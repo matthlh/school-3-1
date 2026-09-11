@@ -1,0 +1,9 @@
+# machine-generated daily output: Gmail digests, Canvas dumps, quiz/plan state
+routines/
+# local Claude Code permissions
+.claude/settings.local.json
+# app build artefacts
+notes-app/node_modules/
+notes-app/dist/
+# macOS
+.DS_Store
