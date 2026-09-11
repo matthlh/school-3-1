@@ -168,9 +168,11 @@ clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is 
 The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11). Every push to
 `main` redeploys the app to https://matthlh.github.io/school-3-1/ via `.github/workflows/pages.yml`.
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
-passcode links stay out of the repo (point at the Canvas Zoom tab instead). `publish.sh` (repo root) commits and pushes
-whatever changed; the morning check, quiz-me and lecture logging run it as their last step, so the
-site updates itself. Outside those, commit/push only when asked. **Never add a `Co-Authored-By` /
+passcode links stay out of the repo (point at the Canvas Zoom tab instead).
+`publish.sh` (repo root) commits whatever changed, fetches GitHub's main and rebases onto it if another
+session or a web edit moved it, then pushes; on a real conflict it aborts, keeps the local commit and names
+the files (fix by hand, rerun). The morning check, quiz-me and lecture logging run it as their last step, so
+the site updates itself. Outside those, commit/push only when asked. **Never add a `Co-Authored-By` /
 AI-attribution trailer** to commits or PRs.
 The preview runner can't read ~/Documents (macOS privacy block), so start it from Bash in the
 background — `cd notes-app && npm run dev` — then `preview_start name=notes` attaches
