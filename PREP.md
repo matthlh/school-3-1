@@ -90,7 +90,7 @@ system is just note-taking.
   Oct 29 and Nov 12 are Thu; Dec 11 a Fri). iClicker running before STAT starts.
 - **Wed** — do the ASIA lecture + quiz in the morning block. Five days of buffer beats zero.
 - **Fri** — **your lab quiz is written in the lab and can't be made up.** Then the retrieval block.
-- **Sun** — 20 minutes: the brief's **Week ahead** block shows the planner's placement of next week
+- **Sun** — 20 minutes at 3 pm: the weekly-plan brief's **Week ahead** block shows the planner's placement of next week
   (hours per day, what moved, any day over budget). Your only calls: an over-budget day → Saturday flex
   block or cut something; anything you want on a fixed day → tag it `pin`.
 

@@ -119,3 +119,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-11 | Weekly planner mode (`things_plan.py --week`): Sundays it places next week's work on days by deadline + PREP rhythm, keeps hand-set days that fit, flags over-budget days; brief gains a **Week ahead** block. Weekly owns when-dates, daily owns Today/Tomorrow. |
 | 2026-09-11 | Quiz (quiz): 10 q · 0 O / 3 ~ / 7 X · CPSC 310, STAT 251 · 5 ledger rows moved |
 | 2026-09-11 | Logged PHIL 321 lec 1 (sit-in; course undecided, folder still in archive/) → 11 questions, 6 ledger topics due Sep 12. |
+| 2026-09-11 | Weekly plan is its own routine: scheduled task `weekly-plan`, Sundays 15:00 (`things_plan.py --week`, ≤12-line Week ahead brief, `routines/runs/<date>-week.md`). Daily task no longer runs `--week`. First real run Sun Sep 13. |
