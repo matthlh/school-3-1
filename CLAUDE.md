@@ -143,7 +143,7 @@ lighten a day, move items out and run `things_plan.py --budget H` — the trim i
 date and skips the Career reserve). Recurring work: dated series (WeBWorK, pre-lab quizzes, CPSC labs,
 PHIL readings, ASIA watch+quiz per lecture) are real dated to-dos; open-ended weekly ones (novel pages,
 Friday retrieval block, Saturday groceries) come from the planner's `WEEKLY` table a week ahead; an auto to-do he ticks or cancels by hand stays closed (ids kept in
-`plan-state.json`); Sundays (or "plan my week") `things_plan.py --week` places next week's dated and
+`plan-state.json`); Sundays 15:00 (scheduled task `weekly-plan`, or "plan my week") `things_plan.py --week` places next week's dated and
 undated-P1 work on days by deadline and rhythm — weekly owns when-dates, daily owns Today/Tomorrow, `pin`
 tag = never move; a ⚠ OVER BUDGET line is the one decision to put to him. Knobs
 (budget per weekday, 1 h Career reserve, 1.5 h P3 cap) sit at the top of the script. One-time
@@ -163,9 +163,10 @@ so edits and new lecture files hot-reload. Hash routes: `#/` home (course cards 
 `#/courses/STAT251/...md` file view. Question banks render as cards with answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
 (`/` focuses it); the sidebar is off-canvas — hover the left edge or pin with ☰.
-The workspace is a git repo → **private** GitHub `matthlh/school-3-1` (created 2026-09-11); Matt
-hosts the app from it (root dir `notes-app`, `npm run build`, output `dist`). `routines/` is
-git-ignored on purpose — the briefs carry Gmail-derived personal detail. Commit/push only when asked.
+The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11). Every push to
+`main` redeploys the app to https://matthlh.github.io/school-3-1/ via `.github/workflows/pages.yml`.
+`routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
+passcode links stay out of the repo (point at the Canvas Zoom tab instead). Commit/push only when asked.
 The preview runner can't read ~/Documents (macOS privacy block), so start it from Bash in the
 background — `cd notes-app && npm run dev` — then `preview_start name=notes` attaches
 (launch.json is URL-only). If port 8765 already answers, just attach. `npm run typecheck` before

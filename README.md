@@ -37,7 +37,7 @@ morning brief never repeats), and `lectures/`.
 | `/morning-check` / `what's new` | sweep Things3, Canvas (+grades), PrairieLearn, Piazza, Gmail; rebuild today's Things3 plan; brief |
 | `plan my day` | just the Things3 rebuild: fit today into 6 h by priority, roll the rest to tomorrow (`things_plan.py`) |
 | `week ahead` | Sunday view: every hard date in the next 14 days, unlogged lectures, is the Saturday flex block needed |
-| `plan my week` | place next week's work on days by deadline and rhythm, keep hand-set days that fit, flag over-budget days (`things_plan.py --week`; runs itself on Sundays) |
+| `plan my week` | place next week's work on days by deadline and rhythm, keep hand-set days that fit, flag over-budget days (`things_plan.py --week`, or `--week --next-week` mid-week; runs itself on Sundays) |
 | `term status` | unlogged lectures + exam countdown (`scripts/term.py`) |
 | `mock exam CPSC310` | full timed practice exam from your bank |
 | `gap check PHIL385` | syllabus topics with no notes against them |

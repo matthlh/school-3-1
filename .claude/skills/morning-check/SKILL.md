@@ -83,7 +83,7 @@ at the top of the script. A future when-date he set by hand holds unless the dea
 Open-ended weekly to-dos (novel pages Mon, retrieval block Fri, groceries Sat) come from the `WEEKLY`
 table one week ahead; tick one and it stays ticked.
 
-**Weekly mode — Sundays (and "plan my week"):** after the daily run, also run
+**Weekly mode — Sundays 15:00 (scheduled task `weekly-plan`) and "plan my week":** run
 ```bash
 python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/things_plan.py" --week
 ```
@@ -94,7 +94,9 @@ first, always before the deadline. Events, `WEEKLY` instances, ladder steps and 
 never move. Weekly owns when-dates; the daily run owns Today/Tomorrow and never moves a future date.
 It prints the brief's **Week ahead — x of 42 h** block (one line per day; `⚠` = over budget; `moved` /
 `placed` lines; a `⚠ OVER BUDGET` line is the decision for Matt: push to the Saturday flex block or cut).
-Paste it verbatim after **Rolled to tomorrow** on Sundays. `--dry-run --date <next Sunday>` previews.
+The weekly-plan task posts it as its own ≤12-line brief (block + hard dates in 14 days + unlogged) and
+writes `routines/runs/<date>-week.md`; the daily run never calls `--week`. On any other day, "plan my week" =
+`--week --next-week` (the coming Mon→Sun); add `--dry-run` to preview.
 
 After it runs:
 - If it lists items under **Needs an estimate/priority tag**, tag them yourself from the title
@@ -285,7 +287,7 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 - ...                                 the lecture close-outs collapse into one line ("· 1 overdue")
 **Rolled to tomorrow**          ← also from the planner; omit the header if empty
 - <project> · <what> · rolled 2×
-**Week ahead — 25 of 42 h** (Mon Sep 14 → Sun Sep 20)   ← Sundays only, verbatim from `--week`
+**Week ahead — 25 of 42 h** (Mon Sep 14 → Sun Sep 20)   ← the Sunday 15:00 weekly-plan brief, verbatim from `--week`
 - Mon 14 · 5.5/6 h · <what> · <what> (+2)
 - ⚠ OVER BUDGET Thu Sep 17: … has no room before Sep 18   ← the one decision
 

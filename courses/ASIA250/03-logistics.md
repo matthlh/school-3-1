@@ -7,7 +7,7 @@ attempt, open-book, no timer, **hard lock one week later at 23:59**.
 break · Wk 13 (Nov 30) last lecture, Dec 4 last Q&A.
 **Textbook:** Harvey 2013, *An Introduction to Buddhism* — PDF on Canvas (files/47240885).
 **Q&A (only synchronous component, optional):** Fridays 19:30–~20:30, Sep 11 → Dec 4.
-Zoom: https://ubc.zoom.us/j/66975373507?pwd=doduSI9GLnpGsqLzdBVHqCS8qX5cio.1 — on the OH calendar.
+Zoom: (Zoom link + passcode: Canvas → Zoom tab) — on the OH calendar.
 
 ## Where every reading lives (all on Canvas as files — nothing to buy)
 | Reading | Canvas file |
