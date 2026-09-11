@@ -163,6 +163,9 @@ so edits and new lecture files hot-reload. Hash routes: `#/` home (course cards 
 `#/courses/STAT251/...md` file view. Question banks render as cards with answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
 (`/` focuses it); the sidebar is off-canvas — hover the left edge or pin with ☰.
+The workspace is a git repo → **private** GitHub `matthlh/school-3-1` (created 2026-09-11); Matt
+hosts the app from it (root dir `notes-app`, `npm run build`, output `dist`). `routines/` is
+git-ignored on purpose — the briefs carry Gmail-derived personal detail. Commit/push only when asked.
 The preview runner can't read ~/Documents (macOS privacy block), so start it from Bash in the
 background — `cd notes-app && npm run dev` — then `preview_start name=notes` attaches
 (launch.json is URL-only). If port 8765 already answers, just attach. `npm run typecheck` before
