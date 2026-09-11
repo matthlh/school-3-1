@@ -18,7 +18,8 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
    course allows it — except CPSC 310, where precise `recall` of terminology is what the
    exams actually test.
-3. Add any new topic to `courses/<CODE>/01-topics.md` and to `ledger.md` with `Next = today + 1`.
+3. Add any new topic to `courses/<CODE>/01-topics.md` and to `ledger.md` with `Next = today + 1`,
+   then `sh publish.sh "Log <CODE> lec N"` — the notes site redeploys itself.
 4. Report only what changed. No summaries of the notes back to him.
 5. The `Log <CODE> lec N (<date>)` to-do in Things3 (deadline = the lecture date, so it shows how
    overdue it really is) auto-completes on the next planner run; to close it immediately run
@@ -43,7 +44,8 @@ one question at a time and grade `X` / `~` / `O`; then `quiz_grade.py "1:O 2:X �
 rows by the ladder below, mirrors `01-topics.md`, logs per-question history in
 `routines/quiz-state.json`, and names the topics that need more questions — write those before the
 session ends. **Never update ledger rows by hand; the script owns them.** `quiz_pick.py --transit`
-builds the 6-question deck the morning check sends to his phone.
+builds the 6-question deck the morning check sends to his phone. Last step of every graded session:
+`sh publish.sh "Quiz <date>"` — the hosted site shows the new ledger rows and per-question history.
 
 **Spacing ladder** (recompute `Next` from today):
 | Grade | Streak | Next |
@@ -166,8 +168,10 @@ clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is 
 The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11). Every push to
 `main` redeploys the app to https://matthlh.github.io/school-3-1/ via `.github/workflows/pages.yml`.
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
-passcode links stay out of the repo (point at the Canvas Zoom tab instead). Commit/push only when asked,
-and **never add a `Co-Authored-By` / AI-attribution trailer** to commits or PRs.
+passcode links stay out of the repo (point at the Canvas Zoom tab instead). `publish.sh` (repo root) commits and pushes
+whatever changed; the morning check, quiz-me and lecture logging run it as their last step, so the
+site updates itself. Outside those, commit/push only when asked. **Never add a `Co-Authored-By` /
+AI-attribution trailer** to commits or PRs.
 The preview runner can't read ~/Documents (macOS privacy block), so start it from Bash in the
 background — `cd notes-app && npm run dev` — then `preview_start name=notes` attaches
 (launch.json is URL-only). If port 8765 already answers, just attach. `npm run typecheck` before

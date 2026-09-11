@@ -74,6 +74,12 @@ sends grades and no session file exists, say so — never invent one.
 - `routines/quiz/YYYY-MM-DD.md` — session log: grades, misses with the correct answer, ledger delta
 - `routines/runs/YYYY-MM-DD-transit.md` — the deck the morning check sends to his phone
 
+## Publish (end of every graded session)
+Grading rewrites `ledger.md` (Due now, topic rows) and sometimes `02-questions.md`. Once the ledger
+is written, run `sh "/Users/matthe/Documents/CodingProjects/School 3-1/publish.sh" "Quiz YYYY-MM-DD"`
+so the hosted notes site shows the new schedule. Nothing to commit → it says so and exits. Plain
+commit message, never an attribution trailer.
+
 ## Tuning log
 - 2026-09-11 built. Matt asked for one skill across all courses that decides focus, flags weak
   topics that need more questions, and keeps the SRS. Question IDs are a hash of course + text, so

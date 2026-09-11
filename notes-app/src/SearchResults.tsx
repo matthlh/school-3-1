@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import type { Texts, Tree } from './files'
 import { courseOf, hrefFor, labelFor } from './files'
+import { toneStyle } from './theme'
 
 interface Hit { path: string; lines: string[]; score: number }
 
@@ -30,15 +31,18 @@ export function SearchResults({ query, all, tree }: { query: string; all: Texts;
     <article>
       <h1>Search <span className="muted light">{total} match{total === 1 ? '' : 'es'} in {hits.length} file{hits.length === 1 ? '' : 's'}</span></h1>
       {hits.length === 0 && <p className="muted">Nothing for “{query}”.</p>}
-      {hits.map((h) => (
-        <a key={h.path} className="card wide hit" href={hrefFor(h.path)}>
-          <div className="name">
-            {courseOf(h.path) && <span className="chip">{courseOf(h.path)}</span>} {labelFor(h.path, tree)}
-            <span className="sub"> · {h.score}</span>
-          </div>
-          {h.lines.map((l, i) => <div key={i} className="snippet"><Highlight text={l} terms={terms} /></div>)}
-        </a>
-      ))}
+      {hits.map((h) => {
+        const code = courseOf(h.path)
+        return (
+          <a key={h.path} className="card wide hit" href={hrefFor(h.path)}>
+            <div className="name">
+              {code && <span className="chip tone" style={toneStyle(code)}>{code}</span>} {labelFor(h.path, tree)}
+              <span className="sub"> · {h.score}</span>
+            </div>
+            {h.lines.map((l, i) => <div key={i} className="snippet"><Highlight text={l} terms={terms} /></div>)}
+          </a>
+        )
+      })}
     </article>
   )
 }

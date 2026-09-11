@@ -120,3 +120,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-11 | Quiz (quiz): 10 q · 0 O / 3 ~ / 7 X · CPSC 310, STAT 251 · 5 ledger rows moved |
 | 2026-09-11 | Logged PHIL 321 lec 1 (sit-in; course undecided, folder still in archive/) → 11 questions, 6 ledger topics due Sep 12. |
 | 2026-09-11 | Weekly plan is its own routine: scheduled task `weekly-plan`, Sundays 15:00 (`things_plan.py --week`, ≤12-line Week ahead brief, `routines/runs/<date>-week.md`). Daily task no longer runs `--week`. First real run Sun Sep 13. |
+| 2026-09-11 | Notes site: per-course tints, favicon, indented sidebar, search fix; quiz stats on the site (ledger topic grades → course cards/sidebar/course page; quiz-state.json → per-question chips + weak-only filter). `publish.sh` now runs at the end of morning check / quiz / log so the site updates itself. |

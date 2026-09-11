@@ -269,6 +269,18 @@ bus. The brief's **Review** block lists the 6 questions (question only) and ends
 them (see the quiz-me skill). The brief itself never edits ledger rows. Skip the deck only if the
 bank has no questions at all (the script exits 1 and says so).
 
+### 8. Ledger session log + publish (last step, every run)
+If the run changed anything durable — a date in `ledger.md`, a grade row, a `03-logistics.md`
+update, a Things3 sync — append one row to `ledger.md → ## Session log`:
+`| YYYY-MM-DD | Morning check: <one line — what changed> |`. Nothing-new days get no row (the run
+file is the record; the ledger stays signal). Then run
+```bash
+sh "/Users/matthe/Documents/CodingProjects/School 3-1/publish.sh" "Morning check YYYY-MM-DD"
+```
+It commits whatever changed (ledger, logistics, questions) and pushes; GitHub Pages redeploys the
+notes site at https://matthlh.github.io/school-3-1/ within a minute. `routines/` is git-ignored,
+so briefs never leave the machine. Plain commit message — never an attribution trailer.
+
 ---
 
 ## Report format (`routines/runs/YYYY-MM-DD-morning.md`)
@@ -323,7 +335,8 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 ### Gmail               School / Career / Admin+money — dated items as a table, the rest bullets
 ### Things3             bullets: title → project, when, deadline, tags (items added/updated this run)
 ### Ledger              bullets: dates added/changed · grade rows updated ·
-                        "logistics updated: <file>" if any
+                        "logistics updated: <file>" if any · "session-log row added" ·
+                        "published <sha>" or "nothing to publish" (§8)
 ```
 Calendar events (classes, gym, badminton) never appear in **Plan today** — Things3 holds tasks, not
 the timetable; today's lectures have their own block.
@@ -346,6 +359,9 @@ unless a deadline collision or a ⚠ OVER BUDGET line needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-09-11 (evening, Matt): §8 added — when a run changes something durable, append a one-line
+  row to the ledger's Session log, then `publish.sh` (commit + push → Pages redeploy). Site is the
+  public notes app; briefs stay local.
 - 2026-09-11 (quiz-me skill built): the **Review** block is now the transit deck — 6 questions
   from `quiz_pick.py --transit`, sent to his phone as a file, graded from his reply with
   `quiz_grade.py`. Replaces the hand-picked ≤3 questions. The ledger's Due-now block is refreshed
