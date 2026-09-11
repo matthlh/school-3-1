@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { buildTree, courseOf, labelFor, loadAll, loadQuizState, type QuizState, type Texts } from './files'
-import { parseLedgerTopics } from './markdown'
+import { parseLedgerTopics, parseLinks } from './markdown'
 import { tallyByCourse } from './stats'
 import { HREF_HOME, hrefCourse, parseHash, type Route } from './routes'
 import { TopBar, type Crumb } from './TopBar'
@@ -42,6 +42,8 @@ export default function App() {
   }, [])
 
   const topics = useMemo(() => parseLedgerTopics(all?.['ledger.md'] ?? ''), [all])
+
+  const links = useMemo(() => parseLinks(all?.['links.md'] ?? ''), [all])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
 
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
@@ -57,8 +59,8 @@ export default function App() {
   let body
   if (!all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} />
-  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} links={links} />
+  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank path={route.path} text={all[route.path]} title={`${courseOf(route.path)} · Question bank`} quiz={quiz} />
   else body = <Viewer path={route.path} text={all[route.path]} />

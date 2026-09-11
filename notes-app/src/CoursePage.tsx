@@ -1,12 +1,13 @@
 import type { Texts, Tree } from './files'
 import { hrefFor } from './files'
-import { afterDash, countQuestions, firstHeading, type TopicRow } from './markdown'
+import { afterDash, countQuestions, firstHeading, type LinkRow, type TopicRow } from './markdown'
+import { LinkChips } from './Links'
 import { toneStyle } from './theme'
 import { EMPTY, todayISO, type Tally } from './stats'
 import { GradeChip, StatBar } from './StatViews'
 
-export function CoursePage({ code, tree, all, topics, tallies }: {
-  code: string; tree: Tree; all: Texts; topics: TopicRow[]; tallies: Record<string, Tally>
+export function CoursePage({ code, tree, all, topics, tallies, links }: {
+  code: string; tree: Tree; all: Texts; topics: TopicRow[]; tallies: Record<string, Tally>; links: LinkRow[]
 }) {
   const course = tree.courses.find((c) => c.code === code)
   if (!course) return <article><h1>Unknown course</h1><p><code>{code}</code></p></article>
@@ -28,6 +29,7 @@ export function CoursePage({ code, tree, all, topics, tallies }: {
           </a>
         ))}
       </div>
+      <LinkChips rows={links} course={code} />
 
       <section className="panel">
         <div className="panel-head"><span>Retrieval</span><a href={hrefFor('ledger.md')}>ledger →</a></div>

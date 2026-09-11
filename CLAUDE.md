@@ -150,7 +150,9 @@ undated-P1 work on days by deadline and rhythm — weekly owns when-dates, daily
 tag = never move; a ⚠ OVER BUDGET line is the one decision to put to him. Knobs
 (budget per weekday, 1 h Career reserve, 1.5 h P3 cap) sit at the top of the script. One-time
 course reference info (office hours, links, policies, schedules) lives in
-`courses/<CODE>/03-logistics.md` — the daily brief never repeats it; answer from there when he asks.
+`courses/<CODE>/03-logistics.md` — except tool URLs (Canvas, WeBWorK, PrairieLearn, Piazza, readers), which live in
+root `links.md`: the notes site shows them on Home and each course page, and `things_plan.py` appends the
+matching rows to a to-do's notes (idempotent, every run; `--no-links` skips it). Add a URL there, nowhere else — the daily brief never repeats it; answer from there when he asks.
 A scheduled task runs the skill daily at 06:35 while the app is open; outputs land in
 `routines/runs/`. When he asks "what's new", run the skill. `scripts/term.py` prints unlogged
 lectures and exam/deliverable countdowns keyed to the PREP.md ladders (T-10 starts Phase 2) —

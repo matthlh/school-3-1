@@ -127,3 +127,7 @@ table.topics { width: 100%; border-collapse: collapse; font-size: 13.5px; margin
 .topics td:first-child { width: 30px; padding-left: 0; }
 .topics td:last-child { white-space: nowrap; text-align: right; font-size: 12.5px; padding-right: 0; }
 .topics td.due { color: #a0405a; font-weight: 600; }
+
+.btn.link { font-size: 12.5px; padding: 4px 11px; background: var(--tint, #fff); color: var(--ink, #1c1c1e); border-color: var(--line, #d9d9de); }
+.btn.link:hover { filter: brightness(.97); }
+.row.links { margin: 6px 0 12px; }

@@ -42,6 +42,7 @@ import argparse, datetime as dt, json, os, re, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = "/Users/matthe/Documents/CodingProjects/School 3-1"
 STATE = os.path.join(ROOT, "routines", "plan-state.json")
+LINKS_MD = os.path.join(ROOT, "links.md")   # course tool links; rows with a match column get attached to to-do notes
 sys.path.insert(0, HERE)
 
 # ---- knobs (edit here) -------------------------------------------------------------------------
@@ -210,6 +211,58 @@ def dump():
         seen.add(id_)
         todos.append(Todo(id_, name, project, area or proj_area.get(project, ""), when, due, tags, lst))
     return todos
+
+def load_links():
+    """links.md rows that have a to-do match column → [(course, name, url, compiled regex)]."""
+    rules = []
+    try:
+        for line in open(LINKS_MD, encoding="utf-8"):
+            if not line.startswith("|"):
+                continue
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) < 4 or cells[0] in ("Course", "") or set(cells[0]) <= {"-"} or not cells[3]:
+                continue
+            course, name, url, match = cells[:4]
+            alts = [a.strip() for a in match.split(";") if a.strip()]
+            rules.append((course, name, url, re.compile("|".join(alts), re.I)))
+    except FileNotFoundError:
+        pass
+    return rules
+
+def _as_text(s):
+    """Python str → AppleScript string expression (newlines via linefeed)."""
+    parts = [p.replace("\\", "\\\\").replace('"', '\\"') for p in s.split("\n")]
+    return " & linefeed & ".join(f'"{p}"' for p in parts)
+
+def attach_links(todos, dry):
+    """Append matching links.md URLs to the notes of open course to-dos that don't carry them yet.
+    A course row only fires for to-dos in that course's project (or with the code in the title), so a
+    broad pattern like 'project' can't leak onto Career items. Returns one log line per to-do touched."""
+    rules = load_links()
+    if not rules:
+        return []
+    lines = []
+    for t in todos:
+        if t.lst == "Someday":
+            continue
+        hits = []
+        for course, name, url, rx in rules:
+            pretty = re.sub(r"^([A-Z]+)(\d+)$", r"\1 \2", course)
+            in_course = course == "ALL" or pretty in (t.project or "") or course in t.name.replace(" ", "")
+            if in_course and rx.search(t.name) and (name, url) not in hits:
+                hits.append((name, url))
+        if not hits:
+            continue
+        notes = osa(f'tell application "Things3" to get notes of to do id "{t.id}"').rstrip("\n")
+        new = [(n, u) for n, u in hits if u not in notes]
+        if not new:
+            continue
+        add = "\n".join(f"{n}: {u}" for n, u in new)
+        body = _as_text((notes + "\n\n" if notes else "") + add)
+        if not dry:
+            osa(f'tell application "Things3" to set notes of to do id "{t.id}" to {body}')
+        lines.append(f"{t.name[:48]} ← {', '.join(n for n, _ in new)}")
+    return lines
 
 def load_state():
     try:
@@ -533,6 +586,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--no-lectures", action="store_true", help="skip auto lecture/ladder to-dos")
     ap.add_argument("--no-ladder", action="store_true", help="alias of --no-lectures")
+    ap.add_argument("--no-links", action="store_true", help="skip attaching links.md URLs to to-do notes")
     ap.add_argument("--seed", action="store_true", help="pre-create every ASIA 250 watch+quiz to-do for the term")
     ap.add_argument("--week", action="store_true", help="weekly mode: place next week's work on days (Sundays, 'plan my week')")
     ap.add_argument("--next-week", action="store_true", help="with --week: plan the coming Mon→Sun even if today isn't Sunday")
@@ -550,6 +604,9 @@ def main():
     if not a.dry_run:             # remember our to-dos by id so one he ticks by hand stays closed
         ids = {t.name: t.id for t in todos}
         state.setdefault("auto", {}).update({n: ids[n] for n in register if n in ids})
+    linked = [] if a.no_links else attach_links(todos, a.dry_run)
+    if linked:
+        auto.append(f"links added to {len(linked)} to-do(s): " + "; ".join(linked[:6]) + (" …" if len(linked) > 6 else ""))
     if a.week:
         for t in todos:                                   # score for the day-line ordering only
             t.score = (1000 if t.due and (t.due - today).days <= 7 else 0) + PRIO_SCORE.get(t.prio, 100)
