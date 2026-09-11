@@ -1,5 +1,7 @@
 # School 3-1 — UBC, Sep–Dec 2026
 
+https://matthlh.github.io/school-3-1/
+
 A retrieval-practice system for five (maybe four) courses, built so Claude can keep up with
 each course and quiz you on it.
 
