@@ -5,6 +5,7 @@ type Loader = () => Promise<string>
 
 const raw = {
   ...import.meta.glob('../../ledger.md', { query: '?raw', import: 'default' }),
+  ...import.meta.glob('../../links.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../courses/**/*.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../routines/runs/*.md', { query: '?raw', import: 'default' }),
 } as Record<string, Loader>

@@ -1,4 +1,6 @@
 import type { Texts, Tree } from './files'
+import type { LinkRow } from './markdown'
+import { LinkChips } from './Links'
 import { hrefFor } from './files'
 import { afterDash, countQuestions, extractSection, firstHeading } from './markdown'
 import { hrefCourse } from './routes'
@@ -8,7 +10,7 @@ import { StatBar } from './StatViews'
 import { Logo } from './Logo'
 import { Md } from './Md'
 
-export function Home({ tree, all, tallies }: { tree: Tree; all: Texts; tallies: Record<string, Tally> }) {
+export function Home({ tree, all, tallies, links }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; links: LinkRow[] }) {
   const due = extractSection(all['ledger.md'] ?? '', /^due now/i)
   return (
     <>
@@ -34,6 +36,12 @@ export function Home({ tree, all, tallies }: { tree: Tree; all: Texts; tallies: 
           )
         })}
       </div>
+      {links.length > 0 && (
+        <section className="panel">
+          <div className="panel-head"><span>Links</span><a href={hrefFor('links.md')}>edit →</a></div>
+          <LinkChips rows={links} />
+        </section>
+      )}
       {tree.runs.length > 0 && (
         <div className="row small">
           <span className="muted">Briefs:</span>

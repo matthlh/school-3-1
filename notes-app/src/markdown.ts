@@ -109,3 +109,16 @@ export function parseLedgerTopics(md: string): TopicRow[] {
   }
   return rows
 }
+
+export interface LinkRow { course: string; name: string; url: string }
+/** links.md → rows. Course "ALL" = shown everywhere. The 4th column (to-do matching) is for things_plan.py. */
+export function parseLinks(md: string): LinkRow[] {
+  const rows: LinkRow[] = []
+  for (const line of md.split('\n')) {
+    if (!line.trim().startsWith('|')) continue
+    const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
+    if (cells.length < 3 || cells[0] === 'Course' || /^-+$/.test(cells[0]) || !/^https?:/.test(cells[2])) continue
+    rows.push({ course: cells[0].replace(/\s+/g, ''), name: cells[1], url: cells[2] })
+  }
+  return rows
+}
