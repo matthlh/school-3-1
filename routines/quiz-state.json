@@ -1,0 +1,174 @@
+{
+ "questions": {
+  "cbef1775": {
+   "course": "STAT251",
+   "topic": "1a Types of data",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "bcc5dfde": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-11",
+     "~"
+    ]
+   ]
+  },
+  "db431ecf": {
+   "course": "STAT251",
+   "topic": "Descriptive vs inferential",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "5d9223ec": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-11",
+     "~"
+    ]
+   ]
+  },
+  "4eff1de4": {
+   "course": "STAT251",
+   "topic": "1b–c Displays",
+   "history": [
+    [
+     "2026-09-11",
+     "~"
+    ]
+   ]
+  },
+  "cd1ac2f5": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "84cb941c": {
+   "course": "STAT251",
+   "topic": "1b–c Displays",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "4e15c1b1": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "94b3e4a0": {
+   "course": "STAT251",
+   "topic": "1b–c Displays",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "a396bb68": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  }
+ },
+ "sessions": [
+  {
+   "date": "2026-09-11",
+   "mode": "quiz",
+   "n": 10,
+   "note": "",
+   "results": [
+    [
+     1,
+     "cbef1775",
+     "STAT251",
+     "X"
+    ],
+    [
+     2,
+     "bcc5dfde",
+     "CPSC310",
+     "~"
+    ],
+    [
+     3,
+     "db431ecf",
+     "STAT251",
+     "X"
+    ],
+    [
+     4,
+     "5d9223ec",
+     "CPSC310",
+     "~"
+    ],
+    [
+     5,
+     "4eff1de4",
+     "STAT251",
+     "~"
+    ],
+    [
+     6,
+     "cd1ac2f5",
+     "CPSC310",
+     "X"
+    ],
+    [
+     7,
+     "84cb941c",
+     "STAT251",
+     "X"
+    ],
+    [
+     8,
+     "4e15c1b1",
+     "CPSC310",
+     "X"
+    ],
+    [
+     9,
+     "94b3e4a0",
+     "STAT251",
+     "X"
+    ],
+    [
+     10,
+     "a396bb68",
+     "CPSC310",
+     "X"
+    ]
+   ]
+  }
+ ]
+}

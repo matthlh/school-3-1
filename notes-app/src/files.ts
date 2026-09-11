@@ -111,3 +111,16 @@ export function resolveRelative(fromPath: string, href: string): string {
 }
 
 export const hrefFor = (path: string) => `#/${path}`
+
+// ---- quiz history (routines/quiz-state.json, written by the quiz-me skill) ----------------
+
+export interface QuizHistory { course: string; topic: string; history: [string, string][] }
+export interface QuizState { questions: Record<string, QuizHistory>; sessions: unknown[] }
+
+const quizRaw = import.meta.glob('../../routines/quiz-state.json', { query: '?raw', import: 'default' }) as Record<string, Loader>
+
+export async function loadQuizState(): Promise<QuizState | null> {
+  const load = Object.values(quizRaw)[0]
+  if (!load) return null
+  try { return JSON.parse(await load()) as QuizState } catch { return null }
+}

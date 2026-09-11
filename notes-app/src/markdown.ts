@@ -83,3 +83,29 @@ export function parseQuestions(md: string): QuestionGroup[] {
 export function countQuestions(md: string | undefined): number {
   return md ? parseQuestions(md).reduce((n, g) => n + g.questions.length, 0) : 0
 }
+
+// ---- ledger.md "All topics" table ---------------------------------------------------------
+
+export type Grade = 'X' | '~' | 'O'
+export interface TopicRow {
+  course: string; topic: string; lec: string; last: string; grade: Grade | null; streak: number; next: string
+}
+
+/** Rows of `## All topics` — course codes normalised ("STAT 251" → "STAT251"). */
+export function parseLedgerTopics(md: string): TopicRow[] {
+  const sec = extractSection(md, /^all topics/i)
+  if (!sec) return []
+  const rows: TopicRow[] = []
+  for (const line of sec.split('\n')) {
+    if (!line.trim().startsWith('|')) continue
+    const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
+    if (cells.length < 7 || cells[0] === 'Course' || /^-+$/.test(cells[0]) || !cells[0]) continue
+    const g = cells[4]
+    rows.push({
+      course: cells[0].replace(/\s+/g, ''), topic: cells[1], lec: cells[2], last: cells[3],
+      grade: g === 'X' || g === '~' || g === 'O' ? g : null,
+      streak: parseInt(cells[5], 10) || 0, next: /^\d{4}-\d{2}-\d{2}$/.test(cells[6]) ? cells[6] : '',
+    })
+  }
+  return rows
+}

@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildTree, courseOf, labelFor, loadAll, type Texts } from './files'
+import { buildTree, courseOf, labelFor, loadAll, loadQuizState, type QuizState, type Texts } from './files'
+import { parseLedgerTopics } from './markdown'
+import { tallyByCourse } from './stats'
 import { HREF_HOME, hrefCourse, parseHash, type Route } from './routes'
 import { TopBar, type Crumb } from './TopBar'
 import { Sidebar } from './Sidebar'
@@ -23,11 +25,12 @@ export default function App() {
   const route = useRoute()
   const tree = useMemo(buildTree, [])
   const [all, setAll] = useState<Texts | null>(null)
+  const [quiz, setQuiz] = useState<QuizState | null>(null)
   const [query, setQuery] = useState('')
   const [pinned, setPinned] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => { loadAll().then(setAll) }, [])
+  useEffect(() => { loadAll().then(setAll); loadQuizState().then(setQuiz) }, [])
   useEffect(() => { setQuery(''); window.scrollTo(0, 0) }, [route])
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -38,12 +41,15 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  const topics = useMemo(() => parseLedgerTopics(all?.['ledger.md'] ?? ''), [all])
+  const tallies = useMemo(() => tallyByCourse(topics), [topics])
+
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
   const crumbs: Crumb[] = [{ label: 'Home', href: HREF_HOME }]
-  if (route.kind === 'course') crumbs.push({ label: route.code })
+  if (route.kind === 'course') crumbs.push({ label: route.code, tone: route.code })
   if (route.kind === 'file') {
     const code = courseOf(route.path)
-    if (code) crumbs.push({ label: code, href: hrefCourse(code) })
+    if (code) crumbs.push({ label: code, href: hrefCourse(code), tone: code })
     crumbs.push({ label: labelFor(route.path, tree) })
   }
   useEffect(() => { document.title = crumbs[crumbs.length - 1].label }, [crumbs])
@@ -51,15 +57,15 @@ export default function App() {
   let body
   if (!all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} />
-  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} />
+  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
-  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank path={route.path} text={all[route.path]} title={`${courseOf(route.path)} · Question bank`} />
+  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank path={route.path} text={all[route.path]} title={`${courseOf(route.path)} · Question bank`} quiz={quiz} />
   else body = <Viewer path={route.path} text={all[route.path]} />
 
   return (
     <div className={'wrap' + (pinned ? ' pinned' : '')}>
-      <Sidebar tree={tree} current={current} pinned={pinned} />
+      <Sidebar tree={tree} current={current} pinned={pinned} tallies={tallies} />
       <TopBar crumbs={crumbs} query={query} onQuery={setQuery} onMenu={() => setPinned((v) => !v)} pinned={pinned} inputRef={searchRef} />
       <main>{body}</main>
     </div>

@@ -1,15 +1,16 @@
 # CPSC 310 — logistics (one-time reference; pulled 2026-09-10)
 
-**Canvas is grades-only.** Everything else: https://ubccpsc.github.io/310/26w1/ (syllabus · schedule ·
+**Canvas is not used at all** (Kyle, Piazza welcome post Sep 11). Everything else: https://ubccpsc.github.io/310/26w1/ (syllabus · schedule ·
 materials · project). Announcements happen on Piazza.
 **Lectures:** Tue/Thu (sections 101/102/103; iClicker join codes on the course landing page).
-**Labs:** blocks run Fri→Thu starting Fri Sep 11. Lab work due by the start of the next lab. Lowest lab
+**Labs:** on Zoom (links Piazza @14); blocks run Fri→Thu starting Fri Sep 11. Waitlisted → attend any lab. Lab work due by the start of the next lab. Lowest lab
 dropped. Cancelled labs: Wed Sep 30, Mon Oct 12 (attend another section).
 **Office hours (from Mon Sep 14):** Mon 1:30–2:30 ICCS 238 Nick Bradley · Tue 11:00–12:30 TBA Dennis ·
 Wed 2:00–3:00 ICCS 306 Kyle Chin · Thu 3:00–5:00 TBA Kevin · Fri 11:00–1:00 TBA Shu.
 **Tools:** PrairieLearn https://us.prairielearn.com/pl/course_instance/231184 (labs + project questions) ·
-Piazza class `mtkmphcadpx5k6` · GitHub Enterprise https://github.students.cs.ubc.ca/CPSC310-2026W-T1
+Piazza class `mtkmphcadpx5k6` (lab Zoom links @14 · office-hour times/links @8) · GitHub Enterprise https://github.students.cs.ubc.ca/CPSC310-2026W-T1
 (VPN + CWL) · Canvas course 192903.
+**D1 spec:** https://ubccpsc.github.io/310/26w1/project/d1-drop-in-a-feature — starter repos provisioned Sep 11, autograding from week of Sep 14; all deliverables submitted through PrairieLearn.
 **Grading:** participation 5% (iClicker, 4 lowest dropped) · labs 10% · project 20% · midterm 25% · final 40%.
 **Concessions:** only via the CPSC 310 Academic Concession Request Form, within one week of the deadline;
 if granted, weight usually shifts to the final. Canvas messages/emails are ignored. CfA exams booked 7+ days ahead.

@@ -1,5 +1,7 @@
-# machine-generated daily output: Gmail digests, Canvas dumps, quiz/plan state
-routines/
+# machine-generated daily output stays local (Gmail digests, Canvas dumps, plan state) …
+routines/*
+# … except the quiz history, which the notes site renders per question
+!routines/quiz-state.json
 # local Claude Code permissions
 .claude/settings.local.json
 # app build artefacts
