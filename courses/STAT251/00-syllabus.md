@@ -1,13 +1,10 @@
 # STAT 251 — Introductory Probability and Statistics (2026W1)
 
-**Instructor:** Dr. W. A. Lasantha Premarathna (wpremara@stat.ubc.ca — personal matters only;
-put "STAT 251" in the subject line)
-**Meets:** MWF 8:00–8:50am, CIRS 1250 · Lab Fri 11:00am, Earth Sciences
-**Text:** Free course notes on Canvas. (Optional: Devore, *Probability and Statistics for
-Engineering and the Sciences*.)
-**Office hours:** start week 2 (Mon Sep 14). Fri 9:30–10:30am on Zoom (link under Canvas →
-Zoom) · in person ~30 min right after MWF class — he leaves if nobody shows up
-**Weather closure:** lecture moves to Zoom or a posted recording; details via Canvas announcement
+- **Instructor:** Dr. W. A. Lasantha Premarathna (wpremara@stat.ubc.ca — personal matters only; put "STAT 251" in the subject line)
+- **Meets:** MWF 8:00–8:50am, CIRS 1250. Lab Fri 11:00am, Earth Sciences
+- **Text:** Free course notes on Canvas. (Optional: Devore, *Probability and Statistics for Engineering and the Sciences*.)
+- **Office hours:** start week 2 (Mon Sep 14). Fri 9:30–10:30am on Zoom (link under Canvas → Zoom). In person ~30 min right after MWF class — he leaves if nobody shows up
+- **Weather closure:** lecture moves to Zoom or a posted recording; details via Canvas announcement
 
 ## Grading
 

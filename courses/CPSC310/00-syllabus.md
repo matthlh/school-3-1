@@ -1,8 +1,8 @@
 # CPSC310 — Introduction to Software Engineering (2026W1)
 
-**Type:** Exam-dominated, with a four-part project
-**Meets:** Tue/Thu 12:30–2:00pm, LSK · Lab Tue 9:00–11:00am
-**Course site:** https://ubccpsc.github.io/310/26w1/
+- **Type:** Exam-dominated, with a four-part project
+- **Meets:** Tue/Thu 12:30–2:00pm, LSK. Lab Tue 9:00–11:00am
+- **Course site:** https://ubccpsc.github.io/310/26w1/
 
 > Pulled from the official 26W1 syllabus on 2026-09-08. Verify against Canvas.
 

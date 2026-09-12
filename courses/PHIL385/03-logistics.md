@@ -1,13 +1,22 @@
 # PHIL 385 — logistics (one-time reference; pulled from Canvas 2026-09-10)
 
-**Instructor:** Anders Kraal, anders.kraal@ubc.ca. Office hours Wed 12:15–12:45 on Zoom (link on the Canvas
-front page); email one day in advance for a slot.
-**TAs:** Zoe Luo (zhiyu.luo@ubc.ca), Karoline Paier (karoline.paier@ubc.ca), Anthony Nguyen (anthon23@student.ubc.ca).
-**Canvas:** course 192607. Tabs: Home, Zoom, Assignments, Discussions. Two "students asking students for
-class notes" boards (one per section). No modules, files, or announcements as of Sep 10.
-**Exams on Canvas (all online_quiz, 50-min window):** Exam 1 Fri Oct 2 14:00–14:50 · Exam 2 Fri Oct 16
-14:00–14:50 · Exam 3 **Nov 20 on Canvas, Oct 30 on the syllabus — ask** · Exam 4 Fri Nov 20 14:00–14:50 ·
-Final (40) undated. Which one is the essay exam: still unknown.
+## People
+- Instructor: Anders Kraal, anders.kraal@ubc.ca.
+- Office hours: Wed 12:15–12:45 on Zoom (link on the Canvas front page). Email one day in advance for a slot.
+- TAs: Zoe Luo (zhiyu.luo@ubc.ca), Karoline Paier (karoline.paier@ubc.ca), Anthony Nguyen (anthon23@student.ubc.ca).
+
+## Canvas
+- Course ID 192607. Tabs: Home, Zoom, Assignments, Discussions.
+- Two "students asking students for class notes" boards, one per section.
+- No modules, files, or announcements as of Sep 10.
+
+## Exams on Canvas (all online quizzes with a 50-minute window)
+- Exam 1: Fri Oct 2, 14:00–14:50.
+- Exam 2: Fri Oct 16, 14:00–14:50.
+- Exam 3: Nov 20 on Canvas, Oct 30 on the syllabus. Ask Kraal.
+- Exam 4: Fri Nov 20, 14:00–14:50.
+- Final (40%): undated.
+- Which one is the essay exam: still unknown.
 
 ## Reading schedule (front page, Sep 8)
 | Date | Topic / reading (all in Kierkegaard's *Either/Or* unless noted) |
@@ -38,7 +47,7 @@ Final (40) undated. Which one is the essay exam: still unknown.
 ## Exam mechanics (from Kraal's 2025W1 syllabus; confirm for this year)
 - Exams are written on **Canvas via Respondus LockDown Browser**: random question order, **one question at
   a time, no going back**. Install and test Respondus before Exam 1 (Fri Oct 2).
-- Missed in-term exam → weight transfers to the final automatically. No makeups, no concession needed.
-- Marked by the TA (~20 min per exam); generic feedback in class "feedback sessions". Marking is
-  explicitly **relative to peers**, scaled toward the department average (~76).
+- A missed in-term exam moves its weight to the final automatically. No makeups, no concession needed.
+- Marked by the TA, about 20 minutes per exam. Generic feedback comes in class "feedback sessions".
+- Marking is explicitly **relative to peers**, scaled toward the department average (about 76).
 - 2025 exams were open-book; this year's syllabus says closed-book. Prepare closed-book.

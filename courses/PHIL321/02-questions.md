@@ -14,7 +14,10 @@ Format:
 
 ### Q: State the three kinds of decision situation and what distinguishes them.
 **Topic:** Decision situations (certainty / risk / ignorance)  **Lec:** 1  **Type:** recall
-**A:** Certainty: each act has one known outcome. Risk: several possible states, with known probabilities. Ignorance (uncertainty): several possible states, probabilities unknown.
+**A:**
+- Certainty: each act has one known outcome.
+- Risk: several possible states, with known probabilities.
+- Ignorance (uncertainty): several possible states, probabilities unknown.
 
 ### Q: You're choosing between two umbrellas at a fixed price, knowing exactly what each does. Which decision situation is this, and what's the rule?
 **Topic:** Decision situations (certainty / risk / ignorance)  **Lec:** 1  **Type:** apply
@@ -22,7 +25,9 @@ Format:
 
 ### Q: Define weak dominance and strong dominance precisely.
 **Topic:** Principle of dominance  **Lec:** 1  **Type:** recall
-**A:** A weakly dominates B if A's outcome is at least as good as B's in every state and strictly better in at least one. A strongly dominates B if A's outcome is strictly better in every state.
+**A:**
+- A weakly dominates B if A's outcome is at least as good as B's in every state and strictly better in at least one.
+- A strongly dominates B if A's outcome is strictly better in every state.
 
 ### Q: Acts a1, a2; states s1, s2. a1 gives (10, 5), a2 gives (10, 3). Does either dominate? Weakly or strongly?
 **Topic:** Principle of dominance  **Lec:** 1  **Type:** apply
@@ -34,7 +39,7 @@ Format:
 
 ### Q: Distinguish the right decision from the rational decision. Can a rational decision be wrong?
 **Topic:** Right vs rational decisions  **Lec:** 1  **Type:** recall
-**A:** Right = the act that actually leads to the best outcome (judged with hindsight/full information). Rational = the act that is best given what the agent knows at the time. Yes: a rational bet can lose; a reckless one can win (right but not rational).
+**A:** Right: the act that actually leads to the best outcome, judged with hindsight or full information. Rational: the act that is best given what the agent knows at the time. Yes: a rational bet can lose, and a reckless one can win (right but not rational).
 
 ### Q: State the principle of insufficient reason. Which decision situation is it for?
 **Topic:** Principle of insufficient reason  **Lec:** 1  **Type:** recall
@@ -54,4 +59,8 @@ Format:
 
 ### Q: Two ordinal assignments agree on the ranking of outcomes A > B > C: (3, 2, 1) and (100, 2, 1). Act X yields A with prob 0.5 else C; act Y yields B for sure. Which act has higher expected value under each assignment, and what does this show?
 **Topic:** Ordinal vs cardinal utility  **Lec:** 1  **Type:** derive
-**A:** Under (3,2,1): EV(X)=2, EV(Y)=2, tie. Under (100,2,1): EV(X)=50.5, EV(Y)=2, X wins. Same ranking, different verdict, so expected-value reasoning needs an interval (cardinal) scale, not merely ordinal utilities.
+**A:**
+- Under (3, 2, 1): EV(X) = 2 and EV(Y) = 2, a tie.
+- Under (100, 2, 1): EV(X) = 50.5 and EV(Y) = 2, so X wins.
+
+Same ranking, different verdict. Expected-value reasoning needs an interval (cardinal) scale, not merely ordinal utilities.

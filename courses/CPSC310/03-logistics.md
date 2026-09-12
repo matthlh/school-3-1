@@ -1,20 +1,36 @@
 # CPSC 310 — logistics (one-time reference; pulled 2026-09-10)
 
-**Canvas is not used at all** (Kyle, Piazza welcome post Sep 11). Everything else: https://ubccpsc.github.io/310/26w1/ (syllabus · schedule ·
-materials · project). Announcements happen on Piazza.
-**Lectures:** Tue/Thu (sections 101/102/103; iClicker join codes on the course landing page).
-**Labs:** on Zoom (links Piazza @14); blocks run Fri→Thu starting Fri Sep 11. Waitlisted → attend any lab. Lab work due by the start of the next lab. Lowest lab
-dropped. Cancelled labs: Wed Sep 30, Mon Oct 12 (attend another section).
-**Office hours (from Mon Sep 14):** Mon 1:30–2:30 ICCS 238 Nick Bradley · Tue 11:00–12:30 TBA Dennis ·
-Wed 2:00–3:00 ICCS 306 Kyle Chin · Thu 3:00–5:00 TBA Kevin · Fri 11:00–1:00 TBA Shu.
-**Tools:** PrairieLearn https://us.prairielearn.com/pl/course_instance/231184 (labs + project questions) ·
-Piazza class `mtkmphcadpx5k6` (lab Zoom links @14 · office-hour times/links @8) · GitHub Enterprise https://github.students.cs.ubc.ca/CPSC310-2026W-T1
-(VPN + CWL) · Canvas course 192903.
-**D1 spec:** https://ubccpsc.github.io/310/26w1/project/d1-drop-in-a-feature — starter repos provisioned Sep 11, autograding from week of Sep 14; all deliverables submitted through PrairieLearn.
-**Grading:** participation 5% (iClicker, 4 lowest dropped) · labs 10% · project 20% · midterm 25% · final 40%.
-**Concessions:** only via the CPSC 310 Academic Concession Request Form, within one week of the deadline;
-if granted, weight usually shifts to the final. Canvas messages/emails are ignored. CfA exams booked 7+ days ahead.
-**AI (course site):** allowed on labs and project, you must be able to explain everything you submit; not on exams.
+## Where things live
+- Canvas is not used at all (Kyle, Piazza welcome post Sep 11). The Canvas course (ID 192903) exists but is empty.
+- Everything is on the course site: https://ubccpsc.github.io/310/26w1/ (syllabus, schedule, materials, project).
+- Announcements happen on Piazza.
+
+## Where and when
+- Lectures: Tue/Thu. Sections 101, 102, 103.
+- iClicker join codes are on the course landing page: 101 SSXL, 102 YSQU, 103 NBOE.
+- Labs: on Zoom, links in Piazza post @14. Lab blocks run Fri to Thu, starting Fri Sep 11.
+- Waitlisted: attend any lab.
+- Lab work is due by the start of the next lab. The lowest lab is dropped.
+- Cancelled labs: Wed Sep 30 and Mon Oct 12. Attend another section those weeks.
+
+## Office hours (from Mon Sep 14)
+- Mon 1:30–2:30, ICCS 238: Nick Bradley.
+- Tue 11:00–12:30, room TBA: Dennis.
+- Wed 2:00–3:00, ICCS 306: Kyle Chin.
+- Thu 3:00–5:00, room TBA: Kevin.
+- Fri 11:00–1:00, room TBA: Shu.
+
+## Tools
+- PrairieLearn: https://us.prairielearn.com/pl/course_instance/231184. Labs and project questions. All deliverables are submitted here.
+- Piazza: class `mtkmphcadpx5k6`. Lab Zoom links in @14, office-hour times and links in @8.
+- GitHub Enterprise: https://github.students.cs.ubc.ca/CPSC310-2026W-T1 (needs VPN and CWL).
+- D1 spec: https://ubccpsc.github.io/310/26w1/project/d1-drop-in-a-feature. Starter repos were provisioned Sep 11. Autograding runs from the week of Sep 14.
+
+## Grading and policies
+- Participation 5% (iClicker, 4 lowest dropped). Labs 10%. Project 20%. Midterm 25%. Final 40%.
+- Concessions only via the CPSC 310 Academic Concession Request Form, within one week of the deadline. If granted, weight usually shifts to the final. Canvas messages and emails are ignored.
+- CfA exams must be booked 7 or more days ahead.
+- AI (course site): allowed on labs and the project, but you must be able to explain everything you submit. Not allowed on exams.
 
 ## Schedule (course site)
 | Wk | Lectures | Lab (Fri→Thu) | Deadline |
@@ -34,13 +50,18 @@ if granted, weight usually shifts to the final. Canvas messages/emails are ignor
 | 13 Dec 1/3 | Process metrics; GenAI | | Final: university-scheduled, 2.5 h, cumulative |
 
 ## Study resources (added 2026-09-10)
-- **Course reader** https://ubccpsc.github.io/310/textbook/ — Software Construction (languages, async,
-  assertions, REST) · Analytical Code Design (Cost of Change, Change Difficulty, Refactoring, Design
-  Principles/SOLID, Testability) · Software Design (Design Patterns, Safe Versioning, APIs, Testing
-  Pyramid). Each Unit-1 lecture names its chapter: L1 What is SE + Analytical Code Design · L2 Cost of
-  Change · L3 Change Difficulty · L4 Refactoring · L5 Design Principles · L6 Testability · L7 Testability +
-  Design Principles.
-- **Slides** are posted on the schedule page as each lecture happens.
-- **Materials by unit:** https://ubccpsc.github.io/310/26w1/materials/unit-01/ (…/unit-02/ etc.).
-- **UBC CSSS exam bank** https://ubccsss.org/services/exams/cpsc310/ — 2009 papers only; style, not content.
-- iClicker join codes per section are on the course landing page (101 SSXL · 102 YSQU · 103 NBOE).
+- Course reader: https://ubccpsc.github.io/310/textbook/. Three parts:
+  - Software Construction: languages, async, assertions, REST.
+  - Analytical Code Design: Cost of Change, Change Difficulty, Refactoring, Design Principles/SOLID, Testability.
+  - Software Design: Design Patterns, Safe Versioning, APIs, Testing Pyramid.
+- Reader chapter per Unit-1 lecture:
+  - L1: What is SE, and the Analytical Code Design intro.
+  - L2: Cost of Change.
+  - L3: Change Difficulty.
+  - L4: Refactoring.
+  - L5: Design Principles.
+  - L6: Testability.
+  - L7: Testability and Design Principles.
+- Slides are posted on the schedule page as each lecture happens.
+- Materials by unit: https://ubccpsc.github.io/310/26w1/materials/unit-01/ (then unit-02, and so on).
+- UBC CSSS exam bank: https://ubccsss.org/services/exams/cpsc310/. 2009 papers only. Useful for style, not content.
