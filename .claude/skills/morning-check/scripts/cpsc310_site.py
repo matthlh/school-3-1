@@ -6,6 +6,8 @@ The site (ubccpsc.github.io/310/26w1) is four pages and only one of them has sli
   Course Materials  unit-NN pages: lecture → "what it answers" → reader chapter links
   Reader            the textbook — where exam terminology comes from
   Syllabus          policies only
+  Project           InsightUBC overview; deliverable specs appear as links (d1-…, d2-…) when released;
+                    the REST API spec is project/spec.html
 
 Usage
   cpsc310_site.py              morning-check: new/changed schedule rows, newly posted decks
@@ -131,6 +133,21 @@ def join(lectures, units):
     return lectures
 
 
+def parse_project():
+    """→ [(label, url)] of deliverable spec pages linked from the project overview."""
+    doc = get(SITE + "/project/").decode()
+    seen, out = set(), []
+    for h, n in re.findall(r'<a[^>]*href="(/310/26w1/project/[^"#]+)"[^>]*>(.*?)</a>', doc, flags=re.S):
+        if h.endswith("/project/") or h in seen:
+            continue
+        seen.add(h)
+        label = text(n)
+        if len(label) < 8:  # "here", "spec" → use the page name instead
+            label = h.rstrip("/").rsplit("/", 1)[-1]
+        out.append((label, abs_url(h)))
+    return out
+
+
 def slug(L):
     return f"{L['n']:02d}-" + re.sub(r"[^a-z0-9]+", "-", L["title"].lower()).strip("-")
 
@@ -207,6 +224,14 @@ def main():
     for n in prev_rows:
         if n not in cur_rows:
             out.append(f"REMOVED   lec {n}: {prev_rows[n]}")
+    try:
+        project = parse_project()
+    except Exception as e:
+        project, out = [], out + [f"(project page unreachable: {e})"]
+    prev_proj = set(prev.get("project", []))
+    for label, url in project:
+        if url not in prev_proj and prev_rows:
+            out.append(f"PROJECT   new page linked: {label} <{url}>  ← a released spec = new deadline/to-do check")
     if not prev_rows:
         out.append(f"(first run: snapshot of {len(lectures)} lectures written)")
 
@@ -221,7 +246,8 @@ def main():
         print(f"    deck: {'posted' if nxt['pdf'] else 'not posted'}")
     if not a.no_snapshot:
         SNAP.parent.mkdir(parents=True, exist_ok=True)
-        SNAP.write_text(json.dumps({"checked": today.isoformat(), "rows": cur_rows}, indent=1))
+        SNAP.write_text(json.dumps({"checked": today.isoformat(), "rows": cur_rows,
+                                    "project": [u for _, u in project]}, indent=1))
 
 
 if __name__ == "__main__":
