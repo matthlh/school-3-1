@@ -143,3 +143,24 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: If a census measures every member of the population, is there any inferential statistics left to do about that population? Explain.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** critique
 **A:** No. The "sample" is the population, so each statistic *is* the parameter and there is no sampling uncertainty — it is all descriptive. Inference reappears only if you want to generalise beyond the census (to next year, to a process, to a larger population).
+
+### Q: You have 25 observations with minimum 175 and maximum 265 and want 5 intervals. Walk through building the histogram: range, interval width, what goes in the frequency table, and how the bars are drawn.
+**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
+**A:** Range = 265 − 175 = 90. Width = 90 ÷ 5 = 18 (the deck then rounds to convenient equal-width bins 170–190, 190–210, … 250–270). Cut the range into equal-width intervals, count the observations in each to make the frequency table, then draw one bar per interval with height equal to its frequency (or relative frequency); bars touch because the axis is a number line. Label both axes and give a heading.
+
+### Q: The lecture-2 slides split variables into categorical and quantitative. Give both definitions, then classify: number of siblings, county of residence, commute distance in km, blood type.
+**Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
+**A:** Categorical: each observation belongs to one of a set of categories. Quantitative: observations take numerical values that represent different magnitudes of the variable. Siblings: quantitative, discrete. County: categorical, nominal. Commute km: quantitative, continuous. Blood type: categorical, nominal. The deck says "quantitative" where the notes say "numerical"; same thing.
+
+### Q: State the deck's definitions of a discrete and a continuous quantitative variable, and give the three one-line characterisations of statistics from the "What is Statistics?" slide.
+**Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
+**A:** Discrete: the possible values form a set of separate numbers, such as 0, 1, 2, 3, …. Continuous: the possible values form an interval. Statistics is (1) a science involving the design of studies, data collection, summarising and analysing data, interpreting results and drawing conclusions; (2) the science of learning from data and of measuring, controlling and communicating uncertainty; (3) a branch of applied mathematics dealing with data collection, organisation, analysis, interpretation and presentation.
+
+### Q: Construct a dot plot for the midterm scores 10, 90, 95, 100, 65, 50, 60, 50, 90, 55, 60, 70 and read off the mode or modes.
+**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
+**A:** Horizontal number line labelled "Grade" from 0 to 100, one dot per score stacked above its value: 10 (1), 50 (2), 55 (1), 60 (2), 65 (1), 70 (1), 90 (2), 95 (1), 100 (1). n = 12. Three modes: 50, 60 and 90, each twice.
+
+### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
+**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
+**A:** Stems 2 to 9: 2 | 5 · 3 | (empty) · 4 | 1 · 5 | 0 5 7 · 6 | 2 3 5 9 · 7 | 0 2 5 5 · 8 | 0 1 2 5 · 9 | 0 2 5. Empty stems stay in so the plot keeps the shape of a histogram and the gap in the 30s is visible. n = 20, so the median is the average of the 10th and 11th ordered values, 70 and 72, which is 71.
+

@@ -108,3 +108,43 @@ where people drop quiz points.
 [ratemycourses Kraal](https://www.ratemycourses.io/ubc/professor/anderskraal) ·
 [ratemycourses ASIA 250](https://www.ratemycourses.io/ubc/course/asia250) ·
 [ratemycourses CPSC 310](https://www.ratemycourses.io/ubc/course/cpsc310)*
+
+## Refresh 2026-09-11 — newer student sentiment
+
+Searched again on Sep 11. Reddit is not reachable from the fetch tools and the search engine does not index r/UBC well, so this round is RateMyProfessors, ratemycourses and one UBC student blog. Nothing here contradicts the Sep 10 picture; it sharpens it.
+
+**STAT 251 (Premarathna)** — RateMyProfessors as of Sep 2026: 2.7/5 over 123 ratings, difficulty 2.9, 40% would take again.
+- Jul 2026, STAT 251, B+: "really nice, gave a few bonuses, and the exams were really fair."
+- Apr 2026, STAT 251, C+: "exams were unreasonably long and impossible to finish on time." The same review calls him a tough grader with minimal partial credit.
+- Apr 2026, STAT 200: MC-heavy finals, lengthy exams, attendance matters, bonuses and extra credit.
+- Read: the split between "fair" and "impossible" is speed. Students who finished called it fair. Timed MC mocks stay the plan. Minimal partial credit means MC answers need to be right, not nearly right.
+
+**PHIL 385 (Kraal)** — RateMyProfessors: 4.6/5 over 361 ratings, difficulty 2.6, 86% would take again.
+- Jul 2026, PHIL 385, A-: "Just get ready to take notes and also know about things that may not be class material but still interesting." Exam questions can reach beyond the core material.
+- Sep 2026, PHIL 385: great lecturer, very responsive to email.
+- Sep 2026, PHIL 347, B+: "attendance is not mandatory but notes are not posted so if you miss a class you're SOL." Same format as 385: four exams, nothing posted.
+- ratemycourses PHIL 385 (Kraal, Winter 2021, A): "the first exam is manageable; the later ones get more nuanced." Advice: annotate the texts, attend, take detailed notes.
+- Read: every logged lecture page is worth about 2% of the course. Exam 1 is the easy one, so bank it. Expect exams 2 to 4 to test finer distinctions.
+
+**ASIA 250 (Shooklyn)** — ratemycourses professor page, six reviews, all 5/5.
+- Winter 2026, ASIA 250, A+: "quiz and essay heavy."
+- Fall 2025, ASIA 250, A: "keep an eye on deadlines and you'll do great." He answers messages fast.
+- Fall 2025, ASIA 250, A-: "quizzes relatively easy; the final paper is demanding." Advice: talk to him about his own practice.
+- Read: the A- came from the paper, not the quizzes. The 47% paper is where the grade is decided, which is why the novel pages need a weekly slot.
+
+**PHIL 321 (Stephens)** — RateMyProfessors: 4.6/5 over 35 ratings, difficulty 3.3, 93% would take again.
+- Jan 2026, PHIL 321, A-, difficulty 4: "go to class and pay attention even though it's not mandatory." He discusses exam questions in lectures.
+- Dec 2025, PHIL 321, A: tougher if weak in mathematics, straightforward grading, participation valued.
+- UBC student blog "Organizing Chaos", 2018 review of the same course with Stephens: the midterm was hard (low class average, top score 92); the hardest items were Dutch Book arguments and Bayes-theorem questions phrased around sampling; the final paper thesis took a long time to refine; mid-70s averages, "not much of a GPA booster"; the course is more nuanced and skeptical than an economics or math version.
+- Read: if he keeps it, the group exercises are unannounced and he flags exam questions in class, so attendance is the whole game. The probability unit overlaps STAT 251 and should be quizzed together.
+
+**CPSC 310** — nothing new surfaced this round beyond the Sep 10 notes.
+
+*Sources added this round: [RMP Premarathna](https://www.ratemyprofessors.com/professor/2281372) · [RMP Kraal](https://www.ratemyprofessors.com/professor/2053524) · [RMP Stephens](https://www.ratemyprofessors.com/professor/171672) · [ratemycourses Shooklyn](https://www.ratemycourses.io/ubc/professor/samshooklyn) · [ratemycourses PHIL 385](https://www.ratemycourses.io/ubc/course/phil385) · [Organizing Chaos PHIL 321 review](https://blogs.ubc.ca/organizingchaos/2018/04/26/course-review-phil-321/)*
+
+**STAT 251 on r/UBC (search read through Chrome, Sep 11)** — the threads the earlier round missed:
+- "Stats 251 final fail.." (Dec 2025, 21 points, 13 comments): "I ran out of time and the questions kept getting worse … the average for the midterm was like 68 but the final was way harder." Time again.
+- "stat 251 final exam!" (May 2026): a student asking what to expect from Lasantha's final, "lots of MC, lots of short answer, difficulty". No answer captured yet.
+- "STAT 251 Postgame Interview" (May 2026, 12 points) is the thread already in the Sep 10 notes.
+- "Stat 251 Final" (2024, 6 points): "The final is not similar to practice exams." Do not calibrate on the practice exam alone; use WeBWorK and the suggested textbook problems too.
+- "Has anyone had Lasantha Premarathna before?" (Sep 9 2026, DSCI 100): an international student worried about following his lectures. Nothing actionable beyond sitting near the front.
