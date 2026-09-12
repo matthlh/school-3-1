@@ -1,26 +1,46 @@
 import type { Texts, Tree } from './files'
-import type { LinkRow } from './markdown'
-import { LinkChips } from './Links'
 import { hrefFor } from './files'
-import { afterDash, countQuestions, extractSection, firstHeading } from './markdown'
+import { afterDash, countQuestions, firstHeading, type TopicRow } from './markdown'
 import { hrefCourse } from './routes'
 import { toneStyle } from './theme'
-import { EMPTY, type Tally } from './stats'
+import { EMPTY, todayISO, type Tally } from './stats'
 import { StatBar } from './StatViews'
 import { Logo } from './Logo'
-import { Md } from './Md'
 
-export function Home({ tree, all, tallies, links }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; links: LinkRow[] }) {
-  const due = extractSection(all['ledger.md'] ?? '', /^due now/i)
+function niceDate(iso: string): string {
+  return new Date(iso + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
+}
+
+export function Home({ tree, all, tallies, topics }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; topics: TopicRow[] }) {
+  // Due now is computed live from the ledger's topic table, never from prose.
+  const today = todayISO()
+  const due = topics.filter((r) => r.next && r.next <= today)
+  const byCourse = new Map<string, number>()
+  for (const r of due) byCourse.set(r.course, (byCourse.get(r.course) ?? 0) + 1)
+  const nextDate = topics.map((r) => r.next).filter((n) => n > today).sort()[0]
+  const nextRows = nextDate ? topics.filter((r) => r.next === nextDate) : []
+  const nextCourses = [...new Set(nextRows.map((r) => r.course))]
+
   return (
     <>
       <h1 className="brand"><Logo size={26} /> School 3-1</h1>
-      {due && (
-        <section className="panel">
-          <div className="panel-head"><span>Due now</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
-          <Md text={due} path="ledger.md" />
-        </section>
-      )}
+      <section className="panel">
+        <div className="panel-head"><span>Due now</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
+        {due.length > 0 ? (
+          <p>
+            <b>{due.length} topic{due.length === 1 ? '' : 's'} due</b>
+            {[...byCourse].map(([c, n]) => (
+              <a key={c} href={hrefCourse(c)} className="chip tone due-chip" style={toneStyle(c)}>{c} · {n}</a>
+            ))}
+            <span className="muted"> — say “quiz me”</span>
+          </p>
+        ) : (
+          <p className="muted">
+            Nothing due today.
+            {nextDate && <> Next: {nextRows.length} topic{nextRows.length === 1 ? '' : 's'} on <b>{niceDate(nextDate)}</b> ({nextCourses.join(', ')}).</>}
+          </p>
+        )}
+      </section>
       <div className="grid">
         {tree.courses.map((c) => {
           const syllabus = all[`courses/${c.code}/00-syllabus.md`]
@@ -36,12 +56,6 @@ export function Home({ tree, all, tallies, links }: { tree: Tree; all: Texts; ta
           )
         })}
       </div>
-      {links.length > 0 && (
-        <section className="panel">
-          <div className="panel-head"><span>Links</span><a href={hrefFor('links.md')}>edit →</a></div>
-          <LinkChips rows={links} />
-        </section>
-      )}
       {tree.runs.length > 0 && (
         <div className="row small">
           <span className="muted">Briefs:</span>

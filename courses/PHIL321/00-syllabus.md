@@ -1,27 +1,24 @@
-# PHIL321 — Induction, Decision and Game Theory
+# PHIL321 — Induction, Decision and Game Theory (2026W1)
 
-**Type:** Problem-based (formal)
-**Meets:** MWF 12:00pm, P.A. Woodward
+**Instructor:** Chris Stephens · **Meets:** MWF 12:00pm, P.A. Woodward
 
-> STATUS: EMPTY — paste the syllabus below, then tell Claude "process the PHIL321 syllabus".
+**Status: undecided.** Sitting in on the first classes; decide by **Fri Sep 18**. Drop without a W
+closes **Mon Sep 21**; W-standing withdrawal closes Oct 30.
 
-## Grading weights
-| Component | Weight | Dates |
+## Grading
+| Component | Weight | Notes |
 |---|---|---|
-| _(paste)_ | | |
+| Group exercises | 10% | best 10 of 11, **unannounced — miss class = 0** |
+| Problem sets ×2 | 10% | |
+| Exam 1 | 20% | **Fri Oct 16** — same day as PHIL 385 Exam 2 and CPSC 310 D2 |
+| Exam 2 | 20% | Mon Nov 23 |
+| Final | 40% | |
 
-## Instructor / office hours
+## Overlap
+The Sept–Oct probability unit covers the same ground as STAT 251 ch 3–6. If the course is kept,
+the two get quizzed together.
 
-## Textbook / required readings
-
-## Exam format
-<!-- Multiple choice? Proofs? Open book? Formula sheet allowed? This drives how Claude quizzes you. -->
-
-## Policies that affect strategy
-<!-- Lowest quiz dropped? Late penalty? Curve? Attendance graded? -->
-
----
-## RAW SYLLABUS PASTE
-```
-(paste here)
-```
+## To verify
+- [ ] Exam format (MC, proofs, formula sheet?)
+- [ ] Textbook / readings
+- [ ] Late policy on problem sets
