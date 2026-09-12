@@ -76,6 +76,9 @@ builds the 6-question deck the morning check sends to his phone. Last step of ev
   map lecture → "what it answers" → reader chapter; **Reader** is the textbook; **Syllabus** is
   policies. Canvas is unused. `cpsc310_site.py` (morning-check scripts) does the fetching: no flags
   = diff + next lecture, `--lecture N` = that deck's text + reader URLs, `--all` = the whole term.
+  The **Project** page (`/26w1/project/`, InsightUBC) links each deliverable spec as it is released;
+  the script flags new ones. Deliverables are 50% autograded (best commit on `main` before the
+  deadline) + 50% reflection, so the "meets spec" bar is visible on every push — stop there.
   **Logging a CPSC 310 lecture** = run `--lecture N`, then his page (if any) verbatim + clarifications
   from the deck + questions from deck *and* reader chapter. Decks download to
   `routines/slides/cpsc310/` (git-ignored); never copy slide text into the public repo beyond the

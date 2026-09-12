@@ -56,7 +56,27 @@
 | Course Materials `/26w1/materials/unit-0N/` | per lecture: the question it answers + **reader chapters** | slides, dates |
 | Reader `/textbook/` | the textbook — exam terminology | anything course-admin |
 | Syllabus `/26w1/syllabus` | policies, grading | content |
+| Project `/26w1/project/` | InsightUBC overview; deliverable specs linked as released (`d1-drop-in-a-feature`, …); REST API spec at `project/spec.html` (Redocly, v2.0.3) | |
 Canvas is not used. `cpsc310_site.py` in the morning-check scripts reads all of this.
+
+## Project — InsightUBC (read 2026-09-11)
+Inherited internal service for the Registrar's Decision Support team: course-offering data (PAIR) + facilities
+data, exposed as a REST API. v1 = datasets + courses/sections + search; v2 = buildings/rooms (geocoded) +
+cross-search. Previous "team" refactored only the courses slice (routers → controllers → services →
+repositories); everything else is in one very large file. v3 is the D3/D4 target. Story arc: D1 = two small
+features to feel the cost of change · D2 = make the network-reaching part testable, add the missing tests ·
+D3/D4 (pairs) = vague stakeholder requirements → spec → build without breaking v1/v2.
+**D1 (Fri Sep 25 18:00, individual, GitHub + PrairieLearn).** Request 1: optional `campus` on buildings —
+parse from each building `.htm` header on `POST /api/v2/datasets`, editable via `PUT /api/v2/buildings/:id`,
+searchable via `POST /api/v2/search`; tests for each; update `openapi.yml` Building schema + endpoints;
+all existing tests must pass. Request 2: finish aggregation in `POST /api/v2/search` per `openapi.yml`
+(validation is done; one method to implement) + tests. Reflection on PrairieLearn (4 Qs: how "no campus" is
+represented incl. PUT-omits-campus behaviour · trace of one PUT from route to disk · every class/function
+touched for PUT and *how you found each one* · what made PUT changes harder than expected vs request 2).
+**Grading:** 50% autograded (every push to `main` is graded, best commit before the deadline counts) +
+50% reflection, TA-marked. Needs UBC VPN to run tests (geocoding). Read the reflection Qs *before* coding
+and keep a running list of every file/function touched and how it was found — Q3 is unanswerable after
+the fact.
 
 ## Study resources (added 2026-09-10)
 - Course reader: https://ubccpsc.github.io/310/textbook/. Three parts:

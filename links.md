@@ -19,6 +19,8 @@ One place for every course tool. The notes site shows these on Home and on each 
 | CPSC310 | Course materials (unit pages → reader chapters) | https://ubccpsc.github.io/310/26w1/materials/unit-01/ | Pre-lecture |
 | CPSC310 | Reader (textbook) | https://ubccpsc.github.io/310/textbook/ | Pre-lecture;CPSC ?310 lec |
 | CPSC310 | Syllabus | https://ubccpsc.github.io/310/26w1/syllabus |  |
+| CPSC310 | Project overview (InsightUBC) | https://ubccpsc.github.io/310/26w1/project/ | \bD\d\b;Deliverable |
+| CPSC310 | InsightUBC REST API spec (openapi) | https://ubccpsc.github.io/310/26w1/project/spec.html | \bD\d\b;Deliverable |
 | CPSC310 | D1 spec | https://ubccpsc.github.io/310/26w1/project/d1-drop-in-a-feature | \bD1\b |
 | CPSC310 | PrairieLearn | https://us.prairielearn.com/pl/course_instance/231184 | \bLAB ?\d;CPSC ?310 lab;\bD\d\b;Deliverable |
 | CPSC310 | GitHub Enterprise | https://github.students.cs.ubc.ca/CPSC310-2026W-T1 | \bD\d\b;Deliverable;project |
