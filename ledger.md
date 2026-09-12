@@ -7,7 +7,25 @@ The one file I read first every session. If a row's `Next` is on or before today
 
 ## Due now
 
-_Nothing due today. Next: 17 topics on **Sat Sep 12** (CPSC 310, PHIL 321, PHIL 385, STAT 251)._
+_17 topics due as of Sat Sep 12. Say **quiz me**._
+
+- CPSC 310 · What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) · due today · last X
+- CPSC 310 · Three fluencies · roadmap radii · 4 learning objectives · due today · last X
+- PHIL 321 · Decision situations (certainty / risk / ignorance) · due today · last X
+- PHIL 321 · Principle of dominance · due today · last X
+- PHIL 321 · Right vs rational decisions · due today · last X
+- PHIL 321 · Principle of insufficient reason · due today · last X
+- PHIL 321 · Utility and preferences · due today · last X
+- PHIL 321 · Ordinal vs cardinal utility · due today · last X
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · due today · last unquizzed
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · due today · last unquizzed
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · due today · last unquizzed
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · due today · last unquizzed
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · due today · last unquizzed
+- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · due today · last unquizzed
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · due today · last X
+- STAT 251 · Descriptive vs. inferential statistics · due today · last X
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · due today · last X
 
 ## All topics
 
@@ -44,7 +62,7 @@ _Nothing due today. Next: 17 topics on **Sat Sep 12** (CPSC 310, PHIL 321, PHIL 
 | Mon Sep 21 | UBC | **Drop-without-W deadline** (all courses) | |
 | Mon Sep 21, 23:59 | STAT 251 | **WeBWorK 1** (no late) | WW pool |
 | Mon Sep 21 | STAT 251 | Labs start (Lab 0 = intro to R, no assignment) | |
-| Fri Sep 25, 18:00 | CPSC 310 | **D1** — Drop in a feature | 5% |
+| Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% |
 | Mon Sep 28, 23:59 | STAT 251 | WeBWorK 2 | |
 | **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1** (Canvas quiz, 50-min window) | 15% |
 | Tue Oct 6, 23:59 | STAT 251 | WeBWorK 3 | |
@@ -130,3 +148,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-11 | Logged PHIL 385 lec 1 (authorship overview, rough dump) → 14 questions, 5 ledger topics due Sep 12. Clarified Schelling/king of Prussia, the 8 pseudonyms, Anti-Climacus in the second authorship. |
 | 2026-09-11 | Logged PHIL 385 reading: Either/Or Preface (he found it too dense to follow; walkthrough written, facts checked against the Danish text) → 8 questions, 1 ledger topic due Sep 12. |
 | 2026-09-11 | Quiz (quiz): 10 q · 0 O / 3 ~ / 7 X · CPSC 310, STAT 251 · 4 ledger rows moved |
+| 2026-09-12 | Morning check: discovered a new active Canvas enrolment, PHIL_V 347 Philosophy of Religion (course 192997, taught by Kraal — same instructor as PHIL 385), not previously tracked anywhere — flagged for Matt, no action taken. Corrected CPSC 310 D1 deadline to PrairieLearn's own window (18:05, not the course site's 18:00). Added Things3 to-do to verify Gradescope email for STAT 251. |
