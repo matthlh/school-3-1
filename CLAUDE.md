@@ -41,6 +41,15 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    PHIL 385 MC questions and ASIA 250 quizzes draw on lectures *and* readings, so a reading with no
    questions logged is a gap.
 
+7. **Posted material is pulled before class** (Matt, 2026-09-11: "today for whatever lecture, here's the
+   slide summary"). The morning check stages whatever is posted as `lectures/_NN-<slug>.md` (plain-sentence
+   outline + 3 pre-lecture questions): CPSC 310 reader chapters and decks via `prelecture.py`; STAT 251,
+   ASIA 250 and PHIL 321 decks and readings via `canvas_materials.js` → `canvas_materials_digest.py` →
+   `canvadoc_text.js` (all in the morning-check scripts dir; the `.js` files run in the Chrome Canvas tab).
+   PHIL 385 has nothing to pull. Logging a lecture consumes its outline: deck-only claims become
+   questions and clarifications, then the `_NN` file is deleted. If he logs a lecture and no outline
+   exists, pull the deck first with the `canvadoc_text.js` recipe. Big readings: only the assigned pages.
+
 ## When he says "quiz me" / "test me" / pastes grades back ("1 O 2 ~ 3 X")
 Run the `/quiz-me` skill (`.claude/skills/quiz-me/SKILL.md`). `quiz_pick.py` chooses an interleaved
 session weighted by `ledger.md` (overdue → `X` → `~` → unquizzed, ×2 near that course's exam); I ask
@@ -215,6 +224,8 @@ to that source first, silently, then answer. Never answer a deadline or grade qu
 | what a lecture covered, what a question's answer is | `courses/<CODE>/lectures/`, `02-questions.md` |
 | what to do today / this week | Things3 via `things_plan.py`, `PREP.md` |
 | why the system is shaped this way | `STUDY-SYSTEM.md`, `research/course-intel.md` |
+| what past students say, prof reputation, exam style intel | `research/course-intel.md` (refresh: RateMyProfessors, ratemycourses.io, old.reddit.com r/UBC through the Chrome tab — the fetch tools cannot reach Reddit) |
+| what a posted deck or reading says, "pull the slides" | `courses/<CODE>/lectures/_NN-*.md` if staged, else the `canvadoc_text.js` recipe |
 This file and `~/.claude/projects/…/memory/MEMORY.md` load automatically in every session started
 in this folder; the skills listed above are always available. A session started in another folder
 has none of this — tell him to open this folder.

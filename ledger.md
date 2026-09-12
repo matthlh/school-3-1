@@ -129,3 +129,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-11 | Notes site: per-course tints, favicon, indented sidebar, search fix; quiz stats on the site (ledger topic grades → course cards/sidebar/course page; quiz-state.json → per-question chips + weak-only filter). `publish.sh` now runs at the end of morning check / quiz / log so the site updates itself. |
 | 2026-09-11 | Logged PHIL 385 lec 1 (authorship overview, rough dump) → 14 questions, 5 ledger topics due Sep 12. Clarified Schelling/king of Prussia, the 8 pseudonyms, Anti-Climacus in the second authorship. |
 | 2026-09-11 | Logged PHIL 385 reading: Either/Or Preface (he found it too dense to follow; walkthrough written, facts checked against the Danish text) → 8 questions, 1 ledger topic due Sep 12. |
+| 2026-09-11 | Quiz (quiz): 10 q · 0 O / 3 ~ / 7 X · CPSC 310, STAT 251 · 4 ledger rows moved |

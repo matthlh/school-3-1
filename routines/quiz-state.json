@@ -99,6 +99,106 @@
      "X"
     ]
    ]
+  },
+  "268f3b26": {
+   "course": "STAT251",
+   "topic": "1a Types of data",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "60c3206c": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "beeca1e8": {
+   "course": "STAT251",
+   "topic": "Descriptive vs inferential",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "7f297702": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "331555ce": {
+   "course": "STAT251",
+   "topic": "1a Types of data",
+   "history": [
+    [
+     "2026-09-11",
+     "~"
+    ]
+   ]
+  },
+  "331c4a47": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "4d6fe49d": {
+   "course": "STAT251",
+   "topic": "1a Types of data",
+   "history": [
+    [
+     "2026-09-11",
+     "~"
+    ]
+   ]
+  },
+  "f92b9fef": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
+  },
+  "04da1ee8": {
+   "course": "STAT251",
+   "topic": "Descriptive vs inferential",
+   "history": [
+    [
+     "2026-09-11",
+     "~"
+    ]
+   ]
+  },
+  "a184039c": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-11",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -165,6 +265,74 @@
     [
      10,
      "a396bb68",
+     "CPSC310",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-11",
+   "mode": "quiz",
+   "n": 10,
+   "note": "",
+   "results": [
+    [
+     1,
+     "268f3b26",
+     "STAT251",
+     "X"
+    ],
+    [
+     2,
+     "60c3206c",
+     "CPSC310",
+     "X"
+    ],
+    [
+     3,
+     "beeca1e8",
+     "STAT251",
+     "X"
+    ],
+    [
+     4,
+     "7f297702",
+     "CPSC310",
+     "X"
+    ],
+    [
+     5,
+     "331555ce",
+     "STAT251",
+     "~"
+    ],
+    [
+     6,
+     "331c4a47",
+     "CPSC310",
+     "X"
+    ],
+    [
+     7,
+     "4d6fe49d",
+     "STAT251",
+     "~"
+    ],
+    [
+     8,
+     "f92b9fef",
+     "CPSC310",
+     "X"
+    ],
+    [
+     9,
+     "04da1ee8",
+     "STAT251",
+     "~"
+    ],
+    [
+     10,
+     "a184039c",
      "CPSC310",
      "X"
     ]

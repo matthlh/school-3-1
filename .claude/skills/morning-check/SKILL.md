@@ -267,6 +267,42 @@ a paragraph he skims. Topic sources, per course:
 - **PHIL 385:** the reading assigned for today in `courses/PHIL385/00-syllabus.md`. 3 Qs on names,
   pseudonyms, terms, which essay — the MC exams test exactly that.
 - **ASIA 250:** async — on Mondays only, this week's lecture + readings module on Canvas; 3 Qs.
+**Materials pull (2026-09-11, Matt: "today for whatever lecture, here's the slide summary").**
+Slides and readings exist for three courses and are pulled every run; PHIL 385 has none (no slides,
+recordings or notes — the syllabus reading list is its only source, so it keeps the reading-based
+pre-questions above).
+1. **CPSC 310** (public site, no browser):
+   ```bash
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/prelecture.py" --n 2
+   ```
+   It stages the next two lectures' reader chapters in `routines/prelecture/cpsc310/NN-*.txt` (and the
+   deck text in `routines/slides/cpsc310/` once posted) and names which `lectures/_NN-<slug>.md` is
+   missing. Write that file from the staged text: a plain-sentence outline of the chapter's claims
+   under `## What the chapter claims`, then `## Three pre-lecture questions`. Quiz-bank questions wait
+   for the lecture log.
+2. **STAT 251, ASIA 250, PHIL 321** (Canvas, in the §2 Chrome tab, after `canvas_fetch.js`):
+   run `scripts/canvas_materials.js` with `javascript_tool`, read it back with `get_page_text`, save
+   the text to `routines/snapshots/materials-<date>.txt`, then
+   ```bash
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt
+   ```
+   It prints only items not seen before, with the Canvas file id of each deck. For every new deck or
+   reading with a file id: pull its text with `scripts/canvadoc_text.js` (recipe in the file header:
+   file page → canvadoc session → fetch `urls.pdf_download` → pdf.js; paint, `get_page_text`), then
+   write `courses/<CODE>/lectures/_NN-<slug>.md` (STAT 251: lecture number from the page title;
+   ASIA 250: week number) — plain-sentence outline of the deck, main topics in slide order, a
+   `## Likely quiz targets` line for ASIA 250, and 3 pre-lecture questions. A reading (not a deck)
+   goes to `courses/<CODE>/readings/_<slug>.md` as an outline plus 3 questions tagged to the week's
+   topic. Big books (Harvey, Luhrmann): extract only the assigned page range.
+   PHIL 321 lives here only until the Sep 18 decision; its syllabus PDF is file 47994081.
+3. **Brief:** under **Today's classes**, one line per lecture today: course, lecture title, and
+   `→ courses/<CODE>/lectures/_NN-<slug>.md` when the outline exists, then the 3 pre-questions. If
+   the outline is missing because nothing is posted yet, say "no deck posted" — never summarise from
+   memory.
+4. **Lecture log later** (CLAUDE.md rule): when he logs the lecture, the `_NN` outline is the
+   clarification source and every deck-only claim becomes a question, then the `_NN` file is deleted
+   (its content lives on in the questions and the notes file's Clarifications).
+
 **Review = the transit deck (2026-09-11).** Run
 ```bash
 python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/quiz_pick.py" --transit

@@ -1,0 +1,16 @@
+# STAT 251 — Lecture 3 pre-read: Ch 1 continued, histograms, describing a distribution, centre and spread (Mon Sep 14)
+
+Pulled 2026-09-11 from the posted deck `Lecture_03_Chapter_1_CanvasPost.pdf` (Canvas file 47723645, 11 slides). Lecture 2's deck ended with the same histogram example, so Monday opens by finishing it.
+
+## Main topics, in slide order
+- **Histogram construction.** The example is 25 students' hours worked (175 to 265). Range = 265 − 175 = 90, five intervals wanted, so width = 90 ÷ 5 = 18; the deck then uses the convenient equal-width bins 170–190, 190–210, 210–230, 230–250, 250–270 with frequencies 1, 2, 7, 10, 5. Steps: divide the range into equal-width intervals, count observations per interval into a frequency table, label the interval endpoints on the horizontal axis, draw a bar over each interval with height equal to its frequency or percentage, label the axes and give a heading.
+- **Describing a distribution.** Type of mound: unimodal has one clear peak, bimodal two, multimodal more than two. Shape: symmetric when the left and right sides of the histogram are mirror images; skewed to the left when the left tail is longer; skewed to the right when the right tail is longer. Centre: where the observations cluster. Spread: how dispersed they are. An outlier falls far from the rest of the data, an unusually large or small observation.
+- **Measures of centre.** The mean is the sum of the observations divided by their number; the sample mean is written x̄. Example: 4, 6, 8, 7, 5 hours gives a mean of 6 hours. The median is the midpoint of the ordered observations. For odd n it is the (n + 1)/2-th observation; for even n it is the average of the n/2-th and (n/2 + 1)-th. Examples: 12, 14, 15, 17, 20, 24, 24, 27, 29 (n = 9) has median 20, the 5th value; adding 30 (n = 10) makes the median (20 + 24)/2 = 22.
+- **Mean versus median.** Nearly symmetric data: mean ≈ median. Skewed data: the mean sits farther out in the long tail than the median. Long right tail: mean > median. Long left tail: mean < median. For skewed distributions the median is preferred because it better represents a typical observation.
+- **Measures of variability.** Measures of variation describe the spread, variability or dispersion of the values; two data sets can share a centre and differ in variation. The range is the largest value minus the smallest and is strongly affected by outliers. Example: 70, 46, 62, 64, 15, 78, 56, 64, 69, 49 has range 78 − 15 = 63.
+- **Next class:** more measures of variability and boxplots. Before class: review lecture 3 and the related textbook sections, and register for iClicker Cloud.
+
+## Three pre-lecture questions
+1. (LO 1d) Name the three mound types and the three shapes a histogram can have. How do you tell left skew from right skew by the tails, and what is the deck's definition of an outlier?
+2. (LO 1b) State the median rule for odd and even n and apply it to 12, 14, 15, 17, 20, 24, 24, 27, 29, then to the same list with 30 appended. In a right-skewed distribution, which way does the mean move relative to the median, and why?
+3. (LO 1c) Why is the median preferred over the mean for skewed data, and why is the range a weak measure of spread? Compute the range of 70, 46, 62, 64, 15, 78, 56, 64, 69, 49.
