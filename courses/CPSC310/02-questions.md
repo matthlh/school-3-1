@@ -60,7 +60,7 @@ Format:
 
 ### Q: Fill the key nouns in the four learning objectives: (1) how a codebase's ____ influences the ____ of changing it; (2) use ____ to make changing a system cheaper at ____ scales; (3) elicit, deconstruct and refine ____, and write ____ precise enough to check; (4) evaluate the ____ trade-offs in ____ software engineering processes.
 **Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
-**A:** (1) structure, cost (2) abstraction, increasingly larger (3) requirements, specifications (4) socio-technical, collaborative. Hook: change cost · abstraction · requirements · socio-technical.
+**A:** (1) structure, cost (2) abstraction, increasingly larger (3) requirements, specifications (4) socio-technical, collaborative. Hook: change cost, abstraction, requirements, socio-technical.
 
 ### Q: The vibe-coding diagram writes each stage as a pair of human inputs. Write the three pairs in order, say which element survives in all three, and what that implies for the fluencies.
 **Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
