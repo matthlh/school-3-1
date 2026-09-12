@@ -7,7 +7,7 @@ The one file I read first every session. If a row's `Next` is on or before today
 
 ## Due now
 
-_Nothing due today. Next: 16 topics on **Sat Sep 12** (CPSC 310, PHIL 321, PHIL 385, STAT 251)._
+_Nothing due today. Next: 17 topics on **Sat Sep 12** (CPSC 310, PHIL 321, PHIL 385, STAT 251)._
 
 ## All topics
 
@@ -29,6 +29,7 @@ _Nothing due today. Next: 16 topics on **Sat Sep 12** (CPSC 310, PHIL 321, PHIL 
 | PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | — | — | 0 | 2026-09-12 |
+| PHIL 385 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | 1 | — | — | 0 | 2026-09-12 |
 
 ## Term calendar — hard dates
 
@@ -127,3 +128,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-11 | Weekly plan is its own routine: scheduled task `weekly-plan`, Sundays 15:00 (`things_plan.py --week`, ≤12-line Week ahead brief, `routines/runs/<date>-week.md`). Daily task no longer runs `--week`. First real run Sun Sep 13. |
 | 2026-09-11 | Notes site: per-course tints, favicon, indented sidebar, search fix; quiz stats on the site (ledger topic grades → course cards/sidebar/course page; quiz-state.json → per-question chips + weak-only filter). `publish.sh` now runs at the end of morning check / quiz / log so the site updates itself. |
 | 2026-09-11 | Logged PHIL 385 lec 1 (authorship overview, rough dump) → 14 questions, 5 ledger topics due Sep 12. Clarified Schelling/king of Prussia, the 8 pseudonyms, Anti-Climacus in the second authorship. |
+| 2026-09-11 | Logged PHIL 385 reading: Either/Or Preface (he found it too dense to follow; walkthrough written, facts checked against the Danish text) → 8 questions, 1 ledger topic due Sep 12. |
