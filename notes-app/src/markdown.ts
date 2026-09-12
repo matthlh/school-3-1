@@ -122,3 +122,32 @@ export function parseLinks(md: string): LinkRow[] {
   }
   return rows
 }
+
+export interface Deadline { date: string; time: string; approx: boolean; course: string; what: string; weight: string; exam: boolean }
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+const DATE_RE = /(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)?\s*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})(?:,?\s*(\d{1,2}:\d{2}))?/g
+
+/** ledger.md → "## Term calendar" rows with a parseable date. A range ("Sep 11 → Sep 24") keeps its end. */
+export function parseCalendar(md: string, year: number): Deadline[] {
+  const sec = extractSection(md, /^term calendar/i)
+  if (!sec) return []
+  const out: Deadline[] = []
+  for (const line of sec.split('\n')) {
+    if (!line.trim().startsWith('|')) continue
+    const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
+    if (cells.length < 3 || cells[0] === 'Date' || /^-+$/.test(cells[0])) continue
+    const plain = cells[0].replace(/\*/g, '')
+    const matches = [...plain.matchAll(DATE_RE)]
+    if (matches.length === 0) continue
+    const last = matches[matches.length - 1]
+    const month = MONTHS.indexOf(last[1].toLowerCase()) + 1
+    const y = month < 6 ? year + 1 : year // a Sept–Dec term; Jan–May dates belong to the next year
+    const date = `${y}-${String(month).padStart(2, '0')}-${last[2].padStart(2, '0')}`
+    const what = cells[2].replace(/\*\*/g, '').replace(/\s*[—–-]\s+(confirmed|the |course-site|PrairieLearn's).*$/i, '').trim()
+    out.push({
+      date, time: last[3] ?? '', approx: /^~/.test(plain.trim()), course: cells[1].replace(/\s+/g, ''),
+      what, weight: (cells[3] ?? '').replace(/\*/g, '').trim(), exam: /\b(exam|midterm|final)\b/i.test(cells[2]),
+    })
+  }
+  return out.sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
+}

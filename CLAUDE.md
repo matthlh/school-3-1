@@ -184,7 +184,9 @@ so edits and new lecture files hot-reload. Hash routes: `#/` home (course cards 
 site relies on (Matt, 2026-09-11): syllabus = grading, exam format, project, one schedule, then a `## To verify`
 checklist that renders on the course Overview (hidden in the syllabus view); logistics = short bullets + one dates
 table; anything kept only for Claude (office hours, Canvas IDs, site maps) goes under `## Reference (for Claude)`,
-which the viewer folds shut. No provenance lines ("pulled from…") in either. Question banks render as cards with
+which the viewer folds shut. No provenance lines ("pulled from…") in either. Home's **Coming up** panel parses the ledger's `## Term calendar` table by the Date cell
+(`Fri Sep 25, 18:00`; a `→` range keeps its end; `~` = approximate) — keep that cell format when adding rows.
+The site follows the OS light/dark setting. Question banks render as cards with
 answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
 (`/` focuses it); the sidebar is off-canvas — hover the left edge or pin with ☰.

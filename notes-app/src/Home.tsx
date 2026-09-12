@@ -6,12 +6,14 @@ import { toneStyle } from './theme'
 import { EMPTY, todayISO, type Tally } from './stats'
 import { StatBar } from './StatViews'
 import { Logo } from './Logo'
+import { Upcoming } from './Upcoming'
+import type { Deadline } from './markdown'
 
 function niceDate(iso: string): string {
   return new Date(iso + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
 }
 
-export function Home({ tree, all, tallies, topics }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; topics: TopicRow[] }) {
+export function Home({ tree, all, tallies, topics, calendar }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; topics: TopicRow[]; calendar: Deadline[] }) {
   // Due now is computed live from the ledger's topic table, never from prose.
   const today = todayISO()
   const due = topics.filter((r) => r.next && r.next <= today)
@@ -41,6 +43,7 @@ export function Home({ tree, all, tallies, topics }: { tree: Tree; all: Texts; t
           </p>
         )}
       </section>
+      <Upcoming items={calendar} today={today} />
       <div className="grid">
         {tree.courses.map((c) => {
           const syllabus = all[`courses/${c.code}/00-syllabus.md`]
@@ -62,6 +65,7 @@ export function Home({ tree, all, tallies, topics }: { tree: Tree; all: Texts; t
           {tree.runs.slice(0, 4).map((r) => <a key={r.path} className="btn" href={hrefFor(r.path)}>{r.label.replace(/-morning.*$/, '')}</a>)}
         </div>
       )}
+      <p className="muted small updated">Site built {new Date(__BUILD_TIME__).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</p>
     </>
   )
 }
