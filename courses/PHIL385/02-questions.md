@@ -97,3 +97,39 @@ The second authorship presents his own religious perspective, unlike the first.
 **A:** Love is the closest thing to the faith he wants to hold in his heart. Two kinds:
 - Preferential love (erotic love, friendship, love of country) loves the other as "another self", so it is self-love in disguise.
 - Christian neighbour-love is commanded ("you shall love"), non-preferential, loves the neighbour as yourself, with God as the "middle term".
+
+## Reading: *Either/Or* Preface (assigned Fri Sep 11, logged 2026-09-11)
+
+### Q: What philosophical thesis does the Preface of Either/Or open by doubting, and whose thesis is it?
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** "The outer is the inner and the inner is the outer." It is Hegel's formula. Eremita doubts it: people carry secrets that their outside never shows, so the outer does not reveal the inner.
+
+### Q: Tell the story of how Victor Eremita says he came by the papers, and say what the story illustrates.
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** Seven years earlier he saw an old writing desk at a second-hand dealer's, offered too little, was refused, and eventually bought it. Before a trip to the country a drawer holding his money stuck. He hit the desk with a hatchet, and a hidden compartment sprang open, full of papers. It illustrates the inner/outer doubt: a desk he knew from the outside had an inside he never suspected.
+
+### Q: Who are A and B? Say what Eremita knows about each and what kind of paper each set is written on.
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** The two unknown authors of the papers.
+- A: aesthetic essays and aphorisms, on fine vellum paper in quarto. Name unknown.
+- B: letters to A in an ethical vein, on foolscap in a business-like hand. From the letters, a court assessor (a judge) named Wilhelm, and married. Hence "Judge William".
+
+### Q: What does Eremita say about "The Seducer's Diary", and what image does he use for the authorship?
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** A claims he only found the diary and copied it. Eremita does not believe him and suspects A wrote it himself. The image is a Chinese puzzle box: one author enclosed inside another.
+
+### Q: List the layers of authorship from Kierkegaard down to "The Seducer's Diary".
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** Kierkegaard, then Victor Eremita as editor, then A, then Johannes the Seducer as the diary's supposed author.
+
+### Q: How does Eremita explain the title "Either/Or", and what does he say about the book's conclusion?
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** Two views of life, A's and B's, are set against each other with no verdict. He plays with the idea that A and B are one man who lived through both views, then leaves it open. The book has no conclusion: when it is read, A and B are forgotten and only the views of life confront each other. The reader must decide.
+
+### Q: Which of A's papers did Eremita place first, under what title and motto, and why? What was the state of B's papers?
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** The aphorisms, under the title Diapsalmata with the motto "ad se ipsum" (to himself), as a preliminary to the longer essays. A's papers had no order, so Eremita arranged them. B's letters were already in order.
+
+### Q: How is the Preface signed and dated, and whose name is on the title page?
+**Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
+**A:** Signed "The Editor", Copenhagen, November 1842. The title page says "edited by Victor Eremita" (Latin for the victorious hermit). The book was published in February 1843.
