@@ -15,7 +15,7 @@ button { font: inherit; }
 .crumbs a.tone:hover { text-decoration: none; filter: brightness(.97); }
 
 .search { margin-left: auto; display: flex; align-items: center; }
-.search input { -webkit-appearance: none; appearance: none; width: 250px; max-width: 42vw; height: 32px; margin: 0; padding: 0 14px;
+.search input { -webkit-appearance: none; appearance: none; width: 330px; max-width: 48vw; height: 32px; margin: 0; padding: 0 14px;
                 border: 1px solid #d9d9de; border-radius: 999px; font: inherit; font-size: 14px; line-height: 30px; color: #1c1c1e; background: #f5f5f7; outline: none; }
 .search input:focus { border-color: #8fb0f0; background: #fff; }
 .search input::placeholder { color: #8e8e93; }
@@ -135,6 +135,48 @@ table.topics { width: 100%; border-collapse: collapse; font-size: 13.5px; margin
 .topics td:last-child { white-space: nowrap; text-align: right; font-size: 12.5px; padding-right: 0; }
 .topics td.due { color: #a0405a; font-weight: 600; }
 
-.btn.link { font-size: 12.5px; padding: 4px 11px; background: var(--tint, #fff); color: var(--ink, #1c1c1e); border-color: var(--line, #d9d9de); }
-.btn.link:hover { filter: brightness(.97); }
-.row.links { margin: 6px 0 12px; }
+
+/* Course header + tabs */
+main.wide, .wrap.pinned main.wide > * { max-width: 1080px; }
+.course-head h1 { margin-bottom: .35em; }
+.tabs { display: flex; flex-wrap: wrap; gap: 2px; border-bottom: 1px solid #dcdce0; margin: 0 0 20px; }
+.tab { display: inline-flex; align-items: center; padding: 7px 14px; margin-bottom: -1px; border: 1px solid transparent; border-bottom: 0;
+       border-radius: 9px 9px 0 0; color: #3a3a3c; text-decoration: none; font-size: 14px; font-weight: 500; }
+.tab:hover { background: #f5f5f7; color: #1c1c1e; }
+.tab.cur { background: #fff; border-color: #dcdce0; color: var(--ink); box-shadow: inset 0 3px 0 var(--ink); }
+.tab .count { margin-left: 7px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: 999px; }
+.course-grid { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; align-items: start; }
+@media (max-width: 900px) { .course-grid { grid-template-columns: 1fr; } }
+.course-main .panel:first-child { margin-top: 0; }
+.panel.side { padding: 8px 14px 10px; }
+.panel.side ul { margin: .3em 0; padding-left: 1.2em; font-size: 13.5px; }
+.panel.side li { margin: .25em 0; }
+.linklist { list-style: none; margin: 4px 0 2px; padding: 0; font-size: 13.5px; }
+.linklist li { display: flex; align-items: baseline; gap: 8px; padding: 3px 0; }
+.linklist li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); opacity: .5; flex: none; position: relative; top: -1px; }
+.linklist a { color: #1c1c1e; text-decoration: none; } .linklist a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Due now */
+a.chip { text-decoration: none; }
+.due-chip { margin-left: 8px; font-weight: 600; }
+
+/* Question bank toolbar */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0 16px; }
+.seg { display: inline-flex; border: 1px solid #d9d9de; border-radius: 9px; overflow: hidden; background: #fff; }
+.seg button { border: 0; border-right: 1px solid #e3e3e6; background: none; padding: 5px 12px; font-size: 13px; color: #3a3a3c; cursor: pointer; }
+.seg button:last-child { border-right: 0; }
+.seg button:hover { background: #f5f5f7; }
+.seg button.on { background: #eef2fb; color: #0a3d91; font-weight: 600; }
+.seg button .k { color: #8e8e93; margin-left: 6px; font-weight: 400; }
+.toolbar select { font: inherit; font-size: 13px; padding: 5px 30px 5px 10px; border: 1px solid #d9d9de; border-radius: 9px; background: #fff; max-width: 280px; }
+.toolbar .spacer { flex: 1; }
+
+/* Topics view */
+.legend.key { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 2px 0 6px; }
+.legend.key .right { margin-left: auto; }
+.hint { background: #fff3b0; color: #6b5a00; padding: 1px 9px; border-radius: 999px; font-size: 11.5px; cursor: help; }
+.outcomes td.id { color: #8e8e93; font-size: 12px; width: 44px; white-space: nowrap; }
+.outcomes tr.later td { color: #6e6e73; }
+article table.topics { display: table; width: 100%; font-size: 13.5px; }
+article .topics td { border: 0; border-top: 1px solid #ececef; padding: 5px 6px; }
+article .topics tr:first-child td { border-top: 0; }

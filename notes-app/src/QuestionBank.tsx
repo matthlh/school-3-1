@@ -6,7 +6,9 @@ import { isWeak, lastGrade, questionId, tallyHistories } from './stats'
 import { GradeChip } from './StatViews'
 import { Md } from './Md'
 
-export function QuestionBank({ path, text, title, quiz }: { path: string; text: string; title: string; quiz: QuizState | null }) {
+type Mode = 'all' | 'weak' | 'new'
+
+export function QuestionBank({ path, text, quiz }: { path: string; text: string; quiz: QuizState | null }) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
   const flat = useMemo(() => groups.flatMap((g) => g.questions), [groups])
@@ -22,8 +24,8 @@ export function QuestionBank({ path, text, title, quiz }: { path: string; text: 
   }, [flat, code])
   const histOf = (q: Question): QuizHistory | undefined => quiz?.questions[ids[q.id] ?? '']
 
-  const [topic, setTopic] = useState<string | null>(null)
-  const [weak, setWeak] = useState(false)
+  const [mode, setMode] = useState<Mode>('all')
+  const [topic, setTopic] = useState('')
   const [open, setOpen] = useState<Set<string>>(new Set())
   const [allOpen, setAllOpen] = useState(false)
   const toggle = (id: string) =>
@@ -32,29 +34,43 @@ export function QuestionBank({ path, text, title, quiz }: { path: string; text: 
   const asked = flat.map(histOf).filter((h): h is QuizHistory => !!h)
   const tally = tallyHistories(asked)
   const total = flat.length
-  if (total === 0) return <article><h1>{title}</h1><p className="muted">No questions yet.</p></article>
+  if (total === 0) return <article><p className="muted">No questions yet.</p></article>
+
+  const weakCount = flat.filter((q) => isWeak(histOf(q))).length
+  const keep = (q: Question) =>
+    (!topic || q.topic === topic) && (mode === 'all' || (mode === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
+  const shownCount = flat.filter(keep).length
+  const seg = (m: Mode, label: string, n: number) => (
+    <button className={mode === m ? 'on' : ''} onClick={() => setMode(m)}>{label}<span className="k">{n}</span></button>
+  )
 
   return (
     <article>
-      <h1>{title} <span className="muted light">{total}</span></h1>
       {asked.length > 0 && (
         <div className="legend">
           asked {asked.length} of {total} · <b>{tally.solid} solid</b> · {tally.shaky} shaky · {tally.missed} missed
         </div>
       )}
-      <div className="row small">
-        <button className="btn" onClick={() => { setAllOpen((v) => !v); setOpen(new Set()) }}>
-          {allOpen ? 'Hide answers' : 'Show all answers'}
-        </button>
-        {asked.length > 0 && (
-          <button className={'chip' + (weak ? ' on' : '')} onClick={() => setWeak((v) => !v)} title="only questions last graded X or ~">weak only</button>
+      <div className="toolbar">
+        <div className="seg" role="tablist">
+          {seg('all', 'All', total)}
+          {asked.length > 0 && seg('weak', 'Weak', weakCount)}
+          {asked.length > 0 && seg('new', 'Not asked', total - asked.length)}
+        </div>
+        {topics.length > 1 && (
+          <select value={topic} onChange={(e) => setTopic(e.target.value)} aria-label="Topic">
+            <option value="">All topics</option>
+            {topics.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
         )}
-        {topics.length > 1 && topics.map((t) => (
-          <button key={t} className={'chip' + (topic === t ? ' on' : '')} onClick={() => setTopic(topic === t ? null : t)}>{t}</button>
-        ))}
+        <span className="spacer" />
+        {shownCount !== total && <span className="muted small">{shownCount} shown</span>}
+        <button className="btn" onClick={() => { setAllOpen((v) => !v); setOpen(new Set()) }}>
+          {allOpen ? 'Hide answers' : 'Show answers'}
+        </button>
       </div>
       {groups.map((g, gi) => {
-        const qs = g.questions.filter((q) => (!topic || q.topic === topic) && (!weak || isWeak(histOf(q))))
+        const qs = g.questions.filter(keep)
         if (qs.length === 0) return null
         return (
           <section key={gi}>
@@ -69,7 +85,7 @@ export function QuestionBank({ path, text, title, quiz }: { path: string; text: 
                   <div className="meta">
                     {h && <GradeChip g={lastGrade(h)} title={last ? `last ${last[0]}` : undefined} />}
                     {h && h.history.length > 1 && <span className="hist">{h.history.slice(-6).map(([, g]) => g).join(' ')}</span>}
-                    {q.topic && <span className="chip">{q.topic}</span>}
+                    {q.topic && !topic && <span className="chip">{q.topic}</span>}
                     {q.lec && <span className="chip">lec {q.lec}</span>}
                     {q.type && <span className={'chip type-' + q.type}>{q.type}</span>}
                     <button className="link" onClick={() => toggle(q.id)}>{shown ? 'hide' : 'answer'}</button>

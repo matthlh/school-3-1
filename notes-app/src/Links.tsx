@@ -1,18 +1,12 @@
 import type { LinkRow } from './markdown'
-import { toneStyle } from './theme'
 
-/** Pills that open course tools in a new tab. `course` narrows to that course (ALL rows excluded). */
-export function LinkChips({ rows, course }: { rows: LinkRow[]; course?: string }) {
-  const list = course ? rows.filter((r) => r.course === course) : rows
+/** Compact vertical list of a course's tool links (opens in a new tab). */
+export function LinkList({ rows, course }: { rows: LinkRow[]; course: string }) {
+  const list = rows.filter((r) => r.course === course)
   if (list.length === 0) return null
   return (
-    <div className="row links">
-      {list.map((r) => (
-        <a key={r.course + r.url + r.name} className="btn link" style={r.course === 'ALL' ? undefined : toneStyle(r.course)}
-           href={r.url} target="_blank" rel="noreferrer" title={r.url}>
-          {course ? '' : r.course === 'ALL' ? '' : `${r.course} · `}{r.name}
-        </a>
-      ))}
-    </div>
+    <ul className="linklist">
+      {list.map((r) => <li key={r.url + r.name}><a href={r.url} target="_blank" rel="noreferrer" title={r.url}>{r.name}</a></li>)}
+    </ul>
   )
 }

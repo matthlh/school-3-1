@@ -180,7 +180,12 @@ every brief chases unlogged lectures. Canvas grades are tracked per run; the tab
 http://localhost:8765. Files come in through `import.meta.glob(..., '?raw')` in `src/files.ts`,
 so edits and new lecture files hot-reload. Hash routes: `#/` home (course cards + Due now),
 `#/course/STAT251` (buttons for syllabus/logistics/topics/question bank + lecture cards),
-`#/courses/STAT251/...md` file view. Question banks render as cards with answers hidden until
+`#/courses/STAT251/...md` file view. Course files render under a tab strip (Overview · Syllabus · Logistics · Topics · Question bank). Conventions the
+site relies on (Matt, 2026-09-11): syllabus = grading, exam format, project, one schedule, then a `## To verify`
+checklist that renders on the course Overview (hidden in the syllabus view); logistics = short bullets + one dates
+table; anything kept only for Claude (office hours, Canvas IDs, site maps) goes under `## Reference (for Claude)`,
+which the viewer folds shut. No provenance lines ("pulled from…") in either. Question banks render as cards with
+answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
 (`/` focuses it); the sidebar is off-canvas — hover the left edge or pin with ☰.
 The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11). Every push to
