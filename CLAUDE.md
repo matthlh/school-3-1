@@ -13,9 +13,11 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
 1. Save the notes to `courses/<CODE>/lectures/NN-<slug>.md`: his words verbatim (transcribe a
    photo faithfully), then a short **Clarifications** block only where he flagged a confusion or
    something was wrong or incomplete. Nothing else — the file is an archive he never rereads;
-   the product is steps 2–3. **Everything he reads is plain sentences** (Matt, 2026-09-11):
-   clarifications and answers get full sentences with periods, one idea per bullet, sub-bullets for
-   lists. No " · " chains, no "=" shorthand, no arrows, no packed one-liners.
+   the product is steps 2–3. **Everything he reads on the site is plain sentences** (Matt,
+   2026-09-11): clarifications, answers, and reference files (syllabus, logistics) get full sentences
+   with periods, one fact per bullet under a `##` header, sub-bullets for lists, tables for dated
+   things. Never a paragraph of `**Label:**` runs joined by " · ", never "=" shorthand or arrows as
+   sentence glue (menu paths like Canvas → Zoom are fine).
 2. Extract every testable claim into `courses/<CODE>/02-questions.md` in the Q/A format.
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
    course allows it — except CPSC 310, where precise `recall` of terminology is what the

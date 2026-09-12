@@ -1,5 +1,5 @@
 * { box-sizing: border-box; }
-body { margin: 0; font: 15px/1.55 -apple-system, system-ui, Helvetica, Arial, sans-serif; color: #1c1c1e; background: #fff; }
+body { margin: 0; font: 15px/1.6 -apple-system, system-ui, Helvetica, Arial, sans-serif; color: #1c1c1e; background: #fff; }
 a { color: #0a58ca; }
 button { font: inherit; }
 
@@ -94,11 +94,18 @@ button.chip { cursor: pointer; } button.chip:hover { background: #e8e8ed; }
 .q .meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 7px; }
 .q .ans { margin-top: 9px; padding-top: 9px; border-top: 1px dashed #e3e3e6; color: #2c2c2e; }
 .q .ans p { margin: .3em 0; }
+.q .ans ul, .q .ans ol { margin: .3em 0; padding-left: 1.4em; }
+.q .ans li { margin: .3em 0; }
 
 /* Markdown */
 article { max-width: 800px; }
+article p { margin: .8em 0; }
+article ul, article ol { margin: .5em 0; padding-left: 1.5em; }
+article li { margin: .35em 0; }
+article li li { margin: .2em 0; }
+article li > p { margin: .2em 0; }
 article table { border-collapse: collapse; margin: .8em 0; font-size: 14px; display: block; overflow-x: auto; max-width: 100%; }
-article th, article td { border: 1px solid #d9d9de; padding: 5px 9px; text-align: left; vertical-align: top; }
+article th, article td { border: 1px solid #d9d9de; padding: 6px 10px; text-align: left; vertical-align: top; }
 article th { background: #f5f5f7; }
 article code { background: #f2f2f5; padding: 1px 5px; border-radius: 4px; font-size: .9em; }
 article pre { background: #f5f5f7; padding: 12px; border-radius: 8px; overflow: auto; }

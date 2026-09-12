@@ -1,10 +1,9 @@
 # PHIL 385 — Existentialism: The Writings of Kierkegaard (2026W1)
 
-**Instructor:** Dr. Anders Kraal (anders.kraal@ubc.ca)
-**Meets:** MWF 2:00pm, Buchanan
-**Text:** Kierkegaard, *Either/Or*, trans. Hannay (Penguin) + PDFs on Canvas
-**Office hours:** Wed 12:15–12:45pm on Zoom, **email Kraal one day ahead** to confirm the
-slot. Link is on the OH calendar.
+- **Instructor:** Dr. Anders Kraal (anders.kraal@ubc.ca)
+- **Meets:** MWF 2:00pm, Buchanan
+- **Text:** Kierkegaard, *Either/Or*, trans. Hannay (Penguin) + PDFs on Canvas
+- **Office hours:** Wed 12:15–12:45pm on Zoom, **email Kraal one day ahead** to confirm the slot. Link is on the OH calendar.
 
 ## Grading — 100% exams, no papers
 

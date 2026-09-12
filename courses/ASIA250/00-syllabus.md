@@ -1,11 +1,12 @@
 # ASIA 250 — Introduction to Buddhism (2026W1)
 
-**Instructor:** Samuel Shooklyn (samuel.shooklyn@ubc.ca) · **TA:** Karin Maruyama
-**Format:** Online, **mostly asynchronous.** Sep 8 – Dec 1.
-**Lectures:** pre-recorded, posted on Canvas **Mondays by 5pm** (11 modules)
-**Only live component:** optional Zoom Q&A, **Fridays 7:30–8:30pm** — not graded, no attendance
-**Office hours:** Wed 4–5pm, Auditorium Annex B Rm 100 — **email 24h ahead to get a slot**
-**Textbook:** Harvey, *An Introduction to Buddhism* (2013) — on Canvas
+- **Instructor:** Samuel Shooklyn (samuel.shooklyn@ubc.ca)
+- **TA:** Karin Maruyama
+- **Format:** Online, **mostly asynchronous.** Sep 8 – Dec 1.
+- **Lectures:** pre-recorded, posted on Canvas **Mondays by 5pm** (11 modules)
+- **Only live component:** optional Zoom Q&A, **Fridays 7:30–8:30pm** — not graded, no attendance
+- **Office hours:** Wed 4–5pm, Auditorium Annex B Rm 100 — **email 24h ahead to get a slot**
+- **Textbook:** Harvey, *An Introduction to Buddhism* (2013) — on Canvas
 
 > ⚠️ Your calendar still has `ASIA_V 311-011` blocked MW 9:30–11am. That's wrong — this course
 > has no scheduled class time. **Delete it. You get 3 hours a week back.**
