@@ -49,6 +49,15 @@
 | 12 Nov 24/26 | CI; team coordination | Lab 10 Process & metrics, Nov 27–Dec 3 | **D4 Fri Nov 27 18:00** |
 | 13 Dec 1/3 | Process metrics; GenAI | | Final: university-scheduled, 2.5 h, cumulative |
 
+## Where things live on the course site (checked 2026-09-11)
+| Page | Has | Doesn't have |
+|---|---|---|
+| Schedule `/26w1/schedule` | week table; **slide PDFs** linked from the lecture title after each class (`/26w1/lectures/NN-*.pdf`); lab weeks; due dates | reader assignments |
+| Course Materials `/26w1/materials/unit-0N/` | per lecture: the question it answers + **reader chapters** | slides, dates |
+| Reader `/textbook/` | the textbook — exam terminology | anything course-admin |
+| Syllabus `/26w1/syllabus` | policies, grading | content |
+Canvas is not used. `cpsc310_site.py` in the morning-check scripts reads all of this.
+
 ## Study resources (added 2026-09-10)
 - Course reader: https://ubccpsc.github.io/310/textbook/. Three parts:
   - Software Construction: languages, async, assertions, REST.
