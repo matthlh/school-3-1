@@ -44,7 +44,14 @@ Format:
 
 ### Q: Build a stem-and-leaf plot for 23, 27, 31, 34, 34, 38, 42, 45, 51 and read off the median.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** Stem = tens, leaf = units. 2 | 3 7 · 3 | 1 4 4 8 · 4 | 2 5 · 5 | 1. Key: 2|3 = 23. n = 9 → median = 5th ordered value = 34.
+**A:** Stem = tens, leaf = units.
+```
+2 | 3 7
+3 | 1 4 4 8
+4 | 2 5
+5 | 1
+```
+Key: 2|3 = 23. With n = 9 the median is the 5th ordered value, which is 34.
 
 ### Q: When is a pie chart defensible, and when is a bar chart strictly better?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** critique
