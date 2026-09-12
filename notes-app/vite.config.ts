@@ -7,6 +7,7 @@ const workspaceRoot = decodeURIComponent(new URL('..', import.meta.url).pathname
 export default defineConfig({
   base: './', // relative asset URLs: works at a domain root and under a sub-path (GitHub Pages)
   plugins: [react()],
+  define: { __BUILD_TIME__: JSON.stringify(new Date().toISOString()) },
   server: {
     host: '127.0.0.1',
     port: 8765,

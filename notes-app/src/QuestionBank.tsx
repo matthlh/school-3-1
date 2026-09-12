@@ -8,6 +8,18 @@ import { Md } from './Md'
 
 type Mode = 'all' | 'weak' | 'new'
 
+/** Deterministic shuffle for a given seed (so toggling answers doesn't reorder). */
+function shuffled<T>(xs: T[], seed: number): T[] {
+  const out = [...xs]
+  let s = seed >>> 0 || 1
+  for (let i = out.length - 1; i > 0; i--) {
+    s = (s * 1664525 + 1013904223) >>> 0
+    const j = s % (i + 1)
+    ;[out[i], out[j]] = [out[j], out[i]]
+  }
+  return out
+}
+
 export function QuestionBank({ path, text, quiz }: { path: string; text: string; quiz: QuizState | null }) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
@@ -28,6 +40,7 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
   const [topic, setTopic] = useState('')
   const [open, setOpen] = useState<Set<string>>(new Set())
   const [allOpen, setAllOpen] = useState(false)
+  const [seed, setSeed] = useState(0) // 0 = file order; otherwise a shuffled single list
   const toggle = (id: string) =>
     setOpen((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n })
 
@@ -65,11 +78,14 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
         )}
         <span className="spacer" />
         {shownCount !== total && <span className="muted small">{shownCount} shown</span>}
+        <button className={'btn' + (seed ? ' on' : '')} onClick={() => setSeed(seed ? 0 : Date.now())} title="Random order, all lectures mixed — how the exam asks">
+          {seed ? 'File order' : 'Shuffle'}
+        </button>
         <button className="btn" onClick={() => { setAllOpen((v) => !v); setOpen(new Set()) }}>
           {allOpen ? 'Hide answers' : 'Show answers'}
         </button>
       </div>
-      {groups.map((g, gi) => {
+      {(seed ? [{ title: null, questions: shuffled(flat, seed) }] : groups).map((g, gi) => {
         const qs = g.questions.filter(keep)
         if (qs.length === 0) return null
         return (

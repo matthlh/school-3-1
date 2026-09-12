@@ -42,6 +42,7 @@ export function Sidebar({ tree, current, pinned, tallies }: {
             {tree.runs.slice(0, 5).map((e) => <Link key={e.path} entry={e} current={current} />)}
           </section>
         )}
+        <p className="built">built {new Date(__BUILD_TIME__).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</p>
       </nav>
     </>
   )

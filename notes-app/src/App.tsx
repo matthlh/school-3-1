@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { buildTree, courseOf, labelFor, loadAll, loadQuizState, type QuizState, type Texts } from './files'
-import { parseLedgerTopics, parseLinks } from './markdown'
+import { parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
+import { darkQuery } from './theme'
 import { tallyByCourse } from './stats'
 import { HREF_HOME, hrefCourse, parseHash, type Route } from './routes'
 import { TopBar, type Crumb } from './TopBar'
@@ -46,6 +47,17 @@ export default function App() {
   const topics = useMemo(() => parseLedgerTopics(all?.['ledger.md'] ?? ''), [all])
 
   const links = useMemo(() => parseLinks(all?.['links.md'] ?? ''), [all])
+  const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', new Date().getFullYear()), [all])
+
+  // Course tints are picked in JS from the OS colour scheme; re-render when it flips.
+  const [, setScheme] = useState(0)
+  useEffect(() => {
+    const q = darkQuery()
+    if (!q) return
+    const onChange = () => setScheme((n) => n + 1)
+    q.addEventListener('change', onChange)
+    return () => q.removeEventListener('change', onChange)
+  }, [])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
 
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
@@ -63,7 +75,7 @@ export default function App() {
   let body
   if (!all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} topics={topics} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} topics={topics} calendar={calendar} />
   else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank path={route.path} text={all[route.path]} quiz={quiz} />
