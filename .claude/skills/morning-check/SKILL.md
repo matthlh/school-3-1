@@ -180,12 +180,21 @@ Gotchas (learned 2026-09-10):
 - Navigating straight to `/api/v1/...` URLs and reading page text also works, but
   `browser_batch` aborts on an empty `[]` response ("No text content"). Use it only for one-offs.
 
-### 3. CPSC 310 course site (public; Canvas is grades-only)
-`WebFetch https://ubccpsc.github.io/310/26w1/schedule` and compare with
-`courses/CPSC310/03-logistics.md`. Report **only** rows that differ from that file, inside the
-CPSC 310 block of the report — there is no separate "course site" section any more. A newly
-posted slide deck for the next lecture is worth one line (he reads the titles for pre-lecture
-questions).
+### 3. CPSC 310 course site (public; Canvas is not used at all)
+The site is four pages and only one has slides: **Schedule** (week table; a lecture title turns into
+a PDF link when its deck is posted), **Course Materials** (unit pages: lecture → what it answers →
+reader chapters), **Reader** (the textbook; exam terminology), **Syllabus** (policies). Run
+```bash
+python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/cpsc310_site.py"
+```
+It diffs the schedule against `routines/snapshots/cpsc310-site.json`, downloads any newly posted deck
+to `routines/slides/cpsc310/` (git-ignored — course material stays out of the public repo) with the
+text extracted beside it, and prints the next lecture with its reader chapters. Report its `NEW DECK` /
+`CHANGED` / `ADDED` lines inside the CPSC 310 block — there is no separate "course site" section. A
+`NEW DECK … not logged yet` line goes in Heads-up: it means the deck for an unlogged lecture is down
+and `cpsc310_site.py --lecture N` gives the slide text to log from (Matt does not take notes in
+CPSC 310 when the deck covers it — verified 2026-09-11, lec 1). A changed `due:` cell is a deadline
+change: update `ledger.md`, `term.py`, `03-logistics.md`, Things3.
 
 ### 4. Gmail (connector `search_threads` / `get_thread`)
 Run these queries; open with `get_thread` (PLAIN_TEXT) only the ones listed as "open":
@@ -251,8 +260,10 @@ a paragraph he skims. Topic sources, per course:
   filename, e.g. "Ch 1 Exploratory Data Analysis"); if nothing new is posted, the week's chapter
   from the schedule in `courses/STAT251/00-syllabus.md`. Headings → 3 Qs; tie each to an LO code
   from `01-topics.md` when obvious.
-- **CPSC 310:** today's row of the course-site schedule (§3): deck title + assigned reader chapter.
-  3 Qs from the reader chapter's headings (CLAUDE.md rule). Exam terminology lives there.
+- **CPSC 310:** the `Next lecture` block that `cpsc310_site.py` (§3) printed: title, the "what it
+  answers" question, and the reader chapter URL(s). WebFetch the chapter and turn its headings into
+  3 Qs (CLAUDE.md rule). Exam terminology lives there. If the deck is already posted, its slide
+  titles (`routines/slides/cpsc310/NN-*.txt`) are the better source.
 - **PHIL 385:** the reading assigned for today in `courses/PHIL385/00-syllabus.md`. 3 Qs on names,
   pseudonyms, terms, which essay — the MC exams test exactly that.
 - **ASIA 250:** async — on Mondays only, this week's lecture + readings module on Canvas; 3 Qs.
