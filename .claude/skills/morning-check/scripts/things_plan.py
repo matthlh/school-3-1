@@ -113,9 +113,12 @@ def lecture_todo(code, n, d):
     if code in ASYNC_LOCK_DAYS:
         lock = d + dt.timedelta(days=ASYNC_LOCK_DAYS[code])
         return (f"Watch + quiz {code} lec {n} · locks {lock:%b %-d}", "2h, P1", d, lock,
-                f"Async — nothing is missed until the mini-quiz locks {lock:%a %b %-d} 23:59. Watch the lecture, one page "
-                f"of notes (`log {code} lec {n}` here), the week's readings (courses/{code}/03-logistics.md), then the "
-                f"open-book quiz (lecture AND readings). Tick this yourself after the quiz.")
+                f"Nothing is missed until the mini-quiz locks {lock:%a %b %-d} 23:59.\n"
+                f"- Watch the lecture.\n"
+                f"- One page of notes, then `log {code} lec {n}` here.\n"
+                f"- The week's readings: courses/{code}/03-logistics.md\n"
+                f"- Open-book quiz — covers the lecture AND the readings.\n"
+                f"- Tick this yourself after the quiz.")
     return (f"Log {code} lec {n} ({d:%b %-d})", "15m, P1", d, d,
             f"10-min close-out: cover the answer column, self-test, mark X/~/O, then `log {code} lec {n}` here.")
 
@@ -257,7 +260,7 @@ def attach_links(todos, dry):
         new = [(n, u) for n, u in hits if u not in notes]
         if not new:
             continue
-        add = "\n".join(f"{n}: {u}" for n, u in new)
+        add = "Links:\n" + "\n".join(f"- {n} — {u}" for n, u in new)
         body = _as_text((notes + "\n\n" if notes else "") + add)
         if not dry:
             osa(f'tell application "Things3" to set notes of to do id "{t.id}" to {body}')
