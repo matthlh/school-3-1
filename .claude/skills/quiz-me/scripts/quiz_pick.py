@@ -151,11 +151,14 @@ def main():
            "Answer each one in your head (out loud is better), then check below. Reply with grades, "
            "e.g. `1 O 2 ~ 3 X 4 O 5 O 6 ~`, and the ledger updates.", ""]
     for it in items:
-        out.append(f"{it['n']}. **{it['label']}** — {it['q']}")
-    out += ["", "---", "", "## Answers", ""]
+        out.append(f"**{it['n']}. {it['label']}** — {it['q']}")
+        out.append("")
+    out += ["---", "", "## Answers", ""]
     for it in items:
-        out.append(f"{it['n']}. {it['a']}")
-    out.append("")
+        out.append(f"**{it['n']}.**")
+        out.append("")
+        out.append(it['a'])
+        out.append("")
     with open(deck, "w", encoding="utf-8") as f:
         f.write("\n".join(out))
     print(f"\n== Transit deck → {os.path.relpath(deck, L.ROOT)}")
