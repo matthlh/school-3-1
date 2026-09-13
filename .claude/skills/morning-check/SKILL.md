@@ -197,18 +197,23 @@ CPSC 310 when the deck covers it — verified 2026-09-11, lec 1). A changed `due
 change: update `ledger.md`, `term.py`, `03-logistics.md`, Things3.
 
 ### 4. Gmail (connector `search_threads` / `get_thread`)
-Run these queries; open with `get_thread` (PLAIN_TEXT) only the ones listed as "open":
+Matt doesn't delete mail, he archives it — so `in:inbox` is the live/unhandled set, not just
+unread. Scope every query to `in:inbox is:unread` (Matt, 2026-09-12): a read-but-still-inboxed
+message he's already triaged himself; an archived one is handled either way. Run these queries;
+open with `get_thread` (PLAIN_TEXT) only the ones listed as "open":
 | Query | Open? |
 |---|---|
-| `newer_than:1d -in:draft` (pageSize 50) | scan subjects/snippets only |
-| `from:instructure.com newer_than:2d` | open all |
-| `from:piazza.com newer_than:2d` | open digests |
-| `(list:lists.ubc.ca OR from:sciencecoop.ubc.ca OR from:ubc.ca) newer_than:2d -from:instructure.com` | open anything from a human or with a date |
-| `(deadline OR "due" OR register OR bonus) newer_than:1d -from:linkedin.com` | scan |
+| `in:inbox is:unread newer_than:1d -in:draft` (pageSize 50) | scan subjects/snippets only |
+| `in:inbox is:unread from:instructure.com newer_than:2d` | open all |
+| `in:inbox is:unread from:piazza.com newer_than:2d` | open digests |
+| `in:inbox is:unread (list:lists.ubc.ca OR from:sciencecoop.ubc.ca OR from:ubc.ca) newer_than:2d -from:instructure.com` | open anything from a human or with a date |
+| `in:inbox is:unread (deadline OR "due" OR register OR bonus) newer_than:1d -from:linkedin.com` | scan |
 Bucket everything into **School / Career / Admin+money** (Matt likes this format — keep it).
 LinkedIn job alerts: one line listing company + role, no detail. Security alerts, receipts, boarding
 passes: one line each. **Skip entirely:** Calendly / room-booking reminders and any calendar
-reminder for something already on his calendar.
+reminder for something already on his calendar. Never suggest deleting mail — if something's spam
+or a phishing attempt, say so and suggest archiving (or leaving it, since ignoring is enough); this
+skill only ever reads mail, never archives/deletes it itself.
 
 ### 5. Piazza (Chrome — needs the extension's site permission, see the note below)
 Class feeds (new UI; `get_page_text` only returns the welcome note, so use `read_page`
@@ -303,18 +308,44 @@ pre-questions above).
    clarification source and every deck-only claim becomes a question, then the `_NN` file is deleted
    (its content lives on in the questions and the notes file's Clarifications).
 
-**Review = the transit deck (2026-09-11).** Run
-```bash
-python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/quiz_pick.py" --transit
-```
-It picks 6 due/weak questions across courses (interleaved, exam-weighted, not-due topics fill the
-rest), writes `routines/runs/<date>-transit.md` (questions, a divider, then answers) plus the
-pending session `routines/quiz-session.json`, and refreshes the ledger's **Due now** block. Send
-the deck with `SendUserFile` (status `proactive`, display `attach`) so it reaches his phone for the
-bus. The brief's **Review** block lists the 6 questions (question only) and ends with the line
-"reply with grades, e.g. `1 O 2 ~ 3 X`". When he replies, `quiz_grade.py "<his reply>"` records
-them (see the quiz-me skill). The brief itself never edits ledger rows. Skip the deck only if the
-bank has no questions at all (the script exits 1 and says so).
+**Review = the transit deck, as a phone artifact (2026-09-13).** Two parts, in order:
+
+0. **Pull yesterday's grades first, before generating anything new.** The deck lives at a fixed
+   Artifact URL (below) with the `db` capability declared; the page writes each day's taps to
+   `grades/<date>` there as he grades (or he says "grade my deck" ad hoc mid-day — same mechanism,
+   see the quiz-me skill's variant table). Query it: `Artifact` → `action: "read_db"`,
+   `db_op: "query"`, `collection: "grades"`, `url` = the fixed URL below. For every returned doc
+   that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
+   half-graded) and not already `processed: true`: run `quiz_grade.py "<replyString>"` (quiz-me
+   skill, same as a pasted reply), then write back `processed: true` on that doc
+   (`action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`) so it is never graded
+   twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
+   (a `.set()`, not a merge), so grading it mid-session would burn the pending
+   `quiz-session.json` before he's tapped the rest, and those later taps would have nowhere valid
+   to land. Report what got graded under **New since yesterday** the way a normal quiz session
+   would (grades, ledger delta). Nothing complete and unprocessed just means nothing to report —
+   not an error.
+1. Run
+   ```bash
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/quiz_pick.py" --transit
+   ```
+   It picks 6 due/weak questions across courses (interleaved, exam-weighted, not-due topics fill the
+   rest), writes `routines/runs/<date>-transit.md` (questions, a divider, then answers) plus the
+   pending session `routines/quiz-session.json`, and refreshes the ledger's **Due now** block.
+2. Rebuild the artifact for today: same design (one question per card, tap to reveal, inline O/~/X
+   that auto-advance, a "Brief ↗" button top-right that opens today's full Brief + Details as an
+   overlay) with today's 6 questions and today's report substituted in. Republish with `Artifact`,
+   passing `url:` (the fixed URL below — **never omit it**, or it forks a new artifact instead of
+   updating this one) and `capabilities: {"db": {}}` still declared. `SendUserFile` is no longer
+   used for this — the artifact is the deck now.
+
+**Transit Deck artifact (fixed URL, update in place):**
+https://claude.ai/code/artifact/c537efc7-50cf-4476-9aa5-b118cd0fa480
+
+The brief's **Review** block lists the 6 questions (question only) and ends with a line pointing at
+the artifact link instead of "reply with grades" — grading now happens on the page. The brief itself
+never edits ledger rows. Skip the deck only if the bank has no questions at all (the script exits 1
+and says so).
 
 ### 8. Ledger session log + publish (last step, every run)
 If the run changed anything durable — a date in `ledger.md`, a grade row, a `03-logistics.md`
@@ -355,9 +386,9 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 - ...                                 or reading schedule (§7) · end with "3 Qs below"
 
 **Review**                  the 6 transit-deck questions (quiz_pick.py --transit, §7) —
-- <course> · <question>               QUESTION ONLY; answers live in the deck file, which is
-- ...                                 also sent to his phone. Last bullet: "reply with grades,
-- reply with grades, e.g. 1 O 2 ~     e.g. 1 O 2 ~ 3 X". "- Bank empty" if the script exits 1.
+- <course> · <question>               QUESTION ONLY; answers + grading live on the Transit Deck
+- ...                                 artifact (§7, fixed URL), rebuilt each run with today's 6.
+- Transit Deck: <url>                 "- Bank empty" if the script exits 1.
 
 **New since yesterday**
 - <course> · <what> · <source>        new deadlines, announcements, Piazza instructor
@@ -406,6 +437,12 @@ unless a deadline collision or a ⚠ OVER BUDGET line needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-09-13 (Matt: "make it an artifact" → "add to this routine"): the transit deck moved from a
+  sent file to a persistent Artifact (fixed URL, rebuilt in place every run) with inline O/~/X
+  grading and a Brief overlay. Because the artifact declares the `db` capability, taps get saved
+  server-side — so the morning check now opens with a check of that database for anything graded
+  since the last run (§7 step 0) and grades it automatically, instead of waiting for a pasted
+  reply. `SendUserFile` retired for this purpose.
 - 2026-09-11 (evening, Matt): §8 added — when a run changes something durable, append a one-line
   row to the ledger's Session log, then `publish.sh` (commit + push → Pages redeploy). Site is the
   public notes app; briefs stay local.
