@@ -7,25 +7,25 @@ The one file I read first every session. If a row's `Next` is on or before today
 
 ## Due now
 
-_17 topics due as of Sat Sep 12. Say **quiz me**._
+_17 topics due as of Sun Sep 13. Say **quiz me**._
 
-- CPSC 310 · What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) · due today · last X
-- CPSC 310 · Three fluencies · roadmap radii · 4 learning objectives · due today · last X
-- PHIL 321 · Decision situations (certainty / risk / ignorance) · due today · last X
-- PHIL 321 · Principle of dominance · due today · last X
-- PHIL 321 · Right vs rational decisions · due today · last X
-- PHIL 321 · Principle of insufficient reason · due today · last X
-- PHIL 321 · Utility and preferences · due today · last X
-- PHIL 321 · Ordinal vs cardinal utility · due today · last X
-- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · due today · last unquizzed
-- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · due today · last unquizzed
-- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · due today · last unquizzed
-- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · due today · last unquizzed
-- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · due today · last unquizzed
-- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · due today · last unquizzed
-- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · due today · last X
-- STAT 251 · Descriptive vs. inferential statistics · due today · last X
-- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · due today · last X
+- CPSC 310 · What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) · overdue 1 d · last X
+- CPSC 310 · Three fluencies · roadmap radii · 4 learning objectives · overdue 1 d · last X
+- PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 1 d · last X
+- PHIL 321 · Principle of dominance · overdue 1 d · last X
+- PHIL 321 · Right vs rational decisions · overdue 1 d · last X
+- PHIL 321 · Principle of insufficient reason · overdue 1 d · last X
+- PHIL 321 · Utility and preferences · overdue 1 d · last X
+- PHIL 321 · Ordinal vs cardinal utility · overdue 1 d · last X
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 1 d · last unquizzed
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 1 d · last unquizzed
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 1 d · last unquizzed
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 1 d · last unquizzed
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 1 d · last unquizzed
+- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 1 d · last unquizzed
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 1 d · last X
+- STAT 251 · Descriptive vs. inferential statistics · overdue 1 d · last X
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 1 d · last X
 
 ## All topics
 
