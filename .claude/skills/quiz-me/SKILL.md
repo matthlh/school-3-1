@@ -46,8 +46,9 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | exam ladder T-9…T-5 (term.py) | `--course CODE --all --n 15` — every topic eligible, weighted by weakness |
 | T-4 | `--course CODE --all`, then ask only the X/~ topics the focus block names |
 | PHIL 385 before exam 2–4 | scope to the exam's ~3 weeks: `--course PHIL385 --all --n 15`, skip questions from lectures outside the window |
-| transit deck | `quiz_pick.py --transit` — 6 q; writes `routines/runs/<date>-transit.md` (questions, divider, answers) |
+| transit deck | `quiz_pick.py --transit` — 6 q; writes `routines/runs/<date>-transit.md` (questions, divider, answers); rebuilds the Transit Deck artifact (morning-check skill §7) |
 | a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | `quiz_grade.py "<paste>"` — bare sequence = session order |
+| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `Artifact` → `action: "read_db"`, `db_op: "get"`, `collection: "grades"`, `doc_id: "<today's date>"`, `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, run `quiz_grade.py "<replyString>"`, then `action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, `data: {"processed": true}`. If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
 
 A new pick overwrites the pending session; ungraded questions are simply not recorded. If he
 sends grades and no session file exists, say so — never invent one.
@@ -81,6 +82,9 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-09-13: transit deck grading moved onto the Transit Deck artifact (inline O/~/X, saved to its
+  `db` capability). "Grade my deck" pulls `grades/<date>` from there instead of a pasted reply; the
+  morning check also sweeps it for anything ungraded before building the next day's deck.
 - 2026-09-11 built. Matt asked for one skill across all courses that decides focus, flags weak
   topics that need more questions, and keeps the SRS. Question IDs are a hash of course + text, so
   editing a question's wording resets its history (fine; the topic row keeps the schedule).
