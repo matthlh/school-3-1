@@ -7,5 +7,5 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 
 | # | Topic | Lec | Added | Last | Grade | Streak | Next | Notes |
 |---|-------|-----|-------|------|-------|--------|------|-------|
-| 1 | What SE is — Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software · SE task list | 1 | 2026-09-11 | 2026-09-11 | X | 0 | 2026-09-12 | reader: Intro + ACD intro |
-| 2 | Three fluencies · roadmap radii · 4 learning objectives (decomposition/requirements/validation · wks 2–5/6–7/8–13) | 1 | 2026-09-11 | 2026-09-11 | X | 0 | 2026-09-12 | slides 12–15 |
+| 1 | What SE is — Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software · SE task list | 1 | 2026-09-11 | 2026-09-13 | X | 0 | 2026-09-14 | reader: Intro + ACD intro |
+| 2 | Three fluencies · roadmap radii · 4 learning objectives (decomposition/requirements/validation · wks 2–5/6–7/8–13) | 1 | 2026-09-11 | 2026-09-13 | X | 0 | 2026-09-14 | slides 12–15 |

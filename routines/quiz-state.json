@@ -199,6 +199,66 @@
      "X"
     ]
    ]
+  },
+  "4f0df74e": {
+   "course": "STAT251",
+   "topic": "1a Types of data",
+   "history": [
+    [
+     "2026-09-13",
+     "O"
+    ]
+   ]
+  },
+  "b5331e0e": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-13",
+     "~"
+    ]
+   ]
+  },
+  "2b3cda0e": {
+   "course": "STAT251",
+   "topic": "1b–c Displays",
+   "history": [
+    [
+     "2026-09-13",
+     "O"
+    ]
+   ]
+  },
+  "cea3e1c1": {
+   "course": "CPSC310",
+   "topic": "Three fluencies & roadmap",
+   "history": [
+    [
+     "2026-09-13",
+     "X"
+    ]
+   ]
+  },
+  "c14871cc": {
+   "course": "STAT251",
+   "topic": "1a Types of data",
+   "history": [
+    [
+     "2026-09-13",
+     "O"
+    ]
+   ]
+  },
+  "68ad12c5": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-13",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -333,6 +393,50 @@
     [
      10,
      "a184039c",
+     "CPSC310",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-13",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "4f0df74e",
+     "STAT251",
+     "O"
+    ],
+    [
+     2,
+     "b5331e0e",
+     "CPSC310",
+     "~"
+    ],
+    [
+     3,
+     "2b3cda0e",
+     "STAT251",
+     "O"
+    ],
+    [
+     4,
+     "cea3e1c1",
+     "CPSC310",
+     "X"
+    ],
+    [
+     5,
+     "c14871cc",
+     "STAT251",
+     "O"
+    ],
+    [
+     6,
+     "68ad12c5",
      "CPSC310",
      "X"
     ]

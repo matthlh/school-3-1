@@ -13,9 +13,9 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 ## 1. Exploratory data analysis · Ch 1
 | # | Outcome | Status | Last | Streak | Next |
 |---|---|---|---|---|---|
-| 1a | Distinguish types of data | X | 2026-09-11 | 0 | 2026-09-12 |
-| 1b | Interpret boxplots, histograms; mean/median/mode/variance/IQR *(so far: freq table, pie, bar, dot, stem-leaf)* | X | 2026-09-11 | 0 | 2026-09-12 |
-| 1c | Choose the right summary method for a data set | X | 2026-09-11 | 0 | 2026-09-12 |
+| 1a | Distinguish types of data | O | 2026-09-13 | 1 | 2026-09-20 |
+| 1b | Interpret boxplots, histograms; mean/median/mode/variance/IQR *(so far: freq table, pie, bar, dot, stem-leaf)* | O | 2026-09-13 | 1 | 2026-09-20 |
+| 1c | Choose the right summary method for a data set | O | 2026-09-13 | 1 | 2026-09-20 |
 | 1d | Identify features describing a distribution | | | | |
 | 1e | Use software for data summary / EDA | | | | |
 | 1+ | Descriptive vs. inferential statistics *(lecture-added; not in the LO doc)* | X | 2026-09-11 | 0 | 2026-09-12 |

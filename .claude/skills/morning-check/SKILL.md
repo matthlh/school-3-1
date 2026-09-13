@@ -318,7 +318,10 @@ pre-questions above).
    that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
    half-graded) and not already `processed: true`: run `quiz_grade.py "<replyString>"` (quiz-me
    skill, same as a pasted reply), then write back `processed: true` on that doc
-   (`action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`) so it is never graded
+   (`action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, plus `if_version` set to
+   the `version` the `read_db` query just returned for that doc — the write rejects
+   `version_mismatch` without it, even though `if_version` isn't listed in the tool's own schema;
+   pass it anyway, it's accepted) so it is never graded
    twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
    (a `.set()`, not a merge), so grading it mid-session would burn the pending
    `quiz-session.json` before he's tapped the rest, and those later taps would have nowhere valid
