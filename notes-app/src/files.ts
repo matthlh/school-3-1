@@ -37,6 +37,7 @@ const MAIN: [string, string][] = [
   ['03-logistics.md', 'Logistics'],
   ['01-topics.md', 'Topics'],
   ['02-questions.md', 'Question bank'],
+  ['04-ask-kraal.md', 'Ask Kraal'],
 ]
 
 /** "01-02-ch1-data-types-displays.md" → "01–02 · ch1 data types displays" */

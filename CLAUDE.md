@@ -189,7 +189,9 @@ every brief chases unlogged lectures. Canvas grades are tracked per run; the tab
 http://localhost:8765. Files come in through `import.meta.glob(..., '?raw')` in `src/files.ts`,
 so edits and new lecture files hot-reload. Hash routes: `#/` home (course cards + Due now),
 `#/course/STAT251` (buttons for syllabus/logistics/topics/question bank + lecture cards),
-`#/courses/STAT251/...md` file view. Course files render under a tab strip (Overview · Syllabus · Logistics · Topics · Question bank). Conventions the
+`#/courses/STAT251/...md` file view. Course files render under a tab strip (Overview · Syllabus · Logistics · Topics · Question bank · Ask Kraal).
+A course may add `04-ask-kraal.md` (PHIL 385 has one, 2026-09-14): the running list of questions to put to
+the instructor plus an Answered table; add the file to `MAIN` in `notes-app/src/files.ts` to give it a tab. Conventions the
 site relies on (Matt, 2026-09-11): syllabus = grading, exam format, project, one schedule, then a `## To verify`
 checklist that renders on the course Overview (hidden in the syllabus view); logistics = short bullets + one dates
 table; anything kept only for Claude (office hours, Canvas IDs, site maps) goes under `## Reference (for Claude)`,
@@ -222,6 +224,7 @@ to that source first, silently, then answer. Never answer a deadline or grade qu
 | what's due for review, how he's doing, weakest topics | `ledger.md` + `quiz_pick.py --report` |
 | office hours, links, tools, policies, section/lab details | `courses/<CODE>/03-logistics.md` |
 | what a lecture covered, what a question's answer is | `courses/<CODE>/lectures/`, `02-questions.md` |
+| what to ask the prof, what he already answered | `courses/<CODE>/04-ask-kraal.md` (PHIL 385) |
 | what to do today / this week | Things3 via `things_plan.py`, `PREP.md` |
 | why the system is shaped this way | `STUDY-SYSTEM.md`, `research/course-intel.md` |
 | what past students say, prof reputation, exam style intel | `research/course-intel.md` (refresh: RateMyProfessors, ratemycourses.io, old.reddit.com r/UBC through the Chrome tab — the fetch tools cannot reach Reddit) |
