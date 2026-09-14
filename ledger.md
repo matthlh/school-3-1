@@ -48,6 +48,8 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | — | — | 0 | 2026-09-15 |
+| PHIL 385 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | — | — | 0 | 2026-09-15 |
+| PHIL 385 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | — | — | 0 | 2026-09-15 |
 
 ## Term calendar — hard dates
 
@@ -78,14 +80,14 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | Thu Oct 29, 23:59 | STAT 251 | WeBWorK 6 (night of the CPSC midterm) | |
 | **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% |
 | Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | |
-| **Fri Oct 30** | PHIL 385 | **Exam 3 — ❓ Canvas quiz is dated Nov 20 (same slot as Exam 4). Ask Kraal.** | 15% |
+| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** | 15% |
 | Fri Oct 30 | UBC | **Withdraw-with-W deadline** (all courses) | |
 | Fri Nov 6, 18:00 | CPSC 310 | **D3** — Design v3 (paired) | 5% |
 | Nov 9–11 | — | Fall break / ASIA reading break | |
 | ~Thu Nov 12 | ASIA 250 | **Short Written Response 2** | 15% |
 | Thu Nov 12, 23:59 | STAT 251 | WeBWorK 7 | |
 | ~Mon Nov 16 | ASIA 250 | Final paper questions posted | |
-| **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** (Canvas also has Exam 3 here) | 15% |
+| **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** | 15% |
 | Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired) | 5% |
 | Mon Nov 30, 23:59 | STAT 251 | WeBWorK 8 | |
 | Wed Dec 2 | STAT 251 | Written Assignment 2 due | ~5% |
@@ -97,8 +99,9 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% |
 | Dec 11–22 | CPSC 310 | **Final**, cumulative, 2.5 h | 40% |
 
-**Oct 29–30 is the crunch of the term:** CPSC 310 midterm Thu 7–9pm, STAT 251 midterm Fri 8am,
-and *possibly* PHIL 385 Exam 3 Fri 2pm. Prep for all of it must be finished by Oct 28.
+**Oct 29–30 is the crunch of the term:** CPSC 310 midterm Thu 7–9pm, then on the Friday the
+STAT 251 midterm at 8am, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 2pm. Confirmed
+2026-09-14. Prep for all of it must be finished by Oct 28.
 
 Pre-lab quizzes (STAT, 11:59pm, confirmed on Canvas 2026-09-10): Oct 2 · Oct 16 · Oct 23 · Nov 13 ·
 Nov 27 · Dec 4 · Dec 11. All on the calendar.
@@ -108,7 +111,6 @@ CPSC 310 labs run Fri→Thu from Sep 11; lab work due by the start of the next l
 Wed Sep 30, Mon Oct 12 (attend another section).
 
 **Open questions**
-- PHIL 385 Exam 3: syllabus says Oct 30, Canvas says Nov 20 (same slot as Exam 4). **Ask Kraal.**
 - Which PHIL 385 exam is the essay exam (vs. the three MC ones)? Ask in week 1.
 - CPSC 310 has **nothing on Canvas** — deadlines only exist on the course site. Canvas silence
   ≠ nothing due.
@@ -155,3 +157,6 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-14 | Logged STAT 251 lec 3 (Ch 1: histograms, shape, mean and median, range; his page + the posted deck, outline consumed) → 14 questions, 3 ledger topics due Sep 15. |
 | 2026-09-14 | Logged PHIL 385 reading: The Unhappiest One, part 1 (first third) → 5 questions, 1 ledger topic due Sep 15. Page held as `readings/_unhappiest.md` until part 2 arrives, so the reading to-do stays open. |
 | 2026-09-14 | Logged PHIL 321 lec 2 (preference axioms, scale types, ignorance rules) → 13 questions, 2 new ledger topics due Sep 15. |
+| 2026-09-14 | Logged PHIL 385 lec 2 (the Preface, A's papers vs B's papers) → 11 new questions plus 4 more on pseudonymity, 2 new ledger topics due Sep 15. Checked against the Danish *Enten–Eller* and corrected two things I had written into the Preface page: Eremita left A's essays in the order he found them rather than arranging them, and he did not drop the one-author reading — it is what decided the title. |
+| 2026-09-14 | PHIL 385 Exam 3 settled at **Fri Oct 30, 14:00–14:50** (Matt re-checked Canvas and the syllabus; they agree). The Nov 20 discrepancy is closed in the syllabus, logistics and term calendar. Oct 30 is now a confirmed triple: STAT 251 midterm 8am, STAT in-lab quiz 11:20, PHIL 385 Exam 3 2pm. |
+| 2026-09-14 | Planner: weekly **Questions for Kraal (week of …)** to-do added to the `WEEKLY` table (Mondays, PHIL 385, 15m/P2, deadline Tuesday) so questions about the reading are collected before Wednesday office hours. |

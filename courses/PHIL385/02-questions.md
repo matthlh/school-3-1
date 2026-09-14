@@ -111,8 +111,8 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: Who are A and B? Say what Eremita knows about each and what kind of paper each set is written on.
 **Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
 **A:** The two unknown authors of the papers.
-- A: aesthetic essays and aphorisms, on fine vellum paper in quarto. Name unknown.
-- B: letters to A in an ethical vein, on foolscap in a business-like hand. From the letters, a court assessor (a judge) named Wilhelm, and married. Hence "Judge William".
+- A: aesthetic essays and aphorisms, on fine vellum in quarto with a wide margin. The papers give no information about him at all, so "A" is Eremita's invention.
+- B: letters to A in an ethical vein, on full sheets of beehive paper in split columns, as legal documents are written. From the letters, an assessor in a court, called Wilhelm, and married. Hence "Judge William".
 
 ### Q: What does Eremita say about "The Seducer's Diary", and what image does he use for the authorship?
 **Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
@@ -124,11 +124,11 @@ The second authorship presents his own religious perspective, unlike the first.
 
 ### Q: How does Eremita explain the title "Either/Or", and what does he say about the book's conclusion?
 **Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
-**A:** Two views of life, A's and B's, are set against each other with no verdict. He plays with the idea that A and B are one man who lived through both views, then leaves it open. The book has no conclusion: when it is read, A and B are forgotten and only the views of life confront each other. The reader must decide.
+**A:** Two views of life, A's and B's, are set against each other with no verdict. The title came from the thought that the papers could belong to one man who had gone through both movements; Eremita calls that reading unhistorical and improbable but says he could not give it up. The book has no conclusion: when it is read, A and B are forgotten and only the views of life confront each other, expecting no final decision in particular persons. The reader must decide.
 
 ### Q: Which of A's papers did Eremita place first, under what title and motto, and why? What was the state of B's papers?
 **Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
-**A:** The aphorisms, under the title Diapsalmata with the motto "ad se ipsum" (to himself), as a preliminary to the longer essays. A's papers had no order, so Eremita arranged them. B's letters were already in order.
+**A:** The aphorisms, under the title Diapsalmata with the motto "ad se ipsum" (to himself), as a preliminary to the longer essays. They were loose slips, so they were the only part he had to place; the word and the motto were A's own, found written on the slips. He left A's essays in the order he found them and says he let chance rule. B's letters were already in order, but had no titles, so he supplied those.
 
 ### Q: How is the Preface signed and dated, and whose name is on the title page?
 **Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
@@ -155,3 +155,82 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: How does A use Solon's saying to Croesus, and what does he conclude from it?
 **Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
 **A:** Solon told Croesus to call no one happy before his death. A flips it: no one can be called the unhappiest before death either. Then the twist: the unhappiest one is the one who cannot die, so his case never closes and his grave is empty.
+
+## Lec 2 — The Preface, and the two authors (Mon Sep 14, logged 2026-09-14)
+
+### Q: Why does Victor Eremita say hearing became his dearest sense, and what illustration does he use?
+**Topic:** Either/Or Preface  **Lec:** 2  **Type:** recall
+**A:** Because the voice is the revelation of an inwardness that the outside cannot measure, and the ear is the instrument by which that inwardness is grasped. His illustration is the confessor: a priest hearing confession is separated from the penitent by a grille, so he only hears and builds a matching outside, and no contradiction arises. The contradiction shows up when you see and hear a person at once.
+
+### Q: State the Hegelian inner/outer thesis, and give the Hegelian reason why a talent that is never exercised does not yet count for anything.
+**Topic:** Either/Or Preface  **Lec:** 2  **Type:** recall
+**A:** The thesis is that the outer is the inner and the inner is the outer. The reason is that for Hegel a person is the series of their deeds, and the will is actual only once it has been carried out in the world. Thinking, wanting and saying are not yet actuality. Eremita doubts the thesis by pointing to secrets: an inwardness the outside never shows.
+
+### Q: What does Eremita say about the possibility that A and B are one and the same person, and how does that bear on the title of the book?
+**Topic:** Either/Or Preface  **Lec:** 2  **Type:** recall
+**A:** He says the thought occurred to him that the papers could be read as belonging to one man who had gone through, or thought through, both movements. He grants it is unhistorical and improbable, but says he could not give it up, and it is what decided the title. The title then frees the reader from asking whether A was convinced and repented, or whether B won.
+
+### Q: The Seducer's Diary gives days and months but no years. How did Eremita date it, and to what year?
+**Topic:** Either/Or Preface  **Lec:** 2  **Type:** recall
+**A:** A passage under 7 April shows that the day must have been a Monday. He calculated which year has 7 April on a Monday and arrived at 1834. He doubts A intended the clue.
+
+### Q: Give the full title and subtitle of Either/Or as printed, who it is edited by, and what each of the two volumes contains.
+**Topic:** How Either/Or is put together  **Lec:** 2  **Type:** recall
+**A:** *Either/Or: A Fragment of Life* (Danish *Enten–Eller. Et Livs-Fragment*), edited by Victor Eremita, Copenhagen 1843. Volume 1 contains A's papers. Volume 2 contains B's papers, letters to A.
+
+### Q: List the eight pieces of A's papers in the order Victor Eremita printed them.
+**Topic:** How Either/Or is put together  **Lec:** 2  **Type:** recall
+**A:**
+1. Diapsalmata
+2. The Immediate Erotic Stages, or the Musical Erotic
+3. Ancient Tragedy's Reflection in the Modern
+4. Silhouettes
+5. The Unhappiest One
+6. The First Love
+7. Crop Rotation
+8. The Seducer's Diary
+
+### Q: Name the three pieces of B's papers in order, and say what the third one contains.
+**Topic:** How Either/Or is put together  **Lec:** 2  **Type:** recall
+**A:**
+1. The Aesthetic Validity of Marriage.
+2. The Equilibrium between the Aesthetic and the Ethical in the Development of the Personality.
+3. Ultimatum, the shortest of the three, which forwards a sermon to A.
+
+### Q: Who wrote the sermon that closes Either/Or, what is it called, and how does it reach the reader?
+**Topic:** How Either/Or is put together  **Lec:** 2  **Type:** recall
+**A:** An unnamed Jutland pastor, a friend of B. It is called "The Edifying in the Thought That Against God We Are Always in the Wrong". B encloses it in his third letter, the Ultimatum, and sends it to A, so it reaches the reader at second hand. It is the last word of the book and the only place a religious view speaks in its own voice. Neither A nor B wrote it.
+
+### Q: What does Eremita say happens to A and B once the book has been read, and why does he call the absence of a conclusion a piece of good fortune?
+**Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** recall
+**A:** When the book has been read, A and B are forgotten, and only the views of life stand facing each other, expecting no final decision in particular persons. He calls it good fortune because in ordinary novels one character convinces the other, and the reader is handed a historical result instead of a view. Here neither wins, so each life-view has to speak for itself and the reader has to decide.
+
+### Q: Does Either/Or show that Kierkegaard held there is no firm truth, or that the right course is to balance the aesthetic and the ethical? Answer and justify.
+**Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** critique
+**A:** Neither. Three reasons.
+- Withholding a verdict is a method, not a doctrine. A pseudonym presents a life-view from the inside so the reader must judge it, which is the point of "A First and Last Explanation".
+- B argues directly against balancing the two. Choosing is what makes a self, and refusing to choose is the evasion he attacks. The title is Either/Or, not Both/And.
+- "Truth is subjectivity", from the *Postscript*, is a claim about how a truth must be held and lived by the individual, not a claim that there is no truth.
+
+### Q: How do A and B differ on marriage, and what does B claim about the beauty of the ethical life?
+**Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** apply
+**A:** A holds that erotic love, above all first love, is aesthetic, and that marriage destroys it, because duty, oath and repetition are unaesthetic. B holds that marriage is where first love becomes actual instead of evaporating, so commitment preserves the aesthetic rather than killing it. B's claim is that the ethical life is more beautiful than the aesthete's, not less, which is why his first essay is called the *aesthetic* validity of marriage.
+
+### Q: What is the difference between a "lower" and a "higher" pseudonym, who are Kierkegaard's examples, and where does he place himself?
+**Topic:** Pseudonymity and the 18 discourses  **Lec:** 2  **Type:** recall
+**A:** A lower pseudonym stands below Kierkegaard, a higher one above him.
+- Johannes Climacus is lower: he writes as someone who is not a Christian, asking how one becomes one.
+- Anti-Climacus is higher: he writes from the standpoint of the ideal Christian, a standard Kierkegaard did not claim to meet.
+- Kierkegaard places himself between them, and puts his own name on the Anti-Climacus books as editor.
+
+### Q: Why did Kierkegaard call the books published under his own name "upbuilding discourses" rather than sermons?
+**Topic:** Pseudonymity and the 18 discourses  **Lec:** 2  **Type:** recall
+**A:** Because he was never ordained. A sermon is preached with the authority of office, and he had no such authority, so he used the weaker word. The distinction is his own and he was careful about it.
+
+### Q: Kierkegaard repeatedly published a pseudonymous book and a set of signed discourses on the same day or within days. What was he doing, and what image does he use for it?
+**Topic:** Pseudonymity and the 18 discourses  **Lec:** 2  **Type:** recall
+**A:** Each pseudonymous book holds out a life-view for the reader to judge, and the signed discourse alongside it offers the religious alternative in his own voice. In *The Point of View* he describes holding out *Either/Or* in his left hand and the *Two Upbuilding Discourses* in his right, and says almost everyone reached for what was in his left. The pairing is deliberate: the aesthetic work is the way of meeting people where they actually are.
+
+### Q: Two of the eight first-authorship books give their pseudonym as an editor rather than an author. Which books, and which pseudonyms?
+**Topic:** Pseudonymity and the 18 discourses  **Lec:** 2  **Type:** recall
+**A:** *Either/Or*, edited by Victor Eremita, and *Stages on Life's Way*, edited by Hilarius Bookbinder. In both, the pseudonym claims only to have found and arranged other people's papers.

@@ -62,6 +62,9 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
     dict(day=FRI, title="Retrieval block — quiz me ({d:%b %-d})", area="UBC", tags="2h, P1", due_days=0,
          first=dt.date(2026, 9, 18), last=dt.date(2026, 12, 4),
          notes="Fri 3–5 pm, not optional, not moveable (PREP.md). Say 'quiz me' — overdue ledger topics first."),
+    dict(day=MON, title="Questions for Kraal (week of {d:%b %-d})", project="PHIL 385", tags="15m, P2", due_days=1,
+         first=dt.date(2026, 9, 14), last=dt.date(2026, 11, 30),
+         notes="Office hours Wed 12:15-12:45 on Zoom (link on the Canvas front page); email anders.kraal@ubc.ca a day ahead for a slot. Questions about the reading and the lectures, not logistics. Say 'questions for Kraal' here and the week's open points get pulled out of courses/PHIL385/lectures/ and readings/ into a list."),
     dict(day=SAT, title="Groceries ({d:%b %-d})", area="Personal", tags="1h, P2", due_days=1,
          first=dt.date(2026, 9, 19), last=dt.date(2026, 12, 19), notes="Before Sunday meal prep."),
 ]
