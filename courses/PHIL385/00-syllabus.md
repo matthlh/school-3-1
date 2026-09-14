@@ -8,7 +8,7 @@
 |---|---|---|---|
 | Exam 1 | 15% | Fri Oct 2, 2:00–2:50pm | MC or essay* |
 | Exam 2 | 15% | Fri Oct 16, 2:00–2:50pm | MC or essay* |
-| Exam 3 | 15% | **Fri Oct 30 per syllabus; Canvas says Nov 20 — ask Kraal** | MC or essay* |
+| Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm | MC or essay* |
 | Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC or essay* |
 | Final | 40% | Dec 11–22, TBD | cumulative |
 
@@ -49,7 +49,7 @@ each. Which one is the essay is not stated. Exams 2–4 are **not cumulative**; 
 | **F Oct 16** | **Exam 2** |
 | M Oct 19 – F Oct 23 | "Seducer's Diary" and "Diapsalmata" |
 | M Oct 26 – W Oct 28 | "Diapsalmata" |
-| **F Oct 30** | **Exam 3** (per syllabus) |
+| **F Oct 30** | **Exam 3** |
 | M Nov 2 – F Nov 6 | "Aesthetic Validity of Marriage" |
 | M Nov 9, W Nov 11 | No class (break) |
 | F Nov 13 – W Nov 18 | "Equilibrium" |
@@ -62,7 +62,6 @@ each. Which one is the essay is not stated. Exams 2–4 are **not cumulative**; 
 | Dec 11–22 | **Final**, cumulative |
 
 ## To verify
-- [ ] Exam 3: Oct 30 (syllabus) or Nov 20 (Canvas)?
 - [ ] Which of the four in-term exams is the essay exam?
 - [ ] Are MC questions multi-select ("the correct answer(s)")? Negative marking?
 - [ ] Respondus LockDown Browser installed and tested before Oct 2
