@@ -133,3 +133,25 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: How is the Preface signed and dated, and whose name is on the title page?
 **Topic:** Either/Or Preface  **Lec:** 1  **Type:** recall
 **A:** Signed "The Editor", Copenhagen, November 1842. The title page says "edited by Victor Eremita" (Latin for the victorious hermit). The book was published in February 1843.
+
+## Reading: *Either/Or*, "The Unhappiest One" (Sep 14–18; part 1 logged 2026-09-14)
+
+### Q: What is the opening image of "The Unhappiest One", and what did the person who opened the grave find?
+**Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
+**A:** A grave in England inscribed "The Unhappiest One". Someone opened it and found no body. The essay asks who deserves the grave and why it is empty.
+
+### Q: To whom is "The Unhappiest One" addressed, and what is that group?
+**Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
+**A:** The Symparanekromenoi, A's fictional club, the "fellowship of the dead": aesthetes who count themselves already dead and meet to celebrate unhappiness. The subtitle calls the piece an inspired address to them.
+
+### Q: Explain A's east/west comparison in "The Unhappiest One" and the parallel it sets up.
+**Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
+**A:** The faithful long eastward for the Holy Sepulchre; the unhappy are drawn westward to the empty grave in England, each believing it is meant for him. Both tombs are empty. Christ's is empty because he rose. The unhappiest one's is empty because he cannot die.
+
+### Q: Who is excluded from the society of the unhappy in "The Unhappiest One", and why?
+**Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
+**A:** The happy, and anyone who fears death or counts it the greatest misfortune. The fellowship regards itself as already dead and death as a rest, so someone who fears death still loves life too much to count as unhappy.
+
+### Q: How does A use Solon's saying to Croesus, and what does he conclude from it?
+**Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
+**A:** Solon told Croesus to call no one happy before his death. A flips it: no one can be called the unhappiest before death either. Then the twist: the unhappiest one is the one who cannot die, so his case never closes and his grave is empty.
