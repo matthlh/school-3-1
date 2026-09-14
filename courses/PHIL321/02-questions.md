@@ -164,3 +164,55 @@ Same ranking, different verdict. Expected-value reasoning needs an interval (car
 ### Q: Someone assigns utilities (10, 9, 1) to outcomes A > B > C and concludes "A is only slightly better than B, but B is far better than C." Is that a legitimate use of an ordinal scale? What would make it legitimate?
 **Topic:** Ordinal vs cardinal utility  **Lec:** 1  **Type:** critique
 **A:** Not on a merely ordinal scale — reading off "slightly better" versus "far better" from the numbers treats the gaps (10−9 vs 9−1) as meaningful magnitudes, which is a cardinal claim. It would only be legitimate if the scale had already been established as cardinal (an interval scale), not just an arbitrary ranking-preserving set of numbers.
+
+### Q: Write down what ≻, ~ and ≽ mean, and state the two conditions a utility function u must satisfy to represent a preference ordering.
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** recall
+**A:** ≻ is strict preference, ~ is indifference, ≽ is weak preference (at least as good as). u represents the ordering when u(x) > u(y) if and only if x ≻ y, and u(x) = u(y) if and only if x ~ y.
+
+### Q: Name the three conditions a preference ordering must satisfy to be represented on an ordinal scale, and state each one formally.
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** recall
+**A:** Completeness: for all x, y, either x ≽ y or y ≽ x. Asymmetry: if x ≻ y then not y ≻ x. Transitivity: if x ≻ y and y ≻ z then x ≻ z (plus the three mixed versions with ~).
+
+### Q: List the four transitivity conditions.
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** recall
+**A:** (1) x ≻ y and y ≻ z gives x ≻ z. (2) x ~ y and y ~ z gives x ~ z. (3) x ≻ y and y ~ z gives x ≻ z. (4) x ~ y and y ≻ z gives x ≻ z.
+
+### Q: An agent says "I can't rank a weekend in Tofino against a new laptop; they're just different." Which axiom does this violate, and why is this not the same as being indifferent?
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** apply
+**A:** Completeness. Indifference is a definite ranking (the two are equally good, so a coin flip is fine and you would trade one for the other plus a tiny bonus). Incomparability is having no ranking at all, so no utility number can be assigned to either. Completeness is an idealisation of a rational agent.
+
+### Q: An agent prefers tea to coffee, coffee to juice, and juice to tea. Which axiom fails, and what practical problem does the agent face?
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** apply
+**A:** Transitivity. The agent is a "money pump": they will pay to swap juice for coffee, coffee for tea, tea for juice, and be back where they started minus the payments. No utility function can represent cyclic preferences.
+
+### Q: What is an indifference class, and how do indifference classes relate to an ordinal utility scale?
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** recall
+**A:** An indifference class is a set of outcomes the agent is indifferent between. The classes are strictly ordered by ≻, and an ordinal utility function assigns one number to each class, higher for more-preferred classes.
+
+### Q: Which transformations preserve an ordinal scale, an interval scale, and a ratio scale? Give one real-world example of each scale.
+**Topic:** Ordinal vs cardinal utility  **Lec:** 2  **Type:** recall
+**A:** Ordinal: any strictly increasing function (example: a ranking of restaurants). Interval: positive linear transformations u′ = a·u + b with a > 0 (example: temperature in °C vs °F). Ratio: u′ = a·u with a > 0, since the zero is fixed (example: weight in kg vs lb).
+
+### Q: Utilities (10, 20, 40) for outcomes A, B, C are on an interval scale. Which of these are equivalent scales: (1, 2, 4), (30, 50, 90), (10, 20, 30), (100, 400, 1600)? Explain.
+**Topic:** Ordinal vs cardinal utility  **Lec:** 2  **Type:** apply
+**A:** (1, 2, 4) and (30, 50, 90) are equivalent: each is a·u + b with a > 0 (a = 0.1, b = 0; a = 2, b = 10). The test is that the ratio of gaps (C − B)/(B − A) stays 2. (10, 20, 30) fails (ratio 1) and (100, 400, 1600) fails (it is u², a nonlinear map, ratio 4). Both keep the order, so they are ordinally equivalent but not interval-equivalent.
+
+### Q: Why is clock time an interval scale but duration a ratio scale?
+**Topic:** Ordinal vs cardinal utility  **Lec:** 2  **Type:** derive
+**A:** Clock time has an arbitrary zero (midnight, or year 1), so "3 o'clock is three times 1 o'clock" is meaningless, but differences between times are meaningful. Duration has a true zero (no time elapsed), so "6 hours is twice 3 hours" is meaningful.
+
+### Q: Acts a1, a2, a3 over states s1, s2, s3 give a1 = (2, 5, 9), a2 = (4, 4, 6), a3 = (4, 7, 5). Which act does maximin pick? Maximax? Leximin?
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** apply
+**A:** Worst outcomes: a1 = 2, a2 = 4, a3 = 4. Maximin ties a2 and a3. Maximax picks a1 (best outcome 9). Leximin breaks the maximin tie on the second-worst: a2 = 4, a3 = 5, so leximin picks a3.
+
+### Q: Define the optimism-pessimism (Hurwicz) rule. Using the acts a1 = (2, 5, 9) and a2 = (4, 4, 6), which act does it pick with α = 0.5, and with α = 0.2?
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** apply
+**A:** Score each act as α·(best) + (1 − α)·(worst) and choose the highest. α = 0.5: a1 = 0.5·9 + 0.5·2 = 5.5, a2 = 0.5·6 + 0.5·4 = 5, so a1. α = 0.2: a1 = 1.8 + 1.6 = 3.4, a2 = 1.2 + 3.2 = 4.4, so a2. α = 1 reduces to maximax and α = 0 to maximin.
+
+### Q: Which decision rules for ignorance need only an ordinal ranking of outcomes, and which need an interval scale? Justify.
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** derive
+**A:** Maximin, leximin and maximax need only ordinal information, because they only compare outcomes (worst vs worst, best vs best). The optimism-pessimism rule and the principle of insufficient reason need an interval scale, because they weight and add utilities, and an ordinal transformation can change which act wins that sum.
+
+### Q: What does it mean that a preference ordering is "relative to a time", and why does that matter for decision theory?
+**Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** recall
+**A:** The axioms constrain an agent's preferences at a given time, not across their life. Preferences can change over time without irrationality; a decision is rational relative to the preferences the agent holds when deciding.

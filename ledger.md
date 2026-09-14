@@ -38,7 +38,9 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | PHIL 321 | Right vs rational decisions | 1 | 2026-09-14 | O | 1 | 2026-09-21 |
 | PHIL 321 | Principle of insufficient reason | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Utility and preferences | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
-| PHIL 321 | Ordinal vs cardinal utility | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
+| PHIL 321 | Ordinal vs cardinal utility | 1–2 | 2026-09-11 | X | 0 | 2026-09-12 |
+| PHIL 321 | Preference relations and ordinal-scale axioms | 2 | 2026-09-14 | X | 0 | 2026-09-15 |
+| PHIL 321 | Ignorance rules: maximin, leximin, maximax, optimism-pessimism | 2 | 2026-09-14 | X | 0 | 2026-09-15 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | — | — | 0 | 2026-09-12 |
@@ -152,3 +154,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-14 | Quiz (transit): 6 q · 3 O / 2 ~ / 1 X · PHIL 321, STAT 251 · 4 ledger rows moved |
 | 2026-09-14 | Logged STAT 251 lec 3 (Ch 1: histograms, shape, mean and median, range; his page + the posted deck, outline consumed) → 14 questions, 3 ledger topics due Sep 15. |
 | 2026-09-14 | Logged PHIL 385 reading: The Unhappiest One, part 1 (first third) → 5 questions, 1 ledger topic due Sep 15. Page held as `readings/_unhappiest.md` until part 2 arrives, so the reading to-do stays open. |
+| 2026-09-14 | Logged PHIL 321 lec 2 (preference axioms, scale types, ignorance rules) → 13 questions, 2 new ledger topics due Sep 15. |
