@@ -56,9 +56,9 @@ PRIO_SCORE = {"P1": 300, "P2": 150, "P3": 0}
 MON, TUE, WED, THU, FRI, SAT, SUN = range(7)
 WEEKLY_AHEAD = 7         # a weekly to-do is created this many days before its date (Upcoming shows next week's)
 WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticked (never re-created)
-    dict(day=MON, title="Novel: read 30–35 pages (week of {d:%b %-d})", project="ASIA 250", tags="2h, P2", due_days=6,
+    dict(day=MON, title="Golden Pavilion: read 30–35 pages (week of {d:%b %-d})", project="ASIA 250", tags="2h, P2", due_days=6,
          first=dt.date(2026, 9, 14), last=dt.date(2026, 11, 16),
-         notes="~30–35 pp/week keeps the Dec 10 paper on schedule. Note page reached + one thing worth quoting."),
+         notes="Mishima, The Temple of the Golden Pavilion (~260 pp; epub on Canvas, files/47240876). ~30–35 pp/week keeps the Dec 10 paper on schedule. Note page reached + one thing worth quoting."),
     dict(day=FRI, title="Retrieval block — quiz me ({d:%b %-d})", area="UBC", tags="2h, P1", due_days=0,
          first=dt.date(2026, 9, 18), last=dt.date(2026, 12, 4),
          notes="Fri 3–5 pm, not optional, not moveable (PREP.md). Say 'quiz me' — overdue ledger topics first."),

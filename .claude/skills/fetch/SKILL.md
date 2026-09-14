@@ -6,9 +6,10 @@ description: On-demand pull of one specific resource instead of a full morning c
 # Fetch
 
 Four narrow, fast lookups — each is a slice of what `/morning-check` already does, for when Matt
-wants just that one thing without a full sweep. Never re-run Canvas/Piazza/PrairieLearn sync here;
-that's morning-check's job. This skill only reads what's already synced, or stages the one missing
-piece asked for.
+wants just that one thing without a full sweep. Piazza and PrairieLearn are never re-run here;
+that's morning-check's job. The one sync this skill does is `fetch canvas` (last section), for a
+morning when the check found Canvas signed out. Everything else only reads what's already synced,
+or stages the one missing piece asked for.
 
 `$S` = `.claude/skills/fetch/scripts` (absolute:
 `/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/fetch/scripts`).
@@ -66,8 +67,24 @@ Local only, no fetch — this is a read, not a sync:
    the full Plan-today work list — if he wants that, point him at "morning check" instead.
    If Canvas hasn't been synced today, say so in one line rather than re-fetching it yourself.
 
+## "fetch canvas" (after a brief said Canvas was signed out)
+The morning check cannot sign in for him: passwords are never typed, and CWL's Duo step needs
+his phone. Once he has signed in at canvas.ubc.ca in Chrome, this re-runs only the Canvas half:
+1. Open the Canvas tab exactly as morning-check SKILL.md §2 Path B, steps 1–2. If
+   `get_page_text` still shows the CWL login page, say "still signed out" and stop.
+2. §2 steps 3–5: `canvas_fetch.js`, read the chunks back, `canvas_digest.py`. Then the §7
+   materials pull (`canvas_materials.js` → `canvas_materials_digest.py` → stage any new deck or
+   reading as `_NN-<slug>.md`), because the signed-out morning skipped that too.
+3. Apply the morning-check rules to what the digest prints: a new hard date goes to `ledger.md`,
+   Things3 (`things_add.py`, always with tags) and `term.py`; a changed grade updates the
+   ledger's Grades so far table; anything labelled bonus becomes a Plan-today to-do.
+4. Append `## Re-run HH:MM — Canvas` to today's `routines/runs/<date>-morning.md` with the
+   Canvas block in the normal format, add a Session-log row to `ledger.md` if anything durable
+   changed, then `sh publish.sh "Canvas re-run <date>"`.
+5. Close the tab. Report only what was new — "Nothing new on Canvas" is a fine full answer.
+
 ## Notes
-- This skill never writes to `ledger.md`, Things3, or `publish.sh` — it only stages `_NN-*.md`
+- Apart from `fetch canvas`, this skill never writes to `ledger.md`, Things3, or `publish.sh` — it only stages `_NN-*.md`
   pre-lecture files (git-ignored routine data stays git-ignored; the `_NN` files themselves are
   tracked, same as morning-check produces) and reads what already exists. Logging a lecture is
   still `log <CODE> lec N`; grading a deck is still replying to it with grades.
