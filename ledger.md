@@ -7,12 +7,9 @@ The one file I read first every session. If a row's `Next` is on or before today
 
 ## Due now
 
-_15 topics due as of Mon Sep 14. Say **quiz me**._
+_11 topics due as of Mon Sep 14. Say **quiz me**._
 
 - PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 2 d · last X
-- PHIL 321 · Principle of dominance · overdue 2 d · last X
-- PHIL 321 · Right vs rational decisions · overdue 2 d · last X
-- PHIL 321 · Principle of insufficient reason · overdue 2 d · last X
 - PHIL 321 · Utility and preferences · overdue 2 d · last X
 - PHIL 321 · Ordinal vs cardinal utility · overdue 2 d · last X
 - PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 2 d · last unquizzed
@@ -21,7 +18,6 @@ _15 topics due as of Mon Sep 14. Say **quiz me**._
 - PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 2 d · last unquizzed
 - PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 2 d · last unquizzed
 - PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 2 d · last unquizzed
-- STAT 251 · Descriptive vs. inferential statistics · overdue 2 d · last X
 - CPSC 310 · What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) · due today · last X
 - CPSC 310 · Three fluencies · roadmap radii · 4 learning objectives · due today · last X
 
@@ -30,14 +26,14 @@ _15 topics due as of Mon Sep 14. Say **quiz me**._
 | Course | Topic | Lec | Last | Grade | Streak | Next |
 |--------|-------|-----|------|-------|--------|------|
 | STAT 251 | 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
-| STAT 251 | Descriptive vs. inferential statistics | 1–2 | 2026-09-11 | X | 0 | 2026-09-12 |
+| STAT 251 | Descriptive vs. inferential statistics | 1–2 | 2026-09-14 | X | 0 | 2026-09-15 |
 | STAT 251 | 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
 | CPSC 310 | What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
 | CPSC 310 | Three fluencies · roadmap radii · 4 learning objectives | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
 | PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
-| PHIL 321 | Principle of dominance | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
-| PHIL 321 | Right vs rational decisions | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
-| PHIL 321 | Principle of insufficient reason | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
+| PHIL 321 | Principle of dominance | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
+| PHIL 321 | Right vs rational decisions | 1 | 2026-09-14 | O | 1 | 2026-09-21 |
+| PHIL 321 | Principle of insufficient reason | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Utility and preferences | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
 | PHIL 321 | Ordinal vs cardinal utility | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | — | — | 0 | 2026-09-12 |
@@ -149,3 +145,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-12 | Morning check: discovered a new active Canvas enrolment, PHIL_V 347 Philosophy of Religion (course 192997, taught by Kraal — same instructor as PHIL 385), not previously tracked anywhere — flagged for Matt, no action taken. Corrected CPSC 310 D1 deadline to PrairieLearn's own window (18:05, not the course site's 18:00). Added Things3 to-do to verify Gradescope email for STAT 251. |
 | 2026-09-13 | Quiz (transit): 6 q · 3 O / 1 ~ / 2 X · CPSC 310, STAT 251 · 4 ledger rows moved |
 | 2026-09-14 | Morning check: Canvas reachable again (no grade changes); fixed `quizlib.py` — `PHIL321` was missing from `COURSE_LABEL`/`TYPE_PREF`, crashing `quiz_pick.py --transit` whenever a PHIL 321 topic came due. Transit deck rebuilt (PHIL 321 + STAT 251, 6 q). |
+| 2026-09-14 | Quiz (transit): 6 q · 3 O / 2 ~ / 1 X · PHIL 321, STAT 251 · 4 ledger rows moved |
