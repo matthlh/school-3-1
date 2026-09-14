@@ -4,13 +4,13 @@
   week later at 23:59. Week 6 (Oct 12) Thanksgiving and week 10 (Nov 9) reading break have no
   lecture; SWR1 is published Sun Oct 11. Last lecture week 13 (Nov 30); last Q&A Dec 4.
 - **Q&A:** Fridays 19:30–~20:30, Sep 11 – Dec 4, optional. Zoom link + passcode: Canvas → Zoom tab.
-- **Novel declaration:** by Mon Sep 14 23:59 (stays open to Sep 23). Final paper (47%) is on it.
+- **Novel:** Option A, Mishima, *The Temple of the Golden Pavilion* (chosen 2026-09-13). Declare on Canvas by Mon Sep 14 23:59 (stays open to Sep 23). Final paper (47%) and the week 9 film (*Fancy Dance*) are on it.
 
 ## Readings on Canvas (files — nothing to buy)
 | Reading | Canvas file |
 |---|---|
-| Novel A — Mishima, *The Temple of the Golden Pavilion* (epub) | files/47240876 |
-| Novel B — Ko Un, *Little Pilgrim* | files/47240852 |
+| **Novel (chosen) — Mishima, *The Temple of the Golden Pavilion*** (epub) | files/47240876 |
+| Novel B, not chosen — Ko Un, *Little Pilgrim* | files/47240852 |
 | Harvey 2013, *An Introduction to Buddhism* | files/47240885 |
 | Luhrmann 2020, *How God Becomes Real* (ch 1–3, Readings 1–2) | files/47240887 |
 | Shooklyn 2023, "Constructing the values of detachment and compassion…" | files/47240888 |

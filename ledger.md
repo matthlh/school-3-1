@@ -28,6 +28,9 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | STAT 251 | 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
 | STAT 251 | Descriptive vs. inferential statistics | 1–2 | 2026-09-14 | X | 0 | 2026-09-15 |
 | STAT 251 | 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
+| STAT 251 | 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) | 3 | — | — | 0 | 2026-09-15 |
+| STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | — | — | 0 | 2026-09-15 |
+| STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
 | CPSC 310 | Three fluencies · roadmap radii · 4 learning objectives | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
 | PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
@@ -146,3 +149,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-13 | Quiz (transit): 6 q · 3 O / 1 ~ / 2 X · CPSC 310, STAT 251 · 4 ledger rows moved |
 | 2026-09-14 | Morning check: Canvas reachable again (no grade changes); fixed `quizlib.py` — `PHIL321` was missing from `COURSE_LABEL`/`TYPE_PREF`, crashing `quiz_pick.py --transit` whenever a PHIL 321 topic came due. Transit deck rebuilt (PHIL 321 + STAT 251, 6 q). |
 | 2026-09-14 | Quiz (transit): 6 q · 3 O / 2 ~ / 1 X · PHIL 321, STAT 251 · 4 ledger rows moved |
+| 2026-09-14 | Logged STAT 251 lec 3 (Ch 1: histograms, shape, mean and median, range; his page + the posted deck, outline consumed) → 13 questions, 3 ledger topics due Sep 15. |

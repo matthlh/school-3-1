@@ -9,3 +9,7 @@ notes-app/node_modules/
 notes-app/dist/
 # macOS
 .DS_Store
+
+# local secrets — never committed
+.env
+.env.*

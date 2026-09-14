@@ -150,7 +150,13 @@ paste it into chat.)
 **Path B — logged-in Chrome session (works today).**
 1. `ToolSearch` → `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__tabs_close_mcp,mcp__claude-in-chrome__browser_batch`
 2. `tabs_context_mcp {createIfEmpty:true}` → `navigate` that tab to `https://canvas.ubc.ca/`.
-   Confirm the Dashboard loads (get_page_text shows course cards). If it's a CWL login page, stop.
+   Confirm the Dashboard loads (get_page_text shows course cards). If it's a CWL login page,
+   stop this source: nothing is ever typed into it. Put one line under Heads-up —
+   `Canvas signed out since <last signed-in line in routines/keepalive.log, else the newest
+   routines/snapshots/canvas-*.json date> — sign in at canvas.ubc.ca in Chrome, then say
+   "fetch canvas"` — and send the same words with
+   `PushNotification` (status `proactive`) so he sees it the moment he is at the keyboard. The
+   `fetch canvas` recipe (fetch skill) re-runs only the Canvas half once he has signed in.
 3. `javascript_tool` with the full contents of `scripts/canvas_fetch.js`. It fetches every
    `/api/v1` endpoint (including **current grades** via `/users/self/enrollments`), stores JSON in
    `window.__co`, writes chunk 0 into the page body, and returns `total_len=… chunks=N`.
@@ -173,6 +179,15 @@ paste it into chat.)
 **Plan today** to-do (`things_add.py … --tags "30m, P1" --when today`) — Premarathna adds small bonuses through the term and Matt takes every one.
 
 Gotchas (learned 2026-09-10):
+- **Session lifetime (2026-09-13):** the Canvas/CWL session dies about 24 h after the last Canvas
+  request. Sep 11 06:47 → Sep 12 06:36 (23.8 h) worked; Sep 12 06:36 → Sep 13 08:01 (25.4 h) hit
+  the CWL page. The scheduled task only fires once the Mac is awake, so the run drifts to
+  lid-open time and the gap can pass 24 h. Whether a request inside the window resets the timer
+  (sliding) or it counts 24 h from sign-in (absolute — Matt's bet) is what `routines/keepalive.log`
+  settles: the `canvas-keepalive` scheduled task touches canvas.ubc.ca at 13:00 and 21:00, logs
+  `signed-in` / `signed-out`, and push-nudges him when it finds the CWL page. Sliding means he never
+  signs in again; absolute means one 10 s sign-in a day at the nudge. Claude never signs in either
+  way — a hard rule, asked and answered 2026-09-13.
 - The extension blocks any `javascript_tool` *return value* containing query strings and any
   script containing the word "credentials". That's why the script strips `?…` from URLs and
   hands data back through the DOM instead of the return value.
@@ -440,6 +455,12 @@ unless a deadline collision or a ⚠ OVER BUDGET line needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-09-13 (Matt: "can you not just login for me?"): no — passwords are never typed and Duo
+  needs his phone. The 09-13 CWL wall was a 25.4 h gap between Canvas requests (the run fires
+  at lid-open, not 06:35; Sep 11→12 was 23.8 h and fine). So: `fetch canvas` (fetch skill) re-runs
+  the Canvas half after he signs in, the wall now also sends a PushNotification, and the
+  `canvas-keepalive` scheduled task (13:00 · 21:00, log in `routines/keepalive.log`) keeps the
+  session touched inside 24 h or nudges him to sign in.
 - 2026-09-13 (Matt: "make it an artifact" → "add to this routine"): the transit deck moved from a
   sent file to a persistent Artifact (fixed URL, rebuilt in place every run) with inline O/~/X
   grading and a Brief overlay. Because the artifact declares the `db` capability, taps get saved

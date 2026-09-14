@@ -22,10 +22,11 @@ Bank the 27 cheap points (declaration + quizzes + bonuses) and the writing needs
 - **Quizzes** test lectures *and* readings — lectures "overlap but do not cover all subjects of
   the readings", so watching alone won't get 5/5. Answers publish when the quiz closes, so **late = 0
   with no exceptions**, concession letters included.
-- **Final paper** is on your **independent novel**, not the lectures. Pick one in week 2:
-  Option A Mishima, *The Temple of the Golden Pavilion* · Option B Ko Un, *Little Pilgrim*
-  (Shooklyn's pick: "really easy and fun to read", ~200 pages). The week 9 film depends on the
-  choice (A → *Fancy Dance*; B → *Mandala*). ~30–35 pages a week keeps pace.
+- **Final paper** is on your **independent novel**, not the lectures.
+  - Chosen 2026-09-13: **Option A, Mishima, *The Temple of the Golden Pavilion*** (Ivan Morris translation, about 260 pages, epub on Canvas).
+  - The week 9 film for option A is *Fancy Dance*.
+  - Option B was Ko Un, *Little Pilgrim* (Shooklyn's own pick, "really easy and fun to read"); not chosen.
+  - 30 to 35 pages a week keeps pace for the Dec 10 paper.
 - SWRs and paper: **−10 points per day late.** No Wikipedia; use the Gale eBooks religion
   collection first. Chicago/Turabian author-date. No AI policy stated.
 
@@ -49,6 +50,6 @@ Bank the 27 cheap points (declaration + quizzes + bonuses) and the writing needs
 | — | **Dec 10** | **Final paper due** | |
 
 ## To do
-- [ ] **Declare your novel by Mon Sep 14** (1%) — skim both first
+- [ ] **Declare option A (Golden Pavilion) on Canvas by Mon Sep 14 23:59** (1%). Chosen 2026-09-13.
 - [ ] Watch Lecture 1, do Readings 1, take Quiz 1 (locks Tue Sep 15)
 - [ ] Watch for the optional-assignment announcement in week 2 (free 2%)
