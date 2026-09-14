@@ -42,7 +42,7 @@ Stats Notes:
 - The range is the largest value minus the smallest. It uses only two observations, so one outlier changes it completely.
 
 ### Detached housing question
-- The posted deck does not contain it, so this is a guess at what the class asked. House prices are the standard right-skew example: a few very expensive houses pull the mean well above the median, so the median is the figure for a typical house and is what real-estate boards report.
-- If the question was different, send the actual wording and it goes into the question bank.
+- This was an iClicker question, not in the posted deck: the shape of the distribution of detached house prices. The answer was (c), right-skewed.
+- Why: most houses sell in a middle band and a few very expensive ones stretch the tail to the right, toward the high values. Those few pull the mean above the median, so the median is the figure for a typical house and is what real-estate boards report.
 
-Questions: 13 in [02-questions.md](../02-questions.md) under "Lec 3". Ledger: 3 topics, due Sep 15.
+Questions: 14 in [02-questions.md](../02-questions.md) under "Lec 3". Ledger: 3 topics, due Sep 15.
