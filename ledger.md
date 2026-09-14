@@ -149,4 +149,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-13 | Quiz (transit): 6 q · 3 O / 1 ~ / 2 X · CPSC 310, STAT 251 · 4 ledger rows moved |
 | 2026-09-14 | Morning check: Canvas reachable again (no grade changes); fixed `quizlib.py` — `PHIL321` was missing from `COURSE_LABEL`/`TYPE_PREF`, crashing `quiz_pick.py --transit` whenever a PHIL 321 topic came due. Transit deck rebuilt (PHIL 321 + STAT 251, 6 q). |
 | 2026-09-14 | Quiz (transit): 6 q · 3 O / 2 ~ / 1 X · PHIL 321, STAT 251 · 4 ledger rows moved |
-| 2026-09-14 | Logged STAT 251 lec 3 (Ch 1: histograms, shape, mean and median, range; his page + the posted deck, outline consumed) → 13 questions, 3 ledger topics due Sep 15. |
+| 2026-09-14 | Logged STAT 251 lec 3 (Ch 1: histograms, shape, mean and median, range; his page + the posted deck, outline consumed) → 14 questions, 3 ledger topics due Sep 15. |
