@@ -27,6 +27,10 @@
     [
      "2026-09-11",
      "X"
+    ],
+    [
+     "2026-09-14",
+     "O"
     ]
    ]
   },
@@ -259,6 +263,56 @@
      "X"
     ]
    ]
+  },
+  "77769da7": {
+   "course": "PHIL321",
+   "topic": "Principle of dominance",
+   "history": [
+    [
+     "2026-09-14",
+     "~"
+    ]
+   ]
+  },
+  "0c56c87d": {
+   "course": "STAT251",
+   "topic": "Descriptive vs inferential",
+   "history": [
+    [
+     "2026-09-14",
+     "X"
+    ]
+   ]
+  },
+  "aaa0c44c": {
+   "course": "PHIL321",
+   "topic": "Principle of insufficient reason",
+   "history": [
+    [
+     "2026-09-14",
+     "~"
+    ]
+   ]
+  },
+  "24f53215": {
+   "course": "STAT251",
+   "topic": "Descriptive vs inferential",
+   "history": [
+    [
+     "2026-09-14",
+     "O"
+    ]
+   ]
+  },
+  "2c3ae998": {
+   "course": "PHIL321",
+   "topic": "Right vs rational decisions",
+   "history": [
+    [
+     "2026-09-14",
+     "O"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -439,6 +493,50 @@
      "68ad12c5",
      "CPSC310",
      "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-14",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "77769da7",
+     "PHIL321",
+     "~"
+    ],
+    [
+     2,
+     "0c56c87d",
+     "STAT251",
+     "X"
+    ],
+    [
+     3,
+     "aaa0c44c",
+     "PHIL321",
+     "~"
+    ],
+    [
+     4,
+     "24f53215",
+     "STAT251",
+     "O"
+    ],
+    [
+     5,
+     "2c3ae998",
+     "PHIL321",
+     "O"
+    ],
+    [
+     6,
+     "db431ecf",
+     "STAT251",
+     "O"
     ]
    ]
   }

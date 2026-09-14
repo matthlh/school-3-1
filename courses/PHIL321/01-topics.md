@@ -8,8 +8,8 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | # | Topic | Lec | Added | Last | Grade | Streak | Next | Notes |
 |---|-------|-----|-------|------|-------|--------|------|-------|
 | 1 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-11 | | | 0 | 2026-09-12 | |
-| 2 | Principle of dominance | 1 | 2026-09-11 | | | 0 | 2026-09-12 | |
-| 3 | Right vs rational decisions | 1 | 2026-09-11 | | | 0 | 2026-09-12 | |
-| 4 | Principle of insufficient reason | 1 | 2026-09-11 | | | 0 | 2026-09-12 | |
+| 2 | Principle of dominance | 1 | 2026-09-11 | 2026-09-14 | ~ | 0 | 2026-09-17 |  |
+| 3 | Right vs rational decisions | 1 | 2026-09-11 | 2026-09-14 | O | 1 | 2026-09-21 |  |
+| 4 | Principle of insufficient reason | 1 | 2026-09-11 | 2026-09-14 | ~ | 0 | 2026-09-17 |  |
 | 5 | Utility and preferences | 1 | 2026-09-11 | | | 0 | 2026-09-12 | |
 | 6 | Ordinal vs cardinal utility | 1 | 2026-09-11 | | | 0 | 2026-09-12 | |
