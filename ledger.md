@@ -45,6 +45,7 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | — | — | 0 | 2026-09-12 |
 | PHIL 385 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | 1 | — | — | 0 | 2026-09-12 |
+| PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | — | — | 0 | 2026-09-15 |
 
 ## Term calendar — hard dates
 
@@ -150,3 +151,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-14 | Morning check: Canvas reachable again (no grade changes); fixed `quizlib.py` — `PHIL321` was missing from `COURSE_LABEL`/`TYPE_PREF`, crashing `quiz_pick.py --transit` whenever a PHIL 321 topic came due. Transit deck rebuilt (PHIL 321 + STAT 251, 6 q). |
 | 2026-09-14 | Quiz (transit): 6 q · 3 O / 2 ~ / 1 X · PHIL 321, STAT 251 · 4 ledger rows moved |
 | 2026-09-14 | Logged STAT 251 lec 3 (Ch 1: histograms, shape, mean and median, range; his page + the posted deck, outline consumed) → 14 questions, 3 ledger topics due Sep 15. |
+| 2026-09-14 | Logged PHIL 385 reading: The Unhappiest One, part 1 (first third) → 5 questions, 1 ledger topic due Sep 15. Page held as `readings/_unhappiest.md` until part 2 arrives, so the reading to-do stays open. |
