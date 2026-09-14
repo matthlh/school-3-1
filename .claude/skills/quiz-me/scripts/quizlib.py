@@ -21,7 +21,7 @@ QUIZ_DIR = os.path.join(ROOT, "routines", "quiz")
 RUNS_DIR = os.path.join(ROOT, "routines", "runs")
 MC_SCRIPTS = os.path.join(ROOT, ".claude", "skills", "morning-check", "scripts")
 
-COURSE_LABEL = {"STAT251": "STAT 251", "CPSC310": "CPSC 310", "PHIL385": "PHIL 385", "ASIA250": "ASIA 250"}
+COURSE_LABEL = {"STAT251": "STAT 251", "CPSC310": "CPSC 310", "PHIL385": "PHIL 385", "ASIA250": "ASIA 250", "PHIL321": "PHIL 321"}
 LABEL_COURSE = {v: k for k, v in COURSE_LABEL.items()}
 GRADES = ("X", "~", "O")
 GRADE_RANK = {"X": 0, "~": 1, "O": 2}          # lower = worse; a topic's session grade is the worst
@@ -31,7 +31,8 @@ LEECH_X_IN_LAST = (2, 3)                       # ≥2 X in the last 3 asks → l
 TYPE_PREF = {"CPSC310": ["recall", "critique", "apply", "derive"],
              "PHIL385": ["recall", "apply", "critique", "derive"],
              "STAT251": ["apply", "derive", "critique", "recall"],
-             "ASIA250": ["recall", "apply", "critique", "derive"]}
+             "ASIA250": ["recall", "apply", "critique", "derive"],
+             "PHIL321": ["apply", "derive", "critique", "recall"]}
 
 # ---- dates / text --------------------------------------------------------------------------
 
