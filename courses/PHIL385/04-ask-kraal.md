@@ -2,52 +2,56 @@
 
 Office hours are Wednesday 12:15–12:45 on Zoom, and the link is on the Canvas front page. Email
 anders.kraal@ubc.ca a day ahead for a slot. He asks for questions at the end of lecture or in
-office hours rather than by email. A weekly to-do lands every Monday to top this page up.
+office hours rather than by email.
 
-A question earns its place here only if the text does not settle it. Anything you can answer by
-rereading belongs in the question bank instead.
+These are built to get his opinion rather than a fact. A question you can settle by rereading goes
+in the question bank instead.
 
 ## Ask these, in this order
 
-- **Whose view does an exam question want?** You have stressed that a pseudonym's position is not
-  Kierkegaard's. On a multiple-choice exam, if a question says "Kierkegaard holds that…" and the
-  claim comes from a pseudonymous book, is the answer the pseudonym's view, or is that option
-  wrong? How will the wording tell us which you are asking for?
-  - Worth asking first because the exams are marked on factual accuracy and each question is worth
-    about 2% of the course grade. This is the most likely place to lose marks on a technicality.
-- **Does biography help, or is it the thing pseudonymity is meant to block?** He broke the
-  engagement with Regine in October 1841, wrote most of the book in Berlin over that winter, and it
-  is often said the Seducer's Diary was meant to make her despise him. Reading the book through that
-  story is exactly the move you say the pseudonyms are built to prevent. So is the biography a
-  legitimate key, a distraction, or a trap he laid deliberately?
-- **Is Eremita's dating of the diary a joke at Strauss's expense?** Eremita works out that 7 April
-  must have been a Monday and concludes the diary is from 1834. That is historical-critical method
-  applied to documents Kierkegaard invented. Given that you opened the course with Strauss reading
-  the Gospels as myth, is the Preface parodying that kind of scholarship, or is the dating just
-  realism?
-- **Is A being satirized or presented straight?** How much of volume 1 is Kierkegaard exhibiting the
-  aesthete as a warning, and how much is it the aesthetic life-view getting its strongest possible
-  case? The answer changes how we should read every essay in the volume, including which claims are
-  A's real position and which are pose.
-- **Who is speaking in "The Unhappiest One"?** The essay is an address to the Symparanekromenoi, a
-  club inside A's own papers. Is that a further persona A puts on for the occasion, or is it just A
-  speaking? You have emphasised the layers in the Preface, so do the layers inside volume 1 count
-  the same way?
-- **Were there three spheres yet in 1843?** *Either/Or* gives two life-views plus a sermon at the
-  end. The aesthetic, ethical and religious scheme is laid out in *Stages* in 1845. Was the third
-  sphere already in view when he wrote this, or are we reading it back into the book?
-- **Does the book actually stay neutral?** B gets the last word, the larger share of the pages, and
-  the sermon. Some readers say that tilts the book toward the ethical whatever the Preface claims.
-  Others say A's essays are the more brilliant writing, so it tilts the other way. Do you think the
-  book leans, and does it matter if it does?
+- **What is the misreading that annoys you most?** In the first lecture you said Kierkegaard is
+  badly misunderstood, even by philosophers and scholars. Which misreading is the worst one, and who
+  is guilty of it?
+  - He set this up himself and did not cash it out. It is the easiest opinion in the room to get.
+- **Would Kierkegaard think a course on Kierkegaard is a contradiction?** He spent the end of his
+  life attacking exactly the figure who turns a life into lecture material, and he thought truth has
+  to be lived by a single person rather than taught to a room. So is teaching him this way a
+  betrayal of the project, or the only way anyone gets to him at all?
+- **Is he really the founder of existentialism, or is that a label pinned on him later?** Sartre and
+  the rest picked him up a century after the fact, and much of what they built drops the God the
+  whole authorship is aimed at. Would Kierkegaard have recognised himself in them, or would he have
+  been appalled?
+- **Was Kierkegaard right about Hegel, or attacking a caricature?** A common charge is that the
+  target is really the Danish Hegelians he had in the room with him, not Hegel. Does the critique
+  survive if the charge is true?
+- **Where does he actually belong?** Continental philosophy claims him, and you also teach
+  philosophy of religion, where he is read very differently. Is one of those readings closer to
+  right, and is there anything in him that only one of the two traditions can see?
+- **Which pseudonym do you find most persuasive, and which one do you dislike?** You have insisted
+  the views are not Kierkegaard's. Are any of them yours?
+- **Is there a part of Kierkegaard you think is simply wrong?** Not misread, wrong.
+- **Did the attack on Christendom at the end of his life follow from the authorship, or did he lose
+  it?** He spent his last two years going after the state church in public and died in the middle of
+  it. Is that the conclusion the books were building toward, or a breakdown that happens to be
+  written well?
+- **Does the aesthetic life-view actually fail on its own terms?** A ends in despair, but is that
+  because the view is incoherent, or because A is not very good at living it? Could someone pull it
+  off?
+
+## One boring question worth real marks
+
+- **Whose view does an exam question want?** If a question says "Kierkegaard holds that…" and the
+  claim comes from a pseudonymous book, is the pseudonym's view the right answer, or is that option
+  wrong? How will the wording tell us which you mean?
+  - Not interesting, but each exam question is worth about 2% of the course grade and this is the
+    likeliest way to lose one on a technicality.
 
 ## Settled without asking
 
-- Whether the Judge is Kierkegaard's final position. The text does not say. Eremita states outright
-  that the papers give no hint how things went for either man.
+- Whether the Judge is Kierkegaard's final position. The text does not say. Eremita states that the
+  papers give no hint how things went for either man.
 - Whether A is named Johannes. Not confirmed anywhere. Johannes is named only inside the diary.
-- Where the sermon sits. It is in B's section, enclosed in his third and shortest letter, the
-  Ultimatum.
+- Where the sermon sits. In B's section, enclosed in his third and shortest letter, the Ultimatum.
 - Whether "A Fragment of Life" is a jab at system-building. Yes.
 
 ## Still open from earlier
