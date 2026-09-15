@@ -100,3 +100,49 @@ Conclusion: engineers need to know requirements, design, and validation of code,
 3. `<natural-language requirements, existing system>`
 
 Requirements appear in every stage; only their form changes, to natural language. Code drops out of the human's hands. So requirements fluency and validation fluency (the open "validation?" on the last stage) are what remain the engineer's job when source-code writing is automated.
+
+## Lab 1 — Onboarding: HTTP, PUT idempotence, request path, async (logged 2026-09-14)
+
+### Q: Give the HTTP status code and one-line meaning for each: OK, CREATED, NO_CONTENT, NOT_FOUND, UNPROCESSABLE_ENTITY. Then say what separates 400 from 422.
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** recall
+**A:** 200 worked, result in body. 201 worked, made a new thing, shown in body. 204 worked, nothing to send back. 404 nothing at that address. 422 request parsed fine but the contents break a rule (missing or wrong-typed field). 400 is when the body could not be parsed at all; 422 is when it parsed but is unacceptable.
+
+### Q: The same PUT /api/v2/buildings/ICCS is sent twice with valid bodies. What status does each call return, and why do they differ?
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** apply
+**A:** First 201 Created (ICCS did not exist, so it was created). Second 204 No Content (ICCS existed, so it was replaced and there is nothing to echo back). The request is identical; the server's prior state differs.
+
+### Q: Define idempotent. Is PUT idempotent even though the two calls above returned different status codes? Justify. Which method is not idempotent and why?
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** derive
+**A:** A request is idempotent if sending it twice leaves the server in the same state as sending it once. PUT is: it says "make the resource at this address look like this", so a repeat changes nothing further. Status codes describe what the server did, not the resulting state, so 201 then 204 is still idempotent, and that is what makes retry-after-timeout safe. POST is not: it means "add one to this collection", so two POSTs create two things.
+
+### Q: In the InsightUBC PUT building endpoint, where does the building id come from, and which four body fields are required? What happens if lat is omitted?
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** recall
+**A:** The id is the path segment (/api/v2/buildings/:buildingId), never in the body; it appears only in the response. Required body fields: name, address, lat, lon. Omitting lat gives 422 with fields.lat = "required but missing"; the exact wording is part of the spec contract.
+
+### Q: You have a 422 and the exact string "required but missing" and want the code that produced it. Which of the three code-finding techniques do you use, and why not the other two?
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** apply
+**A:** Text search, because what you hold is a string, and only text search reaches inside string literals and non-code files. Go-to-definition / find-references need a name that exists in the code (a function, class, field) and are type-aware. Running it with a breakpoint or failing test is for when you have neither a name nor a string.
+
+### Q: validateBuildingParams in App.ts: name three design facts the lab wanted you to notice, and say what that implies for adding a fifth field (campus) in D1.
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** critique
+**A:** (1) It keeps checking after the first failure, so one response reports every bad field. (2) Each required field is its own near-identical eight-line block (missing → "required but missing", wrong type → "expected a …"). (3) Nothing links the strings to openapi.yml; a human typed them, and TypeScript would not notice if the spec's wording changed. So campus means a fifth copy of the block, a hand edit of the spec, and new tests, with nothing checking the three agree.
+
+### Q: Define route, handler, path parameter, and middleware in one line each, using app.delete("/api/v2/buildings/:buildingId", async (req, res) => {…}) as the example. What are req and res?
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** recall
+**A:** Route: method + path pattern registered once at startup. Handler: the function stored with it, run on every matching request. Path parameter: the :buildingId segment, available as req.params.buildingId ("ICCS"). Middleware: code run on every request before any handler, e.g. express.json() which parses the body into req.body. req is the incoming request (read from it); res is the reply (write to it with res.status(…).send(…)).
+
+### Q: Trace DELETE /api/v2/buildings/ICCS for a building that exists: list the stages in order from Express matching the route to the response being sent.
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** derive
+**A:** (1) Express matches method and path, sets req.params.buildingId = "ICCS", calls the handler. (2) Handler builds a new Model and calls deleteBuilding("ICCS"). (3) readBuildings() loads data/buildings.json and rebuilds Building objects. (4) findIndex locates ICCS in the array. (5) getJSONForDelete() captures the response body before removal. (6) splice removes it. (7) writeBuildings() writes the whole array back over the file. (8) Handler copies the returned status and body into the HTTP response.
+
+### Q: True or false, with a reason: (i) the Model keeps buildings in memory between requests; (ii) deleting one building rewrites only its entry in the file; (iii) registering a route runs the handler at startup; (iv) a missing buildings.json crashes readBuildings.
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** apply
+**A:** (i) False: a new Model is built per request and deleteBuilding starts with readBuildings(). (ii) False: writeBuildings stringifies the entire array. (iii) False: registering stores the function; it runs per matching request. (iv) False: the try/catch sets an empty array instead.
+
+### Q: Node has one thread. Explain how it still serves 20 concurrent requests that each read a file, using the terms call stack, hand-off to the OS, callback queue, and "queue drains when the stack is empty". Then: if a 100 ms read blocked instead of suspending, how many could start per second?
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** derive
+**A:** await fs.readFile hands the read to the OS and suspends the function, so it leaves the call stack and the thread is free; all 20 reads can be in flight at once. When the OS finishes, the continuation goes on the callback queue, which drains only when the stack is empty, so a callback never interrupts running code. Blocking at 100 ms each would cap the server at 10 reads per second.
+
+### Q: deleteBuilding touches no disk or network itself, yet it is declared async. Why must it be, and what happens if a caller forgets await on an async function whose body throws?
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** derive
+**A:** Completion must be tracked at every level between the slow operation and whoever needs the result; a function can only hand its caller that tracking (a Promise) if it is itself async, so async propagates up the call chain (readBuildings → deleteBuilding → handler). Without await, the throw becomes a rejected Promise nobody holds: the following line ("Report sent.") still runs, then Node dies with an unhandled rejection. The compiler does not catch the missing await.
