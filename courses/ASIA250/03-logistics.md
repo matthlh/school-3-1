@@ -4,6 +4,7 @@
   week later at 23:59. Week 6 (Oct 12) Thanksgiving and week 10 (Nov 9) reading break have no
   lecture; SWR1 is published Sun Oct 11. Last lecture week 13 (Nov 30); last Q&A Dec 4.
 - **Q&A:** Fridays 19:30–~20:30, Sep 11 – Dec 4, optional. Zoom link + passcode: Canvas → Zoom tab.
+- **Office hours:** Wednesdays 4–5 pm, or by appointment. Auditorium Annex B, Room 100, 1924 West Mall (back of the building, ground floor). Email samuel.shooklyn@ubc.ca at least 24 hours ahead to secure a spot.
 - **Citation style:** all short written responses and the final paper must use Chicago/Turabian Author-Date style, not APA or MLA. Footnotes are not allowed in this style. A title page is required for the final paper but not for the short written responses. The course posts a sample paper (Canvas file 47240878) with the formatting instructions marked on it.
 - **Novel:** Option A, Mishima, *The Temple of the Golden Pavilion* (chosen 2026-09-13). Declare on Canvas by Mon Sep 14 23:59 (stays open to Sep 23). Final paper (47%) and the week 9 film (*Fancy Dance*) are on it.
 
@@ -24,7 +25,6 @@ Readings 3 also has four YouTube links and an 84000.co sutra translation (Gandav
 Open a file at `https://canvas.ubc.ca/courses/193131/files/<id>`.
 
 ## Reference (for Claude)
-- Office hours: Wed 4–5pm, Auditorium Annex B Rm 100 — email 24 h ahead for a slot.
 - Canvas course ID 193131. Tabs: Home, Announcements, Modules, Assignments.
 - Week 1 module files: recording `lecture1.mp4` files/47240874 (285 MB) · slides `Lecture 1.pptx`
   files/47240873 (53 slides) · Mini-Quiz 1 modules/items/9469880. Slide text is readable without
