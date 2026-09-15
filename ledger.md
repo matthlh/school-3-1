@@ -7,10 +7,8 @@ The one file I read first every session. If a row's `Next` is on or before today
 
 ## Due now
 
-_11 topics due as of Mon Sep 14. Say **quiz me**._
+_8 topics due as of Mon Sep 14. Say **quiz me**._
 
-- PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 2 d · last X
-- PHIL 321 · Utility and preferences · overdue 2 d · last X
 - PHIL 321 · Ordinal vs cardinal utility · overdue 2 d · last X
 - PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 2 d · last unquizzed
 - PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 2 d · last unquizzed
@@ -19,7 +17,6 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 - PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 2 d · last unquizzed
 - PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 2 d · last unquizzed
 - CPSC 310 · What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) · due today · last X
-- CPSC 310 · Three fluencies · roadmap radii · 4 learning objectives · due today · last X
 
 ## All topics
 
@@ -32,14 +29,14 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | — | — | 0 | 2026-09-15 |
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
-| CPSC 310 | Three fluencies · roadmap radii · 4 learning objectives | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
+| CPSC 310 | Three fluencies · roadmap radii · 4 learning objectives | 1 | 2026-09-14 | X | 0 | 2026-09-15 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · PUT idempotence · spec as contract) | Lab 1 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · DELETE trace · code-finding · event loop) | Lab 1 | — | — | 0 | 2026-09-15 |
-| PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
+| PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-14 | X | 0 | 2026-09-15 |
 | PHIL 321 | Principle of dominance | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Right vs rational decisions | 1 | 2026-09-14 | O | 1 | 2026-09-21 |
 | PHIL 321 | Principle of insufficient reason | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
-| PHIL 321 | Utility and preferences | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
+| PHIL 321 | Utility and preferences | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Ordinal vs cardinal utility | 1–2 | 2026-09-11 | X | 0 | 2026-09-12 |
 | PHIL 321 | Preference relations and ordinal-scale axioms | 2 | 2026-09-14 | X | 0 | 2026-09-15 |
 | PHIL 321 | Ignorance rules: maximin, leximin, maximax, optimism-pessimism | 2 | 2026-09-14 | X | 0 | 2026-09-15 |
@@ -163,3 +160,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-14 | PHIL 385 Exam 3 settled at **Fri Oct 30, 14:00–14:50** (Matt re-checked Canvas and the syllabus; they agree). The Nov 20 discrepancy is closed in the syllabus, logistics and term calendar. Oct 30 is now a confirmed triple: STAT 251 midterm 8am, STAT in-lab quiz 11:20, PHIL 385 Exam 3 2pm. |
 | 2026-09-14 | Planner: weekly **Questions for Kraal (week of …)** to-do added to the `WEEKLY` table (Mondays, PHIL 385, 15m/P2, deadline Tuesday) so questions about the reading are collected before Wednesday office hours. |
 | 2026-09-14 | CPSC 310 Lab 1 walked through (PrairieLearn LAB01.1–6) → 11 questions, 2 ledger topics due Sep 15. Project repo cloned, builds, 462 tests pass; format-on-save set up. |
+| 2026-09-14 | Quiz (quiz): 6 q · 0 O / 3 ~ / 3 X · CPSC 310, PHIL 321 · 3 ledger rows moved · stopped at 8 of 10; picker gave PHIL 385 nothing |

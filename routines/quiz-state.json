@@ -81,6 +81,10 @@
     [
      "2026-09-11",
      "X"
+    ],
+    [
+     "2026-09-14",
+     "X"
     ]
    ]
   },
@@ -201,6 +205,10 @@
     [
      "2026-09-11",
      "X"
+    ],
+    [
+     "2026-09-14",
+     "X"
     ]
    ]
   },
@@ -311,6 +319,46 @@
     [
      "2026-09-14",
      "O"
+    ]
+   ]
+  },
+  "8f41dc5f": {
+   "course": "PHIL321",
+   "topic": "Utility and preferences",
+   "history": [
+    [
+     "2026-09-14",
+     "~"
+    ]
+   ]
+  },
+  "774c530c": {
+   "course": "PHIL321",
+   "topic": "Decision situations (certainty / risk / ignorance)",
+   "history": [
+    [
+     "2026-09-14",
+     "X"
+    ]
+   ]
+  },
+  "5ebf5aa9": {
+   "course": "PHIL321",
+   "topic": "Utility and preferences",
+   "history": [
+    [
+     "2026-09-14",
+     "~"
+    ]
+   ]
+  },
+  "323855c9": {
+   "course": "PHIL321",
+   "topic": "Decision situations (certainty / risk / ignorance)",
+   "history": [
+    [
+     "2026-09-14",
+     "~"
     ]
    ]
   }
@@ -537,6 +585,50 @@
      "db431ecf",
      "STAT251",
      "O"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-14",
+   "mode": "quiz",
+   "n": 6,
+   "note": "stopped at 8 of 10; picker gave PHIL 385 nothing",
+   "results": [
+    [
+     1,
+     "8f41dc5f",
+     "PHIL321",
+     "~"
+    ],
+    [
+     2,
+     "a184039c",
+     "CPSC310",
+     "X"
+    ],
+    [
+     3,
+     "774c530c",
+     "PHIL321",
+     "X"
+    ],
+    [
+     5,
+     "5ebf5aa9",
+     "PHIL321",
+     "~"
+    ],
+    [
+     6,
+     "4e15c1b1",
+     "CPSC310",
+     "X"
+    ],
+    [
+     7,
+     "323855c9",
+     "PHIL321",
+     "~"
     ]
    ]
   }

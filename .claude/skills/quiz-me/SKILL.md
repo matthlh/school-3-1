@@ -55,13 +55,16 @@ sends grades and no session file exists, say so — never invent one.
 
 ## What the scripts decide (don't second-guess them)
 - **Topic priority** = due/overdue (+5 per day late, capped) + grade (`X` 60 · `~` 30 · unquizzed 40 ·
-  `O` 0), ×2 within 7 d of that course's exam (term.py), ×1.5 within 14 d. Not-due topics only fill
-  leftover slots, marked *(ahead)*.
+  `O` 0), ×2 within 7 d of that course's exam (term.py), ×1.5 within 14 d, ×1.25 within 21 d. Not-due
+  topics only fill leftover slots, marked *(ahead)*.
+- **Course quotas:** every due course gets slots in proportion to the summed priority of its due topics,
+  never fewer than one, and the courses are interleaved by weighted round-robin. So a course with an exam
+  coming and six unquizzed topics gets most of the session, and a two-topic course cannot crowd it out.
 - **Within a topic:** never-asked first, then last-missed, then stalest, plus a small bonus for the
   question types that course's exam rewards (CPSC 310 recall/critique · STAT 251 apply/derive ·
   PHIL 385 and ASIA 250 recall).
-- **Interleave:** never the same course twice in a row when another is available, never the same
-  topic twice in a row, cap per topic = max(3, n ÷ due topics).
+- **Interleave:** within the quotas, never the same topic twice in a row, cap per topic =
+  max(3, n ÷ due topics); leftover slots go to the best remaining due questions, then *(ahead)* ones.
 - **Topic session grade** = the worst grade among its questions. Ladder from CLAUDE.md:
   `X` streak 0, +1 d · `~` +3 d · `O` streak+1, +7 / +16 / +35 d.
 - `ledger.md` is authoritative. `courses/<CODE>/01-topics.md` rows are mirrored best-effort (by LO
@@ -82,6 +85,12 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-09-14: five sessions in, PHIL 385 had never been asked (exam Oct 2, 22 questions banked) because
+  the greedy interleave alternated the two highest-priority courses (PHIL 321 X topics, CPSC 310 lec 1)
+  until the slots ran out. Picker now gives each due course a quota by summed priority and round-robins
+  them; exam boost widened to ×1.25 at ≤21 d. Matt also called out the CPSC 310 lec 1 questions as
+  course-framing, not exam material (week ranges, learning objectives, SE task list): cut. Rule from it:
+  when he says a question is useless, drop it from the bank on the spot instead of grading it.
 - 2026-09-13: transit deck grading moved onto the Transit Deck artifact (inline O/~/X, saved to its
   `db` capability). "Grade my deck" pulls `grades/<date>` from there instead of a pasted reply; the
   morning check also sweeps it for anything ungraded before building the next day's deck.

@@ -38,16 +38,13 @@ Changing requirements is the driver. It is what makes cost of change the central
 
 Software therefore has to be easy to evolve, maintain and test. So you need measurable ways to compare two designs of the same thing and to articulate the trade-offs. That is what "analytical" code design means.
 
-### Q: Per the reader, programming is only one of the tasks of software engineering. Name the task programming corresponds to and list the others.
-**Topic:** What SE is  **Lec:** 1  **Type:** recall
-**A:** Programming is the *build* task. The full list: specify, invent, design, build, validate, deploy, maintain, research, improve. SE covers work before building (specification, design) and after (deployment, maintenance, evolution).
-
-### Q: Name the three "fluencies" (Holmes 2026) and give a one-line definition of each.
+### Q: Name the three fluencies the reader says CPSC 310 builds (Holmes 2026). Names only.
 **Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
-**A:**
-- Decomposition fluency: breaking problems apart and critically evaluating how others have.
-- Requirements fluency: tracing design and implementation decisions back to their requirements.
-- Validation fluency: confirming an implementation realises its design today and will keep affording change as needs evolve.
+**A:** Decomposition fluency, requirements fluency, and validation fluency.
+
+### Q: Define decomposition fluency in one line. Then say which of the three fluencies is about whether the code will keep affording change as needs evolve.
+**Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
+**A:** Decomposition fluency is breaking problems apart and critically evaluating how others have broken them apart. Validation fluency is the one about affording change: it confirms an implementation realises its design today and will keep doing so as needs evolve.
 
 ### Q: In the slides' diagram of traditional practice → source-code assistance → vibe coding, what changes along the arrow, and what is the conclusion about what engineers "need to know"?
 **Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
@@ -57,21 +54,6 @@ Software therefore has to be easy to evolve, maintain and test. So you need meas
 3. `<natural-language requirements, existing system>`, producing an executable feature, with "validation?" left open.
 
 Conclusion: engineers need to know requirements, design, and validation of code, not just how to write and read source code.
-
-### Q: The semester roadmap frames the course as "cost of change at bigger radii". Give the three scales, their week ranges, and the question each asks.
-**Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
-**A:**
-- Inside a codebase you own (weeks 2–5): why is this change expensive here and cheap there?
-- At its boundaries (weeks 6–7): where should the boundaries be, and what happens once you publish one?
-- Across a system and team (weeks 8–13): how does a team change one codebase without breaking each other?
-
-### Q: State the four course learning objectives.
-**Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
-**A:**
-- (1) Reason about how a codebase's structure influences the cost of changing it.
-- (2) Use abstraction to make changing a system cheaper at increasingly larger scales.
-- (3) Elicit, deconstruct, and refine requirements, and write specifications precise enough to check.
-- (4) Evaluate the socio-technical trade-offs in collaborative software engineering processes.
 
 ### Q: Your internship was "clients changing requirements all the time". Using the lecture's framing, say why the course thinks that experience is the *problem statement* rather than the *skill* — what does it claim you still need?
 **Topic:** What SE is  **Lec:** 1  **Type:** critique
@@ -83,23 +65,6 @@ Conclusion: engineers need to know requirements, design, and validation of code,
 - (a) Requirements fluency
 - (b) Validation fluency
 - (c) Decomposition fluency. (Holmes 2026.)
-
-### Q: Fill the key nouns in the four learning objectives: (1) how a codebase's ____ influences the ____ of changing it; (2) use ____ to make changing a system cheaper at ____ scales; (3) elicit, deconstruct and refine ____, and write ____ precise enough to check; (4) evaluate the ____ trade-offs in ____ software engineering processes.
-**Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
-**A:**
-- (1) structure, cost
-- (2) abstraction, increasingly larger
-- (3) requirements, specifications
-- (4) socio-technical, collaborative. Hook: change cost, abstraction, requirements, socio-technical.
-
-### Q: The vibe-coding diagram writes each stage as a pair of human inputs. Write the three pairs in order, say which element survives in all three, and what that implies for the fluencies.
-**Topic:** Three fluencies & roadmap  **Lec:** 1  **Type:** recall
-**A:**
-1. `<requirements, code>`
-2. `<natural-language requirements, code>`
-3. `<natural-language requirements, existing system>`
-
-Requirements appear in every stage; only their form changes, to natural language. Code drops out of the human's hands. So requirements fluency and validation fluency (the open "validation?" on the last stage) are what remain the engineer's job when source-code writing is automated.
 
 ## Lab 1 — Onboarding: HTTP, PUT idempotence, request path, async (logged 2026-09-14)
 

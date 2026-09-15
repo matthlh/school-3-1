@@ -14,10 +14,12 @@ Usage:
   --report     print the focus block only (no session file)
 
 Selection: topic priority (overdue days, grade X > ~ > unquizzed > O, ×2 within 7 d of that
-course's exam, ×1.5 within 14 d) + question score (never asked > missed > stale > solid, plus a
-small bonus for the question types that course's exam rewards). Then greedy with interleaving:
-never the same course twice in a row when another course is available, never the same topic
-twice in a row, at most CAP questions per topic. Not-yet-due topics fill the remainder ("ahead").
+course's exam, ×1.5 within 14 d, ×1.25 within 21 d) + question score (never asked > missed >
+stale > solid, plus a small bonus for the question types that course's exam rewards).
+Every due course gets a quota of the session proportional to the summed priority of its due
+topics (never 0), and the courses are interleaved by weighted round-robin; within a course the
+best-scoring question wins, never the same topic twice in a row, at most CAP questions per topic.
+Leftover slots go to the best remaining due questions, then to not-yet-due topics ("ahead").
 Always refreshes the "## Due now" block in ledger.md (idempotent, nothing else touched).
 """
 import argparse, datetime as dt, json, math, os, random, sys
@@ -34,7 +36,7 @@ def topic_priority(row, today, exam_days, force_due):
         p = 100 + (min(late, 20) * 5 if (late and late > 0 and not force_due) else 0)
     p += {"X": 60, "~": 30, "O": 0}.get(row["grade"], 40)
     if exam_days is not None:
-        p *= 2 if exam_days <= 7 else 1.5 if exam_days <= 14 else 1
+        p *= 2 if exam_days <= 7 else 1.5 if exam_days <= 14 else 1.25 if exam_days <= 21 else 1
     return p, due
 
 def question_score(q, hist, today, rnd):
@@ -84,12 +86,13 @@ def main():
         return
 
     # ---- candidates
-    cands = []
+    cands, prio = [], {}
     for r in fx["rows"]:
         qs = fx["by_topic"].get(r["idx"], [])
         if not qs:
             continue
         pr, due = topic_priority(r, today, exams.get(r["course"], (None,))[0], a.all)
+        prio[r["idx"]] = (pr, due, r["course"])
         for q in qs:
             cands.append(dict(q=q, row=r, due=due, score=pr + question_score(q, L.history(state, q), today, rnd)))
     if not cands:
@@ -102,23 +105,46 @@ def main():
     due_pool = [c for c in pool if c["due"]]
     ahead_pool = sorted((c for c in pool if not c["due"]), key=lambda c: (c["row"]["next_date"] or dt.date.max, -c["score"]))
 
-    chosen, per_topic, last_course, last_topic = [], {}, None, None
-    def take(from_pool):
+    # Course quotas. Each due course gets slots in proportion to the summed priority of its due
+    # topics (more topics, more overdue, weaker, nearer exam → more), never fewer than one.
+    # Plain greedy interleaving let two urgent courses alternate and starve a third: five sessions
+    # up to 2026-09-14 never asked PHIL 385 once with its exam 18 d out.
+    weight = {}
+    for idx, (pr, due, course) in prio.items():
+        if due:
+            weight[course] = weight.get(course, 0.0) + pr
+    total = sum(weight.values())
+    quota = {c: max(1, round(n * w / total)) for c, w in weight.items()} if total else {}
+
+    chosen, per_topic, per_course, last_course, last_topic = [], {}, {}, None, None
+    def eligible(from_pool, course=None):
+        return [c for c in from_pool if c not in chosen and per_topic.get(c["row"]["idx"], 0) < cap
+                and (course is None or c["q"]["course"] == course)]
+    def pick_from(ok):
         nonlocal last_course, last_topic
-        ok = [c for c in from_pool if per_topic.get(c["row"]["idx"], 0) < cap and c not in chosen]
-        if not ok:
-            return False
         pref = [c for c in ok if c["q"]["course"] != last_course] or ok
         pref = [c for c in pref if c["row"]["idx"] != last_topic] or pref
         c = pref[0]
         chosen.append(c)
         per_topic[c["row"]["idx"]] = per_topic.get(c["row"]["idx"], 0) + 1
+        per_course[c["q"]["course"]] = per_course.get(c["q"]["course"], 0) + 1
         last_course, last_topic = c["q"]["course"], c["row"]["idx"]
-        return True
-    while len(chosen) < n and take(due_pool):
-        pass
-    while len(chosen) < n and take(ahead_pool):
-        pass
+    # 1) due topics, courses interleaved by smooth weighted round-robin on their quotas
+    credit = {c: 0.0 for c in quota}
+    while len(chosen) < n:
+        live = [c for c in quota if per_course.get(c, 0) < quota[c] and eligible(due_pool, c)]
+        if not live:
+            break
+        for c in live:
+            credit[c] += quota[c]
+        c = max(live, key=lambda k: credit[k])
+        credit[c] -= sum(quota[k] for k in live)
+        pick_from(eligible(due_pool, c))
+    # 2) leftover slots: best remaining due questions (quota rounding, a course ran dry), then ahead
+    while len(chosen) < n and eligible(due_pool):
+        pick_from(eligible(due_pool))
+    while len(chosen) < n and eligible(ahead_pool):
+        pick_from(eligible(ahead_pool))
 
     # ---- session file
     items = []
