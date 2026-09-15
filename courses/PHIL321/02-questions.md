@@ -216,3 +216,19 @@ Same ranking, different verdict. Expected-value reasoning needs an interval (car
 ### Q: What does it mean that a preference ordering is "relative to a time", and why does that matter for decision theory?
 **Topic:** Preference relations and ordinal-scale axioms  **Lec:** 2  **Type:** recall
 **A:** The axioms constrain an agent's preferences at a given time, not across their life. Preferences can change over time without irrationality; a decision is rational relative to the preferences the agent holds when deciding.
+
+### Q: A hiker picks a route with no idea what the weather will be. Route A gives 10 if sunny and 2 if it rains; route B gives 6 if sunny and 5 if it rains. Which route does maximin pick, which does maximax pick, and what attitude to risk would make each rule the right one?
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** apply
+**A:** Maximin picks B, because its worst outcome (5) beats A's worst (2). Maximax picks A, because its best outcome (10) beats B's best (6). Maximin fits an agent who must guarantee a floor and treats the worst case as what matters; maximax fits an agent who only cares about the best case.
+
+### Q: Two acts share the same worst outcome: a1 = (3, 3, 8) and a2 = (3, 6, 6). Maximin cannot separate them. Show how leximin decides, and say what leximin does if the second-worst outcomes tie too.
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** derive
+**A:** Leximin sorts each act's outcomes from worst to best and compares position by position. Worst outcomes tie at 3, so it moves to the second-worst: a1 has 3 and a2 has 6, so a2 wins. If those tied too it would compare the third-worst, and so on; if every position ties the agent is indifferent between the acts.
+
+### Q: Using a1 = (2, 5, 9) and a2 = (4, 4, 6), find the optimism index α at which the optimism-pessimism rule is indifferent between the two acts, and say which act it picks above and below that α.
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** derive
+**A:** Score each act as α·(best) + (1 − α)·(worst). a1 scores 9α + 2(1 − α) = 2 + 7α. a2 scores 6α + 4(1 − α) = 4 + 2α. They are equal when 2 + 7α = 4 + 2α, so α = 0.4. Above 0.4 (more optimistic) the rule picks a1; below 0.4 it picks a2.
+
+### Q: Someone says the optimism-pessimism rule is just maximin and maximax averaged, so it works on an ordinal scale like they do. What is wrong with that?
+**Topic:** Ignorance rules: maximin, leximin, maximax, optimism-pessimism  **Lec:** 2  **Type:** critique
+**A:** The rule weights and adds the best and worst utilities, so its verdict depends on the size of the gaps between outcomes, not just their order. Any strictly increasing transformation keeps the order but can change which act scores higher, so the rule needs an interval scale. Maximin and maximax only compare outcomes one against another, so they survive any order-preserving transformation and need only ordinal information.
