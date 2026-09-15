@@ -33,6 +33,8 @@ _11 topics due as of Mon Sep 14. Say **quiz me**._
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | What SE is (Hoc & Nguyen-Xuan def · 210 vs 310 · "managing what a change costs" · code vs software) | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
 | CPSC 310 | Three fluencies · roadmap radii · 4 learning objectives | 1 | 2026-09-13 | X | 0 | 2026-09-14 |
+| CPSC 310 | Lab 1 HTTP & PUT (status codes · PUT idempotence · spec as contract) | Lab 1 | — | — | 0 | 2026-09-15 |
+| CPSC 310 | Lab 1 request path & async (route/handler/middleware · DELETE trace · code-finding · event loop) | Lab 1 | — | — | 0 | 2026-09-15 |
 | PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-11 | X | 0 | 2026-09-12 |
 | PHIL 321 | Principle of dominance | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Right vs rational decisions | 1 | 2026-09-14 | O | 1 | 2026-09-21 |
@@ -160,3 +162,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-14 | Logged PHIL 385 lec 2 (the Preface, A's papers vs B's papers) → 11 new questions plus 4 more on pseudonymity, 2 new ledger topics due Sep 15. Checked against the Danish *Enten–Eller* and corrected two things I had written into the Preface page: Eremita left A's essays in the order he found them rather than arranging them, and he did not drop the one-author reading — it is what decided the title. |
 | 2026-09-14 | PHIL 385 Exam 3 settled at **Fri Oct 30, 14:00–14:50** (Matt re-checked Canvas and the syllabus; they agree). The Nov 20 discrepancy is closed in the syllabus, logistics and term calendar. Oct 30 is now a confirmed triple: STAT 251 midterm 8am, STAT in-lab quiz 11:20, PHIL 385 Exam 3 2pm. |
 | 2026-09-14 | Planner: weekly **Questions for Kraal (week of …)** to-do added to the `WEEKLY` table (Mondays, PHIL 385, 15m/P2, deadline Tuesday) so questions about the reading are collected before Wednesday office hours. |
+| 2026-09-14 | CPSC 310 Lab 1 walked through (PrairieLearn LAB01.1–6) → 11 questions, 2 ledger topics due Sep 15. Project repo cloned, builds, 462 tests pass; format-on-save set up. |
