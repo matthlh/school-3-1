@@ -20,8 +20,8 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    sentence glue (menu paths like Canvas → Zoom are fine).
 2. Extract every testable claim into `courses/<CODE>/02-questions.md` in the Q/A format.
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
-   course allows it — except CPSC 310, where precise `recall` of terminology is what the
-   exams actually test.
+   course allows it. For CPSC 310 that means `apply`/`critique` on a code or design fragment plus
+   `recall` of the reader's exact terms; skip housekeeping slides entirely.
 3. Add any new topic to `courses/<CODE>/01-topics.md` and to `ledger.md` with `Next = today + 1`,
    then `sh publish.sh "Log <CODE> lec N"` — the notes site redeploys itself.
 4. Report only what changed. No summaries of the notes back to him.
@@ -71,10 +71,14 @@ builds the 6-question deck the morning check sends to his phone. Last step of ev
 
 ## Course-specific rules
 - **CPSC 310** — 65% of the grade is two closed-book exams (25% mid + 40% final); the project
-  is only 20%. Past finals were heavy on precise factual recall of terminology and on
-  *justifying* an answer, with trick questions. So: drill definitions and distinctions hard
-  (cohesion vs. connascence, LSP, test doubles, the pattern set, API change severity), and
-  always make him justify, not just answer. Do **not** let him sink unbounded hours into the
+  is only 20%. The 26W1 syllabus (read 2026-09-14) says memorising definitions is not sufficient:
+  exams put code or a design he has not seen in front of him and ask what is wrong, what he would
+  change, and why — "the same thing the lab assignments ask". So the bank is weighted to `apply` and
+  `critique` on unseen code, with the reader's terminology (cohesion vs. connascence, LSP, test
+  doubles, the pattern set, API change severity) as the vocabulary underneath; always make him
+  justify. Course housekeeping (learning objectives, roadmap weeks, slide diagrams about AI) is not
+  exam material — do not bank it. No past papers exist for this version (exams are private; the
+  CSSS bank stops at 2009), so labs and iClicker questions are the only format samples. Do **not** let him sink unbounded hours into the
   deliverables — the bucket grading means extra hours past "meets spec" return nothing.
   **Intel (2026-09-10):** 2025W sections (Chin, Bradley, Kerr) averaged ~82 with ~14% at 90+.
   The course reader (ubccpsc.github.io/310/textbook) is the reading list; exam terminology comes

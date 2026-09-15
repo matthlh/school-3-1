@@ -148,3 +148,11 @@ Searched again on Sep 11. Reddit is not reachable from the fetch tools and the s
 - "STAT 251 Postgame Interview" (May 2026, 12 points) is the thread already in the Sep 10 notes.
 - "Stat 251 Final" (2024, 6 points): "The final is not similar to practice exams." Do not calibrate on the practice exam alone; use WeBWorK and the suggested textbook problems too.
 - "Has anyone had Lasantha Premarathna before?" (Sep 9 2026, DSCI 100): an international student worried about following his lectures. Nothing actionable beyond sitting near the front.
+
+## Refresh 2026-09-14 — CPSC 310 exam format, from the 26W1 syllabus
+
+- The syllabus is explicit: "Memorizing definitions will not be sufficient: you will need to be able to read and comprehend code, apply concepts, and articulate the tradeoffs you considered." Every question asks for a justification.
+- The labs are named as the rehearsal: the exams "ask you to do what the lab assignments ask: take code or a design you have not seen, say what is wrong with it, and justify what you would change."
+- So the quiz bank should be weighted toward apply and critique questions on unseen code, with recall of reader terminology as the vocabulary underneath, not the goal. Course-housekeeping content (learning objectives, roadmap weeks, the vibe-coding diagram) is not exam material and was pruned from the bank on 2026-09-14.
+- No past papers exist for this version. The reader licence marks exams and solutions private; the CSSS bank has only a 2009 sample final (20 MC + 20 T/F + 80 marks of short-answer and design, 150 min). The 2025 Quizlet "final exam" set (88 terms) covers the old syllabus: security/STRIDE, agile/scrum/INVEST, MVC/MVP, DevOps. Of it, only testing (black/glass box, coverage, mutation, testability), code smells and refactoring, SOLID, design patterns, API design, semantic versioning and REST idempotence overlap the 26W1 reader.
+

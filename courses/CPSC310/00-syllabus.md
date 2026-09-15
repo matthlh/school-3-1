@@ -15,10 +15,12 @@
 versions of the course and does not apply to 26W1.
 
 ## Exam format
-- Closed book, no devices, no AI. You are "asked to justify your answer, not merely to give it."
+- Closed book, on paper, no devices, no AI. Every question asks you to justify your answer, not merely to give it.
+- The 26W1 syllabus says memorising definitions will not be sufficient. The exams put code or a design you have not seen in front of you and ask what is wrong with it, what you would change, and why.
+- Question kinds mirror what you practised in lecture activities, iClicker questions, lab tutorials, lab assignments and the project. Format details come closer to the exam date.
 - Midterm covers content through week 6 (Oct 15). Final is cumulative.
-- Past finals: precise recall of terminology, trick questions, harder than in-term quizzes.
-  Earlier terms used T/F with **negative marking** — not yet confirmed for this year.
+- There are no past papers for this version of the course. The reader's licence says exams and solutions are private. The CSSS exam bank only has a 2009 sample final: 20 marks MC, 20 marks true/false, then 11 short-answer and design questions worth 6 to 12 marks each, 120 marks in 150 minutes. Student Quizlet sets from 2025 cover the old syllabus (security, agile process, MVC), most of which is gone from 26W1.
+- Earlier terms used true/false with negative marking. Not yet confirmed for this year.
 
 ## Project — InsightUBC
 An inherited REST service for the Registrar (course and facilities data). D1 = two small features to
