@@ -88,6 +88,9 @@ builds the 6-question deck the morning check sends to his phone. Last step of ev
   The **Project** page (`/26w1/project/`, InsightUBC) links each deliverable spec as it is released;
   the script flags new ones. Deliverables are 50% autograded (best commit on `main` before the
   deadline) + 50% reflection, so the "meets spec" bar is visible on every push — stop there.
+  **Project repo:** cloned at `/Users/matthe/Documents/CodingProjects/CPSC 310/solo_mhe28` (SSH remote,
+  Node 24, `yarn build` / `yarn test`, VS Code format-on-save configured). **Never commit or push
+  there** (Matt, 2026-09-14) — every push to `main` is a graded submission; edit and test, he does git.
   **Logging a CPSC 310 lecture** = run `--lecture N`, then his page (if any) verbatim + clarifications
   from the deck + questions from deck *and* reader chapter. Decks download to
   `routines/slides/cpsc310/` (git-ignored); never copy slide text into the public repo beyond the
