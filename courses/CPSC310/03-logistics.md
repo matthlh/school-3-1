@@ -2,8 +2,11 @@
 
 - **Lectures:** Tue/Thu 12:30–2:00, LSK. Section 103 (iClicker code NBOE). Canvas is not used;
   the course site has everything and announcements are on Piazza.
-- **Labs:** Tue 9–11 on Zoom (links in Piazza @14). Lab blocks run Fri→Thu from Fri Sep 11.
-  Waitlisted → attend any lab. Work is due by the start of the next lab; lowest lab dropped.
+- **Labs:** his registered section is **L1N, Tue 09:00–11:00**, on Zoom. Section Zoom links are in
+  Piazza @14 (the passcode links are deliberately not copied into this repo). Lab blocks run
+  Fri→Thu from Fri Sep 11. Waitlisted → attend any lab. Work is due by the start of the next lab;
+  the lowest lab is dropped. PrairieLearn's own credit window overrides the "start of the next
+  lab" rule whenever the two disagree.
 - **Submissions:** PrairieLearn (labs, project questions, reflections); code on GitHub Enterprise
   (needs VPN + CWL). Starter repos were provisioned Sep 11; autograding runs from the week of Sep 14.
 - **Concessions:** only via the CPSC 310 Academic Concession Request Form, within one week of the

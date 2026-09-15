@@ -319,6 +319,15 @@ pre-questions above).
    `→ courses/<CODE>/lectures/_NN-<slug>.md` when the outline exists, then the 3 pre-questions. If
    the outline is missing because nothing is posted yet, say "no deck posted" — never summarise from
    memory.
+   **Labs count as classes (Matt, 2026-09-15).** A lab is a fixed slot he has to show up to, so it
+   gets its own bullet in the same block, before the lectures when it runs earlier in the day. His
+   registered sections are **CPSC 310 L1N, Tue 09:00–11:00 on Zoom** (links in Piazza @14) and
+   **STAT 251 L1K, Fri 11:00–12:00, ESB 1046** (in person, from Sep 21; Lab 0 the week of Sep 21 has
+   no assignment). The bullet carries the section, the time, the room or "Zoom", and what is due —
+   the PrairieLearn assessment for CPSC 310, the pre-lab quiz for STAT 251 — taken from the
+   PrairieLearn read (§6) and the ledger, never from memory. Lab work has its own deadline and does
+   not become a pre-question set: no 3 Qs on a lab line. Cancelled CPSC 310 labs: Wed Sep 30 and
+   Mon Oct 12.
 4. **Lecture log later** (CLAUDE.md rule): when he logs the lecture, the `_NN` outline is the
    clarification source and every deck-only claim becomes a question, then the `_NN` file is deleted
    (its content lives on in the questions and the notes file's Clarifications).
@@ -399,7 +408,9 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 - Mon 14 · 5.5/6 h · <what> · <what> (+2)
 - ⚠ OVER BUDGET Thu Sep 17: … has no room before Sep 18   ← the one decision
 
-**Today's classes**         one bullet per lecture happening today (none on weekends):
+**Today's classes**         one bullet per lecture AND per lab happening today (none on weekends):
+- <course> · <section> <time> · lab   labs first when they run earlier · section, time, room or
+    <what is due>                     Zoom, and what is due · no pre-questions on a lab line
 - <course> · <time> · <topic>         time · topic from the slide/page title, course-site row
 - ...                                 or reading schedule (§7) · end with "3 Qs below"
 
@@ -455,6 +466,12 @@ unless a deadline collision or a ⚠ OVER BUDGET line needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-09-15 (Matt: "For today's classes also include labs (i have one today)"): **Today's
+  classes** now covers labs as well as lectures — a lab is a fixed slot he has to attend, so it
+  earns its own bullet with section, time, room or Zoom, and what is due. His sections are CPSC 310
+  **L1N** (Tue 09:00–11:00, Zoom) and STAT 251 **L1K** (Fri 11:00–12:00, ESB 1046, from Sep 21);
+  the CPSC 310 section id was missing from `03-logistics.md` until now. Lab lines carry no
+  pre-questions.
 - 2026-09-13 (Matt: "can you not just login for me?"): no — passwords are never typed and Duo
   needs his phone. The 09-13 CWL wall was a 25.4 h gap between Canvas requests (the run fires
   at lid-open, not 06:35; Sep 11→12 was 23.8 h and fine). So: `fetch canvas` (fetch skill) re-runs
