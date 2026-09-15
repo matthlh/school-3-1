@@ -62,6 +62,9 @@ _21 topics due as of Tue Sep 15. Say **quiz me**._
 | PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | — | — | 0 | 2026-09-15 |
 | PHIL 385 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | — | — | 0 | 2026-09-15 |
 | PHIL 385 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | — | — | 0 | 2026-09-15 |
+| ASIA 250 | Defining religion, myth and ritual | 1 | — | — | 0 | 2026-09-16 |
+| ASIA 250 | Aesthetic experience and the faith frame | 1 | — | — | 0 | 2026-09-16 |
+| ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | — | — | 0 | 2026-09-16 |
 
 ## Term calendar — hard dates
 
