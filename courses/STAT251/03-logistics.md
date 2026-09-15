@@ -14,7 +14,7 @@
 ## Dates (Canvas, as of 2026-09-10)
 | What | When (Pacific) | Pts |
 |---|---|---|
-| WeBWorK 1–10 | Mon Sep 21 · Mon Sep 28 · Tue Oct 6 · Mon Oct 12 · Mon Oct 19 · Thu Oct 29 · Thu Nov 12 · Mon Nov 30 · Mon Dec 7 · Fri Dec 11, all 23:59 | |
+| WeBWorK 1–10 | **Tue Sep 22** · Mon Sep 28 · Tue Oct 6 · Mon Oct 12 · Mon Oct 19 · Thu Oct 29 · Thu Nov 12 · Mon Nov 30 · Mon Dec 7 · Fri Dec 11, all 23:59 | |
 | Pre-lab quizzes, Labs 2–8 | Fri Oct 2 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
 | In-lab quiz + follow-up (L1K) | Fri Oct 30, 11:20–11:40 and 11:45–12:00 | 3 + 3 |
 | Post-lab survey | Fri Nov 13, 23:59 | 1 |
@@ -51,5 +51,7 @@
   in all course assessments unless explicitly stated otherwise."
 - Canvas discussion boards: Other · Final Exam · Midterm · Written Assignments · Textbook Questions ·
   Labs · WeBWorK (all empty as of Sep 10).
-- Lecture pages live in the Canvas module "Lecture Materials". Each page has the slide PDF (`Lecture_NN_Chapter_K_CanvasPost.pdf`) plus a Panopto recording link, and the next lecture's page can appear a few days early (lecture 3's was up on Sep 11). Page slugs so far: `lecture-1-introduction-wed-sep-9` (files 47949983, 47723730), `lecture-2-ch-1-exploratory-data-analysis-fri-sep-11` (file 47723640), `lecture-3-ch-1-exploratory-data-analysis-contd-dot-mon-sep-14` (file 47723645).
-- Lecture 3's page says WeBWorK 1 opens Sep 14 and is due Tuesday Sep 22. The Canvas calendar entry used in the ledger says Mon Sep 21. Confirm on WeBWorK when it opens.
+- Lecture pages live in the Canvas module "Lecture Materials". Each page has the slide PDF (`Lecture_NN_Chapter_K_CanvasPost.pdf`) plus a Panopto recording link, and the next lecture's page can appear a few days early (lecture 3's was up on Sep 11). Page slugs so far: `lecture-1-introduction-wed-sep-9` (files 47949983, 47723730), `lecture-2-ch-1-exploratory-data-analysis-fri-sep-11` (file 47723640), `lecture-3-ch-1-exploratory-data-analysis-contd-dot-mon-sep-14` (file 47723645), `lecture-4-ch-1-exploratory-data-analysis-contd-dot-wed-sep-16` (files 47723647 before the lecture, 47723806 after).
+- Slide files are named `BL` for the version posted before the lecture and `AL` for the version posted after it, which adds the worked solutions to the in-class questions. A file with neither tag is the same before and after.
+- WeBWorK 1 opened Sep 14 and is due **Tuesday Sep 22, 23:59**. The lecture 3 and lecture 4 Canvas pages both state this date, so it is taken as authoritative over the Canvas calendar entry, which sits at midnight on Sep 22 and was previously read as Mon Sep 21.
+- The remaining WeBWorK calendar entries all sit at midnight on the day after the date recorded here, so the whole series may be one day later than listed. Confirm each one inside WeBWorK itself; WeBWorK 6 would move from Thu Oct 29 to Fri Oct 30, which is already the STAT midterm, the in-lab quiz and PHIL 385 Exam 3.

@@ -4,6 +4,7 @@
   week later at 23:59. Week 6 (Oct 12) Thanksgiving and week 10 (Nov 9) reading break have no
   lecture; SWR1 is published Sun Oct 11. Last lecture week 13 (Nov 30); last Q&A Dec 4.
 - **Q&A:** Fridays 19:30–~20:30, Sep 11 – Dec 4, optional. Zoom link + passcode: Canvas → Zoom tab.
+- **Citation style:** all short written responses and the final paper must use Chicago/Turabian Author-Date style, not APA or MLA. Footnotes are not allowed in this style. A title page is required for the final paper but not for the short written responses. The course posts a sample paper (Canvas file 47240878) with the formatting instructions marked on it.
 - **Novel:** Option A, Mishima, *The Temple of the Golden Pavilion* (chosen 2026-09-13). Declare on Canvas by Mon Sep 14 23:59 (stays open to Sep 23). Final paper (47%) and the week 9 film (*Fancy Dance*) are on it.
 
 ## Readings on Canvas (files — nothing to buy)
