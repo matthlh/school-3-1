@@ -14,6 +14,16 @@
   must be booked ≥7 days ahead.
 - **AI:** allowed on labs and the project if you can explain everything you submit; not on exams.
 
+## AutoTest — how the project deliverables are graded (course site, 2026-09-16)
+- Code is graded automatically on every push to `main`.
+- Feedback on a specific commit is requested by posting a **commit comment** reading `@310-bot #d1` (the deliverable number changes per deliverable). A commit *message* does not work, and neither does a comment on a pull request.
+- Feedback requests are capped at **3 per day**, resetting at midnight. A build, lint or Prettier failure burns one; a timeout does not.
+- A response can take more than 12 hours at peak times, so the cap is not a substitute for running tests locally.
+- The autograded mark is the **highest score from any push before the deadline**, timed by the push or merge event on `main` — commit timestamps are ignored because they can be forged.
+- When merging a branch, use GitHub's default merge option. A squash or rebase merge does not trigger AutoTest.
+- Unit tests belong in `/test/unit/`, and `yarn build` should pass before committing.
+- Feedback is reported as bucket grades: Beginning, Acquiring, Developing, Proficient, Extending.
+
 ## Reader chapters by lecture (Unit 1)
 | Lec | Reader chapter |
 |---|---|

@@ -80,3 +80,4 @@ Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks
 - [ ] Is T/F negative marking still used on exams?
 - [ ] Final exam date (published ≥3 weeks before the end of classes)
 - [ ] Do deliverables ever get posted to Canvas? (Canvas has nothing for this course; deadlines come from the calendar.)
+- [ ] Where does the D1 code autograder result actually show up? The site (syllabus, project overview, D1 spec, all four unit pages, schedule) only says pushes to `main` are auto-graded and the best commit before the deadline counts. It names no dashboard, bot, or check. A throwaway push on 2026-09-14 produced no status check and no comment on the GitHub Enterprise commit. Ask on Piazza.
