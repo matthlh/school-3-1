@@ -38,6 +38,9 @@ _18 topics due as of Wed Sep 16. Say **quiz me**._
 | STAT 251 | 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) | 3 | — | — | 0 | 2026-09-15 |
 | STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | — | — | 0 | 2026-09-15 |
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | — | — | 0 | 2026-09-15 |
+| STAT 251 | 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) | 4 | — | — | 0 | 2026-09-17 |
+| STAT 251 | 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) | 4 | — | — | 0 | 2026-09-17 |
+| STAT 251 | 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) | 4 | — | — | 0 | 2026-09-17 |
 | CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-09-16 | X | 0 | 2026-09-17 |
 | CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-14 | X | 0 | 2026-09-15 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | — | — | 0 | 2026-09-15 |
@@ -70,26 +73,26 @@ _18 topics due as of Wed Sep 16. Say **quiz me**._
 | Fri Sep 11, 08:00 → **Thu Sep 24, 23:59** | CPSC 310 | **LAB01 Onboarding** opens on PrairieLearn — PrairieLearn's own credit window is 100% until Thu Sep 24 23:59 (course-site "due by start of next lab" rule would say Sep 18; PrairieLearn is the live/authoritative source for this one) | 10% pool |
 | Fri Sep 11, 09:00 | CPSC 310 | PRO1 (D1) opens on PrairieLearn | |
 | **Mon Sep 14, 23:59** | ASIA 250 | **Declare independent novel** (open till Sep 23) | 1% |
-| Mon Sep 14 | STAT 251 | WeBWorK 1 opens · TA office hours start | |
+| Mon Sep 14 | STAT 251 | WeBWorK 1 opens · TA office hours start (later sets open Tue Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1; each due date is read off WeBWorK the day it opens) | |
 | Tue Sep 15, 23:59 | ASIA 250 | Quiz 1 (then Mondays) — hard lock | 2% ea |
 | Fri Sep 18 | PHIL 321 | keep/drop decision (no-W drop closes Mon Sep 21) | |
 | Mon Sep 21 | UBC | **Drop-without-W deadline** (all courses) | |
 | Mon Sep 21 | STAT 251 | Labs start (Lab 0 = intro to R, no assignment) | |
 | **Tue Sep 22, 23:59** | STAT 251 | **WeBWorK 1** (no late) — corrected from Mon Sep 21; the lecture 3 and lecture 4 Canvas pages both say "due on Tuesday, Sep 22" | WW pool |
 | Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% |
-| Mon Sep 28, 23:59 | STAT 251 | WeBWorK 2 | |
+| ~Mon Sep 28, 23:59 | STAT 251 | WeBWorK 2 | |
 | **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1** (Canvas quiz, 50-min window) | 15% |
-| Tue Oct 6, 23:59 | STAT 251 | WeBWorK 3 | |
+| ~Tue Oct 6, 23:59 | STAT 251 | WeBWorK 3 | |
 | Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | |
-| Mon Oct 12, 23:59 | STAT 251 | WeBWorK 4 | |
+| ~Mon Oct 12, 23:59 | STAT 251 | WeBWorK 4 | |
 | ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% |
 | ~mid-Oct | UBC | December exam schedule posted on the SSC — check for 3 exams in 24 h (hardship) | |
 | Fri Oct 16, 18:00 | CPSC 310 | **D2** — Make it testable · pair formation in Oct 16–22 lab | 5% |
 | **Fri Oct 16, 14:00–14:50** | PHIL 385 | **Exam 2** | 15% |
-| Mon Oct 19, 23:59 | STAT 251 | WeBWorK 5 | |
+| ~Mon Oct 19, 23:59 | STAT 251 | WeBWorK 5 | |
 | **Sat Oct 24** | STAT 251 | **Written Assignment 1** — confirmed by Matt 2026-09-11; the Oct 31 Canvas calendar entry is wrong | ~5% |
 | Thu Oct 29, 19:00–21:00 | CPSC 310 | **Midterm** — through Wk 6 | 25% |
-| Thu Oct 29, 23:59 | STAT 251 | WeBWorK 6 (night of the CPSC midterm) | |
+| ~Thu Oct 29, 23:59 | STAT 251 | WeBWorK 6 (night of the CPSC midterm) | |
 | **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% |
 | Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | |
 | **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** | 15% |
@@ -97,16 +100,16 @@ _18 topics due as of Wed Sep 16. Say **quiz me**._
 | Fri Nov 6, 18:00 | CPSC 310 | **D3** — Design v3 (paired) | 5% |
 | Nov 9–11 | — | Fall break / ASIA reading break | |
 | ~Thu Nov 12 | ASIA 250 | **Short Written Response 2** | 15% |
-| Thu Nov 12, 23:59 | STAT 251 | WeBWorK 7 | |
+| ~Thu Nov 12, 23:59 | STAT 251 | WeBWorK 7 | |
 | ~Mon Nov 16 | ASIA 250 | Final paper questions posted | |
 | **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** | 15% |
 | Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired) | 5% |
-| Mon Nov 30, 23:59 | STAT 251 | WeBWorK 8 | |
+| ~Mon Nov 30, 23:59 | STAT 251 | WeBWorK 8 | |
 | Wed Dec 2 | STAT 251 | Written Assignment 2 due | ~5% |
 | Mon Dec 7 | — | Last day of classes · last ASIA quiz due | |
-| Mon Dec 7, 23:59 | STAT 251 | WeBWorK 9 | |
+| ~Mon Dec 7, 23:59 | STAT 251 | WeBWorK 9 | |
 | **Thu Dec 10** | ASIA 250 | **FINAL PAPER** (1000–1500 words) | 47% |
-| Fri Dec 11, 23:59 | STAT 251 | WeBWorK 10 · Pre-lab quiz Lab 8 | |
+| ~Fri Dec 11, 23:59 | STAT 251 | WeBWorK 10 · Pre-lab quiz Lab 8 | |
 | Dec 11–22 | STAT 251 | **Final** — must pass to pass course | 45% |
 | Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% |
 | Dec 11–22 | CPSC 310 | **Final**, cumulative, 2.5 h | 40% |
@@ -178,3 +181,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-15 | Morning check: labs now count as classes in the brief's Today's classes block (Matt's ask) — CPSC 310 section **L1N Tue 09:00–11:00 Zoom** recorded in logistics, skill §7 and the report template updated. WeBWorK 1 corrected to Tue Sep 22 (both STAT lecture pages say so; the Canvas calendar midnight entry had been read as Sep 21) and the rest of the series flagged as possibly one day later. LAB01 Onboarding scored 83% on PrairieLearn with the window open to Sep 24. ASIA 250 lecture 2 + Mini-Quiz 2 published. STAT 251 logistics gained the BL/AL slide convention; ASIA 250 logistics gained the Chicago/Turabian requirement. |
 | 2026-09-16 | Morning check: ASIA 250 Mini-Quiz 1 submitted Sep 15 10:06 (no score released) and the independent-novel declaration graded 100/100; CPSC 310 LAB01 Onboarding finished at 100% and its to-do closed. CPSC 310 lecture 2 deck posted under the title "Coupling" (schedule said "Measuring a change"), lecture 3 renamed to "Cohesion", and a new AutoTest page released — its grading rules (`@310-bot #d1` commit comment, 3 requests a day, highest score from any push to main before the deadline, default merge only, tests in `/test/unit/`) added to CPSC 310 logistics. STAT 251 lecture 4 deck pulled and staged as a pre-lecture outline. No new hard dates and no Canvas grade changes. |
 | 2026-09-16 | Quiz (transit): 6 q · 2 O / 1 ~ / 3 X · CPSC 310, PHIL 321, PHIL 385, STAT 251 · 6 ledger rows moved |
+| 2026-09-16 | Logged STAT 251 lec 4 (Ch 1: variance and SD, percentiles, quartiles and the IQR, box plots, location and scale changes; his page + the BL deck he attached, outline consumed) → 13 questions, 3 ledger topics due Sep 17. The staged outline had the quantile rule wrong (it said interpolate; the deck's formula averages the two neighbouring order statistics), caught from the PDF's formula images. |

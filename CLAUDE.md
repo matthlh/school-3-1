@@ -49,6 +49,14 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    PHIL 385 has nothing to pull. Logging a lecture consumes its outline: deck-only claims become
    questions and clarifications, then the `_NN` file is deleted. If he logs a lecture and no outline
    exists, pull the deck first with the `canvadoc_text.js` recipe. Big readings: only the assigned pages.
+   **STAT 251 posts two decks per lecture** (Matt, 2026-09-16): `BL` before class, which is what the morning
+   check stages, and `AL` after class with the worked solutions to the in-class examples. The Canvas text
+   layer drops equations that are images, so a staged outline can misstate a formula (lec 4's quantile rule
+   came out as "interpolate" when the slide averages). When he attaches a deck PDF to the log message, read
+   it with `pypdf` (page text plus the embedded formula images under `page.images`) and trust it over the
+   outline; when he attaches the `AL` deck, check every worked example against it. Nothing is pulled from
+   Canvas at log time; the PDFs he attaches are the source, and the `BL` one is enough when the `AL` is not
+   up yet.
 
 ## When he says "quiz me" / "test me" / pastes grades back ("1 O 2 ~ 3 X")
 Run the `/quiz-me` skill (`.claude/skills/quiz-me/SKILL.md`). `quiz_pick.py` chooses an interleaved

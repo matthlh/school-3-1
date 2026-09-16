@@ -123,7 +123,8 @@ def lecture_todo(code, n, d):
                 f"- Open-book quiz — covers the lecture AND the readings.\n"
                 f"- Tick this yourself after the quiz.")
     return (f"Log {code} lec {n} ({d:%b %-d})", "15m, P1", d, d,
-            f"10-min close-out: cover the answer column, self-test, mark X/~/O, then `log {code} lec {n}` here.")
+            f"Send a photo of your page (or a rough dump) to Claude in the School 3-1 folder and say `log {code} lec {n}`.\n"
+            f"Claude files the notes, writes the questions and adds the topics to the ledger. This to-do closes itself on the next morning check.")
 
 DUMP = r'''
 on iso(d)

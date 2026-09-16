@@ -171,7 +171,9 @@ main.wide, .wrap.pinned main.wide > * { max-width: 1080px; }
 .linklist { list-style: none; margin: 4px 0 2px; padding: 0; font-size: 13.5px; }
 .linklist li { display: flex; align-items: baseline; gap: 8px; padding: 3px 0; }
 .linklist li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); opacity: .5; flex: none; position: relative; top: -1px; }
-.linklist a { color: var(--fg); text-decoration: none; } .linklist a:hover { color: var(--ink); text-decoration: underline; }
+.linklist a { color: var(--link); text-decoration: underline; text-decoration-color: var(--border3); text-underline-offset: 3px; }
+.linklist a::after { content: '\2197'; font-size: 11px; margin-left: 4px; opacity: .55; }
+.linklist a:hover { color: var(--ink); text-decoration-color: currentColor; }
 
 /* Due now */
 a.chip { text-decoration: none; }

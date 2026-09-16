@@ -222,3 +222,57 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: iClicker from lecture 3: the distribution of prices of detached houses sold in a city is (a) symmetric (b) left-skewed (c) right-skewed (d) bimodal. Pick one and justify it using the tail and the position of the mean relative to the median.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
 **A:** (c) right-skewed. Prices cannot go below zero and most houses cluster in a middle band, but a small number of very expensive houses stretch the tail far to the right, toward the high values. Those few pull the mean above the median, the signature of a right tail. Left-skewed would need a long tail of very cheap houses, and bimodal would need two separate clusters of prices.
+
+## Lec 4 — Ch 1: variability, percentiles and quartiles, box plots (logged 2026-09-16)
+
+### Q: The deck's example: the hours five students spent studying per week are 4, 6, 8, 7, 5. From a blank page, compute the sample variance and the sample standard deviation, showing every deviation, and give the units of each.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** derive
+**A:** x̄ = 30/5 = 6. Deviations −2, 0, 2, 1, −1; squares 4, 0, 4, 1, 1; sum 10. s² = 10/(5 − 1) = 2.5 hours². s = √2.5 ≈ 1.58 hours. The formula is s² = Σ(xᵢ − x̄)²/(n − 1). The shortcut Σxᵢ² − n x̄² = 190 − 180 = 10 gives the same sum.
+
+### Q: Which statement about the sample standard deviation s is false, and why? (a) s ≥ 0, with s = 0 only when every observation is the same value. (b) s has the same units as the data, and s² has those units squared. (c) s is resistant: one extreme observation moves it about as little as it moves the median. (d) Strong skew or a few outliers can inflate s a great deal.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** critique
+**A:** (c) is false. s squares every deviation from the mean, so one far-out value adds a huge term to the sum and also shifts x̄ toward it; the median only counts positions, so it barely moves. (a), (b) and (d) are the deck's stated properties.
+
+### Q: A sample of daily temperatures has mean 20 °C and variance 9. Every value is converted to Fahrenheit by y = (9/5)x + 32. Give the mean, variance and standard deviation in Fahrenheit, then state the general rule for y = a + bx and say which constant affects which.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** derive
+**A:** Mean 1.8 × 20 + 32 = 68 °F. Variance 1.8² × 9 = 29.16. s = 1.8 × 3 = 5.4 °F. Rule: ȳ = a + b x̄ and s_y² = b² s_x², so s_y = |b| s_x. The added constant a shifts the mean only; the multiplier b scales the mean and scales the spread by |b|. Derivation: ȳ = (1/n)Σ(a + b xᵢ) = a + b x̄, and each deviation yᵢ − ȳ = b(xᵢ − x̄) gets squared.
+
+### Q: Household incomes in a city are strongly right-skewed, with a handful of billionaires. Which pair should a report use for centre and spread? (a) mean and s (b) median and IQR (c) mean and IQR (d) median and range. Justify, and say what happens to each of s, the median and the IQR if one billionaire's income doubles.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** apply
+**A:** (b). The median and the IQR are set by positions in the sorted data, so the tail cannot drag them; the mean and s use every value's distance from the mean and are inflated by the tail. The range is worse still, built from the two extremes. If one billionaire's income doubles, s rises sharply because of the larger squared deviation, while the median and the IQR do not change at all.
+
+### Q: Sorted data from the deck (n = 20): 12 14 17 22 22 24 25 26 27 29 30 31 33 34 35 35 39 40 42 59. Using the deck's np + 0.5 rule, compute Q1, the median and Q3, then the IQR. Show the value of np + 0.5 each time.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** derive
+**A:** p = 0.25: 20 × 0.25 + 0.5 = 5.5, not an integer, so Q1 = (x₍₅₎ + x₍₆₎)/2 = (22 + 24)/2 = 23. p = 0.5: 10.5, so the median = (x₍₁₀₎ + x₍₁₁₎)/2 = (29 + 30)/2 = 29.5. p = 0.75: 15.5, so Q3 = (x₍₁₅₎ + x₍₁₆₎)/2 = (35 + 35)/2 = 35. IQR = 35 − 23 = 12.
+
+### Q: Sorted data, n = 15: 3 5 7 8 10 12 14 15 18 20 22 25 27 30 33. Find Q(0.3), Q(0.35) and Q(0.9) by the deck's rule. Then say in words what the value of Q(0.3) means and check it against the data.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
+**A:** Q(0.3): 15 × 0.3 + 0.5 = 5, an integer, so Q(0.3) = x₍₅₎ = 10. Q(0.35): 5.25 + 0.5 = 5.75, between 5 and 6, so Q(0.35) = (x₍₅₎ + x₍₆₎)/2 = (10 + 12)/2 = 11, the plain average, not a weighted value like 11.5. Q(0.9): 13.5 + 0.5 = 14, so Q(0.9) = x₍₁₄₎ = 30. Q(0.3) = 10 means about 30% of the observations are smaller than 10: four of fifteen are (3, 5, 7, 8), which is 27%, close to 30%.
+
+### Q: For the same n = 15 data, compute Q1 two ways: with the np + 0.5 rule, and as the median of the lower half of the data (the seven values below the median). Do they agree? What does the deck say about this, and which rule do you use on a computation question?
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
+**A:** np + 0.5 rule: 15 × 0.25 + 0.5 = 4.25, so Q1 = (x₍₄₎ + x₍₅₎)/2 = (8 + 10)/2 = 9. The lower half 3, 5, 7, 8, 10, 12, 14 has median 8. They disagree. The deck says different textbooks and software use slightly different quartile rules, so sources can differ. The np + 0.5 rule is the procedure the deck states, so use it unless the question fixes another rule. For the deck's own 20-value example the two rules happen to agree.
+
+### Q: The 75th percentile of a data set is (a) the value three quarters of the way from the minimum to the maximum (b) a value with 75% of the observations at or below it (c) the mean of the top quarter of the data (d) the same thing as Q1. Pick one, show with the data 1, 2, 3, 4, 5, 6, 7, 100 why (a) is wrong, and name the three quartiles as percentiles.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
+**A:** (b). Percentiles count observations, not distance along the range. For 1, 2, 3, 4, 5, 6, 7, 100 the point three quarters of the way from 1 to 100 is about 75, but the 75th percentile by the np + 0.5 rule is 8 × 0.75 + 0.5 = 6.5, so (x₍₆₎ + x₍₇₎)/2 = 6.5. Q1 is the 25th percentile, Q2 (the median) is the 50th and Q3 is the 75th.
+
+### Q: Twenty marks have Q1 = 23 and Q3 = 35. Compute the fences for the 1.5 × IQR rule, state the rule in words, and say which of the marks 4, 5, 52, 53, 59 are outliers.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
+**A:** IQR = 12, 1.5 × IQR = 18, lower fence 23 − 18 = 5, upper fence 35 + 18 = 53. An observation is an outlier if it falls more than 1.5 × IQR below Q1 or more than 1.5 × IQR above Q3. 4 is an outlier (more than 18 below Q1); 5 is not (exactly 18 below, not more); 52 and 53 are not; 59 is (more than 18 above Q3).
+
+### Q: Build the box plot for the deck's 20 values (12 14 17 22 22 24 25 26 27 29 30 31 33 34 35 35 39 40 42 59). Give the five-number summary, the fences, where each whisker ends, and any point plotted separately. Then say what the plot shows about shape.
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** derive
+**A:** Five-number summary: min 12, Q1 23, median 29.5, Q3 35, max 59. IQR 12, fences 5 and 53. 59 is above 53, so it is drawn as a star beyond the whisker. The left whisker ends at 12, the smallest value inside the fences; the right whisker ends at 42, the largest value at or under 53. The box runs from 23 to 35 with a line at 29.5. The median sits almost centrally in the box and the left whisker (11 long) is a little longer than the right (7 long), so the middle of the data is roughly symmetric; the single high outlier is the only sign of a right tail.
+
+### Q: "The whiskers of a box plot always run to the minimum and the maximum of the data, and the median line always sits in the middle of the box." Correct both halves. Then: a box plot's right whisker ends at 42 but the data's maximum is 59. What must be true?
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** critique
+**A:** Whiskers end at the most extreme observations still inside the fences Q1 − 1.5 × IQR and Q3 + 1.5 × IQR; they reach the minimum and maximum only when there are no outliers, and they never extend to the fences themselves. The median line sits wherever the median falls between Q1 and Q3, so it is central only when the middle half of the data is symmetric. If the whisker stops at 42 while the maximum is 59, then 59 lies above the upper fence and is an outlier plotted on its own, and 42 is the largest observation inside the fence.
+
+### Q: A box plot has its median line close to Q1, the left edge of the box, and a right whisker much longer than the left one. The distribution is most likely (a) symmetric (b) left-skewed (c) right-skewed (d) bimodal. Pick one, say what in the plot tells you, and explain why (d) can never be read off a box plot.
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
+**A:** (c). The lower half of the data is crammed into a short interval below the median while the upper half stretches far to the right, so the long tail is on the high side: right-skewed. Outliers do not move the median line; the crowding of the middle half does. A box plot cannot show bimodality because it collapses the data to five numbers and hides the shape between them; that is what a histogram is for.
+
+### Q: The deck shows side-by-side box plots of chemistry and physics grades. Name three things you can compare directly from them, one thing you cannot see, and the situation where a histogram is the better choice.
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
+**A:** You can compare the centres (median lines), the spreads (box length, which is the IQR, and whisker span), and the skew and outliers of each group, all on one scale. You cannot see the shape between the five numbers: modality, gaps, or how many observations each group has. Use a histogram when the shape of one distribution is the point, especially to check for two humps.
