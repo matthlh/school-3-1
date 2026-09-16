@@ -98,6 +98,42 @@ The second authorship presents his own religious perspective, unlike the first.
 - Preferential love (erotic love, friendship, love of country) loves the other as "another self", so it is self-love in disguise.
 - Christian neighbour-love is commanded ("you shall love"), non-preferential, loves the neighbour as yourself, with God as the "middle term".
 
+### Q: Kierkegaard died in 1855, so the second authorship runs from 1847 to his death. Put these five in chronological order and give each year: *Practice in Christianity*, *Works of Love*, *The Sickness unto Death*, *Christian Discourses*, *The Point of View* (publication, not composition).
+**Topic:** Second authorship  **Lec:** 1  **Type:** recall
+**A:** *Works of Love* 1847, *Christian Discourses* 1848, *The Sickness unto Death* 1849, *Practice in Christianity* 1850, *The Point of View* 1859 (written 1848, published posthumously by his brother).
+
+### Q: Anti-Climacus is a pseudonym, yet the second authorship is supposed to carry Kierkegaard's own religious position. Explain the apparent contradiction, and say how Anti-Climacus differs in standpoint from Johannes Climacus.
+**Topic:** Second authorship  **Lec:** 1  **Type:** recall
+**A:** Anti-Climacus is not a pseudonym in the first authorship's sense, because Kierkegaard puts "S. Kierkegaard" on the title page as *editor*, which he never did for the first authorship's pseudonyms. The "anti-" is positional, not oppositional: Climacus writes as someone who is not a Christian and is trying to work out what Christianity demands, while Anti-Climacus writes from *above* ordinary Christianity, as an ideal Christian on a higher rung. Kierkegaard placed himself between the two and said he could not claim Anti-Climacus's standpoint as his own achievement, which is why the name is still a pseudonym.
+
+### Q: A friend says "Kierkegaard thinks romantic love and friendship are wrong." Using the *Works of Love* distinction, say what is right and what is wrong in that claim.
+**Topic:** Second authorship  **Lec:** 1  **Type:** apply
+**A:** Wrong as stated: he does not condemn erotic love or friendship as such. Right in what it points at: those are *preferential* loves, which choose their object and love the other as "another self", so they can be self-love wearing a second face. Christian neighbour-love is different in kind — commanded ("you shall love"), non-preferential, extended to whoever is nearest, with God as the "middle term" between the two people. The criticism is that preference cannot be the *ground* of love, not that preferential relationships are forbidden.
+
+### Q: What does it mean to say God is the "middle term" in neighbour-love, and what follows about whether such love can be lost when the other person changes?
+**Topic:** Second authorship  **Lec:** 1  **Type:** derive
+**A:** The relation is not two-way but three-way: I love the other *through* God, who stands between us. So the love is not grounded in anything about the other person — their charm, their loyalty, their being like me. It follows that it cannot be revoked when they change, disappoint or become unlovable, because nothing in them was holding it up. Preferential love, grounded in the beloved's qualities, is exactly the love that *can* die when those qualities go.
+
+### Q: Which single work of the second authorship is signed, addresses love, and is the one the lecture treats as its centre? Give its year and say why love is the theme rather than faith.
+**Topic:** Second authorship  **Lec:** 1  **Type:** recall
+**A:** *Works of Love*, 1847, signed in his own name. Love is the theme because it is the closest thing to the faith he wants to hold in his heart — the deliberate, livable form that faith takes between people.
+
+### Q: Strauss, Feuerbach and Bauer are all named as Left Hegelians. Which one wrote *The Life of Jesus, Critically Examined*, which one coined the Right/Left labels, and in what year were they coined?
+**Topic:** Post-Hegelian context  **Lec:** 1  **Type:** recall
+**A:** Strauss wrote *Das Leben Jesu* (1835–36), and Strauss also coined the Right/Left Hegelian labels, in 1837.
+
+### Q: Put these in order with years: Hegel's death, the Pantheism Controversy, Strauss's *Life of Jesus*, the coining of "Right" and "Left" Hegelian, Schelling's call to Berlin.
+**Topic:** Post-Hegelian context  **Lec:** 1  **Type:** recall
+**A:** Pantheism Controversy 1785 (Jacobi) · Hegel dies 1831 · Strauss, *The Life of Jesus, Critically Examined* 1835–36 · Right/Left Hegelian labels coined by Strauss 1837 · Schelling called to Berlin 1841.
+
+### Q: An exam stem reads: "Hegel's Absolute Spirit is impersonal, therefore Hegel is an atheist." Fill in the suppressed middle step, name the 1785 episode that made it work as an argument, and say how Hegel himself answered.
+**Topic:** Post-Hegelian context  **Lec:** 1  **Type:** apply
+**A:** The suppressed step is "an impersonal God is pantheism, and pantheism is atheism." The Pantheism Controversy of 1785, set off by Jacobi, is what made "pantheist" function as a synonym for "atheist" in German intellectual life. Hegel answered that he was and would remain a Lutheran, and presented his own system as Christian philosophy.
+
+### Q: Why was the Hegel dispute specifically a *theological* fight rather than a technical one about logic, and what was at stake for the Prussian state?
+**Topic:** Post-Hegelian context  **Lec:** 1  **Type:** derive
+**A:** Hegel's system claimed to contain and complete Christianity, so the question of whether it was orthodox decided whether the state's official philosophy underwrote or dissolved the state church. The Right Hegelians read the system as compatible with a personal God and immortality; the Left read it as incompatible with theism altogether, and Strauss's mythic reading of the Gospels made that concrete. That is why the King of Prussia treated it as something to be put down, and called Schelling to Berlin in 1841 to "stamp out the dragon-seed of Hegelian pantheism".
+
 ## Reading: *Either/Or* Preface (assigned Fri Sep 11, logged 2026-09-11)
 
 ### Q: What philosophical thesis does the Preface of Either/Or open by doubting, and whose thesis is it?

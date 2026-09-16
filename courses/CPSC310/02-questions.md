@@ -23,17 +23,53 @@ Format:
 **Topic:** What SE is  **Lec:** 1  **Type:** recall
 **A:** "…what a change costs as a system keeps growing." (slide 8). The driver is changing requirements: 310 software is large, multi-version, collaborative and its requirements move, which is why cost of change, not correctness of a single version, is the central concern.
 
-### Q: The reader distinguishes "code" from "software". Give the three adjectives for each, and say why the distinction motivates Analytical Code Design.
+### Q: The reader gives three adjectives for "code" and three for "software". Name all six, paired to the right word.
 **Topic:** What SE is  **Lec:** 1  **Type:** recall
-**A:**
-- Code: short, isolated, run once (scripts, assignments).
-- Software: large, highly connected, longstanding.
+**A:** Code is short, isolated, run once. Software is large, highly connected, longstanding.
 
-Software therefore has to be easy to evolve, maintain and test. So you need measurable ways to compare two designs of the same thing and to articulate the trade-offs. That is what "analytical" code design means.
+### Q: Given that software is large, connected and longstanding, what property does it therefore need, and what does that requirement make "analytical" about Analytical Code Design?
+**Topic:** What SE is  **Lec:** 1  **Type:** derive
+**A:** It needs to be easy to evolve, maintain and test, because it will be changed many times by many people over years. You cannot rely on taste to decide which of two designs supports that better, so you need measurable ways to compare two designs of the same thing and to state the trade-off between them. Reasoning about designs by measurement rather than by preference is what "analytical" means here.
 
 ### Q: Name the three fluencies the reader says CPSC 310 builds (Holmes 2026). Names only.
 **Topic:** Three fluencies  **Lec:** 1  **Type:** recall
 **A:** Decomposition fluency, requirements fluency, and validation fluency.
+
+### Q: A classmate writes a 300-line Python script that scrapes one dataset for their thesis, runs it, gets the numbers, and never opens it again. By the reader's terms, is that code or software? Which of the three adjectives decides it, and does Analytical Code Design apply?
+**Topic:** What SE is  **Lec:** 1  **Type:** apply
+**A:** Code. All three adjectives fit — it is short, isolated and run once — but "run once" is the one that decides it, because nothing will ever have to change in it. Analytical Code Design is about the cost of the *next* change, so it buys nothing here: effort spent making that script evolvable is effort that is never recovered.
+
+### Q: State the course's one-sentence definition of software engineering, then say which word in it is doing the real work and why correctness is not the centre of the definition.
+**Topic:** What SE is  **Lec:** 1  **Type:** derive
+**A:** "Software engineering is the discipline of managing what a change costs as a system keeps growing." The load-bearing word is *cost*: a single version being correct is a one-time property, but the system will be changed repeatedly under moving requirements, so what determines whether the project survives is how expensive each of those changes is. Correctness of any one version is necessary but says nothing about the price of the next version.
+
+### Q: The reader lists SE as "specify, invent, design, build, validate, deploy, maintain, research, improve". Where does programming sit in that list, and what does its position imply about the course's emphasis?
+**Topic:** What SE is  **Lec:** 1  **Type:** recall
+**A:** Programming is only the *build* step — one of nine. The implication is that the other eight are where a 310-sized project is won or lost, so the course spends its time on specification, design and validation rather than on writing code faster.
+
+### Q: Name four ways 310-scale software differs from 210-scale code as the lecture set them out, and say which one the course calls the root of the difficulty.
+**Topic:** What SE is  **Lec:** 1  **Type:** recall
+**A:** 210: small code, single version, solo, one prompt. 310: large codebase, multi-version, collaborative, and changing requirements — the course calls this "socio-technical". Changing requirements is the root: without it the system could be built once and left alone, and cost of change would not be a discipline.
+
+### Q: Name the three fluencies the reader says CPSC 310 builds (Holmes 2026), and give the one-line question each one answers.
+**Topic:** Three fluencies  **Lec:** 1  **Type:** recall
+**A:** Decomposition fluency — how should this be split into parts? Requirements fluency — what is actually being asked for? Validation fluency — how do I know it does that?
+
+### Q: Slide 11 argues that AI agents doing "source code assistance" and "vibe coding" make the three fluencies more valuable, not less. Reconstruct that argument in two steps.
+**Topic:** Three fluencies  **Lec:** 1  **Type:** derive
+**A:** Step one: the fluencies are about deciding what to build, how to carve it up, and how to check it — none of which is the act of typing code. Step two: agents drive down the cost of the typing, so the typing stops being the bottleneck and the deciding and the checking become the whole of the remaining work. What got cheap is the part that was never the fluencies.
+
+### Q: A teammate hands you a working feature that passes its tests, but it reads one config value directly out of `process.env` in four different files. Which of the three fluencies does this failure belong to, and why is it not the other two?
+**Topic:** Three fluencies  **Lec:** 1  **Type:** apply
+**A:** Decomposition. The feature does what was asked (requirements are fine) and it is demonstrably checked (validation is fine); the defect is that one concept — where the config comes from — has been spread across four places instead of living in one, so changing it later means finding all four. That is a question about how the work is split into parts.
+
+### Q: A deliverable spec says "return the buildings sorted", the code sorts by name, and the autograder marks it wrong because it expected sorting by code. All the tests the student wrote pass. Which fluency failed, and which one did *not*?
+**Topic:** Three fluencies  **Lec:** 1  **Type:** apply
+**A:** Requirements fluency failed — the ambiguity in "sorted" was never resolved against the spec. Validation did not fail in the sense of being absent: tests exist and run. But they validate the student's own misreading, which is the standard trap — a test suite can only check the requirement you believed in, so validation is never a substitute for reading the spec.
+
+### Q: Map the course roadmap onto the fluencies: weeks 2–5 sit inside a codebase you own, weeks 6–7 at its boundaries, weeks 8–13 across a system and a team. Which fluency dominates each stretch, and what question does each stretch ask?
+**Topic:** Three fluencies  **Lec:** 1  **Type:** derive
+**A:** Weeks 2–5 are decomposition: why is this change expensive here and cheap there? Weeks 6–7 are requirements, now as a contract with someone outside — where should the boundaries be, and what happens once you publish one? Weeks 8–13 are validation at team scale: how does a team change one codebase without breaking each other? The same three questions recur at a larger radius each time, which is the same shape as the cost-of-change definition.
 
 ## Lab 1 — Onboarding: HTTP, PUT idempotence, request path, async (logged 2026-09-14; pruned the same day to what transfers beyond this repo)
 

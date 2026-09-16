@@ -18,7 +18,7 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | 1c | Choose the right summary method for a data set | O | 2026-09-13 | 1 | 2026-09-20 |
 | 1d | Identify features describing a distribution *(lec 3: mound type, shape, centre, spread, outliers)* | — | — | 0 | 2026-09-15 |
 | 1e | Use software for data summary / EDA | | | | |
-| 1+ | Descriptive vs. inferential statistics *(lecture-added; not in the LO doc)* | X | 2026-09-14 | 0 | 2026-09-15 |
+| 1+ | Descriptive vs. inferential statistics *(lecture-added; not in the LO doc)* | O | 2026-09-16 | 1 | 2026-09-23 |
 
 ## 2. Probability basics · Ch 3
 | # | Outcome | Status | Last | Streak | Next |
