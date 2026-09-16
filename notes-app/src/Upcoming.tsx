@@ -1,13 +1,13 @@
-import type { Deadline } from './markdown'
-import { hrefFor } from './files'
-import { hrefCourse } from './routes'
+import { slug, type Deadline } from './markdown'
+import { hrefAnchor, hrefCourse } from './routes'
 import { toneStyle } from './theme'
+import { daysBetween, formatDate } from './stats'
 
-function daysBetween(a: string, b: string): number {
-  return Math.round((new Date(b + 'T12:00:00').getTime() - new Date(a + 'T12:00:00').getTime()) / 86400000)
-}
+/** The ledger heading the "all dates" link jumps to; its slug must match what splitSections gives that section. */
+export const CALENDAR_HEADING = 'Term calendar — hard dates'
+
 const when = (n: number) => (n === 0 ? 'today' : n === 1 ? 'tomorrow' : `in ${n} days`)
-const nice = (iso: string) => new Date(iso + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
+const nice = formatDate
 
 /** The next few hard dates from the ledger's term calendar. */
 export function Upcoming({ items, today, limit = 7 }: { items: Deadline[]; today: string; limit?: number }) {
@@ -15,7 +15,7 @@ export function Upcoming({ items, today, limit = 7 }: { items: Deadline[]; today
   if (next.length === 0) return null
   return (
     <section className="panel">
-      <div className="panel-head"><span>Coming up</span><a href={hrefFor('ledger.md')}>all dates →</a></div>
+      <div className="panel-head"><span>Coming up</span><a href={hrefAnchor('ledger.md', slug(CALENDAR_HEADING))}>all dates →</a></div>
       <table className="upcoming">
         <tbody>
           {next.map((d, i) => {

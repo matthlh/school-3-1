@@ -1,9 +1,6 @@
 # Master retrieval ledger
 
-The one file I read first every session. If a row's `Next` is on or before today, it's due.
-
-**Grade key:** `X` missed · `~` shaky · `O` solid
-**Ladder:** `X` → +1d · `~` → +3d · `O`×1 → +7d · `O`×2 → +16d · `O`×3+ → +35d
+Rows whose Next is on or before today are due.
 
 ## Due now
 
@@ -86,7 +83,7 @@ _18 topics due as of Wed Sep 16. Say **quiz me**._
 | Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | |
 | ~Mon Oct 12, 23:59 | STAT 251 | WeBWorK 4 | |
 | ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% |
-| ~mid-Oct | UBC | December exam schedule posted on the SSC — check for 3 exams in 24 h (hardship) | |
+| ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | |
 | Fri Oct 16, 18:00 | CPSC 310 | **D2** — Make it testable · pair formation in Oct 16–22 lab | 5% |
 | **Fri Oct 16, 14:00–14:50** | PHIL 385 | **Exam 2** | 15% |
 | ~Mon Oct 19, 23:59 | STAT 251 | WeBWorK 5 | |
@@ -114,23 +111,22 @@ _18 topics due as of Wed Sep 16. Say **quiz me**._
 | Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% |
 | Dec 11–22 | CPSC 310 | **Final**, cumulative, 2.5 h | 40% |
 
-**Oct 29–30 is the crunch of the term:** CPSC 310 midterm Thu 7–9pm, then on the Friday the
-STAT 251 midterm at 8am, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 2pm. Confirmed
-2026-09-14. Prep for all of it must be finished by Oct 28.
+> **Oct 29–30 is the crunch of the term.** The CPSC 310 midterm is Thu Oct 29, 19:00–21:00. On Fri Oct 30 the STAT 251 midterm is at 08:00, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 14:00. Prep for all four must be finished by Oct 28. Confirmed 2026-09-14.
 
-Pre-lab quizzes (STAT, 11:59pm, confirmed on Canvas 2026-09-10): Oct 2 · Oct 16 · Oct 23 · Nov 13 ·
-Nov 27 · Dec 4 · Dec 11. All on the calendar.
-WeBWorK (STAT, 11:59pm, no late, from Canvas calendar): Sep 21 · Sep 28 · Oct 6 · Oct 12 · Oct 19 ·
-Oct 29 · Nov 12 · Nov 30 · Dec 7 · Dec 11.
-CPSC 310 labs run Fri→Thu from Sep 11; lab work due by the start of the next lab. Cancelled labs:
-Wed Sep 30, Mon Oct 12 (attend another section).
+### Recurring series
 
-**Open questions**
-- Which PHIL 385 exam is the essay exam (vs. the three MC ones)? Ask in week 1.
-- CPSC 310 has **nothing on Canvas** — deadlines only exist on the course site. Canvas silence
-  ≠ nothing due.
-- **PHIL 321 is still an active enrolment on Canvas.** Decision by Sep 18.
-- **Science Co-op Workshops (Canvas):** 12 undated, unsubmitted quizzes/modules. Matt thinks not required; Things3 task to confirm by Sun Sep 13.
+| Series | Course | Rule | Dates |
+|---|---|---|---|
+| Pre-lab quizzes | STAT 251 | One per lab for Labs 2–8, due at 23:59 on a Friday. Confirmed on Canvas 2026-09-10. | Oct 2, Oct 16, Oct 23, Nov 13, Nov 27, Dec 4, Dec 11 |
+| WeBWorK | STAT 251 | Due at 23:59 with no late submissions. WeBWorK 1 is confirmed for Tue Sep 22. Sets 2–10 are unconfirmed and may fall one day later than the Canvas calendar shows, so each due date is read off WeBWorK the day the set opens (the `~` rows above). | Sep 22, Sep 28, Oct 6, Oct 12, Oct 19, Oct 29, Nov 12, Nov 30, Dec 7, Dec 11 |
+| Labs | CPSC 310 | Lab weeks run Friday to Thursday from Sep 11. Work is due by the start of the next lab unless PrairieLearn's own credit window says otherwise. The Wed Sep 30 and Mon Oct 12 sections are cancelled; anyone in those sections attends another one that week. | Weekly from Fri Sep 11 |
+| Mini-quizzes | ASIA 250 | Each quiz publishes with its lecture on a Monday and hard-locks the following Monday at 23:59. Late is zero with no exceptions. Nothing locks on Oct 19 or Nov 16 because the Oct 12 and Nov 9 weeks have no lecture. | Sep 15, Sep 21, Sep 28, Oct 5, Oct 12, Oct 26, Nov 2, Nov 9, Nov 23, Nov 30, Dec 7 |
+
+### Open questions
+
+- CPSC 310 has nothing on Canvas. Its deadlines exist only on the course site and PrairieLearn, so Canvas silence does not mean nothing is due.
+- PHIL 321 is still an active enrolment on Canvas. Matt decides whether to keep it by Fri Sep 18; the drop-without-W deadline is Mon Sep 21.
+- Which of the four PHIL 385 in-term exams is the 500-word essay exam. The syllabus does not say; the question is on the Ask Kraal list with a Sep 30 deadline, ahead of Exam 1 on Oct 2.
 
 ## Grades so far
 

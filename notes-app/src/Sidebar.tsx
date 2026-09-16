@@ -4,6 +4,7 @@ import { HREF_HOME, hrefCourse } from './routes'
 import { toneStyle } from './theme'
 import { pctSolid, type Tally } from './stats'
 import { Logo } from './Logo'
+import { ThemeToggle } from './ThemeToggle'
 
 function Link({ entry, current }: { entry: Entry; current: string }) {
   return <a href={hrefFor(entry.path)} className={entry.path === current ? 'cur' : undefined}>{entry.label}</a>
@@ -17,7 +18,10 @@ export function Sidebar({ tree, current, pinned, tallies }: {
     <>
       <div className="edge" aria-hidden="true" />
       <nav className={pinned ? 'pinned' : undefined}>
-        <a className="home" href={HREF_HOME}><Logo /> School 3-1</a>
+        <div className="nav-head">
+          <a className="home" href={HREF_HOME}><Logo /> School 3-1</a>
+          <ThemeToggle />
+        </div>
         <Link entry={{ path: 'ledger.md', label: 'Ledger' }} current={current} />
         <Link entry={{ path: 'links.md', label: 'Links' }} current={current} />
         {tree.courses.map((c) => {

@@ -1,0 +1,71 @@
+/* Tables, pagers, Due now and the ledger dashboard. Owned by the tables agent; styles.css stays with the shell. */
+
+/* Pager: "11–20 of 63" on the left, ‹ 2 of 7 › on the right */
+.pager { display: flex; align-items: center; gap: 8px; margin: 8px 0 2px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pager .range { margin-right: auto; }
+.pager .count { min-width: 44px; text-align: center; }
+.pager button { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0 0 2px; border: 1px solid var(--border2);
+                border-radius: 50%; background: var(--soft2); color: var(--fg2); font-size: 17px; line-height: 1; cursor: pointer; }
+.pager button:hover:not(:disabled) { background: var(--hover); border-color: var(--border3); }
+.pager button:disabled { opacity: .35; cursor: default; }
+.pager button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-radius: 50%; }
+tr.pager-row td, article tr.pager-row td { border: 0; padding: 2px 0 0; background: none; }
+tr.pager-row .pager { margin: 4px 0 0; }
+
+/* Compact tables: Due now and the ledger dashboard */
+table.due, table.ledger { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 6px 0 0; line-height: 1.45; }
+article table.due, article table.ledger { display: table; }
+table.due td, table.ledger td, table.ledger th { padding: 6px 8px; border: 0; border-top: 1px solid var(--hair); vertical-align: top; text-align: left; background: none; }
+table.ledger th { border-top: 0; border-bottom: 1px solid var(--border2); padding-top: 0; font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+table.due tr:first-child td, table.ledger tbody tr:first-child td { border-top: 0; }
+table.due td:first-child, table.ledger td:first-child, table.ledger th:first-child { padding-left: 0; }
+table.due td:last-child, table.ledger td:last-child, table.ledger th:last-child { padding-right: 0; }
+td.nowrap, th.nowrap { white-space: nowrap; }
+.detail { color: var(--muted); font-size: 12.5px; margin-left: 5px; }
+.past { color: var(--muted); }
+.past td { color: var(--muted); }
+.past .chip { opacity: .8; }
+.late { color: var(--bad); font-weight: 600; }
+table.due td.when { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; width: 76px; }
+table.due td.when.late, table.ledger td.next.late { color: var(--bad); font-weight: 600; }
+table.due td.grade, table.ledger td.grade { width: 40px; text-align: center; }
+table.ledger th.grade { text-align: center; }
+table.ledger td.lec, table.ledger td.last { color: var(--muted); white-space: nowrap; font-size: 12.5px; }
+table.ledger td.next { white-space: nowrap; text-align: right; font-size: 12.5px; color: var(--fg2); }
+table.ledger th.next, table.ledger th.weight { text-align: right; }
+table.ledger td.date { white-space: nowrap; color: var(--fg2); }
+table.ledger td.weight { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; }
+table.ledger tr.exam td.what { font-weight: 600; }
+table.ledger td.log-date { white-space: nowrap; color: var(--muted); font-size: 12.5px; width: 96px; }
+table.ledger td.what code { font-size: .88em; }
+.panel table.due { margin-top: 2px; }
+.panel-head .sub { text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+
+/* Course filter chips over the All topics table */
+.filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
+.filter button.chip.tone:hover { background: var(--tint); filter: brightness(.96); }
+.filter .chip.tone.on { box-shadow: inset 0 0 0 1.5px var(--ink); font-weight: 600; }
+
+/* Ledger page */
+.ledger-page .contents { margin: 2px 0 14px; }
+.contents a.chip { cursor: pointer; }
+.contents a.chip:hover { background: var(--hover); }
+.ledger-page h2 .count { font-size: 13px; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.ledger-page section { margin-bottom: 6px; }
+.ledger-page p.small { margin: -.2em 0 .6em; }
+.ledger-page blockquote { margin: 1em 0; padding: .55em 1em; border-left: 3px solid var(--warn, var(--border3)); border-radius: 0 9px 9px 0; background: var(--panel); color: var(--fg); }
+.ledger-page blockquote p { margin: .3em 0; }
+.ledger-page h3 { margin-top: 1.4em; }
+/* Markdown tables on the ledger page (recurring series, grades) share the hairline look of the built tables */
+.ledger-page article table, .ledger-page table:not(.ledger):not(.due) { display: table; width: 100%; font-size: 13.5px; }
+.ledger-page table:not(.ledger):not(.due) td, .ledger-page table:not(.ledger):not(.due) th { border: 0; border-top: 1px solid var(--hair); padding: 6px 8px; background: none; }
+.ledger-page table:not(.ledger):not(.due) th { border-top: 0; border-bottom: 1px solid var(--border2); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.ledger-page table:not(.ledger):not(.due) td:first-child, .ledger-page table:not(.ledger):not(.due) th:first-child { padding-left: 0; }
+
+@media (max-width: 640px) {
+  table.ledger td.lec, table.ledger th.lec, table.ledger td.last, table.ledger th.last { display: none; }
+  table.due td.grade, table.ledger td.grade, table.ledger th.grade { display: none; }   /* the grade chip is the first thing to go on a phone */
+  table.due td.when { width: auto; font-size: 12px; padding-right: 0; }
+  table.due td, table.ledger td { padding-left: 5px; padding-right: 5px; }
+  table.due td.topic, table.ledger td.topic, table.ledger td.what { overflow-wrap: anywhere; }   /* long tokens like route/handler/middleware must not force the table wider than the phone */
+}

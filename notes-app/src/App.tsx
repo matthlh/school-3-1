@@ -9,6 +9,7 @@ import { Sidebar } from './Sidebar'
 import { Home } from './Home'
 import { CoursePage } from './CoursePage'
 import { Viewer } from './Viewer'
+import { LedgerView } from './LedgerView'
 import { TopicsView } from './TopicsView'
 import { CourseHeader, scopedCourse } from './CourseTabs'
 import { QuestionBank } from './QuestionBank'
@@ -34,7 +35,14 @@ export default function App() {
   const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => { loadAll().then(setAll); loadQuizState().then(setQuiz) }, [])
-  useEffect(() => { setQuery(''); window.scrollTo(0, 0) }, [route])
+  // New route: back to the top, unless it names a `#section` — then scroll there once the content exists.
+  useEffect(() => {
+    setQuery('')
+    const anchor = route.kind === 'file' ? route.anchor : undefined
+    if (!anchor) { window.scrollTo(0, 0); return }
+    const el = document.getElementById('sec-' + anchor)
+    if (el) el.scrollIntoView({ block: 'start' })
+  }, [route, all])
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const typing = (e.target as HTMLElement)?.tagName === 'INPUT'
@@ -49,14 +57,14 @@ export default function App() {
   const links = useMemo(() => parseLinks(all?.['links.md'] ?? ''), [all])
   const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', new Date().getFullYear()), [all])
 
-  // Course tints are picked in JS from the OS colour scheme; re-render when it flips.
+  // Course tints are picked in JS from the colour scheme; re-render when the OS setting flips or the toggle fires.
   const [, setScheme] = useState(0)
   useEffect(() => {
-    const q = darkQuery()
-    if (!q) return
     const onChange = () => setScheme((n) => n + 1)
-    q.addEventListener('change', onChange)
-    return () => q.removeEventListener('change', onChange)
+    const q = darkQuery()
+    q?.addEventListener('change', onChange)
+    window.addEventListener('themechange', onChange)
+    return () => { q?.removeEventListener('change', onChange); window.removeEventListener('themechange', onChange) }
   }, [])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
 
@@ -78,6 +86,7 @@ export default function App() {
   else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} topics={topics} calendar={calendar} />
   else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
+  else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={quiz} />
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank path={route.path} text={all[route.path]} quiz={quiz} />
   else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} />
   else body = <Viewer path={route.path} text={all[route.path]} hideTitle={!!scoped} />
