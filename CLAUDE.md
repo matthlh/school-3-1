@@ -58,6 +58,17 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    Canvas at log time; the PDFs he attaches are the source, and the `BL` one is enough when the `AL` is not
    up yet.
 
+8. **STAT 251 WeBWorK sets are banked weekly** (Matt, 2026-09-16: "can you read them weekly"). Each set
+   is read the day it opens (Tuesdays: Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24,
+   Dec 1) by the morning check through the Chrome WeBWorK tab (morning-check SKILL.md §2b), or sooner
+   when he attaches the hardcopy PDF and says `log STAT251 webwork N`. Every problem becomes one bank
+   question under `## WeBWorK N` in `02-questions.md`, tagged `**Lec:** WWN` to the ledger row it
+   exercises (a new row only for a skill no lecture row covers), with the numbers changed and any
+   figure turned into a table of counts. The hardcopy and page text stay in `routines/webwork/`
+   (git-ignored); no problem is copied verbatim into the public repo. It is graded homework: read and
+   bank, never type into an answer box or press Submit. WeBWorK 1 was banked 2026-09-16 from the PDF
+   he attached.
+
 ## When he says "quiz me" / "test me" / pastes grades back ("1 O 2 ~ 3 X")
 Run the `/quiz-me` skill (`.claude/skills/quiz-me/SKILL.md`). `quiz_pick.py` chooses an interleaved
 session weighted by `ledger.md` (overdue → `X` → `~` → unquizzed, ×2 near that course's exam); I ask
