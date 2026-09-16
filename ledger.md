@@ -7,29 +7,32 @@ The one file I read first every session. If a row's `Next` is on or before today
 
 ## Due now
 
-_21 topics due as of Tue Sep 15. Say **quiz me**._
+_24 topics due as of Wed Sep 16. Say **quiz me**._
 
-- PHIL 321 · Ordinal vs cardinal utility · overdue 3 d · last X
-- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 3 d · last unquizzed
-- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 3 d · last unquizzed
-- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 3 d · last unquizzed
-- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 3 d · last unquizzed
-- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 3 d · last unquizzed
-- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 3 d · last unquizzed
-- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 1 d · last X
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · due today · last X
-- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · due today · last unquizzed
-- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · due today · last unquizzed
-- PHIL 321 · Decision situations (certainty / risk / ignorance) · due today · last X
-- PHIL 321 · Preference relations and ordinal-scale axioms · due today · last X
-- PHIL 321 · Ignorance rules: maximin, leximin, maximax, optimism-pessimism · due today · last X
-- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · due today · last unquizzed
-- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · due today · last unquizzed
-- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · due today · last unquizzed
-- STAT 251 · Descriptive vs. inferential statistics · due today · last X
-- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · due today · last unquizzed
-- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · due today · last unquizzed
-- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · due today · last unquizzed
+- PHIL 321 · Ordinal vs cardinal utility · overdue 4 d · last X
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 4 d · last unquizzed
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 4 d · last unquizzed
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 4 d · last unquizzed
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 4 d · last unquizzed
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 4 d · last unquizzed
+- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 4 d · last unquizzed
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 2 d · last X
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 1 d · last X
+- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 1 d · last unquizzed
+- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 1 d · last unquizzed
+- PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 1 d · last X
+- PHIL 321 · Preference relations and ordinal-scale axioms · overdue 1 d · last X
+- PHIL 321 · Ignorance rules: maximin, leximin, maximax, optimism-pessimism · overdue 1 d · last X
+- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 1 d · last unquizzed
+- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 1 d · last unquizzed
+- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 1 d · last unquizzed
+- STAT 251 · Descriptive vs. inferential statistics · overdue 1 d · last X
+- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 1 d · last unquizzed
+- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 1 d · last unquizzed
+- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 1 d · last unquizzed
+- ASIA 250 · Defining religion, myth and ritual · due today · last unquizzed
+- ASIA 250 · Aesthetic experience and the faith frame · due today · last unquizzed
+- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · due today · last unquizzed
 
 ## All topics
 
@@ -179,3 +182,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-14 | Quiz (quiz): 6 q · 0 O / 3 ~ / 3 X · CPSC 310, PHIL 321 · 3 ledger rows moved · stopped at 8 of 10; picker gave PHIL 385 nothing |
 | 2026-09-14 | CPSC 310 bank pruned 21 → 10 against the 26W1 exam format (syllabus: unseen code or design, say what is wrong, justify; definitions alone not sufficient). Dropped housekeeping (learning objectives, roadmap weeks, AI-tooling diagram) and repo-specific lab trivia (DELETE trace, code-finding, field lists). No past papers exist for this course version; exam-format notes in the syllabus file and course-intel. |
 | 2026-09-15 | Morning check: labs now count as classes in the brief's Today's classes block (Matt's ask) — CPSC 310 section **L1N Tue 09:00–11:00 Zoom** recorded in logistics, skill §7 and the report template updated. WeBWorK 1 corrected to Tue Sep 22 (both STAT lecture pages say so; the Canvas calendar midnight entry had been read as Sep 21) and the rest of the series flagged as possibly one day later. LAB01 Onboarding scored 83% on PrairieLearn with the window open to Sep 24. ASIA 250 lecture 2 + Mini-Quiz 2 published. STAT 251 logistics gained the BL/AL slide convention; ASIA 250 logistics gained the Chicago/Turabian requirement. |
+| 2026-09-16 | Morning check: ASIA 250 Mini-Quiz 1 submitted Sep 15 10:06 (no score released) and the independent-novel declaration graded 100/100; CPSC 310 LAB01 Onboarding finished at 100% and its to-do closed. CPSC 310 lecture 2 deck posted under the title "Coupling" (schedule said "Measuring a change"), lecture 3 renamed to "Cohesion", and a new AutoTest page released — its grading rules (`@310-bot #d1` commit comment, 3 requests a day, highest score from any push to main before the deadline, default merge only, tests in `/test/unit/`) added to CPSC 310 logistics. STAT 251 lecture 4 deck pulled and staged as a pre-lecture outline. No new hard dates and no Canvas grade changes. |
