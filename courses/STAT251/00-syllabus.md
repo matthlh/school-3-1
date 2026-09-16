@@ -51,7 +51,8 @@ Chapters: 1 descriptive stats · 3 probability · 4–6 random variables · 7 CL
 testing · 10 ANOVA · 2 & 11 regression. Schedule is tentative; changes come by announcement.
 
 ## To verify
-- [ ] iClicker Cloud set up and STAT 251 added (4% accrues from week 2)
-- [ ] Piazza joined and answering (the +1%)
-- [ ] Exact WeBWorK due dates once WeBWorK opens (they live there, not on Canvas)
+- [x] iClicker Cloud set up, STAT 251 added, answering in class (2026-09-16)
+- [x] Piazza joined (2026-09-16)
+- [x] WeBWorK 1 due Tue Sep 22, 23:59, confirmed inside WeBWorK (2026-09-16)
+- [ ] WeBWorK 2–10 due dates. WeBWorK shows a due date only once an assignment opens, so the morning check reads each one on its open day (Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1). Until then the dates in Logistics are the Canvas calendar's and may be one day early.
 - [x] WA1 Sat Oct 24 and midterm Fri Oct 30 confirmed (2026-09-11)

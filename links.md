@@ -9,7 +9,7 @@ One place for every course tool. The notes site shows these on Home and on each 
 | ALL | Canvas | https://canvas.ubc.ca/ |  |
 | ALL | Notes site | https://matthlh.github.io/school-3-1/ |  |
 | STAT251 | Canvas | https://canvas.ubc.ca/courses/193293 | . |
-| STAT251 | WeBWorK (Canvas → WeBWorK tab) | https://canvas.ubc.ca/courses/193293 | WeBWorK;\bWW ?\d |
+| STAT251 | WeBWorK | https://webwork.elearning.ubc.ca/webwork2/2026W1_V_STAT_V_251_101_2026W1 | WeBWorK;\bWW ?\d |
 | STAT251 | Pre-lab quizzes | https://canvas.ubc.ca/courses/193293/quizzes | Pre-lab;Prelab |
 | STAT251 | Course notes (Canvas files) | https://canvas.ubc.ca/courses/193293/files |  |
 | STAT251 | Gradescope | https://www.gradescope.com/ | Written Assignment;\bWA ?\d |

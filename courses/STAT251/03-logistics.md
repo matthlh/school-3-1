@@ -14,7 +14,8 @@
 ## Dates (Canvas, as of 2026-09-10)
 | What | When (Pacific) | Pts |
 |---|---|---|
-| WeBWorK 1–10 | **Tue Sep 22** · Mon Sep 28 · Tue Oct 6 · Mon Oct 12 · Mon Oct 19 · Thu Oct 29 · Thu Nov 12 · Mon Nov 30 · Mon Dec 7 · Fri Dec 11, all 23:59 | |
+| WeBWorK 1 | **Tue Sep 22, 23:59** (confirmed in WeBWorK 2026-09-16) | |
+| WeBWorK 2–10 | Opens Tue Sep 22 · Sep 29 · Oct 6 · Oct 13 · Oct 20 · Nov 3 · Nov 17 · Nov 24 · Dec 1 (from WeBWorK). Due dates per the Canvas calendar, unconfirmed and possibly one day early: Mon Sep 28 · Tue Oct 6 · Mon Oct 12 · Mon Oct 19 · Thu Oct 29 · Thu Nov 12 · Mon Nov 30 · Mon Dec 7 · Fri Dec 11, 23:59 | |
 | Pre-lab quizzes, Labs 2–8 | Fri Oct 2 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
 | In-lab quiz + follow-up (L1K) | Fri Oct 30, 11:20–11:40 and 11:45–12:00 | 3 + 3 |
 | Post-lab survey | Fri Nov 13, 23:59 | 1 |
@@ -53,5 +54,7 @@
   Labs · WeBWorK (all empty as of Sep 10).
 - Lecture pages live in the Canvas module "Lecture Materials". Each page has the slide PDF (`Lecture_NN_Chapter_K_CanvasPost.pdf`) plus a Panopto recording link, and the next lecture's page can appear a few days early (lecture 3's was up on Sep 11). Page slugs so far: `lecture-1-introduction-wed-sep-9` (files 47949983, 47723730), `lecture-2-ch-1-exploratory-data-analysis-fri-sep-11` (file 47723640), `lecture-3-ch-1-exploratory-data-analysis-contd-dot-mon-sep-14` (file 47723645), `lecture-4-ch-1-exploratory-data-analysis-contd-dot-wed-sep-16` (files 47723647 before the lecture, 47723806 after).
 - Slide files are named `BL` for the version posted before the lecture and `AL` for the version posted after it, which adds the worked solutions to the in-class questions. A file with neither tag is the same before and after.
-- WeBWorK 1 opened Sep 14 and is due **Tuesday Sep 22, 23:59**. The lecture 3 and lecture 4 Canvas pages both state this date, so it is taken as authoritative over the Canvas calendar entry, which sits at midnight on Sep 22 and was previously read as Mon Sep 21.
+- WeBWorK course URL: https://webwork.elearning.ubc.ca/webwork2/2026W1_V_STAT_V_251_101_2026W1 (Matt's roster sync is done; he first launched it from the Canvas WeBWorK tab). The assignment list shows a due date only for open sets and an open date for future ones.
+- WeBWorK 1 opened Sep 14 and is due **Tuesday Sep 22, 23:59**, confirmed on the WeBWorK assignment list 2026-09-16 (the Canvas calendar entry sits at midnight on Sep 22 and had been read as Mon Sep 21).
+- Future sets open (WeBWorK, 2026-09-16): 02 Tue Sep 22 · 03 Sep 29 · 04 Oct 6 · 05 Oct 13 · 06 Oct 20 · 07 Nov 3 · 08 Nov 17 · 09 Nov 24 · 10 Dec 1, all 00:00. On each open day the morning check reads that set's due date off the list and fixes the ledger, logistics and Things3 entry.
 - The remaining WeBWorK calendar entries all sit at midnight on the day after the date recorded here, so the whole series may be one day later than listed. Confirm each one inside WeBWorK itself; WeBWorK 6 would move from Thu Oct 29 to Fri Oct 30, which is already the STAT midterm, the in-lab quiz and PHIL 385 Exam 3.
