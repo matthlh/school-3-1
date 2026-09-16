@@ -1,4 +1,5 @@
 import { splitSections } from './markdown'
+import { hrefAnchor, scrollIfSame } from './routes'
 import { Md } from './Md'
 import { VERIFY } from './CoursePage'
 
@@ -12,14 +13,13 @@ export function Viewer({ path, text, hideTitle }: { path: string; text: string; 
   // Checklists ("To verify", "Ask in week 1") show on the course overview instead.
   const shown = /\/00-syllabus\.md$/.test(path) ? rest.filter((s) => !(s.heading && VERIFY.test(s.heading))) : rest
   const named = shown.filter((s) => s.heading)
-  const jump = (id: string) => document.getElementById('sec-' + id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   return (
     <article>
       {preBody.trim() && <Md text={preBody} path={path} />}
       {named.length >= 4 && (
         <div className="contents">
-          {named.map((s) => <button key={s.id} className="chip" onClick={() => jump(s.id)}>{s.heading}</button>)}
+          {named.map((s) => <a key={s.id} className="chip" href={hrefAnchor(path, s.id)} onClick={scrollIfSame}>{s.heading}</a>)}
         </div>
       )}
       {shown.map((s) =>

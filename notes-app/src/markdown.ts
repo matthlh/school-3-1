@@ -123,7 +123,7 @@ export function parseLinks(md: string): LinkRow[] {
   return rows
 }
 
-export interface Deadline { date: string; time: string; approx: boolean; course: string; what: string; weight: string; exam: boolean }
+export interface Deadline { date: string; time: string; approx: boolean; course: string; what: string; rawWhat: string; weight: string; exam: boolean }
 const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
 const DATE_RE = /(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)?\s*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})(?:,?\s*(\d{1,2}:\d{2}))?/g
 
@@ -146,8 +146,59 @@ export function parseCalendar(md: string, year: number): Deadline[] {
     const what = cells[2].replace(/\*\*/g, '').replace(/\s*[—–-]\s+(confirmed|the |course-site|PrairieLearn's).*$/i, '').trim()
     out.push({
       date, time: last[3] ?? '', approx: /^~/.test(plain.trim()), course: cells[1].replace(/\s+/g, ''),
-      what, weight: (cells[3] ?? '').replace(/\*/g, '').trim(), exam: /\b(exam|midterm|final)\b/i.test(cells[2]),
+      what, rawWhat: cells[2], weight: (cells[3] ?? '').replace(/\*/g, '').trim(), exam: /\b(exam|midterm|final)\b/i.test(cells[2]),
     })
   }
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
+}
+
+// ---- generic tables and topic strings -------------------------------------------------------
+
+export interface Table { head: string[]; rows: string[][] }
+
+/** One `| a | b |` line → trimmed cells; `\|` inside a cell stays a pipe. */
+function splitRow(line: string): string[] {
+  const s = line.trim().replace(/^\|/, '').replace(/\|$/, '')
+  return s.split(/(?<!\\)\|/).map((c) => c.replace(/\\\|/g, '|').trim())
+}
+
+/** Body → text before the first table, the table lines, and everything after that contiguous run. */
+export function splitAroundTable(md: string): { before: string; table: string; after: string } {
+  const lines = md.split('\n')
+  const start = lines.findIndex((l) => l.trim().startsWith('|'))
+  if (start < 0) return { before: md, table: '', after: '' }
+  let end = start
+  while (end < lines.length && lines[end].trim().startsWith('|')) end++
+  return { before: lines.slice(0, start).join('\n'), table: lines.slice(start, end).join('\n'), after: lines.slice(end).join('\n') }
+}
+
+/** The first markdown table in `md` as header cells + body rows (the `|---|` separator row is dropped). */
+export function parseTable(md: string): Table | null {
+  const { table } = splitAroundTable(md)
+  if (!table) return null
+  const lines = table.split('\n').map(splitRow)
+  const isRule = (cells: string[]) => cells.every((c) => /^:?-+:?$/.test(c) || c === '')
+  const [head, ...rest] = lines
+  return { head, rows: rest.filter((cells) => !isRule(cells)) }
+}
+
+/** "Mean and median (odd and even n · which to report)" → main text plus the trailing parenthetical. */
+export function splitTopic(topic: string): { main: string; detail: string | null } {
+  const s = topic.trim()
+  if (!s.endsWith(')')) return { main: s, detail: null }
+  let depth = 0
+  for (let i = s.length - 1; i >= 0; i--) {
+    if (s[i] === ')') depth++
+    else if (s[i] === '(' && --depth === 0) {
+      const main = s.slice(0, i).trim()
+      const detail = s.slice(i + 1, -1).trim()
+      return main && detail ? { main, detail } : { main: s, detail: null }
+    }
+  }
+  return { main: s, detail: null }
+}
+
+/** "STAT251" → "STAT 251" for prose; chips keep the compact code. */
+export function courseLabel(code: string): string {
+  return code.replace(/^([A-Za-z]+)(\d)/, '$1 $2')
 }

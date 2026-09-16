@@ -223,7 +223,7 @@ checklist that renders on the course Overview (hidden in the syllabus view); log
 table; anything kept only for Claude (office hours, Canvas IDs, site maps) goes under `## Reference (for Claude)`,
 which the viewer folds shut. No provenance lines ("pulled from…") in either. Home's **Coming up** panel parses the ledger's `## Term calendar` table by the Date cell
 (`Fri Sep 25, 18:00`; a `→` range keeps its end; `~` = approximate) — keep that cell format when adding rows.
-The site follows the OS light/dark setting. Question banks render as cards with
+The ledger page (`#/ledger.md`) renders as a dashboard: a live **Due now** panel titled `Due now · N topics · <date>`, then All topics, the hard-dates table and the Session log, each paged 10 rows at a time; every markdown table over 10 rows pages the same way. A link can target a section as `#/<file>.md#<heading-slug>`, where the slug is the heading lowercased with each run of non-alphanumerics turned into `-`. The sidebar has a Light / Auto / Dark switch stored in `localStorage` under the key `theme`; Auto follows the OS setting. Question banks render as cards with
 answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
 (`/` focuses it); the sidebar is off-canvas — hover the left edge or pin with ☰.

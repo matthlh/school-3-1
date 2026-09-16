@@ -69,3 +69,21 @@ export async function questionId(course: string, question: string): Promise<stri
     return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('').slice(0, 8)
   } catch { return '' }
 }
+
+// ---- dates ----------------------------------------------------------------------------------
+
+const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+/** "2026-09-16" → "Wed Sep 16". Anything that is not an ISO date comes back unchanged. */
+export function formatDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim())
+  if (!m) return iso
+  const d = new Date(+m[1], +m[2] - 1, +m[3])
+  return `${DOW[d.getDay()]} ${MON[d.getMonth()]} ${d.getDate()}`
+}
+
+/** Whole days from ISO date `a` to ISO date `b` (positive when `b` is later). */
+export function daysBetween(a: string, b: string): number {
+  return Math.round((new Date(b + 'T12:00:00').getTime() - new Date(a + 'T12:00:00').getTime()) / 86400000)
+}

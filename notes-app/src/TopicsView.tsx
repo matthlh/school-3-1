@@ -1,7 +1,8 @@
 import { splitSections, type Grade } from './markdown'
 import { GradeChip } from './StatViews'
-import { todayISO } from './stats'
+import { formatDate, todayISO } from './stats'
 import { Md } from './Md'
+import { usePager } from './Pager'
 
 const LADDER = 'Spacing ladder — X missed: asked again tomorrow · ~ shaky: +3 days · O solid: +7 days, then +16, then +35'
 
@@ -25,6 +26,31 @@ function parseTable(body: string): Row[] | null {
 }
 const withoutTables = (body: string) => body.split('\n').filter((l) => !l.trim().startsWith('|')).join('\n').trim()
 
+/** One chapter's outcomes: grade chip, id, text, next date. Paged at 10. */
+function OutcomeTable({ rows, path, today }: { rows: Row[]; path: string; today: string }) {
+  const { rows: shown, pager } = usePager(rows)
+  return (
+    <>
+      <table className="topics outcomes">
+        <tbody>
+          {shown.map((r) => {
+            const due = !!r.next && r.next <= today
+            return (
+              <tr key={r.id} className={r.g ? '' : 'later'}>
+                <td><GradeChip g={r.g} title={/^\d{4}-\d{2}-\d{2}$/.test(r.last) ? `last quizzed ${formatDate(r.last)}` : undefined} /></td>
+                <td className="id">{r.id}</td>
+                <td><Md text={r.text} path={path} inline /></td>
+                <td className={due ? 'due' : 'muted'}>{r.next ? `${due ? 'due' : 'next'} ${formatDate(r.next)}` : ''}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+      {pager}
+    </>
+  )
+}
+
 /** 01-topics.md: the preamble is dropped; each chapter is a status table with chips and due dates. */
 export function TopicsView({ path, text }: { path: string; text: string }) {
   const today = todayISO()
@@ -46,23 +72,7 @@ export function TopicsView({ path, text }: { path: string; text: string }) {
         return (
           <section key={s.id}>
             <h2>{s.heading}</h2>
-            {rows ? (
-              <table className="topics outcomes">
-                <tbody>
-                  {rows.map((r) => {
-                    const due = !!r.next && r.next <= today
-                    return (
-                      <tr key={r.id} className={r.g ? '' : 'later'}>
-                        <td><GradeChip g={r.g} title={r.last ? `last quizzed ${r.last}` : undefined} /></td>
-                        <td className="id">{r.id}</td>
-                        <td><Md text={r.text} path={path} inline /></td>
-                        <td className={due ? 'due' : 'muted'}>{r.next ? (due ? `due ${r.next}` : `next ${r.next}`) : ''}</td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            ) : <Md text={s.body} path={path} />}
+            {rows ? <OutcomeTable rows={rows} path={path} today={today} /> : <Md text={s.body} path={path} />}
             {prose && <Md text={prose} path={path} />}
           </section>
         )

@@ -1,47 +1,26 @@
 import type { Texts, Tree } from './files'
 import { hrefFor } from './files'
 import { afterDash, countQuestions, firstHeading, type TopicRow } from './markdown'
-import { hrefCourse } from './routes'
+import { hrefAnchor, hrefCourse } from './routes'
 import { toneStyle } from './theme'
 import { EMPTY, todayISO, type Tally } from './stats'
 import { StatBar } from './StatViews'
 import { Logo } from './Logo'
 import { Upcoming } from './Upcoming'
+import { DueTable, NothingDue, dueRows, dueDetail } from './DueNow'
 import type { Deadline } from './markdown'
-
-function niceDate(iso: string): string {
-  return new Date(iso + 'T12:00:00').toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
-}
 
 export function Home({ tree, all, tallies, topics, calendar }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; topics: TopicRow[]; calendar: Deadline[] }) {
   // Due now is computed live from the ledger's topic table, never from prose.
   const today = todayISO()
-  const due = topics.filter((r) => r.next && r.next <= today)
-  const byCourse = new Map<string, number>()
-  for (const r of due) byCourse.set(r.course, (byCourse.get(r.course) ?? 0) + 1)
-  const nextDate = topics.map((r) => r.next).filter((n) => n > today).sort()[0]
-  const nextRows = nextDate ? topics.filter((r) => r.next === nextDate) : []
-  const nextCourses = [...new Set(nextRows.map((r) => r.course))]
+  const due = dueRows(topics, today)
 
   return (
     <>
       <h1 className="brand"><Logo size={26} /> School 3-1</h1>
       <section className="panel">
-        <div className="panel-head"><span>Due now</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
-        {due.length > 0 ? (
-          <p>
-            <b>{due.length} topic{due.length === 1 ? '' : 's'} due</b>
-            {[...byCourse].map(([c, n]) => (
-              <a key={c} href={hrefCourse(c)} className="chip tone due-chip" style={toneStyle(c)}>{c} · {n}</a>
-            ))}
-            <span className="muted"> — say “quiz me”</span>
-          </p>
-        ) : (
-          <p className="muted">
-            Nothing due today.
-            {nextDate && <> Next: {nextRows.length} topic{nextRows.length === 1 ? '' : 's'} on <b>{niceDate(nextDate)}</b> ({nextCourses.join(', ')}).</>}
-          </p>
-        )}
+        <div className="panel-head"><span>Due now <span className="sub">· {dueDetail(due.length, today)}</span></span><a href={hrefAnchor('ledger.md', 'due-now')}>ledger →</a></div>
+        {due.length > 0 ? <DueTable rows={due} today={today} /> : <NothingDue topics={topics} today={today} />}
       </section>
       <Upcoming items={calendar} today={today} />
       <div className="grid">

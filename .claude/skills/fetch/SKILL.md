@@ -60,7 +60,8 @@ or stages the one missing piece asked for.
 
 ## "fetch what's due today" (or "fetch what was due today")
 Local only, no fetch — this is a read, not a sync:
-1. `grep` `ledger.md`'s `## Term calendar` table for a row whose Date cell is today.
+1. `grep -E '^\| [^|]*Sep 22' ledger.md` (today's `Mon DD`) — a hard-dates row has today's date in its
+   FIRST cell; ignore hits from the `### Recurring series` table below it, whose Dates column lists many days.
 2. `osascript .claude/skills/morning-check/scripts/things_today.applescript` and pick out Today
    items whose `due=` is today's date.
 3. Report both as one short list: what's actually due today (assignments, quizzes, exams), not
