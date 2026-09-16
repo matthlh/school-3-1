@@ -195,6 +195,26 @@ Gotchas (learned 2026-09-10):
 - Navigating straight to `/api/v1/...` URLs and reading page text also works, but
   `browser_batch` aborts on an empty `[]` response ("No text content"). Use it only for one-offs.
 
+### 2b. WeBWorK — STAT 251 (Chrome; the extension was allowed on webwork.elearning.ubc.ca 2026-09-16)
+Course: https://webwork.elearning.ubc.ca/webwork2/2026W1_V_STAT_V_251_101_2026W1 — Matt is logged in
+through his Chrome session. If the page is a login form, treat it like a Canvas sign-out (one Heads-up
+line; Claude never signs in). Read-only: never touch an answer box, Preview, Submit or Check Answers.
+- **Every run:** `navigate` to the course URL and `get_page_text`. The Assignments list shows each open
+  set's due date and each future set's open date. A changed date goes to Things3 (`WeBWorK N`), the
+  ledger term calendar and `courses/STAT251/03-logistics.md` (drop the `~` once confirmed).
+- **On a set's open day** (Tuesdays: Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1)
+  or the first run after it: open `<course>/Assignment-0N/` (the problem list gives the count), then each
+  `<course>/Assignment-0N/k/` with `get_page_text`. A problem whose text refers to a figure ("histogram
+  shown below", a boxplot, a stemplot) gets a `computer` screenshot, and the counts are read off the
+  image. Save the text to `routines/webwork/stat251-wwNN.txt`, then bank it per CLAUDE.md log step 8:
+  one question per problem under `## WeBWorK N` in `courses/STAT251/02-questions.md`, numbers changed,
+  `**Lec:** WWN`, tagged to existing ledger rows. Brief line under STAT 251:
+  "WeBWorK N open · k problems banked · due <date>".
+- Fallback when the domain is denied or the tab is signed out: one Heads-up line asking him to attach
+  the set's hardcopy PDF (problem list → Download Hardcopy) with `log STAT251 webwork N`.
+- Verified 2026-09-16: problem pages `Assignment-01/1/` and `/2/` read cleanly with `get_page_text`,
+  and the histogram came through a screenshot; WeBWorK 1 itself was banked from the PDF he attached.
+
 ### 3. CPSC 310 course site (public; Canvas is not used at all)
 The site is four pages and only one has slides: **Schedule** (week table; a lecture title turns into
 a PDF link when its deck is posted), **Course Materials** (unit pages: lecture → what it answers →

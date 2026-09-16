@@ -276,3 +276,41 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: The deck shows side-by-side box plots of chemistry and physics grades. Name three things you can compare directly from them, one thing you cannot see, and the situation where a histogram is the better choice.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
 **A:** You can compare the centres (median lines), the spreads (box length, which is the IQR, and whisker span), and the skew and outliers of each group, all on one scale. You cannot see the shape between the five numbers: modality, gaps, or how many observations each group has. Use a histogram when the shape of one distribution is the point, especially to check for two humps.
+
+## WeBWorK 1 — Ch 1 (opened Sep 14, due Tue Sep 22; banked 2026-09-16, numbers changed)
+
+### Q: WeBWorK-style. A histogram of exam scores has bins 40–50: 1, 50–60: 2, 60–70: 4, 70–80: 9, 80–90: 17, 90–100: 12. Is the data skewed right, symmetric or skewed left, and is the mean bigger than the median, smaller, or about equal? Answer in the WeBWorK form (SKEWED LEFT, MEDIAN, and so on) and justify from the tail.
+**Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** WW1  **Type:** apply
+**A:** SKEWED LEFT and MEDIAN. The peak sits at 80–90 and the counts fade slowly toward the low scores (4, 2, 1), so the long tail points left. A left tail drags the mean below the median, so the median is the bigger one. WeBWorK 1's version showed the mirror image: a right-skewed histogram with the mean bigger.
+
+### Q: WeBWorK-style. 120 students report how much cash they are carrying. Bins in dollars: 0–10: 48, 10–20: 37, 20–30: 22, 30–40: 6, 40–50: 2, 50–60: 0, 60–70: 1, 70–80: 2, 80–90: 1, 90–100: 1. (a) How many students carry under $10? (b) Is the histogram symmetric, skewed right, skewed left, or none of these? (c) Is the share carrying over $30 above 30%, between 20% and 30%, about 10%, or less than 3%?
+**Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** WW1  **Type:** apply
+**A:** (a) 48, the first bar. (b) Skewed right: the tallest bars are at the low end and a thin tail of bars runs out to $100. (c) About 10%: over $30 means every bar from 30–40 up, 6 + 2 + 0 + 1 + 2 + 1 + 1 = 13 students, and 13/120 = 10.8%. Read the bar heights, add the ones in the range, then divide by the class size; do not eyeball the width of the tail.
+
+### Q: WeBWorK-style. Surface flaws on 50 new cars: 0 flaws on 4 cars, 1 flaw on 8, 2 on 15, 3 on 11, 4 on 7, 5 on 4, 6 on 1. From a blank page, find the mean and the sample variance of flaws per car, to two decimals.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
+**A:** Each row is f copies of x, so n = Σf = 50, Σfx = 0 + 8 + 30 + 33 + 28 + 20 + 6 = 125 and x̄ = 125/50 = 2.50. Σfx² = 0 + 8 + 60 + 99 + 112 + 100 + 36 = 415, so s² = (Σfx² − n x̄²)/(n − 1) = (415 − 50 × 6.25)/49 = 102.5/49 = 2.09. Divide by n − 1: dividing by 50 gives 2.05, the population variance, which is not the sample variance this course uses.
+
+### Q: WeBWorK-style. Forty rivets have mean length 7.240 and standard deviation 0.312, both in hundredths of an inch. Head office wants millimetres, and one inch is 2.54 cm. Give the mean and the standard deviation in mm to three significant figures, and name the rule you used.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
+**A:** One hundredth of an inch is 25.4/100 = 0.254 mm, so every value is multiplied by b = 0.254 with no shift (a = 0). Mean 7.240 × 0.254 = 1.84 mm. Standard deviation 0.312 × 0.254 = 0.0792 mm. Rule: for y = a + bx, ȳ = a + b x̄ and s_y = |b| s_x, with the variance scaling by b². A shift alone would leave s unchanged.
+
+### Q: WeBWorK-style. A boxplot of the lifetimes in months of 30 light bulbs has its lower whisker ending at 2.1, a box from 10.2 to 43.7 with the heavy line at 25.0, and its upper whisker ending at 89.6, with no separate points. Which of 10.2, 25.0, 30.3, 43.7, 89.6 is the median? Give the IQR, say whether 89.6 is an outlier, and say what the 30.3 could be.
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** WW1  **Type:** apply
+**A:** The median is the heavy line inside the box, 25.0. The box edges are Q1 = 10.2 and Q3 = 43.7, and the whisker ends are the minimum and the maximum. IQR = 43.7 − 10.2 = 33.5. The upper fence is 43.7 + 1.5 × 33.5 = 93.95, so 89.6 is inside it and is not an outlier, which is why the whisker reaches it. 30.3 appears nowhere on the plot, so it is a distractor. The mean is never shown on a boxplot; here it would sit above the median because the upper half is stretched out.
+
+### Q: WeBWorK-style, three quick MC. (a) If a distribution is skewed to the left, is the mean less than, greater than, or equal to the median? (b) What percent of the observations lie at or below the third quartile? (c) Which is most affected when an extreme high outlier is added: the standard deviation, the median, or the IQR?
+**Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** WW1  **Type:** apply
+**A:** (a) Less than: the left tail pulls the mean down. (b) 75%, since Q3 is the 75th percentile; the box between Q1 and Q3 holds the middle 50%. (c) The standard deviation, because it squares the outlier's distance from the mean; the median and the IQR depend only on positions in the sorted data and barely move. WeBWorK 1 asked the mirror versions: right skew, the 50% between Q1 and Q3, and the least affected measure.
+
+### Q: WeBWorK-style. A survey asks Vancouver renters from different neighbourhoods and building types what they pay in monthly rent. What is the variable of interest: (A) the renters, (B) the neighbourhood, (C) the building type, (D) the monthly rent paid by a renter? Say what the other three are, and classify the variable.
+**Topic:** 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous)  **Lec:** WW1  **Type:** apply
+**A:** (D). The variable of interest is the quantity the survey measures on each individual. The renters are the individuals, the units the data are collected on; neighbourhood and building type are other variables describing them, both categorical. Monthly rent is numerical and continuous, a dollar amount that can take any value in a range.
+
+### Q: WeBWorK-style. Four people's weekly incomes are $1450, $2100, $1700 and $212000. Compute the mean and the median, then say which better represents these people's income and why.
+**Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** WW1  **Type:** derive
+**A:** Mean = (1450 + 2100 + 1700 + 212000)/4 = 217250/4 = $54,312.50. Sorted: 1450, 1700, 2100, 212000; n = 4 is even, so the median is the average of the 2nd and 3rd values, (1700 + 2100)/2 = $1,900. The median: three of the four people earn near $1,900, while the one outlier drags the mean to a figure nobody earns.
+
+### Q: WeBWorK-style. A stemplot of nine physics point totals out of 200 reads 12 | 3 7, 13 | 0 4 9, 14 | 2 5, 15 | (empty), 16 | 1, 17 | 8. (a) Write out the data set. (b) This stemplot is most like which display: a time plot, a histogram with classes 120–130, 130–140 and so on, a boxplot, or the five-number summary? (c) Give the lowest score as a percentage of the total possible.
+**Topic:** 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf  **Lec:** WW1  **Type:** apply
+**A:** (a) 123, 127, 130, 134, 139, 142, 145, 161, 178: the stem is the hundreds and tens digits, the leaf the ones digit. (b) A histogram with classes 120–130, 130–140 and so on: each stem is a class and the row length is its bar, only with the actual values kept, and the empty stem 15 is an empty bin. (c) 123/200 = 61.5%.
