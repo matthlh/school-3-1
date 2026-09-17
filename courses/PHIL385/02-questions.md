@@ -42,6 +42,21 @@ The right/left labels themselves come from this dispute. Strauss coined them in 
 **Topic:** Kierkegaard 1841–43  **Lec:** 1  **Type:** recall
 **A:** *Either/Or* (*Enten–Eller*), February 1843, "edited by Victor Eremita". It presents the papers of "A", the aesthete, and "B", Judge William.
 
+### Q: Kierkegaard's dissertation, the Berlin winter and the 1843 debut all fall in 1841–43. Put the three in order with their dates, and name the work or person at the centre of each.
+**Topic:** Kierkegaard 1841–43  **Lec:** 1  **Type:** recall
+**A:**
+1. September 1841 — he defends *On the Concept of Irony with Continual Reference to Socrates*, his master's dissertation at Copenhagen, on Socratic irony.
+2. October 1841 to March 1842 — Berlin, attending Schelling's lectures. Enthusiastic first, then disappointed.
+3. 20 February 1843 — *Either/Or* appears, "edited by Victor Eremita". This is the debut of the pseudonymous authorship.
+
+### Q: Someone says Kierkegaard's first book was Either/Or. What is wrong with that, and what makes Either/Or a "debut" anyway?
+**Topic:** Kierkegaard 1841–43  **Lec:** 1  **Type:** critique
+**A:** It is wrong because the dissertation came first, in 1841, two years earlier, and under his own name. *Either/Or* is the debut in a narrower sense: it opens the **pseudonymous** authorship. Kraal's distinction is between his academic work, signed, and the authorship proper, which begins with a pseudonym.
+
+### Q: Why was Schelling in Berlin in 1841, in the king's own metaphor, and why is it ironic that Kierkegaard came away disappointed?
+**Topic:** Kierkegaard 1841–43  **Lec:** 1  **Type:** apply
+**A:** Friedrich Wilhelm IV called Schelling to "stamp out the dragon-seed of Hegelian pantheism", that is, to defend Christian philosophy against Hegelianism. The irony is that Kierkegaard went for exactly that reason — he wanted Hegel answered — and concluded Schelling was not delivering it. He ends up mounting the anti-Hegelian case himself, in a form no lecture hall could contain.
+
 ### Q: List the eight pseudonymous works of the first authorship in publication order, with years.
 **Topic:** First authorship: the 8 pseudonymous works  **Lec:** 1  **Type:** recall
 **A:**
@@ -251,6 +266,14 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: How do A and B differ on marriage, and what does B claim about the beauty of the ethical life?
 **Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** apply
 **A:** A holds that erotic love, above all first love, is aesthetic, and that marriage destroys it, because duty, oath and repetition are unaesthetic. B holds that marriage is where first love becomes actual instead of evaporating, so commitment preserves the aesthetic rather than killing it. B's claim is that the ethical life is more beautiful than the aesthete's, not less, which is why his first essay is called the *aesthetic* validity of marriage.
+
+### Q: Ranking pseudonyms as "lower" and "higher" looks like it commits Kierkegaard to some life-views being objectively better — which would contradict letting each one speak for itself with no verdict. Resolve the tension.
+**Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** critique
+**A:** There is no contradiction, because the two claims are about different things.
+- What the ladder ranks is not opinions but **proximity to ideal Christian existence**, how far a writer has appropriated Christianity into how he lives. Climacus says he is not a Christian; Anti-Climacus writes from inside ideal Christian existence; Kierkegaard puts himself between them and signs the Anti-Climacus books only as editor. The Climacus name comes from John Climacus, who wrote *The Ladder of Divine Ascent*.
+- "Truth is subjectivity" in the *Postscript* makes this precise. The truth that matters is a relation the individual stands in, not a proposition assented to, so two people can recite the same creed and stand at different heights.
+- "No verdict" is a claim about *Either/Or*'s method, not about Kierkegaard having no views. He published the 18 upbuilding discourses under his own name over the same years, carrying his own standpoint; the pseudonyms carry the alternatives.
+- So it is not relativism. He holds Christianity true. He withholds the verdict because a life-view cannot be handed over as a proposition — told the answer, the reader acquires an opinion instead of an existence. That is indirect communication.
 
 ### Q: What is the difference between a "lower" and a "higher" pseudonym, who are Kierkegaard's examples, and where does he place himself?
 **Topic:** Pseudonymity and the 18 discourses  **Lec:** 2  **Type:** recall
