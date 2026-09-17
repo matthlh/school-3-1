@@ -183,6 +183,23 @@ Research Centre's edition. Everything on the essay is checked against the Danish
   A's summary: his misfortune is that he came into the world too soon and therefore constantly
   arrives too late.
 
+### Kraal's example: Gatsby (added 2026-09-16, from your question)
+- Gatsby thinks he is hoping for a future with Daisy. What he wants is Daisy in 1917, before Tom, and
+  he says so: of course you can repeat the past. So what he hopes for lies behind him. That is the
+  first half, hoping for what should be remembered.
+- He has also lived the reunion in his head every night for five years, staring at the green light.
+  When the real Daisy is in front of him she cannot match it; Fitzgerald says the illusion had gone
+  beyond her. He had already experienced the future, so the real one arrives as a memory. That is
+  the second half, remembering what should be hoped for.
+- Two smaller matches. When he finally has her, the green light loses its meaning for him: the hope
+  is disappointed not because the goal moved away but because he is past it. And he got rich too
+  late: the money that would have won her at 22 is exactly what cannot buy her back now. That is
+  A's line about coming into the world too soon and always arriving too late.
+- The novel's last sentence is the formula: boats beating toward the future, carried back into the
+  past.
+- For the exam: Gatsby is Kraal's illustration, from 1925. A's own examples are the teacher who
+  never had a childhood and the man who sees life's joy only on his deathbed.
+
 ### "Is the biggest indicator regret?" — a near miss, and it matters
 - Regret is the everyday face of the remembering individual, so you are in the right part of the
   essay. But as a definition it fails A's test twice.

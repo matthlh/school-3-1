@@ -361,6 +361,10 @@ The second authorship presents his own religious perspective, unlike the first.
 **Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
 **A:** His first wife, Kirstine Nielsdatter Røyen, died childless on 23 March 1796. He married Ane Sørensdatter Lund, who was his household servant, on 26 April 1797, about thirteen months later. Their first child, Maren Kirstine, was born on 7 September 1797, four and a half months after the wedding, so Ane was some five months pregnant at it. The dates are solid. What the father felt about them is inference from Søren's own retrospective writing, not from anything the father left.
 
+### Q: Kraal used *The Great Gatsby* to illustrate the unhappiest one. Map Gatsby onto A's two halves, and say which examples are A's own.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** apply
+**A:** First half, hoping for what should be remembered: Gatsby thinks he is hoping for a future with Daisy but wants Daisy as she was in 1917, before Tom, and insists the past can be repeated, so what he hopes for lies behind him. Second half, remembering what should be hoped for: he has lived the reunion in imagination for five years, so when the real Daisy arrives she cannot match the illusion and the future reaches him as something already experienced. When he finally has her the green light loses its meaning, which is A's point that a disappointed hope discovers it is past the goal rather than short of it; and his money came too late to do what it would have done at 22, which is A's "too soon, therefore always too late". The novel is Kraal's illustration from 1925. A's own examples are the man who never had a childhood and discovers it as a teacher of children, and the man who glimpses life's joy only at the moment of death and then lives on without living it over.
+
 ## Reading: "The Unhappiest One" — the gallery and the ending (read 2026-09-16)
 
 ### Q: A parades eight figures at the end of "The Unhappiest One". List them in order.
