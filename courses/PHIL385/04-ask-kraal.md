@@ -44,8 +44,9 @@ in the question bank instead.
   Reflection in the Modern"? The text does not say and the commentaries do not settle it, and if it
   is the modern one then A is quoting himself to the same club.
 
-- **"Where does someone who scrolls for three hours fit in A's scheme? They're not in the past or
-  the future, but they're not present either."**
+- **"A's unhappy people are at least *somewhere*, the past or the future. Someone doomscrolling
+  isn't anywhere. Does A have a category for that?"** Or, if he is in a good mood: "Is doomscrolling
+  the boredom A is running from, or the absence he's describing?"
   - Your social-media question with a handle on it. If he takes it somewhere, Kierkegaard's 1846
     "present age" (reflection without passion, the press inventing "the public", levelling) is the
     text he will reach for. Don't bring it up yourself.
