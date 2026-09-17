@@ -6,7 +6,8 @@ Usage:
                 [--deadline 2026-09-21] [--notes "..."] [--tags "School,URGENT"] [--dry-run]
   --when / --deadline take YYYY-MM-DD. --when today|tomorrow|evening also work.
 If a to-do with the same title already exists in that project (or area, or anywhere if neither),
-it is updated in place instead of duplicated. Prints the resulting to-do.
+it is updated in place instead of duplicated. When a project or area is given and nothing matches
+inside it, a loose to-do with that title anywhere is updated and filed, rather than copied. Prints the resulting to-do.
 Also importable: add_todo(**kwargs) -> str.
 """
 import argparse, datetime as dt, subprocess, sys
@@ -40,6 +41,17 @@ def add_todo(title, project=None, area=None, when=None, deadline=None, notes=Non
         '  set theBase to current date',
         '  set time of theBase to 0',
         f'  set existing to ({scope} whose name is "{_esc(title)}" and status is open)',
+    ]
+    if scope != "to dos":
+        # The to-do may already exist loose (no project, no area) — updating it is what we want,
+        # otherwise filing a loose item under a project/area just makes a tagged copy beside it
+        # and the planner keeps flagging the untagged original (Matt, 2026-09-17).
+        lines += [
+            '  if (count of existing) = 0 then',
+            f'    set existing to (to dos whose name is "{_esc(title)}" and status is open)',
+            '  end if',
+        ]
+    lines += [
         '  if (count of existing) > 0 then',
         '    set t to item 1 of existing',
         '  else',
