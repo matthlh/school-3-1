@@ -4,26 +4,39 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-_18 topics due as of Wed Sep 16. Say **quiz me**._
+_31 topics due as of Thu Sep 17. Say **quiz me**._
 
-- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 4 d · last unquizzed
-- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 4 d · last unquizzed
-- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 4 d · last unquizzed
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 1 d · last X
-- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 1 d · last unquizzed
-- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 1 d · last unquizzed
-- PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 1 d · last X
-- PHIL 321 · Preference relations and ordinal-scale axioms · overdue 1 d · last X
-- PHIL 321 · Ignorance rules: maximin, leximin, maximax, optimism-pessimism · overdue 1 d · last X
-- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 1 d · last unquizzed
-- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 1 d · last unquizzed
-- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 1 d · last unquizzed
-- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 1 d · last unquizzed
-- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 1 d · last unquizzed
-- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 1 d · last unquizzed
-- ASIA 250 · Defining religion, myth and ritual · due today · last unquizzed
-- ASIA 250 · Aesthetic experience and the faith frame · due today · last unquizzed
-- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · due today · last unquizzed
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 5 d · last unquizzed
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 5 d · last unquizzed
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 5 d · last unquizzed
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 2 d · last X
+- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 2 d · last unquizzed
+- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 2 d · last unquizzed
+- PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 2 d · last X
+- PHIL 321 · Preference relations and ordinal-scale axioms · overdue 2 d · last X
+- PHIL 321 · Ignorance rules: maximin, leximin, maximax, optimism-pessimism · overdue 2 d · last X
+- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 2 d · last unquizzed
+- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 2 d · last unquizzed
+- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 2 d · last unquizzed
+- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 2 d · last unquizzed
+- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 2 d · last unquizzed
+- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 2 d · last unquizzed
+- ASIA 250 · Defining religion, myth and ritual · overdue 1 d · last unquizzed
+- ASIA 250 · Aesthetic experience and the faith frame · overdue 1 d · last unquizzed
+- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 1 d · last unquizzed
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · due today · last X
+- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · due today · last unquizzed
+- PHIL 321 · Principle of dominance · due today · last ~
+- PHIL 321 · Principle of insufficient reason · due today · last ~
+- PHIL 321 · Utility and preferences · due today · last ~
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · due today · last X
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · due today · last X
+- PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · due today · last unquizzed
+- PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · due today · last unquizzed
+- PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · due today · last unquizzed
+- STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · due today · last unquizzed
+- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · due today · last unquizzed
+- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · due today · last unquizzed
 
 ## All topics
 
@@ -187,3 +200,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-16 | Logged PHIL 385 lec 3 (Wed Sep 16: Kierkegaard's family losses, and the analytic core of "The Unhappiest One") → 22 questions, 2 ledger topics due Sep 17. Fact-checked against the Danish *Enten–Eller* and the journals: **two earlier errors corrected**. A raises "the unhappiest one is the one who cannot die" only as the Wandering Jew legend and then discards it (death is the common good fortune of all human beings), and A does not conclude from Solon that no one can be called the unhappiest before death — he turns the saying into the prize and expressly includes the dead in the competition. `readings/_unhappiest.md` and two answers in the bank rewritten. |
 | 2026-09-16 | Read "The Unhappiest One" through for him — he had no notes past the first third. `readings/unhappiest-one.md` now walks the whole address: the contest rules, the analysis, the eight-station gallery (the dismissed girl, Niobe, Antigone, Job, the prodigal's father, the lapsed martyr, the *accessit* girl, the winner), the reversal, and a table of every allusion checked against the SKS commentary. 15 new questions, 1 new ledger topic due Sep 17. File renamed from `_unhappiest.md`, which closes the reading to-do. |
 | 2026-09-16 | Talked "The Unhappiest One" through after the reading log (grief as proof of a real past · presence over pain and whether A's definition is a stipulation · aesthete vs hedonist · the empty grave as a seat anyone can take · presence vs happiness as the measure · "most experiences" as the aesthetic view on trial · Gatsby as Kraal's example). All of it added to `readings/unhappiest-one.md` and lecture 3; 9 more questions; 4 opinion questions for Kraal, with spoken wording for the opener. |
+| 2026-09-17 | Morning check: CPSC 310 schedule reshuffled (refactoring folded into lec 3, lec 4+ each moved one slot earlier) — logistics updated and staged outlines renumbered; STAT 251 TA office hour moved to Fri Sep 18 15:00; ASIA 250 Mini-Quiz 1 scored 10/10; Rogers x Databricks hackathon registration (closes today 17:00) added to Things3. |

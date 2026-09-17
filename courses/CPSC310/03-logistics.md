@@ -43,6 +43,12 @@ only — useful for style, not content.
   Dennis · Wed 2:00–3:00 ICCS 306 Kyle Chin · Thu 3:00–5:00 (TBA) Kevin · Fri 11:00–1:00 (TBA) Shu.
   Current list: Piazza @8.
 - iClicker codes: 101 SSXL · 102 YSQU · 103 NBOE. Canvas course ID 192903 (empty).
+- The lecture schedule was reshuffled on 2026-09-17. Refactoring stopped being its own lecture and
+  was folded into lecture 3, so everything from the old lecture 4 onward moved one slot earlier.
+  The order is now lecture 3 Cohesion & Refactoring (Sep 17), lecture 4 Polymorphism & LSP (Sep 22),
+  lecture 5 Testability (Sep 24), lecture 6 Test Doubles & dependency inversion (Sep 29),
+  lecture 7 Patterns: Adapter & Composite (Oct 1), lecture 8 Patterns: Strategy & State (Oct 6).
+  Lab 2 was retitled "coupling & cohesion" and Lab 3 "refactoring & testability". No deadline moved.
 - Course-site map (checked 2026-09-11): Schedule `/26w1/schedule` = week table, slide PDFs
   (`/26w1/lectures/NN-*.pdf`), lab weeks, due dates · Materials `/26w1/materials/unit-0N/` =
   per-lecture question + reader chapters · Reader `/textbook/` (Software Construction · Analytical
