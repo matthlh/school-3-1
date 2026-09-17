@@ -38,6 +38,12 @@ in the question bank instead.
   because the view is incoherent, or because A is not very good at living it? Could someone pull it
   off?
 
+- **Which Antigone is in "The Unhappiest One"?** A parades her as someone who turned her back on
+  hope and took recollection's fidelity instead. Is that Sophocles' Antigone, who acts and defies
+  and dies rather than remembers, or A's own reworked modern Antigone from "Ancient Tragedy's
+  Reflection in the Modern"? The text does not say and the commentaries do not settle it, and if it
+  is the modern one then A is quoting himself to the same club.
+
 ## One boring question worth real marks
 
 - **Whose view does an exam question want?** If a question says "Kierkegaard holds that…" and the
