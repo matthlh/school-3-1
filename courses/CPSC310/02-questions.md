@@ -133,3 +133,79 @@ Format:
 ### Q: Why is implicit coupling more dangerous than explicit coupling of the same degree? Tie this to lecture 1's idea of "footprint."
 **Topic:** Coupling & connascence  **Lec:** 2  **Type:** derive
 **A:** Explicit coupling (imports, types) is visible to the compiler, so tooling can find every affected site, the way a clear footprint can be fully read. Implicit coupling is only visible at runtime, so nothing stops you from missing part of it, the same risk a large or unclear footprint carries.
+
+## Lec 3 — Cohesion & refactoring (logged 2026-09-17, deck 02b-cohesion-refactoring.pdf + reader Change Difficulty and Refactoring; no in-class notes)
+
+### Q: The deck pairs each of coupling and cohesion with one difficulty and one risk. Give all four, then say which of the four the Parkboard `v1-direct` diff (the loyalty-tier block pasted at four sites across two files) shows most directly.
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** recall
+**A:** High coupling: the difficulty is making the edit in more places, and the risk is missing a place that needed the edit. Low cohesion: the difficulty is understanding what the unit actually does before you can change it, and the risk is an edit disturbing code unrelated to the reason for the change. Parkboard v1 shows the coupling difficulty most directly, because one concept needs four edit sites. It also plants loyalty logic inside registration code, which sets up the cohesion risk for the next change.
+
+### Q: Name the three kinds of cohesion binding, define each in one sentence, and give the reader's alternative name for the third. Then say what "the more they share, the more they belong together" tells you to do with a statement that shares nothing with its neighbours.
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** recall
+**A:** Data binding: two statements read or write the same data. Logic binding: two statements sit in the same branch of a conditional or switch and run because that condition held. Order binding: the statements must run in a fixed sequence. The reader's prose calls the third one timing, though its own table says Order. A statement with no binding to anything around it does not belong in that unit, so it is the first candidate to move or extract, while a pair sharing several bindings should stay together.
+
+### Q: Shared setup for all three parts.
+```ts
+function closeMonth(orders: Order[]): number {
+  const total = orders.reduce((s, o) => s + o.amount, 0);  // (1)
+  const avg = total / orders.length;                        // (2)
+  if (avg > 500) {                                          // (3)
+    notifyManager(avg);                                     // (4)
+    logHighAverage(avg);                                    // (5)
+  }
+  purgeTempFiles();                                         // (6)
+  return avg;                                               // (7)
+}
+```
+For each pair, name every binding that holds and justify it: (a) lines 1 and 2; (b) lines 4 and 5; (c) line 6 against any other line. Then say what (c) tells you to do.
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** apply
+**A:** (a) Data, because line 2 reads `total`, which line 1 wrote, and order, because line 1 must run first for line 2 to be right. There is no logic binding beyond both running unconditionally. (b) Logic, because both run only when the `avg > 500` branch holds, and data, because both read `avg`. There is no order binding: swapping them changes nothing. (c) None. Line 6 reads no variable the others use, sits in no branch, and nothing depends on it having run before or after. That is the low-cohesion tell: temp-file purging is a separate concern sitting inside a pricing function, so move it to the caller or its own unit (Fowler's Move Method). Leaving it means a change to temp-file handling forces someone to read and risk breaking `closeMonth`.
+
+### Q: A codebase has `class Helpers` with static methods `formatDate`, `hashPassword`, `parseCsvRow` and `postSlackAlert`, each called from one different feature. A teammate says it is fine because every method is short and has tests. Assess the class in the deck's terms, name what it costs, and say what you would do.
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** critique
+**A:** Cohesion is low. No pair of methods shares data, sits under a common condition, or must run in order, so this is the deck's `Util` box holding pieces of four features. Short, tested methods do not change that, because cohesion is about whether the pieces belong together, not whether each piece works. The cost is the deck's low-cohesion difficulty and risk: someone changing the hash has to open and understand a file full of dates, CSV and Slack, and a shared import or constant edited for one of them can disturb the others. The fix is to move each method next to the feature that calls it (Move Method, or Extract Class per feature), which is the slide 7 picture of one unit per feature. A method genuinely shared by several features can stay, but the class then needs a name that says what it is, not `Helpers`.
+
+### Q: Shared setup for both parts.
+```ts
+function handle(event: "created" | "deleted" | "archived"): void {
+  if (event === "created") {
+    sendWelcome();                 // (1)
+  } else if (event === "deleted") {
+    removeFromIndex();             // (2)
+    sendGoodbye();                 // (3)
+  } else {
+    markReadOnly();                // (4)
+  }
+}
+```
+(a) Which pairs among (1) to (4) are logic-bound, and does any pair also carry a data or order binding? (b) A reviewer wants to pull (2) and (3) into their own function. Does cohesion support that, and why?
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** apply
+**A:** (a) Only (2) and (3) are logic-bound: they are the two statements in one branch and run because `event === "deleted"` held. Every other pair sits in different branches, so no pair across branches shares logic, data or order. By the deck's definitions (2) and (3) carry no data or order binding: neither reads what the other wrote, and neither needs the other to have run first, so swapping them changes nothing the code does. (b) Yes. The pair shares a logic binding with each other and nothing with the rest of the function, so an `onDeleted()` method (Extract Method) groups what belongs together and leaves `handle()` as pure dispatch, where each branch is one call.
+
+### Q: The reader says a cohesive class has a small set of private fields that most of its public methods use. Explain why a field used by only two of ten methods is a cohesion warning, what those two methods and the field probably are, and which refactoring from Fowler's list the advice implies.
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** derive
+**A:** Cohesion is measured by what pairs share. A field most methods read or write is a data binding running through the whole class, and that is what makes the class one unit. A field only two methods touch means those two are data-bound to each other and to almost nothing else in the class, so they form their own cluster with a different reason to change. They are probably a separate concept that was parked here because the class already existed. The implied move is Extract Class: take the field and the two methods into a new class and have the original delegate to it (Move Field and Move Method are the individual steps). The result is two smaller units, each with fields that most of its methods use.
+
+### Q: Give the deck's one-line definition of refactoring and the reader's, and say what a refactoring never does. Then name at least six refactorings from the Fowler catalogue the reader lists.
+**Topic:** Refactoring  **Lec:** 3  **Type:** recall
+**A:** Deck: a predictable, meaning-preserving code transformation, where meaning is behaviour. Reader: "the process of improving on the implementation of an existing design by restructuring the source code to alleviate existing shortcomings and ease future development." A refactoring never changes what the program does: it adds no feature and fixes no bug. It changes structure so the next change is cheaper, usually by consolidating duplicates, reducing coupling or raising cohesion. Fowler's list in the reader: rename (class, field or method); move (class, field or method); extract class, interface or method; push down or pull up a field or method; replace a magic number or string with a constant; replace inheritance with delegation.
+
+### Q: List the reader's four refactoring steps and the deck's six. Why does the test suite run twice, and when does the deck say not to refactor at all?
+**Topic:** Refactoring  **Lec:** 3  **Type:** recall
+**A:** Reader: identify the property to improve and the transformations that will do it; run the suite to confirm the system works; perform the refactoring; run the full suite again and confirm identical behaviour. Deck: make sure all tests pass; examine coupling and cohesion; determine the refactoring; apply it; run the tests to confirm nothing broke; repeat until the change is localised. The first run establishes that green is real before anything is touched, so a red after the refactoring can only be the refactoring. Without it you cannot separate a pre-existing failure from one you introduced. Slide 16 says not to refactor when tests are already failing, when the code should be rewritten instead, or when a deadline is imminent, and slide 17 adds not to refactor while fixing a bug, because a fix changes behaviour on purpose and mixing the two hides which change did what.
+
+### Q: A teammate writes a second near-copy of an eight-line validation block and opens a PR extracting both copies into `validateFields()` "so we never write it a third time". Another teammate says the right moment is the next copy, not this one. Who is following the reader, what is the rule called, and what does it protect against? Then name the three technical-debt triggers the reader gives.
+**Topic:** Refactoring  **Lec:** 3  **Type:** apply
+**A:** The second teammate follows the reader's rule of three: the first time, write it simply; the second time, duplicate it and note the duplication; the third time, refactor. It guards against premature abstraction, which the reader says can make a system harder to understand even when it is easier to extend, because with only two examples you are likely to generalise the wrong thing. The three triggers that debt is due: a new feature is much harder than expected; fixing a bug that should be cohesive needs changes scattered across the system; a code review of a simple change shows complex, hard-to-understand edits. Two copies is a note-it moment, not yet a trigger. Parkboard v2 extracted at four copies.
+
+### Q: A PR titled "Refactor: extract PricingService" moves the fee calculation out of `Invoice` into a new class and, in the same commit, changes tax rounding from truncation to round-half-up, editing two expected values in the tests so the suite stays green. Is this a refactoring? Say what is wrong in the deck's and the reader's terms and what the author should have done instead.
+**Topic:** Refactoring  **Lec:** 3  **Type:** critique
+**A:** No. A refactoring preserves behaviour and the rounding changed, so the program's semantics are different. Editing the expected values destroys the oracle: the process runs the same tests before and after, and here the "after" tests are different tests, so green proves nothing about the extraction. It also breaks the deck's rule of not refactoring while fixing a bug, because a reviewer cannot tell which of the two changes caused any difference in output. The right sequence is one commit that extracts `PricingService` with the existing tests untouched and passing before and after, then a separate commit that changes the rounding and updates its tests as a deliberate behaviour change.
+
+### Q: `Invoice.printOwing()` prints a banner, loops over tasks summing `owing`, then logs the amount. The reader extracts the loop into a private `getOwing()`. Which bindings tied the banner to the loop, which tied the loop to the log line, and why does the extraction raise cohesion rather than merely shorten the method? Name the refactoring.
+**Topic:** Refactoring  **Lec:** 3  **Type:** apply
+**A:** Banner and loop were bound by logic (both run whenever `printOwing` runs) and order (banner first) but shared no data. Loop and log line were bound by data (`owing`) and order (sum before log). So the calculation belongs with printing the amount, not with the banner. After Extract Method, `printOwing()` holds one concern (output) and `getOwing()` another (calculation), and every pair inside each unit shares data or order. Cohesion rises because each unit now contains only statements bound to each other. The shorter method is a side effect, and `getOwing()` can be tested or reused without printing anything.
+
+### Q: Clients call `RoomsParser.parseRooms(id, zip)` and `CourseProcessor.processCourses(id, zip)`, which have the same shape. The reader applies three refactorings so that both classes implement `IParser { parse(id, zip): boolean }`. Name the three, then explain in lecture 2's connascence terms what the clients were bound to before and after, and why that makes the coupling cheaper.
+**Topic:** Refactoring  **Lec:** 3  **Type:** derive
+**A:** Extract Interface (`IParser`), Rename (`CourseProcessor` to `CourseParser`, and both methods to `parse`), plus adding an explicit return type to the signature. Before, each client was bound to a specific class and a specific method name, so adding a third parser or renaming a method meant editing every client: connascence of Name to two different targets, with client logic duplicated per parser. After, clients depend only on the `IParser` type, which is connascence of Type and compiler-checked, so a new parser is one new class and zero client edits. The degree of coupling is about the same, but its strength dropped to the cheapest kind the tooling can catch for you.
