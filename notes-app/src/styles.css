@@ -245,3 +245,42 @@ nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 @media (prefers-reduced-motion: reduce) {
   .wrap, nav { transition: none; }
 }
+
+/* Settings (gear left of the search) */
+.settings { position: relative; display: flex; align-items: center; margin-left: auto; }
+.gear { border: 0; background: none; font-size: 17px; line-height: 1; padding: 6px 8px; border-radius: 8px; cursor: pointer; color: var(--fg2); }
+.gear:hover, .gear.on { background: var(--soft); color: var(--fg); }
+.pop { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; min-width: 300px; padding: 8px 14px 10px;
+       background: var(--panel); border: 1px solid var(--border2); border-radius: 12px; box-shadow: 0 12px 34px rgba(0,0,0,.14); font-size: 13.5px; }
+.pop .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0; }
+.pop .row + .row { border-top: 1px solid var(--hair); }
+.pop .lbl { color: var(--fg2); font-weight: 500; }
+.pop .btn.secret { font-size: 13px; padding: 4px 12px; }
+.pop .hintline { margin: 2px 0 2px; font-size: 12.5px; color: var(--muted); }
+.pop .hintline .link { font-size: 12.5px; }
+@media (max-width: 640px) { .pop { position: fixed; left: 12px; right: 12px; top: 56px; min-width: 0; } }
+
+/* Secret visuals. Scoped to the content (main, sidebar, crumbs, search) so the settings popover stays readable
+   and every link still sits where it was. Text stays in the DOM for screen readers; only its paint changes. */
+[data-visual="abstract"] :where(main, nav, .crumbs, .search) :is(h1, h2, h3, h4, p, li, td, th, a, span, button, summary, label, em, strong, b, i, code, small, div, input, mark, select) {
+  color: transparent !important; -webkit-text-fill-color: transparent;
+  text-decoration: line-through !important; text-decoration-thickness: .66em !important; text-decoration-skip-ink: none !important;
+  text-decoration-color: var(--border3) !important;
+}
+[data-visual="abstract"] :is(main, nav) a, [data-visual="abstract"] :is(main, nav) a * { text-decoration-color: var(--link) !important; text-decoration-color: color-mix(in srgb, var(--link) 55%, var(--bg)) !important; }
+[data-visual="abstract"] :is(main, nav) a:hover, [data-visual="abstract"] :is(main, nav) a:hover * { text-decoration-color: var(--link) !important; }
+[data-visual="abstract"] .search input::placeholder { color: transparent; }
+[data-visual="abstract"] .search input { caret-color: var(--fg); }
+[data-visual="abstract"] :is(main, nav) svg { opacity: .35; }
+[data-visual="abstract"] :is(main, nav) input[type=checkbox] { opacity: .35; }
+
+[data-visual="blobs"] :is(main, nav) { filter: blur(3px) contrast(1.35) saturate(1.5); }
+[data-visual="blobs"] :is(.crumbs, .search) { filter: blur(3px); }
+
+[data-visual="wireframe"] :is(main, nav, .crumbs) * {
+  background: transparent !important; box-shadow: none !important; color: transparent !important; -webkit-text-fill-color: transparent;
+  text-decoration: none !important; border-color: var(--border3) !important;
+  outline: 1px solid var(--border3); outline: 1px solid color-mix(in srgb, var(--fg) 22%, transparent); outline-offset: -1px;
+}
+[data-visual="wireframe"] :is(main, nav) svg { opacity: .25; }
+[data-visual="wireframe"] :is(main, nav, .crumbs) *:focus-visible { outline: 2px solid var(--focus); }
