@@ -267,6 +267,19 @@ The second authorship presents his own religious perspective, unlike the first.
 **Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** apply
 **A:** A holds that erotic love, above all first love, is aesthetic, and that marriage destroys it, because duty, oath and repetition are unaesthetic. B holds that marriage is where first love becomes actual instead of evaporating, so commitment preserves the aesthetic rather than killing it. B's claim is that the ethical life is more beautiful than the aesthete's, not less, which is why his first essay is called the *aesthetic* validity of marriage.
 
+### Q: From Victor Eremita's point of view, which of the pseudonyms are the "lower" and which the "higher" ones? Answer carefully.
+**Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** critique
+**A:** The question has no answer from Eremita's side, for three reasons.
+- The terms are not his and appear nowhere in *Either/Or*. "Lower" and "higher" are Kierkegaard's own, used of Johannes Climacus and Anti-Climacus in the second authorship, *The Sickness unto Death* (1849) and *Practice in Christianity* (1850). Eremita signs his Preface in November 1842.
+- Eremita does not know he is in a system of pseudonyms. He takes A and B for two real men whose papers he found in the desk.
+- About A and B he refuses to rank at all: once the book is read they are forgotten and only the views of life stand facing each other, expecting no final decision in particular persons.
+
+Two hierarchies are being confused.
+- **Nesting**, Eremita's own Chinese-puzzle-box image: Kierkegaard, then Eremita, then A, then Johannes the Seducer. It tracks who frames whom inside the fiction.
+- **The existential ladder**, Kierkegaard's: Anti-Climacus above him, Climacus below. It tracks proximity to ideal Christian existence.
+
+They do not line up, and the editor role flips between the two books. In *Either/Or* Kierkegaard hides behind Eremita, an editor beneath him. In *The Sickness unto Death* he puts "S. Kierkegaard" on the title page as editor of Anti-Climacus, a pseudonym above him. So Anti-Climacus is higher on the ladder while lower in the nesting.
+
 ### Q: Ranking pseudonyms as "lower" and "higher" looks like it commits Kierkegaard to some life-views being objectively better — which would contradict letting each one speak for itself with no verdict. Resolve the tension.
 **Topic:** Why Kierkegaard uses pseudonyms  **Lec:** 2  **Type:** critique
 **A:** There is no contradiction, because the two claims are about different things.
