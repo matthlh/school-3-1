@@ -11,6 +11,8 @@
       try {
         var t = localStorage.getItem('theme');
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        var v = localStorage.getItem('visual');
+        if (v === 'abstract' || v === 'blobs' || v === 'wireframe') document.documentElement.dataset.visual = v;
       } catch (e) {}
     </script>
   </head>

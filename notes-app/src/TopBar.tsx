@@ -1,5 +1,6 @@
 import type { RefObject } from 'react'
 import { toneStyle } from './theme'
+import { Settings } from './Settings'
 
 export interface Crumb { label: string; href?: string; tone?: string }
 
@@ -28,6 +29,7 @@ export function TopBar({ crumbs, query, onQuery, onMenu, pinned, inputRef }: {
           )
         })}
       </div>
+      <Settings />
       <div className="search">
         <input
           ref={inputRef}
