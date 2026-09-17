@@ -360,3 +360,65 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: What are the actual dates behind the claim that Kierkegaard's father carried guilt about his second marriage?
 **Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
 **A:** His first wife, Kirstine Nielsdatter Røyen, died childless on 23 March 1796. He married Ane Sørensdatter Lund, who was his household servant, on 26 April 1797, about thirteen months later. Their first child, Maren Kirstine, was born on 7 September 1797, four and a half months after the wedding, so Ane was some five months pregnant at it. The dates are solid. What the father felt about them is inference from Søren's own retrospective writing, not from anything the father left.
+
+## Reading: "The Unhappiest One" — the gallery and the ending (read 2026-09-16)
+
+### Q: A parades eight figures at the end of "The Unhappiest One". List them in order.
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** An unnamed young girl whose lover was unfaithful, dismissed at once; Niobe; Antigone; Job and his friends; the father of the prodigal son; an unnamed pale figure, a youth who had sought martyrdom; a second young girl whose lover was unfaithful, who is awarded the *accessit*; and finally the unhappiest one himself, unnamed.
+
+### Q: Why is the first young girl dismissed in three lines, and what does that tell you about A's test?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** derive
+**A:** Because she loved him with her whole soul and so she can remember and grieve. Grieving means being present in your memory, and whoever is present in his memory is not unhappy in the strict sense. The test is not how much was lost but whether either direction in time still holds a present for you. That is why the second girl, who can neither grieve nor hope, gets much further.
+
+### Q: Who is Niobe, what does A say her position is, and why does she not win?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** In the myth she boasted of being Leto's equal, Apollo and Artemis killed all twelve of her children, and Zeus turned her to stone. A asks whether she is a real being or an image, a living person dying or a dead one living. She lost everything at a single blow: she lost what she had given life to, and she lost what gave her life. No hope beckons her; she stands hopeless, petrified in memory. She does not win because she was unhappy for one instant and in that same instant became happy, and nothing can take that from her. Her memory is of something real.
+
+### Q: What does A say about Antigone, and what does he wish her?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** She is the last of the outcast house of Oedipus, the blow passing from one generation to the next until it crushes her. A says one generation's sorrow is enough for one human life, and that she has turned her back on hope and exchanged its inconstancy for the loyalty of memory. He then wishes her a long life as full of meaning as a deep sigh, that no forgetfulness take anything from her, and that the daily bitterness of grief be given to her in abundance.
+
+### Q: What is A's line about Job, and on what ground does he refuse him the grave?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** "He lost everything, but not at one blow; for the Lord took, and the Lord took, and the Lord took." His friends taught him to feel the bitterness of the loss, since the Lord gave and gave and gave, and threw in a foolish wife as well. A honours him for his grey hair and his misfortune and then refuses him in one clause: he lost everything, but he had possessed it. Job's memory is of a real past, so he is present in it.
+
+### Q: Who is the only hoper in the gallery, and how does A contrast him with the figure before him?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** apply
+**A:** The father of the prodigal son. The contrast with Job is exact and A draws it himself: Job lost what was dearest and the Lord took it, whereas here the enemy took it; Job has lost, this man is losing; it was not taken from him, it is vanishing. He does not sit at home in sackcloth and ashes like Job but has left home to search. His hope makes him old, and A repeats the refrain as the body fails: his feet are tired, his eyes dim, his body seeks rest, his hope lives; his hair is white, his foot halts, his heart breaks, his hope lives.
+
+### Q: Describe the pale figure in the gallery, and say who he is commonly but wrongly taken to be.
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** critique
+**A:** A youth whose name has been forgotten, many centuries having passed. He sought martyrdom and saw himself in imagination nailed to the cross with heaven open, but reality proved too heavy, the fervour disappeared, and he denied his Master and himself. He was not crushed but broken, his spirit enfeebled. And he did become a martyr after all, though not by the cross or the beasts but by being burned alive and slowly consumed. He is often taken for the apostle Peter, because of the denial, but he is not: the text says his name is forgotten, which is exactly what Peter's is not, and Peter was crucified rather than burned. The wording borrows Peter's denial for a generic lapsed would-be martyr.
+
+### Q: Why does the second young girl come closest without winning, what is she awarded, and what is that award?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** Because she can do neither of the two things that would keep her present to herself. She cannot grieve, since perhaps he was not unfaithful and not a deceiver; and she cannot hope, since he was a riddle. A tells her she must divide herself and hope by day and grieve by night, or grieve by day and hope by night, and that she should be proud, because one should never be proud of happiness but may be of unhappiness. She is awarded an honourable *accessit* and the place next to the grave, but not the grave. An *accessit* is the runner-up prize given for the second-best answer in a university prize competition.
+
+### Q: What titles does A heap on the unhappiest one when he finally appears, and what does A call him by name?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** The emissary from the kingdom of sighs, the elected favourite of suffering, the apostle of sorrow, the silent friend of pain, and the unhappy lover of memory — confounded in his memory by the light of hope, and deceived in his hope by the shadows of memory. He has no name. A greets him as the great unknown whose name he does not know, and salutes him with his title of honour.
+
+### Q: What is the real-world source of the grave in "The Unhappiest One", and what does Kierkegaard's own note about it say?
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** A grave slab in Worcester Cathedral inscribed *Miserrimus*, Latin for "the most wretched". Kierkegaard recorded it in a notebook in 1840, and the note already contains the whole conceit: that someone might read the inscription and conclude that nobody at all lay buried there, but that the grave was meant for him.
+
+### Q: Name the two Easter allusions in "The Unhappiest One" and say what they do to the essay.
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** derive
+**A:** The empty grave at the opening, and "the stone is rolled away" when A greets the winner near the end. Both echo the women at Christ's tomb in Mark 16. They make the grave in the unhappy west an inverted Holy Sepulchre: Christ's tomb is empty because he rose to life, and this one is empty because the man who belongs in it has not been found and has never lived.
+
+### Q: A offers the unhappiest one two opposite wishes. Give both, and say why he offers the second.
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** The first is that no one understand him but everyone envy him, that no friend attach himself to him, no girl love him, no secret sympathy suspect his solitary pain, no eye fathom his distant sorrow and no ear detect his secret sigh. He offers the second in case that proud soul scorns such pity and spurns the relief: that the girls love him, that women with child in their anguish seek him out, that mothers put their hopes in him, that the dying look to him for comfort, that the young attach themselves to him, that husbands depend on him and the aged reach for him as for a staff — that the whole world believe he is able to make it happy.
+
+### Q: How does A reverse the title at the end, and what four clauses follow the reversal?
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** He says farewell to the unhappiest one and then corrects himself: he ought to say the happiest, because this is a gift of fortune that nobody can give himself. Language fails and thought is confounded, for who is the happiest except the unhappiest and who the unhappiest except the happiest. Then the four clauses: what is life but madness, faith but folly, hope but a reprieve, and love but salt in the wound.
+
+### Q: How does "The Unhappiest One" actually end, and what follows about whether the contest is settled?
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** derive
+**A:** The winner vanishes and the fellowship is standing at the empty grave again. A wishes him peace, rest, recovery, every possible good fortune, an early death, an eternal oblivion and no remembrance, so that not even the memory of him should make anyone else unhappy. Then he dismisses the meeting: the night has passed and the day begins its untiring activity again, never weary of repeating itself for ever, which echoes Ecclesiastes 1. Nothing is settled. No one is installed in the grave, A said at the start that the title belongs to a class rather than a person, and he told the winner that the time was perhaps not yet come and the way perhaps long. The grave is as empty at the end as at the beginning.
+
+### Q: A says the grave itself is not the strangest thing about the opening story. What does he find stranger, and what does he say about titles?
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** recall
+**A:** He asks which is the more surprising, that no corpse was found or that the grave was opened at all, and says it is strange that anyone took the trouble to check whether someone was in it. On titles: reading a name on an epitaph makes you want to climb down and talk to the man, but this inscription says so much on its own that it works the way a book title can, so evocative and so personally appealing that you will never read the book.
