@@ -10,6 +10,8 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
 ## When he says "log <COURSE> lec N" (or pastes lecture notes / a photo of his page)
 0. His in-class notes are **one handwritten page, his way** — no template, no format rules
    (Matt, 2026-09-11). He pastes a photo or a rough dump after class; organising it is my job.
+   **CPSC 310 is the exception:** no page from him; the lecture file is the organised deck (rule under
+   Course-specific rules).
 1. Save the notes to `courses/<CODE>/lectures/NN-<slug>.md`: his words verbatim (transcribe a
    photo faithfully), then a short **Clarifications** block only where he flagged a confusion or
    something was wrong or incomplete. Nothing else — the file is an archive he never rereads;
@@ -114,10 +116,17 @@ builds the 6-question deck the morning check sends to his phone. Last step of ev
   **Project repo:** cloned at `/Users/matthe/Documents/CodingProjects/CPSC 310/solo_mhe28` (SSH remote,
   Node 24, `yarn build` / `yarn test`, VS Code format-on-save configured). **Never commit or push
   there** (Matt, 2026-09-14) — every push to `main` is a graded submission; edit and test, he does git.
-  **Logging a CPSC 310 lecture** = run `--lecture N`, then his page (if any) verbatim + clarifications
-  from the deck + questions from deck *and* reader chapter. Decks download to
-  `routines/slides/cpsc310/` (git-ignored); never copy slide text into the public repo beyond the
-  clarifications and questions.
+  **Logging a CPSC 310 lecture** (Matt, 2026-09-17: he takes no notes in this course, so the posted deck
+  *is* the lecture record) = run `--lecture N`, then write `lectures/NN-<slug>.md` as the deck organised for
+  study: a one-line preamble (deck link, reader chapter links, question count), `## Learning goals` (the
+  deck's goals slide, paraphrased), `## Slides, organized` with one `###` per topic block naming its slide
+  range, plain sentences, the reader's terms in bold on first use, a short fenced code fragment only where
+  the point needs it; then `## In class` (iClicker, exercises) and `## Clarifications` (deck vs reader
+  disagreements) only when there is something, and `## Your notes` only if he sent some. Paraphrase, never
+  transcribe: the decks say "do not distribute on non-UBC domains" and the repo is public, so the PDFs stay
+  git-ignored in `routines/slides/cpsc310/` and no slide is copied wholesale. Questions still come from the
+  deck *and* the reader chapter. A deck posted before class can be logged that morning; anything from class
+  is added afterwards under In class.
 - **STAT 251** — 33% of the grade is non-exam work (clicker in class, labs in person, WeBWorK,
   written assignments and pre-lab quizzes at home) plus a 1% Piazza bonus. Those points are not negotiable; ask
   about them. `courses/STAT251/01-topics.md` holds the **official learning outcomes** — the
