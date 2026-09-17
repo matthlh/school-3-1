@@ -174,6 +174,69 @@ Kraal's exams are factual, and this essay is nothing but allusions. These are th
 | "The stone is rolled away" | Mark 16:3–4 |
 | The day repeating itself for ever | Ecclesiastes 1 |
 
+## Clarifications from our discussion (2026-09-16)
+
+### Why grief disqualifies
+- You can only grieve what you actually had. Niobe had twelve children and mourns them, so however
+  destroyed she is, she has somewhere to stand: her past is real and she is living in it. A's rule is
+  that whoever is present in his memory is not the unhappiest.
+- Job's verdict is the same rule in one clause: he lost everything, but he had possessed it. Losing
+  proves you had it. Having it means your past is real.
+- The second girl gets closer than either of them because she has no ground in either direction. She
+  cannot grieve, since perhaps he was not a deceiver; she cannot hope, since he was a riddle. She
+  does not even know what she lost. Less happened to her than to Niobe, and she ranks higher.
+- So the contest is not "who suffered most." It is "who has nothing real behind them and nothing
+  real ahead." Grief is proof of something real.
+
+### Presence over pain, and whether that is a stipulation
+- A is not measuring how bad anyone feels. He is measuring whether they are anywhere at all. The
+  unhappiest one is not in the most pain; A says he has no passion, "not because he lacks it, but
+  because that same instant he has the opposite." His condition is cancellation, not intensity. He
+  cannot even say what is wrong with him, which is why he would be declared mad if he tried.
+- That is a definition, not an argument. A defines unhappiness as absence from yourself, borrows the
+  boundary from Hegel, and never defends it. Define unhappiness as suffering instead and Job wins the
+  grave. This is a fair objection and the essay has no answer to it.
+- The insight underneath the stipulation is real, though: pain you can name is bearable in a way pain
+  you cannot place is not. Compare the two girls. The first knows he cheated and can hate him and move
+  on. The second cannot close the file. An ambiguous loss is worse than a clear one, even though
+  "less happened." That is A's point with the theatre removed.
+
+### Aesthete, not hedonist
+- The course word for A is **aesthete**, and it is broader than hedonist. A hedonist wants pleasure. An
+  aesthete wants experience: the interesting, the intense, the mood, misery included. A hedonist does
+  not found a club to celebrate sorrow on Fridays. A does, and the Symparanekromenoi cultivate
+  unhappiness as something to savour.
+- The hedonist side of A shows up in the next reading, *Crop Rotation*, where boredom is the root of
+  all evil and pleasures are rotated to stay ahead of it. Hedonism is one of A's moods, not his
+  definition.
+
+### The empty grave as a chair
+- The grave has to stay empty for the essay to work. A says every unhappy visitor feels it was dug
+  for him, and that only works if nobody is in it. It is a seat anyone can take, which is also why A
+  said at the start that the title belongs to a class rather than a person.
+- It also keeps the club's game going. These are aesthetes for whom misery is the Friday hobby; if
+  someone were actually buried, the contest would be over. So A crowns a nameless winner, calls him
+  the happiest, lets him vanish, and ends with the day starting again. The reversal is the club's
+  joke about itself: being the unhappiest is the one prize luck can never take from you.
+
+### Happiness versus presence, which is why this is an existentialism reading
+- Your instinct measures a life by happiness. A measures it by whether you are present to your own
+  existence. That gap is why this essay sits in an existentialism course: it is the first place the
+  book asks "are you actually here?" rather than "are you happy?"
+- Judge William picks up the same criterion in volume 2 and gives the answer A never gives: you
+  become present by choosing, by committing to something. A diagnoses and walks off.
+
+### "The happiest life is the one with the most experiences"
+- That is the aesthetic life-view, stated cleanly, and it is the position the rest of the book puts on
+  trial. A himself shows where it breaks in *Crop Rotation*: novelty wears out, every experience gets
+  boring, so the pleasures have to be rotated faster and faster. The Symparanekromenoi are the end
+  state, people who did experience everything and now count themselves dead.
+- The Judge's diagnosis, later, is that a life built on new experiences has no self, only a sequence
+  of moods, and depends on the outside world to deliver the next one. His counter is that presence
+  comes from commitment, which does not need novelty; the married man, he says, has first love
+  continuously rather than once.
+- Hold the view if you hold it. Just know it is the claim the book exists to argue about.
+
 ## Clarifications on your part-1 notes
 - **The title.** "The Unhappiest One. An inspired address to the Symparanekromenoi." The Symparanekromenoi are A's fictional club, the "fellowship of the dead": aesthetes who count themselves already dead and meet to celebrate unhappiness. A is giving them a speech.
 - **"Why did he do that?"** The text does not say who opened the grave or why. Only what they found matters: nothing. A quotes the hymn line about peace in the grave to set up the irony. The grave is supposed to be the one place where the unhappy finally rest, and this one is empty. The unhappiest one does not even get that.
@@ -186,6 +249,6 @@ Kraal's exams are factual, and this essay is nothing but allusions. These are th
 - **Why the grave is empty, then.** Because the contest is still open and the winner has not yet been laid in it. When A finally hails the unhappiest one at the end, he says the stone is rolled away and the grave's shade awaits him, but the time is perhaps not yet come and the way perhaps long.
 - **Where "cannot die" does come back.** In the middle of the essay, hedged, and about absence rather than immortality: he cannot in a way die, for he has not lived; he cannot in a way live, for he is already dead. That is about living in hope or recollection instead of the present, and it is not the answer to why the grave is empty. Part 2 is where it is explained.
 
-Questions: 20 in [02-questions.md](../02-questions.md) under the two "Reading: The Unhappiest One"
-headings, plus 16 more from lecture 3 on the analysis itself. Ledger: 2 topics (The Unhappiest One,
+Questions: 28 in [02-questions.md](../02-questions.md) under the "Reading: The Unhappiest One"
+and "Discussion" headings, plus 17 more from lecture 3 on the analysis itself. Ledger: 2 topics (The Unhappiest One,
 The gallery in The Unhappiest One), both due Sep 17. Reading complete.

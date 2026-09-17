@@ -162,7 +162,10 @@ Research Centre's edition. Everything on the essay is checked against the Danish
   A's answer is memory, not hope.
 
 ### The two strict formations, and then the crossing
-- A **hoper** is not unhappy in the strict sense as long as he is present *in* his hope. He becomes
+- A **hoper** is not unhappy in the strict sense as long as he is present *in* his hope. A's own
+  example of a hoper who is *not* strictly unhappy is the person who hopes for eternal life: he
+  gives up the present, so he is unhappy in a loose sense, but he is present in that hope and never
+  collides with the particular moments of finite life. Hope that carries you forward is fine. He becomes
   strictly unhappy when he cannot: he loses hope, hopes again, loses it again. The genuine case is
   sharper, and A corrects his own wording to get at it: it is not that he hopes for something with
   no reality for him, it is that he hopes for something he himself knows cannot be realised, because
@@ -177,6 +180,11 @@ Research Centre's edition. Everything on the essay is checked against the Danish
   what stops him being present in his hope; hope is what stops him being present in his memory. He
   hopes for what ought to be remembered and remembers what he ought to hope for. So what he hopes
   for lies behind him and what he remembers lies ahead.
+- Planning is not the second half. Planning is thinking about the future while staying here: the
+  logistics, the times, the responses. A planner still expects to be surprised. A's man has
+  *consumed* the future, lived it in imagination so thoroughly that when it arrives it is already
+  used up, so nothing happens for the first time. The line to draw for yourself is between working
+  out the logistics and pre-living how it will feel. A does not draw it; he gives no advice at all.
 - The mechanism underneath it, which is the kind of thing Kraal can ask: an ordinary hope is
   disappointed because the goal moved further off. His is disappointed because he is *past* the
   goal. It has already been lived through, or should have been, and has passed over into memory.
@@ -211,6 +219,12 @@ Research Centre's edition. Everything on the essay is checked against the Danish
 - What Kraal was getting at with "I should have done that, or done it better" is the everyday
   version: most people's unhappiness is a past they keep re-entering. A's analysis starts there and
   then argues that it is not yet the worst case.
+- Three ways to relate to a past you missed, from our discussion. "I wish I had done that" is
+  ordinary regret about a real absence, and you are present in your memory. Living inside the
+  version of your youth that never happened, trying to remember it as if it had, is A's
+  stuck-in-the-past case. Trying to have it now, at 25 or 40, and finding it does not land because
+  the moment it was built for is gone, is hope pointed backwards, the combination. Noticing the gap
+  is fine. Building a life around it in either direction is the trap.
 
 ### "I don't really understand this perspective" — the two lines that make it click
 - On being alone: he has no contemporary he can attach himself to, no past he can long for, because
@@ -249,6 +263,6 @@ Research Centre's edition. Everything on the essay is checked against the Danish
   Enthusiastic Address to Symparanekromenoi / Peroration in the Friday Meetings"; Hong has
   "inspired" for "enthusiastic".
 
-Questions: 22 in [02-questions.md](../02-questions.md) under "Lec 3". Ledger: 2 new topics, plus
+Questions: 23 in [02-questions.md](../02-questions.md) under "Lec 3". Ledger: 2 new topics, plus
 corrections to two answers under the reading. The gallery of candidates at the end of the essay is
 not banked yet; it lands when you log the rest of the reading.

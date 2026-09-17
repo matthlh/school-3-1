@@ -426,3 +426,37 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: A says the grave itself is not the strangest thing about the opening story. What does he find stranger, and what does he say about titles?
 **Topic:** The Unhappiest One  **Lec:** reading  **Type:** recall
 **A:** He asks which is the more surprising, that no corpse was found or that the grave was opened at all, and says it is strange that anyone took the trouble to check whether someone was in it. On titles: reading a name on an epitaph makes you want to climb down and talk to the man, but this inscription says so much on its own that it works the way a book title can, so evocative and so personally appealing that you will never read the book.
+
+## Discussion of "The Unhappiest One" (2026-09-16)
+
+### Q: Niobe lost twelve children at a single blow. The second young girl lost one lover who may not even have wronged her. Why does the second girl rank higher in A's contest?
+**Topic:** The gallery in The Unhappiest One  **Lec:** reading  **Type:** apply
+**A:** Because the contest is not about how much was lost but about whether either direction in time still holds a present. Niobe's loss is real and complete, so she can grieve, and grieving means she is present in her memory; A says she was unhappy for one instant and in that same instant became happy, and nothing can take that from her. The second girl cannot grieve, because perhaps he was not a deceiver, and cannot hope, because he was a riddle. She does not even know what she lost, so she has no ground behind her and none ahead. Less happened to her and she stands closer to the grave. Grief is proof of something real, and that disqualifies you.
+
+### Q: Give A's example of a hoping individual who is not unhappy in the strict sense, and say why he is not.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** The person who hopes for an eternal life. A grants that he is unhappy in a certain sense, because he renounces the present, but he is not strictly unhappy, because he is present to himself in that hope and never comes into conflict with the particular moments of finite existence. Hope is not the problem; only hope you cannot be present in, for something you yourself know cannot be realised, makes the strict case.
+
+### Q: "Planning your future carefully is a form of A's unhappy hoping." Assess.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** apply
+**A:** No. Planning is thinking about the future while staying present: logistics, timing, contingencies. A planner still expects to be surprised, and A says a hoper who is present in his hope is not strictly unhappy. A's second half of the combination is different in kind: the man has taken the future up in thought, experienced it in thought, and so remembers it instead of hoping for it. The future arrives already used up. The distinction is between working out what will happen and pre-living how it will feel. A describes the second and offers no advice about either.
+
+### Q: "A's definition of unhappiness is a stipulation, not an argument." Assess, and say what insight survives if the objection is granted.
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** critique
+**A:** The objection holds. A defines the unhappy one as the one who is absent from himself, borrows the past-or-future boundary from Hegel, and never defends the definition; he thanks Hegel and moves on. Define unhappiness as suffering instead and Job or Niobe wins the grave, and the essay collapses. What survives is a psychological claim that does not depend on the definition: pain you can name and place is bearable in a way that pain you cannot is not. The first girl knows he cheated and can grieve; the second cannot close the file because she does not know what happened. An ambiguous loss outranks a clear one, which is A's point without the theatre.
+
+### Q: "A is a hedonist." Say what is right and what is wrong in that, and name the reading where the hedonist side shows most.
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** critique
+**A:** The course term is aesthete, and it is wider than hedonist. A hedonist wants pleasure; an aesthete wants experience — the interesting, the intense, the mood — and misery counts. A hedonist would not found a club to celebrate sorrow on Fridays, and A's Symparanekromenoi cultivate unhappiness as something to savour, so "hedonist" cannot explain this essay at all. What is right in it: A does have a hedonist mood, and it shows most in "Crop Rotation", where boredom is the root of all evil and pleasures are rotated to stay ahead of it. Hedonism is one of A's moods, not his definition.
+
+### Q: A measures a life by presence rather than by happiness. Explain the difference, say why it makes this an existentialist text, and say what answer Judge William gives that A does not.
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** derive
+**A:** The ordinary measure asks whether a life feels good. A asks whether the person is present to his own existence at all: the unhappiest one may not be in the most pain, but he is nowhere, absent in both directions. That shift, from "are you happy" to "are you actually here", is the criterion existentialism will run on, which is why the essay is in this course. A diagnoses and walks off; he gives no cure. Judge William, in volume 2, takes the same criterion and answers it: you become present to yourself by choosing, by committing to something, rather than by consuming experiences.
+
+### Q: "The happiest life is the one with the most experiences, kept fresh." Which life-view in Either/Or is that, where does the book first show it failing, and what is the Judge's alternative?
+**Topic:** Why Kierkegaard uses pseudonyms  **Lec:** reading  **Type:** critique
+**A:** It is the aesthetic life-view, A's own, stated plainly. The book first shows it failing in A's own "Crop Rotation": novelty wears out, every experience turns boring, and the pleasures have to be rotated faster and faster to stay ahead of it. The Symparanekromenoi of "The Unhappiest One" are the end state, people who have experienced everything and count themselves already dead. The Judge's diagnosis is that such a life has no self, only a sequence of moods, and depends on the outside world to supply the next one. His alternative is that presence comes from commitment, which needs no novelty; the married man, he argues, has first love continuously rather than once.
+
+### Q: Why does the grave in "The Unhappiest One" have to stay empty for the essay to work?
+**Topic:** The Unhappiest One  **Lec:** reading  **Type:** derive
+**A:** Two reasons, both in the text. First, A says every unhappy person who comes to the grave feels it was dug for him, and that only works if nobody is in it; it is a seat anyone can take, which matches A's rule that the title belongs to a class rather than an individual. Second, the fellowship's whole activity is the contest; if someone were buried the contest would be over. So A crowns a nameless winner, tells him the time has perhaps not yet come, calls him the happiest, lets him vanish, and ends with the day beginning again. The reversal is the club's joke about itself: being the unhappiest is the one prize fortune can never take away.
