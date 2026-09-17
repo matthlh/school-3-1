@@ -16,3 +16,5 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | 7 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | 2026-09-14 | | | 0 | 2026-09-15 | reading, part 1 logged; lectures Sep 14–18 |
 | 8 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | 2026-09-14 | | | 0 | 2026-09-15 | |
 | 9 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | 2026-09-14 | | | 0 | 2026-09-15 | |
+| 10 | Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) | 3 | 2026-09-16 | | | 0 | 2026-09-17 | |
+| 11 | The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) | 3 | 2026-09-16 | | | 0 | 2026-09-17 | |

@@ -100,3 +100,36 @@ Format:
 ### Q: deleteBuilding touches no disk or network itself, yet it is declared async. Why must it be, and what happens if a caller forgets await on an async function whose body throws?
 **Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** derive
 **A:** Completion must be tracked at every level between the slow operation and whoever needs the result; a function can only hand its caller that tracking (a Promise) if it is itself async, so async propagates up the call chain (readBuildings → deleteBuilding → handler). Without await, the throw becomes a rejected Promise nobody holds: the following line ("Report sent.") still runs, then Node dies with an unhandled rejection. The compiler does not catch the missing await.
+## Lec 2 — Coupling (logged 2026-09-15, deck 02a-coupling.pdf + reader Change Difficulty)
+
+### Q: Coupling is measured on three axes. Name them and give a one-line definition of each.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** recall
+**A:** Degree: how many components a dependency touches. Locality: how far apart the dependent components are. Strength (connascence): how much effort it takes to change the dependency.
+
+### Q: List the five connascence types in increasing order of cost to change, one line each.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** recall
+**A:** Name (what something is called) · Type (the shape of the data) · Value (a shared literal) · Position (argument order) · Algorithm (a computation both sides must do the same way).
+
+### Q: `createInvoice(customerId, startDate, endDate, total, tax)` is called from several modules. One caller swaps `total` and `tax`. Which connascence type is this, and why is the bug worse than a compile error?
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** apply
+**A:** Connascence of position. The code still compiles and may still pass tests, since both arguments are the same type; it just computes the wrong number, silently, for every invoice that caller creates.
+
+### Q: The string `"pending"` is hardcoded in validation, reporting, and UI code. Renaming it to `"in-review"` in only two of the three spots does not error. Which connascence type is this, and why is it worse than connascence of name?
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** apply
+**A:** Connascence of value. Renaming a method (connascence of name) is caught by the compiler or an IDE's rename tool at every call site; a shared literal string is invisible to both, so a missed spot runs without error and just misbehaves.
+
+### Q: `findUserById` gets renamed everywhere via one IDE refactor with no bugs introduced, even though it has many call sites. Explain why connascence of name is cheap despite a high degree, using Degree, Locality, and Strength.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** critique
+**A:** Degree (call-site count) is high, but Strength is low: a name is explicit and type-checked, so tooling finds and fixes every site mechanically. Cost tracks Strength more than Degree — a large, cheap-to-fix footprint beats a small, silent one.
+
+### Q: Class A encodes data with an algorithm; Class B must decode it with the matching algorithm. There is no shared name, type, or literal between them. Name the connascence type, and explain what makes it dangerous to catch.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** apply
+**A:** Connascence of algorithm. Nothing in the code ties the two implementations together — no import, no shared constant, no type signature — so a change to one side's logic breaks the other with no compiler error and no obvious code link to follow.
+
+### Q: The reader says coupling cannot be eliminated, only loosened. Name the three ways to reduce it, mapped to the three axes.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** derive
+**A:** Minimize the number of interfaces between elements (reduces Degree). Minimize the distance between interfaces (reduces Locality). Weaken the kind of connascence a dependency relies on, e.g. a named options object instead of five positional arguments (reduces Strength).
+
+### Q: Why is implicit coupling more dangerous than explicit coupling of the same degree? Tie this to lecture 1's idea of "footprint."
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** derive
+**A:** Explicit coupling (imports, types) is visible to the compiler, so tooling can find every affected site, the way a clear footprint can be fully read. Implicit coupling is only visible at runtime, so nothing stops you from missing part of it, the same risk a large or unclear footprint carries.
