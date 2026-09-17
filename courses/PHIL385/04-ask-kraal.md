@@ -44,6 +44,23 @@ in the question bank instead.
   Reflection in the Modern"? The text does not say and the commentaries do not settle it, and if it
   is the modern one then A is quoting himself to the same club.
 
+- **Is the scroller A's unhappiest one, A's aesthete, or the "present age"?** Someone who scrolls
+  all evening is not in the past and not in the future, but not present either. In 1846 Kierkegaard
+  described an age of reflection without passion, where the press manufactures a phantom called
+  "the public" and everyone talks about everything and commits to nothing — levelling. Which
+  diagnosis fits, or is this something he did not foresee?
+  - Your social-media question, with a handle on it. Asked without the handle it gets a general
+    answer.
+- **Is A's definition of unhappiness just a stipulation?** He borrows the boundary from Hegel and
+  never argues for it. Define unhappiness as suffering instead and Job wins the grave. Does the
+  essay ever earn its definition, or does it only work if you grant it first?
+- **Which text in this course is the best argument against me?** Say your actual view: the happiest
+  life is the one with the most experiences, kept fresh. Then ask where the book hits that hardest.
+  - He will enjoy this one, and the answer is a map of the term.
+- **Does "The Unhappiest One" have a cure, or is reading the Judge as the answer reading the book
+  backwards?** A diagnoses and walks off. Is "choose yourself" in volume 2 meant as the response to
+  A's unhappiest one, or is that us imposing a plot on two authors who never met?
+
 ## One boring question worth real marks
 
 - **Whose view does an exam question want?** If a question says "Kierkegaard holds that…" and the
