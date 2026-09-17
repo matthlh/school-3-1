@@ -409,6 +409,66 @@
      "X"
     ]
    ]
+  },
+  "1fa30e48": {
+   "course": "PHIL385",
+   "topic": "Kierkegaard 1841–43",
+   "history": [
+    [
+     "2026-09-17",
+     "X"
+    ]
+   ]
+  },
+  "f6482419": {
+   "course": "STAT251",
+   "topic": "1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)",
+   "history": [
+    [
+     "2026-09-17",
+     "O"
+    ]
+   ]
+  },
+  "945d38a4": {
+   "course": "CPSC310",
+   "topic": "Three fluencies",
+   "history": [
+    [
+     "2026-09-17",
+     "X"
+    ]
+   ]
+  },
+  "8617e62f": {
+   "course": "PHIL321",
+   "topic": "Ignorance rules: maximin, leximin, maximax, optimism-pessimism",
+   "history": [
+    [
+     "2026-09-17",
+     "X"
+    ]
+   ]
+  },
+  "ea4e3a79": {
+   "course": "ASIA250",
+   "topic": "Defining religion, myth and ritual",
+   "history": [
+    [
+     "2026-09-17",
+     "X"
+    ]
+   ]
+  },
+  "23ab1ecf": {
+   "course": "PHIL385",
+   "topic": "Pseudonymity and the 18 discourses",
+   "history": [
+    [
+     "2026-09-17",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -719,6 +779,50 @@
     [
      6,
      "be82635a",
+     "PHIL385",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-17",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "1fa30e48",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "f6482419",
+     "STAT251",
+     "O"
+    ],
+    [
+     3,
+     "945d38a4",
+     "CPSC310",
+     "X"
+    ],
+    [
+     4,
+     "8617e62f",
+     "PHIL321",
+     "X"
+    ],
+    [
+     5,
+     "ea4e3a79",
+     "ASIA250",
+     "X"
+    ],
+    [
+     6,
+     "23ab1ecf",
      "PHIL385",
      "X"
     ]

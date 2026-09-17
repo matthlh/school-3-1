@@ -4,24 +4,18 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-_31 topics due as of Thu Sep 17. Say **quiz me**._
+_25 topics due as of Thu Sep 17. Say **quiz me**._
 
-- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 5 d · last unquizzed
 - PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 5 d · last unquizzed
-- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 5 d · last unquizzed
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 2 d · last X
 - CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 2 d · last unquizzed
 - CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 2 d · last unquizzed
 - PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 2 d · last X
 - PHIL 321 · Preference relations and ordinal-scale axioms · overdue 2 d · last X
-- PHIL 321 · Ignorance rules: maximin, leximin, maximax, optimism-pessimism · overdue 2 d · last X
 - PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 2 d · last unquizzed
 - PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 2 d · last unquizzed
 - PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 2 d · last unquizzed
-- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 2 d · last unquizzed
 - STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 2 d · last unquizzed
 - STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 2 d · last unquizzed
-- ASIA 250 · Defining religion, myth and ritual · overdue 1 d · last unquizzed
 - ASIA 250 · Aesthetic experience and the faith frame · overdue 1 d · last unquizzed
 - ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 1 d · last unquizzed
 - CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · due today · last X
@@ -45,14 +39,14 @@ _31 topics due as of Thu Sep 17. Say **quiz me**._
 | STAT 251 | 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
 | STAT 251 | Descriptive vs. inferential statistics | 1–2 | 2026-09-16 | O | 1 | 2026-09-23 |
 | STAT 251 | 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
-| STAT 251 | 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) | 3 | — | — | 0 | 2026-09-15 |
+| STAT 251 | 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) | 3 | 2026-09-17 | O | 1 | 2026-09-24 |
 | STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | — | — | 0 | 2026-09-15 |
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | — | — | 0 | 2026-09-15 |
 | STAT 251 | 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) | 4 | — | — | 0 | 2026-09-17 |
 | STAT 251 | 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) | 4 | — | — | 0 | 2026-09-17 |
 | STAT 251 | 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) | 4 | — | — | 0 | 2026-09-17 |
 | CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-09-16 | X | 0 | 2026-09-17 |
-| CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-14 | X | 0 | 2026-09-15 |
+| CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-17 | X | 0 | 2026-09-18 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) | Lab 1 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | — | — | 0 | 2026-09-17 |
@@ -63,11 +57,11 @@ _31 topics due as of Thu Sep 17. Say **quiz me**._
 | PHIL 321 | Utility and preferences | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Ordinal vs cardinal utility | 1–2 | 2026-09-16 | O | 1 | 2026-09-23 |
 | PHIL 321 | Preference relations and ordinal-scale axioms | 2 | 2026-09-14 | X | 0 | 2026-09-15 |
-| PHIL 321 | Ignorance rules: maximin, leximin, maximax, optimism-pessimism | 2 | 2026-09-14 | X | 0 | 2026-09-15 |
+| PHIL 321 | Ignorance rules: maximin, leximin, maximax, optimism-pessimism | 2 | 2026-09-17 | X | 0 | 2026-09-18 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-16 | X | 0 | 2026-09-17 |
-| PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | — | — | 0 | 2026-09-12 |
+| PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-17 | X | 0 | 2026-09-18 |
 | PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | — | — | 0 | 2026-09-12 |
-| PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | — | — | 0 | 2026-09-12 |
+| PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | 2026-09-17 | X | 0 | 2026-09-18 |
 | PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | 2026-09-16 | X | 0 | 2026-09-17 |
 | PHIL 385 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | 1 | 2026-09-16 | ~ | 0 | 2026-09-19 |
 | PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | — | — | 0 | 2026-09-15 |
@@ -76,7 +70,7 @@ _31 topics due as of Thu Sep 17. Say **quiz me**._
 | PHIL 385 | Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) | 3 | — | — | 0 | 2026-09-17 |
 | PHIL 385 | The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) | 3 | — | — | 0 | 2026-09-17 |
 | PHIL 385 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | reading | — | — | 0 | 2026-09-17 |
-| ASIA 250 | Defining religion, myth and ritual | 1 | — | — | 0 | 2026-09-16 |
+| ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-17 | X | 0 | 2026-09-18 |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | — | — | 0 | 2026-09-16 |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | — | — | 0 | 2026-09-16 |
 
@@ -202,3 +196,5 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-16 | Talked "The Unhappiest One" through after the reading log (grief as proof of a real past · presence over pain and whether A's definition is a stipulation · aesthete vs hedonist · the empty grave as a seat anyone can take · presence vs happiness as the measure · "most experiences" as the aesthetic view on trial · Gatsby as Kraal's example). All of it added to `readings/unhappiest-one.md` and lecture 3; 9 more questions; 4 opinion questions for Kraal, with spoken wording for the opener. |
 | 2026-09-17 | Morning check: CPSC 310 schedule reshuffled (refactoring folded into lec 3, lec 4+ each moved one slot earlier) — logistics updated and staged outlines renumbered; STAT 251 TA office hour moved to Fri Sep 18 15:00; ASIA 250 Mini-Quiz 1 scored 10/10; Rogers x Databricks hackathon registration (closes today 17:00) added to Things3. |
 | 2026-09-17 | Things3 cleanup: week of Sep 21 planned (WeBWorK 2 moved off an overloaded Monday). Found `things_add.py` duplicating loose to-dos instead of updating them — two untagged duplicates trashed, and the script now falls back to a global title match when a project or area is given. The planner's untagged-items list is empty again. |
+| 2026-09-17 | Quiz (transit): 6 q · 1 O / 0 ~ / 5 X · ASIA 250, CPSC 310, PHIL 321, PHIL 385, STAT 251 · 6 ledger rows moved |
+| 2026-09-17 | Transit deck graded 1/6 (only the STAT histogram-shape question held). Five topics reset to +1 d. Matt pushed on whether "lower/higher" pseudonym makes life-views objectively rankable — answered from lec 1–2, and banked it as a critique question plus 3 more on Kierkegaard 1841–43, the topic the grader flagged as thin. |
