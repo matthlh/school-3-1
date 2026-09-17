@@ -1,4 +1,4 @@
-# CPSC 310 — Lecture 5 pre-read: Polymorphism and LSP (Thu Sep 24)
+# CPSC 310 — Lecture 4 pre-read: Polymorphism and LSP (Tue Sep 22)
 
 Pulled 2026-09-11 from the reader chapter *Design Principles*
 (https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). The deck was not

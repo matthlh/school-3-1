@@ -48,6 +48,8 @@
 - Office hours from Mon Sep 14: instructor online Fri 9:30–10:30 (Canvas → Zoom tab) and in person
   ~30 min after every MWF class outside the room (he leaves if nobody shows). TA schedule: Canvas →
   Course Information → TA Office Hours (TBD as of Sep 10). Extra hours in midterm week.
+- TA Mohammad Taha Askari moved his 3:00 pm office hour this week to Friday, September 18 at
+  3:00 pm, because he is travelling (Piazza @12, posted 2026-09-17).
 - Canvas course ID 193293. Piazza class `mtnhr8ecx7c3po`. Gen AI page (Sep 8): "strictly prohibited
   in all course assessments unless explicitly stated otherwise."
 - Canvas discussion boards: Other · Final Exam · Midterm · Written Assignments · Textbook Questions ·
