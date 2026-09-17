@@ -182,7 +182,7 @@ The second authorship presents his own religious perspective, unlike the first.
 
 ### Q: Explain A's east/west comparison in "The Unhappiest One" and the parallel it sets up.
 **Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
-**A:** The faithful long eastward for the Holy Sepulchre; the unhappy are drawn westward to the empty grave in England, each believing it is meant for him. Both tombs are empty. Christ's is empty because he rose. The unhappiest one's is empty because he cannot die.
+**A:** The faithful long eastward for the Holy Sepulchre; the unhappy are drawn westward to the empty grave in England, each believing it is meant for him. A calls the fellowship crusaders making a pilgrimage to the sorrowful grave in the unhappy west rather than the holy grave in the happy east. Both tombs are empty. Christ's is empty because he rose. This one is empty because the unhappiest one has not yet been found: A poses the alternative himself, either the man rose and wanders the world still, leaving only his address behind, or he has simply not been found yet, and it is the second that launches the crusade.
 
 ### Q: Who is excluded from the society of the unhappy in "The Unhappiest One", and why?
 **Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
@@ -190,7 +190,7 @@ The second authorship presents his own religious perspective, unlike the first.
 
 ### Q: How does A use Solon's saying to Croesus, and what does he conclude from it?
 **Topic:** The Unhappiest One  **Lec:** 2  **Type:** recall
-**A:** Solon told Croesus to call no one happy before his death. A flips it: no one can be called the unhappiest before death either. Then the twist: the unhappiest one is the one who cannot die, so his case never closes and his grave is empty.
+**A:** Solon told Croesus to call no one happy before his death, and Croesus remembered it too late, crying "Solon, Solon, Solon!" on the pyre. A does not conclude that no one can be called the unhappiest before death. He turns the saying into the prize: whoever is assured that he is the unhappiest has no need to fear good fortune, because he will never suffer the humiliation of making that cry in his last hour. A also refuses to exclude the dead from the competition, on the ground that they have lived.
 
 ## Lec 2 — The Preface, and the two authors (Mon Sep 14, logged 2026-09-14)
 
@@ -270,3 +270,93 @@ The second authorship presents his own religious perspective, unlike the first.
 ### Q: Two of the eight first-authorship books give their pseudonym as an editor rather than an author. Which books, and which pseudonyms?
 **Topic:** Pseudonymity and the 18 discourses  **Lec:** 2  **Type:** recall
 **A:** *Either/Or*, edited by Victor Eremita, and *Stages on Life's Way*, edited by Hilarius Bookbinder. In both, the pseudonym claims only to have found and arranged other people's papers.
+
+## Lec 3 — Kierkegaard's life, and the formations of the unhappy (Wed Sep 16, logged 2026-09-16)
+
+### Q: Between what ages did Kierkegaard lose most of his family? Name who died and when, say who was left, and give the date of his father's death.
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** Between 6 and 21. He was born 5 May 1813, the youngest of seven. His brother Søren Michael died on 14 September 1819, when Søren was 6; his sister Maren Kirstine on 15 March 1822 (8); his sister Nicoline Christine on 10 September 1832 (19); his brother Niels Andreas on 21 September 1833 (20); his mother Ane on 31 July 1834 (21); and his sister Petrea Severine on 29 December 1834 (21). Five of his six siblings and his mother, inside fifteen years. Both married sisters died after childbirth. The one left is Peter Christian, 1805–1888, later Bishop of Aalborg. His father Michael Pedersen died on 9 August 1838, when Søren was 25.
+
+### Q: What is the "great earthquake", what does Kierkegaard actually say in it, and what are the two things it is commonly said to contain but does not?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** His own phrase is *den store Jordrystelse*, the great upheaval; "earthquake" is the conventional English. It is a set of papers usually cited as Papir 305. He writes that the upheaval forced a new infallible law of interpretation on him: that his father's great age was a curse rather than a blessing, that the family's gifts existed only to tear each other apart, that his father would outlive them all and stand as a grave-cross over the grave of all his own hopes, and that a guilt rested on the whole family with God's punishment upon it, the family to be wiped out as a failed experiment. It does not contain the story of his father cursing God on the heath, and it mentions no sexual sin. It never says what the guilt is. Its date is disputed: traditionally 1838, because the manuscript is headed "25 years old", but the modern edition puts it at 1843–45.
+
+### Q: What is the evidence that Kierkegaard's father cursed God on the Jutland heath as a boy, and how strong is it?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** critique
+**A:** One journal entry Søren wrote in 1846, and nothing else. It describes the dreadful thing about the man who once as a little boy, herding sheep on the Jutland heath, starving and worn out, stood up on a hill and cursed God, and who could not forget it when he was 82. The entry names nobody. It says "the man", not "my father", it does not say Sædding, and it gives the boy no age. The identification with his father rests on Peter Christian, who wept when the passage was shown to him after Søren's death and said it was their father's story. So it is family tradition recorded by a son eight years after the father died, not a documented event, and the age does not even fit, since the father died at 81.
+
+### Q: What did Kierkegaard believe about how long he would live, where does the belief come from, and what actually happened?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** He believed he would not outlive the age of Christ. Brøchner records him saying he had been convinced for years that he would die at 33, and his own journal shortly after his birthday in 1847 says it is strange that he has turned 34, that it is wholly inconceivable to him, and that he had been so certain of dying on or before that birthday that he could be tempted to assume his birth date was recorded wrongly so that he would still die at 34. That is why both 33 and 34 circulate. He lived to 42 and died on 11 November 1855; Peter Christian lived to 82.
+
+### Q: A opens his analysis with a one-sentence definition of the unhappy one. Give it, and say what follows immediately about where in time the unhappy one can be found.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** The unhappy one is the one who has his ideal, the content of his life, the fullness of his consciousness, his own real nature, in one way or another outside himself. He is always absent from himself, never present to himself. Since a person can only be absent in past or future time, that alone maps the whole territory of the unhappy consciousness: he lives either in memory or in hope.
+
+### Q: Whom does A thank for the delimitation of the unhappy consciousness, where does that term actually come from in that philosopher's work, and how much of it does A take over?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** Hegel. A opens by saying that in all Hegel's systematic writings there is a section dealing with the unhappy consciousness, and thanks him for the firm delimitation. In Hegel it is one shape in the *Phenomenology of Spirit*, chapter IV part B, "Freedom of Self-Consciousness: Stoicism, Scepticism and the Unhappy Consciousness", paragraphs 206 to 229 in Miller's numbering. A takes only the formal boundary — the unhappy one has his essence outside himself, so he is absent in past or future — and then fills the territory with his own categories, hope and memory. He takes none of Hegel's content: no Unchangeable, no devotion, no work, no priestly mediator.
+
+### Q: A's claim that the unhappy consciousness appears in *all* Hegel's systematic writings is not literally true. Where does it actually appear, and what is A doing with the exaggeration?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** critique
+**A:** It appears in exactly one, the *Phenomenology of Spirit* of 1807. The mature system drops it: the Encyclopaedia's philosophy of mind has no Stoicism, no Scepticism and no unhappy consciousness, and neither the *Science of Logic* nor the *Philosophy of Right* treats it. The exaggeration is the joke. A follows it immediately with the line that happy is the man who has no more to do with the matter than to write a paragraph on it, and happier still the one who can write the next paragraph — the systematiser passes through unhappiness as one numbered section and moves on. A then says that he and the fellowship will inspect the region as natives rather than as philosophers viewing the kingdom from a distance.
+
+### Q: State the one-sentence contrast between what the unhappy consciousness is for Hegel and what it is for A.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** derive
+**A:** For Hegel it is a stage: the self-division is the engine of its own overcoming, and it is sublated into Reason at the end of the chapter. For A it is a terminus: the unhappiest one never becomes present to himself, the address reaches no winner, and the grave stays empty.
+
+### Q: A uses a grammatical analogy for the two ways of being absent from oneself. Give it, say which science he credits for it, and say which tense pairs with which kind of person.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** He credits philology, not Hegel. Philology teaches that there is a tense present in a past time and a tense present in a future time, but also a pluperfect (*plus quam perfectum*) in which there is nothing present at all, and a future perfect (*futurum exactum*) of the same character. Those two are the hoping and the remembering individuals. The pairing is chiastic, so read it carefully: pluperfect goes with the remembering one and future perfect with the hoping one. Hannay drops the Latin and says "pluperfect tense" and "future perfect tense"; Hong keeps the Latin with glosses.
+
+### Q: A says that one blow, however heavy, can never make a person the *unhappiest*. Why not?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** derive
+**A:** Because a single blow can only do one of two things. It can rob a man of hope, which leaves him present in memory, or it can rob him of memory, which leaves him present in hope. Either way he is still present to himself somewhere, and whoever is present in his hope or in his memory is not unhappy in the strict sense. Unhappiness in A's sense is not a quantity of suffering but a structure. Job is A's own illustration of the point: he lost everything, but not at one blow, for the Lord took, and the Lord took, and the Lord took.
+
+### Q: Someone argues that the worst thing that can happen to a person is to have their hopes shattered, so the unhappiest must be a hoper. What does A say, and on what grounds?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** critique
+**A:** A says the reverse. Hope's unhappy individuals never have the painfulness that memory's have, because their disappointment is always the more cheerful kind. So the unhappiest is always to be sought among the unhappy rememberers. His reason is that memory is pre-eminently the proper element of the unhappy, because the past has the peculiar property of being over, while the future is still to come, so in a sense the future lies nearer to the present than the past does. The award at the end confirms it: the winner is hailed as recollection's unhappy lover.
+
+### Q: What makes a hoping individual unhappy in the strict sense, and what makes a remembering one? Give A's two examples for the remembering case.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** The hoper becomes strictly unhappy when he cannot become present in his hope: he loses hope, hopes again, loses it again, and so is absent from himself in the present and the future alike. The genuine case is sharper, and A corrects his own wording to get it right: it is not that the hoper hopes for something that has no reality for him, but that he hopes for something he himself knows cannot be realised, because when hope fails he wills to go on being a hoper rather than become a rememberer. The remembering one becomes strictly unhappy when he remembers a time that never had reality for him, because when he has nothing to remember he wills to go on being a rememberer rather than become a hoper. A's two examples: the man who never really had a childhood, becomes a teacher of children, discovers there what is beautiful in childhood and then spends his life staring back at a childhood he never had; and the man who lived without ever grasping life's joy, catches sight of it in the moment of death, and then does not die but lives again without living it over. The foil is a man who loses himself in antiquity, the Middle Ages or his own childhood where that did have a decided reality for him — he is not unhappy in the strict sense.
+
+### Q: State the combination that produces the unhappiest one, and give A's formula for where his hope and his memory lie.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** What prevents him from becoming present in his hope is memory, and what prevents him from becoming present in his memory is hope. He constantly hopes for what ought to be remembered and constantly remembers what he ought to hope for. So what he hopes for lies behind him and what he remembers lies ahead of him. Hannay's phrase is that his life is not backwards but back-to-front in two directions; the Danish is "turned the wrong way in a double direction".
+
+### Q: How is the unhappiest one's disappointment different in kind from an ordinary disappointed hope?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** derive
+**A:** When an ordinary hope is disappointed, the goal has been pushed further away. When his is disappointed, he discovers that he is past the goal: the thing has already been lived through, or ought to have been, and has passed over into memory. The future he has already taken up and lived through in thought, so he remembers it instead of hoping it. A's summary is that his misfortune is to have come into the world too soon and therefore to be constantly arriving too late. He is constantly quite near the goal, and in the same moment away from it.
+
+### Q: What does A say about the unhappiest one and madness, and why is it the opposite of what you would expect?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** In daily life he enjoys the honour of being taken for a man in his right mind, and yet he knows that if he explained to one single person how things actually stand with him he would be declared insane. It is enough to drive a man mad — and he does not go mad, and that, says A, is precisely his unhappiness. Madness would at least be a resolution, and he is denied even that.
+
+### Q: A says the whole rest of the world is, for the unhappiest one, a single person. Which person, and what three things does A say he lacks?
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** Misunderstanding. He stands alone with the whole world over against him as the single "Thou" with which he is in conflict, and that inseparable, importunate friend is the misunderstanding. He has no contemporary he can attach himself to, no past he can long for, because his past has not yet come, and no posterity he can hope for, because his posterity is already over.
+
+### Q: Give A's four-part statement about age, death, life and love for the unhappiest one, and say where it falls in the essay.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** recall
+**A:** He cannot become old, for he has never been young; he cannot become young, for he has already become old; in a way he cannot die, for he has never lived; in a way he cannot live, for he is already dead. And he cannot love, because love is always present, and he has no present, no future and no past. It falls in the middle of the essay, closing the abstract portrait of the doubly reversed individual, immediately before the gallery of candidates opens. It is not the ending, and the "cannot die" in it is hedged with "in a way".
+
+### Q: "The unhappiest one is simply the person with the most regret." Assess that using A's analysis.
+**Topic:** The unhappy consciousness and the three formations  **Lec:** 3  **Type:** critique
+**A:** Regret is the everyday face of the remembering individual, so it is the right neighbourhood, but as a definition it fails A's own test twice. First, a man who regrets something he actually did is remembering a real past, and A says whoever is present in his memory is not unhappy in the strict sense, however heavy the blow was. The strictly unhappy rememberer mourns a time that never had reality for him at all. Second, the unhappiest one is not fixed by the content of what he remembers but by the crossing: he remembers what he ought to hope for and hopes for what he ought to remember, so neither direction in time ever holds a present for him.
+
+### Q: Early in the address A considers the man who cannot die as a candidate for the title. What figure does he use, where does the passage sit, and why does he set that answer aside?
+**Topic:** The Unhappiest One  **Lec:** 3  **Type:** recall
+**A:** The Wandering Jew. The passage sits very early, in the paragraph that shuts out anyone who fears death, before Solon and before the Hegel paragraph. A says that if the legend were true the question would be settled, the empty grave explained and the answer easy: the unhappiest is the one who cannot die, who cannot slip down into a grave. Then he cancels it — but it is not so, death is the common good fortune of all human beings, so the unhappiest must be looked for inside that limit. He also ranks the alternative on the way past: happy is the one who could die, happy the one who died in old age, happier the one who died young, happiest the one who died at birth, and happiest of all the one who was never born.
+
+### Q: Does A award the title of the unhappiest one to an individual? What does he say, where does he say it, and what follows for how he runs the contest?
+**Topic:** The Unhappiest One  **Lec:** 3  **Type:** recall
+**A:** No. He says plainly that no single individual is the unhappiest, that it is a class, but that he has no hesitation in awarding the representative of that class the name and the grave. He says it at the end of the paragraph about making themselves fit to judge, immediately before the Hegel paragraph, so it is the rule announced for the whole competition rather than a conclusion drawn at the end. That is why he divides the unhappy into definite groups and lets only one speak for each, and why he warns the fellowship to arm their thought against the seduction of the ear, since no voice is as ingratiating as an unhappy one talking about his own unhappiness.
+
+### Q: Give Kierkegaard's father's background, and say which two kinds of churchgoing the family did.
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** Michael Pedersen Kierkegaard was born on 12 December 1756 at Sædding in West Jutland, came to Copenhagen as a boy, took out his own burgess rights as a hosier in December 1780, made a fortune in wool and cloth, retired from trade in his forties and lived on his capital, and died rich in 1838. Religiously he was in two places at once. He belonged to the Moravian Brødremenighed in Copenhagen and was prominent in it, while the family also attended the state church under Mynster, who confirmed Søren in April 1828. Sunday morning at Vor Frue with Mynster, Sunday evening at the Moravian meeting.
+
+### Q: What are the actual dates behind the claim that Kierkegaard's father carried guilt about his second marriage?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** His first wife, Kirstine Nielsdatter Røyen, died childless on 23 March 1796. He married Ane Sørensdatter Lund, who was his household servant, on 26 April 1797, about thirteen months later. Their first child, Maren Kirstine, was born on 7 September 1797, four and a half months after the wedding, so Ane was some five months pregnant at it. The dates are solid. What the father felt about them is inference from Søren's own retrospective writing, not from anything the father left.
