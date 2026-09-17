@@ -50,6 +50,8 @@ _25 topics due as of Thu Sep 17. Say **quiz me**._
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) | Lab 1 | — | — | 0 | 2026-09-15 |
 | CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | — | — | 0 | 2026-09-17 |
+| CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | — | — | 0 | 2026-09-18 |
+| CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | — | — | 0 | 2026-09-18 |
 | PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-14 | X | 0 | 2026-09-15 |
 | PHIL 321 | Principle of dominance | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
 | PHIL 321 | Right vs rational decisions | 1 | 2026-09-14 | O | 1 | 2026-09-21 |
@@ -198,3 +200,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-17 | Things3 cleanup: week of Sep 21 planned (WeBWorK 2 moved off an overloaded Monday). Found `things_add.py` duplicating loose to-dos instead of updating them — two untagged duplicates trashed, and the script now falls back to a global title match when a project or area is given. The planner's untagged-items list is empty again. |
 | 2026-09-17 | Quiz (transit): 6 q · 1 O / 0 ~ / 5 X · ASIA 250, CPSC 310, PHIL 321, PHIL 385, STAT 251 · 6 ledger rows moved |
 | 2026-09-17 | Transit deck graded 1/6 (only the STAT histogram-shape question held). Five topics reset to +1 d. Matt pushed on whether "lower/higher" pseudonym makes life-views objectively rankable — answered from lec 1–2, and banked it as a critique question plus 3 more on Kierkegaard 1841–43, the topic the grader flagged as thin. |
+| 2026-09-17 | CPSC 310 lec 3 logged from the posted deck (Cohesion & refactoring) → 12 questions, 2 ledger topics due Sep 18. New CPSC 310 lecture format (Matt takes no notes there): lectures 1–3 are now the decks organised for study, checked claim by claim against the deck text and reader chapters. |
