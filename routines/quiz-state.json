@@ -469,6 +469,66 @@
      "X"
     ]
    ]
+  },
+  "5822efdb": {
+   "course": "PHIL385",
+   "topic": "First authorship: the 8 pseudonymous works",
+   "history": [
+    [
+     "2026-09-18",
+     "X"
+    ]
+   ]
+  },
+  "f6f4d915": {
+   "course": "STAT251",
+   "topic": "1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)",
+   "history": [
+    [
+     "2026-09-18",
+     "O"
+    ]
+   ]
+  },
+  "d5677e08": {
+   "course": "PHIL321",
+   "topic": "Preference relations and ordinal-scale axioms",
+   "history": [
+    [
+     "2026-09-18",
+     "X"
+    ]
+   ]
+  },
+  "6cb6f79b": {
+   "course": "PHIL385",
+   "topic": "First authorship: the 8 pseudonymous works",
+   "history": [
+    [
+     "2026-09-18",
+     "X"
+    ]
+   ]
+  },
+  "e5975db2": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-18",
+     "X"
+    ]
+   ]
+  },
+  "612ccd57": {
+   "course": "ASIA250",
+   "topic": "Buddhism as a world religion and the early schools (arhat vs bodhisattva)",
+   "history": [
+    [
+     "2026-09-18",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -824,6 +884,50 @@
      6,
      "23ab1ecf",
      "PHIL385",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-18",
+   "mode": "quiz",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "5822efdb",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "f6f4d915",
+     "STAT251",
+     "O"
+    ],
+    [
+     3,
+     "d5677e08",
+     "PHIL321",
+     "X"
+    ],
+    [
+     4,
+     "6cb6f79b",
+     "PHIL385",
+     "X"
+    ],
+    [
+     5,
+     "e5975db2",
+     "CPSC310",
+     "X"
+    ],
+    [
+     6,
+     "612ccd57",
+     "ASIA250",
      "X"
     ]
    ]

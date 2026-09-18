@@ -14,7 +14,7 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | # | Outcome | Status | Last | Streak | Next |
 |---|---|---|---|---|---|
 | 1a | Distinguish types of data | O | 2026-09-13 | 1 | 2026-09-20 |
-| 1b | Interpret boxplots, histograms; mean/median/mode/variance/IQR *(so far: freq table, pie, bar, dot, stem-leaf, histogram, box plot, mean, median, range, variance, SD, percentiles, quartiles, IQR)* | O | 2026-09-13 | 1 | 2026-09-20 |
+| 1b | Interpret boxplots, histograms; mean/median/mode/variance/IQR *(so far: freq table, pie, bar, dot, stem-leaf, histogram, box plot, mean, median, range, variance, SD, percentiles, quartiles, IQR)* | O | 2026-09-18 | 1 | 2026-09-25 |
 | 1c | Choose the right summary method for a data set *(lec 4: median and IQR versus mean and s, box plot versus histogram)* | O | 2026-09-13 | 1 | 2026-09-20 |
 | 1d | Identify features describing a distribution *(lec 3: mound type, shape, centre, spread, outliers; lec 4: the 1.5 × IQR outlier rule)* | O | 2026-09-17 | 1 | 2026-09-24 |
 | 1e | Use software for data summary / EDA | | | | |
