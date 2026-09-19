@@ -4,20 +4,16 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-_32 topics due as of Sat Sep 19. Say **quiz me**._
+_26 topics due as of Sat Sep 19. Say **quiz me**._
 
 - CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 4 d · last unquizzed
 - CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 4 d · last unquizzed
-- PHIL 321 · Decision situations (certainty / risk / ignorance) · overdue 4 d · last X
 - PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 4 d · last unquizzed
 - PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 4 d · last unquizzed
 - PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 4 d · last unquizzed
 - STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 4 d · last unquizzed
 - ASIA 250 · Aesthetic experience and the faith frame · overdue 3 d · last unquizzed
 - CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 2 d · last unquizzed
-- PHIL 321 · Principle of dominance · overdue 2 d · last ~
-- PHIL 321 · Principle of insufficient reason · overdue 2 d · last ~
-- PHIL 321 · Utility and preferences · overdue 2 d · last ~
 - PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 2 d · last X
 - PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 2 d · last X
 - PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · overdue 2 d · last unquizzed
@@ -30,12 +26,10 @@ _32 topics due as of Sat Sep 19. Say **quiz me**._
 - CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 1 d · last X
 - CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 1 d · last unquizzed
 - CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 1 d · last unquizzed
-- PHIL 321 · Ignorance rules: maximin, leximin, maximax, optimism-pessimism · overdue 1 d · last X
 - PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 1 d · last X
 - PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 1 d · last X
 - ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · due today · last X
 - CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · due today · last X
-- PHIL 321 · Preference relations and ordinal-scale axioms · due today · last X
 - PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · due today · last X
 - PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · due today · last ~
 
@@ -62,14 +56,6 @@ _32 topics due as of Sat Sep 19. Say **quiz me**._
 | CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | — | — | 0 | 2026-09-17 |
 | CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | — | — | 0 | 2026-09-18 |
 | CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | — | — | 0 | 2026-09-18 |
-| PHIL 321 | Decision situations (certainty / risk / ignorance) | 1 | 2026-09-14 | X | 0 | 2026-09-15 |
-| PHIL 321 | Principle of dominance | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
-| PHIL 321 | Right vs rational decisions | 1 | 2026-09-14 | O | 1 | 2026-09-21 |
-| PHIL 321 | Principle of insufficient reason | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
-| PHIL 321 | Utility and preferences | 1 | 2026-09-14 | ~ | 0 | 2026-09-17 |
-| PHIL 321 | Ordinal vs cardinal utility | 1–2 | 2026-09-16 | O | 1 | 2026-09-23 |
-| PHIL 321 | Preference relations and ordinal-scale axioms | 2 | 2026-09-18 | X | 0 | 2026-09-19 |
-| PHIL 321 | Ignorance rules: maximin, leximin, maximax, optimism-pessimism | 2 | 2026-09-17 | X | 0 | 2026-09-18 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-16 | X | 0 | 2026-09-17 |
 | PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-17 | X | 0 | 2026-09-18 |
 | PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-18 | X | 0 | 2026-09-19 |
@@ -95,7 +81,6 @@ _32 topics due as of Sat Sep 19. Say **quiz me**._
 | **Mon Sep 14, 23:59** | ASIA 250 | **Declare independent novel** (open till Sep 23) | 1% |
 | Mon Sep 14 | STAT 251 | WeBWorK 1 opens · TA office hours start (later sets open Tue Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1; each due date is read off WeBWorK the day it opens) | |
 | Tue Sep 15, 23:59 | ASIA 250 | Quiz 1 (then Mondays) — hard lock | 2% ea |
-| Fri Sep 18 | PHIL 321 | keep/drop decision (no-W drop closes Mon Sep 21) | |
 | Mon Sep 21 | UBC | **Drop-without-W deadline** (all courses) | |
 | Mon Sep 21 | STAT 251 | Labs start (Lab 0 = intro to R, no assignment) | |
 | **Tue Sep 22, 23:59** | STAT 251 | **WeBWorK 1** (no late) — corrected from Mon Sep 21; the lecture 3 and lecture 4 Canvas pages both say "due on Tuesday, Sep 22" | WW pool |
@@ -151,7 +136,6 @@ _32 topics due as of Sat Sep 19. Say **quiz me**._
 ### Open questions
 
 - CPSC 310 has nothing on Canvas. Its deadlines exist only on the course site and PrairieLearn, so Canvas silence does not mean nothing is due.
-- PHIL 321 is still an active enrolment on Canvas. Matt decides whether to keep it by Fri Sep 18; the drop-without-W deadline is Mon Sep 21.
 - Which of the four PHIL 385 in-term exams is the 500-word essay exam. The syllabus does not say; the question is on the Ask Kraal list with a Sep 30 deadline, ahead of Exam 1 on Oct 2.
 
 ## Grades so far

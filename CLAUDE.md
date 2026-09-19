@@ -46,7 +46,7 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
 7. **Posted material is pulled before class** (Matt, 2026-09-11: "today for whatever lecture, here's the
    slide summary"). The morning check stages whatever is posted as `lectures/_NN-<slug>.md` (plain-sentence
    outline + 3 pre-lecture questions): CPSC 310 reader chapters and decks via `prelecture.py`; STAT 251,
-   ASIA 250 and PHIL 321 decks and readings via `canvas_materials.js` → `canvas_materials_digest.py` →
+   ASIA 250 decks and readings via `canvas_materials.js` → `canvas_materials_digest.py` →
    `canvadoc_text.js` (all in the morning-check scripts dir; the `.js` files run in the Chrome Canvas tab).
    PHIL 385 has nothing to pull. Logging a lecture consumes its outline: deck-only claims become
    questions and clarifications, then the `_NN` file is deleted. If he logs a lecture and no outline
@@ -157,14 +157,8 @@ builds the 6-question deck the morning check sends to his phone. Last step of ev
   exceptions, concession letters included.
   **Intel (2026-09-10):** Shooklyn 2025W: section averages 82–86, a third of the class at 90+.
   96 here is normal, not heroic — bank it, don't over-invest.
-- **PHIL 321** (Induction, Decision and Game Theory — Chris Stephens) — **undecided.** Dropped
-  2026-09-08, reconsidered 2026-09-09; he's sitting in on the first few classes and deciding by
-  **Sep 18** (drop without a W closes **Mon Sep 21**; W-standing withdrawal closes Oct 30).
-  Folder is back at `courses/PHIL321/` (moved 2026-09-11 so sit-in lectures get quizzed); move it to `archive/` if he drops.
-  Grading: group exercises 10% (best 10/11, **unannounced — miss class = 0**), 2 problem sets
-  10%, Exam 1 20% (**Fri Oct 16**, collides with PHIL 385 Exam 2 and CPSC D2), Exam 2 20%
-  (Nov 23), final 40%. Its Sept–Oct probability unit overlaps STAT 251 ch. 3–6 directly — if he
-  keeps it, quiz the two together rather than separately.
+- **PHIL 321** — dropped for good on 2026-09-19 after sitting in on two lectures. Folder is in `archive/PHIL321-dropped/`;
+  do not mention it in briefs, quizzes or the site. He may add a fifth course (a science breadth such as EOS 112) in a later term.
 
 ## AI use
 Matt has said the written syllabi are out of date and his profs are fine with AI use. That's

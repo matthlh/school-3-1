@@ -15,8 +15,8 @@ from zoneinfo import ZoneInfo
 ROOT = "/Users/matthe/Documents/CodingProjects/School 3-1"
 SNAP_DIR = os.path.join(ROOT, "routines", "snapshots")
 PT = ZoneInfo("America/Vancouver")
-COURSES = ["ASIA250", "CPSC310", "PHIL385", "STAT251", "PHIL321"]
-COURSE_IDS = {193131: "ASIA250", 192903: "CPSC310", 192607: "PHIL385", 193293: "STAT251", 194666: "PHIL321"}
+COURSES = ["ASIA250", "CPSC310", "PHIL385", "STAT251"]
+COURSE_IDS = {193131: "ASIA250", 192903: "CPSC310", 192607: "PHIL385", 193293: "STAT251"}
 
 def load(path):
     raw = open(path).read()

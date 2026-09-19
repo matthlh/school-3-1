@@ -280,16 +280,6 @@
     ]
    ]
   },
-  "77769da7": {
-   "course": "PHIL321",
-   "topic": "Principle of dominance",
-   "history": [
-    [
-     "2026-09-14",
-     "~"
-    ]
-   ]
-  },
   "0c56c87d": {
    "course": "STAT251",
    "topic": "Descriptive vs inferential",
@@ -300,16 +290,6 @@
     ]
    ]
   },
-  "aaa0c44c": {
-   "course": "PHIL321",
-   "topic": "Principle of insufficient reason",
-   "history": [
-    [
-     "2026-09-14",
-     "~"
-    ]
-   ]
-  },
   "24f53215": {
    "course": "STAT251",
    "topic": "Descriptive vs inferential",
@@ -317,56 +297,6 @@
     [
      "2026-09-14",
      "O"
-    ]
-   ]
-  },
-  "2c3ae998": {
-   "course": "PHIL321",
-   "topic": "Right vs rational decisions",
-   "history": [
-    [
-     "2026-09-14",
-     "O"
-    ]
-   ]
-  },
-  "8f41dc5f": {
-   "course": "PHIL321",
-   "topic": "Utility and preferences",
-   "history": [
-    [
-     "2026-09-14",
-     "~"
-    ]
-   ]
-  },
-  "774c530c": {
-   "course": "PHIL321",
-   "topic": "Decision situations (certainty / risk / ignorance)",
-   "history": [
-    [
-     "2026-09-14",
-     "X"
-    ]
-   ]
-  },
-  "5ebf5aa9": {
-   "course": "PHIL321",
-   "topic": "Utility and preferences",
-   "history": [
-    [
-     "2026-09-14",
-     "~"
-    ]
-   ]
-  },
-  "323855c9": {
-   "course": "PHIL321",
-   "topic": "Decision situations (certainty / risk / ignorance)",
-   "history": [
-    [
-     "2026-09-14",
-     "~"
     ]
    ]
   },
@@ -387,16 +317,6 @@
     [
      "2026-09-16",
      "~"
-    ]
-   ]
-  },
-  "202b1d3b": {
-   "course": "PHIL321",
-   "topic": "Ordinal vs cardinal utility",
-   "history": [
-    [
-     "2026-09-16",
-     "O"
     ]
    ]
   },
@@ -433,16 +353,6 @@
   "945d38a4": {
    "course": "CPSC310",
    "topic": "Three fluencies",
-   "history": [
-    [
-     "2026-09-17",
-     "X"
-    ]
-   ]
-  },
-  "8617e62f": {
-   "course": "PHIL321",
-   "topic": "Ignorance rules: maximin, leximin, maximax, optimism-pessimism",
    "history": [
     [
      "2026-09-17",
@@ -487,16 +397,6 @@
     [
      "2026-09-18",
      "O"
-    ]
-   ]
-  },
-  "d5677e08": {
-   "course": "PHIL321",
-   "topic": "Preference relations and ordinal-scale axioms",
-   "history": [
-    [
-     "2026-09-18",
-     "X"
     ]
    ]
   },

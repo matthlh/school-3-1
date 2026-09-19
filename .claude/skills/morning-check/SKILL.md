@@ -133,8 +133,8 @@ inside a `whose` loop — snapshot ids first. (Lessons from 2026-09-10.)
 
 ### 2. Canvas — all active courses
 Matt's STAT 251 lab section is **L1K** (Fri 11–12, ESB 1046, TA Zachary) — only track L1K lab quizzes.
-Course IDs: ASIA 250 `193131` · CPSC 310 `192903` · PHIL 385 `192607` · STAT 251 `193293` ·
-PHIL 321 `194666` (until he drops it). **Ignore** `183899` Science Co-op Workshops and `136962`
+Course IDs: ASIA 250 `193131` · CPSC 310 `192903` · PHIL 385 `192607` · STAT 251 `193293`.
+**Ignore** `183899` Science Co-op Workshops and `136962`
 Academic Integrity — Matt's call, 2026-09-10.
 
 **Path A — Canvas access token. NOT AVAILABLE: UBC blocks student token creation (Matt tried
@@ -320,7 +320,7 @@ pre-questions above).
    missing. Write that file from the staged text: a plain-sentence outline of the chapter's claims
    under `## What the chapter claims`, then `## Three pre-lecture questions`. Quiz-bank questions wait
    for the lecture log.
-2. **STAT 251, ASIA 250, PHIL 321** (Canvas, in the §2 Chrome tab, after `canvas_fetch.js`):
+2. **STAT 251, ASIA 250** (Canvas, in the §2 Chrome tab, after `canvas_fetch.js`):
    run `scripts/canvas_materials.js` with `javascript_tool`, read it back with `get_page_text`, save
    the text to `routines/snapshots/materials-<date>.txt`, then
    ```bash
@@ -334,7 +334,6 @@ pre-questions above).
    `## Likely quiz targets` line for ASIA 250, and 3 pre-lecture questions. A reading (not a deck)
    goes to `courses/<CODE>/readings/_<slug>.md` as an outline plus 3 questions tagged to the week's
    topic. Big books (Harvey, Luhrmann): extract only the assigned page range.
-   PHIL 321 lives here only until the Sep 18 decision; its syllabus PDF is file 47994081.
 3. **Brief:** under **Today's classes**, one line per lecture today: course, lecture title, and
    `→ courses/<CODE>/lectures/_NN-<slug>.md` when the outline exists, then the 3 pre-questions. If
    the outline is missing because nothing is posted yet, say "no deck posted" — never summarise from

@@ -9,7 +9,7 @@ const api = async (p) => { try { const r = await fetch('/api/v1' + p); const t =
 const strip = (h) => (h||'').replace(/<style[\s\S]*?<\/style>/g,'').replace(/<[^>]+>/g,' ').replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&#39;/g,"'").replace(/&quot;/g,'"').replace(/https?:\/\/\S+/g,'[link]').replace(/\s+/g,' ').trim();
 const u = (x) => (x||'').split('?')[0].replace('https://canvas.ubc.ca','');
 const arr = (x) => Array.isArray(x) ? x : [];
-const courses = [[193131,'ASIA250'],[192903,'CPSC310'],[192607,'PHIL385'],[193293,'STAT251'],[194666,'PHIL321']];
+const courses = [[193131,'ASIA250'],[192903,'CPSC310'],[192607,'PHIL385'],[193293,'STAT251']];
 const out = { fetched_at: new Date().toISOString() };
 out.todo = arr(await api('/users/self/todo?per_page=50')).map(t=>({type:t.type,course:t.context_name,title:t.assignment?.name,due:t.assignment?.due_at,pts:t.assignment?.points_possible,url:u(t.html_url)}));
 out.stream = arr(await api('/users/self/activity_stream?per_page=30')).map(s=>({type:s.type,title:s.title,course_id:s.course_id,created:s.created_at,read:s.read_state,url:u(s.html_url),msg:strip(s.message).slice(0,300)}));

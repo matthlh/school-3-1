@@ -13,7 +13,7 @@ const PALETTE: Pair[] = [
   { light: { tint: '#fdf0f3', ink: '#a0405a', line: '#f5d8de' }, dark: { tint: '#2f1a20', ink: '#ee97ab', line: '#552c38' } }, // rose
 ]
 
-const FIXED: Record<string, number> = { STAT251: 0, CPSC310: 1, PHIL385: 2, ASIA250: 3, PHIL321: 4 }
+const FIXED: Record<string, number> = { STAT251: 0, CPSC310: 1, PHIL385: 2, ASIA250: 3 }
 
 export type Theme = 'light' | 'dark' | 'auto'
 const KEY = 'theme'
