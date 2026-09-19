@@ -23,13 +23,13 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 ## 2. Probability basics · Ch 3
 | # | Outcome | Status | Last | Streak | Next |
 |---|---|---|---|---|---|
-| 2a | Rudimentary mathematical properties of probability | | | | |
-| 2b | Describe the sample space | | | | |
-| 2c | Probability as long-run relative frequency | | | | |
-| 2d | Independent vs. mutually exclusive vs. complementary | | | | |
+| 2a | Rudimentary mathematical properties of probability *(lec 5: outcome probabilities lie in [0, 1] and sum to 1, countable additivity, a subset has the smaller probability)* | | | | |
+| 2b | Describe the sample space *(lec 5: coin flips, accident counts, two component lifetimes; discrete, continuous, bivariate)* | | | | |
+| 2c | Probability as long-run relative frequency *(lec 5 slide not reached; lecture 6 opens with it)* | | | | |
+| 2d | Independent vs. mutually exclusive vs. complementary *(lec 5: disjoint and complementary; independence comes in lec 6)* | | | | |
 | 2e | Judge whether an independence assumption is justifiable | | | | |
-| 2f | Probabilities of single, complementary, union, intersection | | | | |
-| 2g | Venn diagrams | | | | |
+| 2f | Probabilities of single, complementary, union, intersection *(lec 5: complement rule, general addition rule, the three-event rule as an exercise)* | | | | |
+| 2g | Venn diagrams *(lec 5: complement, intersection, union, disjoint pictures)* | | | | |
 | 2h | Independence + conditional probability to solve problems | | | | |
 | 2i | Posterior probabilities — tree diagrams / Bayes | | | | |
 | 2j | Law of total probability | | | | |
