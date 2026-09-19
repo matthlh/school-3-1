@@ -529,6 +529,106 @@
      "X"
     ]
    ]
+  },
+  "5d764d56": {
+   "course": "PHIL385",
+   "topic": "Kierkegaard 1841–43",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "c811bc3b": {
+   "course": "CPSC310",
+   "topic": "Lab 1 request path & async",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
+  },
+  "065e7fdf": {
+   "course": "PHIL385",
+   "topic": "Pseudonymity and the 18 discourses",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "779bf547": {
+   "course": "STAT251",
+   "topic": "1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)",
+   "history": [
+    [
+     "2026-09-19",
+     "O"
+    ]
+   ]
+  },
+  "dd79dbff": {
+   "course": "PHIL385",
+   "topic": "Pseudonymity and the 18 discourses",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
+  },
+  "244f66ff": {
+   "course": "PHIL385",
+   "topic": "Kierkegaard 1841–43",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "0f687b02": {
+   "course": "ASIA250",
+   "topic": "Buddhism as a world religion and the early schools (arhat vs bodhisattva)",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "77287861": {
+   "course": "PHIL385",
+   "topic": "Pseudonymity and the 18 discourses",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "ff72bd45": {
+   "course": "CPSC310",
+   "topic": "Lab 1 HTTP & PUT",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
+  },
+  "8f015d83": {
+   "course": "PHIL385",
+   "topic": "Kierkegaard 1841–43",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -997,6 +1097,74 @@
      "4bee8bec",
      "PHIL385",
      "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "mode": "quiz",
+   "n": 10,
+   "note": "",
+   "results": [
+    [
+     1,
+     "5d764d56",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "c811bc3b",
+     "CPSC310",
+     "~"
+    ],
+    [
+     3,
+     "065e7fdf",
+     "PHIL385",
+     "X"
+    ],
+    [
+     4,
+     "779bf547",
+     "STAT251",
+     "O"
+    ],
+    [
+     5,
+     "dd79dbff",
+     "PHIL385",
+     "~"
+    ],
+    [
+     6,
+     "244f66ff",
+     "PHIL385",
+     "X"
+    ],
+    [
+     7,
+     "0f687b02",
+     "ASIA250",
+     "X"
+    ],
+    [
+     8,
+     "77287861",
+     "PHIL385",
+     "X"
+    ],
+    [
+     9,
+     "ff72bd45",
+     "CPSC310",
+     "~"
+    ],
+    [
+     10,
+     "8f015d83",
+     "PHIL385",
+     "~"
     ]
    ]
   }

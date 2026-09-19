@@ -100,6 +100,26 @@ Format:
 ### Q: deleteBuilding touches no disk or network itself, yet it is declared async. Why must it be, and what happens if a caller forgets await on an async function whose body throws?
 **Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** derive
 **A:** Completion must be tracked at every level between the slow operation and whoever needs the result; a function can only hand its caller that tracking (a Promise) if it is itself async, so async propagates up the call chain (readBuildings → deleteBuilding → handler). Without await, the throw becomes a rejected Promise nobody holds: the following line ("Report sent.") still runs, then Node dies with an unhandled rejection. The compiler does not catch the missing await.
+### Q: A client sends POST /api/v2/buildings with the body `{"name": "ICCS", "floors": "six"}` where floors must be a number. A second client sends a body that is not valid JSON at all. Give the status code for each and the one-word reason the codes differ.
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** apply
+**A:** The first gets 422 Unprocessable Entity: the JSON parsed, but a field has the wrong type. The second gets 400 Bad Request: the body could not be parsed. The difference is parsing. 400 means the server could not read it; 422 means it read it and rejected the contents.
+
+### Q: Sort these into "the request worked" and "the client got something wrong": 200, 201, 204, 400, 404, 422. Then say what the first digit of a status code tells you and why 201 and 202 are not interchangeable.
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** recall
+**A:** Worked: 200, 201, 204. Client error: 400, 404, 422. The first digit is the class: 2xx success, 4xx client error, 5xx server error. 201 Created means a new resource now exists. 202 Accepted means the server has queued the work and has not done it yet, so a client cannot assume the thing exists.
+
+### Q: A handler creates a building and returns 200 with the new building in the body. A reviewer says it should return 201. Is the reviewer right, and does anything break if the code stays at 200?
+**Topic:** Lab 1 HTTP & PUT  **Lec:** Lab 1  **Type:** critique
+**A:** The reviewer is right: 201 is the code that says a new resource was created, and it is what openapi.yml and the lab tests specify. Nothing breaks at the HTTP level, since both are success codes, but the contract is now wrong: clients and tests written to the spec check for 201, and a generic 200 hides the create-versus-replace distinction that PUT relies on (201 first call, 204 repeat).
+
+### Q: A teammate writes: "req is the data we pass in, and res is what the API returns to us." Correct each half from the server's point of view, and name the one method chain you use to send a reply.
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** critique
+**A:** Inside the handler you are the server, not the caller. req is the incoming request from the client: you read from it (req.params, req.body). res is the reply you are building for that client: you write to it, and you never receive anything from it. The reply goes out through res.status(code).send(body); the handler's return value is ignored.
+
+### Q: Where does express.json() run relative to app.delete("/api/v2/buildings/:buildingId", …), what would req.body contain without it, and why is it middleware rather than part of each handler?
+**Topic:** Lab 1 request path & async  **Lec:** Lab 1  **Type:** apply
+**A:** It runs on every request before any handler, because app.use(express.json()) registers it as middleware at startup. Without it req.body is undefined, since Express does not parse bodies by default. It is middleware because every handler that reads a body needs the same parsing, so it is done once in a shared step instead of being copied into each handler.
+
 ## Lec 2 — Coupling (logged 2026-09-15, deck 02a-coupling.pdf + reader Change Difficulty)
 
 ### Q: Coupling is measured on three axes. Name them and give a one-line definition of each.
