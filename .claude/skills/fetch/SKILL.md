@@ -35,7 +35,7 @@ or stages the one missing piece asked for.
      (`routines/prelecture/cpsc310/NN-*.txt`) — plain-sentence outline of the chapter's claims
      under `## What the chapter claims`, then `## Three pre-lecture questions`. If the deck is
      already posted, prefer its slide titles (`routines/slides/cpsc310/NN-*.txt`) over the reader.
-   - **STAT 251 / ASIA 250 / PHIL 321:** needs a Chrome tab on canvas.ubc.ca (morning-check
+   - **STAT 251 / ASIA 250:** needs a Chrome tab on canvas.ubc.ca (morning-check
      SKILL.md §2 for opening it). Run `scripts/canvas_materials.js` (in
      `.claude/skills/morning-check/scripts/`) via `javascript_tool`, read it back with
      `get_page_text`, save to `routines/snapshots/materials-<date>.txt`, then
@@ -90,5 +90,5 @@ his phone. Once he has signed in at canvas.ubc.ca in Chrome, this re-runs only t
   tracked, same as morning-check produces) and reads what already exists. Logging a lecture is
   still `log <CODE> lec N`; grading a deck is still replying to it with grades.
 - If a Chrome step here needs a domain permission prompt and none appears (STAT 251/ASIA
-  250/PHIL 321 path), retry up to 3 times before telling him it's blocked — see morning-check
+  250 path), retry up to 3 times before telling him it's blocked — see morning-check
   SKILL.md §5's note on transient permission hiccups.

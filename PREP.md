@@ -11,9 +11,7 @@ Ordered by return on time.
 **1. ~~Paste the syllabi~~ — done (2026-09-10).** All four live in `courses/<CODE>/00-syllabus.md`;
 logistics (office hours, links, dates) in `03-logistics.md`.
 
-**2. ~~Decide PHIL 321~~ — done.** Dropped 2026-09-08. Four courses. Remember to actually drop
-it in the SSC before the deadline, and delete the `PHIL_V 321-001` recurring event from your
-calendar (I left it alone — it's yours to remove).
+**2. ~~Decide PHIL 321~~ — done.** Dropped for good 2026-09-19. Four courses.
 
 **3. Get the CPSC 310 environment running end-to-end (~45 min).**
 **D1 is due Fri Sep 25 at 18:00 and late work is not graded — zero, no partial credit.**
@@ -148,10 +146,3 @@ Course-specific in the run-up:
 
 ---
 
-## PHIL 321 — dropped (2026-09-08)
-
-Recorded here so the reasoning survives: PHIL 321 has never had a section average above 86.3 and
-sits at 76.5 over five years. It's a formal-methods course competing with STAT 251 and CPSC 310
-for the same kind of attention, and dropping it freed ~6 h/week plus your MWF noon hour.
-
-If you reverse this before the drop deadline, tell me and I'll rebuild the schedule for five.

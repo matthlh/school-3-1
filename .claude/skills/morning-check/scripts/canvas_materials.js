@@ -4,7 +4,7 @@
 // then read with get_page_text (the result is painted into the body; nothing is returned).
 // Do NOT return URLs with query strings and do not put the word c-r-e-d-e-n-t-i-a-l-s in this file.
 const api = async (p) => { const r = await fetch('/api/v1' + p, {headers:{Accept:'application/json'}}); const t = await r.text(); return JSON.parse(t.replace(/^while\(1\);/, '')); };
-const courses = [[193293,'STAT251',/Lecture Materials/i],[193131,'ASIA250',/^Week \d+/i],[194666,'PHIL321',/./],[192607,'PHIL385',/./]];
+const courses = [[193293,'STAT251',/Lecture Materials/i],[193131,'ASIA250',/^Week \d+/i],[192607,'PHIL385',/./]];
 let out = 'CANVAS MATERIALS ' + new Date().toISOString().slice(0,16) + '\n';
 for (const [cid, code, pat] of courses) {
   out += `\n#### ${code}\n`;

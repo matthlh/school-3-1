@@ -12,7 +12,7 @@ import urllib.request, urllib.parse
 
 BASE = "https://canvas.ubc.ca/api/v1"
 TOKEN_FILE = os.path.expanduser("~/.config/canvas/token")
-COURSES = [(193131, "ASIA250"), (192903, "CPSC310"), (192607, "PHIL385"), (193293, "STAT251"), (194666, "PHIL321")]
+COURSES = [(193131, "ASIA250"), (192903, "CPSC310"), (192607, "PHIL385"), (193293, "STAT251")]
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 def token():
