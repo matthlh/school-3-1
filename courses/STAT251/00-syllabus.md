@@ -20,6 +20,7 @@
 ## Exam format
 - Intel from past terms: **MC-heavy and long** ("impossible to finish on time"). Mocks must be MC and timed.
 - Exams are built from the official learning outcomes (see Topics), not the chapter list.
+- Exams do not cover textbook material beyond what the lectures cover. Premarathna said so after class when asked directly; the TA on Piazza had said neither exam was written yet and to ask him.
 - The final is cumulative over chapters 1, 2, 3, 4, 5, 6, 7, 8, 10, 11.
 
 ## Rules that cost points
@@ -56,3 +57,4 @@ testing · 10 ANOVA · 2 & 11 regression. Schedule is tentative; changes come by
 - [x] WeBWorK 1 due Tue Sep 22, 23:59, confirmed inside WeBWorK (2026-09-16)
 - [ ] WeBWorK 2–10 due dates. WeBWorK shows a due date only once an assignment opens, so the morning check reads each one on its open day (Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1). Until then the dates in Logistics are the Canvas calendar's and may be one day early.
 - [x] WA1 Sat Oct 24 and midterm Fri Oct 30 confirmed (2026-09-11)
+- [x] Exam scope stays within lecture material, per Premarathna after class (2026-09-19)

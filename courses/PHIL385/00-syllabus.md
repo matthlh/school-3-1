@@ -6,15 +6,17 @@
 ## Grading — 100% exams, no papers
 | Component | Weight | Date | Format |
 |---|---|---|---|
-| Exam 1 | 15% | Fri Oct 2, 2:00–2:50pm | MC or essay* |
-| Exam 2 | 15% | Fri Oct 16, 2:00–2:50pm | MC or essay* |
-| Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm | MC or essay* |
-| Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC or essay* |
+| Exam 1 | 15% | Fri Oct 2, 2:00–2:50pm | **Essay: 2 questions, max 500 words each*** |
+| Exam 2 | 15% | Fri Oct 16, 2:00–2:50pm | MC, 7 questions |
+| Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm (syllabus) — **Canvas quiz says Nov 20; unresolved** | MC, 7 questions |
+| Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC, 7 questions |
 | Final | 40% | Dec 11–22, TBD | cumulative |
 
 *Three in-term exams are **multiple choice, 7 questions each**, marked on factual accuracy alone
 (each question ≈ 2.1% of the course grade). One is an **essay exam**: 2 questions, max 500 words
-each. Which one is the essay is not stated. Exams 2–4 are **not cumulative**; only the final is.
+each. The syllabus does not say which; the Canvas quiz pages do. Exam 1 is built with 2 questions and
+Exams 2, 3 and 4 with 7 (checked 2026-09-19), so **Exam 1 is the essay exam**: two 500-word essays
+in 50 minutes, typed in Respondus. Exams 2–4 are **not cumulative**; only the final is.
 
 ## Exam format
 - All four in-term exams are 50-minute Canvas quizzes opening exactly at 2:00pm, written in the
@@ -49,7 +51,7 @@ each. Which one is the essay is not stated. Exams 2–4 are **not cumulative**; 
 | **F Oct 16** | **Exam 2** |
 | M Oct 19 – F Oct 23 | "Seducer's Diary" and "Diapsalmata" |
 | M Oct 26 – W Oct 28 | "Diapsalmata" |
-| **F Oct 30** | **Exam 3** |
+| **F Oct 30** | **Exam 3** — the Canvas quiz page shows Nov 20 instead; ask Kraal |
 | M Nov 2 – F Nov 6 | "Aesthetic Validity of Marriage" |
 | M Nov 9, W Nov 11 | No class (break) |
 | F Nov 13 – W Nov 18 | "Equilibrium" |
@@ -62,6 +64,7 @@ each. Which one is the essay is not stated. Exams 2–4 are **not cumulative**; 
 | Dec 11–22 | **Final**, cumulative |
 
 ## To verify
-- [ ] Which of the four in-term exams is the essay exam?
+- [x] Which of the four in-term exams is the essay exam? Exam 1: its Canvas quiz has 2 questions, the others 7 (2026-09-19). Confirm in passing.
+- [ ] Exam 3 date: the syllabus says Fri Oct 30, the Canvas quiz page says Nov 20, the same day as Exam 4. Almost certainly a Canvas setup slip, but it decides whether Oct 30 is a triple exam day.
 - [ ] Are MC questions multi-select ("the correct answer(s)")? Negative marking?
 - [ ] Respondus LockDown Browser installed and tested before Oct 2

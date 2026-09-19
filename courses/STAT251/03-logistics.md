@@ -29,6 +29,7 @@
 - The course textbook is `textBook_coursenotes.pdf` on Canvas (file 47723417). There are no solutions for chapters 1 and 2. Other chapters have partial solution PDFs on the same page.
 - The normal, t and F tables are supplied on tests and exams. The textbook's own tables are not.
 - Suggested problems are not collected. The instructor and TAs will look over attempts.
+- The exams do not go beyond lecture material, so the suggested problems are practice for what the lectures cover, not extra scope.
 
 | Ch | Problems | Instructor notes |
 |---|---|---|

@@ -44,7 +44,7 @@ DELIV_LADDER = {10: "T-10 environment check: clone, install, run tests, push a t
 KEY_DATES = [  # (date, course, label, kind)  kind: exam | deliverable | admin | paper
     (D(2026, 9, 21), "UBC", "Drop without W closes", "admin"),
     (D(2026, 9, 25), "CPSC310", "D1 due 18:00", "deliverable"),
-    (D(2026, 10, 2), "PHIL385", "Exam 1 14:00 (15%, 7 MC)", "exam"),
+    (D(2026, 10, 2), "PHIL385", "Exam 1 14:00 (15%, ESSAY: 2 × 500 words in 50 min)", "exam"),
     (D(2026, 10, 2), "ASIA250", "Optional Assignment 1 due 23:59 (+2% bonus)", "admin"),
     (D(2026, 10, 15), "ASIA250", "SWR1 due (15%) — date approximate", "paper"),
     (D(2026, 10, 16), "CPSC310", "D2 due 18:00", "deliverable"),
