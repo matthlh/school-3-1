@@ -76,11 +76,15 @@ in the question bank instead.
 - Whether A is named Johannes. Not confirmed anywhere. Johannes is named only inside the diary.
 - Where the sermon sits. In B's section, enclosed in his third and shortest letter, the Ultimatum.
 - Whether "A Fragment of Life" is a jab at system-building. Yes.
+- Which exam is the essay exam. Exam 1. Its Canvas quiz is built with 2 questions; Exams 2, 3 and 4
+  have 7, which is the MC count in the syllabus. Worth one sentence of confirmation if he is already
+  answering the Exam 3 question, not a question on its own.
 
 ## Still open from earlier
 
-- Which of the four in-term exams is the 500-word essay exam. Tracked as its own to-do, deadline
-  Sep 30, because it needs an answer before Exam 1 on Oct 2.
+- **Exam 3's date.** The syllabus says Fri Oct 30; the Canvas quiz page says Nov 20, the same day as
+  Exam 4. Almost certainly a Canvas slip, but Oct 30 is already a STAT midterm and a STAT lab quiz, so
+  it matters. Tracked as its own to-do, deadline Sep 30. Ask it in one sentence at the end of class.
 - Whether the multiple-choice questions are multi-select, and whether there is negative marking.
 - Whether the exam uses Hannay's titles or the Hong titles, since *Philosophical Crumbs* and
   *Philosophical Fragments* are the same book and *Crop Rotation* is elsewhere *Rotation of Crops*.

@@ -13,6 +13,8 @@
 - Office hours: Wed 12:15–12:45 on Zoom (link on the Canvas front page); email one day ahead for a slot.
 - Canvas course ID 192607. Tabs: Home, Zoom, Assignments, Discussions. No modules, files or
   announcements as of Sep 10.
-- Canvas exam entries: Exam 1 Fri Oct 2 14:00–14:50 · Exam 2 Fri Oct 16 · Exam 3 Fri Oct 30 ·
-  Exam 4 Fri Nov 20 · Final undated. Matt re-checked Canvas and the syllabus on 2026-09-14 and
-  they agree on Oct 30 for Exam 3; the earlier Nov 20 reading was wrong.
+- Canvas quiz pages (screenshots 2026-09-19): Exam1 due Oct 2 14:50, 15 points, **2 questions**;
+  Exam2 due Oct 16, 7 questions; Exam3 due **Nov 20**, 7 questions; Exam4 due Nov 20, 7 questions. All
+  open 14:00–14:50, 50-minute limit, Respondus required. So Exam 1 is the essay exam. Exam 3's Nov 20
+  date contradicts the syllabus (Oct 30) and collides with Exam 4, so it is probably a setup slip; the
+  2026-09-14 note that Canvas and the syllabus agreed on Oct 30 was wrong. Ask Kraal.

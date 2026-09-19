@@ -89,7 +89,7 @@ _26 topics due as of Sat Sep 19. Say **quiz me**._
 | Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% |
 | ~Mon Sep 28, 23:59 | STAT 251 | WeBWorK 2 | |
 | Fri Oct 2, 23:59 | ASIA 250 | **Optional Assignment 1** — 250–300 words on Mirabai's religious experience, using only the Lecture 2 slides and Luhrmann ch. 3. Everyone who submits gets full marks and no extensions are given | +2% bonus |
-| **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1** (Canvas quiz, 50-min window) | 15% |
+| **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1 — the essay exam**: 2 questions, max 500 words each, typed in Respondus in 50 min (Canvas quiz has 2 questions; the MC exams have 7) | 15% |
 | ~Tue Oct 6, 23:59 | STAT 251 | WeBWorK 3 | |
 | Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | |
 | ~Mon Oct 12, 23:59 | STAT 251 | WeBWorK 4 | |
@@ -103,14 +103,14 @@ _26 topics due as of Sat Sep 19. Say **quiz me**._
 | ~Thu Oct 29, 23:59 | STAT 251 | WeBWorK 6 (night of the CPSC midterm) | |
 | **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% |
 | Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | |
-| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** | 15% |
+| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** (7 MC) — syllabus date; the Canvas quiz page says Nov 20, ask Kraal | 15% |
 | Fri Oct 30 | UBC | **Withdraw-with-W deadline** (all courses) | |
 | Fri Nov 6, 18:00 | CPSC 310 | **D3** — Design v3 (paired) | 5% |
 | Nov 9–11 | — | Fall break / ASIA reading break | |
 | ~Thu Nov 12 | ASIA 250 | **Short Written Response 2** | 15% |
 | ~Thu Nov 12, 23:59 | STAT 251 | WeBWorK 7 | |
 | ~Mon Nov 16 | ASIA 250 | Final paper questions posted | |
-| **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** | 15% |
+| **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** (7 MC) | 15% |
 | Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired) | 5% |
 | ~Mon Nov 30, 23:59 | STAT 251 | WeBWorK 8 | |
 | Wed Dec 2 | STAT 251 | Written Assignment 2 due | ~5% |
@@ -122,7 +122,7 @@ _26 topics due as of Sat Sep 19. Say **quiz me**._
 | Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% |
 | Dec 11–22 | CPSC 310 | **Final**, cumulative, 2.5 h | 40% |
 
-> **Oct 29–30 is the crunch of the term.** The CPSC 310 midterm is Thu Oct 29, 19:00–21:00. On Fri Oct 30 the STAT 251 midterm is at 08:00, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 14:00. Prep for all four must be finished by Oct 28. Confirmed 2026-09-14.
+> **Oct 29–30 is the crunch of the term.** The CPSC 310 midterm is Thu Oct 29, 19:00–21:00. On Fri Oct 30 the STAT 251 midterm is at 08:00, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 14:00. Prep for all four must be finished by Oct 28. Reopened 2026-09-19: the Exam 3 Canvas quiz page shows Nov 20, so the PHIL leg of the triple is unconfirmed until Kraal answers.
 
 ### Recurring series
 
@@ -136,7 +136,7 @@ _26 topics due as of Sat Sep 19. Say **quiz me**._
 ### Open questions
 
 - CPSC 310 has nothing on Canvas. Its deadlines exist only on the course site and PrairieLearn, so Canvas silence does not mean nothing is due.
-- Which of the four PHIL 385 in-term exams is the 500-word essay exam. The syllabus does not say; the question is on the Ask Kraal list with a Sep 30 deadline, ahead of Exam 1 on Oct 2.
+- PHIL 385 Exam 3 date: syllabus Oct 30, Canvas quiz page Nov 20 (same day as Exam 4). On the Ask Kraal list with a Sep 30 deadline. The essay-exam question is answered: Exam 1 (its Canvas quiz has 2 questions).
 
 ## Grades so far
 
@@ -202,3 +202,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-18 | Morning check: graded the Sep 17 transit deck (1 of 6 solid). Chrome extension offline, so Canvas, PrairieLearn, WeBWorK and Piazza were skipped; CPSC 310 schedule read directly instead and no deadline moved. |
 | 2026-09-19 | STAT 251 lec 5 logged from the posted after-class deck (Matt was sick): 12 questions, 3 ledger topics due Sep 20. The lecture 4 after-class deck was checked against the lec 4 file and the worked numbers agree. Lecture 6 outline staged for Mon Sep 21. PHIL 385 lec 4 has no slides, so it stays unlogged. |
 | 2026-09-19 | Morning check: ASIA 250 Optional Assignment 1 (+2% bonus, Fri Oct 2) found and synced to ledger/Things3/term.py. CPSC 310 LAB02 corrected to Thu Oct 1 and LAB03 renamed "LSP and Testability" from PrairieLearn. STAT 251 lec 6 BL deck staged. Google SWE 2027 deadline (Sep 25) added. WeBWorK hit a CWL wall and was skipped. |
+| 2026-09-19 | PHIL 385 exam format settled from the Canvas quiz pages Matt screenshotted: **Exam 1 (Oct 2) is the essay exam** — 2 questions, Exams 2–4 have 7. The same screenshots reopen Exam 3: the Canvas quiz says **Nov 20**, not Oct 30 (the 2026-09-14 "settled" note was wrong). Syllabus, logistics, calendar, term.py, Ask Kraal and the Things3 to-do all updated; Exam 1 prep switches to timed essays. |
