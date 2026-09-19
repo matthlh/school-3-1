@@ -88,6 +88,15 @@ The right/left labels themselves come from this dispute. Strauss coined them in 
 **Topic:** First authorship: the 8 pseudonymous works  **Lec:** 1  **Type:** recall
 **A:** The Postscript is the sequel. Its full title is *Concluding Unscientific Postscript to Philosophical Crumbs*. Both are by Johannes Climacus, who writes as a non-Christian asking how one becomes a Christian. The Postscript (1846) was intended to conclude the authorship.
 
+
+### Q: Three of the eight first-authorship works came out in 1843 and three in 1844. Name each year's three, and give the one work of 1845 and the one of 1846.
+**Topic:** First authorship: the 8 pseudonymous works  **Lec:** 1  **Type:** recall
+**A:** 1843: *Either/Or*, *Fear and Trembling*, *Repetition*. 1844: *Philosophical Crumbs* (*Fragments*), *The Concept of Anxiety*, *Prefaces*. 1845: *Stages on Life's Way*. 1846: *Concluding Unscientific Postscript*. Hook: three, three, one, one, from 1843 to 1846.
+
+### Q: Which two of the eight first-authorship works have their pseudonym as editor rather than author, and who are the two editors?
+**Topic:** First authorship: the 8 pseudonymous works  **Lec:** 1  **Type:** recall
+**A:** *Either/Or* (1843), edited by Victor Eremita, and *Stages on Life's Way* (1845), edited by Hilarius Bookbinder. Both are collections of papers by other invented writers, so the pseudonym only claims to have found and published them.
+
 ### Q: What is the relation between the views in a pseudonymous book and Kierkegaard's own views, and where does he say so himself?
 **Topic:** Pseudonymity and the 18 discourses  **Lec:** 1  **Type:** recall
 **A:** They are not his views. Each pseudonym is a perspective on existence, thought through from the inside. He says so in "A First and Last Explanation", appended to the Postscript in 1846: he admits authorship but says there is "not a single word" of his own in the pseudonymous books, and asks that quotations be attributed to the pseudonym. Attributing a pseudonym's position to Kierkegaard is the standard misreading, even among scholars.

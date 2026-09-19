@@ -91,3 +91,20 @@ Format:
 ### Q: What is an arhat, and what are the three poisons an arhat is free from? Say which poison the lecture glosses as the illusion of one's own self.
 **Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
 **A:** An arhat is a liberated follower of the Buddha who does not get reborn. The three poisons are anger, passion and ignorance. Ignorance is glossed as the illusion of one's own self.
+
+
+### Q: A follower says: "I will not stop at my own liberation; I declare myself a future Buddha so I can lead others there." Which early school is that, what is the word for that follower, and what did that school become?
+**Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
+**A:** The progressive school. The follower is a bodhisattva, a future Buddha. That school became most of the Buddhist world today.
+
+### Q: A follower says: "My aim is nirvana, release from the cycle of births and deaths, and when I reach it I will not be reborn." Which early school is that, what is the word for someone who reaches that goal, and what is that school called today?
+**Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
+**A:** The conservative school. Someone who reaches it is an arhat, a liberated follower free of the three poisons. Today it survives as Theravada.
+
+### Q: Why does the number of universes matter to the difference between the two early schools?
+**Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
+**A:** The conservative school holds that one universe has only one Buddha at a time, so a follower cannot become a Buddha here and aims at arhatship instead. The progressive school holds there are multiple universes, so a bodhisattva can become a Buddha quickly in another unenlightened universe, and a Buddha then creates a Buddha Land where bodhisattvas are reborn to train.
+
+### Q: Name the three poisons, and say what the arhat and the Buddha have in common with respect to them and what the Buddha does that the arhat does not.
+**Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
+**A:** Anger, passion and ignorance, where ignorance means the illusion of one's own self. Both the arhat and the Buddha are free of rebirth and of the three poisons. The Buddha additionally creates a Buddha Land where bodhisattvas can be reborn to train.

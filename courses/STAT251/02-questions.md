@@ -219,6 +219,19 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** recall
 **A:** Centre is a single value standing for a typical observation, where the data cluster: the measures so far are the mean and the median. Spread is how far the observations sit from each other or from the centre, also called variability or dispersion: the only measure so far is the range. Next class adds variance, standard deviation and the interquartile range, plus the boxplot that displays the median, quartiles and outliers.
 
+
+### Q: A lab reports "range: 12 to 41". Is that the range as the course defines it? Give the correct value and say what a range of 0 would mean.
+**Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** apply
+**A:** No. The range is a single number, maximum minus minimum, so here it is 41 − 12 = 29. "12 to 41" is the span of the data, not the range. A range of 0 means every observation is identical, so there is no spread at all.
+
+### Q: Data: 3, 5, 5, 6, 7, 8, 40. Compute the mean, the median and the range. Then drop the 40 and recompute all three. Which measures changed a lot, which barely moved, and what is the word the course uses for a measure that barely moves?
+**Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** derive
+**A:** With the 40: mean = 74/7 ≈ 10.6, median = 6, range = 37. Without it: mean = 34/6 ≈ 5.7, median = 5.5, range = 5. The mean and the range are pulled hard by the single extreme value, because the mean uses every value in its sum and the range uses only the two ends. The median barely moves because it only depends on the middle position. A measure that is not much affected by an outlier is called resistant, so the median is resistant and the mean and range are not.
+
+### Q: Give the deck's definition of an outlier in one sentence, and say why the 1.5 × IQR rule is not the definition.
+**Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** recall
+**A:** An outlier is an observation that lies far from the rest of the data, unusually large or unusually small. The 1.5 × IQR fence is a later working rule for flagging candidates once quartiles are available, not the definition, and the deck introduces the idea before any fence: an outlier is identified by its distance from the bulk of the data, whatever tool is used to decide "far".
+
 ### Q: iClicker from lecture 3: the distribution of prices of detached houses sold in a city is (a) symmetric (b) left-skewed (c) right-skewed (d) bimodal. Pick one and justify it using the tail and the position of the mean relative to the median.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
 **A:** (c) right-skewed. Prices cannot go below zero and most houses cluster in a middle band, but a small number of very expensive houses stretch the tail far to the right, toward the high values. Those few pull the mean above the median, the signature of a right tail. Left-skewed would need a long tail of very cheap houses, and bimodal would need two separate clusters of prices.

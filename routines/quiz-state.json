@@ -429,6 +429,106 @@
      "X"
     ]
    ]
+  },
+  "57e2fb3c": {
+   "course": "PHIL385",
+   "topic": "Second authorship",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "ab21764f": {
+   "course": "CPSC310",
+   "topic": "Three fluencies",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "cade93a7": {
+   "course": "PHIL385",
+   "topic": "Post-Hegelian context",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "3a657e3f": {
+   "course": "STAT251",
+   "topic": "1d Centre vs spread (what each measures · range · same centre, different spread)",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
+  },
+  "3a0b961a": {
+   "course": "PHIL385",
+   "topic": "Second authorship",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "4b7a40d7": {
+   "course": "PHIL385",
+   "topic": "Post-Hegelian context",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "69d896c7": {
+   "course": "ASIA250",
+   "topic": "Defining religion, myth and ritual",
+   "history": [
+    [
+     "2026-09-19",
+     "O"
+    ]
+   ]
+  },
+  "4c27cef0": {
+   "course": "PHIL385",
+   "topic": "Second authorship",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "e1ca808e": {
+   "course": "CPSC310",
+   "topic": "What SE is",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "4bee8bec": {
+   "course": "PHIL385",
+   "topic": "Post-Hegelian context",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -828,6 +928,74 @@
      6,
      "612ccd57",
      "ASIA250",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "mode": "quiz",
+   "n": 10,
+   "note": "",
+   "results": [
+    [
+     1,
+     "57e2fb3c",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "ab21764f",
+     "CPSC310",
+     "X"
+    ],
+    [
+     3,
+     "cade93a7",
+     "PHIL385",
+     "X"
+    ],
+    [
+     4,
+     "3a657e3f",
+     "STAT251",
+     "~"
+    ],
+    [
+     5,
+     "3a0b961a",
+     "PHIL385",
+     "X"
+    ],
+    [
+     6,
+     "4b7a40d7",
+     "PHIL385",
+     "X"
+    ],
+    [
+     7,
+     "69d896c7",
+     "ASIA250",
+     "O"
+    ],
+    [
+     8,
+     "4c27cef0",
+     "PHIL385",
+     "X"
+    ],
+    [
+     9,
+     "e1ca808e",
+     "CPSC310",
+     "X"
+    ],
+    [
+     10,
+     "4bee8bec",
+     "PHIL385",
      "X"
     ]
    ]
