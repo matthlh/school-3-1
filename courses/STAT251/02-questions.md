@@ -314,3 +314,53 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: WeBWorK-style. A stemplot of nine physics point totals out of 200 reads 12 | 3 7, 13 | 0 4 9, 14 | 2 5, 15 | (empty), 16 | 1, 17 | 8. (a) Write out the data set. (b) This stemplot is most like which display: a time plot, a histogram with classes 120–130, 130–140 and so on, a boxplot, or the five-number summary? (c) Give the lowest score as a percentage of the total possible.
 **Topic:** 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf  **Lec:** WW1  **Type:** apply
 **A:** (a) 123, 127, 130, 134, 139, 142, 145, 161, 178: the stem is the hundreds and tens digits, the leaf the ones digit. (b) A histogram with classes 120–130, 130–140 and so on: each stem is a class and the row length is its bar, only with the actual values kept, and the empty stem 15 is an empty bin. (c) 123/200 = 61.5%.
+
+## Lec 5 — Ch 3: sets and probability, the addition rule (logged 2026-09-19 from the posted deck)
+
+### Q: A fair coin is flipped three times. Write the sample space, list the outcomes of A = "at least two tails" and B = "exactly two heads", say whether A and B are disjoint, and find P(A ∪ B).
+**Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
+**A:** S = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}, eight equally likely outcomes. A = {TTT, TTH, THT, HTT} and B = {HHT, HTH, THH}. An outcome with exactly two heads has exactly one tail, so nothing is in both and A and B are disjoint. Then P(A ∪ B) = P(A) + P(B) = 4/8 + 3/8 = 7/8. The only outcome left out is HHH, which checks: 1 − 1/8.
+
+### Q: Write the sample space for (i) the number of auto accidents in BC next year and (ii) the lifetimes in hours of two components, (X₁, X₂). For each, say whether S is discrete or continuous, finite or infinite, and univariate or bivariate. Then write the events "more than 100 accidents" and, for a system that runs only while both components run, "the system fails within 10 hours".
+**Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
+**A:** (i) S = {0, 1, 2, 3, …}: discrete, infinite, univariate. More than 100 accidents is {101, 102, 103, …}. (ii) S = {(x₁, x₂): x₁ ≥ 0, x₂ ≥ 0}: continuous, infinite, bivariate. The system fails within 10 hours as soon as either component does, so the event is {(x₁, x₂): 0 ≤ x₁ < 10 or 0 ≤ x₂ < 10}. Its complement, the system still running at 10 hours, is {x₁ ≥ 10 and x₂ ≥ 10}. The "or" in the event becomes "and" in the complement.
+
+### Q: Two fair dice are rolled. Describe the sample space and its size, then find P(the sum is 7) and P(the sum is at least 10).
+**Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
+**A:** S is the 36 ordered pairs (first die, second die), all equally likely. Sum 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), six outcomes, so P = 6/36 = 1/6. Sum at least 10: three outcomes give 10, two give 11, one gives 12, six in all, so P = 6/36 = 1/6. Order matters: (3,4) and (4,3) are different outcomes, which is what makes the 36 outcomes equally likely.
+
+### Q: A jar holds three red marbles and two blue ones. Two marbles are drawn without replacement. Set up a sample space of equally likely outcomes and use it to find P(both red) and P(one of each colour).
+**Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
+**A:** Label the marbles R1, R2, R3, B1, B2 and record the draws in order: 5 × 4 = 20 ordered pairs, all equally likely. Both red: 3 × 2 = 6 pairs, so P = 6/20 = 0.3. One of each: red then blue is 3 × 2 = 6 pairs and blue then red is 2 × 3 = 6, so P = 12/20 = 0.6. Check: both blue is 2 × 1 = 2 pairs, 0.1, and 0.3 + 0.6 + 0.1 = 1. Unordered pairs also work (10 equally likely pairs, 3 of them both red). Colours alone do not, because "red red" and "blue blue" are not equally likely.
+
+### Q: Two circles A and B overlap inside a rectangle S. Name the region for each of A ∩ Bᶜ, Aᶜ ∩ B, (A ∪ B)ᶜ and Aᶜ ∪ Bᶜ, and write each probability in terms of P(A), P(B) and P(A ∩ B).
+**Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** apply
+**A:** A ∩ Bᶜ is the part of A outside the overlap: P(A) − P(A ∩ B). Aᶜ ∩ B is the part of B outside the overlap: P(B) − P(A ∩ B). (A ∪ B)ᶜ is the rectangle outside both circles: 1 − P(A) − P(B) + P(A ∩ B). Aᶜ ∪ Bᶜ is everything except the overlap, because an outcome fails to be in both exactly when it is outside at least one of them: 1 − P(A ∩ B). That last step is De Morgan's law, (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ.
+
+### Q: P(A) = 0.3, P(B) = 0.5 and P(A ∩ B) = 0.1. Which of these are true? (i) A and B are disjoint. (ii) P(A ∪ B) = 0.7. (iii) P(Aᶜ ∩ B) = 0.4. (iv) P(Aᶜ) = 0.7. (v) B ⊂ A.
+**Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** critique
+**A:** (i) False: disjoint events have P(A ∩ B) = 0, and here it is 0.1. (ii) True: 0.3 + 0.5 − 0.1 = 0.7. (iii) True: the part of B outside A is 0.5 − 0.1 = 0.4. (iv) True: 1 − 0.3. (v) False: if B ⊂ A then P(A ∩ B) would equal P(B) = 0.5, and P(B) ≤ P(A) would have to hold, but 0.5 > 0.3.
+
+### Q: Suppose A ⊂ B. Show that P(A ∩ B) = P(A) and that P(A) ≤ P(B), and give a die-roll example.
+**Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** derive
+**A:** Every outcome of A is in B, so A ∩ B is A itself and P(A ∩ B) = P(A). Split B into the disjoint pieces A and B ∩ Aᶜ. By additivity P(B) = P(A) + P(B ∩ Aᶜ), and the second term is at least 0, so P(B) ≥ P(A). Example: A = roll a 6, B = roll an even number. A ⊂ B, P(A ∩ B) = P(A) = 1/6, and 1/6 ≤ 3/6.
+
+### Q: A student argues: "odd and even on a die are disjoint and they are complements, so any two disjoint events are complements of each other." Fix the claim, and say where independence fits.
+**Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** critique
+**A:** Disjoint means the events share no outcome, so P(A ∩ B) = 0. Complementary means disjoint and together filling S, so P(A) + P(B) = 1. Odd and even satisfy both. A = {1} and B = {2} are disjoint, but P(A) + P(B) = 1/3, so they are not complements. Independence is a third idea, defined next lecture through P(A ∩ B) = P(A) P(B). Disjoint events with positive probability are never independent, because one occurring rules the other out.
+
+### Q: From a blank page, state the general addition rule for P(A ∪ B), explain from a Venn diagram why the last term is subtracted, and state the disjoint special case.
+**Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** derive
+**A:** P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Adding P(A) and P(B) counts every outcome in the overlap twice, once in each circle, so the overlap's probability is subtracted once. If A and B are disjoint the overlap is empty, P(A ∩ B) = 0, and P(A ∪ B) = P(A) + P(B).
+
+### Q: In a survey, 78% of respondents follow soccer or basketball, 52% follow soccer and 40% follow basketball. Find the probability that a randomly chosen respondent (a) follows both, (b) follows neither, (c) follows soccer but not basketball.
+**Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** apply
+**A:** (a) The addition rule: 0.78 = 0.52 + 0.40 − P(both), so P(both) = 0.14. (b) Neither is the complement of the union: 1 − 0.78 = 0.22. (c) Soccer but not basketball is P(soccer) − P(both) = 0.52 − 0.14 = 0.38. Check: basketball only is 0.40 − 0.14 = 0.26, and 0.38 + 0.14 + 0.26 + 0.22 = 1.
+
+### Q: A loaded die has P(1) = P(2) = P(3) = 0.1 and P(4) = P(5) = 0.2. Find P(6), then P(even), P(at least 5) and P(not a 6), naming the rule each step uses.
+**Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** apply
+**A:** Outcome probabilities sum to 1, so P(6) = 1 − 0.7 = 0.3. An event's probability is the sum over its outcomes: P(even) = 0.1 + 0.2 + 0.3 = 0.6 and P(at least 5) = 0.2 + 0.3 = 0.5. Complement rule: P(not a 6) = 1 − 0.3 = 0.7. Every value sits between 0 and 1, as the properties require.
+
+### Q: Derive the three-event addition rule P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A ∩ B) − P(A ∩ C) − P(B ∩ C) + P(A ∩ B ∩ C) from the two-event rule.
+**Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** derive
+**A:** Write A ∪ B ∪ C as (A ∪ B) ∪ C and apply the two-event rule: P(A ∪ B) + P(C) − P((A ∪ B) ∩ C). Expand P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Distribute the intersection: (A ∪ B) ∩ C = (A ∩ C) ∪ (B ∩ C), and these two pieces overlap in A ∩ B ∩ C, so P((A ∪ B) ∩ C) = P(A ∩ C) + P(B ∩ C) − P(A ∩ B ∩ C). Substituting gives the rule. This is the slide 15 exercise, left for lecture 6.
