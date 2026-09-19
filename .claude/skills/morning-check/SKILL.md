@@ -202,6 +202,13 @@ line; Claude never signs in). Read-only: never touch an answer box, Preview, Sub
 - **Every run:** `navigate` to the course URL and `get_page_text`. The Assignments list shows each open
   set's due date and each future set's open date. A changed date goes to Things3 (`WeBWorK N`), the
   ledger term calendar and `courses/STAT251/03-logistics.md` (drop the `~` once confirmed).
+- **Read the status column too, and close what is finished.** The Assignments list marks a set
+  completed or scored once every problem is answered. When it does, run
+  `things_done.py --title "WeBWorK N" --project "STAT 251"` in the same run and say so under
+  Things3. Without this the to-do keeps rolling and the plan shows work he has already done —
+  WeBWorK 1 rolled four days that way and he had to say so himself (2026-09-19). When the tab is a
+  login form the status is unknown, so the Heads-up line says the set may already be done rather
+  than implying it is outstanding.
 - **On a set's open day** (Tuesdays: Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1)
   or the first run after it: open `<course>/Assignment-0N/` (the problem list gives the count), then each
   `<course>/Assignment-0N/k/` with `get_page_text`. A problem whose text refers to a figure ("histogram

@@ -26,14 +26,18 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    - **CPSC 310:** a correct answer with no reason is `~` until he gives the why. Ask "why?" once.
    - **STAT 251:** apply/derive needs the method, not the number. Right number, no method = `~`.
    - **PHIL 385:** exact names, pseudonyms, essay titles, dates. Close = `~`.
-4. Stop after the last question or when he says stop. Grade only what was asked:
+4. **Second pass (Matt, 2026-09-19):** after the last question, re-ask every `X` from this session
+   once more, in order, one at a time, before grading. The retry is not graded and does not change
+   the first-pass grade; it exists so a miss gets one retrieval attempt while the correction is fresh.
+   Skip it if he says stop. Then grade the first pass only.
+5. Stop after the second pass or when he says stop. Grade only what was asked:
    `python3 "$S/quiz_grade.py" "1:O 2:X 3:~ 4:O"` — **always one quoted string**
    (an unquoted `~` becomes the shell's home directory).
-5. The script lists **Needs more questions** (X/~ topics with < 6 questions, leech questions missed
+6. The script lists **Needs more questions** (X/~ topics with < 6 questions, leech questions missed
    ≥ 2 of the last 3). Write them now into `02-questions.md` under the lecture's section, same
    `**Topic:**` tag, aimed at *what he got wrong* from a different angle — not a rephrase. Split a
    leech into two smaller questions and delete the original. Say how many you added, one line.
-6. Report ≤ 10 lines: grades table (course · topic · grade), ledger delta (topic → next date),
+7. Report ≤ 10 lines: grades table (course · topic · grade), ledger delta (topic → next date),
    questions added. No summaries, no pep talk.
 
 ## Variants
@@ -85,6 +89,10 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-09-19: 8 X of 10, mostly PHIL 385 dates. Matt asked that a first-time miss be re-asked in the
+  same session instead of only resurfacing the next day; added the ungraded second pass (step 4).
+  Also: corrections are bullets, never a run-on line, and when he asks a comprehension question
+  mid-session answer it in the plainest words possible, one idea per sentence, before moving on.
 - 2026-09-14: five sessions in, PHIL 385 had never been asked (exam Oct 2, 22 questions banked) because
   the greedy interleave alternated the two highest-priority courses (PHIL 321 X topics, CPSC 310 lec 1)
   until the slots ran out. Picker now gives each due course a quota by summed priority and round-robins
