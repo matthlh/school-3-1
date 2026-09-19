@@ -99,8 +99,11 @@ _32 topics due as of Sat Sep 19. Say **quiz me**._
 | Mon Sep 21 | UBC | **Drop-without-W deadline** (all courses) | |
 | Mon Sep 21 | STAT 251 | Labs start (Lab 0 = intro to R, no assignment) | |
 | **Tue Sep 22, 23:59** | STAT 251 | **WeBWorK 1** (no late) — corrected from Mon Sep 21; the lecture 3 and lecture 4 Canvas pages both say "due on Tuesday, Sep 22" | WW pool |
+| Fri Sep 18, 08:00 → **Thu Oct 1, 23:59** | CPSC 310 | **LAB02 Cohesion and Coupling** on PrairieLearn — credit window read off PrairieLearn on Sep 19 (the "due by start of next lab" rule would have said Sep 24) | 10% pool |
+| Fri Sep 25, 08:00 → ~Thu Oct 8, 23:59 | CPSC 310 | **LAB03 LSP and Testability** opens on PrairieLearn — PrairieLearn has not published the close date yet, so Oct 8 is inferred from the two-week window LAB01 and LAB02 used | 10% pool |
 | Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% |
 | ~Mon Sep 28, 23:59 | STAT 251 | WeBWorK 2 | |
+| Fri Oct 2, 23:59 | ASIA 250 | **Optional Assignment 1** — 250–300 words on Mirabai's religious experience, using only the Lecture 2 slides and Luhrmann ch. 3. Everyone who submits gets full marks and no extensions are given | +2% bonus |
 | **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1** (Canvas quiz, 50-min window) | 15% |
 | ~Tue Oct 6, 23:59 | STAT 251 | WeBWorK 3 | |
 | Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | |
@@ -214,3 +217,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-18 | Quiz (quiz): 6 q · 1 O / 0 ~ / 5 X · ASIA 250, CPSC 310, PHIL 321, PHIL 385, STAT 251 · 5 ledger rows moved |
 | 2026-09-18 | Morning check: graded the Sep 17 transit deck (1 of 6 solid). Chrome extension offline, so Canvas, PrairieLearn, WeBWorK and Piazza were skipped; CPSC 310 schedule read directly instead and no deadline moved. |
 | 2026-09-19 | STAT 251 lec 5 logged from the posted after-class deck (Matt was sick): 12 questions, 3 ledger topics due Sep 20. The lecture 4 after-class deck was checked against the lec 4 file and the worked numbers agree. Lecture 6 outline staged for Mon Sep 21. PHIL 385 lec 4 has no slides, so it stays unlogged. |
+| 2026-09-19 | Morning check: ASIA 250 Optional Assignment 1 (+2% bonus, Fri Oct 2) found and synced to ledger/Things3/term.py. CPSC 310 LAB02 corrected to Thu Oct 1 and LAB03 renamed "LSP and Testability" from PrairieLearn. STAT 251 lec 6 BL deck staged. Google SWE 2027 deadline (Sep 25) added. WeBWorK hit a CWL wall and was skipped. |
