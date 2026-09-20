@@ -8,7 +8,7 @@
 |---|---|---|---|
 | Exam 1 | 15% | Fri Oct 2, 2:00–2:50pm | **Essay: 2 questions, max 500 words each*** |
 | Exam 2 | 15% | Fri Oct 16, 2:00–2:50pm | MC, 7 questions |
-| Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm (syllabus) — **Canvas quiz says Nov 20; unresolved** | MC, 7 questions |
+| Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm | MC, 7 questions |
 | Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC, 7 questions |
 | Final | 40% | Dec 11–22, TBD | cumulative |
 
@@ -51,7 +51,7 @@ in 50 minutes, typed in Respondus. Exams 2–4 are **not cumulative**; only the 
 | **F Oct 16** | **Exam 2** |
 | M Oct 19 – F Oct 23 | "Seducer's Diary" and "Diapsalmata" |
 | M Oct 26 – W Oct 28 | "Diapsalmata" |
-| **F Oct 30** | **Exam 3** — the Canvas quiz page shows Nov 20 instead; ask Kraal |
+| **F Oct 30** | **Exam 3** |
 | M Nov 2 – F Nov 6 | "Aesthetic Validity of Marriage" |
 | M Nov 9, W Nov 11 | No class (break) |
 | F Nov 13 – W Nov 18 | "Equilibrium" |
@@ -65,6 +65,6 @@ in 50 minutes, typed in Respondus. Exams 2–4 are **not cumulative**; only the 
 
 ## To verify
 - [x] Which of the four in-term exams is the essay exam? Exam 1: its Canvas quiz has 2 questions, the others 7 (2026-09-19). Confirm in passing.
-- [ ] Exam 3 date: the syllabus says Fri Oct 30, the Canvas quiz page says Nov 20, the same day as Exam 4. Almost certainly a Canvas setup slip, but it decides whether Oct 30 is a triple exam day.
+- [x] Exam 3 date: **Fri Oct 30**, the syllabus date (Matt, 2026-09-20). The Canvas quiz page says Nov 20, but that is Exam 4's slot, so it is a setup slip. Oct 30 is a triple exam day.
 - [ ] Are MC questions multi-select ("the correct answer(s)")? Negative marking?
 - [ ] Respondus LockDown Browser installed and tested before Oct 2
