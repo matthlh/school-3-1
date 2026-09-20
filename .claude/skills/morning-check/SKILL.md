@@ -462,8 +462,8 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 |---|---|---|                          every item the planner picked gets a row, same order
 | 2 h | <project> · <what> | <due, or "overdue since <d>"> |
 | event | <project> · <what> | <time> |   [event] = fixed slot, costs no budget
-⚠ Over budget: <item> (<est>) is due <d> with no room today.   ← its own line under the table
-⚠ This is an 8 h day: <what it buys>. Say the word and I replan.   ← see the surge rule below
+⚠ <item> is due <d> and there is no room for it today.   ← plain words, its own line
+⚠ An 8 h day would fit <what, in marks>. Say the word.   ← the longer-day offer, rule below
 
 **Rolled to tomorrow — N items**   ← also from the planner; omit the whole block if empty
 - Dated ones only, one per bullet: <project> · <what> · rolled 4× · due <d>
@@ -478,8 +478,8 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 - <course> · <time> · <topic>         time · topic from the slide/page title, course-site row
 - ...                                 or reading schedule (§7) · end with "3 Qs below"
 
-**Review — 6 questions**    the transit deck (quiz_pick.py --transit, §7). In the CHAT BRIEF give
-- <course> · <short stem>             only a short stem — the topic and the ask, ~12 words, never the
+**Review — 6 questions**    today's 6 phone-deck questions (§7). In the CHAT BRIEF give
+- <course> · <short version>          only a short version — the topic and the ask, ~12 words, never the
 - ...                                 full worked question (Matt, 2026-09-20: the long ones made the
 - Transit Deck: <url>                 brief unreadable). The run file keeps them in full. Answers and
                                       grading live on the artifact. "- Bank empty" if the script exits 1.
@@ -497,6 +497,7 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
                             "- Saturday flex block: needed / delete"
 
 **Self-improvement**        (Matt, 2026-09-20: "what I shd be doing better / shouldn't be")
+                            Plain words here too — "quizzing yourself", not "retrieval".
 Keep doing                  Three blocks, at most 3 bullets each, omit a block with nothing real in it.
 - <what worked, from evidence this run>
 Start doing
@@ -535,6 +536,27 @@ the timetable; today's lectures have their own block.
 Header line, then bullets, one item per bullet, in the brief AND every details section. He
 called the first paragraph-style brief "a large pile". Tables for dated rows, bullets for
 everything else, prose never.
+
+**Plain-language rule (Matt, 2026-09-20: "too much jargon and buzz words… I can't understand what
+you're saying").** He was right and it was the skill's own invented vocabulary that did it. Write
+the brief so someone who has never seen this system understands every line.
+
+- **Never invent a term.** "Over budget line", "surge day", "what I pitched", "stems", "banked",
+  "massed practice", "the ladder", "retrieval", "close-out", "staged" — all of these were Claude's
+  words, not his, and he had to ask what three of them meant. Say the thing instead: not "the over
+  budget line is gone" but "it all fits in the day now"; not "rolled 4×" but "pushed back 4 days";
+  not "retrieval" but "quizzing yourself".
+- **Name things the way he would.** "The Golden Pavilion" is his novel for the ASIA 250 final paper,
+  not "novel pages". "D1" is the CPSC 310 project deliverable. Spell out what a code means the first
+  time it appears in a brief: "Mini-Quiz 2 (ASIA 250, worth 2% of the course)".
+- **No shorthand he did not choose.** `P1/P2/P3` and the estimate tags are his own Things3 system, so
+  those are fine. `X / ~ / O` are his grades, fine. Everything else gets words.
+- **Say the consequence, not the mechanism.** "Late = 0" beats "hard lock". "Closes tomorrow night"
+  beats "locks Sep 21 23:59". He wants to know what happens to him, not how the system models it.
+- **Short sentences.** One clause where possible. If a line needs a dash or a semicolon to hold it
+  together, split it in two.
+- **Do not explain the plumbing.** Script names, file paths, JSON keys and snapshot diffs belong in
+  Details or nowhere. The brief never mentions `things_plan.py`, `quiz_pick.py` or a `.json` file.
 
 **Density rule (Matt, 2026-09-20: "can you format things better? It's really messy to read"):**
 the brief is scanned in about twenty seconds, so length is the enemy, not missing detail — the run
