@@ -14,7 +14,7 @@
 ## Dates (Canvas, as of 2026-09-10)
 | What | When (Pacific) | Pts |
 |---|---|---|
-| WeBWorK 1 | **Tue Sep 22, 23:59** (confirmed in WeBWorK 2026-09-16) | |
+| WeBWorK 1 | **Tue Sep 22, 23:59** (confirmed in WeBWorK 2026-09-16) | Done: 9/9 problems at 100%, verified 2026-09-20 |
 | WeBWorK 2–10 | Opens Tue Sep 22 · Sep 29 · Oct 6 · Oct 13 · Oct 20 · Nov 3 · Nov 17 · Nov 24 · Dec 1 (from WeBWorK). Due dates per the Canvas calendar, unconfirmed and possibly one day early: Mon Sep 28 · Tue Oct 6 · Mon Oct 12 · Mon Oct 19 · Thu Oct 29 · Thu Nov 12 · Mon Nov 30 · Mon Dec 7 · Fri Dec 11, 23:59 | |
 | Pre-lab quizzes, Labs 2–8 | Fri Oct 2 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
 | In-lab quiz + follow-up (L1K) | Fri Oct 30, 11:20–11:40 and 11:45–12:00 | 3 + 3 |
