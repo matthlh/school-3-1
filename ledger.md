@@ -1,4 +1,4 @@
-# Master retrieval ledger
+# Master revision ledger
 
 Rows whose Next is on or before today are due.
 
@@ -163,7 +163,7 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-11 | Matt confirmed STAT 251 midterm **Fri Oct 30** and WA1 **Sat Oct 24** — conflicts closed in ledger, logistics, term.py. Notes browser built as `notes-app/` (Vite + React + TS, port 8765, launch `notes` attaches). Lecture templates dropped; log rule = his notes verbatim + clarifications. Morning brief gains Today's classes + Review. |
 | 2026-09-11 | Logged CPSC 310 lec 1 from the posted slides (Matt took no notes; his recollection verified against schedule + 23-slide deck) → 10 questions, 2 ledger topics due Sep 12. |
 | 2026-09-11 | PHIL 385 Sep 9 (intro remarks) dropped from the lecture count — Matt absent. Lecture 1 = Fri Sep 11. Log to-dos now carry the lecture date as deadline; ASIA 250 gets `Watch + quiz … locks <date>` (2h, due at the quiz lock). |
-| 2026-09-11 | Recurring work into Things3: ASIA 250 watch+quiz to-dos seeded for lectures 2–11 (due at each quiz lock), CPSC 310 LAB03–10, PHIL 385 reading series (11, from the syllabus), weekly Friday retrieval block + Saturday groceries via the planner's `WEEKLY` table. Planner now respects hand-set future dates and remembers a trimmed `--budget` per day. |
+| 2026-09-11 | Recurring work into Things3: ASIA 250 watch+quiz to-dos seeded for lectures 2–11 (due at each quiz lock), CPSC 310 LAB03–10, PHIL 385 reading series (11, from the syllabus), weekly Friday revision block + Saturday groceries via the planner's `WEEKLY` table. Planner now respects hand-set future dates and remembers a trimmed `--budget` per day. |
 | 2026-09-11 | Weekly planner mode (`things_plan.py --week`): Sundays it places next week's work on days by deadline + PREP rhythm, keeps hand-set days that fit, flags over-budget days; brief gains a **Week ahead** block. Weekly owns when-dates, daily owns Today/Tomorrow. |
 | 2026-09-11 | Quiz (quiz): 10 q · 0 O / 3 ~ / 7 X · CPSC 310, STAT 251 · 5 ledger rows moved |
 | 2026-09-11 | Logged PHIL 321 lec 1 (sit-in; course undecided, folder still in archive/) → 11 questions, 6 ledger topics due Sep 12. |

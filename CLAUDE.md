@@ -4,7 +4,7 @@ Matt is a UBC CS student, Term 3-1 (Sep–Dec 2026). Goal: highest grades per ho
 Career work is a co-priority, so **time efficiency is a hard constraint, not a preference.**
 
 ## At the start of any session
-1. Read `ledger.md`. Tell him what is **overdue** for retrieval before anything else.
+1. Read `ledger.md`. Tell him what is **overdue** for revision before anything else.
 2. Do not re-read every course file. Read only the course(s) in play.
 
 ## When he says "log <COURSE> lec N" (or pastes lecture notes / a photo of his page)
@@ -198,7 +198,7 @@ and let the planner decide (a *future* date set by hand holds unless the deadlin
 lighten a day, move items out and run `things_plan.py --budget H` — the trim is remembered for that
 date and skips the Career reserve). Recurring work: dated series (WeBWorK, pre-lab quizzes, CPSC labs,
 PHIL readings, ASIA watch+quiz per lecture) are real dated to-dos; open-ended weekly ones (novel pages,
-Friday retrieval block, Saturday groceries) come from the planner's `WEEKLY` table a week ahead; an auto to-do he ticks or cancels by hand stays closed (ids kept in
+Friday revision block, Saturday groceries) come from the planner's `WEEKLY` table a week ahead; an auto to-do he ticks or cancels by hand stays closed (ids kept in
 `plan-state.json`); Sundays 15:00 (scheduled task `weekly-plan`, or "plan my week") `things_plan.py --week` places next week's dated and
 undated-P1 work on days by deadline and rhythm — weekly owns when-dates, daily owns Today/Tomorrow, `pin`
 tag = never move; a ⚠ OVER BUDGET line is the one decision to put to him. Knobs

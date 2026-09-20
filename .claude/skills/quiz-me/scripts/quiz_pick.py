@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pick an interleaved retrieval session from the question banks, weighted by the ledger.
+"""Pick a mixed revision session from the question banks, weighted by the ledger.
 
 Usage:
   quiz_pick.py [--course CODE ...] [--n N] [--all] [--transit] [--due] [--report] [--date YYYY-MM-DD] [--seed S]

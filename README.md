@@ -2,7 +2,7 @@
 
 https://matthlh.github.io/school-3-1/
 
-A retrieval-practice system for five (maybe four) courses, built so Claude can keep up with
+A revision system for five (maybe four) courses, built so Claude can keep up with
 each course and quiz you on it.
 
 ## Read these
@@ -23,7 +23,7 @@ each course and quiz you on it.
 
 PHIL 321 was dropped on 2026-09-19; its folder is in `archive/PHIL321-dropped/`.
 
-Each course holds `00-syllabus.md`, `01-topics.md` (retrieval ledger), `02-questions.md`
+Each course holds `00-syllabus.md`, `01-topics.md` (revision ledger), `02-questions.md`
 (the quiz bank), `03-logistics.md` (office hours, links, tools, dates — the one-time reference the
 morning brief never repeats), and `lectures/`.
 
@@ -31,7 +31,7 @@ morning brief never repeats), and `lectures/`.
 | Say | I do |
 |---|---|
 | `log CPSC310 lec 7` | file your notes, extract questions, schedule them |
-| `quiz me` | interleaved retrieval across everything due, weighted to what you've missed and to the nearest exam (`/quiz-me`) |
+| `quiz me` | mixed revision across everything due, weighted to what you've missed and to the nearest exam (`/quiz-me`) |
 | `quiz me on STAT251` | scoped to one course; `quick quiz` = 5 questions |
 | `1 O 2 ~ 3 X` | grades for the transit deck (or any session), pasted from your phone — the ledger updates |
 | `what's due?` | read the ledger, list due/overdue topics |
