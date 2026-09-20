@@ -89,6 +89,9 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-09-19 (later): multi-part questions are asked as bullets, one part per bullet, MC options on their
+  own lines. STAT 251 and CPSC 310 new questions are worked problems (WeBWorK-style data, code or design to
+  critique), not recall; swap recall questions for problems as topics come up for more questions.
 - 2026-09-19: 8 X of 10, mostly PHIL 385 dates. Matt asked that a first-time miss be re-asked in the
   same session instead of only resurfacing the next day; added the ungraded second pass (step 4).
   Also: corrections are bullets, never a run-on line, and when he asks a comprehension question
