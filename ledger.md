@@ -104,7 +104,7 @@ _26 topics due as of Sun Sep 20. Say **quiz me**._
 | ~Thu Oct 29, 23:59 | STAT 251 | WeBWorK 6 (night of the CPSC midterm) | |
 | **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% |
 | Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | |
-| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** (7 MC) — syllabus date; the Canvas quiz page says Nov 20, ask Kraal | 15% |
+| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** (7 MC) | 15% |
 | Fri Oct 30 | UBC | **Withdraw-with-W deadline** (all courses) | |
 | Fri Nov 6, 18:00 | CPSC 310 | **D3** — Design v3 (paired) | 5% |
 | Nov 9–11 | — | Fall break / ASIA reading break | |
@@ -137,7 +137,6 @@ _26 topics due as of Sun Sep 20. Say **quiz me**._
 ### Open questions
 
 - CPSC 310 has nothing on Canvas. Its deadlines exist only on the course site and PrairieLearn, so Canvas silence does not mean nothing is due.
-- PHIL 385 Exam 3 date: syllabus Oct 30, Canvas quiz page Nov 20 (same day as Exam 4). On the Ask Kraal list with a Sep 30 deadline. The essay-exam question is answered: Exam 1 (its Canvas quiz has 2 questions).
 
 ## Grades so far
 
@@ -209,3 +208,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-19 | Quiz (quiz): 10 q · 1 O / 4 ~ / 5 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 6 ledger rows moved |
 | 2026-09-19 | Quiz (quiz): 9 q · 0 O / 1 ~ / 8 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 5 ledger rows moved |
 | 2026-09-20 | Morning check: no new dates in any source. WeBWorK 1 closed by hand, PHIL 385 lec 4 logged, so ASIA 250 lec 2 is the only unlogged lecture with Mini-Quiz 2 locking Sep 21. Due-now refreshed: 26 due, 9 overdue. |
+| 2026-09-20 | PHIL 385 Exam 3 settled again at **Fri Oct 30** (Matt: the syllabus date, since Nov 20 is Exam 4's own slot and Oct 30 is the only timeslot that fits). Canvas' Nov 20 is a setup slip and is not to be reopened. Ask-Kraal to-do closed, question moved to Answered, term.py and the syllabus cleaned. |

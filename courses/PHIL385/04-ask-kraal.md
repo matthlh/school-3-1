@@ -82,9 +82,6 @@ in the question bank instead.
 
 ## Still open from earlier
 
-- **Exam 3's date.** The syllabus says Fri Oct 30; the Canvas quiz page says Nov 20, the same day as
-  Exam 4. Almost certainly a Canvas slip, but Oct 30 is already a STAT midterm and a STAT lab quiz, so
-  it matters. Tracked as its own to-do, deadline Sep 30. Ask it in one sentence at the end of class.
 - Whether the multiple-choice questions are multi-select, and whether there is negative marking.
 - Whether the exam uses Hannay's titles or the Hong titles, since *Philosophical Crumbs* and
   *Philosophical Fragments* are the same book and *Crop Rotation* is elsewhere *Rotation of Crops*.
@@ -97,3 +94,4 @@ Each answer goes in this table, so the lecture pages and the question bank can b
 
 | Date | Question | What he said |
 |---|---|---|
+| 2026-09-20 | Exam 3's date — syllabus Fri Oct 30 vs the Canvas quiz page's Nov 20 | Not asked. Matt settled it himself: **Oct 30**. Nov 20 is Exam 4's own slot, so the Canvas date is a setup slip, and Oct 30 is the only timeslot in the term that fits a third in-term exam. |

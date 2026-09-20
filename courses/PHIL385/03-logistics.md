@@ -14,7 +14,8 @@
 - Canvas course ID 192607. Tabs: Home, Zoom, Assignments, Discussions. No modules, files or
   announcements as of Sep 10.
 - Canvas quiz pages (screenshots 2026-09-19): Exam1 due Oct 2 14:50, 15 points, **2 questions**;
-  Exam2 due Oct 16, 7 questions; Exam3 due **Nov 20**, 7 questions; Exam4 due Nov 20, 7 questions. All
-  open 14:00–14:50, 50-minute limit, Respondus required. So Exam 1 is the essay exam. Exam 3's Nov 20
-  date contradicts the syllabus (Oct 30) and collides with Exam 4, so it is probably a setup slip; the
-  2026-09-14 note that Canvas and the syllabus agreed on Oct 30 was wrong. Ask Kraal.
+  Exam2 due Oct 16, 7 questions; Exam3 due Nov 20 on Canvas, 7 questions; Exam4 due Nov 20, 7
+  questions. All open 14:00–14:50, 50-minute limit, Respondus required. So Exam 1 is the essay exam.
+- **Exam 3 is Fri Oct 30**, the syllabus date (settled by Matt, 2026-09-20). The Canvas quiz page's
+  Nov 20 is Exam 4's own slot and is a setup slip: Oct 30 is the only timeslot in the term that fits
+  a third in-term exam. Do not reopen this from Canvas.

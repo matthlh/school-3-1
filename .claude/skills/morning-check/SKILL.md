@@ -604,6 +604,22 @@ file holds the detail.
   setup posts) become one counted line.
 - **Cut "Nothing new" blocks to a single line** rather than a header plus a bullet.
 
+**Settled facts stay settled (Matt, 2026-09-20: "we alr went over this").** When he has decided
+between two disagreeing sources, that decision is final and a later run must not reopen it just
+because the losing source still says the old thing. PHIL 385 Exam 3 was settled at **Fri Oct 30** on
+2026-09-14; the 2026-09-19 run saw Nov 20 on the Canvas quiz page and put it back on the Ask Kraal
+list, which cost him a to-do and a second explanation.
+
+- Before flagging any date conflict, grep `ledger.md`'s Session log and the course's
+  `03-logistics.md` for the item. If a row already records his ruling, say nothing.
+- Record a ruling so it is greppable: the course file gets the decision **and the reason it beats the
+  other source**, plus "do not reopen this from <source>". A bare date is not enough — the next run
+  needs to know why Canvas is wrong.
+- A source that keeps contradicting a settled fact is reported at most once, as "Canvas still shows
+  Nov 20 for Exam 3; that stays a setup slip", and only if something about it actually changed.
+- This applies to any fact he has ruled on, not only dates: exam format, which lab section, whether a
+  set is done. Reopening a closed question reads as not listening.
+
 Rules: tables for anything dated · points/weight when known · mark `unsubmitted` · when two sources
 disagree on a date, print both and flag it · a new hard date goes to **ledger.md AND Things3 AND
 term.py** in the same run · no course-content summaries · no repeating yesterday's items unless

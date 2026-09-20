@@ -52,7 +52,7 @@ KEY_DATES = [  # (date, course, label, kind)  kind: exam | deliverable | admin |
     (D(2026, 10, 24), "STAT251", "WA1 due (Gradescope)", "deliverable"),
     (D(2026, 10, 29), "CPSC310", "MIDTERM 19:00–21:00 (25%)", "exam"),
     (D(2026, 10, 30), "STAT251", "MIDTERM 08:00–08:50 (22%)", "exam"),
-    (D(2026, 10, 30), "PHIL385", "Exam 3 14:00 (15%) — Oct 30 vs Nov 20 unresolved", "exam"),
+    (D(2026, 10, 30), "PHIL385", "Exam 3 14:00 (15%)", "exam"),
     (D(2026, 10, 30), "UBC", "Withdraw-with-W deadline (all courses)", "admin"),
     (D(2026, 11, 6), "CPSC310", "D3 due 18:00 (paired)", "deliverable"),
     (D(2026, 11, 12), "ASIA250", "SWR2 due (15%) — date approximate", "paper"),
@@ -117,7 +117,7 @@ def main():
     crunch = D(2026, 10, 29)
     left = (crunch - today).days
     if 0 <= left <= 21:
-        print(f"-- Oct 29–30 crunch in {left} days: CPSC midterm Thu 19:00, STAT midterm Fri 08:00, PHIL Exam 3 Fri 14:00 (if Oct 30). Prep finished by Oct 28.")
+        print(f"-- Oct 29–30 crunch in {left} days: CPSC midterm Thu 19:00, STAT midterm Fri 08:00, PHIL Exam 3 Fri 14:00. Prep finished by Oct 28.")
 
 if __name__ == "__main__":
     main()
