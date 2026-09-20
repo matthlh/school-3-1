@@ -537,26 +537,36 @@ Header line, then bullets, one item per bullet, in the brief AND every details s
 called the first paragraph-style brief "a large pile". Tables for dated rows, bullets for
 everything else, prose never.
 
-**Plain-language rule (Matt, 2026-09-20: "too much jargon and buzz words… I can't understand what
-you're saying").** He was right and it was the skill's own invented vocabulary that did it. Write
-the brief so someone who has never seen this system understands every line.
+**Vocabulary rule (Matt, 2026-09-20, in two passes).** First he said "too much jargon and buzz
+words… I can't understand what you're saying". Then he corrected the over-correction: "I'm ok with
+stuff like hard lock and rolled 4x, just don't go over board and make formatting much much better if
+you're gonna do a lot of abbrevs." So the rule is not "no shorthand" — it is **a small, stable
+vocabulary, and layout that carries it**.
 
-- **Never invent a term.** "Over budget line", "surge day", "what I pitched", "stems", "banked",
-  "massed practice", "the ladder", "retrieval", "close-out", "staged" — all of these were Claude's
-  words, not his, and he had to ask what three of them meant. Say the thing instead: not "the over
-  budget line is gone" but "it all fits in the day now"; not "rolled 4×" but "pushed back 4 days";
-  not "retrieval" but "quizzing yourself".
-- **Name things the way he would.** "The Golden Pavilion" is his novel for the ASIA 250 final paper,
-  not "novel pages". "D1" is the CPSC 310 project deliverable. Spell out what a code means the first
-  time it appears in a brief: "Mini-Quiz 2 (ASIA 250, worth 2% of the course)".
-- **No shorthand he did not choose.** `P1/P2/P3` and the estimate tags are his own Things3 system, so
-  those are fine. `X / ~ / O` are his grades, fine. Everything else gets words.
-- **Say the consequence, not the mechanism.** "Late = 0" beats "hard lock". "Closes tomorrow night"
-  beats "locks Sep 21 23:59". He wants to know what happens to him, not how the system models it.
-- **Short sentences.** One clause where possible. If a line needs a dash or a semicolon to hold it
-  together, split it in two.
-- **Do not explain the plumbing.** Script names, file paths, JSON keys and snapshot diffs belong in
-  Details or nowhere. The brief never mentions `things_plan.py`, `quiz_pick.py` or a `.json` file.
+**Fine to use, no explaining.** Terms that recur in every brief and that he has learned by now:
+`hard lock`, `rolled 4×`, `overdue since <date>`, `unlogged`, `P1/P2/P3`, the time tags, the quiz
+grades `X / ~ / O`, and real course names — `D1`, `LAB02`, `WeBWorK 2`, `Mini-Quiz 2`, `Exam 1`.
+
+**Not fine.** Terms coined for a single brief, which is what actually broke it. "Over budget line",
+"what I pitched", "novel pages", "surge day", "stems", "banked", "massed practice", "the ladder",
+"close-out", "staged" — he had to ask what three of those meant. Before using a compact phrase, ask:
+has it appeared in a brief before, or am I inventing it right now? If inventing, write the plain
+version instead.
+- Say *The Golden Pavilion* — his ASIA 250 novel — not "novel pages".
+- Say "it all fits now", not "the over budget line is gone".
+- Say "what I suggested", not "what I pitched".
+- Say "quizzing yourself", not "retrieval".
+
+**The density trade-off — this is the part he emphasised.** Shorthand is only readable when the
+layout does the work. The more abbreviations on a line, the more structure it needs around it.
+- A line carrying two or more compact terms goes in a **table cell**, never in running prose.
+- One idea per row or bullet. Never stack `rolled 4×` and `hard lock` and a date in one sentence.
+- Put the consequence in its own column or its own bold fragment, so it reads without parsing the
+  rest: **Late = 0**, **closes tomorrow**, **overdue since Sep 17**.
+- If a block needs more than about four compact terms to say its piece, that block is too dense —
+  split it or move the detail to the run file.
+
+Script names, file paths and JSON keys are never brief material regardless; they belong in Details.
 
 **Density rule (Matt, 2026-09-20: "can you format things better? It's really messy to read"):**
 the brief is scanned in about twenty seconds, so length is the enemy, not missing detail — the run
