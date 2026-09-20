@@ -112,6 +112,29 @@ After it runs:
 - Paste the planner output verbatim as the first block of the brief. It replaces the old
   "Do today" block — hard deadlines and ladder steps are to-dos now, so they are in the plan.
 
+**Surge days — 8–10 h (Matt, 2026-09-20: "if something is really urgent, yeah I dont mind doing
+8-10 hrs of works js lmk and remind me").** The 6 h budget is the default, not a ceiling. When a run
+finds work that is *genuinely* urgent and does not fit, say so in the brief and offer the bigger day;
+he decides, and the offer is a question, never a silent replan.
+
+A day qualifies when **any** of these is true:
+- A hard lock or a no-late deadline falls inside 24 h and its to-do did not fit in the 6 h.
+- The ⚠ OVER BUDGET item is worth marks (a deliverable, a quiz, a graded set) rather than a habit.
+- Two or more graded items collide on the same date inside the next 3 days.
+- An exam is inside T-3 and the PREP ladder step did not fit.
+
+It does **not** qualify on rollover count alone, on undated P2/P3 work, or on a career item with a
+week left. Novel pages and the Friday retrieval block are habits: they justify a surge only when the
+thing they feed is inside its own deadline window. Overusing this burns the signal — if a surge is
+offered more than twice a week, the 6 h budget is being mis-set and that is the thing to say instead.
+
+How to offer it: one line under the plan table naming **what the extra hours buy**, in marks or in a
+lock that closes — not "you're behind". Then ask with `AskUserQuestion`. On a yes, re-run
+`things_plan.py --budget 8` (or the number he gives; the trim is remembered for that date and skips
+the Career reserve) and post the new table. On a no, leave the plan alone and do not raise it again
+that day. He asked to be **reminded**, so on a surge day that he accepted, the evening deck and the
+next morning's run both carry one line on whether the surge item actually closed.
+
 **Sync rule:** every new dated item found in Canvas / PrairieLearn / the CPSC 310 site / Piazza
 instructor notes gets added to Things3 in the same run, via:
 ```bash
@@ -217,8 +240,17 @@ line; Claude never signs in). Read-only: never touch an answer box, Preview, Sub
   one question per problem under `## WeBWorK N` in `courses/STAT251/02-questions.md`, numbers changed,
   `**Lec:** WWN`, tagged to existing ledger rows. Brief line under STAT 251:
   "WeBWorK N open · k problems banked · due <date>".
-- Fallback when the domain is denied or the tab is signed out: one Heads-up line asking him to attach
-  the set's hardcopy PDF (problem list → Download Hardcopy) with `log STAT251 webwork N`.
+- **A CWL bounce here is transient far more often than it is real (2026-09-20).** The Sep 19 and the
+  first Sep 20 attempt both landed on the CWL page and both runs gave up after ONE try and reported
+  WeBWorK as signed out. Matt pushed back — "double check the webwork, because my link works" — and
+  the very next navigation to the identical URL loaded the assignment list fine, same session, no
+  sign-in. So the §5 three-attempt rule applies to webwork.elearning.ubc.ca exactly as it does to
+  Canvas and Piazza: **navigate, and on a CWL page navigate again, up to three times, before
+  reporting anything.** Reporting a set as unread when it is actually done is worse than a slow run —
+  it kept a completed WeBWorK 1 in the plan for days.
+- Fallback when the domain is denied or the tab is still signed out after three attempts: one Heads-up
+  line asking him to attach the set's hardcopy PDF (problem list → Download Hardcopy) with
+  `log STAT251 webwork N`.
 - Verified 2026-09-16: problem pages `Assignment-01/1/` and `/2/` read cleanly with `get_page_text`,
   and the histogram came through a screenshot; WeBWorK 1 itself was banked from the PDF he attached.
 
@@ -431,6 +463,7 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 | 2 h | <project> · <what> | <due, or "overdue since <d>"> |
 | event | <project> · <what> | <time> |   [event] = fixed slot, costs no budget
 ⚠ Over budget: <item> (<est>) is due <d> with no room today.   ← its own line under the table
+⚠ This is an 8 h day: <what it buys>. Say the word and I replan.   ← see the surge rule below
 
 **Rolled to tomorrow — N items**   ← also from the planner; omit the whole block if empty
 - Dated ones only, one per bullet: <project> · <what> · rolled 4× · due <d>
