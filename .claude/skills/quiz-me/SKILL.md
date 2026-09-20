@@ -1,6 +1,6 @@
 ---
 name: quiz-me
-description: Interleaved spaced-retrieval quiz across every course from courses/<CODE>/02-questions.md, weighted by ledger.md (overdue → X → ~ → unquizzed) and exam proximity. Asks one question at a time, grades X/~/O, moves ledger rows by the spacing ladder, keeps per-question history in routines/quiz-state.json, flags weak topics that need more questions, and builds the morning transit deck. Use for "quiz me", "test me", "quiz me on STAT251", "what's due", "transit deck", grades pasted back like "1 O 2 ~ 3 X", or the T-9…T-5 exam-ladder retrieval days.
+description: Interleaved spaced revision quiz across every course from courses/<CODE>/02-questions.md, weighted by ledger.md (overdue → X → ~ → unquizzed) and exam proximity. Asks one question at a time, grades X/~/O, moves ledger rows by the spacing ladder, keeps per-question history in routines/quiz-state.json, flags weak topics that need more questions, and builds the morning transit deck. Use for "quiz me", "test me", "quiz me on STAT251", "what's due", "transit deck", grades pasted back like "1 O 2 ~ 3 X", or the T-9…T-5 exam-ladder revision days.
 ---
 
 # Quiz me
@@ -21,14 +21,14 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    cannot land in the ledger.
 2. Ask question 1 exactly as written. Nothing else. Wait.
 3. Grade, then one line of correction (for `X`, the full bank answer). Move on. Never reveal the
-   answer early; "skip" / "idk" = `X`. Never coach mid-session — the retrieval attempt is the point.
+   answer early; "skip" / "idk" = `X`. Never coach mid-session — the attempt to recall it is the point.
    - `O` = would score full marks on the exam · `~` = right idea, imprecise or missing a piece · `X` = wrong or blank.
    - **CPSC 310:** a correct answer with no reason is `~` until he gives the why. Ask "why?" once.
    - **STAT 251:** apply/derive needs the method, not the number. Right number, no method = `~`.
    - **PHIL 385:** exact names, pseudonyms, essay titles, dates. Close = `~`.
 4. **Second pass (Matt, 2026-09-19):** after the last question, re-ask every `X` from this session
    once more, in order, one at a time, before grading. The retry is not graded and does not change
-   the first-pass grade; it exists so a miss gets one retrieval attempt while the correction is fresh.
+   the first-pass grade; it exists so a miss gets one attempt to recall it while the correction is fresh.
    Skip it if he says stop. Then grade the first pass only.
 5. Stop after the second pass or when he says stop. Grade only what was asked:
    `python3 "$S/quiz_grade.py" "1:O 2:X 3:~ 4:O"` — **always one quoted string**

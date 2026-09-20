@@ -35,7 +35,7 @@ info (office hours, policies, schedules, links, course structure) is NOT repeate
    shows up in **Plan today**. `term.py` holds the
    machine-readable copy of the term dates: when a date changes in `ledger.md`, change it there too.
 1. Read the newest file in `routines/runs/` so you can report deltas, not the whole world again.
-2. Read `ledger.md` — overdue retrieval topics go in Heads-up, and the term calendar is the thing you
+2. Read `ledger.md` — overdue revision topics go in Heads-up, and the term calendar is the thing you
    compare new dates against.
 3. Skim `courses/<CODE>/03-logistics.md` only if you need to decide whether something is new.
 
@@ -66,7 +66,7 @@ today"; auto-completed once the lecture file exists), for async ASIA 250 a `Watc
 locks <date>` (2h, P1, deadline = the mini-quiz hard lock, publish + 7 d; only Matt ticks it, after the
 quiz), one per PREP ladder step that
 fires today (`T-3 STAT 251 · FULL TIMED MOCK`), the weekly `Novel: read 30–35 pages (week of …)`
-for ASIA 250 from Sep 14, the two **daily retrieval habits** (`Deck: answer the 6 on the bus, reply
+for ASIA 250 from Sep 14, the two **daily revision habits** (`Deck: answer the 6 on the bus, reply
 grades (<date>)` and `Quiz me: 10 min before bed (<date>)`, 15m P1 each, area UBC; an open one from
 an earlier day is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
 schedule in `PHIL_READINGS` (`Read PHIL385: <title> (class …)` 1h P1, skipped if any open to-do
@@ -80,7 +80,7 @@ next time so nothing starves), undated Anytime items stay in the pool. It prints
 budget). `--dry-run` previews; `--budget 3` trims a short day and is remembered for that date (no
 Career reserve on a trimmed day); `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos; knobs are
 at the top of the script. A future when-date he set by hand holds unless the deadline is within a day.
-Open-ended weekly to-dos (novel pages Mon, retrieval block Fri, groceries Sat) come from the `WEEKLY`
+Open-ended weekly to-dos (novel pages Mon, revision block Fri, groceries Sat) come from the `WEEKLY`
 table one week ahead; tick one and it stays ticked.
 
 **Weekly mode — Sundays 15:00 (scheduled task `weekly-plan`) and "plan my week":** run
@@ -124,7 +124,7 @@ A day qualifies when **any** of these is true:
 - An exam is inside T-3 and the PREP ladder step did not fit.
 
 It does **not** qualify on rollover count alone, on undated P2/P3 work, or on a career item with a
-week left. Novel pages and the Friday retrieval block are habits: they justify a surge only when the
+week left. Novel pages and the Friday revision block are habits: they justify a surge only when the
 thing they feed is inside its own deadline window. Overusing this burns the signal — if a surge is
 offered more than twice a week, the 6 h budget is being mis-set and that is the thing to say instead.
 
@@ -497,7 +497,7 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
                             "- Saturday flex block: needed / delete"
 
 **Self-improvement**        (Matt, 2026-09-20: "what I shd be doing better / shouldn't be")
-                            Plain words here too — "quizzing yourself", not "retrieval".
+                            Use his words: "revision" or "review", never "retrieval".
 Keep doing                  Three blocks, at most 3 bullets each, omit a block with nothing real in it.
 - <what worked, from evidence this run>
 Start doing
@@ -555,7 +555,7 @@ version instead.
 - Say *The Golden Pavilion* — his ASIA 250 novel — not "novel pages".
 - Say "it all fits now", not "the over budget line is gone".
 - Say "what I suggested", not "what I pitched".
-- Say "quizzing yourself", not "retrieval".
+- Say "revision" or "review", never "retrieval" (Matt, 2026-09-20).
 
 **The density trade-off — this is the part he emphasised.** Shorthand is only readable when the
 layout does the work. The more abbreviations on a line, the more structure it needs around it.
@@ -567,6 +567,27 @@ layout does the work. The more abbreviations on a line, the more structure it ne
   split it or move the detail to the run file.
 
 Script names, file paths and JSON keys are never brief material regardless; they belong in Details.
+
+**Word list — his words, not mine.** He said 2026-09-20 "fuck it i'll just slowly correct what's
+good and what isn't", so this table grows one row at a time as he corrects a word. Applying a
+correction means changing it *everywhere he reads it* in the same session — the brief, `ledger.md`,
+`PREP.md`, `README.md`, `STUDY-SYSTEM.md`, `CLAUDE.md`, both skills, the planner's to-do titles and
+the notes site — not just in that day's reply. Renaming a generated to-do also means renaming the
+open one in Things3 and its key in `routines/plan-state.json`, or the next run makes a duplicate.
+
+| Don't say | Say | Added |
+|---|---|---|
+| retrieval | revision, or review | 2026-09-20 |
+| over budget line | it all fits now / there's no room for X today | 2026-09-20 |
+| what I pitched | what I suggested | 2026-09-20 |
+| novel pages | The Golden Pavilion (his ASIA 250 novel) | 2026-09-20 |
+| surge day | long day, 8 h day | 2026-09-20 |
+| stems | short version of the question | 2026-09-20 |
+| massed practice | all in one day | 2026-09-20 |
+
+One term survives on purpose: `STUDY-SYSTEM.md` keeps "retrieval practice" once, in the sentence
+citing Roediger & Karpicke, because that is the literature's name for the effect and the linked
+sources use it. Everywhere else it is revision.
 
 **Density rule (Matt, 2026-09-20: "can you format things better? It's really messy to read"):**
 the brief is scanned in about twenty seconds, so length is the enemy, not missing detail — the run

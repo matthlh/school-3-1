@@ -32,9 +32,9 @@ COURSES = {
 }
 
 # Exams use the Phase-2 ladder from PREP.md; deliverables use the deliverable ladder.
-EXAM_LADDER = {10: "T-10 gap check: syllabus topics vs. ledger", 9: "45 min interleaved retrieval",
-               8: "45 min interleaved retrieval", 7: "45 min interleaved retrieval",
-               6: "45 min interleaved retrieval", 5: "45 min interleaved retrieval + name the prof's 2–3 themes",
+EXAM_LADDER = {10: "T-10 gap check: syllabus topics vs. ledger", 9: "45 min mixed revision",
+               8: "45 min mixed revision", 7: "45 min mixed revision",
+               6: "45 min mixed revision", 5: "45 min mixed revision + name the prof's 2–3 themes",
                4: "T-4 gaps and X topics only", 3: "T-3 FULL TIMED MOCK", 2: "T-2 mark the mock, study only the misses",
                1: "T-1 light: verbal reconstruction, bed 10:30", 0: "EXAM DAY"}
 DELIV_LADDER = {10: "T-10 environment check: clone, install, run tests, push a throwaway commit",

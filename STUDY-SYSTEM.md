@@ -12,7 +12,7 @@ Dunlosky et al. (2013) rated ten common study techniques. Only **two** came out 
 and summarization** — which is exactly what most note-taking is.
 
 Specific numbers worth knowing:
-- **Retrieval beats rereading.** Roediger & Karpicke: 80% retained after a week with recall
+- **Revision by recall beats rereading** (the literature calls this retrieval practice). Roediger & Karpicke: 80% retained after a week with recall
   practice vs. 34% with rereading.
 - **Interleaving beats blocking**, hugely, on delayed tests: 63% vs. 20% at one week
   (d = 1.34); 61% vs. 38% at one month in a ~800-student trial. Note the catch — interleaving
@@ -22,7 +22,7 @@ Specific numbers worth knowing:
   even when the pre-test gives no answers.
 
 So: previewing survives only if you convert it into pre-testing. Note-taking survives only if
-the notes are questions. Packaging doesn't survive at all — replace it with spaced retrieval.
+the notes are questions. Packaging doesn't survive at all — replace it with spaced revision.
 
 ## The loop
 
@@ -47,7 +47,7 @@ Photograph or type the page into `courses/<CODE>/lectures/`. Cover the answer co
 yourself once, mark each line `X` / `~` / `O`. Then tell me **"log CPSC310 lec 7"** — I pull
 your questions into the course bank and the ledger, and the spacing starts.
 
-### 4. Friday — one retrieval block, ~2 hours
+### 4. Friday — one revision block, ~2 hours
 I quiz you across all courses, interleaved, weighted toward what's overdue and what you've
 missed before. This is where the actual learning happens. Everything above just feeds it.
 
@@ -64,7 +64,7 @@ Four courses (321 dropped):
 | STAT 251 — timed problem redo | 1.5 |
 | CPSC 310 — deliverable work | 3.5 |
 | ASIA 250 + PHIL 385 — reading w/ argument mapping | 1.5 |
-| Friday retrieval block | 2.0 |
+| Friday revision block | 2.0 |
 | Sunday ledger + planning | 0.5 |
 | Saturday flex (deliverable & essay weeks only) | 2.5 |
 | **Total outside class** | **~13** |
@@ -93,7 +93,7 @@ the cheap points are real, bank them.
 
 ---
 *Sources: [Dunlosky et al. / meta-analysis summary](https://longtermemory.com/b/best-study-methods-research/) ·
-[Retrieval + spacing](https://evidencebased.education/resource/retrieval-and-spaced-practice-study-strategies-that-must-be-combined/) ·
+[Revision + spacing](https://evidencebased.education/resource/retrieval-and-spaced-practice-study-strategies-that-must-be-combined/) ·
 [Interleaving meta-analysis](https://www.aft.org/ae/spring2020/agarwal_agostinelli) ·
 [Rohrer RCT](https://gwern.net/doc/psychology/spaced-repetition/2019-rohrer.pdf) ·
 [Preview vs. pre-test](https://files.eric.ed.gov/fulltext/EJ1323237.pdf) ·

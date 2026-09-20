@@ -64,14 +64,14 @@ didn't). Twenty-five lines max:
    lecture close-outs, exam-ladder steps (T-10 gap check, T-3 mock, T-1 rationale…) and the weekly
    novel pages are created as to-dos automatically. Work the list top to bottom; check things off.
 2. **Rolled to tomorrow** — what was in Today and didn't fit. It competes again tomorrow with a bump.
-3. **Today's classes** + **Review** — pre-questions for today's lectures and up to 3 due retrieval questions.
+3. **Today's classes** + **Review** — pre-questions for today's lectures and up to 3 due revision questions.
 4. **New since yesterday** — new Canvas / PrairieLearn / Piazza items, grades posted, emails that matter.
-5. **Heads-up** — due in 2–7 days, date conflicts, **unlogged lectures**, overdue retrieval topics.
+5. **Heads-up** — due in 2–7 days, date conflicts, **unlogged lectures**, overdue revision topics.
 
 Anything you add to Things3 yourself: give it the two tags (or leave it untagged and the brief will
 ask). Undated stuff lives in Anytime; the planner pulls from it when the day has room.
 
-"What's due?" reads the ledger for overdue retrieval. Sundays the brief adds a **Week ahead** block.
+"What's due?" reads the ledger for overdue revision. Sundays the brief adds a **Week ahead** block.
 
 ### After every lecture — 10 minutes, non-negotiable
 
@@ -87,12 +87,12 @@ system is just note-taking.
   the Wednesday block, never Monday night). WeBWorK is due 23:59 most Mondays (Oct 6 is a Tue;
   Oct 29 and Nov 12 are Thu; Dec 11 a Fri). iClicker running before STAT starts.
 - **Wed** — do the ASIA lecture + quiz in the morning block. Five days of buffer beats zero.
-- **Fri** — **your lab quiz is written in the lab and can't be made up.** Then the retrieval block.
+- **Fri** — **your lab quiz is written in the lab and can't be made up.** Then the revision block.
 - **Sun** — 20 minutes at 3 pm: the weekly-plan brief's **Week ahead** block shows the planner's placement of next week
   (hours per day, what moved, any day over budget). Your only calls: an over-budget day → Saturday flex
   block or cut something; anything you want on a fixed day → tag it `pin`.
 
-**The one rule:** the Friday retrieval block is not optional and not moveable. Every other block
+**The one rule:** the Friday revision block is not optional and not moveable. Every other block
 feeds it.
 
 ---
@@ -125,7 +125,7 @@ term, so this is consolidation, not first contact.
 | Day | What |
 |---|---|
 | **T-10** | I generate a complete topic inventory from the course ledger and diff it against the syllabus. Anything on the syllabus that never made it into your notes is a **gap** — that's the day's work. |
-| **T-9 → T-5** | 45 min/day, interleaved retrieval across all topics. Not by unit — mixed, so you have to identify what kind of problem you're looking at before you solve it. Expect to feel worse at this than blocked review. That's the mechanism, not a warning sign. |
+| **T-9 → T-5** | 45 min/day, mixed revision across all topics. Not by unit — mixed, so you have to identify what kind of problem you're looking at before you solve it. Expect to feel worse at this than blocked review. That's the mechanism, not a warning sign. |
 | **T-4** | Gaps and `X` topics only. Anything still failing gets rebuilt from scratch. |
 | **T-3** | **Full timed mock exam.** I write it from your question bank in the real format and length. For STAT 251 in particular this is the most important single day — the reported failure mode is running out of time, not not knowing the material. |
 | **T-2** | Mark the mock together. Only the misses get studied. Nothing else. |

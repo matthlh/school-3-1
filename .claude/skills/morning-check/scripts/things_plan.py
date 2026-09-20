@@ -26,7 +26,7 @@ Steps:
      locks <date>" (2h) due at the mini-quiz hard lock — nothing is missed until then. Plus one
      per PREP ladder step that fires today (T-10 gap check, T-3 mock, …). Existing lecture to-dos
      are reconciled (title, deadline; tags only if untagged) and auto-completed once the lecture
-     file exists. Open-ended weekly to-dos (WEEKLY: novel pages, Friday retrieval block, groceries)
+     file exists. Open-ended weekly to-dos (WEEKLY: novel pages, Friday revision block, groceries)
      are created one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
   3. Candidates: when ≤ today, OR undated in Anytime, OR deadline ≤ today+PULL_IN_DAYS (a future
      when-date he set by hand is respected otherwise).
@@ -59,7 +59,7 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
     dict(day=MON, title="Golden Pavilion: read 30–35 pages (week of {d:%b %-d})", project="ASIA 250", tags="2h, P2", due_days=6,
          first=dt.date(2026, 9, 14), last=dt.date(2026, 11, 16),
          notes="Mishima, The Temple of the Golden Pavilion (~260 pp; epub on Canvas, files/47240876). ~30–35 pp/week keeps the Dec 10 paper on schedule. Note page reached + one thing worth quoting."),
-    dict(day=FRI, title="Retrieval block — quiz me ({d:%b %-d})", area="UBC", tags="2h, P1", due_days=0,
+    dict(day=FRI, title="Revision block — quiz me ({d:%b %-d})", area="UBC", tags="2h, P1", due_days=0,
          first=dt.date(2026, 9, 18), last=dt.date(2026, 12, 4),
          notes="Fri 3–5 pm, not optional, not moveable (PREP.md). Say 'quiz me' — overdue ledger topics first."),
     dict(day=MON, title="Questions for Kraal (week of {d:%b %-d})", project="PHIL 385", tags="15m, P2", due_days=1,
@@ -69,10 +69,10 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
          first=dt.date(2026, 9, 19), last=dt.date(2026, 12, 19), notes="Before Sunday meal prep."),
 ]
 PROJECT_OF = {"STAT251": "STAT 251", "PHIL385": "PHIL 385", "CPSC310": "CPSC 310", "ASIA250": "ASIA 250"}
-LADDER_EST = [("MOCK", "2h"), ("gap check", "1h"), ("retrieval", "1h"), ("mark the mock", "1h"),
+LADDER_EST = [("MOCK", "2h"), ("gap check", "1h"), ("revision", "1h"), ("mark the mock", "1h"),
               ("environment check", "1h"), ("read the spec", "30m"), ("autograder", "30m"),
               ("design rationale", "1h"), ("verbal reconstruction", "30m")]
-# Daily retrieval habits (Matt, 2026-09-11): created for today with the date in the title; an open
+# Daily revision habits (Matt, 2026-09-11): created for today with the date in the title; an open
 # one from an earlier day is cancelled — a missed habit is not a debt that rolls over.
 HABITS = [("Deck: answer the 6 on the bus, reply grades", "15m, P1",
            "The morning brief attaches routines/runs/<date>-transit.md. Answer each in your head, check below "
@@ -368,7 +368,7 @@ def ensure_auto_todos(today, todos, dry, state, seed=False):
         if add(title, project=proj, area=None if proj else "UBC", when=today.isoformat(), deadline=today.isoformat(),
                tags=f"{est}, P1", notes=f"Ladder step for {label} on {d:%a %b %-d}. From PREP.md."):
             todos.append(Todo("new-" + title, title, proj or "", "UBC", today.isoformat(), today.isoformat(), f"{est}, P1", "Anytime"))
-    # open-ended weekly to-dos (novel pages, Friday retrieval block, groceries), created a week ahead
+    # open-ended weekly to-dos (novel pages, Friday revision block, groceries), created a week ahead
     for w in WEEKLY:
         d = today + dt.timedelta(days=(w["day"] - today.weekday()) % 7)
         while d <= today + dt.timedelta(days=WEEKLY_AHEAD):

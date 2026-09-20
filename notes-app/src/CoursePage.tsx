@@ -28,7 +28,7 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
     <div className="course-grid">
       <div className="course-main">
         <section className="panel">
-          <div className="panel-head"><span>Retrieval</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
+          <div className="panel-head"><span>Revision</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
           <StatBar t={tallies[code] ?? EMPTY} />
           {rows.length > 0 && (
             <>
