@@ -80,10 +80,6 @@ The right/left labels themselves come from this dispute. Strauss coined them in 
 - Nicolaus Notabene: *Prefaces*.
 - Hilarius Bookbinder: *Stages on Life's Way* (as editor).
 
-### Q: Which work is associated with the "leap of faith" and the Abraham/Isaac story? Year and pseudonym?
-**Topic:** First authorship: the 8 pseudonymous works  **Lec:** 1  **Type:** recall
-**A:** *Fear and Trembling*, 1843, by Johannes de silentio.
-
 ### Q: Why do Philosophical Crumbs and the Concluding Unscientific Postscript share a pseudonym? Who is he and what is his standpoint?
 **Topic:** First authorship: the 8 pseudonymous works  **Lec:** 1  **Type:** recall
 **A:** The Postscript is the sequel. Its full title is *Concluding Unscientific Postscript to Philosophical Crumbs*. Both are by Johannes Climacus, who writes as a non-Christian asking how one becomes a Christian. The Postscript (1846) was intended to conclude the authorship.

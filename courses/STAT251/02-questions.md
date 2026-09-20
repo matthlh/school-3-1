@@ -262,6 +262,13 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
 **A:** Q(0.3): 15 × 0.3 + 0.5 = 5, an integer, so Q(0.3) = x₍₅₎ = 10. Q(0.35): 5.25 + 0.5 = 5.75, between 5 and 6, so Q(0.35) = (x₍₅₎ + x₍₆₎)/2 = (10 + 12)/2 = 11, the plain average, not a weighted value like 11.5. Q(0.9): 13.5 + 0.5 = 14, so Q(0.9) = x₍₁₄₎ = 30. Q(0.3) = 10 means about 30% of the observations are smaller than 10: four of fifteen are (3, 5, 7, 8), which is 27%, close to 30%.
 
+### Q: Sorted data: 4, 7, 9, 12, 15, 18, 22, 30, 41. Using the course's np + 0.5 rule:
+- Find the position and value of the 40th percentile.
+- Find Q1 and Q3, then the IQR.
+- Say what you do when np + 0.5 lands on a whole number versus a half.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** derive
+**A:** n = 9. 40th percentile: 9 × 0.40 + 0.5 = 4.1, between the 4th and 5th values, so (12 + 15) / 2 = 13.5 by the course's averaging rule for any non-integer position. Q1: 9 × 0.25 + 0.5 = 2.75, so (7 + 9) / 2 = 8. Q3: 9 × 0.75 + 0.5 = 7.25, so (22 + 30) / 2 = 26. IQR = 26 − 8 = 18. A whole-number position means take that ordered value; anything else means average the two ordered values on either side.
+
 ### Q: For the same n = 15 data, compute Q1 two ways: with the np + 0.5 rule, and as the median of the lower half of the data (the seven values below the median). Do they agree? What does the deck say about this, and which rule do you use on a computation question?
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
 **A:** np + 0.5 rule: 15 × 0.25 + 0.5 = 4.25, so Q1 = (x₍₄₎ + x₍₅₎)/2 = (8 + 10)/2 = 9. The lower half 3, 5, 7, 8, 10, 12, 14 has median 8. They disagree. The deck says different textbooks and software use slightly different quartile rules, so sources can differ. The np + 0.5 rule is the procedure the deck states, so use it unless the question fixes another rule. For the deck's own 20-value example the two rules happen to agree.

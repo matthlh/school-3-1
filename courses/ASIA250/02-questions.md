@@ -34,6 +34,18 @@ Format:
 **Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** recall
 **A:** (D). Axiological aesthetics is not limited to art; anything in the world can become the object of the aesthetic gaze. A, B and C are all stated in the lecture.
 
+### Q: Define axiology in three words, then explain in plain terms what it has to do with staring at a sunset.
+**Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** recall
+**A:** Axiology is value theory: the study of what people count as good or worth wanting. Staring at a sunset is an aesthetic experience, putting a frame around something and holding attention on it. The lecture's claim is that such experiences are where values come from: after the sunset the driver values calm and beauty enough to change lanes and plan a photo. Axiological aesthetics is the study of that link from experience to value.
+
+### Q: A student writes: "Axiological aesthetics is about how religious art makes people feel." Give two corrections.
+**Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** recall
+**A:** First, it is not limited to art: anything at all can be the object of the aesthetic gaze, including a ritual, a story or a traffic jam. Second, it is not about feeling but about value formation: the chain is aesthetic experience, then values, then behaviour, and the claim is that religious experience is one kind of aesthetic experience in this value-forming sense.
+
+### Q: The lecture's three drivers in a traffic jam at sunset: one curses, one admires the sky and plans a photo, one reads the jam as God's punishment. Which one shows the faith frame, and what is a faith frame made of?
+**Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** recall
+**A:** The third driver: he is detecting the supernatural in a natural event. A faith frame, Luhrmann's 2020 term, is produced by a paracosm built from narratives, rituals and religious objects, all of them attempts to detect the supernatural in the natural world.
+
 ## Lec 1 — deck-only claims (logged 2026-09-15)
 
 ### Q: Give the course definition of "religion" in full, then name the three kinds of supernatural idea it rests on with one example each.

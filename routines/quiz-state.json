@@ -629,6 +629,96 @@
      "~"
     ]
    ]
+  },
+  "7bf05552": {
+   "course": "PHIL385",
+   "topic": "The Unhappiest One",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "7eaf1166": {
+   "course": "CPSC310",
+   "topic": "Coupling & connascence",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "173b361b": {
+   "course": "PHIL385",
+   "topic": "The Unhappiest One",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "15125b4c": {
+   "course": "STAT251",
+   "topic": "1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
+  },
+  "24461009": {
+   "course": "PHIL385",
+   "topic": "First authorship: the 8 pseudonymous works",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "dfb0c686": {
+   "course": "ASIA250",
+   "topic": "Aesthetic experience and the faith frame",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "1447dfa4": {
+   "course": "PHIL385",
+   "topic": "The Unhappiest One",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "02ac3be9": {
+   "course": "PHIL385",
+   "topic": "First authorship: the 8 pseudonymous works",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
+  },
+  "d4614826": {
+   "course": "CPSC310",
+   "topic": "Coupling & connascence",
+   "history": [
+    [
+     "2026-09-19",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -1165,6 +1255,68 @@
      "8f015d83",
      "PHIL385",
      "~"
+    ]
+   ]
+  },
+  {
+   "date": "2026-09-19",
+   "mode": "quiz",
+   "n": 9,
+   "note": "",
+   "results": [
+    [
+     1,
+     "7bf05552",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "7eaf1166",
+     "CPSC310",
+     "X"
+    ],
+    [
+     4,
+     "173b361b",
+     "PHIL385",
+     "X"
+    ],
+    [
+     5,
+     "15125b4c",
+     "STAT251",
+     "~"
+    ],
+    [
+     6,
+     "24461009",
+     "PHIL385",
+     "X"
+    ],
+    [
+     7,
+     "dfb0c686",
+     "ASIA250",
+     "X"
+    ],
+    [
+     8,
+     "1447dfa4",
+     "PHIL385",
+     "X"
+    ],
+    [
+     9,
+     "02ac3be9",
+     "PHIL385",
+     "X"
+    ],
+    [
+     10,
+     "d4614826",
+     "CPSC310",
+     "X"
     ]
    ]
   }

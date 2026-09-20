@@ -4,21 +4,16 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-_14 topics due as of Sat Sep 19. Say **quiz me**._
+_9 topics due as of Sat Sep 19. Say **quiz me**._
 
-- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 4 d · last unquizzed
 - PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 4 d · last unquizzed
 - PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 4 d · last unquizzed
-- ASIA 250 · Aesthetic experience and the faith frame · overdue 3 d · last unquizzed
-- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 2 d · last unquizzed
 - PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · overdue 2 d · last unquizzed
 - PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · overdue 2 d · last unquizzed
 - PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · overdue 2 d · last unquizzed
 - STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · overdue 2 d · last unquizzed
-- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 2 d · last unquizzed
 - CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 1 d · last unquizzed
 - CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 1 d · last unquizzed
-- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · due today · last X
 - PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · due today · last ~
 
 ## All topics
@@ -32,7 +27,7 @@ _14 topics due as of Sat Sep 19. Say **quiz me**._
 | STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | 2026-09-18 | O | 1 | 2026-09-25 |
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | STAT 251 | 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) | 4 | — | — | 0 | 2026-09-17 |
-| STAT 251 | 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) | 4 | — | — | 0 | 2026-09-17 |
+| STAT 251 | 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) | 4 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | STAT 251 | 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) | 4 | 2026-09-19 | O | 1 | 2026-09-26 |
 | STAT 251 | 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) | 5 | — | — | 0 | 2026-09-20 |
 | STAT 251 | 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) | 5 | — | — | 0 | 2026-09-20 |
@@ -41,16 +36,16 @@ _14 topics due as of Sat Sep 19. Say **quiz me**._
 | CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
-| CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | — | — | 0 | 2026-09-17 |
+| CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | 2026-09-19 | X | 0 | 2026-09-20 |
 | CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | — | — | 0 | 2026-09-18 |
 | CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | — | — | 0 | 2026-09-18 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-18 | X | 0 | 2026-09-19 |
+| PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | 1 | 2026-09-16 | ~ | 0 | 2026-09-19 |
-| PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | — | — | 0 | 2026-09-15 |
+| PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | — | — | 0 | 2026-09-15 |
 | PHIL 385 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | — | — | 0 | 2026-09-15 |
 | PHIL 385 | Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) | 3 | — | — | 0 | 2026-09-17 |
@@ -58,7 +53,7 @@ _14 topics due as of Sat Sep 19. Say **quiz me**._
 | PHIL 385 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | reading | — | — | 0 | 2026-09-17 |
 | PHIL 385 | Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) | 4 | — | — | 0 | 2026-09-20 |
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
-| ASIA 250 | Aesthetic experience and the faith frame | 1 | — | — | 0 | 2026-09-16 |
+| ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 
 ## Term calendar — hard dates
@@ -195,3 +190,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-19 | Logged PHIL 385 lec 4 (Fri Sep 18) from a friend's page — Matt was sick. Kraal's synthesis of "The Unhappiest One" plus biography. Fact-checked: no childhood brain hemorrhage (the brother Søren Michael's schoolyard death and a rejected 1855 cause-of-death hypothesis, run together); the engagement to Regine Olsen dated (Sep 1840 – Oct 1841) with his three stated reasons; the Tolstoy *On Life* comparison is Kraal's own, a convergence not an influence; "doxology" and "comfort" are Kraal's words, A's are "the happiest", "a gift of fortune", "envy". 9 questions, 1 new ledger topic due Sep 20. |
 | 2026-09-19 | Quiz (quiz): 10 q · 1 O / 1 ~ / 8 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 6 ledger rows moved |
 | 2026-09-19 | Quiz (quiz): 10 q · 1 O / 4 ~ / 5 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 6 ledger rows moved |
+| 2026-09-19 | Quiz (quiz): 9 q · 0 O / 1 ~ / 8 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 5 ledger rows moved |
