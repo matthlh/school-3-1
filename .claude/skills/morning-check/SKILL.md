@@ -425,11 +425,16 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 
 ## Brief
 
-**Plan today — 5.75 of 6 h**   ← verbatim from things_plan.py (§1b), ONE BULLET PER ITEM
-- [30m] <project> · <what> · due <d>   ordered by priority; [event] = fixed slot, no time;
-- ...                                 the lecture close-outs collapse into one line ("· 1 overdue")
-**Rolled to tomorrow**          ← also from the planner; omit the header if empty
-- <project> · <what> · rolled 2×
+**Plan today — 5.75 of 6 h**   ← the planner's items (§1b) rendered as a TABLE, not its raw bullets
+| Est | What | When |                 (Matt, 2026-09-20: the " · "-joined bullet list read as a wall)
+|---|---|---|                          every item the planner picked gets a row, same order
+| 2 h | <project> · <what> | <due, or "overdue since <d>"> |
+| event | <project> · <what> | <time> |   [event] = fixed slot, costs no budget
+⚠ Over budget: <item> (<est>) is due <d> with no room today.   ← its own line under the table
+
+**Rolled to tomorrow — N items**   ← also from the planner; omit the whole block if empty
+- Dated ones only, one per bullet: <project> · <what> · rolled 4× · due <d>
+- Then ONE closing bullet for the undated tail: "Twelve more, undated P2/P3. Rolling longest: …"
 **Week ahead — 25 of 42 h** (Mon Sep 14 → Sun Sep 20)   ← the Sunday 15:00 weekly-plan brief, verbatim from `--week`
 - Mon 14 · 5.5/6 h · <what> · <what> (+2)
 - ⚠ OVER BUDGET Thu Sep 17: … has no room before Sep 18   ← the one decision
@@ -440,10 +445,11 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 - <course> · <time> · <topic>         time · topic from the slide/page title, course-site row
 - ...                                 or reading schedule (§7) · end with "3 Qs below"
 
-**Review**                  the 6 transit-deck questions (quiz_pick.py --transit, §7) —
-- <course> · <question>               QUESTION ONLY; answers + grading live on the Transit Deck
-- ...                                 artifact (§7, fixed URL), rebuilt each run with today's 6.
-- Transit Deck: <url>                 "- Bank empty" if the script exits 1.
+**Review — 6 questions**    the transit deck (quiz_pick.py --transit, §7). In the CHAT BRIEF give
+- <course> · <short stem>             only a short stem — the topic and the ask, ~12 words, never the
+- ...                                 full worked question (Matt, 2026-09-20: the long ones made the
+- Transit Deck: <url>                 brief unreadable). The run file keeps them in full. Answers and
+                                      grading live on the artifact. "- Bank empty" if the script exits 1.
 
 **New since yesterday**
 - <course> · <what> · <source>        new deadlines, announcements, Piazza instructor
@@ -456,6 +462,24 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 **Week ahead**              Sundays only (or when asked): one bullet per hard date in the
 - ...                       next 14 days from ledger.md + Things3 + term.py, then
                             "- Saturday flex block: needed / delete"
+
+**Self-improvement**        (Matt, 2026-09-20: "what I shd be doing better / shouldn't be")
+Keep doing                  Three blocks, at most 3 bullets each, omit a block with nothing real in it.
+- <what worked, from evidence this run>
+Start doing
+- <the change, then the number that justifies it>
+Stop doing
+- <the habit that is costing him, then what to do instead>
+
+**Where the evidence comes from — never invent these.** Roll counts and the ⚠ line from
+`things_plan.py`; graded/ungraded decks from the artifact db (§7 step 0) and `routines/quiz-state.json`;
+overdue topics and streaks from `ledger.md`; unlogged lectures from `term.py`; missed or unsubmitted
+work from the Canvas digest and PrairieLearn. Every bullet names the number it rests on. A roll count
+≥ 5 on a dated item, a deck that went ungraded twice running, or an unlogged lecture with marks
+attached is always worth a bullet. Praise only what the run can actually show he did — no
+encouragement filler, and no repeating the same three bullets every day: if nothing changed since
+yesterday's run file, say "Same three as yesterday" and move on. This is the one block allowed to
+give advice; everything else in the brief stays reporting.
 
 ## Details
 ### <Course>            only courses with something new; deadlines as a table:
@@ -479,6 +503,21 @@ Header line, then bullets, one item per bullet, in the brief AND every details s
 called the first paragraph-style brief "a large pile". Tables for dated rows, bullets for
 everything else, prose never.
 
+**Density rule (Matt, 2026-09-20: "can you format things better? It's really messy to read"):**
+the brief is scanned in about twenty seconds, so length is the enemy, not missing detail — the run
+file holds the detail.
+- **One line, one fact, twelve words or fewer.** A bullet that needs a comma-spliced second clause
+  belongs in Details.
+- **Plan today and any dated list is a table**, not bullets — the ` · ` separators inside a bullet
+  are what made it read as a wall.
+- **Bold only the thing that changes his morning** — a hard lock, a collision, an ⚠. If three
+  things are bold, nothing is.
+- **Never say the same fact in two blocks.** A hard lock goes in Heads-up OR in the plan table's
+  When cell, not both; "New since yesterday" carries the source, Heads-up carries the consequence.
+- **Collapse tails.** More than four items of the same kind (rolled to-dos, LinkedIn alerts, Piazza
+  setup posts) become one counted line.
+- **Cut "Nothing new" blocks to a single line** rather than a header plus a bullet.
+
 Rules: tables for anything dated · points/weight when known · mark `unsubmitted` · when two sources
 disagree on a date, print both and flag it · a new hard date goes to **ledger.md AND Things3 AND
 term.py** in the same run · no course-content summaries · no repeating yesterday's items unless
@@ -486,8 +525,10 @@ they're now due. "Plan today" means exactly that: the list he should clear befor
 inside the budget. Nothing informational goes there.
 
 ## Chat brief
-The `## Brief` block, ≤25 lines, plus a link to the run file. No headers, no preamble, no advice
-unless a deadline collision or a ⚠ OVER BUDGET line needs a decision.
+The `## Brief` block, ≤30 lines (the plan table's header rows and the Self-improvement block bought
+five, 2026-09-20 — they are not licence to write longer bullets), plus a link to the run file. No
+preamble. **Self-improvement** is the only block that may give advice; everywhere else, advice is
+limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 
 ---
 
