@@ -4,17 +4,34 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-_9 topics due as of Sat Sep 19. Say **quiz me**._
+_26 topics due as of Sun Sep 20. Say **quiz me**._
 
-- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 4 d · last unquizzed
-- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 4 d · last unquizzed
-- PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · overdue 2 d · last unquizzed
-- PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · overdue 2 d · last unquizzed
-- PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · overdue 2 d · last unquizzed
-- STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · overdue 2 d · last unquizzed
-- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 1 d · last unquizzed
-- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 1 d · last unquizzed
-- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · due today · last ~
+- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 5 d · last unquizzed
+- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 5 d · last unquizzed
+- PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · overdue 3 d · last unquizzed
+- PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · overdue 3 d · last unquizzed
+- PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · overdue 3 d · last unquizzed
+- STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · overdue 3 d · last unquizzed
+- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 2 d · last unquizzed
+- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 2 d · last unquizzed
+- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 1 d · last ~
+- ASIA 250 · Aesthetic experience and the faith frame · due today · last X
+- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · due today · last X
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · due today · last X
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · due today · last X
+- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · due today · last X
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · due today · last X
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · due today · last X
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · due today · last X
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · due today · last X
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · due today · last X
+- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · due today · last X
+- PHIL 385 · Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) · due today · last unquizzed
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · due today · last O
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · due today · last O
+- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · due today · last unquizzed
+- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · due today · last unquizzed
+- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · due today · last unquizzed
 
 ## All topics
 
@@ -191,3 +208,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-19 | Quiz (quiz): 10 q · 1 O / 1 ~ / 8 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 6 ledger rows moved |
 | 2026-09-19 | Quiz (quiz): 10 q · 1 O / 4 ~ / 5 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 6 ledger rows moved |
 | 2026-09-19 | Quiz (quiz): 9 q · 0 O / 1 ~ / 8 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 5 ledger rows moved |
+| 2026-09-20 | Morning check: no new dates in any source. WeBWorK 1 closed by hand, PHIL 385 lec 4 logged, so ASIA 250 lec 2 is the only unlogged lecture with Mini-Quiz 2 locking Sep 21. Due-now refreshed: 26 due, 9 overdue. |

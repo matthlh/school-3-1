@@ -76,8 +76,15 @@ unanswerable afterwards.
 
 Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks.
 
+## AutoTest (found 2026-09-19, was a "To verify" gap)
+- Every push/merge to `main` is graded automatically. No separate dashboard — feedback posts as a **follow-up commit comment** on GitHub.
+- To force a feedback run on demand, comment on a commit: `@310-bot #d1` (swap the deliverable tag per assignment).
+- **3 requests/day**, resets at midnight. A run that fails build/lint/prettier still consumes a request.
+- Only the **push/merge timestamp** counts for deadlines — not the commit's local timestamp.
+- Feedback near a deadline can take **12+ hours** under load — don't push for the first time right at 17:59.
+- Grade is a bucket (Beginning/Acquiring/Developing/Proficient/Extending), sometimes with a note on which feature scored lowest.
+
 ## To verify
 - [ ] Is T/F negative marking still used on exams?
 - [ ] Final exam date (published ≥3 weeks before the end of classes)
 - [ ] Do deliverables ever get posted to Canvas? (Canvas has nothing for this course; deadlines come from the calendar.)
-- [ ] Where does the D1 code autograder result actually show up? The site (syllabus, project overview, D1 spec, all four unit pages, schedule) only says pushes to `main` are auto-graded and the best commit before the deadline counts. It names no dashboard, bot, or check. A throwaway push on 2026-09-14 produced no status check and no comment on the GitHub Enterprise commit. Ask on Piazza.
