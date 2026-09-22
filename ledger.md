@@ -49,6 +49,9 @@ _26 topics due as of Mon Sep 21. Say **quiz me**._
 | STAT 251 | 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) | 5 | — | — | 0 | 2026-09-20 |
 | STAT 251 | 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) | 5 | — | — | 0 | 2026-09-20 |
 | STAT 251 | 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) | 5 | — | — | 0 | 2026-09-20 |
+| STAT 251 | 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) | 6 | — | — | 0 | 2026-09-22 |
+| STAT 251 | 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) | 6 | — | — | 0 | 2026-09-22 |
+| STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | — | — | 0 | 2026-09-22 |
 | CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
@@ -69,6 +72,7 @@ _26 topics due as of Mon Sep 21. Say **quiz me**._
 | PHIL 385 | The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) | 3 | — | — | 0 | 2026-09-17 |
 | PHIL 385 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | reading | — | — | 0 | 2026-09-17 |
 | PHIL 385 | Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) | 4 | — | — | 0 | 2026-09-20 |
+| PHIL 385 | Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) | reading | — | — | 0 | 2026-09-22 |
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
@@ -210,3 +214,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-20 | Morning check: no new dates in any source. WeBWorK 1 closed by hand, PHIL 385 lec 4 logged, so ASIA 250 lec 2 is the only unlogged lecture with Mini-Quiz 2 locking Sep 21. Due-now refreshed: 26 due, 9 overdue. |
 | 2026-09-20 | PHIL 385 Exam 3 settled again at **Fri Oct 30** (Matt: the syllabus date, since Nov 20 is Exam 4's own slot and Oct 30 is the only timeslot that fits). Canvas' Nov 20 is a setup slip and is not to be reopened. Ask-Kraal to-do closed, question moved to Answered, term.py and the syllabus cleaned. |
 | 2026-09-21 | Morning check: WeBWorK's Future Assignments list is populated again and every open date matches the ledger (Sep 22 → Dec 1), closing yesterday's open question; set 2 opens Tue Sep 22 00:00 and is read and banked tomorrow. ASIA 250 Week 3 module published with Readings 3 only — lecture 3 and Mini-Quiz 3 not posted yet. No date changed, no grade published. |
+| 2026-09-21 | STAT 251 lec 6 logged from the after-class deck and the Panopto recording (Matt was sick): 13 questions, 3 ledger topics due Sep 22. The captions came through Panopto's SRT endpoint in his Chrome, so recordings are now a usable source. Lecture 7 outline staged for Wed Sep 23. PHIL 385 lec 5 has no posted material, so it stays unlogged. |
