@@ -384,3 +384,57 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: Derive the three-event addition rule P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A ∩ B) − P(A ∩ C) − P(B ∩ C) + P(A ∩ B ∩ C) from the two-event rule.
 **Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** derive
 **A:** Write A ∪ B ∪ C as (A ∪ B) ∪ C and apply the two-event rule: P(A ∪ B) + P(C) − P((A ∪ B) ∩ C). Expand P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Distribute the intersection: (A ∪ B) ∩ C = (A ∩ C) ∪ (B ∩ C), and these two pieces overlap in A ∩ B ∩ C, so P((A ∪ B) ∩ C) = P(A ∩ C) + P(B ∩ C) − P(A ∩ B ∩ C). Substituting gives the rule. This is the slide 15 exercise, left for lecture 6.
+
+## Lec 6 — Ch 3: conditional probability and independence (logged 2026-09-21 from the posted deck and the recording)
+
+### Q: From a blank page, define P(A | B), say why P(B) must be positive, and say what the ratio measures on a Venn diagram. Then derive both forms of the multiplication rule.
+**Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** derive
+**A:** P(A | B) = P(A ∩ B) / P(B). The given event is the denominator, and dividing by zero is undefined; P(B) = 0 would also mean B cannot happen, so there is nothing to condition on. On the diagram it is the fraction of B's region that lies inside A. Multiplying through gives P(A ∩ B) = P(A | B) P(B). Starting from P(B | A) = P(A ∩ B) / P(A) instead gives P(A ∩ B) = P(B | A) P(A).
+
+### Q: P(A) = 0.5, P(B) = 0.3 and P(B | A) = 0.4. Find P(A ∩ B), P(A | B) and P(A ∪ B).
+**Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** apply
+**A:** P(A ∩ B) = P(B | A) P(A) = 0.4 × 0.5 = 0.20. P(A | B) = 0.20 / 0.3 = 2/3. P(A ∪ B) = 0.5 + 0.3 − 0.2 = 0.6. P(B | A) = 0.4 and P(A | B) = 2/3 differ because they share the numerator 0.20 but divide by different given events.
+
+### Q: A student writes P(A | B) = P(A ∩ B) / P(A). What is wrong? With P(A) = 0.6, P(B) = 0.4 and P(A ∩ B) = 0.36, give the correct P(A | B) and P(B | A).
+**Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** critique
+**A:** The denominator must be the given event, which is B. P(A | B) = 0.36 / 0.4 = 0.9 and P(B | A) = 0.36 / 0.6 = 0.6. The student's formula computes P(B | A) and labels it P(A | B).
+
+### Q: Two cards are drawn without replacement from a standard 52-card deck. Use the multiplication rule to find P(both are aces) and P(the first is an ace and the second is a king).
+**Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** apply
+**A:** Let A₁ = first card is an ace and A₂ = second card is an ace. P(A₁ ∩ A₂) = P(A₁) P(A₂ | A₁) = (4/52)(3/51) = 12/2652 = 1/221 ≈ 0.0045. Ace then king: (4/52)(4/51) = 16/2652 = 4/663 ≈ 0.0060. The second factor is conditional because the first draw changed the deck.
+
+### Q: State the three equivalent conditions for A and B to be independent, and show that P(A ∩ B) = P(A) P(B) implies P(A | B) = P(A).
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** derive
+**A:** P(A | B) = P(A), P(B | A) = P(B), and P(A ∩ B) = P(A) P(B). From the third, P(A | B) = P(A ∩ B) / P(B) = P(A) P(B) / P(B) = P(A) when P(B) > 0. Independence is checked with one of these equations and never read off a Venn diagram, which only shows whether events overlap.
+
+### Q: "These two events are disjoint, so they are independent." Correct this with the one-line reason and a die example.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** critique
+**A:** Disjoint means P(A ∩ B) = 0. Independence would need P(A) P(B) = 0, so one of the events would have to be impossible. Disjoint events with positive probability are never independent: knowing A happened tells you B did not. Die: A = odd and B = even are disjoint, and P(A | B) = 0 while P(A) = 1/2.
+
+### Q: Flip a fair coin and roll a fair die. Let A = head and B = the die shows 1 or 2. List A ∩ B and use the product test to decide whether A and B are independent.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
+**A:** The 12 outcomes (coin, die) are equally likely. A has 6 outcomes, B = {(H,1), (H,2), (T,1), (T,2)} has 4, and A ∩ B = {(H,1), (H,2)} has 2. P(A ∩ B) = 2/12 = 1/6 and P(A) P(B) = (1/2)(1/3) = 1/6, so A and B are independent. The test needs an intersection to check; here it has one.
+
+### Q: Twelve smoke detectors each work with probability 0.98, independently. Find P(all work) and P(at least one fails), and say why the complement is the only sensible route.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
+**A:** Define Aᵢ = detector i works. P(all work) = P(A₁ ∩ … ∩ A₁₂) = 0.98¹² ≈ 0.785 by independence. P(at least one fails) = 1 − 0.785 = 0.215. "At least one fails" splits into exactly 1, 2, …, 12 failures, each in many arrangements, while "all work" is a single intersection of independent events.
+
+### Q: A question gives P(A) = 0.3 and P(B) = 0.6 and asks for P(A ∩ B). A student answers 0.18. What did they assume, when is that allowed, and what can be said otherwise?
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** critique
+**A:** They assumed independence and multiplied. That is allowed only when the question states independence or the events are physically independent, like a coin and a die. Otherwise P(A ∩ B) is not determined by P(A) and P(B) alone; you need P(A | B), P(B | A) or P(A ∪ B). Without that, all you can say is 0 ≤ P(A ∩ B) ≤ 0.3.
+
+### Q: If A and B are independent, prove that Aᶜ and B are independent, then name the other two pairs the deck lists.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** derive
+**A:** P(Aᶜ ∩ B) = P(B) − P(A ∩ B) = P(B) − P(A) P(B) = (1 − P(A)) P(B) = P(Aᶜ) P(B), which is the product test for Aᶜ and B. The same argument gives A and Bᶜ, and applying it twice gives Aᶜ and Bᶜ.
+
+### Q: P(D) = 0.4, P(E) = 0.5 and P(D ∪ E) = 0.7. Find P(E | D) and decide whether D and E are independent, two ways.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
+**A:** The addition rule gives P(D ∩ E) = 0.4 + 0.5 − 0.7 = 0.2. P(E | D) = 0.2 / 0.4 = 0.5, which equals P(E), so they are independent. Product test: 0.4 × 0.5 = 0.2 = P(D ∩ E). Compare the deck's numbers 0.5, 0.6 and 0.65, where P(D ∩ E) = 0.45 is not 0.3 and the events are not independent.
+
+### Q: A fair coin gives 2 heads in 10 flips. Does that contradict P(heads) = 0.5? Describe the graph the lecture used of the proportion of heads against the number of flips.
+**Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** recall
+**A:** No. 0.5 is the long-run relative frequency, not a promise about ten flips. The graph plots heads divided by n against n. At n = 1 it is 0 or 1, then it wanders, and it settles near 0.5 as n grows, close by 10,000 flips but not necessarily by 100. Short-run outcomes are random.
+
+### Q: In 400 rolls of a die a student sees 80 sixes and says the probability of a six is 0.2. What is right and what is wrong in that claim?
+**Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** critique
+**A:** 80/400 = 0.2 is an observed relative frequency, an estimate from a finite run. The probability is the long-run limit of that proportion, 1/6 ≈ 0.167 for a fair die. At 400 rolls, 0.2 is within ordinary variation. If the proportion stayed near 0.2 as n grew, that would be evidence the die is not fair, not a redefinition of the probability.

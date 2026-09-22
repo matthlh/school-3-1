@@ -25,12 +25,12 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 |---|---|---|---|---|---|
 | 2a | Rudimentary mathematical properties of probability *(lec 5: outcome probabilities lie in [0, 1] and sum to 1, countable additivity, a subset has the smaller probability)* | | | | |
 | 2b | Describe the sample space *(lec 5: coin flips, accident counts, two component lifetimes; discrete, continuous, bivariate)* | | | | |
-| 2c | Probability as long-run relative frequency *(lec 5 slide not reached; lecture 6 opens with it)* | | | | |
-| 2d | Independent vs. mutually exclusive vs. complementary *(lec 5: disjoint and complementary; independence comes in lec 6)* | | | | |
-| 2e | Judge whether an independence assumption is justifiable | | | | |
+| 2c | Probability as long-run relative frequency *(lec 6: the proportion-of-heads graph, long run versus short run)* | | | | |
+| 2d | Independent vs. mutually exclusive vs. complementary *(lec 5: disjoint and complementary; lec 6: independence, three equivalent tests)* | | | | |
+| 2e | Judge whether an independence assumption is justifiable *(lec 6: never assume it unless stated or physically certain; disjoint events are never independent)* | | | | |
 | 2f | Probabilities of single, complementary, union, intersection *(lec 5: complement rule, general addition rule, the three-event rule as an exercise)* | | | | |
 | 2g | Venn diagrams *(lec 5: complement, intersection, union, disjoint pictures)* | | | | |
-| 2h | Independence + conditional probability to solve problems | | | | |
+| 2h | Independence + conditional probability to solve problems *(lec 6: definition, multiplication rule, the switches example)* | | | | |
 | 2i | Posterior probabilities — tree diagrams / Bayes | | | | |
 | 2j | Law of total probability | | | | |
 | 2k | **Reliability of series/parallel circuits** | | | | |

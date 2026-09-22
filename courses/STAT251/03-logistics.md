@@ -3,6 +3,9 @@
 - **Lectures:** MWF 8:00–8:50, CIRS 1250. Sit in the same seat (syllabus asks for it).
 - **Lab L1K:** Fri 11:00–12:00, ESB 1046, TA Zachary. Labs start the week of Sep 21 (Lab 0 = intro
   to R, no assignment); no labs Sep 7–18.
+- **Lab 1** runs the week of Sep 21 (L1K on Fri Sep 25). Its pre-reading is the same R introduction as
+  Lab 0 and nothing is submitted beforehand. Lab groups of 3 to 4 are posted on Canvas from Wed Sep 23.
+  Pre-lab quizzes start with Lab 2 (said in lecture 6).
 - **Tools:** WeBWorK only via the Canvas WeBWorK tab (else the roster won't sync) · iClicker Cloud —
   join via the Canvas link and press *sync* or participation isn't graded · Gradescope for written
   assignments (link appears with WA1) · Piazza (don't post answers before due dates).
@@ -57,6 +60,7 @@
   Labs · WeBWorK (all empty as of Sep 10).
 - Lecture pages live in the Canvas module "Lecture Materials". Each page has the slide PDF (`Lecture_NN_Chapter_K_CanvasPost.pdf`) plus a Panopto recording link, and the next lecture's page can appear a few days early (lecture 3's was up on Sep 11). Page slugs so far: `lecture-1-introduction-wed-sep-9` (files 47949983, 47723730), `lecture-2-ch-1-exploratory-data-analysis-fri-sep-11` (file 47723640), `lecture-3-ch-1-exploratory-data-analysis-contd-dot-mon-sep-14` (file 47723645), `lecture-4-ch-1-exploratory-data-analysis-contd-dot-wed-sep-16` (files 47723647 before the lecture, 47723806 after).
 - Slide files are named `BL` for the version posted before the lecture and `AL` for the version posted after it, which adds the worked solutions to the in-class questions. A file with neither tag is the same before and after.
+- Each Lecture Materials page also links the Panopto recording (ubc.ca.panopto.com, Viewer.aspx with the session id). While Matt's Chrome is signed in there, the auto-captions come back as plain text from `/Panopto/Pages/Transcription/GenerateSRT.ashx` with that id and `language=0`; strip the index and timestamp lines. Verified 2026-09-21 on lecture 6, about 35k characters for a 50-minute class. The transcript says what was actually reached and what was said in class.
 - WeBWorK course URL: https://webwork.elearning.ubc.ca/webwork2/2026W1_V_STAT_V_251_101_2026W1 (Matt's roster sync is done; he first launched it from the Canvas WeBWorK tab). The assignment list shows a due date only for open sets and an open date for future ones.
 - WeBWorK problem pages: `<course URL>/Assignment-0N/k/` for problem k; `/Assignment-0N/` is the problem list (which are done, Download Hardcopy). Claude reads sets there the day they open and banks them as practice questions; it never enters answers.
 - WeBWorK 1 opened Sep 14 and is due **Tuesday Sep 22, 23:59**, confirmed on the WeBWorK assignment list 2026-09-16 (the Canvas calendar entry sits at midnight on Sep 22 and had been read as Mon Sep 21).
