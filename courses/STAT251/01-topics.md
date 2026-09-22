@@ -31,9 +31,9 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | 2f | Probabilities of single, complementary, union, intersection *(lec 5: complement rule, general addition rule, the three-event rule as an exercise)* | | | | |
 | 2g | Venn diagrams *(lec 5: complement, intersection, union, disjoint pictures)* | | | | |
 | 2h | Independence + conditional probability to solve problems *(lec 6: definition, multiplication rule, the switches example)* | | | | |
-| 2i | Posterior probabilities — tree diagrams / Bayes | | | | |
-| 2j | Law of total probability | | | | |
-| 2k | **Reliability of series/parallel circuits** | | | | |
+| 2i | Posterior probabilities — tree diagrams / Bayes *(WeBWorK 2: which plant the defective item came from, which factory, the iClicker left in the 5th class; lec 7 Sep 23 covers it)* | | | | |
+| 2j | Law of total probability *(WeBWorK 2: the marginal P(C) read off a two-stage tree; lec 7 Sep 23)* | | | | |
+| 2k | **Reliability of series/parallel circuits** *(WeBWorK 2: parallel block in series with a third component, and the set-notation version of the same circuit)* | | | | |
 
 ## 3. Random variables — discrete & continuous · Ch 4–6
 | # | Outcome | Status | Last | Streak | Next |
