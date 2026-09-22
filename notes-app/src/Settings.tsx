@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ThemeToggle } from './ThemeToggle'
 import { VISUALS, currentVisual, nextVisual, setVisual, type Visual } from './visual'
+import { buildLabel, checkForUpdate, getUpdate, reloadNow } from './update'
 
 /** Gear button in the top bar. The popover holds Appearance and the Super secret settings button. */
 export function Settings() {
@@ -9,6 +10,8 @@ export function Settings() {
   const ref = useRef<HTMLDivElement>(null)
   const gearRef = useRef<HTMLButtonElement>(null)
   const secretRef = useRef<HTMLButtonElement>(null)
+  const [checkMsg, setCheckMsg] = useState<string | null>(null)
+  const msgTimer = useRef<number | undefined>(undefined)
 
   useEffect(() => {
     const sync = () => setV(currentVisual())
@@ -25,6 +28,16 @@ export function Settings() {
     window.addEventListener('keydown', onKey)
     return () => { document.removeEventListener('mousedown', onDown); window.removeEventListener('keydown', onKey) }
   }, [open])
+
+  // Version row: ask the server for a newer build; reload if there is one, else say so for a moment.
+  const checkNow = async () => {
+    window.clearTimeout(msgTimer.current)
+    setCheckMsg('Checking…')
+    const status = await checkForUpdate(true)
+    if (status === 'available') { reloadNow(getUpdate().newer); return }
+    setCheckMsg(status === 'current' ? 'Up to date' : 'Could not check')
+    msgTimer.current = window.setTimeout(() => setCheckMsg(null), 2500)
+  }
 
   return (
     <div className="settings" ref={ref}>
@@ -53,6 +66,15 @@ export function Settings() {
               title="Each click moves to the next effect. Links keep working."
               onClick={() => setVisual(nextVisual(visual))}
             >{visual === 'off' ? 'Super secret settings…' : VISUALS[visual].label}</button>
+          </div>
+          <div className="row">
+            <span className="lbl">Version</span>
+            <span className="val">
+              built {buildLabel()}
+              {import.meta.env.DEV
+                ? <span className="muted">· dev server</span>
+                : <button type="button" className="link" onClick={checkNow} disabled={checkMsg === 'Checking…'}>{checkMsg ?? 'Check now'}</button>}
+            </span>
           </div>
           {visual !== 'off' && (
             <p className="hintline">

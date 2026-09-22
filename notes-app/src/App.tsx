@@ -14,6 +14,8 @@ import { TopicsView } from './TopicsView'
 import { CourseHeader, scopedCourse } from './CourseTabs'
 import { QuestionBank } from './QuestionBank'
 import { SearchResults } from './SearchResults'
+import { UpdateToast } from './UpdateToast'
+import { startUpdateChecks, takeSavedScroll } from './update'
 
 function useRoute(): Route {
   const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash))
@@ -35,9 +37,12 @@ export default function App() {
   const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => { loadAll().then(setAll); loadQuizState().then(setQuiz) }, [])
+  useEffect(() => { startUpdateChecks() }, [])
   // New route: back to the top, unless it names a `#section` — then scroll there once the content exists.
   useEffect(() => {
     setQuery('')
+    // After one of our own reloads (update.ts) land where he was, once the content exists.
+    if (all) { const y = takeSavedScroll(window.location.hash); if (y !== null) { window.scrollTo(0, y); return } }
     const anchor = route.kind === 'file' ? route.anchor : undefined
     if (!anchor) { window.scrollTo(0, 0); return }
     const el = document.getElementById('sec-' + anchor)
@@ -99,6 +104,7 @@ export default function App() {
         {scoped && all && !query.trim() && <CourseHeader code={scoped} tree={tree} all={all} current={current} />}
         {body}
       </main>
+      <UpdateToast />
     </div>
   )
 }
