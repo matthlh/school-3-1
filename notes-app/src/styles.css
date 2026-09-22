@@ -250,7 +250,7 @@ nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 .settings { position: relative; display: flex; align-items: center; margin-left: auto; }
 .gear { border: 0; background: none; font-size: 17px; line-height: 1; padding: 6px 8px; border-radius: 8px; cursor: pointer; color: var(--fg2); }
 .gear:hover, .gear.on { background: var(--soft); color: var(--fg); }
-.pop { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; min-width: 300px; padding: 8px 14px 10px;
+.pop { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; min-width: 340px; padding: 8px 14px 10px;
        background: var(--panel); border: 1px solid var(--border2); border-radius: 12px; box-shadow: 0 12px 34px rgba(0,0,0,.14); font-size: 13.5px; }
 .pop .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0; }
 .pop .row + .row { border-top: 1px solid var(--hair); }
@@ -259,6 +259,22 @@ nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 .pop .hintline { margin: 2px 0 2px; font-size: 12.5px; color: var(--muted); }
 .pop .hintline .link { font-size: 12.5px; }
 @media (max-width: 640px) { .pop { position: fixed; left: 12px; right: 12px; top: 56px; min-width: 0; } }
+.pop .val { display: inline-flex; align-items: center; gap: 2px; font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.pop .val .link:disabled { color: var(--muted); cursor: default; }
+
+/* Update toast: a newer build is deployed. Fixed outside main and nav so the secret visuals never touch it. */
+.toast { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px);
+         padding: 10px 12px 10px 14px; background: var(--panel); border: 1px solid var(--border2); border-radius: 12px;
+         box-shadow: 0 12px 34px rgba(0,0,0,.14); font-size: 13.5px; color: var(--fg); animation: toast-in .25s ease-out; }
+.toast .actions { display: flex; align-items: center; gap: 10px; flex: none; }
+.toast .btn { padding: 4px 12px; font-size: 13px; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 640px) {
+  .toast { left: 12px; right: 12px; bottom: 12px; max-width: none; flex-wrap: wrap; }
+  .toast .msg { flex: 1 1 100%; }                       /* the sentence takes its own line, the buttons share the next */
+  .wrap:has(.toast) main { padding-bottom: 120px; }     /* so the toast never sits on the last lines of a page */
+}
+@media (prefers-reduced-motion: reduce) { .toast { animation: none; } }
 
 /* Secret visuals. Scoped to the content (main, sidebar, crumbs, search) so the settings popover stays readable
    and every link still sits where it was. Text stays in the DOM for screen readers; only its paint changes. */
