@@ -20,3 +20,4 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | 11 | The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) | 3 | 2026-09-16 | | | 0 | 2026-09-17 | |
 | 12 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | reading | 2026-09-16 | | | 0 | 2026-09-17 | |
 | 13 | Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) | 4 | 2026-09-19 | | | 0 | 2026-09-20 | |
+| 14 | Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) | reading | 2026-09-21 | | | 0 | 2026-09-22 | lectures Sep 21–23 |
