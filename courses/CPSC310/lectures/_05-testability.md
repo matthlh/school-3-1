@@ -1,7 +1,7 @@
-# CPSC 310 — Lecture 4 pre-read: Polymorphism and LSP (Tue Sep 22)
+# CPSC 310 — Lecture 5 pre-read: Testability (Thu Sep 24)
 
 Pulled 2026-09-11 from the reader chapter *Design Principles*
-(https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). The deck was not
+(https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). The course site moved this chapter from lecture 4 to lecture 5 on 2026-09-23, when lecture 4 became Refactoring. Lecture 5 asks when it is safe to substitute one thing for another, which is the Liskov substitution part below. The deck was not
 posted yet. The same chapter is listed again for lecture 7 (test doubles) and lecture 13 (layered
 architecture).
 
