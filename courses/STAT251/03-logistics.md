@@ -3,6 +3,7 @@
 - **Lectures:** MWF 8:00–8:50, CIRS 1250. Sit in the same seat (syllabus asks for it).
 - **Lab L1K:** Fri 11:00–12:00, ESB 1046, TA Zachary. Labs start the week of Sep 21 (Lab 0 = intro
   to R, no assignment); no labs Sep 7–18.
+- There are no labs the week of Sep 28 to Oct 2 (lecture 8 page). The Lab 2 pre-lab quiz is still due Fri Oct 2.
 - **Lab 1** runs the week of Sep 21 (L1K on Fri Sep 25). Its pre-reading is the same R introduction as
   Lab 0 and nothing is submitted beforehand. Lab groups of 3 to 4 are posted on Canvas from Wed Sep 23.
   Pre-lab quizzes start with Lab 2 (said in lecture 6).
