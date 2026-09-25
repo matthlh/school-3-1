@@ -23,7 +23,7 @@ One place for every course tool. The notes site shows these on Home and on each 
 | CPSC310 | InsightUBC REST API spec (openapi) | https://ubccpsc.github.io/310/26w1/project/spec.html | \bD\d\b;Deliverable |
 | CPSC310 | D1 spec | https://ubccpsc.github.io/310/26w1/project/d1-drop-in-a-feature | \bD1\b |
 | CPSC310 | PrairieLearn | https://us.prairielearn.com/pl/course_instance/231184 | \bLAB ?\d;CPSC ?310 lab;\bD\d\b;Deliverable |
-| CPSC310 | GitHub Enterprise | https://github.students.cs.ubc.ca/CPSC310-2026W-T1 | \bD\d\b;Deliverable;project |
+| CPSC310 | GitHub: my project repo (solo_mhe28) | https://github.students.cs.ubc.ca/CPSC310-2026W-T1/solo_mhe28 | \bD\d\b;Deliverable;project |
 | CPSC310 | Piazza | https://piazza.com/class/mtkmphcadpx5k6 |  |
 | CPSC310 | iClicker (sec 103) | https://join.iclicker.com/NBOE |  |
 | PHIL385 | Canvas | https://canvas.ubc.ca/courses/192607 | . |

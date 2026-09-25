@@ -27,7 +27,7 @@ An inherited REST service for the Registrar (course and facilities data). D1 = t
 feel the cost of change · D2 = make the network-reaching part testable · D3/D4 (pairs) = vague
 requirements → spec → build without breaking v1/v2.
 
-- Every deliverable = code + **design rationale** + **process evidence** (PRs, commits, reviews).
+- Every deliverable ships three artifacts (syllabus, "Code is necessary but not sufficient"): the work, a **design rationale**, and **process evidence** — "the pull requests, the commit sequence, the reviews you left, the tests". A submission that passes every automated check but lacks rationale and process evidence is incomplete. So D1 too: branch → PR → merge to `main`, small commits with real messages. Grading reads `main` (highest-scoring commit before the deadline) plus the PrairieLearn design analysis; TAs review PRs from D2 onward.
 - Graded **50% autograder** (every push to `main`; best commit before the deadline counts) +
   **50% written reflection** on PrairieLearn, TA-marked. Everyone passes the autograder; the
   reflection is where marks are won or lost.
@@ -42,13 +42,20 @@ requirements → spec → build without breaking v1/v2.
 | Fri Nov 27, 18:00 | **D4** Build it *(pairs)* |
 
 ### D1 — Drop in a feature (Fri Sep 25, 18:00)
-**Request 1:** optional `campus` string on buildings — parsed from each building `.htm` header on
-`POST /api/v2/datasets`, editable via `PUT /api/v2/buildings/:id` (422 `"expected a string"` when
-wrong; clients that omit it must get identical responses), searchable via `POST /api/v2/search`,
-present in list / single / delete responses. Update `openapi.yml`, run `yarn docs:build`, keep
-`yarn test` green (fix assertions, not test setup). **Request 2:** finish aggregation in
-`POST /api/v2/search` per `openapi.yml` (validation exists; one method to implement) + tests.
-Feature branch → PR → merge to `main` before the deadline — **only merged code is graded**.
+**Request 1 (spec wording, re-read 2026-09-24):** add an optional `campus` field to buildings. Three
+changes: `POST /api/v2/datasets` extracts the campus name from each building's `.htm` page header, if
+present (always `"vancouver campus"` in `campus.zip`); `PUT /api/v2/buildings/:id` can modify it;
+`POST /api/v2/search` can filter on it. Done means campus "appears and can be used just like any other
+existing building field, except that it is optional instead of required." Add tests for each of the
+three, update `openapi.yml` for the Building schema and all three endpoints, keep every existing test
+passing. How a missing campus is represented (omit the key vs `null`) and what `PUT` does when the body
+omits campus are left to you — PrairieLearn Q1 asks you to defend the choice. Editing the existing tests to
+expect the new field is allowed (Piazza @35, instructor Kyle, 2026-09-17: "update any accompanying tests too",
+but a failing test can also be a real failure, so check each one). **Request 2:** finish
+aggregation in `POST /api/v2/search` per `openapi.yml` (validation exists; one method to implement) + tests.
+Autograding reads `main` only: every push to `main` is autograded and the highest-scoring commit before the
+deadline counts. Process evidence (PRs, commit sequence, tests) is assessed for every deliverable, so
+work on a branch and merge through a PR even solo.
 
 **Reflection (PrairieLearn):** PR description (what changed, why, what might break) · files
 modified · every file and function touched **and how you found each one** · a request trace from
