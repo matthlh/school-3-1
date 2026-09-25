@@ -43,6 +43,9 @@ in the question bank instead.
   and dies rather than remembers, or A's own reworked modern Antigone from "Ancient Tragedy's
   Reflection in the Modern"? The text does not say and the commentaries do not settle it, and if it
   is the modern one then A is quoting himself to the same club.
+  - Update 2026-09-25: the tragedy essay makes the modern Antigone "sorrow's bride", living inwardly,
+    already dead in another sense, with hope renounced. That matches the Unhappiest One figure closely,
+    so the evidence now leans modern. Still worth the question, because the text never says.
 
 - **"A's unhappy people are at least *somewhere*, the past or the future. Someone doomscrolling
   isn't anywhere. Does A have a category for that?"** Or, if he is in a good mood: "Is doomscrolling
