@@ -1,6 +1,6 @@
-# CPSC 310 — Lec 6 (Tue Sep 29) — Test doubles and dependency inversion — outline, pulled before class
+# CPSC 310 — Lec 6 (Tue Sep 29) — Testability — outline, pulled before class
 
-Staged on Fri Sep 25 from the reader chapters [Testability](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). The deck is not posted yet. The lecture asks how to test something you did not construct. Design Principles was already outlined in `_05-testability.md`, so this file covers the Testability chapter.
+Staged on Fri Sep 25 from the reader chapters [Testability](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). The deck is not posted yet. The course site retitled this lecture Testability on Sep 26 and moved test doubles to lecture 7. It asks why code resists testing. Design Principles was already outlined in `_05-testability.md`, so this file covers the Testability chapter.
 
 ## What the chapter claims
 - **Testability** is a quality attribute that does not change what the system does. It changes how easily the system can be tested.
