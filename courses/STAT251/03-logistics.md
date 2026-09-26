@@ -3,7 +3,7 @@
 - **Lectures:** MWF 8:00–8:50, CIRS 1250. Sit in the same seat (syllabus asks for it).
 - **Lab L1K:** Fri 11:00–12:00, ESB 1046, TA Zachary. Labs start the week of Sep 21 (Lab 0 = intro
   to R, no assignment); no labs Sep 7–18.
-- There are no labs the week of Sep 28 to Oct 2 (lecture 8 page). The Lab 2 pre-lab quiz is still due Fri Oct 2.
+- There are no labs the week of Sep 28 to Oct 2 (lecture 8 page). The Lab 2 pre-lab quiz moved to Fri Oct 9, 23:59, and opens Fri Oct 2.
 - **Lab 1** runs the week of Sep 21 (L1K on Fri Sep 25). Its pre-reading is the same R introduction as
   Lab 0 and nothing is submitted beforehand. Lab groups of 3 to 4 are posted on Canvas from Wed Sep 23.
   Pre-lab quizzes start with Lab 2 (said in lecture 6).
@@ -20,7 +20,7 @@
 |---|---|---|
 | WeBWorK 1 | **Tue Sep 22, 23:59** (confirmed in WeBWorK 2026-09-16) | Done: 9/9 problems at 100%, verified 2026-09-20 |
 | WeBWorK 2–10 | Opens Tue Sep 22 · Sep 29 · Oct 6 · Oct 13 · Oct 20 · Nov 3 · Nov 17 · Nov 24 · Dec 1 (from WeBWorK). Due dates per the Canvas calendar, unconfirmed and possibly one day early: Mon Sep 28 · Tue Oct 6 · Mon Oct 12 · Mon Oct 19 · Thu Oct 29 · Thu Nov 12 · Mon Nov 30 · Mon Dec 7 · Fri Dec 11, 23:59 | |
-| Pre-lab quizzes, Labs 2–8 | Fri Oct 2 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
+| Pre-lab quizzes, Labs 2–8 | Fri Oct 9 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
 | In-lab quiz + follow-up (L1K) | Fri Oct 30, 11:20–11:40 and 11:45–12:00 | 3 + 3 |
 | Post-lab survey | Fri Nov 13, 23:59 | 1 |
 | Written Assignment 1 | **Sat Oct 24** (confirmed 2026-09-11; ignore the Oct 31 Canvas calendar entry) | 52 |
