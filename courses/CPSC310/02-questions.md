@@ -229,3 +229,155 @@ function handle(event: "created" | "deleted" | "archived"): void {
 ### Q: Clients call `RoomsParser.parseRooms(id, zip)` and `CourseProcessor.processCourses(id, zip)`, which have the same shape. The reader applies three refactorings so that both classes implement `IParser { parse(id, zip): boolean }`. Name the three, then explain in lecture 2's connascence terms what the clients were bound to before and after, and why that makes the coupling cheaper.
 **Topic:** Refactoring  **Lec:** 3  **Type:** derive
 **A:** Extract Interface (`IParser`), Rename (`CourseProcessor` to `CourseParser`, and both methods to `parse`), plus adding an explicit return type to the signature. Before, each client was bound to a specific class and a specific method name, so adding a third parser or renaming a method meant editing every client: connascence of Name to two different targets, with client logic duplicated per parser. After, clients depend only on the `IParser` type, which is connascence of Type and compiler-checked, so a new parser is one new class and zero client edits. The degree of coupling is about the same, but its strength dropped to the cheapest kind the tooling can catch for you.
+
+## Lec 4 — Refactoring (logged 2026-09-26, deck 03a-refactoring.pdf + reader Refactoring; no in-class notes)
+
+### Q: The deck gives three signs that a change is going to be difficult and three kinds of abstraction to introduce before making it. Name all six and pair each sign with the abstraction that removes it. What does the reader call the process of folding such abstractions in as the system grows?
+**Topic:** Emergent design and technical debt  **Lec:** 4  **Type:** recall
+**A:** Signs: the change has to be made in more than one place; you can tell it will cause merge conflicts or edits to the same file as a teammate; the code is too obscure to understand clearly. Fixes, in the same order: remove the duplication, clones or scattering that create the several edit sites; split apart tangled pieces of functionality so teammates stop landing in the same file; make the code readable. Each sign raises the chance of a bug, which is why you refactor before the change, not after. The reader calls it emergent design: you learn which abstractions fit as the system grows, and refactoring is how you add them.
+
+### Q: Shared setup for all parts.
+```ts
+class ShippingLabel {
+  render(order: Order): string {
+    const a = order.customer.profile.address;
+    const name = order.customer.profile.firstName + " " + order.customer.profile.lastName;
+    return `${name}\n${a.street}\n${a.city} ${a.postalCode}`;
+  }
+}
+```
+(a) Name the smell and the rule of thumb the deck attaches to it. (b) Say where the behaviour should live and what `render` would call instead. (c) Explain in connascence terms what the change buys.
+**Topic:** Code smells  **Lec:** 4  **Type:** critique
+**A:** (a) Feature envy: the method wants many fields of another object, so it probably belongs in that object. The deck's companion rule is the Law of Demeter: a long chain of dereferences (`order.customer.profile.address.city`) means the method is in the wrong spot. (b) Formatting a name and an address is the customer profile's (or the address's) own behaviour, so move it there: `Profile.fullName()` and `Address.format()`, or one `Customer.mailingBlock()`, and `render` makes one or two calls. This is the deck's `Cat` telling `Dog` to run, wag and smile, fixed by `fido.beChased()`. (c) Before, `ShippingLabel` is coupled by name to the internal structure of three other classes (`customer`, `profile`, `firstName`, `street`…), so renaming or restructuring any of them breaks the label. After, it depends on one method name on one class, so the degree of coupling drops and a change inside the profile stays inside the profile.
+
+### Q: Shared setup for all parts. In one codebase: `billing.ts` has `if (plan === 2) fee *= 0.8;`, `ui.ts` has `if (user.plan == "2") showBadge("Student");`, and `report.ts` has `const discount = 20; // percent`. All three refer to the student plan and its discount. (a) Name the smell and the connascence type. (b) Give the deck's three challenges and point to where each one shows up here. (c) A teammate adds `const STUDENT_PLAN = 2;` at the top of each of the three files. Has the problem been fixed?
+**Topic:** Code smells  **Lec:** 4  **Type:** critique
+**A:** (a) Magic values: semantically important values written straight into the code. It is connascence of value, because the three sites must agree on what "student plan" is and what the discount is. (b) Coupling: you have to find every site that must agree and work out what changing the value does; here the plan id and the discount live in three files. Readability: `2` and `0.8` say nothing about what they mean. The same value encoded different ways: the plan is the number `2` in one file and the string `"2"` in another, and the discount is `0.8` (a multiplier) in one place and `20` (a percent) in another, so a text search for one spelling misses the others. (c) No. The value is now named, which helps readability, but it is still defined three times, so the three constants still have to agree: it is still connascence of value across three places. The fix is one shared definition (a `Plan.Student` enum and one `STUDENT_DISCOUNT` constant) imported everywhere, so the agreement lives in a single place.
+
+### Q: Shared setup for both parts.
+```ts
+abstract class Exporter {
+  protected open(): void { /* open file */ }
+  protected close(): void { /* flush and close */ }
+  public abstract export(rows: Row[]): void;
+}
+class CsvExporter extends Exporter {
+  public export(rows: Row[]) { this.open(); /* write CSV */ this.close(); }
+}
+class JsonExporter extends Exporter {
+  public export(rows: Row[]) { this.open(); /* write JSON */ this.close(); }
+}
+```
+(a) A reviewer says the duplication is already gone because `open` and `close` were pulled up. What does the deck say is still wrong? (b) Restructure it and name the pattern.
+**Topic:** Code smells  **Lec:** 4  **Type:** critique
+**A:** (a) This is the deck's slide 19 version. The duplicate lines were pulled up, but the sequence (open, write, close) is still copied into every subclass, and nothing forces a new subclass to follow it. An `XmlExporter` can forget `close()` and leak the file, or call things out of order, and the compiler will not object. The parent should own the order. (b) Make `export` concrete in the parent and have it call one abstract hook, which is a template method:
+```ts
+abstract class Exporter {
+  public export(rows: Row[]): void { this.open(); this.write(rows); this.close(); }
+  protected abstract write(rows: Row[]): void;
+}
+```
+Each subclass now implements only `write`. The fixed steps exist once, and a subclass can fill the gap but cannot skip or reorder the steps around it.
+
+### Q: Two functions compute a late fee. `libraryFee(days)` returns `Math.round(days * 0.25 * 100) / 100` capped at 10. `equipmentFee(days)` returns `Math.floor(days * 0.25 * 100) / 100` capped at 10. Nobody remembers whether the rounding difference was intended. Name the smell and the connascence type, say why "almost" duplicates are worse than exact ones by the deck's list of challenges, and describe the refactoring and what you must settle before doing it.
+**Topic:** Code smells  **Lec:** 4  **Type:** critique
+**A:** Almost-duplicate code, which is connascence of algorithm: the two sites encode the same fee rule and must stay in agreement, so changing the rate or cap means finding and editing both. The deck's challenges: multiple sites must stay in agreement; when the copies are not identical they are very hard to find (searching for one copy's text misses the other); and it is hard to tell where a behaviour actually comes from. Here the rounding already differs, and nobody can say whether that is a bug or a requirement. The refactoring is Extract Method into one `lateFee(days, rounding)` (or one function if the difference turns out to be a bug). Before refactoring you have to decide whether the rounding difference is intended, because a refactoring must preserve behaviour: if both are kept, the parameter preserves them; if one is a bug, fixing it is a separate, behaviour-changing commit, never part of the refactoring.
+
+### Q: For each smell, give the deck's name and the usual refactoring: (a) a method that reaches through another object's fields to make it do things; (b) the literal `86400` in four files; (c) the same header and footer printed in every subclass's `printReport()`, with only the middle lines differing.
+**Topic:** Code smells  **Lec:** 4  **Type:** recall
+**A:** (a) Feature envy, a Law of Demeter violation. Move the behaviour into the envied class (Move Method) so the caller makes one call. (b) A magic value, which is connascence of value. Replace the magic number with a symbol (a named constant defined once, such as `SECONDS_PER_DAY`). (c) Almost-duplicate code, which is connascence of algorithm. Pull up the shared behaviour into the parent and make `printReport()` a template method that calls an abstract hook such as `printContents()` for the unique lines.
+
+### Q: Give the deck's definition of technical debt and its four claims about it, the rule of thumb for noticing it, and what the cost-per-feature chart on slide 21 shows.
+**Topic:** Emergent design and technical debt  **Lec:** 4  **Type:** recall
+**A:** Technical debt is the extra cost of changing the system later because of shortcuts taken earlier. It accumulates invisibly, like interest. Not all of it is bad. The bad kind is the kind that slows the team down or raises risk. Code smells hint at where it sits. Rule of thumb: if you feel pain making a change, you are probably paying interest on technical debt. The chart plots cost per feature over the years after launch: without refactoring the cost keeps climbing, and with refactoring it stays roughly flat in a narrow band.
+
+### Q: Shared setup for all parts. A team's `main` has four failing tests nobody has looked at. Priya wants to "clean up the scheduler first so the failures are easier to find". Omar is fixing a timezone bug in the same scheduler and plans to extract two methods while he is in there. The lead proposes a two-week refactoring sprint every March and September instead. Judge each of the three plans by the deck's refactoring timeline, and say what the deck recommends instead.
+**Topic:** Emergent design and technical debt  **Lec:** 4  **Type:** critique
+**A:** Priya: no. The deck says not to refactor while tests are failing. The process starts with a green suite so that any failure afterwards can only be the refactoring; with four red tests she cannot tell whether she broke something. Fix or understand the failures first. Omar: no. The deck says not to refactor while fixing a bug, because the bug fix changes behaviour on purpose and the refactoring must not, and doing both at once hides which change caused what. He should fix the bug, commit, then refactor (or refactor first on a green suite, then fix). The lead: no. The deck rejects "two weeks of every six months". Instead refactor opportunistically: when you notice a warning sign, just before or after adding a feature, and during code review.
+
+### Q: Explain why the recap says to run the tests "before you touch the code, and after every single change" rather than once at the end of a refactoring session, and connect it to the deck's definition of refactoring.
+**Topic:** Emergent design and technical debt  **Lec:** 4  **Type:** derive
+**A:** A refactoring is by definition meaning-preserving: behaviour after must equal behaviour before. The only practical evidence of that is the suite giving the same result. Running it first proves the baseline is green, so a later failure belongs to your change rather than to something already broken. Running it after each small step means a failure points at the one transformation just made, which is easy to undo or fix. If you make ten moves and test once, a red suite could come from any of them, and finding which one costs more than the refactoring saved. The deck's cycle ("repeat until the change is localized") is built from these small tested steps.
+
+## Lec 5 — Testability (logged 2026-09-26, deck 03b-testability.pdf + reader Testability, contract material from Design Principles; no in-class notes)
+
+### Q: Define controllability and observability in the deck's words, and give the four things the deck says lower each one.
+**Topic:** Controllability and observability  **Lec:** 5  **Type:** recall
+**A:** Controllability is the degree to which a test can determine the inputs and state that the code under test depends on. It is lowered by hidden inputs (the clock, randomness), global or shared state, hard-wired dependencies, and preconditions that are hard to set up. Observability is the degree to which a test can inspect the results and effects that the code under test produces. It is lowered by results that are only printed or formatted, intermediate values that are never returned, private state that is never exposed, and effects on external systems.
+
+### Q: Shared setup for all parts.
+```ts
+function lateFee(loan: Loan): number {
+  const now = new Date();
+  const daysLate = Math.max(0, daysBetween(loan.due, now));
+  const surcharge = Math.random() < 0.1 ? 2 : 0; // spot-check fee
+  return daysLate * RATES[Config.get().region] + surcharge;
+}
+```
+(a) Name every testability problem, which axis each one hurts, and the deck's category for it. (b) Rewrite the signature so a test can pin down the result.
+**Topic:** Controllability and observability  **Lec:** 5  **Type:** critique
+**A:** (a) All three hurt controllability. `new Date()` is a hidden input (the clock): the answer changes depending on when the test runs. `Math.random()` is a hidden input (randomness): the same loan gives two different fees. `Config.get()` is global or shared state: the test has to reach into a singleton to set the region, and other tests can leave it changed. Observability is fine, because the fee is returned as a value. (b) Take everything the behaviour depends on as parameters, which is the deck's "raised by" line and the reader's most common fix: `lateFee(loan: Loan, now: Date, region: Region, spotCheck: boolean): number`, or pass a clock and a random source as objects. The caller in production supplies the real clock and randomness, and the test supplies fixed values and can assert an exact number.
+
+### Q: Shared setup for all parts.
+```ts
+function printSummary(orders: Order[]): void {
+  let total = 0;
+  for (const o of orders) total += o.amount;
+  const avg = total / orders.length;
+  console.log(`Total: $${total.toFixed(2)}  Avg: $${avg.toFixed(2)}`);
+}
+```
+(a) Which axis is the problem, and which two of the deck's four causes appear here? (b) Restructure it so the arithmetic is testable without reading the console.
+**Topic:** Controllability and observability  **Lec:** 5  **Type:** critique
+**A:** (a) Observability. Controllability is fine, since the orders come in as a parameter. The results are only printed and formatted, and the intermediate values (`total`, `avg`) are never returned. A test could only capture stdout and parse a string. (b) Return results as values, which is the deck's fix for observability: extract `summarize(orders): { total: number; avg: number }` and leave a thin `printSummary` that calls it and formats the output. The test asserts on the returned numbers directly. This also exposes a case the old code hid: an empty list gives `NaN` for the average, which a test on `summarize([])` would now catch.
+
+### Q: Shared setup for all parts.
+```ts
+class ReminderService {
+  private db = new PostgresClient(process.env.DB_URL);
+  private mailer = new SmtpMailer();
+  sendOverdueReminders(): void {
+    for (const u of this.db.query("SELECT * FROM loans WHERE due < now()")) {
+      this.mailer.send(u.email, "Your book is overdue");
+    }
+  }
+}
+```
+(a) Identify the controllability and the observability problems, using the deck's categories. (b) What change fixes both, and what would a test pass in?
+**Topic:** Controllability and observability  **Lec:** 5  **Type:** critique
+**A:** (a) Controllability: both dependencies are hard-wired, because the class constructs them itself; the database connection string comes from global state (`process.env`); the query uses the database's own clock (`now()`), which is a hidden input; and to get a user into the overdue state a test needs a real Postgres with seeded rows, which is a hard-to-set-up precondition. Observability: the only result is an effect on an external system (email sent over SMTP), and the method returns nothing, so a test cannot see who was reminded. (b) Take the dependencies as constructor parameters typed as small interfaces (`LoanStore`, `Mailer`), and pass the current date in. A test passes in a fake store that returns two known overdue loans and a fake mailer that records each call, then asserts that exactly those two emails were "sent". Returning the list of users reminded would add a second way to observe the result. The reader calls this passing in key dependencies, which lecture 7 formalises as dependency inversion.
+
+### Q: Shared setup for all parts.
+```ts
+class Account {
+  private balance = 0;
+  private frozen = false;
+  // REQUIRES: amount > 0 and the account is not frozen
+  // EFFECTS: balance increases by amount
+  deposit(amount: number): void { this.balance += amount; }
+  freeze(): void { this.frozen = true; }
+}
+```
+(a) Following slide 6, write the Given, When, Then of a black-box test for `deposit`. (b) What must be added to the class before the test can be written, and why is that the right kind of change? (c) What does the REQUIRES clause mean for a test that deposits into a frozen account?
+**Topic:** Testable by design  **Lec:** 5  **Type:** apply
+**A:** (a) Given a new account, which is not frozen and has balance 0. When it deposits 50. Then its balance is 50, or at least greater than it was before. (b) Neither `balance` nor `frozen` is visible and `deposit` returns nothing, so there is nothing to assert on: private state that is never exposed, which is an observability problem. Add query methods such as `getBalance()` and `isFrozen()` to the public interface, as the deck added `isHungry()` and `amountEaten()` to `Animal`. They are read-only, so they expose the state the specification already talks about without letting a test or a client change it. Making the fields public would expose them to writes as well and couple clients to the representation. Returning the new balance from `deposit` would also work. (c) A frozen account violates the precondition, so the specification promises nothing about that call. A test of `deposit` should first confirm the precondition holds (as slide 6 checks the animal is hungry), and a "frozen" test is only meaningful if the contract is changed to say what happens, for example that it throws.
+
+### Q: Name the three parts of a CPSC 210-style method specification and the three contract terms the reader's Design Principles chapter maps them to. In the `Animal` example, which clause did slide 6 fold into the EFFECTS line and why does the test begin by asserting `isHungry()`?
+**Topic:** Testable by design  **Lec:** 5  **Type:** recall
+**A:** REQUIRES, MODIFIES and EFFECTS. The reader calls the comment block a data abstraction that defines the method's contract: preconditions (what the method expects), postconditions (what it provides) and invariants (what must always be true). In `Animal.eat()` the REQUIRES clause says the animal must be hungry. Slide 6 rewrites EFFECTS to start "for a hungry animal only", folding the precondition into the effect. The test asserts `isHungry()` first to show the precondition holds in the Given state, because the postcondition is only promised when it does; it also checks that `amountEaten()` starts at 0 so "has eaten more" has a baseline.
+
+### Q: Name the reader's four testability properties, say which two it calls most important, and explain why it says isolateability without controllability is not useful and why controllability alone is not enough. Which property is least discussed and why?
+**Topic:** Controllability and observability  **Lec:** 5  **Type:** recall
+**A:** Controllability, observability, isolateability and automatability. Observability and isolateability matter most: can I detect that a fault exists, and can I tell where in the code it is. Isolateability without controllability is not useful because, if you cannot pass in the key dependencies or values that trigger the fault, you never get to see the behaviour, however well isolated the unit is. Controllability alone is not enough because a large, flexible function may let you trigger many behaviours but still be too big, or call too many external dependencies, for you to locate the failure. Automatability is least discussed because it is close to shorthand for code that can be controlled programmatically.
+
+### Q: Sort each item under controllability or observability, and give the fix: (a) a method reads the current user from a global `Session.current`; (b) a function writes its result to `out.csv` and returns nothing; (c) a validator computes an error list, then only returns `true` or `false`; (d) testing the refund path needs an order that is 31 days old; (e) a class keeps a private retry counter that the specification says must reset after a success.
+**Topic:** Controllability and observability  **Lec:** 5  **Type:** apply
+**A:** (a) Controllability, global or shared state: pass the user in as a parameter. (b) Observability, an effect on an external system: return the rows (or take a writer the test can supply) and keep file writing in a thin outer layer. (c) Observability, an intermediate value never returned: return the error list, since `true`/`false` hides which rule failed. (d) Controllability, a hard-to-set-up precondition, with the clock as the hidden input underneath: take the current date (or the order's age) as a parameter so the test can say "31 days" directly. (e) Observability, private state never exposed: add a read-only query such as `retryCount()`, or make the behaviour it controls observable, so the test can check the reset.
+
+### Q: Give the three steps of the TDD cycle on slide 7 and the deck's three "testability by design" ideas beside it. Why, according to the reader, does writing the test first produce more testable code than writing it after?
+**Topic:** Testable by design  **Lec:** 5  **Type:** recall
+**A:** The cycle: write a failing test, make the test pass, refactor your code. The three ideas: know what you are building, let the details come from building it, and make the next change cheap. The reader says code usually needs restructuring for testability when a unit takes on more than one responsibility or a feature scatters across the codebase. Writing the test first means the code must be drivable and checkable from the start, so its inputs arrive as parameters and its results come back as values instead of being retrofitted later. The refactor step is where the lecture 4 discipline fits, done on a green suite.
+
+### Q: A reviewer rejects a PR that adds `getInternalQueue()` to a class "just so the tests can see it", and says tests should only use the public interface. The author replies that the deck itself added `isHungry()` to `Animal` for a test. Who is right? Give the test you would apply to decide whether a new accessor is a good change.
+**Topic:** Testable by design  **Lec:** 5  **Type:** critique
+**A:** It depends on what the accessor exposes. The deck's accessors expose state the specification already promises: EFFECTS says the animal is not hungry and has eaten more, so `isHungry()` and `amountEaten()` let any client, not only the test, check the promised behaviour. That raises observability without leaking the design. `getInternalQueue()` exposes the representation: tests become coupled to how the class works rather than what it promises, so any internal change breaks them, and clients can start depending on it too. The test to apply: does the accessor answer a question the specification talks about, preferably read-only? If yes, add it. If it only exposes an implementation detail, test through the behaviour the queue affects (what gets returned or processed, and in what order) instead, or return that result as a value.
