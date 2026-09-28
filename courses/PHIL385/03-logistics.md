@@ -9,6 +9,12 @@
   open-book; this year's syllabus says closed-book — prepare closed-book.
 - Canvas has two "students asking students for class notes" boards, one per section.
 
+## Exam 1 (Fri Oct 2, 14:00–14:50)
+- The room is Buchanan A 201 (Kraal's announcement, Sep 26).
+- The examinable texts are the Preface, The Unhappiest One, Crop Rotation, and Ancient Tragedy's Reflection in the Modern.
+- There are two questions, and either one may cover all four texts or only one of them.
+- Both questions have an evaluation part: you are asked whether you agree or disagree with a central idea, so have your own view on each text ready.
+
 ## Reference (for Claude)
 - Office hours: Wed 12:15–12:45 on Zoom (link on the Canvas front page); email one day ahead for a slot.
 - Canvas course ID 192607. Tabs: Home, Zoom, Assignments, Discussions. No modules, files or

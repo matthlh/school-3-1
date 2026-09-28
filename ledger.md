@@ -4,50 +4,54 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-_42 topics due as of Sat Sep 26. Say **quiz me**._
+_46 topics due as of Mon Sep 28. Say **quiz me**._
 
-- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 11 d · last unquizzed
-- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 11 d · last unquizzed
-- PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · overdue 9 d · last unquizzed
-- PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · overdue 9 d · last unquizzed
-- PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · overdue 9 d · last unquizzed
-- STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · overdue 9 d · last unquizzed
-- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 8 d · last unquizzed
-- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 8 d · last unquizzed
-- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 7 d · last ~
-- ASIA 250 · Aesthetic experience and the faith frame · overdue 6 d · last X
-- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 6 d · last X
-- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 6 d · last X
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 6 d · last X
-- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 6 d · last X
-- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 6 d · last X
-- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 6 d · last X
-- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 6 d · last X
-- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 6 d · last X
-- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 6 d · last X
-- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 6 d · last X
-- PHIL 385 · Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) · overdue 6 d · last unquizzed
-- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 6 d · last O
-- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 6 d · last O
-- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 6 d · last unquizzed
-- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 6 d · last unquizzed
-- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 6 d · last unquizzed
-- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 4 d · last ~
-- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 4 d · last ~
-- PHIL 385 · Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) · overdue 4 d · last unquizzed
-- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 4 d · last ~
-- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 4 d · last ~
-- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 4 d · last unquizzed
-- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 4 d · last unquizzed
-- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 4 d · last unquizzed
-- STAT 251 · Descriptive vs. inferential statistics · overdue 3 d · last O
-- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 3 d · last unquizzed
-- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 2 d · last O
-- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 1 d · last O
-- ASIA 250 · Defining religion, myth and ritual · due today · last O
-- PHIL 385 · The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) · due today · last unquizzed
-- PHIL 385 · Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) · due today · last unquizzed
-- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · due today · last O
+- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · overdue 13 d · last unquizzed
+- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · overdue 13 d · last unquizzed
+- PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · overdue 11 d · last unquizzed
+- PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · overdue 11 d · last unquizzed
+- PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · overdue 11 d · last unquizzed
+- STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · overdue 11 d · last unquizzed
+- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 10 d · last unquizzed
+- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 10 d · last unquizzed
+- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · overdue 9 d · last ~
+- ASIA 250 · Aesthetic experience and the faith frame · overdue 8 d · last X
+- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 8 d · last X
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 8 d · last X
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 8 d · last X
+- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 8 d · last X
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · overdue 8 d · last X
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · overdue 8 d · last X
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · overdue 8 d · last X
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · overdue 8 d · last X
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · overdue 8 d · last X
+- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · overdue 8 d · last X
+- PHIL 385 · Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) · overdue 8 d · last unquizzed
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 8 d · last O
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 8 d · last O
+- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 8 d · last unquizzed
+- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 8 d · last unquizzed
+- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 8 d · last unquizzed
+- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 6 d · last ~
+- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 6 d · last ~
+- PHIL 385 · Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) · overdue 6 d · last unquizzed
+- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 6 d · last ~
+- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 6 d · last ~
+- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 6 d · last unquizzed
+- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 6 d · last unquizzed
+- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 6 d · last unquizzed
+- STAT 251 · Descriptive vs. inferential statistics · overdue 5 d · last O
+- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 5 d · last unquizzed
+- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 4 d · last O
+- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 3 d · last O
+- ASIA 250 · Defining religion, myth and ritual · overdue 2 d · last O
+- PHIL 385 · The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) · overdue 2 d · last unquizzed
+- PHIL 385 · Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) · overdue 2 d · last unquizzed
+- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 2 d · last O
+- CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 1 d · last unquizzed
+- CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 1 d · last unquizzed
+- CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 1 d · last unquizzed
+- CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 1 d · last unquizzed
 
 ## All topics
 
@@ -117,13 +121,13 @@ _42 topics due as of Sat Sep 26. Say **quiz me**._
 | Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% |
 | **Tue Sep 29, 23:59** | STAT 251 | **WeBWorK 2** (no late) — read off WeBWorK on its open day, Sep 22; the Canvas calendar agrees | WW pool |
 | Fri Oct 2, 23:59 | ASIA 250 | **Optional Assignment 1** — 250–300 words on Mirabai's religious experience, using only the Lecture 2 slides and Luhrmann ch. 3. Everyone who submits gets full marks and no extensions are given | +2% bonus |
-| **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1 — the essay exam**: 2 questions, max 500 words each, typed in Respondus in 50 min (Canvas quiz has 2 questions; the MC exams have 7) | 15% |
+| **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1 — the essay exam** in Buchanan A 201: 2 questions, max 500 words each, typed in Respondus in 50 min. Covers the Preface, The Unhappiest One, Crop Rotation and Ancient Tragedy; each question asks whether you agree or disagree with a central idea | 15% |
 | ~Tue Oct 6, 23:59 | STAT 251 | WeBWorK 3 — opens Sep 29; inferred from the open-day-plus-seven pattern, and the Canvas calendar moved to Oct 6 on Sep 23 (was Oct 7) | |
 | Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | |
 | ~Tue Oct 13, 23:59 | STAT 251 | WeBWorK 4 — opens Oct 6; inferred | |
 | ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% |
 | ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | |
-| Fri Oct 16, 18:00 | CPSC 310 | **D2** — Make it testable · pair formation in Oct 16–22 lab | 5% |
+| Fri Oct 16, 18:05 | CPSC 310 | **D2** — Make it evolvable (individual): refactor filterSections and filterRooms into one filter behind an interface, then add the IN operator. PrairieLearn DELIV2 closes 18:05; the spec says 18:00 · pair formation in Oct 16–22 lab | 5% |
 | **Fri Oct 16, 14:00–14:50** | PHIL 385 | **Exam 2** | 15% |
 | ~Tue Oct 20, 23:59 | STAT 251 | WeBWorK 5 — opens Oct 13; inferred | |
 | **Sat Oct 24** | STAT 251 | **Written Assignment 1** — confirmed by Matt 2026-09-11; the Oct 31 Canvas calendar entry is wrong | ~5% |
@@ -246,3 +250,4 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-26 | Morning check: STAT 251 Lab 2 pre-lab quiz moved to Fri Oct 9 (opens Oct 2). PrairieLearn confirmed LAB03 closes Thu Oct 8. CPSC 310 site retitled lec 6 (Testability) and lec 7 (Test Doubles, DIP & LSP). D1 autograder reached Extending. WeBWorK signed out. |
 | 2026-09-26 | Logged CPSC 310 lec 4 (Refactoring, Sep 22) and lec 5 (Testability, Sep 24) from the decks and the reader's Refactoring and Testability chapters: 9 and 10 questions, 4 new ledger rows due Sep 27. The `_05` outline (Design Principles) was consumed and deleted; only its contract material fit this deck, and the rest belongs to lec 7 (DIP and LSP). |
 | 2026-09-26 | Two-hours-a-day week, Sep 26 to Oct 3 (Matt, low on motivation): budget set to 2 h per day. PHIL 385 ladder steps T-9 to T-6 cancelled; T-5, T-3 and T-2 skipped and replaced by one timed two-essay run on Wed Sep 30. Hard-dated work placed by hand: ASIA lec 3 Sun, STAT lec 6–8 outlines Mon, WeBWorK 2 Tue, timed essays and LAB02 Wed, Respondus Thu, Optional Assignment 1 Fri, ASIA lec 4 Sat. Career, The Golden Pavilion and the STAT recordings wait until after Exam 1. |
+| 2026-09-28 | Morning check: PHIL 385 Exam 1 room (Buchanan A 201) and scope posted, with an agree-or-disagree part in both questions. CPSC 310 D2 spec released as "Make it evolvable" (individual, DELIV2 closes Fri Oct 16 18:05); LAB04 renamed DIP, LSP & Testability, opens Fri Oct 2. ASIA 250 lecture 4 and STAT 251 lecture 9 decks staged. WeBWorK signed out. |
