@@ -33,20 +33,20 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | 2h | Independence + conditional probability to solve problems *(lec 6: definition, multiplication rule, the switches example)* | | | | |
 | 2i | Posterior probabilities — tree diagrams / Bayes *(WeBWorK 2: which plant the defective item came from, which factory, the iClicker left in the 5th class; lec 7 Sep 23 covers it)* | | | | |
 | 2j | Law of total probability *(WeBWorK 2: the marginal P(C) read off a two-stage tree; lec 7 Sep 23)* | | | | |
-| 2k | **Reliability of series/parallel circuits** *(WeBWorK 2: parallel block in series with a third component, and the set-notation version of the same circuit)* | | | | |
+| 2k | **Reliability of series/parallel circuits** *(WeBWorK 2: parallel block in series with a third component, and the set-notation version of the same circuit; lec 7: the four-component system, parallel block times series block)* | | | | |
 
 ## 3. Random variables — discrete & continuous · Ch 4–6
 | # | Outcome | Status | Last | Streak | Next |
 |---|---|---|---|---|---|
-| 3a | Identify discrete vs. continuous | | | | |
-| 3b | Probabilities over finite discrete sets | | | | |
-| 3c | Continuous probabilities using calculus | | | | |
-| 3d | Mean/variance of discrete RVs (Bernoulli, Binomial, Geometric, Poisson) | | | | |
-| 3e | Find constants making a pdf legitimate | | | | |
-| 3f | pdf ↔ cdf both directions | | | | |
-| 3g | Mean/var/median/IQR of continuous RVs (integration by parts) | | | | |
-| 3h | Uniform distribution characteristics | | | | |
-| 3i | Exponential distribution characteristics | | | | |
+| 3a | Identify discrete vs. continuous *(lec 8: finite set or sequence of values versus an interval; P at a point is 0 for continuous)* | | | | |
+| 3b | Probabilities over finite discrete sets *(lec 8: pmf properties, find k, probability statements)* | | | | |
+| 3c | Continuous probabilities using calculus *(lec 9: probability as area under the pdf, endpoints do not matter)* | | | | |
+| 3d | Mean/variance of discrete RVs (Bernoulli, Binomial, Geometric, Poisson) *(lec 8: general discrete mean and variance, the shortcut; named distributions later)* | | | | |
+| 3e | Find constants making a pdf legitimate *(lec 9: total area 1 gives the constant)* | | | | |
+| 3f | pdf ↔ cdf both directions *(lec 8: discrete cdf as a step function; lec 9: integrate f to get F, differentiate F to get f)* | | | | |
+| 3g | Mean/var/median/IQR of continuous RVs (integration by parts) *(lec 9 video: E and Var by integration, median and quartiles from F, Example 7)* | | | | |
+| 3h | Uniform distribution characteristics *(lec 9 video: mean (a + b)/2, variance (b − a)²/12, derived as an exercise)* | | | | |
+| 3i | Exponential distribution characteristics *(lec 9 video: mean 1/λ, variance 1/λ², by parts)* | | | | |
 | 3j | Expectation & variance operators on linear combinations | | | | |
 | 3k | Var of sum/average vs. var of a multiple | | | | |
 | 3l | pdf/cdf of functions of one RV (simple polynomials) | | | | |

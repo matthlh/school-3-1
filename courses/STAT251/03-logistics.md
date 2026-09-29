@@ -7,6 +7,9 @@
 - **Lab 1** runs the week of Sep 21 (L1K on Fri Sep 25). Its pre-reading is the same R introduction as
   Lab 0 and nothing is submitted beforehand. Lab groups of 3 to 4 are posted on Canvas from Wed Sep 23.
   Pre-lab quizzes start with Lab 2 (said in lecture 6).
+- No labs the week of Sep 28, because Wed Sep 30 is a holiday. Lab 2 is the next lab week.
+- iClicker grades are synced to the Canvas gradebook every few weeks. The sync misses an iClicker account whose email or name differs from Canvas, so set the iClicker name to the Canvas name; he enters those grades by hand at the end of term (said in lecture 9).
+- Only 35 lecture days this term, so overflow goes into short posted videos. The first covers lecture 9's slides 16 to 26 (mean and variance, uniform, exponential, Example 7), promised for the night of Sep 28.
 - **Tools:** WeBWorK only via the Canvas WeBWorK tab (else the roster won't sync) · iClicker Cloud —
   join via the Canvas link and press *sync* or participation isn't graded · Gradescope for written
   assignments (link appears with WA1) · Piazza (don't post answers before due dates).
