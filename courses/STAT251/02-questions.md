@@ -498,3 +498,117 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: Factory A produces three times as many computers as factory B. An item from A is defective with probability 0.025, and one from B with probability 0.04. A computer is picked at random and found to be defective. What is the probability it came from A, to four decimal places?
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
 **A:** "Three times as many" fixes the priors: P(A) = 3/4 = 0.75 and P(B) = 0.25, since A and B are the only two producers. Then P(A ∩ D) = 0.75 × 0.025 = 0.01875 and P(B ∩ D) = 0.25 × 0.04 = 0.01, so P(D) = 0.02875 and P(A | D) = 0.01875/0.02875 = 0.6522. Two traps worth naming. The ratio "3 times as many" is not a probability — convert it to 3/4 and 1/4 first. And the posterior 0.6522 is *below* the prior 0.75, because A is the better factory: a defect is evidence against A even though most defects still come from A.
+
+## Lec 7 — Ch 3: Bayes' theorem, tree diagrams, system reliability (logged 2026-09-28 from the posted deck and the recording)
+
+### Q: Starting from the definition of conditional probability, derive Bayes' theorem for a partition A₁, …, Aₙ and an event B, and say where the law of total probability enters.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** derive
+**A:** P(Aᵢ | B) = P(Aᵢ ∩ B) / P(B). The numerator is P(B | Aᵢ) P(Aᵢ) by the multiplication rule. For the denominator, B is the union of the disjoint pieces A₁ ∩ B, …, Aₙ ∩ B, so P(B) is the sum of P(B | Aₖ) P(Aₖ) over k, which is the law of total probability. Putting them together: P(Aᵢ | B) = P(B | Aᵢ) P(Aᵢ) divided by the sum over k of P(B | Aₖ) P(Aₖ).
+
+### Q: Three suppliers provide 50%, 30% and 20% of a store's batteries, with defect rates 2%, 4% and 5%. A battery is found defective. Find the probability it came from each supplier, and check that the three posteriors add to 1.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
+**A:** Define S₁, S₂, S₃ = supplier and D = defective. P(D) = 0.5 × 0.02 + 0.3 × 0.04 + 0.2 × 0.05 = 0.010 + 0.012 + 0.010 = 0.032. Posteriors: P(S₁ | D) = 0.010 / 0.032 = 0.3125, P(S₂ | D) = 0.012 / 0.032 = 0.375, P(S₃ | D) = 0.010 / 0.032 = 0.3125. They add to 1 because the suppliers partition the defective batteries. Supplier 2 is the most likely source even though supplier 3 has the worst rate, because supplier 2 ships more.
+
+### Q: In the three-plant example a student says: "The probability that a plant 2 car is defective is 0.018, so the probability that a defective car is from plant 2 is also about 0.018." Explain the error in one sentence and give the right number.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** critique
+**A:** Those are reverse conditionals: P(D | A₂) = 0.018 is given, while P(A₂ | D) weighs plant 2's defective output against the defective output of all three plants. P(D) = 0.0035 + 0.0036 + 0.0090 = 0.0161, so P(A₂ | D) = 0.0036 / 0.0161 ≈ 0.224.
+
+### Q: A test detects a disease with probability 0.95 when it is present and gives a false positive with probability 0.08 when it is absent. 4% of people have the disease. Draw the tree and find P(disease | positive).
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
+**A:** First split: disease 0.04, no disease 0.96. Second split: positive 0.95 or negative 0.05 on the disease branch, positive 0.08 or negative 0.92 on the other. Multiply along the two positive paths: 0.04 × 0.95 = 0.038 and 0.96 × 0.08 = 0.0768, so P(positive) = 0.1148. P(disease | positive) = 0.038 / 0.1148 ≈ 0.331. Most positives come from the large healthy group, which is why the posterior is far below 0.95.
+
+### Q: Two bins are equally likely to be picked from. Bin I has 2% defective parts and bin II has 6%. Given a defective part, find P(bin I). Why is it below one half, and what would make it exactly one half?
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
+**A:** P(D) = 0.5 × 0.02 + 0.5 × 0.06 = 0.01 + 0.03 = 0.04, so P(I | D) = 0.01 / 0.04 = 0.25. It is below one half because bin I contributes fewer of the defective parts. Equal defect rates would give exactly 0.5, since the prior is already even.
+
+### Q: A system has components A and B in parallel, followed in series by C and then D. The reliabilities are A 0.7, B 0.6, C 0.95 and D 0.9, and the components work independently. Find the reliability of the system.
+**Topic:** 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given)  **Lec:** 7  **Type:** apply
+**A:** The parallel block fails only if both A and B fail, so it works with probability 1 − 0.3 × 0.4 = 0.88. The system needs the block, C and D all working, so by independence the reliability is 0.88 × 0.95 × 0.9 = 0.7524. With the deck's numbers (0.6, 0.5, 0.9, 0.9) the same steps give 0.8 × 0.81 = 0.648.
+
+### Q: Three components each work with probability 0.9, independently. Compare the reliability of all three in series with all three in parallel, and name the rule each layout uses.
+**Topic:** 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given)  **Lec:** 7  **Type:** apply
+**A:** Series needs every component to work, so the reliability is the product 0.9³ = 0.729. Parallel fails only if every component fails, so the reliability is 1 − 0.1³ = 0.999. Series uses the multiplication rule for independent events; parallel uses the complement of that rule applied to the failures.
+
+## Lec 8 — Ch 4: random variables, the pmf, the cdf, mean and variance (logged 2026-09-28 from the posted deck and the recording)
+
+### Q: Two fair dice, one green and one red, are rolled and Y = green score minus red score. List the possible values of Y, find P(Y = 0) and P(Y = 4), and say whether Y is discrete.
+**Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** apply
+**A:** The 36 ordered pairs are equally likely. Differences run from 1 − 6 = −5 to 6 − 1 = 5, so the possible values are −5, −4, …, 4, 5, eleven values. P(Y = 0) counts the six doubles, 6/36 = 1/6. P(Y = 4) needs (5, 1) or (6, 2), so 2/36 = 1/18. Y is discrete: a finite set of separate values with probability at each one.
+
+### Q: Flip a fair coin four times and let X be the number of heads. Give the pmf as a table and check both pmf properties.
+**Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** apply
+**A:** Sixteen equally likely outcomes. The counts with 0, 1, 2, 3, 4 heads are 1, 4, 6, 4, 1, so f(x) = 1/16, 4/16, 6/16, 4/16, 1/16 at x = 0, 1, 2, 3, 4. Every value is at least 0, and the sum is 16/16 = 1, so it is a pmf.
+
+### Q: Y takes the values −2, 0, 3, 6 with probabilities 2c, 0.3, c, 4c. Find c, then P(Y = 6), P(Y ≥ 0), P(Y < 0) and P(Y > 1.5), writing each as probability statements before the numbers.
+**Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** apply
+**A:** f is a pmf, so 2c + 0.3 + c + 4c = 1, which gives 7c = 0.7 and c = 0.1. P(Y = 6) = 4c = 0.4. P(Y ≥ 0) = P(Y = 0) + P(Y = 3) + P(Y = 6) = 0.3 + 0.1 + 0.4 = 0.8. P(Y < 0) = P(Y = −2) = 0.2. P(Y > 1.5) = P(Y = 3) + P(Y = 6) = 0.5, because the possible values above 1.5 are 3 and 6.
+
+### Q: Which of these tables can be a pmf? (i) Values 1, 2, 3 with probabilities 0.5, 0.6, −0.1. (ii) Values 0, 1 with 0.45, 0.55. (iii) Values 1, 2, 3, 4 with 0.1, 0.2, 0.3, 0.5. Name the property each failure breaks, and say which one is Bernoulli.
+**Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** critique
+**A:** (i) No: a probability of −0.1 breaks f(x) ≥ 0, and the sum being 1 does not rescue it. (ii) Yes, both properties hold, and it is Bernoulli because the only values are 0 and 1. (iii) No: the sum is 1.1, which breaks the total of 1.
+
+### Q: For X = the number of heads in four fair flips, write the cdf as a piecewise function, then evaluate F(1.5), F(−1), F(4) and P(X > 2).
+**Topic:** 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F)  **Lec:** 8  **Type:** apply
+**A:** Running sums of 1/16, 4/16, 6/16, 4/16, 1/16 give F(x) = 0 for x < 0, 1/16 for 0 ≤ x < 1, 5/16 for 1 ≤ x < 2, 11/16 for 2 ≤ x < 3, 15/16 for 3 ≤ x < 4, and 1 for x ≥ 4. F(1.5) = 5/16, F(−1) = 0, F(4) = 1, and P(X > 2) = 1 − F(2) = 1 − 11/16 = 5/16.
+
+### Q: For the number of heads in three fair flips, a student computes P(X ≥ 2) as 1 − F(2). What is wrong, and what are the correct P(X ≥ 2) and P(X > 2)?
+**Topic:** 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F)  **Lec:** 8  **Type:** critique
+**A:** 1 − F(2) is P(X > 2), which leaves out X = 2. P(X ≥ 2) = 1 − F(1) = 1 − 4/8 = 4/8, while P(X > 2) = 1 − F(2) = 1/8. For a discrete variable the equal sign moves the answer by f(2) = 3/8.
+
+### Q: X is the score on a fair die. Find E(X) and Var(X) by the shortcut, then explain what E(X) = 3.5 means when no face shows 3.5.
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** derive
+**A:** With f(x) = 1/6 at 1 to 6, E(X) = 21/6 = 3.5. E(X²) = (1 + 4 + 9 + 16 + 25 + 36)/6 = 91/6, so Var(X) = 91/6 − 3.5² = 35/12 ≈ 2.92 and σ ≈ 1.71. 3.5 is the long-run average of the scores over hypothetically many rolls, not a value one roll can show.
+
+### Q: Y takes −2, 0, 3, 6 with probabilities 0.2, 0.3, 0.1, 0.4. Find E(Y), E(Y²), Var(Y) and SD(Y).
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** apply
+**A:** E(Y) = −2(0.2) + 0(0.3) + 3(0.1) + 6(0.4) = −0.4 + 0 + 0.3 + 2.4 = 2.3. E(Y²) = 4(0.2) + 0 + 9(0.1) + 36(0.4) = 0.8 + 0.9 + 14.4 = 16.1. Var(Y) = 16.1 − 2.3² = 16.1 − 5.29 = 10.81, and SD(Y) = √10.81 ≈ 3.29.
+
+### Q: "The mean of a random variable is the sum of its values divided by how many there are, like Chapter 1." Correct the claim, and say when the two formulas happen to agree.
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** critique
+**A:** Chapter 1's mean is a statistic of n data values. A random variable's mean is μ = Σ x f(x), a weighted average of the possible values with the pmf as weights; the distribution, not a count of data, carries the information. The two agree only when every possible value is equally likely, as for a fair die, where Σ x f(x) = (1 + … + 6)/6.
+
+## Lec 9 — Ch 4: continuous random variables, the pdf and cdf, uniform and exponential (logged 2026-09-28 from the posted deck and the recording)
+
+### Q: f(x) = cx on [0, 4] and 0 elsewhere. Find c, confirm f is a pdf, and find P(1 ≤ X ≤ 3) and P(X = 2).
+**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** apply
+**A:** The total area must be 1: ∫₀⁴ cx dx = 8c = 1, so c = 1/8. Then f(x) = x/8 ≥ 0 on the support, so it is a pdf. P(1 ≤ X ≤ 3) = ∫₁³ x/8 dx = (9 − 1)/16 = 0.5. P(X = 2) = 0, because a single point has no area.
+
+### Q: A student says f(x) = 2 on [0, 0.5] cannot be a pdf because a probability cannot exceed 1. Respond.
+**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** critique
+**A:** f is a density, not a probability. The tests are f ≥ 0 and total area 1, and here the area is 2 × 0.5 = 1, so it is a valid pdf, the uniform distribution on [0, 0.5]. Only areas under f are probabilities, and every one of them is at most 1.
+
+### Q: Why are P(a ≤ X ≤ b) and P(a < X < b) equal for a continuous X but not for a discrete one? Give a discrete example where they differ.
+**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** recall
+**A:** For a continuous X, P(X = a) = P(X = b) = 0, so including or excluding the endpoints changes nothing. For a discrete X the endpoints can carry probability. With X = the number of heads in three flips, P(1 ≤ X ≤ 2) = 6/8 while P(1 < X < 2) = 0, since no possible value lies strictly between 1 and 2.
+
+### Q: For f(x) = x/8 on [0, 4], find the cdf as a piecewise function, recover f by differentiation, and find P(X > 3) and the median.
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** derive
+**A:** F(x) = ∫₀ˣ t/8 dt = x²/16 for 0 ≤ x ≤ 4, with F(x) = 0 for x < 0 and F(x) = 1 for x > 4. Differentiating x²/16 gives x/8, the pdf back. P(X > 3) = 1 − F(3) = 1 − 9/16 = 7/16. The median solves x²/16 = 0.5, so x = √8 ≈ 2.83.
+
+### Q: X is uniform on [0, 100], the deck's Example 6. Find Q1, Q3 and the IQR, and P(X > 85).
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** apply
+**A:** F(x) = x/100 on [0, 100]. Q1 solves x/100 = 0.25, so Q1 = 25; Q3 solves x/100 = 0.75, so Q3 = 75; IQR = 50. P(X > 85) = 1 − F(85) = 0.15.
+
+### Q: Given F(x) = x³/8 on [0, 2], a student writes P(X < 1) = F(2) − F(1) = 7/8. Fix the error, then compute P(X < 1), P(X ≥ 1) and P(0.5 < X < 1.5).
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** critique
+**A:** F(2) − F(1) is P(1 < X < 2). P(X < 1) is F(1) = 1/8 on its own. P(X ≥ 1) = 1 − F(1) = 7/8. P(0.5 < X < 1.5) = F(1.5) − F(0.5) = 3.375/8 − 0.125/8 = 3.25/8 ≈ 0.406.
+
+### Q: For X ~ U(a, b), derive E(X) and Var(X) from the definitions.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** derive
+**A:** E(X) = ∫ₐᵇ x/(b − a) dx = (b² − a²)/(2(b − a)) = (a + b)/2. E(X²) = ∫ₐᵇ x²/(b − a) dx = (b³ − a³)/(3(b − a)) = (a² + ab + b²)/3. Then Var(X) = (a² + ab + b²)/3 − (a + b)²/4 = (4a² + 4ab + 4b² − 3a² − 6ab − 3b²)/12 = (b − a)²/12.
+
+### Q: For X ~ Exp(λ), find the cdf and P(X > t), then derive E(X) = 1/λ by integration by parts.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** derive
+**A:** F(x) = ∫₀ˣ λe^(−λt) dt = 1 − e^(−λx) for x ≥ 0, so P(X > t) = e^(−λt). For the mean, E(X) = ∫₀^∞ x λe^(−λx) dx. Take u = x and dv = λe^(−λx) dx, so v = −e^(−λx): the integral is [−xe^(−λx)]₀^∞ + ∫₀^∞ e^(−λx) dx = 0 + 1/λ. Parts twice on E(X²) gives 2/λ², so Var(X) = 2/λ² − 1/λ² = 1/λ².
+
+### Q: f(x) = (3/8)x² on [0, 2], the deck's Example 7. Find E(X), E(X²), Var(X) and SD(X), then E(1/X).
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
+**A:** E(X) = (3/8)∫₀² x³ dx = (3/8)(4) = 3/2. E(X²) = (3/8)∫₀² x⁴ dx = (3/8)(32/5) = 12/5. Var(X) = 12/5 − 9/4 = 3/20 = 0.15 and SD(X) ≈ 0.387. E(1/X) = ∫₀² (1/x)(3/8)x² dx = (3/8)∫₀² x dx = (3/8)(2) = 3/4. The pdf stays; only the function inside the integral changes.
+
+### Q: A bus wait time X is uniform on [0, 20] minutes. Find the mean, the variance, P(X > 15) and the 90th percentile.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
+**A:** E(X) = (0 + 20)/2 = 10 minutes. Var(X) = 20²/12 = 400/12 ≈ 33.3, so SD ≈ 5.77. F(x) = x/20, so P(X > 15) = 1 − 0.75 = 0.25. The 90th percentile solves x/20 = 0.9, giving 18 minutes.
+
+### Q: A component's time to failure X is exponential with mean 200 hours. Find λ, P(X > 300), P(100 < X < 300) and the median lifetime.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
+**A:** E(X) = 1/λ = 200, so λ = 0.005 per hour. P(X > 300) = e^(−1.5) ≈ 0.223. P(100 < X < 300) = F(300) − F(100) = e^(−0.5) − e^(−1.5) ≈ 0.607 − 0.223 = 0.383. The median solves 1 − e^(−λm) = 0.5, so m = ln 2 / λ = 200 ln 2 ≈ 139 hours, below the mean because the distribution is right-skewed.

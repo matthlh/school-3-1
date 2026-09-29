@@ -21,6 +21,8 @@
 - Intel from past terms: **MC-heavy and long** ("impossible to finish on time"). Mocks must be MC and timed.
 - Exams are built from the official learning outcomes (see Topics), not the chapter list.
 - Exams do not cover textbook material beyond what the lectures cover. Premarathna said so after class when asked directly; the TA on Piazza had said neither exam was written yet and to ask him.
+- Cheat sheets: the midterm allows one handwritten letter-size sheet, one side; the final allows two sides, which can be two one-sided sheets. Written on a tablet and printed is fine; typed or pasted slides are not. Two students with matching sheets lose them for that exam. Said in lecture 7, Sep 23.
+- He does not set theoretical proofs, but a short "show that" (for example, that Aᶜ and B are independent when A and B are) has appeared on a midterm.
 - The final is cumulative over chapters 1, 2, 3, 4, 5, 6, 7, 8, 10, 11.
 
 ## Rules that cost points
