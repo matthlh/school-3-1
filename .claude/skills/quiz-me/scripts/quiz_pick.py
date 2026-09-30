@@ -54,6 +54,7 @@ def question_score(q, hist, today, rnd):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--course", action="append", help="scope to a course code (repeatable)")
+    ap.add_argument("--topic", action="append", help="keep only ledger rows whose topic contains this text, case-insensitive (repeatable; e.g. the four texts on an exam)")
     ap.add_argument("--n", type=int)
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--transit", action="store_true")
@@ -87,7 +88,10 @@ def main():
 
     # ---- candidates
     cands, prio = [], {}
+    topic_keys = [t.lower() for t in a.topic] if a.topic else None
     for r in fx["rows"]:
+        if topic_keys and not any(k in r["topic"].lower() for k in topic_keys):
+            continue
         qs = fx["by_topic"].get(r["idx"], [])
         if not qs:
             continue
