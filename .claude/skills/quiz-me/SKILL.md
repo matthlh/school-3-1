@@ -16,6 +16,15 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 
 ## Session — "quiz me"
 1. Run `python3 "$S/quiz_pick.py"` (add `--course STAT251`, `--n 5`, `--all` as needed).
+   **Inside an exam window, scope to the exam (Matt, 2026-09-29: "make sure it's related to the test and not
+   random questions").** PHIL 385 exams 1–4 are not cumulative, so from T-7 the picker takes `--topic <text>`
+   once per examinable text (case-insensitive substring of the ledger topic; pick a key that hits one row, e.g.
+   `--topic "uses pseudonyms"` not `--topic pseudonyms`, which also catches the First-authorship row).
+   Exam 1 (Fri Oct 2) = `--course PHIL385 --topic Preface --topic "put together" --topic "uses pseudonyms"
+   --topic Unhappiest --topic "unhappy consciousness" --topic gallery --topic "Crop Rotation" --topic "aesthetic
+   life" --topic "Ancient Tragedy"`. Biography rows (Post-Hegelian, 1841–43, First/Second authorship, 18
+   discourses, family losses) wait until after the exam. Exam 1 is two agree-or-disagree essays, so after the
+   recall questions ask for one position per text with its strongest objection, in his words.
    Read the FOCUS block. If it prints **⚠ unmatched tags**, fix the `**Topic:**` tag in that
    `02-questions.md` to the ledger row's leading label *before* asking — otherwise the grade
    cannot land in the ledger.

@@ -15,7 +15,7 @@ MON, TUE, WED, THU, FRI = 0, 1, 2, 3, 4
 
 # UBC 2026W Term 1: classes Wed Sep 9 → Mon Dec 7; exams Dec 11–22.
 FIRST_DAY, LAST_DAY = D(2026, 9, 9), D(2026, 12, 7)
-NO_CLASS = {D(2026, 10, 12), D(2026, 11, 9), D(2026, 11, 10), D(2026, 11, 11)}  # Thanksgiving, midterm break
+NO_CLASS = {D(2026, 9, 30), D(2026, 10, 12), D(2026, 11, 9), D(2026, 11, 10), D(2026, 11, 11)}  # Truth and Reconciliation Day, Thanksgiving, midterm break
 
 # Per-course lecture pattern. Exam days and course-specific cancellations are removed so a
 # missing file on those days isn't counted as an unlogged lecture.
