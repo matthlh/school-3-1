@@ -87,6 +87,16 @@ mocks must be MC-format and timed. It's an 8 a.m. course and attendance is a rea
 - Ratemycourses (A/A+ students, Kraal's other courses): *"include every little detail you can
   because that's what'll put you in A territory"*; *"study the texts well, annotate them, pay
   attention in class and take diligent notes."*
+- Checked again 2026-09-30 before Exam 1. His 2023 and 2024 syllabi describe the in-class exams only as
+  "questions dealing with matters brought up in class prior to the date of the exam" and mark on three
+  things: performance relative to peers, comprehension of the material, and "skill in assessing and
+  evaluating philosophical ideas." That third item is the agree-or-disagree part. A 2021 PHIL 385 A student
+  on ratemycourses: three in-class exams, "the first wasn't so bad, the second was more nuanced and
+  difficult"; success came from being "familiar and comfortable with the nuance of the texts insofar as it's
+  explored in this class." A Sep 2026 PHIL 347 review on RateMyProfessors calls his tests "mostly just trick
+  questions," which for MC means options that are almost right (wrong pseudonym, wrong essay, A's view
+  attributed to Kierkegaard). No Reddit thread on his PHIL 385 exams exists; r/UBC is blocked from this
+  session's Chrome anyway.
 - General UBC philosophy-major advice: most studying was **walking and mentally reconstructing
   the arguments**; you can usually **predict 1–2 exam questions** from prof emphasis; read the
   primary text **with a pen**; write to be *clear* above all.
