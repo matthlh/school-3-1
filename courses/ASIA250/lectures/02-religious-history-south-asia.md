@@ -1,12 +1,11 @@
-# ASIA 250 — Lecture 2 (posted Mon Sep 14): Religious history of South Asia
+# ASIA 250 — Lecture 2: Religious history of South Asia
 
-Pre-watch outline pulled from the deck on 2026-09-19. 94 slides; slides 15 to 30, 35 to 37 and 52 to 53 are image-only (Indus Valley Civilization and Hindu deity images), so their content is in the recording and Trautmann ch. 3 and 4.
-Recording: Canvas module item 9469882 (450 MB). Slides: module item 9469883. Mini-Quiz 2: module item 9469884, locks Mon Sep 21 23:59. Optional Assignment 1 (2% bonus, Mirabai, 250 to 300 words, due Fri Oct 2): module item 9469885. Readings: Trautmann ch. 3 and 4 (pp. 32 to 61) and Luhrmann ch. 3 "Talent and training" (pp. 58 to 78).
+Logged 2026-10-02 from the posted deck (94 slides). No handwritten page; the course is asynchronous.
+Recording: Canvas module item 9469882. Slides: module item 9469883. Readings: Trautmann ch. 3 and 4 (pp. 32 to 61) and Luhrmann ch. 3 "Talent and training" (pp. 58 to 78).
+Slides 15 to 30, 35 to 37 and 52 to 53 are image-only (Indus Valley Civilization and Hindu deity images), so their content is in the recording and in Trautmann.
 
-## Three questions to answer while watching
-1. Why does the lecture treat shamanism as the root of South Asian religion, and what carries over from the shaman's ecstasy and enstasy into Vedic sacrifice and later yoga?
-2. What did "karma" mean in the late Rig Veda, and how did the Upanishads widen it?
-3. Why does Bhakti prefer the human Krishna to the divine Vishnu, and how does the lecture connect that to the Buddha?
+## Your notes
+None. Everything below is from the deck.
 
 ## What the deck covers
 
@@ -101,5 +100,7 @@ Recording: Canvas module item 9469882 (450 MB). Slides: module item 9469883. Min
 - Married against her will, she refused wifely, household and religious duties, refused to bow to her mother-in-law and to have sex with her husband, and instead joined the devotees at the local temple.
 - Her family tried to confine, stop and punish her, then made several attempts to kill her, including poison. She began to wander, visiting the places of Krishna's biography, the Braj and the rasa lila.
 
-## Likely quiz targets
-Eliade and shamanism as proto-religion; ecstasy versus enstasy with the Greek roots; shin byeong; the God module (Ramachandran); Vedic period dates; saguna versus nirguna; pantheism versus panentheism; the four castes; Agni, Vayu, Indra, Rudra; Shiva from Indra plus Rudra; soma; the shift in the meaning of karma; yuga; Kama's iconography and the Shiva story; Trimurti and Tridevi; Ardhanarishvara; shakti; atman and Brahman; Samkhya, Yoga, Advaita and Dvaita Vedanta; henotheism; avatar; BG 9.28; lila and maya; kama versus prema; the nine processes of bhakti-yoga; Mirabai's life.
+## Clarifications
+- The deck's correction slide fixes lecture 1's wording: pantheism means the universe is God; panentheism means the universe is part of God's body while part of God extends beyond it. The Hymn of Purusha is panentheism.
+- Macdonell's 1917 reading of the hymn, gods sacrificing Purusha, is called a paradox he did not think through. The gods are Purusha partitioning himself.
+- The Mirabai slide is the whole source for Optional Assignment 1, together with slides 2 to 4 and Luhrmann ch. 3.

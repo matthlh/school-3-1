@@ -126,6 +126,9 @@ _56 topics due as of Fri Oct 2. Say **quiz me**._
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
+| ASIA 250 | Shamanism, ecstasy and enstasy | 2 | — | — | 0 | 2026-10-03 |
+| ASIA 250 | Vedic religion: gods, sacrifice, karma and the castes | 2 | — | — | 0 | 2026-10-03 |
+| ASIA 250 | Hindu philosophy and bhakti (Upanishads to Krishna) | 2 | — | — | 0 | 2026-10-03 |
 
 ## Term calendar — hard dates
 
