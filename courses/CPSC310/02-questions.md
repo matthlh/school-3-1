@@ -8,6 +8,10 @@ not seen and ask what is wrong, what you would change, and why. So questions are
 `critique` on a fragment, plus `recall` of the reader's exact terms. Course housekeeping (learning
 objectives, roadmap, slides about AI tooling) is not banked.
 
+Format intel (a classmate, 2026-10-02, unverified): the exams are all true/false. The syllabus still says every
+answer must be justified, so from lecture 6 on, questions are written as "True or false, and justify" over a
+fragment or a claim, and the answer gives the verdict first and the reason second. Older questions stay as they are.
+
 Format:
 ```
 ### Q: <question>
@@ -381,3 +385,159 @@ class Account {
 ### Q: A reviewer rejects a PR that adds `getInternalQueue()` to a class "just so the tests can see it", and says tests should only use the public interface. The author replies that the deck itself added `isHungry()` to `Animal` for a test. Who is right? Give the test you would apply to decide whether a new accessor is a good change.
 **Topic:** Testable by design  **Lec:** 5  **Type:** critique
 **A:** It depends on what the accessor exposes. The deck's accessors expose state the specification already promises: EFFECTS says the animal is not hungry and has eaten more, so `isHungry()` and `amountEaten()` let any client, not only the test, check the promised behaviour. That raises observability without leaking the design. `getInternalQueue()` exposes the representation: tests become coupled to how the class works rather than what it promises, so any internal change breaks them, and clients can start depending on it too. The test to apply: does the accessor answer a question the specification talks about, preferably read-only? If yes, add it. If it only exposes an implementation detail, test through the behaviour the queue affects (what gets returned or processed, and in what order) instead, or return that result as a value.
+
+## Lec 7 — Test robustness (logged 2026-10-01, deck 04b-test-robustness.pdf + reader Blackbox Testing and Glassbox Testing; no in-class notes)
+
+### Q: The deck says a strong test suite "fails when the implementation is wrong" and lists four properties it needs. Name them, and for each say which technique from the lecture delivers it.
+**Topic:** Strong test suites and coverage  **Lec:** 7  **Type:** recall
+**A:** (1) The right inputs: every behaviour in the spec has a test. Delivered by equivalence classes plus boundary values. (2) Precise checks: each test would notice a wrong answer. Delivered by assertions that verify what the spec guarantees, not just that the call returned. (3) Reliable results: the same outcome every run. Delivered by deterministic code, or test doubles standing in for the clock, the network or randomness. (4) Coverage of most of the behaviour in the code. Delivered by measuring coverage after the spec tests pass and adding structural tests for what was missed.
+
+### Q: Shared setup for all parts.
+```ts
+/**
+ * Shipping cost for a parcel.
+ * | Weight (kg)   | Cost  |
+ * | 0 < w <= 2    | 5     |
+ * | 2 < w <= 10   | 12    |
+ * | 10 < w <= 30  | 25    |
+ * @param weightKg Valid 0 < weightKg <= 30.
+ * @returns the cost in dollars.
+ * @throws RangeError if weightKg <= 0 or weightKg > 30.
+ */
+shippingCost(weightKg: number): number;
+```
+(a) List the input classes (valid and invalid) and the output classes (normal and error), the way slides 18 to 22 do. (b) Pick one value per class so every class from both views has at least one, and say which value covers two classes at once. (c) Write the boundary table: both sides of every edge.
+**Topic:** Equivalence class partitioning  **Lec:** 7  **Type:** apply
+**A:** (a) Input domain starts from `number`, narrowed by the precondition 0 < w ≤ 30. Valid input class: 0 < w ≤ 30. Invalid input classes: w ≤ 0 and w > 30. Output range starts from `number` plus the documented error. Normal output classes: 5, 12, 25. Error output class: RangeError. Six classes. Values such as "3", `undefined` and `NaN` are outside the parameter type and are not tested. (b) For example −1, 1, 5, 20, 40. The value 1 covers the valid input class and the output class 5; 5 and 20 cover the other two normal outputs; −1 and 40 cover the two invalid inputs and the error output between them. (c) Edges: invalid/5: 0 throws, 0.01 (or the smallest step the spec allows) gives 5. 5/12: 2 gives 5, 2.01 gives 12. 12/25: 10 gives 12, 10.01 gives 25. 25/invalid: 30 gives 25, 30.01 throws. Because the spec uses strict and non-strict inequalities on real numbers, the boundary value is the endpoint itself plus the first value past it; say what step you used.
+
+### Q: A teammate's test file for `getLetterGrade` (A 80–100, B 68–79, C 55–67, D 50–54, F 0–49, RangeError outside 0–100) calls it with 25, 30, 40, 72, 75 and 90, and asserts the letter each time. Use ECP to say which tests are repeats, which classes have no test, and what the boundary pass would add.
+**Topic:** Equivalence class partitioning  **Lec:** 7  **Type:** critique
+**A:** 25, 30 and 40 all sit in the F class, so two of them are repeats. 72 and 75 both sit in B, so one is a repeat. 90 covers A. Missing classes: C (55–67), D (50–54), and both invalid input classes, so the RangeError output class is never exercised either. The suite tests three of the nine classes with six tests. ECP shows the repeats and the gaps at the same time, which is the deck's claim for it. The boundary pass adds twelve values, the last on one side and the first on the other of every edge: −1 and 0, 49 and 50, 54 and 55, 67 and 68, 79 and 80, 100 and 101. Those catch `>=` written as `>` and an A that starts at 81.
+
+### Q: Slide 26 says input partitioning and output partitioning agree for `getLetterGrade` but diverge for `computeGPA`. Explain what each view finds in the GPA case, and then give the general condition under which the two views stop agreeing.
+**Topic:** Equivalence class partitioning  **Lec:** 7  **Type:** apply
+**A:** Input partitioning finds values the code might mishandle: invalid, empty, extreme. For `computeGPA` it makes you try a 1-credit course and a 4-credit course, which both come out as 3.0, so the weighting code gets exercised even though the output looks the same. Output partitioning finds behaviours that no single input points to. Asking "can the grade go over 100?" leads to points greater than maxPoints, which is the case that throws, and nothing in the input list would have suggested it. The views agree when each output comes from one range of one input, as each letter does. They diverge when an output depends on a combination of inputs, because then one output class is reached from many input classes and some output classes are only reached by combinations you would not list from the inputs alone.
+
+### Q: Shared setup for all parts.
+```ts
+function eval(x: number, a: boolean, b: boolean): number {
+  let r = x;
+  if (a) { r = r + 1; }
+  if (b) { r = r * 2; }
+  return r;
+}
+```
+A suite has one test, `eval(0, false, false)`. (a) Give the line, branch and path coverage, and the smallest number of tests needed to reach 100% of each. (b) The deck lists three metrics and the reader a fourth. Name the fourth and say what it demands that branch coverage does not.
+**Topic:** Strong test suites and coverage  **Lec:** 7  **Type:** apply
+**A:** (a) The test skips both `if` bodies. Line (and statement) coverage is about 67%: the two body lines are never run. Branch coverage is 50%: each `if` has two outcomes and only the false outcome of each is taken. Path coverage is 25%: one of the four combinations. To reach 100%: one test for line coverage (`eval(0, true, true)` runs every line), two for branch coverage (true-true and false-false take both outcomes of both decisions), four for path coverage (every combination of the two decisions). These are the reader's numbers. (b) Path coverage. It requires every combination of conditional outcomes to be exercised, not just each outcome of each decision on its own, so it grows with the product of the branches rather than their sum.
+
+### Q: A pull request reports 100% line coverage. Reviewing the tests, you find most call the function and assert nothing, and the one assertion checks that the result "is not undefined". Using the deck's four limits of coverage, say why the number is misleading, and say what the deck tells you to do with a coverage report instead.
+**Topic:** Strong test suites and coverage  **Lec:** 7  **Type:** critique
+**A:** Coverage measures where the tests went, not what they validated. Here two of the four limits apply directly: it can be fooled by tests without assertions, and it does not check correctness, so a wrong result on every line still reads as 100%. The other two are also in play: the number says nothing about the input space (one happy-path value per function covers the lines but none of the boundaries), and a threshold like 100% is exactly the artificial target that gets gamed. The deck's rule: use coverage to find what the tests missed, then decide whether more tests are needed. The number is a to-do list, not a grade. Fix by writing the assertions that verify what the spec guarantees, then partition the inputs; coverage is checked after the spec tests exist (step 5 of the six), not written to.
+
+### Q: Shared setup for all parts.
+```ts
+interface Fetcher {
+  // REQUIRES: url is a valid http(s) URL
+  // EFFECTS: returns the body as a string; throws NetworkError if the host cannot be reached
+  fetch(url: string): Promise<string>;
+}
+class CachedFetcher implements Fetcher {
+  // REQUIRES: url was previously registered with register(url)
+  // EFFECTS: returns the cached body; throws if the url is unknown
+  async fetch(url: string) { ... }
+}
+class StubFetcher implements Fetcher {
+  async fetch(url: string) { return "<html>ok</html>"; }
+}
+```
+(a) Apply the LSP methods rule to `CachedFetcher`: is it a valid substitute for `Fetcher`, and which rule does it break? (b) `StubFetcher` never throws. Is it a valid test double for code that handles `NetworkError`, and what does "keep the contract, not just the shape" mean here?
+**Topic:** Test doubles and LSP substitutability  **Lec:** 7  **Type:** critique
+**A:** (a) Not valid. The interface's precondition is "any valid URL"; `CachedFetcher` requires the URL to have been registered first, which is a stronger precondition for the same inputs. Code written against `Fetcher`, like `GoodPerson.freeBird` against `Bird`, will call it with an unregistered URL and break, exactly as the Penguin breaks at 100 cm. Widening the precondition would be fine; narrowing it is the violation. (b) It compiles, so it has the shape. It does not keep the contract: the interface promises a `NetworkError` when the host is unreachable, and the stub can never produce one, so any test of the error-handling path is impossible, and a test that passes with this stub says nothing about that path. A valid double for that test is a stub that throws `NetworkError` on demand, or a stub with a switch for it, the way the approving and declining readers are two stubs for two promised outcomes. Doubles must honour the postconditions the interface promises, including the error ones.
+
+### Q: Name the two kinds of test double the deck defines, say what each one controls or records, and give the one-line reason the dependency inversion principle is what makes them usable. Then list the three costs the recap slide attaches to doubles.
+**Topic:** Test doubles and LSP substitutability  **Lec:** 7  **Type:** recall
+**A:** A stub controls what the dependency gives back, like the approving and declining readers. A spy records what the code under test sent to it, like the recording reader. DIP, "depend upon abstractions, not implementations", means the code under test depends on an interface and receives the implementation from outside, so the test can hand it a double that implements the same interface. Costs: another layer in the design; doubles can drift from the real thing and must be updated whenever the interface changes; the real implementation still needs tests of its own, because the double only proves the caller's half.
+
+### Q: Give the deck's six steps for building a strong test suite in order, and say why structural tests come last rather than first. What does the note "spec tests only test what is in the spec" rule out?
+**Topic:** Strong test suites and coverage  **Lec:** 7  **Type:** recall
+**A:** (1) Get the requirements. (2) Turn them into stubs with specifications. (3) Write behavioural tests that check the specifications. (4) Implement until all behavioural tests pass. (5) Check how good the suite is for this specific implementation: coverage, optionally mutants. (6) Write structural tests to exercise the full codebase. Structural tests follow the shape of the code, so they cannot exist before the implementation does, and writing them first would make the tests mirror the author's assumptions instead of the spec, the confirmation bias the reader warns about. The note rules out asserting on behaviour the spec never promised: a spec test may not pin down an implementation detail, an undocumented error, or a value for an input the precondition excludes.
+
+### Q: Shared setup for all parts.
+```ts
+/**
+ * @param age Valid 0–120.
+ * @returns "child" for 0–12, "teen" for 13–17, "adult" for 18–64, "senior" for 65–120.
+ * @throws RangeError outside 0–120.
+ */
+ageBand(age: number): string;
+```
+(a) How many equivalence classes are there across both views, and what are they? (b) Write the boundary table. (c) A reviewer says the boundary table is redundant because every class already has a value in it. What is the deck's reply?
+**Topic:** Equivalence class partitioning  **Lec:** 7  **Type:** apply
+**A:** (a) Eight: valid input 0 ≤ age ≤ 120; invalid inputs age < 0 and age > 120; normal outputs child, teen, adult, senior; error output RangeError. (b) Edges, last on one side and first on the other: −1 throws and 0 is child; 12 is child and 13 is teen; 17 is teen and 18 is adult; 64 is adult and 65 is senior; 120 is senior and 121 throws. Ten values. (c) One value per class checks that each class is handled at all. Boundaries check that the edges are in the right place, and bugs cluster there: `>=` written as `>`, or teen starting at 14. A value like 15 cannot tell you whether 13 is a teen or a child. Both passes are needed, and the boundary values double as class representatives, so the suite is not much bigger.
+
+## Lec 6 — Test doubles, DIP and LSP (logged 2026-10-02, deck 04a-test-doubles.pdf + reader Testability & Test Doubles and Design Principles; Matt absent, deck only; written as true/false with justification, the exam format a classmate reported)
+
+### Q: True or false, and justify: "Once `FakeWorkingReader` compiles as an `IReader`, it is a valid test double for `buyCoffee`."
+```ts
+class FakeWorkingReader implements IReader {
+  charge = (n: number) => {
+    if (n < 0) throw new Error("Invalid charge!");
+    return true;
+  };
+}
+```
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** critique
+**A:** False. Compiling only proves the double has the interface's shape: a `charge` method that returns a boolean. Validity is about the contract, what `IReader` guarantees `buyCoffee`, which is written in the interface's specification, not its types. This double always approves, so the declined path of `buyCoffee` can never be exercised, and if a declined test fails against it the double is wrong, not `buyCoffee`. LSP is the test: the double is a subtype of `IReader` and must keep every property a caller can rely on. The approving and declining readers are two stubs precisely because the contract has two promised outcomes.
+
+### Q: True or false, and justify: "A stub improves observability and a spy improves controllability."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** recall
+**A:** False, it is the other way round. A stub controls what the dependency gives back, so the test decides what the code under test receives: that is controllability. A spy records what the code under test sent to it, so the test can inspect an effect that would otherwise be invisible: that is observability. The reader's wording matches: a stub lets the test "supply values," a spy "records the arguments provided to the method calls." One object can do both, like the reader's `FakeLocator`, which returns fixed values and appends every call to `myCalls`.
+
+### Q: True or false, and justify: "The dependency inversion principle says the test should construct the real dependency and pass it in."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** recall
+**A:** False. DIP says "depend upon abstractions, do not depend upon implementations." The code under test depends on an interface, `IReader`, and receives an implementation from outside. Passing the dependency in is the mechanism, but what gets passed is anything that implements the interface: the real `reader` in production, a `testReader` double in the test. The point of the principle for testing is that the code under test cannot tell which one it got. Passing in the real dependency would keep it uncontrollable, unobservable, or slow, the three cases that made the test hard in the first place.
+
+### Q: Shared setup for all parts. `printStatus(offeringId)` looks up the offering, logs "no offering" and returns if it is missing, and otherwise computes `daysLeft` from `Date.parse(SEASON[offering.season]) - Date.now()`. For each statement say true or false and justify. (a) "Its testability problem is only observability." (b) "Replacing `Date.now()` with an injected clock is the DIP applied." (c) "After injecting a clock and returning the status instead of logging it, the function no longer needs a test double for `findOffering`."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** apply
+**A:** (a) False. Observability is one problem, because the only output goes to `console.log` and nothing can assert on it. Controllability is the other, because the function reads `Date.now()` itself, so the test cannot set the date and `daysLeft` changes every run. (b) True. The function stops depending on the concrete `Date` and depends on an abstraction, a clock interface, that the test implements with a stub returning a fixed time. (c) It depends on what `findOffering` is. If it hits a database or the network, it is still uncontrollable and slow and should be doubled with a stub that returns a known offering or `undefined`. If it is a fast, deterministic in-memory lookup with no side effects, the deck says use the real thing. The decision is per dependency, not per function.
+
+### Q: True or false, and justify: "If a dependency is fast, deterministic and has no side effects, you should still double it so the unit test stays isolated."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** critique
+**A:** False. Slide 12 says to use a double only when the real dependency is uncontrollable, unobservable, or unsafe or slow; otherwise use the real thing. Doubling anyway buys nothing on those three axes and pays all three costs from the recap: another layer in the design, a double that can drift from the real implementation and must be updated when the interface changes, and a real implementation that still needs its own tests. Isolation for its own sake is not one of the deck's reasons.
+
+### Q: True or false, and justify: "Under the LSP methods rule, a subclass may accept more inputs than its superclass but may not promise less about its outputs."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** recall
+**A:** True. The precondition rule says preconditions should not be strengthened for the same inputs, and widening them is fine, so accepting more inputs is allowed. The postcondition rule says postconditions should not be weakened for the same inputs, and narrowing them is fine, so promising less is not allowed. Both follow from substitutability: code written for the superclass calls with inputs the superclass accepted and relies on what the superclass promised, so a subclass that rejects some of those inputs (Penguin under 50 cm only) or delivers less than promised (Resize changing the height too) breaks correct caller code.
+
+### Q: Shared setup for all parts.
+```ts
+interface Mailer {
+  // REQUIRES: to is a well-formed address
+  // EFFECTS: sends the message; returns the message id; never throws
+  send(to: string, body: string): string;
+}
+class LoggingMailer implements Mailer {
+  // REQUIRES: to is a well-formed address AND the domain is on the allow-list
+  send(to: string, body: string): string { ... }
+}
+class SpyMailer implements Mailer {
+  sent: Array<[string, string]> = [];
+  send(to: string, body: string): string { this.sent.push([to, body]); return "id-1"; }
+}
+```
+For each statement say true or false and justify. (a) "`LoggingMailer` satisfies LSP because it has the same signature." (b) "`SpyMailer` is a valid double for a test that checks a reminder was sent to the right address." (c) "A `ThrowingMailer` whose `send` throws on every call is a valid stub for testing the error path."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** apply
+**A:** (a) False. Same signature is the shape. The allow-list requirement is a stronger precondition for the same inputs: addresses the interface accepts are now rejected, so code correct against `Mailer` breaks when handed a `LoggingMailer`. Penguin again. (b) True. It keeps the contract, it accepts every well-formed address, returns an id and never throws, and it records what the code under test sent, which is what the test needs to observe. (c) False. The interface promises `send` never throws, so there is no error path to test, and a double that throws is not a valid subtype. If the real mailer can fail, the fix is to change the contract to say so, and only then write a stub for that outcome. A double cannot invent behaviour the interface does not promise.
+
+### Q: True or false, and justify: "LSP only applies to classes that use `extends`; an object that merely `implements` an interface is not subject to it."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** recall
+**A:** False. Liskov and Wing's statement is about subtypes: if a property is provable about objects of type T, it should hold for objects of any subtype S. An implementation of an interface is a subtype of that interface, and so is a test double, which is why the deck uses LSP as the test for a valid double: it must keep the interface's contract, not just its shape. The reader's one-liner says the same without mentioning inheritance: any object can be interchanged with any other that has the same parent type.
+
+### Q: True or false, and justify: "Once `buyCoffee` passes its tests against the approving, declining and recording readers, the real card reader does not need tests of its own."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** critique
+**A:** False. The doubles prove `buyCoffee` does the right thing for each outcome the interface promises. They prove nothing about whether the real reader produces those outcomes correctly, talks to the bank properly, or still matches the interface after a change. The recap lists this as one of the three costs: the real implementation still needs tests of its own. The other two are the extra layer and the drift of doubles away from the real thing when the interface changes.
+
+### Q: True or false, and justify: "Slide 16's Resize example breaks LSP by strengthening a precondition."
+**Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** apply
+**A:** False. Resize lets the caller set one dimension and promises the other is unchanged. The subclass where changing the width also changes the height still accepts the same inputs, so the precondition is untouched. What it breaks is the postcondition: callers were promised one effect and get an extra one, so the promise is weakened. The precondition case on the same slide is Penguin, whose "under 50 cm only" narrows the inputs the superclass accepted. The two rules catch different violations, and an exam question will ask which one.

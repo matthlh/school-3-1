@@ -1,6 +1,9 @@
 import { Children, isValidElement, useMemo, type ComponentProps, type ReactElement, type ReactNode } from 'react'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import rehypeHighlight from 'rehype-highlight'
 import { hrefFor, resolveRelative } from './files'
 import { PAGE, usePager } from './Pager'
 
@@ -28,6 +31,13 @@ type TBodyProps = ComponentProps<'tbody'> & { node?: unknown }
 const TBody = ({ node: _node, ...rest }: TBodyProps) => <PagedBody {...rest} />
 const Unwrap = ({ children }: { children?: ReactNode }) => <>{children}</>
 
+// Math: only `$$…$$` counts as math, so a lone dollar sign ("$1450") stays plain text. `$$…$$` inside a line is
+// inline math; a `$$` line, the LaTeX, then a closing `$$` line is a display equation. Rendered by KaTeX.
+const REMARK = [remarkGfm, [remarkMath, { singleDollarTextMath: false }]] as NonNullable<ComponentProps<typeof ReactMarkdown>['remarkPlugins']>
+// Code: a fenced block tagged with a language (```ts) gets highlight.js token classes; the colours live in
+// styles.css under `.hljs-*` for both themes. Untagged fences stay plain, so prose in a fence is not guessed at.
+const REHYPE = [[rehypeKatex, { strict: false }], [rehypeHighlight, { detect: false }]] as NonNullable<ComponentProps<typeof ReactMarkdown>['rehypePlugins']>
+
 /** Markdown renderer. `path` is the current file (for relative links); `inline` drops <p> wrappers. */
 export function Md({ text, path = '', inline = false }: { text: string; path?: string; inline?: boolean }) {
   const components = useMemo<Components>(() => ({
@@ -42,5 +52,5 @@ export function Md({ text, path = '', inline = false }: { text: string; path?: s
     tbody: TBody,
     ...(inline ? { p: Unwrap } : {}),
   }), [path, inline])
-  return <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>{text}</ReactMarkdown>
+  return <ReactMarkdown remarkPlugins={REMARK} rehypePlugins={REHYPE} components={components}>{text}</ReactMarkdown>
 }

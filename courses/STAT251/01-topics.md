@@ -16,7 +16,7 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | 1a | Distinguish types of data | O | 2026-09-13 | 1 | 2026-09-20 |
 | 1b | Interpret boxplots, histograms; mean/median/mode/variance/IQR *(so far: freq table, pie, bar, dot, stem-leaf, histogram, box plot, mean, median, range, variance, SD, percentiles, quartiles, IQR)* | ~ | 2026-09-19 | 0 | 2026-09-22 |
 | 1c | Choose the right summary method for a data set *(lec 4: median and IQR versus mean and s, box plot versus histogram)* | O | 2026-09-19 | 1 | 2026-09-26 |
-| 1d | Identify features describing a distribution *(lec 3: mound type, shape, centre, spread, outliers; lec 4: the 1.5 × IQR outlier rule)* | ~ | 2026-09-19 | 0 | 2026-09-22 |
+| 1d | Identify features describing a distribution *(lec 3: mound type, shape, centre, spread, outliers; lec 4: the $$1.5 \times \text{IQR}$$ outlier rule)* | ~ | 2026-09-19 | 0 | 2026-09-22 |
 | 1e | Use software for data summary / EDA | | | | |
 | 1+ | Descriptive vs. inferential statistics *(lecture-added; not in the LO doc)* | O | 2026-09-16 | 1 | 2026-09-23 |
 
@@ -45,15 +45,15 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | 3e | Find constants making a pdf legitimate *(lec 9: total area 1 gives the constant)* | | | | |
 | 3f | pdf ↔ cdf both directions *(lec 8: discrete cdf as a step function; lec 9: integrate f to get F, differentiate F to get f)* | | | | |
 | 3g | Mean/var/median/IQR of continuous RVs (integration by parts) *(lec 9 video: E and Var by integration, median and quartiles from F, Example 7)* | | | | |
-| 3h | Uniform distribution characteristics *(lec 9 video: mean (a + b)/2, variance (b − a)²/12, derived as an exercise)* | | | | |
-| 3i | Exponential distribution characteristics *(lec 9 video: mean 1/λ, variance 1/λ², by parts)* | | | | |
-| 3j | Expectation & variance operators on linear combinations | | | | |
-| 3k | Var of sum/average vs. var of a multiple | | | | |
+| 3h | Uniform distribution characteristics *(lec 9 video: mean $$\frac{a + b}{2}$$, variance $$\frac{(b - a)^2}{12}$$, derived as an exercise)* | | | | |
+| 3i | Exponential distribution characteristics *(lec 9 video: mean $$\frac{1}{\lambda}$$, variance $$\frac{1}{\lambda^2}$$, by parts)* | | | | |
+| 3j | Expectation & variance operators on linear combinations *(lec 10: E(aX + b), the mean of a sum, Var(aX + bY + c) with the covariance term, proof of the shortcut)* | | | | |
+| 3k | Var of sum/average vs. var of a multiple *(lec 10: variance of a sum of independent variables, $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$, $$\operatorname{Var}(X_1 + X_2)$$ versus $$\operatorname{Var}(2X_1)$$)* | | | | |
 | 3l | pdf/cdf of functions of one RV (simple polynomials) | | | | |
-| 3m | pdf/cdf of **min/max** of independent RVs, incl. non-identical | | | | |
-| 3n | **Min/max lifetimes of series/parallel circuits** | | | | |
+| 3m | pdf/cdf of **min/max** of independent RVs, incl. non-identical *(lec 10: cdf of the max as a product of cdfs, pdf by the chain rule)* | | | | |
+| 3n | **Min/max lifetimes of series/parallel circuits** *(lec 10: a parallel system's lifetime is the max, a series system's is the min)* | | | | |
 | 3o | Normal properties, incl. preservation under linear transformation | | | | |
-| 3p | Normal: probability, percentile, μ given σ² (and vice versa), μ&σ² from two probabilities | | | | |
+| 3p | Normal: probability, percentile, $$\mu$$ given $$\sigma^2$$ (and vice versa), $$\mu$$ and $$\sigma^2$$ from two probabilities | | | | |
 | 3q–s | Binomial — recognise, characteristics, compute | | | | |
 | 3t–v | Geometric — recognise, characteristics (incl. **return period**), compute | | | | |
 | 3w–y | Poisson **process** — recognise, counts in an interval, **wait time between events** | | | | |
@@ -90,7 +90,7 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
 | # | Outcome | Status | Last | Streak | Next |
 |---|---|---|---|---|---|
 | 6a | Definition of the t statistic | | | | |
-| 6b | Inference for one mean, σ² known and unknown; CIs + 1/2-sided tests | | | | |
+| 6b | Inference for one mean, $$\sigma^2$$ known and unknown; CIs + 1/2-sided tests | | | | |
 | 6c | Difference of two means, equal variances assumed | | | | |
 
 ## 7. One-way ANOVA · Ch 10

@@ -20,7 +20,7 @@ versions of the course and does not apply to 26W1.
 - Question kinds mirror what you practised in lecture activities, iClicker questions, lab tutorials, lab assignments and the project. Format details come closer to the exam date.
 - Midterm covers content through week 6 (Oct 15). Final is cumulative.
 - There are no past papers for this version of the course. The reader's licence says exams and solutions are private. The CSSS exam bank only has a 2009 sample final: 20 marks MC, 20 marks true/false, then 11 short-answer and design questions worth 6 to 12 marks each, 120 marks in 150 minutes. Student Quizlet sets from 2025 cover the old syllabus (security, agile process, MVC), most of which is gone from 26W1.
-- Earlier terms used true/false with negative marking. Not yet confirmed for this year.
+- Earlier terms used true/false with negative marking. A classmate told Matt on 2026-10-02 that this year's exams are all true/false. Not confirmed by the course staff; the syllabus still says every answer is justified, so expect true/false plus a reason.
 
 ## Project — InsightUBC
 An inherited REST service for the Registrar (course and facilities data). D1 = two small features to

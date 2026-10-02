@@ -300,3 +300,41 @@ nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 }
 [data-visual="wireframe"] :is(main, nav) svg { opacity: .25; }
 [data-visual="wireframe"] :is(main, nav, .crumbs) *:focus-visible { outline: 2px solid var(--focus); }
+
+/* Math (KaTeX). Display equations scroll sideways on a narrow screen instead of widening the page. */
+.katex { font-size: 1.08em; }
+.katex-display { margin: .7em 0; padding: 2px 0; overflow-x: auto; overflow-y: hidden; }
+.katex-display > .katex { white-space: nowrap; }
+@media (max-width: 520px) { .katex-display > .katex { font-size: .92em; } }
+/* Long file names in inline code wrap instead of running off a phone screen. */
+article code { overflow-wrap: anywhere; }
+
+/* Code highlighting (rehype-highlight → highlight.js token classes). Tagged fences only. The palette is the
+   app's own: muted in light, brighter in dark, same hues both ways so a snippet reads the same after a theme switch. */
+article pre code.hljs { display: block; font-size: 13px; line-height: 1.55; color: var(--fg); }
+:root {
+  --hl-kw: #8a3fa0; --hl-str: #1f7a4d; --hl-num: #b25e09; --hl-cmt: #7a8190; --hl-fn: #2456b3; --hl-type: #0e7490;
+  --hl-attr: #9a3b3b; --hl-lit: #b25e09; --hl-meta: #6b7280; --hl-punct: #5b6170;
+}
+:root[data-theme="dark"] {
+  --hl-kw: #d7a6ff; --hl-str: #8fd9a8; --hl-num: #f0b06a; --hl-cmt: #8a919e; --hl-fn: #8ab4ff; --hl-type: #6fd3e0;
+  --hl-attr: #f29c9c; --hl-lit: #f0b06a; --hl-meta: #9aa1ad; --hl-punct: #a6adbb;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --hl-kw: #d7a6ff; --hl-str: #8fd9a8; --hl-num: #f0b06a; --hl-cmt: #8a919e; --hl-fn: #8ab4ff; --hl-type: #6fd3e0;
+    --hl-attr: #f29c9c; --hl-lit: #f0b06a; --hl-meta: #9aa1ad; --hl-punct: #a6adbb;
+  }
+}
+.hljs-keyword, .hljs-selector-tag, .hljs-doctag, .hljs-tag { color: var(--hl-kw); }
+.hljs-string, .hljs-regexp, .hljs-template-tag, .hljs-addition { color: var(--hl-str); }
+.hljs-number, .hljs-symbol, .hljs-bullet { color: var(--hl-num); }
+.hljs-literal, .hljs-built_in { color: var(--hl-lit); }
+.hljs-comment, .hljs-quote, .hljs-deletion { color: var(--hl-cmt); font-style: italic; }
+.hljs-title, .hljs-title.function_, .hljs-title.class_, .hljs-section, .hljs-name { color: var(--hl-fn); }
+.hljs-type, .hljs-class, .hljs-selector-class, .hljs-selector-id { color: var(--hl-type); }
+.hljs-attr, .hljs-attribute, .hljs-variable, .hljs-property, .hljs-template-variable, .hljs-params { color: var(--hl-attr); }
+.hljs-meta, .hljs-meta .hljs-keyword, .hljs-link { color: var(--hl-meta); }
+.hljs-punctuation, .hljs-operator { color: var(--hl-punct); }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: 700; }

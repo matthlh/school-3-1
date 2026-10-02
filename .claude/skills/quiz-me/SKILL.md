@@ -29,6 +29,9 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    `02-questions.md` to the ledger row's leading label *before* asking — otherwise the grade
    cannot land in the ledger.
 2. Ask question 1 exactly as written. Nothing else. Wait.
+   STAT 251 questions and answers are written in LaTeX between `$$` markers, which the site renders. In chat,
+   write the same math in readable plain form (P(A | B), σ²/n, ∫₀² x dx) instead of pasting raw LaTeX; the
+   wording stays exactly as written.
 3. Grade, then one line of correction (for `X`, the full bank answer). Move on. Never reveal the
    answer early; "skip" / "idk" = `X`. Never coach mid-session — the attempt to recall it is the point.
    - `O` = would score full marks on the exam · `~` = right idea, imprecise or missing a piece · `X` = wrong or blank.

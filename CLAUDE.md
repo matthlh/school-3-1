@@ -20,6 +20,19 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    with periods, one fact per bullet under a `##` header, sub-bullets for lists, tables for dated
    things. Never a paragraph of `**Label:**` runs joined by " · ", never "=" shorthand or arrows as
    sentence glue (menu paths like Canvas → Zoom are fine).
+   **Formulas are LaTeX** (Matt, 2026-10-02: "proper latex formatting instead of inline, super hard to
+   read"). Math goes between `$$` markers and nothing else: `$$P(A \mid B)$$` inside a sentence is inline;
+   a `$$` line, the LaTeX, then a `$$` line (blank lines around it, not indented into a list) is a display
+   equation. A single `$` is always a literal dollar sign. Definitions, derivations and any calculation with
+   more than one step go in a display equation, written as `\begin{aligned}` with one step per line short
+   enough for a phone (about 30 characters of rendered math; never two formulas side by side), and
+   `\frac` rather than `\tfrac` inside display equations. Notation: `\operatorname{Var}`, `\operatorname{Cov}`,
+   `\operatorname{SD}`, `\mid` for "given", `A^c`, `\bar{X}`, `\frac{a}{b}` (never "a/b"), `\le`, `\times`, and
+   `\%` inside math. `### Q:` stems take inline math only; ledger topic labels and `**Topic:**` tags stay plain
+   Unicode, because they are matched as text; his pasted notes stay verbatim. Check every file before
+   publishing: `node notes-app/scripts/check-math.mjs <files>` prints parse errors and leftover Unicode
+   math. Rewording a `### Q:` line changes that question's id, so its history in `routines/quiz-state.json`
+   detaches unless the key is moved to the new id.
 2. Extract every testable claim into `courses/<CODE>/02-questions.md` in the Q/A format.
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
    course allows it. For CPSC 310 that means `apply`/`critique` on a code or design fragment plus
@@ -97,7 +110,8 @@ builds the 6-question deck the morning check sends to his phone. Last step of ev
   change, and why — "the same thing the lab assignments ask". So the bank is weighted to `apply` and
   `critique` on unseen code, with the reader's terminology (cohesion vs. connascence, LSP, test
   doubles, the pattern set, API change severity) as the vocabulary underneath; always make him
-  justify. Course housekeeping (learning objectives, roadmap weeks, slide diagrams about AI) is not
+  justify. A classmate reported (2026-10-02, unverified) that the exams are all true/false, so from lecture 6 on
+  bank questions as "True or false, and justify" over a fragment or a claim, answer with the verdict then the reason. Course housekeeping (learning objectives, roadmap weeks, slide diagrams about AI) is not
   exam material — do not bank it. No past papers exist for this version (exams are private; the
   CSSS bank stops at 2009), so labs and iClicker questions are the only format samples. Do **not** let him sink unbounded hours into the
   deliverables — the bucket grading means extra hours past "meets spec" return nothing.
@@ -226,7 +240,7 @@ checklist that renders on the course Overview (hidden in the syllabus view); log
 table; anything kept only for Claude (office hours, Canvas IDs, site maps) goes under `## Reference (for Claude)`,
 which the viewer folds shut. No provenance lines ("pulled from…") in either. Home's **Coming up** panel parses the ledger's `## Term calendar` table by the Date cell
 (`Fri Sep 25, 18:00`; a `→` range keeps its end; `~` = approximate) — keep that cell format when adding rows.
-The ledger page (`#/ledger.md`) renders as a dashboard: a live **Due now** panel titled `Due now · N topics · <date>`, then All topics, the hard-dates table and the Session log, each paged 10 rows at a time; every markdown table over 10 rows pages the same way. A link can target a section as `#/<file>.md#<heading-slug>`, where the slug is the heading lowercased with each run of non-alphanumerics turned into `-`. The sidebar has a Light / Auto / Dark switch stored in `localStorage` under the key `theme`; Auto follows the OS setting. A gear left of the search opens Settings: the same theme switch plus "Secret visuals", a Minecraft-style button that cycles the content through abstract bars, blur and wireframe looks (key `visual`; the popover stays readable and every link keeps working), and a Version row (build time plus Check now). **The site keeps itself current** (Matt, 2026-09-21): the build writes `version.json` next to the bundle, and an open tab compares it with its own build stamp at load, every five minutes and whenever the tab comes back into view. A newer build reloads a hidden or just-opened tab on the spot; a tab he is looking at gets a bottom-right toast with Reload and Later and reloads on his next click inside the site. One reload per build per tab, so a lagging cache cannot loop. Question banks render as cards with
+The ledger page (`#/ledger.md`) renders as a dashboard: a live **Due now** panel titled `Due now · N topics · <date>`, then All topics, the hard-dates table and the Session log, each paged 10 rows at a time; every markdown table over 10 rows pages the same way. A link can target a section as `#/<file>.md#<heading-slug>`, where the slug is the heading lowercased with each run of non-alphanumerics turned into `-`. The sidebar has a Light / Auto / Dark switch stored in `localStorage` under the key `theme`; Auto follows the OS setting. A gear left of the search opens Settings: the same theme switch plus "Secret visuals", a Minecraft-style button that cycles the content through abstract bars, blur and wireframe looks (key `visual`; the popover stays readable and every link keeps working), and a Version row (build time plus Check now). **The site keeps itself current** (Matt, 2026-09-21): the build writes `version.json` next to the bundle, and an open tab compares it with its own build stamp at load, every five minutes and whenever the tab comes back into view. A newer build reloads a hidden or just-opened tab on the spot; a tab he is looking at gets a bottom-right toast with Reload and Later and reloads on his next click inside the site. One reload per build per tab, so a lagging cache cannot loop. Math renders with KaTeX (remark-math and rehype-katex in `src/Md.tsx`, `singleDollarTextMath` off so only `$$` is math); on a phone, display equations shrink slightly and scroll sideways inside themselves if still too wide. Question banks render as cards with
 answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
 (`/` focuses it); the sidebar is off-canvas — hover the left edge or pin with ☰.

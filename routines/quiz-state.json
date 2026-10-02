@@ -560,16 +560,6 @@
     ]
    ]
   },
-  "779bf547": {
-   "course": "STAT251",
-   "topic": "1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)",
-   "history": [
-    [
-     "2026-09-19",
-     "O"
-    ]
-   ]
-  },
   "dd79dbff": {
    "course": "PHIL385",
    "topic": "Pseudonymity and the 18 discourses",
@@ -660,16 +650,6 @@
     ]
    ]
   },
-  "15125b4c": {
-   "course": "STAT251",
-   "topic": "1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)",
-   "history": [
-    [
-     "2026-09-19",
-     "~"
-    ]
-   ]
-  },
   "24461009": {
    "course": "PHIL385",
    "topic": "First authorship: the 8 pseudonymous works",
@@ -717,6 +697,26 @@
     [
      "2026-09-19",
      "X"
+    ]
+   ]
+  },
+  "3f77523e": {
+   "course": "STAT251",
+   "topic": "1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)",
+   "history": [
+    [
+     "2026-09-19",
+     "~"
+    ]
+   ]
+  },
+  "a9fa7744": {
+   "course": "STAT251",
+   "topic": "1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)",
+   "history": [
+    [
+     "2026-09-19",
+     "O"
     ]
    ]
   }

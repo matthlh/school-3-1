@@ -306,7 +306,8 @@ def ensure_auto_todos(today, todos, dry, state, seed=False):
     for code, proj in PROJECT_OF.items():
         held = term.lecture_dates(code, today)
         total = term.lecture_dates(code, term.COURSES[code]["end"])    # whole term
-        n_logged = term.logged_count(code)
+        logged = term.logged_numbers(code)        # set of lecture numbers with a log file
+        n_logged = len(logged)
         is_async = code in ASYNC_LOCK_DAYS         # async: the to-do is watch + quiz, he ticks it after the quiz
         existing = {}
         for t in list(todos):
@@ -314,7 +315,7 @@ def ensure_auto_todos(today, todos, dry, state, seed=False):
             if not m:
                 continue
             n = int(m.group(1))
-            if not is_async and n <= n_logged:     # lecture file exists → close the to-do
+            if not is_async and n in logged:       # lecture file exists → close the to-do
                 if not dry:
                     osa(f'tell application "Things3" to set status of to do id "{t.id}" to completed')
                 lines.append(f"completed: {t.name}")
@@ -326,8 +327,10 @@ def ensure_auto_todos(today, todos, dry, state, seed=False):
                 todos.remove(t)
             else:
                 existing[n] = t
-        for i in range(0 if is_async else n_logged, len(total)):
+        for i in range(len(total)):
             n, d = i + 1, total[i]
+            if not is_async and n in logged:
+                continue
             title, tags, when, due, notes = lecture_todo(code, n, d)
             t = existing.get(n)
             if t is None:

@@ -30,16 +30,23 @@ Stats Notes:
 ### Mean versus median
 - It is median, not medium.
 - "The median is the relative mean" is not a thing. The median is preferred for skewed data because it is resistant: a few extreme values drag the mean into the long tail but barely move the median, so the median is the better picture of a typical observation.
-- Direction of the pull: a long right tail gives mean > median, a long left tail gives mean < median, and a nearly symmetric distribution gives mean ≈ median.
-- Median rule from the deck: order the data. For odd n take the (n + 1)/2-th value. For even n average the n/2-th and (n/2 + 1)-th values.
-- The sample mean is written x̄ and is the sum of the observations divided by n.
+- Direction of the pull: a long right tail gives $$\text{mean} > \text{median}$$, a long left tail gives $$\text{mean} < \text{median}$$, and a nearly symmetric distribution gives $$\text{mean} \approx \text{median}$$.
+- Median rule from the deck: order the data first.
+  - For odd $$n$$, the median is the $$\frac{n+1}{2}$$-th value.
+  - For even $$n$$, the median is the average of the $$\frac{n}{2}$$-th and $$\left(\frac{n}{2} + 1\right)$$-th values.
+- The sample mean is written $$\bar{x}$$ and is the sum of the observations divided by $$n$$:
+
+$$
+\bar{x} = \frac{x_1 + x_2 + \dots + x_n}{n} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+
 
 ### Empty intervals
 - A histogram interval with no observations stays on the axis with a bar of height zero. The gap is information, the same reason an empty stem stays in a stem-and-leaf plot.
 
 ### Outliers and the range (in the deck, not on your page)
 - An outlier is an observation far from the rest of the data, unusually large or unusually small.
-- The range is the largest value minus the smallest. It uses only two observations, so one outlier changes it completely.
+- The range is the largest value minus the smallest, $$\text{range} = x_{\max} - x_{\min}$$. It uses only two observations, so one outlier changes it completely.
 
 ### Detached housing question
 - This was an iClicker question, not in the posted deck: the shape of the distribution of detached house prices. The answer was (c), right-skewed.
