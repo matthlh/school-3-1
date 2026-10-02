@@ -2,6 +2,7 @@ import { splitSections } from './markdown'
 import { hrefAnchor, scrollIfSame } from './routes'
 import { Md } from './Md'
 import { VERIFY } from './CoursePage'
+import { SectionRail } from './SectionRail'
 
 /** Sections folded by default: raw dumps he has on paper, and reference detail kept for Claude. */
 const FOLDED = /^(your notes|raw|raw notes|reference|for claude|where .* live|sources|study resources|office hours|people|canvas)\b/i
@@ -22,6 +23,7 @@ export function Viewer({ path, text, hideTitle }: { path: string; text: string; 
           {named.map((s) => <a key={s.id} className="chip" href={hrefAnchor(path, s.id)} onClick={scrollIfSame}>{s.heading}</a>)}
         </div>
       )}
+      {named.length >= 3 && <SectionRail sections={named.map((s) => ({ id: s.id, label: s.heading ?? '' }))} path={path} />}
       {shown.map((s) =>
         s.heading && FOLDED.test(s.heading) ? (
           <details key={s.id} id={'sec-' + s.id}>

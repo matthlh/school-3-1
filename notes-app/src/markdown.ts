@@ -202,3 +202,85 @@ export function splitTopic(topic: string): { main: string; detail: string | null
 export function courseLabel(code: string): string {
   return code.replace(/^([A-Za-z]+)(\d)/, '$1 $2')
 }
+
+// ---- ledger.md "Grades so far" and "Session log" ---------------------------------------------
+
+export interface GradeItem { name: string; got: string; of: string }
+export interface GradeRow {
+  /** Course code with spaces removed ("ASIA250"). */
+  course: string
+  /** The overall percentage at the start of the Score cell, without the sign; null when there is none. */
+  percent: string | null
+  /** True when the Score cell says Canvas hides the total. */
+  hidden: boolean
+  /** Graded items written as "Name got/of". */
+  items: GradeItem[]
+  /** Any other fragment of the Score cell, as a sentence. */
+  notes: string[]
+  /** The As of cell, usually an ISO date; empty when nothing is graded. */
+  asOf: string
+}
+
+/** "the only Canvas item so far" → "The only Canvas item so far." */
+function sentence(s: string): string {
+  const t = s.trim()
+  const cap = t.charAt(0).toUpperCase() + t.slice(1)
+  return /[.!?]$/.test(cap) ? cap : cap + '.'
+}
+
+/**
+ * Rows of the first table in the `## Grades so far` body (Course | Score | As of). The Score cell is free text
+ * written by the morning check: an optional "87%" at the start, then items like "Mini-Quiz 3 9.5/10" separated by
+ * ";" or "," (parentheses count as separators), and remarks. "total hidden …" sets `hidden` instead of becoming a note.
+ */
+export function parseGrades(body: string): GradeRow[] {
+  const table = parseTable(body)
+  if (!table) return []
+  const out: GradeRow[] = []
+  for (const cells of table.rows) {
+    if (!cells[0]) continue
+    let score = (cells[1] ?? '').trim()
+    let percent: string | null = null
+    const pm = /^(\d+(?:\.\d+)?)%/.exec(score)
+    if (pm) { percent = pm[1]; score = score.slice(pm[0].length) }
+    const items: GradeItem[] = []
+    const notes: string[] = []
+    let hidden = false
+    if (!/^[\s—–-]*$/.test(score)) {
+      for (const raw of score.replace(/[()]/g, ',').split(/[;,]/)) {
+        const f = raw.trim()
+        if (!f) continue
+        if (/total hidden/i.test(f)) { hidden = true; continue }
+        const im = /^(.+?)\s+(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)\.?$/.exec(f)
+        if (im) items.push({ name: im[1], got: im[2], of: im[3] })
+        else notes.push(sentence(f))
+      }
+    }
+    out.push({ course: cells[0].replace(/\s+/g, ''), percent, hidden, items, notes, asOf: (cells[2] ?? '').trim() })
+  }
+  return out
+}
+
+/**
+ * A session-log entry split for display: the title runs up to and including the first ". " that is outside
+ * backticks and parentheses; the rest is the detail. An entry of 110 characters or fewer is all title.
+ */
+export function splitLogEntry(text: string): { title: string; detail: string | null } {
+  const s = text.trim()
+  if (s.length <= 110) return { title: s, detail: null }
+  let code = false
+  let depth = 0
+  for (let i = 0; i < s.length - 1; i++) {
+    const ch = s[i]
+    if (ch === '`') { code = !code; continue }
+    if (code) continue
+    if (ch === '(') depth++
+    else if (ch === ')') depth = Math.max(0, depth - 1)
+    else if (ch === '.' && depth === 0 && s[i + 1] === ' ') {
+      const title = s.slice(0, i + 1).trim()
+      const detail = s.slice(i + 2).trim()
+      return detail ? { title, detail } : { title: s, detail: null }
+    }
+  }
+  return { title: s, detail: null }
+}

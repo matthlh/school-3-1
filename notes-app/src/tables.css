@@ -35,8 +35,10 @@ table.ledger td.next { white-space: nowrap; text-align: right; font-size: 12.5px
 table.ledger th.next, table.ledger th.weight { text-align: right; }
 table.ledger td.date { white-space: nowrap; color: var(--fg2); }
 table.ledger td.weight { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; }
+table.ledger td.asof { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; width: 72px; }
+table.ledger th.asof { text-align: right; }
 table.ledger tr.exam td.what { font-weight: 600; }
-table.ledger td.log-date { white-space: nowrap; color: var(--muted); font-size: 12.5px; width: 96px; }
+table.ledger.calendar .chip-inline { display: none; margin-right: 6px; }   /* phones only; the Course column carries the chip on wide screens */
 table.ledger td.what code { font-size: .88em; }
 .panel table.due { margin-top: 2px; }
 .panel-head .sub { text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; }
@@ -62,10 +64,41 @@ table.ledger td.what code { font-size: .88em; }
 .ledger-page table:not(.ledger):not(.due) th { border-top: 0; border-bottom: 1px solid var(--border2); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
 .ledger-page table:not(.ledger):not(.due) td:first-child, .ledger-page table:not(.ledger):not(.due) th:first-child { padding-left: 0; }
 
+/* Grades so far: one row per course, the Canvas total on the first line, then the graded items as chips */
+table.ledger.grades td.score { line-height: 1.4; }
+.grades .total { font-size: 15px; font-weight: 600; color: var(--fg); }
+.grades .total.none { font-size: 13.5px; font-weight: 400; color: var(--muted); }
+.grades .items { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 4px; }
+.grades .items .chip { white-space: nowrap; }
+.grades .items .chip b { font-weight: 600; }
+.grades .note { margin-top: 3px; font-size: 12.5px; color: var(--muted); }
+.grades .asof-inline { display: none; font-size: 12px; color: var(--muted); }   /* phones only; the As of column carries the date on wide screens */
+
+/* Session log: newest first, one block per day with the short date beside its entries */
+.ledger-page .log { margin-top: 6px; font-size: 13.5px; line-height: 1.45; }
+.ledger-page .log-day { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 10px; padding: 7px 0; border-top: 1px solid var(--hair); }
+.ledger-page .log-day:first-child { border-top: 0; padding-top: 2px; }
+.ledger-page .log-date { color: var(--muted); font-size: 12.5px; white-space: nowrap; padding-top: 1px; }
+.ledger-page ul.log-entries { list-style: none; margin: 0; padding: 0; min-width: 0; }
+.ledger-page li.log-entry { position: relative; margin: 0 0 5px; padding-left: 14px; overflow-wrap: anywhere; }
+.ledger-page li.log-entry:last-child { margin-bottom: 0; }
+.ledger-page li.log-entry::before { content: ''; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--border3); }
+.log-title { font-weight: 500; }
+.log-title code, .log-more code { font-size: .88em; }
+.log-title .link { font-size: 12px; margin-left: 2px; padding: 0 4px; }
+.log-more { margin-top: 3px; font-size: 13px; font-weight: 400; color: var(--fg2); }
+
 @media (max-width: 640px) {
   table.ledger td.lec, table.ledger th.lec, table.ledger td.last, table.ledger th.last { display: none; }
   table.due td.grade, table.ledger td.grade, table.ledger th.grade { display: none; }   /* the grade chip is the first thing to go on a phone */
   table.due td.when { width: auto; font-size: 12px; padding-right: 0; }
   table.due td, table.ledger td { padding-left: 5px; padding-right: 5px; }
   table.due td.topic, table.ledger td.topic, table.ledger td.what { overflow-wrap: anywhere; }   /* long tokens like route/handler/middleware must not force the table wider than the phone */
+  table.ledger.grades td.asof, table.ledger.grades th.asof { display: none; }
+  .grades .asof-inline { display: inline; }
+  .ledger-page .log-day { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }   /* the date sits above its entries */
+  table.ledger.calendar td.course, table.ledger.calendar th.course { display: none; }
+  table.ledger.calendar .chip-inline { display: inline; }
+  table.ledger.calendar td.date, table.ledger.calendar td.weight { white-space: normal; }   /* "Fri Oct 2, 23:59" and "+2% bonus" may wrap so the What column keeps its width */
+  table.ledger.calendar td.date { width: 72px; }
 }

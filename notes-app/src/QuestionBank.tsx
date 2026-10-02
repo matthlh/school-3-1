@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { QuizHistory, QuizState } from './files'
 import { courseOf } from './files'
-import { parseQuestions, type Question } from './markdown'
+import { parseQuestions, splitTopic, type Question } from './markdown'
 import { isWeak, lastGrade, questionId, tallyHistories } from './stats'
 import { GradeChip } from './StatViews'
 import { Md } from './Md'
@@ -20,11 +20,21 @@ function shuffled<T>(xs: T[], seed: number): T[] {
   return out
 }
 
+/** "Lec 3 — Histograms (Mon Sep 14, logged 2026-09-14)" → "Lec 3 — Histograms". Emphasis markers are dropped too. */
+function shortTitle(title: string): string {
+  return splitTopic(title).main.replace(/\*/g, '').replace(/\s+/g, ' ').trim()
+}
+
 export function QuestionBank({ path, text, quiz }: { path: string; text: string; quiz: QuizState | null }) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
   const flat = useMemo(() => groups.flatMap((g) => g.questions), [groups])
-  const topics = useMemo(() => [...new Set(flat.map((q) => q.topic).filter(Boolean))], [flat])
+  // Question id → index of its `## ` group, so the section filter also works on the flattened shuffle list.
+  const groupOf = useMemo(() => {
+    const m = new Map<string, number>()
+    groups.forEach((g, i) => g.questions.forEach((q) => m.set(q.id, i)))
+    return m
+  }, [groups])
 
   // Map each parsed question to the id the quiz scripts use (sha1 of course + normalised text).
   const [ids, setIds] = useState<Record<string, string>>({})
@@ -37,7 +47,8 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
   const histOf = (q: Question): QuizHistory | undefined => quiz?.questions[ids[q.id] ?? '']
 
   const [mode, setMode] = useState<Mode>('all')
-  const [topic, setTopic] = useState('')
+  const [section, setSection] = useState('') // '' = every section; otherwise a group index as a string
+  const [topic, setTopic] = useState('') // set by clicking a card's topic chip
   const [open, setOpen] = useState<Set<string>>(new Set())
   const [allOpen, setAllOpen] = useState(false)
   const [seed, setSeed] = useState(0) // 0 = file order; otherwise a shuffled single list
@@ -51,7 +62,9 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
 
   const weakCount = flat.filter((q) => isWeak(histOf(q))).length
   const keep = (q: Question) =>
-    (!topic || q.topic === topic) && (mode === 'all' || (mode === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
+    (!section || String(groupOf.get(q.id)) === section) &&
+    (!topic || splitTopic(q.topic).main === topic) &&
+    (mode === 'all' || (mode === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
   const shownCount = flat.filter(keep).length
   const seg = (m: Mode, label: string, n: number) => (
     <button className={mode === m ? 'on' : ''} onClick={() => setMode(m)}>{label}<span className="k">{n}</span></button>
@@ -70,11 +83,18 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
           {asked.length > 0 && seg('weak', 'Weak', weakCount)}
           {asked.length > 0 && seg('new', 'Not asked', total - asked.length)}
         </div>
-        {topics.length > 1 && (
-          <select value={topic} onChange={(e) => setTopic(e.target.value)} aria-label="Topic">
-            <option value="">All topics</option>
-            {topics.map((t) => <option key={t} value={t}>{t}</option>)}
+        {groups.length > 1 && (
+          <select value={section} onChange={(e) => setSection(e.target.value)} aria-label="Section">
+            <option value="">All sections</option>
+            {groups.map((g, i) => g.title && (
+              <option key={i} value={String(i)} title={g.title}>{shortTitle(g.title)}</option>
+            ))}
           </select>
+        )}
+        {topic && (
+          <button className="chip on" onClick={() => setTopic('')} title={`${topic} — click to show every topic again`}>
+            Topic: {topic} <span className="x" aria-hidden="true">×</span>
+          </button>
         )}
         <span className="spacer" />
         {shownCount !== total && <span className="muted small">{shownCount} shown</span>}
@@ -101,7 +121,11 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
                   <div className="meta">
                     {h && <GradeChip g={lastGrade(h)} title={last ? `last ${last[0]}` : undefined} />}
                     {h && h.history.length > 1 && <span className="hist">{h.history.slice(-6).map(([, g]) => g).join(' ')}</span>}
-                    {q.topic && !topic && <span className="chip">{q.topic}</span>}
+                    {q.topic && !topic && (
+                      <button className="chip" onClick={() => setTopic(splitTopic(q.topic).main)} title={`${q.topic} — click to show only this topic`}>
+                        {splitTopic(q.topic).main}
+                      </button>
+                    )}
                     {q.lec && <span className="chip">lec {q.lec}</span>}
                     {q.type && <span className={'chip type-' + q.type}>{q.type}</span>}
                     <button className="link" onClick={() => toggle(q.id)}>{shown ? 'hide' : 'answer'}</button>
