@@ -26,6 +26,70 @@
     --bar-s: #3f8a58; --bar-h: #b98b3a; --bar-m: #a8506a; --bar-u: #3a3d47;
   }
 }
+/* Colour palettes (Settings, <html data-palette>). Mist is the blocks above; each other palette overrides only the
+   page, surface, border and accent tokens, never text, status, bar or course colours. Per palette: a light block, a
+   forced-dark block, then the OS-dark block last. All three selectors weigh the same, so in Auto with a dark OS the
+   media block wins by coming later. palette.ts keeps a copy of each --bg and --link for the swatches. */
+/* Sage: soft green. */
+:root[data-palette="sage"]:not([data-theme="dark"]) {
+  --bg: #f5f9f6; --glow: #e4f1e6; --nav: #eff5f0; --soft: #ecf2ed; --soft2: #eff5f0; --hover: #e4ede6;
+  --hair: #e6ede7; --border: #dfe8e1; --border2: #d4dfd5; --border3: #c1cdc2; --link: #22714b; --accent-bg: #e6eee9; --accent: #165034; --focus: #95bba4;
+}
+:root[data-palette="sage"][data-theme="dark"] {
+  --bg: #131914; --glow: #162c1b; --bg-glass: rgba(27,33,28,.86); --nav: #171d18; --panel: #1b211c; --soft: #232c25; --soft2: #202721; --hover: #29322b;
+  --hair: #212822; --border: #273029; --border2: #313932; --border3: #424b43; --link: #8dbda0; --accent-bg: #213127; --accent: #adceb9; --focus: #446250;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="sage"]:not([data-theme="light"]) {
+    --bg: #131914; --glow: #162c1b; --bg-glass: rgba(27,33,28,.86); --nav: #171d18; --panel: #1b211c; --soft: #232c25; --soft2: #202721; --hover: #29322b;
+    --hair: #212822; --border: #273029; --border2: #313932; --border3: #424b43; --link: #8dbda0; --accent-bg: #213127; --accent: #adceb9; --focus: #446250;
+  }
+}
+/* Lavender: soft violet. */
+:root[data-palette="lavender"]:not([data-theme="dark"]) {
+  --bg: #f8f7fc; --glow: #eeebfb; --nav: #f3f2f8; --soft: #f0eff6; --soft2: #f3f2f8; --hover: #eae8f2;
+  --hair: #ebeaf2; --border: #e5e3ed; --border2: #dcd9e6; --border3: #c9c7d5; --link: #6a47b1; --accent-bg: #ece9f7; --accent: #4a317f; --focus: #b4a6e1;
+}
+:root[data-palette="lavender"][data-theme="dark"] {
+  --bg: #17161c; --glow: #28213b; --bg-glass: rgba(32,30,37,.86); --nav: #1b1a20; --panel: #201e25; --soft: #2a2831; --soft2: #26242c; --hover: #302e38;
+  --hair: #27252d; --border: #2e2c35; --border2: #37353e; --border3: #494651; --link: #b4a2ec; --accent-bg: #2e2841; --accent: #c7bbf1; --focus: #5d517f;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="lavender"]:not([data-theme="light"]) {
+    --bg: #17161c; --glow: #28213b; --bg-glass: rgba(32,30,37,.86); --nav: #1b1a20; --panel: #201e25; --soft: #2a2831; --soft2: #26242c; --hover: #302e38;
+    --hair: #27252d; --border: #2e2c35; --border2: #37353e; --border3: #494651; --link: #b4a2ec; --accent-bg: #2e2841; --accent: #c7bbf1; --focus: #5d517f;
+  }
+}
+/* Sand: warm cream with a terracotta accent. */
+:root[data-palette="sand"]:not([data-theme="dark"]) {
+  --bg: #fbf8f2; --glow: #f8ebdd; --nav: #f7f3ec; --soft: #f4efe7; --soft2: #f7f2eb; --hover: #f0e9de;
+  --hair: #f0eae1; --border: #ebe4d9; --border2: #e3dacc; --border3: #d1c8b8; --link: #9a431e; --accent-bg: #f5e9e4; --accent: #6d2e13; --focus: #d5a390;
+}
+:root[data-palette="sand"][data-theme="dark"] {
+  --bg: #1a1711; --glow: #302314; --bg-glass: rgba(35,31,24,.86); --nav: #1e1b15; --panel: #231f18; --soft: #2e2820; --soft2: #29241d; --hover: #342f25;
+  --hair: #2a251e; --border: #322c24; --border2: #3b362d; --border3: #4d473e; --link: #dd9e86; --accent-bg: #3c271f; --accent: #e7b9a7; --focus: #754f40;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="sand"]:not([data-theme="light"]) {
+    --bg: #1a1711; --glow: #302314; --bg-glass: rgba(35,31,24,.86); --nav: #1e1b15; --panel: #231f18; --soft: #2e2820; --soft2: #29241d; --hover: #342f25;
+    --hair: #2a251e; --border: #322c24; --border2: #3b362d; --border3: #4d473e; --link: #dd9e86; --accent-bg: #3c271f; --accent: #e7b9a7; --focus: #754f40;
+  }
+}
+/* Slate: neutral grey with a deep teal accent. */
+:root[data-palette="slate"]:not([data-theme="dark"]) {
+  --bg: #f6f8f9; --glow: #e5eff2; --nav: #f1f4f4; --soft: #eef1f2; --soft2: #f1f3f4; --hover: #e7ebec;
+  --hair: #e8eced; --border: #e2e6e7; --border2: #d7dcde; --border3: #c4cacc; --link: #086e77; --accent-bg: #e3eeef; --accent: #004e55; --focus: #87bbc1;
+}
+:root[data-palette="slate"][data-theme="dark"] {
+  --bg: #151819; --glow: #18292d; --bg-glass: rgba(29,32,33,.86); --nav: #191c1d; --panel: #1d2021; --soft: #262a2b; --soft2: #222627; --hover: #2c3032;
+  --hair: #232728; --border: #2a2e2f; --border2: #333738; --border3: #45494a; --link: #79bdc4; --accent-bg: #1a3134; --accent: #a0ced4; --focus: #386266;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-palette="slate"]:not([data-theme="light"]) {
+    --bg: #151819; --glow: #18292d; --bg-glass: rgba(29,32,33,.86); --nav: #191c1d; --panel: #1d2021; --soft: #262a2b; --soft2: #222627; --hover: #2c3032;
+    --hair: #232728; --border: #2a2e2f; --border2: #333738; --border3: #45494a; --link: #79bdc4; --accent-bg: #1a3134; --accent: #a0ced4; --focus: #386266;
+  }
+}
 * { box-sizing: border-box; }
 body { margin: 0; font: 15px/1.6 -apple-system, system-ui, Helvetica, Arial, sans-serif; color: var(--fg); background: var(--bg); }
 /* Soft glow at the top of the page. Fixed to the viewport so it stays put while the content scrolls. */
@@ -119,7 +183,8 @@ mark { background: var(--mark); padding: 0 2px; border-radius: 3px; }
 .btn { display: inline-block; padding: 6px 13px; border: 1px solid var(--border2); border-radius: 999px; font-size: 13.5px; text-decoration: none; color: var(--fg); background: var(--panel); cursor: pointer; }
 .btn:hover { background: var(--soft); border-color: var(--border3); }
 .chip { display: inline-block; font-size: 11.5px; padding: 2px 9px; border-radius: 999px; background: var(--soft); color: var(--fg2); border: 0; cursor: default; }
-button.chip { cursor: pointer; } button.chip:hover { background: var(--hover); }
+button.chip, a.chip { cursor: pointer; } a .chip, button .chip { cursor: inherit; } button.chip:hover, a.chip:hover { background: var(--hover); }
+a.chip.tone:hover, button.chip.tone:hover { background: var(--tint); box-shadow: inset 0 0 0 1px var(--ink); }   /* course chips open the course page */
 .chip.on { background: var(--accent-bg); color: var(--accent); }
 .chip.tone { background: var(--tint); color: var(--ink); border: 1px solid var(--line); }
 .chip.type-apply { background: var(--ok-bg); color: var(--ok); } .chip.type-derive { background: var(--warn-bg); color: var(--warn); }
@@ -197,14 +262,6 @@ main.wide { max-width: 1080px; }
 .linklist a::after { content: '\2197'; font-size: 11px; margin-left: 4px; opacity: .55; }
 .linklist a:hover { color: var(--ink); text-decoration-color: currentColor; }
 
-/* Links page: one panel per course in a two-column grid; the "Everywhere" panel has no course tint */
-.linkgroups { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 14px 0 22px; align-items: start; }
-@media (min-width: 700px) { .linkgroups { grid-template-columns: 1fr 1fr; } }
-.linkgroups .panel { margin: 0; padding: 10px 16px 12px; --ink: var(--muted); }
-.linkgroups .panel-head { align-items: center; min-height: 24px; margin-bottom: 2px; }
-.linkgroups .panel-head .chip { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; }
-.linkgroups .panel-head a.chip:hover { filter: brightness(.96); }
-
 /* Due now */
 a.chip { text-decoration: none; }
 
@@ -275,6 +332,13 @@ nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 .pop .hintline .link { font-size: 12.5px; }
 @media (max-width: 640px) { .pop { position: fixed; left: 12px; right: 12px; top: 56px; min-width: 0; } }
 .pop .val { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+.pop .swatches { display: flex; align-items: center; gap: 14px; padding-right: 6px; }
+/* Palette swatch: page colour top left, accent bottom right. The picked one gets a ring with a gap the colour of the popover. */
+.swatch { flex: none; width: 18px; height: 18px; padding: 0; border: 1px solid var(--border3); border-radius: 50%; cursor: pointer;
+          background: linear-gradient(135deg, var(--sw-page) 50%, var(--sw-accent) 50%); }
+.swatch:hover { border-color: var(--muted2); }
+.swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--panel), 0 0 0 4px var(--focus); }
+.swatch:focus-visible { border-radius: 50%; outline-offset: 5px; }
 
 /* Update toast: a newer build is deployed. Fixed outside main and nav so the secret visuals never touch it. */
 .toast { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px);

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { QuizState } from './files'
-import { firstHeading, parseGrades, parseTable, splitAroundTable, splitLogEntry, splitSections, type Deadline, type TopicRow } from './markdown'
+import { firstHeading, parseGrades, parseTable, splitAroundTable, splitLogEntry, splitSections, splitSentences, type Deadline, type Table, type TopicRow } from './markdown'
 import { hrefAnchor, scrollIfSame } from './routes'
 import { toneStyle } from './theme'
 import { formatDate, shortDate, todayISO } from './stats'
@@ -137,7 +137,74 @@ function CalendarSection({ heading, body, calendar, today }: { heading: string; 
       )}
       {pager}
       {hidden > 0 && <p className="muted small">{hidden} row{hidden === 1 ? '' : 's'} of the table {hidden === 1 ? 'has' : 'have'} no calendar date and {hidden === 1 ? 'is' : 'are'} not shown here.</p>}
-      {after.trim() && <Md text={after} path={PATH} />}
+      {splitSeries(after).map((b, i) =>
+        b.kind === 'md'
+          ? b.text.trim() ? <Md key={i} text={b.text} path={PATH} /> : null
+          : <RecurringSeries key={i} heading={b.heading} table={b.table} />,
+      )}
+    </>
+  )
+}
+
+type AfterBlock = { kind: 'md'; text: string } | { kind: 'series'; heading: string | null; table: Table }
+
+/**
+ * The text after the hard-dates table, cut around every table whose header starts with "Series". Such a table
+ * and the `###` heading right above it become a series block; everything else stays markdown.
+ */
+function splitSeries(md: string): AfterBlock[] {
+  const out: AfterBlock[] = []
+  let carry = ''
+  let rest = md
+  for (;;) {
+    const { before, table, after } = splitAroundTable(rest)
+    const parsed = table ? parseTable(table) : null
+    if (!parsed) break
+    if (/^series$/i.test(parsed.head[0] ?? '')) {
+      const lines = before.split('\n')
+      let j = lines.length - 1
+      while (j >= 0 && !lines[j].trim()) j--
+      const heading = j >= 0 && /^###\s/.test(lines[j]) ? lines[j].replace(/^###\s+/, '').trim() : null
+      out.push({ kind: 'md', text: carry + (heading ? lines.slice(0, j).join('\n') : before) })
+      out.push({ kind: 'series', heading, table: parsed })
+      carry = ''
+    } else {
+      carry += before + '\n' + table + '\n'
+    }
+    rest = after
+  }
+  out.push({ kind: 'md', text: carry + rest })
+  return out
+}
+
+/** Recurring series (Series | Course | When | Note) in the ledger look; on phones the chip leads the Series cell. */
+function RecurringSeries({ heading, table }: { heading: string | null; table: Table }) {
+  return (
+    <>
+      {heading && <h3>{heading}</h3>}
+      <table className="ledger recurring">
+        <thead>
+          <tr><th>Series</th><th className="course">Course</th><th className="when">When</th><th className="note">Note</th></tr>
+        </thead>
+        <tbody>
+          {table.rows.map((cells, i) => {
+            const [series = '', course = '', when = '', note = ''] = cells
+            const code = course.replace(/\s+/g, '')
+            const chip = isCourseCode(code) ? <CourseChip code={code} /> : null
+            return (
+              <tr key={i}>
+                <td className="series">
+                  {chip && <span className="chip-inline">{chip}</span>}
+                  <Md text={series} path={PATH} inline />
+                </td>
+                <td className="course nowrap">{chip ?? course}</td>
+                <td className="when"><Md text={when} path={PATH} inline /></td>
+                <td className="note"><Md text={note} path={PATH} inline /></td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </>
   )
 }
@@ -197,7 +264,7 @@ function groupByDate(entries: LogEntry[]): { date: string; entries: LogEntry[] }
   return out
 }
 
-/** Session log as a list, newest first, ten entries a page, each entry a title with its detail behind "more". */
+/** Session log as a list, newest first, ten entries a page, each entry a title with its detail behind "more" as one bullet per sentence. */
 function SessionLog({ heading, body }: { heading: string; body: string }) {
   const table = parseTable(body)
   // Newest first; the key is the row's position in the file, which only ever grows at the end.
@@ -228,7 +295,11 @@ function SessionLog({ heading, body }: { heading: string; body: string }) {
                       <Md text={title} path={PATH} inline />
                       {detail && <button type="button" className="link" aria-expanded={isOpen} onClick={() => toggle(e.i)}>{isOpen ? 'less' : 'more'}</button>}
                     </div>
-                    {detail && isOpen && <div className="log-more"><Md text={detail} path={PATH} inline /></div>}
+                    {detail && isOpen && (
+                      <ul className="log-more">
+                        {splitSentences(detail).map((d, k) => <li key={k}><Md text={d} path={PATH} inline /></li>)}
+                      </ul>
+                    )}
                   </li>
                 )
               })}

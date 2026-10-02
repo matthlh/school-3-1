@@ -60,8 +60,9 @@ or stages the one missing piece asked for.
 
 ## "fetch what's due today" (or "fetch what was due today")
 Local only, no fetch — this is a read, not a sync:
-1. `grep -E '^\| [^|]*Sep 22' ledger.md` (today's `Mon DD`) — a hard-dates row has today's date in its
-   FIRST cell; ignore hits from the `### Recurring series` table below it, whose Dates column lists many days.
+1. `grep -E '^\| [^|]*Oct 2([^0-9]|$)' ledger.md` (today's `Mon D`, with the day anchored so Oct 2 does not also match
+   Oct 20 to Oct 29) — a hard-dates row has today's date in its FIRST cell. The `### Recurring series` table has no dates;
+   a series whose When cell names today's weekday shows up through its Things3 to-do in step 2.
 2. `osascript .claude/skills/morning-check/scripts/things_today.applescript` and pick out Today
    items whose `due=` is today's date.
 3. Report both as one short list: what's actually due today (assignments, quizzes, exams), not

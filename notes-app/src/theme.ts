@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import { PALETTES, currentPalette } from './palette'
 
 export interface Tone { tint: string; ink: string; line: string }
 interface Pair { light: Tone; dark: Tone }
@@ -33,15 +34,13 @@ export function currentTheme(): Theme {
   return t === 'light' || t === 'dark' ? t : 'auto'
 }
 
-const PAGE_BG = { light: '#f6f8fd', dark: '#15171d' }
-
 /** Mirror a theme onto <html data-theme> ('auto' removes the attribute so the OS decides) and the browser-chrome colour. */
 function applyTo(t: Theme) {
   if (typeof document === 'undefined') return
   const el = document.documentElement
   if (t === 'auto') delete el.dataset.theme
   else el.dataset.theme = t
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isDark() ? PAGE_BG.dark : PAGE_BG.light)
+  syncChrome()
 }
 
 /** Apply the stored preference (index.html does this inline before paint too; this keeps the two in step). */
@@ -67,6 +66,16 @@ export const isDark = () => {
   return darkQuery()?.matches ?? false
 }
 
+/** Paint the browser chrome (meta theme-color) with the page colour the stylesheet resolves for the current theme
+    and palette. Before the stylesheet has loaded, --bg reads empty, so the palette's own page colour stands in. */
+function syncChrome() {
+  if (typeof document === 'undefined') return
+  const css = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim()
+  const p = PALETTES.find((x) => x.id === currentPalette()) ?? PALETTES[0]
+  const bg = css || (isDark() ? p.dark.page : p.light.page)
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', bg)
+}
+
 export function tone(code: string): Tone {
   let i = FIXED[code]
   if (i === undefined) {
@@ -84,3 +93,10 @@ export function toneStyle(code: string): CSSProperties {
 
 // Runs last: applyTo() reads isDark(), so the whole module must be initialised first.
 applyTheme()
+if (typeof window !== 'undefined') {
+  // The chrome colour follows a palette pick and, in Auto, the OS flipping between light and dark.
+  window.addEventListener('palettechange', syncChrome)
+  darkQuery()?.addEventListener('change', syncChrome)
+  // In dev the stylesheet is injected after this module runs; read --bg again once it is in.
+  requestAnimationFrame(syncChrome)
+}

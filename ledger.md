@@ -184,24 +184,23 @@ _56 topics due as of Fri Oct 2. Say **quiz me**._
 
 ### Recurring series
 
-| Series | Course | Rule | Dates |
+| Series | Course | When | Note |
 |---|---|---|---|
-| Pre-lab quizzes | STAT 251 | One per lab for Labs 2–8, due at 23:59 on a Friday. Confirmed on Canvas 2026-09-10. Lab 2's moved to Fri Oct 9 on Sep 25 because there are no labs the week of Sep 28 (opens Fri Oct 2). | Oct 9, Oct 16, Oct 23, Nov 13, Nov 27, Dec 4, Dec 11 |
-| WeBWorK | STAT 251 | Due at 23:59 with no late submissions. Sets 1, 2 and 3 are confirmed at Sep 22, Sep 29 and Oct 6. Sets 4–10 are still unconfirmed, so each due date is read off WeBWorK the day the set opens (the `~` rows above). Each set has run open-day plus seven days so far. | Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Oct 27, Nov 10, Nov 24, Dec 1, Dec 8 |
-| Labs | CPSC 310 | Lab weeks run Friday to Thursday from Sep 11. Work is due by the start of the next lab unless PrairieLearn's own credit window says otherwise. The Wed Sep 30 and Mon Oct 12 sections are cancelled; anyone in those sections attends another one that week. | Weekly from Fri Sep 11 |
-| Mini-quizzes | ASIA 250 | Each quiz publishes with its lecture on a Monday and hard-locks the following Monday at 23:59. Late is zero with no exceptions. Nothing locks on Oct 19 or Nov 16 because the Oct 12 and Nov 9 weeks have no lecture. | Sep 15, Sep 21, Sep 28, Oct 5, Oct 12, Oct 26, Nov 2, Nov 9, Nov 23, Nov 30, Dec 7 |
-
+| Pre-lab quizzes | STAT 251 | Fridays, 23:59 | Labs 2 to 8. None on Oct 30, Nov 6 or Nov 20. |
+| WeBWorK | STAT 251 | Tuesdays, 23:59 | No late submissions. None on Nov 3 or Nov 17. |
+| Labs | CPSC 310 | Thursdays, 23:59 | Some stay open two weeks. PrairieLearn's close date wins. |
+| Mini-quizzes | ASIA 250 | Mondays, 23:59 | Late is zero. None on Oct 19 or Nov 16. |
 
 ## Grades so far
 
-Canvas current score per course; the morning check updates a row when Canvas changes.
+Each row holds the course's Canvas current score. The CPSC 310 row also holds PrairieLearn scores once each assessment closes. The morning check updates a row when either source changes.
 
 | Course | Score | As of |
 |---|---|---|
 | ASIA 250 | total hidden on Canvas; Declaration 100/100, Mini-Quiz 1 10/10, Mini-Quiz 2 10/10, Mini-Quiz 3 9.5/10 | 2026-09-30 |
-| CPSC 310 | 100% (D1-Auto 100/100, the only Canvas item so far) | 2026-09-30 |
+| CPSC 310 | 100%; D1-Auto 100/100; LAB01 100/100; LAB02 74/100; the total is Canvas only and the labs come from PrairieLearn | 2026-10-02 |
 | PHIL 385 | — | |
-| STAT 251 | — | |
+| STAT 251 | 37.84%; iClicker 14/37; classes 5 to 9 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 is posted with no score; the total counts only the iClicker polls and WeBWorK is not on Canvas yet | 2026-10-02 |
 
 ## Session log
 | Date | What we did |
@@ -280,6 +279,6 @@ Canvas current score per course; the morning check updates a row when Canvas cha
 | 2026-09-30 | Morning check: WeBWorK 2 finished 12/12 before the lock. ASIA 250 Mini-Quiz 3 9.5/10 and CPSC 310 D1-Auto 100/100 recorded in Grades so far. CPSC 310 lec 6 deck (Test Doubles, DIP & LSP) posted; LAB03 at 18%. STAT 251 lecture 10 deck staged and the Chapter 4 pre-activity worksheet (before Mon Oct 5) added to Things3. Sep 30 (university closed) added to term.py. No classes today. |
 | 2026-10-01 | Logged CPSC 310 lec 7 (Thu Oct 1, deck 04b-test-robustness.pdf): test-double and LSP recap, strong test suites, equivalence class partitioning with the getLetterGrade boundary table, coverage and its limits, plus the reader's Blackbox and Glassbox chapters. 10 questions, 3 new ledger topics due Oct 2. Staged outline _07 consumed. Lec 6 (Sep 29, Test Doubles, DIP & LSP) is still unlogged. Left unpublished in the working tree. |
 | 2026-10-02 | Morning check: CPSC 310 LAB02 closed on PrairieLearn at 74%, to-do closed. STAT 251 Pre-lab Quiz Lab 2 and CPSC 310 LAB04 opened (both already in Things3). Lecture counter in `term.py` / `things_plan.py` now tracks lecture numbers, so CPSC 310 lec 6 (Sep 29) shows as unlogged again and its to-do was reopened. WeBWorK signed out since Oct 1. |
-| 2026-10-02 | STAT 251 lec 10 logged from the after-class deck (Matt not attending): 12 questions, 3 ledger topics due Oct 3. The lecture 10 Canvas page says answering iClicker from outside class counts as cheating; recorded in logistics. No recording link on the page yet. |
+| 2026-10-02 | STAT 251 lec 10 logged from the after-class deck: 12 questions, 3 ledger topics due Oct 3. The lecture 10 Canvas page says answering iClicker from outside class counts as cheating; recorded in logistics. No recording link on the page yet. |
 | 2026-10-02 | Equations on the site are now LaTeX (Matt: "proper latex formatting instead of inline"). The notes app renders `$$…$$` with KaTeX; every STAT 251 lecture, the question bank and the topics page were converted, 1468 formulas, each display equation one step per line so it fits a phone. 41 question ids changed; the 2 with quiz history were moved to their new ids. The transit deck template and the offline pack render the same math as MathML. Rule in CLAUDE.md; checker `notes-app/scripts/check-math.mjs`. |
 | 2026-10-02 | Logged CPSC 310 lec 6 (Tue Sep 29, deck 04a-test-doubles.pdf; Matt absent): printStatus testability problems, DIP, stubs and spies, when to double, compiling vs keeping the contract, LSP and the methods rule. 10 true/false-with-justification questions on the existing Test doubles and LSP row. Exam-format intel (all true/false, from a classmate) recorded in the syllabus, the bank header and CLAUDE.md. Staged outline _06 consumed. Left unpublished. |

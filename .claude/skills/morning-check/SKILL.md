@@ -198,6 +198,10 @@ paste it into chat.)
 
 **Grades:** a changed current score or a newly scored submission is a "New since yesterday" line
 (`CPSC 310 · D1 scored 92/100 · Canvas`) and updates the **Grades so far** table in `ledger.md`.
+CPSC 310 also takes its lab scores from PrairieLearn (§6), because Canvas only carries the deliverables' autograde (Matt, 2026-10-02).
+**Score cell format** (the notes site parses it): an optional total first (`100%`), then items as `Name got/of`, all separated
+by `;`, then any plain remarks, each its own `;`-separated piece with no commas or parentheses inside it. Example: `100%; D1-Auto 100/100; LAB01 100/100; LAB02 74/100; the total is
+Canvas only and the labs come from PrairieLearn`. A course whose Canvas total is hidden starts with `total hidden on Canvas;`.
 **Bonus watch:** any announcement, Piazza note, or email containing "bonus" / "extra credit" becomes a
 **Plan today** to-do (`things_add.py … --tags "30m, P1" --when today`) — Premarathna adds small bonuses through the term and Matt takes every one.
 
@@ -330,6 +334,11 @@ Sep 18 from the course-site rule, PrairieLearn's actual window was Sep 24 23:59)
 ledger.md and Things3 to PrairieLearn's date and flag it as a correction, not just a diff. If the
 session fails 3 consecutive attempts, skip it — the windows are already in ledger.md and Things3,
 so only the status column is lost.
+**Grades from PrairieLearn:** when an assessment's window has closed (LABnn and PRAQnn; a DELIVn row on PrairieLearn is the TA-marked design analysis, not the autograde,
+which comes from Canvas as D1-Auto, so it goes in only once its mark is final and only as `D1 design analysis 25/100`),
+its final score goes into the CPSC 310 row of **Grades so far** as `LAB02 74/100` (percent shown as out of 100), with the as-of
+date set to today. An open assessment's running score is a status, not a grade, so it stays out of the row. A newly closed score
+is also a "New since yesterday" line (`CPSC 310 · LAB02 closed at 74% · PrairieLearn`).
 
 ---
 

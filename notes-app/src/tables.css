@@ -58,7 +58,7 @@ table.ledger td.what code { font-size: .88em; }
 .ledger-page blockquote { margin: 1em 0; padding: .55em 1em; border-left: 3px solid var(--warn, var(--border3)); border-radius: 0 9px 9px 0; background: var(--panel); color: var(--fg); }
 .ledger-page blockquote p { margin: .3em 0; }
 .ledger-page h3 { margin-top: 1.4em; }
-/* Markdown tables on the ledger page (recurring series, grades) share the hairline look of the built tables */
+/* Any other markdown table on the ledger page shares the hairline look of the built tables */
 .ledger-page article table, .ledger-page table:not(.ledger):not(.due) { display: table; width: 100%; font-size: 13.5px; }
 .ledger-page table:not(.ledger):not(.due) td, .ledger-page table:not(.ledger):not(.due) th { border: 0; border-top: 1px solid var(--hair); padding: 6px 8px; background: none; }
 .ledger-page table:not(.ledger):not(.due) th { border-top: 0; border-bottom: 1px solid var(--border2); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
@@ -86,7 +86,26 @@ table.ledger.grades td.score { line-height: 1.4; }
 .log-title { font-weight: 500; }
 .log-title code, .log-more code { font-size: .88em; }
 .log-title .link { font-size: 12px; margin-left: 2px; padding: 0 4px; }
-.log-more { margin-top: 3px; font-size: 13px; font-weight: 400; color: var(--fg2); }
+/* The detail behind "more": one small sub-bullet per sentence, indented under the title */
+.ledger-page ul.log-more { list-style: none; margin: 3px 0 1px; padding: 0; font-size: 13px; font-weight: 400; line-height: 1.42; color: var(--fg2); }
+.ledger-page ul.log-more li { position: relative; margin: 2px 0 0; padding-left: 12px; }
+.ledger-page ul.log-more li::before { content: ''; position: absolute; left: 1px; top: .6em; width: 4px; height: 4px; border-radius: 50%; background: var(--border3); }
+
+/* Recurring series under the term calendar: Series | Course | When | Note */
+table.ledger.recurring td.series { font-weight: 500; }
+table.ledger.recurring td.when { white-space: nowrap; color: var(--fg2); }
+table.ledger.recurring td.note { color: var(--muted); font-size: 13px; }
+table.ledger.recurring td.note code, table.ledger.recurring td.series code { font-size: .88em; }
+table.ledger.recurring .chip-inline { display: none; margin-right: 6px; }   /* phones only; the Course column carries the chip on wide screens */
+
+/* Links page: the groups pack into two balanced columns, so a short group leaves no gap under it */
+.linkgroups { column-count: 1; column-gap: 14px; margin: 14px 0 8px; }
+.linkgroups + * { margin-top: 0; }   /* the last panel's 14px bottom margin plus the 8px above make a 22px gap to whatever follows */
+@media (min-width: 700px) { .linkgroups { column-count: 2; } }
+/* An inline-block panel is never split across columns, even in Safari, which ignores break-inside on blocks. */
+.linkgroups .panel { display: inline-block; width: 100%; vertical-align: top; break-inside: avoid; margin: 0 0 14px; padding: 10px 16px 12px; --ink: var(--muted); }
+.linkgroups .panel-head { align-items: center; min-height: 24px; margin-bottom: 2px; }
+.linkgroups .panel-head .chip { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; }
 
 @media (max-width: 640px) {
   table.ledger td.lec, table.ledger th.lec, table.ledger td.last, table.ledger th.last { display: none; }
@@ -101,4 +120,8 @@ table.ledger.grades td.score { line-height: 1.4; }
   table.ledger.calendar .chip-inline { display: inline; }
   table.ledger.calendar td.date, table.ledger.calendar td.weight { white-space: normal; }   /* "Fri Oct 2, 23:59" and "+2% bonus" may wrap so the What column keeps its width */
   table.ledger.calendar td.date { width: 72px; }
+  table.ledger.recurring td.course, table.ledger.recurring th.course { display: none; }
+  table.ledger.recurring .chip-inline { display: inline; }
+  table.ledger.recurring td.series, table.ledger.recurring td.note { overflow-wrap: anywhere; }
+  table.ledger.recurring td.when { white-space: normal; width: 76px; }   /* "Thursdays, 23:59" wraps after the comma so the Note column keeps its width */
 }
