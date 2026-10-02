@@ -249,8 +249,10 @@ line; Claude never signs in). Read-only: never touch an answer box, Preview, Sub
   reporting anything.** Reporting a set as unread when it is actually done is worse than a slow run —
   it kept a completed WeBWorK 1 in the plan for days.
 - Fallback when the domain is denied or the tab is still signed out after three attempts: one Heads-up
-  line asking him to attach the set's hardcopy PDF (problem list → Download Hardcopy) with
-  `log STAT251 webwork N`.
+  line, nothing more — "WeBWorK signed out; WeBWorK N status unknown, due <date>." No push
+  notification and no chasing (Matt, 2026-10-02: "it's only stats and it's weekly assignments anyways,
+  so just give the note"). He attaches the hardcopy PDF with `log STAT251 webwork N` when he wants it
+  banked.
 - Verified 2026-09-16: problem pages `Assignment-01/1/` and `/2/` read cleanly with `get_page_text`,
   and the histogram came through a screenshot; WeBWorK 1 itself was banked from the PDF he attached.
 
@@ -369,7 +371,8 @@ pre-questions above).
    reading with a file id: pull its text with `scripts/canvadoc_text.js` (recipe in the file header:
    file page → canvadoc session → fetch `urls.pdf_download` → pdf.js; paint, `get_page_text`), then
    write `courses/<CODE>/lectures/_NN-<slug>.md` (STAT 251: lecture number from the page title;
-   ASIA 250: week number) — plain-sentence outline of the deck, main topics in slide order, a
+   ASIA 250: week number) — plain-sentence outline of the deck (formulas in LaTeX between `$$` markers, per
+   CLAUDE.md), main topics in slide order, a
    `## Likely quiz targets` line for ASIA 250, and 3 pre-lecture questions. A reading (not a deck)
    goes to `courses/<CODE>/readings/_<slug>.md` as an outline plus 3 questions tagged to the week's
    topic. Big books (Harvey, Luhrmann): extract only the assigned page range.
@@ -423,6 +426,13 @@ pre-questions above).
    passing `url:` (the fixed URL below — **never omit it**, or it forks a new artifact instead of
    updating this one) and `capabilities: {"db": {}}` still declared. `SendUserFile` is no longer
    used for this — the artifact is the deck now.
+   **Math (2026-10-02):** STAT 251 questions and answers carry LaTeX between `$$` markers. The page must
+   render it: start from `routines/transit-deck.html`, which loads `katex.min.js` from cdn.jsdelivr.net and
+   passes every question and answer through its `mathify` function (MathML output, because an artifact page
+   cannot load KaTeX's stylesheet; a few CSS rules line aligned rows up in Chrome). If you rebuild the page
+   another way, carry over that script tag, `mathify`, the math CSS, and the `${mathify(item.q)}` and
+   `${mathify(item.a)}` calls. Convert answer newlines to `<br>` as before; `mathify` reads a `$$` span that
+   contains a `<br>` as a display equation.
 
 **Transit Deck artifact (fixed URL, update in place):**
 https://claude.ai/code/artifact/c537efc7-50cf-4476-9aa5-b118cd0fa480

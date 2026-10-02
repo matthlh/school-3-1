@@ -72,18 +72,26 @@ def lecture_dates(code, today):
         d += dt.timedelta(days=1)
     return sorted(x for x in out if x <= today)
 
-def logged_count(code):
-    """Count lectures covered by files in courses/<CODE>/lectures/. A file named
-    `01-02-<slug>.md` covers two lectures (Matt may log a week in one file)."""
+def logged_numbers(code):
+    """Lecture numbers covered by files in courses/<CODE>/lectures/. A file named
+    `01-02-<slug>.md` covers two lectures (Matt may log a week in one file); a leading
+    underscore marks a pre-lecture outline, not a log. Returns a set so a gap (lec 7 logged,
+    lec 6 not) shows up as lec 6 unlogged instead of hiding behind a count."""
     import re
-    total = 0
+    nums = set()
     for f in glob.glob(os.path.join(ROOT, "courses", code, "lectures", "*.md")):
         base = os.path.basename(f)
         if base.startswith("_"):
             continue
         m = re.match(r"^(\d+)(?:-(\d+))?-", base)
-        total += (int(m.group(2)) - int(m.group(1)) + 1) if (m and m.group(2)) else 1
-    return total
+        if not m:
+            continue
+        a, b = int(m.group(1)), int(m.group(2) or m.group(1))
+        nums.update(range(a, b + 1))
+    return nums
+
+def logged_count(code):
+    return len(logged_numbers(code))
 
 def main():
     today = D.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else dt.datetime.now().astimezone().date()
@@ -92,10 +100,12 @@ def main():
     print("-- Unlogged lectures (held so far vs. files in courses/<CODE>/lectures/)")
     for code in COURSES:
         held = lecture_dates(code, today)
-        n_logged = logged_count(code)
-        missing = len(held) - n_logged
+        logged = logged_numbers(code)
+        n_logged = len(logged)
+        unlogged = [d for i, d in enumerate(held) if (i + 1) not in logged]
+        missing = len(unlogged)
         if missing > 0:
-            recent = ", ".join(f"{d:%b %-d}" for d in held[-missing:])
+            recent = ", ".join(f"{d:%b %-d}" for d in unlogged)
             print(f"  {code}: {len(held)} held, {n_logged} logged → {missing} UNLOGGED ({recent})")
         else:
             print(f"  {code}: {len(held)} held, {n_logged} logged — up to date")
