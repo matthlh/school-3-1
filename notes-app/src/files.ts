@@ -94,6 +94,7 @@ export function courseOf(path: string): string | null {
 /** Human label for any known path. */
 export function labelFor(path: string, tree: Tree): string {
   if (path === 'ledger.md') return 'Ledger'
+  if (path === 'links.md') return 'Links'
   for (const c of tree.courses) {
     const e = [...c.main, ...c.lectures].find((x) => x.path === path)
     if (e) return e.label

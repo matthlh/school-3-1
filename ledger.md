@@ -191,9 +191,6 @@ _56 topics due as of Fri Oct 2. Say **quiz me**._
 | Labs | CPSC 310 | Lab weeks run Friday to Thursday from Sep 11. Work is due by the start of the next lab unless PrairieLearn's own credit window says otherwise. The Wed Sep 30 and Mon Oct 12 sections are cancelled; anyone in those sections attends another one that week. | Weekly from Fri Sep 11 |
 | Mini-quizzes | ASIA 250 | Each quiz publishes with its lecture on a Monday and hard-locks the following Monday at 23:59. Late is zero with no exceptions. Nothing locks on Oct 19 or Nov 16 because the Oct 12 and Nov 9 weeks have no lecture. | Sep 15, Sep 21, Sep 28, Oct 5, Oct 12, Oct 26, Nov 2, Nov 9, Nov 23, Nov 30, Dec 7 |
 
-### Open questions
-
-- CPSC 310 has nothing on Canvas. Its deadlines exist only on the course site and PrairieLearn, so Canvas silence does not mean nothing is due.
 
 ## Grades so far
 

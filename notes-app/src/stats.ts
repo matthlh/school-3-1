@@ -83,6 +83,15 @@ export function formatDate(iso: string): string {
   return `${DOW[d.getDay()]} ${MON[d.getMonth()]} ${d.getDate()}`
 }
 
+/** "2026-09-29" → "Sep 29", with the year added ("Sep 29, 2027") when it is not this year. Anything that is not an ISO date comes back unchanged. */
+export function shortDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim())
+  if (!m) return iso
+  const d = new Date(+m[1], +m[2] - 1, +m[3])
+  const s = `${MON[d.getMonth()]} ${d.getDate()}`
+  return d.getFullYear() === new Date().getFullYear() ? s : `${s}, ${d.getFullYear()}`
+}
+
 /** Whole days from ISO date `a` to ISO date `b` (positive when `b` is later). */
 export function daysBetween(a: string, b: string): number {
   return Math.round((new Date(b + 'T12:00:00').getTime() - new Date(a + 'T12:00:00').getTime()) / 86400000)

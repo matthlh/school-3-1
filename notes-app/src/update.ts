@@ -54,7 +54,6 @@ const snapshot = () => info
 export function useUpdate(): UpdateInfo {
   return useSyncExternalStore(subscribe, snapshot, snapshot)
 }
-export const getUpdate = snapshot
 
 // sessionStorage is per tab and survives a reload, which is exactly the scope the loop guard needs.
 function readSession<T>(key: string): T | null {
@@ -120,9 +119,9 @@ function armNextNavigation() {
   window.addEventListener('hashchange', onHash)
 }
 
-export async function checkForUpdate(force = false): Promise<UpdateStatus> {
+export async function checkForUpdate(): Promise<UpdateStatus> {
   if (inFlight) return inFlight
-  if (!force && info.checkedAt !== null && Date.now() - info.checkedAt < MIN_GAP_MS) return info.status
+  if (info.checkedAt !== null && Date.now() - info.checkedAt < MIN_GAP_MS) return info.status
   const startedAt = performance.now()
   inFlight = (async () => {
     if (info.status !== 'available') emit({ status: 'checking' })
