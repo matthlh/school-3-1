@@ -7,7 +7,7 @@ import { Md } from './Md'
 /** Trailing sections kept for Claude render folded shut, like the Viewer does. */
 const FOLDED = /reference|for claude/i
 
-/** links.md as grouped link lists: "Everywhere" first, then one tinted panel per course in file order. */
+/** links.md as grouped link lists: "Everywhere" first, then one tinted panel per course (the longest first, the rest in file order). */
 export function LinksView({ text, rows }: { text: string; rows: LinkRow[] }) {
   const [pre, ...rest] = splitSections(text)
   const title = firstHeading(text) ?? 'Links'
@@ -19,8 +19,13 @@ export function LinksView({ text, rows }: { text: string; rows: LinkRow[] }) {
     .join('\n')
     .trim()
   const codes = [...new Set(rows.map((r) => r.course))]
+  const count = (c: string) => rows.filter((r) => r.course === c).length
+  // The groups flow down two balanced CSS columns. The course with the most links goes right after Everywhere,
+  // so it tops up the short first column and the other courses fill the second one in file order.
   const courses = codes.filter((c) => c !== 'ALL')
-  const groups = (codes.includes('ALL') ? ['ALL'] : []).concat(courses)
+  const longest = courses.reduce<string | null>((best, c) => (best === null || count(c) > count(best) ? c : best), null)
+  const ordered = longest ? [longest, ...courses.filter((c) => c !== longest)] : courses
+  const groups = (codes.includes('ALL') ? ['ALL'] : []).concat(ordered)
 
   return (
     <article>

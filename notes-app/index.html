@@ -7,10 +7,12 @@
     <meta name="theme-color" content="#f6f8fd" />
     <title>School 3-1 notes</title>
     <script>
-      // Apply a stored light/dark choice before the first paint so the page never flashes the wrong theme.
+      // Apply a stored light/dark choice and colour palette before the first paint so the page never flashes the wrong look.
       try {
         var t = localStorage.getItem('theme');
         if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+        var p = localStorage.getItem('palette');
+        if (p === 'sage' || p === 'lavender' || p === 'sand' || p === 'slate') document.documentElement.dataset.palette = p;
         var v = localStorage.getItem('visual');
         if (v === 'abstract' || v === 'blobs' || v === 'wireframe') document.documentElement.dataset.visual = v;
       } catch (e) {}

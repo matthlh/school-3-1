@@ -127,15 +127,20 @@ export interface Deadline { date: string; time: string; approx: boolean; course:
 const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
 const DATE_RE = /(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)?\s*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})(?:,?\s*(\d{1,2}:\d{2}))?/g
 
-/** ledger.md → "## Term calendar" rows with a parseable date. A range ("Sep 11 → Sep 24") keeps its end. */
+/**
+ * ledger.md → "## Term calendar" rows with a parseable date. A range ("Sep 11 → Sep 24") keeps its end.
+ * A table whose header starts with "Series" (the recurring series) is skipped whole: its rows are weekly, not dated.
+ */
 export function parseCalendar(md: string, year: number): Deadline[] {
   const sec = extractSection(md, /^term calendar/i)
   if (!sec) return []
   const out: Deadline[] = []
+  let series = false
   for (const line of sec.split('\n')) {
-    if (!line.trim().startsWith('|')) continue
+    if (!line.trim().startsWith('|')) { series = false; continue }
     const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
-    if (cells.length < 3 || cells[0] === 'Date' || /^-+$/.test(cells[0])) continue
+    if (/^series$/i.test(cells[0] ?? '')) series = true
+    if (series || cells.length < 3 || cells[0] === 'Date' || /^-+$/.test(cells[0])) continue
     const plain = cells[0].replace(/\*/g, '')
     const matches = [...plain.matchAll(DATE_RE)]
     if (matches.length === 0) continue
@@ -224,7 +229,7 @@ export interface GradeRow {
 /** "the only Canvas item so far" → "The only Canvas item so far." */
 function sentence(s: string): string {
   const t = s.trim()
-  const cap = t.charAt(0).toUpperCase() + t.slice(1)
+  const cap = /^[a-z][A-Z]/.test(t) ? t : t.charAt(0).toUpperCase() + t.slice(1)   // "iClicker" stays as written
   return /[.!?]$/.test(cap) ? cap : cap + '.'
 }
 
@@ -261,26 +266,66 @@ export function parseGrades(body: string): GradeRow[] {
   return out
 }
 
+/** Words that end in a period without ending a sentence ("e.g. the", "p. 147", "vs. the Judge"). */
+const ABBREV = new Set(['e.g', 'i.e', 'vs', 'cf', 'p', 'pp', 'ca', 'approx', 'dr', 'mr', 'mrs', 'prof', 'st', 'fig'])
+
 /**
- * A session-log entry split for display: the title runs up to and including the first ". " that is outside
- * backticks and parentheses; the rest is the detail. An entry of 110 characters or fewer is all title.
+ * Indices just past each sentence-ending ". " in `s`. A period ends a sentence when a space follows it and it sits
+ * outside inline code, `$$…$$` math, parentheses, link brackets and a balanced `**bold**` run, and the word before
+ * it is not an abbreviation such as "e.g". A decimal ("9.5/10") never qualifies because no space follows its period.
+ */
+function sentenceEnds(s: string): number[] {
+  const out: number[] = []
+  // Bold only shields its contents when the `**` markers outside code pair up; a stray one is ignored.
+  const boldPairs = (s.replace(/`[^`]*`/g, '').match(/\*\*/g) ?? []).length % 2 === 0
+  let code = false
+  let math = false
+  let bold = false
+  let depth = 0
+  for (let i = 0; i < s.length - 1; i++) {
+    const ch = s[i]
+    if (ch === '`' && !math) { code = !code; continue }
+    if (code) continue
+    if (ch === '$' && s[i + 1] === '$') { math = !math; i++; continue }
+    if (math) continue
+    if (ch === '*' && s[i + 1] === '*') { if (boldPairs) bold = !bold; i++; continue }
+    if (ch === '(' || ch === '[') depth++
+    else if (ch === ')' || ch === ']') depth = Math.max(0, depth - 1)
+    else if (ch === '.' && depth === 0 && !bold && s[i + 1] === ' ') {
+      const word = /([^\s(\[*_"'“‘]*)$/.exec(s.slice(0, i))?.[1] ?? ''
+      if (ABBREV.has(word.toLowerCase())) continue
+      out.push(i + 1)
+    }
+  }
+  return out
+}
+
+/** Text split into sentences by the rule in `sentenceEnds`; each sentence keeps its closing period. */
+export function splitSentences(text: string): string[] {
+  const s = text.trim()
+  if (!s) return []
+  const out: string[] = []
+  let from = 0
+  for (const end of sentenceEnds(s)) {
+    const piece = s.slice(from, end).trim()
+    if (piece) out.push(piece)
+    from = end
+  }
+  const tail = s.slice(from).trim()
+  if (tail) out.push(tail)
+  return out
+}
+
+/**
+ * A session-log entry split for display: the title is the first sentence (see `splitSentences`); the rest is the
+ * detail. An entry of 110 characters or fewer is all title.
  */
 export function splitLogEntry(text: string): { title: string; detail: string | null } {
   const s = text.trim()
   if (s.length <= 110) return { title: s, detail: null }
-  let code = false
-  let depth = 0
-  for (let i = 0; i < s.length - 1; i++) {
-    const ch = s[i]
-    if (ch === '`') { code = !code; continue }
-    if (code) continue
-    if (ch === '(') depth++
-    else if (ch === ')') depth = Math.max(0, depth - 1)
-    else if (ch === '.' && depth === 0 && s[i + 1] === ' ') {
-      const title = s.slice(0, i + 1).trim()
-      const detail = s.slice(i + 2).trim()
-      return detail ? { title, detail } : { title: s, detail: null }
-    }
-  }
-  return { title: s, detail: null }
+  const end = sentenceEnds(s)[0]
+  if (end === undefined) return { title: s, detail: null }
+  const title = s.slice(0, end).trim()
+  const detail = s.slice(end + 1).trim()
+  return detail ? { title, detail } : { title: s, detail: null }
 }

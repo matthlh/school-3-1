@@ -1,9 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { ThemeToggle } from './ThemeToggle'
+import { PALETTES, currentPalette, setPalette, type Palette } from './palette'
+import { darkQuery, isDark } from './theme'
 import { VISUALS, currentVisual, nextVisual, setVisual, type Visual } from './visual'
 import { buildLabel } from './update'
 
-/** Gear button in the top bar. The popover holds Appearance and the Super secret settings button. */
+/** Gear button in the top bar. The popover holds Appearance, Colours and the Super secret settings button. */
 export function Settings() {
   const [open, setOpen] = useState(false)
   const [visual, setV] = useState<Visual>(currentVisual)
@@ -46,6 +48,10 @@ export function Settings() {
             <ThemeToggle />
           </div>
           <div className="row">
+            <span className="lbl">Colours</span>
+            <PalettePicker />
+          </div>
+          <div className="row">
             <span className="lbl">Secret visuals</span>
             <button
               ref={secretRef}
@@ -66,6 +72,46 @@ export function Settings() {
           )}
         </div>
       )}
+    </div>
+  )
+}
+
+/** One round swatch per palette: the page colour and the accent of the theme showing now. A click applies it at once. */
+function PalettePicker() {
+  const [palette, setP] = useState<Palette>(currentPalette)
+  const [dark, setDark] = useState(isDark)
+
+  useEffect(() => {
+    const syncPalette = () => setP(currentPalette())
+    const syncDark = () => setDark(isDark())
+    const q = darkQuery()
+    window.addEventListener('palettechange', syncPalette)
+    window.addEventListener('themechange', syncDark)
+    q?.addEventListener('change', syncDark)
+    return () => {
+      window.removeEventListener('palettechange', syncPalette)
+      window.removeEventListener('themechange', syncDark)
+      q?.removeEventListener('change', syncDark)
+    }
+  }, [])
+
+  return (
+    <div className="swatches" role="group" aria-label="Colours">
+      {PALETTES.map((p) => {
+        const s = dark ? p.dark : p.light
+        return (
+          <button
+            key={p.id}
+            type="button"
+            className="swatch"
+            aria-label={p.label}
+            title={p.label}
+            aria-pressed={palette === p.id}
+            style={{ '--sw-page': s.page, '--sw-accent': s.accent } as CSSProperties}
+            onClick={() => setPalette(p.id)}
+          />
+        )
+      })}
     </div>
   )
 }
