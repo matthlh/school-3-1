@@ -120,3 +120,85 @@ Format:
 ### Q: Name the three poisons, and say what the arhat and the Buddha have in common with respect to them and what the Buddha does that the arhat does not.
 **Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
 **A:** Anger, passion and ignorance, where ignorance means the illusion of one's own self. Both the arhat and the Buddha are free of rebirth and of the three poisons. The Buddha additionally creates a Buddha Land where bodhisattvas can be reborn to train.
+
+## Lec 2 — Religious history of South Asia (logged 2026-10-02)
+
+### Q: What did Mircea Eliade claim about shamanism, and what three things does the lecture say shamanic techniques were developed to do?
+**Topic:** Shamanism, ecstasy and enstasy  **Lec:** 2  **Type:** recall
+**A:** Eliade held that shamanism was the proto-religion of the first human societies. Its techniques for altering consciousness were developed to solve social problems: healing, death rituals, and communication with spirits.
+
+### Q: A Korean woman falls ill with an illness no doctor can cure. A shaman tells her the only cure is to apprentice herself and be initiated into the spirit that is afflicting her. Name the illness in Korean, explain what the lecture says the "journey" is in this case, and say what the basic myth of shamanism rests on.
+**Topic:** Shamanism, ecstasy and enstasy  **Lec:** 2  **Type:** apply
+**A:** This is shin byeong, the "divine sickness". In Korean shamanism the journey is inward: the spirit world breaks into the person's consciousness rather than the shaman travelling out. The basic myth of shamanism is the account of travel to and from the spirit world, the interactions with spirits, and the stories the spirits tell.
+
+### Q: Define ecstasy and enstasy with their Greek roots, give the lecture's drop-and-ocean image for each, and say what each looks like in shamanic practice.
+**Topic:** Shamanism, ecstasy and enstasy  **Lec:** 2  **Type:** recall
+**A:** Ecstasy, from ex-stasis "stand outside oneself", is the border between self and world disappearing so the person becomes the universe, a drop dissolving into the ocean; in shamanism it is travel to a spirit world away from the body. Enstasy, from en-stasis "stand inside oneself", is the universe breaking into the contours of the body, seeing the ocean in one drop; in shamanism the spirit possesses the shaman. Both are altered states of consciousness provoked by specific techniques.
+
+### Q: What is the "God module", who named it, and what does the lecture say such experiences need in order to count as religious?
+**Topic:** Shamanism, ecstasy and enstasy  **Lec:** 2  **Type:** recall
+**A:** V. S. Ramachandran's name for a poorly understood part of the temporal lobe whose activation, for example in epileptic seizures, can cause altered states that feel religious. The lecture says the experiences themselves are ambiguous and need a structured narrative to interpret them and give them meaning.
+
+### Q: Give the dates of the Vedic period and its two sub-periods, and say what marks its end.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** Roughly 1500 to 500 BCE, when the Vedas were composed. Early Vedic is about 1500 to 1000 BCE and Later Vedic about 1000 to 500 BCE. It ends with the decline of Vedic activity and the rise of classical Hinduism and new urban centres.
+
+### Q: Distinguish pantheism from panentheism as the deck's correction slide does, say which one the Hymn of Purusha is, and explain what was wrong with Macdonell's 1917 reading of the hymn.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** Pantheism: the universe is God. Panentheism: the universe is a part of God's body, but part of God extends beyond the universe. The Hymn of Purusha is panentheism. Macdonell read the hymn as gods sacrificing Purusha, which is a paradox, because the gods spring from Purusha's body; the gods in the hymn are Purusha himself as he partitions into gods, people, animals and the inanimate world.
+
+### Q: Name the four castes with their roles, and say what the presence of the caste account tells us about the Purusha hymn's date.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** Brahmins are priests and teachers, Kshatriyas nobles and warriors, Vaishyas merchants, Shudras labourers and artisans. Because the earliest hymns reflect a polytheistic nomadic society with no castes, the caste account shows the Purusha hymn is late in the Rig Veda.
+
+### Q: Match each god to its description: Agni, Vayu, Indra, Rudra. Then say which two combine, when, and into whom.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** Agni is the fire god who sustains life and carries sacrifices to the gods. Vayu is the wind god animating the cosmos. Indra and Rudra both personify the storm, modelled on nomadic warriors: Indra is the benevolent storm good for agriculture, Rudra the destructive one. In the post-Vedic period, around 200 BCE, Indra and Rudra combine with non-Aryan deity forms to become Shiva, whom Shaivas hold to be Purusha.
+
+### Q: Trace the meaning of sacrifice and of "karma" across early polytheism, the early Rig Veda, the late Rig Veda and the Upanishads.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** derive
+**A:** In early polytheism and shamanism sacrifice placates deities and spirits in a gift economy. In the early Rig Veda it seeks worldly gains and immortality among the gods, with soma as both god and elixir. In the late Rig Veda the meaning shifts: the primordial God's self-sacrifice set the universe going, and sacrifice now maintains cosmic order, which secures the hereditary brahmins' position. "Karma" at that point means the sacrificial actions that sustain the universe. By the Upanishads (800 to 200 BCE) karma broadens to all actions that produce effects, good and bad, and sacrifice becomes tied to generosity, which brings good karma.
+
+### Q: The lecture says the Vedic cosmos is tripartite. Name the three parts, say which god creates the middle one, and say what the lecture compares the system to.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** The gods' Heaven, the spirits' Earth, and an intermediate space where life occurs, created when Indra separates the two. The lecture compares it to the shamanic systems met earlier in the lecture.
+
+### Q: Tell the Shiva and Kama story and give the two readings of its ending.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** After losing his wife Sati, Shiva becomes a celibate ascetic. The gods need a son of Shiva to defeat a demon, so they send Kama, god of desire, who shoots Shiva with a flower arrow to make him fall for Parvati, Sati's reincarnation. Enraged, Shiva burns Kama to ash with his third eye; Rati petitions and Kama returns formless but still powerful. One reading is asceticism defeating eroticism. The other is Kama's victory, because Shiva does wake, fall in love and marry Parvati.
+
+### Q: List the Trimurti with their roles and each god's Tridevi counterpart, and explain what Ardhanarishvara is.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** Brahma the creator with Sarasvati, Vishnu the sustainer with Lakshmi, Shiva the destroyer with Parvati; each goddess is the consort or the female manifestation of her god. Ardhanarishvara, "the Lord who is half woman", is Shiva shown split vertically with masculine Shiva on the dominant right side and feminine Parvati on the left.
+
+### Q: A student says "Samkhya and Advaita Vedanta both teach that the real self is beyond the mind, so they are the same view." Correct the student using the lecture's account of each school and the problem each one cannot solve.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** apply
+**A:** Samkhya is dualist: purusha, the individual spirit, is distinct from prakriti, inanimate matter, and mind, ego, intellect and the six senses all belong to prakriti; liberation is becoming aware of purusha, and its unsolved problem is why purusha gets entangled in prakriti and where prakriti comes from. Advaita Vedanta is non-dual: there are no individual souls, only Brahman, the one universal consciousness, reflected like one sun in many mirrors, and separate selfhood is illusion; its unsolved problem is why Brahman becomes ignorant of itself. They agree the self is not the mind, but disagree on whether there are many selves or one, and on whether matter is real.
+
+### Q: What does Dvaita Vedanta say, and why does the lecture call it the dominant Hindu theology?
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** God, for example Vishnu, is the eternal purusha or Brahman who created individual souls out of goodwill, like sparks of the sun held in separate pots, so that they would seek union with the divine and be liberated through devotion. The lecture says it is the dominant theology today because it solves most of the philosophical problems that plague Samkhya, Yoga and Advaita.
+
+### Q: Explain the lecture's desktop analogy and which school each of its three questions maps to.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** Thoughts, feelings and perceptions come and go but consciousness continues, like a desktop and its contents. Is there one desktop or many, which is atman versus Brahman. Is it separate from the hardware, which is purusha versus prakriti. Or are both produced by a benevolent intelligence, which is the Vedas and Dvaita Vedanta.
+
+### Q: Define henotheism, avatar, lila and maya as the lecture uses them for Krishna devotion.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** Henotheism is taking one manifestation of the divine as most important among many, the way a lover chooses one beloved; the Bhakti movement (7th to 17th centuries CE) does this. An avatar is an incarnation of a god born as a human, as Krishna is of Vishnu. Lila is play: Krishna's childhood mischief, read as an allegory for creation as God's charity with karma as an educational tool. Maya is divine illusion: God hiding from creatures while revealing himself through avatars, so that lila and maya together are a game of hide-and-seek that ends in liberation.
+
+### Q: Why does Bhakti rank the human Krishna above the divine Vishnu, how does the lecture connect that to the Buddha, and what is the one difference it draws?
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** apply
+**A:** Krishna is tangible and relatable, so the Bhagavata Purana makes Krishna the absolute and Vishnu his partial manifestation, reversing the usual ranking. The parallel is that the Buddha was a celestial bodhisattva god before his human birth and awakens in human form, which matters more than his divine past. The difference is that Krishna is a form of the one creator God, while the Buddha is only an awakened being. Hinduism also counts the Buddha as an avatar of Vishnu.
+
+### Q: Distinguish kama from prema using Sherma's account, and say how devotional poets use union and separation.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** Kama is erotic love based on desire. Prema is pure love based on surrender and sacrifice, which includes and transcends kama and is one way to love God. Poets use union, which is ecstasy, and separation, which is pain and longing, to show the devotee as equal to God in union and unequal in separation, as in Radha and Krishna.
+
+### Q: List the nine processes of bhakti-yoga, and say which three head the list.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** Hearing about Krishna, singing about him, remembering him, serving him, worshipping him, offering obeisance, dedicating all one's actions to him, confiding in him as a friend, and offering one's body and belongings to his service. Hearing, singing and meditating on his lila head the list.
+
+### Q: Give the facts of Mirabai's life as the deck states them.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** Born around 1500 CE to a high-caste, wealthy ruling family; a childhood love of Krishna after receiving an image of him from a visiting Brahmin. Married against her will, she refused household, religious and wifely duties, would not bow to her mother-in-law or sleep with her husband, and joined the devotees at the local temple. Her family tried to confine and punish her and then to kill her, including by poison. She then wandered to the places of Krishna's life.
