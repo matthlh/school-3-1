@@ -202,3 +202,103 @@ Format:
 ### Q: Give the facts of Mirabai's life as the deck states them.
 **Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
 **A:** Born around 1500 CE to a high-caste, wealthy ruling family; a childhood love of Krishna after receiving an image of him from a visiting Brahmin. Married against her will, she refused household, religious and wifely duties, would not bow to her mother-in-law or sleep with her husband, and joined the devotees at the local temple. Her family tried to confine and punish her and then to kill her, including by poison. She then wandered to the places of Krishna's life.
+
+## Lec 3 — Going against the Vedas (added 2026-10-05)
+
+### Q: Which caste is matched with the wrong duty? (A) brahmins: perform rituals and teach; (B) kshatriyas: keep order and fight intruders; (C) vaishyas: make profit while paying taxes and donating; (D) shudras: perform rituals for the merchants; (E) none of the above.
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** (D). Shudras are labourers and artisans who follow their vocations, pay taxes and donate. Ritual belongs to the brahmins. The lecture uses dharma here to mean caste duty: each person stays in their caste and does its work.
+
+### Q: In the Bhagavadgita, Arjuna wants to become a wandering ascetic rather than fight. Give Krishna's two arguments for fighting, and the deck's name for the moral of the Mahabharata's ending.
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** First, Arjuna is a kshatriya, so fighting is his duty. Second, the atman, the soul of every living being, is indestructible, so he will not really kill anyone. The deck calls the ending "cosmic justice": bad karma cannot be escaped, but doing one's duty is rewarded in the afterlife.
+
+### Q: Which pairing is correct? (A) Siddhartha: Naya clan, renounced at 30; (B) Mahavira: Shakya clan, renounced at 29; (C) Siddhartha: Shakya clan, renounced at 29; (D) Mahavira: 6 years of austerities before omniscience; (E) Siddhartha: 12 years of austerities before enlightenment.
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** (C). Mahavira was of the Naya clan, renounced at 30 and practised austerities for 12 years before omniscience. Siddhartha practised for 6 years before enlightenment. Both were kshatriya princes who held that killing creates so much bad karma that it is better to become a shramana.
+
+### Q: Name the four ashramas in order with the life stage of each, and say which are world-affirming. What was the Buddhist and Jain objection to this scheme?
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** apply
+**A:** Brahmacarya (youth, celibacy, learning dharma), grihastha (adulthood, householder), vanaprastha (middle age, retirement, "way to the forest") and sannyasa (old age, renunciation and moksha). The first three are world-affirming; only sannyasa renounces the world. Both founders said renunciation should start early, because human life is a rare chance to escape samsara and old age makes the hard effort difficult.
+
+### Q: Which of the following is NOT a reason the deck gives for Hindus calling Buddhism and Jainism heterodox? (A) they reject the authority of the Vedas; (B) they say the Vedic gods still die and can be reborn lower; (C) they have no creator god; (D) they reject caste; (E) they deny that karma exists.
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** (E). Both traditions keep karma; the cycles of the universe start from previous karma. A to D are the deck's four points.
+
+### Q: What do "Tirthankara", "Buddha" and "Jina" mean, and who gets which title? Why, according to the deck, did both founders name long lines of predecessors?
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** Tirthankara, "Ford Maker", is Mahavira's title; the ford is a crossing out of the world of suffering. Buddha, "Awakened One", is Siddhartha's. Both are called Jina, "Conqueror" of suffering. Mahavira named 23 earlier tirthankaras and the Buddha 27 earlier Buddhas, which made each tradition older than the Vedas; the deck says there is no archaeological evidence for either line.
+
+### Q: Give two ways Jainism differs from Buddhism in the deck, and name the Jain practice of fasting to death.
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** Jains believe in a permanent self, the jiva, similar to the Vedic atman and enmeshed in karma as a substance. Jain liberation is a place at the top tier of the cosmos, above the Vedic gods, while Buddhist nirvana is outside the world entirely. Jains also take asceticism further, up to sallekhana (santhara), giving up food until death, on the premise that total non-violence frees one from karma.
+
+### Q: According to Schmalz (2007), where does the word asceticism come from, why is asceticism both negative and positive, what is the Sanskrit word for what it produces, and what does it do?
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** From the Greek askesis, "to exercise, train". It is negative because it denies: avoidance, mortification, suppressing part of the self. It is positive because it produces virtue, purity, consciousness or power, called tapas, "inner heat". It consecrates, separates one from ordinary people, transforms or atones, and with other methods produces altered states of consciousness.
+
+### Q: Which statement about the sources for the Buddha's life is true? (A) Jain texts confirm his dates; (B) inscriptions from his lifetime name him; (C) writing did not exist in South Asia until about 300 BCE, so everything comes from oral tradition written down centuries later; (D) Vedic texts mention him as a heretic; (E) all of the above.
+**Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
+**A:** (C). No rival tradition mentions him and no archaeological find proves he existed. The deck calls the result traditional lore: collective memory that changes over time and gains depth as the tradition develops.
+
+### Q: Give the Buddha numbers of Dipankara, Gautama and Maitreya, name who Gautama was when his path began, and define bodhisattva.
+**Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
+**A:** Dipankara is Buddha 4, Gautama 28, and Maitreya (Pali Metteyya) 29, now a god in Tushita Heaven. Four asamkhyeyas and one hundred thousand kalpas ago Gautama was Sumedha, a brahmin ascetic who heard Dipankara and vowed to become a Buddha. A bodhisattva is a being with that aspiration.
+
+### Q: Match each Jataka to its perfection: Vessantara, Bhuridatta, Temiya. Then name the collection of the ten most important Jatakas.
+**Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
+**A:** Vessantara is generosity: he gives away everything, including his wife and children. Bhuridatta is morality: a naga captured by a snake charmer, released after his family finds him. Temiya is renunciation: he feigns being deaf and mute to avoid the throne and becomes a forest ascetic. The ten are the dasajati jataka, "Stories of Ten Rebirths", out of 547 in the Pali canon.
+
+### Q: List the twelve great deeds in order. Then say what Queen Maya dreamed, how the birth happened, and what the name Lalitavistara means.
+**Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
+**A:** Descent from Tushita Heaven; entering the womb; birth in the garden; training in the arts and sciences; victory in sports; palace life and marriage; renunciation; six years of austerities, then giving them up; victory over Mara; enlightenment under the Bodhi Tree; turning the Wheel of Dharma; parinirvana. Maya dreamed a white elephant entered her side and conceived without intercourse. She gave birth standing, holding a tree branch, and he came out of her side, signifying freedom from passion. Lalita means play or divine sport and vistara means extensive.
+
+## Lec 4 — The Buddha and his teachings (added 2026-10-05)
+
+### Q: Which teacher taught Siddhartha the four meditative absorptions (dhyanas), and where does mastering the fourth one lead? (A) Udraka Ramaputra, to nirvana; (B) Alara Kalama, to rebirth in the world of form; (C) Alara Kalama, to nirvana; (D) Udraka Ramaputra, to the formless realm; (E) Channa, to the desire realm.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** (B). Alara Kalama taught the four absorptions. The fourth gives a fully equanimous mind but is not liberation; it causes rebirth in the world of form, where gods called Brahma live. Udraka Ramaputra taught the subtler states that lead into the formless realm, making eight stages in all.
+
+### Q: Match each term to what it names: Brahma, Brahmin, Brahman. Options: a priest, the absolute, a god.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** Brahma is a god (the gods of the world of form are called Brahma). A Brahmin is a priest. Brahman is the absolute.
+
+### Q: List the four ashramas (stages of life) in order, and say which of them affirm the world and which renounces it.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** Brahmacarya (youth and study), grihastha (householder), vanaprastha (retiring to the forest), sannyasa (renunciation). The first two affirm the world, and the last one, sannyasa, renounces it.
+
+### Q: In the Bhagavadgita, Krishna gives Arjuna two reasons to fight. What are they, and how does the word dharma change meaning once the Buddha begins teaching?
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** apply
+**A:** First, fighting is Arjuna's caste duty, his dharma. Second, the atman cannot be destroyed, so no one is really killed. After the awakening, dharma means the truth spoken by the Buddha rather than caste duty, and in the plural, dharmas are the constituents of existence, like atoms.
+
+### Q: What does Siddhartha name his son, what does the name mean, and who is the charioteer who leaves the palace with him?
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** Rahula, meaning "stumbling block". The charioteer is Channa.
+
+### Q: Which statement about Mara is NOT made in the lecture? (A) His name means "death". (B) He is also called Kamadeva, god of passion and sexual desire. (C) His daughters personify anger and his army personifies the passions. (D) He rules the desire realm from its highest heaven. (E) Siddhartha conquers him without killing him.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** (C). It is the other way round: Mara's daughters personify the passions and his army personifies anger. The story reworks the Hindu myth in which Shiva burns Kama with his third eye; Siddhartha, unlike Shiva, does not kill him.
+
+### Q: Name the five skandhas in order, and explain the image the lecture uses for how they pass between lives.
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** Form, sensation, perception, volition and cognition. They are impermanent and pass from body to body like fire jumping from branch to branch. On this view, Hinduism mistakes the fire's changes for a permanent substance, the atman.
+
+### Q: A student says: "When Siddhartha stopped his mind in the eighth absorption, he found the atman reflected in the quiet mind, as the Yoga Sutras promise." What is wrong, and what did he find instead?
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** apply
+**A:** That is the Yoga Sutras' claim, not the Buddha's. On stopping his mind he realised there is no atman (anatman). What exists instead is physical matter made of five elements (earth, water, fire, air, space) and conscious matter made of the five skandhas.
+
+### Q: According to the lecture deck, which list gives the three marks (lakshanas)? (A) dukkha, anitya, anatman; (B) anatman, anitya, nirvana; (C) atman, samsara, karma; (D) anitya, karma, dharma; (E) anatman, dukkha, karma.
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** (B), as the deck lists it: anatman (no soul), anitya (impermanence) and nirvana, the end of dukkha. The standard list, likely the one in Harvey, is (A), with dukkha as the third mark, so read the question for whether it asks about the lecture or the reading.
+
+### Q: Fill in the numbers: Buddhas he remembers in his first realisation; days under the tree after awakening; his age at awakening; years he teaches; the number of Great Deeds.
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** 29 Buddhas; 49 days (the same number of days the mind of the dead lingers before rebirth); age 35; 45 years of teaching; 12 Great Deeds.
+
+### Q: How long did Buddhists go without writing, what language is the Pali Canon in, and when did the full canon take its current form?
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** Over 200 years without writing. Pali is a dialect of western India from about the 3rd century BCE. The first Pali inscriptions date to about 25 BCE, more than 400 years after the Buddha, and the full canon took its current form in the 5th century CE.
+
+### Q: How does the Buddha die, why do Buddhists say he chose to, and what happens to his remains?
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** He dies after eating spoiled pork given as an offering. Buddhists hold that he chose to die to teach impermanence. His cremated bone fragments became relics (sharira), enshrined in stupas.
