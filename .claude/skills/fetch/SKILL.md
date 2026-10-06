@@ -1,6 +1,6 @@
 ---
 name: fetch
-description: On-demand pull of one specific resource instead of a full morning check — today's transit deck, a course's pre-lecture outline (staged fresh if missing), what's covered in class today, or what's due today. Use for "fetch transit deck", "fetch pre-lecture <course>", "fetch what's covered today", "fetch what's due today", or "fetch <course>" on its own.
+description: On-demand pull of one specific resource instead of a full morning check — today's transit deck, a course's pre-lecture outline (staged fresh if missing; CPSC 310's is rebuilt from the deck once it is posted, which the Tue/Thu 12:30 scheduled task runs), what's covered in class today, or what's due today. Use for "fetch transit deck", "fetch pre-lecture <course>", "fetch what's covered today", "fetch what's due today", or "fetch <course>" on its own.
 ---
 
 # Fetch
@@ -9,7 +9,7 @@ Five narrow, fast recipes — each is a slice of what `/morning-check` already d
 wants just that one thing without a full sweep. Piazza and PrairieLearn are never re-run here;
 that's morning-check's job. The one sync this skill does is `fetch canvas` (last section), for a
 morning when the check found Canvas signed out. Everything else only reads what's already synced,
-or stages the one missing piece asked for.
+or stages the one missing piece asked for (for CPSC 310, also an outline the deck now replaces).
 
 `$S` = `.claude/skills/fetch/scripts` (absolute:
 `/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/fetch/scripts`).
@@ -31,17 +31,24 @@ or stages the one missing piece asked for.
 1. `python3 "$S/fetch_status.py" --course <CODE>` — tells you whether the course meets today, what
    lecture number that is, and whether a file already exists (`missing` / `staged` `_NN-*.md` /
    `logged` `NN-*.md`).
-2. **logged or staged:** it already exists — just show him the file (Read it, summarize the "3
-   pre-lecture questions" section back in chat, don't re-fetch anything).
-3. **missing** — stage it, per course:
-   - **CPSC 310:** `python3 "$S/../../morning-check/scripts/prelecture.py" --n 1`. When the deck is
-     posted, it downloads it and prints the deck text's path (`routines/slides/cpsc310/NN-*.txt`).
-     Write `courses/CPSC310/lectures/_NN-<slug>.md` from that text: a plain-sentence outline of the
-     deck's claims in slide order, then `## Three pre-lecture questions`. When the deck is not posted
-     yet, there is nothing to stage, so tell him that in one line. No reader chapter is staged,
-     because the course site removed its lecture → chapter pages on 2026-09-28. If the command exits
-     non-zero, the schedule or the deck could not be fetched or no longer parses: report the error in
-     one line.
+2. **logged**, or **staged** in any course but CPSC 310: it already exists, so show him the file
+   (Read it, give the outline back in chat) and don't re-fetch anything.
+3. **missing**, or **staged** in CPSC 310: stage it, per course:
+   - **CPSC 310** (also the midday pass below): `python3 "$S/../../morning-check/scripts/prelecture.py" --n 1 --force`.
+     `--force` picks the lecture even when its outline exists, so an outline staged from a reader
+     chapter that morning comes back for the deck check.
+     - **Deck posted:** the deck wins. When `courses/CPSC310/lectures/_NN-<slug>.md` is missing, or its
+       first line says it was built from a reader chapter, write it from the deck text it printed
+       (`routines/slides/cpsc310/NN-*.txt`): a plain-sentence outline of the deck's claims in slide
+       order. It replaces the chapter outline whole; nothing of the chapter version is kept. An
+       outline already built from the deck is shown as it is.
+     - **No deck yet:** a staged outline stays, and you show it with one line saying the deck is not
+       up yet. A missing one is staged from the reader chapter as morning-check SKILL.md §7 step 1
+       does: pick the chapter in the printed reader contents whose title best matches the lecture
+       title, run `prelecture.py --chapter N URL`, and write the outline with its one-sentence source
+       line.
+     If a command exits non-zero, a page could not be fetched or no longer parses: report its error
+     in one line.
    - **STAT 251 / ASIA 250:** needs a Chrome tab on canvas.ubc.ca (morning-check
      SKILL.md §2 for opening it). Run `scripts/canvas_materials.js` (in
      `.claude/skills/morning-check/scripts/`) via `javascript_tool`, read it back with
@@ -49,21 +56,44 @@ or stages the one missing piece asked for.
      `python3 "$S/../../morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt`.
      For the new deck/reading it names, pull the text with `canvadoc_text.js` (recipe in that
      file's header), then write `courses/<CODE>/lectures/_NN-<slug>.md` (or
-     `courses/<CODE>/readings/_<slug>.md` for a reading) the same way morning-check §7 does —
-     outline in slide order + 3 pre-lecture questions (ASIA 250 also gets a
-     `## Likely quiz targets` line).
+     `courses/<CODE>/readings/_<slug>.md` for a reading) the same way morning-check §7 does: a
+     plain-sentence outline in slide order (ASIA 250 also gets a `## Likely quiz targets` line).
    - **PHIL 385:** no slides or recordings, ever — there's nothing to stage. Instead read the
      reading assigned for that date straight from `courses/PHIL385/00-syllabus.md`'s schedule and
-     hand him the reading + 3 questions on names/pseudonyms/terms, same as morning-check §7.
-4. Report just the outline + questions (or "already staged, here it is") — no course-content
-   summary beyond what's needed to prime him before class.
+     name it for him, same as morning-check §7.
+4. Report just the outline (or "already staged, here it is") — no course-content summary beyond
+   what's needed to prime him before class.
+
+### Midday pass: CPSC 310 (a scheduled task Matt creates once)
+CPSC 310 decks go up on lecture day between about 10:40 and 12:00, after the 06:35 morning check
+has built the outline from a reader chapter (morning-check SKILL.md §7). A scheduled task runs the
+recipe above at 12:30, so the outline is rebuilt from the deck before the 15:30 lecture. Scheduled
+tasks live in the Claude desktop app, not in this repo (the 06:35 morning check is one), so Matt
+creates this one there, once:
+
+| Field | Value |
+|---|---|
+| Name | `cpsc310-midday` |
+| Prompt | `fetch pre-lecture CPSC310` |
+| Schedule | Tuesdays and Thursdays at 12:30 (cron `30 12 * * 2,4`, local time) |
+| Folder | `/Users/matthe/Documents/CodingProjects/School 3-1` |
+
+- The folder matters: a task started anywhere else loads neither this skill nor CLAUDE.md.
+- Like the morning check, it fires only while the Mac is awake and the app is open. A late run still
+  helps until 15:30. A missed one leaves the reader-chapter outline in place, and logging the
+  lecture works from the deck either way.
+- If the first run stops on a permission prompt for `prelecture.py`, allow it permanently.
+- The scheduled run replies in one line, such as "Lec 9 outline rebuilt from the deck" or "Lec 9
+  deck not up yet, the reader-chapter outline stays". It writes only the `_NN` file: no ledger row
+  and no publish, because the notes site does not show `_NN` outlines and the next morning check's
+  publish commits the file.
 
 ## "fetch what's covered today" (or "fetch today")
 1. `python3 "$S/fetch_status.py"` (no `--course`) — one line per course, which ones meet today.
-2. Run the "fetch pre-lecture" recipe above for each course where `meets_today=True` and the file
-   is `missing`; just read and show the ones already `staged`/`logged`.
+2. Run the "fetch pre-lecture" recipe above for each course where `meets_today=True`. It shows what
+   already exists and stages only what is missing, or for CPSC 310 what the deck now replaces.
 3. Report one block per class meeting today, in the order they happen: course, lecture title if
-   known, the 3 pre-questions. Weekends: say "no classes today" and stop — don't invent content.
+   known, and its outline. Weekends: say "no classes today" and stop — don't invent content.
 
 ## "fetch what's due today" (or "fetch what was due today")
 Local only, no fetch — this is a read, not a sync:

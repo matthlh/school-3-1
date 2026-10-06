@@ -49,9 +49,11 @@ export interface Question {
 export interface QuestionGroup { title: string | null; questions: Question[] }
 
 /**
- * Parse the `### Q:` / `**Topic:** … **Lec:** … **Type:** …` / `**A:**` format. Mirror of `_parse_bank` in quizlib.py.
- * `question` keeps the flat, code-less text ids have always hashed; `display` keeps the stem as written. Fenced code
- * in an answer stays in `answer`. A fence outside any question (the format example atop each bank) is skipped whole.
+ * Parse the `### Q:` / `**Topic:** … **Lec:** … **Type:** …` / `**A:**` format. Mirror of `_parse_bank` in quizlib.py,
+ * line for line (`npm run parity` fails the deploy on any difference): a `#`/`##` heading or a `---` line ends a
+ * question, only its first meta line counts, and a second `**A:**` line extends the answer. `question` keeps the flat,
+ * code-less text ids have always hashed; `display` keeps the stem as written. Fenced code in an answer stays in
+ * `answer`. A fence outside any question (the format example atop each bank) is skipped whole.
  */
 export function parseQuestions(md: string): QuestionGroup[] {
   const groups: QuestionGroup[] = []
@@ -84,9 +86,15 @@ export function parseQuestions(md: string): QuestionGroup[] {
       continue
     }
     if (!cur) continue
-    const meta = /\*\*Topic:\*\*\s*(.*?)\s*\*\*Lec:\*\*\s*(.*?)\s*\*\*Type:\*\*\s*(\S+)/.exec(line)
-    if (meta) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].trim(); continue }
-    if (/^\*\*A:\*\*/.test(line)) { cur.answer = line.replace(/^\*\*A:\*\*\s*/, ''); mode = 'a'; continue }
+    if (/^# /.test(line) || line.trim() === '---') { flush(); continue }
+    const meta = /\*\*Topic:\*\*\s*(.+?)\s+\*\*Lec:\*\*\s*(.+?)\s+\*\*Type:\*\*\s*(\w+)/.exec(line)
+    if (meta && !cur.type) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].toLowerCase(); continue }
+    if (/^\*\*A:\*\*/.test(line)) {
+      const rest = line.slice('**A:**'.length).trim()
+      cur.answer = mode === 'a' ? cur.answer + '\n' + rest : rest   // a second **A:** line extends the answer
+      mode = 'a'
+      continue
+    }
     if (mode === 'q') {
       if (line.trim()) cur.question += ' ' + line.trim()
       cur.display += '\n' + line

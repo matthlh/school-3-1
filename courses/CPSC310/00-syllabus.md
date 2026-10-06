@@ -92,6 +92,7 @@ Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks
 - Grade is a bucket (Beginning/Acquiring/Developing/Proficient/Extending), sometimes with a note on which feature scored lowest.
 
 ## To verify
+- [ ] Midterm scope: the syllabus says it covers everything through the end of week 6 (Thu Oct 15), but the schedule page says it covers through Thu Oct 22. Ask on Piazza which is right; until then, study through Oct 22.
 - [ ] Is T/F negative marking still used on exams?
 - [ ] Final exam date (published ≥3 weeks before the end of classes)
 - [ ] Do deliverables ever get posted to Canvas? (Canvas has nothing for this course; deadlines come from the calendar.)

@@ -117,6 +117,17 @@ commits, reviews). Passing the autograder alone forfeits the judgment marks.
 **Stop rule:** when the checklist is done and the rationale is written, close the laptop. Hours
 past spec return literally nothing, and this project is 20% of a course whose exams are 65%.
 
+## How to do a STAT 251 written assignment
+
+Same shape for WA1 and WA2.
+
+| When | What |
+|---|---|
+| **5 days out** | Read every question and solve the first ones. |
+| **2 days out** | Finish every question. |
+| **1 day out** | Check the answers, then submit early. |
+| **Due day** | Submit early, then stop. |
+
 ## Phase 2 — exam run-up (start T-10 days)
 
 Same shape for a midterm or a final. No cramming week; the ledger has been doing the spacing all

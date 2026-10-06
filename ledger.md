@@ -124,9 +124,9 @@ _62 topics due as of Mon Oct 5. Say **quiz me**._
 | PHIL 385 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | 2026-10-02 | X | 0 | 2026-10-03 |
 | PHIL 385 | Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) | 3 | — | — | 0 | 2026-09-17 |
 | PHIL 385 | The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) | 3 | — | — | 0 | 2026-09-17 |
-| PHIL 385 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | reading | — | — | 0 | 2026-09-17 |
+| PHIL 385 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | 3–4 | — | — | 0 | 2026-09-17 |
 | PHIL 385 | Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) | 4 | — | — | 0 | 2026-09-20 |
-| PHIL 385 | Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) | reading | — | — | 0 | 2026-09-22 |
+| PHIL 385 | Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) | 5–6 | — | — | 0 | 2026-09-22 |
 | PHIL 385 | The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | — | — | 0 | 2026-10-06 |
@@ -144,54 +144,55 @@ _62 topics due as of Mon Oct 5. Say **quiz me**._
 
 ## Term calendar — hard dates
 
-| Date | Course | What | Weight |
-|---|---|---|---|
-| Fri Sep 11, 08:00 → **Thu Sep 24, 23:59** | CPSC 310 | **LAB01 Onboarding** opens on PrairieLearn — PrairieLearn's own credit window is 100% until Thu Sep 24 23:59 (course-site "due by start of next lab" rule would say Sep 18; PrairieLearn is the live/authoritative source for this one) | 10% pool |
-| Fri Sep 11, 09:00 | CPSC 310 | PRO1 (D1) opens on PrairieLearn | |
-| **Mon Sep 14, 23:59** | ASIA 250 | **Declare independent novel** (open till Sep 23) | 1% |
-| Mon Sep 14 | STAT 251 | WeBWorK 1 opens · TA office hours start (later sets open Tue Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1; each due date is read off WeBWorK the day it opens) | |
-| Tue Sep 15, 23:59 | ASIA 250 | Quiz 1 (then Mondays) — hard lock | 2% ea |
-| Mon Sep 21 | UBC | **Drop-without-W deadline** (all courses) | |
-| Mon Sep 21 | STAT 251 | Labs start (Lab 0 = intro to R, no assignment) | |
-| **Tue Sep 22, 23:59** | STAT 251 | **WeBWorK 1** (no late) — corrected from Mon Sep 21; the lecture 3 and lecture 4 Canvas pages both say "due on Tuesday, Sep 22" | WW pool |
-| Fri Sep 18, 08:00 → **Thu Oct 1, 23:59** | CPSC 310 | **LAB02 Cohesion and Coupling** on PrairieLearn — credit window read off PrairieLearn on Sep 19 (the "due by start of next lab" rule would have said Sep 24) | 10% pool |
-| Fri Sep 25, 08:00 → Thu Oct 8, 23:59 | CPSC 310 | **LAB03 Refactoring and Testability** on PrairieLearn (renamed by Sep 25; was LSP and Testability). Close date confirmed on PrairieLearn 2026-09-26 | 10% pool |
-| Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% |
-| **Tue Sep 29, 23:59** | STAT 251 | **WeBWorK 2** (no late) — read off WeBWorK on its open day, Sep 22; the Canvas calendar agrees | WW pool |
-| Fri Oct 2, 23:59 | ASIA 250 | **Optional Assignment 1** — 250–300 words on Mirabai's religious experience, using only the Lecture 2 slides and Luhrmann ch. 3. Everyone who submits gets full marks and no extensions are given | +2% bonus |
-| **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1 — the essay exam** in Buchanan A 201: 2 questions, max 500 words each, typed in Respondus in 50 min. Covers the Preface, The Unhappiest One, Crop Rotation and Ancient Tragedy; each question asks whether you agree or disagree with a central idea | 15% |
-| **Thu Oct 8, 23:59** | STAT 251 | **WeBWorK 3** (no late). Extended from Tue Oct 6 on the lecture 11 Canvas page (seen 2026-10-03), because the holiday cost lecture time. 6 problems | WW pool |
-| Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | |
-| ~Tue Oct 13, 23:59 | STAT 251 | WeBWorK 4 — opens Oct 6; inferred | |
-| Fri Oct 2, 08:00 → Thu Oct 15, 23:59 | CPSC 310 | **LAB04 DIP, LSP & Testability** on PrairieLearn. Close date read on PrairieLearn 2026-10-03; PRAQ04 practice closes the same time | 10% pool |
-| ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% |
-| ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | |
-| Fri Oct 16, 18:05 | CPSC 310 | **D2** — Make it evolvable (individual): refactor filterSections and filterRooms into one filter behind an interface, then add the IN operator. PrairieLearn DELIV2 closes 18:05; the spec says 18:00 · pair formation in Oct 16–22 lab | 5% |
-| **Fri Oct 16, 14:00–14:50** | PHIL 385 | **Exam 2** | 15% |
-| ~Tue Oct 20, 23:59 | STAT 251 | WeBWorK 5 — opens Oct 13; inferred | |
-| **Sat Oct 24** | STAT 251 | **Written Assignment 1** — confirmed by Matt 2026-09-11; the Oct 31 Canvas calendar entry is wrong | ~5% |
-| Thu Oct 29, 19:00–21:00 | CPSC 310 | **Midterm** — through Wk 6 | 25% |
-| ~Tue Oct 27, 23:59 | STAT 251 | WeBWorK 6 — opens Oct 20; inferred. The Canvas calendar says Tue Nov 3 (Sat Oct 31 on Sep 23, Fri Oct 30 before). The instructor said on Piazza @17 (Sep 24) that the Canvas calendar dates have gone wrong and the syllabus and schedule rule, so read the real date off WeBWorK on Oct 20 | |
-| **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% |
-| Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | |
-| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** (7 MC) | 15% |
-| Fri Oct 30 | UBC | **Withdraw-with-W deadline** (all courses) | |
-| Fri Nov 6, 18:00 | CPSC 310 | **D3** — Design v3 (paired) | 5% |
-| Nov 9–11 | — | Fall break / ASIA reading break | |
-| ~Tue Nov 10, 23:59 | STAT 251 | WeBWorK 7 — opens Nov 3; inferred | |
-| ~Thu Nov 12 | ASIA 250 | **Short Written Response 2** | 15% |
-| ~Mon Nov 16 | ASIA 250 | Final paper questions posted | |
-| **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** (7 MC) | 15% |
-| ~Tue Nov 24, 23:59 | STAT 251 | WeBWorK 8 — opens Nov 17; inferred | |
-| Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired) | 5% |
-| ~Tue Dec 1, 23:59 | STAT 251 | WeBWorK 9 — opens Nov 24; inferred | |
-| Wed Dec 2 | STAT 251 | Written Assignment 2 due | ~5% |
-| Mon Dec 7 | — | Last day of classes · last ASIA quiz due | |
-| ~Tue Dec 8, 23:59 | STAT 251 | WeBWorK 10 — opens Dec 1; inferred. Pre-lab quiz Lab 8 is Fri Dec 11 | |
-| **Thu Dec 10** | ASIA 250 | **FINAL PAPER** (1000–1500 words) | 47% |
-| Dec 11–22 | STAT 251 | **Final** — must pass to pass course | 45% |
-| Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% |
-| Dec 11–22 | CPSC 310 | **Final**, cumulative, 2.5 h | 40% |
+| Date | Course | What | Weight | Kind |
+|---|---|---|---|---|
+| Fri Sep 11, 08:00 → **Thu Sep 24, 23:59** | CPSC 310 | **LAB01 Onboarding** opens on PrairieLearn — PrairieLearn's own credit window is 100% until Thu Sep 24 23:59 (course-site "due by start of next lab" rule would say Sep 18; PrairieLearn is the live/authoritative source for this one) | 10% pool | |
+| Fri Sep 11, 09:00 | CPSC 310 | PRO1 (D1) opens on PrairieLearn | | |
+| **Mon Sep 14, 23:59** | ASIA 250 | **Declare independent novel** (open till Sep 23) | 1% | |
+| Mon Sep 14 | STAT 251 | WeBWorK 1 opens · TA office hours start (later sets open Tue Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24, Dec 1; each due date is read off WeBWorK the day it opens) | | |
+| Tue Sep 15, 23:59 | ASIA 250 | Quiz 1 (then Mondays) — hard lock | 2% ea | |
+| Mon Sep 21 | UBC | **Drop-without-W deadline** (all courses) | | admin |
+| Mon Sep 21 | STAT 251 | Labs start (Lab 0 = intro to R, no assignment) | | |
+| **Tue Sep 22, 23:59** | STAT 251 | **WeBWorK 1** (no late) — corrected from Mon Sep 21; the lecture 3 and lecture 4 Canvas pages both say "due on Tuesday, Sep 22" | WW pool | |
+| Fri Sep 18, 08:00 → **Thu Oct 1, 23:59** | CPSC 310 | **LAB02 Cohesion and Coupling** on PrairieLearn — credit window read off PrairieLearn on Sep 19 (the "due by start of next lab" rule would have said Sep 24) | 10% pool | |
+| Fri Sep 25, 08:00 → Thu Oct 8, 23:59 | CPSC 310 | **LAB03 Refactoring and Testability** on PrairieLearn (renamed by Sep 25; was LSP and Testability). Close date confirmed on PrairieLearn 2026-09-26 | 10% pool | |
+| Fri Sep 25, 18:05 | CPSC 310 | **D1** — Drop in a feature (PrairieLearn's own credit window; course site says 18:00) | 5% | deliverable |
+| **Tue Sep 29, 23:59** | STAT 251 | **WeBWorK 2** (no late) — read off WeBWorK on its open day, Sep 22; the Canvas calendar agrees | WW pool | |
+| Fri Oct 2, 23:59 | ASIA 250 | **Optional Assignment 1** — 250–300 words on Mirabai's religious experience, using only the Lecture 2 slides and Luhrmann ch. 3. Everyone who submits gets full marks and no extensions are given | +2% bonus | admin |
+| **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1 — the essay exam** in Buchanan A 201: 2 questions, max 500 words each, typed in Respondus in 50 min. Covers the Preface, The Unhappiest One, Crop Rotation and Ancient Tragedy; each question asks whether you agree or disagree with a central idea | 15% | exam |
+| **Thu Oct 8, 23:59** | STAT 251 | **WeBWorK 3** (no late). Extended from Tue Oct 6 on the lecture 11 Canvas page (seen 2026-10-03), because the holiday cost lecture time. 6 problems | WW pool | |
+| Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | | |
+| ~Tue Oct 13, 23:59 | STAT 251 | WeBWorK 4 — opens Oct 6; inferred | | |
+| Fri Oct 2, 08:00 → Thu Oct 15, 23:59 | CPSC 310 | **LAB04 DIP, LSP & Testability** on PrairieLearn. Close date read on PrairieLearn 2026-10-03; PRAQ04 practice closes the same time | 10% pool | |
+| ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% | paper |
+| ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | | |
+| Fri Oct 16, 18:05 | CPSC 310 | **D2** — Make it evolvable (individual): refactor filterSections and filterRooms into one filter behind an interface, then add the IN operator. PrairieLearn DELIV2 closes 18:05; the spec says 18:00 · pair formation in Oct 16–22 lab | 5% | deliverable |
+| **Fri Oct 16, 14:00–14:50** | PHIL 385 | **Exam 2** | 15% | exam |
+| ~Tue Oct 20, 23:59 | STAT 251 | WeBWorK 5 — opens Oct 13; inferred | | |
+| **Sat Oct 24** | STAT 251 | **Written Assignment 1** — confirmed by Matt 2026-09-11; the Oct 31 Canvas calendar entry is wrong | ~5% | assignment |
+| Thu Oct 29, 19:00–21:00 | CPSC 310 | **Midterm** — through Wk 6 | 25% | exam |
+| ~Tue Oct 27, 23:59 | STAT 251 | WeBWorK 6 — opens Oct 20; inferred. The Canvas calendar says Tue Nov 3 (Sat Oct 31 on Sep 23, Fri Oct 30 before). The instructor said on Piazza @17 (Sep 24) that the Canvas calendar dates have gone wrong and the syllabus and schedule rule, so read the real date off WeBWorK on Oct 20 | | |
+| **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% | exam |
+| Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | | |
+| **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** (7 MC) | 15% | exam |
+| Fri Oct 30 | UBC | **Withdraw-with-W deadline** (all courses) | | admin |
+| Fri Nov 6, 18:00 | CPSC 310 | **D3** — Design v3 (paired) | 5% | deliverable |
+| Nov 9–11 | — | Fall break / ASIA reading break | | |
+| ~Tue Nov 10, 23:59 | STAT 251 | WeBWorK 7 — opens Nov 3; inferred | | |
+| ~Thu Nov 12 | ASIA 250 | **Short Written Response 2** | 15% | paper |
+| ~Mon Nov 16 | ASIA 250 | Final paper questions posted | | |
+| **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** (7 MC) | 15% | exam |
+| ~Tue Nov 24, 23:59 | STAT 251 | WeBWorK 8 — opens Nov 17; inferred | | |
+| Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired) | 5% | deliverable |
+| ~Tue Dec 1, 23:59 | STAT 251 | WeBWorK 9 — opens Nov 24; inferred | | |
+| Wed Dec 2 | STAT 251 | Written Assignment 2 due | ~5% | assignment |
+| Mon Dec 7 | — | Last day of classes · last ASIA quiz due | | |
+| ~Tue Dec 8, 23:59 | STAT 251 | WeBWorK 10 — opens Dec 1; inferred. Pre-lab quiz Lab 8 is Fri Dec 11 | | |
+| **Thu Dec 10** | ASIA 250 | **FINAL PAPER** (1000–1500 words) | 47% | paper |
+| Fri Dec 11 | UBC | Exam period starts (Dec 11–22) — finals TBA, check SSC | | admin |
+| Dec 11–22 | STAT 251 | **Final** — must pass to pass course | 45% | |
+| Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% | |
+| Dec 11–22 | CPSC 310 | **Final**, cumulative, 2.5 h | 40% | |
 
 > **Oct 29–30 is the crunch of the term.** The CPSC 310 midterm is Thu Oct 29, 19:00–21:00. On Fri Oct 30 the STAT 251 midterm is at 08:00, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 14:00. Prep for all four must be finished by Oct 28. PHIL 385 Exam 3 is settled at Fri Oct 30 (Matt, 2026-09-20); Canvas' Nov 20 is a setup slip and is not to be reopened.
 

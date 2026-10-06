@@ -14,7 +14,8 @@ for (const [cid, code, pat] of courses) {
     if (!pat.test(m.name)) continue;
     out += `\n## MODULE: ${m.name}\n`;
     for (const it of (m.items || [])) {
-      out += `### ${it.title} | ${it.type} | item=${it.id}` + (it.content_id ? ` | file=${it.content_id}` : '') + (it.page_url ? ` | page=${it.page_url}` : '') + '\n';
+      // file= only on File items: a quiz's or assignment's content_id is not a file canvadoc_text.js can pull.
+      out += `### ${it.title} | ${it.type} | item=${it.id}` + (it.type === 'File' && it.content_id ? ` | file=${it.content_id}` : '') + (it.page_url ? ` | page=${it.page_url}` : '') + '\n';
       if (it.type === 'Page' && it.page_url) {
         try {
           const pg = await api(`/courses/${cid}/pages/${it.page_url}`);

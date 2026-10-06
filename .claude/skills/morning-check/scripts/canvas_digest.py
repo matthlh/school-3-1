@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
-"""Reassemble the Canvas JSON produced by canvas_fetch.js (or canvas_fetch.py), save a dated
-snapshot under routines/snapshots/, print a per-course digest, and diff against the previous
-snapshot.
+"""Reassemble the Canvas JSON produced by canvas_fetch.js, save a dated snapshot under
+routines/snapshots/, print a per-course digest, and diff against the previous snapshot.
+
+A section named in the JSON's "failed" list did not load. The snapshot keeps the previous
+snapshot's copy of it, because saving it empty would make the next run announce all of it as NEW,
+and one line says so. Everything that loaded diffs and saves as usual.
 
 Usage:
   python3 canvas_digest.py <file>
@@ -55,6 +58,31 @@ def prev_snapshot(today_path):
     files = sorted(glob.glob(os.path.join(SNAP_DIR, "canvas-*.json")))
     files = [f for f in files if os.path.abspath(f) != os.path.abspath(today_path)]
     return json.load(open(files[-1])) if files else None
+
+def keep_failed(data, old):
+    """Put back the previous snapshot's copy of every section canvas_fetch.js failed to load, so a failed
+    request never saves a section empty. Returns one line per failed section."""
+    errors = {}
+    for f in data["failed"]:
+        errors.setdefault((f["course"], f["endpoint"]), f["error"])
+    lines = []
+    for (code, section), error in errors.items():
+        new, prev = (data[code], (old or {}).get(code) or {}) if code else (data, old or {})
+        name = f"{code[:-3]} {code[-3:]} {section}" if code else section
+        if section in prev:
+            new[section] = prev[section]
+            lines.append(f"Canvas: {name} failed ({error}), kept the previous snapshot")
+        else:
+            new.pop(section, None)
+            lines.append(f"Canvas: {name} failed ({error}), no previous snapshot to keep")
+    return lines
+
+def save(path, data):
+    """Write through a .tmp file and os.replace, so a killed run never leaves half a snapshot."""
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(data, f, indent=1)
+    os.replace(tmp, path)
 
 def key(items, k="url"):
     return {i.get(k) or i.get("title") or i.get("name"): i for i in items if isinstance(i, dict)}
@@ -133,14 +161,20 @@ def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     data = load(sys.argv[1])
+    if "failed" not in data:
+        sys.exit(f"no 'failed' list in {sys.argv[1]}: it was not made by the current canvas_fetch.js, so a "
+                 "request that failed cannot be told from an empty section. Run canvas_fetch.js again.")
     full = "--full" in sys.argv
     os.makedirs(SNAP_DIR, exist_ok=True)
     today = dt.datetime.now(PT).strftime("%Y-%m-%d")
     snap_path = os.path.join(SNAP_DIR, f"canvas-{today}.json")
     # Re-run on the same day: diff against the snapshot already taken today, then overwrite it.
     old = json.load(open(snap_path)) if os.path.exists(snap_path) else prev_snapshot(snap_path)
-    json.dump(data, open(snap_path, "w"), indent=1)
+    kept = keep_failed(data, old)
+    save(snap_path, data)
     print(f"snapshot: {snap_path}   previous: {'yes' if old else 'none'}\n")
+    if kept:
+        print("\n".join(kept) + "\n")
 
     print("== CANVAS TO-DO ==")
     for t in data.get("todo", []):

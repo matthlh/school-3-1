@@ -1,9 +1,19 @@
-import { useMemo } from 'react'
+import { useMemo, useState, type MouseEvent } from 'react'
+import { flushSync } from 'react-dom'
 import type { Texts, Tree } from './files'
 import { courseOf, hrefFor, labelFor } from './files'
+import { splitSections } from './markdown'
+import { hrefAnchor, scrollIfSame } from './routes'
 import { toneStyle } from './tone'
 
-interface Hit { path: string; lines: string[]; score: number }
+/** One `## ` section of one file (the preamble too), with its text lowercased once for matching. */
+interface Part { key: string; path: string; href: string; heading: string | null; lines: string[]; lower: string }
+/** A section holding every term: `full` lines hold all of them, `count` lines hold at least one, `snippets` show them. */
+interface Hit extends Part { full: number; count: number; snippets: string[] }
+
+/** Hits shown at first, and how many more each "Show more" adds. */
+const BATCH = 20
+const SNIPPETS = 4
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 const clean = (line: string) => line.replace(/^[#>*\-\s|]+/, '').replace(/^Q:\s*/, '').replace(/\*\*/g, '').trim()
@@ -13,37 +23,70 @@ function Highlight({ text, terms }: { text: string; terms: string[] }) {
   return <>{text.split(re).map((part, i) => (i % 2 ? <mark key={i}>{part}</mark> : part))}</>
 }
 
-/** Hits for every term on one line. `onPick` clears the search, since a hit on the page already open changes no hash. */
+/** Every file cut into its `## ` sections, as the viewer cuts it, so a hit links to the id its section gets there. */
+function sectionsOf(all: Texts): Part[] {
+  return Object.entries(all).flatMap(([path, text]) => splitSections(text).map((s, i) => ({
+    key: `${path}:${i}`, path, href: s.heading ? hrefAnchor(path, s.id) : hrefFor(path), heading: s.heading,
+    lines: s.body.split('\n'), lower: `${s.heading ?? ''}\n${s.body}`.toLowerCase(),
+  })))
+}
+
+/**
+ * Sections holding every term, anywhere in the section. Best first: the most lines holding all the terms, then the
+ * most lines holding any (the heading counts as a line). The snippets are the body lines holding the most terms, in
+ * reading order.
+ */
+function search(parts: Part[], terms: string[]): Hit[] {
+  const hits: Hit[] = []
+  for (const p of parts) {
+    if (!terms.every((t) => p.lower.includes(t))) continue
+    const rows = [p.heading ?? '', ...p.lines]
+      .map((line, i) => { const s = line.toLowerCase(); return { i, line, n: terms.filter((t) => s.includes(t)).length } })
+      .filter((r) => r.n > 0)
+    const best = rows.filter((r) => r.i > 0).sort((a, b) => b.n - a.n).slice(0, SNIPPETS).sort((a, b) => a.i - b.i)
+    const full = rows.filter((r) => r.n === terms.length).length
+    hits.push({ ...p, full, count: rows.length, snippets: best.map((r) => clean(r.line)).filter(Boolean) })
+  }
+  return hits.sort((a, b) => b.full - a.full || b.count - a.count)
+}
+
+/** Every `## ` section that holds all the terms, each linked to its place on the page; the first BATCH, then more on request. */
 export function SearchResults({ query, all, tree, onPick }: { query: string; all: Texts; tree: Tree; onPick: () => void }) {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
-  const hits = useMemo<Hit[]>(() => {
-    if (terms.length === 0) return []
-    const out: Hit[] = []
-    for (const [path, text] of Object.entries(all)) {
-      const lines = text.split('\n').filter((l) => { const s = l.toLowerCase(); return terms.every((t) => s.includes(t)) })
-      if (lines.length) out.push({ path, lines: lines.map(clean).filter(Boolean).slice(0, 4), score: lines.length })
-    }
-    return out.sort((a, b) => b.score - a.score).slice(0, 25)
-  }, [all, query]) // eslint-disable-line react-hooks/exhaustive-deps
+  const parts = useMemo(() => sectionsOf(all), [all])
+  const key = terms.join(' ')
+  const [more, setMore] = useState({ key, count: BATCH })
+  const count = more.key === key ? more.count : BATCH // a new query starts again at BATCH
 
   if (terms.length === 0) return null
-  const total = hits.reduce((n, h) => n + h.score, 0)
+  const hits = search(parts, terms)
+  const files = new Set(hits.map((h) => h.path)).size
+  // A hit on the page and section already in the URL changes no hash, so nothing else clears the search or scrolls:
+  // clear it now, then scroll to the section on the page that comes back.
+  const pick = (e: MouseEvent<HTMLAnchorElement>) => { flushSync(onPick); scrollIfSame(e) }
   return (
     <article>
-      <h1>Search <span className="muted light">{total} match{total === 1 ? '' : 'es'} in {hits.length} file{hits.length === 1 ? '' : 's'}</span></h1>
+      <h1>Search <span className="muted light">{hits.length} section{hits.length === 1 ? '' : 's'} in {files} file{files === 1 ? '' : 's'}</span></h1>
       {hits.length === 0 && <p className="muted">Nothing for “{query}”.</p>}
-      {hits.map((h) => {
+      {hits.slice(0, count).map((h) => {
         const code = courseOf(h.path)
         return (
-          <a key={h.path} className="card wide hit" href={hrefFor(h.path)} onClick={onPick}>
+          <a key={h.key} className="card wide hit" href={h.href} onClick={pick}>
             <div className="name">
               {code && <span className="chip tone" style={toneStyle(code)}>{code}</span>} {labelFor(h.path, tree)}
-              <span className="sub"> · {h.score}</span>
+              {h.heading && <> › <Highlight text={clean(h.heading)} terms={terms} /></>}
+              <span className="sub"> · {h.count}</span>
             </div>
-            {h.lines.map((l, i) => <div key={i} className="snippet"><Highlight text={l} terms={terms} /></div>)}
+            {h.snippets.map((l, i) => <div key={i} className="snippet"><Highlight text={l} terms={terms} /></div>)}
           </a>
         )
       })}
+      {hits.length > count && (
+        <div className="row">
+          <button type="button" className="btn" onClick={() => setMore({ key, count: count + BATCH })}>Show more</button>
+          <span className="muted small">{count} of {hits.length} shown</span>
+        </div>
+      )}
     </article>
   )
 }
