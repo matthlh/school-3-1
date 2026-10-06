@@ -24,6 +24,7 @@ versions of the course and does not apply to 26W1.
 - Midterm covers content through week 6 (Oct 15). Final is cumulative.
 - There are no past papers for this version of the course. The reader's licence says exams and solutions are private. The CSSS exam bank only has a 2009 sample final: 20 marks MC, 20 marks true/false, then 11 short-answer and design questions worth 6 to 12 marks each, 120 marks in 150 minutes. Student Quizlet sets from 2025 cover the old syllabus (security, agile process, MVC), most of which is gone from 26W1.
 - Earlier terms used true/false with negative marking. Two second-hand reports on this year's format: a classmate told Matt on 2026-10-02 that the exams are all true/false, and on 2026-10-05 Matt heard they are all multiple choice. Neither is confirmed by the course staff, and the two may describe the same thing (true/false is a two-option multiple-choice question). The syllabus still says every answer is justified, so expect a chosen option plus a reason.
+- The PrairieLearn labs are the only format sample from this year's staff (read 2026-10-06). Every lab uses four question shapes: one correct option, select every statement that is true, a whole number, and true/false per statement marked +1 right, -0.5 wrong, 0 blank. Each question is a short unseen code fragment with the same stems every time: degree, connascence, how you find out; data, logic, order binding; controllability, observability; precondition, postcondition. Expect the exam to look like this.
 
 ## Project — InsightUBC
 An inherited REST service for the Registrar (course and facilities data). D1 = two small features to
@@ -96,6 +97,6 @@ Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks
 
 ## To verify
 - [ ] Midterm scope: the syllabus says it covers everything through the end of week 6 (Thu Oct 15), but the schedule page says it covers through Thu Oct 22. Ask on Piazza which is right; until then, study through Oct 22.
-- [ ] Is T/F negative marking still used on exams?
+- [ ] Is T/F negative marking still used on exams? (The labs use it: +1, -0.5, 0 blank.)
 - [ ] Final exam date (published ≥3 weeks before the end of classes)
 - [ ] Do deliverables ever get posted to Canvas? (Canvas has nothing for this course; deadlines come from the calendar.)

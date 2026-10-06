@@ -12,6 +12,8 @@ Format intel (unverified): a classmate said on 2026-10-02 that the exams are all
 Matt heard they are all multiple choice. The syllabus still says every answer must be justified, so from
 lecture 6 on, questions are written as "True or false, and justify" or as a multiple-choice stem over a
 fragment or a claim, and the answer gives the verdict first and the reason second. Older questions stay as they are.
+The PrairieLearn labs (read 2026-10-06) use single choice, select-all, a whole number, and true/false per
+statement with negative marking; the Labs 2–4 section below keeps those shapes.
 
 Format:
 ```
@@ -542,3 +544,173 @@ For each statement say true or false and justify. (a) "`LoggingMailer` satisfies
 ### Q: True or false, and justify: "Slide 16's Resize example breaks LSP by strengthening a precondition."
 **Topic:** Test doubles and LSP substitutability  **Lec:** 6  **Type:** apply
 **A:** False. Resize lets the caller set one dimension and promises the other is unchanged. The subclass where changing the width also changes the height still accepts the same inputs, so the precondition is untouched. What it breaks is the postcondition: callers were promised one effect and get an extra one, so the promise is weakened. The precondition case on the same slide is Penguin, whose "under 50 cm only" narrows the inputs the superclass accepted. The two rules catch different violations, and an exam question will ask which one.
+
+## Labs 2–4 and practice set 4 — PrairieLearn (banked 2026-10-06; fragments reworded and renumbered, nothing copied; Lab 2 is closed and marked, so its model answers are the course's; Labs 3–4 and PRAQ04 were still open, so those answers are mine and say so)
+
+The lab format is the best exam sample there is: single-choice, "select every statement that is true", a whole number, and true/false per statement marked +1 right, -0.5 wrong, 0 blank. Questions below keep that shape. Lab 2 came back at 74% with the misses on connascence of value vs type vs name, on the "how you find out" test, and on logic and order bindings, so those get the most questions.
+
+### Q: Three classes each hold their own private list of accepted coupon codes: one validates a code, one prints the codes in a banner, one gates the submit button. (a) Degree of the agreement? (b) Strongest connascence? (c) Add a code to one list only: build fails, runtime exception, or silently wrong?
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** apply
+**A:** (a) 3: three places hold the same list and nothing marks them as the same fact. (b) Value: three places must hold the same literal strings. Not name (each list has a different name) and not algorithm (the membership check is not the agreement, the contents are). (c) Silently wrong: the build is clean and the tests pass, and one place advertises a code another rejects until a customer complains. Fix: one shared constant, degree 1.
+
+### Q: True or false, and justify: "A settings store is read with `store.get("retries") as number` and `.toFixed(0)` is called on the result. The strongest connascence between whoever writes that key and this reader is connascence of type."
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
+**A:** False. It is connascence of value: both sides must agree on the literal key `"retries"`, and the cast is an assumption, not a check. Type connascence is present too, but it is the weaker of the two. Degree is 2 (the writer of the key and the reader). How you find out: `store.set("retries", "3")` compiles, then `.toFixed` throws a TypeError at run time. So this one is a runtime crash, not silently wrong and not caught by the compiler. (Lab 2 answer was name and silently wrong.)
+
+### Q: True or false, and justify: "Two classes compute a line total independently, one as `price * qty * (1 + tax)` and the other as `price * qty + price * qty * tax`. Since no literal is shared between them, there is no coupling."
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
+**A:** False. Connascence of algorithm, degree 2: both must derive the same rule and nothing names or shares it. Change the rule in one place and the other is silently wrong, with a clean build. Value needs a shared literal; here the tax rate is a parameter on both sides, so what must agree is the computation. Fix: one function both call.
+
+### Q: A status service returns a number with the comment "0 = draft, 1 = sent, 2 = failed". A notifier checks `=== 1` and a dashboard maps 0, 1 and anything else to labels. (a) Degree? (b) Connascence? (c) Change the service to return 2 for sent. What happens? (d) The fix that moves up the table?
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** apply
+**A:** (a) 3 modules, 5 literal sites if you count comparisons; either is fine if you say which you counted. (b) Value: three places must agree that 1 means sent, and only a comment records the encoding. Not type: everything is a number and stays a number; what is in dispute is which number means what. (c) Silently wrong: it compiles, the notifier goes quiet and the dashboard tells a customer their sent order failed. (d) A union type `"draft" | "sent" | "failed"`: value becomes name, and the compiler visits every site when a case is added. (Lab 2 answer was 6, type, build fails.)
+
+### Q: `static distance(x1, y1, x2, y2)` is called as `distance(a[0], a[1], b[0], b[1])` where a and b are bare `number[]`. (a) Degree? (b) Connascence? (c) Swap x2 and y2 in the signature only. What happens? (d) Fix?
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** apply
+**A:** (a) 2, plus a second positional agreement the caller carries on its own: every caller of the `number[]` version has to know index 0 is x. (b) Position: both sides must agree on the order of four values. Not type: all four really are numbers on both sides, which is exactly why the type system cannot help. (c) Silently wrong: the call still compiles and still returns a number, the wrong one. (d) A named shape `{ x: number; y: number }`: the call cannot be transposed in a way that compiles, so position becomes name. (Lab 2 answer was 5, name, runtime crash.)
+
+### Q: True or false, and justify: "A login checker re-implements the password hashing loop instead of calling the hasher. Because both copies contain the literal multiplier 31, this is connascence of value."
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
+**A:** False. It is connascence of algorithm: the loop, the multiplier, the concatenation order and the output encoding all have to match, and the agreement is written out twice. A shared literal inside a duplicated computation does not make the agreement about the literal. Break it by swapping `password + salt` to `salt + password` on one side: clean build, every valid password rejected, and the symptom "users cannot log in" points at authentication, not at a duplicated loop. Fix: centralise, degree 1.
+
+### Q: True or false, and justify: "A cart stores `any[]` and a checkout compares items with `===`. Because the item type is `any`, there is no coupling between the cart and its callers."
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
+**A:** False. There is connascence of type, made implicit instead of explicit: every caller of `add` and every caller of the checkout must agree on what an item looks like, and `any` means the agreement has an unbounded number of parties you cannot enumerate. It is already silently wrong in the fragment: two structurally identical object literals compared with `===` are not equal, so the loop finds nothing and reports nothing. The fix in TypeScript is not to loosen past type but to declare the type once and use it in both places.
+
+### Q: A CSV importer builds `new Employee(row[0], row[1])` with a comment saying the export is `[lastName, firstName]`. The file is produced nightly by another team's payroll system in another repo. (a) Degree? (b) Connascence? (c) What happens if the exporter swaps its columns? (d) Fix?
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** apply
+**A:** (a) 3, and the third party is not in your repository. An agreement's parties are whoever has to hold it, not whoever is checked into your source control, and the party outside is the one you cannot watch change. Answering 2 is tidy and wrong in the direction that matters. (b) Position: column order and parameter order must match, and only a comment records which order. (c) Silently wrong: every name comes in backwards with a clean build and green tests, since both columns are strings. (d) Read the header row and look columns up by name; position becomes value. (Lab 2 answer was 2, type, runtime crash.)
+
+### Q: True or false, and justify: "Of the five kinds of connascence, name is the one the build catches for you: rename the method and every call site fails to compile."
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** recall
+**A:** True. Name is the weakest kind in the table and the only one in the Lab 2 set where the compiler reports the break, at every call site, with a message naming the problem. A method defined once and called once by name is degree 2, name, build fails. Every other kind in the worksheet was either a runtime crash or silently wrong. (Lab 2 answer was algorithm and silently wrong.)
+
+### Q: State the Lab 2 procedure for working out how a coupling will be found, and name the three outcomes in order from best to worst.
+**Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** recall
+**A:** Make the smallest change to one side that makes the other wrong, then ask what happens. Best: the compiler tells you and the build fails. Middle: it crashes at run time, at the point the assumption is used. Worst: it is silently wrong, compiling and running with the wrong answer. Nothing in a value, position or algorithm agreement is expressed in a way the type system can check, so those land in the bottom two.
+
+### Q: In one function body: `subtotal = sum of lines` (1), `tax = subtotal * RATE` (2), `audit.append(...)` (4), `metrics.increment(...)` (5). For each pair, say true or false for data, logic and order binding: (a) 1 and 2, (b) 4 and 5, (c) 2 and 4.
+**Topic:** Cohesion & bindings  **Lec:** Lab 2  **Type:** apply
+**A:** (a) All three true: 2 reads what 1 produced (data), both run whenever the function is called (logic), and swapping them does not compile (order). (b) Data false, logic true, order false: one appends to the audit log, the other increments a counter, neither reads the other, both run on the same call, and swapping them changes nothing. (c) Data false, logic true, order false: tax and the audit log have nothing in common, but they happen under the same condition, and swapping them leaves the program identical. (Lab 2 answers were F F F, T T F, T T T.)
+
+### Q: True or false, and justify: "Two statements in the same function body always share a logic binding."
+**Topic:** Cohesion & bindings  **Lec:** Lab 2  **Type:** critique
+**A:** False. Logic binding means the two happen for the same reason: same trigger, same condition, same moment. A statement inside an `if` and a statement after it in the same function do not share it, because one is conditional and the other runs on every call. Two statements both at the top level of a function do share it, even when they are otherwise unrelated.
+
+### Q: True or false, and justify: "Two loops over the same `orders` array that both read `order.status` share an order binding."
+**Topic:** Cohesion & bindings  **Lec:** Lab 2  **Type:** critique
+**A:** False. They share a data binding (same array, same field), but order binding needs one block to change something the other depends on. If the first loop only sums paid and refunded orders and the second only turns old pending orders into cancelled ones, swapping them leaves the totals identical. Reading the same field is not enough to create an ordering.
+
+### Q: `seatsLeft -= 1` (1); `if (seatsLeft === 0) {` (2) `mailer.send(ADMIN, "full")` (3); `customer.status = "Winner"` (4) `}`; `customer.status = tierFor(customer)` (5). (a) Bindings for 3 and 4? (b) Bindings for 4 and 5? (c) What does the ordering of 4 and 5 reveal?
+**Topic:** Cohesion & bindings  **Lec:** Lab 2  **Type:** apply
+**A:** (a) Data false (different objects), logic true (both run only when line 2 is true), order false (reverse them and nothing changes). (b) Data true (both write `customer.status`), logic false (4 is conditional, 5 runs on every call), order true (swap them and the result differs). (c) A bug: line 5 unconditionally overwrites the "Winner" status that line 4 just set, so the winner never keeps it. Order binding is often where a bug hides.
+
+### Q: A sweep function has blocks: (A) declares `notices` and `promoted`; (B) a loop that fills both; (C) a loop over the same offerings that runs only when a config flag is on and reads `seatsLeft`, which (B) changes; (D) reports `promoted` to metrics; (E) loops over `notices` and sends mail. Bindings for (A, B), (B, C) and (D, E)?
+**Topic:** Cohesion & bindings  **Lec:** Lab 2  **Type:** apply
+**A:** (A, B): all three true. B fills what A declared, both run every sweep, and A below B does not compile. (B, C): data true (same array, same list), logic false (C runs only under the flag), order true (C decides "at risk" from `seatsLeft`, which B modified). (D, E): data false (promoted count vs notices list), logic true (both once at the end of every call), order false (metrics do not care whether the mail has gone out). (Lab 2 answers were F F T, F T T, T T T.)
+
+### Q: A shipping calculator and a checkout summary both compare `orderTotal >= 75`, and the summary also computes `75 - orderTotal`. (a) How many places must be edited to change the threshold? (b) Connascence before and after extracting `FREE_SHIPPING_THRESHOLD`? (c) True or false: "After the constant is extracted the two classes are no longer coupled."
+**Topic:** Coupling & connascence  **Lec:** Lab 3  **Type:** apply
+**A:** (a) 3: three literal sites, not two methods. Nothing marks them as the same fact; they just happen to agree. (b) Value before, name after: every site now has to agree only on the constant's name, and a rename is caught by the build. (c) False. Both classes still encode the rule "free when total is at or above the threshold" (the `>=` comparison), which is connascence of algorithm. Move the decision into one `qualifiesForFreeShipping(total)` and the summary calls it. (Lab 3 marked answer: 3, value, name.)
+
+### Q: Three functions each branch on `account.tier` with `if bronze… if silver… return gold-value`. Product adds a platinum tier. (a) True or false: "Adding `"platinum"` to the `Tier` union makes the compiler flag every function that does not handle it." (b) Connascence before and after replacing the chains with one lookup table typed `Record<Tier, Benefits>`? (c) What happens if platinum is added to the union but not the table?
+**Topic:** Coupling & connascence  **Lec:** Lab 3  **Type:** critique
+**A:** (a) False. Each chain ends in an unconditional return, so a platinum account falls through and silently gets gold's values. All three functions need a new branch. (b) Value before (each function independently encodes the full tier mapping as literals), type after: consumers agree only on the shape `Record<Tier, Benefits>`, and there is exactly one place that says what a tier means. Not name. (c) The lab's model answer: the lookup returns `undefined` and the first property read throws, loud instead of silent. Note that an object literal typed `Record<Tier, …>` with a key missing is actually a compile error in TypeScript, which is better still; say which you mean. (Lab 3 marked answer: 3 functions, silently gold, value, type.)
+
+### Q: An invoice printer with no fields of its own sums an order's lines, applies the order's discount, then formats the customer's name, city and province. (a) Whose data does it compute from? (b) Order changes its address from `{ city, province }` to one `addressLine` string: how many classes change? (c) Bindings between the compute block and the format block? (d) The refactoring, and what stays in the printer?
+**Topic:** Code smells  **Lec:** Lab 3  **Type:** apply
+**A:** (a) Entirely Order's. That is feature envy: the method wants to live on Order. (b) 2: Order and the printer, because the printer reaches into the address shape. (c) Data true (the format line uses the total the compute block produced), logic true (same call), order true (you cannot print a total you have not computed). (d) Move subtotal, discount and total onto Order as methods; the printer keeps only formatting, and the address reach-through goes too if Order exposes a formatted address. My answer; the lab was open.
+
+### Q: A label printer has an if-chain over a three-value `packageType` union, each branch assigning a bare handling fee, and a fourth type arrives next sprint. True or false, and justify: "Moving all of the printer's computation onto Shipment is the change that most reduces the risk that the new type is handled silently wrong."
+**Topic:** Refactoring  **Lec:** Lab 3  **Type:** critique
+**A:** False. The risk is coupling: the if-chain's literals and the union type must agree on the set of package types, connascence of value, and a type that is missing from the chain gets handling 0 with a clean build. The change that attacks that is a lookup table keyed by `packageType`, typed over the union, so a new type has one place to go and the build complains if it is missing. Moving computation onto Shipment is a cohesion fix that is worth doing later if Shipment's shape keeps changing or other printers appear, but it does not touch the fall-through. A comment does nothing. My answer; the lab was open.
+
+### Q: A teammate replaces an `OrderStatus` enum with a class of five static readonly instances and `isPaid()`-style methods, and claims it reduces connascence. (a) True or false: "This change weakens the connascence." (b) What connascence do callers of `isPaid()` have with the class?
+**Topic:** Coupling & connascence  **Lec:** Lab 3  **Type:** critique
+**A:** (a) False. `order.status === OrderStatus.Paid` and `order.status.isPaid()` are both agreements on a shared identifier. (b) Name: callers reference method names that must stay consistent, exactly as they referenced enum member names before. The class adds five methods to maintain for no change in kind; the enum stays simpler unless the class is going to carry real behaviour per status. My answer; the lab was open.
+
+### Q: For each pair, say whether the second version has lower, same or higher observability and controllability than the first, and why. (a) `Die.roll(sides)` returns a random value vs `LoadedDie.roll(sides)` returns `sides`. (b) `Receipt.render` logs and returns the string vs `PrintedReceipt.render` only logs. (c) `Greeter.greet(name, hour)` vs `ClockGreeter.greet(name)` reading `new Date()`. (d) one 25-line `total(items, code, province)` vs the same split into `subtotal`, `discount`, `tax`, `shipping` methods that `total` calls.
+**Topic:** Controllability and observability  **Lec:** Lab 3  **Type:** apply
+**A:** (a) Observability same (both return the number); controllability higher, because the result is fixed by an input the test chooses instead of by `Math.random`, which a test cannot set. (b) Observability lower (nothing comes back; the result goes to the console); controllability same (same parameters). (c) Observability same; controllability lower, because the hour now comes from the clock and a test cannot pick "evening". (d) Both higher: each step can be called with inputs the test chooses (controllability), and each intermediate value is returned instead of buried in a local (observability). My answers; the lab was open.
+
+### Q: `place(order)` has four marked lines: (A) `subtotal += line.price * line.qty`; (B) `surcharge = weekend(new Date()) ? 4.99 : 0`; (C) `this.backorders.push(sku)` inside `if (!warehouse.reserve(...))` where warehouse is the real system and `backorders` is private; (D) `mailer.send(order.email, ...)` with a real mailer. It returns `{ subtotal, surcharge, total }`. For each line: does controllability limit the test, does observability?
+**Topic:** Controllability and observability  **Lec:** Lab 3  **Type:** apply
+**A:** (A) Neither: the test passes the lines in and reads subtotal from the return. Write the test for this one. (B) Controllability: the test cannot choose the day. Observable, since surcharge is returned. (C) Both: the test cannot make the real warehouse say no, and the pushed value sits in a private field nothing returns. (D) Observability: the test can call `place` with any order (controllable) but cannot see what the real mailer sent, and it really sends. My answers; the lab was open.
+
+### Q: `login(user, pw)` counts attempts in a private map; after 3 it writes `audit.write("locked")` (A) to the server log and returns `"locked"` (B); it then calls `findUser` against the production database and returns `"wrong password"` (C) on a hash mismatch; on success it stores `{ user, expires: Date.now() + 1h }` (D) in a module-level map that is not exported. For each marked line: controllability limited, observability limited?
+**Topic:** Controllability and observability  **Lec:** Lab 3  **Type:** apply
+**A:** (A) Observability only: the test can call login four times to get there, but cannot read the server's audit file. (B) Neither: four calls, read the return value. Write this test. (C) Controllability: the branch needs a user the production database happens to contain, and the test cannot plant one. The return is observable. (D) Both: `Date.now()` cannot be set, and the sessions map is module-private so the expiry cannot be read. My answers; the lab was open.
+
+### Q: True or false, and justify: "`class Builder { constructor(private fmt: IFormatter) {} }` with `CsvFormatter implements IFormatter` and a `FakeFormatter implements IFormatter` used in tests correctly implements the dependency inversion principle."
+**Topic:** Test doubles and LSP substitutability  **Lec:** Lab 4  **Type:** critique
+**A:** True. The high-level module depends on an interface it owns, the concrete formatter is passed in from outside through the constructor, and the fake is just another implementation of the same interface. Nothing in the builder names `CsvFormatter`. My answer; the lab was open.
+
+### Q: True or false, and justify: "`class Notifier { private sender = new EmailSender(); }` together with `class FakeEmailSender extends EmailSender { override send(...) { this.sent.push(...) } }` correctly implements DIP, because the fake can stand in for the real sender."
+**Topic:** Test doubles and LSP substitutability  **Lec:** Lab 4  **Type:** critique
+**A:** False. The notifier constructs the concrete `EmailSender` itself, so there is no seam: a test cannot hand it the fake, and subclassing the real class does not help because nothing ever injects the subclass. Fix: an `IEmailSender` interface with `send`, owned next to the notifier, the notifier taking an `IEmailSender` through its constructor, and the real and fake senders both implementing it. My answer; the practice set was open.
+
+### Q: An order processor creates `new FileAuditLog()` as a field and calls `write` on it; `write` appends to `audit.log` on disk. (a) DIP satisfied? (b) Which property limits a test that wants to check the logged message? (c) True or false: "A `FakeAuditLog` that records messages in an array weakens the postcondition of `IAuditLog.write`, because it does not persist to disk."
+**Topic:** Test doubles and LSP substitutability  **Lec:** Lab 4  **Type:** critique
+**A:** (a) No: the high-level class instantiates the concrete filesystem logger, so it cannot run without disk I/O and cannot be handed a double. (b) Observability: the message goes to a file the test cannot easily read. (c) False. The interface promises only that the message is recorded, not how or where. A fake that keeps the contract is substitutable; "to disk" was never part of the promise. My answers; the lab was open.
+
+### Q: For each subclass override, say whether the precondition is strengthened, weakened or unchanged, whether the postcondition is strengthened, weakened or unchanged, and whether LSP is violated. (a) `PriceList.priceOf(sku)` returns the stored non-negative price or throws on an unknown sku; `SalePriceList.priceOf` returns `super.priceOf(sku) - discount`. (b) `Bike.ride(d)` adds any distance and throws once the total passes 1000; `CoolBike.ride` first throws if `d < 0`. (c) `Shipping.quote(kg)` throws for `kg <= 0` or `kg > 30`; `FreightShipping.quote` throws only for `kg <= 0`, delegates up to 30 and prices heavier parcels itself.
+**Topic:** Test doubles and LSP substitutability  **Lec:** Lab 4  **Type:** apply
+**A:** (a) Precondition unchanged (same throw on unknown sku); postcondition weakened: the base promises the price that was stored, the subclass returns less and can go negative (store 5, discount 10, get -5). Violation. (b) Precondition strengthened: the base accepted a negative distance, the subclass rejects it; postcondition unchanged. Violation, shown by a test that rides -5 on a `Bike` variable holding a `CoolBike`. (c) Precondition weakened (accepts more inputs), postcondition unchanged for every input the base accepted (same formula up to 30). Allowed. The teammate is wrong. My answers; the practice set was open.
+
+### Q: Same drill for: (a) `Account.withdraw(a)` throws on `a <= 0` or `a > balance` and returns the new balance; `ScammyAccount.withdraw` also throws on `a > 100` and deducts an extra 1. (b) `Die.roll(sides)` returns a random 1..sides; `LoadedDie.roll` returns `sides`. (c) `Thermostat.setTarget(c)` clamps to 10..30 and returns it; `SmartThermostat.setTarget` rounds and does not clamp. (d) `Directory.lookup(name)` throws `NotFoundError` when absent; `RemoteDirectory.lookup` throws `HttpError(404)` instead, and a caller catches only `NotFoundError`.
+**Topic:** Test doubles and LSP substitutability  **Lec:** Lab 4  **Type:** apply
+**A:** (a) Precondition strengthened (rejects 101 where the base allowed it) and postcondition weakened (returns balance - a - 1, not balance - a). Violation twice over. (b) Precondition unchanged; postcondition strengthened: `sides` is always inside 1..sides, so every promise the base made still holds. Not a violation, however useless the die. (c) Precondition unchanged (any number in); postcondition weakened: the base promised a value in 10..30 and the subclass returns 40 for 40. Violation. (d) Precondition unchanged; postcondition weakened, because the exception type is part of the postcondition. The caller's `catch` lets `HttpError` through, so a caller can tell the subtype apart. Violation. My answers; the practice set was open.
+
+### Q: `recommend(city)` fetches the live weather, then returns one of three strings by temperature band. (a) Which property blocks each of the fetch line and the two return lines? (b) The DIP refactoring, and where the interface lives? (c) `open()` uses `crypto.randomUUID()` and `Date.now() + 30 min`, `isValid` compares `Date.now()` to the expiry, `close` logs to the console. Which property limits each?
+**Topic:** Test doubles and LSP substitutability  **Lec:** Lab 4  **Type:** apply
+**A:** (a) Controllability for all three: the live fetch means the test cannot choose the temperature, so it cannot reach the cold branch or the warm branch on purpose. The returns themselves are observable. (b) An `IWeatherApi` with `getTemperatureCelsius(city)`, owned alongside the advisory (the high-level module), passed in through the constructor; a `FakeWeatherApi` returns whatever the test sets, one test per band. (c) The token: controllability (random id the test cannot predict). The expiry check: controllability (the clock cannot be advanced). The console log: observability (nothing comes back). Fix: `IClock.nowMs()` and `IIdGenerator.generate()` through the constructor, with a `FakeClock` the test advances past 30 minutes. My answers; the lab was open.
+
+## Lec 8 — Patterns I: Adapter and Composite (logged 2026-10-06, deck 05a-patterns-i.pdf + reader Design Patterns; Matt absent, deck only)
+
+### Q: Name the four steps for understanding a design pattern, in order, and say which Module 1 problem "scattered" and "tangled" each point to.
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** recall
+**A:** Change (which decision is likely to vary), pain (where that decision scatters or tangles in the current code), mechanism (how the pattern gives the decision one home), cost (what indirection was added and whether it was worth it). Scattered means the decision is spread over many places, a coupling problem. Tangled means it is mixed with unrelated logic in one place, a cohesion problem.
+
+### Q: True or false, and justify: "A design pattern is a class diagram; if your code matches the diagram, it uses the pattern, and if it does not, it does not."
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** False. The deck says a pattern is not a class diagram you copy, not a library, and not a rule you must follow. It is a reusable way of thinking about a recurring problem, what emerges when a likely change is kept local, and a vocabulary for trade-offs. The reader adds that the purpose is not to classify code as "is" or "is not" a pattern but to give you more ways to structure it.
+
+### Q: True or false, and justify: "Knowing whether a pattern is structural, creational or behavioural tells you when to use it."
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** False. The categories organise the catalogue: structural patterns realise relationships between entities, creational ones handle object creation, behavioural ones capture how objects communicate. Whether to use one comes from the four-step analysis, above all whether change is likely and where the pain is.
+
+### Q: True or false, and justify: "Since every system will be changed, you should apply a pattern wherever one fits, before the change arrives."
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** False. Patterns help when change is likely, variability already exists, or coupling is already painful. They hurt when requirements are stable, when there is only one concrete case, and when the abstraction costs more than the future benefit. Forcing a pattern adds indirection with nothing to pay for it; the cost step of the analysis exists to stop that.
+
+### Q: The deck says the OO mechanism of a pattern is found by asking three questions. What are they?
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** recall
+**A:** Abstraction: what new interface or class gives the decision a single home? Polymorphism and obliviousness: what methods does that abstraction declare, who calls them without knowing the concrete type, and can someone add a new implementation and override them safely? Trigger: when are those methods called, and by whom?
+
+### Q: A listening-history app pulls plays from three services. Each of its four reports has one loop per service that calls that service's own client and translates its own field names. A fourth service is coming. Give the four-step analysis and name the pattern.
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** apply
+**A:** Adapter. Change: new services, each with its own interface. Pain: one loop per service in every report (scattered) and report logic tangled with each service's calls and field translation. Mechanism: a `PlaySource` interface with one method returning normalised `Play` records; one adapter class per service wraps that service's client and does the translation; each report only holds a `PlaySource[]` and calls the method on each. Cost: one class per service, and the normalised record can only carry fields every service can supply.
+
+### Q: True or false, and justify: "After adapters are introduced, each report's coupling to the services is connascence of name, since the reports only use the method's name."
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** False. The reader puts it at connascence of type: each report depends on one interface type that every adapter must satisfy. The bigger improvement is in degree, not strength: one dependency instead of one per service. Before the adapters, each report had an implicit connascence of type or algorithm with every service it touched.
+
+### Q: A teammate adds `skipCount` to the normalised record because one platform exports it; the other adapters return `undefined` for it. Why does the deck's cost line say this is the wrong move?
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** The normalised record can only hold fields every platform can supply. A field only one source fills means callers have to check which adapter a record came from before using it, which is exactly the type-dependent code the pattern removed. Either every adapter can supply the field (possibly computed), or it does not belong on the shared record.
+
+### Q: A `Manager` class holds `engineers: Engineer[]`, `designers: Designer[]` and `managers: Manager[]`, and `totalSalary()` loops over each array, recursing into `managers`. A technical-lead role is added that may or may not head a team. Give the four-step analysis and name the pattern.
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** apply
+**A:** Composite. Change: new roles, each of which might be one person or head a team. Pain: one array and one loop per role in every Manager operation (scattered), and each operation tangled with checking whether a report is a person or a team. Mechanism: an `Employee` interface with `totalSalary()` and `headcount()`; a leaf answers for itself, a Manager holds an `Employee[]` and adds up its reports; the client calls the method on any node and each Manager calls it on each of its reports. Cost: one class per role, and a new operation is a new method in the interface and in every class.
+
+### Q: True or false, and justify: "In Composite, adding a new operation such as `averageTenure()` is cheap, because clients are oblivious to node types."
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** False. What Composite makes cheap is a new kind of node: one new class, no client changes. A new operation is the expensive direction: a new method on the component interface and an implementation in every leaf and composite class. The deck lists this as the pattern's cost.
+
+### Q: In the reader's terms, what connascence does the client have before and after Composite, and what is the reader's example?
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** recall
+**A:** Before: traversal logic duplicated in every role that has reports, scattered change with connascence of algorithm. After: connascence of type with the component interface. The example is `getBudget()`: an Employee returns its salary, a Manager returns its salary plus `getBudget()` of each direct report, and the client calls `getBudget()` on employee 1233 (no reports) and 1234 (39 people under them) the same way.
+
+### Q: True or false, and justify: "All adapters in an Adapter design must implement one shared interface."
+**Topic:** Design patterns I: Adapter and Composite  **Lec:** 8  **Type:** critique
+**A:** False as a rule, true in the deck's case. The reader says both of its adapters implement `FormatAdapter`, but that is not strictly required by the pattern; an adapter only has to present the interface its client expects. The deck's `MusicSource` is shared because the report wants to loop over a `MusicSource[]` without knowing which platform each one wraps.
