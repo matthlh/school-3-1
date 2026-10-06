@@ -496,36 +496,47 @@ def lecture_todos(auto, seed):
                 auto.register[-1] = title
 
 def ladder_todos(auto):
-    """Today's PREP ladder step for every key date, titled `T-<days left> <project> <name> · <step>`, P1, due today.
-    Once a key date has passed, its open steps are cancelled and none is created. On the date itself they are left alone,
-    except an exam's, which go that morning: PREP's exam day is "Nothing".
-    Switch-over from the titles without the name (`T-<days left> <project> · <step>`): an open one is renamed, matched by
-    its due date, the day its step fired, before the past check; one closed under that title is left closed, and if it
-    was in today's earlier plan (state["last"]), today's renamed step counts as closed too."""
+    """Today's PREP ladder step for every key date that is still ahead, titled `T-<days left> <project> <name> · <step>`,
+    P1, due today. A key date is ahead until the day after it, or for an exam until its day (PREP's exam day is
+    "Nothing"); after that its open steps are cancelled and none is created.
+    Switch-over from the titles without the name (`T-<days left> <project> · <step>`), which the old code shared across
+    a course's items: an open one stood in for every later item's same step, so it goes to the soonest item ahead whose
+    step has fired. It is renamed to that item's title, or cancelled when that item already has the step, open or
+    ticked, or when no such item is left. One closed under the old title stays closed, and if it was in today's earlier
+    plan (state["last"]), today's renamed step counts as closed too."""
     today, last = auto.today, auto.state.get("last", {})
     planned = set(last.get("selected", []) + last.get("rolled", [])) if last.get("date") == today.isoformat() else set()
+    ahead = lambda k: k.date > today if k.kind == "exam" else k.date >= today
+    steps = []                                        # (key date, days left, fired, estimate, title, old title)
     for k in term.key_dates():
-        if k.kind not in term.LADDERS:                       # an admin date has no ladder
+        for left, (text, est) in term.LADDERS.get(k.kind, {}).items():   # an admin date has no ladder
+            if left:
+                proj, step = PROJECT_OF[k.course], re.sub(r"^T-\d+ ", "", text)
+                steps.append((k, left, k.date - dt.timedelta(days=left), est,
+                              f"T-{left} {proj} {k.name} · {step}", f"T-{left} {proj} · {text}"))
+    for old in dict.fromkeys(s[5] for s in steps):
+        t = auto.by_title.get(old)
+        if t is None:
             continue
-        proj = PROJECT_OF[k.course]
-        for left, (text, est) in term.LADDERS[k.kind].items():
-            fired = k.date - dt.timedelta(days=left)
-            if left == 0 or fired > today:
-                continue
-            title = f"T-{left} {proj} {k.name} · {re.sub(r'^T-\d+ ', '', text)}"
-            old = f"T-{left} {proj} · {text}"
-            t = auto.by_title.get(old)
-            if t is not None and t.due == fired:
-                auto.rename(t, title)
-            elif fired == today and old in planned and auto.closed_by_hand(old):
-                auto.known[title] = auto.known[old]
-            if k.date < today or (k.kind == "exam" and k.date == today):    # past, or exam day (PREP: "Nothing")
-                if title in auto.by_title:
-                    auto.close(auto.by_title[title], "canceled",
-                               f"{k.name} is today" if k.date == today else f"{k.name} on {k.date:%b %-d} is past")
-            elif fired == today:
-                auto.create(title, f"{est}, P1", project=proj, when=today, deadline=today,
-                            notes=f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md.")
+        owners = [s for s in steps if s[5] == old and s[2] <= today and ahead(s[0])]
+        if not owners:
+            auto.close(t, "canceled", "the item it was for is past")
+            continue
+        k, _, _, _, title, _ = min(owners, key=lambda s: s[0].date)
+        if title in auto.by_title or auto.closed_by_hand(title):
+            auto.close(t, "canceled", f"{k.name} already has this step")
+        else:
+            auto.rename(t, title)
+    for k, left, fired, est, title, old in steps:
+        if fired == today and old in planned and auto.closed_by_hand(old):
+            auto.known[title] = auto.known[old]
+        if not ahead(k):
+            if title in auto.by_title:
+                auto.close(auto.by_title[title], "canceled",
+                           f"{k.name} is today" if k.date == today else f"{k.name} on {k.date:%b %-d} is past")
+        elif fired == today:
+            auto.create(title, f"{est}, P1", project=PROJECT_OF[k.course], when=today, deadline=today,
+                        notes=f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md.")
 
 def habit_todos(auto):
     """Today's revision habits, area UBC, due today. Any other open habit is cancelled: one from an earlier day, since a
