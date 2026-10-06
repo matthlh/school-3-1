@@ -5,7 +5,14 @@ Usage:
   quiz_grade.py 1:O 2:X 3:~ 4:-            explicit (n:grade; - or s = skipped)
   quiz_grade.py O X ~ O                    positional, in session order
   quiz_grade.py "1 O 2 ~ 3 X"              a phone reply pasted verbatim
-  options: --date YYYY-MM-DD  --dry-run  --session PATH  --note "free text for the log"
+  quiz_grade.py --transit 2026-10-05 "1 O 2 ~ 3 X"
+                                           the transit deck of that date (routines/transit-session.json)
+  options: --date YYYY-MM-DD  --dry-run  --transit DECK_DATE | --session PATH  --note "free text for the log"
+
+Each mode refuses the wrong session before writing anything. Plain grading takes routines/quiz-session.json only
+when it was picked today (--date sets today), and when there is none it names a pending transit deck. --transit
+takes routines/transit-session.json only when it holds the deck of DECK_DATE, the doc_id the deck page saves its
+grades under, so taps never land on another deck's questions. --session PATH grades that file with no date check.
 
 Questions not mentioned are left untouched (he stopped early). A topic's session grade is the
 WORST grade among its questions this session; the ledger row then moves by the CLAUDE.md ladder
@@ -17,7 +24,7 @@ WORST grade among its questions this session; the ledger row then moves by the C
 Then prints the ledger delta, what needs more questions, and last the notes pages behind the X and ~
 grades, grouped by page with the most misses first (miss_pages).
 """
-import argparse, datetime as dt, json, os, re, sys
+import argparse, datetime as dt, json, os, re, shlex, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import quizlib as L
@@ -39,22 +46,22 @@ def parse_grades(tokens, n_items):
         if s not in gmap:
             raise SystemExit(f"bad grade '{s}' — use X, ~ (or p), O, or - (skip)")
         return gmap[s]
-    out, i = {}, 0
+    out = {}
     if all(re.fullmatch(G, x) for x in flat):                            # bare sequence
-        for k, x in enumerate(flat, 1):
-            out[k] = g_of(x)
-        return out
-    while i < len(flat):
-        m = re.fullmatch(rf"(\d+)[:=]?({G})?", flat[i])
-        if not m:
-            raise SystemExit(f"cannot parse '{flat[i]}' — expected n:grade pairs or a bare grade sequence")
-        k = int(m.group(1))
-        if m.group(2):
-            out[k] = g_of(m.group(2)); i += 1
-        else:
-            if i + 1 >= len(flat):
-                raise SystemExit(f"question {k} has no grade")
-            out[k] = g_of(flat[i + 1]); i += 2
+        out = {k: g_of(x) for k, x in enumerate(flat, 1)}
+    else:
+        i = 0
+        while i < len(flat):
+            m = re.fullmatch(rf"(\d+)[:=]?({G})?", flat[i])
+            if not m:
+                raise SystemExit(f"cannot parse '{flat[i]}' — expected n:grade pairs or a bare grade sequence")
+            k = int(m.group(1))
+            if m.group(2):
+                out[k] = g_of(m.group(2)); i += 1
+            else:
+                if i + 1 >= len(flat):
+                    raise SystemExit(f"question {k} has no grade")
+                out[k] = g_of(flat[i + 1]); i += 2
     for k in out:
         if not 1 <= k <= n_items:
             raise SystemExit(f"question {k} is not in the session (1–{n_items})")
@@ -131,14 +138,32 @@ def main():
     ap.add_argument("grades", nargs="*")
     ap.add_argument("--date")
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--session", default=L.SESSION)
+    which = ap.add_mutually_exclusive_group()
+    which.add_argument("--transit", metavar="DECK_DATE", type=dt.date.fromisoformat,
+                       help="grade the transit deck's session, routines/transit-session.json, if it holds this date's deck")
+    which.add_argument("--session", help="grade this session file instead, with no date check")
     ap.add_argument("--note", default="")
     a = ap.parse_args()
     today = dt.date.fromisoformat(a.date) if a.date else L.today_local()
+    plain = not (a.transit or a.session)          # neither flag: the quiz picked today
+    a.session = a.session or (L.TRANSIT_SESSION if a.transit else L.SESSION)
+    deck_hint = ""                                # a plain reply may have been meant for the waiting deck
+    if plain and os.path.exists(L.TRANSIT_SESSION):
+        with open(L.TRANSIT_SESSION, encoding="utf-8") as f:
+            deck = json.load(f)["date"]
+        deck_hint = (f". The transit deck of {deck} is waiting in {os.path.relpath(L.TRANSIT_SESSION, L.ROOT)}; "
+                     f"if these are its grades, run: quiz_grade.py --transit {deck} {shlex.join(sys.argv[1:])}")
     if not os.path.exists(a.session):
-        raise SystemExit("no pending session — run quiz_pick.py first")
+        raise SystemExit(f"no pending session in {os.path.relpath(a.session, L.ROOT)}"
+                         + (deck_hint or f" — run quiz_pick.py{' --transit' if a.transit else ''} first"))
     with open(a.session, encoding="utf-8") as f:
         session = json.load(f)
+    if a.transit and session["date"] != a.transit.isoformat():
+        raise SystemExit(f"{os.path.relpath(a.session, L.ROOT)} holds the deck of {session['date']}, not {a.transit} — "
+                         "grading would put these grades on the wrong questions")
+    if plain and session["date"] != today.isoformat():
+        raise SystemExit(f"{os.path.relpath(a.session, L.ROOT)} is from {session['date']} and was never graded — "
+                         f"grade it as that day with --date {session['date']}, or pick a new session" + deck_hint)
     items = {it["n"]: it for it in session["items"]}
     grades = parse_grades(a.grades, len(items))
     graded = {k: g for k, g in grades.items() if g}
@@ -146,6 +171,7 @@ def main():
         raise SystemExit("nothing graded")
 
     text, rows = L.load_ledger()
+    L.session_log_end(text.split("\n"))      # exits here if ledger.md has no Session log table, before anything is written
     state = L.load_state()
     questions = L.load_questions()
     qsrc = {q["id"]: q for q in questions}

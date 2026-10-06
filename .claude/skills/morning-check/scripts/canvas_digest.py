@@ -12,7 +12,8 @@ Usage:
 import json, sys, re, os, glob, datetime as dt
 from zoneinfo import ZoneInfo
 
-ROOT = "/Users/matthe/Documents/CodingProjects/School 3-1"
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))   # the workspace this script sits in
 SNAP_DIR = os.path.join(ROOT, "routines", "snapshots")
 PT = ZoneInfo("America/Vancouver")
 COURSES = ["ASIA250", "CPSC310", "PHIL385", "STAT251"]

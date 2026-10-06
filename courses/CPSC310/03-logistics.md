@@ -50,10 +50,11 @@ only — useful for style, not content.
   lecture 7 Patterns: Adapter & Composite (Oct 1), lecture 8 Patterns: Strategy & State (Oct 6).
   Lab 2 was retitled "coupling & cohesion" and Lab 3 "refactoring & testability". No deadline moved.
 - Course-site map (checked 2026-09-11): Schedule `/26w1/schedule` = week table, slide PDFs
-  (`/26w1/lectures/NN-*.pdf`), lab weeks, due dates · Materials `/26w1/materials/unit-0N/` =
-  per-lecture question + reader chapters · Reader `/textbook/` (Software Construction · Analytical
-  Code Design · Software Design) · Syllabus `/26w1/syllabus` · Project `/26w1/project/` (specs
-  linked as released; REST spec at `project/spec.html`, Redocly v2.0.3). `cpsc310_site.py` reads these.
+  (`/26w1/lectures/NN-*.pdf`), lab weeks, due dates · Reader `/textbook/` (Software Construction ·
+  Analytical Code Design · Software Design) · Syllabus `/26w1/syllabus` · Project `/26w1/project/`
+  (specs linked as released; REST spec at `project/spec.html`, Redocly v2.0.3). The Materials unit
+  pages were removed from the site on 2026-09-28, so nothing there maps lectures to reader chapters
+  any more. `cpsc310_site.py` reads the schedule and the project page.
 - Project background: v1 = datasets + courses/sections + search; v2 = buildings/rooms (geocoded)
   + cross-search. Only the courses slice was refactored (routers → controllers → services →
   repositories); the rest is one very large file. v3 is the D3/D4 target. Lab 1 environment config

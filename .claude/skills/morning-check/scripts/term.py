@@ -9,7 +9,8 @@ When a date changes in ledger.md, change it here too (the morning check says so)
 """
 import datetime as dt, glob, os, sys
 
-ROOT = "/Users/matthe/Documents/CodingProjects/School 3-1"
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))   # the workspace this script sits in
 D = dt.date
 MON, TUE, WED, THU, FRI = 0, 1, 2, 3, 4
 
@@ -75,26 +76,34 @@ def lecture_dates(code, today):
         d += dt.timedelta(days=1)
     return sorted(x for x in out if x <= today)
 
-def logged_numbers(code):
-    """Lecture numbers covered by files in courses/<CODE>/lectures/. A file named
-    `01-02-<slug>.md` covers two lectures (Matt may log a week in one file); a leading
-    underscore marks a pre-lecture outline, not a log. Returns a set so a gap (lec 7 logged,
-    lec 6 not) shows up as lec 6 unlogged instead of hiding behind a count."""
+def lecture_logs(code):
+    """{lecture number: log file name} for courses/<CODE>/lectures/. Lecture numbers are two digits;
+    `01-02-<slug>.md` covers lectures 1 and 2 and `05-06-07-<slug>.md` covers 5 to 7 (Matt may log a
+    week in one file). A run stops at the first number that does not increase, so a slug that starts
+    with a number (`12-2-sample-tests.md`, `09-08-…`) still counts for its first lecture. A slug that
+    starts with a larger two-digit number reads as a range (`09-10-rules-…` covers 9 and 10), so name
+    such a lecture without the leading number. A leading underscore marks a pre-lecture outline, not
+    a log. The one rule for "is lecture N logged"."""
     import re
-    nums = set()
-    for f in glob.glob(os.path.join(ROOT, "courses", code, "lectures", "*.md")):
+    logs = {}
+    for f in sorted(glob.glob(os.path.join(ROOT, "courses", code, "lectures", "*.md"))):
         base = os.path.basename(f)
-        if base.startswith("_"):
-            continue
-        m = re.match(r"^(\d+)(?:-(\d+))?-", base)
+        m = re.match(r"^(\d{2}(?:-\d{2})*)-", base)
         if not m:
             continue
-        a, b = int(m.group(1)), int(m.group(2) or m.group(1))
-        nums.update(range(a, b + 1))
-    return nums
+        nums = [int(x) for x in m.group(1).split("-")]
+        last = nums[0]
+        for x in nums[1:]:
+            if x <= last:
+                break
+            last = x
+        logs.update(dict.fromkeys(range(nums[0], last + 1), base))
+    return logs
 
-def logged_count(code):
-    return len(logged_numbers(code))
+def logged_numbers(code):
+    """Lecture numbers covered by a log. Returns a set so a gap (lec 7 logged, lec 6 not)
+    shows up as lec 6 unlogged instead of hiding behind a count."""
+    return set(lecture_logs(code))
 
 def main():
     today = D.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else dt.datetime.now().astimezone().date()

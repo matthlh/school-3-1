@@ -33,7 +33,7 @@ morning brief never repeats), and `lectures/`.
 | `log CPSC310 lec 7` | file your notes, extract questions, schedule them |
 | `quiz me` | mixed revision across everything due, weighted to what you've missed and to the nearest exam (`/quiz-me`) |
 | `quiz me on STAT251` | scoped to one course; `quick quiz` = 5 questions |
-| `1 O 2 ~ 3 X` | grades for the transit deck (or any session), pasted from your phone — the ledger updates |
+| `grade my deck` / `1 O 2 ~ 3 X` | Grades the transit deck. Tap O, ~ or X on each card of the deck page, then say `grade my deck`, or paste the grades from your phone. Pasted grades work for any quiz session too. The ledger updates. |
 | `what's due?` | read the ledger, list due/overdue topics |
 | `how am I doing` | weakest topics, what needs more questions, exam countdown |
 | `/morning-check` / `what's new` | sweep Things3, Canvas (+grades), PrairieLearn, Piazza, Gmail; rebuild today's Things3 plan; brief |

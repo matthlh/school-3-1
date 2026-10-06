@@ -7,6 +7,8 @@ Files it owns:
   courses/<CODE>/01-topics.md   — best-effort mirror of Last/Grade/Streak/Next per topic row
   routines/quiz-state.json      — per-question history {id: {course, topic, history: [[date, grade]]}}
   routines/quiz-session.json    — the pending session written by quiz_pick.py, consumed by quiz_grade.py
+  routines/transit-session.json — the same for the transit deck, which is graded the next morning (--transit), so a
+                                  quiz picked in between can neither overwrite it nor take its grades
   routines/quiz/YYYY-MM-DD.md   — human-readable session log
 
 Set SCHOOL_ROOT to point at a copy of the workspace when testing.
@@ -14,10 +16,12 @@ Set SCHOOL_ROOT to point at a copy of the workspace when testing.
 import datetime as dt, glob, hashlib, json, os, random, re, sys
 from urllib.parse import quote
 
-ROOT = os.environ.get("SCHOOL_ROOT", "/Users/matthe/Documents/CodingProjects/School 3-1")
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))   # the workspace this script sits in
 LEDGER = os.path.join(ROOT, "ledger.md")
 STATE = os.path.join(ROOT, "routines", "quiz-state.json")
 SESSION = os.path.join(ROOT, "routines", "quiz-session.json")
+TRANSIT_SESSION = os.path.join(ROOT, "routines", "transit-session.json")
 QUIZ_DIR = os.path.join(ROOT, "routines", "quiz")
 RUNS_DIR = os.path.join(ROOT, "routines", "runs")
 MC_SCRIPTS = os.path.join(ROOT, ".claude", "skills", "morning-check", "scripts")
@@ -101,6 +105,12 @@ def load_questions(courses=None):
     return out
 
 def _parse_bank(path, course):
+    """One bank file → its questions. The stem comes twice: `q`, its prose joined into one line without fenced code,
+    which the id hashes, and `q_display`, the stem exactly as written (line breaks, bullets, tables and code blocks
+    kept), which is what gets shown. So ids and the history keyed by them stay as they were before stems were shown
+    as written, and editing only a stem's code keeps its history. The answer `a` keeps its code blocks. A fence
+    outside any question (the format example in each bank's header) is skipped whole, so the `### Q:` inside it is
+    not read as a question."""
     qs, cur, fence, section = [], None, False, None
     with open(path, encoding="utf-8") as f:
         lines = f.read().split("\n")
@@ -111,22 +121,25 @@ def _parse_bank(path, course):
         q = " ".join(l.strip() for l in cur["q"] if l.strip())
         meta = cur["meta"] or ("(untagged)", "?", "recall")
         qs.append(dict(id=qid(course, q), course=course, topic=meta[0].strip(), lec=meta[1].strip(),
-                       type=meta[2].strip().lower(), q=q, a="\n".join(cur["a"]).strip(),
-                       file=os.path.relpath(path, ROOT), line=cur["line"], section=cur["section"],
-                       long=(cur["section"] or "").lower().startswith(LONG_SECTION)))
+                       type=meta[2].strip().lower(), q=q, q_display="\n".join(cur["show"]).strip(),
+                       a="\n".join(cur["a"]).strip(), file=os.path.relpath(path, ROOT), line=cur["line"],
+                       section=cur["section"], long=(cur["section"] or "").lower().startswith(LONG_SECTION)))
 
     for i, line in enumerate(lines, 1):
-        if line.startswith("```"):
-            fence = not fence
-            continue
-        if fence:
+        if line.startswith("```") or fence:
+            if line.startswith("```"):
+                fence = not fence
+            if cur and cur["in_a"]:
+                cur["a"].append(line)
+            elif cur:
+                cur["show"].append(line)
             continue
         if line.startswith("## "):
             section = line[3:].strip()          # the `## ` heading a question sits under (the site's group title)
         m = Q_RE.match(line)
         if m:
             flush()
-            cur = dict(line=i, q=[m.group(1)], meta=None, a=[], in_a=False, section=section)
+            cur = dict(line=i, q=[m.group(1)], show=[m.group(1)], meta=None, a=[], in_a=False, section=section)
             continue
         if cur is None:
             continue
@@ -141,7 +154,11 @@ def _parse_bank(path, course):
             cur["in_a"] = True
             cur["a"].append(line[len("**A:**"):].strip())
             continue
-        (cur["a"] if cur["in_a"] else cur["q"]).append(line)
+        if cur["in_a"]:
+            cur["a"].append(line)
+        else:
+            cur["q"].append(line)
+            cur["show"].append(line)
     flush()
     return qs
 
@@ -295,11 +312,19 @@ def write_ledger(text, rows, today, due_rows=None, log_line=None):
         block = ["## Due now", ""] + due_block(rows, today) + [""]
         lines[start:end] = block
     if log_line:
-        last_row = max((i for i, l in enumerate(lines) if l.startswith("|")), default=None)
-        if last_row is not None:
-            lines.insert(last_row + 1, log_line)
+        lines.insert(session_log_end(lines), log_line)
     with open(LEDGER, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+
+def session_log_end(lines):
+    """Index just past the last row of the `## Session log` table, where a session row goes. Exits when
+    ledger.md has no such table, so quiz_grade.py can check before it writes anything."""
+    start = next((i for i, l in enumerate(lines) if l.strip() == "## Session log"), len(lines))
+    end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
+    last_row = max((i for i in range(start + 1, end) if lines[i].startswith("|")), default=None)
+    if last_row is None:
+        raise SystemExit("no '## Session log' table in ledger.md — nowhere to append this session's row")
+    return last_row + 1
 
 def due_block(rows, today):
     due = sorted((r for r in rows if r["next_date"] and r["next_date"] <= today),

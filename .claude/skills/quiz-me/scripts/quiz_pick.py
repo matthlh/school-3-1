@@ -2,13 +2,14 @@
 """Pick a mixed revision session from the question banks, weighted by the ledger.
 
 Usage:
-  quiz_pick.py [--course CODE ...] [--n N] [--all] [--transit | --long] [--due] [--report] [--date YYYY-MM-DD] [--seed S]
+  quiz_pick.py [--course CODE ...] [--topic TEXT ...] [--n N] [--all] [--transit | --long] [--due] [--report] [--date YYYY-MM-DD] [--seed S]
 
   default      write routines/quiz-session.json and print the focus block + the numbered session
                (questions WITH answers — for Claude's eyes; ask them one at a time)
   --transit    6 questions by default; also writes routines/runs/<date>-transit.md — questions
-               first, answers after a divider — for reading on the bus; the session file is
-               written too, so a reply like "1 O 2 ~ 3 X" can be graded with quiz_grade.py.
+               first, answers after a divider — for reading on the bus. Its session goes to
+               routines/transit-session.json instead, so a reply like "1 O 2 ~ 3 X" is graded with
+               quiz_grade.py --transit <deck date> even after other quizzes the same day.
                Short questions only: nothing from a `## Long problems` section.
   --long       the Friday set: 4 long problems by default, worked in full on paper; prints a clock of
                MINUTES_PER_PART minutes for each part asked. A normal session may also pick long
@@ -19,6 +20,7 @@ Usage:
 
 Each picked item carries the notes page it comes from (src_title, src_url; quizlib.attach_sources):
 a "Page:" line in the printout, a "Source:" link under its answer in the transit deck.
+The printout and the deck show the stem as written (q_display: bullets, tables and code kept); q is the flat text its id hashes.
 
 Selection: topic priority (overdue days, grade X > ~ > unquizzed > O, ×2 within 7 d of that
 course's exam, ×1.5 within 14 d, ×1.25 within 21 d) + question score (never asked > missed >
@@ -170,17 +172,18 @@ def main():
         items.append(dict(n=i, id=q["id"], course=q["course"], label=L.COURSE_LABEL[q["course"]],
                           topic=r["topic"], topic_tag=q["topic"], lec=q["lec"], type=q["type"],
                           ahead=not c["due"], long=q.get("long", False), parts=L.parts(q) if q.get("long") else 1,
-                          q=q["q"], a=q["a"], file=q["file"], line=q["line"],
+                          q=q["q"], q_display=q["q_display"], a=q["a"], file=q["file"], line=q["line"],
                           src_title=q["src_title"], src_url=q["src_url"]))
     session = dict(date=today.isoformat(), created=dt.datetime.now().astimezone().isoformat(timespec="minutes"),
                    mode=mode, courses=courses, n=len(items), items=items)
-    os.makedirs(os.path.dirname(L.SESSION), exist_ok=True)
-    with open(L.SESSION, "w", encoding="utf-8") as f:
+    session_path = L.TRANSIT_SESSION if a.transit else L.SESSION
+    os.makedirs(os.path.dirname(session_path), exist_ok=True)
+    with open(session_path, "w", encoding="utf-8") as f:
         json.dump(session, f, indent=1, ensure_ascii=False)
 
     n_due = sum(1 for c in chosen if c["due"])
     print(f"\n== SESSION · {len(items)} questions ({n_due} due, {len(items) - n_due} ahead) · "
-          f"{mode} · cap {cap}/topic → {os.path.relpath(L.SESSION, L.ROOT)}")
+          f"{mode} · cap {cap}/topic → {os.path.relpath(session_path, L.ROOT)}")
     if a.long:
         total = sum(it["parts"] for it in items)
         print(f"== Clock: {total} parts × {L.MINUTES_PER_PART} min = {total * L.MINUTES_PER_PART} minutes, on paper, "
@@ -191,12 +194,12 @@ def main():
             flag += " (long: steps only)"
         elif a.long:
             flag += f" ({it['parts']} parts)"
-        print(f"\n{it['n']}. [{it['label']} · {it['topic_tag']} · {it['type']}{flag}] {it['q']}")
+        print(f"\n{it['n']}. [{it['label']} · {it['topic_tag']} · {it['type']}{flag}] {it['q_display']}")
         print(f"   A: {it['a']}")
         if it["src_url"]:
             print(f"   Page: {it['src_title']} ({it['src_url']})")
     if not a.transit:
-        print("\nGrade with:  quiz_grade.py 1:O 2:X 3:~ …   (skip = -, unasked = leave out)")
+        print("\nGrade with:  quiz_grade.py \"1:O 2:X 3:~ …\"   (skip = -, unasked = leave out)")
         return
 
     # ---- transit deck
@@ -206,7 +209,7 @@ def main():
            "Answer each one in your head (out loud is better), then check below. Reply with grades, "
            "e.g. `1 O 2 ~ 3 X 4 O 5 O 6 ~`, and the ledger updates.", ""]
     for it in items:
-        out.append(f"**{it['n']}. {it['label']}** — {it['q']}")
+        out.append(f"**{it['n']}. {it['label']}** — {it['q_display']}")
         out.append("")
     out += ["---", "", "## Answers", ""]
     for it in items:

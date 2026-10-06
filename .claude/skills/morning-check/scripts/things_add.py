@@ -4,10 +4,11 @@
 Usage:
   things_add.py --title "WeBWorK 1" --project "STAT 251" [--area UBC] [--when 2026-09-14] \
                 [--deadline 2026-09-21] [--notes "..."] [--tags "School,URGENT"] [--dry-run]
-  --when / --deadline take YYYY-MM-DD. --when today|tomorrow|evening also work.
-If a to-do with the same title already exists in that project (or area, or anywhere if neither),
+  --when / --deadline take YYYY-MM-DD, today or tomorrow.
+If an open to-do with the same title already exists in that project (or area, or anywhere if neither),
 it is updated in place instead of duplicated. When a project or area is given and nothing matches
-inside it, a loose to-do with that title anywhere is updated and filed, rather than copied. Prints the resulting to-do.
+inside it, an open to-do with that title anywhere else (loose, or in another project or area) is
+updated and filed there, rather than copied. Prints the resulting to-do.
 Also importable: add_todo(**kwargs) -> str.
 """
 import argparse, datetime as dt, subprocess, sys
@@ -25,7 +26,10 @@ def _date_expr(s):
     elif s == "tomorrow":
         n = 1
     else:
-        n = (dt.date.fromisoformat(s) - today).days
+        try:
+            n = (dt.date.fromisoformat(s) - today).days
+        except ValueError:
+            raise ValueError(f"{s!r} is not a date: use YYYY-MM-DD, today or tomorrow") from None
     return f"(theBase + ({n}) * days)"
 
 def add_todo(title, project=None, area=None, when=None, deadline=None, notes=None, tags=None, dry_run=False):

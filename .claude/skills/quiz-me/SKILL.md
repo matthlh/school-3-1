@@ -8,9 +8,10 @@ description: Interleaved spaced revision quiz across every course from courses/<
 Two scripts with one JSON hand-off. Both live in `.claude/skills/quiz-me/scripts/`
 (`$S` below = that directory, absolute: `/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts`).
 
-- **Pick:** `quiz_pick.py` writes `routines/quiz-session.json` and prints the session *with answers*
+- **Pick:** `quiz_pick.py` writes `routines/quiz-session.json` (`--transit`: `routines/transit-session.json`) and prints the session *with answers*
   (for my eyes only). It also refreshes the **Due now** block in `ledger.md` every run.
-- **Grade:** `quiz_grade.py "1:O 2:X 3:~"` records everything and deletes the session file.
+- **Grade:** `quiz_grade.py "1:O 2:X 3:~"` grades the quiz picked today, records everything and deletes the session file.
+  `--transit <deck date>` grades the transit deck's file instead, and only if it holds that day's deck.
 
 Never edit the ledger's All-topics rows by hand. The scripts own them.
 
@@ -72,12 +73,13 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | T-4 | `--course CODE --all`, then ask only the X/~ topics the focus block names |
 | PHIL 385 before exam 2–4 | scope to the exam's ~3 weeks: `--course PHIL385 --all --n 15`, skip questions from lectures outside the window |
 | Friday set / "long problems" / the Friday revision block | `quiz_pick.py --long` — 4 long problems (`--n` to change). It prints a clock, 2 minutes a part (`MINUTES_PER_PART` in quizlib.py, a first guess at the midterm's pace). Give him all the stems at once; he works them on paper with no notes and sends every part's answer when the clock runs out. Grade on the numbers: `O` = every part right · `~` = right method throughout but an arithmetic slip · `X` = a wrong method or a part left blank. Correct part by part against the bank answer, then `quiz_grade.py` as usual. Then a normal `quiz me` for the rest of the block. |
-| transit deck | `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers); rebuilds the Transit Deck artifact (morning-check skill §7) |
-| a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | `quiz_grade.py "<paste>"` — bare sequence = session order |
-| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `Artifact` → `action: "read_db"`, `db_op: "get"`, `collection: "grades"`, `doc_id: "<today's date>"`, `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, run `quiz_grade.py "<replyString>"`, then `action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, `data: {"processed": true}`, `if_version` = the `version` the `get` just returned (required — the write rejects `version_mismatch` without it, even though the tool's schema doesn't list it). If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
+| transit deck | `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers) and its own session file, `routines/transit-session.json`, which `quiz_grade.py --transit <deck date>` grades (the deck date is that file's `date`, the day it was picked, and the deck page saves its taps under the same date); rebuilds the Transit Deck artifact (morning-check skill §7) |
+| a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | Right after you quizzed him in this conversation, it grades that session: `quiz_grade.py "<paste>"`, a bare sequence in session order. A bare reply in a conversation where you did not just quiz him answers the transit deck: `quiz_grade.py --transit <deck date> "<paste>"`. The deck date is the `date` in `routines/transit-session.json`, and the deck's title shows the same day (`Transit deck — Tue Oct 6`). |
+| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `Artifact` → `action: "read_db"`, `db_op: "get"`, `collection: "grades"`, `doc_id: "<today's date>"`, `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, run `quiz_grade.py --transit <doc_id> "<replyString>"` (the doc_id is the deck's date, and the script refuses the session file if it holds another day's deck), then `action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, `data: {"processed": true}`, `if_version` = the `version` the `get` just returned (required — the write rejects `version_mismatch` without it, even though the tool's schema doesn't list it). If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
 
 A new pick overwrites the pending session; ungraded questions are simply not recorded. If he
-sends grades and no session file exists, say so — never invent one.
+sends grades and no session file exists, say so — never invent one. Plain grading also refuses a quiz session
+picked on an earlier day; when it really is that day's quiz, `--date <its date>` grades it as that day.
 
 ## What the scripts decide (don't second-guess them)
 - **Topic priority** = due/overdue (+5 per day late, capped) + grade (`X` 60 · `~` 30 · unquizzed 40 ·
@@ -100,6 +102,7 @@ sends grades and no session file exists, say so — never invent one.
 
 ## Files
 - `routines/quiz-session.json` — pending session (deleted on grade)
+- `routines/transit-session.json` — the transit deck's pending session, written by `quiz_pick.py --transit` and graded with `quiz_grade.py --transit <deck date>`, usually the next morning (deleted on grade)
 - `routines/quiz-state.json` — per-question history and session records
 - `routines/quiz/YYYY-MM-DD.md` — session log: grades, misses with the correct answer, ledger delta
 - `routines/runs/YYYY-MM-DD-transit.md` — the deck the morning check sends to his phone

@@ -65,7 +65,7 @@ It (1) creates the automatic to-dos — one `Log <CODE> lec N (<date>)` per unlo
 today"; auto-completed once the lecture file exists), for async ASIA 250 a `Watch + quiz ASIA250 lec N ·
 locks <date>` (2h, P1, deadline = the mini-quiz hard lock, publish + 7 d; only Matt ticks it, after the
 quiz), one per PREP ladder step that
-fires today (`T-3 STAT 251 · FULL TIMED MOCK`), the weekly `Novel: read 30–35 pages (week of …)`
+fires today (`T-3 STAT 251 · FULL TIMED MOCK`), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
 for ASIA 250 from Sep 14, the two **daily revision habits** (`Deck: answer the 6 on the bus, reply
 grades (<date>)` and `Quiz me: 10 min before bed (<date>)`, 15m P1 each, area UBC; an open one from
 an earlier day is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
@@ -80,7 +80,7 @@ next time so nothing starves), undated Anytime items stay in the pool. It prints
 budget). `--dry-run` previews; `--budget 3` trims a short day and is remembered for that date (no
 Career reserve on a trimmed day); `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos; knobs are
 at the top of the script. A future when-date he set by hand holds unless the deadline is within a day.
-Open-ended weekly to-dos (novel pages Mon, revision block Fri, groceries Sat) come from the `WEEKLY`
+Open-ended weekly to-dos (novel pages Mon, Questions for Kraal Mon, revision block Fri, groceries Sat) come from the `WEEKLY`
 table one week ahead; tick one and it stays ticked.
 
 **Weekly mode — Sundays 15:00 (scheduled task `weekly-plan`) and "plan my week":** run
@@ -130,8 +130,9 @@ offered more than twice a week, the 6 h budget is being mis-set and that is the 
 
 How to offer it: one line under the plan table naming **what the extra hours buy**, in marks or in a
 lock that closes — not "you're behind". Then ask with `AskUserQuestion`. On a yes, re-run
-`things_plan.py --budget 8` (or the number he gives; the trim is remembered for that date and skips
-the Career reserve) and post the new table. On a no, leave the plan alone and do not raise it again
+`things_plan.py --budget 8` (or the number he gives; the bigger budget is remembered for that date,
+and the 1 h Career reserve still applies, because only a day trimmed below its default skips it) and
+post the new table. On a no, leave the plan alone and do not raise it again
 that day. He asked to be **reminded**, so on a surge day that he accepted, the evening deck and the
 next morning's run both carry one line on whether the surge item actually closed.
 
@@ -262,19 +263,24 @@ line; Claude never signs in). Read-only: never touch an answer box, Preview, Sub
 
 ### 3. CPSC 310 course site (public; Canvas is not used at all)
 The site is four pages and only one has slides: **Schedule** (week table; a lecture title turns into
-a PDF link when its deck is posted), **Course Materials** (unit pages: lecture → what it answers →
-reader chapters), **Reader** (the textbook; exam terminology), **Syllabus** (policies). Run
+a PDF link when its deck is posted), **Reader** (the textbook; exam terminology), **Syllabus**
+(policies), **Project** (deliverable specs, linked as they are released). On 2026-09-28 the site
+removed its Course Materials unit pages, which were the only place that matched lectures to reader
+chapters. Run
 ```bash
 python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/cpsc310_site.py"
 ```
 It diffs the schedule against `routines/snapshots/cpsc310-site.json`, downloads any newly posted deck
 to `routines/slides/cpsc310/` (git-ignored — course material stays out of the public repo) with the
-text extracted beside it, and prints the next lecture with its reader chapters. Report its `NEW DECK` /
+text extracted beside it, and prints the next lecture and whether its deck is posted; it names no
+reader chapter. Report its `NEW DECK` /
 `CHANGED` / `ADDED` lines inside the CPSC 310 block — there is no separate "course site" section. A
 `NEW DECK … not logged yet` line goes in Heads-up: it means the deck for an unlogged lecture is down
 and `cpsc310_site.py --lecture N` gives the slide text to log from (Matt does not take notes in
 CPSC 310 when the deck covers it — verified 2026-09-11, lec 1). A changed `due:` cell is a deadline
 change: update `ledger.md`, `term.py`, `03-logistics.md`, Things3.
+It exits non-zero when the schedule or a newly posted deck cannot be fetched or no longer parses, and
+saves no snapshot; the brief then gets one Heads-up line naming the error instead of the site lines.
 
 ### 4. Gmail (connector `search_threads` / `get_thread`)
 Matt doesn't delete mail, he archives it — so `in:inbox` is the live/unhandled set, not just
@@ -383,10 +389,11 @@ a paragraph he skims. Topic sources, per course:
   filename, e.g. "Ch 1 Exploratory Data Analysis"); if nothing new is posted, the week's chapter
   from the schedule in `courses/STAT251/00-syllabus.md`. Headings → 3 Qs; tie each to an LO code
   from `01-topics.md` when obvious.
-- **CPSC 310:** the `Next lecture` block that `cpsc310_site.py` (§3) printed: title, the "what it
-  answers" question, and the reader chapter URL(s). WebFetch the chapter and turn its headings into
-  3 Qs (CLAUDE.md rule). Exam terminology lives there. If the deck is already posted, its slide
-  titles (`routines/slides/cpsc310/NN-*.txt`) are the better source.
+- **CPSC 310:** the `Next lecture` lines that `cpsc310_site.py` (§3) printed: the title and whether
+  the deck is posted. A posted deck's slide titles (`routines/slides/cpsc310/NN-*.txt`) are the
+  source for the 3 Qs. The scripts name no reader chapter, because the course site removed its
+  lecture → chapter pages on 2026-09-28. Choosing a chapter without those pages is Matt's call, so
+  do not guess one: until the deck is posted there are no CPSC 310 pre-questions.
 - **PHIL 385:** the reading assigned for today in `courses/PHIL385/00-syllabus.md`. 3 Qs on names,
   pseudonyms, terms, which essay — the MC exams test exactly that.
 - **ASIA 250:** async — on Mondays only, this week's lecture + readings module on Canvas; 3 Qs.
@@ -398,11 +405,14 @@ pre-questions above).
    ```bash
    python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/prelecture.py" --n 2
    ```
-   It stages the next two lectures' reader chapters in `routines/prelecture/cpsc310/NN-*.txt` (and the
-   deck text in `routines/slides/cpsc310/` once posted) and names which `lectures/_NN-<slug>.md` is
-   missing. Write that file from the staged text: a plain-sentence outline of the chapter's claims
-   under `## What the chapter claims`, then `## Three pre-lecture questions`. Quiz-bank questions wait
-   for the lecture log.
+   It takes the next two lectures that have no log or outline yet. When a lecture's deck is posted,
+   it downloads the deck (text in `routines/slides/cpsc310/NN-*.txt`) and names the
+   `lectures/_NN-<slug>.md` to write. When the deck is not posted yet, there is nothing to stage and
+   the lecture's block says so. Write that file from the deck text: a plain-sentence outline of the
+   deck's claims in slide order, then `## Three pre-lecture questions`. Quiz-bank questions wait for
+   the lecture log. No reader chapters are staged, because the course site removed its lecture →
+   chapter pages on 2026-09-28. It exits non-zero when the schedule or a deck cannot be fetched or no
+   longer parses; the brief then gets one Heads-up line naming the error instead of staged material.
 2. **STAT 251, ASIA 250** (Canvas, in the §2 Chrome tab, after `canvas_fetch.js`):
    run `scripts/canvas_materials.js` with `javascript_tool`, read it back with `get_page_text`, save
    the text to `routines/snapshots/materials-<date>.txt`, then
@@ -443,15 +453,16 @@ pre-questions above).
    see the quiz-me skill's variant table). Query it: `Artifact` → `action: "read_db"`,
    `db_op: "query"`, `collection: "grades"`, `url` = the fixed URL below. For every returned doc
    that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
-   half-graded) and not already `processed: true`: run `quiz_grade.py "<replyString>"` (quiz-me
-   skill, same as a pasted reply), then write back `processed: true` on that doc
+   half-graded) and not already `processed: true`: run `quiz_grade.py --transit <doc_id> "<replyString>"` (quiz-me
+   skill; `--transit` grades the deck's own session file, which no quiz picked since can overwrite, and the doc_id,
+   which is the deck's date, makes it refuse that file when it holds another day's deck), then write back `processed: true` on that doc
    (`action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, plus `if_version` set to
    the `version` the `read_db` query just returned for that doc — the write rejects
    `version_mismatch` without it, even though `if_version` isn't listed in the tool's own schema;
    pass it anyway, it's accepted) so it is never graded
    twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
    (a `.set()`, not a merge), so grading it mid-session would burn the pending
-   `quiz-session.json` before he's tapped the rest, and those later taps would have nowhere valid
+   `transit-session.json` before he's tapped the rest, and those later taps would have nowhere valid
    to land. Report what got graded under **New since yesterday** the way a normal quiz session
    would (grades, ledger delta). Nothing complete and unprocessed just means nothing to report —
    not an error.
@@ -461,7 +472,7 @@ pre-questions above).
    ```
    It picks 6 due/weak questions across courses (interleaved, exam-weighted, not-due topics fill the
    rest), writes `routines/runs/<date>-transit.md` (questions, a divider, then answers) plus the
-   pending session `routines/quiz-session.json`, and refreshes the ledger's **Due now** block.
+   pending session `routines/transit-session.json`, and refreshes the ledger's **Due now** block.
 2. Rebuild the artifact for today: same design (one question per card, tap to reveal, inline O/~/X
    that auto-advance, a "Brief ↗" button top-right that opens today's full Brief + Details as an
    overlay) with today's 6 questions and today's report substituted in. Republish with `Artifact`,
@@ -473,11 +484,26 @@ pre-questions above).
    passes every question and answer through its `mathify` function (MathML output, because an artifact page
    cannot load KaTeX's stylesheet; a few CSS rules line aligned rows up in Chrome). If you rebuild the page
    another way, carry over that script tag, `mathify`, the math CSS, and the `${mathify(item.q)}` and
-   `${mathify(item.a)}` calls. Convert answer newlines to `<br>` as before; `mathify` reads a `$$` span that
-   contains a `<br>` as a display equation.
+   `${mathify(item.a)}` calls. Each question and answer goes through three steps, in this order:
+   1. Take every `$$` span out of the text first. The markdown step must never see LaTeX: marked turns
+      `&= 0.65 \\` into `&amp;= 0.65 \`, and 243 lines of STAT 251's bank end in `\\`.
+   2. Render the rest as markdown, as Stems as written below describes.
+   3. Put each span back where it was and run the result through `mathify`. A display span goes back with
+      its line breaks as `<br>`, because a `$$` span that contains a `<br>` is what `mathify` reads as a
+      display equation.
+   `notes-app/scripts/offline-pack.mjs` gets the same result inside marked: two marked extensions claim the
+   `$$` spans as their own tokens before any markdown rule touches them (a `$$` line, the LaTeX and a `$$` line
+   make a display equation; `$$…$$` inside a line is inline), and their renderer hands the untouched LaTeX to
+   KaTeX.
    **Notes link (2026-10-05):** give each item `src` and `srcTitle` from the session item's `src_url` and
    `src_title` (the transit md's `Source:` line under each answer); the page links that notes page under the
    revealed answer.
+   **Stems as written (2026-10-06):** fill each item's `q` from the session item's `q_display`, not its `q`
+   (`q` is only the flattened text the question id hashes). `q_display` keeps the stem's own lines: bullet parts,
+   a table, or a CPSC 310 code block, and an answer can hold a code block too. Step 2 of the Math order above
+   renders both as markdown: a fenced block as an HTML-escaped `<pre><code>`, a pipe table as `<table>`, `- `
+   lines as a list, and any other line break as `<br>`. That replaces turning every newline into `<br>`, so code
+   keeps its indentation and tables their columns, and it runs only after the `$$` spans are out.
 
 **Transit Deck artifact (fixed URL, update in place):**
 https://claude.ai/code/artifact/c537efc7-50cf-4476-9aa5-b118cd0fa480
@@ -495,7 +521,8 @@ file is the record; the ledger stays signal). Then run
 ```bash
 sh "/Users/matthe/Documents/CodingProjects/School 3-1/publish.sh" "Morning check YYYY-MM-DD"
 ```
-It commits whatever changed (ledger, logistics, questions) and pushes; GitHub Pages redeploys the
+It runs only on main: on any other branch, or a detached HEAD, it stops before committing anything and says
+so. On main it commits whatever changed (ledger, logistics, questions) and pushes; GitHub Pages redeploys the
 notes site at https://matthlh.github.io/school-3-1/ within a minute. `routines/` is git-ignored,
 so briefs never leave the machine. Plain commit message — never an attribution trailer.
 

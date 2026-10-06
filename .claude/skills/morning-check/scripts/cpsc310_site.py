@@ -3,39 +3,45 @@
 
 The site (ubccpsc.github.io/310/26w1) is four pages and only one of them has slides:
   Schedule          week table; each lecture title becomes a link to its PDF once the deck is posted
-  Course Materials  unit-NN pages: lecture → "what it answers" → reader chapter links
   Reader            the textbook — where exam terminology comes from
   Syllabus          policies only
   Project           InsightUBC overview; deliverable specs appear as links (d1-…, d2-…) when released;
                     the REST API spec is project/spec.html
+The Course Materials unit pages (lecture → reader chapters) were removed from the site on 2026-09-28,
+and nothing on it maps lectures to reader chapters any more.
 
 Usage
   cpsc310_site.py              morning-check: new/changed schedule rows, newly posted decks
                                (downloaded to routines/slides/cpsc310/, text extracted), today's
-                               / next lecture with its reader chapters. Diffs against
-                               routines/snapshots/cpsc310-site.json and updates it.
-  cpsc310_site.py --lecture N  print lecture N's deck text + reader chapter URLs (for "log CPSC310 lec N")
-  cpsc310_site.py --all        the full lecture list with deck status and readings
+                               / next lecture. Diffs against routines/snapshots/cpsc310-site.json
+                               and updates it.
+  cpsc310_site.py --lecture N  print lecture N's deck text (for "log CPSC310 lec N")
+  cpsc310_site.py --all        the full lecture list with deck status
   cpsc310_site.py --no-snapshot  don't touch the snapshot (dry run of the default mode)
 
 Slides are course material, so they live under routines/ (git-ignored), never in the public repo.
 """
-import argparse, datetime as dt, html, json, re, sys, urllib.request
+import argparse, datetime as dt, html, http.client, io, json, os, re, sys, urllib.request
 from pathlib import Path
 
-ROOT = Path("/Users/matthe/Documents/CodingProjects/School 3-1")
+import term
+
+ROOT = Path(os.environ.get("SCHOOL_ROOT") or Path(__file__).resolve().parents[4])   # the workspace this script sits in
 BASE = "https://ubccpsc.github.io"
 SITE = BASE + "/310/26w1"
 SNAP = ROOT / "routines/snapshots/cpsc310-site.json"
 SLIDES = ROOT / "routines/slides/cpsc310"
-UNITS = [f"{SITE}/materials/unit-0{i}/" for i in range(1, 5)]
 YEAR = 2026
+COLUMNS = ["Wk", "Dates", "Unit", "Lectures", "Lab", "Due"]   # the schedule's week table, read by position
 
 
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "school-3-1 morning-check"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read()
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return r.read()
+    except (OSError, http.client.HTTPException) as e:   # URLError, HTTPError, timeouts, IncompleteRead: none names the page
+        raise RuntimeError(f"{url} could not be fetched: {e}") from e
 
 
 def text(s):
@@ -56,15 +62,26 @@ def abs_url(u):
 
 
 def parse_schedule(doc):
-    """→ list of lectures in order: {n, week, date, title, pdf, lab, due}."""
+    """→ list of lectures in order: {n, week, date, title, pdf, lab, due}. Cells are read by position, so a
+    missing heading or table, a different header, a short row or no lectures at all raises."""
+    page = SITE + "/schedule"
     i = doc.find("Week by week")
-    tbl = re.search(r"<table[^>]*>(.*?)</table>", doc[i:], flags=re.S).group(1)
+    m = re.search(r"<table[^>]*>(.*?)</table>", doc[i:], flags=re.S) if i >= 0 else None
+    if not m:
+        raise RuntimeError(f"{page} no longer parses: no 'Week by week' heading followed by a table")
+    tbl = m.group(1)
+    head = [text(h) for h in re.findall(r"<th(?:\s[^>]*)?>(.*?)</th>", tbl, flags=re.S)]
+    if head != COLUMNS:
+        raise RuntimeError(f"{page} no longer parses: the week table header is {' | '.join(head) or 'empty'},"
+                           f" expected {' | '.join(COLUMNS)}")
     lectures = []
     for row in rows_of(tbl):
         c = cells_of(row)
-        if len(c) < 6:
+        if not c:   # the header row: <th> cells only
             continue
-        wk, dates, _unit, lec, lab, due = (c + [""] * 6)[:6]
+        if len(c) != len(COLUMNS):
+            raise RuntimeError(f"{page} no longer parses: a week row has {len(c)} cells, expected {len(COLUMNS)}: {text(row)}")
+        wk, dates, _unit, lec, lab, due = c
         # "Sep 8, 10" / "Sep 29, Oct 1" → list of dates for the week's Tue/Thu slots
         ds, mon = [], None
         for tok in text(dates).split(","):
@@ -85,52 +102,14 @@ def parse_schedule(doc):
                 n=len(lectures) + 1, week=text(wk), date=ds[slot].isoformat() if slot < len(ds) else "",
                 title=t, pdf=abs_url(m.group(1)) if m else "", lab=text(lab), due=text(due)))
             slot += 1
+    if not lectures:
+        raise RuntimeError(f"{page} no longer parses: no lectures in the week table")
     return lectures
 
 
-def parse_units():
-    """→ ordered list of {title, answers, readings:[(name,url)]} across the unit pages."""
-    out = []
-    for u in UNITS:
-        try:
-            doc = get(u).decode()
-        except Exception:
-            continue
-        m = re.search(r"<h2[^>]*>Lectures.*?<table[^>]*>(.*?)</table>", doc, flags=re.S)
-        if not m:
-            continue
-        for row in rows_of(m.group(1)):
-            c = cells_of(row)
-            if len(c) < 3:
-                continue
-            readings = [(text(n), abs_url(h)) for h, n in re.findall(r'<a href="([^"]+)"[^>]*>(.*?)</a>', c[2])]
-            out.append(dict(title=text(c[0]), answers=text(c[1]), readings=readings, unit=u))
-    return out
-
-
-def norm(s):
-    return re.sub(r"[^a-z]", "", s.lower())
-
-
-def join(lectures, units):
-    """Attach reader chapters: exact title match first, else by position (the site names the
-    Sep 10 deck 'Introduction' on the schedule but 'The cost of change' on the unit page)."""
-    by_title = {norm(u["title"]): u for u in units}
-    used = set()
-    for L in lectures:
-        u = by_title.get(norm(L["title"]))
-        if u:
-            used.add(id(u))
-            L.update(answers=u["answers"], readings=u["readings"])
-    pos = [u for u in units if id(u) not in used]
-    for L in lectures:
-        if "readings" not in L:
-            if pos:
-                u = pos.pop(0)
-                L.update(answers=u["answers"], readings=u["readings"], guessed=True)
-            else:
-                L.update(answers="", readings=[])
-    return lectures
+def load_lectures():
+    """The schedule's lectures in order (prelecture.py imports this)."""
+    return parse_schedule(get(SITE + "/schedule").decode())
 
 
 def parse_project():
@@ -152,26 +131,38 @@ def slug(L):
     return f"{L['n']:02d}-" + re.sub(r"[^a-z0-9]+", "-", L["title"].lower()).strip("-")
 
 
+def save(path, data):
+    """Write bytes through a .part file and os.replace, so a killed run never leaves a partial file."""
+    part = path.with_name(path.name + ".part")
+    part.write_bytes(data)
+    os.replace(part, path)
+
+
 def fetch_deck(L):
-    """Download the PDF and extract text next to it. Returns (pdf_path, txt_path)."""
+    """Download lecture L's deck and extract its text beside it; returns (pdf_path, txt_path).
+    The PDF is parsed and its text extracted before anything is written, and both files go through
+    save(), so the cache only ever holds decks that parse. A PDF cached without its .txt (a run killed
+    between the two writes) is extracted from the cache instead of downloaded again."""
     SLIDES.mkdir(parents=True, exist_ok=True)
     pdf = SLIDES / (slug(L) + ".pdf")
     txt = pdf.with_suffix(".txt")
-    if not pdf.exists():
-        pdf.write_bytes(get(L["pdf"]))
-    if not txt.exists():
-        try:
-            from pypdf import PdfReader
-            r = PdfReader(str(pdf))
-            txt.write_text("\n".join(f"--- slide {i} ---\n{(p.extract_text() or '').strip()}"
-                                     for i, p in enumerate(r.pages, 1)))
-        except ImportError:
-            txt.write_text("(pypdf not installed: python3 -m pip install --user pypdf)")
+    if pdf.exists() and txt.exists():
+        return pdf, txt
+    try:
+        from pypdf import PdfReader
+    except ImportError as e:
+        raise ImportError("deck text needs pypdf: python3 -m pip install --user pypdf") from e
+    cached = pdf.exists()
+    data = pdf.read_bytes() if cached else get(L["pdf"])
+    try:
+        text = "\n".join(f"--- slide {i} ---\n{(p.extract_text() or '').strip()}"
+                         for i, p in enumerate(PdfReader(io.BytesIO(data)).pages, 1))
+    except Exception as e:   # an HTML page, a short body, a corrupt file: write nothing
+        where = f"{pdf} (a bad cached copy: delete it and re-run)" if cached else L["pdf"]
+        raise RuntimeError(f"{where} is not a readable PDF: {e}; it starts with {data[:40]!r}") from e
+    save(pdf, data)
+    save(txt, text.encode())
     return pdf, txt
-
-
-def readings_line(L):
-    return " · ".join(f"{n} <{u}>" for n, u in L.get("readings", [])) or "(no reader chapter listed)"
 
 
 def main():
@@ -181,7 +172,7 @@ def main():
     ap.add_argument("--no-snapshot", action="store_true")
     a = ap.parse_args()
 
-    lectures = join(parse_schedule(get(SITE + "/schedule").decode()), parse_units())
+    lectures = load_lectures()
     today = dt.date.today()
 
     if a.lecture:
@@ -189,19 +180,17 @@ def main():
         if not L:
             sys.exit(f"no lecture {a.lecture} on the schedule")
         print(f"Lecture {L['n']} — {L['title']} ({L['date']}, week {L['week']})")
-        print("Answers:", L.get("answers") or "?")
-        print("Reader:", readings_line(L), "(positional guess)" if L.get("guessed") else "")
         if L["pdf"]:
             pdf, txt = fetch_deck(L)
             print(f"Deck: {L['pdf']}\nSaved: {pdf}\n")
             print(txt.read_text())
         else:
-            print("Deck: not posted yet — log from his page + the reader chapter, re-run when the schedule links it.")
+            print("Deck: not posted yet — re-run when the schedule links it.")
         return
 
     if a.all:
         for L in lectures:
-            print(f"{L['n']:>2} {L['date']} {L['title']:<45} {'deck' if L['pdf'] else '----'}  {readings_line(L)}")
+            print(f"{L['n']:>2} {L['date']} {L['title']:<45} {'deck' if L['pdf'] else '----'}")
         return
 
     prev = json.loads(SNAP.read_text()) if SNAP.exists() else {}
@@ -214,7 +203,7 @@ def main():
             L = lectures[int(n) - 1]
             if L["pdf"] and "no deck" in prev_rows.get(n, "no deck"):
                 pdf, txt = fetch_deck(L)
-                logged = any(f.name.startswith(f"{L['n']:02d}-") for f in (ROOT / "courses/CPSC310/lectures").glob("*.md"))
+                logged = L["n"] in term.lecture_logs("CPSC310")
                 out.append(f"NEW DECK  lec {L['n']} {L['title']} ({L['date']}) → {txt.name}"
                            + ("" if logged else "  ← not logged yet: `cpsc310_site.py --lecture %d`" % L["n"]))
             elif n in prev_rows:
@@ -224,11 +213,13 @@ def main():
     for n in prev_rows:
         if n not in cur_rows:
             out.append(f"REMOVED   lec {n}: {prev_rows[n]}")
+    prev_proj = prev.get("project", [])
     try:
         project = parse_project()
+        proj_urls = [u for _, u in project]
     except Exception as e:
-        project, out = [], out + [f"(project page unreachable: {e})"]
-    prev_proj = set(prev.get("project", []))
+        project, proj_urls = [], prev_proj   # keep the last list, or the next run announces every spec as new
+        out.append(f"(project page unreachable: {e})")
     for label, url in project:
         if url not in prev_proj and prev_rows:
             out.append(f"PROJECT   new page linked: {label} <{url}>  ← a released spec = new deadline/to-do check")
@@ -241,13 +232,11 @@ def main():
         print("  " + line)
     if nxt:
         when = "TODAY" if nxt["date"] == today.isoformat() else nxt["date"]
-        print(f"  Next lecture ({when}): lec {nxt['n']} {nxt['title']} — {nxt.get('answers') or ''}")
-        print(f"    reader: {readings_line(nxt)}{'  (positional guess)' if nxt.get('guessed') else ''}")
+        print(f"  Next lecture ({when}): lec {nxt['n']} {nxt['title']}")
         print(f"    deck: {'posted' if nxt['pdf'] else 'not posted'}")
     if not a.no_snapshot:
         SNAP.parent.mkdir(parents=True, exist_ok=True)
-        SNAP.write_text(json.dumps({"checked": today.isoformat(), "rows": cur_rows,
-                                    "project": [u for _, u in project]}, indent=1))
+        save(SNAP, json.dumps({"checked": today.isoformat(), "rows": cur_rows, "project": proj_urls}, indent=1).encode())
 
 
 if __name__ == "__main__":

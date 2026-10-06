@@ -2,11 +2,16 @@
 """Daily plan for Things3: fit today's to-dos into a fixed hour budget, roll the rest to tomorrow.
 
 Usage:
-  things_plan.py [--date YYYY-MM-DD] [--budget H] [--dry-run] [--no-lectures] [--no-ladder] [--seed]
+  things_plan.py [--budget H] [--dry-run [--date YYYY-MM-DD]] [--no-lectures] [--no-ladder]
+                 [--no-links] [--seed] [--week [--next-week]]
+
+`--date` plans as if it were that day and needs `--dry-run`, because Things3 schedules relative to the
+real today. `--no-links` skips appending links.md URLs to the notes of matching to-dos.
 
 `--week` is the weekly mode (Sundays, "plan my week"): it places next week's deadline-bound work and
 undated P1 items on days — a hand-set day is kept if it fits, otherwise the project's rhythm day, else
-the lightest day — and prints the brief's **Week ahead** block. Weekly owns when-dates; the daily run
+the lightest day — and prints the brief's **Week ahead** block. On any other day it covers tomorrow
+through Sunday; add `--next-week` for the coming Mon→Sun. Weekly owns when-dates; the daily run
 owns Today/Tomorrow and never moves a future date. Tag `pin` = never move.
 
 `--budget H` trims (or extends) that date and is remembered in plan-state.json, so a later run the
@@ -19,15 +24,18 @@ everything else out of Today so the Today list IS the day's plan. Whatever he do
 still open tomorrow, gets a rollover bump, and competes again.
 
 Steps:
-  1. Dump every open to-do (Today / Upcoming / Anytime / Inbox; Someday is ignored).
+  1. Dump every open to-do in Inbox, Someday, Upcoming and Anytime (Today's items come through
+     Anytime). Inbox and Someday items are never planned, but they still count as existing, so an
+     automatic to-do sitting there is not created again.
   2. Ensure the automatic to-dos exist: one "Log <CODE> lec N (<date>)" per unlogged lecture
      (term.py) with the LECTURE DATE as its deadline, so a missed close-out shows as overdue by
-     the real date, not "due today"; for an async course (ASIA 250) it is "Watch + log … · quiz
-     locks <date>" (2h) due at the mini-quiz hard lock — nothing is missed until then. Plus one
+     the real date, not "due today"; for an async course (ASIA 250) it is "Watch + quiz <CODE> lec N
+     · locks <date>" (2h) due at the mini-quiz hard lock — nothing is missed until then. Plus one
      per PREP ladder step that fires today (T-10 gap check, T-3 mock, …). Existing lecture to-dos
      are reconciled (title, deadline; tags only if untagged) and auto-completed once the lecture
-     file exists. Open-ended weekly to-dos (WEEKLY: novel pages, Friday revision block, groceries)
-     are created one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
+     file exists, except an async one, which he ticks himself after the quiz. Open-ended weekly
+     to-dos (WEEKLY: novel pages, Friday revision block, questions for Kraal, groceries) are created
+     one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
   3. Candidates: when ≤ today, OR undated in Anytime, OR deadline ≤ today+PULL_IN_DAYS (a future
      when-date he set by hand is respected otherwise).
   4. Score (deadline urgency → P-tag → was-planned → rollovers), then greedy fill by score:
@@ -40,7 +48,7 @@ Steps:
 import argparse, datetime as dt, json, os, re, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = "/Users/matthe/Documents/CodingProjects/School 3-1"
+ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))   # the workspace this script sits in
 STATE = os.path.join(ROOT, "routines", "plan-state.json")
 LINKS_MD = os.path.join(ROOT, "links.md")   # course tool links; rows with a match column get attached to to-do notes
 sys.path.insert(0, HERE)
@@ -69,7 +77,8 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
          first=dt.date(2026, 9, 19), last=dt.date(2026, 12, 19), notes="Before Sunday meal prep."),
 ]
 PROJECT_OF = {"STAT251": "STAT 251", "PHIL385": "PHIL 385", "CPSC310": "CPSC 310", "ASIA250": "ASIA 250"}
-LADDER_EST = [("MOCK", "2h"), ("gap check", "1h"), ("revision", "1h"), ("mark the mock", "1h"),
+# First match wins (case-insensitive substring), so "mark the mock" (1h) must come before the timed "MOCK" (2h).
+LADDER_EST = [("mark the mock", "1h"), ("MOCK", "2h"), ("gap check", "1h"), ("revision", "1h"),
               ("environment check", "1h"), ("outline", "1h"), ("full draft", "2h"), ("citations", "1h"), ("read the spec", "30m"), ("autograder", "30m"),
               ("design rationale", "1h"), ("verbal reconstruction", "30m")]
 # Daily revision habits (Matt, 2026-09-11): created for today with the date in the title; an open
@@ -260,7 +269,8 @@ def attach_links(todos, dry):
                 hits.append((name, url))
         if not hits:
             continue
-        notes = osa(f'tell application "Things3" to get notes of to do id "{t.id}"').rstrip("\n")
+        # a dry run's new to-dos are placeholders (id "new-…") that Things3 has never seen, so they have no notes yet
+        notes = "" if t.id.startswith("new-") else osa(f'tell application "Things3" to get notes of to do id "{t.id}"').rstrip("\n")
         new = [(n, u) for n, u in hits if u not in notes]
         if not new:
             continue
@@ -272,10 +282,15 @@ def attach_links(todos, dry):
     return lines
 
 def load_state():
-    try:
-        return json.load(open(STATE))
-    except Exception:
+    """plan-state.json, or a fresh state on the first run. A file that exists but does not parse stops the run: starting
+    over would forget every auto to-do he closed by hand and re-create them."""
+    if not os.path.exists(STATE):
         return {"rolled": {}, "last": {}}
+    try:
+        with open(STATE, encoding="utf-8") as f:
+            return json.load(f)
+    except json.JSONDecodeError as e:
+        raise SystemExit(f"{STATE} is not valid JSON ({e}). Fix or restore it before planning.")
 
 def fmt_h(h):
     return f"{h:g} h" if h >= 1 or h == 0 else f"{int(h * 60)}m"
@@ -458,8 +473,12 @@ def apply(today, selected, rollover, state, todos):
     save_state(state)
 
 def save_state(state):
+    """Write to a temporary file and rename it over the old one, so a crash mid-write never leaves half a file."""
     os.makedirs(os.path.dirname(STATE), exist_ok=True)
-    json.dump(state, open(STATE, "w"), indent=1, ensure_ascii=False)
+    tmp = STATE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=1, ensure_ascii=False)
+    os.replace(tmp, STATE)
 
 # ---- weekly mode ---------------------------------------------------------------------------------
 def week_window(today, next_week=False):
@@ -545,10 +564,9 @@ def plan_week(today, todos, state, next_week=False):
     return days, cap, load, on_day, changes, warn
 
 def apply_week(today, changes, state):
-    real_today = dt.datetime.now().astimezone().date()
     lines = ['tell application "Things3"', '  set theBase to current date', '  set time of theBase to 0']
     for t, _old, new in changes:
-        k = (new - real_today).days
+        k = (new - today).days                       # today is the real today: a real run refuses --date
         lines.append(f'  schedule (to do id "{t.id}") for (theBase {"+" if k >= 0 else "-"} {abs(k)} * days)')
     lines.append('end tell')
     if changes:
@@ -601,6 +619,8 @@ def main():
     ap.add_argument("--week", action="store_true", help="weekly mode: place next week's work on days (Sundays, 'plan my week')")
     ap.add_argument("--next-week", action="store_true", help="with --week: plan the coming Mon→Sun even if today isn't Sunday")
     a = ap.parse_args()
+    if a.date and not a.dry_run:
+        ap.error("--date needs --dry-run: Things3 schedules relative to the real today, so a real run for another date would misplace to-dos")
     today = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now().astimezone().date()
     state = load_state()
     overrides = state.setdefault("budget", {})          # per-date budget set with --budget (sticks for that date)

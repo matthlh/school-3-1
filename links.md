@@ -14,7 +14,6 @@ Every course tool in one place. A name opens the tool in a new tab, and the same
 | STAT251 | Piazza | https://piazza.com/class/mtnhr8ecx7c3po | Piazza |
 | CPSC310 | Course site | https://ubccpsc.github.io/310/26w1/ | . |
 | CPSC310 | Schedule (slides live here) | https://ubccpsc.github.io/310/26w1/schedule | CPSC ?310 lec |
-| CPSC310 | Course materials (unit pages → reader chapters) | https://ubccpsc.github.io/310/26w1/materials/unit-01/ | Pre-lecture |
 | CPSC310 | Reader (textbook) | https://ubccpsc.github.io/310/textbook/ | Pre-lecture;CPSC ?310 lec |
 | CPSC310 | Syllabus | https://ubccpsc.github.io/310/26w1/syllabus |  |
 | CPSC310 | Project overview (InsightUBC) | https://ubccpsc.github.io/310/26w1/project/ | \bD\d\b;Deliverable |

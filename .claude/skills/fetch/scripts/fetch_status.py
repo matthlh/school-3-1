@@ -7,23 +7,24 @@ meeting-pattern table (COURSES) has exactly one copy — this script never redef
 
 Usage: fetch_status.py [--course CODE] [--date YYYY-MM-DD]
 Prints one line per course: whether it meets that date, the lecture number, and whether a file
-exists for it (missing / staged `_NN-*.md` / logged `NN-*.md`).
+exists for it (missing / staged `_NN-*.md` / logged `NN-*.md`, or a `MM-NN-*.md` range covering it).
 """
-import argparse, datetime as dt, os, re, sys
+import argparse, datetime as dt, glob, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
-sys.path.insert(0, os.path.join(ROOT, ".claude", "skills", "morning-check", "scripts"))
+ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
+sys.path.insert(0, os.path.join(HERE, "..", "..", "morning-check", "scripts"))   # term.py sits beside this skill, not under SCHOOL_ROOT
 import term  # noqa: E402
 
 def lecture_file(code, n):
-    d = os.path.join(ROOT, "courses", code, "lectures")
-    if not os.path.isdir(d):
-        return None
-    for f in sorted(os.listdir(d)):
-        if re.match(rf"^_?{n:02d}(-\d+)?-", f):
-            return os.path.join("courses", code, "lectures", f)
-    return None
+    """Workspace-relative path of the log covering lecture n (term.lecture_logs, so `05-06-…`
+    covers 6), else of its staged `_NN-…` outline, else None."""
+    d = os.path.join("courses", code, "lectures")
+    log = term.lecture_logs(code).get(n)
+    if log:
+        return os.path.join(d, log)
+    staged = sorted(glob.glob(os.path.join(ROOT, d, f"_{n:02d}-*.md")))
+    return os.path.relpath(staged[0], ROOT) if staged else None
 
 def meets_on(code, d):
     c = term.COURSES[code]

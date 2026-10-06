@@ -5,7 +5,7 @@ description: On-demand pull of one specific resource instead of a full morning c
 
 # Fetch
 
-Four narrow, fast lookups — each is a slice of what `/morning-check` already does, for when Matt
+Five narrow, fast recipes — each is a slice of what `/morning-check` already does, for when Matt
 wants just that one thing without a full sweep. Piazza and PrairieLearn are never re-run here;
 that's morning-check's job. The one sync this skill does is `fetch canvas` (last section), for a
 morning when the check found Canvas signed out. Everything else only reads what's already synced,
@@ -15,12 +15,16 @@ or stages the one missing piece asked for.
 `/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/fetch/scripts`).
 
 ## "fetch transit deck"
-1. Check whether `routines/runs/<today>-transit.md` exists and `routines/quiz-session.json` has
-   `"date": "<today>"` and `"mode": "transit"`.
-2. If yes — it's already built (maybe from this morning's check). Just re-send it:
-   `SendUserFile` on that path, status `normal`.
-3. If no (missing, stale date, or he already graded it and it's gone) — build a fresh one:
-   `python3 "$S/../../quiz-me/scripts/quiz_pick.py" --transit`, then send the new file the same way.
+1. Check whether `routines/runs/<today>-transit.md` exists and `routines/transit-session.json` has
+   `"date": "<today>"`.
+2. If yes — it's already built (maybe from this morning's check), and the Transit Deck artifact already shows
+   it. Give him the artifact's fixed URL from morning-check SKILL.md §7; nothing is rebuilt or re-sent.
+3. If no (missing, stale date, or he already graded it and it's gone) — build a fresh one by the transit-deck
+   steps of morning-check SKILL.md §7 ("Review = the transit deck"), in order. Step 0 first grades any fully
+   tapped older deck against its own session file, because once a new deck replaces that file its taps can
+   no longer be graded. Step 1 is `python3 "$S/../../quiz-me/scripts/quiz_pick.py" --transit`. Step 2 rebuilds
+   the page and republishes it at the fixed artifact URL. If step 0 graded anything, finish with
+   `sh publish.sh "Quiz <date>"`, as after any graded session.
 4. One line back: "Deck's the one from this morning" or "Built a fresh one" — not the whole session dump.
 
 ## "fetch pre-lecture <COURSE>" (or "fetch <COURSE>" on its own)
@@ -30,11 +34,14 @@ or stages the one missing piece asked for.
 2. **logged or staged:** it already exists — just show him the file (Read it, summarize the "3
    pre-lecture questions" section back in chat, don't re-fetch anything).
 3. **missing** — stage it, per course:
-   - **CPSC 310:** `python3 "$S/../../morning-check/scripts/prelecture.py" --n 1`, then write
-     `courses/CPSC310/lectures/_NN-<slug>.md` from the staged reader-chapter text
-     (`routines/prelecture/cpsc310/NN-*.txt`) — plain-sentence outline of the chapter's claims
-     under `## What the chapter claims`, then `## Three pre-lecture questions`. If the deck is
-     already posted, prefer its slide titles (`routines/slides/cpsc310/NN-*.txt`) over the reader.
+   - **CPSC 310:** `python3 "$S/../../morning-check/scripts/prelecture.py" --n 1`. When the deck is
+     posted, it downloads it and prints the deck text's path (`routines/slides/cpsc310/NN-*.txt`).
+     Write `courses/CPSC310/lectures/_NN-<slug>.md` from that text: a plain-sentence outline of the
+     deck's claims in slide order, then `## Three pre-lecture questions`. When the deck is not posted
+     yet, there is nothing to stage, so tell him that in one line. No reader chapter is staged,
+     because the course site removed its lecture → chapter pages on 2026-09-28. If the command exits
+     non-zero, the schedule or the deck could not be fetched or no longer parses: report the error in
+     one line.
    - **STAT 251 / ASIA 250:** needs a Chrome tab on canvas.ubc.ca (morning-check
      SKILL.md §2 for opening it). Run `scripts/canvas_materials.js` (in
      `.claude/skills/morning-check/scripts/`) via `javascript_tool`, read it back with
@@ -86,10 +93,12 @@ his phone. Once he has signed in at canvas.ubc.ca in Chrome, this re-runs only t
 5. Close the tab. Report only what was new — "Nothing new on Canvas" is a fine full answer.
 
 ## Notes
-- Apart from `fetch canvas`, this skill never writes to `ledger.md`, Things3, or `publish.sh` — it only stages `_NN-*.md`
+- Apart from `fetch canvas` and a transit-deck rebuild (which follows morning-check §7, so it can grade the old
+  deck and publish), this skill never writes to `ledger.md`, Things3, or `publish.sh` — it only stages `_NN-*.md`
   pre-lecture files (git-ignored routine data stays git-ignored; the `_NN` files themselves are
   tracked, same as morning-check produces) and reads what already exists. Logging a lecture is
-  still `log <CODE> lec N`; grading a deck is still replying to it with grades.
+  still `log <CODE> lec N`; grading a deck is tapping O, ~ or X on the deck page and saying "grade my deck",
+  or pasting the grades (quiz-me skill).
 - If a Chrome step here needs a domain permission prompt and none appears (STAT 251/ASIA
   250 path), retry up to 3 times before telling him it's blocked — see morning-check
   SKILL.md §5's note on transient permission hiccups.

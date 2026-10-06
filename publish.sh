@@ -17,6 +17,15 @@ if [ -n "$(git diff --name-only --diff-filter=U)" ]; then
   echo "publish: unresolved conflict markers in: $(git diff --name-only --diff-filter=U | xargs)" >&2
   exit 1
 fi
+# Only main publishes: the push below sends the local main branch, so from any other branch it would report a push
+# that never carried this branch's commits. Stop before committing anything. This comes after the rebase checks
+# because a rebase also detaches HEAD, and that case needs the rebase advice above.
+branch=$(git branch --show-current)
+if [ "$branch" != main ]; then
+  where=${branch:+branch $branch}
+  echo "publish: on ${where:-a detached HEAD}, not main — nothing committed or pushed. Switch to main (or merge this work into it), then rerun." >&2
+  exit 1
+fi
 
 # 1. Commit local changes, if any.
 committed=
