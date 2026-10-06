@@ -175,7 +175,8 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | **Fri Oct 2, 14:00–14:50** | PHIL 385 | **Exam 1 — the essay exam** in Buchanan A 201: 2 questions, max 500 words each, typed in Respondus in 50 min. Covers the Preface, The Unhappiest One, Crop Rotation and Ancient Tragedy; each question asks whether you agree or disagree with a central idea | 15% | exam |
 | **Thu Oct 8, 23:59** | STAT 251 | **WeBWorK 3** (no late). Extended from Tue Oct 6 on the lecture 11 Canvas page (seen 2026-10-03), because the holiday cost lecture time. 6 problems | WW pool | |
 | Sun Oct 11 | ASIA 250 | SWR1 published (Thanksgiving week, no lecture) | | |
-| ~Tue Oct 13, 23:59 | STAT 251 | WeBWorK 4 — opens Oct 6; inferred | | |
+| **Tue Oct 13, 23:59** | ASIA 250 | **Mini-Quiz 5** (lecture 5) — hard lock. One day later than the Monday pattern because Oct 12 is Thanksgiving (instructor announcement, Oct 5) | 2% | |
+| **Thu Oct 15, 23:59** | STAT 251 | **WeBWorK 4** (no late). Read off WeBWorK on its open day, Oct 6; 6 problems, 20 points. Two days later than the seven-day pattern, like WeBWorK 3 | WW pool | |
 | Fri Oct 2, 08:00 → Thu Oct 15, 23:59 | CPSC 310 | **LAB04 DIP, LSP & Testability** on PrairieLearn. Close date read on PrairieLearn 2026-10-03; PRAQ04 practice closes the same time | 10% pool | |
 | ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% | paper |
 | ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | | |
@@ -224,7 +225,7 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 
 | Course | Score | As of |
 |---|---|---|
-| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Optional Assignment 1 missed and the 2% bonus is gone | 2026-10-03 |
+| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Optional Assignment 1 missed and the 2% bonus is gone | 2026-10-06 |
 | CPSC 310 | 100%; D1-Auto 100/100; D1 design analysis 100/100; LAB01 100/100; LAB02 74/100; the total is Canvas only and the labs and design analysis come from PrairieLearn | 2026-10-03 |
 | PHIL 385 | — | |
 | STAT 251 | 37.84%; iClicker 14/37; classes 5 to 9 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); the total counts only the iClicker polls and WeBWorK is not on Canvas yet | 2026-10-02 |
@@ -314,3 +315,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-05 | PHIL 385 lec 9 logged (The Musical Erotic): 12 questions, 2 ledger topics due Oct 6. The three arias are on the lecture page with their texts and translations. Ask Kraal topped up with the week's questions, and the Ask Kraal page now attaches to the weekly Kraal to-do through links.md. |
 | 2026-10-05 | STAT 251 lectures 1–4 and 10 checked against the posted decks and the Panopto recordings. Lectures 1–2 and 3 now have Slides, organized and In class sections, and lectures 4 and 10 gained In class sections with the iClicker answers and his exam remarks. Nothing on the pages was wrong; one bank answer gained the exam rule for outliers. 15 new questions. Lecture 11's recording is not posted yet. |
 | 2026-10-05 | STAT 251 question bank split by length. A new Long problems section holds the 24 problems that need paper: 14 moved from the lecture and WeBWorK sections, and 10 new ones worked like the lecture 4 to 10 examples and the lecture 7 Bayes activity, which was the one class worksheet not yet banked. Each long answer opens with a Steps list. The bus deck now skips them, a normal quiz asks them as steps only, and the Friday revision block opens with a timed set of four. Lectures 8 and 9 were already logged on Sep 28. |
+| 2026-10-06 | Morning check: STAT 251 WeBWorK 3 done at 100%. WeBWorK 4 opened, due Thu Oct 15 (not Oct 13), 6 problems banked. ASIA 250 Mini-Quiz 4 10/10, and Mini-Quiz 5 locks Tue Oct 13 (Thanksgiving extension). CPSC 310 PRAQ5 opened. |

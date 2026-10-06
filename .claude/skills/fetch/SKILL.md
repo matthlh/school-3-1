@@ -39,10 +39,11 @@ or stages the one missing piece asked for (for CPSC 310, also an outline the dec
      `--force` picks the lecture even when its outline exists, so an outline staged from a reader
      chapter that morning comes back for the deck check.
      - **Deck posted:** the deck wins. When `courses/CPSC310/lectures/_NN-<slug>.md` is missing, or its
-       first line says it was built from a reader chapter, write it from the deck text it printed
-       (`routines/slides/cpsc310/NN-*.txt`): a plain-sentence outline of the deck's claims in slide
-       order. It replaces the chapter outline whole; nothing of the chapter version is kept. An
-       outline already built from the deck is shown as it is.
+       first line says it was built from a reader chapter, do morning-check SKILL.md §7's Full lecture
+       prep: write the full study page from the deck text it printed (`routines/slides/cpsc310/NN-*.txt`)
+       and the reader chapter, in the CPSC 310 lecture-file shape, and bank its questions. It replaces
+       the chapter outline whole; nothing of the chapter version is kept. A page already built from the
+       deck is shown as it is.
      - **No deck yet:** a staged outline stays, and you show it with one line saying the deck is not
        up yet. A missing one is staged from the reader chapter as morning-check SKILL.md §7 step 1
        does: pick the chapter in the printed reader contents whose title best matches the lecture
@@ -62,8 +63,9 @@ or stages the one missing piece asked for (for CPSC 310, also an outline the dec
      what it listed, say in one line what failed, and leave each failed item unmarked (`--mark` refuses one whose
      page failed). For the new deck/reading it names, pull the text with `canvadoc_text.js` (recipe in that
      file's header), then write `courses/<CODE>/lectures/_NN-<slug>.md` (or
-     `courses/<CODE>/readings/_<slug>.md` for a reading) the same way morning-check §7 does: a
-     plain-sentence outline in slide order (ASIA 250 also gets a `## Likely quiz targets` line).
+     `courses/<CODE>/readings/_<slug>.md` for a reading) the same way morning-check §7 does: for a
+     lecture deck, the Full lecture prep study page with its questions banked; for a reading, a
+     plain-sentence outline (ASIA 250 also gets a `## Likely quiz targets` line).
      Then record it as pulled: run the same digest command with `--mark <KEY>` added, using the key the list
      printed (`COURSE:item`). An item left unmarked is listed again on the next run.
    - **PHIL 385:** no slides or recordings, ever — there's nothing to stage. Instead read the

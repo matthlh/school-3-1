@@ -75,8 +75,14 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    ASIA 250 decks and readings go `canvas_materials.js` → `canvas_materials_digest.py` → `canvadoc_text.js`, then
    `canvas_materials_digest.py --mark <keys>` once the outline is written, so an item whose pull failed comes
    back the next day (all in the morning-check scripts dir; the `.js` files run in the Chrome Canvas tab).
-   PHIL 385 has nothing to pull. Logging a lecture consumes its outline: deck-only claims become
-   questions and clarifications, then the `_NN` file is deleted. If he logs a lecture and no outline
+   PHIL 385 has nothing to pull. **Full lecture prep** (Matt, 2026-10-06: "go through the slides, the
+   recordings, and everything … I'll submit my notes, and then you can add or adjust"): once a STAT 251,
+   CPSC 310 or ASIA 250 lecture's deck is posted, its `_NN` file is the full study page built from the deck, the
+   recording and the reading, and its questions are banked then (for CPSC 310 that is the 12:30 task). When he
+   sends notes the file is renamed to `NN`, his words go under `## Your notes`, and the page and questions are
+   adjusted only where his notes add or correct something (morning-check SKILL.md §7, Full lecture prep).
+   Otherwise logging a lecture consumes its outline: deck-only claims become questions and clarifications, then
+   the `_NN` file is deleted. If he logs a lecture and no outline
    exists, pull the deck first with the `canvadoc_text.js` recipe. Big readings: only the assigned pages.
    **STAT 251 posts two decks per lecture** (Matt, 2026-09-16): `BL` before class, which is what the morning
    check stages, and `AL` after class with the worked solutions to the in-class examples. The Canvas text

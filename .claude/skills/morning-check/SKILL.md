@@ -528,9 +528,40 @@ and nothing else.
    the PrairieLearn assessment for CPSC 310, the pre-lab quiz for STAT 251 — taken from the
    PrairieLearn read (§6) and the ledger, never from memory. Cancelled CPSC 310 labs: Wed Sep 30 and
    Mon Oct 12.
-4. **Lecture log later** (CLAUDE.md rule): when he logs the lecture, the `_NN` outline is the
-   clarification source and every deck-only claim becomes a question, then the `_NN` file is deleted
-   (its content lives on in the questions and the notes file's Clarifications).
+4. **Lecture log later** (CLAUDE.md rule): when he logs a lecture whose `_NN` file is still an outline, the
+   outline is the clarification source and every deck-only claim becomes a question, then the `_NN` file is
+   deleted (its content lives on in the questions and the notes file's Clarifications). A full study page
+   (Full lecture prep, below) is renamed instead.
+
+**Full lecture prep (Matt, 2026-10-06: "for the lectures today (for all my classes except philosophy), if
+there are slides, maybe you can go through the slides, the recordings, and everything. Afterwards … I'll
+submit my notes, and then you can add or adjust if needed").** Once a lecture's deck is posted, this replaces
+the outline in steps 1–2 for STAT 251, CPSC 310 and ASIA 250. CPSC 310's deck goes up after the morning check
+(about 10:40–12:00), so the Tue/Thu 12:30 `cpsc310-midday` task does its full prep and the chapter outline stands
+until then. PHIL 385 is unchanged (nothing to pull).
+- **Which lectures:** every lecture held today in those three courses whose deck is posted, plus ASIA 250's
+  current week (async, video and slides up from Monday). For a lecture held earlier that is still unlogged,
+  also fold in anything that has appeared since its page was written: the STAT `AL` deck, its Panopto
+  recording, a CPSC deck that went up after class.
+- **Sources:** the deck (STAT/ASIA via `canvadoc_text.js`, CPSC via `cpsc310_site.py --lecture N`), the
+  recording where one exists (STAT: Panopto captions, recipe in `courses/STAT251/03-logistics.md` →
+  Reference; ASIA: captions if the Canvas video has a track, otherwise deck only and say so; CPSC has
+  none), and the assigned reader chapter or readings.
+- **Write the page as the real study page, not an outline:** `courses/<CODE>/lectures/_NN-<slug>.md` in
+  the course's lecture-file shape (CPSC 310: the deck-organised format in CLAUDE.md; STAT 251 and ASIA 250:
+  `## Slides, organized`, `## In class` from the recording when there is one, `## Clarifications` where the
+  deck and the recording or reader disagree), formulas in LaTeX. No pre-lecture questions (dropped on
+  2026-10-06). Keep the underscore: term.py still counts the lecture unlogged and the `Log …` to-do stays
+  open, which is his reminder to send notes after class.
+- **Bank the questions now:** 6–12 per lecture into `02-questions.md` (long ones under `## Long problems`),
+  with the topics added to `01-topics.md` and `ledger.md` (Next = tomorrow), run `check-math.mjs` on every
+  touched file, then `quiz_pick.py --due` and `npm run parity` as CLAUDE.md step 3 says. A STAT 251 or ASIA 250
+  item is marked with `canvas_materials_digest.py --mark` once its page is written.
+- **When he sends notes** (`log <COURSE> lec N`): rename `_NN` → `NN`, add `## Your notes` with his words
+  verbatim, and adjust the page and its questions only where his notes add or correct something. Report what
+  changed, nothing else.
+- **Brief:** the Today's classes line points at the page and names the question count. A lecture with no
+  deck yet is "no deck posted", as before.
 
 **Review = the transit deck, as a phone artifact (2026-09-13).** Two parts, in order:
 
@@ -938,6 +969,10 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
     lines, First thing tomorrow, a Time check answered with `--actual`, and half a budget on exam eves.
   - The transit deck shows each answer as key points whose ticks set the grade. The weekly brief carries the
     FSRS shadow verdict until it decides.
+- 2026-10-06 (Matt): §7 gains **Full lecture prep**. For STAT 251, CPSC 310 and ASIA 250 the morning
+  check builds today's lecture page from the deck, the recording and the reading, and banks its questions;
+  his after-class notes are merged in later. Also: `publish.sh` runs as the last step again (§8), after a
+  stretch where runs skipped it.
 - 2026-10-02 (Matt: "is there a way to combine this check with that? Like check for new emails,
   auto apply, check for updates and responses"): §4b added. The morning check now reads the Career
   repo's applications ledger, pastes its Career block (what closes in 3 days, interviews, quiet
