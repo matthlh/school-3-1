@@ -15,10 +15,11 @@ export function LastGrade({ r }: { r: TopicRow }) {
   return <GradeChip g={r.grade} title={isISODate(r.last) ? `last quizzed ${formatDate(r.last)}` : 'not quizzed yet'} />
 }
 
-/** "due Wed Sep 16" in red once Next has come, else "next Sat Sep 20"; empty without a date. */
-export function NextCell({ next, today }: { next: string; today: string }) {
-  const due = !!next && next <= today
-  return <td className={due ? 'due' : 'muted'}>{next ? `${due ? 'due' : 'next'} ${formatDate(next)}` : ''}</td>
+/** A topics page's Next cell: "next Sat Sep 20", muted; empty without a date. It marks nothing due, since whether a topic
+ *  is due is the Due now block's to say and the block names ledger rows, which a course page's Revision panel and the
+ *  ledger show (StandingCell in DueNow.tsx). `today` is no longer read; TopicsView still passes it. */
+export function NextCell({ next }: { next: string; today: string }) {
+  return <td className="muted">{next ? `next ${formatDate(next)}` : ''}</td>
 }
 
 export function CourseChip({ code }: { code: string }) {
@@ -33,14 +34,16 @@ export function calendarChip(course: string) {
   return course === 'UBC' ? <span className="chip">UBC</span> : null
 }
 
-/** A topic row's main text as a link to its questions in the course's bank, then its trailing parenthetical, muted. */
-export function TopicCell({ r }: { r: TopicRow }) {
+/** A topic's main text as a link to its questions in the course's bank, then its trailing parenthetical, muted. Takes a
+ *  ledger row or a Due now item. */
+export function TopicCell({ r }: { r: { course: string; topic: string } }) {
   const { main, detail } = splitTopic(r.topic)
-  return <><a href={hrefTopic(r.course, r.topic)}>{main}</a>{detail && <span className="detail">{detail}</span>}</>
+  return <><a className="topic-link" href={hrefTopic(r.course, r.topic)}>{main}</a>{detail && <span className="detail">{detail}</span>}</>
 }
 
-/** Thin segmented bar + one-line legend: solid / shaky / missed / not yet quizzed. */
-export function StatBar({ t }: { t: Tally }) {
+/** Thin segmented bar + one-line legend: solid / shaky / missed / not yet quizzed, then how many topics the Due now
+ *  block lists (null when the block could not be read). */
+export function StatBar({ t, due }: { t: Tally; due: number | null }) {
   if (t.total === 0) return <div className="legend">no topics yet</div>
   const seg = (n: number, cls: string) => (n > 0 ? <i className={cls} style={{ width: `${(100 * n) / t.total}%` }} /> : null)
   const pct = pctSolid(t)
@@ -50,7 +53,7 @@ export function StatBar({ t }: { t: Tally }) {
       <div className="legend">
         {pct !== null && <><b>{pct}% solid</b> · </>}
         {t.solid} solid · {t.shaky} shaky · {t.missed} missed
-        {t.unquizzed ? ` · ${t.unquizzed} new` : ''}{t.due ? ` · ${t.due} due` : ''}
+        {t.unquizzed ? ` · ${t.unquizzed} new` : ''}{due ? ` · ${due} due` : ''}
       </div>
     </div>
   )

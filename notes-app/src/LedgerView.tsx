@@ -6,15 +6,17 @@ import { toneStyle } from './tone'
 import { formatDate, isISODate, shortDate, todayISO } from './dates'
 import { Md } from './Md'
 import { usePager } from './Pager'
-import { DueTable, NothingDue, dueRows, dueTitle, rowKey } from './DueNow'
+import { DueBody, FROZEN_TITLE, dueDetail, useDue, whenLabel, whenTitle, type Due } from './DueNow'
 import { CourseChip, LastGrade, TopicCell, calendarChip, isCourseCode } from './ui'
+import { calibrationByCourse } from './stats'
 import { SectionRail } from './SectionRail'
 
 const PATH = 'ledger.md'
 
-/** ledger.md rendered as a dashboard: live Due now, paged All topics / Term calendar / Grades / Session log. */
+/** ledger.md rendered as a dashboard: the scheduler's Due now block, then paged All topics / Term calendar / Grades / Session log. */
 export function LedgerView({ text, topics, calendar, quiz }: { text: string; topics: TopicRow[]; calendar: Deadline[]; quiz: QuizState | null }) {
   const today = todayISO()
+  const due = useDue(text)
   // The preamble (title, grade key, ladder) is for the scripts; the page starts at the first section.
   const sections = splitSections(text).slice(1).filter((s) => s.heading !== null)
   return (
@@ -29,8 +31,8 @@ export function LedgerView({ text, topics, calendar, quiz }: { text: string; top
       {sections.map((s) => {
         const h = s.heading ?? ''
         let body
-        if (/^due now/i.test(h)) body = <DueSection topics={topics} today={today} />
-        else if (/^all topics/i.test(h)) body = <AllTopics heading={h} topics={topics} today={today} quiz={quiz} />
+        if (/^due now/i.test(h)) body = <><h2>Due now · {dueDetail(due)}</h2><DueBody due={due} /></>
+        else if (/^all topics/i.test(h)) body = <AllTopics heading={h} topics={topics} due={due} quiz={quiz} />
         else if (/^term calendar/i.test(h)) body = <CalendarSection heading={h} body={s.body} calendar={calendar} today={today} />
         else if (/^grades/i.test(h)) body = <GradesSection heading={h} body={s.body} />
         else if (/^session log/i.test(h)) body = <SessionLog heading={h} body={s.body} />
@@ -41,20 +43,12 @@ export function LedgerView({ text, topics, calendar, quiz }: { text: string; top
   )
 }
 
-function DueSection({ topics, today }: { topics: TopicRow[]; today: string }) {
-  const due = dueRows(topics, today)
-  return (
-    <>
-      <h2>{dueTitle(due.length, today)}</h2>
-      {due.length > 0 ? <DueTable rows={due} today={today} /> : <NothingDue topics={topics} today={today} />}
-    </>
-  )
-}
-
 const byNext = (a: TopicRow, b: TopicRow) =>
   (a.next || '9999').localeCompare(b.next || '9999') || a.course.localeCompare(b.course) || a.topic.localeCompare(b.topic)
 
-function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: TopicRow[]; today: string; quiz: QuizState | null }) {
+/** Every ledger row, paged, with a course filter. The Next column shows the Due now block's standing: why a listed topic
+ *  is due, "frozen", or else the Next date. */
+function AllTopics({ heading, topics, due, quiz }: { heading: string; topics: TopicRow[]; due: Due; quiz: QuizState | null }) {
   const [course, setCourse] = useState<string | null>(null)
   const courses = [...new Set(topics.map((t) => t.course))].sort()
   const shown = [...topics].sort(byNext).filter((t) => !course || t.course === course)
@@ -67,6 +61,7 @@ function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: 
       {histories.length > 0 && (
         <p className="muted small">{histories.length} question{histories.length === 1 ? ' has' : 's have'} been asked {answers} time{answers === 1 ? '' : 's'} so far.</p>
       )}
+      <Calibration quiz={quiz} />
       {courses.length > 1 && (
         <div className="filter">
           <button type="button" className={'chip' + (course ? '' : ' on')} onClick={() => setCourse(null)}>All</button>
@@ -81,15 +76,19 @@ function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: 
         </thead>
         <tbody>
           {rows.map((r) => {
-            const due = !!r.next && r.next <= today
+            const s = due.ok ? due.standing(r) : null
             return (
-              <tr key={rowKey(r)}>
+              <tr key={`${r.course}|${r.topic}`}>
                 <td className="course nowrap"><CourseChip code={r.course} /></td>
                 <td className="topic"><TopicCell r={r} /></td>
                 <td className="lec">{r.lec || '—'}</td>
                 <td className="last">{isISODate(r.last) ? shortDate(r.last) : '—'}</td>
                 <td className="grade"><LastGrade r={r} /></td>
-                <td className={'next' + (due ? ' late' : '')}>{due ? 'due' : r.next ? shortDate(r.next) : '—'}</td>
+                {s?.kind === 'due'
+                  ? <td className={'next ' + (s.when.kind === 'sweep' ? 'sweep' : 'late')} title={whenTitle(s.when)}>{whenLabel(s.when)}</td>
+                  : s?.kind === 'frozen'
+                    ? <td className="next frozen" title={FROZEN_TITLE}>frozen</td>
+                    : <td className="next">{r.next ? shortDate(r.next) : '—'}</td>}
               </tr>
             )
           })}
@@ -97,6 +96,31 @@ function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: 
       </table>
       {pager}
     </>
+  )
+}
+
+const CONF = { 1: 'guess', 2: 'think so', 3: 'sure' } as const
+
+/** A small panel per course: for each confidence he gave before the answer, how many answers and the share graded O.
+ *  Nothing shows until a history entry carries a confidence. */
+function Calibration({ quiz }: { quiz: QuizState | null }) {
+  const courses = calibrationByCourse(Object.values(quiz?.questions ?? {}))
+  if (courses.length === 0) return null
+  return (
+    <div className="calibration">
+      {courses.map((c) => (
+        <div key={c.course} className="panel" style={toneStyle(c.course)}>
+          <div className="panel-head"><span>Calibration</span><CourseChip code={c.course} /></div>
+          {c.levels.map((l) => (
+            <div key={l.conf} className="cal-row">
+              <span>{l.conf} {CONF[l.conf]}</span>
+              <span className="n">{l.answers} answer{l.answers === 1 ? '' : 's'}</span>
+              <span className="o">{l.answers ? `${Math.round((100 * l.solid) / l.answers)}% O` : '—'}</span>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
   )
 }
 

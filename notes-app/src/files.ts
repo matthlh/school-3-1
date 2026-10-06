@@ -143,7 +143,11 @@ export const hrefFor = (path: string) => `#/${path}`
 
 // ---- quiz history (routines/quiz-state.json, written by the quiz-me skill) ----------------
 
-export interface QuizHistory { course: string; topic: string; history: [string, string][] }
+/** What quiz_grade.py stores beside a grade when it was given: the confidence before the answer (1 guess, 2 think so,
+ *  3 sure), the cause of a miss, a live variant, his wrong answer and why he was sure. */
+export interface QuizExtra { conf?: 1 | 2 | 3; cause?: 'concept' | 'forgot' | 'misread' | 'careless' | 'slow'; variant?: true; said?: string; why?: string }
+/** One question's history: `[date, grade]`, or `[date, grade, extra]` when there was more to store. */
+export interface QuizHistory { course: string; topic: string; history: ([string, string] | [string, string, QuizExtra])[] }
 export interface QuizState { questions: Record<string, QuizHistory>; sessions: unknown[] }
 
 const quizRaw = import.meta.glob('../../routines/quiz-state.json', { query: '?raw', import: 'default' }) as Record<string, Loader>

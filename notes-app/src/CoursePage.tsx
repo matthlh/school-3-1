@@ -2,11 +2,12 @@ import type { Entry, Texts, Tree } from './files'
 import { hrefFor } from './files'
 import { afterDash, firstHeading, splitSections, type LinkRow, type TopicRow } from './markdown'
 import { EMPTY, type Tally } from './stats'
-import { todayISO } from './dates'
-import { LastGrade, NextCell, StatBar, TopicCell } from './ui'
+import { LastGrade, StatBar, TopicCell } from './ui'
+import { DueError, StandingCell, useDue } from './DueNow'
 import { LinkList } from './Links'
 import { Md } from './Md'
 import { usePager } from './Pager'
+import { WhatIf } from './WhatIf'
 
 /** Syllabus sections that belong on the overview (checklists), not in the syllabus view. */
 export const VERIFY = /^(to verify|ask\b|check\b|do this week|open questions|to do)/i
@@ -31,12 +32,12 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
   const course = tree.courses.find((c) => c.code === code)
   const rows = topics.filter((r) => r.course === code)
   const { rows: shown, pager } = usePager(rows)
+  const due = useDue(all['ledger.md'] ?? '')
   if (!course) return <article><h1>Unknown course</h1><p><code>{code}</code></p></article>
 
   const syllabusPath = `courses/${code}/00-syllabus.md`
   const syllabus = all[syllabusPath]
   const verify = syllabus ? splitSections(syllabus).filter((s) => s.heading && VERIFY.test(s.heading)) : []
-  const today = todayISO()
   const hasLinks = links.some((l) => l.course === code)
 
   return (
@@ -44,7 +45,8 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
       <div className="course-main">
         <section className="panel">
           <div className="panel-head"><span>Revision</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
-          <StatBar t={tallies[code] ?? EMPTY} />
+          <StatBar t={tallies[code] ?? EMPTY} due={due.ok ? due.count(code) : null} />
+          {!due.ok && <DueError error={due.error} />}
           {rows.length > 0 && (
             <>
               <table className="topics">
@@ -53,7 +55,7 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
                     <tr key={r.topic}>
                       <td><LastGrade r={r} /></td>
                       <td><TopicCell r={r} /></td>
-                      <NextCell next={r.next} today={today} />
+                      <StandingCell s={due.ok ? due.standing(r) : null} next={r.next} />
                     </tr>
                   ))}
                 </tbody>
@@ -63,6 +65,7 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
           )}
         </section>
 
+        <WhatIf code={code} all={all} />
         <h2 className="section-title">Lectures</h2>
         {course.lectures.length === 0 ? <p className="muted">No lectures logged yet.</p> : <PageCards entries={course.lectures} all={all} />}
         {course.readings.length > 0 && (

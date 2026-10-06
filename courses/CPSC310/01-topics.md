@@ -1,26 +1,24 @@
 # CPSC310 — Topic Ledger
 
-Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` after each quiz.
+Every topic gets a row here and one in `ledger.md`. Its grade and next review live only in the ledger, where the
+quiz scripts own them. The Topic here starts with the words of the ledger topic, so the site's Topics tab can find them.
 
-**Grade key:** `X` missed · `~` shaky · `O` solid
-**Spacing ladder:** X → +1d · ~ → +3d · O(1) → +7d · O(2) → +16d · O(3+) → +35d
-
-| # | Topic | Lec | Added | Last | Grade | Streak | Next | Notes |
-|---|-------|-----|-------|------|-------|--------|------|-------|
-| 1 | What SE is — "managing what a change costs" · changing requirements as the driver · code vs software · analytical code design | 1 | 2026-09-11 | 2026-09-19 | X | 0 | 2026-09-20 | reader: Intro + ACD intro |
-| 2 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-11 | 2026-09-19 | X | 0 | 2026-09-20 | reader intro; roadmap/objectives pruned 2026-09-14 |
-| 3 | Lab 1 HTTP & PUT — status codes 200/201/204/400/404/422 · 400 vs 422 · PUT idempotence vs POST | Lab 1 | 2026-09-14 | 2026-09-19 | ~ | 0 | 2026-09-22 | PrairieLearn LAB01.1–3 |
-| 4 | Lab 1 request path & async — route/handler/path param/middleware · req vs res · validator critique (repeated blocks, strings untied to the spec) · event loop, async propagation, missing await | Lab 1 | 2026-09-14 | 2026-09-19 | ~ | 0 | 2026-09-22 | PrairieLearn LAB01.3–6 |
-| 5 | Coupling & connascence — coupling axes (degree · locality · strength) · five connascence types (name/type/value/position/algorithm), increasing cost of change · addressing coupling (cut interfaces, cut distance, weaken connascence) | 2 | 2026-09-16 | 2026-09-19 | X | 0 | 2026-09-20 | reader: Change Difficulty |
-| 6 | Cohesion & bindings — the deck's three bindings (data · logic · order; the reader's prose says timing) · low cohesion's difficulty (reading unrelated code) and risk (edits hit unrelated features) · Util box vs one controller per feature · a statement with no binding is the extraction candidate · reader's tell: a field used by few methods | 3 | 2026-09-17 | — | — | 0 | 2026-09-18 | reader: Change Difficulty (cohesion section) |
-| 7 | Refactoring — predictable, meaning-preserving transformation · reader's four steps vs deck's six (tests before and after) · don't refactor when tests fail, when rewriting, near deadlines, while fixing a bug · opportunistic timeline · rule of three · technical debt triggers · Fowler's catalogue · Invoice getOwing and IParser examples · Parkboard FEAT-0002 v1 vs v2 | 3 | 2026-09-17 | — | — | 0 | 2026-09-18 | reader: Refactoring |
-| 8 | Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) | 4 | 2026-09-26 | — | — | 0 | 2026-09-27 | reader: Refactoring (the named smells are deck only) |
-| 9 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | 2026-09-26 | — | — | 0 | 2026-09-27 | reader: Refactoring |
-| 10 | Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) | 5 | 2026-09-26 | — | — | 0 | 2026-09-27 | reader: Testability |
-| 11 | Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) | 5 | 2026-09-26 | — | — | 0 | 2026-09-27 | reader: Testability; Design Principles (contracts) |
-| 12 | Test doubles and LSP substitutability (stub controls what comes back, spy records what goes out · DIP makes doubles possible · double only an uncontrollable, unobservable, or unsafe-or-slow dependency, otherwise use the real thing · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | 2026-10-01 | — | — | 0 | 2026-10-02 | reader: Testability & Test Doubles, Design Principles; lec 6 deck still to log |
-| 13 | Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) | 7 | 2026-10-01 | — | — | 0 | 2026-10-02 | reader: Blackbox Testing |
-| 14 | Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) | 7 | 2026-10-01 | — | — | 0 | 2026-10-02 | reader: Glassbox Testing |
+| # | Topic | Lec | Added | Notes |
+|---|-------|-----|-------|-------|
+| 1 | What SE is — "managing what a change costs" · changing requirements as the driver · code vs software · analytical code design | 1 | 2026-09-11 | reader: Intro + ACD intro |
+| 2 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-11 | reader intro; roadmap/objectives pruned 2026-09-14 |
+| 3 | Lab 1 HTTP & PUT — status codes 200/201/204/400/404/422 · 400 vs 422 · PUT idempotence vs POST | Lab 1 | 2026-09-14 | PrairieLearn LAB01.1–3 |
+| 4 | Lab 1 request path & async — route/handler/path param/middleware · req vs res · validator critique (repeated blocks, strings untied to the spec) · event loop, async propagation, missing await | Lab 1 | 2026-09-14 | PrairieLearn LAB01.3–6 |
+| 5 | Coupling & connascence — coupling axes (degree · locality · strength) · five connascence types (name/type/value/position/algorithm), increasing cost of change · addressing coupling (cut interfaces, cut distance, weaken connascence) | 2 | 2026-09-16 | reader: Change Difficulty |
+| 6 | Cohesion & bindings — the deck's three bindings (data · logic · order; the reader's prose says timing) · low cohesion's difficulty (reading unrelated code) and risk (edits hit unrelated features) · Util box vs one controller per feature · a statement with no binding is the extraction candidate · reader's tell: a field used by few methods | 3 | 2026-09-17 | reader: Change Difficulty (cohesion section) |
+| 7 | Refactoring — predictable, meaning-preserving transformation · reader's four steps vs deck's six (tests before and after) · don't refactor when tests fail, when rewriting, near deadlines, while fixing a bug · opportunistic timeline · rule of three · technical debt triggers · Fowler's catalogue · Invoice getOwing and IParser examples · Parkboard FEAT-0002 v1 vs v2 | 3 | 2026-09-17 | reader: Refactoring |
+| 8 | Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) | 4 | 2026-09-26 | reader: Refactoring (the named smells are deck only) |
+| 9 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | 2026-09-26 | reader: Refactoring |
+| 10 | Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) | 5 | 2026-09-26 | reader: Testability |
+| 11 | Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) | 5 | 2026-09-26 | reader: Testability; Design Principles (contracts) |
+| 12 | Test doubles and LSP substitutability (stub controls what comes back, spy records what goes out · DIP makes doubles possible · double only an uncontrollable, unobservable, or unsafe-or-slow dependency, otherwise use the real thing · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | 2026-10-01 | reader: Testability & Test Doubles, Design Principles; lec 6 deck still to log |
+| 13 | Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) | 7 | 2026-10-01 | reader: Blackbox Testing |
+| 14 | Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) | 7 | 2026-10-01 | reader: Glassbox Testing |
 
 ## Look-alikes
 

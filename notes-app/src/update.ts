@@ -6,7 +6,9 @@
 // just loaded, unless something is typed in the search box; otherwise show the toast and reload when he next
 // opens another page (a jump within the same page does not count). A tab reloads for a given build at most
 // once every few minutes, so a cache that has not caught up cannot cause a loop, and the tab still recovers
-// on its own once the cache does catch up. Our own reloads put the page back at the same scroll position.
+// on its own once the cache does catch up. A reload in place puts the page back at the same scroll position. A reload
+// on the way to another page carries no position: the new page opens where its history entry says (routes.ts keeps
+// one per entry), at its top or its #section when it is new, or where it was left when Back returns to it.
 import { useSyncExternalStore } from 'react'
 import { parseHash } from './routes'
 
@@ -84,10 +86,16 @@ async function fetchServerBuild(): Promise<string> {
   return build
 }
 
-/** Reload the page. `forBuild` records the build we are reloading for so the guard above can count it. */
+/** Reload the page in place, keeping its scroll position. `forBuild` records the build we are reloading for so the
+ *  guard above can count it. */
 export function reloadNow(forBuild?: string | null) {
-  if (forBuild) writeSession(RELOADED_KEY, { build: forBuild, at: Date.now() } satisfies Reloaded)
   writeSession(SCROLL_KEY, { hash: window.location.hash, y: window.scrollY })
+  reload(forBuild)
+}
+
+/** Reload without saving a scroll position, so App takes it from the history entry (savedScroll in routes.ts). */
+function reload(forBuild?: string | null) {
+  if (forBuild) writeSession(RELOADED_KEY, { build: forBuild, at: Date.now() } satisfies Reloaded)
   window.location.reload()
 }
 
@@ -105,7 +113,9 @@ function pageOf(hash: string): string {
   return r.kind === 'file' ? r.path : r.kind === 'course' ? 'course/' + r.code : ''
 }
 
-/** Reload on the next move to another page. Jumps within the same page (contents chips) are left alone. */
+/** Reload on the next move to another page. Jumps within the same page (contents chips) are left alone. The reload saves
+ *  no scroll position: window.scrollY at this moment is whatever the last render left, possibly the old page's, while
+ *  the new page's history entry already says where it opens. */
 function armNextNavigation() {
   if (navArmed) return
   navArmed = true
@@ -114,7 +124,7 @@ function armNextNavigation() {
     window.removeEventListener('hashchange', onHash)
     navArmed = false
     const target = info.newer
-    if (target && sinceReloadFor(target) > NAV_RETRY_MS) reloadNow(target)
+    if (target && sinceReloadFor(target) > NAV_RETRY_MS) reload(target)
   }
   window.addEventListener('hashchange', onHash)
 }

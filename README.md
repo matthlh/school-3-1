@@ -23,7 +23,7 @@ each course and quiz you on it.
 
 PHIL 321 was dropped on 2026-09-19; its folder is in `archive/PHIL321-dropped/`.
 
-Each course holds `00-syllabus.md`, `01-topics.md` (revision ledger), `02-questions.md`
+Each course holds `00-syllabus.md`, `01-topics.md` (the topic list and its look-alikes; grades live in `ledger.md`), `02-questions.md`
 (the quiz bank), `03-logistics.md` (office hours, links, tools, dates — the one-time reference the
 morning brief never repeats), and `lectures/`.
 

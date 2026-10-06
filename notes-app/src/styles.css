@@ -256,6 +256,12 @@ table.topics { width: 100%; border-collapse: collapse; font-size: 13.5px; margin
 .topics td:first-child { width: 30px; padding-left: 0; }
 .topics td:last-child { white-space: nowrap; text-align: right; font-size: 12.5px; padding-right: 0; }
 .topics td.due { color: var(--bad); font-weight: 600; }
+.topics td.sweep { color: var(--warn); font-weight: 600; }   /* due early: the exam-week sweep pulled it in */
+.topics td.frozen { color: var(--muted2); }
+/* A topic's name links to its questions in the bank (TopicCell): body text at rest, the link colour and an underline on
+   hover, wherever topics are listed (this table, Due now, the ledger's All topics). */
+a.topic-link { color: inherit; text-decoration: none; }
+a.topic-link:hover { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
 article table.topics { display: table; }
 article .topics td { border: 0; border-top: 1px solid var(--hair); padding: 5px 6px; }
 article .topics tr:first-child td { border-top: 0; }
@@ -266,6 +272,28 @@ article .topics tr:first-child td { border-top: 0; }
 @media (max-width: 640px) {
   .topics td { overflow-wrap: anywhere; }   /* a token like mean/median/mode must not force the table wider than the phone */
 }
+
+/* == Revision status: the Due now block and calibration == */
+/* The Due now block (DueNow.tsx) on Home and the ledger: the sweep count over its list, the readiness and frozen lines
+   under it, or the error that stands in for all of it. The list itself is the compact table in tables.css. */
+.due-note { margin: .45em 0 .3em; font-size: 13px; color: var(--muted); }
+.readiness { margin: 10px 0 4px; }
+.due-label { font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.readiness ul { list-style: none; margin: 2px 0 0; padding: 0; font-size: 13.5px; }
+.readiness li { margin: 3px 0; line-height: 1.5; }
+.readiness b { font-weight: 600; }
+.due-error { margin: 6px 0; padding: 8px 12px; border-radius: 9px; background: var(--bad-bg); color: var(--bad); font-size: 13.5px; }
+.due-error p { margin: .25em 0; }
+/* Why a topic is due, in the compact tables: late in red (tables.css), an exam sweep in amber; frozen is muted */
+table.due td.when.sweep, table.ledger td.next.sweep { color: var(--warn); font-weight: 600; }
+table.ledger td.next.frozen { color: var(--muted2); }
+/* Calibration under the ledger's All topics heading: a small tinted panel per course, one row per confidence */
+.calibration { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 4px 0 12px; }
+.calibration .panel { margin: 0; padding: 8px 12px 7px; background: var(--tint); border-color: var(--line); }
+.calibration .panel-head { align-items: center; }
+.calibration .cal-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; font-size: 12.5px; line-height: 1.7; }
+.calibration .cal-row .n { color: var(--muted); }
+.calibration .cal-row .o { min-width: 44px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* == Course page: header, tabs and overview == */
 main.wide { max-width: 1080px; }
@@ -281,6 +309,30 @@ main.wide { max-width: 1080px; }
 @media (max-width: 900px) { .course-grid { grid-template-columns: 1fr; } }
 .panel.side { padding: 8px 14px 10px; }
 .panel.side ul { margin: .3em 0; padding-left: 1.2em; font-size: 13.5px; } .panel.side li { margin: .25em 0; }
+/* Grade what-if panel: the target and assumption inputs, the projected grade beside the needed average, then the
+   components with the graded items placed in them, most points open first */
+.whatif-warn { color: var(--warn); }
+.whatif-inputs { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 8px 0 12px; font-size: 13.5px; color: var(--fg2); }
+.whatif-inputs label { display: inline-flex; align-items: center; gap: 6px; }
+.whatif-inputs input { width: 62px; height: 30px; margin: 0; padding: 0 8px; border: 1px solid var(--border2); border-radius: 8px;
+                       font: inherit; color: var(--fg); background: var(--soft2); font-variant-numeric: tabular-nums; }
+.whatif-inputs input:focus { border-color: var(--focus); background: var(--panel); }
+.whatif-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 24px; margin: 0 0 8px; }
+.whatif-stats .num { font-size: 24px; font-weight: 650; line-height: 1.2; color: var(--fg); font-variant-numeric: tabular-nums; }
+.whatif-stats .say { font-size: 13px; color: var(--muted); }
+.whatif-stats p.verdict { margin: 0; align-self: center; font-size: 14px; color: var(--fg); }
+table.whatif-table { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.45; margin: 8px 0 4px; }
+.whatif-table th { padding: 0 8px 4px; border-bottom: 1px solid var(--border2); font-size: 11px; font-weight: 600; letter-spacing: .05em;
+                   text-transform: uppercase; color: var(--muted); text-align: left; }
+.whatif-table td { padding: 6px 8px; border-top: 1px solid var(--hair); vertical-align: top; overflow-wrap: anywhere; }
+.whatif-table tbody tr:first-child td { border-top: 0; }
+.whatif-table th:nth-child(2) { width: 34%; }   /* room for an item chip on one line at phone width */
+.whatif-table :is(th, td):first-child { padding-left: 0; }
+.whatif-table :is(th, td).open { padding-right: 0; text-align: right; overflow-wrap: normal; font-variant-numeric: tabular-nums; }
+.whatif-table .w { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+.whatif-table .items { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.whatif-table .chip b { font-weight: 600; }
+.whatif-table tr.quiet td { color: var(--muted); }
 
 /* == Link lists: the Links panel on a course page and the links page == */
 .linklist { list-style: none; margin: 4px 0 2px; padding: 0; font-size: 13.5px; }
@@ -297,6 +349,14 @@ main.wide { max-width: 1080px; }
 .linkgroups .panel { display: inline-block; width: 100%; vertical-align: top; break-inside: avoid; margin: 0 0 14px; padding: 10px 16px 12px; --ink: var(--muted); }
 .linkgroups .panel-head { align-items: center; min-height: 24px; margin-bottom: 2px; }
 .linkgroups .panel-head .chip { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; }
+/* Home: the same groups, compact, in two columns down to a phone's width (the group order balances two columns) */
+.home-links { margin: 0 0 18px; }
+.home-links > .panel-head { margin: 0 2px 6px; }
+.home-links .linkgroups { columns: 2 150px; margin: 0; }
+.home-links .linkgroups .panel { margin-bottom: 10px; padding: 6px 12px 8px; }
+.home-links .linkgroups .panel-head { min-height: 22px; }
+.home-links .linklist { font-size: 13px; }
+.home-links .linklist li { padding: 1px 0; }
 
 /* == Focus ring == */
 /* After the components on purpose: at equal specificity it overrides their border-radius while focused, so buttons,

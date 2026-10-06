@@ -102,12 +102,12 @@ export default function App() {
   if (failed) body = <p className="muted">Some notes failed to load. <button type="button" className="link" onClick={() => window.location.reload()}>Reload</button></p>
   else if (!all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} onPick={() => setQuery('')} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} topics={topics} calendar={calendar} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} calendar={calendar} />
   else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={quiz} />
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} quiz={quiz} all={all} view={parseBankView(route.query)} anchor={route.anchor} />
-  else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} />
+  else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} topics={topics} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
   else body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} />
 

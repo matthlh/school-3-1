@@ -1,6 +1,6 @@
 import type { Texts, Tree } from './files'
 import { courseName, hrefFor } from './files'
-import { countQuestions, type TopicRow } from './markdown'
+import { countQuestions, parseLinks, type Deadline } from './markdown'
 import { hrefAnchor, hrefCourse } from './routes'
 import { toneStyle } from './tone'
 import { EMPTY, type Tally } from './stats'
@@ -9,20 +9,21 @@ import { StatBar } from './ui'
 import { Logo } from './Logo'
 import { Upcoming } from './Upcoming'
 import { buildLabel } from './update'
-import { DueTable, NothingDue, dueRows, dueDetail } from './DueNow'
-import type { Deadline } from './markdown'
+import { DueBody, dueDetail, useDue } from './DueNow'
+import { LinkGroups } from './LinksView'
 
-export function Home({ tree, all, tallies, topics, calendar }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; topics: TopicRow[]; calendar: Deadline[] }) {
-  // Due now is computed live from the ledger's topic table, never from prose.
+/** Home: the Due now block, the next hard dates, a card per course, every link, the latest briefs. `topics` is unused:
+ *  what is due comes from the ledger's Due now block. */
+export function Home({ tree, all, tallies, calendar }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; calendar: Deadline[] }) {
+  const due = useDue(all['ledger.md'] ?? '')
   const today = todayISO()
-  const due = dueRows(topics, today)
 
   return (
     <>
       <h1 className="brand"><Logo size={26} /> School 3-1</h1>
       <section className="panel">
-        <div className="panel-head"><span>Due now <span className="sub">· {dueDetail(due.length, today)}</span></span><a href={hrefAnchor('ledger.md', 'due-now')}>ledger →</a></div>
-        {due.length > 0 ? <DueTable rows={due} today={today} /> : <NothingDue topics={topics} today={today} />}
+        <div className="panel-head"><span>Due now <span className="sub">· {dueDetail(due)}</span></span><a href={hrefAnchor('ledger.md', 'due-now')}>ledger →</a></div>
+        <DueBody due={due} />
       </section>
       <Upcoming items={calendar} today={today} />
       <div className="grid">
@@ -34,11 +35,15 @@ export function Home({ tree, all, tallies, topics, calendar }: { tree: Tree; all
               <div className="code">{c.code}</div>
               <div className="name">{name}</div>
               <div className="sub">{c.lectures.length} lecture{c.lectures.length === 1 ? '' : 's'} · {q} question{q === 1 ? '' : 's'}</div>
-              <StatBar t={tallies[c.code] ?? EMPTY} />
+              <StatBar t={tallies[c.code] ?? EMPTY} due={due.ok ? due.count(c.code) : null} />
             </a>
           )
         })}
       </div>
+      <section className="home-links">
+        <div className="panel-head"><span>Links</span><a href={hrefFor('links.md')}>all links →</a></div>
+        <LinkGroups rows={parseLinks(all['links.md'] ?? '')} />
+      </section>
       {tree.runs.length > 0 && (
         <div className="row small">
           <span className="muted">Briefs:</span>
