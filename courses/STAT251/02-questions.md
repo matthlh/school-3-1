@@ -1083,6 +1083,18 @@ $$
 
 The median is below the mean because the distribution is right-skewed.
 
+### Q: One problem gives a pdf $$f(x)$$. Another gives $$P(T > t) = \frac{16}{(4 + t)^2}$$ for $$t \ge 0$$. How do you get a probability from each, and how do you tell which one you were handed? Find $$P(T \le 4)$$.
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** apply
+**A:** Read the left side of the equals sign. A pdf $$f(x)$$ is a height, not a probability, so you integrate it over the range you want. $$P(\dots)$$ or $$F(x)$$ is already a probability, so you plug the number in. Here $$P(T > 4) = \frac{16}{64} = 0.25$$, and $$P(T \le 4)$$ is its complement, $$1 - 0.25 = 0.75$$.
+
+### Q: Why is $$P(X = c) = 0$$ for a continuous $$X$$, and where does the total probability of 1 sit if every single value has probability 0?
+**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** recall
+**A:** A continuous $$X$$ can take endlessly many values, such as 1, 1.1, 1.01 and 1.001. If each exact value had even a chance of 0.001, a thousand of them would already add to 1 and the rest would push the total past 1, so each one must be exactly 0. The 1 sits in ranges, the way length does on a ruler: the point from 1 to 1 has length $$1 - 1 = 0$$, but the stretch from 0 to 2 has length 2. A range's probability is its area under $$f$$, and the area over the whole support is 1.
+
+### Q: Why is $$E(X) = \int x\,f(x)\,dx$$ the same idea as the discrete mean $$\sum x\,P(X = x)$$, and what changes for $$E(\sqrt{X})$$?
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** recall
+**A:** Both are each value times its chance, added up. In the continuous case the chance of landing in a thin strip near $$x$$ is $$f(x)\,dx$$, and the integral does the adding. For $$E(\sqrt{X})$$, or any function of $$X$$, replace the $$x$$ in front of $$f(x)$$ with what is inside the brackets, giving $$\int \sqrt{x}\,f(x)\,dx$$. The $$f(x)$$ itself never changes.
+
 ## WeBWorK 3 — Ch 4 (opened Sep 29, due Tue Oct 6; banked 2026-09-29, numbers changed)
 
 ### Q: WeBWorK-style. An unevenly balanced four-sided die has $$P(1) = 0.15$$, $$P(1 \text{ or } 2) = 0.45$$ and $$P(2 \text{ or } 3) = 0.50$$. You win the amount showing on the die. From a blank page, build the full pmf and then find your expected winnings.
@@ -1352,6 +1364,53 @@ Game B is riskier: same mean, twice the variance.
 ### Q: In Game A (sum of two independent rolls of the die with faces $$-3, -1, 1, 2$$ and probabilities 0.2, 0.3, 0.1, 0.4), find $$P(W_A = -6)$$ and $$P(W_A = 4)$$, and give the two ways to get $$E(W_A)$$.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 11  **Type:** apply
 **A:** $$-6$$ needs two $$-3$$s: $$0.2^2 = 0.04$$. $$4$$ needs two 2s: $$0.4^2 = 0.16$$. The two ways to get the mean are the definition $$E(W_A) = \sum w f(w)$$ over the nine possible sums, and the rule $$E(X_1 + X_2) = E(X_1) + E(X_2) = 0$$, which holds even without independence.
+
+## WeBWorK 4 — Ch 4 (opened Oct 6, due Thu Oct 15; banked 2026-10-06, numbers changed)
+
+### Q: WeBWorK-style. A repair time $$T$$ is exponential with mean 5 hours. Given that a repair has already taken more than 10 hours, what is the probability it takes at least 10.5 hours? Pick the right form: $$e^{-0.1}$$, $$1 - e^{-0.1}$$, $$e^{-2.1}$$ or $$1 - \frac{1}{5}e^{-0.1}$$.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** WW4  **Type:** apply
+**A:** The answer is $$e^{-0.1} \approx 0.905$$. The exponential is memoryless: having already lasted 10 hours does not change the chance of lasting another half hour. With mean 5 the rate is $$\lambda = \frac{1}{5}$$, and $$P(T > t) = e^{-t/5}$$.
+
+$$
+\begin{aligned}
+P(T \ge 10.5 \mid T > 10) &= \frac{P(T \ge 10.5)}{P(T > 10)} \\
+&= \frac{e^{-10.5/5}}{e^{-10/5}} \\
+&= e^{-0.5/5} = e^{-0.1}
+\end{aligned}
+$$
+
+The trap options are $$1 - e^{-0.1}$$, which is the chance of finishing within the extra half hour, and $$e^{-2.1}$$, which ignores the condition.
+
+### Q: WeBWorK-style. A component's lifetime has pdf $$f(x) = \frac{1}{120}e^{-x/120}$$ for $$x > 0$$. Four such components work independently. (1) Wired in series, what is the system's lifetime $$Y$$ and its distribution? (2) Wired in parallel, what changes?
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** WW4  **Type:** apply
+**A:** (1) A series system dies when the first component dies, so $$Y = \min(X_1, \dots, X_4)$$. The minimum of independent exponentials is exponential with the rates added:
+
+$$
+\begin{aligned}
+P(Y > y) &= \left(e^{-y/120}\right)^4 \\
+&= e^{-4y/120} = e^{-y/30}
+\end{aligned}
+$$
+
+So $$Y$$ is exponential with mean 30 hours. (2) A parallel system runs until the last component dies, so $$Y = \max(X_1, \dots, X_4)$$, with cdf $$\left(1 - e^{-y/120}\right)^4$$. That is not of the form $$1 - e^{-\lambda y}$$, so the maximum is not exponential. The WeBWorK distractors pair "max" with an exponential mean, or multiply the mean instead of dividing it.
+
+### Q: WeBWorK-style. $$X$$ is uniform on $$[0, 2]$$ and $$Y = e^X$$. Find the pdf of $$Y$$, including its support, by the cdf method.
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW4  **Type:** derive
+**A:** Write the cdf of $$Y$$ as a statement about $$X$$, use the uniform cdf, then differentiate. Since $$e^x$$ is increasing, $$Y \le y$$ exactly when $$X \le \ln y$$, and $$Y$$ runs from $$e^0 = 1$$ to $$e^2$$.
+
+$$
+\begin{aligned}
+F_Y(y) &= P(X \le \ln y) \\
+&= \frac{\ln y - 0}{2} \\
+f_Y(y) &= \frac{d}{dy}\,\frac{\ln y}{2} = \frac{1}{2y}
+\end{aligned}
+$$
+
+So $$f_Y(y) = \frac{1}{2y}$$ for $$1 \le y \le e^2$$ and 0 otherwise. Check: the area is $$\frac{1}{2}(\ln e^2 - \ln 1) = 1$$. The tempting wrong answer keeps $$f_Y$$ constant at $$\frac{1}{2}$$, as if the transformation did not stretch the axis.
+
+### Q: WeBWorK-style. $$X$$ is uniform on $$(0, 3)$$. Find the median of $$e^X$$ to two decimals, and say why the same shortcut does not give the mean.
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW4  **Type:** apply
+**A:** The median of $$X$$ is 1.5. Because $$e^x$$ is increasing, half the values of $$X$$ lie below 1.5 exactly when half the values of $$e^X$$ lie below $$e^{1.5}$$, so the median of $$e^X$$ is $$e^{1.5} \approx 4.48$$. Solving $$F_Y(m) = 0.5$$ gives the same: $$\frac{\ln m}{3} = 0.5$$, so $$m = e^{1.5}$$. The mean does not carry over, because $$E(e^X) \ne e^{E(X)}$$. Here $$E(e^X) = \frac{e^3 - 1}{3} \approx 6.36$$, larger than 4.48 because $$e^x$$ bends upward.
 
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
@@ -2162,3 +2221,72 @@ P(U > 1) &= \big[1 - F(1)\big]^3 \\
 $$
 
 Same method as the lecture 10 deck's maximum slides and the minimum on the lecture 10 page.
+
+### Q: WeBWorK 4-style. A project is due in 36 hours. You and your partner each write part of it, working independently. Your time is uniform on 20 to 40 hours and your partner's is uniform on 25 to 45 hours. (a) Find the mean and SD of your partner's time. (b) Find the probability the project is late, meaning the later of the two finishes after 36 hours. (c) At hour 36 the project is not done and you get a 4-hour extension. Find the probability you now finish on time.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** WW4  **Type:** apply
+**A:** Steps:
+1. Use the uniform mean $$\frac{a + b}{2}$$ and SD $$\frac{b - a}{\sqrt{12}}$$.
+2. The team's time is the maximum of the two, so $$P(\max \le t)$$ is the product of the two uniform cdfs at $$t$$.
+3. Late means $$1 - P(\max \le 36)$$.
+4. The extension is a conditional probability: $$P(\max \le 40 \mid \max > 36)$$.
+
+(a) For the partner, $$a = 25$$ and $$b = 45$$:
+
+$$
+\begin{aligned}
+\mu &= \frac{25 + 45}{2} = 35 \text{ h} \\
+\sigma &= \frac{20}{\sqrt{12}} \approx 5.77 \text{ h}
+\end{aligned}
+$$
+
+(b) Each uniform cdf is the fraction of its interval below $$t$$:
+
+$$
+\begin{aligned}
+P(\max \le 36) &= \frac{16}{20} \times \frac{11}{20} \\
+&= 0.8 \times 0.55 = 0.44 \\
+P(\text{late}) &= 1 - 0.44 = 0.56
+\end{aligned}
+$$
+
+(c) By hour 40 you are certainly done, so only the partner matters:
+
+$$
+\begin{aligned}
+P(\max \le 40) &= 1 \times \frac{15}{20} = 0.75 \\
+P(\text{on time}) &= \frac{0.75 - 0.44}{1 - 0.44} \\
+&= \frac{0.31}{0.56} \approx 0.554
+\end{aligned}
+$$
+
+The common mistake in (c) is to answer 0.75, which forgets that you already know the project was not done by hour 36.
+
+### Q: WeBWorK 4-style. Daily electricity use $$X$$ (kWh) has pdf $$f(x) = \frac{25}{x^2}$$ for $$20 \le x \le 100$$ and 0 otherwise. (a) Check that this is a valid pdf. (b) Find $$P(X > 80)$$ to two decimals. (c) Find the median.
+**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** WW4  **Type:** apply
+**A:** Steps:
+1. Check that $$f \ge 0$$ and integrate it over the whole support to get 1.
+2. Integrate from 80 to the top of the support for (b).
+3. Write the cdf $$F(m)$$ and solve $$F(m) = 0.5$$ for (c).
+
+The antiderivative of $$\frac{25}{x^2}$$ is $$-\frac{25}{x}$$.
+
+$$
+\begin{aligned}
+\int_{20}^{100} \frac{25}{x^2}\,dx &= 25\left(\frac{1}{20} - \frac{1}{100}\right) \\
+&= 25(0.04) = 1 \\
+P(X > 80) &= 25\left(\frac{1}{80} - \frac{1}{100}\right) \\
+&= 25(0.0025) \approx 0.06
+\end{aligned}
+$$
+
+For the median, $$F(m) = 25\left(\frac{1}{20} - \frac{1}{m}\right)$$:
+
+$$
+\begin{aligned}
+25\left(\frac{1}{20} - \frac{1}{m}\right) &= 0.5 \\
+\frac{1}{m} &= 0.05 - 0.02 = 0.03 \\
+m &\approx 33.3 \text{ kWh}
+\end{aligned}
+$$
+
+The upper limit is 100, not infinity; integrating to infinity gives 0.31 instead of 0.06.

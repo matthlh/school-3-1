@@ -102,6 +102,7 @@ PHIL_READINGS = [
 ]
 READ_AHEAD_DAYS, LOG_WINDOW_DAYS = 7, 21     # create a reading's to-dos a week before its first class; keep chasing a log 3 weeks after
 ASYNC_LOCK_DAYS = {"ASIA250": 7}   # async course → days from lecture publish to its mini-quiz hard lock
+ASYNC_LOCK_OVERRIDE = {("ASIA250", 5): dt.date(2026, 10, 13)}   # lock moved by the instructor (lec 5: Thanksgiving, announced Oct 5)
 # weekly mode (--week): preferred days per project/area from PREP.md's weekly rhythm
 RHYTHM = {"STAT 251": [MON, WED, FRI], "CPSC 310": [TUE, WED], "PHIL 385": [THU, MON], "ASIA 250": [WED, TUE],
           "Career": [TUE, THU], "Personal": [SAT, SUN]}
@@ -114,7 +115,7 @@ LEC_RE = r"^(?:Log|Watch \+ (?:log|quiz)) {code} lec (\d+)\b"
 def lecture_todo(code, n, d):
     """Canonical (title, tags, when, deadline, notes) for lecture n of `code`, held/published on d."""
     if code in ASYNC_LOCK_DAYS:
-        lock = d + dt.timedelta(days=ASYNC_LOCK_DAYS[code])
+        lock = ASYNC_LOCK_OVERRIDE.get((code, n), d + dt.timedelta(days=ASYNC_LOCK_DAYS[code]))
         return (f"Watch + quiz {code} lec {n} · locks {lock:%b %-d}", "2h, P1", d, lock,
                 f"Nothing is missed until the mini-quiz locks {lock:%a %b %-d} 23:59.\n"
                 f"- Watch the lecture.\n"

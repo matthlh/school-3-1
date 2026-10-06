@@ -435,6 +435,33 @@ pre-questions above).
    clarification source and every deck-only claim becomes a question, then the `_NN` file is deleted
    (its content lives on in the questions and the notes file's Clarifications).
 
+**Full lecture prep (Matt, 2026-10-06: "for the lectures today (for all my classes except philosophy), if
+there are slides, maybe you can go through the slides, the recordings, and everything. Afterwards … I'll
+submit my notes, and then you can add or adjust if needed").** This replaces the outline in steps 1–2 for
+STAT 251, CPSC 310 and ASIA 250. PHIL 385 is unchanged (nothing to pull).
+- **Which lectures:** every lecture held today in those three courses whose deck is posted, plus ASIA 250's
+  current week (async, video and slides up from Monday). For a lecture held earlier that is still unlogged,
+  also fold in anything that has appeared since its page was written: the STAT `AL` deck, its Panopto
+  recording, a CPSC deck that went up after class.
+- **Sources:** the deck (STAT/ASIA via `canvadoc_text.js`, CPSC via `cpsc310_site.py --lecture N`), the
+  recording where one exists (STAT: Panopto captions, recipe in `courses/STAT251/03-logistics.md` →
+  Reference; ASIA: captions if the Canvas video has a track, otherwise deck only and say so; CPSC has
+  none), and the assigned reader chapter or readings.
+- **Write the page as the real study page, not an outline:** `courses/<CODE>/lectures/_NN-<slug>.md` in
+  the course's lecture-file shape (CPSC 310: the deck-organised format in CLAUDE.md; STAT 251 and ASIA 250:
+  `## Slides, organized`, `## In class` from the recording when there is one, `## Clarifications` where the
+  deck and the recording or reader disagree), formulas in LaTeX, plus `## Three pre-lecture questions` at
+  the end. Keep the underscore: term.py still counts the lecture unlogged and the `Log …` to-do stays open,
+  which is his reminder to send notes after class.
+- **Bank the questions now:** 6–12 per lecture into `02-questions.md` (long ones under `## Long problems`),
+  with the topics added to `01-topics.md` and `ledger.md` (Next = tomorrow), and run `check-math.mjs` on
+  every touched file.
+- **When he sends notes** (`log <COURSE> lec N`): rename `_NN` → `NN`, add `## Your notes` with his words
+  verbatim, and adjust the page and its questions only where his notes add or correct something. Report what
+  changed, nothing else.
+- **Brief:** the Today's classes line points at the page and names the question count; the 3 pre-questions
+  stay. A lecture with no deck yet is "no deck posted", as before.
+
 **Review = the transit deck, as a phone artifact (2026-09-13).** Two parts, in order:
 
 0. **Pull yesterday's grades first, before generating anything new.** The deck lives at a fixed
@@ -700,6 +727,10 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-10-06 (Matt): §7 gains **Full lecture prep**. For STAT 251, CPSC 310 and ASIA 250 the morning
+  check builds today's lecture page from the deck, the recording and the reading, and banks its questions;
+  his after-class notes are merged in later. Also: `publish.sh` runs as the last step again (§8), after a
+  stretch where runs skipped it.
 - 2026-10-02 (Matt: "is there a way to combine this check with that? Like check for new emails,
   auto apply, check for updates and responses"): §4b added. The morning check now reads the Career
   repo's applications ledger, pastes its Career block (what closes in 3 days, interviews, quiet
