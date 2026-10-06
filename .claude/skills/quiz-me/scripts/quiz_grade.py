@@ -14,7 +14,8 @@ WORST grade among its questions this session; the ledger row then moves by the C
   ledger.md                             All-topics rows, Due-now block, one Session-log line
   courses/<CODE>/01-topics.md           matching row(s), best effort — warns when no row matches
   routines/quiz/YYYY-MM-DD.md           the session log (appends on a second session that day)
-Then prints the ledger delta and what needs more questions.
+Then prints the ledger delta, what needs more questions, and last the notes pages behind the X and ~
+grades, grouped by page with the most misses first (miss_pages).
 """
 import argparse, datetime as dt, json, os, re, sys
 
@@ -97,6 +98,33 @@ def sync_topics_file(course, topic, last, grade, streak, nxt, dry):
         with open(path, "w", encoding="utf-8") as f:
             f.write("\n".join(lines))
     return hit
+
+def miss_pages(items, graded, qsrc=None):
+    """Lines naming the notes pages behind the X and ~ grades, grouped by page, most misses first (then most X).
+    An item from a session picked before pages were recorded falls back to the bank's mapping (qsrc: id → question)."""
+    pages, none = {}, []
+    for k, g in sorted(graded.items()):
+        if g == "O":
+            continue
+        it = items[k]
+        url, title = it.get("src_url"), it.get("src_title")
+        if not url and qsrc and it["id"] in qsrc:
+            url, title = qsrc[it["id"]]["src_url"], qsrc[it["id"]]["src_title"]
+        if not url:
+            none.append(it)
+            continue
+        p = pages.setdefault(url, dict(label=it["label"], title=title, n=0, x=0))
+        p["n"] += 1
+        p["x"] += g == "X"
+    if not pages and not none:
+        return ["-- Pages behind the misses: none"]
+    out = ["-- Pages behind the misses (X and ~), most first"]
+    for url, p in sorted(pages.items(), key=lambda kv: (-kv[1]["n"], -kv[1]["x"], kv[1]["label"], kv[1]["title"])):
+        out.append(f"   {p['label']} {p['title']} ({p['n']} missed): {url}")
+    if none:
+        tags = ", ".join(sorted({f"{it['label']} {it['lec']}" for it in none}))
+        out.append(f"   {len(none)} {'miss has' if len(none) == 1 else 'misses have'} no notes page ({tags}).")
+    return out
 
 def main():
     ap = argparse.ArgumentParser()
@@ -214,6 +242,8 @@ def main():
     else:
         print("-- Needs more questions: none")
     for line in L.due_block(rows, today):
+        print(line)
+    for line in miss_pages(items, graded, qsrc):
         print(line)
 
 if __name__ == "__main__":

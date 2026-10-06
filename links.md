@@ -26,6 +26,7 @@ Every course tool in one place. A name opens the tool in a new tab, and the same
 | CPSC310 | iClicker (sec 103) | https://join.iclicker.com/NBOE |  |
 | PHIL385 | Canvas | https://canvas.ubc.ca/courses/192607 | . |
 | PHIL385 | Readings (Canvas files) | https://canvas.ubc.ca/courses/192607/files | ^Read\b;reading |
+| PHIL385 | Ask Kraal questions | https://matthlh.github.io/school-3-1/#/courses/PHIL385/04-ask-kraal.md | Kraal |
 | ASIA250 | Canvas modules | https://canvas.ubc.ca/courses/193131/modules | . |
 | ASIA250 | Harvey textbook PDF | https://canvas.ubc.ca/courses/193131/files/47240885 |  |
 | ASIA250 | Gale eBooks (paper sources) | https://go.gale.com/ps/displayAllBooksForSubject?subject=Religion&userGroupName=ubcolumbia&inPS=true&prodId=GVRL | final paper;sources |

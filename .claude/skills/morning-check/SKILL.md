@@ -1,6 +1,6 @@
 ---
 name: morning-check
-description: Morning sweep of Things3, Canvas (every course, grades, + the CPSC 310 course site), PrairieLearn, Piazza, and Gmail, plus term status (unlogged lectures, exam countdown). Reports only what changed, syncs new deadlines into Things3 and ledger.md, writes routines/runs/<date>-morning.md, and builds the day's plan in Things3 (6 h budget, scripts/things_plan.py), and posts a ≤25-line brief. Use for "morning check", "what's new", "plan my day", "daily sweep", "week ahead", "term status", or when the scheduled morning task fires.
+description: Morning sweep of Things3, Canvas (every course, grades, + the CPSC 310 course site), PrairieLearn, Piazza, and Gmail, plus term status (unlogged lectures, exam countdown) and the Career repo's applications ledger. Reports only what changed, syncs new deadlines into Things3 and ledger.md, writes routines/runs/<date>-morning.md, and builds the day's plan in Things3 (6 h budget, scripts/things_plan.py), and posts a ≤25-line brief. Use for "morning check", "what's new", "plan my day", "daily sweep", "week ahead", "term status", or when the scheduled morning task fires.
 ---
 
 # Morning check
@@ -295,6 +295,39 @@ reminder for something already on his calendar. Never suggest deleting mail — 
 or a phishing attempt, say so and suggest archiving (or leaving it, since ignoring is enough); this
 skill only ever reads mail, never archives/deletes it itself.
 
+### 4b. Career: internship applications (local; Matt, 2026-10-02)
+The Career repo keeps the record of every internship application: what went out, what he still has
+to send on an employer's own site, and what closes soon. This step reads that record and his mail.
+It never applies, never sends anything, and never opens SCOPE: SCOPE needs his CWL login, and
+applying is a separate session he starts himself.
+1. Run
+   ```bash
+   python3 "/Users/matthe/Documents/CodingProjects/Projects/Career/scripts/run.py" applications
+   ```
+   It rewrites `data/APPLICATIONS.md` in the Career repo and prints the **Career** block between
+   the `===` lines. Paste the block into the brief verbatim, the same way the planner's block is
+   pasted: it already keeps the rules below (dated rows as a table, four rows at most, one counted
+   line for the rest). If the command fails, one Heads-up line and move on.
+2. Run it again with `query=1` on the end. It prints one Gmail search covering every company he is
+   still waiting on. Run that with `search_threads` (pageSize 25) and open each hit with `get_thread`.
+3. For each thread where an employer is writing about one of his applications (not a job alert, not
+   a newsletter, not LinkedIn):
+   - One bullet under the Career block: `- <Company> · <what they said or asked, 8 words or fewer>`.
+   - If it clearly belongs to exactly one row of `data/APPLICATIONS.md` (company and role both
+     match), record that the email arrived:
+     `python3 "/Users/matthe/Documents/CodingProjects/Projects/Career/scripts/run.py" mark-app <job_id> note "<sender>: <subject>"`.
+     That logs the email without deciding what it means. **Never** run `mark-app` with interview,
+     offer or rejected: the status is his call. Put the ready-to-paste command for the likely status
+     under Details → Career instead. Some companies have more than one application (the ledger shows
+     which), so a reply that does not name the role gets the bullet but no note.
+   - A date in the email (an assessment due, an interview slot to pick) is a hard date: Heads-up,
+     and Things3 via `things_add.py --title "Career · <Company> <what>" --deadline <date>
+     --tags "1h, P1"`. Not `ledger.md` or `term.py`; those are for school.
+   SCOPE mail (`from:sciencecoop.ubc.ca`) already comes in through §4's queries. An interview
+   invite or posting update from there gets the same treatment here.
+4. A reply to one of his applications goes in this block, not in §4's Career bucket, so the same
+   email never appears twice. Job alerts and recruiter mail stay in §4.
+
 ### 5. Piazza (Chrome — needs the extension's site permission, see the note below)
 Class feeds (new UI; `get_page_text` only returns the welcome note, so use `read_page`
 filter=interactive to list the feed, then open posts by URL):
@@ -442,6 +475,9 @@ pre-questions above).
    another way, carry over that script tag, `mathify`, the math CSS, and the `${mathify(item.q)}` and
    `${mathify(item.a)}` calls. Convert answer newlines to `<br>` as before; `mathify` reads a `$$` span that
    contains a `<br>` as a display equation.
+   **Notes link (2026-10-05):** give each item `src` and `srcTitle` from the session item's `src_url` and
+   `src_title` (the transit md's `Source:` line under each answer); the page links that notes page under the
+   revealed answer.
 
 **Transit Deck artifact (fixed URL, update in place):**
 https://claude.ai/code/artifact/c537efc7-50cf-4476-9aa5-b118cd0fa480
@@ -511,6 +547,13 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 - Unlogged lectures: <course> (<date>) · <course> (<date>)
 - <due in 2–7 days / date conflict / blocked source / overdue ledger topic>
 
+**Career: <N> applied, <N> interviews, <N> offers**   ← §4b, printed by run.py, pasted verbatim
+| Closes | Still to apply | Note |          up to 4 rows, one per company, next 3 days only
+|---|---|---|
+| <Day Mon D time> | <Company> · <role, or N roles> | <referral or blank> |
+- <N> more companies close by <date>. Full list: data/APPLICATIONS.md
+- <Company> · <what the employer said>     one bullet per reply found in §4b step 3
+
 **Week ahead**              Sundays only (or when asked): one bullet per hard date in the
 - ...                       next 14 days from ledger.md + Things3 + term.py, then
                             "- Saturday flex block: needed / delete"
@@ -543,6 +586,8 @@ give advice; everything else in the brief stays reporting.
                         the bus and tries to answer; the lecture then confirms or corrects.
 ### Review answers      link to routines/runs/<date>-transit.md (answers are in the deck)
 ### Gmail               School / Career / Admin+money — dated items as a table, the rest bullets
+### Career              per employer reply: sender, subject, date, and the mark-app command for
+                        the likely status, ready to paste (§4b). "Nothing new" if no replies.
 ### Things3             bullets: title → project, when, deadline, tags (items added/updated this run)
 ### Ledger              bullets: dates added/changed · grade rows updated ·
                         "logistics updated: <file>" if any · "session-log row added" ·
@@ -647,13 +692,21 @@ inside the budget. Nothing informational goes there.
 
 ## Chat brief
 The `## Brief` block, ≤30 lines (the plan table's header rows and the Self-improvement block bought
-five, 2026-09-20 — they are not licence to write longer bullets), plus a link to the run file. No
+five, 2026-09-20 — they are not licence to write longer bullets), plus the Career block (§4b: at most
+8 lines from the script, plus one per employer reply), plus a link to the run file. No
 preamble. **Self-improvement** is the only block that may give advice; everywhere else, advice is
 limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 
 ---
 
 ## Tuning log (newest first)
+- 2026-10-02 (Matt: "is there a way to combine this check with that? Like check for new emails,
+  auto apply, check for updates and responses"): §4b added. The morning check now reads the Career
+  repo's applications ledger, pastes its Career block (what closes in 3 days, interviews, quiet
+  ones), and runs one Gmail search for replies from every company he is waiting on. It logs a reply
+  as a note and leaves the status to him. **Auto-apply stays out of this routine**: SCOPE needs his
+  CWL login and signs out after about an hour, employer sites need accounts, and a cover letter he
+  has never seen should not go out under his name at 06:35. Applying is a session he starts.
 - 2026-09-15 (Matt: "For today's classes also include labs (i have one today)"): **Today's
   classes** now covers labs as well as lectures — a lab is a fixed slot he has to attend, so it
   earns its own bullet with section, time, room or Zoom, and what is due. His sections are CPSC 310

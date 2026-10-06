@@ -9,6 +9,21 @@ in the question bank instead.
 
 ## Ask these, in this order
 
+- **Is it cheating that A's proof is an opera?** A says only music can express desire, because
+  language is reflection. Yet all three of his examples are operas with words: Da Ponte's libretti for
+  *Figaro* and *Don Giovanni*, and Schikaneder's for *The Magic Flute*. Does the argument survive the
+  libretto, or does opera bring language back in?
+  - From lecture 9 (Oct 5). This is your own question, sharpened.
+- **Does A live the immediacy he praises?** He writes a long, careful, reflective essay about how
+  reflection kills immediacy. Is A a reflective man admiring what he cannot have, and is that what
+  Kierkegaard wants the reader to catch?
+- **Why build the aesthetic life on sensuous desire?** It can feel primitive as the centre of a
+  life-view. Is Kierkegaard starting from the rawest form of the aesthetic on purpose, so the Judge has
+  something to answer in Part II?
+- **Where does the Nietzsche parallel come from?** Nietzsche never read Kierkegaard. Is the Dionysian
+  the same insight reached twice, or do both draw on a common source, such as Schopenhauer's view of
+  music as a direct copy of the will?
+
 - **What is the misreading that annoys you most?** In the first lecture you said Kierkegaard is
   badly misunderstood, even by philosophers and scholars. Which misreading is the worst one, and who
   is guilty of it?
@@ -85,6 +100,7 @@ in the question bank instead.
 
 ## Still open from earlier
 
+- What format the final takes. It is 40% and cumulative, and the syllabus does not say whether it has essay questions like Exam 1 or multiple choice like Exams 2 to 4.
 - Whether the multiple-choice questions are multi-select, and whether there is negative marking.
 - Whether the exam uses Hannay's titles or the Hong titles, since *Philosophical Crumbs* and
   *Philosophical Fragments* are the same book and *Crop Rotation* is elsewhere *Rotation of Crops*.

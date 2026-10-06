@@ -146,7 +146,7 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: You have 25 observations with minimum 175 and maximum 265 and want 5 intervals. Walk through building the histogram: range, interval width, what goes in the frequency table, and how the bars are drawn.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** $$\text{Range} = 265 - 175 = 90$$. $$\text{Width} = 90 \div 5 = 18$$ (the deck then rounds to convenient equal-width bins 170–190, 190–210, … 250–270). Cut the range into equal-width intervals, count the observations in each to make the frequency table, then draw one bar per interval with height equal to its frequency (or relative frequency); bars touch because the axis is a number line. Label both axes and give a heading.
+**A:** $$\text{Range} = 265 - 175 = 90$$. $$\text{Width} = 90 \div 5 = 18$$ (the deck then rounds to convenient equal-width bins 170–190, 190–210, … 250–270). Cut the range into equal-width intervals, count the observations in each to make the frequency table, then draw one bar per interval with height equal to its frequency (or relative frequency); bars touch because the axis is a number line. Label both axes and give a heading. A value that sits exactly on a boundary is counted in the interval where it is the upper end, so 230 goes in 210–230; lecture 3 gave that rule.
 
 ### Q: The lecture-2 slides split variables into categorical and quantitative. Give both definitions, then classify: number of siblings, county of residence, commute distance in km, blood type.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
@@ -162,7 +162,50 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** Stems 2 to 9: 2 | 5 · 3 | (empty) · 4 | 1 · 5 | 0 5 7 · 6 | 2 3 5 9 · 7 | 0 2 5 5 · 8 | 0 1 2 5 · 9 | 0 2 5. Empty stems stay in so the plot keeps the shape of a histogram and the gap in the 30s is visible. $$n = 20$$, so the median is the average of the 10th and 11th ordered values, 70 and 72, which is 71.
+**A:** Stems 2 to 9, with the leaves sorted:
+```
+2 | 5
+3 |
+4 | 1
+5 | 0 5 7
+6 | 2 3 5 9
+7 | 0 2 5 5
+8 | 0 1 2 5
+9 | 0 2 5
+```
+- Empty stems stay in, so the plot keeps the shape of a histogram and the gap in the 30s is visible.
+- With $$n = 20$$ the median is the average of the 10th and 11th ordered values, 70 and 72, so it is 71.
+
+### Q: Give the symbols for the population mean, standard deviation and proportion, and for each one's sample version. Which are parameters, which are statistics, and which can you usually compute?
+**Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
+**A:**
+- The population mean $$\mu$$, the population standard deviation $$\sigma$$ and the population proportion $$p$$ are parameters. They describe the population.
+- The sample mean $$\bar{x}$$, the sample standard deviation $$s$$ and the sample proportion $$\hat{p}$$ are statistics. They are computed from the sample.
+- You can always compute the statistics from the data in hand. The parameters are usually unknown, because the population is too large, or infinite, to measure in full, and inference uses the statistics to estimate them.
+
+### Q: Which of these is continuous? (a) the number of people waiting in a line (b) the number of speeding tickets a driver has (c) the weight of a dog (d) shoe size, sold in half sizes. Justify each.
+**Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
+**A:**
+- (a) Discrete, because it is a count.
+- (b) Discrete, because it is a count.
+- (c) Continuous. A weight can take any value in an interval, and recording it to one decimal only reflects the scale's precision.
+- (d) Discrete. The sizes 6, 6.5 and 7 are separate values with no size in between, even though some are not whole numbers.
+- Only (c) is continuous. This was the lecture 2 iClicker, and (d) is his example of a discrete variable with fractions.
+
+### Q: A stem-and-leaf plot says the leaf unit is 10. What value does the row 5 | 7 stand for, and can the value 692 be shown exactly? What does 5 | 7 mean if the leaf unit is 0.1?
+**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** apply
+**A:**
+- With a leaf unit of 10, the leaf counts tens and the stem counts hundreds, so 5 | 7 is 570.
+- 692 cannot be shown exactly. It goes on stem 6 with leaf 9, which stands for 690, so the last digit is lost.
+- With a leaf unit of 0.1, the row 5 | 7 is 5.7.
+- When no leaf unit is stated, it is 1.
+
+### Q: A survey question has 25 possible answers. Pie chart or bar chart, and how would you make the bars easiest to compare? Then say how exam percentages, which are numerical, could be shown in a pie chart at all.
+**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** apply
+**A:**
+- A bar chart. A pie with 25 slices cannot be read, while bar heights are easy to compare. This was the lecture 2 iClicker.
+- Sort the bars from tallest to shortest. A sorted bar graph is called a Pareto chart.
+- Exam percentages must first be grouped into categories, such as letter-grade bands. Each band then gets a slice sized by its percentage of students, and the percentages add to 100%.
 
 ## Lec 3 — Ch 1: histograms, shape, mean and median, range (logged 2026-09-14)
 
@@ -229,11 +272,47 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: Give the deck's definition of an outlier in one sentence, and say why the $$1.5 \times \text{IQR}$$ rule is not the definition.
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** recall
-**A:** An outlier is an observation that lies far from the rest of the data, unusually large or unusually small. The $$1.5 \times \text{IQR}$$ fence is a later working rule for flagging candidates once quartiles are available, not the definition, and the deck introduces the idea before any fence: an outlier is identified by its distance from the bulk of the data, whatever tool is used to decide "far".
+**A:** An outlier is an observation that lies far from the rest of the data, unusually large or unusually small. The $$1.5 \times \text{IQR}$$ fence is a later working rule for flagging candidates once quartiles are available, not the definition, and the deck introduces the idea before any fence: an outlier is identified by its distance from the bulk of the data, whatever tool is used to decide "far". On an exam, though, the $$1.5 \times \text{IQR}$$ rule from lecture 4 is how you decide which values count as outliers.
 
 ### Q: iClicker from lecture 3: the distribution of prices of detached houses sold in a city is (a) symmetric (b) left-skewed (c) right-skewed (d) bimodal. Pick one and justify it using the tail and the position of the mean relative to the median.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
 **A:** (c) right-skewed. Prices cannot go below zero and most houses cluster in a middle band, but a small number of very expensive houses stretch the tail far to the right, toward the high values. Those few pull the mean above the median, the signature of a right tail. Left-skewed would need a long tail of very cheap houses, and bimodal would need two separate clusters of prices.
+
+### Q: The 25 hours-worked values include 230 and 250, and the intervals are 170–190, 190–210, 210–230, 230–250 and 250–270. Which interval gets each of those two values under the course's rule, and why must the rule stay the same at every boundary?
+**Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
+**A:**
+- A value on a boundary goes in the interval where it is the upper end. So 230 goes in 210 to 230, and 250 goes in 230 to 250, not in 250 to 270.
+- The rule must be the same at every boundary. Otherwise some boundary values get pushed up and others down, and the counts stop describing the data. The deck's counts of 1, 2, 7, 10 and 5 only come out with this rule.
+
+### Q: You have 25 observations. Why would a histogram with 2 intervals, or with 10, be a poor choice, and what is the course's rule of thumb for the number of intervals?
+**Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** critique
+**A:**
+- Two bars cannot show a shape, a centre or a spread, which is the whole point of the graph.
+- Ten intervals spread 25 values so thinly that most bars hold only 0 to 3 values, and the shape gets lost.
+- The rule of thumb is 5 to 15 intervals, with more only for large data sets. For 25 values, 5 or 6 is about right, and the two give a similar picture.
+
+### Q: A relative frequency histogram of resting heart rates for 400 people has intervals 50–60, 60–70, 70–80, 80–90 and 90–100 with bar heights 0.05, 0.20, 0.40, 0.25 and 0.10. Using the course's boundary rule, how many people had a rate of at most 80, and how many had a rate above 80?
+**Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
+**A:**
+- A rate of exactly 80 is in the 70–80 interval, the one it ends, so the people with a rate of at most 80 are the first three bars.
+
+$$
+\begin{aligned}
+0.05 + 0.20 + 0.40 &= 0.65 \\
+0.65 \times 400 &= 260
+\end{aligned}
+$$
+
+- The people above 80 are the last two bars: $$0.25 + 0.10 = 0.35$$, and $$0.35 \times 400 = 140$$. As a check, $$260 + 140 = 400$$.
+- This is the method from the lecture 3 iClicker: add the relative frequencies, then multiply by the number of people.
+
+### Q: True or false, and justify: a bar chart of the number of students in each faculty, with the tallest bar on the right and the bars shrinking toward the left, shows a left-skewed distribution.
+**Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** critique
+**A:** False. Skewness describes a numerical variable on a number line, so it is read from a histogram. Faculties are categories with no fixed order, so the same bars could be rearranged into any shape, and the shape of a bar chart means nothing. This was the lecture 3 iClicker, and the answer was "none of these".
+
+### Q: True or false, and justify: the median is always one of the data values.
+**Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** 3  **Type:** critique
+**A:** False. With an odd number of values the median is the middle value, so it is a data value. With an even number it is the average of the two middle values, which is a data value only when those two are equal. The list 12, 14, 15, 17, 20, 24, 24, 27, 29, 30 has median $$\frac{20 + 24}{2} = 22$$, and 22 is not in the list.
 
 ## Lec 4 — Ch 1: variability, percentiles and quartiles, box plots (logged 2026-09-16)
 
@@ -333,6 +412,29 @@ An observation is an outlier if it falls more than $$1.5 \times \text{IQR}$$ bel
 ### Q: The deck shows side-by-side box plots of chemistry and physics grades. Name three things you can compare directly from them, one thing you cannot see, and the situation where a histogram is the better choice.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
 **A:** You can compare the centres (median lines), the spreads (box length, which is the IQR, and whisker span), and the skew and outliers of each group, all on one scale. You cannot see the shape between the five numbers: modality, gaps, or how many observations each group has. Use a histogram when the shape of one distribution is the point, especially to check for two humps.
+
+### Q: Every score in a class gets 5 bonus points. Say what happens to the mean, the median, $$Q_1$$, $$Q_3$$, the IQR, the range and the standard deviation. Then answer again for multiplying every score by 1.1 instead.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
+**A:**
+- Adding 5 moves every value up by 5, so every measure of position moves up by 5: the mean, the median, $$Q_1$$ and $$Q_3$$.
+- The measures of spread stay the same, because the distances between values do not change: the IQR, the range and the standard deviation. This was the lecture 4 iClicker, with answer (e).
+- Multiplying by 1.1 multiplies every measure of position by 1.1, and every measure of spread by 1.1 too, since every distance grows by 10%. The variance is multiplied by $$1.1^2 = 1.21$$.
+
+### Q: Two smooth density curves on the same axes have the same centre, and one is much narrower than the other. Which one must have the higher peak, and why? Which has the larger standard deviation?
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** apply
+**A:**
+- The narrower curve must have the higher peak. The area under each curve is the total probability, 1, so a curve squeezed into a narrower range has to rise higher to keep the same area.
+- The wider curve has the larger standard deviation, because its values spread farther from the centre.
+- Drawing the narrow curve with the lower peak on the same scale is wrong. He made this point in lecture 4, ahead of Chapter 4.
+
+### Q: From a box plot alone, which of these can you read: the median, the mean, the IQR, the range, and whether there are outliers? Say why for any you cannot.
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** recall
+**A:**
+- The median is the line inside the box.
+- The IQR is the length of the box, from $$Q_1$$ to $$Q_3$$.
+- The range is the distance from the lowest point drawn to the highest, counting any outliers plotted beyond the whiskers.
+- Outliers are the stars or circles beyond the whiskers.
+- The mean cannot be read. A box plot is built from the five-number summary and the fences, and none of them uses the mean.
 
 ## WeBWorK 1 — Ch 1 (opened Sep 14, due Tue Sep 22; banked 2026-09-16, numbers changed)
 
@@ -1436,3 +1538,103 @@ F_V(5) &= F_1(5)\,F_2(5) = \big(1 - e^{-0.5}\big)\big(1 - e^{-1}\big) \\
 $$
 
 The $$[F(v)]^n$$ shortcut applies only when every component has the same cdf.
+
+### Q: A question says $$X_1, \dots, X_n$$ are a random sample from a distribution with mean $$\mu$$ and variance $$\sigma^2$$. What two assumptions does "random sample" carry, and which of $$E(\bar{X}) = \mu$$ and $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ needs which?
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** derive
+**A:**
+- A random sample means the $$X_i$$ are independent and identically distributed, often written iid. Independent means no value affects another. Identically distributed means they all come from one distribution, so they share the mean $$\mu$$ and the variance $$\sigma^2$$.
+- $$E(\bar{X}) = \mu$$ needs only the common mean, because the mean of a sum always adds.
+- $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ needs the common variance and also independence, which makes every covariance term 0 so that the variances add.
+
+### Q: True or false, and justify each: (a) $$\operatorname{Cov}(X, Y) = 50$$ shows that $$X$$ and $$Y$$ are strongly related. (b) If $$X$$ and $$Y$$ are independent, then $$\operatorname{Cov}(X, Y) = 0$$. (c) If $$\operatorname{Cov}(X, Y) = 0$$, then $$X$$ and $$Y$$ are independent.
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** critique
+**A:**
+- (a) False. Covariance gives only the direction of a linear relationship, and a positive value means the two tend to rise together. Its size depends on the units, so it says nothing about strength. The correlation, in Chapter 11, measures strength.
+- (b) True. Independence gives $$E(XY) = E(X)E(Y)$$, so $$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y) = 0$$.
+- (c) False. The deck states only the direction in (b). A covariance of 0 rules out a linear relationship, not every kind of dependence.
+
+### Q: $$X$$ is continuous with pdf $$f$$, cdf $$F$$ and median $$m$$. Which of these are true? (a) $$F(m) = 0.5$$ (b) $$\int_{-\infty}^{m} f(x)\,dx = 0.5$$ (c) $$\int_{m}^{\infty} f(x)\,dx = 0.5$$ (d) $$P(X > m) = 0.5$$
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 10  **Type:** apply
+**A:**
+- All four are true. The median splits the area under $$f$$ in half.
+- (a) defines the median through the cdf.
+- (b) is the same statement as an integral, since $$F(m) = \int_{-\infty}^{m} f(x)\,dx$$.
+- (c) is the other half. The total area is 1, so the area to the right of $$m$$ is $$1 - 0.5 = 0.5$$.
+- (d) is (c) written as a probability.
+- In lecture 10 this was an iClicker whose answer was "all of these", and 79% got it. The trap was stopping at the first true option.
+
+## Lec 11 — Ch 4: in-class Activity 3, expectation and variance of discrete random variables (logged 2026-10-05 from the activity sheets)
+
+### Q: A four-sided die has faces $$-2$$, $$0$$, $$1$$ and $$3$$ with probabilities $$k$$, $$2k$$, $$3k$$ and $$4k$$. Find $$k$$, then $$E(X)$$, $$E(X^2)$$ and $$\operatorname{Var}(X)$$.
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 11  **Type:** apply
+**A:** The probabilities sum to 1, so $$10k = 1$$ and $$k = 0.1$$. Each probability is then between 0 and 1, as a pmf needs.
+
+$$
+\begin{aligned}
+E(X) &= -2(0.1) + 0(0.2) \\
+&\quad + 1(0.3) + 3(0.4) \\
+&= -0.2 + 0.3 + 1.2 = 1.3 \\
+E(X^2) &= 4(0.1) + 0 \\
+&\quad + 1(0.3) + 9(0.4) \\
+&= 0.4 + 0.3 + 3.6 = 4.3 \\
+\operatorname{Var}(X) &= 4.3 - 1.3^2 \\
+&= 4.3 - 1.69 = 2.61
+\end{aligned}
+$$
+
+### Q: For the same die (faces $$-2, 0, 1, 3$$ with probabilities 0.1, 0.2, 0.3, 0.4; $$E(X) = 1.3$$, $$\operatorname{Var}(X) = 2.61$$), let $$Y = 3X + 2$$. Write the pmf of $$Y$$, find $$E(Y)$$ and $$\operatorname{Var}(Y)$$ with the linear rules, and say what the $$+2$$ does to each.
+**Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** 11  **Type:** apply
+**A:** $$Y$$ takes $$-4$$, $$2$$, $$5$$ and $$11$$ with the same probabilities 0.1, 0.2, 0.3 and 0.4.
+
+$$
+\begin{aligned}
+E(Y) &= 3(1.3) + 2 = 5.9 \\
+\operatorname{Var}(Y) &= 3^2(2.61) = 23.49
+\end{aligned}
+$$
+
+The $$+2$$ shifts the mean by 2 and does nothing to the variance, because moving every value by the same amount leaves the spread unchanged. The 3 multiplies the mean by 3 and the variance by 9.
+
+### Q: For the same die (faces $$-2, 0, 1, 3$$ with probabilities 0.1, 0.2, 0.3, 0.4; $$E(X) = 1.3$$), find $$E(X^3)$$ and compare it with $$[E(X)]^3$$. Why can no shortcut rule give $$E(X^3)$$?
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 11  **Type:** apply
+**A:**
+
+$$
+\begin{aligned}
+E(X^3) &= -8(0.1) + 0 \\
+&\quad + 1(0.3) + 27(0.4) \\
+&= -0.8 + 0.3 + 10.8 = 10.3
+\end{aligned}
+$$
+
+$$[E(X)]^3 = 1.3^3 = 2.197$$, so they are not equal. The rules only move constants through $$E$$ for linear functions $$aX + b$$. For any other $$g$$, $$E[g(X)] = \sum g(x) f(x)$$ has to be computed from the pmf.
+
+### Q: A die has faces $$-3, -1, 1, 2$$ with probabilities 0.2, 0.3, 0.1, 0.4, so $$E(X) = 0$$ and $$\operatorname{Var}(X) = 3.8$$. Game A pays the sum of two independent rolls; Game B pays twice one roll. Find $$P(W_A = -2)$$, then the mean and variance of each game's winning, and say which game is riskier.
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 11  **Type:** apply
+**A:** A sum of $$-2$$ comes from $$(-3, 1)$$, $$(1, -3)$$ or $$(-1, -1)$$, and independent rolls multiply.
+
+$$
+\begin{aligned}
+P(W_A = -2) &= 2(0.2)(0.1) + 0.3^2 \\
+&= 0.04 + 0.09 = 0.13
+\end{aligned}
+$$
+
+Both means are 0: $$E(X_1 + X_2) = 0 + 0$$ and $$E(2X) = 2(0)$$.
+
+$$
+\begin{aligned}
+\operatorname{Var}(W_A) &= 3.8 + 3.8 = 7.6 \\
+\operatorname{Var}(W_B) &= 2^2(3.8) = 15.2
+\end{aligned}
+$$
+
+Game B is riskier: same mean, twice the variance.
+
+### Q: True or false, and justify: if $$X_1$$ and $$X_2$$ are independent copies of $$X$$, then $$X_1 + X_2$$ and $$2X$$ have the same distribution, so they have the same variance.
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 11  **Type:** critique
+**A:** False. They have the same mean, $$2\mu$$, but not the same distribution or variance. Independent variances add, so $$\operatorname{Var}(X_1 + X_2) = 2\sigma^2$$, while a constant multiple squares, so $$\operatorname{Var}(2X) = 4\sigma^2$$. In general the sum of $$n$$ independent copies has variance $$n\sigma^2$$ and $$nX$$ has $$n^2\sigma^2$$. Two rolls can land high and low and partly cancel; doubling one roll scales every deviation by 2.
+
+### Q: In Game A (sum of two independent rolls of the die with faces $$-3, -1, 1, 2$$ and probabilities 0.2, 0.3, 0.1, 0.4), find $$P(W_A = -6)$$ and $$P(W_A = 4)$$, and give the two ways to get $$E(W_A)$$.
+**Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 11  **Type:** apply
+**A:** $$-6$$ needs two $$-3$$s: $$0.2^2 = 0.04$$. $$4$$ needs two 2s: $$0.4^2 = 0.16$$. The two ways to get the mean are the definition $$E(W_A) = \sum w f(w)$$ over the nine possible sums, and the rule $$E(X_1 + X_2) = E(X_1) + E(X_2) = 0$$, which holds even without independence.

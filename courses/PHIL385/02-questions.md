@@ -719,3 +719,70 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: Why does A say the Jews could seem to be the tragic people, and why does he say they are not?
 **Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** 8  **Type:** derive
 **A:** Because Jehovah is a jealous God who visits the fathers' sins on the children to the third and fourth generation, and the curses of the Old Testament look like tragic material. But Judaism is too ethically developed for tragedy: Jehovah's curses, however terrible, are also just punishments, whereas the wrath of the Greek gods has no ethical character, only aesthetic ambiguity. The tragic needs that ambiguity; a just punishment is ethics, not tragedy.
+
+## Exam 1 — the real questions (Fri Oct 2, as Matt recalled them)
+
+### Q: Exam 1, question 1: drawing on "The Unhappiest One" and "Crop Rotation", give three ways A suggests a person fails to overcome boredom.
+**Topic:** Crop Rotation  **Lec:** exam1  **Type:** apply
+**A:** Crop Rotation supplies the failures and The Unhappiest One shows the people they produce.
+- Chasing novelty. Changing the soil, by moving to the city, going abroad or eating off gold, is the extensive method. A calls it the bad infinity and says it cancels itself, as Nero burning Rome shows.
+- Getting tied down. Friendship, marriage and office each bind you, so you can no longer rotate. A keeps an exit in every relationship.
+- Losing control of memory and hope. Crop Rotation says to throw hope overboard, because hope stops you limiting yourself, and to remember and forget at will. The Unhappiest One portrays the people who failed at this: the rememberer stuck in a past he never had, the hoper fixed on what he knows cannot happen, and the unhappiest one in whom both cross.
+- The link to state outright: boredom and unhappiness are not the same thing. Boredom is the emptiness A's method fights, and unhappiness is being absent from yourself. Failing the method leaves you absent in the past or the future. A also says those who bore themselves can end by dying of boredom or shooting themselves out of curiosity.
+
+### Q: Exam 1, question 2: what is A's position, and do you agree?
+**Topic:** The aesthetic life-view  **Lec:** exam1  **Type:** critique
+**A:** State the position before judging it. A judges life by how it feels to live it, and his three essays give a recipe for satisfaction: expect the worst (The Unhappiest One), keep no lifelong ties (Crop Rotation), and treat your fortune as outside your control (Ancient Tragedy). Then disagree with one reason per part.
+- Against the baseline: suffering survived has meaning only if it is real and yours, and a baseline of "life is misery" gives that up in advance.
+- Against no ties: B says a life of moods has no self, and that marriage is where first love lasts.
+- Against fate as comfort: it gives up responsibility for your own deeds, which B says is what having a self means. A's own words admit the modern person is in despair, which is where B's half of the book begins.
+
+## Lec 9 — The Musical Erotic: why music, and the three stages (Mon Oct 5, logged 2026-10-05)
+
+### Q: Name the three immediate erotic stages in A's essay, in order. For each, give the Mozart character, the opera and the year it premiered.
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
+**A:** Stage 1, desire dreaming: the Page, Cherubino, in *The Marriage of Figaro* (1786). Stage 2, desire seeking: Papageno, the bird-catcher, in *The Magic Flute* (1791). Stage 3, desire desiring: Don Giovanni, in *Don Giovanni* (1787). The order follows desire's growth, not the dates, so *The Magic Flute* is the latest opera but the middle stage.
+
+### Q: What separates the first stage from the second? Answer with Cherubino and Papageno.
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** apply
+**A:** In the first stage desire has not woken to any object. It dreams: a vague, melancholy longing, in love with love itself, "the one" in the abstract. In the second stage desire has woken and turned outward. It notices the many possible objects and goes looking among them, cheerfully, but does not yet desire any one of them; it seeks one it could desire (p. 90). Dreaming is inward and has no object; seeking is outward and aims at the many.
+
+### Q: What is the third stage, desiring, and why does A treat it as the unity of the first two?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
+**A:** In Don Giovanni desire is fully itself. It has a particular object, and it wants each particular woman as an instance of woman as such, so it never settles and never runs out. It keeps the dreamer's pull toward the ideal and the seeker's turn to the many, and aims both at the particular. That is why Don Giovanni is A's picture of the sensuous erotic genius.
+
+### Q: Reconstruct the argument Kraal laid out for why music is the best expression of desire. Give each premise and the conclusion.
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** derive
+**A:** First, desire is a mode of immediacy: it exists only in the moment, in passion, before any thought about it. Second, language is a mode of reflection: it comes after the event and describes it (p. 80). Third, painting and sculpture are modes of representation: they hold a figure still in space. Fourth, music is a mode of immediacy: it exists only while it sounds, in time. Conclusion: only music matches desire's mode, so music is desire's best, in fact its only adequate, expression.
+
+### Q: In "desire is a mode of immediacy", what does "immediacy" mean, and why can language not capture it?
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** apply
+**A:** Immediacy is experience as it happens, before reflection steps back to name it, explain it or judge it. Language works by reflection: to say something you stand outside the moment and describe it afterwards, so putting desire into words already turns it into something past and mediated. Music does not stand outside the moment, because it is itself an event in time.
+
+### Q: Why does A rank Mozart's *Don Giovanni* above every other classic work?
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** recall
+**A:** For A a work is classic when its idea and its medium fit perfectly. Desire in its immediacy, the sensuous erotic, is the most abstract idea, and music is the most abstract medium, the only one that can carry it. *Don Giovanni* is the one work where that idea meets that medium, so A puts it, and Mozart, at the top of the classics. The worshipful tone belongs to A, the aesthete.
+
+### Q: In the passage Kraal read from page 75, what happens to the sensuous "in its mediate state", and why does A call music a Christian art?
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** recall
+**A:** Once the sensuous is reflected, it comes under language and becomes subject to ethical categories: it is talked about and judged. In its immediacy it can be expressed only in music. Music is a Christian art because Christianity set spirit against the flesh, and in excluding the sensuous it made the sensuous a principle of its own for the first time; music is the art of that excluded principle.
+
+### Q: True or false, and justify: A argues that painting and sculpture are the best media for the sensuous because they show beauty.
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** critique
+**A:** False. Painting and sculpture are modes of representation that hold a figure still in space. That suits beauty at rest, but desire is movement in time, so A gives the sensuous erotic in its immediacy to music alone.
+
+### Q: Kraal compared A's essay to Nietzsche. Name the book and its year, the two principles, the kind of art that goes with each, and where music falls.
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** recall
+**A:** *The Birth of Tragedy*, 1872. The Apollonian goes with the plastic arts such as sculpture: order, form, rationality, and language as Kraal glossed it. The Dionysian goes with the non-plastic art of music: wild, orgiastic, pre-rational. Music falls on the Dionysian side, which lines up with A putting desire's immediacy in music rather than in sculpture or words. Nietzsche never read Kierkegaard, so the parallel is not influence.
+
+### Q: "A's desire is just hedonism." Is that right?
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** critique
+**A:** Not quite. Hedonism is a view that pleasure is the good, so it is already reflective, a theory with reasons behind it and a policy of chasing pleasant states. A's desire comes before any theory: Don Giovanni does not weigh pleasures, he simply desires, and desire need not even feel good, since the first stage is melancholy. The calculating pursuer of enjoyment is a different figure, the reflective seducer of "The Seducer's Diary" at the end of A's papers.
+
+### Q: Which essay of *Either/Or* is "The Musical Erotic", who wrote it, and where does it sit among A's papers?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
+**A:** Its full title is "The Immediate Erotic Stages or The Musical Erotic". It is by A, the aesthete, in Part I of *Either/Or* (1843), the papers Victor Eremita published. It is the second of A's papers, right after the Diapsalmata.
+
+### Q: Which aria did Kraal play for the first stage, who sings it, and which line shows desire that has no object yet?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
+**A:** "Voi che sapete", sung by Cherubino, the Page, in *The Marriage of Figaro*. The line is "Ricerco un bene fuori di me, non so chi il tiene, non so cos'è": I search for a good outside myself; I don't know who holds it, I don't know what it is. He longs without any particular woman in view, which is A's first stage, desire dreaming.

@@ -8,8 +8,9 @@ not seen and ask what is wrong, what you would change, and why. So questions are
 `critique` on a fragment, plus `recall` of the reader's exact terms. Course housekeeping (learning
 objectives, roadmap, slides about AI tooling) is not banked.
 
-Format intel (a classmate, 2026-10-02, unverified): the exams are all true/false. The syllabus still says every
-answer must be justified, so from lecture 6 on, questions are written as "True or false, and justify" over a
+Format intel (unverified): a classmate said on 2026-10-02 that the exams are all true/false, and on 2026-10-05
+Matt heard they are all multiple choice. The syllabus still says every answer must be justified, so from
+lecture 6 on, questions are written as "True or false, and justify" or as a multiple-choice stem over a
 fragment or a claim, and the answer gives the verdict first and the reason second. Older questions stay as they are.
 
 Format:

@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
-import type { QuizHistory, QuizState } from './files'
-import { courseOf } from './files'
+import type { QuizHistory, QuizState, Texts } from './files'
+import { courseOf, hrefFor } from './files'
 import { parseQuestions, splitTopic, type Question } from './markdown'
+import { sourcesFor } from './sources'
 import { isWeak, lastGrade, questionId, tallyHistories } from './stats'
 import { GradeChip } from './StatViews'
 import { Md } from './Md'
@@ -25,10 +26,12 @@ function shortTitle(title: string): string {
   return splitTopic(title).main.replace(/\*/g, '').replace(/\s+/g, ' ').trim()
 }
 
-export function QuestionBank({ path, text, quiz }: { path: string; text: string; quiz: QuizState | null }) {
+export function QuestionBank({ path, text, quiz, all }: { path: string; text: string; quiz: QuizState | null; all: Texts }) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
   const flat = useMemo(() => groups.flatMap((g) => g.questions), [groups])
+  // The lecture or reading notes each question comes from, linked under its answer (a title by the question would hint).
+  const sources = useMemo(() => sourcesFor(code, groups, all), [code, groups, all])
   // Question id → index of its `## ` group, so the section filter also works on the flattened shuffle list.
   const groupOf = useMemo(() => {
     const m = new Map<string, number>()
@@ -115,6 +118,7 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
               const shown = allOpen || open.has(q.id)
               const h = histOf(q)
               const last = h?.history[h.history.length - 1]
+              const src = sources.get(q.id)
               return (
                 <div key={q.id} className="q">
                   <div className="text"><span className="n">{i + 1}.</span> <Md text={q.question} path={path} inline /></div>
@@ -130,7 +134,12 @@ export function QuestionBank({ path, text, quiz }: { path: string; text: string;
                     {q.type && <span className={'chip type-' + q.type}>{q.type}</span>}
                     <button className="link" onClick={() => toggle(q.id)}>{shown ? 'hide' : 'answer'}</button>
                   </div>
-                  {shown && <div className="ans"><Md text={q.answer} path={path} /></div>}
+                  {shown && (
+                    <div className="ans">
+                      <Md text={q.answer} path={path} />
+                      {src && <div className="src"><a href={hrefFor(src.path)}>{src.title}</a></div>}
+                    </div>
+                  )}
                 </div>
               )
             })}

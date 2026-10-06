@@ -70,7 +70,7 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
 ]
 PROJECT_OF = {"STAT251": "STAT 251", "PHIL385": "PHIL 385", "CPSC310": "CPSC 310", "ASIA250": "ASIA 250"}
 LADDER_EST = [("MOCK", "2h"), ("gap check", "1h"), ("revision", "1h"), ("mark the mock", "1h"),
-              ("environment check", "1h"), ("read the spec", "30m"), ("autograder", "30m"),
+              ("environment check", "1h"), ("outline", "1h"), ("full draft", "2h"), ("citations", "1h"), ("read the spec", "30m"), ("autograder", "30m"),
               ("design rationale", "1h"), ("verbal reconstruction", "30m")]
 # Daily revision habits (Matt, 2026-09-11): created for today with the date in the title; an open
 # one from an earlier day is cancelled — a missed habit is not a debt that rolls over.
@@ -359,7 +359,7 @@ def ensure_auto_todos(today, todos, dry, state, seed=False):
                 register[-1] = title
     for d, course, label, kind in term.KEY_DATES:
         left = (d - today).days
-        ladder = term.EXAM_LADDER if kind == "exam" else term.DELIV_LADDER if kind in ("deliverable", "paper") else {}
+        ladder = {"exam": term.EXAM_LADDER, "deliverable": term.DELIV_LADDER, "paper": term.PAPER_LADDER}.get(kind, {})
         step = ladder.get(left)
         if not step or left == 0:
             continue

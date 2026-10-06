@@ -13,6 +13,9 @@ Usage:
   --due        print the due/overdue topic list only (no session file)
   --report     print the focus block only (no session file)
 
+Each picked item carries the notes page it comes from (src_title, src_url; quizlib.attach_sources):
+a "Page:" line in the printout, a "Source:" link under its answer in the transit deck.
+
 Selection: topic priority (overdue days, grade X > ~ > unquizzed > O, ×2 within 7 d of that
 course's exam, ×1.5 within 14 d, ×1.25 within 21 d) + question score (never asked > missed >
 stale > solid, plus a small bonus for the question types that course's exam rewards).
@@ -156,7 +159,8 @@ def main():
         q, r = c["q"], c["row"]
         items.append(dict(n=i, id=q["id"], course=q["course"], label=L.COURSE_LABEL[q["course"]],
                           topic=r["topic"], topic_tag=q["topic"], lec=q["lec"], type=q["type"],
-                          ahead=not c["due"], q=q["q"], a=q["a"], file=q["file"], line=q["line"]))
+                          ahead=not c["due"], q=q["q"], a=q["a"], file=q["file"], line=q["line"],
+                          src_title=q["src_title"], src_url=q["src_url"]))
     session = dict(date=today.isoformat(), created=dt.datetime.now().astimezone().isoformat(timespec="minutes"),
                    mode="transit" if a.transit else "quiz", courses=courses, n=len(items), items=items)
     os.makedirs(os.path.dirname(L.SESSION), exist_ok=True)
@@ -170,6 +174,8 @@ def main():
         flag = " (ahead)" if it["ahead"] else ""
         print(f"\n{it['n']}. [{it['label']} · {it['topic_tag']} · {it['type']}{flag}] {it['q']}")
         print(f"   A: {it['a']}")
+        if it["src_url"]:
+            print(f"   Page: {it['src_title']} ({it['src_url']})")
     if not a.transit:
         print("\nGrade with:  quiz_grade.py 1:O 2:X 3:~ …   (skip = -, unasked = leave out)")
         return
@@ -189,6 +195,9 @@ def main():
         out.append("")
         out.append(it['a'])
         out.append("")
+        if it["src_url"]:
+            out.append(f"Source: [{it['src_title']}]({it['src_url']})")   # the deck shows it under the answer
+            out.append("")
     with open(deck, "w", encoding="utf-8") as f:
         f.write("\n".join(out))
     print(f"\n== Transit deck → {os.path.relpath(deck, L.ROOT)}")

@@ -1,5 +1,7 @@
 # STAT 251 — Lec 4 (Wed Sep 16) — Ch 1: variability, percentiles and quartiles, box plots
 
+Your page from Sep 16 comes first. The clarifications below it work through the after-class deck, `Lecture_04_Chapter_1_AL_CanvasPost.pdf` (13 slides), slide by slide. Everything was checked against the deck and the Panopto recording on 2026-10-05, and what the class added is under In class.
+
 ## Your notes (pasted 2026-09-16)
 
 * Standard deviation
@@ -23,6 +25,21 @@
       * star / circle for outlier
    * Box plots are better for making graphical comparisons of two ore more distributions?
 
+## In class
+- The variance carries squared units. In the deck example it is 2.5 hours squared, and the standard deviation is about 1.581 hours. He insisted on units in every answer.
+- Each squared deviation is 0 or positive, so the variance can never be negative. A negative variance or standard deviation means an arithmetic mistake, and the standard deviation is always the positive square root.
+- He drew two smooth curves with the same centre on one scale and asked which may be taller. The narrower one has to be taller, because the area under each curve is the total probability, 1. A narrow curve drawn with a lower peak is wrong. This is a Chapter 4 idea, previewed here.
+- Percentile rank: if a score of 1200 on a test out of 1600 is at the 90th percentile, then 90% of test takers scored below it, so it is in the top 10%.
+- Use the course's $$np + 0.5$$ rule for quartiles and percentiles, not a formula from high school or from software, especially in WeBWorK. On small data sets other rules give slightly different answers. He called the 0.5 a correction factor.
+- Notation: $$x_i$$ is the $$i$$th observation in the order recorded, while $$x_{(i)}$$, with brackets, is the $$i$$th smallest after sorting, called an order statistic.
+- You cannot read the mean off a box plot, because the plot is built from the five-number summary and never uses the mean.
+- On the chemistry and physics box plots, the physics median was about 65 and the chemistry median about 73, and the whole physics box sat lower, so the physics exam looked harder.
+- iClicker: a box plot of the exam scores for a statistics course. If every score goes up by 5 points, which is true? The answer was (e), all of these.
+  - The third quartile goes up by 5 points.
+  - The median goes up by 5 points.
+  - The interquartile range does not change, because $$Q_3$$ and $$Q_1$$ both move up by 5.
+- The lecture ended on that iClicker. Slides 11 and 12, on location and scale changes and a box plot of right-skewed simulated data, opened lecture 5.
+
 ## Clarifications
 
 ### Standard deviation
@@ -39,7 +56,10 @@ $$
 - Deck example: 4, 6, 8, 7, 5 hours. The mean is 6, the deviations are $$-2, 0, 2, 1, -1$$, and their squares are 4, 0, 4, 1, 1 with sum 10.
 
 $$
-s^2 = \frac{10}{4} = 2.5 \qquad s \approx 1.58 \text{ hours}
+\begin{aligned}
+s^2 &= \frac{10}{4} = 2.5 \text{ hours}^2 \\
+s &= \sqrt{2.5} \approx 1.58 \text{ hours}
+\end{aligned}
 $$
 
 - $$s$$ is never negative, and $$s = 0$$ only when every observation is the same value. It grows as the spread grows.
@@ -93,6 +113,7 @@ $$
 - The price is shape. A box plot cannot show whether a distribution is unimodal or bimodal, so for the shape of one distribution use a histogram.
 
 ### Location and scale changes (deck only, not on the page)
+- The class reached these slides at the start of lecture 5.
 - If every observation is transformed by $$y = a + bx$$, the mean and variance change like this:
 
 $$
@@ -109,4 +130,4 @@ $$
 ### Next class
 - Chapter 3, Sets and Probability. Chapter 2 (bivariate data) is skipped for now; the schedule puts it with Chapter 11 at the end of the term.
 
-Questions: 13 in [02-questions.md](../02-questions.md) under "Lec 4". Ledger: 3 topics, due Sep 17.
+Questions: 17 in [02-questions.md](../02-questions.md) under "Lec 4". Ledger: 3 topics.

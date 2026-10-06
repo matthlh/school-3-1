@@ -719,6 +719,66 @@
      "O"
     ]
    ]
+  },
+  "37a4633e": {
+   "course": "PHIL385",
+   "topic": "How Either/Or is put together",
+   "history": [
+    [
+     "2026-10-02",
+     "~"
+    ]
+   ]
+  },
+  "4e92449d": {
+   "course": "PHIL385",
+   "topic": "Why Kierkegaard uses pseudonyms",
+   "history": [
+    [
+     "2026-10-02",
+     "~"
+    ]
+   ]
+  },
+  "a017d0d2": {
+   "course": "PHIL385",
+   "topic": "How Either/Or is put together",
+   "history": [
+    [
+     "2026-10-02",
+     "X"
+    ]
+   ]
+  },
+  "f909bd2b": {
+   "course": "PHIL385",
+   "topic": "Why Kierkegaard uses pseudonyms",
+   "history": [
+    [
+     "2026-10-02",
+     "O"
+    ]
+   ]
+  },
+  "c531c3ea": {
+   "course": "PHIL385",
+   "topic": "How Either/Or is put together",
+   "history": [
+    [
+     "2026-10-02",
+     "X"
+    ]
+   ]
+  },
+  "e41af027": {
+   "course": "PHIL385",
+   "topic": "Why Kierkegaard uses pseudonyms",
+   "history": [
+    [
+     "2026-10-02",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -1316,6 +1376,50 @@
      10,
      "d4614826",
      "CPSC310",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-02",
+   "mode": "quiz",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "37a4633e",
+     "PHIL385",
+     "~"
+    ],
+    [
+     2,
+     "4e92449d",
+     "PHIL385",
+     "~"
+    ],
+    [
+     3,
+     "a017d0d2",
+     "PHIL385",
+     "X"
+    ],
+    [
+     4,
+     "f909bd2b",
+     "PHIL385",
+     "O"
+    ],
+    [
+     5,
+     "c531c3ea",
+     "PHIL385",
+     "X"
+    ],
+    [
+     6,
+     "e41af027",
+     "PHIL385",
      "X"
     ]
    ]

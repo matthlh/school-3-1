@@ -200,6 +200,9 @@ a.chip.tone:hover, button.chip.tone:hover { background: var(--tint); box-shadow:
 .q .ans p { margin: .3em 0; }
 .q .ans ul, .q .ans ol { margin: .3em 0; padding-left: 1.4em; }
 .q .ans li { margin: .3em 0; }
+.q .src { margin-top: 8px; font-size: 12.5px; }   /* the notes page the question comes from, under the answer */
+.q .src a { color: var(--muted); text-decoration-color: var(--border3); text-underline-offset: 3px; }
+.q .src a:hover { color: var(--link); text-decoration-color: currentColor; }
 
 /* Markdown */
 article { max-width: 800px; }

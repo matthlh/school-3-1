@@ -38,6 +38,8 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    - **CPSC 310:** a correct answer with no reason is `~` until he gives the why. Ask "why?" once.
    - **STAT 251:** apply/derive needs the method, not the number. Right number, no method = `~`.
    - **PHIL 385:** exact names, pseudonyms, essay titles, dates. Close = `~`.
+   - After an `X` or `~`, also give the link to the notes page it comes from (the item's `Page:` line in the
+     pick output) and name the `##` section on that page that covers it when you can tell.
 4. **Second pass (Matt, 2026-09-19):** after the last question, re-ask every `X` from this session
    once more, in order, one at a time, before grading. The retry is not graded and does not change
    the first-pass grade; it exists so a miss gets one attempt to recall it while the correction is fresh.
@@ -50,7 +52,8 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    `**Topic:**` tag, aimed at *what he got wrong* from a different angle — not a rephrase. Split a
    leech into two smaller questions and delete the original. Say how many you added, one line.
 7. Report ≤ 10 lines: grades table (course · topic · grade), ledger delta (topic → next date),
-   questions added. No summaries, no pep talk.
+   questions added. No summaries, no pep talk. Close the session with the **Pages behind the misses** list
+   that `quiz_grade.py` prints last (each page as a link with its miss count), so he knows what to reread.
 
 ## Variants
 | He says | Run |

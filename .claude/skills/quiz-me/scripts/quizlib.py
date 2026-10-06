@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Shared code for the quiz-me skill: question bank parsing, ledger read/write, per-question
-history, topic matching, exam proximity, and the focus report.
+"""Shared code for the quiz-me skill: question bank parsing, the notes page behind each question,
+ledger read/write, per-question history, topic matching, exam proximity, and the focus report.
 
 Files it owns:
   ledger.md                     — "## Due now" block and the "## All topics" table rows (SRS state)
@@ -12,6 +12,7 @@ Files it owns:
 Set SCHOOL_ROOT to point at a copy of the workspace when testing.
 """
 import datetime as dt, glob, hashlib, json, os, random, re, sys
+from urllib.parse import quote
 
 ROOT = os.environ.get("SCHOOL_ROOT", "/Users/matthe/Documents/CodingProjects/School 3-1")
 LEDGER = os.path.join(ROOT, "ledger.md")
@@ -20,6 +21,7 @@ SESSION = os.path.join(ROOT, "routines", "quiz-session.json")
 QUIZ_DIR = os.path.join(ROOT, "routines", "quiz")
 RUNS_DIR = os.path.join(ROOT, "routines", "runs")
 MC_SCRIPTS = os.path.join(ROOT, ".claude", "skills", "morning-check", "scripts")
+SITE_URL = "https://matthlh.github.io/school-3-1/"   # the public notes site; a page is SITE_URL + "#/" + its path
 
 COURSE_LABEL = {"STAT251": "STAT 251", "CPSC310": "CPSC 310", "PHIL385": "PHIL 385", "ASIA250": "ASIA 250"}
 LABEL_COURSE = {v: k for k, v in COURSE_LABEL.items()}
@@ -85,11 +87,11 @@ def load_questions(courses=None):
         course = os.path.basename(os.path.dirname(path))
         if courses and course not in courses:
             continue
-        out.extend(_parse_bank(path, course))
+        out.extend(attach_sources(_parse_bank(path, course), course))
     return out
 
 def _parse_bank(path, course):
-    qs, cur, fence = [], None, False
+    qs, cur, fence, section = [], None, False, None
     with open(path, encoding="utf-8") as f:
         lines = f.read().split("\n")
 
@@ -100,7 +102,7 @@ def _parse_bank(path, course):
         meta = cur["meta"] or ("(untagged)", "?", "recall")
         qs.append(dict(id=qid(course, q), course=course, topic=meta[0].strip(), lec=meta[1].strip(),
                        type=meta[2].strip().lower(), q=q, a="\n".join(cur["a"]).strip(),
-                       file=os.path.relpath(path, ROOT), line=cur["line"]))
+                       file=os.path.relpath(path, ROOT), line=cur["line"], section=cur["section"]))
 
     for i, line in enumerate(lines, 1):
         if line.startswith("```"):
@@ -108,10 +110,12 @@ def _parse_bank(path, course):
             continue
         if fence:
             continue
+        if line.startswith("## "):
+            section = line[3:].strip()          # the `## ` heading a question sits under (the site's group title)
         m = Q_RE.match(line)
         if m:
             flush()
-            cur = dict(line=i, q=[m.group(1)], meta=None, a=[], in_a=False)
+            cur = dict(line=i, q=[m.group(1)], meta=None, a=[], in_a=False, section=section)
             continue
         if cur is None:
             continue
@@ -128,6 +132,118 @@ def _parse_bank(path, course):
             continue
         (cur["a"] if cur["in_a"] else cur["q"]).append(line)
     flush()
+    return qs
+
+# ---- source pages (the lecture or reading notes each question comes from) -------------------
+# Mirrored in notes-app/src/sources.ts, which links each question card to the same page: keep the rules in step.
+
+LEC_FILE_RE = re.compile(r"^(\d+)(?:-(\d+))?-")             # 05-06-<slug>.md covers lectures 5–6 (as term.py reads it)
+LEC_TAG_RE = re.compile(r"^(\d+)(?:\s*[–—-]\s*(\d+))?$")     # **Lec:** 6 or 5–6
+
+def lec_span(tag):
+    """'5–6' → (5, 6), '6' → (6, 6); a non-lecture tag ('WW2', 'reading', 'Lab 1') → None."""
+    m = LEC_TAG_RE.match((tag or "").strip())
+    return (int(m.group(1)), int(m.group(2) or m.group(1))) if m else None
+
+def _words(s):
+    """Lowercase words with apostrophes dropped: "Seducer's Diary" → ['seducers', 'diary']."""
+    return re.sub(r"[^a-z0-9]+", " ", re.sub(r"['’]", "", (s or "").lower())).split()
+
+def _pages(course):
+    """Lecture files as (first, last, path) and reading files as (slug words, path), paths workspace-relative.
+    Staged outlines (`_NN-…`) never count: the lecture pattern needs a leading digit."""
+    base = os.path.join(ROOT, "courses", course)
+    lecs = []
+    for p in sorted(glob.glob(os.path.join(base, "lectures", "*.md"))):
+        m = LEC_FILE_RE.match(os.path.basename(p))
+        if m:
+            lecs.append((int(m.group(1)), int(m.group(2) or m.group(1)), os.path.relpath(p, ROOT)))
+    reads = [(_words(os.path.basename(p)[:-3]), os.path.relpath(p, ROOT))
+             for p in sorted(glob.glob(os.path.join(base, "readings", "*.md"))) if not os.path.basename(p).startswith("_")]
+    return lecs, reads
+
+def _lecture_file(span, lecs):
+    """The file whose NN or NN-MM prefix covers the whole span (narrowest first), else the one covering its start."""
+    lo, hi = span
+    for a, b in ((lo, hi), (lo, lo)):
+        hits = [f for f in lecs if f[0] <= a and b <= f[1]]
+        if hits:
+            return min(hits, key=lambda f: (f[1] - f[0], f[2]))[2]
+    return None
+
+def _reading_file(heading, reads):
+    """The reading whose slug words each start a word of the `## ` heading; the one named earliest wins.
+    '## Reading: *Either/Or*, "Crop Rotation" (Sep 21–23)' → readings/crop-rotation.md."""
+    hw, best = _words(heading), None
+    for sw, path in reads:
+        at = [next((i for i, w in enumerate(hw) if w.startswith(s)), None) for s in sw]
+        if sw and None not in at and (best is None or min(at) < best[0]):
+            best = (min(at), path)
+    return best[1] if best else None
+
+def _topic_lecture(i, tags, direct):
+    """The lecture file most other questions with question i's Topic tag point at; ties go to the earliest lecture.
+    Tags compare after norm(), as match_topic does: equal first, else one a prefix of the other (6+ characters)."""
+    t = tags[i]
+    if not t:
+        return None
+    for same in (lambda u: u == t, lambda u: min(len(u), len(t)) >= 6 and (u.startswith(t) or t.startswith(u))):
+        counts = {}
+        for j, u in enumerate(tags):
+            if j != i and direct[j] and same(u):
+                counts[direct[j]] = counts.get(direct[j], 0) + 1
+        if counts:
+            return min(counts, key=lambda p: (-counts[p], p))
+    return None
+
+def page_title(path):
+    """Plain link text from the file's H1: 'Lecture 6 notes: Conditional probability and independence',
+    'Lectures 1–2 notes: …', 'Reading notes: Either/Or, "Crop Rotation"'. Drops the course, the lecture number
+    and date, a 'Ch 3:' prefix, a reading's dates and emphasis markers."""
+    name = os.path.basename(path)[:-3]
+    m = LEC_FILE_RE.match(name)
+    reading = "/readings/" in path
+    kind = ("Reading notes" if reading else
+            f"Lectures {int(m.group(1))}–{int(m.group(2))} notes" if m and m.group(2) else
+            f"Lecture {int(m.group(1))} notes" if m else "Notes")
+    try:
+        with open(os.path.join(ROOT, path), encoding="utf-8") as f:
+            h1 = re.search(r"^# (.+)$", f.read(), re.M)
+    except OSError:
+        h1 = None
+    s = re.sub(r"[*`]", "", h1.group(1)).strip() if h1 else ""
+    s = re.sub(r"^[A-Z]{2,5} ?\d{3}[A-Z]?\s+—\s+", "", s)                                   # "STAT 251 — "
+    s = re.sub(r"^Lec(?:ture)?s?\s+\d+(?:\s*[–-]\s*\d+)?\s*(?:\([^)]*\))?\s*(?:[—:]\s*|$)", "", s)  # "Lec 6 (Mon Sep 21) — "
+    if reading:
+        s = re.sub(r"\s+—\s+[^—]*$", "", re.sub(r"^Reading:\s*", "", s))                     # "Reading: " and its dates
+    s = re.sub(r"^Ch(?:apter)?\s*\d+:\s*", "", s).strip()                                     # "Ch 3: "
+    if not s:
+        s = " ".join(name[m.end():].split("-") if m else name.split("-"))
+    return f"{kind}: {s[:1].upper()}{s[1:]}" if s else kind
+
+def page_url(path):
+    return SITE_URL + "#/" + quote(path)
+
+def attach_sources(qs, course):
+    """Set src (the page's workspace path, or None), src_title and src_url on each question of one course's bank.
+    A numeric or range Lec maps to the lecture file covering it. Any other tag (WW2, Lab 1, exam1, reading) falls
+    back to the lecture that teaches its Topic (_topic_lecture). A `reading` question, or any question under a
+    `## Reading: …` heading, first tries the readings file that heading names. Nothing on disk → no page, never a guess."""
+    lecs, reads = _pages(course)
+    spans = [lec_span(q["lec"]) for q in qs]
+    direct = [_lecture_file(s, lecs) if s else None for s in spans]
+    tags = [norm(q["topic"]) for q in qs]
+    titles = {}
+    for i, q in enumerate(qs):
+        # A question written from a reading links to that reading's notes, whatever lecture its Lec names.
+        section = q.get("section") or ""
+        from_reading = q["lec"].strip().lower() == "reading" or section.lower().startswith("reading")
+        src = (_reading_file(section, reads) if from_reading else None) or direct[i]
+        if src is None and spans[i] is None:
+            src = _topic_lecture(i, tags, direct)
+        if src and src not in titles:
+            titles[src] = page_title(src)
+        q.update(src=src, src_title=titles.get(src), src_url=page_url(src) if src else None)
     return qs
 
 # ---- ledger.md -----------------------------------------------------------------------------

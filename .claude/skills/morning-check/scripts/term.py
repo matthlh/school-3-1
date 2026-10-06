@@ -40,6 +40,9 @@ EXAM_LADDER = {10: "T-10 gap check: syllabus topics vs. ledger", 9: "45 min mixe
 DELIV_LADDER = {10: "T-10 environment check: clone, install, run tests, push a throwaway commit",
                 8: "T-8 read the spec once, write the done-checklist", 2: "T-2 first autograder run (this is the buffer)",
                 1: "T-1 write the design rationale", 0: "DUE — submit early, then stop"}
+PAPER_LADDER = {4: "T-4 read the prompt, write a one-line thesis and a 3-point outline",
+                2: "T-2 full draft", 1: "T-1 edit, then check Chicago author-date citations (no footnotes)",
+                0: "DUE — submit early, then stop"}
 
 KEY_DATES = [  # (date, course, label, kind)  kind: exam | deliverable | admin | paper
     (D(2026, 9, 21), "UBC", "Drop without W closes", "admin"),
@@ -119,7 +122,7 @@ def main():
         first_for_course = course not in seen
         if left <= 10 or first_for_course:
             seen.add(course)
-            ladder = EXAM_LADDER if kind == "exam" else DELIV_LADDER if kind in ("deliverable", "paper") else {}
+            ladder = {"exam": EXAM_LADDER, "deliverable": DELIV_LADDER, "paper": PAPER_LADDER}.get(kind, {})
             step = ladder.get(left, "")
             flag = "  ← " + step if step else ""
             print(f"  T-{left:<3} {d:%a %b %-d}  {course:8} {label}{flag}")

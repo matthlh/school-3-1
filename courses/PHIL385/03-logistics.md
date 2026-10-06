@@ -9,11 +9,20 @@
   open-book; this year's syllabus says closed-book — prepare closed-book.
 - Canvas has two "students asking students for class notes" boards, one per section.
 
+## Readings
+- For "The Musical Erotic" (Oct 5 to Oct 14), Kraal said reading to page 110 is enough and the rest can be skimmed.
+
 ## Exam 1 (Fri Oct 2, 14:00–14:50)
 - The room is Buchanan A 201 (Kraal's announcement, Sep 26).
 - The examinable texts are the Preface, The Unhappiest One, Crop Rotation, and Ancient Tragedy's Reflection in the Modern.
 - There are two questions, and either one may cover all four texts or only one of them.
 - Both questions have an evaluation part: you are asked whether you agree or disagree with a central idea, so have your own view on each text ready.
+- A friend who sat Kraal's essay exam in another course reported the pattern (2026-10-02, unconfirmed for this course). Question 1 combined all the texts and asked who says what and with what arguments. Question 2 asked, for each argument, whether its conclusion makes sense in your opinion and why.
+
+## Exam 1 questions (as Matt recalled them after the exam)
+- Question 1 asked for three ways A suggests a person fails to overcome boredom, based on "The Unhappiest One". It drew on Crop Rotation as well.
+- Question 2 asked what A's position is and whether you agree or disagree, with justification.
+- So one question tied two essays together and the other asked for a verdict on A as a whole.
 
 ## Reference (for Claude)
 - Office hours: Wed 12:15–12:45 on Zoom (link on the Canvas front page); email one day ahead for a slot.

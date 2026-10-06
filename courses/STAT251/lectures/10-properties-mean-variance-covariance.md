@@ -1,6 +1,6 @@
 # STAT 251 — Lec 10 (Fri Oct 2) — Ch 4: rules for the mean and variance, covariance, sums and averages, the maximum of independent random variables
 
-No page from you for this one. This file is the posted after-class deck organised for study, `Lecture_10_Chapter_4_CanvasPost_AL.pdf` (16 slides, Canvas file 47723830). It is the before-class deck plus worked answers to Examples 8 and 9. The recording was not linked on the Canvas page yet when this was logged.
+No page from you for this one. This file is the posted after-class deck organised for study, `Lecture_10_Chapter_4_CanvasPost_AL.pdf` (16 slides, Canvas file 47723830). It is the before-class deck plus worked answers to Examples 8 and 9. It was checked against the Panopto recording on 2026-10-05, and what the class added is under In class.
 
 ## Learning goals (slide 2)
 - Use the rules for the mean and variance of $$aX + b$$ and of sums of random variables.
@@ -149,7 +149,7 @@ f_V(v) &= n\big[F_X(v)\big]^{n-1} f_X(v)
 $$
 
 ### The minimum (not on any slide)
-- The deck's title promises the minimum, but no slide covers it. It is in the learning outcomes (3m and 3n), so expect it in an activity or later example.
+- The deck's title promises the minimum, but no slide covers it. He said in class that the minimum is taught on Wednesday Oct 7, in lecture 12, because Monday is the activity.
 - A series system dies at the first failure, so its lifetime is $$U = \min\{X_1, \dots, X_n\}$$. $$U > u$$ exactly when every component still works at $$u$$.
 
 $$
@@ -163,11 +163,32 @@ $$
 ### Next class
 - Lecture 11 is activities and examples on Chapter 4.
 - Complete the Chapter 4 pre-activity worksheet (Activity 3) before that class. It is posted under the lecture 11 materials, and the class will ask questions about it. Your Things3 already has it as a to-do.
+- Lecture 12, on Wednesday Oct 7, finishes the maximum and covers the minimum, with more examples.
+
+## In class
+- The class reached slide 13: the parallel system and the definition of the cdf of the maximum. The rest of the maximum and all of the minimum move to Wednesday Oct 7.
+- iClicker on lecture 9's material: $$X$$ is continuous with pdf $$f$$, cdf $$F$$ and median $$m$$. The options were $$F(m) = 0.5$$, $$\int_{-\infty}^{m} f(x)\,dx = 0.5$$ and $$\int_{m}^{\infty} f(x)\,dx = 0.5$$. The answer was (e), all of them, and 79% got it.
+  - The three say the same thing in different notation. The median splits the area under $$f$$ in half.
+  - He warned against stopping at the first true option. Read every option before answering.
+- He worked Example 8 on the board, $$\operatorname{Var}(2X + 3Y) = 134$$. Example 9 was an iClicker, $$\operatorname{Var}(2X - Y) = 22$$, answer (c), and 81% got it.
+- What he said about exams:
+  - He will not ask you to compute a covariance from scratch on an exam, so its definition does not need to go on your cheat sheet. Know $$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y)$$ and what its sign means.
+  - For the cheat sheet, write only the general formula for $$\operatorname{Var}(aX + bY + c)$$ plus the fact that independence makes the covariance 0. That covers every special case on the slides.
+  - He allows a cheat sheet because building a good one forces you to understand the material.
+- Covariance gives only the direction of a linear relationship, not its strength. The sample covariance and the correlation come with Chapter 11, together with Chapter 2.
+- When a question says "random sample", the random variables are independent and identically distributed, often written iid. Independent means no value affects another. Identically distributed means they all come from the same distribution, so they share one mean and one variance. His example was the grades of randomly chosen students from a distribution with mean 78 and SD 8.
+- Before you observe a random variable its value is random. After you observe it, it is just a number, called an observed value.
+- Parallel system example: four components each last between 0 and 100 hours.
+  - With lifetimes 78, 10, 88 and 2 hours, the system runs for 88 hours.
+  - With lifetimes 15, 95, 91 and 18 hours, it runs for 95 hours.
+  - So the system lifetime is the maximum, which is itself a random variable between 0 and 100.
+- He does not teach integration or differentiation. The calculus prerequisite covers them.
+- A short video finishing lecture 9, and solution files for the mean and variance of the uniform and the exponential, are on the lecture 9 Canvas page. He said the exponential one is harder than it looks.
+- Nobody asked about WeBWorK 2 in his office hours. He urged using office hours or Piazza, because a mistake you never ask about comes back on the exam.
 
 ## Clarifications
-- $$E(\bar{X}) = \mu$$ uses only the rule for the mean of a sum, so it holds without independence. $$\operatorname{Var}(\bar{X}) = \sigma^2/n$$ needs independence.
+- $$E(\bar{X}) = \mu$$ uses only the rule for the mean of a sum, so it holds without independence. $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ needs independence.
 - For two independent values with the same variance $$\sigma^2$$, $$\operatorname{Var}(X_1 + X_2) = 2\sigma^2$$, but $$\operatorname{Var}(2X_1) = 4\sigma^2$$. A sum of independent values varies less than one value doubled, because their deviations partly cancel.
 - The deck states one direction only: independent random variables have covariance 0.
-- The lecture 10 Canvas page points to the lecture 9 page for the video covering lecture 9's last slides and for the solution files deriving the uniform and exponential mean and variance.
 
-Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 10". Ledger: 3 topics, due Oct 3.
+Questions: 15 in [02-questions.md](../02-questions.md) under "Lec 10". Ledger: 3 topics.

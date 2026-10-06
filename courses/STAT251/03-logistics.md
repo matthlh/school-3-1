@@ -24,7 +24,7 @@
 |---|---|---|
 | WeBWorK 1 | **Tue Sep 22, 23:59** (confirmed in WeBWorK 2026-09-16) | Done: 9/9 problems at 100%, verified 2026-09-20 |
 | WeBWorK 2 | **Tue Sep 29, 23:59** (confirmed in WeBWorK 2026-09-22) | 0 of 12 problems answered as of the Sep 29 morning check |
-| WeBWorK 3 | **Tue Oct 6, 23:59** (confirmed in WeBWorK 2026-09-29) | 6 problems, banked 2026-09-29 |
+| WeBWorK 3 | **Thu Oct 8, 23:59** (extended from Tue Oct 6 on the lecture 11 Canvas page, 2026-10-03) | 6 problems, banked 2026-09-29 |
 | WeBWorK 4–10 | Opens Tue Oct 6 · Oct 13 · Oct 20 · Nov 3 · Nov 17 · Nov 24 · Dec 1 (from WeBWorK). Each set has closed seven days after opening so far, so expect Oct 13 · Oct 20 · Oct 27 · Nov 10 · Nov 24 · Dec 1 · Dec 8, 23:59; each is confirmed inside WeBWorK on its open day | |
 | Pre-lab quizzes, Labs 2–8 | Fri Oct 9 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
 | In-lab quiz + follow-up (L1K) | Fri Oct 30, 11:20–11:40 and 11:45–12:00 | 3 + 3 |

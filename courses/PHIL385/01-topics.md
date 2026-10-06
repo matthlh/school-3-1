@@ -14,8 +14,8 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | 5 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | 2026-09-11 | 2026-09-19 | X | 0 | 2026-09-20 |  |
 | 6 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | reading | 2026-09-11 | 2026-09-16 | ~ | 0 | 2026-09-19 | Preface assigned for lec 1 |
 | 7 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | 2026-09-14 | 2026-09-19 | X | 0 | 2026-09-20 | reading, part 1 logged; lectures Sep 14–18 |
-| 8 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | 2026-09-14 | | | 0 | 2026-09-15 | |
-| 9 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | 2026-09-14 | | | 0 | 2026-09-15 | |
+| 8 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | 2026-09-14 | 2026-10-02 | X | 0 | 2026-10-03 |  |
+| 9 | Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) | 2 | 2026-09-14 | 2026-10-02 | X | 0 | 2026-10-03 |  |
 | 10 | Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) | 3 | 2026-09-16 | | | 0 | 2026-09-17 | |
 | 11 | The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) | 3 | 2026-09-16 | | | 0 | 2026-09-17 | |
 | 12 | The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) | reading | 2026-09-16 | | | 0 | 2026-09-17 | |
@@ -23,3 +23,5 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | 14 | Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) | reading | 2026-09-21 | | | 0 | 2026-09-22 | lectures Sep 21–23 |
 | 15 | The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) | 7 | 2026-09-25 | | | 0 | 2026-09-26 | |
 | 16 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | 2026-09-25 | | | 0 | 2026-09-26 | reading Sep 25–28 |
+| 17 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-05 | | | 0 | 2026-10-06 | reading Oct 5–14 |
+| 18 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-05 | | | 0 | 2026-10-06 | reading Oct 5–14 |
