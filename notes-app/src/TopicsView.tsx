@@ -71,7 +71,7 @@ export function TopicsView({ path, text }: { path: string; text: string }) {
         const rows = outcomeRows(s.body)
         const prose = rows ? withoutTables(s.body) : ''
         return (
-          <section key={s.id}>
+          <section key={s.id} id={'sec-' + s.id}>
             <h2>{s.heading}</h2>
             {rows ? <OutcomeTable rows={rows} path={path} today={today} /> : <Md text={s.body} path={path} />}
             {prose && <Md text={prose} path={path} />}

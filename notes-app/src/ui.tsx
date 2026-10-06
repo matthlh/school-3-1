@@ -1,7 +1,7 @@
 // Small pieces shared across pages: grade and course chips, the solid/shaky/missed bar, topic cells.
 import { splitTopic, type Grade, type TopicRow } from './markdown'
 import { formatDate, isISODate } from './dates'
-import { hrefCourse } from './routes'
+import { hrefCourse, hrefTopic } from './routes'
 import { toneStyle } from './tone'
 import { pctSolid, type Tally } from './stats'
 
@@ -33,10 +33,10 @@ export function calendarChip(course: string) {
   return course === 'UBC' ? <span className="chip">UBC</span> : null
 }
 
-/** "Main topic" with the trailing parenthetical as a muted detail span. */
-export function TopicCell({ topic }: { topic: string }) {
-  const { main, detail } = splitTopic(topic)
-  return <>{main}{detail && <span className="detail">{detail}</span>}</>
+/** A topic row's main text as a link to its questions in the course's bank, then its trailing parenthetical, muted. */
+export function TopicCell({ r }: { r: TopicRow }) {
+  const { main, detail } = splitTopic(r.topic)
+  return <><a href={hrefTopic(r.course, r.topic)}>{main}</a>{detail && <span className="detail">{detail}</span>}</>
 }
 
 /** Thin segmented bar + one-line legend: solid / shaky / missed / not yet quizzed. */

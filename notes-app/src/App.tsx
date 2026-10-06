@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildTree, courseOf, labelFor, loadAll, loadQuizState, mainFileCourse, titledByHeader, type QuizState, type Texts } from './files'
-import { parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
+import { buildTree, courseOf, labelFor, loadAll, loadQuizState, mainFileCourse, titledByHeader, type QuizState, type Texts, type Tree } from './files'
+import { courseLabel, parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
 import { tallyByCourse } from './stats'
-import { HREF_HOME, hrefCourse, parseHash, type Route } from './routes'
+import { HREF_HOME, hrefCourse, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
 import { TopBar, type Crumb } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { Home } from './Home'
@@ -17,14 +17,17 @@ import { SearchResults } from './SearchResults'
 import { UpdateToast } from './UpdateToast'
 import { startUpdateChecks, takeSavedScroll } from './update'
 
-function useRoute(): Route {
-  const [route, setRoute] = useState<Route>(() => parseHash(window.location.hash))
-  useEffect(() => {
-    const onChange = () => setRoute(parseHash(window.location.hash))
-    window.addEventListener('hashchange', onChange)
-    return () => window.removeEventListener('hashchange', onChange)
-  }, [])
-  return route
+/** The tab title: the page, then the course it belongs to ("Syllabus · STAT 251", "Lec 3 · CPSC 310"). */
+function tabTitle(route: Route, tree: Tree): string {
+  if (route.kind === 'home') return 'Home'
+  if (route.kind === 'course') return courseLabel(route.code)
+  const lec = /\/lectures\/(\d+)(?:-(\d+))?-[^/]*$/.exec(route.path)
+  const reading = /\/readings\/([^/]+)\.md$/.exec(route.path)
+  const page = lec ? `Lec ${+lec[1]}${lec[2] ? `–${+lec[2]}` : ''}`
+    : reading ? `Reading: ${reading[1].replace(/-/g, ' ')}`
+    : labelFor(route.path, tree)
+  const code = courseOf(route.path)
+  return code ? `${page} · ${courseLabel(code)}` : page
 }
 
 /** The year the academic year began: Sep–Dec dates belong to it and Jan–May dates to the year after, even in January. */
@@ -44,20 +47,30 @@ export default function App() {
   const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => { loadAll().then(setAll, () => setFailed(true)); loadQuizState().then(setQuiz) }, [])
-  useEffect(() => { startUpdateChecks() }, [])
-  // New route: back to the top, unless it names a `#section` — then scroll there once the content exists, opening
-  // it if it is folded. On a phone the sidebar covers the page, so following one of its links closes it.
+  useEffect(() => { startUpdateChecks(); startScrollMemory() }, [])
+  const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
+  const anchor = route.kind === 'file' ? route.anchor : undefined
+  const viewQuery = route.kind === 'file' ? route.query : ''
+  // New page, once the content exists: where it was last scrolled when Back, Forward or a reload return to it
+  // (update.ts keeps its own copy for its reloads); else the top, or the `#section` it names, opened if folded. On a
+  // phone the sidebar covers the page, so following one of its links closes it.
   useEffect(() => {
     setQuery('')
     if (window.matchMedia('(max-width: 640px)').matches) setPinned(false)
-    // After one of our own reloads (update.ts) land where he was, once the content exists.
-    if (all) { const y = takeSavedScroll(window.location.hash); if (y !== null) { window.scrollTo(0, y); return } }
-    const anchor = route.kind === 'file' ? route.anchor : undefined
+    if (!all) return
+    const y = takeSavedScroll(window.location.hash) ?? savedScroll()
+    if (y !== null) { window.scrollTo(0, y); return }
     const el = anchor ? document.getElementById('sec-' + anchor) : null
     if (!el) { window.scrollTo(0, 0); return }
     if (el instanceof HTMLDetailsElement) el.open = true
     el.scrollIntoView({ block: 'start' })
-  }, [route, all])
+  }, [current, anchor, all])
+  // A question bank's view changing is the same page and stays put, unless Back or Forward return to a step that
+  // remembers where it was. Only a change of view runs this: the first load is the effect above's.
+  useEffect(() => {
+    const y = savedScroll()
+    if (all && y !== null) window.scrollTo(0, y)
+  }, [viewQuery])
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const typing = (e.target as HTMLElement)?.tagName === 'INPUT'
@@ -73,7 +86,6 @@ export default function App() {
   const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', termYear()), [all])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
 
-  const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
   const crumbs: Crumb[] = [{ label: 'Home', href: HREF_HOME }]
   if (route.kind === 'course') crumbs.push({ label: route.code, tone: route.code })
   if (route.kind === 'file') {
@@ -81,7 +93,8 @@ export default function App() {
     if (code) crumbs.push({ label: code, href: hrefCourse(code), tone: code })
     crumbs.push({ label: labelFor(route.path, tree) })
   }
-  useEffect(() => { document.title = crumbs[crumbs.length - 1].label }, [crumbs])
+  const title = tabTitle(route, tree)
+  useEffect(() => { document.title = title }, [title])
 
   const scoped = route.kind === 'course' ? route.code : route.kind === 'file' ? mainFileCourse(route.path) : null
 
@@ -93,7 +106,7 @@ export default function App() {
   else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={quiz} />
-  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} quiz={quiz} all={all} />
+  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} quiz={quiz} all={all} view={parseBankView(route.query)} anchor={route.anchor} />
   else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
   else body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} />

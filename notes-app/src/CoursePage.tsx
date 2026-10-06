@@ -3,7 +3,7 @@ import { hrefFor } from './files'
 import { afterDash, firstHeading, splitSections, type LinkRow, type TopicRow } from './markdown'
 import { EMPTY, type Tally } from './stats'
 import { todayISO } from './dates'
-import { LastGrade, NextCell, StatBar } from './ui'
+import { LastGrade, NextCell, StatBar, TopicCell } from './ui'
 import { LinkList } from './Links'
 import { Md } from './Md'
 import { usePager } from './Pager'
@@ -52,7 +52,7 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
                   {shown.map((r) => (
                     <tr key={r.topic}>
                       <td><LastGrade r={r} /></td>
-                      <td>{r.topic}</td>
+                      <td><TopicCell r={r} /></td>
                       <NextCell next={r.next} today={today} />
                     </tr>
                   ))}

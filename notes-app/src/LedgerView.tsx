@@ -85,7 +85,7 @@ function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: 
             return (
               <tr key={rowKey(r)}>
                 <td className="course nowrap"><CourseChip code={r.course} /></td>
-                <td className="topic"><TopicCell topic={r.topic} /></td>
+                <td className="topic"><TopicCell r={r} /></td>
                 <td className="lec">{r.lec || '—'}</td>
                 <td className="last">{isISODate(r.last) ? shortDate(r.last) : '—'}</td>
                 <td className="grade"><LastGrade r={r} /></td>

@@ -42,7 +42,7 @@ export function DueTable({ rows, today }: { rows: TopicRow[]; today: string }) {
             return (
               <tr key={rowKey(r)}>
                 <td className="course nowrap"><CourseChip code={r.course} /></td>
-                <td className="topic"><TopicCell topic={r.topic} /></td>
+                <td className="topic"><TopicCell r={r} /></td>
                 <td className={'when' + (late > 0 ? ' late' : '')}>{late > 0 ? `${late} d late` : 'today'}</td>
                 <td className="grade"><LastGrade r={r} /></td>
               </tr>

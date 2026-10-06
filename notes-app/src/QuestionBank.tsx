@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { QuizHistory, QuizState, Texts } from './files'
 import { courseOf, hrefFor } from './files'
-import { parseQuestions, splitTopic, type Question } from './markdown'
+import { parseQuestions, slug, splitTopic, type Question, type QuestionGroup } from './markdown'
+import { hrefBank, navigate, toRanges, topicKey, type BankView } from './routes'
 import { sourcesFor } from './sources'
 import { isWeak, lastGrade, questionId, tallyHistories } from './stats'
 import { GradeChip } from './ui'
 import { Md } from './Md'
 
-type Mode = 'all' | 'weak' | 'new'
+type Mode = BankView['only']
 
-/** Deterministic shuffle for a given seed (so toggling answers doesn't reorder). */
+/** Deterministic shuffle for a given seed (the seed is in the URL, so a reload deals the same order). */
 function shuffled<T>(xs: T[], seed: number): T[] {
   const out = [...xs]
   let s = seed >>> 0 || 1
@@ -26,10 +27,69 @@ function shortTitle(title: string): string {
   return splitTopic(title).main.replace(/\*/g, '').replace(/\s+/g, ' ').trim()
 }
 
-export function QuestionBank({ path, text, quiz, all }: { path: string; text: string; quiz: QuizState | null; all: Texts }) {
+/** True when slug `s` is `key` or goes on from it by whole words. */
+const startsWith = (s: string, key: string) => s === key || s.startsWith(key + '-')
+
+/**
+ * Each section's key in the URL: its label (the title up to " — ") as a slug, plus as many following words as it takes
+ * to differ from every earlier section: "lec-7", "webwork-2", "long-problems", "lec-1-deck". A section added later
+ * never changes an earlier key, so an old URL keeps naming the same section.
+ */
+function sectionKeys(groups: QuestionGroup[]): string[] {
+  const earlier: string[] = []
+  return groups.map((g) => {
+    const title = shortTitle(g.title ?? '')
+    const words = slug(title).split('-')
+    let n = slug(title.split(' — ')[0]).split('-').length
+    while (n < words.length && earlier.some((s) => startsWith(s, words.slice(0, n).join('-')))) n++
+    earlier.push(words.join('-'))
+    return words.slice(0, n).join('-')
+  })
+}
+
+/** A question's Topic, Lec and Type tags as a bank URL writes them; '' where the tag is missing. */
+function tagKeys(q: Question): Pick<BankView, 'topic' | 'lec' | 'type'> {
+  return { topic: q.topic && topicKey(q.topic), lec: q.lec && slug(q.lec), type: q.type && slug(q.type) }
+}
+
+/**
+ * Two topic slugs name the same topic when equal or when one goes on from the other (6+ characters): the prefix step
+ * of quizlib's match_topic, so a ledger row's link finds the questions the quiz scripts file under that row.
+ */
+const sameTopic = (a: string, b: string) => a === b || (Math.min(a.length, b.length) >= 6 && (startsWith(a, b) || startsWith(b, a)))
+
+/**
+ * Quiz-script ids already worked out, by course and question text. A bank opened again (Back from a notes page) then
+ * draws its Weak and Not asked lists in its first render, so the scroll position put back lands where it was.
+ */
+const knownIds = new Map<string, string>()
+
+/** The ids knownIds already holds for `qs`, by parsed question id. */
+function idsKnown(code: string, qs: Question[]): Record<string, string> {
+  const out: Record<string, string> = {}
+  for (const q of qs) {
+    const id = knownIds.get(code + '|' + q.question)
+    if (id !== undefined) out[q.id] = id
+  }
+  return out
+}
+
+/** An active filter in the toolbar; clicking it clears the filter. */
+function ActiveFilter({ label, title, onClear }: { label: string; title: string; onClear: () => void }) {
+  return (
+    <button type="button" className="chip on" onClick={onClear} title={title}>
+      {label} <span className="x" aria-hidden="true">×</span>
+    </button>
+  )
+}
+
+export function QuestionBank({ path, text, quiz, all, view, anchor }: {
+  path: string; text: string; quiz: QuizState | null; all: Texts; view: BankView; anchor?: string
+}) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
   const flat = useMemo(() => groups.flatMap((g) => g.questions), [groups])
+  const keys = useMemo(() => sectionKeys(groups), [groups])
   // The lecture or reading notes each question comes from, linked under its answer (a title by the question would hint).
   const sources = useMemo(() => sourcesFor(code, groups, all), [code, groups, all])
   // Question id → index of its `## ` group, so the section filter also works on the flattened shuffle list.
@@ -40,37 +100,48 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
   }, [groups])
 
   // Map each parsed question to the id the quiz scripts use (sha1 of course + normalised text).
-  const [ids, setIds] = useState<Record<string, string>>({})
+  const [ids, setIds] = useState<Record<string, string>>(() => idsKnown(code, flat))
   useEffect(() => {
     let alive = true
-    Promise.all(flat.map(async (q) => [q.id, await questionId(code, q.question)] as const))
-      .then((pairs) => { if (alive) setIds(Object.fromEntries(pairs)) })
+    Promise.all(flat.map(async (q) => {
+      const id = await questionId(code, q.question)
+      knownIds.set(code + '|' + q.question, id)
+      return [q.id, id] as const
+    })).then((pairs) => { if (alive) setIds(Object.fromEntries(pairs)) })
     return () => { alive = false }
   }, [flat, code])
   const histOf = (q: Question): QuizHistory | undefined => quiz?.questions[ids[q.id] ?? '']
 
-  const [mode, setMode] = useState<Mode>('all')
-  const [section, setSection] = useState('') // '' = every section; otherwise a group index as a string
-  const [topic, setTopic] = useState('') // set by clicking a card's topic chip
-  const [open, setOpen] = useState<Set<string>>(new Set())
-  const [allOpen, setAllOpen] = useState(false)
-  const [seed, setSeed] = useState(0) // 0 = file order; otherwise a shuffled single list
-  const toggle = (id: string) =>
-    setOpen((s) => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n })
+  // Every filter, the mode and the shuffle are a new Back step; opening and closing answers changes the current one.
+  const go = (change: Partial<BankView>, replace = false) => navigate(hrefBank(path, { ...view, ...change }, anchor), replace)
+  // The questions showing their answer. The URL names them by position in the file, counting from 1.
+  const showing = new Set(flat.filter((_, i) => view.open.some(([a, b]) => a <= i + 1 && i + 1 <= b)))
+  /** Show the answers of exactly the questions `pick` keeps. */
+  const openOnly = (pick: (q: Question) => boolean) => go({ open: toRanges(flat.flatMap((q, i) => (pick(q) ? [i + 1] : []))) }, true)
 
   const asked = flat.map(histOf).filter((h): h is QuizHistory => !!h)
   const tally = tallyHistories(asked)
   const total = flat.length
   if (total === 0) return <article><p className="muted">No questions yet.</p></article>
 
+  const section = keys.indexOf(view.section)
   const weakCount = flat.filter((q) => isWeak(histOf(q))).length
-  const keep = (q: Question) =>
-    (!section || String(groupOf.get(q.id)) === section) &&
-    (!topic || splitTopic(q.topic).main === topic) &&
-    (mode === 'all' || (mode === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
-  const shownCount = flat.filter(keep).length
+  const keep = (q: Question) => {
+    const t = tagKeys(q)
+    return (!view.section || groupOf.get(q.id) === section) &&
+      (!view.topic || sameTopic(t.topic, view.topic)) &&
+      (!view.lec || t.lec === view.lec) &&
+      (!view.type || t.type === view.type) &&
+      (view.only === 'all' || (view.only === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
+  }
+  const visible = flat.filter(keep)
+  const everyOpen = visible.length > 0 && visible.every((q) => showing.has(q))
+  // The toolbar names an active filter as the cards write it; one that no question matches shows its slug.
+  const topicName = view.topic && splitTopic(flat.find((q) => sameTopic(tagKeys(q).topic, view.topic))?.topic ?? view.topic).main
+  const lecName = view.lec && (flat.find((q) => tagKeys(q).lec === view.lec)?.lec ?? view.lec)
+  const typeName = view.type && (flat.find((q) => tagKeys(q).type === view.type)?.type ?? view.type)
   const seg = (m: Mode, label: string, n: number) => (
-    <button type="button" className={mode === m ? 'on' : ''} aria-pressed={mode === m} onClick={() => setMode(m)}>{label}<span className="k">{n}</span></button>
+    <button type="button" className={view.only === m ? 'on' : ''} aria-pressed={view.only === m} onClick={() => go({ only: m })}>{label}<span className="k">{n}</span></button>
   )
 
   return (
@@ -83,39 +154,40 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
       <div className="toolbar">
         <div className="seg" role="group" aria-label="Which questions">
           {seg('all', 'All', total)}
-          {asked.length > 0 && seg('weak', 'Weak', weakCount)}
-          {asked.length > 0 && seg('new', 'Not asked', total - asked.length)}
+          {(asked.length > 0 || view.only !== 'all') && seg('weak', 'Weak', weakCount)}
+          {(asked.length > 0 || view.only !== 'all') && seg('new', 'Not asked', total - asked.length)}
         </div>
         {groups.length > 1 && (
-          <select value={section} onChange={(e) => setSection(e.target.value)} aria-label="Section">
+          <select value={view.section} onChange={(e) => go({ section: e.target.value })} aria-label="Section">
             <option value="">All sections</option>
             {groups.map((g, i) => g.title && (
-              <option key={i} value={String(i)} title={g.title}>{shortTitle(g.title)}</option>
+              <option key={i} value={keys[i]} title={g.title}>{shortTitle(g.title)}</option>
             ))}
           </select>
         )}
-        {topic && (
-          <button className="chip on" onClick={() => setTopic('')} title={`${topic} — click to show every topic again`}>
-            Topic: {topic} <span className="x" aria-hidden="true">×</span>
-          </button>
-        )}
+        {topicName && <ActiveFilter label={`Topic: ${topicName}`} title={`${topicName} — click to show every topic again`} onClear={() => go({ topic: '' })} />}
+        {lecName && <ActiveFilter label={`Lec: ${lecName}`} title={`Lec ${lecName} — click to show every lecture again`} onClear={() => go({ lec: '' })} />}
+        {typeName && <ActiveFilter label={`Type: ${typeName}`} title={`${typeName} — click to show every type again`} onClear={() => go({ type: '' })} />}
         <span className="spacer" />
-        {shownCount !== total && <span className="muted small">{shownCount} shown</span>}
-        <button className={'btn' + (seed ? ' on' : '')} onClick={() => setSeed(seed ? 0 : Date.now())} title="Random order, all lectures mixed — how the exam asks">
-          {seed ? 'File order' : 'Shuffle'}
+        {visible.length !== total && <span className="muted small">{visible.length} shown</span>}
+        <button type="button" className={'btn' + (view.shuffle ? ' on' : '')} onClick={() => go({ shuffle: view.shuffle ? 0 : 1 + Math.floor(Math.random() * 9999) })} title="Random order, all lectures mixed — how the exam asks">
+          {view.shuffle ? 'File order' : 'Shuffle'}
         </button>
-        <button className="btn" onClick={() => { setAllOpen((v) => !v); setOpen(new Set()) }}>
-          {allOpen ? 'Hide answers' : 'Show answers'}
+        <button type="button" className="btn" onClick={() => openOnly(() => !everyOpen)}>
+          {everyOpen ? 'Hide answers' : 'Show answers'}
         </button>
       </div>
-      {(seed ? [{ title: null, questions: shuffled(flat, seed) }] : groups).map((g, gi) => {
+      {visible.length === 0 && <p className="muted">No questions match these filters.</p>}
+      {(view.shuffle ? [{ title: null, questions: shuffled(flat, view.shuffle) }] : groups).map((g, gi) => {
         const qs = g.questions.filter(keep)
         if (qs.length === 0) return null
+        // The id splitSections gives this `## ` heading, as in the viewer, so a `#section` link (a search hit) lands here.
         return (
-          <section key={gi}>
+          <section key={gi} id={g.title ? 'sec-' + slug(g.title) : undefined}>
             {g.title && <h2>{g.title}</h2>}
             {qs.map((q, i) => {
-              const shown = allOpen !== open.has(q.id) // a card's own toggle flips whatever Show/Hide answers set
+              const open = showing.has(q)
+              const t = tagKeys(q)
               const h = histOf(q)
               const last = h?.history[h.history.length - 1]
               const src = sources.get(q.id)
@@ -125,16 +197,20 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
                   <div className="meta">
                     {h && <GradeChip g={lastGrade(h)} title={last ? `last ${last[0]}` : undefined} />}
                     {h && h.history.length > 1 && <span className="hist">{h.history.slice(-6).map(([, g]) => g).join(' ')}</span>}
-                    {q.topic && !topic && (
-                      <button className="chip" onClick={() => setTopic(splitTopic(q.topic).main)} title={`${q.topic} — click to show only this topic`}>
+                    {q.topic && !view.topic && (
+                      <button type="button" className="chip" onClick={() => go({ topic: t.topic })} title={`${q.topic} — click to show only this topic`}>
                         {splitTopic(q.topic).main}
                       </button>
                     )}
-                    {q.lec && <span className="chip">lec {q.lec}</span>}
-                    {q.type && <span className={'chip type-' + q.type}>{q.type}</span>}
-                    <button type="button" className="link" aria-expanded={shown} onClick={() => toggle(q.id)}>{shown ? 'hide' : 'answer'}</button>
+                    {q.lec && !view.lec && (
+                      <button type="button" className="chip" onClick={() => go({ lec: t.lec })} title={`Lec ${q.lec} — click to show only this lecture`}>lec {q.lec}</button>
+                    )}
+                    {q.type && !view.type && (
+                      <button type="button" className={'chip type-' + q.type} onClick={() => go({ type: t.type })} title={`${q.type} — click to show only this type`}>{q.type}</button>
+                    )}
+                    <button type="button" className="link" aria-expanded={open} onClick={() => openOnly((x) => showing.has(x) !== (x === q))}>{open ? 'hide' : 'answer'}</button>
                   </div>
-                  {shown && (
+                  {open && (
                     <div className="ans">
                       <Md text={q.answer} path={path} />
                       {src && <div className="src"><a href={hrefFor(src.path)}>{src.title}</a></div>}
