@@ -58,6 +58,8 @@ or stages the one missing piece asked for (for CPSC 310, also an outline the dec
      file's header), then write `courses/<CODE>/lectures/_NN-<slug>.md` (or
      `courses/<CODE>/readings/_<slug>.md` for a reading) the same way morning-check §7 does: a
      plain-sentence outline in slide order (ASIA 250 also gets a `## Likely quiz targets` line).
+     Then record it as pulled: run the same digest command with `--mark <KEY>` added, using the key the list
+     printed (`COURSE:item`). An item left unmarked is listed again on the next run.
    - **PHIL 385:** no slides or recordings, ever — there's nothing to stage. Instead read the
      reading assigned for that date straight from `courses/PHIL385/00-syllabus.md`'s schedule and
      name it for him, same as morning-check §7.
@@ -109,13 +111,13 @@ Local only, no fetch — this is a read, not a sync:
 ## "fetch canvas" (after a brief said Canvas was signed out)
 The morning check cannot sign in for him: passwords are never typed, and CWL's Duo step needs
 his phone. Once he has signed in at canvas.ubc.ca in Chrome, this re-runs only the Canvas half:
-1. Open the Canvas tab exactly as morning-check SKILL.md §2 Path B, steps 1–2. If
+1. Open the Canvas tab exactly as morning-check SKILL.md §2 (the logged-in Chrome session), steps 1–2. If
    `get_page_text` still shows the CWL login page, say "still signed out" and stop.
 2. §2 steps 3–5: `canvas_fetch.js`, read the chunks back, `canvas_digest.py`. Then the §7
    materials pull (`canvas_materials.js` → `canvas_materials_digest.py` → stage any new deck or
-   reading as `_NN-<slug>.md`), because the signed-out morning skipped that too.
-3. Apply the morning-check rules to what the digest prints: a new hard date goes to `ledger.md`,
-   Things3 (`things_add.py`, always with tags) and `term.py`; a changed grade updates the
+   reading as `_NN-<slug>.md` → `--mark` it), because the signed-out morning skipped that too.
+3. Apply the morning-check rules to what the digest prints: a new hard date goes to `ledger.md`'s Term
+   calendar (with a Kind when it is a countdown date) and to Things3 (`things_add.py`, always with tags); a changed grade updates the
    ledger's Grades so far table; anything labelled bonus becomes a Plan-today to-do.
 4. Append `## Re-run HH:MM — Canvas` to today's `routines/runs/<date>-morning.md` with the
    Canvas block in the normal format, add a Session-log row to `ledger.md` if anything durable
@@ -127,7 +129,7 @@ his phone. Once he has signed in at canvas.ubc.ca in Chrome, this re-runs only t
   deck and publish), this skill never writes to `ledger.md`, Things3, or `publish.sh` — it only stages `_NN-*.md`
   pre-lecture files (git-ignored routine data stays git-ignored; the `_NN` files themselves are
   tracked, same as morning-check produces) and reads what already exists. Logging a lecture is
-  still `log <CODE> lec N`; grading a deck is tapping O, ~ or X on the deck page and saying "grade my deck",
+  still `log <CODE> lec N`; grading a deck is ticking each answer's key points on the deck page and saying "grade my deck",
   or pasting the grades (quiz-me skill).
 - If a Chrome step here needs a domain permission prompt and none appears (STAT 251/ASIA
   250 path), retry up to 3 times before telling him it's blocked — see morning-check

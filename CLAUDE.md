@@ -62,10 +62,15 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    questions logged is a gap.
 
 7. **Posted material is pulled before class** (Matt, 2026-09-11: "today for whatever lecture, here's the
-   slide summary"). The morning check stages whatever is posted as `lectures/_NN-<slug>.md` (plain-sentence
-   outline + 3 pre-lecture questions): CPSC 310 reader chapters and decks via `prelecture.py`; STAT 251,
-   ASIA 250 decks and readings via `canvas_materials.js` → `canvas_materials_digest.py` →
-   `canvadoc_text.js` (all in the morning-check scripts dir; the `.js` files run in the Chrome Canvas tab).
+   slide summary"). The morning check stages whatever is posted as `lectures/_NN-<slug>.md`, a plain-sentence
+   outline (no pre-lecture questions since 2026-10-06, Matt: the evidence for them with real lectures is weak).
+   CPSC 310 goes through `prelecture.py`: before the deck is posted (decks land about 10:40–12:00 on lecture day)
+   the outline comes from the reader chapter whose title best matches the lecture's, staged with
+   `prelecture.py --chapter N URL` and named, with the reason, in the outline's first line; the Tue/Thu 12:30
+   scheduled task `cpsc310-midday` ("fetch pre-lecture CPSC310") then rebuilds it from the deck. STAT 251 and
+   ASIA 250 decks and readings go `canvas_materials.js` → `canvas_materials_digest.py` → `canvadoc_text.js`, then
+   `canvas_materials_digest.py --mark <keys>` once the outline is written, so an item whose pull failed comes
+   back the next day (all in the morning-check scripts dir; the `.js` files run in the Chrome Canvas tab).
    PHIL 385 has nothing to pull. Logging a lecture consumes its outline: deck-only claims become
    questions and clarifications, then the `_NN` file is deleted. If he logs a lecture and no outline
    exists, pull the deck first with the `canvadoc_text.js` recipe. Big readings: only the assigned pages.
@@ -91,12 +96,28 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
 
 ## When he says "quiz me" / "test me" / pastes grades back ("1 O 2 ~ 3 X")
 Run the `/quiz-me` skill (`.claude/skills/quiz-me/SKILL.md`). `quiz_pick.py` chooses an interleaved
-session weighted by `ledger.md` (overdue → `X` → `~` → unquizzed, ×2 near that course's exam); I ask
-one question at a time and grade `X` / `~` / `O`; then `quiz_grade.py "1:O 2:X …"` moves the ledger
-rows by the ladder below, mirrors `01-topics.md`, logs per-question history in
-`routines/quiz-state.json`, and names the topics that need more questions — write those before the
-session ends. **Never update ledger rows by hand; the script owns them.** `quiz_pick.py --transit`
-builds the 6-question deck the morning check sends to his phone. **Long problems** (Matt, 2026-10-05: short ones
+session weighted by `ledger.md` (most overdue for its interval → `X` → `~` → unquizzed, ×2 near that course's
+exam; topics frozen after a non-cumulative exam are skipped, and the week before an exam sweeps in everything it
+covers). Look-alike topics (the `## Look-alikes` table in each `01-topics.md`) come back to back, and the day after
+a logged lecture the first session opens with 2 minutes of free recall. I ask one question at a time (Matt
+approved all of this on 2026-10-06):
+- He answers with a confidence of 1–3 ("B, 2"); a confident miss gets one line on why he was sure.
+- A miss gets a one-letter cause (c concept, f forgot, m misread, k careless, s slow) and comes back 2–3
+  questions later until he gets it right; only the first try is graded.
+- An apply or derive question he last got right comes back as a variant with new numbers or code.
+- A CPSC 310 or PHIL 385 question he has missed before comes as multiple choice built from his own wrong answers.
+
+Then `quiz_grade.py "1:O3 2:X3/c 3:~2v"` (grade, confidence, `v` for a variant, `/` and the cause; `--said N "…"`
+keeps his wrong answer and `--why N "…"` why he was sure) moves the ledger rows by the ladder below, logs
+per-question history in `routines/quiz-state.json`, prints calibration and misses by cause, and names the topics
+that need more questions — write those before the session ends. **Never update ledger rows by hand; the script
+owns them.** `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone: each answer
+shows as a checklist of key points whose ticks set the grade, and "grade my deck" runs
+`quiz_grade.py --transit <deck date>` on the taps. `quiz_pick.py --sprint` is the STAT 251 "which method?" drill:
+10 stems in 3 minutes, method and first setup line only. **FSRS shadow trial** (from 2026-10-06):
+`fsrs_shadow.py` replays the history through FSRS-6 beside the ladder and writes nothing; the Sunday weekly brief
+carries its verdict until it decides, and FSRS replaces the ladder only if it predicts his misses better.
+**Long problems** (Matt, 2026-10-05: short ones
 "on the bus", longer ones "on the friday study sessions", or "I'll just say the steps") never go in that deck; a
 normal quiz asks them as steps only, the method and the setup without the arithmetic; and the Friday revision
 block opens with `quiz_pick.py --long`, four of them worked in full on paper against a clock. Last step of every graded session:
@@ -110,6 +131,13 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
 | `O` solid | 1 | +7 days |
 | `O` solid | 2 | +16 days |
 | `O` solid | 3+ | +35 days |
+
+Two adjustments follow the ladder. Next is never later than 4 days before the next exam that covers the topic
+(the day before that exam once that day has passed), and a gap of 3 days or more moves up to 15% either way, at
+least a day, to the day with the fewest topics due. From 7 days before an exam, every topic it covers is due
+unless it was reviewed that week. After a non-cumulative exam (PHIL 385) its topics freeze until a later exam of
+the course covers them. Details: the quiz-me SKILL, "What the scripts decide". Each due-now block in `ledger.md`
+also ends with a readiness line per exam within 21 days: the share of its questions he would likely get right.
 
 ## Course-specific rules
 - **CPSC 310** — 65% of the grade is two closed-book exams (25% mid + 40% final); the project
@@ -126,13 +154,13 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
   deliverables — the bucket grading means extra hours past "meets spec" return nothing.
   **Intel (2026-09-10):** 2025W sections (Chin, Bradley, Kerr) averaged ~82 with ~14% at 90+.
   The course reader (ubccpsc.github.io/310/textbook) is the reading list; exam terminology comes
-  from it and the slides. Turn the assigned reader chapter's headings into the three pre-lecture
-  questions.
-  **Course site map (2026-09-11):** of the four pages only **Schedule** has slides (the lecture title
-  becomes a PDF link at `/310/26w1/lectures/NN-*.pdf` after class); **Course Materials** unit pages
-  map lecture → "what it answers" → reader chapter; **Reader** is the textbook; **Syllabus** is
-  policies. Canvas is unused. `cpsc310_site.py` (morning-check scripts) does the fetching: no flags
-  = diff + next lecture, `--lecture N` = that deck's text + reader URLs, `--all` = the whole term.
+  from it and the slides. Nothing on the site maps lectures to reader chapters since 2026-09-28, so a
+  lecture's chapter is the one whose title best matches it; the pre-lecture outline names it and why.
+  **Course site map (2026-10-06):** only **Schedule** has slides (the lecture title becomes a PDF link at
+  `/310/26w1/lectures/NN-*.pdf` on lecture day, about 10:40–12:00); the Course Materials unit pages were
+  removed on 2026-09-28; **Reader** is the textbook, and its sidebar is the chapter list `prelecture.py`
+  prints; **Syllabus** is policies. Canvas is unused. `cpsc310_site.py` (morning-check scripts) does the
+  fetching: no flags = diff + next lecture, `--lecture N` = that deck's text, `--all` = the whole term.
   The **Project** page (`/26w1/project/`, InsightUBC) links each deliverable spec as it is released;
   the script flags new ones. Deliverables are 50% autograded (best commit on `main` before the
   deadline) + 50% reflection, so the "meets spec" bar is visible on every push — stop there.
@@ -148,7 +176,7 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
   disagreements) only when there is something, and `## Your notes` only if he sent some. Paraphrase, never
   transcribe: the decks say "do not distribute on non-UBC domains" and the repo is public, so the PDFs stay
   git-ignored in `routines/slides/cpsc310/` and no slide is copied wholesale. Questions still come from the
-  deck *and* the reader chapter. A deck posted before class can be logged that morning; anything from class
+  deck *and* the reader chapter. A deck posted before class can be logged before class; anything from class
   is added afterwards under In class.
 - **STAT 251** — 33% of the grade is non-exam work (clicker in class, labs in person, WeBWorK,
   written assignments and pre-lab quizzes at home) plus a 1% Piazza bonus. Those points are not negotiable; ask
@@ -162,7 +190,8 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
 - **PHIL 385** — 45% is three MC exams of **7 questions each**, marked on factual accuracy
   alone. Each question ≈ 2.1% of his course grade. Drill hard, factual, and exhaustive: names,
   dates, which pseudonym wrote what, which argument appears in which essay, exact terminology.
-  Exams 2–4 are *not* cumulative, so scope each drill to the ~3 weeks it covers. There are **no
+  Exams 2–4 are *not* cumulative: the quiz scheduler freezes each past exam's topics, so drills cover only
+  the current exam's weeks until the cumulative final brings them back. There are **no
   slides, no recordings and no instructor notes** — his lecture pages are the only record, so
   chase him if a lecture goes unlogged. One in-term exam is a 500-word essay exam graded partly
   *relative to peers* on clarity and cogency: drill structure (position → numbered argument →
@@ -201,8 +230,9 @@ deliverable, an assignment — just help him make it good.
 (`.claude/skills/morning-check/SKILL.md`) has the exact recipe: run `scripts/canvas_fetch.js` in
 a canvas.ubc.ca tab, read the result back through the DOM in chunks, then
 `scripts/canvas_digest.py` diffs against `routines/snapshots/`. Course IDs are in the skill.
-UBC blocks student Canvas access tokens (tried 2026-09-10), so the Chrome path is the only path;
-`scripts/canvas_fetch.py` stays as a fallback if that ever changes. STAT 251 lab section: L1K.
+UBC blocks student Canvas access tokens (tried 2026-09-10), so the Chrome path is the only path. A request
+that fails keeps that section's previous snapshot and adds one Heads-up line, so a hiccup never floods the next
+brief with fake NEW items. STAT 251 lab section: L1K.
 Gmail connector still works for notifications: `from:instructure.com`, `from:piazza.com`.
 Piazza and PrairieLearn open in his Chrome too, but only in a session where the Claude-in-Chrome
 extension has been granted those sites (canvas.ubc.ca is always-allowed; piazza.com and
@@ -213,9 +243,15 @@ to the Gmail digest, PrairieLearn is skipped, one line under Heads-up either way
 `CPSC 310`/`STAT 251`/`PHIL 385`/`ASIA 250` under area `UBC`; areas `Career`, `Personal`). **Things3 is a plan, not a pile (2026-09-11):** ~6 h of work a day outside class. Every to-do carries
 an estimate tag (`15m` `30m` `1h` `2h` `3h`, `event` = fixed slot) and a priority tag (`P1` must ·
 `P2` this week · `P3` whenever). `scripts/things_plan.py` runs in every morning check (and on "plan my
-day"): it creates the lecture close-out, PREP-ladder, and weekly-novel to-dos itself, fills the 6 h
+day"): it creates the lecture close-out, PREP-ladder, weekly-novel, daily habit (bus deck, quiz before bed;
+an open one from an earlier day is cancelled) and PHIL 385 reading Read/Log to-dos itself, fills the 6 h
 by priority, schedules the winners Today and the losers Tomorrow (rollover count in
-`routines/plan-state.json` so nothing starves), and prints the brief's **Plan today** block. Rules:
+`routines/plan-state.json` so nothing starves), and prints the brief's **Plan today** block. That block gives
+each P1 a start time from 09:00 (from now on a later run) that skips lecture and lab slots and never runs past
+22:30, a Cushion line for each countdown item within 14 days (hours needed against hours free, ⚠ when short),
+"First thing tomorrow", and one "Time check" question: his answer goes in with `things_plan.py --actual
+"TITLE=45m"`, and after 5 answers for an estimate tag that tag's estimates scale to his real times. The day
+before an exam gets half the budget unless he sets one. Rules:
 anything added to Things3 gets both tags; never hand-schedule into Today — set when/deadline/tags
 and let the planner decide (a *future* date set by hand holds unless the deadline is within a day; to
 lighten a day, move items out and run `things_plan.py --budget H` — the trim is remembered for that
@@ -225,15 +261,18 @@ Friday revision block, Saturday groceries) come from the planner's `WEEKLY` tabl
 `plan-state.json`); Sundays 15:00 (scheduled task `weekly-plan`, or "plan my week") `things_plan.py --week` places next week's dated and
 undated-P1 work on days by deadline and rhythm — weekly owns when-dates, daily owns Today/Tomorrow, `pin`
 tag = never move; a ⚠ OVER BUDGET line is the one decision to put to him. Knobs
-(budget per weekday, 1 h Career reserve, 1.5 h P3 cap) sit at the top of the script. One-time
+(budget per weekday, 1 h Career reserve, 1.5 h P3 cap, the exam-eve factor, the 09:00–22:30 day, the cushion
+window, the samples needed before estimates scale) sit at the top of the script. One-time
 course reference info (office hours, links, policies, schedules) lives in
 `courses/<CODE>/03-logistics.md` — except tool URLs (Canvas, WeBWorK, PrairieLearn, Piazza, readers), which live in
 root `links.md`: the notes site shows them on Home and each course page, and `things_plan.py` appends the
 matching rows to a to-do's notes (idempotent, every run; `--no-links` skips it). Add a URL there, nowhere else — the daily brief never repeats it; answer from there when he asks.
 A scheduled task runs the skill daily at 06:35 while the app is open; outputs land in
 `routines/runs/`. When he asks "what's new", run the skill. `scripts/term.py` prints unlogged
-lectures and exam/deliverable countdowns keyed to the PREP.md ladders (T-10 starts Phase 2) —
-every brief chases unlogged lectures. Canvas grades are tracked per run; the table is in `ledger.md`.
+lectures and the countdowns: every row of the ledger's Term calendar that has a Kind (exam, deliverable,
+paper, assignment, admin), with the PREP.md ladder steps (T-10 starts Phase 2). That table is the only copy
+of the term dates. Every brief chases unlogged lectures. Canvas grades are tracked per run; the table is in
+`ledger.md`.
 
 ## Notes browser
 `notes-app/` is a Vite + React + TypeScript app (Matt's choice, 2026-09-11) that renders
@@ -249,6 +288,7 @@ checklist that renders on the course Overview (hidden in the syllabus view); log
 table; anything kept only for Claude (office hours, Canvas IDs, site maps) goes under `## Reference (for Claude)`,
 which the viewer folds shut. No provenance lines ("pulled from…") in either. Home's **Coming up** panel parses the ledger's `## Term calendar` table by the Date cell
 (`Fri Sep 25, 18:00`; a `→` range keeps its end; `~` = approximate) — keep that cell format when adding rows.
+Its fifth column, Kind, marks the countdown rows `term.py` reads; a row with a Kind needs one weekday date.
 The ledger page (`#/ledger.md`) renders as a dashboard: a live **Due now** panel titled `Due now · N topics · <date>`, then All topics, the hard-dates table and the Session log, each paged 10 rows at a time; every markdown table over 10 rows pages the same way. A link can target a section as `#/<file>.md#<heading-slug>`, where the slug is the heading lowercased with each run of non-alphanumerics turned into `-`. The sidebar has a Light / Auto / Dark switch stored in `localStorage` under the key `theme`; Auto follows the OS setting. A gear left of the search opens Settings: the same theme switch plus "Secret visuals", a Minecraft-style button that cycles the content through abstract bars, blur and wireframe looks (key `visual`; the popover stays readable and every link keeps working), a Colours row with five palettes of the same soft look (Mist is the default, then Sage, Lavender, Sand and Slate; key `palette`, applied as `data-palette` on the root), and a Version row showing the build time (no Check now button, Matt 2026-10-02). **The site keeps itself current** (Matt, 2026-09-21): the build writes `version.json` next to the bundle, and an open tab compares it with its own build stamp at load, every five minutes and whenever the tab comes back into view. A newer build reloads a hidden or just-opened tab on the spot and puts the page back at the same scroll position; a tab he is looking at gets a bottom-right toast with Reload now and Hide and reloads the next time he opens another page (a jump within the same page does not count). A tab reloads for a given build at most once every few minutes, so a lagging cache cannot loop. **Wide screens get a Notion-style section rail** (Matt, 2026-10-02): thin bars at the right edge of any page with three or more sections, no box around it, with the section names shown faintly beside the bars when there is room and brighter on hover; a click jumps to the section. Under 1000px the old chip row shows instead. On the ledger page, Grades so far renders as course chips plus one small chip per scored item (the Score cell stays free text in the file; `parseGrades` in `markdown.ts` reads `Name N/M` fragments and drops "total hidden"), the Session log renders as day-grouped bullets with the first sentence as the title and the rest as sub-bullets behind a "more" link, the `### Recurring series` table under the term calendar is Series | Course | When | Note with a weekday rule (`Fridays, 23:59`) and one short note, never a list of dates, and ISO dates render as `Sep 29`. Question banks filter by section (the `## ` group titles) from the dropdown and by topic from the chip on a card. Once its answer is shown, a question card links to the lecture or reading notes page it comes from (`notes-app/src/sources.ts`, the same rules as `attach_sources` in `quizlib.py`), and `quiz_grade.py` ends by listing the pages behind the `X` and `~` grades. `links.md` renders as link groups per course (`LinksView`); its table keeps the planner's fourth column, which the site never shows. Question banks render as cards with
 answers hidden until
 clicked; `## Your notes` / `## Raw` sections fold into a collapsible; search is in the top bar
@@ -257,7 +297,8 @@ The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11)
 `main` redeploys the app to https://matthlh.github.io/school-3-1/ via `.github/workflows/pages.yml`.
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
 passcode links stay out of the repo (point at the Canvas Zoom tab instead).
-`publish.sh` (repo root) commits whatever changed, fetches GitHub's main and rebases onto it if another
+`publish.sh` (repo root) runs only on main (on any other branch or a detached HEAD it stops before
+committing, since its push sends main) and there commits whatever changed, fetches GitHub's main and rebases onto it if another
 session or a web edit moved it, then pushes; on a real conflict it aborts, keeps the local commit and names
 the files (fix by hand, rerun). The morning check, quiz-me and lecture logging run it as their last step, so
 the site updates itself. Outside those, commit/push only when asked. **Never add a `Co-Authored-By` /

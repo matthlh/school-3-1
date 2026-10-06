@@ -32,8 +32,11 @@ morning brief never repeats), and `lectures/`.
 |---|---|
 | `log CPSC310 lec 7` | file your notes, extract questions, schedule them |
 | `quiz me` | mixed revision across everything due, weighted to what you've missed and to the nearest exam (`/quiz-me`) |
-| `quiz me on STAT251` | scoped to one course; `quick quiz` = 5 questions |
-| `grade my deck` / `1 O 2 ~ 3 X` | Grades the transit deck. Tap O, ~ or X on each card of the deck page, then say `grade my deck`, or paste the grades from your phone. Pasted grades work for any quiz session too. The ledger updates. |
+| `quiz me on STAT251` | scoped to one course; `quick quiz` = 5 questions. Answer with how sure you are (1–3), give a one-letter cause after a miss; a miss comes back until you get it |
+| `STAT sprint` | 10 STAT 251 stems in 3 minutes: name the method and write the first setup line only (`quiz_pick.py --sprint`) |
+| `grade my deck` / `1 O 2 ~ 3 X` | Grades the transit deck. Tick each answer's key points on the deck page (the ticks set the grade), then say `grade my deck`, or paste the grades from your phone. Pasted grades work for any quiz session too. The ledger updates. |
+| `took 45m on <to-do>` | answers the brief's Time check (`things_plan.py --actual`); after 5 answers per estimate tag, estimates scale to your real times |
+| `is FSRS better yet` | the FSRS shadow trial against the ladder (`fsrs_shadow.py`); it writes nothing |
 | `what's due?` | read the ledger, list due/overdue topics |
 | `how am I doing` | weakest topics, what needs more questions, exam countdown |
 | `/morning-check` / `what's new` | sweep Things3, Canvas (+grades), PrairieLearn, Piazza, Gmail; rebuild today's Things3 plan; brief |

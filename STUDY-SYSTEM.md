@@ -27,8 +27,9 @@ the notes are questions. Packaging doesn't survive at all — replace it with sp
 ## The loop
 
 ### 1. Pre-lecture — 90 seconds
-Open the slides. Read **titles only**. Write 3 questions you can't yet answer at the top of
-your page. Don't read the content. You're setting up a pre-test, not previewing.
+Open the staged outline (or the slides). Read **titles only**, so the lecture lands on a frame you have
+already seen. Pre-lecture questions were dropped on 2026-10-06: with real lectures the evidence for them is
+weak, and the day-after free-recall opener does that work instead.
 
 ### 2. In lecture — your half page, restructured
 Same volume you planned. But split the page into two columns:

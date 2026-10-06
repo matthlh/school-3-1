@@ -129,7 +129,7 @@ It prints the brief's **Week ahead — x of 42 h** block (one line per day; `⚠
 The weekly-plan task posts it as its own ≤12-line brief (block + hard dates in 14 days + unlogged) and
 writes `routines/runs/<date>-week.md`; the daily run never calls `--week`. On any other day, "plan my week" =
 `--week --next-week` (the coming Mon→Sun); add `--dry-run` to preview.
-Through Sun Nov 1, the first 4 weeks of the FSRS shadow trial, the weekly-plan brief also carries the one-line
+Until the FSRS shadow trial decides (it needs about 30 scored reviews and had 5 on 2026-10-06), the weekly-plan brief also carries the one-line
 verdict that `python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/fsrs_shadow.py"` prints last.
 
 After it runs:
@@ -195,17 +195,10 @@ Course IDs: ASIA 250 `193131` · CPSC 310 `192903` · PHIL 385 `192607` · STAT 
 **Ignore** `183899` Science Co-op Workshops and `136962`
 Academic Integrity — Matt's call, 2026-09-10.
 
-**Path A — Canvas access token. NOT AVAILABLE: UBC blocks student token creation (Matt tried
-2026-09-10). Kept only in case that changes.** If `~/.config/canvas/token` ever exists, run:
-```bash
-python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/canvas_fetch.py"
-```
-It does not record failed requests yet, so `canvas_digest.py` stops on its output. It needs the
-same `failed` list as `canvas_fetch.js` before it can be used. No browser needed. (Matt creates the token himself: Canvas → Account → Settings →
-Approved Integrations → "+ New Access Token", then pastes it into that file. Never ask him to
-paste it into chat.)
+UBC blocks student Canvas access tokens (Matt tried 2026-09-10), so his logged-in Chrome session is the
+only path; the token-based fetcher was deleted on 2026-10-06.
 
-**Path B — logged-in Chrome session (works today).**
+**The logged-in Chrome session.**
 1. `ToolSearch` → `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__get_page_text,mcp__claude-in-chrome__tabs_close_mcp,mcp__claude-in-chrome__browser_batch`
 2. `tabs_context_mcp {createIfEmpty:true}` → `navigate` that tab to `https://canvas.ubc.ca/`.
    Confirm the Dashboard loads (get_page_text shows course cards). If it's a CWL login page,
@@ -899,6 +892,18 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-10-06 (Matt: "make all the changes above"):
+  - The term dates live only in the ledger's Term calendar. A Kind column marks the countdown rows, `term.py`
+    reads them, and the STAT 251 written assignments get their own ladder.
+  - Canvas: a failed request keeps that section's previous snapshot and adds one Heads-up line. Materials stay
+    listed until `--mark` runs after the pull.
+  - CPSC 310: before the deck, the reader chapter whose title matches the lecture's is staged with
+    `prelecture.py --chapter`, and the Tue/Thu 12:30 `cpsc310-midday` task rebuilds the outline from the deck.
+    Pre-lecture questions are gone for every course.
+  - The planner adds daily habits, PHIL 385 reading pairs, start times that skip lectures and labs, Cushion
+    lines, First thing tomorrow, a Time check answered with `--actual`, and half a budget on exam eves.
+  - The transit deck shows each answer as key points whose ticks set the grade. The weekly brief carries the
+    FSRS shadow verdict until it decides.
 - 2026-10-02 (Matt: "is there a way to combine this check with that? Like check for new emails,
   auto apply, check for updates and responses"): §4b added. The morning check now reads the Career
   repo's applications ledger, pastes its Career block (what closes in 3 days, interviews, quiet

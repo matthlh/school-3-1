@@ -64,7 +64,7 @@ didn't). Twenty-five lines max:
    lecture close-outs, exam-ladder steps (T-10 gap check, T-3 mock, T-1 rationale…) and the weekly
    novel pages are created as to-dos automatically. Work the list top to bottom; check things off.
 2. **Rolled to tomorrow** — what was in Today and didn't fit. It competes again tomorrow with a bump.
-3. **Today's classes** + **Review** — pre-questions for today's lectures and up to 3 due revision questions.
+3. **Today's classes** + **Review** — the outline for today's lectures and up to 3 due revision questions.
 4. **New since yesterday** — new Canvas / PrairieLearn / Piazza items, grades posted, emails that matter.
 5. **Heads-up** — due in 2–7 days, date conflicts, **unlogged lectures**, overdue revision topics.
 
