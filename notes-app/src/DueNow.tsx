@@ -41,18 +41,34 @@ function readDue(ledger: string): Due {
 }
 
 /**
- * What follows "Due now" in a panel title: "52 topics · Tue Oct 6", "nothing due · Tue Oct 6", or "unreadable". A block
- * written before today says how old it is, muted: "(2 days old)".
+ * What follows "Due now" in a panel title: "52 topics · Tue Oct 6", "nothing due · Tue Oct 6", or "unreadable", then the
+ * block's age when it is old (BlockAge).
  */
 export function DueDetail({ due }: { due: Due }) {
   if (!due.ok) return <>unreadable</>
   const { items, date } = due.block
-  const age = daysBetween(date, todayISO())
   return (
     <>
       {items.length ? `${items.length} topic${items.length === 1 ? '' : 's'}` : 'nothing due'} · {formatDate(date)}
-      {age > 0 && <span className="stale"> ({age} day{age === 1 ? '' : 's'} old)</span>}
+      <BlockAge due={due} />
     </>
+  )
+}
+
+/**
+ * "(2 days old)", muted, after `label`, when the block was written before today; nothing for today's block or one that
+ * could not be read. The Due now titles, a course page's Revision panel and a Topics tab show it, so an old block's
+ * marks are not taken for today's.
+ */
+export function BlockAge({ due, label = '' }: { due: Due; label?: string }) {
+  if (!due.ok) return null
+  const age = daysBetween(due.block.date, todayISO())
+  if (age <= 0) return null
+  const days = `${age} day${age === 1 ? '' : 's'}`
+  return (
+    <span className="stale" title={`The Due now block was written on ${formatDate(due.block.date)}, so its due, sweep and frozen marks are ${days} old.`}>
+      {label} ({days} old)
+    </span>
   )
 }
 

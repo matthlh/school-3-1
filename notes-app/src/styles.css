@@ -281,7 +281,7 @@ article .topics tr:first-child td { border-top: 0; }
 .readiness b { font-weight: 600; }
 .due-error { margin: 6px 0; padding: 8px 12px; border-radius: 9px; background: var(--bad-bg); color: var(--bad); font-size: 13.5px; }
 .due-error p { margin: .25em 0; }
-.stale { color: var(--muted); font-weight: 400; }   /* "(2 days old)" after the date of a block written before today */
+.stale { color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }   /* "(2 days old)": a block written before today (BlockAge) */
 /* Calibration under the ledger's All topics heading: a small tinted panel per course, one row per confidence */
 .calibration { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 4px 0 12px; }
 .calibration .panel { margin: 0; padding: 8px 12px 7px; background: var(--tint); border-color: var(--line); }

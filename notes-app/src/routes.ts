@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { slug, splitTopic } from './markdown'
+import { slug } from './markdown'
 
 export type Route =
   | { kind: 'home' }
@@ -37,9 +37,11 @@ const NAVIGATED = 'navigated'
 /**
  * Go to `href`, adding a Back step; the step being left remembers its scroll position. With `replace` the current step
  * changes instead: opening and closing answers is not something Back should step through. Either way the browser fires
- * no hashchange, and useRoute hears NAVIGATED at once, so the next click already builds on this URL.
+ * no hashchange, and useRoute hears NAVIGATED at once, so the next click already builds on this URL. An `href` that is
+ * already the address changes nothing, so clicking the pressed filter again adds no Back step.
  */
 export function navigate(href: string, replace = false) {
+  if (new URL(href, window.location.href).href === window.location.href) return
   if (replace) history.replaceState({ ...history.state, y: window.scrollY }, '', href)
   else { rememberScroll(); history.pushState(null, '', href) }
   window.dispatchEvent(new Event(NAVIGATED))
@@ -106,7 +108,8 @@ type Ranges = [number, number][]
 export interface BankView {
   /** A `## ` section's key (sectionKeys in QuestionBank.tsx), or '' for every section. */
   section: string
-  /** The filters as slugs, '' for none: topicKey of a Topic tag, then the slugs of a Lec tag and a Type tag. */
+  /** The filters as slugs, '' for none: topicKey of the ledger topic a Topic tag names, then the slugs of a Lec tag and a
+   *  Type tag. */
   topic: string
   lec: string
   type: string
@@ -119,8 +122,9 @@ export interface BankView {
 
 const WHOLE_BANK: BankView = { section: '', topic: '', lec: '', type: '', only: 'all', shuffle: 0, open: [] }
 
-/** The slug a topic goes by in a bank URL: its main text without the trailing parenthetical. */
-export const topicKey = (topic: string) => slug(splitTopic(topic).main)
+/** The slug a topic goes by in a bank URL, parenthetical included, so ledger rows that differ only inside their
+ *  parentheses ("Exam review (Ch 1–3)", "Exam review (Ch 4–6)") keep apart. Every topic link and the bank's filter use it. */
+export const topicKey = (topic: string) => slug(topic)
 
 /** Ascending numbers → runs: [3, 7, 8, 9] → [[3, 3], [7, 9]]. */
 export function toRanges(ns: number[]): Ranges {

@@ -117,8 +117,10 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
   }
   const visible = flat.filter(keep)
   const everyOpen = visible.length > 0 && visible.every((q) => showing.has(q))
-  // The toolbar names an active filter as the cards write it; one that no question matches shows its slug.
-  const topicName = view.topic && splitTopic([...topicOf.values()].find((t) => t && topicKey(t) === view.topic) ?? view.topic).main
+  // The toolbar names an active filter as the cards write it (a topic by its main text, in full on hover); one that no
+  // question matches shows its slug.
+  const topicText = view.topic && ([...topicOf.values()].find((t) => t && topicKey(t) === view.topic) ?? view.topic)
+  const topicName = topicText && splitTopic(topicText).main
   const lecName = view.lec && (flat.find((q) => tagKeys(q).lec === view.lec)?.lec ?? view.lec)
   const typeName = view.type && (flat.find((q) => tagKeys(q).type === view.type)?.type ?? view.type)
   const seg = (m: Mode, label: string, n: number) => (
@@ -149,7 +151,7 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
         {view.section && section < 0 && (
           <ActiveFilter label={`Section: ${view.section}, not found`} title="No section has this key — click to show every section again" onClear={() => go({ section: '' })} />
         )}
-        {topicName && <ActiveFilter label={`Topic: ${topicName}`} title={`${topicName} — click to show every topic again`} onClear={() => go({ topic: '' })} />}
+        {topicName && <ActiveFilter label={`Topic: ${topicName}`} title={`${topicText} — click to show every topic again`} onClear={() => go({ topic: '' })} />}
         {lecName && <ActiveFilter label={`Lec: ${lecName}`} title={`Lec ${lecName} — click to show every lecture again`} onClear={() => go({ lec: '' })} />}
         {typeName && <ActiveFilter label={`Type: ${typeName}`} title={`${typeName} — click to show every type again`} onClear={() => go({ type: '' })} />}
         <span className="spacer" />

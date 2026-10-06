@@ -2,7 +2,7 @@ import { splitRow, splitSections, type Grade, type TopicRow } from './markdown'
 import { courseOf } from './files'
 import { loCodes, matchTopic } from './stats'
 import { GradeChip } from './ui'
-import { DueError, StandingCell, type Due, type Standing } from './DueNow'
+import { BlockAge, DueError, StandingCell, type Due, type Standing } from './DueNow'
 import { formatDate, isISODate } from './dates'
 import { Md } from './Md'
 import { usePager } from './Pager'
@@ -96,6 +96,7 @@ export function TopicsView({ path, text, topics, due }: { path: string; text: st
         <span><GradeChip g="X" /> missed</span><span><GradeChip g="~" /> shaky</span><span><GradeChip g="O" /> solid</span>
         <span><GradeChip g={null} /> not covered yet</span>
         <span className="hint" title={LADDER}>when do topics come back?</span>
+        <BlockAge due={due} label="Due now block" />
         <span className="muted right" title={COVERED}>{covered} of {all.length} covered</span>
       </div>
       {!due.ok && <DueError error={due.error} />}

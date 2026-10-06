@@ -19,14 +19,21 @@ const banks = readdirSync(join(root, 'courses')).sort()
 // The site's side: markdown.ts and stats.ts bundled for Node with the esbuild Vite ships.
 const { parseQuestions, questionId } = await importSite("export { parseQuestions } from './markdown'\nexport { questionId } from './stats'")
 
-// The quiz scripts' side: `_parse_bank` on each bank, as JSON. -B keeps __pycache__ out of the repo. No cap on the
-// output: the default 1 MiB would stop the deploys once the banks grow past it.
+// The quiz scripts' side: `_parse_bank` on each bank, as JSON. A question without a meta line (one that lacks
+// **Type:**, say) gets the tags ("(untagged)", "?", "recall") there and empty tags on the site; that is the same
+// missing tag, so the quiz side's defaults become empty strings here and only tags the line gives are compared.
+// -B keeps __pycache__ out of the repo. No cap on the output: the default 1 MiB would stop the deploys once the banks
+// grow past it.
 const PY = `
 import json, sys
 sys.path.insert(0, sys.argv[1])
 import quizlib
-print(json.dumps({bank: [dict(id=q["id"], question=q["q"], display=q["q_display"], answer=q["a"], topic=q["topic"], lec=q["lec"],
-                              type=q["type"], line=q["line"])
+UNTAGGED = ("(untagged)", "?", "recall")            # what _parse_bank fills in when a question has no meta line
+def tags(q):
+    t = (q["topic"], q["lec"], q["type"])
+    return ("", "", "") if t == UNTAGGED else t
+print(json.dumps({bank: [dict(zip(("topic", "lec", "type"), tags(q)), id=q["id"], question=q["q"], display=q["q_display"],
+                              answer=q["a"], line=q["line"])
                          for q in quizlib._parse_bank(f"{sys.argv[2]}/{bank}", bank.split("/")[1])]
                   for bank in sys.argv[3:]}))
 `

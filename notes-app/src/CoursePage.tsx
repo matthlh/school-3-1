@@ -3,7 +3,7 @@ import { hrefFor } from './files'
 import { afterDash, firstHeading, splitSections, type LinkRow, type TopicRow } from './markdown'
 import { EMPTY, type Tally } from './stats'
 import { LastGrade, StatBar, TopicCell } from './ui'
-import { DueError, StandingCell, type Due } from './DueNow'
+import { BlockAge, DueError, StandingCell, type Due } from './DueNow'
 import { LinkList } from './Links'
 import { Md } from './Md'
 import { usePager } from './Pager'
@@ -43,7 +43,7 @@ export function CoursePage({ code, tree, all, topics, tallies, links, due }: {
     <div className="course-grid">
       <div className="course-main">
         <section className="panel">
-          <div className="panel-head"><span>Revision</span><a href={hrefFor('ledger.md')}>ledger →</a></div>
+          <div className="panel-head"><span>Revision<BlockAge due={due} /></span><a href={hrefFor('ledger.md')}>ledger →</a></div>
           <StatBar t={tallies[code] ?? EMPTY} due={due.ok ? due.count(code) : null} />
           {!due.ok && <DueError error={due.error} />}
           {rows.length > 0 && (
