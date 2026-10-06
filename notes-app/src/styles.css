@@ -139,7 +139,7 @@ nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 
 /* == Content and markdown == */
 main { max-width: 800px; margin: 0 auto; padding: 22px 28px 90px; }
-[id^="sec-"] { scroll-margin-top: 60px; }   /* anchor jumps land below the sticky top bar */
+[id^="sec-"], .toolbar { scroll-margin-top: 60px; }   /* anchor jumps, and a bank's filter changes, land below the sticky top bar */
 h1 { font-size: 24px; margin: .2em 0 .7em; }
 h1.brand { display: flex; align-items: center; gap: 10px; }
 h2 { font-size: 18px; margin: 1.5em 0 .5em; padding-bottom: .2em; border-bottom: 1px solid var(--hair); }
@@ -254,10 +254,7 @@ a.chip.tone:hover, button.chip.tone:hover { background: var(--tint); box-shadow:
 table.topics { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 8px; }
 .topics td { padding: 4px 6px; border-top: 1px solid var(--hair); vertical-align: top; }
 .topics td:first-child { width: 30px; padding-left: 0; }
-.topics td:last-child { white-space: nowrap; text-align: right; font-size: 12.5px; padding-right: 0; }
-.topics td.due { color: var(--bad); font-weight: 600; }
-.topics td.sweep { color: var(--warn); font-weight: 600; }   /* due early: the exam-week sweep pulled it in */
-.topics td.frozen { color: var(--muted2); }
+.topics td:last-child { padding-right: 0; }   /* the standing cell (tables.css) */
 /* A topic's name links to its questions in the bank (TopicCell): body text at rest, the link colour and an underline on
    hover, wherever topics are listed (this table, Due now, the ledger's All topics). */
 a.topic-link { color: inherit; text-decoration: none; }
@@ -284,9 +281,7 @@ article .topics tr:first-child td { border-top: 0; }
 .readiness b { font-weight: 600; }
 .due-error { margin: 6px 0; padding: 8px 12px; border-radius: 9px; background: var(--bad-bg); color: var(--bad); font-size: 13.5px; }
 .due-error p { margin: .25em 0; }
-/* Why a topic is due, in the compact tables: late in red (tables.css), an exam sweep in amber; frozen is muted */
-table.due td.when.sweep, table.ledger td.next.sweep { color: var(--warn); font-weight: 600; }
-table.ledger td.next.frozen { color: var(--muted2); }
+.stale { color: var(--muted); font-weight: 400; }   /* "(2 days old)" after the date of a block written before today */
 /* Calibration under the ledger's All topics heading: a small tinted panel per course, one row per confidence */
 .calibration { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 4px 0 12px; }
 .calibration .panel { margin: 0; padding: 8px 12px 7px; background: var(--tint); border-color: var(--line); }

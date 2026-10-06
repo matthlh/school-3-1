@@ -1,7 +1,8 @@
 // Every markdown file in the workspace, pulled in through Vite's glob imports.
 // Files load as raw text; Vite hot-reloads the app when any of them changes.
 
-import { afterDash, firstHeading } from './markdown'
+import { afterDash, firstHeading, parseQuestions } from './markdown'
+import { questionId } from './stats'
 
 type Loader = () => Promise<string>
 
@@ -19,15 +20,49 @@ export const files: Record<string, Loader> = Object.fromEntries(
 
 export type Texts = Record<string, string>
 
-let allCache: Promise<Texts> | null = null
-/** Load every file once (there are a few dozen small ones); cached for the page lifetime. */
-export function loadAll(): Promise<Texts> {
-  if (!allCache) {
-    allCache = Promise.all(
-      Object.entries(files).map(async ([p, load]) => [p, await load()] as const),
-    ).then((pairs) => Object.fromEntries(pairs))
-  }
+/** Everything the site loads before it shows a page. */
+export interface Loaded {
+  /** Every file's text, by workspace-relative path. */
+  texts: Texts
+  /** routines/quiz-state.json; null where there is none (the deployed site) or it does not parse. */
+  quiz: QuizState | null
+  /** A bank question's history, by course and question text (Question.question), through the quiz scripts' id for it. */
+  historyOf: (course: string, question: string) => QuizHistory | undefined
+}
+
+let allCache: Promise<Loaded> | null = null
+/**
+ * Load every file (a few dozen small ones) and the quiz history once, and work out the quiz id of every bank question;
+ * cached for the page lifetime. The ids are ready before any page renders, so a question bank draws its Weak and Not
+ * asked lists in its first render and a reload puts the scroll position back where it was.
+ */
+export function loadAll(): Promise<Loaded> {
+  if (!allCache) allCache = load()
   return allCache
+}
+
+async function load(): Promise<Loaded> {
+  const [pairs, quiz] = await Promise.all([
+    Promise.all(Object.entries(files).map(async ([p, read]) => [p, await read()] as const)),
+    loadQuizState(),
+  ])
+  const texts: Texts = Object.fromEntries(pairs)
+  const ids = new Map<string, string>()
+  const key = (course: string, question: string) => `${course}|${question}`
+  await Promise.all(Object.entries(texts).flatMap(([p, text]) => {
+    const course = /^courses\/([^/]+)\/02-questions\.md$/.exec(p)?.[1]
+    if (!course) return []
+    return parseQuestions(text).flatMap((g) => g.questions)
+      .map(async (q) => { ids.set(key(course, q.question), await questionId(course, q.question)) })
+  }))
+  return {
+    texts,
+    quiz,
+    historyOf: (course, question) => {
+      const id = ids.get(key(course, question))
+      return id === undefined ? undefined : quiz?.questions[id]
+    },
+  }
 }
 
 export interface Entry { path: string; label: string }
@@ -144,15 +179,15 @@ export const hrefFor = (path: string) => `#/${path}`
 // ---- quiz history (routines/quiz-state.json, written by the quiz-me skill) ----------------
 
 /** What quiz_grade.py stores beside a grade when it was given: the confidence before the answer (1 guess, 2 think so,
- *  3 sure), the cause of a miss, a live variant, his wrong answer and why he was sure. */
-export interface QuizExtra { conf?: 1 | 2 | 3; cause?: 'concept' | 'forgot' | 'misread' | 'careless' | 'slow'; variant?: true; said?: string; why?: string }
+ *  3 sure), the cause of a miss, his wrong answer and why he was sure. */
+interface QuizExtra { conf?: 1 | 2 | 3; cause?: 'concept' | 'forgot' | 'misread' | 'careless' | 'slow'; said?: string; why?: string }
 /** One question's history: `[date, grade]`, or `[date, grade, extra]` when there was more to store. */
 export interface QuizHistory { course: string; topic: string; history: ([string, string] | [string, string, QuizExtra])[] }
 export interface QuizState { questions: Record<string, QuizHistory>; sessions: unknown[] }
 
 const quizRaw = import.meta.glob('../../routines/quiz-state.json', { query: '?raw', import: 'default' }) as Record<string, Loader>
 
-export async function loadQuizState(): Promise<QuizState | null> {
+async function loadQuizState(): Promise<QuizState | null> {
   const load = Object.values(quizRaw)[0]
   if (!load) return null
   try { return JSON.parse(await load()) as QuizState } catch (e) { console.error('routines/quiz-state.json could not be loaded or parsed; quiz history is not shown', e); return null }

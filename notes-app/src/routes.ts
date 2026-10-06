@@ -31,18 +31,18 @@ export function parseHash(hash: string): Route {
   return { kind: 'file', path: s, query, anchor: decode(anchor) || undefined }
 }
 
-/** Fired by navigate's replace, which changes the URL without a hashchange event. */
-const REPLACED = 'hashreplace'
+/** Fired by navigate, which changes the URL without a hashchange event. */
+const NAVIGATED = 'navigated'
 
 /**
  * Go to `href`, adding a Back step; the step being left remembers its scroll position. With `replace` the current step
- * changes instead and the browser fires no hashchange, so useRoute hears REPLACED: opening and closing answers is not
- * something Back should step through.
+ * changes instead: opening and closing answers is not something Back should step through. Either way the browser fires
+ * no hashchange, and useRoute hears NAVIGATED at once, so the next click already builds on this URL.
  */
 export function navigate(href: string, replace = false) {
-  if (!replace) { rememberScroll(); window.location.hash = href; return }
-  history.replaceState({ ...history.state, y: window.scrollY }, '', href)
-  window.dispatchEvent(new Event(REPLACED))
+  if (replace) history.replaceState({ ...history.state, y: window.scrollY }, '', href)
+  else { rememberScroll(); history.pushState(null, '', href) }
+  window.dispatchEvent(new Event(NAVIGATED))
 }
 
 /** Write where the page is scrolled into the current history entry. */
@@ -76,10 +76,10 @@ export function useRoute(): Route {
   useEffect(() => {
     const onChange = () => setRoute(parseHash(window.location.hash))
     window.addEventListener('hashchange', onChange)
-    window.addEventListener(REPLACED, onChange)
+    window.addEventListener(NAVIGATED, onChange)
     return () => {
       window.removeEventListener('hashchange', onChange)
-      window.removeEventListener(REPLACED, onChange)
+      window.removeEventListener(NAVIGATED, onChange)
     }
   }, [])
   return route
@@ -101,7 +101,7 @@ export function scrollIfSame(e: { currentTarget: HTMLAnchorElement }) {
 // ---- a question bank's view, kept in its URL so Back, Forward and a reload come back to it ----------------------
 
 /** Runs of question numbers: [[3, 3], [7, 9]] is questions 3, 7, 8 and 9. */
-export type Ranges = [number, number][]
+type Ranges = [number, number][]
 
 export interface BankView {
   /** A `## ` section's key (sectionKeys in QuestionBank.tsx), or '' for every section. */
@@ -117,7 +117,7 @@ export interface BankView {
   open: Ranges
 }
 
-export const WHOLE_BANK: BankView = { section: '', topic: '', lec: '', type: '', only: 'all', shuffle: 0, open: [] }
+const WHOLE_BANK: BankView = { section: '', topic: '', lec: '', type: '', only: 'all', shuffle: 0, open: [] }
 
 /** The slug a topic goes by in a bank URL: its main text without the trailing parenthetical. */
 export const topicKey = (topic: string) => slug(splitTopic(topic).main)

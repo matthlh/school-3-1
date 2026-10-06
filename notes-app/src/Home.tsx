@@ -1,6 +1,6 @@
 import type { Texts, Tree } from './files'
 import { courseName, hrefFor } from './files'
-import { countQuestions, parseLinks, type Deadline } from './markdown'
+import { countQuestions, type Deadline, type LinkRow } from './markdown'
 import { hrefAnchor, hrefCourse } from './routes'
 import { toneStyle } from './tone'
 import { EMPTY, type Tally } from './stats'
@@ -9,20 +9,20 @@ import { StatBar } from './ui'
 import { Logo } from './Logo'
 import { Upcoming } from './Upcoming'
 import { buildLabel } from './update'
-import { DueBody, dueDetail, useDue } from './DueNow'
+import { DueBody, DueDetail, type Due } from './DueNow'
 import { LinkGroups } from './LinksView'
 
-/** Home: the Due now block, the next hard dates, a card per course, every link, the latest briefs. `topics` is unused:
- *  what is due comes from the ledger's Due now block. */
-export function Home({ tree, all, tallies, calendar }: { tree: Tree; all: Texts; tallies: Record<string, Tally>; calendar: Deadline[] }) {
-  const due = useDue(all['ledger.md'] ?? '')
+/** Home: the Due now block (`due`), the next hard dates, a card per course, every link, the latest briefs. */
+export function Home({ tree, all, tallies, calendar, links, due }: {
+  tree: Tree; all: Texts; tallies: Record<string, Tally>; calendar: Deadline[]; links: LinkRow[]; due: Due
+}) {
   const today = todayISO()
 
   return (
     <>
       <h1 className="brand"><Logo size={26} /> School 3-1</h1>
       <section className="panel">
-        <div className="panel-head"><span>Due now <span className="sub">· {dueDetail(due)}</span></span><a href={hrefAnchor('ledger.md', 'due-now')}>ledger →</a></div>
+        <div className="panel-head"><span>Due now <span className="sub">· <DueDetail due={due} /></span></span><a href={hrefAnchor('ledger.md', 'due-now')}>ledger →</a></div>
         <DueBody due={due} />
       </section>
       <Upcoming items={calendar} today={today} />
@@ -42,7 +42,7 @@ export function Home({ tree, all, tallies, calendar }: { tree: Tree; all: Texts;
       </div>
       <section className="home-links">
         <div className="panel-head"><span>Links</span><a href={hrefFor('links.md')}>all links →</a></div>
-        <LinkGroups rows={parseLinks(all['links.md'] ?? '')} />
+        <LinkGroups rows={links} />
       </section>
       {tree.runs.length > 0 && (
         <div className="row small">

@@ -1,10 +1,10 @@
-import { useEffect, useMemo, useState } from 'react'
-import type { QuizHistory, QuizState, Texts } from './files'
+import { useMemo, useRef } from 'react'
+import type { Loaded, QuizHistory, Texts } from './files'
 import { courseOf, hrefFor } from './files'
-import { parseQuestions, slug, splitTopic, type Question, type QuestionGroup } from './markdown'
+import { parseQuestions, slug, splitTopic, type Question, type QuestionGroup, type TopicRow } from './markdown'
 import { hrefBank, navigate, toRanges, topicKey, type BankView } from './routes'
 import { sourcesFor } from './sources'
-import { isWeak, lastGrade, questionId, tallyHistories } from './stats'
+import { isWeak, lastGrade, loCodes, matchTopic, tallyHistories } from './stats'
 import { GradeChip } from './ui'
 import { Md } from './Md'
 
@@ -47,44 +47,17 @@ function sectionKeys(groups: QuestionGroup[]): string[] {
   })
 }
 
-/** A question's Topic, Lec and Type tags as a bank URL writes them; '' where the tag is missing. */
-function tagKeys(q: Question): Pick<BankView, 'topic' | 'lec' | 'type'> {
-  return { topic: q.topic && topicKey(q.topic), lec: q.lec && slug(q.lec), type: q.type && slug(q.type) }
-}
-
-/**
- * Two topic slugs name the same topic when equal or when one goes on from the other (6+ characters): the prefix step
- * of quizlib's match_topic, so a ledger row's link finds the questions the quiz scripts file under that row.
- */
-const sameTopic = (a: string, b: string) => a === b || (Math.min(a.length, b.length) >= 6 && (startsWith(a, b) || startsWith(b, a)))
-
-/**
- * Quiz-script ids already worked out, by course and question text. A bank opened again (Back from a notes page) then
- * draws its Weak and Not asked lists in its first render, so the scroll position put back lands where it was.
- */
-const knownIds = new Map<string, string>()
-
-/** The ids knownIds already holds for `qs`, by parsed question id. */
-function idsKnown(code: string, qs: Question[]): Record<string, string> {
-  const out: Record<string, string> = {}
-  for (const q of qs) {
-    const id = knownIds.get(code + '|' + q.question)
-    if (id !== undefined) out[q.id] = id
-  }
-  return out
-}
-
-/** An active filter in the toolbar; clicking it clears the filter. */
+/** An active filter in the toolbar; clicking it clears the filter, which its accessible name says. */
 function ActiveFilter({ label, title, onClear }: { label: string; title: string; onClear: () => void }) {
   return (
-    <button type="button" className="chip on" onClick={onClear} title={title}>
+    <button type="button" className="chip on" onClick={onClear} title={title} aria-label={`${label}. Click to clear this filter.`}>
       {label} <span className="x" aria-hidden="true">×</span>
     </button>
   )
 }
 
-export function QuestionBank({ path, text, quiz, all, view, anchor }: {
-  path: string; text: string; quiz: QuizState | null; all: Texts; view: BankView; anchor?: string
+export function QuestionBank({ path, text, all, topics, historyOf, view, anchor }: {
+  path: string; text: string; all: Texts; topics: TopicRow[]; historyOf: Loaded['historyOf']; view: BankView; anchor?: string
 }) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
@@ -98,22 +71,30 @@ export function QuestionBank({ path, text, quiz, all, view, anchor }: {
     groups.forEach((g, i) => g.questions.forEach((q) => m.set(q.id, i)))
     return m
   }, [groups])
+  // Question id → the topic its chip filters by: the ledger row its Topic tag names, found as the quiz scripts file it
+  // (matchTopic), so a ledger row's link shows exactly the questions the quiz files under that row. A tag that names no
+  // row, or several (the quiz scripts stop on that), goes by its own words.
+  const topicOf = useMemo(() => new Map(flat.map((q) => {
+    const rows = q.topic ? matchTopic(code, q.topic, loCodes(q.topic), topics) : []
+    return [q.id, rows.length === 1 ? rows[0].topic : q.topic]
+  })), [flat, code, topics])
+  const histOf = (q: Question): QuizHistory | undefined => historyOf(code, q.question)
+  /** A question's Topic, Lec and Type as a bank URL writes them; '' where the tag is missing. */
+  const tagKeys = (q: Question): Pick<BankView, 'topic' | 'lec' | 'type'> => {
+    const topic = topicOf.get(q.id) ?? ''
+    return { topic: topic && topicKey(topic), lec: q.lec && slug(q.lec), type: q.type && slug(q.type) }
+  }
 
-  // Map each parsed question to the id the quiz scripts use (sha1 of course + normalised text).
-  const [ids, setIds] = useState<Record<string, string>>(() => idsKnown(code, flat))
-  useEffect(() => {
-    let alive = true
-    Promise.all(flat.map(async (q) => {
-      const id = await questionId(code, q.question)
-      knownIds.set(code + '|' + q.question, id)
-      return [q.id, id] as const
-    })).then((pairs) => { if (alive) setIds(Object.fromEntries(pairs)) })
-    return () => { alive = false }
-  }, [flat, code])
-  const histOf = (q: Question): QuizHistory | undefined => quiz?.questions[ids[q.id] ?? '']
-
-  // Every filter, the mode and the shuffle are a new Back step; opening and closing answers changes the current one.
-  const go = (change: Partial<BankView>, replace = false) => navigate(hrefBank(path, { ...view, ...change }, anchor), replace)
+  const toolbar = useRef<HTMLDivElement>(null)
+  // Every filter, the mode and the shuffle are a new Back step, which opens at the toolbar when the page is scrolled past
+  // it (a chip far down would otherwise land below the shorter list); opening and closing answers changes the current
+  // step and stays put.
+  const go = (change: Partial<BankView>, replace = false) => {
+    navigate(hrefBank(path, { ...view, ...change }, anchor), replace)
+    const bar = toolbar.current
+    const hidden = bar && bar.getBoundingClientRect().top < parseFloat(getComputedStyle(bar).scrollMarginTop)
+    if (!replace && hidden) bar.scrollIntoView({ block: 'start' })
+  }
   // The questions showing their answer. The URL names them by position in the file, counting from 1.
   const showing = new Set(flat.filter((_, i) => view.open.some(([a, b]) => a <= i + 1 && i + 1 <= b)))
   /** Show the answers of exactly the questions `pick` keeps. */
@@ -129,7 +110,7 @@ export function QuestionBank({ path, text, quiz, all, view, anchor }: {
   const keep = (q: Question) => {
     const t = tagKeys(q)
     return (!view.section || groupOf.get(q.id) === section) &&
-      (!view.topic || sameTopic(t.topic, view.topic)) &&
+      (!view.topic || t.topic === view.topic) &&
       (!view.lec || t.lec === view.lec) &&
       (!view.type || t.type === view.type) &&
       (view.only === 'all' || (view.only === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
@@ -137,7 +118,7 @@ export function QuestionBank({ path, text, quiz, all, view, anchor }: {
   const visible = flat.filter(keep)
   const everyOpen = visible.length > 0 && visible.every((q) => showing.has(q))
   // The toolbar names an active filter as the cards write it; one that no question matches shows its slug.
-  const topicName = view.topic && splitTopic(flat.find((q) => sameTopic(tagKeys(q).topic, view.topic))?.topic ?? view.topic).main
+  const topicName = view.topic && splitTopic([...topicOf.values()].find((t) => t && topicKey(t) === view.topic) ?? view.topic).main
   const lecName = view.lec && (flat.find((q) => tagKeys(q).lec === view.lec)?.lec ?? view.lec)
   const typeName = view.type && (flat.find((q) => tagKeys(q).type === view.type)?.type ?? view.type)
   const seg = (m: Mode, label: string, n: number) => (
@@ -151,7 +132,7 @@ export function QuestionBank({ path, text, quiz, all, view, anchor }: {
           asked {asked.length} of {total} · <b>{tally.solid} solid</b> · {tally.shaky} shaky · {tally.missed} missed
         </div>
       )}
-      <div className="toolbar">
+      <div className="toolbar" ref={toolbar}>
         <div className="seg" role="group" aria-label="Which questions">
           {seg('all', 'All', total)}
           {(asked.length > 0 || view.only !== 'all') && seg('weak', 'Weak', weakCount)}
@@ -164,6 +145,9 @@ export function QuestionBank({ path, text, quiz, all, view, anchor }: {
               <option key={i} value={keys[i]} title={g.title}>{shortTitle(g.title)}</option>
             ))}
           </select>
+        )}
+        {view.section && section < 0 && (
+          <ActiveFilter label={`Section: ${view.section}, not found`} title="No section has this key — click to show every section again" onClear={() => go({ section: '' })} />
         )}
         {topicName && <ActiveFilter label={`Topic: ${topicName}`} title={`${topicName} — click to show every topic again`} onClear={() => go({ topic: '' })} />}
         {lecName && <ActiveFilter label={`Lec: ${lecName}`} title={`Lec ${lecName} — click to show every lecture again`} onClear={() => go({ lec: '' })} />}

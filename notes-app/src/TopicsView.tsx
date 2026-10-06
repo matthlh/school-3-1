@@ -1,68 +1,63 @@
 import { splitRow, splitSections, type Grade, type TopicRow } from './markdown'
 import { courseOf } from './files'
-import { normQuestion } from './stats'
-import { GradeChip, NextCell } from './ui'
-import { formatDate, isISODate, todayISO } from './dates'
+import { loCodes, matchTopic } from './stats'
+import { GradeChip } from './ui'
+import { DueError, StandingCell, type Due, type Standing } from './DueNow'
+import { formatDate, isISODate } from './dates'
 import { Md } from './Md'
 import { usePager } from './Pager'
 
 const LADDER = 'Spacing ladder — X missed: asked again tomorrow · ~ shaky: +3 days · O solid: +7 days, then +16, then +35'
 const COVERED = 'A topic is covered once the ledger shows it quizzed at least once. Every grade and date here comes from the ledger.'
 
-interface Row { id: string; text: string; g: Grade | null; last: string; next: string }
+interface Row { id: string; text: string; g: Grade | null; last: string; standing: Standing | null; next: string }
 
 const RANK: Record<Grade, number> = { X: 0, '~': 1, O: 2 }   // lower is worse, as quizlib's GRADE_RANK
 
-/** quizlib.codes_of: the LO codes a `#` cell or a ledger topic starts with. '1b–c Box plots' → 1b, 1c; '3z–aa' → 3z, 3aa; '7' → none. */
-function loCodes(s: string): string[] {
-  const m = /^\s*(\d+)([a-z]{1,2})(?:[–-]([a-z]{1,2}))?\b/.exec(s)
-  if (!m) return []
-  const [, num, a, b] = m
-  if (!b || a.length !== 1 || b.length !== 1) return b ? [num + a, num + b] : [num + a]
-  const from = a.charCodeAt(0)
-  return Array.from({ length: b.charCodeAt(0) - from + 1 }, (_, i) => num + String.fromCharCode(from + i))
+/**
+ * Where a topic-table row stands when it stands for several ledger rows: the most overdue of those the Due now block
+ * lists (due today after any overdue one, an exam sweep last), else frozen when every one is frozen, else later, with
+ * the earliest Next among those not frozen. The standing is null when the block could not be read.
+ */
+function standingOf(rs: TopicRow[], due: Due): { standing: Standing | null; next: string } {
+  const earliest = (from: TopicRow[]) => from.map((r) => r.next).filter(Boolean).sort()[0] ?? ''
+  if (!due.ok) return { standing: null, next: earliest(rs) }
+  const ss = rs.map((r) => due.standing(r))
+  const lateness = (s: Standing) => (s.kind !== 'due' ? -2 : s.when.kind === 'overdue' ? s.when.days : s.when.kind === 'today' ? 0 : -1)
+  const worst = ss.filter((s) => s.kind === 'due').sort((a, b) => lateness(b) - lateness(a))[0]
+  if (worst) return { standing: worst, next: '' }
+  if (ss.length > 0 && ss.every((s) => s.kind === 'frozen')) return { standing: ss[0], next: '' }
+  return { standing: { kind: 'later' }, next: earliest(rs.filter((_, i) => ss[i].kind !== 'frozen')) }
 }
 
 /**
- * The ledger rows a topic-table row stands for, found the way quizlib.match_topic finds a question tag's row: the same
- * words after quizlib's norm, else one a prefix of the other (6+ characters), else a shared LO code. So STAT 251's 1b
- * row stands for every ledger row whose topic starts with a code covering 1b.
+ * A row's chip and dates from the ledger rows it stands for, found as the quiz scripts find a Topic tag's row
+ * (matchTopic), with the LO codes of its `#` cell: so STAT 251's 1b row stands for every ledger row whose topic starts
+ * with a code covering 1b. The chip is the worst grade among them, the date the latest Last, and the standing comes from
+ * the Due now block. No grade (none of them quizzed yet, or no ledger row at all) means not covered yet.
  */
-function ledgerRowsOf(id: string, text: string, ledger: TopicRow[]): TopicRow[] {
-  const t = normQuestion(text)
-  const words = ledger.map((r) => normQuestion(r.topic))
-  const same = ledger.filter((_, i) => words[i] === t)
-  if (same.length) return same
-  const prefix = ledger.filter((_, i) => Math.min(words[i].length, t.length) >= 6 && (words[i].startsWith(t) || t.startsWith(words[i])))
-  if (prefix.length) return prefix
-  const codes = loCodes(id)
-  return ledger.filter((r) => loCodes(r.topic).some((c) => codes.includes(c)))
-}
-
-/** A row's chip and dates from its ledger rows: the worst grade among them, the latest Last and the earliest Next. No
- *  grade (none of them quizzed yet, or no ledger row at all) means not covered yet. */
-function topicRow(id: string, text: string, ledger: TopicRow[]): Row {
-  const rs = ledgerRowsOf(id, text, ledger)
+function topicRow(course: string, id: string, text: string, ledger: TopicRow[], due: Due): Row {
+  const rs = matchTopic(course, text, loCodes(id), ledger)
   const grades = rs.flatMap((r) => (r.grade ? [r.grade] : []))
   return {
     id, text,
     g: grades.length ? grades.reduce((a, b) => (RANK[b] < RANK[a] ? b : a)) : null,
     last: rs.map((r) => r.last).filter(isISODate).sort().pop() ?? '',
-    next: rs.map((r) => r.next).filter(Boolean).sort()[0] ?? '',
+    ...standingOf(rs, due),
   }
 }
 
 /** A topic table (first column `#`, the row's number or LO code, then its topic or outcome) → rows; anything else,
  *  such as the Look-alikes table → null (rendered as markdown). */
-function outcomeRows(body: string, ledger: TopicRow[]): Row[] | null {
+function outcomeRows(body: string, course: string, ledger: TopicRow[], due: Due): Row[] | null {
   const lines = body.split('\n').filter((l) => l.trim().startsWith('|'))
   if (lines.length < 2 || splitRow(lines[0])[0] !== '#') return null
-  return lines.slice(1).map(splitRow).filter((c) => c.length >= 2 && c[0] && !/^-+$/.test(c[0])).map((c) => topicRow(c[0], c[1], ledger))
+  return lines.slice(1).map(splitRow).filter((c) => c.length >= 2 && c[0] && !/^-+$/.test(c[0])).map((c) => topicRow(course, c[0], c[1], ledger, due))
 }
 const withoutTables = (body: string) => body.split('\n').filter((l) => !l.trim().startsWith('|')).join('\n').trim()
 
-/** One chapter's outcomes: grade chip, id, text, next date. Paged at 10. */
-function OutcomeTable({ rows, path, today }: { rows: Row[]; path: string; today: string }) {
+/** One chapter's outcomes: grade chip, id, text, standing. Paged at 10. */
+function OutcomeTable({ rows, path }: { rows: Row[]; path: string }) {
   const { rows: shown, pager } = usePager(rows)
   return (
     <>
@@ -73,7 +68,7 @@ function OutcomeTable({ rows, path, today }: { rows: Row[]; path: string; today:
               <td><GradeChip g={r.g} title={isISODate(r.last) ? `last quizzed ${formatDate(r.last)}` : undefined} /></td>
               <td className="id">{r.id}</td>
               <td><Md text={r.text} path={path} inline /></td>
-              <NextCell next={r.next} today={today} />
+              <StandingCell s={r.standing} next={r.next} />
             </tr>
           ))}
         </tbody>
@@ -84,17 +79,16 @@ function OutcomeTable({ rows, path, today }: { rows: Row[]; path: string; today:
 }
 
 /**
- * 01-topics.md: each chapter's topic table, every row with a grade chip and next date from the ledger (`topics`, the
- * parsed All topics table). The preamble's prose (title, notes for Claude) is dropped, but a file with no chapters
- * keeps its one table there, and that table is shown.
+ * 01-topics.md: each chapter's topic table, every row with a grade chip from the ledger (`topics`, the parsed All topics
+ * table) and its standing in the Due now block (`due`), as a course page shows them. The preamble's prose (title, notes
+ * for Claude) is dropped, but a file with no chapters keeps its one table there, and that table is shown.
  */
-export function TopicsView({ path, text, topics }: { path: string; text: string; topics: TopicRow[] }) {
-  const today = todayISO()
-  const ledger = topics.filter((r) => r.course === courseOf(path))
+export function TopicsView({ path, text, topics, due }: { path: string; text: string; topics: TopicRow[]; due: Due }) {
+  const course = courseOf(path) ?? ''
   const [pre, ...rest] = splitSections(text)
-  const preRows = outcomeRows(pre.body, ledger)
+  const preRows = outcomeRows(pre.body, course, topics, due)
   const named = rest.filter((s) => s.heading)
-  const all = [...(preRows ?? []), ...named.flatMap((s) => outcomeRows(s.body, ledger) ?? [])]
+  const all = [...(preRows ?? []), ...named.flatMap((s) => outcomeRows(s.body, course, topics, due) ?? [])]
   const covered = all.filter((r) => r.g).length
   return (
     <article>
@@ -104,14 +98,15 @@ export function TopicsView({ path, text, topics }: { path: string; text: string;
         <span className="hint" title={LADDER}>when do topics come back?</span>
         <span className="muted right" title={COVERED}>{covered} of {all.length} covered</span>
       </div>
-      {preRows && <OutcomeTable rows={preRows} path={path} today={today} />}
+      {!due.ok && <DueError error={due.error} />}
+      {preRows && <OutcomeTable rows={preRows} path={path} />}
       {named.map((s) => {
-        const rows = outcomeRows(s.body, ledger)
+        const rows = outcomeRows(s.body, course, topics, due)
         const prose = rows ? withoutTables(s.body) : ''
         return (
           <section key={s.id} id={'sec-' + s.id}>
             <h2>{s.heading}</h2>
-            {rows ? <OutcomeTable rows={rows} path={path} today={today} /> : <Md text={s.body} path={path} />}
+            {rows ? <OutcomeTable rows={rows} path={path} /> : <Md text={s.body} path={path} />}
             {prose && <Md text={prose} path={path} />}
           </section>
         )

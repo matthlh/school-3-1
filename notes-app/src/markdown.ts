@@ -1,4 +1,5 @@
 // Small markdown-structure helpers: sections, headings, and the Q/A question-bank format.
+import { formatDate } from './dates'
 
 export interface Section { id: string; heading: string | null; body: string }
 
@@ -198,6 +199,9 @@ export interface DueItem { course: string; topic: string; when: DueWhen; grade: 
 /** "PHIL 385 16 topics from Exam 1": topics that exam covered and the course's next exam does not. */
 export interface FrozenGroup { course: string; count: number; exam: string }
 
+/** One frozen bullet: a ledger row the scheduler keeps from coming due, and the exam it is frozen after. */
+interface FrozenRow { course: string; topic: string; exam: string }
+
 /** A course whose next exam is at most 21 days away, with the share of its in-scope questions likely recalled now. */
 export interface Readiness {
   course: string
@@ -212,8 +216,8 @@ export interface Readiness {
 }
 
 export interface DueBlock {
-  /** The day the scheduler wrote the block, as written ("Tue Oct 6"); null when nothing is due, since that line names no day. */
-  asOf: string | null
+  /** The day the scheduler wrote the block, an ISO day, from its first line: `<!-- due as of 2026-10-06 -->`. */
+  date: string
   /** The due topics in the scheduler's order, the most overdue for their interval first. */
   items: DueItem[]
   /** How many of the items the exam-week sweep pulled in. */
@@ -221,23 +225,21 @@ export interface DueBlock {
   /** The sentence that stands in for the list when nothing is due, as written (markdown); null when something is due. */
   nothing: string | null
   readiness: Readiness[]
+  /** The frozen line's counts, in its order; empty without a frozen line. */
   frozen: FrozenGroup[]
   /** The sentence after the frozen counts, as written; null without a frozen line. */
   frozenWhy: string | null
-  /**
-   * The scheduler checks frozen before due, so in a course with frozen topics a ledger row missing from `items` whose
-   * Next is before this ISO day must be frozen. It is the day after `asOf`, or the day a "Nothing due" line names as
-   * Next; null when the block names neither.
-   */
-  frozenBefore: string | null
+  /** The frozen bullets under the frozen line, one per frozen ledger row. */
+  frozenRows: FrozenRow[]
 }
 
-export type DueParse = { ok: true; block: DueBlock } | { ok: false; error: string }
+type DueParse = { ok: true; block: DueBlock } | { ok: false; error: string }
 
 const DAY = '(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{1,2}'
 const LABEL = '[A-Z]{2,4} \\d{3}[A-Z]?'   // a course as the ledger writes it: "STAT 251"
+const DUE_DATE = /^<!-- due as of (\d{4}-\d{2}-\d{2}) -->$/
 const DUE_SUMMARY = new RegExp(`^_(\\d+) topics? due as of (${DAY})(?:, (\\d+) of them from an exam-week sweep)?\\.[^_]*_$`)
-const DUE_NOTHING = new RegExp(`^_(Nothing due today\\. Next: \\d+ topics? on \\*\\*(${DAY})\\*\\* \\([^)]+\\)\\.)_$`)
+const DUE_NOTHING = new RegExp(`^_(Nothing due today\\. Next: \\d+ topics? on \\*\\*${DAY}\\*\\* \\([^)]+\\)\\.)_$`)
 const DUE_UNSCHEDULED = /^_(Nothing scheduled yet\b[^_]*)_$/
 const DUE_READY = new RegExp(`^_Readiness · (${LABEL}) (.+?) · (${DAY}) · (\\d+)% of (\\d+) in-scope questions? likely recalled`
   + '(?: · (\\d+) topics? in scope (?:has|have) no question)?\\._$')
@@ -245,61 +247,93 @@ const DUE_FROZEN = /^_Frozen, not due: (.+?)\. ([^_]+)_$/
 const FROZEN_GROUP = new RegExp(`^(${LABEL}) (\\d+) topics? from (.+)$`)
 const DUE_COURSE = new RegExp(`^${LABEL}$`)
 const DUE_SWEEP = new RegExp(`^exam sweep before (.+) on (${DAY})$`)
-const WEEKDAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
+const FROZEN_AFTER = /^frozen after (.+)$/
 
-/** "Tue Oct 6" plus `shift` days as an ISO day. The block writes no year, so it is the Oct 6 nearest today; null when that
- *  one is not a Tuesday. */
-function dueDayISO(day: string, shift = 0): string | null {
-  const [dow, mon, dd] = day.toLowerCase().split(' ')
-  const now = new Date()
-  const d = [-1, 0, 1].map((k) => new Date(now.getFullYear() + k, MONTHS.indexOf(mon), +dd))
-    .reduce((a, b) => (Math.abs(+b - +now) < Math.abs(+a - +now) ? b : a))
-  if (d.getDate() !== +dd || d.getDay() !== WEEKDAYS.indexOf(dow)) return null
-  d.setDate(d.getDate() + shift)
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+/** A bullet's parts around " · ": the course first, then the topic, which may hold " · " itself, then `tail` more parts
+ *  of the scheduler's. Null when there are too few parts or the first is not a course. */
+function bulletParts(s: string, tail: number): { course: string; topic: string; rest: string[] } | null {
+  const parts = s.split(' · ')
+  if (parts.length < tail + 2 || !DUE_COURSE.test(parts[0])) return null
+  return { course: parts[0].replace(' ', ''), topic: parts.slice(1, -tail).join(' · '), rest: parts.slice(-tail) }
 }
 
-/** "STAT 251 · <topic> · overdue 19 d · last unquizzed" → an item, or null. A topic may hold " · " itself, so the course is
- *  the first part, the grade the last, the when the one before it and the topic everything between. */
+/** "STAT 251 · <topic> · overdue 19 d · last unquizzed" → an item, or null. */
 function parseDueItem(s: string): DueItem | null {
-  const parts = s.split(' · ')
-  if (parts.length < 4 || !DUE_COURSE.test(parts[0])) return null
-  const w = parts[parts.length - 2]
-  const g = /^last (O|~|X|unquizzed)$/.exec(parts[parts.length - 1])?.[1]
+  const b = bulletParts(s, 2)
+  if (!b) return null
+  const [w, last] = b.rest
+  const g = /^last (O|~|X|unquizzed)$/.exec(last)?.[1]
   const overdue = /^overdue (\d+) d$/.exec(w)
   const sweep = DUE_SWEEP.exec(w)
   const when: DueWhen | null = w === 'due today' ? { kind: 'today' }
     : overdue ? { kind: 'overdue', days: +overdue[1] }
     : sweep ? { kind: 'sweep', exam: sweep[1], date: sweep[2] } : null
   if (!when || !g) return null
-  return { course: parts[0].replace(' ', ''), topic: parts.slice(1, -2).join(' · '), when, grade: g === 'O' || g === '~' || g === 'X' ? g : null }
+  return { course: b.course, topic: b.topic, when, grade: g === 'O' || g === '~' || g === 'X' ? g : null }
+}
+
+/** "PHIL 385 · <topic> · frozen after Exam 1" → a frozen row, or null. */
+function parseFrozenRow(s: string): FrozenRow | null {
+  const b = bulletParts(s, 1)
+  const exam = b && FROZEN_AFTER.exec(b.rest[0])?.[1]
+  return b && exam ? { course: b.course, topic: b.topic, exam } : null
+}
+
+/** "Exam 2 14:00" → "Exam 2": the block names an exam with its start time when it has one. */
+export function examOnly(exam: string): string {
+  return exam.replace(/ \d{1,2}:\d{2}$/, '')
+}
+
+/** A due topic's label in a table: "due today", "19 d late", or the sweep with its exam, "Exam 2 sweep". */
+export function whenLabel(w: DueWhen): string {
+  return w.kind === 'today' ? 'due today' : w.kind === 'overdue' ? `${w.days} d late` : `${examOnly(w.exam)} sweep`
+}
+
+/** The block's own words: "due today", "overdue 19 d", "exam sweep before Exam 2 14:00 on Fri Oct 16". */
+export function whenTitle(w: DueWhen): string {
+  return w.kind === 'today' ? 'due today' : w.kind === 'overdue' ? `overdue ${w.days} d` : `exam sweep before ${w.exam} on ${w.date}`
 }
 
 /**
- * ledger.md's `## Due now` block → its parts, or why it cannot be read. Every non-blank line must be one of the
- * scheduler's: the summary ("_52 topics due as of Tue Oct 6, 6 of them from an exam-week sweep. Say **quiz me**._") with
- * one bullet per due topic, or the "Nothing due today" or "Nothing scheduled yet" line in their place; then a readiness
- * line per near exam and at most one frozen line. The summary's counts must match the bullets.
+ * ledger.md's `## Due now` block → its parts, or why it cannot be read. The first line is the date line,
+ * `<!-- due as of 2026-10-06 -->`, which never renders. Every other non-blank line must be one of the scheduler's: the
+ * summary ("_52 topics due as of Tue Oct 6, 6 of them from an exam-week sweep. Say **quiz me**._") with one bullet per
+ * due topic, or the "Nothing due today" or "Nothing scheduled yet" line in their place; then a readiness line per near
+ * exam; then at most one frozen line with one bullet per frozen topic under it ("- PHIL 385 · <topic> · frozen after
+ * Exam 1"). The summary's day must be the date line's, and the counts of the summary and the frozen line must match
+ * their bullets.
  */
 export function parseDueBlock(ledger: string): DueParse {
-  const body = extractSection(ledger, /^due now$/i)
-  if (body === null) return { ok: false, error: 'ledger.md has no "## Due now" section.' }
   const fail = (error: string): DueParse => ({ ok: false, error })
-  const heads: { count: number; asOf: string | null; swept: number; nothing: string | null; next: string | null }[] = []
+  const body = extractSection(ledger, /^due now$/i)
+  if (body === null) return fail('ledger.md has no "## Due now" section.')
+  const [first = '', ...lines] = body.split('\n').map((l) => l.trim()).filter(Boolean)
+  const date = DUE_DATE.exec(first)?.[1]
+  if (!date) return fail('The block does not start with its date line, "<!-- due as of YYYY-MM-DD -->".')
+  let head: { count: number; day: string | null; swept: number; nothing: string | null } | null = null
   const items: DueItem[] = []
   const readiness: Readiness[] = []
   const frozen: FrozenGroup[] = []
+  const frozenRows: FrozenRow[] = []
   let frozenWhy: string | null = null
-  for (const line of body.split('\n').map((l) => l.trim()).filter(Boolean)) {
+  for (const line of lines) {
     let m: RegExpExecArray | null
-    if (line.startsWith('- ')) {
+    // A bullet above the frozen line is a due topic, one under it a frozen topic.
+    if (line.startsWith('- ') && frozenWhy === null) {
       const item = parseDueItem(line.slice(2))
       if (!item) return fail(`This bullet is not in the scheduler's format: "${line}"`)
       items.push(item)
-    } else if ((m = DUE_SUMMARY.exec(line))) heads.push({ count: +m[1], asOf: m[2], swept: +(m[3] ?? 0), nothing: null, next: null })
-    else if ((m = DUE_NOTHING.exec(line))) heads.push({ count: 0, asOf: null, swept: 0, nothing: m[1], next: m[2] })
-    else if ((m = DUE_UNSCHEDULED.exec(line))) heads.push({ count: 0, asOf: null, swept: 0, nothing: m[1], next: null })
-    else if ((m = DUE_READY.exec(line))) {
+    } else if (line.startsWith('- ')) {
+      const row = parseFrozenRow(line.slice(2))
+      if (!row) return fail(`This bullet under the frozen line is not in the scheduler's format: "${line}"`)
+      frozenRows.push(row)
+    } else if ((m = DUE_SUMMARY.exec(line))) {
+      if (head) return fail('The block has more than one summary line.')
+      head = { count: +m[1], day: m[2], swept: +(m[3] ?? 0), nothing: null }
+    } else if ((m = DUE_NOTHING.exec(line) ?? DUE_UNSCHEDULED.exec(line))) {
+      if (head) return fail('The block has more than one summary line.')
+      head = { count: 0, day: null, swept: 0, nothing: m[1] }
+    } else if ((m = DUE_READY.exec(line))) {
       readiness.push({ course: m[1].replace(' ', ''), exam: m[2], date: m[3], percent: +m[4], questions: +m[5], bare: +(m[6] ?? 0) })
     } else if ((m = DUE_FROZEN.exec(line))) {
       if (frozenWhy !== null) return fail('The block has two frozen lines.')
@@ -311,16 +345,18 @@ export function parseDueBlock(ledger: string): DueParse {
       frozenWhy = m[2]
     } else return fail(`This line is not in the scheduler's format: "${line}"`)
   }
-  if (heads.length !== 1) return fail(heads.length ? 'The block has more than one summary line.' : 'The block has no summary line.')
-  const [head] = heads
+  if (!head) return fail('The block has no summary line.')
+  if (head.day !== null && head.day !== formatDate(date)) return fail(`The summary is dated ${head.day}, but the date line says ${formatDate(date)}.`)
   const swept = items.filter((i) => i.when.kind === 'sweep').length
   if (items.length !== head.count || swept !== head.swept) {
     return fail(`The summary counts ${head.count} topics, ${head.swept} of them from a sweep, but the block lists ${items.length}, ${swept} of them from a sweep.`)
   }
-  const day = head.asOf ?? head.next
-  const frozenBefore = day === null ? null : dueDayISO(day, head.asOf ? 1 : 0)
-  if (day !== null && frozenBefore === null) return fail(`"${day}" is not a date near today: the weekday does not match.`)
-  return { ok: true, block: { asOf: head.asOf, items, swept, nothing: head.nothing, readiness, frozen, frozenWhy, frozenBefore } }
+  const counted = frozen.reduce((n, g) => n + g.count, 0)
+  const under = (g: FrozenGroup) => frozenRows.filter((r) => r.course === g.course && r.exam === g.exam).length
+  if (counted !== frozenRows.length || frozen.some((g) => under(g) !== g.count)) {
+    return fail(`The frozen line counts ${counted} topics, but the ${frozenRows.length} bullets under it do not match those counts.`)
+  }
+  return { ok: true, block: { date, items, swept, nothing: head.nothing, readiness, frozen, frozenWhy, frozenRows } }
 }
 
 // ---- generic tables and topic strings -------------------------------------------------------
@@ -377,7 +413,7 @@ export function courseLabel(code: string): string {
 // ---- a syllabus's "## Grading" table, for the what-if panel on a course page ------------------
 
 export interface GradeComponent {
-  /** As the syllabus names it, without bold, italics or the count: "WeBWorK" from "WeBWorK ×10". */
+  /** As the syllabus names it, without bold, italics, the count or the running mark: "WeBWorK" from "WeBWorK ×10". */
   name: string
   /** Percent of the course grade; for a bonus, the points it adds on top of the 100. */
   weight: number
@@ -385,12 +421,17 @@ export interface GradeComponent {
   count: number | null
   /** A weight written with a plus ("*+1%*"): extra points on top of the 100. */
   bonus: boolean
+  /** Marked "(running)": one item holds the score so far ("iClicker 14/37"), and the component stays open until the end. */
+  running: boolean
+  /** Another cell of its row says scores are dropped ("lowest dropped"), which the what-if panel does not model. */
+  drops: boolean
 }
 
 /**
  * The first table under a syllabus's `## Grading` heading (Component | Weight | …) → its components, or the one problem
- * that stopped the parse. All or nothing: a missing section, table or column, or one weight not written like "4%",
- * "**22%**" or "*+1%*", fails the whole table, so the panel never shows numbers from part of it.
+ * that stopped the parse. All or nothing: a missing section, table or column, one weight not written like "4%",
+ * "**22%**" or "*+1%*", or a running component with a count, fails the whole table, so the panel never shows numbers
+ * from part of it.
  */
 export function parseWeights(syllabus: string): { components: GradeComponent[] } | { error: string } {
   const sec = extractSection(syllabus, /^grading\b/i)
@@ -406,11 +447,16 @@ export function parseWeights(syllabus: string): { components: GradeComponent[] }
   for (const cells of table.rows) {
     const cell = (i: number) => (cells[i] ?? '').replace(/\*/g, '').trim()
     const counted = /^(.*?)\s*×\s*([1-9]\d*)$/.exec(cell(nameAt))
-    const name = counted ? counted[1] : cell(nameAt)
+    const running = /^(.*?)\s*\(running\)$/.exec(counted ? counted[1] : cell(nameAt))
+    const name = running ? running[1] : counted ? counted[1] : cell(nameAt)
     const weight = /^(\+?)(\d+(?:\.\d+)?)%$/.exec(cell(weightAt))
     if (!name) return { error: 'A row of the grading table has no component name.' }
     if (!weight) return { error: `The weight of ${name}, "${cell(weightAt)}", is not a percentage like 4% or +1%.` }
-    components.push({ name, weight: Number(weight[2]), count: counted ? Number(counted[2]) : null, bonus: weight[1] === '+' })
+    if (running && counted) return { error: `${name} is marked running, so it holds one item and takes no count like ×${counted[2]}.` }
+    components.push({
+      name, weight: Number(weight[2]), count: counted ? Number(counted[2]) : null, bonus: weight[1] === '+', running: !!running,
+      drops: cells.some((c, i) => i !== nameAt && i !== weightAt && /\bdropped\b/i.test(c)),
+    })
   }
   return { components }
 }
@@ -441,12 +487,13 @@ function sentence(s: string): string {
 }
 
 /**
- * Rows of the first table in the `## Grades so far` body (Course | Score | As of). The Score cell is free text
- * written by the morning check: an optional "87%" at the start, then items like "Mini-Quiz 3 9.5/10" separated by
- * ";" or "," (parentheses count as separators), and remarks. "total hidden …" sets `hidden` instead of becoming a note.
+ * Rows of the first table in ledger.md's `## Grades so far` section (Course | Score | As of); none without that section.
+ * The Score cell is free text written by the morning check: an optional "87%" at the start, then items like
+ * "Mini-Quiz 3 9.5/10" separated by ";" or "," (parentheses count as separators), and remarks. "total hidden …" sets
+ * `hidden` instead of becoming a note.
  */
-export function parseGrades(body: string): GradeRow[] {
-  const table = parseTable(body)
+export function parseLedgerGrades(ledger: string): GradeRow[] {
+  const table = parseTable(extractSection(ledger, /^grades/i) ?? '')
   if (!table) return []
   const out: GradeRow[] = []
   for (const cells of table.rows) {

@@ -3,7 +3,7 @@ import { hrefFor } from './files'
 import { afterDash, firstHeading, splitSections, type LinkRow, type TopicRow } from './markdown'
 import { EMPTY, type Tally } from './stats'
 import { LastGrade, StatBar, TopicCell } from './ui'
-import { DueError, StandingCell, useDue } from './DueNow'
+import { DueError, StandingCell, type Due } from './DueNow'
 import { LinkList } from './Links'
 import { Md } from './Md'
 import { usePager } from './Pager'
@@ -26,13 +26,12 @@ function PageCards({ entries, all }: { entries: Entry[]; all: Texts }) {
   )
 }
 
-export function CoursePage({ code, tree, all, topics, tallies, links }: {
-  code: string; tree: Tree; all: Texts; topics: TopicRow[]; tallies: Record<string, Tally>; links: LinkRow[]
+export function CoursePage({ code, tree, all, topics, tallies, links, due }: {
+  code: string; tree: Tree; all: Texts; topics: TopicRow[]; tallies: Record<string, Tally>; links: LinkRow[]; due: Due
 }) {
   const course = tree.courses.find((c) => c.code === code)
   const rows = topics.filter((r) => r.course === code)
   const { rows: shown, pager } = usePager(rows)
-  const due = useDue(all['ledger.md'] ?? '')
   if (!course) return <article><h1>Unknown course</h1><p><code>{code}</code></p></article>
 
   const syllabusPath = `courses/${code}/00-syllabus.md`

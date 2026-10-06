@@ -1,14 +1,15 @@
 // The what-if panel on a course page: the course grade the rest of the term projects to, and the average the rest
 // needs for a target. Weights come from the syllabus's Grading table (parseWeights), graded items from the ledger's
-// Grades so far (parseGrades). The target is kept per viewer in localStorage under "target".
+// Grades so far (parseLedgerGrades). The target is kept per viewer in localStorage under "target".
 import { useMemo, useState } from 'react'
 import { hrefFor, type Texts } from './files'
-import { parseGrades, parseWeights, splitSections, type GradeComponent, type GradeItem } from './markdown'
+import { parseLedgerGrades, parseWeights, type GradeComponent, type GradeItem } from './markdown'
 
-export interface Row extends GradeComponent {
+interface Row extends GradeComponent {
   /** The Grades so far items that belong to this component. */
   items: GradeItem[]
-  /** Points of the course grade already graded: the whole weight once an item matches, or weight × graded ÷ count. */
+  /** Points of the course grade already graded: weight × items ÷ count for a counted component, the whole weight once an
+   *  item matches an uncounted one, none for a running one, whose score is not final. */
   graded: number
   /** Points earned on the graded part: graded × the items' average. */
   earned: number
@@ -16,11 +17,9 @@ export interface Row extends GradeComponent {
   open: number
 }
 
-export interface Standing {
+interface Breakdown {
   /** Most points open first, bonuses last. */
   rows: Row[]
-  /** Items that belong to no component, with the components they tie between (none when nothing matched). */
-  unplaced: { item: GradeItem; ties: string[] }[]
   /** The non-bonus weights' sum: 100 when the table is right. */
   total: number
   /** Non-bonus points graded, earned and still open. */
@@ -31,12 +30,20 @@ export interface Standing {
   bonus: number
 }
 
+/** 93.6735 → "93.7"; 45 → "45". */
+const fmt = (n: number) => String(Math.round(n * 10) / 10)
+
+/** ["a", "b", "c"] → "a, b and c". */
+const andList = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`)
+
+const itemText = (it: GradeItem) => `${it.name} ${it.got}/${it.of}`
+
 /**
  * The components a graded item belongs to: those whose first word starts the item's name, in any case. When several
  * share that word ("Exam 1" to "Exam 4"), only those whose names share the longest beginning with the item's name stay,
  * so "Exam 2" belongs to Exam 2 alone. More than one left means the item cannot be placed.
  */
-export function owners(item: string, components: GradeComponent[]): GradeComponent[] {
+function owners(item: string, components: GradeComponent[]): GradeComponent[] {
   const name = item.toLowerCase()
   const shared = (c: GradeComponent) => {
     const n = c.name.toLowerCase()
@@ -51,25 +58,43 @@ export function owners(item: string, components: GradeComponent[]): GradeCompone
 
 /**
  * Graded items placed in their components. A counted component is graded in the share items ÷ count, an uncounted one
- * whole once an item matches it; either way the known part is the items' average. An error when an item is scored out
- * of 0 or a component holds more items than its count, since the numbers would then be wrong.
+ * whole once an item matches it, and a running one not at all: its one item is the score so far, so all of its weight
+ * stays open. The known part is the items' average. An error, so that no numbers show, when an item belongs to no
+ * single component, when one is scored out of 0, or when a component holds more items than its count (a running one,
+ * more than one).
  */
-export function standing(components: GradeComponent[], items: GradeItem[]): Standing | { error: string } {
+function breakdown(components: GradeComponent[], items: GradeItem[]): Breakdown | { error: string } {
   const placed = components.map((): GradeItem[] => [])
-  const unplaced: Standing['unplaced'] = []
+  const unmatched: GradeItem[] = []
+  const tied: string[] = []
   for (const item of items) {
     if (Number(item.of) === 0) return { error: `${item.name} is scored out of 0. Fix it in Grades so far in the ledger.` }
     const own = owners(item.name, components)
     if (own.length === 1) placed[components.indexOf(own[0])].push(item)
-    else unplaced.push({ item, ties: own.map((c) => c.name) })
+    else if (own.length === 0) unmatched.push(item)
+    else tied.push(`${itemText(item)} matches ${andList(own.map((c) => c.name))} equally.`)
+  }
+  if (unmatched.length || tied.length) {
+    const n = unmatched.length + tied.length
+    return {
+      error: [
+        `${n} graded item${n === 1 ? ' belongs' : 's belong'} to no single component, so the panel shows no numbers.`,
+        ...(unmatched.length ? [`${andList(unmatched.map(itemText))} ${unmatched.length === 1 ? 'matches' : 'match'} no component.`] : []),
+        ...tied,
+        "An item belongs to the component whose first word starts its name. Rename the item in Grades so far in the ledger, or the component in the syllabus's Grading table.",
+      ].join(' '),
+    }
   }
   const rows: Row[] = []
   for (const [i, c] of components.entries()) {
     const its = placed[i]
+    if (c.running && its.length > 1) {
+      return { error: `${c.name} is a running score, so it holds one item, but Grades so far has ${its.length} for it. Fix the item names in Grades so far or the component in the syllabus.` }
+    }
     if (c.count !== null && its.length > c.count) {
       return { error: `${c.name} has ${its.length} graded items, more than the ${c.count} the syllabus counts. Fix the item names in Grades so far or the count in the syllabus.` }
     }
-    const share = c.count === null ? (its.length > 0 ? 1 : 0) : its.length / c.count
+    const share = c.running ? 0 : c.count === null ? (its.length > 0 ? 1 : 0) : its.length / c.count
     const average = its.length > 0 ? its.reduce((sum, it) => sum + Number(it.got) / Number(it.of), 0) / its.length : 0
     const graded = c.weight * share
     rows.push({ ...c, items: its, graded, earned: graded * average, open: c.weight - graded })
@@ -78,7 +103,6 @@ export function standing(components: GradeComponent[], items: GradeItem[]): Stan
   const sum = (rs: Row[], f: (r: Row) => number) => rs.reduce((s, r) => s + f(r), 0)
   return {
     rows: [...rows].sort((a, b) => Number(a.bonus) - Number(b.bonus) || b.open - a.open),
-    unplaced,
     total: sum(core, (r) => r.weight),
     graded: sum(core, (r) => r.graded),
     earned: sum(core, (r) => r.earned),
@@ -88,7 +112,7 @@ export function standing(components: GradeComponent[], items: GradeItem[]): Stan
 }
 
 /** The average everything not yet graded needs for the target, or the sentence that says why there is none. */
-export function verdict(s: Standing, target: number): { need: number } | { say: string } {
+function verdict(s: Breakdown, target: number): { need: number } | { say: string } {
   const have = s.earned + s.bonus
   if (s.open === 0) return { say: `Everything is graded, and the course grade of ${fmt(have)}% ${have >= target ? 'reaches' : 'is short of'} the target.` }
   const need = (100 * (target - have)) / s.open
@@ -96,14 +120,6 @@ export function verdict(s: Standing, target: number): { need: number } | { say: 
   if (need > 100) return { say: `The target is out of reach. Even 100% on everything not yet graded gives ${fmt(have + s.open)}%.` }
   return { need }
 }
-
-/** 93.6735 → "93.7"; 45 → "45". */
-export const fmt = (n: number) => String(Math.round(n * 10) / 10)
-
-/** ["a", "b", "c"] → "a, b and c". */
-const andList = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs[xs.length - 1]}`)
-
-const itemText = (it: GradeItem) => `${it.name} ${it.got}/${it.of}`
 
 /** A percentage typed into an input: a number from 0 to 100, else null. */
 function percent(s: string): number | null {
@@ -126,18 +142,12 @@ function saveTarget(v: number) {
   try { localStorage.setItem(KEY, String(v)) } catch { /* storage blocked: the target lasts for this page load */ }
 }
 
-/** The course's items in the ledger's Grades so far table; none when it has no row there. */
-function gradedItems(ledger: string, code: string): GradeItem[] {
-  const sec = splitSections(ledger).find((s) => s.heading !== null && /^grades/i.test(s.heading))
-  return (sec ? parseGrades(sec.body) : []).find((r) => r.course === code)?.items ?? []
-}
-
 export function WhatIf({ code, all }: { code: string; all: Texts }) {
   const syllabusPath = `courses/${code}/00-syllabus.md`
   const result = useMemo(() => {
     const parsed = parseWeights(all[syllabusPath] ?? '')
     if ('error' in parsed) return { error: `${parsed.error} Fix the Grading table in the syllabus to see the numbers.` }
-    return standing(parsed.components, gradedItems(all['ledger.md'] ?? '', code))
+    return breakdown(parsed.components, parseLedgerGrades(all['ledger.md'] ?? '').find((r) => r.course === code)?.items ?? [])
   }, [all, code, syllabusPath])
   const [target, setTarget] = useState(loadTarget)
   const [assume, setAssume] = useState<string | null>(null)   // null: the assumption follows the target
@@ -149,8 +159,8 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
   const t = percent(target)
   const a = percent(assume ?? target)
   const v = t === null ? null : verdict(s, t)
-  const unmatched = s.unplaced.filter((u) => u.ties.length === 0)
-  const tied = s.unplaced.filter((u) => u.ties.length > 0)
+  const running = s.rows.filter((r) => r.running)
+  const drops = s.rows.filter((r) => r.drops && !r.running)   // a running score stays open, so its drop changes nothing here
   const openBonus = s.rows.filter((r) => r.bonus && r.open > 0)
   return (
     <section className="panel whatif">
@@ -192,7 +202,9 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
               <td>
                 <span className="items">
                   {r.items.map((it, i) => <span key={i} className="chip">{it.name} <b>{it.got}/{it.of}</b></span>)}
-                  {r.count !== null ? <span className="muted">{r.items.length} of {r.count}</span> : r.items.length === 0 && <span className="muted">—</span>}
+                  {r.running ? <span className="muted">running</span>
+                    : r.count !== null ? <span className="muted">{r.items.length} of {r.count}</span>
+                    : r.items.length === 0 && <span className="muted">—</span>}
                 </span>
               </td>
               <td className="open">{r.bonus && r.open > 0 ? 'not assumed' : fmt(r.open)}</td>
@@ -200,12 +212,16 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
           ))}
         </tbody>
       </table>
-      {unmatched.length > 0 && (
+      {running.map((r) => (
+        <p key={r.name} className="small muted">
+          {r.name} shows its running score, but its {fmt(r.weight)}% stays open until the final score is in, so the assumption applies to it.
+        </p>
+      ))}
+      {drops.length > 0 && (
         <p className="small muted">
-          Not matched to any component, so not counted: {andList(unmatched.map((u) => itemText(u.item)))}. An item matches a component when its name starts with the component's first word.
+          {andList(drops.map((r) => r.name))} {drops.length === 1 ? 'drops its' : 'drop their'} lowest scores at the end of term. The panel ignores the drop and counts every score.
         </p>
       )}
-      {tied.map((u, i) => <p key={i} className="small muted">{itemText(u.item)} matches {andList(u.ties)} equally, so it is not counted.</p>)}
       {openBonus.length > 0 && (
         <p className="small muted">
           Bonus points count only once graded, so {andList(openBonus.map((r) => `${r.name} (+${fmt(r.weight)}%)`))} {openBonus.length === 1 ? 'is' : 'are'} not assumed.

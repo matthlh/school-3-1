@@ -6,7 +6,7 @@
 ## Grading
 | Component | Weight | Notes |
 |---|---|---|
-| iClicker in class | 4% | participation; 4 lowest sessions dropped; week 1 not counted; 38 polls weighted 2–14 pts each, so be there every time |
+| iClicker in class (running) | 4% | participation; 4 lowest sessions dropped; week 1 not counted; 38 polls weighted 2–14 pts each, so be there every time |
 | WeBWorK ×10 | 10% | mostly Mondays 23:59 (dates in Logistics) |
 | Lab ×8 | 7% | in-lab quiz (3) + follow-up (3), written in a ~20-min window during the Friday lab — no make-up at home |
 | Pre-lab quizzes ×7 | 2% | short Canvas quiz on the lab handout before Labs 2–8; opens ~1 week before, due Fri 23:59 |

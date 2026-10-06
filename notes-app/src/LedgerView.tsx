@@ -1,22 +1,22 @@
 import { useState } from 'react'
 import type { QuizState } from './files'
-import { firstHeading, parseGrades, parseTable, splitAroundTable, splitLogEntry, splitSections, splitSentences, type Deadline, type Table, type TopicRow } from './markdown'
+import { firstHeading, parseLedgerGrades, parseTable, splitAroundTable, splitLogEntry, splitSections, splitSentences, type Deadline, type Table, type TopicRow } from './markdown'
 import { hrefAnchor, scrollIfSame } from './routes'
 import { toneStyle } from './tone'
 import { formatDate, isISODate, shortDate, todayISO } from './dates'
 import { Md } from './Md'
 import { usePager } from './Pager'
-import { DueBody, FROZEN_TITLE, dueDetail, useDue, whenLabel, whenTitle, type Due } from './DueNow'
+import { DueBody, DueDetail, StandingCell, type Due } from './DueNow'
 import { CourseChip, LastGrade, TopicCell, calendarChip, isCourseCode } from './ui'
 import { calibrationByCourse } from './stats'
 import { SectionRail } from './SectionRail'
 
 const PATH = 'ledger.md'
 
-/** ledger.md rendered as a dashboard: the scheduler's Due now block, then paged All topics / Term calendar / Grades / Session log. */
-export function LedgerView({ text, topics, calendar, quiz }: { text: string; topics: TopicRow[]; calendar: Deadline[]; quiz: QuizState | null }) {
+/** ledger.md rendered as a dashboard: the scheduler's Due now block (`due`, read from `text`), then paged All topics /
+ *  Term calendar / Grades / Session log. */
+export function LedgerView({ text, topics, calendar, quiz, due }: { text: string; topics: TopicRow[]; calendar: Deadline[]; quiz: QuizState | null; due: Due }) {
   const today = todayISO()
-  const due = useDue(text)
   // The preamble (title, grade key, ladder) is for the scripts; the page starts at the first section.
   const sections = splitSections(text).slice(1).filter((s) => s.heading !== null)
   return (
@@ -31,10 +31,10 @@ export function LedgerView({ text, topics, calendar, quiz }: { text: string; top
       {sections.map((s) => {
         const h = s.heading ?? ''
         let body
-        if (/^due now/i.test(h)) body = <><h2>Due now · {dueDetail(due)}</h2><DueBody due={due} /></>
+        if (/^due now/i.test(h)) body = <><h2>Due now · <DueDetail due={due} /></h2><DueBody due={due} /></>
         else if (/^all topics/i.test(h)) body = <AllTopics heading={h} topics={topics} due={due} quiz={quiz} />
         else if (/^term calendar/i.test(h)) body = <CalendarSection heading={h} body={s.body} calendar={calendar} today={today} />
-        else if (/^grades/i.test(h)) body = <GradesSection heading={h} body={s.body} />
+        else if (/^grades/i.test(h)) body = <GradesSection heading={h} body={s.body} ledger={text} />
         else if (/^session log/i.test(h)) body = <SessionLog heading={h} body={s.body} />
         else body = <><h2>{h}</h2><Md text={s.body} path={PATH} /></>
         return <section key={s.id} id={'sec-' + s.id}>{body}</section>
@@ -46,8 +46,8 @@ export function LedgerView({ text, topics, calendar, quiz }: { text: string; top
 const byNext = (a: TopicRow, b: TopicRow) =>
   (a.next || '9999').localeCompare(b.next || '9999') || a.course.localeCompare(b.course) || a.topic.localeCompare(b.topic)
 
-/** Every ledger row, paged, with a course filter. The Next column shows the Due now block's standing: why a listed topic
- *  is due, "frozen", or else the Next date. */
+/** Every ledger row, paged, with a course filter. The Next column shows the Due now block's standing (StandingCell): why
+ *  a listed topic is due, "frozen", or else the Next date. */
 function AllTopics({ heading, topics, due, quiz }: { heading: string; topics: TopicRow[]; due: Due; quiz: QuizState | null }) {
   const [course, setCourse] = useState<string | null>(null)
   const courses = [...new Set(topics.map((t) => t.course))].sort()
@@ -75,23 +75,16 @@ function AllTopics({ heading, topics, due, quiz }: { heading: string; topics: To
           <tr><th>Course</th><th>Topic</th><th className="lec">Lec</th><th className="last">Last</th><th className="grade">Grade</th><th className="next">Next</th></tr>
         </thead>
         <tbody>
-          {rows.map((r) => {
-            const s = due.ok ? due.standing(r) : null
-            return (
-              <tr key={`${r.course}|${r.topic}`}>
-                <td className="course nowrap"><CourseChip code={r.course} /></td>
-                <td className="topic"><TopicCell r={r} /></td>
-                <td className="lec">{r.lec || '—'}</td>
-                <td className="last">{isISODate(r.last) ? shortDate(r.last) : '—'}</td>
-                <td className="grade"><LastGrade r={r} /></td>
-                {s?.kind === 'due'
-                  ? <td className={'next ' + (s.when.kind === 'sweep' ? 'sweep' : 'late')} title={whenTitle(s.when)}>{whenLabel(s.when)}</td>
-                  : s?.kind === 'frozen'
-                    ? <td className="next frozen" title={FROZEN_TITLE}>frozen</td>
-                    : <td className="next">{r.next ? shortDate(r.next) : '—'}</td>}
-              </tr>
-            )
-          })}
+          {rows.map((r) => (
+            <tr key={`${r.course}|${r.topic}`}>
+              <td className="course nowrap"><CourseChip code={r.course} /></td>
+              <td className="topic"><TopicCell r={r} /></td>
+              <td className="lec">{r.lec || '—'}</td>
+              <td className="last">{isISODate(r.last) ? shortDate(r.last) : '—'}</td>
+              <td className="grade"><LastGrade r={r} /></td>
+              <StandingCell s={due.ok ? due.standing(r) : null} next={r.next} />
+            </tr>
+          ))}
         </tbody>
       </table>
       {pager}
@@ -232,9 +225,10 @@ function RecurringSeries({ heading, table }: { heading: string | null; table: Ta
   )
 }
 
-/** Grades so far: course chip, the Canvas total with the graded items as chips, and the as-of date. The file's preamble sentence is for the scripts and is not shown. */
-function GradesSection({ heading, body }: { heading: string; body: string }) {
-  const rows = parseGrades(body)
+/** Grades so far: course chip, the Canvas total with the graded items as chips, and the as-of date. The file's preamble
+ *  sentence is for the scripts and is not shown; without a table the section's `body` shows as written. */
+function GradesSection({ heading, body, ledger }: { heading: string; body: string; ledger: string }) {
+  const rows = parseLedgerGrades(ledger)
   if (rows.length === 0) return <><h2>{heading}</h2><Md text={body} path={PATH} /></>
   return (
     <>

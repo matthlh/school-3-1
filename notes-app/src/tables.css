@@ -24,12 +24,15 @@ table.due td:last-child, table.ledger td:last-child, table.ledger th:last-child 
 td.nowrap { white-space: nowrap; }
 .detail { color: var(--muted); font-size: 12.5px; margin-left: 5px; }   /* a topic's trailing parenthetical */
 table.due td.when { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; width: 76px; }
-table.due td.when.late, table.ledger td.next.late { color: var(--bad); font-weight: 600; }
+/* A ledger row's standing (StandingCell in DueNow.tsx: a course page's Revision, All topics, a Topics tab) and why a
+   Due now item is due: overdue in red, an exam sweep in amber; frozen and the next date stay muted. */
+td.standing { white-space: nowrap; text-align: right; font-size: 12.5px; color: var(--muted); }
+:is(td.standing, table.due td.when).late { color: var(--bad); font-weight: 600; }
+:is(td.standing, table.due td.when).sweep { color: var(--warn); font-weight: 600; }
 table.due td.grade, table.ledger td.grade { width: 40px; text-align: center; }
 table.ledger th.grade { text-align: center; }
 /* All topics */
 table.ledger td.lec, table.ledger td.last { color: var(--muted); white-space: nowrap; font-size: 12.5px; }
-table.ledger td.next { white-space: nowrap; text-align: right; font-size: 12.5px; color: var(--fg2); }
 table.ledger th.next, table.ledger th.weight { text-align: right; }
 /* Term calendar */
 table.ledger td.date { white-space: nowrap; color: var(--fg2); }

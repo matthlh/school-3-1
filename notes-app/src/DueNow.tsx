@@ -1,14 +1,15 @@
-// The Due now block the quiz scripts write into ledger.md, as Home, the ledger and a course page show it. The site never
-// works out for itself what is due: every due, sweep and frozen mark comes from this block (parseDueBlock in markdown.ts).
+// The Due now block the quiz scripts write into ledger.md, as Home, the ledger, a course page and a Topics tab show it.
+// The site never works out for itself what is due: every due, sweep and frozen mark comes from this block (parseDueBlock
+// in markdown.ts).
 import { useMemo } from 'react'
-import { parseDueBlock, type DueBlock, type DueItem, type DueWhen, type FrozenGroup, type Readiness, type TopicRow } from './markdown'
-import { formatDate } from './dates'
+import { examOnly, parseDueBlock, whenLabel, whenTitle, type DueBlock, type DueItem, type DueWhen, type FrozenGroup, type Readiness, type TopicRow } from './markdown'
+import { daysBetween, formatDate, todayISO } from './dates'
 import { CourseChip, GradeChip, TopicCell } from './ui'
 import { usePager } from './Pager'
 import { Md } from './Md'
 
-/** Where a ledger row stands in the block: listed as due, frozen, or neither. */
-export type Standing = { kind: 'due'; when: DueWhen } | { kind: 'frozen' } | { kind: 'later' }
+/** Where a ledger row stands in the block: listed as due, listed as frozen (after `exam`), or neither. */
+export type Standing = { kind: 'due'; when: DueWhen } | { kind: 'frozen'; exam: string } | { kind: 'later' }
 
 /** The block read from one ledger text, with the lookups the pages need; or why it could not be read. */
 export type Due =
@@ -24,52 +25,39 @@ function readDue(ledger: string): Due {
   const parsed = parseDueBlock(ledger)
   if (!parsed.ok) return parsed
   const { block } = parsed
-  const listed = new Map(block.items.map((i) => [`${i.course}|${i.topic}`, i]))
-  const frozenIn = new Set(block.frozen.map((g) => g.course))
+  const listed = new Map(block.items.map((i) => [`${i.course}|${i.topic}`, i.when]))
+  const frozen = new Map(block.frozenRows.map((f) => [`${f.course}|${f.topic}`, f.exam]))
   return {
     ok: true,
     block,
-    // A row missing from the list is frozen when its course has frozen topics and its Next is before
-    // block.frozenBefore (whose comment says why that is exact). Any other row is neither due nor frozen.
     standing: (r) => {
-      const item = listed.get(`${r.course}|${r.topic}`)
-      if (item) return { kind: 'due', when: item.when }
-      const frozen = frozenIn.has(r.course) && block.frozenBefore !== null && r.next !== '' && r.next < block.frozenBefore
-      return frozen ? { kind: 'frozen' } : { kind: 'later' }
+      const key = `${r.course}|${r.topic}`
+      const when = listed.get(key)
+      const exam = frozen.get(key)
+      return when ? { kind: 'due', when } : exam !== undefined ? { kind: 'frozen', exam } : { kind: 'later' }
     },
     count: (course) => block.items.filter((i) => i.course === course).length,
   }
 }
 
-/** What follows "Due now" in a panel title: "52 topics · Tue Oct 6", "nothing due", or "unreadable". */
-export function dueDetail(due: Due): string {
-  if (!due.ok) return 'unreadable'
-  const { items, asOf } = due.block
-  return items.length ? `${items.length} topic${items.length === 1 ? '' : 's'} · ${asOf}` : 'nothing due'
-}
-
-/** "due today", "19 d late" or "exam sweep". */
-export function whenLabel(w: DueWhen): string {
-  return w.kind === 'today' ? 'due today' : w.kind === 'overdue' ? `${w.days} d late` : 'exam sweep'
-}
-
-/** The block's own words, for a tooltip: "overdue 19 d", "exam sweep before Exam 2 14:00 on Fri Oct 16". */
-export function whenTitle(w: DueWhen): string {
-  return w.kind === 'today' ? 'due today' : w.kind === 'overdue' ? `overdue ${w.days} d` : `exam sweep before ${w.exam} on ${w.date}`
-}
-
-export const FROZEN_TITLE = "Not due: an exam that covered it is past and the course's next exam does not cover it."
-
-/** "Exam 2 14:00" → ["Exam 2", "14:00"]: the block names an exam with its start time. */
-function splitTime(exam: string): [string, string | null] {
-  const m = /^(.*) (\d{1,2}:\d{2})$/.exec(exam)
-  return m ? [m[1], m[2]] : [exam, null]
-}
-
 /**
- * The block as the scheduler wrote it: how many topics the sweep pulled in, the due topics paged at 10 (or the line that
- * stands in for them), the readiness lines, then the frozen line. An unreadable block shows why instead.
+ * What follows "Due now" in a panel title: "52 topics · Tue Oct 6", "nothing due · Tue Oct 6", or "unreadable". A block
+ * written before today says how old it is, muted: "(2 days old)".
  */
+export function DueDetail({ due }: { due: Due }) {
+  if (!due.ok) return <>unreadable</>
+  const { items, date } = due.block
+  const age = daysBetween(date, todayISO())
+  return (
+    <>
+      {items.length ? `${items.length} topic${items.length === 1 ? '' : 's'}` : 'nothing due'} · {formatDate(date)}
+      {age > 0 && <span className="stale"> ({age} day{age === 1 ? '' : 's'} old)</span>}
+    </>
+  )
+}
+
+/** The block as the scheduler wrote it: how many topics the sweep pulled in, the due topics paged at 10 (or the line that
+ *  stands in for them), the readiness lines, then the frozen line. An unreadable block shows why instead. */
 export function DueBody({ due }: { due: Due }) {
   if (!due.ok) return <DueError error={due.error} />
   const { items, swept, nothing, readiness, frozen, frozenWhy } = due.block
@@ -113,7 +101,8 @@ function ReadinessList({ rows }: { rows: Readiness[] }) {
       <div className="due-label">Exam readiness</div>
       <ul>
         {rows.map((r) => {
-          const [exam, time] = splitTime(r.exam)
+          const exam = examOnly(r.exam)
+          const time = r.exam.slice(exam.length).trim()
           return (
             <li key={`${r.course}|${r.exam}`}>
               <CourseChip code={r.course} />{' '}
@@ -134,7 +123,7 @@ function FrozenLine({ groups, why }: { groups: FrozenGroup[]; why: string | null
       Frozen, not due:{' '}
       {groups.map((g, k) => (
         <span key={`${g.course}|${g.exam}`}>
-          {k > 0 && ', '}<CourseChip code={g.course} /> {g.count} topic{g.count === 1 ? '' : 's'} from {splitTime(g.exam)[0]}
+          {k > 0 && ', '}<CourseChip code={g.course} /> {g.count} topic{g.count === 1 ? '' : 's'} from {examOnly(g.exam)}
         </span>
       ))}
       . {why}
@@ -153,11 +142,14 @@ export function DueError({ error }: { error: string }) {
 }
 
 /**
- * A course page's cell for one ledger row: the block's label in red when due (amber for an exam sweep), "frozen" muted,
- * else "next Sat Sep 20" muted. `s` is null when the block could not be read; then only the next date shows.
+ * A ledger row's standing as a table cell (a course page's Revision panel, the ledger's All topics, a Topics tab): the
+ * block's label in red when due, in amber with its exam for an exam sweep ("Exam 2 sweep"), "frozen" muted, else
+ * "next Tue Oct 13" muted. `s` is null when the block could not be read; then only the next date shows.
  */
 export function StandingCell({ s, next }: { s: Standing | null; next: string }) {
-  if (s?.kind === 'due') return <td className={s.when.kind === 'sweep' ? 'sweep' : 'due'} title={whenTitle(s.when)}>{whenLabel(s.when)}</td>
-  if (s?.kind === 'frozen') return <td className="frozen" title={FROZEN_TITLE}>frozen</td>
-  return <td className="muted">{next ? `next ${formatDate(next)}` : ''}</td>
+  if (s?.kind === 'due') return <td className={'standing ' + (s.when.kind === 'sweep' ? 'sweep' : 'late')} title={whenTitle(s.when)}>{whenLabel(s.when)}</td>
+  if (s?.kind === 'frozen') {
+    return <td className="standing" title={`Not due: ${examOnly(s.exam)} covered it and is past, and the course's next exam does not cover it.`}>frozen</td>
+  }
+  return <td className="standing">{next ? `next ${formatDate(next)}` : ''}</td>
 }

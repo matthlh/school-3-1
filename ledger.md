@@ -4,6 +4,8 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
+<!-- due as of 2026-10-06 -->
+
 _52 topics due as of Tue Oct 6. Say **quiz me**._
 
 - STAT 251 · 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx) · overdue 19 d · last unquizzed
@@ -62,6 +64,23 @@ _52 topics due as of Tue Oct 6. Say **quiz me**._
 _Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 0% of 12 in-scope questions likely recalled._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is past and the course's next exam does not._
+
+- PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · frozen after Exam 1
+- PHIL 385 · Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) · frozen after Exam 1
+- PHIL 385 · First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) · frozen after Exam 1
+- PHIL 385 · Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) · frozen after Exam 1
+- PHIL 385 · Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) · frozen after Exam 1
+- PHIL 385 · Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) · frozen after Exam 1
+- PHIL 385 · The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) · frozen after Exam 1
+- PHIL 385 · How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) · frozen after Exam 1
+- PHIL 385 · Why Kierkegaard uses pseudonyms (life-views speak for themselves · no verdict · not relativism) · frozen after Exam 1
+- PHIL 385 · Kierkegaard's family losses (five siblings and his mother 1819–34 · the father · the great upheaval · the age of Christ) · frozen after Exam 1
+- PHIL 385 · The unhappy consciousness and the three formations (absent from oneself · hoping vs remembering · the crossing) · frozen after Exam 1
+- PHIL 385 · The gallery in The Unhappiest One (Niobe · Antigone · Job · the prodigal's father · the lapsed martyr · the accessit) · frozen after Exam 1
+- PHIL 385 · Kraal on The Unhappiest One (the doxology · the paradox · a gift of fortune, not comfort · Tolstoy's On Life) · frozen after Exam 1
+- PHIL 385 · Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) · frozen after Exam 1
+- PHIL 385 · The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) · frozen after Exam 1
+- PHIL 385 · Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) · frozen after Exam 1
 
 ## All topics
 

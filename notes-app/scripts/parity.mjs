@@ -1,8 +1,8 @@
 // Parser parity. Every courses/*/02-questions.md is parsed twice: by the quiz scripts (`_parse_bank` in
 // .claude/skills/quiz-me/scripts/quizlib.py) and by the site (`parseQuestions` in src/markdown.ts, the id from
 // `questionId` in src/stats.ts). Both must find the same questions in the same order, with the same id, question,
-// display and answer; otherwise the site shows a question differently from how the quiz asks it, or files its history
-// under another id.
+// display, answer, topic, lec and type; otherwise the site shows a question differently from how the quiz asks it, files
+// its history under another id, or lists it under another topic, lecture or type.
 //   npm run parity      (the Pages build runs it before building)
 // Exit code 1 on any difference, each one printed from the first place where the two parsers part.
 import { spawnSync } from 'node:child_process'
@@ -11,7 +11,7 @@ import { join } from 'node:path'
 import { importSite } from './import-site.mjs'
 
 const root = decodeURIComponent(new URL('../..', import.meta.url).pathname)
-const FIELDS = ['id', 'question', 'display', 'answer']
+const FIELDS = ['id', 'question', 'display', 'answer', 'topic', 'lec', 'type']
 const banks = readdirSync(join(root, 'courses')).sort()
   .map((code) => `courses/${code}/02-questions.md`)
   .filter((bank) => existsSync(join(root, bank)))
@@ -25,7 +25,8 @@ const PY = `
 import json, sys
 sys.path.insert(0, sys.argv[1])
 import quizlib
-print(json.dumps({bank: [dict(id=q["id"], question=q["q"], display=q["q_display"], answer=q["a"], line=q["line"])
+print(json.dumps({bank: [dict(id=q["id"], question=q["q"], display=q["q_display"], answer=q["a"], topic=q["topic"], lec=q["lec"],
+                              type=q["type"], line=q["line"])
                          for q in quizlib._parse_bank(f"{sys.argv[2]}/{bank}", bank.split("/")[1])]
                   for bank in sys.argv[3:]}))
 `
@@ -57,7 +58,7 @@ for (const bank of banks) {
   const course = bank.split('/')[1]
   const site = []
   for (const q of parseQuestions(readFileSync(join(root, bank), 'utf8')).flatMap((g) => g.questions)) {
-    site.push({ id: await questionId(course, q.question), question: q.question, display: q.display, answer: q.answer })
+    site.push({ id: await questionId(course, q.question), question: q.question, display: q.display, answer: q.answer, topic: q.topic, lec: q.lec, type: q.type })
   }
   const theirs = scripts[bank]
   total += theirs.length

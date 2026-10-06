@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildTree, courseOf, labelFor, loadAll, loadQuizState, mainFileCourse, titledByHeader, type QuizState, type Texts, type Tree } from './files'
+import { buildTree, courseOf, labelFor, loadAll, mainFileCourse, titledByHeader, type Loaded, type Tree } from './files'
 import { courseLabel, parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
 import { tallyByCourse } from './stats'
 import { HREF_HOME, hrefCourse, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
@@ -16,6 +16,7 @@ import { LinksView } from './LinksView'
 import { SearchResults } from './SearchResults'
 import { UpdateToast } from './UpdateToast'
 import { startUpdateChecks, takeSavedScroll } from './update'
+import { useDue } from './DueNow'
 
 /** The tab title: the page, then the course it belongs to ("Syllabus · STAT 251", "Lec 3 · CPSC 310"). */
 function tabTitle(route: Route, tree: Tree): string {
@@ -39,14 +40,14 @@ function termYear(): number {
 export default function App() {
   const route = useRoute()
   const tree = useMemo(buildTree, [])
-  const [all, setAll] = useState<Texts | null>(null)
+  const [loaded, setLoaded] = useState<Loaded | null>(null)
   const [failed, setFailed] = useState(false)
-  const [quiz, setQuiz] = useState<QuizState | null>(null)
   const [query, setQuery] = useState('')
   const [pinned, setPinned] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
+  const all = loaded?.texts ?? null
 
-  useEffect(() => { loadAll().then(setAll, () => setFailed(true)); loadQuizState().then(setQuiz) }, [])
+  useEffect(() => { loadAll().then(setLoaded, () => setFailed(true)) }, [])
   useEffect(() => { startUpdateChecks(); startScrollMemory() }, [])
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
   const anchor = route.kind === 'file' ? route.anchor : undefined
@@ -81,7 +82,7 @@ export default function App() {
   }, [])
 
   const topics = useMemo(() => parseLedgerTopics(all?.['ledger.md'] ?? ''), [all])
-
+  const due = useDue(all?.['ledger.md'] ?? '')
   const links = useMemo(() => parseLinks(all?.['links.md'] ?? ''), [all])
   const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', termYear()), [all])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
@@ -100,14 +101,14 @@ export default function App() {
 
   let body
   if (failed) body = <p className="muted">Some notes failed to load. <button type="button" className="link" onClick={() => window.location.reload()}>Reload</button></p>
-  else if (!all) body = <p className="muted">Loading…</p>
+  else if (!loaded || !all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} onPick={() => setQuery('')} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} calendar={calendar} />
-  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} calendar={calendar} links={links} due={due} />
+  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} due={due} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
-  else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={quiz} />
-  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} quiz={quiz} all={all} view={parseBankView(route.query)} anchor={route.anchor} />
-  else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} topics={topics} />
+  else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={loaded.quiz} due={due} />
+  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} all={all} topics={topics} historyOf={loaded.historyOf} view={parseBankView(route.query)} anchor={route.anchor} />
+  else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} topics={topics} due={due} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
   else body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} />
 

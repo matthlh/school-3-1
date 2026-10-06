@@ -6,8 +6,11 @@
 | Component | Weight | Notes |
 |---|---|---|
 | Participation (iClicker) | 5% | 4 lowest dropped |
-| Labs | 10% | weekly; due by the start of the next lab; lowest dropped |
-| Project D1–D4 | 20% | 5% each; D1–D2 individual, D3–D4 pairs |
+| LAB ×10 | 10% | weekly; due by the start of the next lab; lowest dropped |
+| D1 ×2 | 5% | project, individual; half autograded, half design analysis |
+| D2 ×2 | 5% | project, individual; half autograded, half design analysis |
+| D3 ×2 | 5% | project, in pairs; half autograded, half design analysis |
+| D4 ×2 | 5% | project, in pairs; half autograded, half design analysis |
 | **Midterm** | **25%** | **Thu Oct 29, 19:00–21:00**, in person, on paper, covers weeks 1–6 |
 | **Final** | **40%** | university-scheduled, 2.5 h, cumulative |
 

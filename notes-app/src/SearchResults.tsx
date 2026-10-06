@@ -3,11 +3,13 @@ import { flushSync } from 'react-dom'
 import type { Texts, Tree } from './files'
 import { courseOf, hrefFor, labelFor } from './files'
 import { splitSections } from './markdown'
-import { hrefAnchor, scrollIfSame } from './routes'
+import { hrefAnchor, hrefCourse, scrollIfSame } from './routes'
 import { toneStyle } from './tone'
+import { VERIFY } from './CoursePage'
 
-/** One `## ` section of one file (the preamble too), with its text lowercased once for matching. */
-interface Part { key: string; path: string; href: string; heading: string | null; lines: string[]; lower: string }
+/** One `## ` section of one file (the preamble too), with its text lowercased once for matching. `page` names where
+ *  `href` goes. */
+interface Part { key: string; path: string; href: string; page: string; heading: string | null; lines: string[]; lower: string }
 /** A section holding every term: `full` lines hold all of them, `count` lines hold at least one, `snippets` show them. */
 interface Hit extends Part { full: number; count: number; snippets: string[] }
 
@@ -23,12 +25,22 @@ function Highlight({ text, terms }: { text: string; terms: string[] }) {
   return <>{text.split(re).map((part, i) => (i % 2 ? <mark key={i}>{part}</mark> : part))}</>
 }
 
-/** Every file cut into its `## ` sections, as the viewer cuts it, so a hit links to the id its section gets there. */
-function sectionsOf(all: Texts): Part[] {
-  return Object.entries(all).flatMap(([path, text]) => splitSections(text).map((s, i) => ({
-    key: `${path}:${i}`, path, href: s.heading ? hrefAnchor(path, s.id) : hrefFor(path), heading: s.heading,
-    lines: s.body.split('\n'), lower: `${s.heading ?? ''}\n${s.body}`.toLowerCase(),
-  })))
+/**
+ * Every file cut into its `## ` sections, as the viewer cuts it, so a hit links to the id its section gets there. A
+ * syllabus checklist ("To verify", "To do") shows on the course Overview instead of the syllabus page, so its hits link
+ * there.
+ */
+function sectionsOf(all: Texts, tree: Tree): Part[] {
+  return Object.entries(all).flatMap(([path, text]) => splitSections(text).map((s, i) => {
+    const code = /^courses\/([^/]+)\/00-syllabus\.md$/.exec(path)?.[1]
+    const overview = code !== undefined && s.heading !== null && VERIFY.test(s.heading)
+    return {
+      key: `${path}:${i}`, path,
+      href: overview ? hrefCourse(code) : s.heading ? hrefAnchor(path, s.id) : hrefFor(path),
+      page: overview ? 'Overview' : labelFor(path, tree),
+      heading: s.heading, lines: s.body.split('\n'), lower: `${s.heading ?? ''}\n${s.body}`.toLowerCase(),
+    }
+  }))
 }
 
 /**
@@ -53,7 +65,7 @@ function search(parts: Part[], terms: string[]): Hit[] {
 /** Every `## ` section that holds all the terms, each linked to its place on the page; the first BATCH, then more on request. */
 export function SearchResults({ query, all, tree, onPick }: { query: string; all: Texts; tree: Tree; onPick: () => void }) {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
-  const parts = useMemo(() => sectionsOf(all), [all])
+  const parts = useMemo(() => sectionsOf(all, tree), [all, tree])
   const key = terms.join(' ')
   const [more, setMore] = useState({ key, count: BATCH })
   const count = more.key === key ? more.count : BATCH // a new query starts again at BATCH
@@ -73,7 +85,7 @@ export function SearchResults({ query, all, tree, onPick }: { query: string; all
         return (
           <a key={h.key} className="card wide hit" href={h.href} onClick={pick}>
             <div className="name">
-              {code && <span className="chip tone" style={toneStyle(code)}>{code}</span>} {labelFor(h.path, tree)}
+              {code && <span className="chip tone" style={toneStyle(code)}>{code}</span>} {h.page}
               {h.heading && <> › <Highlight text={clean(h.heading)} terms={terms} /></>}
               <span className="sub"> · {h.count}</span>
             </div>

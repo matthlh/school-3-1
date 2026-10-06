@@ -15,13 +15,6 @@ export function LastGrade({ r }: { r: TopicRow }) {
   return <GradeChip g={r.grade} title={isISODate(r.last) ? `last quizzed ${formatDate(r.last)}` : 'not quizzed yet'} />
 }
 
-/** A topics page's Next cell: "next Sat Sep 20", muted; empty without a date. It marks nothing due, since whether a topic
- *  is due is the Due now block's to say and the block names ledger rows, which a course page's Revision panel and the
- *  ledger show (StandingCell in DueNow.tsx). `today` is no longer read; TopicsView still passes it. */
-export function NextCell({ next }: { next: string; today: string }) {
-  return <td className="muted">{next ? `next ${formatDate(next)}` : ''}</td>
-}
-
 export function CourseChip({ code }: { code: string }) {
   return <a href={hrefCourse(code)} className="chip tone" style={toneStyle(code)}>{code}</a>
 }

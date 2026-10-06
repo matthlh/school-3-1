@@ -60,21 +60,25 @@ function demote(text) {
 }
 
 // The banks go through the site's own parser (src/markdown.ts), which `npm run parity` holds line for line to
-// quizlib.py. A card shows its `display`, the stem as written.
-const { parseQuestions } = await importSite("export { parseQuestions } from './markdown'")
+// quizlib.py. A card shows its `display`, the stem as written. The Due now block goes through the site's parser too.
+const { parseQuestions, parseDueBlock, whenTitle, courseLabel } = await importSite("export { parseQuestions, parseDueBlock, whenTitle, courseLabel } from './markdown'")
 
 // ---------- gather ----------
+/** The ledger's Due now topics by course, each as the block words it: "<topic> · overdue 19 d · last unquizzed". Stops
+ *  when the site could not read the block either. */
 function dueNow() {
-  const ledger = read(join(root, 'ledger.md'))
-  const m = /## Due now\n([\s\S]*?)\n## /.exec(ledger)
-  const lines = (m ? m[1] : '').split('\n').filter((l) => l.startsWith('- '))
-  const byCourse = new Map()
-  for (const l of lines) {
-    const [course, ...rest] = l.slice(2).split(' · ')
-    if (!byCourse.has(course)) byCourse.set(course, [])
-    byCourse.get(course).push(rest.join(' · '))
+  const parsed = parseDueBlock(read(join(root, 'ledger.md')))
+  if (!parsed.ok) {
+    console.error(`offline-pack: ${parsed.error}`)
+    process.exit(1)
   }
-  return { count: lines.length, byCourse }
+  const byCourse = new Map()
+  for (const i of parsed.block.items) {
+    const course = courseLabel(i.course)
+    if (!byCourse.has(course)) byCourse.set(course, [])
+    byCourse.get(course).push(`${i.topic} · ${whenTitle(i.when)} · last ${i.grade ?? 'unquizzed'}`)
+  }
+  return { count: parsed.block.items.length, byCourse }
 }
 
 function course(code) {
