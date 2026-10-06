@@ -77,7 +77,7 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    - `--said N "text"` records his wrong answer to an `X` or `~`. `--why N "text"` records why he was sure, on
      an `X` at 3. Both can repeat.
    - A malformed token, a question number given twice, a flag on the wrong item, or a graded question whose
-     `**Topic:**` tag names no ledger row stops the script before it writes anything. Fix it and run it again.
+     topic names no ledger row any more stops the script before it writes anything. Fix it and run it again.
 6. The script lists **Needs more questions** (X/~ topics with < 6 questions, leech questions missed
    ≥ 2 of the last 3). Write them now into `02-questions.md` under the lecture's section, same
    `**Topic:**` tag, aimed at *what he got wrong* from a different angle — not a rephrase. Split a
@@ -100,15 +100,15 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | exam ladder T-9…T-5 (term.py) | `--course CODE --all --n 15` — every topic but the frozen ones eligible, weighted by weakness |
 | T-4 | `--course CODE --all`, then ask only the X/~ topics the focus block names |
 | PHIL 385 before exam 2–4 | `--course PHIL385 --all --n 15`. The earlier exams' topics are frozen, so only this exam's weeks come up. |
-| Friday set / "long problems" / the Friday revision block | `quiz_pick.py --long` — 4 long problems (`--n` to change). It prints a clock, 2 minutes a part (`MINUTES_PER_PART` in quizlib.py, a first guess at the midterm's pace). Give him all the stems at once; he works them on paper with no notes and sends every part's answer when the clock runs out. Grade on the numbers: `O` = every part right · `~` = right method throughout but an arithmetic slip · `X` = a wrong method or a part left blank. Correct part by part against the bank answer, then `quiz_grade.py` as usual. Then a normal `quiz me` for the rest of the block. |
-| STAT sprint / which method | `quiz_pick.py --sprint` — 10 short STAT 251 apply or derive questions by the usual priority, never a long problem (`--n` to change). It prints a clock of 18 s a question, 3 minutes for 10 (`SPRINT_SECONDS` in quiz_pick.py). Give him all the stems at once. For each one he names the distribution or rule and writes the first setup line, with no arithmetic, and sends them all when the clock runs out. Grade `O` (right method and setup line) or `X` (anything else, blank included), never `~`. Correct each `X` with the method from the bank answer, then plain `quiz_grade.py` as usual; the session's mode is `sprint`. |
-| transit deck | First grade any fully tapped deck ("grade my deck" below). Then `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers) and its own session file, `routines/transit-session.json`, which `quiz_grade.py --transit <deck date>` grades (the deck date is that file's `date`, the day it was picked, and the deck page saves its taps under the same date); rebuilds the Transit Deck artifact (morning-check skill §7). While a deck from another day is waiting ungraded, `--transit` stops and names its date, because a new deck would strand its taps. `--transit --replace` discards that deck, the one way to build over it. |
+| Friday set / "long problems" / the Friday revision block | `quiz_pick.py --long` — 4 long problems (`--n` to change). It prints a clock, 2 minutes a part (`MINUTES_PER_PART` in quizlib.py, a first guess at the midterm's pace). Give him all the questions at once; he works them on paper with no notes and sends every part's answer when the clock runs out. Grade on the numbers: `O` = every part right · `~` = right method throughout but an arithmetic slip · `X` = a wrong method or a part left blank. Correct part by part against the bank answer, then `quiz_grade.py` as usual. Then a normal `quiz me` for the rest of the block. |
+| STAT sprint / which method | `quiz_pick.py --sprint` — 10 short STAT 251 apply or derive questions by the usual priority, never a long problem (`--n` to change). It prints a clock of 18 s a question, 3 minutes for 10 (`SPRINT_SECONDS` in quiz_pick.py). Give him all the questions at once. For each one he names the distribution or rule and writes the first setup line, with no arithmetic, and sends them all when the clock runs out. Grade `O` (right method and setup line) or `X` (anything else, blank included), never `~`. Correct each `X` with the method from the bank answer, then plain `quiz_grade.py` as usual; the session's mode is `sprint`. |
+| transit deck | First grade any fully tapped deck ("grade my deck" below). Then `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers) and its own session file, `routines/transit-session.json`, which `quiz_grade.py --transit <deck date>` grades (the deck date is that file's `date`, the day it was picked, and the deck page saves its taps under the same date); rebuilds the Transit Deck artifact (morning-check skill §7). `--transit` stops in two cases: a deck from another day is waiting ungraded (a new deck would strand its taps), or today's deck already exists, graded or not (a second deck under the same date would mix its taps with the first's). `--replace` is the only way past either; morning-check §7 step 1 says when to use it. |
 | a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | Right after you quizzed him in this conversation, it grades that session: `quiz_grade.py "<paste>"`, a bare sequence in session order. A bare reply in a conversation where you did not just quiz him answers the transit deck: `quiz_grade.py --transit <deck date> "<paste>"`. The deck date is the `date` in `routines/transit-session.json`, and the deck's title shows the same day (`Transit deck — Tue Oct 6`). |
 | "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `ArtifactData` with `action: "get"`, `collection: "grades"`, `doc_id` = the `date` in `routines/transit-session.json` (the deck page's fixed DATE_ID) and `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, run `quiz_grade.py --transit <doc_id> "<replyString>"` (the script refuses the session file if it holds another day's deck), then `ArtifactData` with `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and `if_version` = the `version` the get returned. If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
 | is FSRS better yet / the FSRS shadow trial (Oct 6 – Nov 1) | `fsrs_shadow.py` — read-only: replays `routines/quiz-state.json` through FSRS-6 with its default parameters beside the ladder, prints log loss, RMSE and a 5-bin calibration table for FSRS and the ladder baseline, then one verdict line, always last (the Sunday weekly brief quotes it). `--since YYYY-MM-DD` scores only reviews from that day on. The ladder keeps scheduling; Matt adopts FSRS only if it beats the ladder baseline. |
 
 A new quiz pick overwrites `routines/quiz-session.json`; its ungraded questions are simply not recorded. A new
-transit deck never overwrites a deck from another day unless `--replace` says so (the transit row above). If he
+transit deck never replaces a waiting deck or today's deck unless `--replace` says so (the transit row above). If he
 sends grades and no session file exists, say so — never invent one. Plain grading also refuses a quiz session
 picked on an earlier day; when it really is that day's quiz, `--date <its date>` grades it as that day.
 
@@ -209,16 +209,19 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
   a date moved: "ladder said Oct 13, held before Exam 2 14:00 on Fri Oct 16" or "ladder said Oct 13, moved to a
   lighter day".
 - **Topic matching.** A question's `**Topic:**` tag and a Look-alikes cell find their ledger row by one rule
-  (`match_topic`): the same text, else one a prefix of the other (6+ characters), else a shared LO code (`1b–c`).
-  The first of these that hits any row decides. When it hits several rows, the scripts stop and name the tag or
-  cell, so a grade never lands on a guessed row. Nothing fuzzier.
+  (`match_topic`): the same text, else one a prefix of the other (6+ characters), else a shared LO code (`1b–c`),
+  compared after dropping bold and parentheticals. The first of these that hits any row decides. When it hits
+  several rows, the scripts stop and name the tag or cell, so a grade never lands on a guessed row. Nothing fuzzier.
+  A tag that is an exact copy of a ledger row's topic always names that row, which is the way out when two rows
+  differ only inside parentheses. `quiz_grade.py` files each graded question under the ledger topic stored when the
+  session was picked, so retagging the bank does not change a session already picked.
 - **Unmatched tags.** A tag that matches no ledger row prints one ⚠ block in every `quiz_pick.py` run (`--due`
   included) and in `quiz_grade.py`. It names each tag with its question count and first `file:line`. Such questions
-  are never picked. When a graded question's tag names no row (its row was renamed after the pick),
-  `quiz_grade.py` stops before writing anything and names the tag; make a ledger row match it and grade again.
+  are never picked. When a graded question's topic names no row any more (its row was renamed after the pick),
+  `quiz_grade.py` stops before writing anything and names it; make a ledger row match it and grade again.
 - `ledger.md` holds the only copy of each topic's grade, streak and Next. Grading never writes
   `courses/<CODE>/01-topics.md`, which keeps the topic list, its notes and the Look-alikes table. The notes site's
-  Topics tab shows each row's grade and next date from the ledger.
+  Topics tab shows each row's grade from the ledger and its standing from the Due now block.
 - Knobs at the top of `quizlib.py`: `MIN_QUESTIONS_PER_TOPIC` (6), `LEECH_X_IN_LAST` (2 of 3), `TYPE_PREF`,
   `SWEEP_DAYS` (7), `CAP_DAYS` (4), `SPREAD` (0.15), `NON_CUMULATIVE` and `EXAM_CUTOFF`. Each
   `NON_CUMULATIVE` or `EXAM_CUTOFF` key must name exactly one exam in the ledger's Term calendar, or the scripts
@@ -227,7 +230,7 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 
 ## Files
 - `routines/quiz-session.json` — pending session (deleted on grade; a new quiz pick replaces it)
-- `routines/transit-session.json` — the transit deck's pending session, written by `quiz_pick.py --transit` and graded with `quiz_grade.py --transit <deck date>`, usually the next morning (deleted on grade; a new deck replaces one from another day only with `--replace`)
+- `routines/transit-session.json` — the transit deck's pending session, written by `quiz_pick.py --transit` and graded with `quiz_grade.py --transit <deck date>`, usually the next morning (deleted on grade; a new deck replaces a waiting one, or follows today's, only with `--replace`)
 - `routines/quiz-state.json` — per-question history and session records. A history entry is `[date, grade]`, or
   `[date, grade, extra]` where `extra` holds only what was given: `conf`, `cause` (the full word), `said`, `why`
 - `routines/quiz/YYYY-MM-DD.md` — session log: grades, misses with the correct answer, ledger delta

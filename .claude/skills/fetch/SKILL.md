@@ -15,14 +15,15 @@ or stages the one missing piece asked for (for CPSC 310, also an outline the dec
 `/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/fetch/scripts`).
 
 ## "fetch transit deck"
-1. Check whether `routines/runs/<today>-transit.md` exists and `routines/transit-session.json` has
-   `"date": "<today>"`.
-2. If yes — it's already built (maybe from this morning's check), and the Transit Deck artifact already shows
-   it. Give him the artifact's fixed URL from morning-check SKILL.md §7; nothing is rebuilt or re-sent.
-3. If no (missing, stale date, or he already graded it and it's gone) — build a fresh one by the transit-deck
-   steps of morning-check SKILL.md §7 ("Review = the transit deck"), in order. Step 0 first grades any fully
-   tapped older deck against its own session file, because once a new deck replaces that file its taps can
-   no longer be graded. Step 1 is `python3 "$S/../../quiz-me/scripts/quiz_pick.py" --transit`. Step 2 rebuilds
+1. Check whether `routines/runs/<today>-transit.md` exists.
+2. If yes — today's deck is built (maybe by this morning's check), graded or not, and the Transit Deck artifact
+   shows it. Give him the artifact's fixed URL from morning-check SKILL.md §7; nothing is rebuilt or re-sent,
+   because a second deck under the same date would mix its taps with the first's (§7 step 1, case B).
+3. If no — build one by the transit-deck steps of morning-check SKILL.md §7 ("Review = the transit deck"), in
+   order and under the same rules. Step 0 first grades any fully tapped older deck against its own session file,
+   because once a new deck replaces that file its taps can no longer be graded. Step 1 is
+   `python3 "$S/../../quiz-me/scripts/quiz_pick.py" --transit`; when it stops on an older ungraded deck (case A),
+   run it again with `--replace` as §7 step 1 says and name that deck's date in the reply. Step 2 rebuilds
    the page and republishes it at the fixed artifact URL. If step 0 graded anything, finish with
    `sh publish.sh "Quiz <date>"`, as after any graded session.
 4. One line back: "Deck's the one from this morning" or "Built a fresh one" — not the whole session dump.
@@ -51,10 +52,15 @@ or stages the one missing piece asked for (for CPSC 310, also an outline the dec
      in one line.
    - **STAT 251 / ASIA 250:** needs a Chrome tab on canvas.ubc.ca (morning-check
      SKILL.md §2 for opening it). Run `scripts/canvas_materials.js` (in
-     `.claude/skills/morning-check/scripts/`) via `javascript_tool`, read it back with
-     `get_page_text`, save to `routines/snapshots/materials-<date>.txt`, then
+     `.claude/skills/morning-check/scripts/`) via `javascript_tool`. It paints chunk 0 and returns
+     `total_len=… chunks=N`: read each chunk with `get_page_text`, then `window.__chunk(i)` and `get_page_text`
+     for the next, until the `END <n> items` line arrives, and save them in order to
+     `routines/snapshots/materials-<date>.txt`. Then run
      `python3 "$S/../../morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt`.
-     For the new deck/reading it names, pull the text with `canvadoc_text.js` (recipe in that
+     It exits 1 without listing anything when the END line is missing or the item count differs: read the
+     chunks back again. It also exits 1, after listing, when a request failed (`ERR modules` or `ERR page`): use
+     what it listed, say in one line what failed, and leave each failed item unmarked (`--mark` refuses one whose
+     page failed). For the new deck/reading it names, pull the text with `canvadoc_text.js` (recipe in that
      file's header), then write `courses/<CODE>/lectures/_NN-<slug>.md` (or
      `courses/<CODE>/readings/_<slug>.md` for a reading) the same way morning-check §7 does: a
      plain-sentence outline in slide order (ASIA 250 also gets a `## Likely quiz targets` line).
@@ -117,8 +123,9 @@ his phone. Once he has signed in at canvas.ubc.ca in Chrome, this re-runs only t
    materials pull (`canvas_materials.js` → `canvas_materials_digest.py` → stage any new deck or
    reading as `_NN-<slug>.md` → `--mark` it), because the signed-out morning skipped that too.
 3. Apply the morning-check rules to what the digest prints: a new hard date goes to `ledger.md`'s Term
-   calendar (with a Kind when it is a countdown date) and to Things3 (`things_add.py`, always with tags); a changed grade updates the
-   ledger's Grades so far table; anything labelled bonus becomes a Plan-today to-do.
+   calendar (with a Kind when it is a countdown date, and an exam's time as a span such as `14:00–14:50`) and to
+   Things3 (`things_add.py`, always with tags); a changed grade updates the ledger's Grades so far table; anything
+   labelled bonus becomes a Plan-today to-do.
 4. Append `## Re-run HH:MM — Canvas` to today's `routines/runs/<date>-morning.md` with the
    Canvas block in the normal format, add a Session-log row to `ledger.md` if anything durable
    changed, then `sh publish.sh "Canvas re-run <date>"`.

@@ -18,16 +18,16 @@ Specific numbers worth knowing:
   (d = 1.34); 61% vs. 38% at one month in a ~800-student trial. Note the catch — interleaving
   feels *worse* during practice (60% vs 89% accuracy). It's supposed to. Don't bail on it.
 - **Passive previewing doesn't work.** Students who read preview material before a lecture did
-  not outperform those who didn't — but they *believed* they had. **Pre-testing does work**,
-  even when the pre-test gives no answers.
+  not outperform those who didn't — but they *believed* they had. **Pre-testing** helped in lab
+  studies, but the evidence with real lectures is weak.
 
-So: previewing survives only if you convert it into pre-testing. Note-taking survives only if
-the notes are questions. Packaging doesn't survive at all — replace it with spaced revision.
+So: the preview is 90 seconds of titles, and pre-lecture questions were dropped on 2026-10-06.
+Note-taking survives only if the notes are questions. Packaging doesn't survive at all — replace it with spaced revision.
 
 ## The loop
 
 ### 1. Pre-lecture — 90 seconds
-Open the staged outline (or the slides). Read **titles only**, so the lecture lands on a frame you have
+Open the outline the morning check made (or the slides). Read **titles only**, so the lecture lands on a frame you have
 already seen. Pre-lecture questions were dropped on 2026-10-06: with real lectures the evidence for them is
 weak, and the day-after free-recall opener does that work instead.
 

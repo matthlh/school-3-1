@@ -1,12 +1,12 @@
 ---
 name: morning-check
-description: Morning sweep of Things3, Canvas (every course, grades, + the CPSC 310 course site), PrairieLearn, Piazza, and Gmail, plus term status (unlogged lectures, exam countdown) and the Career repo's applications ledger. Reports only what changed, syncs new deadlines into Things3 and ledger.md, writes routines/runs/<date>-morning.md, and builds the day's plan in Things3 (6 h budget, scripts/things_plan.py), and posts a ≤25-line brief. Use for "morning check", "what's new", "plan my day", "daily sweep", "week ahead", "term status", or when the scheduled morning task fires.
+description: Morning sweep of Things3, Canvas (every course, grades, + the CPSC 310 course site), PrairieLearn, Piazza, and Gmail, plus term status (unlogged lectures, exam countdown) and the Career repo's applications ledger. Reports only what changed, syncs new deadlines into Things3 and ledger.md, writes routines/runs/<date>-morning.md, and builds the day's plan in Things3 (6 h budget, scripts/things_plan.py), and posts a brief of at most 30 lines plus the Career block. Use for "morning check", "what's new", "plan my day", "daily sweep", "week ahead", "term status", or when the scheduled morning task fires.
 ---
 
 # Morning check
 
-**Deliverable:** a chat brief of at most 25 lines (that IS the product) plus the same brief with
-details at `routines/runs/YYYY-MM-DD-morning.md`. The Things3 Today list is rebuilt every run so
+**Deliverable:** a chat brief of at most 30 lines plus the Career block (that IS the product), and the same brief
+with details at `routines/runs/YYYY-MM-DD-morning.md`. The Things3 Today list is rebuilt every run so
 it holds exactly the day's plan (§1b) — that rebuild is the other half of the product. Wall-clock budget ~5 minutes. If a Chrome source
 (Canvas/Piazza/PrairieLearn) fails with "not allowed"/"permission denied" and no visible prompt,
 retry up to 3 times first (see §5/§6 — this is usually transient, not a real block); if a source
@@ -33,9 +33,11 @@ info (office hours, policies, schedules, links, course structure) is NOT repeate
    in Heads-up every day until logged (PHIL 385 has no slides or recordings — his page is the only
    record). A ladder step that fires today becomes a P1 to-do via `things_plan.py` (§1b) and
    shows up in **Plan today**. The countdown comes from the ledger's Term calendar table, the only
-   copy of the term dates: a row counts down when its Kind cell is `exam`, `deliverable`, `paper`,
+   copy of the countdown dates: a row counts down when its Kind cell is `exam`, `deliverable`, `paper`,
    `assignment` or `admin`, and its Date cell must then name one day like `Fri Oct 16, 18:05` (a `→`
-   range ends in one), or `term.py` stops and names the row.
+   range ends in one), or `term.py` stops and names the row. An exam's Date cell needs its time as a span,
+   like `Fri Oct 30, 14:00–14:50`, because the planner keeps that slot free, and a UBC row's Kind can only be
+   `admin`.
 1. Read the newest file in `routines/runs/` so you can report deltas, not the whole world again.
 2. Read `ledger.md` — overdue revision topics go in Heads-up, and the term calendar is the thing you
    compare new dates against.
@@ -69,7 +71,8 @@ locks <date>` (2h, P1, deadline = the mini-quiz hard lock, publish + 7 d; only M
 quiz), one per PREP ladder step that
 fires today, named for its item (`T-3 STAT 251 Midterm · FULL TIMED MOCK`, the name being the bold name in
 the item's Term calendar row; the ladders are `term.LADDERS`, one per kind: exam, deliverable, paper and
-assignment, each step with its time tag), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
+assignment, each step with its time tag; once the item's date has passed, or on an exam's own day, its open steps
+are cancelled), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
 for ASIA 250 from Sep 14, the two **daily revision habits** (`Deck: answer the 6 on the bus, tick key
 points (<date>)` and `Quiz me: 10 min before bed (<date>)`, 15m P1 each, area UBC, due today; an open one from
 an earlier day, or under an old title, is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
@@ -242,7 +245,8 @@ only path; the token-based fetcher was deleted on 2026-10-06.
    retry, because the next run fetches them again. The snapshot is written to a temporary file and
    renamed into place, so a killed run never leaves half a file. If the JSON has no `failed` list,
    the digest stops with an error, because an old copy of `canvas_fetch.js` made it.
-6. `tabs_close_mcp` the tab.
+6. Keep the tab open for the other Chrome sources (§2b, §5, §6) and §7 step 2, and `tabs_close_mcp` it after §7
+   step 2. That step runs on Canvas, so it navigates the tab back to `https://canvas.ubc.ca/` first.
 
 **Grades:** a changed current score or a newly scored submission is a "New since yesterday" line
 (`CPSC 310 · D1 scored 92/100 · Canvas`) and updates the **Grades so far** table in `ledger.md`.
@@ -432,7 +436,7 @@ is also a "New since yesterday" line (`CPSC 310 · LAB02 closed at 74% · Prairi
 ### 7. Today's classes + review (local; no browser needed beyond what §2/§3 already fetched)
 Matt (2026-09-11) wants each brief to carry what today's lectures cover plus some review. Each
 lecture today gets one line naming its topic and its staged outline. There are no pre-lecture
-questions (Matt, 2026-10-06: the evidence for prequestions with real lectures is weak). Topic
+questions (Matt, 2026-10-06: the evidence for them with real lectures is weak). Topic
 sources, per course:
 - **STAT 251:** the newest page in the Canvas module *Lecture Materials* (page title or slide
   filename, e.g. "Ch 1 Exploratory Data Analysis"); if nothing new is posted, the week's chapter
@@ -476,8 +480,9 @@ and nothing else.
    fetched or no longer parses, and the error names the URL. The brief then gets one Heads-up line
    naming the error instead of staged material, and a lecture whose chapter failed waits for the
    midday pass to build its outline from the deck.
-2. **STAT 251, ASIA 250** (Canvas, in the §2 Chrome tab, after `canvas_fetch.js`):
-   run `scripts/canvas_materials.js` with `javascript_tool`. Like `canvas_fetch.js`, it paints chunk 0
+2. **STAT 251, ASIA 250** (Canvas, in the §2 Chrome tab, navigated back to `https://canvas.ubc.ca/`):
+   run `scripts/canvas_materials.js` with `javascript_tool`. It replaces `canvas_fetch.js`'s `window.__chunk`, which
+   is why §2 step 4 reads every chunk of that script first. Like `canvas_fetch.js`, it paints chunk 0
    and returns `total_len=… chunks=N`, and the last chunk ends with the line `END <n> items`. Read the
    chunks back as §2 step 4 does (`get_page_text`, then `window.__chunk(i)` and `get_page_text` for
    each next chunk) until the END line arrives, save them in order, each starting on a new line, to
@@ -532,16 +537,14 @@ and nothing else.
 0. **Pull yesterday's grades first, before generating anything new.** The deck lives at a fixed
    Artifact URL (below) with the `db` capability declared; the page writes each day's taps to
    `grades/<date>` there as he grades (or he says "grade my deck" ad hoc mid-day — same mechanism,
-   see the quiz-me skill's variant table). Query it: `Artifact` → `action: "read_db"`,
-   `db_op: "query"`, `collection: "grades"`, `url` = the fixed URL below. For every returned doc
+   see the quiz-me skill's Variants table). Query it: `ArtifactData` with `action: "query"`,
+   `collection: "grades"` and `url` = the fixed URL below. For every returned doc
    that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
    half-graded) and not already `processed: true`: run `quiz_grade.py --transit <doc_id> "<replyString>"` (quiz-me
    skill; `--transit` grades the deck's own session file, which no quiz picked since can overwrite, and the doc_id,
-   which is the deck's date, makes it refuse that file when it holds another day's deck), then write back `processed: true` on that doc
-   (`action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, plus `if_version` set to
-   the `version` the `read_db` query just returned for that doc — the write rejects
-   `version_mismatch` without it, even though `if_version` isn't listed in the tool's own schema;
-   pass it anyway, it's accepted) so it is never graded
+   which is the deck's date, makes it refuse that file when it holds another day's deck), then mark that doc with
+   `ArtifactData` `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and
+   `if_version` = the `version` the query returned for that doc, so it is never graded
    twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
    (a `.set()`, not a merge), so grading it mid-session would burn the pending
    `transit-session.json` before he's tapped the rest, and those later taps would have nowhere valid
@@ -555,6 +558,13 @@ and nothing else.
    It picks 6 due/weak questions across courses (interleaved, exam-weighted, not-due topics fill the
    rest), writes `routines/runs/<date>-transit.md` (questions, a divider, then answers) plus the
    pending session `routines/transit-session.json`, and refreshes the ledger's **Due now** block.
+   It stops in two cases, and `--replace` is the only way past either:
+   - (A) `transit-session.json` holds an earlier day's deck that was never graded. Step 0 has already graded every
+     complete deck (fix any error that stopped it first), so this one is unfinished or untapped: run step 1 again
+     with `--replace` and add one Heads-up line naming that deck's date.
+   - (B) Today's deck already exists (`routines/runs/<today>-transit.md`), graded or not, because a second deck
+     under the same date would mix its taps with the first's. This is a second run today: skip steps 1 and 2 and
+     keep this morning's deck.
 2. Rebuild the artifact for today: same design (one question per card, tap to reveal, the answer as a
    checklist of key points whose ticks set the grade (Key points below), a "Brief ↗" button top-right that
    opens today's full Brief + Details as an overlay) with today's 6 questions and today's report
@@ -570,7 +580,7 @@ and nothing else.
    `${mathify(point)}` calls. Each question and each key point goes through three steps, in this order:
    1. Take every `$$` span out of the text first. The markdown step must never see LaTeX: marked turns
       `&= 0.65 \\` into `&amp;= 0.65 \`, and 243 lines of STAT 251's bank end in `\\`.
-   2. Render the rest as markdown, as Stems as written below describes.
+   2. Render the rest as markdown, as Questions as written below describes.
    3. Put each span back where it was and run the result through `mathify`. A display span goes back with
       its line breaks as `<br>`, because a `$$` span that contains a `<br>` is what `mathify` reads as a
       display equation.
@@ -581,8 +591,8 @@ and nothing else.
    **Notes link (2026-10-05):** give each item `src` and `srcTitle` from the session item's `src_url` and
    `src_title` (the transit md's `Source:` line under each answer); the page links that notes page under the
    revealed answer.
-   **Stems as written (2026-10-06):** fill each item's `q` from the session item's `q_display`, not its `q`
-   (`q` is only the flattened text the question id hashes). `q_display` keeps the stem's own lines: bullet parts,
+   **Questions as written (2026-10-06):** fill each item's `q` from the session item's `q_display`, not its `q`
+   (`q` is only the flattened text the question id hashes). `q_display` keeps the question's own lines: bullet parts,
    a table, or a CPSC 310 code block, and an answer can hold a code block too. Step 2 of the Math order above
    renders both as markdown: a fenced block as an HTML-escaped `<pre><code>`, a pipe table as `<table>`, `- `
    lines as a list, and any other line break as `<br>`. That replaces turning every newline into `<br>`, so code
@@ -607,8 +617,9 @@ and nothing else.
         "Then:") and joins the unit after it. A unit that starts with a lowercase letter outside a list item is
         the rest of a sentence a display equation interrupted, and joins the unit before it. A block joins with
         a blank line and a sentence with a space.
-      - Nothing else merges. A one-word verdict ("False.", "(b).", "1831.") stays its own point, so a right
-        verdict without its reason grades `~`, as quiz-me grades it. There is no cap on the number of points.
+      - Nothing else merges. A one-word verdict ("False.", "(b).") stays its own point, so a right
+        verdict without its reason grades `~`, as quiz-me grades it. A bare number opening an answer ("1831. His
+        followers…") reads as a list number and stays with its sentence. There is no cap on the number of points.
       - A `- ` marker is dropped. A list number stays in front of its item, joined by a no-break space, so the
         markdown step shows it as text and not as a one-item list.
    3. On the page the points sit under the label "Key points: tick each one your answer had". Each point is a row
@@ -688,8 +699,8 @@ https://claude.ai/code/artifact/c537efc7-50cf-4476-9aa5-b118cd0fa480
 
 The brief's **Review** block lists the 6 questions (question only) and ends with a line pointing at
 the artifact link instead of "reply with grades" — grading now happens on the page. The brief itself
-never edits ledger rows. Skip the deck only if the bank has no questions at all (the script exits 1
-and says so).
+never edits ledger rows. Build no deck only when the bank has no questions at all (the script exits 1
+and says so) or step 1 found this morning's deck (case B), which the Review block then lists.
 
 ### 8. Ledger session log + publish (last step, every run)
 If the run changed anything durable — a date in `ledger.md`, a grade row, a `03-logistics.md`
@@ -899,8 +910,11 @@ disagree on a date, print both and flag it · a new hard date goes to **ledger.m
 the same run · no course-content summaries · no repeating yesterday's items unless
 they're now due. A new Term calendar row gets a Kind when `term.py` should count it down (`exam`,
 `deliverable`, `paper`, `assignment`, or `admin` for a deadline with no prep steps), and every other
-row leaves Kind empty. "Plan today" means exactly that: the list he should clear before the day ends,
-inside the budget. Nothing informational goes there.
+row leaves Kind empty. A past exam row keeps its Kind and time: the lecture count skips a lecture an exam
+replaced, so clearing the row shifts every later lecture number. The finals rows (`Dec 11–22`) have no Kind, so
+the finals get no exam-aware scheduling yet: when the SSC posts the December schedule, give each final its one-day
+Date with its time span and Kind `exam`. "Plan today" means exactly that: the list he should clear before the day
+ends, inside the budget. Nothing informational goes there.
 
 ## Chat brief
 The `## Brief` block, ≤30 lines (the plan table's header rows and the Self-improvement block bought
@@ -913,7 +927,7 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 
 ## Tuning log (newest first)
 - 2026-10-06 (Matt: "make all the changes above"):
-  - The term dates live only in the ledger's Term calendar. A Kind column marks the countdown rows, `term.py`
+  - The countdown dates live only in the ledger's Term calendar. A Kind column marks the countdown rows, `term.py`
     reads them, and the STAT 251 written assignments get their own ladder.
   - Canvas: a failed request keeps that section's previous snapshot and adds one Heads-up line. Materials stay
     listed until `--mark` runs after the pull.

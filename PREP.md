@@ -45,7 +45,7 @@ advance, watching ahead. Passive preview shows no measurable benefit. Bank the t
 | **Tue** | 7:00 career<br>9:00–11:00 CPSC 310 lab | **1:00–3:30 CPSC deliverable + close-out**<br>3:30–5:00 CPSC lecture | Gym · career 8–9 |
 | **Wed** | 8:00 STAT lecture<br>**9:30–11:00 ASIA lecture + readings + quiz** | 2:00 PHIL 385<br>**3:00–5:00 CPSC deliverable + close-outs** | Badminton 7–9:45 |
 | **Thu** | 7:00 career | **1:30–3:30 PHIL 385 reading + close-outs**<br>3:30–5:00 CPSC lecture | Gym · career 8–9 |
-| **Fri** | 8:00 STAT lecture<br>**11:00 STAT lab L1K — graded quiz in the lab** | 2:00 PHIL 385<br>**3:00–5:00 RETRIEVAL BLOCK** | Free |
+| **Fri** | 8:00 STAT lecture<br>**11:00 STAT lab L1K — graded quiz in the lab** | 2:00 PHIL 385<br>**3:00–5:00 REVISION BLOCK** | Free |
 | **Sat** | Badminton 10–12 | 12:15–2:45 flex *(delete if nothing's due)* | Free |
 | **Sun** | | 1–3 meal prep<br>3:00–3:20 ledger + week plan | Gym |
 
@@ -57,14 +57,15 @@ afternoons — evenings stay yours for career, gym, badminton, 10:30 bed.
 ### The daily 60 seconds
 
 The morning brief lands at **06:35** while the desktop app is open (say "what's new" if it
-didn't). Twenty-five lines max:
+didn't). At most 30 lines, plus the Career block:
 
 1. **Plan today — x of 6 h** — your Things3 Today list, rebuilt by the planner: every to-do has
-   an estimate tag (15m … 3h) and a priority tag (P1/P2/P3); it fills 6 h by priority, and the
-   lecture close-outs, exam-ladder steps (T-10 gap check, T-3 mock, T-1 rationale…) and the weekly
-   novel pages are created as to-dos automatically. Work the list top to bottom; check things off.
+   an estimate tag (15m … 3h) and a priority tag (P1/P2/P3); it fills 6 h by priority and gives each
+   P1 a start time. Lecture logs, exam-ladder steps (T-10 gap check, T-3 mock, T-1 rationale…), the
+   two daily revision habits, PHIL 385 readings and the weekly Golden Pavilion reading are created as
+   to-dos automatically. Work the list top to bottom; check things off.
 2. **Rolled to tomorrow** — what was in Today and didn't fit. It competes again tomorrow with a bump.
-3. **Today's classes** + **Review** — the outline for today's lectures and up to 3 due revision questions.
+3. **Today's classes** + **Review** — the outline for today's lectures, and the 6 questions on today's phone deck.
 4. **New since yesterday** — new Canvas / PrairieLearn / Piazza items, grades posted, emails that matter.
 5. **Heads-up** — due in 2–7 days, date conflicts, **unlogged lectures**, overdue revision topics.
 
@@ -84,8 +85,8 @@ system is just note-taking.
 ### Day-specific things to watch
 
 - **Mon** — the new ASIA lecture drops by 5pm and *last week's* quiz locks at 23:59 (do it in
-  the Wednesday block, never Monday night). WeBWorK is due 23:59 most Mondays (Oct 6 is a Tue;
-  Oct 29 and Nov 12 are Thu; Dec 11 a Fri). iClicker running before STAT starts.
+  the Wednesday block, never Monday night). iClicker running before STAT starts.
+- **Tue** — WeBWorK is due at 23:59 (none on Nov 3 or Nov 17).
 - **Wed** — do the ASIA lecture + quiz in the morning block. Five days of buffer beats zero.
 - **Fri** — **your lab quiz is written in the lab and can't be made up.** Then the revision block.
 - **Sun** — 20 minutes at 3 pm: the weekly-plan brief's **Week ahead** block shows the planner's placement of next week
