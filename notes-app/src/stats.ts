@@ -88,15 +88,17 @@ export function loCodes(s: string): string[] {
 }
 
 /**
- * Mirror of quizlib.match_topic: the ledger rows of `course` that a topic text names, by the first of three rules that
- * hits any row, compared after normQuestion: the same text; one a prefix of the other, when the text has 6+ characters;
- * a shared LO code, `codes` (a Topic tag's are its own, loCodes(text)). Several rows are what the quiz scripts stop on
- * for a Topic tag; a Topics-tab outcome whose code covers several ledger rows stands for them all.
+ * Mirror of quizlib.match_topic: the ledger rows of `course` that a topic text names, by the first of four rules that
+ * hits any row: the row's topic exactly, trimmed; then, compared after normQuestion, the same text; one a prefix of the
+ * other, when the text has 6+ characters; a shared LO code, `codes` (a Topic tag's are its own, loCodes(text)). The
+ * exact rule tells apart rows that differ only inside parentheses, which normQuestion drops. Several rows are what the
+ * quiz scripts stop on for a Topic tag; a Topics-tab outcome whose code covers several ledger rows stands for them all.
  */
 export function matchTopic(course: string, text: string, codes: string[], rows: TopicRow[]): TopicRow[] {
   const n = normQuestion(text)
   const cands = rows.filter((r) => r.course === course).map((r) => ({ r, rn: normQuestion(r.topic) }))
   const rules: ((c: { r: TopicRow; rn: string }) => boolean)[] = [
+    ({ r }) => r.topic.trim() === text.trim(),
     ({ rn }) => rn === n,
     ({ rn }) => n.length >= 6 && (rn.startsWith(n) || n.startsWith(rn)),
     ({ r }) => loCodes(r.topic).some((c) => codes.includes(c)),

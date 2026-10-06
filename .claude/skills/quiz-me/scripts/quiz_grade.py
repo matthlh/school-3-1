@@ -22,12 +22,13 @@ when it was picked today (--date sets today), and when there is none it names a 
 takes routines/transit-session.json only when it holds the deck of DECK_DATE, the doc_id the deck page saves its
 grades under, so taps never land on another deck's questions. --session PATH grades that file with no date check.
 
-Questions not mentioned are left untouched (he stopped early). A topic's session grade is the
-WORST grade among its questions this session; the ledger row then moves by the CLAUDE.md ladder
-(X → streak 0, +1 d · ~ → +3 d · O → streak+1, +7/+16/+35 d), adjusted by quizlib.next_review:
-never later than quizlib.exam_cap, and a gap of 3+ days goes to the lightest day within ±15% of it.
-Everything is built in memory first, every check included (a **Topic:** tag that names no ledger row stops it,
-naming the tag), so a stop writes nothing and a rerun records nothing twice. Then it writes:
+Questions not mentioned are left untouched (he stopped early). Each graded question counts for the ledger row of the
+topic stored in the session when it was picked (quizlib.match_topic on the item's `topic`), so retagging the bank
+after the pick changes nothing. A topic's session grade is the WORST grade among its questions this session; the
+ledger row then moves by the CLAUDE.md ladder (X → streak 0, +1 d · ~ → +3 d · O → streak+1, +7/+16/+35 d), adjusted
+by quizlib.next_review: never later than quizlib.exam_cap, and a gap of 3+ days goes to the lightest day within ±15%
+of it. Everything is built in memory first, every check included (a stored topic that names no ledger row now stops
+it, naming the topic), so a stop writes nothing and a rerun records nothing twice. Then it writes:
   routines/quiz-state.json              per-question history + session record
   ledger.md                             All-topics rows, Due-now block, one Session-log line
   routines/quiz/YYYY-MM-DD.md           the session log (appends on a second session that day)
@@ -247,20 +248,22 @@ def main():
     # Everything below is built in memory, every check included, before the first write at the end. A stop anywhere
     # leaves every file as it was, so the rerun after a fix records nothing twice.
 
-    # ---- topic grades = worst of the session; a tag that names no ledger row stops here
+    # ---- topic grades = worst of the session. Each question's row is the ledger topic stored when it was picked, so
+    # a bank tag retagged since (a lecture log added a look-alike row) changes nothing; one that names no row stops here
     per_topic, lost = {}, []
     for k, g in graded.items():
         it = items[k]
-        r = L.match_topic(it["course"], it["topic_tag"], rows, f"{it['file']}:{it['line']}: question {k}'s **Topic:** tag")
+        r = L.match_topic(it["course"], it["topic"], rows, f"{it['file']}:{it['line']}: question {k}'s ledger topic at pick time")
         if r is None:
             lost.append(it); continue
         cur = per_topic.get(r["idx"])
         per_topic[r["idx"]] = g if cur is None or L.GRADE_RANK[g] < L.GRADE_RANK[cur] else cur
     if lost:
-        raise SystemExit("These **Topic:** tags name no ledger row, so their grades cannot move the ledger. Nothing was "
-                         "written. Make a ledger row match each tag (fix the row's topic or add the row), then run this "
-                         "again:\n" + "\n".join(f"   question {it['n']} · {it['label']} · '{it['topic_tag']}' · "
-                                                f"{it['file']}:{it['line']}" for it in lost))
+        raise SystemExit("These questions' ledger topics, stored when the session was picked, name no ledger row now, so "
+                         "their grades cannot move the ledger. Nothing was written. Make a ledger row match each one (fix "
+                         "the row's topic or add the row), then run this again:\n"
+                         + "\n".join(f"   question {it['n']} · {it['label']} · '{it['topic']}' · {it['file']}:{it['line']}"
+                                     for it in lost))
 
     # ---- per-question history
     for k, g in graded.items():

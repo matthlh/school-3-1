@@ -51,7 +51,8 @@ def main():
     modes.add_argument("--transit", action="store_true")
     modes.add_argument("--long", action="store_true", help="the Friday set: long problems only, worked in full against a clock")
     modes.add_argument("--sprint", action="store_true", help="STAT 251's which-method drill: short apply and derive questions against a clock")
-    ap.add_argument("--replace", action="store_true", help="with --transit: discard a waiting deck from another day, never graded")
+    ap.add_argument("--replace", action="store_true",
+                    help="with --transit: discard an ungraded deck from another day, or today's deck, and build a new one")
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--date")
@@ -72,13 +73,19 @@ def main():
     text, rows = L.load_ledger()
     cal = L.load_calendar()
     looks = L.load_lookalikes(rows)      # every mode, so a bad Look-alikes cell stops --due and the 06:35 --transit alike
-    if a.transit and not a.replace and os.path.exists(L.TRANSIT_SESSION):
-        with open(L.TRANSIT_SESSION, encoding="utf-8") as f:
-            deck = json.load(f)["date"]
-        if deck != today.isoformat():    # a new deck would strand that one's taps: nothing could grade them
-            raise SystemExit(f"{os.path.relpath(L.TRANSIT_SESSION, L.ROOT)} holds the transit deck of {deck}, which was "
-                             f"never graded. Grade it first with quiz_grade.py --transit {deck} \"<its grades>\", or run "
-                             "this again with --replace to discard it.")
+    deck_md = os.path.join(L.RUNS_DIR, f"{today.isoformat()}-transit.md")
+    if a.transit and not a.replace:      # the deck page saves taps under the deck's date, so one deck per date
+        if os.path.exists(L.TRANSIT_SESSION):
+            with open(L.TRANSIT_SESSION, encoding="utf-8") as f:
+                waiting = json.load(f)["date"]
+            if waiting != today.isoformat():         # a new deck would strand its taps: nothing could grade them
+                raise SystemExit(f"{os.path.relpath(L.TRANSIT_SESSION, L.ROOT)} holds the deck of {waiting}, which was never "
+                                 f"graded. If he tapped every card, grade it with quiz_grade.py --transit {waiting} "
+                                 "\"<its replyString>\"; otherwise run this again with --replace to discard it.")
+        if os.path.exists(deck_md):                  # graded or not
+            raise SystemExit(f"Today's deck ({today.isoformat()}) is already built ({os.path.relpath(deck_md, L.ROOT)}). "
+                             "Keep it: a second deck under the same date would mix its taps with the first's. Pass "
+                             "--replace only to discard it on purpose.")
     questions = L.load_questions()       # the whole bank, parsed once: readiness counts every course
     scoped = [q for q in questions if not courses or q["course"] in courses]
     state = L.load_state()
@@ -208,7 +215,7 @@ def main():
     if a.sprint:
         m, s = divmod(len(items) * SPRINT_SECONDS, 60)
         print(f"== Clock: {len(items)} questions × {SPRINT_SECONDS} s = " + (f"{m} min {s} s" if s else f"{m} minutes")
-              + ", every stem at once; the answer is the method only: name the distribution or rule and write the first "
+              + ", every question at once; the answer is the method only: name the distribution or rule and write the first "
                 "setup line, no arithmetic. Grade O or X, nothing in between")
     for it in items:
         flag = " (ahead)" if it["ahead"] else ""
@@ -237,10 +244,9 @@ def main():
 
     # ---- transit deck
     os.makedirs(L.RUNS_DIR, exist_ok=True)
-    deck = os.path.join(L.RUNS_DIR, f"{today.isoformat()}-transit.md")
     out = [f"# Transit deck — {today:%a %b %-d}", "",
-           "Answer each one in your head (out loud is better), then check below. Reply with grades, "
-           "e.g. `1 O 2 ~ 3 X 4 O 5 O 6 ~`, and the ledger updates.", ""]
+           "Answer each one in your head (out loud is better), then check below. Tick each answer's key points on the "
+           "deck page, or reply with grades like `1 O 2 ~ 3 X 4 O 5 O 6 ~`; the ledger updates.", ""]
     for it in items:
         out.append(f"**{it['n']}. {it['label']}** — {it['q_display']}")
         out.append("")
@@ -253,9 +259,9 @@ def main():
         if it["src_url"]:
             out.append(f"Source: [{it['src_title']}]({it['src_url']})")   # the deck shows it under the answer
             out.append("")
-    with open(deck, "w", encoding="utf-8") as f:
+    with open(deck_md, "w", encoding="utf-8") as f:
         f.write("\n".join(out))
-    print(f"\n== Transit deck → {os.path.relpath(deck, L.ROOT)}")
+    print(f"\n== Transit deck → {os.path.relpath(deck_md, L.ROOT)}")
 
 if __name__ == "__main__":
     main()

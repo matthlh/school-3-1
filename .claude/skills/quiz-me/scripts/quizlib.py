@@ -402,20 +402,23 @@ def due_block(rows, today, cal, ready):
 # ---- topic matching (question tag → ledger row) -------------------------------------------
 
 def match_topic(course, text, rows, where):
-    """The one ledger row of `course` that a topic text names: a question's **Topic:** tag or a Look-alikes cell. Three
-    rules, compared after norm(), in this order: the same text; one a prefix of the other (6+ characters); a shared LO
-    code ('1b–c Displays' finds a 1b or 1c row). The first rule that hits any row decides. One hit is the row; several
-    stop the script, naming `where` (the text's place, for the message) and the rows. None when no rule hits."""
+    """The one ledger row of `course` that a topic text names: a question's **Topic:** tag, a Look-alikes cell, or the
+    ledger topic a session stored at pick time. Four rules, in this order: the row's topic exactly, after strip; then,
+    compared after norm(), the same text; one a prefix of the other (6+ characters); a shared LO code ('1b–c Displays'
+    finds a 1b or 1c row). The first rule that hits any row decides, so a text copied exactly from a row's topic names
+    that row even when another row differs from it only inside parentheses, which norm() drops. One hit is the row;
+    several stop the script, naming `where` (the text's place, for the message) and the rows. None when no rule hits."""
     cands = [r for r in rows if r["course"] == course]
     n, codes = norm(text), set(codes_of(text))
-    for rule in (lambda t: norm(t) == n,
+    for rule in (lambda t: t.strip() == text.strip(),
+                 lambda t: norm(t) == n,
                  lambda t: len(n) >= 6 and (norm(t).startswith(n) or n.startswith(norm(t))),
                  lambda t: bool(codes & set(codes_of(t)))):
         hits = [r for r in cands if rule(r["topic"])]
         if len(hits) > 1:
             raise SystemExit(f"{where} '{text}' names {len(hits)} {COURSE_LABEL.get(course, course)} ledger rows ("
                              + " · ".join(h["topic"][:40] for h in hits) + "). Write more of the intended row's topic "
-                             "into it, so it names that row only.")
+                             "into it, or copy the row's topic exactly, so it names that row only.")
         if hits:
             return hits[0]
     return None
@@ -674,8 +677,8 @@ def bank_by_topic(rows, questions):
 
 def unmatched_block(unmatched):
     """The one loud block for **Topic:** tags that match no ledger row: a line per tag in the bank (`unmatched`, from
-    bank_by_topic) with its question count and where the first one sits. Such questions are never picked; a graded one
-    (its row renamed after the pick) stops quiz_grade.py before it writes anything. [] when there are none."""
+    bank_by_topic) with its question count and where the first one sits. Such questions are never picked; quiz_grade.py
+    goes by the ledger topic stored at pick time, not the tag. [] when there are none."""
     if not unmatched:
         return []
     out = ["-- ⚠ Topic tags that match no ledger row. Their questions are never picked and their grades cannot reach "
