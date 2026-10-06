@@ -7,8 +7,8 @@ Files it owns:
   ledger.md                     — "## Due now" block and the "## All topics" table rows (SRS state, its only copy)
   routines/quiz-state.json      — per-question history {id: {course, topic, history: [[date, grade], …]}}; an entry
                                   is [date, grade, extra] when quiz_grade.py had more to store, and extra holds only the
-                                  keys given: conf (1–3), cause (concept, forgot, misread, careless or slow), variant
-                                  (true), said (his wrong answer) and why (why he was sure)
+                                  keys given: conf (1–3), cause (concept, forgot, misread, careless or slow), said (his
+                                  wrong answer) and why (why he was sure)
   routines/quiz-session.json    — the pending session written by quiz_pick.py, consumed by quiz_grade.py
   routines/transit-session.json — the same for the transit deck, which is graded the next morning (--transit), so a
                                   quiz picked in between can neither overwrite it nor take its grades
@@ -16,7 +16,7 @@ Files it owns:
 
 Set SCHOOL_ROOT to point at a copy of the workspace when testing.
 """
-import datetime as dt, glob, hashlib, json, os, random, re, sys
+import datetime as dt, glob, hashlib, json, os, re, sys
 from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -29,6 +29,9 @@ QUIZ_DIR = os.path.join(ROOT, "routines", "quiz")
 RUNS_DIR = os.path.join(ROOT, "routines", "runs")
 MC_SCRIPTS = os.path.join(ROOT, ".claude", "skills", "morning-check", "scripts")
 SITE_URL = "https://matthlh.github.io/school-3-1/"   # the public notes site; a page is SITE_URL + "#/" + its path
+
+sys.path.insert(0, MC_SCRIPTS)
+import term                                    # the morning check's term.py: the Term calendar and lecture numbering
 
 COURSE_LABEL = {"STAT251": "STAT 251", "CPSC310": "CPSC 310", "PHIL385": "PHIL 385", "ASIA250": "ASIA 250"}
 LABEL_COURSE = {v: k for k, v in COURSE_LABEL.items()}
@@ -50,7 +53,8 @@ SWEEP_DAYS = 7                                 # from this many days before an e
 CAP_DAYS = 4                                   # a grade never sets Next later than this many days before that exam
 SPREAD = 0.15                                  # a gap of 3+ days may move this share of itself, at least a day, to a lighter day
 # Exam scope, from the syllabi: an exam covers the lectures from the start of term up to its date, or up to its cutoff
-# here; a non-cumulative exam starts after that course's previous exam. Keys match term.py's exam labels, any case.
+# here; a non-cumulative exam starts after that course's previous exam. Keys match the Term calendar's exam labels,
+# any case.
 NON_CUMULATIVE = {"PHIL385": ("exam 2", "exam 3", "exam 4")}   # PHIL 385's final is cumulative
 # CPSC 310's syllabus says the midterm covers through week 6 (Thu Oct 15); its schedule page says through Thu Oct 22.
 # Until that is confirmed, the wider cutoff, so nothing in scope is skipped.
@@ -79,6 +83,10 @@ def next_after(grade, streak):
     """CLAUDE.md spacing ladder. Returns (new_streak, days_until_next)."""
     s = 0 if grade == "X" else streak + 1 if grade == "O" else streak
     return s, gap(grade, s)
+
+def pct(part, whole):
+    """part / whole as a whole percent, rounded half up (12.5 → 13), the one rounding readiness and calibration use."""
+    return int(100 * part / whole + 0.5)
 
 def norm(s):
     s = (s or "").lower()
@@ -314,27 +322,29 @@ def load_ledger():
                          next=nxt, next_date=parse_date(nxt), idx=i))
     return text, rows
 
-def write_ledger(text, rows, today, cal, log_line=None):
-    """Rewrite the All-topics rows from `rows` (by idx), regenerate the Due-now block, and
-    optionally append a Session-log row. Everything else is left byte-identical."""
+def ledger_text(text, rows, due, log_line=None):
+    """ledger.md's new text, built in memory: the All-topics rows rewritten from `rows` (by idx), the Due-now block
+    replaced by `due` (due_block's lines) and, given log_line, that row added to the end of the Session log table.
+    Everything else stays byte-identical. Writes nothing (write_ledger does), so a stop here leaves every file as it was."""
     lines = text.split("\n")
     for r in rows:
         lines[r["idx"]] = (f"| {r['label']} | {r['topic']} | {r['lec']} | {r['last'] or '—'} | "
                            f"{r['grade'] or '—'} | {r['streak']} | {r['next'] or '—'} |")
-    # Due now block
     start = next((i for i, l in enumerate(lines) if l.strip() == "## Due now"), None)
     if start is not None:
         end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
-        block = ["## Due now", ""] + due_block(rows, today, cal) + [""]
-        lines[start:end] = block
+        lines[start:end] = ["## Due now", ""] + due + [""]
     if log_line:
         lines.insert(session_log_end(lines), log_line)
+    return "\n".join(lines)
+
+def write_ledger(text):
     with open(LEDGER, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines))
+        f.write(text)
 
 def session_log_end(lines):
     """Index just past the last row of the `## Session log` table, where a session row goes. Exits when
-    ledger.md has no such table, so quiz_grade.py can check before it writes anything."""
+    ledger.md has no such table."""
     start = next((i for i, l in enumerate(lines) if l.strip() == "## Session log"), len(lines))
     end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
     last_row = max((i for i in range(start + 1, end) if lines[i].startswith("|")), default=None)
@@ -342,17 +352,26 @@ def session_log_end(lines):
         raise SystemExit("no '## Session log' table in ledger.md — nowhere to append this session's row")
     return last_row + 1
 
-def due_block(rows, today, cal):
-    """The Due-now lines: due topics most overdue for their interval first (lateness), a sweep topic marked with its
-    exam, then a line per course with an exam within 21 days (readiness), then one line for the frozen topics."""
+def due_block(rows, today, cal, ready):
+    """The Due-now lines, in this order, with a blank line between parts, after each summary line and between readiness
+    lines. The notes site parses every line, so keep the wording.
+      1. `<!-- due as of 2026-10-06 -->`, the day the block was written. It never renders; the site dates the block by
+         it and flags it when stale.
+      2. The summary, then a bullet per due topic, most overdue for its interval first (lateness), a sweep topic marked
+         with its exam. With nothing due, one line instead: the day the next topics come due (next_due), or that no
+         topic has a date yet.
+      3. `ready`, readiness()'s lines.
+      4. With frozen topics, their summary, then a bullet per frozen row in ledger order,
+         `- PHIL 385 · <topic> · frozen after Exam 1`, the exam as exam_name() prints it."""
     st = {r["idx"]: standing(r, today, cal) for r in rows}
     due = sorted((r for r in rows if st[r["idx"]][0] in ("due", "sweep")),
                  key=lambda r: (-lateness(r, st[r["idx"]][1]), r["next_date"] or today, r["label"]))
     frozen = [r for r in rows if st[r["idx"]][0] == "frozen"]
+    out = [f"<!-- due as of {today.isoformat()} -->", ""]
     if due:
         swept = sum(1 for r in due if st[r["idx"]][0] == "sweep")
-        out = [f"_{len(due)} topic{'s' if len(due) != 1 else ''} due as of {today:%a %b %-d}"
-               + (f", {swept} of them from an exam-week sweep" if swept else "") + ". Say **quiz me**._", ""]
+        out += [f"_{len(due)} topic{'s' if len(due) != 1 else ''} due as of {today:%a %b %-d}"
+                + (f", {swept} of them from an exam-week sweep" if swept else "") + ". Say **quiz me**._", ""]
         for r in due:
             s, late, e = st[r["idx"]]
             tag = r["grade"] or "unquizzed"
@@ -360,44 +379,45 @@ def due_block(rows, today, cal):
                     "due today" if late == 0 else f"overdue {late} d")
             out.append(f"- {r['label']} · {r['topic']} · {when} · last {tag}")
     else:
-        upcoming = sorted((r for r in rows if r["next_date"] and st[r["idx"]][0] != "frozen"),
-                          key=lambda r: r["next_date"])
-        if not upcoming:
-            return ["_Nothing scheduled yet — log a lecture to start the ledger._"]
-        d = upcoming[0]["next_date"]
-        n = [r for r in upcoming if r["next_date"] == d]
-        labels = sorted({r["label"] for r in n})
-        out = [f"_Nothing due today. Next: {len(n)} topic{'s' if len(n) != 1 else ''} on "
-               f"**{d:%a %b %-d}** ({', '.join(labels)})._"]
-    for line in readiness(rows, today, cal):
+        upcoming = {}
+        for r in rows:
+            d = next_due(r, today, cal) if st[r["idx"]][0] != "frozen" else None
+            if d:
+                upcoming.setdefault(d, []).append(r)
+        if upcoming:
+            d = min(upcoming)
+            n, labels = len(upcoming[d]), sorted({r["label"] for r in upcoming[d]})
+            out.append(f"_Nothing due today. Next: {n} topic{'s' if n != 1 else ''} on **{d:%a %b %-d}** "
+                       f"({', '.join(labels)})._")
+        else:
+            out.append("_Nothing scheduled yet — log a lecture to start the ledger._")
+    for line in ready:
         out += ["", line]
     if frozen:
         out += ["", f"_Frozen, not due: {frozen_summary(frozen, st)}. The exam that covered them is past and the "
-                    f"course's next exam does not._"]
+                    f"course's next exam does not._", ""]
+        out += [f"- {r['label']} · {r['topic']} · frozen after {exam_name(st[r['idx']][2])}" for r in frozen]
     return out
 
 # ---- topic matching (question tag → ledger row) -------------------------------------------
 
-def match_topic(course, qtopic, rows):
-    """The ledger row a question's **Topic:** tag names, compared after norm(): the same text, else one a prefix of the
-    other (6+ characters), else a shared LO code ('1b–c Displays' finds a 1b or 1c row). None when none of these hold;
-    unmatched_block then names the tag."""
+def match_topic(course, text, rows, where):
+    """The one ledger row of `course` that a topic text names: a question's **Topic:** tag or a Look-alikes cell. Three
+    rules, compared after norm(), in this order: the same text; one a prefix of the other (6+ characters); a shared LO
+    code ('1b–c Displays' finds a 1b or 1c row). The first rule that hits any row decides. One hit is the row; several
+    stop the script, naming `where` (the text's place, for the message) and the rows. None when no rule hits."""
     cands = [r for r in rows if r["course"] == course]
-    if not cands:
-        return None
-    n = norm(qtopic)
-    for r in cands:
-        if norm(r["topic"]) == n:
-            return r
-    for r in cands:
-        rn = norm(r["topic"])
-        if len(n) >= 6 and (rn.startswith(n) or n.startswith(rn)):
-            return r
-    qc = codes_of(qtopic)
-    if qc:
-        for r in cands:
-            if set(qc) & set(codes_of(r["topic"])):
-                return r
+    n, codes = norm(text), set(codes_of(text))
+    for rule in (lambda t: norm(t) == n,
+                 lambda t: len(n) >= 6 and (norm(t).startswith(n) or n.startswith(norm(t))),
+                 lambda t: bool(codes & set(codes_of(t)))):
+        hits = [r for r in cands if rule(r["topic"])]
+        if len(hits) > 1:
+            raise SystemExit(f"{where} '{text}' names {len(hits)} {COURSE_LABEL.get(course, course)} ledger rows ("
+                             + " · ".join(h["topic"][:40] for h in hits) + "). Write more of the intended row's topic "
+                             "into it, so it names that row only.")
+        if hits:
+            return hits[0]
     return None
 
 # ---- look-alikes (confusable topics, served back to back by quiz_pick.py) -------------------
@@ -409,10 +429,10 @@ LOOKALIKE_HEAD = ["Topic", "Look-alike", "Why they get confused"]
 
 def load_lookalikes(rows):
     """{ledger row idx: {look-alike's row idx: why}}, each pair both ways round, from the Look-alikes table at the end of
-    every course's 01-topics.md. A Topic or Look-alike cell names one ledger row of that course: its topic, or a prefix
-    of it of 6+ characters that starts no other row, compared after norm() as match_topic does. Stops, naming the file
-    and the cell, when a cell names no row or several, when a row lacks one of its three cells or names one row twice,
-    and when the header is not those three columns. A course without the section has no pairs."""
+    every course's 01-topics.md. A Topic or Look-alike cell names one ledger row of that course by the rules a
+    **Topic:** tag follows (match_topic). Stops, naming the file and the cell, when a cell names no row or several, when
+    a row lacks one of its three cells or names one row twice, and when the header is not those three columns. A course
+    without the section has no pairs. quiz_pick.py loads it in every mode, so a bad cell stops every run."""
     pairs = {}
     for path in sorted(glob.glob(os.path.join(ROOT, "courses", "*", "01-topics.md"))):
         course, rel = os.path.basename(os.path.dirname(path)), os.path.relpath(path, ROOT)
@@ -426,18 +446,12 @@ def load_lookalikes(rows):
         if table and table[0] != LOOKALIKE_HEAD:
             raise SystemExit(f"{rel}: the Look-alikes header is | {' | '.join(table[0])} |, expected "
                              f"| {' | '.join(LOOKALIKE_HEAD)} |")
-        cands = [r for r in rows if r["course"] == course]
         def row_of(cell):
-            n = norm(cell)
-            hits = ([r for r in cands if norm(r["topic"]) == n]
-                    or [r for r in cands if len(n) >= 6 and norm(r["topic"]).startswith(n)])
-            if not hits:
+            r = match_topic(course, cell, rows, f"{rel}: the Look-alikes cell")
+            if r is None:
                 raise SystemExit(f"{rel}: the Look-alikes cell '{cell}' matches no {COURSE_LABEL.get(course, course)} "
                                  "ledger row. Write the ledger topic, or a prefix of it of 6+ characters.")
-            if len(hits) > 1:
-                raise SystemExit(f"{rel}: the Look-alikes cell '{cell}' starts {len(hits)} ledger rows ("
-                                 + " · ".join(h["topic"][:40] for h in hits) + "). Lengthen it until it starts one.")
-            return hits[0]
+            return r
         for cells in table[1:]:
             if set("".join(cells)) <= set("-: "):
                 continue                    # the |---| rule
@@ -474,13 +488,12 @@ def is_leech(hist):
 # ---- exams and the schedule ----------------------------------------------------------------
 
 def load_calendar():
-    """{course: dict(lectures, exams)} for every course with an exam in term.py's KEY_DATES. lectures: its lecture dates
-    in order, so lecture N is lectures[N - 1] (term.lecture_dates, the numbering term.py counts logs by). exams: dicts of
-    date, label, after and through, in date order; an exam covers the lectures held after `after` (None: from the start
-    of term) up to and including `through` (its cutoff, else its date). Stops when term.py does not import, and when a
-    NON_CUMULATIVE or EXAM_CUTOFF key does not name exactly one exam, so a renamed exam cannot quietly widen a scope."""
-    sys.path.insert(0, MC_SCRIPTS)
-    import term
+    """{course: dict(lectures, exams)} for every course with an exam: the ledger's Term calendar rows with Kind `exam`,
+    which term.py loads. lectures: its lecture dates in order, so lecture N is lectures[N - 1] (term.lecture_dates, the
+    numbering term.py counts logs by). exams: dicts of date, label, after and through, in date order; an exam covers
+    the lectures held after `after` (None: from the start of term) up to and including `through` (its cutoff, else its
+    date). Stops when a NON_CUMULATIVE or EXAM_CUTOFF key does not name exactly one exam, so a renamed exam cannot
+    quietly widen a scope."""
     cal = {}
     for d, course, label, kind in sorted(term.KEY_DATES):
         if kind != "exam":
@@ -495,7 +508,7 @@ def load_calendar():
     for course, w in keys:
         n = sum(w in e["label"].lower() for e in cal.get(course, {}).get("exams", []))
         if n != 1:
-            raise SystemExit(f"quizlib.py: '{w}' names {n} {course} exams in term.py's KEY_DATES, not one. "
+            raise SystemExit(f"quizlib.py: '{w}' names {n} {course} exams in ledger.md's Term calendar, not one. "
                              "Fix NON_CUMULATIVE or EXAM_CUTOFF to match the exam's label.")
     return cal
 
@@ -525,7 +538,7 @@ def next_exam(cal, course, today):
 def standing(r, today, cal):
     """Where a ledger row stands today: (state, days late, exam).
       frozen  an exam that covered it is past and the course's next exam does not cover it (a non-cumulative exam):
-              never due. With no exam left in term.py nothing is frozen, because every final is cumulative.
+              never due. With no exam left in the Term calendar nothing is frozen, because every final is cumulative.
       due     its Next is today or earlier.
       sweep   the course's next exam covers it and is at most SWEEP_DAYS away, and it has not been reviewed since that
               window opened: due though its Next is later.
@@ -548,6 +561,14 @@ def lateness(r, late):
     intervals behind, an O on its 35-day gap a week late a fifth of one."""
     return late / gap(r["grade"], r["streak"])
 
+def next_due(r, today, cal):
+    """The first day after today on which a live row that is not due comes due: its Next date, or the day the exam-week
+    sweep opens (SWEEP_DAYS before the course's next exam) when that exam covers the row and the sweep has not opened
+    yet, whichever is earlier. None when it has neither. The "Nothing due today. Next: …" line counts both."""
+    e = next_exam(cal, r["course"], today)
+    opens = e["date"] - dt.timedelta(days=SWEEP_DAYS) if e and covers(e, held(r, cal)) else None
+    return min((d for d in (r["next_date"], opens) if d and d > today), default=None)
+
 def frozen_summary(frozen, st):
     """'PHIL 385 14 topics from Exam 1', one part per course and exam, for frozen rows (st: idx → standing)."""
     groups = {}
@@ -564,48 +585,50 @@ def near_exams(cal, today):
 
 RECALL = {"O": 1, "~": 0.5}                     # readiness: a question's last grade as a chance of recalling it now
 
-def readiness(rows, today, cal):
+def readiness(rows, today, cal, state, questions):
     """One line per exam in near_exams, for the Due-now block and the focus block (the notes site parses it, so keep
     the wording). In scope are the bank questions whose ledger row the exam covers (covers(), the scope rule standing()
     uses, so a frozen row is never in it). Each counts by its last grade, O 1, ~ 0.5, X or never asked 0, and the line
-    gives the mean as a whole percent, rounded half up, then how many in-scope ledger topics no question matches,
-    left out when none. An exam with no in-scope question yet (none of its lectures logged) gets no line. Reads the
-    whole bank and routines/quiz-state.json, whatever --course scopes, so the block quiz_grade.py writes after saving
-    the state counts that session. [] with no exam within 21 days."""
-    by, _ = bank_by_topic(rows, load_questions())
-    state, out = load_state(), []
+    gives the mean as a whole percent (pct), then how many in-scope ledger topics no question matches, left out when
+    none. An exam with no in-scope question yet (none of its lectures logged) gets no line. `questions` is the whole
+    bank, whatever --course scopes, and `state` the per-question history: the caller passes the ones it already holds,
+    so quiz_grade.py counts the session it is grading before it writes anything. [] with no exam within 21 days."""
+    by, _ = bank_by_topic(rows, questions)
+    out = []
     for e, course in near_exams(cal, today):
         scope = [r for r in rows if r["course"] == course and covers(e, held(r, cal))]
         qs = [q for r in scope for q in by.get(r["idx"], [])]
         if not qs:
             continue
         recalled = sum(RECALL.get(h[-1][1], 0) for h in (history(state, q) for q in qs) if h)
-        pct = int(100 * recalled / len(qs) + 0.5)
         bare = sum(1 for r in scope if r["idx"] not in by)
         out.append(f"_Readiness · {COURSE_LABEL.get(course, course)} {exam_name(e)} · {e['date']:%a %b %-d} · "
-                   f"{pct}% of {len(qs)} in-scope question{'s' if len(qs) != 1 else ''} likely recalled"
+                   f"{pct(recalled, len(qs))}% of {len(qs)} in-scope question{'s' if len(qs) != 1 else ''} likely recalled"
                    + (f" · {bare} {'topics' if bare != 1 else 'topic'} in scope {'have' if bare != 1 else 'has'} no question"
                       if bare else "") + "._")
     return out
 
-def exam_cap(r, today, cal):
-    """(latest Next a grade today may set, its exam): CAP_DAYS before the first exam ahead that covers the row, or the
-    day before it when that day is today or past. An exam today or tomorrow sets no cap (this review is the last before
-    it), so the next exam that covers the row sets it. None when no exam ahead covers the row."""
+def exam_ahead(r, day, cal):
+    """The first exam of the row's course on or after `day` whose scope covers the row (covers()), or None. It sets
+    quiz_pick.py's exam boost (from today) and exam_cap (from the day after tomorrow)."""
     lecs = held(r, cal)
-    for e in cal.get(r["course"], {}).get("exams", []):
-        if e["date"] >= today and covers(e, lecs):
-            for k in (CAP_DAYS, 1):
-                d = e["date"] - dt.timedelta(days=k)
-                if d > today:
-                    return d, e
-    return None
+    return next((e for e in cal.get(r["course"], {}).get("exams", []) if e["date"] >= day and covers(e, lecs)), None)
+
+def exam_cap(r, today, cal):
+    """(latest Next a grade today may set, its exam), or None when no exam that far ahead covers the row. The exam is
+    exam_ahead from the day after tomorrow: an exam today or tomorrow sets no cap, because this review is the last
+    before it. The cap is CAP_DAYS before that exam, or the day before it when that day is today or past."""
+    e = exam_ahead(r, today + dt.timedelta(days=2), cal)
+    if e is None:
+        return None
+    d = e["date"] - dt.timedelta(days=CAP_DAYS)
+    return (d if d > today else e["date"] - dt.timedelta(days=1)), e
 
 def next_review(r, days, today, rows, cal):
     """(Next date, why it differs from the ladder's, or "") for row r graded today with a ladder gap of `days`. Never
     later than exam_cap. A gap of 3+ days may move by up to SPREAD of itself either way (at least a day) to the day
-    with the fewest topics due in the ledger's Next column (`rows`, r itself left out). Ties go to the ladder date, then
-    the nearer day, then the earlier one."""
+    with the fewest topics due in the ledger's Next column (`rows`; r itself and the rows frozen today left out, since a
+    frozen row never comes due). Ties go to the ladder date, then the nearer day, then the earlier one."""
     ideal = today + dt.timedelta(days=days)
     w = max(1, int(days * SPREAD)) if days >= 3 else 0
     window = [ideal + dt.timedelta(days=k) for k in range(-w, w + 1)]
@@ -614,7 +637,7 @@ def next_review(r, days, today, rows, cal):
         window = [d for d in window if d <= cap[0]] or [cap[0]]
     load = {}
     for o in rows:
-        if o is not r and o["next_date"]:
+        if o is not r and o["next_date"] and standing(o, today, cal)[0] != "frozen":
             load[o["next_date"]] = load.get(o["next_date"], 0) + 1
     best = min(window, key=lambda d: (load.get(d, 0), abs((d - ideal).days), d))
     if cap and ideal > cap[0]:
@@ -627,8 +650,6 @@ def day_after(today, courses=None):
     """The focus block's day-after flags: for each lecture held yesterday that has a log (term.py's lecture_dates and
     lecture_logs, the numbering every script uses), a line saying to open the session with 2 minutes of free recall on
     it (Karpicke & Blunt 2011), then its notes page. Only the given courses, when any are given. [] when there is none."""
-    sys.path.insert(0, MC_SCRIPTS)
-    import term
     yesterday, out = today - dt.timedelta(days=1), []
     for code in term.COURSES:
         dates, logs = term.lecture_dates(code, yesterday), term.lecture_logs(code)
@@ -640,21 +661,22 @@ def day_after(today, courses=None):
     return out
 
 def bank_by_topic(rows, questions):
-    """{ledger row idx: [questions]} plus a list of questions whose tag matched no row."""
+    """{ledger row idx: [questions]} plus a list of questions whose tag matched no row. Stops on a tag that names
+    several rows (match_topic)."""
     by, unmatched = {}, []
     for q in questions:
-        r = match_topic(q["course"], q["topic"], rows)
+        r = match_topic(q["course"], q["topic"], rows, f"{q['file']}:{q['line']}: the **Topic:** tag")
         if r is None:
             unmatched.append(q)
         else:
             by.setdefault(r["idx"], []).append(q)
     return by, unmatched
 
-def unmatched_block(unmatched, lost=()):
+def unmatched_block(unmatched):
     """The one loud block for **Topic:** tags that match no ledger row: a line per tag in the bank (`unmatched`, from
-    bank_by_topic) with its question count and where the first one sits, then a line per grade this session could
-    not record (`lost`: (session item, grade) pairs). Such questions are never picked. [] when there are none."""
-    if not unmatched and not lost:
+    bank_by_topic) with its question count and where the first one sits. Such questions are never picked; a graded one
+    (its row renamed after the pick) stops quiz_grade.py before it writes anything. [] when there are none."""
+    if not unmatched:
         return []
     out = ["-- ⚠ Topic tags that match no ledger row. Their questions are never picked and their grades cannot reach "
            "the ledger. Change each tag to the exact ledger topic, or add the row:"]
@@ -663,8 +685,6 @@ def unmatched_block(unmatched, lost=()):
         by.setdefault((q["course"], q["topic"]), []).append(q)
     for (c, t), qs in sorted(by.items()):
         out.append(f"   {COURSE_LABEL.get(c, c)} · '{t}' · {len(qs)} q · {qs[0]['file']}:{qs[0]['line']}")
-    for it, g in lost:
-        out.append(f"   {it['label']} · '{it['topic_tag']}' · question {it['n']} of this session, graded {g}, was not recorded")
     return out
 
 def focus(rows, questions, state, today, cal, courses=None):

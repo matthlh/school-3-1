@@ -2,7 +2,7 @@
 """Record grades for the pending session and update every SRS store.
 
 Usage:
-  quiz_grade.py "1:O3 2:X3/c 3:~2v 4:-"    n:token pairs, always ONE quoted string (- = skipped)
+  quiz_grade.py "1:O3 2:X3/c 3:~2/m 4:-"   n:token pairs, always ONE quoted string (- = skipped)
   quiz_grade.py "O3 X1/m ~2"               a bare token sequence, in session order
   quiz_grade.py "1 O 2 ~ 3 X"              a phone reply or the deck page's replyString, pasted verbatim
   quiz_grade.py --transit 2026-10-05 "1 O 2 ~ 3 X"
@@ -11,11 +11,11 @@ Usage:
            --said N "text"   his wrong answer to question N, an X or ~ (repeatable)
            --why N "text"    why he was sure, for question N, an X at confidence 3 (repeatable)
 
-A token is <grade><conf?><v?></cause?>. The grade is O, ~ (p means the same) or X, or - for skipped. conf is 1, 2
-or 3, his confidence before he saw the answer. v means it was asked as a live variant. /cause goes on an X or ~ only:
-c concept, f forgot, m misread, k careless, s slow. Anything else stops the script before it writes. A history entry
-is [date, grade], or [date, grade, extra] when there is more to store; extra holds only the keys given: conf, cause
-(the full word), variant (true), said and why.
+A token is <grade><conf?></cause?>. The grade is O, ~ (p means the same) or X, or - for skipped. conf is 1, 2 or 3,
+his confidence before he saw the answer. /cause goes on an X or ~ only: c concept, f forgot, m misread, k careless,
+s slow. A live variant takes its question's grade. A question number given twice, or anything else malformed, stops
+the script before it writes. A history entry is [date, grade], or [date, grade, extra] when there is more to store;
+extra holds only the keys given: conf, cause (the full word), said and why.
 
 Each mode refuses the wrong session before writing anything. Plain grading takes routines/quiz-session.json only
 when it was picked today (--date sets today), and when there is none it names a pending transit deck. --transit
@@ -25,15 +25,17 @@ grades under, so taps never land on another deck's questions. --session PATH gra
 Questions not mentioned are left untouched (he stopped early). A topic's session grade is the
 WORST grade among its questions this session; the ledger row then moves by the CLAUDE.md ladder
 (X → streak 0, +1 d · ~ → +3 d · O → streak+1, +7/+16/+35 d), adjusted by quizlib.next_review:
-never later than 4 days before the next exam that covers it, and a gap of 3+ days goes to the
-lightest day within ±15% of it. Writes:
+never later than quizlib.exam_cap, and a gap of 3+ days goes to the lightest day within ±15% of it.
+Everything is built in memory first, every check included (a **Topic:** tag that names no ledger row stops it,
+naming the tag), so a stop writes nothing and a rerun records nothing twice. Then it writes:
   routines/quiz-state.json              per-question history + session record
   ledger.md                             All-topics rows, Due-now block, one Session-log line
   routines/quiz/YYYY-MM-DD.md           the session log (appends on a second session that day)
-Then prints the ledger delta, what needs more questions, the share graded O at each confidence (calibration), the
-misses by cause with a fix for each (misses_by_cause), and last the notes pages behind the X and ~ grades, grouped by
-page with the most misses first (miss_pages). A plain reply, with nothing past its grades, prints neither of the two
-middle blocks.
+Then prints the ledger delta, what needs more questions, the Due-now block (its readiness lines count this session,
+--dry-run included), the share graded O at each confidence (calibration), the misses by cause with a fix for each
+(misses_by_cause), the confident misses with why he was sure (confident_misses), and last the notes pages behind the
+X and ~ grades, grouped by page with the most misses first (miss_pages). A plain reply, with nothing past its grades,
+prints none of the three blocks before the pages.
 """
 import argparse, datetime as dt, json, os, re, shlex, sys
 
@@ -50,14 +52,14 @@ CAUSES = {"c": ("concept", "open the notes page listed below and add or rewrite 
 CONF = {1: "guess", 2: "think so", 3: "sure"}
 
 def parse_token(tok):
-    """One grade token, <grade><conf?><v?></cause?> as in O3, X3/c or ~2v → (grade or None for a skip, extra).
-    extra holds only what the token gave: conf, cause (the full word), variant."""
-    m = re.fullmatch(r"([ox~p-])(\d*)(v?)(?:/(.*))?", tok.lower())
+    """One grade token, <grade><conf?></cause?> as in O3, X3/c or ~2/m → (grade or None for a skip, extra).
+    extra holds only what the token gave: conf and cause (the full word)."""
+    m = re.fullmatch(r"([ox~p-])(\d*)(?:/(.*))?", tok.lower())
     if not m:
-        raise SystemExit(f"bad grade '{tok}' — a token is O, ~ (or p), X or - (skip), then a confidence 1–3, v for a "
-                         "live variant and /cause on an X or ~, each optional and in that order: O3, X3/c, ~2v")
-    g, conf, variant, cause = GRADE[m.group(1)], m.group(2), m.group(3), m.group(4)
-    if g is None and (conf or variant or cause is not None):
+        raise SystemExit(f"bad grade '{tok}' — a token is O, ~ (or p), X or - (skip), then a confidence 1–3 and /cause "
+                         "on an X or ~, each optional and in that order: O3, X3/c, ~2/m")
+    g, conf, cause = GRADE[m.group(1)], m.group(2), m.group(3)
+    if g is None and (conf or cause is not None):
         raise SystemExit(f"bad grade '{tok}' — a skip (-) takes nothing after it")
     if conf and conf not in ("1", "2", "3"):
         raise SystemExit(f"bad grade '{tok}' — confidence {conf}; use 1, 2 or 3")
@@ -71,13 +73,11 @@ def parse_token(tok):
         extra["conf"] = int(conf)
     if cause:
         extra["cause"] = CAUSES[cause][0]
-    if variant:
-        extra["variant"] = True
     return g, extra
 
 def parse_grades(tokens, n_items):
     """n:token pairs (the colon may be a space, as in the deck page's "1 O 2 ~ 3 X"), or a bare token sequence in
-    session order. Returns {n: (grade or None, extra)}; parse_token reads each token."""
+    session order. Returns {n: (grade or None, extra)}; parse_token reads each token. Stops on a number given twice."""
     flat = []
     for t in tokens:
         flat += re.split(r"[\s,]+", t.strip())
@@ -101,6 +101,8 @@ def parse_grades(tokens, n_items):
                 tok, i = flat[i + 1], i + 2
             else:
                 raise SystemExit(f"question {k} has no grade")
+            if k in out:
+                raise SystemExit(f"question {k} is graded twice — give each question one grade")
             out[k] = parse_token(tok)
     for k in out:
         if not 1 <= k <= n_items:
@@ -136,7 +138,7 @@ def calibration(graded, extra):
     out = ["-- Calibration: confidence before the answer → share graded O"]
     for c, gs in sorted(by.items()):
         o = gs.count("O")
-        out.append(f"   {c} {CONF[c]} · {len(gs)} answer{'s' if len(gs) != 1 else ''} · {o} O ({round(100 * o / len(gs))}%)")
+        out.append(f"   {c} {CONF[c]} · {len(gs)} answer{'s' if len(gs) != 1 else ''} · {o} O ({L.pct(o, len(gs))}%)")
     return out
 
 def misses_by_cause(graded, extra):
@@ -153,6 +155,17 @@ def misses_by_cause(graded, extra):
     bare = [str(k) for k, c in misses.items() if c is None]
     if bare:
         out.append(f"   no cause given · {', '.join(bare)}")
+    return out
+
+def confident_misses(items, graded, extra):
+    """Each X given at confidence 3 with why he was sure (--why), the beliefs to correct first. [] when there is none."""
+    ks = [k for k, g in sorted(graded.items()) if g == "X" and extra.get(k, {}).get("conf") == 3]
+    if not ks:
+        return []
+    out = ["-- Confident misses (X at confidence 3) and why he was sure"]
+    for k in ks:
+        why = extra[k].get("why")
+        out.append(f"   {k} · {items[k]['label']} · {items[k]['topic_tag'][:50]} · " + (f'"{why}"' if why else "no reason given"))
     return out
 
 def miss_pages(items, graded, qsrc=None):
@@ -226,11 +239,28 @@ def main():
         raise SystemExit("nothing graded")
 
     text, rows = L.load_ledger()
-    L.session_log_end(text.split("\n"))      # exits here if ledger.md has no Session log table, before anything is written
     state = L.load_state()
     questions = L.load_questions()
     qsrc = {q["id"]: q for q in questions}
     cal = L.load_calendar()
+
+    # Everything below is built in memory, every check included, before the first write at the end. A stop anywhere
+    # leaves every file as it was, so the rerun after a fix records nothing twice.
+
+    # ---- topic grades = worst of the session; a tag that names no ledger row stops here
+    per_topic, lost = {}, []
+    for k, g in graded.items():
+        it = items[k]
+        r = L.match_topic(it["course"], it["topic_tag"], rows, f"{it['file']}:{it['line']}: question {k}'s **Topic:** tag")
+        if r is None:
+            lost.append(it); continue
+        cur = per_topic.get(r["idx"])
+        per_topic[r["idx"]] = g if cur is None or L.GRADE_RANK[g] < L.GRADE_RANK[cur] else cur
+    if lost:
+        raise SystemExit("These **Topic:** tags name no ledger row, so their grades cannot move the ledger. Nothing was "
+                         "written. Make a ledger row match each tag (fix the row's topic or add the row), then run this "
+                         "again:\n" + "\n".join(f"   question {it['n']} · {it['label']} · '{it['topic_tag']}' · "
+                                                f"{it['file']}:{it['line']}" for it in lost))
 
     # ---- per-question history
     for k, g in graded.items():
@@ -241,15 +271,7 @@ def main():
     state["sessions"].append(dict(date=today.isoformat(), mode=session["mode"], n=len(graded), note=a.note,
                                   results=[[k, items[k]["id"], items[k]["course"], g] for k, g in sorted(graded.items())]))
 
-    # ---- topic grades = worst of the session
-    per_topic, lost = {}, []
-    for k, g in graded.items():
-        it = items[k]
-        r = L.match_topic(it["course"], it["topic_tag"], rows)
-        if r is None:
-            lost.append((it, g)); continue
-        cur = per_topic.get(r["idx"])
-        per_topic[r["idx"]] = g if cur is None or L.GRADE_RANK[g] < L.GRADE_RANK[cur] else cur
+    # ---- ledger rows by the ladder
     delta = []
     for r in rows:
         if r["idx"] not in per_topic:
@@ -261,12 +283,16 @@ def main():
         r.update(last=today.isoformat(), grade=g, streak=streak, next=nxt.isoformat(), next_date=nxt)
         delta.append((r, old, f"+{(nxt - today).days} d" + (f"; {why}" if why else "")))
 
-    # ---- session log + ledger session-log line
+    # ---- ledger.md's new text: the rows, the Due-now block (its readiness counts this session) and a Session-log line
     counts = {g: sum(1 for x in graded.values() if x == g) for g in L.GRADES}
     labels = sorted({items[k]["label"] for k in graded})
     log_line = (f"| {today.isoformat()} | Quiz ({session['mode']}): {len(graded)} q · "
                 f"{counts['O']} O / {counts['~']} ~ / {counts['X']} X · {', '.join(labels)} · "
                 f"{len(delta)} ledger rows moved{' · ' + a.note if a.note else ''} |")
+    block = L.due_block(rows, today, cal, L.readiness(rows, today, cal, state, questions))
+    ledger = L.ledger_text(text, rows, block, log_line)      # stops when ledger.md has no Session log table
+
+    # ---- the session log
     stamp = dt.datetime.now().astimezone().strftime("%H:%M")
     log = [f"## {stamp} · {session['mode']} · {len(graded)} q · {counts['O']} O / {counts['~']} ~ / {counts['X']} X"
            + (f" · {a.note}" if a.note else ""), "", "| # | Course | Topic | Type | Grade |", "|---|---|---|---|---|"]
@@ -285,39 +311,38 @@ def main():
         log.append(f"- {r['label']} · {r['topic']} · {old[0]}→{r['grade']} · streak {old[1]}→{r['streak']} · next {r['next']} ({when})")
     log.append("")
 
+    # ---- the report
+    report = [f"== GRADED {len(graded)} of {len(items)} · {counts['O']} O / {counts['~']} ~ / {counts['X']} X", "-- Ledger delta"]
+    for r, old, when in delta:
+        report.append(f"   {r['label']} · {r['topic'][:55]} · {old[0]}→{r['grade']} · streak {r['streak']} · next {r['next']} ({when})")
+    fx = L.focus(rows, questions, state, today, cal)
+    report += L.unmatched_block(fx["unmatched"])
+    if fx["needs_more"] or fx["leeches"] or fx["empty"]:
+        report.append("-- Needs more questions (write them now, tagged with the same **Topic:**):")
+        for r, k in fx["needs_more"]:
+            report.append(f"   {r['label']} · {r['topic'][:60]} · {r['grade']} with {k} q → write {L.MIN_QUESTIONS_PER_TOPIC - k}+ aimed at the miss")
+        for r in fx["empty"]:
+            report.append(f"   {r['label']} · {r['topic'][:60]} · no questions at all")
+        for q in fx["leeches"]:
+            report.append(f"   LEECH {L.COURSE_LABEL[q['course']]} · {q['q'][:70]}… → rewrite or split into 2")
+    else:
+        report.append("-- Needs more questions: none")
+    report += (block + calibration(graded, extra) + misses_by_cause(graded, extra) + confident_misses(items, graded, extra)
+               + miss_pages(items, graded, qsrc))
+
+    # ---- the writes, all checks passed
     if a.dry_run:
         print("DRY RUN — nothing written\n")
     else:
         L.save_state(state)
-        L.write_ledger(text, rows, today, cal, log_line=log_line)
+        L.write_ledger(ledger)
         os.makedirs(L.QUIZ_DIR, exist_ok=True)
         path = os.path.join(L.QUIZ_DIR, f"{today.isoformat()}.md")
         new = not os.path.exists(path)
         with open(path, "a", encoding="utf-8") as f:
             f.write(("" if not new else f"# Quiz log — {today:%a %Y-%m-%d}\n\n") + "\n".join(log) + "\n")
         os.remove(a.session)
-
-    # ---- report
-    print(f"== GRADED {len(graded)} of {len(items)} · {counts['O']} O / {counts['~']} ~ / {counts['X']} X")
-    print("-- Ledger delta")
-    for r, old, when in delta:
-        print(f"   {r['label']} · {r['topic'][:55]} · {old[0]}→{r['grade']} · streak {r['streak']} · next {r['next']} ({when})")
-    fx = L.focus(rows, questions, state, today, cal)
-    for line in L.unmatched_block(fx["unmatched"], lost):
-        print(line)
-    if fx["needs_more"] or fx["leeches"] or fx["empty"]:
-        print("-- Needs more questions (write them now, tagged with the same **Topic:**):")
-        for r, k in fx["needs_more"]:
-            print(f"   {r['label']} · {r['topic'][:60]} · {r['grade']} with {k} q → write {L.MIN_QUESTIONS_PER_TOPIC - k}+ aimed at the miss")
-        for r in fx["empty"]:
-            print(f"   {r['label']} · {r['topic'][:60]} · no questions at all")
-        for q in fx["leeches"]:
-            print(f"   LEECH {L.COURSE_LABEL[q['course']]} · {q['q'][:70]}… → rewrite or split into 2")
-    else:
-        print("-- Needs more questions: none")
-    for line in L.due_block(rows, today, cal) + calibration(graded, extra) + misses_by_cause(graded, extra):
-        print(line)
-    for line in miss_pages(items, graded, qsrc):
+    for line in report:
         print(line)
 
 if __name__ == "__main__":

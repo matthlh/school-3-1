@@ -2,13 +2,12 @@
 """Shadow trial: would FSRS have predicted his misses better than the ladder? Read-only, writes nothing.
 
 Usage:
-  fsrs_shadow.py [--since YYYY-MM-DD] [--json]
+  fsrs_shadow.py [--since YYYY-MM-DD]
 
   default      replay routines/quiz-state.json and print each predictor's log loss and RMSE, a 5-bin
                calibration table, then one verdict line, always last (the Sunday weekly brief quotes it)
   --since      score only reviews dated on or after this day; earlier ones still build FSRS's memory
-               state and the baselines' counts
-  --json       the same numbers as one JSON object
+               state and the baseline's counts
 
 The trial (from 2026-10-06, 3–4 weeks): FSRS runs silently on his history while the ladder keeps
 scheduling. Matt adopts FSRS only if it predicts his misses better than the ladder does.
@@ -31,12 +30,12 @@ formula but is not scored: R is 1 by construction, and the FSRS benchmark leaves
 Outcome: O and ~ count as recalled (1), X as forgotten (0). ~ maps to Hard, which FSRS treats as a pass
 (R is the chance of anything but Again), and a miss in CLAUDE.md is X alone.
 
-Baselines, fit only on spaced reviews from earlier days (a day's reviews are all predicted before any counts):
-  overall   (recalled + 1) / (reviews + 2), Laplace's rule, so 0.5 before any data
-  ladder    the same within the review's ladder state, last grade plus streak bucket (X0, ~0 to ~3+, O1, O2,
-            O3+; the ledger keeps streaks per topic, so this replays one per question with quizlib.next_after),
-            plus 2 pseudo-reviews at the overall rate: (recalled + 2 × overall) / (reviews + 2). It stands
-            in for the ladder, which sets intervals but gives no probabilities.
+Ladder baseline, fit only on spaced reviews from earlier days (a day's reviews are all predicted before any counts):
+the recall rate within the review's ladder state, last grade plus streak bucket (X0, ~0 to ~3+, O1, O2, O3+; the
+ledger keeps streaks per topic, so this replays one per question with quizlib.next_after), plus 2 pseudo-reviews at
+the overall rate: (recalled + 2 × overall) / (reviews + 2), where overall is (recalled + 1) / (reviews + 2) over every
+earlier spaced review, Laplace's rule, so 0.5 before any data. It stands in for the ladder, which sets intervals but
+gives no probabilities.
 
 Scores: log loss (lower is better; always guessing 50% gives 0.693) and RMSE, the square root of the mean of
 (p − outcome)², which is the root Brier score, not the benchmark's binned RMSE. Calibration: 5 equal-width
@@ -44,8 +43,8 @@ bins of predicted chance, each with its count, mean prediction and actual recall
 
 Verdict: FSRS against the ladder baseline on log loss, from the per-review differences. Decided once
 MIN_REVIEWS are scored and the mean difference is at least twice its standard error. Until then it estimates
-the reviews needed as (2 × sd / mean difference)², the count at which today's gap and spread would reach two
-standard errors. Reviews of one question are correlated, so the standard error is optimistic.
+the reviews needed as (2 × sd / mean difference)², rounded, the count at which today's gap and spread would reach
+two standard errors. Reviews of one question are correlated, so the standard error is optimistic.
 """
 import argparse, datetime as dt, json, math, os, sys
 from itertools import groupby
@@ -64,7 +63,7 @@ RATING = {"X": 1, "~": 2, "O": 3}              # Again, Hard, Good
 RECALLED = {"X": 0, "~": 1, "O": 1}            # ~ is a pass, as Hard is to FSRS
 MIN_REVIEWS = 30                               # below this many scored reviews: no verdict and no estimate
 BINS = 5
-PREDICTORS = (("fsrs", "FSRS-6"), ("ladder", "Ladder state"), ("overall", "Overall rate"))
+PREDICTORS = (("fsrs", "FSRS-6"), ("ladder", "Ladder state"))
 
 # ---- FSRS-6 ----------------------------------------------------------------------------------
 
@@ -149,9 +148,9 @@ def replay(history):
             events.append(e)
     return events
 
-def fit_baselines(events):
-    """Sort events by date and give every spaced review its overall and ladder-state predictions, counted from the
-    spaced reviews of earlier days only."""
+def fit_baseline(events):
+    """Sort events by date and give every spaced review its ladder-state prediction, counted from the spaced reviews
+    of earlier days only, with 2 pseudo-reviews at the overall rate of those days."""
     events.sort(key=lambda e: e["date"])
     k = n = 0
     ks, ns = {}, {}
@@ -159,7 +158,6 @@ def fit_baselines(events):
         day = [e for e in day if e["kind"] == "spaced"]
         p = (k + 1) / (n + 2)
         for e in day:
-            e["overall"] = p
             e["ladder"] = (ks.get(e["state"], 0) + 2 * p) / (ns.get(e["state"], 0) + 2)
         for e in day:
             k, n = k + e["y"], n + 1
@@ -188,14 +186,14 @@ def calibration(ps, ys):
 
 def paired_gap(scored):
     """Per-review log-loss advantage of FSRS over the ladder baseline (> 0 = FSRS better): mean, sd, its standard
-    error, and the reviews at which this gap would reach two standard errors (None with no gap)."""
+    error, and the reviews at which this gap would reach two standard errors, rounded (None with no gap)."""
     n = len(scored)
     if n < 2:
         return None
     diffs = [nll(e["ladder"], e["y"]) - nll(e["fsrs"], e["y"]) for e in scored]
     mean = sum(diffs) / n
     sd = math.sqrt(sum((x - mean) ** 2 for x in diffs) / (n - 1))
-    return dict(mean=mean, sd=sd, se=sd / math.sqrt(n), needed=math.ceil((2 * sd / mean) ** 2) if mean else None)
+    return dict(mean=mean, sd=sd, se=sd / math.sqrt(n), needed=round((2 * sd / mean) ** 2) if mean else None)
 
 def count(k, noun):
     return f"{k} {noun}{'' if k == 1 else 's'}"
@@ -213,19 +211,18 @@ def verdict(n, preds, gap):
         return f"The ladder baseline beats FSRS by {-mean:.3f} ± {se:.3f} log loss on {n} reviews: keep the ladder"
     if not mean:
         return f"Not decided yet: {n} reviews scored, FSRS and the ladder baseline are level"
-    need = max(n + 1, int(float(f"{gap['needed']:.2g}")))       # two significant figures
+    need = max(n + 1, gap["needed"])
     lead = "FSRS" if mean > 0 else "the ladder baseline"
     return f"Not decided yet: {n} reviews scored, about {need} needed ({lead} ahead by {abs(mean):.3f} ± {se:.3f} log loss)"
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--since", type=dt.date.fromisoformat, help="score only reviews on or after this date (YYYY-MM-DD)")
-    ap.add_argument("--json", action="store_true", help="print one JSON object instead of the report")
     a = ap.parse_args()
 
     history = load_history()
     events = replay(history)
-    fit_baselines(events)
+    fit_baseline(events)
     spaced = [e for e in events if e["kind"] == "spaced"]
     scored = [e for e in spaced if not a.since or e["date"] >= a.since]
     ys = [e["y"] for e in scored]
@@ -237,14 +234,6 @@ def main():
     line = verdict(len(scored), preds, gap)
     skipped = dict(first=sum(e["kind"] == "first" for e in events), same_day=sum(e["kind"] == "same-day" for e in events),
                    before_since=len(spaced) - len(scored))
-
-    if a.json:
-        print(json.dumps(dict(fsrs="FSRS-6, default parameters", parameters=list(W), since=a.since and a.since.isoformat(),
-                              questions=len(history), reviews=len(events), scored=len(scored), not_scored=skipped,
-                              first_scored=scored[0]["date"].isoformat() if scored else None,
-                              last_scored=scored[-1]["date"].isoformat() if scored else None,
-                              predictors=preds, gap=gap, min_reviews=MIN_REVIEWS, verdict=line), indent=1, ensure_ascii=False))
-        return
 
     print(f"== FSRS SHADOW TRIAL for {L.today_local():%a %Y-%m-%d} · FSRS-6 default parameters vs the ladder · read-only")
     span = f", {events[0]['date']:%b %-d} → {events[-1]['date']:%b %-d}" if events else ""
