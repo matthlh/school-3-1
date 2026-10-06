@@ -1,4 +1,5 @@
-/* Section rail: a Notion-style table of contents fixed at the right edge, one thin bar per section. No box in any state.
+/* On this page: the section rail on wide screens, and the chip row (.contents) that takes its place on narrow ones.
+   The rail is a Notion-style table of contents fixed at the right edge, one thin bar per section. No box in any state.
    When the margin beside the article has room (SectionRail.tsx measures it and sets .roomy and --rail-label), the section
    names show at rest, faint, never reaching the article. Without room only the bars show, and hovering (or tabbing in)
    opens the names over a soft backdrop in the page colour so they stay readable over the text.
@@ -9,7 +10,7 @@
 .rail { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); z-index: 15;
         display: none; flex-direction: column; align-items: stretch; gap: 7px;
         max-height: calc(100vh - 96px); overflow: hidden; box-sizing: border-box;
-        padding: 8px 12px 8px 20px;    /* the left padding is an invisible hit area; the right 12px is BAR_INSET in SectionRail.tsx */
+        padding: 8px 12px 8px 20px;    /* the left padding is an invisible hit area; the right 12px plus right: 14px is BAR_INSET in SectionRail.tsx */
         border-radius: 14px; background: transparent; box-shadow: 0 0 24px 18px transparent;
         transition: background-color .15s, box-shadow .15s; }
 .rail:hover, .rail:has(:focus-visible) { overflow-y: auto; scrollbar-width: thin; }
@@ -39,6 +40,10 @@
 .rail:is(:hover, :has(:focus-visible)) .lbl { opacity: 1; }
 /* With room the names keep their resting width on hover (the title tooltip has the rest); without room they open to 220px. */
 .rail:not(.roomy):is(:hover, :has(:focus-visible)) .lbl { max-width: 220px; }
+
+/* Chip row: one chip per section, above the sections (the chips themselves are styled in styles.css). */
+.contents { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 18px; }
+.ledger-page .contents { margin: 2px 0 14px; }
 
 /* Wide screens get the rail and lose the chip row; under 1000px the chip row stays and the rail is gone.
    With the sidebar pinned the content area is 260px narrower, so the switch happens at 1260px instead. */

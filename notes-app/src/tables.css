@@ -1,6 +1,6 @@
-/* Tables, pagers, Due now and the ledger dashboard. Owned by the tables agent; styles.css stays with the shell. */
+/* Tables: the pager, the compact tables (Due now, Coming up, the ledger's) and the rest of the ledger page. After styles.css. */
 
-/* Pager: "11–20 of 63" on the left, ‹ 2 of 7 › on the right */
+/* == Pager: "11–20 of 63" on the left, ‹ 2 of 7 › on the right == */
 .pager { display: flex; align-items: center; gap: 8px; margin: 8px 0 2px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .pager .range { margin-right: auto; }
 .pager .count { min-width: 44px; text-align: center; }
@@ -9,10 +9,10 @@
 .pager button:hover:not(:disabled) { background: var(--hover); border-color: var(--border3); }
 .pager button:disabled { opacity: .35; cursor: default; }
 .pager button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; border-radius: 50%; }
-tr.pager-row td, article tr.pager-row td { border: 0; padding: 2px 0 0; background: none; }
+tr.pager-row td { border: 0; padding: 2px 0 0; background: none; }   /* a long markdown table carries its pager in a last row */
 tr.pager-row .pager { margin: 4px 0 0; }
 
-/* Compact tables: Due now and the ledger dashboard */
+/* == Compact tables: Due now (Home and the ledger) and the ledger dashboard == */
 table.due, table.ledger { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 6px 0 0; line-height: 1.45; }
 article table.due, article table.ledger { display: table; }
 table.due td, table.ledger td, table.ledger th { padding: 6px 8px; border: 0; border-top: 1px solid var(--hair); vertical-align: top; text-align: left; background: none; }
@@ -20,38 +20,46 @@ table.ledger th { border-top: 0; border-bottom: 1px solid var(--border2); paddin
 table.due tr:first-child td, table.ledger tbody tr:first-child td { border-top: 0; }
 table.due td:first-child, table.ledger td:first-child, table.ledger th:first-child { padding-left: 0; }
 table.due td:last-child, table.ledger td:last-child, table.ledger th:last-child { padding-right: 0; }
-td.nowrap, th.nowrap { white-space: nowrap; }
-.detail { color: var(--muted); font-size: 12.5px; margin-left: 5px; }
-.past { color: var(--muted); }
-.past td { color: var(--muted); }
-.past .chip { opacity: .8; }
-.late { color: var(--bad); font-weight: 600; }
+.panel table.due { margin-top: 2px; }
+td.nowrap { white-space: nowrap; }
+.detail { color: var(--muted); font-size: 12.5px; margin-left: 5px; }   /* a topic's trailing parenthetical */
 table.due td.when { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; width: 76px; }
 table.due td.when.late, table.ledger td.next.late { color: var(--bad); font-weight: 600; }
 table.due td.grade, table.ledger td.grade { width: 40px; text-align: center; }
 table.ledger th.grade { text-align: center; }
+/* All topics */
 table.ledger td.lec, table.ledger td.last { color: var(--muted); white-space: nowrap; font-size: 12.5px; }
 table.ledger td.next { white-space: nowrap; text-align: right; font-size: 12.5px; color: var(--fg2); }
 table.ledger th.next, table.ledger th.weight { text-align: right; }
+/* Term calendar */
 table.ledger td.date { white-space: nowrap; color: var(--fg2); }
 table.ledger td.weight { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; }
-table.ledger td.asof { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; width: 72px; }
-table.ledger th.asof { text-align: right; }
 table.ledger tr.exam td.what { font-weight: 600; }
-table.ledger.calendar .chip-inline { display: none; margin-right: 6px; }   /* phones only; the Course column carries the chip on wide screens */
 table.ledger td.what code { font-size: .88em; }
-.panel table.due { margin-top: 2px; }
-.panel-head .sub { text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; }
+.past { color: var(--muted); } .past .chip { opacity: .8; }
+/* Recurring series under the term calendar: Series | Course | When | Note */
+table.ledger.recurring td.series { font-weight: 500; }
+table.ledger.recurring td.when { white-space: nowrap; color: var(--fg2); }
+table.ledger.recurring td.note { color: var(--muted); font-size: 13px; }
+table.ledger.recurring td.note code, table.ledger.recurring td.series code { font-size: .88em; }
+table.ledger:is(.calendar, .recurring) .chip-inline { display: none; margin-right: 6px; }   /* phones only; the Course column carries the chip on wide screens */
 
+/* == Coming up on Home: the next few hard dates == */
+table.upcoming { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 4px; }
+.upcoming td { padding: 5px 6px; border-top: 1px solid var(--hair); vertical-align: top; }
+.upcoming tr:first-child td { border-top: 0; }
+.upcoming td.when { white-space: nowrap; width: 84px; padding-left: 0; color: var(--muted); }
+.upcoming td.when.soon { color: var(--bad); font-weight: 600; }
+.upcoming td.date { white-space: nowrap; width: 150px; color: var(--fg2); }
+.upcoming td.weight { white-space: nowrap; text-align: right; color: var(--muted2); font-size: 12.5px; padding-right: 0; }
+.upcoming tr.exam td:nth-child(3) { font-weight: 600; }
+.upcoming .chip { margin-right: 4px; }
+
+/* == Ledger page == */
 /* Course filter chips over the All topics table */
 .filter { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
 .filter button.chip.tone:hover { background: var(--tint); filter: brightness(.96); }
 .filter .chip.tone.on { box-shadow: inset 0 0 0 1.5px var(--ink); font-weight: 600; }
-
-/* Ledger page */
-.ledger-page .contents { margin: 2px 0 14px; }
-.contents a.chip { cursor: pointer; }
-.contents a.chip:hover { background: var(--hover); }
 .ledger-page h2 .count { font-size: 13px; font-weight: 500; color: var(--muted); margin-left: 4px; }
 .ledger-page section { margin-bottom: 6px; }
 .ledger-page p.small { margin: -.2em 0 .6em; }
@@ -59,22 +67,23 @@ table.ledger td.what code { font-size: .88em; }
 .ledger-page blockquote p { margin: .3em 0; }
 .ledger-page h3 { margin-top: 1.4em; }
 /* Any other markdown table on the ledger page shares the hairline look of the built tables */
-.ledger-page article table, .ledger-page table:not(.ledger):not(.due) { display: table; width: 100%; font-size: 13.5px; }
+.ledger-page table:not(.ledger):not(.due) { display: table; width: 100%; font-size: 13.5px; }
 .ledger-page table:not(.ledger):not(.due) td, .ledger-page table:not(.ledger):not(.due) th { border: 0; border-top: 1px solid var(--hair); padding: 6px 8px; background: none; }
 .ledger-page table:not(.ledger):not(.due) th { border-top: 0; border-bottom: 1px solid var(--border2); font-size: 11px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
 .ledger-page table:not(.ledger):not(.due) td:first-child, .ledger-page table:not(.ledger):not(.due) th:first-child { padding-left: 0; }
 
-/* Grades so far: one row per course, the Canvas total on the first line, then the graded items as chips */
+/* == Grades so far: one row per course, the Canvas total on the first line, then the graded items as chips == */
+table.ledger td.asof { white-space: nowrap; text-align: right; color: var(--muted); font-size: 12.5px; width: 72px; }
+table.ledger th.asof { text-align: right; }
 table.ledger.grades td.score { line-height: 1.4; }
 .grades .total { font-size: 15px; font-weight: 600; color: var(--fg); }
 .grades .total.none { font-size: 13.5px; font-weight: 400; color: var(--muted); }
 .grades .items { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-top: 4px; }
-.grades .items .chip { white-space: nowrap; }
-.grades .items .chip b { font-weight: 600; }
+.grades .items .chip { white-space: nowrap; } .grades .items .chip b { font-weight: 600; }
 .grades .note { margin-top: 3px; font-size: 12.5px; color: var(--muted); }
 .grades .asof-inline { display: none; font-size: 12px; color: var(--muted); }   /* phones only; the As of column carries the date on wide screens */
 
-/* Session log: newest first, one block per day with the short date beside its entries */
+/* == Session log: newest first, one block per day with the short date beside its entries == */
 .ledger-page .log { margin-top: 6px; font-size: 13.5px; line-height: 1.45; }
 .ledger-page .log-day { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 10px; padding: 7px 0; border-top: 1px solid var(--hair); }
 .ledger-page .log-day:first-child { border-top: 0; padding-top: 2px; }
@@ -91,23 +100,9 @@ table.ledger.grades td.score { line-height: 1.4; }
 .ledger-page ul.log-more li { position: relative; margin: 2px 0 0; padding-left: 12px; }
 .ledger-page ul.log-more li::before { content: ''; position: absolute; left: 1px; top: .6em; width: 4px; height: 4px; border-radius: 50%; background: var(--border3); }
 
-/* Recurring series under the term calendar: Series | Course | When | Note */
-table.ledger.recurring td.series { font-weight: 500; }
-table.ledger.recurring td.when { white-space: nowrap; color: var(--fg2); }
-table.ledger.recurring td.note { color: var(--muted); font-size: 13px; }
-table.ledger.recurring td.note code, table.ledger.recurring td.series code { font-size: .88em; }
-table.ledger.recurring .chip-inline { display: none; margin-right: 6px; }   /* phones only; the Course column carries the chip on wide screens */
-
-/* Links page: the groups pack into two balanced columns, so a short group leaves no gap under it */
-.linkgroups { column-count: 1; column-gap: 14px; margin: 14px 0 8px; }
-.linkgroups + * { margin-top: 0; }   /* the last panel's 14px bottom margin plus the 8px above make a 22px gap to whatever follows */
-@media (min-width: 700px) { .linkgroups { column-count: 2; } }
-/* An inline-block panel is never split across columns, even in Safari, which ignores break-inside on blocks. */
-.linkgroups .panel { display: inline-block; width: 100%; vertical-align: top; break-inside: avoid; margin: 0 0 14px; padding: 10px 16px 12px; --ink: var(--muted); }
-.linkgroups .panel-head { align-items: center; min-height: 24px; margin-bottom: 2px; }
-.linkgroups .panel-head .chip { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; }
-
+/* == Phones: the tables shed columns and let long words wrap == */
 @media (max-width: 640px) {
+  .upcoming td.date { display: none; }
   table.ledger td.lec, table.ledger th.lec, table.ledger td.last, table.ledger th.last { display: none; }
   table.due td.grade, table.ledger td.grade, table.ledger th.grade { display: none; }   /* the grade chip is the first thing to go on a phone */
   table.due td.when { width: auto; font-size: 12px; padding-right: 0; }
@@ -116,12 +111,11 @@ table.ledger.recurring .chip-inline { display: none; margin-right: 6px; }   /* p
   table.ledger.grades td.asof, table.ledger.grades th.asof { display: none; }
   .grades .asof-inline { display: inline; }
   .ledger-page .log-day { grid-template-columns: minmax(0, 1fr); row-gap: 2px; }   /* the date sits above its entries */
-  table.ledger.calendar td.course, table.ledger.calendar th.course { display: none; }
-  table.ledger.calendar .chip-inline { display: inline; }
+  /* The calendar and the recurring series drop the Course column; the chip leads the What or Series cell instead. */
+  table.ledger:is(.calendar, .recurring) :is(td, th).course { display: none; }
+  table.ledger:is(.calendar, .recurring) .chip-inline { display: inline; }
   table.ledger.calendar td.date, table.ledger.calendar td.weight { white-space: normal; }   /* "Fri Oct 2, 23:59" and "+2% bonus" may wrap so the What column keeps its width */
   table.ledger.calendar td.date { width: 72px; }
-  table.ledger.recurring td.course, table.ledger.recurring th.course { display: none; }
-  table.ledger.recurring .chip-inline { display: inline; }
   table.ledger.recurring td.series, table.ledger.recurring td.note { overflow-wrap: anywhere; }
   table.ledger.recurring td.when { white-space: normal; width: 76px; }   /* "Thursdays, 23:59" wraps after the comma so the Note column keeps its width */
 }
