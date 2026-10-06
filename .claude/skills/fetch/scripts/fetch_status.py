@@ -27,12 +27,8 @@ def lecture_file(code, n):
     return os.path.relpath(staged[0], ROOT) if staged else None
 
 def meets_on(code, d):
-    c = term.COURSES[code]
-    if d in c.get("extra", set()):
-        return True
-    if d < c["start"] or d > c["end"]:
-        return False
-    return d.weekday() in c["days"] and d not in term.NO_CLASS and d not in c.get("skip", set())
+    """Whether the course has a lecture on d: term.lecture_dates's rule (extra days, skips, exam days)."""
+    return d in term.lecture_dates(code, d)
 
 def main():
     ap = argparse.ArgumentParser()

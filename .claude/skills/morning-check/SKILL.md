@@ -67,15 +67,16 @@ It (1) creates the automatic to-dos — one `Log <CODE> lec N (<date>)` per unlo
 today"; auto-completed once the lecture file exists), for async ASIA 250 a `Watch + quiz ASIA250 lec N ·
 locks <date>` (2h, P1, deadline = the mini-quiz hard lock, publish + 7 d; only Matt ticks it, after the
 quiz), one per PREP ladder step that
-fires today (`T-3 STAT 251 · FULL TIMED MOCK`; the ladders are `term.LADDERS`, one per kind: exam,
-deliverable, paper and assignment), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
-for ASIA 250 from Sep 14, the two **daily revision habits** (`Deck: answer the 6 on the bus, tap
-grades (<date>)` and `Quiz me: 10 min before bed (<date>)`, 15m P1 each, area UBC, due today; an open one from
-an earlier day is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
+fires today, named for its item (`T-3 STAT 251 Midterm · FULL TIMED MOCK`, the name being the bold name in
+the item's Term calendar row; the ladders are `term.LADDERS`, one per kind: exam, deliverable, paper and
+assignment, each step with its time tag), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
+for ASIA 250 from Sep 14, the two **daily revision habits** (`Deck: answer the 6 on the bus, tick key
+points (<date>)` and `Quiz me: 10 min before bed (<date>)`, 15m P1 each, area UBC, due today; an open one from
+an earlier day, or under an old title, is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
 schedule in `PHIL_READINGS`, from a week before the reading's first class (`Read PHIL385: <title> (class …)`
 1h P1, due the first class, created until the last class, skipped if any open to-do already mentions
-the title; `Log PHIL385 reading: <title>` 15m P1, due the last class, completed once
-`courses/PHIL385/readings/<slug>.md` exists; one still open 21 days after the last class is cancelled)
+the title; `Log PHIL385 reading: <title>` 15m P1, due the last class; both are completed once
+`courses/PHIL385/readings/<slug>.md` exists, and one still open 21 days after the last class is cancelled)
 — then (2) scores every candidate (deadline urgency → P-tag → was already planned → rollover count),
 (3) fills the budget by score: events dated today, then today's two habits (so they never roll), then
 a 1 h Career reserve, then everything else, with a 1.5 h cap on P3 filler, (4) gives the plan a clock
@@ -90,29 +91,37 @@ table one week ahead; tick one and it stays ticked.
 
 The printed block, top to bottom (Matt, 2026-10-06):
 - **Plan today — x of 6 h**, then one line per picked item in the order to do them.
-- Each P1 line starts with a suggested start time. Times run from 09:00 (`DAY_START`) in that order and jump
-  past every lecture and lab that day (`slots` in `term.COURSES`). A run for today that starts after 09:00
-  counts from now, rounded up to the next quarter hour. A dry run with `--date` always counts from 09:00.
+- Each P1 line starts with a suggested start time. Times run from 09:00 (`DAY_START`) and jump past every
+  lecture, lab and exam that day (`time` and `labs` in `term.COURSES`, and each Term calendar exam with a time).
+  A run for today that starts after 09:00 counts from now, rounded up to the next quarter hour. A dry run with
+  `--date` always counts from 09:00.
+- A lecture's log starts after that lecture ends, and the items after it go first in the meantime, so the lines
+  still read in the order to do them.
 - Events and the two habits get no time and take none from the clock. An event has its own slot, and a habit's
   slot is in its title (the bus, bed).
-- Nothing is planned to end after 22:30 (`STUDY_END`). An item that would end later rolls to tomorrow like
-  any other item that did not fit, and a ⚠ line names it.
-- The day before an exam (`term.KEY_DATES` kind exam) plans half its budget (`LIGHT_EVE`), and a line says
-  which exam is tomorrow. A `--budget` set for that date wins.
+- Nothing is planned to end after 22:30 (`STUDY_END`). An item that would end later leaves today's plan, and a
+  ⚠ line names it. One that was already in Today moves to tomorrow like any other item that did not fit
+  ("so it moves to tomorrow"). One that was not, such as an undated Anytime item, stays where it is ("so it is
+  not planned today").
+- The day before an exam (a Term calendar row with Kind `exam`) plans half its budget (`LIGHT_EVE`), and a line
+  says which exam is tomorrow. A `--budget` set for that date wins.
 - Once a time tag has 5 recorded times, the plan counts that tag as tag × the median of actual ÷ tag, to the
   quarter hour, and a line names the factors in use (`Scaled by your actual times: 1h ×1.5`). The start times,
   the cushion and the weekly mode use the same numbers.
 - **Rolled to tomorrow**, **Needs an estimate/priority tag**, the Inbox count and the ⚠ lines follow as before.
-- A `Cushion:` line covers every exam, deliverable, paper and assignment due in the next 14 days. Needed is the
-  estimates of that course's open to-dos due by then plus its ladder steps still to come. Free is the daily
-  budgets from today to the day before, minus the 1 h Career reserve. A ⚠ line follows when needed is more
-  than free.
+- A `Cushion:` line covers each date in the next 14 days that has an exam, deliverable, paper or assignment
+  (an admin date gets none), in date order. Its hours count all the work due before that date, so each line
+  includes the lines above it: every open course to-do due by then, plus every ladder step still to come before
+  it. Free is the daily budgets from today to the day before, minus the 1 h Career reserve. When the work is
+  more than the free hours, the line is a ⚠ instead.
 - `First thing tomorrow:` names the top item that rolled.
 - The last line, `Time check: how long did <to-do> take?`, asks about one to-do completed yesterday that has a
-  time tag, taking the tags in turn so each one collects samples. Habits are never asked about.
+  time tag, taking the tags in turn so each one collects samples. Habits are never asked about. Its query runs
+  after the plan is applied, so if it fails, today's plan is already in Things3 and only that line is missing.
 - When he answers, record it with `things_plan.py --actual "<exact title>=45m"` (also `2h`, `1.5h`, `1h30m`;
   repeatable). It finds the completed to-do by its exact title, stores the time with the to-do's tag and
-  completion date under `actuals` in `routines/plan-state.json`, and plans nothing.
+  completion date under `actuals` in `routines/plan-state.json`, and plans nothing. Every pair is checked
+  first, so one bad pair records nothing.
 
 **Weekly mode — Sundays 15:00 (scheduled task `weekly-plan`) and "plan my week":** run
 ```bash
@@ -717,10 +726,10 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 PHIL 385 Exam 2 is tomorrow, so today plans 3 h instead of 6 h.   ← the day before an exam only
 Scaled by your actual times: 1h ×1.5.   ← only once a time tag has 5 recorded times
 ⚠ <item> is due <d> and there is no room for it today.   ← plain words, its own line
-⚠ <item> would end after 22:30, so it moves to tomorrow.   ← the sleep cutoff, its own line
+⚠ <item> would end after 22:30, so it moves to tomorrow.   ← the sleep cutoff, its own line ("so it is not planned today" when it was not in Today)
 ⚠ An 8 h day would fit <what, in marks>. Say the word.   ← the longer-day offer, rule below
-Cushion: <course> <item> needs 6 h, 40 h free.   ← one line per exam, deliverable, paper and assignment within 14 days
-⚠ <course> <item> needs 14 h but only 12 h are free before <date>.   ← only when it does not fit
+Cushion: <course> <item> has 6 h of work before it, 40 h free.   ← one line per date with an exam, deliverable, paper or assignment within 14 days
+⚠ <course> <item> has 14 h of work before <date> but only 12 h free.   ← replaces that date's Cushion line when it does not fit
 
 **Rolled to tomorrow — N items**   ← also from the planner; omit the whole block if empty
 - Dated ones only, one per bullet: <project> · <what> · rolled 4× · due <d>

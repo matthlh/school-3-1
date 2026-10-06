@@ -5,11 +5,13 @@ PREP.md phase label, and UBC admin deadlines. Pure local computation — no netw
 Usage: python3 term.py [YYYY-MM-DD]      (defaults to today, Pacific)
 
 The countdown dates come from ledger.md's Term calendar table, the only copy of the term dates: every
-row with a Kind (exam, deliverable, paper, assignment or admin) counts down, and a broken table stops
-the import with a message saying what to fix. The lecture patterns and the weekly lecture and lab
-timetable live in COURSES below.
+row with a Kind (exam, deliverable, paper, assignment or admin) counts down. key_dates() reads the table
+on first use, so a script that never asks for a date (cpsc310_site, prelecture) does not depend on it,
+and a broken table stops every script that does with a message saying what to fix. The lecture count
+needs the exams, since an exam held in a lecture's slot replaces that lecture. The lecture patterns and
+the weekly lecture and lab timetable live in COURSES below.
 """
-import datetime as dt, glob, os, re, sys
+import collections, datetime as dt, functools, glob, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))   # the workspace this script sits in
@@ -21,52 +23,66 @@ MON, TUE, WED, THU, FRI = 0, 1, 2, 3, 4
 FIRST_DAY, LAST_DAY = D(2026, 9, 9), D(2026, 12, 7)
 NO_CLASS = {D(2026, 9, 30), D(2026, 10, 12), D(2026, 11, 9), D(2026, 11, 10), D(2026, 11, 11)}  # Truth and Reconciliation Day, Thanksgiving, midterm break
 
-# Per-course lecture pattern: `days` are the lecture days the lecture count runs on. Exam days and
-# course-specific cancellations are removed so a missing file on those days isn't counted as an
-# unlogged lecture. `slots` is the weekly timetable the planner keeps free, lectures and labs alike, as
-# (weekdays, "HH:MM" start, minutes); a week without a lab just leaves its slot empty.
+# Per-course lecture pattern: `days` are the lecture days the lecture count runs on, and `time` is the lecture's
+# start and length in minutes on those days (None for an asynchronous course). `skip` holds the course's own
+# cancellations; an exam of the course that starts inside its lecture slot replaces that lecture too (exam_days), so
+# neither counts as an unlogged lecture. `labs` are the weekly lab slots the planner also keeps free, as (weekdays,
+# "HH:MM" start, minutes); a week without a lab just leaves its slot empty.
 COURSES = {
-    "STAT251": dict(days={MON, WED, FRI}, slots=[({MON, WED, FRI}, "08:00", 50), ({FRI}, "11:00", 60)],   # lab L1K, ESB 1046
-                    start=FIRST_DAY, end=LAST_DAY,
-                    skip={D(2026, 10, 30)}),                                   # midterm slot (unverified)
-    "PHIL385": dict(days={MON, WED, FRI}, slots=[({MON, WED, FRI}, "14:00", 50)], start=FIRST_DAY, end=LAST_DAY,
-                    skip={D(2026, 9, 9),                                       # intro remarks only; Matt absent
-                          D(2026, 9, 30), D(2026, 10, 2), D(2026, 10, 16), D(2026, 10, 30), D(2026, 11, 20)}),
-    "CPSC310": dict(days={TUE, THU}, slots=[({TUE, THU}, "15:30", 90), ({TUE}, "09:00", 120)],           # lab L1N, Zoom
+    "STAT251": dict(days={MON, WED, FRI}, time=("08:00", 50), labs=[({FRI}, "11:00", 60)],   # lab L1K, ESB 1046
+                    start=FIRST_DAY, end=LAST_DAY, skip=set()),
+    "PHIL385": dict(days={MON, WED, FRI}, time=("14:00", 50), labs=[], start=FIRST_DAY, end=LAST_DAY,
+                    skip={D(2026, 9, 9)}),                                     # intro remarks only; Matt absent
+    "CPSC310": dict(days={TUE, THU}, time=("15:30", 90), labs=[({TUE}, "09:00", 120)],       # lab L1N, Zoom
                     start=D(2026, 9, 10), end=D(2026, 12, 3),
-                    skip={D(2026, 10, 29)}),                                   # midterm evening, no Thu lecture
-    "ASIA250": dict(days={MON}, slots=[], start=D(2026, 9, 14), end=D(2026, 11, 30), skip=set(),   # asynchronous
+                    skip={D(2026, 10, 29)}),                                   # the schedule has no Thursday class on midterm day
+    "ASIA250": dict(days={MON}, time=None, labs=[], start=D(2026, 9, 14), end=D(2026, 11, 30), skip=set(),   # asynchronous
                     extra={D(2026, 9, 8)}),                                    # week 1 posted Tue Sep 8
 }
 
-# Exams use the Phase-2 ladder from PREP.md; deliverables and written assignments use the ladders beside it.
-EXAM_LADDER = {10: "T-10 gap check: syllabus topics vs. ledger", 9: "45 min mixed revision",
-               8: "45 min mixed revision", 7: "45 min mixed revision",
-               6: "45 min mixed revision", 5: "45 min mixed revision + name the prof's 2–3 themes",
-               4: "T-4 gaps and X topics only", 3: "T-3 FULL TIMED MOCK", 2: "T-2 mark the mock, study only the misses",
-               1: "T-1 light: verbal reconstruction, bed 10:30", 0: "EXAM DAY"}
-DELIV_LADDER = {10: "T-10 environment check: clone, install, run tests, push a throwaway commit",
-                8: "T-8 read the spec once, write the done-checklist", 2: "T-2 first autograder run (this is the buffer)",
-                1: "T-1 write the design rationale", 0: "DUE — submit early, then stop"}
-PAPER_LADDER = {4: "T-4 read the prompt, write a one-line thesis and a 3-point outline",
-                2: "T-2 full draft", 1: "T-1 edit, then check Chicago author-date citations (no footnotes)",
-                0: "DUE — submit early, then stop"}
-ASSIGN_LADDER = {5: "T-5 read every question and solve the first ones", 2: "T-2 finish every question",
-                 1: "T-1 check the answers, then submit early", 0: "DUE — submit early, then stop"}
+# Exams use the Phase-2 ladder from PREP.md; deliverables, written assignments and papers use the ladders beside it.
+# A step is (text, estimate tag). The planner makes each step a to-do on its day, so day 0, the date itself, has no estimate.
+EXAM_LADDER = {10: ("T-10 gap check: syllabus topics vs. ledger", "1h"), 9: ("45 min mixed revision", "1h"),
+               8: ("45 min mixed revision", "1h"), 7: ("45 min mixed revision", "1h"),
+               6: ("45 min mixed revision", "1h"), 5: ("45 min mixed revision + name the prof's 2–3 themes", "1h"),
+               4: ("T-4 gaps and X topics only", "1h"), 3: ("T-3 FULL TIMED MOCK", "2h"),
+               2: ("T-2 mark the mock, study only the misses", "1h"),
+               1: ("T-1 light: verbal reconstruction, bed 10:30", "30m"), 0: ("EXAM DAY", None)}
+DELIV_LADDER = {10: ("T-10 environment check: clone, install, run tests, push a throwaway commit", "1h"),
+                8: ("T-8 read the spec once, write the done-checklist", "30m"),
+                2: ("T-2 first autograder run (this is the buffer)", "30m"),
+                1: ("T-1 write the design rationale", "1h"), 0: ("DUE — submit early, then stop", None)}
+PAPER_LADDER = {4: ("T-4 read the prompt, write a one-line thesis and a 3-point outline", "1h"),
+                2: ("T-2 full draft", "2h"), 1: ("T-1 edit, then check Chicago author-date citations (no footnotes)", "1h"),
+                0: ("DUE — submit early, then stop", None)}
+ASSIGN_LADDER = {5: ("T-5 read every question and solve the first ones", "1h"), 2: ("T-2 finish every question", "2h"),
+                 1: ("T-1 check the answers, then submit early", "30m"), 0: ("DUE — submit early, then stop", None)}
 LADDERS = {"exam": EXAM_LADDER, "deliverable": DELIV_LADDER, "paper": PAPER_LADDER, "assignment": ASSIGN_LADDER}
 KINDS = set(LADDERS) | {"admin"}            # an admin date counts down with no ladder
 
 CALENDAR_HEADING = "## Term calendar — hard dates"
 CALENDAR_HEAD = ["Date", "Course", "What", "Weight", "Kind"]
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-DATE_CELL = re.compile(r"(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (" + "|".join(MONTHS) + r") (\d{1,2})(?:, (\d{2}:\d{2})(?:–\d{2}:\d{2})?)?")
+DATE_CELL = re.compile(r"(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (" + "|".join(MONTHS) + r") (\d{1,2})(?:, (\d{2}:\d{2})(?:–(\d{2}:\d{2}))?)?")
 BOLD_LEAD = re.compile(r"\*\*(.+?)\*\*")
+# A Term calendar row with a Kind. label: the short form the countdown prints, like `Exam 2 14:00 (15%)`. name: the item
+# alone, like `Exam 2`, which ladder to-do titles carry. start, end: the Date cell's "HH:MM" times, or "".
+KeyDate = collections.namedtuple("KeyDate", "date course label kind name start end")
+
+def to_min(hhmm):
+    """Minutes after midnight of an "HH:MM" time."""
+    h, m = hhmm.split(":")
+    return int(h) * 60 + int(m)
+
+def span(hhmm, minutes):
+    """(start, end) in minutes after midnight of a slot that starts at "HH:MM" and lasts `minutes`."""
+    return to_min(hhmm), to_min(hhmm) + minutes
 
 def calendar_when(cell):
-    """(date, time) for a Term calendar Date cell, time being its "HH:MM" or "", or None unless the cell reads
-    like `Fri Oct 16, 18:05` (the time, or a 14:00–14:50 span whose start is the time, is optional) with the right
-    weekday for this term. Bold is ignored, a leading `~` marks an approximate date, and a `start → end` range
-    gives its end, as on the notes site."""
+    """(date, start, end) for a Term calendar Date cell, the times being "HH:MM" or "", or None unless the cell reads
+    like `Fri Oct 16, 18:05` or `Fri Oct 16, 14:00–14:50` (the times are optional) with the right weekday for this
+    term. Bold is ignored, a leading `~` marks an approximate date, and a `start → end` range gives its end, as on
+    the notes site."""
     m = DATE_CELL.fullmatch(cell.replace("*", "").split("→")[-1].strip().lstrip("~"))
     if not m:
         return None
@@ -74,21 +90,23 @@ def calendar_when(cell):
         d = D(FIRST_DAY.year, MONTHS.index(m[2]) + 1, int(m[3]))
     except ValueError:                      # no such day, like Sep 31
         return None
-    return (d, m[4] or "") if f"{d:%a}" == m[1] else None
+    return (d, m[4] or "", m[5] or "") if f"{d:%a}" == m[1] else None
 
-def load_key_dates():
-    """[(date, course code, label, kind)] for every row of ledger.md's Term calendar table that has a Kind, in
-    table order. The label is short, like `Exam 2 14:00 (15%)`: the What cell's opening **bold** run (or, when it
-    opens without one, its text before the first " — "), then the Date cell's time and the Weight in parentheses
-    when they are there. Stops with a message naming the row when the heading or the table is missing, a Kind is
-    unknown, or a Kind row's course, date or label cannot be read."""
+@functools.cache
+def key_dates():
+    """A KeyDate for every row of ledger.md's Term calendar table that has a Kind, in table order, read on first use.
+    The label is the What cell's opening **bold** run (or, when it opens without one, its text before the first " — "),
+    then the Date cell's start time and the Weight in parentheses when they are there; the name is that run cut before
+    any " — ". Stops with a message naming the row when the heading or the table is missing, a Kind is unknown, a Kind
+    row's course, date or label cannot be read, a UBC row has a Kind other than admin, or an exam has a start time
+    without an end."""
     with open(LEDGER, encoding="utf-8") as f:
         lines = f.read().split("\n")
-    start = next((i for i, l in enumerate(lines) if l.strip() == CALENDAR_HEADING), None)
-    if start is None:
+    head = next((i for i, l in enumerate(lines) if l.strip() == CALENDAR_HEADING), None)
+    if head is None:
         raise SystemExit(f"ledger.md has no '{CALENDAR_HEADING}' heading; term.py reads the countdown dates from its table")
     table = []
-    for line in lines[start + 1:]:
+    for line in lines[head + 1:]:
         if line.startswith("## ") or (table and not line.startswith("|")):
             break                           # the next section, or the end of the first table
         if line.startswith("|"):
@@ -112,27 +130,44 @@ def load_key_dates():
         code = course.replace(" ", "")
         if code not in COURSES and code != "UBC":
             raise SystemExit(f"ledger.md's Term calendar row has Kind {kind} but course '{course}' is not in term.COURSES or UBC: {row}")
+        if code == "UBC" and kind != "admin":
+            raise SystemExit(f"ledger.md's Term calendar row is a UBC row with Kind {kind}; a UBC row has no course to prepare in,"
+                             f" so its Kind can only be admin: {row}")
         when = calendar_when(date)
         if when is None:
             raise SystemExit(f"ledger.md's Term calendar row has Kind {kind} but its Date cell '{date}' does not parse;"
                              f" write it like 'Fri Oct 16, 18:05' with the right weekday: {row}")
-        d, time = when
+        d, start, end = when
+        if kind == "exam" and start and not end:
+            raise SystemExit(f"ledger.md's Term calendar row is an exam with a start time but no end; write its time like"
+                             f" '14:00–14:50', since the planner keeps that slot free: {row}")
         bold = BOLD_LEAD.match(what)
         lead = (bold[1] if bold else what.split(" — ")[0]).replace("*", "").strip()
         if not lead:
             raise SystemExit(f"ledger.md's Term calendar row has Kind {kind} but its What cell gives no label"
                              f" (it needs a **bold** name or text before ' — '): {row}")
         weight = weight.replace("*", "").strip()
-        out.append((d, code, " ".join(x for x in (lead, time, f"({weight})" if weight else "") if x), kind))
-    return out
+        label = " ".join(x for x in (lead, start, f"({weight})" if weight else "") if x)
+        out.append(KeyDate(d, code, label, kind, lead.split(" — ")[0].strip(), start, end))
+    return tuple(out)
 
-KEY_DATES = load_key_dates()   # (date, course, label, kind)  kind: exam | deliverable | paper | assignment | admin
+def exam_days(code):
+    """Dates of the course's exams (key_dates) that start inside its lecture slot: such an exam replaces that lecture."""
+    c = COURSES[code]
+    if c["time"] is None:
+        return set()
+    a, b = span(*c["time"])
+    return {k.date for k in key_dates() if k.course == code and k.kind == "exam" and k.start
+            and k.date.weekday() in c["days"] and a <= to_min(k.start) < b}
 
 def lecture_dates(code, today):
+    """The course's lecture dates up to today, in order, so lecture N is the Nth: its lecture days within its term, less
+    NO_CLASS, its own skip days and its exam days, plus its extra days."""
     c = COURSES[code]
+    skip = c["skip"] | exam_days(code)
     d, out = c["start"], set(c.get("extra", set()))
     while d <= c["end"]:
-        if d.weekday() in c["days"] and d not in NO_CLASS and d not in c["skip"]:
+        if d.weekday() in c["days"] and d not in NO_CLASS and d not in skip:
             out.add(d)
         d += dt.timedelta(days=1)
     return sorted(x for x in out if x <= today)
@@ -145,7 +180,6 @@ def lecture_logs(code):
     starts with a larger two-digit number reads as a range (`09-10-rules-…` covers 9 and 10), so name
     such a lecture without the leading number. A leading underscore marks a pre-lecture outline, not
     a log. The one rule for "is lecture N logged"."""
-    import re
     logs = {}
     for f in sorted(glob.glob(os.path.join(ROOT, "courses", code, "lectures", "*.md"))):
         base = os.path.basename(f)
@@ -185,21 +219,16 @@ def main():
 
     print("-- Countdown (next per course, plus anything ≤ 10 days)")
     seen = set()
-    for d, course, label, kind in sorted(KEY_DATES):
-        left = (d - today).days
+    for k in sorted(key_dates()):
+        left = (k.date - today).days
         if left < 0:
             continue
-        first_for_course = course not in seen
+        first_for_course = k.course not in seen
         if left <= 10 or first_for_course:
-            seen.add(course)
-            step = LADDERS.get(kind, {}).get(left, "")
-            flag = "  ← " + step if step else ""
-            print(f"  T-{left:<3} {d:%a %b %-d}  {course:8} {label}{flag}")
-
-    crunch = D(2026, 10, 29)
-    left = (crunch - today).days
-    if 0 <= left <= 21:
-        print(f"-- Oct 29–30 crunch in {left} days: CPSC midterm Thu 19:00, STAT midterm Fri 08:00, PHIL Exam 3 Fri 14:00. Prep finished by Oct 28.")
+            seen.add(k.course)
+            step = LADDERS.get(k.kind, {}).get(left)
+            flag = "  ← " + step[0] if step else ""
+            print(f"  T-{left:<3} {k.date:%a %b %-d}  {k.course:8} {k.label}{flag}")
 
 if __name__ == "__main__":
     main()

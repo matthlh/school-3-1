@@ -128,6 +128,17 @@ Same shape for WA1 and WA2.
 | **1 day out** | Check the answers, then submit early. |
 | **Due day** | Submit early, then stop. |
 
+## How to write an ASIA 250 paper
+
+Same shape for Short Written Responses 1 and 2 and the final paper.
+
+| When | What |
+|---|---|
+| **4 days out** | Read the prompt. Write a one-line thesis and a three-point outline. |
+| **2 days out** | Write the full draft. |
+| **1 day out** | Edit, then check that the citations are Chicago author-date, with no footnotes. |
+| **Due day** | Submit early, then stop. |
+
 ## Phase 2 — exam run-up (start T-10 days)
 
 Same shape for a midterm or a final. No cramming week; the ledger has been doing the spacing all

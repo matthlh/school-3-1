@@ -495,7 +495,7 @@ def load_calendar():
     date). Stops when a NON_CUMULATIVE or EXAM_CUTOFF key does not name exactly one exam, so a renamed exam cannot
     quietly widen a scope."""
     cal = {}
-    for d, course, label, kind in sorted(term.KEY_DATES):
+    for d, course, label, kind, *_ in sorted(term.key_dates()):
         if kind != "exam":
             continue
         c = cal.setdefault(course, dict(lectures=term.lecture_dates(course, term.COURSES[course]["end"]), exams=[]))

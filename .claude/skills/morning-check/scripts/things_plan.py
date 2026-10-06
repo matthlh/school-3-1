@@ -11,8 +11,9 @@ real today. `--no-links` skips appending links.md URLs to the notes of matching 
 
 `--actual "TITLE=45m"` records how long a completed to-do really took (found by its exact title, as
 things_done.py finds one) in plan-state.json under "actuals", with its estimate tag and completion date,
-and plans nothing. Once a tag has MIN_SAMPLES of them, the plan counts that tag as tag × the median of
-actual ÷ tag, and the Plan today block names the factors in use.
+and plans nothing. Every pair is checked before any is recorded, so one bad pair records nothing. Once a
+tag has MIN_SAMPLES of them, the plan counts that tag as tag × the median of actual ÷ tag, and the Plan
+today block names the factors in use.
 
 `--week` is the weekly mode (Sundays, "plan my week"): it places next week's deadline-bound work and
 undated P1 items on days — a hand-set day is kept if it fits, otherwise the project's rhythm day, else
@@ -38,11 +39,12 @@ Steps:
      (term.py) with the LECTURE DATE as its deadline, so a missed close-out shows as overdue by
      the real date, not "due today"; for an async course (ASIA 250) it is "Watch + quiz <CODE> lec N
      · locks <date>" (2h) due at the mini-quiz hard lock — nothing is missed until then. Plus one
-     per PREP ladder step that fires today (T-10 gap check, T-3 mock, …). Existing lecture to-dos
+     per PREP ladder step that fires today, named for its item ("T-3 STAT 251 Midterm · FULL TIMED
+     MOCK"); once the item's date has passed (for an exam, from its day), its open steps are cancelled. Existing lecture to-dos
      are reconciled (title, deadline; tags only if untagged) and auto-completed once the lecture
      file exists, except an async one, which he ticks himself after the quiz. Today's two revision
-     habits (HABITS; an open one from an earlier day is cancelled) and the PHIL 385 Read/Log pair of
-     every reading in its window (PHIL_READINGS; the reading's file closes the Log). Open-ended weekly
+     habits (HABITS; an open one from an earlier day or under an old title is cancelled) and the PHIL 385 Read/Log pair of
+     every reading in its window (PHIL_READINGS; the reading's file completes both). Open-ended weekly
      to-dos (WEEKLY: novel pages, Friday revision block, questions for Kraal, groceries) are created
      one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
   3. Candidates: when ≤ today, OR undated in Anytime, OR deadline ≤ today+PULL_IN_DAYS (a future
@@ -52,13 +54,18 @@ Steps:
      Career items, then everything else.
      P3 items are capped at P3_CAP_H so the day isn't padded with fluff.
   5. Clock: in printed order each line starts at DAY_START (planning the real today after that: now,
-     rounded up to the quarter hour) or where the line before it ended, after any lecture or lab it
-     would overlap; a line that would end after STUDY_END leaves the plan.
+     rounded up to the quarter hour) or where the line before it ended, after any lecture, lab or exam
+     it would overlap. The log of a lecture held later today waits until that lecture ends, and the
+     lines after it go first meanwhile, so the plan still reads in the order to do it. A line that
+     would end after STUDY_END leaves today's plan: one already in Today rolls to tomorrow like any
+     other item that did not fit, and one that was not (undated, or pulled in from a later date by its
+     deadline) stays where it is.
   6. Apply: selected → scheduled Today. Was-in-Today-but-lost → scheduled Tomorrow (+1 rollover in
      routines/plan-state.json). Unpicked Anytime items stay put.
   7. Print the brief block: Plan today (a start time on each P1) / Rolled to tomorrow / Needs an
-     estimate / warnings / a Cushion line per exam, deliverable, paper and assignment within
-     CUSHION_DAYS / First thing tomorrow / Time check.
+     estimate / warnings / a Cushion line per date within CUSHION_DAYS that has an exam, deliverable,
+     paper or assignment, counting all the work due before it / First thing tomorrow. The Time check
+     comes last: its query runs after the plan is applied, so a failure there leaves the plan in place.
 """
 import argparse, datetime as dt, json, os, re, statistics, subprocess, sys
 
@@ -75,9 +82,9 @@ LIGHT_EVE = 0.5          # the day before an exam plans this share of its budget
 PULL_IN_DAYS = 1         # a when-date later than today is respected unless the deadline is within N days
 CAREER_MIN_H = 1.0       # reserve this much for Career-area items whenever any exist
 P3_CAP_H = 1.5           # at most this much P3 work per day
-DAY_START = "09:00"      # suggested start times run from here (a later run for today: from now), around term.COURSES slots
-STUDY_END = "22:30"      # sleep: nothing in the plan ends later; what doesn't fit rolls to tomorrow
-CUSHION_DAYS = 14        # a Cushion line for every exam, deliverable, paper and assignment due within N days
+DAY_START = "09:00"      # suggested start times run from here (a later run for today: from now), around lectures, labs and exams
+STUDY_END = "22:30"      # sleep: nothing in the plan ends later; a line that would leaves today's plan (docstring step 5)
+CUSHION_DAYS = 14        # a Cushion line for each date within N days that has an exam, deliverable, paper or assignment
 MIN_SAMPLES = 5          # a tag plans as tag × median(actual ÷ tag) once --actual has timed this many of it
 DEFAULT_EST_H = 0.5      # untagged items count as this and get flagged
 EST = {"15m": 0.25, "30m": 0.5, "1h": 1.0, "2h": 2.0, "3h": 3.0, "event": 0.0}
@@ -98,26 +105,26 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
          first=dt.date(2026, 9, 19), last=dt.date(2026, 12, 19), notes="Before Sunday meal prep."),
 ]
 PROJECT_OF = {"STAT251": "STAT 251", "PHIL385": "PHIL 385", "CPSC310": "CPSC 310", "ASIA250": "ASIA 250"}
-# First match wins (case-insensitive substring), so "mark the mock" (1h) must come before the timed "MOCK" (2h).
-LADDER_EST = [("mark the mock", "1h"), ("MOCK", "2h"), ("gap check", "1h"), ("revision", "1h"),
-              ("environment check", "1h"), ("outline", "1h"), ("full draft", "2h"), ("citations", "1h"), ("read the spec", "30m"), ("autograder", "30m"),
-              ("design rationale", "1h"), ("verbal reconstruction", "30m"),
-              ("solve the first", "1h"), ("finish every question", "2h"), ("check the answers", "30m")]
 # Daily revision habits (Matt, 2026-09-11): created for today with the date in the title; an open
 # one from an earlier day is cancelled — a missed habit is not a debt that rolls over. Each counts
 # against the budget but gets no start time: its slot is in its title (the bus, bed).
-HABITS = [("Deck: answer the 6 on the bus, tap grades", "15m, P1",
-           "Open the Transit Deck page linked in this morning's brief. Answer each question in your head, tap the card "
-           "to see the answer, then tap O, ~ or X. Once all 6 have a grade, say `grade my deck` in Claude and the ledger "
-           "updates itself."),
+HABITS = [("Deck: answer the 6 on the bus, tick key points", "15m, P1",
+           "Open the Transit Deck page linked in this morning's brief. Answer each question in your head, then open its "
+           "answer and tick each key point your answer had. Once all 6 are done, say `grade my deck` in Claude and the "
+           "ledger updates itself."),
           ("Quiz me: 10 min before bed", "15m, P1",
            "Say `quiz me` in Claude (School 3-1 folder). Ten questions, interleaved, whatever is due. Not a reread.")]
-HABIT_RE = r"^(Deck: |Quiz me: )"
+# Titles a habit had before, old → new. An open habit under an old title is cancelled like a missed one, and one he
+# ticked today counts as today's new one ticked. Drop an entry once no open to-do carries its title.
+RENAMED_HABITS = {"Deck: answer the 6 on the bus, reply grades": "Deck: answer the 6 on the bus, tick key points",
+                  "Deck: answer the 6 on the bus, tap grades": "Deck: answer the 6 on the bus, tick key points"}
+HABIT_RE = re.compile("^(?:" + "|".join(re.escape(h) for h in [title for title, _, _ in HABITS] + list(RENAMED_HABITS))
+                      + r") \([A-Z][a-z]{2} \d{1,2}\)$")   # a habit's exact title plus its date, like (Oct 6)
 # PHIL 385 readings from the syllabus schedule: (slug, title, first class, last class). Two to-dos
 # each, created from READ_AHEAD_DAYS before the first class: `Read PHIL385: …` (due the first class,
 # created until the last; skipped if any open to-do already mentions the title — he makes his own) and
-# `Log PHIL385 reading: …` (due the last class, chased LOG_WINDOW_DAYS past it;
-# courses/PHIL385/readings/<slug>.md completes it). When that window closes, an open one is cancelled.
+# `Log PHIL385 reading: …` (due the last class, chased LOG_WINDOW_DAYS past it).
+# courses/PHIL385/readings/<slug>.md completes both; when the window closes, an open one is cancelled.
 _d = lambda m, d: dt.date(2026, m, d)
 PHIL_READINGS = [
     ("preface", "Preface", _d(9, 11), _d(9, 11)),
@@ -225,12 +232,14 @@ class Todo:
         self.score = 0
     def set_tags(self, tags):
         self.tags = [x.strip() for x in tags.split(",") if x.strip()]
-        ests = [t for t in self.tags if t in EST]
-        self.est = EST[ests[0]] if ests else DEFAULT_EST_H
-        self.has_est = bool(ests)
+        self.est_tag = next((t for t in self.tags if t in EST), None)
+        self.est = EST[self.est_tag] if self.est_tag else DEFAULT_EST_H
         self.is_event = "event" in self.tags
         prios = [t for t in self.tags if t in PRIO_SCORE]
         self.prio = prios[0] if prios else None
+    @property
+    def is_habit(self):
+        return bool(HABIT_RE.match(self.name))
     def where(self):
         return self.project or self.area or "—"
 
@@ -256,44 +265,28 @@ def dump():
         todos.append(Todo(id_, name, project, area or proj_area.get(project, ""), when, due, tags, lst))
     return todos
 
-def completed_on(day):
-    """[(title, tags)] of every to-do completed on `day`."""
-    k = (day - dt.datetime.now().astimezone().date()).days
-    out = osa(f'''tell application "Things3"
+def completed(title=None, day=None):
+    """[(Todo, completion date)] of the completed to-dos titled exactly `title` (found the way things_done.py finds an
+    open one), or, without a title, of those completed on `day`. The time check and --actual both use it."""
+    k = (day - dt.datetime.now().astimezone().date()).days if title is None else 0
+    match = f"name is {_as_text(title)}" if title is not None else "completion date ≥ d0 and completion date < d1"
+    out = osa(ISO + f'''tell application "Things3"
 	set theBase to current date
 	set time of theBase to 0
 	set d0 to theBase + ({k}) * days
 	set d1 to d0 + 1 * days
 	set out to ""
-	repeat with t in (to dos whose status is completed and completion date ≥ d0 and completion date < d1)
+	repeat with t in (to dos whose status is completed and {match})
 		set tg to ""
 		try
 			set tg to tag names of t
 		end try
-		set out to out & name of t & tab & tg & linefeed
+		set out to out & name of t & tab & tg & tab & my iso(completion date of t) & linefeed
 	end repeat
 	return out
 end tell''')
-    rows = [line.split("\t") + [""] for line in out.split("\n") if line.strip()]
-    return [(r[0], [x.strip() for x in r[1].split(",") if x.strip()]) for r in rows]
-
-def completed_todo(title):
-    """(tags, completion date) of the completed to-do with exactly this title, found the way things_done.py finds
-    an open one; None when there is none."""
-    out = osa(ISO + f'''tell application "Things3"
-	set c to (to dos whose name is {_as_text(title)} and status is completed)
-	if (count of c) = 0 then return ""
-	set t to item 1 of c
-	set tg to ""
-	try
-		set tg to tag names of t
-	end try
-	return tg & tab & my iso(completion date of t)
-end tell''').strip("\n")
-    if not out:
-        return None
-    tags, day = out.split("\t")
-    return [x.strip() for x in tags.split(",") if x.strip()], day
+    rows = [line.split("\t") for line in out.split("\n") if line.strip()]
+    return [(Todo("", name, "", "", "", "", tags, "Logbook"), dt.date.fromisoformat(done)) for name, tags, done in rows]
 
 def load_links():
     """links.md rows that have a to-do match column → [(course, name, url, compiled regex)]."""
@@ -362,13 +355,6 @@ def load_state():
 def fmt_h(h):
     return f"{h:g} h" if h >= 1 or h == 0 else f"{int(h * 60)}m"
 
-def est_tag(h):
-    return next(k for k, v in EST.items() if v == h)
-
-def ladder_est(step):
-    """Estimate tag of a ladder step: the first LADDER_EST key in its text, else 1h."""
-    return next((e for k, e in LADDER_EST if k.lower() in step.lower()), "1h")
-
 def est_factors(state):
     """{estimate tag: median of actual ÷ estimate} for every tag with MIN_SAMPLES or more recorded times."""
     ratios = {}
@@ -381,82 +367,116 @@ def planned_h(tag, factors):
     return max(0.25, round(EST[tag] * factors[tag] * 4) / 4) if tag in factors else EST[tag]
 
 def exams_on(d):
-    """[(course, label)] of the term.KEY_DATES exams on date d."""
-    return [(c, label) for x, c, label, kind in term.KEY_DATES if kind == "exam" and x == d]
+    """The term.key_dates() exams on date d."""
+    return [k for k in term.key_dates() if k.kind == "exam" and k.date == d]
 
 def reserve_h(d, budget):
     """Career hours held back on day d: CAREER_MIN_H, or none on a day trimmed below its weekday budget."""
     return CAREER_MIN_H if budget >= BUDGET_H[d.weekday()] else 0
 
-def to_min(hhmm):
-    h, m = hhmm.split(":")
-    return int(h) * 60 + int(m)
+def held_today(code, d):
+    """Whether course `code` holds a lecture on d (term.lecture_dates, so not on a skip or exam day), and its number."""
+    held = term.lecture_dates(code, d)
+    return (bool(held) and held[-1] == d), len(held)
 
 def class_slots(d):
-    """[(start, end)] in minutes after midnight of every lecture and lab on d: the term.COURSES slots for d's weekday,
-    within the course's term, except NO_CLASS days. A course's own skip days keep their slots: most are exams held in them."""
+    """[(start, end)] in minutes after midnight of every lecture, lab and exam on d: a course's lecture when it holds one
+    that day, its labs on their weekdays within its term except NO_CLASS days, and every exam with a time."""
     slots = []
-    for c in term.COURSES.values():
+    for code, c in term.COURSES.items():
+        if c["time"] and held_today(code, d)[0]:
+            slots.append(term.span(*c["time"]))
         if c["start"] <= d <= c["end"] and d not in term.NO_CLASS:
-            slots += [(to_min(hhmm), to_min(hhmm) + minutes) for days, hhmm, minutes in c["slots"] if d.weekday() in days]
+            slots += [term.span(hhmm, minutes) for days, hhmm, minutes in c["labs"] if d.weekday() in days]
+    slots += [(term.to_min(k.start), term.to_min(k.end)) for k in exams_on(d) if k.start]
     return sorted(slots)
 
-def ensure_auto_todos(today, todos, dry, state, seed=False):
-    """Lecture close-outs, ladder steps, the daily habits, the PHIL 385 reading pairs and the WEEKLY
-    to-dos become real to-dos. seed=True also pre-creates every async (ASIA 250) lecture to-do for the
-    whole term so Upcoming shows them. Returns (log lines, titles to register). state["auto"] maps every
-    title this function ever created to its Things id: a title whose id is no longer open was ticked or
-    cancelled by hand and is never re-created."""
-    lines, register = [], []
-    by_title = {t.name: t for t in todos}
-    open_ids = {t.id for t in todos}
-    known = state.setdefault("auto", {})
+class Auto:
+    """The planner's own to-dos for one run: create, close and rename them, and log each change in `lines`.
+    state["auto"] maps every title it ever created to its Things id, so a title whose id is no longer open was ticked
+    or cancelled by hand and is never created again; `register` lists the titles to map after the run. A created
+    to-do joins `todos` as a placeholder (id "new-…"), so a dry run plans it like a real run does."""
+    def __init__(self, today, todos, dry, state):
+        self.today, self.todos, self.dry, self.state = today, todos, dry, state
+        self.known = state.setdefault("auto", {})
+        self.open_ids = {t.id for t in todos}
+        self.by_title = {t.name: t for t in todos}
+        self.lines, self.register = [], []
 
-    def add(title, **kw):
-        if title in known and known[title] not in open_ids:      # closed by hand → leave it closed
-            return False
-        if not dry:
-            things_add.add_todo(title, **kw)
-        lines.append(f"added: {title}")
-        register.append(title)
-        return True
+    def closed_by_hand(self, title):
+        return title in self.known and self.known[title] not in self.open_ids
+
+    def create(self, title, tags, project=None, area=None, when=None, deadline=None, notes=None):
+        """Add the to-do, unless one with this title is open or he closed it by hand."""
+        if title in self.by_title or self.closed_by_hand(title):
+            return
+        iso = lambda d: d.isoformat() if d else ""
+        if not self.dry:
+            things_add.add_todo(title, project=project, area=area, when=iso(when) or None, deadline=iso(deadline) or None,
+                                tags=tags, notes=notes)
+        t = Todo("new-" + title, title, project or "", "UBC" if project else area, iso(when), iso(deadline), tags,
+                 "Upcoming" if when and when > self.today else "Anytime")
+        self.todos.append(t)
+        self.by_title[title] = t
+        self.lines.append(f"added: {title}")
+        self.register.append(title)
+
+    def close(self, t, status, why=None):
+        """Set an open to-do's status to completed or canceled."""
+        if not self.dry:
+            osa(f'tell application "Things3" to set status of to do id "{t.id}" to {status}')
+        self.lines.append(f"{'completed' if status == 'completed' else 'cancelled'}: {t.name}" + (f" ({why})" if why else ""))
+        self.todos.remove(t)
+        if self.by_title.get(t.name) is t:
+            del self.by_title[t.name]
+
+    def rename(self, t, title):
+        """Retitle an open to-do, and move its state["auto"] entry to the new title."""
+        if not self.dry:
+            osa(f'tell application "Things3" to set name of to do id "{t.id}" to {_as_text(title)}')
+        self.lines.append(f"renamed: {t.name} → {title}")
+        if self.known.get(t.name) == t.id:
+            del self.known[t.name]
+        if self.by_title.get(t.name) is t:
+            del self.by_title[t.name]
+        t.name = title
+        self.by_title[title] = t
+        self.register.append(title)
+
+def lecture_todos(auto, seed):
+    """A close-out to-do per lecture held so far (lecture_todo); seed=True also creates every async (ASIA 250) lecture's
+    for the whole term so Upcoming shows them. One whose log file exists is completed, except an async one, which he
+    ticks himself after the quiz; one for a lecture term.py no longer has is cancelled; the rest are reconciled to the
+    canonical title and deadline, and to its tags only when untagged."""
+    today = auto.today
     for code, proj in PROJECT_OF.items():
         held = term.lecture_dates(code, today)
         total = term.lecture_dates(code, term.COURSES[code]["end"])    # whole term
         logged = term.logged_numbers(code)        # set of lecture numbers with a log file
-        n_logged = len(logged)
         is_async = code in ASYNC_LOCK_DAYS         # async: the to-do is watch + quiz, he ticks it after the quiz
         existing = {}
-        for t in list(todos):
+        for t in list(auto.todos):
             m = re.match(LEC_RE.format(code=code), t.name)
             if not m:
                 continue
             n = int(m.group(1))
             if not is_async and n in logged:       # lecture file exists → close the to-do
-                if not dry:
-                    osa(f'tell application "Things3" to set status of to do id "{t.id}" to completed')
-                lines.append(f"completed: {t.name}")
-                todos.remove(t)
+                auto.close(t, "completed")
             elif n > len(total):                   # lecture no longer in term.py (dropped/cancelled) → cancel
-                if not dry:
-                    osa(f'tell application "Things3" to set status of to do id "{t.id}" to canceled')
-                lines.append(f"cancelled: {t.name} (no lecture {n} in term.py)")
-                todos.remove(t)
+                auto.close(t, "canceled", f"no lecture {n} in term.py")
             else:
                 existing[n] = t
-        for i in range(len(total)):
-            n, d = i + 1, total[i]
+        for i, d in enumerate(total):
+            n = i + 1
             if not is_async and n in logged:
                 continue
             title, tags, when, due, notes = lecture_todo(code, n, d)
             t = existing.get(n)
             if t is None:
-                if i >= len(held) and not (seed and is_async):     # future lecture: only seeded async ones
-                    continue
-                if add(title, project=proj, when=when.isoformat(), deadline=due.isoformat(), tags=tags, notes=notes):
-                    todos.append(Todo("new-" + title, title, proj, "UBC", when.isoformat(), due.isoformat(), tags, "Anytime"))
+                if i < len(held) or (seed and is_async):       # a future lecture only when seeding an async one
+                    auto.create(title, tags, project=proj, when=when, deadline=due, notes=notes)
                 continue
-            register.append(t.name)
+            auto.register.append(t.name)
             fixes = []                             # reconcile: real deadline + canonical title; tags only if untagged
             if t.due != due:
                 k = (due - today).days
@@ -465,78 +485,111 @@ def ensure_auto_todos(today, todos, dry, state, seed=False):
             if t.name != title:
                 fixes.append(f'set name of to do id "{t.id}" to "{title}"')
                 t.name = title
-            if not t.has_est or not t.prio:
+            if not t.est_tag or not t.prio:
                 fixes.append(f'set tag names of to do id "{t.id}" to "{tags}"')
                 t.set_tags(tags)
             if fixes:
-                if not dry:
+                if not auto.dry:
                     osa('tell application "Things3"\n  set theBase to current date\n  set time of theBase to 0\n  '
                         + "\n  ".join(fixes) + "\nend tell")
-                lines.append(f"fixed: {title} → due {due:%b %-d}")
-                register[-1] = title
-    for d, course, label, kind in term.KEY_DATES:
-        left = (d - today).days
-        step = term.LADDERS.get(kind, {}).get(left)          # an admin date has no ladder
-        if not step or left == 0:
+                auto.lines.append(f"fixed: {title} → due {due:%b %-d}")
+                auto.register[-1] = title
+
+def ladder_todos(auto):
+    """Today's PREP ladder step for every key date, titled `T-<days left> <project> <name> · <step>`, P1, due today.
+    Once a key date has passed, its open steps are cancelled and none is created. On the date itself they are left alone,
+    except an exam's, which go that morning: PREP's exam day is "Nothing".
+    Switch-over from the titles without the name (`T-<days left> <project> · <step>`): an open one is renamed, matched by
+    its due date, the day its step fired, before the past check; one closed under that title is left closed, and if it
+    was in today's earlier plan (state["last"]), today's renamed step counts as closed too."""
+    today, last = auto.today, auto.state.get("last", {})
+    planned = set(last.get("selected", []) + last.get("rolled", [])) if last.get("date") == today.isoformat() else set()
+    for k in term.key_dates():
+        if k.kind not in term.LADDERS:                       # an admin date has no ladder
             continue
-        proj = PROJECT_OF.get(course)
-        title = f"T-{left} {course if not proj else proj} · {step}"
-        if title in by_title:
-            continue
-        est = ladder_est(step)
-        if add(title, project=proj, area=None if proj else "UBC", when=today.isoformat(), deadline=today.isoformat(),
-               tags=f"{est}, P1", notes=f"Ladder step for {label} on {d:%a %b %-d}. From PREP.md."):
-            todos.append(Todo("new-" + title, title, proj or "", "UBC", today.isoformat(), today.isoformat(), f"{est}, P1", "Anytime"))
-    # daily revision habits: today's pair once; an open one from an earlier day is cancelled, never rolled
-    habits = {f"{name} ({today:%b %-d})": (tags, notes) for name, tags, notes in HABITS}
-    for t in [t for t in todos if re.match(HABIT_RE, t.name) and t.name not in habits]:
-        if not dry:
-            osa(f'tell application "Things3" to set status of to do id "{t.id}" to canceled')
-        lines.append(f"cancelled: {t.name} (a missed habit does not roll over)")
-        todos.remove(t)
-    for title, (tags, notes) in habits.items():
-        if title not in by_title and add(title, area="UBC", when=today.isoformat(), deadline=today.isoformat(), tags=tags, notes=notes):
-            todos.append(Todo("new-" + title, title, "", "UBC", today.isoformat(), today.isoformat(), tags, "Anytime"))
-    # PHIL 385 readings: a Read/Log pair while the reading's window is open; its file completes the Log
+        proj = PROJECT_OF[k.course]
+        for left, (text, est) in term.LADDERS[k.kind].items():
+            fired = k.date - dt.timedelta(days=left)
+            if left == 0 or fired > today:
+                continue
+            title = f"T-{left} {proj} {k.name} · {re.sub(r'^T-\d+ ', '', text)}"
+            old = f"T-{left} {proj} · {text}"
+            t = auto.by_title.get(old)
+            if t is not None and t.due == fired:
+                auto.rename(t, title)
+            elif fired == today and old in planned and auto.closed_by_hand(old):
+                auto.known[title] = auto.known[old]
+            if k.date < today or (k.kind == "exam" and k.date == today):    # past, or exam day (PREP: "Nothing")
+                if title in auto.by_title:
+                    auto.close(auto.by_title[title], "canceled",
+                               f"{k.name} is today" if k.date == today else f"{k.name} on {k.date:%b %-d} is past")
+            elif fired == today:
+                auto.create(title, f"{est}, P1", project=proj, when=today, deadline=today,
+                            notes=f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md.")
+
+def habit_todos(auto):
+    """Today's revision habits, area UBC, due today. Any other open habit is cancelled: one from an earlier day, since a
+    missed habit is not a debt that rolls over, and one under an old title (RENAMED_HABITS)."""
+    today = auto.today
+    on = lambda title: f"{title} ({today:%b %-d})"
+    for old, new in RENAMED_HABITS.items():                 # ticked today under its old title: today's is done
+        if auto.closed_by_hand(on(old)):
+            auto.known[on(new)] = auto.known[on(old)]
+    current = [on(title) for title, _, _ in HABITS]
+    for t in [t for t in auto.todos if t.is_habit and t.name not in current]:
+        auto.close(t, "canceled", "its title changed" if t.name.endswith(f"({today:%b %-d})") else "a missed habit does not roll over")
+    for title, tags, notes in HABITS:
+        auto.create(on(title), tags, area="UBC", when=today, deadline=today, notes=notes)
+
+def reading_todos(auto):
+    """The PHIL 385 Read/Log pair of every reading whose window is open. The reading's file completes both; when the
+    window closes, an open one is cancelled. The Read is skipped when any open to-do already names the reading (he
+    made his own) and is not created after its last class."""
+    today = auto.today
     for slug, name, first, last in PHIL_READINGS:
         read, log = f"Read PHIL385: {name} (class {first:%b %-d})", f"Log PHIL385 reading: {name}"
         logged = os.path.exists(os.path.join(ROOT, "courses", "PHIL385", "readings", f"{slug}.md"))
         live = first - dt.timedelta(days=READ_AHEAD_DAYS) <= today <= last + dt.timedelta(days=LOG_WINDOW_DAYS)
-        for t in [t for t in todos if t.name in (read, log)]:
-            if t.name == log and logged:
-                status, line = "completed", f"completed: {t.name}"
+        for t in [t for t in auto.todos if t.name in (read, log)]:
+            if logged:
+                auto.close(t, "completed")
             elif not live:
-                status, line = "canceled", f"cancelled: {t.name} ({LOG_WINDOW_DAYS} days past its last class)"
-            else:
-                continue
-            if not dry:
-                osa(f'tell application "Things3" to set status of to do id "{t.id}" to {status}')
-            lines.append(line)
-            todos.remove(t)
+                auto.close(t, "canceled", f"{LOG_WINDOW_DAYS} days past its last class")
         if logged or not live:
             continue
-        if log not in by_title and add(log, project="PHIL 385", deadline=last.isoformat(), tags="15m, P1",
-                                       notes=f"Send Claude the 3 to 6 questions you wrote while reading, plus anything unclear (not photos "
-                                             f"of pages), and say `log PHIL385 reading {name}`. Claude saves courses/PHIL385/readings/{slug}.md, "
-                                             f"and this to-do closes itself on the next morning check."):
-            todos.append(Todo("new-" + log, log, "PHIL 385", "UBC", "", last.isoformat(), "15m, P1", "Anytime"))
-        his = any(name.lower() in t.name.lower() for t in todos if t.name not in (read, log))   # he made his own Read
+        auto.create(log, "15m, P1", project="PHIL 385", deadline=last,
+                    notes=f"Send Claude the 3 to 6 questions you wrote while reading, plus anything unclear (not photos "
+                          f"of pages), and say `log PHIL385 reading {name}`. Claude saves courses/PHIL385/readings/{slug}.md, "
+                          f"and this to-do closes itself on the next morning check.")
+        his = any(name.lower() in t.name.lower() for t in auto.todos if t.name not in (read, log))
         span = f"on {first:%a %b %-d}" if last == first else f"from {first:%a %b %-d} to {last:%a %b %-d}"
-        if today <= last and read not in by_title and not his and add(read, project="PHIL 385", deadline=first.isoformat(), tags="1h, P1",
-                                                    notes=f"Discussed in class {span}. Write 3 to 6 questions while you read, "
-                                                          f"plus anything unclear; the Log to-do sends them to Claude."):
-            todos.append(Todo("new-" + read, read, "PHIL 385", "UBC", "", first.isoformat(), "1h, P1", "Anytime"))
-    # open-ended weekly to-dos (novel pages, Friday revision block, groceries), created a week ahead
+        if today <= last and not his:
+            auto.create(read, "1h, P1", project="PHIL 385", deadline=first,
+                        notes=f"Discussed in class {span}. Write 3 to 6 questions while you read, "
+                              f"plus anything unclear; the Log to-do sends them to Claude.")
+
+def weekly_todos(auto):
+    """The open-ended WEEKLY to-dos (novel pages, Friday revision block, questions for Kraal, groceries), each created
+    WEEKLY_AHEAD days before its date."""
+    today = auto.today
     for w in WEEKLY:
         d = today + dt.timedelta(days=(w["day"] - today.weekday()) % 7)
         while d <= today + dt.timedelta(days=WEEKLY_AHEAD):
             if w["first"] <= d <= w["last"]:
-                title = w["title"].format(d=d)
-                if title not in by_title:
-                    add(title, project=w.get("project"), area=w.get("area"), when=d.isoformat(),
-                        deadline=(d + dt.timedelta(days=w["due_days"])).isoformat(), tags=w["tags"], notes=w["notes"])
+                auto.create(w["title"].format(d=d), w["tags"], project=w.get("project"), area=w.get("area"), when=d,
+                            deadline=d + dt.timedelta(days=w["due_days"]), notes=w["notes"])
             d += dt.timedelta(days=7)
-    return lines, register
+
+def ensure_auto_todos(today, todos, dry, state, seed=False):
+    """Make the planner's own to-dos real: lecture close-outs, ladder steps, the daily habits, the PHIL 385 reading pairs
+    and the WEEKLY to-dos. Returns (log lines, titles to register)."""
+    auto = Auto(today, todos, dry, state)
+    lecture_todos(auto, seed)
+    ladder_todos(auto)
+    habit_todos(auto)
+    reading_todos(auto)
+    weekly_todos(auto)
+    return auto.lines, auto.register
 
 def plan(today, budget, todos, state):
     rolled = state.get("rolled", {})
@@ -575,7 +628,7 @@ def plan(today, budget, todos, state):
         elif t.is_event and t.when and t.when < today:
             warn.append(f"stale event still open: {t.name}")
     for t in order:                                    # today's habits: a missed one is cancelled, never rolled
-        if re.match(HABIT_RE, t.name) and t.est <= remaining:
+        if t.is_habit and t.est <= remaining:
             take(t)
     for t in order:                                    # career reserve
         if t in selected or t.is_event or t.area != "Career" or career_h >= career_min:
@@ -591,7 +644,7 @@ def plan(today, budget, todos, state):
             take(t)
         elif t.due and (t.due - today).days <= 1:
             warn.append(f"OVER BUDGET — due {t.due:%b %-d} but no room: {t.name} ({fmt_h(t.est)})")
-    rollover = [t for t in cands if t not in selected and not t.is_event and not re.match(HABIT_RE, t.name)
+    rollover = [t for t in cands if t not in selected and not t.is_event and not t.is_habit
                 and t.when and t.when <= today]
     return selected, rollover, warn, cands
 
@@ -624,68 +677,93 @@ def save_state(state):
         json.dump(state, f, indent=1, ensure_ascii=False)
     os.replace(tmp, STATE)
 
-def plan_rows(selected):
-    """The plan in printed order, one list per line: two or more lecture logs share the first line, the rest follow by score."""
-    logs = [t for t in selected if re.match(r"^Log \w+ lec \d+", t.name)]
+def plan_rows(selected, today, start):
+    """The plan in printed order, one list per line: two or more lecture logs that can start at `start` (not the log of a
+    lecture still to come today, see ready_at) share the first line, the rest follow by score."""
+    logs = [t for t in selected if re.match(r"^Log \w+ lec \d+", t.name) and ready_at(t, today) <= start]
     logs = logs if len(logs) > 1 else []
     rest = sorted((t for t in selected if t not in logs), key=lambda t: (-t.score, t.due or dt.date.max))
     return ([logs] if logs else []) + [[t] for t in rest]
 
+def ready_at(t, today):
+    """When to-do t can start, in minutes after midnight: the end of its lecture for the log of a lecture held today,
+    else 0."""
+    m = re.match(r"^Log (\w+) lec (\d+)\b", t.name)
+    if not m or m[1] not in term.COURSES or not term.COURSES[m[1]]["time"]:
+        return 0
+    held, n = held_today(m[1], today)
+    return term.span(*term.COURSES[m[1]]["time"])[1] if held and int(m[2]) == n else 0
+
 def clock(today, rows, now):
-    """Start times: the first line starts at `now` (minutes after midnight), each next one where the line before it
-    ended, moved past any lecture or lab it would overlap. Events and habits take no clock time (an event has its own
-    slot, a habit's is in its title). Returns ([(line, start minute or None)], [lines that would end after STUDY_END])."""
-    slots, end = class_slots(today), to_min(STUDY_END)
+    """Start times, in the order to do them. A line is ready at once, except a lecture's log, which is ready when that
+    lecture ends (ready_at). A line starts where the line before it ended (the first at `now`, minutes after midnight)
+    or when it is ready, whichever is later, moved past any lecture, lab or exam it would overlap. The next line is the
+    first in `rows` order that is ready by the time the first ready one (or, when none is, the soonest ready) could
+    start. Events and habits take no clock time (an event has its own slot, a habit's is in its title).
+    Returns ([(line, start minute or None)], [lines that would end after STUDY_END])."""
+    slots, end = class_slots(today), term.to_min(STUDY_END)
+
+    def minutes(row):
+        return round(sum(t.est for t in row) * 60)
+
+    def start_of(row, ready):
+        start = max(now, ready)
+        for a, b in slots:
+            if start < b and start + minutes(row) > a:
+                start = b
+        return start
+    pending = [(row, max(ready_at(t, today) for t in row)) for row in rows]
     kept, dropped = [], []
-    for row in rows:
-        if all(t.is_event or re.match(HABIT_RE, t.name) for t in row):
+    while pending:
+        first = next((p for p in pending if p[1] <= now), None) or min(pending, key=lambda p: p[1])
+        row, ready = pending.pop(next(i for i, p in enumerate(pending) if p[1] <= start_of(*first)))
+        if all(t.is_event or t.is_habit for t in row):
             kept.append((row, None))
             continue
-        need = round(sum(t.est for t in row) * 60)
-        start = now
-        for a, b in slots:
-            if start < b and start + need > a:
-                start = b
-        if start + need > end:
+        start = start_of(row, ready)
+        if start + minutes(row) > end:
             dropped.append(row)
             continue
         kept.append((row, start))
-        now = start + need
+        now = start + minutes(row)
     return kept, dropped
 
 def cushions(today, budget, todos, state, factors):
-    """A Cushion line per exam, deliverable, paper or assignment (every kind with a ladder) due in 1..CUSHION_DAYS
-    days. Needed: the estimates of its project's open to-dos due on or before it, plus its ladder steps still to come.
-    Free: the budgets from today (today's is `budget`) to the day before it, less the Career reserve. A ⚠ line
-    follows when needed exceeds free."""
+    """One line per date in 1..CUSHION_DAYS days that has an exam, deliverable, paper or assignment (an admin date has
+    no ladder and gets none), in date order. Its need counts all the work due before it, so it includes the needs of
+    the lines above it: the estimates of every open course to-do due on or before that date, plus every ladder step
+    still to come before it, whichever item the step is for. Free: the budgets from today (today's is `budget`) to the
+    day before it, less the Career reserve. When the need is more than the free hours, the line is a ⚠."""
+    steps = [(k.date - dt.timedelta(days=left), planned_h(est, factors)) for k in term.key_dates()
+             for left, (_, est) in term.LADDERS.get(k.kind, {}).items() if 0 < left < (k.date - today).days]
+    items = {}
+    for k in term.key_dates():
+        if k.kind in term.LADDERS and 0 < (k.date - today).days <= CUSHION_DAYS:
+            items.setdefault(k.date, []).append(f"{PROJECT_OF[k.course]} {k.name}")
     lines = []
-    for d, course, label, kind in sorted(term.KEY_DATES):
-        left = (d - today).days
-        if kind not in term.LADDERS or not 0 < left <= CUSHION_DAYS:
-            continue
-        proj = PROJECT_OF.get(course)
-        need = sum(t.est for t in todos if proj and t.project == proj and t.due and t.due <= d)
-        need += sum(planned_h(ladder_est(step), factors) for k, step in term.LADDERS[kind].items() if 0 < k < left)
+    for d in sorted(items):
+        need = sum(t.est for t in todos if t.project in PROJECT_OF.values() and t.due and t.due <= d)
+        need = round(need + sum(h for day, h in steps if day < d), 2)
         free = 0.0
-        for i in range(left):
+        for i in range((d - today).days):
             day = today + dt.timedelta(days=i)
             b = budget if i == 0 else budget_for(day, state)
             free += b - reserve_h(day, b)
-        what = f"{proj or course} {short(label)}"
-        lines.append(f"Cushion: {what} needs {need:g}h, {free:g}h free")
+        names, one = " and ".join(items[d]), len(items[d]) == 1
         if need > free:
-            lines.append(f"⚠ {what} needs {need:g}h but only {free:g}h are free before {d:%a %b %-d}")
+            lines.append(f"⚠ {names} {'has' if one else 'have'} {need:g}h of work before {d:%a %b %-d} but only {free:g}h free")
+        else:
+            lines.append(f"Cushion: {names} {'has' if one else 'have'} {need:g}h of work before {'it' if one else 'them'}, {free:g}h free")
     return lines
 
 def time_check(today, state, done):
-    """The to-do completed yesterday to ask "how long did it take?" about, or None. done = [(title, tags)]. Only
+    """The to-do completed yesterday to ask "how long did it take?" about, or None. done = completed(day=yesterday). Only
     to-dos with an estimate tag, no recorded time and no habit title count. The day's pick comes from the next
     estimate tag after the one asked last, so every tag collects samples; a re-run the same day asks the same."""
     timed, by_tag = state.get("actuals", {}), {}
-    for title, tags in sorted(done):
-        tag = next((x for x in tags if x in EST), None)
-        if tag not in (None, "event") and title not in timed and not re.match(HABIT_RE, title):
-            by_tag.setdefault(tag, []).append(title)
+    for t, _ in sorted(done, key=lambda r: r[0].name):
+        if t.est_tag not in (None, "event") and t.name not in timed and not t.is_habit:
+            by_tag.setdefault(t.est_tag, []).append(t.name)
     last = state.get("time_check", {})
     if last.get("date") == today.isoformat() and last["title"] in by_tag.get(last["tag"], []):
         return last["title"]
@@ -698,24 +776,27 @@ def time_check(today, state, done):
     return by_tag[tag][0]
 
 def record_actuals(pairs, state, dry):
-    """--actual "TITLE=45m": store how long each completed to-do took, with its estimate tag and completion date,
-    under state["actuals"] keyed by title. Any bad pair stops the run before anything is saved."""
-    actuals = state.setdefault("actuals", {})
+    """--actual "TITLE=45m": store how long each completed to-do took, with its estimate tag and completion date (the
+    latest, when several share the title), under state["actuals"] keyed by title. Every pair is checked first, so a
+    bad one stops the run with nothing recorded."""
+    checked = []
     for pair in pairs:
         title, _, took = pair.rpartition("=")
         title = title.strip()
         m = re.fullmatch(r"(?:(\d+(?:\.\d+)?)h)?(?:(\d+)m)?", took.strip())
         if not title or not m or not any(m.groups()):
             raise SystemExit(f'--actual takes "TITLE=45m" (or 2h, 1.5h, 1h30m), got {pair!r}')
-        found = completed_todo(title)
-        if found is None:
+        found = completed(title=title)
+        if not found:
             raise SystemExit(f"no completed to-do is titled exactly {title!r}: tick it in Things3 first, or copy its title")
-        tags, day = found
-        tag = next((x for x in tags if x in EST), None)
-        if tag in (None, "event"):
+        t, day = max(found, key=lambda r: r[1])
+        if t.est_tag in (None, "event"):
             raise SystemExit(f"{title!r} has no estimate tag (15m/30m/1h/2h/3h), so there is nothing to compare it with")
-        actuals[title] = {"est": tag, "min": round(float(m[1] or 0) * 60 + int(m[2] or 0)), "date": day}
-        print(f"recorded: {title} took {actuals[title]['min']}m against {tag}")
+        checked.append((title, t.est_tag, round(float(m[1] or 0) * 60 + int(m[2] or 0)), day))
+    actuals = state.setdefault("actuals", {})
+    for title, tag, minutes, day in checked:
+        actuals[title] = {"est": tag, "min": minutes, "date": day.isoformat()}
+        print(f"recorded: {title} took {minutes}m against {tag}")
     factors, counts = est_factors(state), {}
     for a in actuals.values():
         counts[a["est"]] = counts.get(a["est"], 0) + 1
@@ -853,6 +934,51 @@ def print_week(days, cap, load, on_day, changes, warn, dry):
     for w in warn:
         print(f"- ⚠ {w}")
 
+def print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, auto, state, dry):
+    """The brief's Plan today block, down to First thing tomorrow; main prints the Time check line after it."""
+    used = sum(t.est for row, _ in kept for t in row)
+    print(f"**Plan today — {used:g} of {budget:g} h**{'  (DRY RUN)' if dry else ''}")
+    if eve:
+        print(f"- {' and '.join(f'{PROJECT_OF[k.course]} {k.name}' for k in eve)} {'is' if len(eve) == 1 else 'are'} "
+              f"tomorrow, so today plans {fmt_h(budget)} instead of {fmt_h(BUDGET_H[today.weekday()])}.")
+    if factors:
+        print("- Scaled by your actual times: " + ", ".join(
+            f"{tag} ×{round(f, 2):g}" for tag, f in sorted(factors.items(), key=lambda x: EST[x[0]])))
+    for row, start in kept:
+        at = f"{start // 60:02d}:{start % 60:02d} " if start is not None and any(t.prio == "P1" for t in row) else ""
+        if len(row) > 1:                                  # several lecture logs, one line
+            late = [t for t in row if t.due and t.due < today]
+            print(f"- {at}[{fmt_h(sum(t.est for t in row))}] Log {len(row)} lectures · " +
+                  " · ".join(re.sub(r"^Log (\w+) lec (\d+) \((.*?)\).*", r"\1 lec \2 (\3)", t.name) for t in row) +
+                  (f" · {len(late)} overdue" if late else " · due today"))
+            continue
+        t = row[0]
+        due = ("" if not t.due else " · due today" if t.due == today else
+               f" · OVERDUE since {t.due:%b %-d}" if t.due < today else f" · due {t.due:%b %-d}")
+        tag = "event" if t.is_event else fmt_h(t.est)
+        print(f"- {at}[{tag}] {t.where()} · {t.name[:80]}{due}")
+    if rollover:
+        print("**Rolled to tomorrow**")
+        for t in rollover:
+            n = state.get("rolled", {}).get(t.id, 0)
+            print(f"- {t.where()} · {t.name[:80]}" + (f" · rolled {n}×" if n else ""))
+    need = [t for t in cands if not t.est_tag or not t.prio]
+    if need:
+        print("**Needs an estimate/priority tag** (15m/30m/1h/2h/3h + P1/P2/P3)")
+        for t in need:
+            print(f"- {t.where()} · {t.name[:80]}")
+    inbox = [t for t in todos if t.lst == "Inbox"]
+    if inbox:
+        print(f"**Inbox: {len(inbox)} to file** — " + "; ".join(t.name[:40] for t in inbox))
+    for w in warn:
+        print(f"- ⚠ {w}")
+    for c in cushions(today, budget, todos, state, factors):
+        print(f"- {c}")
+    for l in auto:
+        print(f"- auto: {l}")
+    if rollover:
+        print(f"- First thing tomorrow: {rollover[0].where()} · {rollover[0].name[:80]}")
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date")
@@ -891,9 +1017,8 @@ def main():
         auto.append(f"links added to {len(linked)} to-do(s): " + "; ".join(linked[:6]) + (" …" if len(linked) > 6 else ""))
     factors = est_factors(state)
     for t in todos:                                       # a tag timed often enough plans as tag × its factor
-        tag = next((x for x in t.tags if x in EST), None)
-        if tag in factors:
-            t.est = planned_h(tag, factors)
+        if t.est_tag in factors:
+            t.est = planned_h(t.est_tag, factors)
     if a.week:
         for t in todos:                                   # score for the day-line ordering only
             t.score = (1000 if t.due and (t.due - today).days <= 7 else 0) + PRIO_SCORE.get(t.prio, 100)
@@ -905,65 +1030,28 @@ def main():
             print(f"- auto: {l}")
         return
     selected, rollover, warn, cands = plan(today, budget, todos, state)
-    start = to_min(DAY_START)
+    start = term.to_min(DAY_START)
     if not a.date:                                        # planning the real today: nothing starts before now
         start = max(start, -(-(now.hour * 60 + now.minute) // 15) * 15)
-    kept, dropped = clock(today, plan_rows(selected), start)
-    for row in dropped:                                   # no time left before STUDY_END: it rolls like any other loser
+    kept, dropped = clock(today, plan_rows(selected, today, start), start)
+    for row in dropped:                                   # no time left before STUDY_END: the line leaves today's plan
+        moves = False
         for t in row:
             selected.remove(t)
-            if t.when and t.when <= today:
+            if t.when and t.when <= today:                # it was in Today: it rolls like any other item that did not fit
                 rollover.append(t)
-        warn.append(f"{'; '.join(short(t.name, 40) for t in row)} ({fmt_h(sum(t.est for t in row))}) would end after {STUDY_END}, so it moves to tomorrow")
+                moves = True
+        warn.append(f"{'; '.join(short(t.name, 40) for t in row)} ({fmt_h(sum(t.est for t in row))}) would end after {STUDY_END}, "
+                    + ("so it moves to tomorrow" if moves else "so it is not planned today"))
     rollover.sort(key=lambda t: (-t.score, t.due or dt.date.max))
-    check = time_check(today, state, completed_on(today - dt.timedelta(days=1)))
     if not a.dry_run:
         apply(today, selected, rollover, state, todos)
-
-    used = sum(t.est for t in selected)
-    print(f"**Plan today — {used:g} of {budget:g} h**{'  (DRY RUN)' if a.dry_run else ''}")
-    if eve:
-        print(f"- {' and '.join(f'{PROJECT_OF[c]} {short(label)}' for c, label in eve)} {'is' if len(eve) == 1 else 'are'} "
-              f"tomorrow, so today plans {fmt_h(budget)} instead of {fmt_h(BUDGET_H[today.weekday()])}.")
-    if factors:
-        print("- Scaled by your actual times: " + ", ".join(
-            f"{tag} ×{round(f, 2):g}" for tag, f in sorted(factors.items(), key=lambda x: EST[x[0]])))
-    for row, start in kept:
-        at = f"{start // 60:02d}:{start % 60:02d} " if start is not None and any(t.prio == "P1" for t in row) else ""
-        if len(row) > 1:                                  # several lecture logs, one line
-            late = [t for t in row if t.due and t.due < today]
-            print(f"- {at}[{fmt_h(sum(t.est for t in row))}] Log {len(row)} lectures · " +
-                  " · ".join(re.sub(r"^Log (\w+) lec (\d+) \((.*?)\).*", r"\1 lec \2 (\3)", t.name) for t in row) +
-                  (f" · {len(late)} overdue" if late else " · due today"))
-            continue
-        t = row[0]
-        due = ("" if not t.due else " · due today" if t.due == today else
-               f" · OVERDUE since {t.due:%b %-d}" if t.due < today else f" · due {t.due:%b %-d}")
-        tag = "event" if t.is_event else fmt_h(t.est)
-        print(f"- {at}[{tag}] {t.where()} · {t.name[:80]}{due}")
-    if rollover:
-        print("**Rolled to tomorrow**")
-        for t in rollover:
-            n = state.get("rolled", {}).get(t.id, 0)
-            print(f"- {t.where()} · {t.name[:80]}" + (f" · rolled {n}×" if n else ""))
-    need = [t for t in cands if not t.has_est or not t.prio]
-    if need:
-        print("**Needs an estimate/priority tag** (15m/30m/1h/2h/3h + P1/P2/P3)")
-        for t in need:
-            print(f"- {t.where()} · {t.name[:80]}")
-    inbox = [t for t in todos if t.lst == "Inbox"]
-    if inbox:
-        print(f"**Inbox: {len(inbox)} to file** — " + "; ".join(t.name[:40] for t in inbox))
-    for w in warn:
-        print(f"- ⚠ {w}")
-    for c in cushions(today, budget, todos, state, factors):
-        print(f"- {c}")
-    for l in auto:
-        print(f"- auto: {l}")
-    if rollover:
-        print(f"- First thing tomorrow: {rollover[0].where()} · {rollover[0].name[:80]}")
+    print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, auto, state, a.dry_run)
+    check = time_check(today, state, completed(day=today - dt.timedelta(days=1)))   # after apply: a failure here leaves the plan in place
     if check:
         print(f"- Time check: how long did {check} take?")
+    if not a.dry_run:
+        save_state(state)
 
 if __name__ == "__main__":
     main()
