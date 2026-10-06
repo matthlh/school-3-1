@@ -8,7 +8,7 @@
 import { spawnSync } from 'node:child_process'
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { build } from 'esbuild'
+import { importSite } from './import-site.mjs'
 
 const root = decodeURIComponent(new URL('../..', import.meta.url).pathname)
 const FIELDS = ['id', 'question', 'display', 'answer']
@@ -17,11 +17,7 @@ const banks = readdirSync(join(root, 'courses')).sort()
   .filter((bank) => existsSync(join(root, bank)))
 
 // The site's side: markdown.ts and stats.ts bundled for Node with the esbuild Vite ships.
-const bundle = await build({
-  stdin: { contents: "export { parseQuestions } from './markdown'\nexport { questionId } from './stats'", resolveDir: join(root, 'notes-app', 'src'), loader: 'ts' },
-  bundle: true, format: 'esm', platform: 'node', write: false, logLevel: 'error',
-})
-const { parseQuestions, questionId } = await import('data:text/javascript;base64,' + Buffer.from(bundle.outputFiles[0].text).toString('base64'))
+const { parseQuestions, questionId } = await importSite("export { parseQuestions } from './markdown'\nexport { questionId } from './stats'")
 
 // The quiz scripts' side: `_parse_bank` on each bank, as JSON. -B keeps __pycache__ out of the repo. No cap on the
 // output: the default 1 MiB would stop the deploys once the banks grow past it.

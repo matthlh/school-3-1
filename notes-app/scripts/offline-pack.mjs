@@ -14,6 +14,7 @@ import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { marked } from 'marked'
 import katex from 'katex'
+import { importSite } from './import-site.mjs'
 
 const root = decodeURIComponent(new URL('../..', import.meta.url).pathname)
 const outDir = join(root, 'routines', 'offline')
@@ -58,52 +59,9 @@ function demote(text) {
     .join('\n')
 }
 
-/** Same `### Q:` / `**Topic:**` / `**A:**` format as src/markdown.ts; `question` is the stem as written, like the site's `display`. */
-function parseQuestions(text) {
-  const groups = []
-  let cur = null
-  let mode = null
-  let fence = false
-  const push = (q) => {
-    if (!groups.length) groups.push({ title: null, questions: [] })
-    groups[groups.length - 1].questions.push(q)
-  }
-  const flush = () => {
-    if (cur) {
-      cur.question = cur.question.trim()
-      cur.answer = cur.answer.replace(/\n-{3,}\s*$/, '').trim()
-      push(cur)
-      cur = null
-      mode = null
-    }
-  }
-  const field = () => (mode === 'q' ? 'question' : 'answer')
-  for (const line of text.split('\n')) {
-    if (/^```/.test(line)) {
-      fence = !fence
-      if (cur && mode) cur[field()] += '\n' + line
-      continue
-    }
-    if (fence) {
-      if (cur && mode) cur[field()] += '\n' + line
-      continue
-    }
-    if (/^## /.test(line)) { flush(); groups.push({ title: line.slice(3).trim(), questions: [] }); continue }
-    if (/^### Q:/.test(line)) {
-      flush()
-      cur = { question: line.replace(/^### Q:\s*/, ''), topic: '', lec: '', type: '', answer: '' }
-      mode = 'q'
-      continue
-    }
-    if (!cur) continue
-    const meta = /\*\*Topic:\*\*\s*(.*?)\s*\*\*Lec:\*\*\s*(.*?)\s*\*\*Type:\*\*\s*(\S+)/.exec(line)
-    if (meta) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].trim(); continue }
-    if (/^\*\*A:\*\*/.test(line)) { cur.answer = line.replace(/^\*\*A:\*\*\s*/, ''); mode = 'a'; continue }
-    if (mode) cur[field()] += '\n' + line
-  }
-  flush()
-  return groups.filter((g) => g.questions.length)
-}
+// The banks go through the site's own parser (src/markdown.ts), which `npm run parity` holds line for line to
+// quizlib.py. A card shows its `display`, the stem as written.
+const { parseQuestions } = await importSite("export { parseQuestions } from './markdown'")
 
 // ---------- gather ----------
 function dueNow() {
@@ -151,7 +109,7 @@ function renderBank(c, print) {
   for (const g of c.bank) {
     if (g.title) out.push(`<h4>${esc(g.title)}</h4>`)
     if (print) {
-      out.push('<ol class="qs">' + g.questions.map((q) => `<li>${md(q.question)}<div class="meta">${chips(q)}</div></li>`).join('') + '</ol>')
+      out.push('<ol class="qs">' + g.questions.map((q) => `<li>${md(q.display)}<div class="meta">${chips(q)}</div></li>`).join('') + '</ol>')
       out.push('<p class="anshead">Answers</p>')
       out.push('<ol class="as">' + g.questions.map((q) => `<li>${md(q.answer)}</li>`).join('') + '</ol>')
     } else {
@@ -159,7 +117,7 @@ function renderBank(c, print) {
         g.questions
           .map(
             (q, i) =>
-              `<details class="q"><summary><span class="n">${i + 1}.</span><div class="qt">${md(q.question)}</div><div class="meta">${chips(q)}</div></summary><div class="ans">${md(q.answer)}</div></details>`,
+              `<details class="q"><summary><span class="n">${i + 1}.</span><div class="qt">${md(q.display)}</div><div class="meta">${chips(q)}</div></summary><div class="ans">${md(q.answer)}</div></details>`,
           )
           .join(''),
       )
