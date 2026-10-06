@@ -6,7 +6,8 @@ Usage: python3 term.py [YYYY-MM-DD]      (defaults to today, Pacific)
 
 The countdown dates come from ledger.md's Term calendar table, the only copy of the term dates: every
 row with a Kind (exam, deliverable, paper, assignment or admin) counts down, and a broken table stops
-the import with a message saying what to fix. The lecture patterns live in COURSES below.
+the import with a message saying what to fix. The lecture patterns and the weekly lecture and lab
+timetable live in COURSES below.
 """
 import datetime as dt, glob, os, re, sys
 
@@ -20,18 +21,21 @@ MON, TUE, WED, THU, FRI = 0, 1, 2, 3, 4
 FIRST_DAY, LAST_DAY = D(2026, 9, 9), D(2026, 12, 7)
 NO_CLASS = {D(2026, 9, 30), D(2026, 10, 12), D(2026, 11, 9), D(2026, 11, 10), D(2026, 11, 11)}  # Truth and Reconciliation Day, Thanksgiving, midterm break
 
-# Per-course lecture pattern. `time` is the lecture slot as ("HH:MM" start, minutes), None for an
-# asynchronous course. Exam days and course-specific cancellations are removed so a
-# missing file on those days isn't counted as an unlogged lecture.
+# Per-course lecture pattern: `days` are the lecture days the lecture count runs on. Exam days and
+# course-specific cancellations are removed so a missing file on those days isn't counted as an
+# unlogged lecture. `slots` is the weekly timetable the planner keeps free, lectures and labs alike, as
+# (weekdays, "HH:MM" start, minutes); a week without a lab just leaves its slot empty.
 COURSES = {
-    "STAT251": dict(days={MON, WED, FRI}, time=("08:00", 50), start=FIRST_DAY, end=LAST_DAY,
+    "STAT251": dict(days={MON, WED, FRI}, slots=[({MON, WED, FRI}, "08:00", 50), ({FRI}, "11:00", 60)],   # lab L1K, ESB 1046
+                    start=FIRST_DAY, end=LAST_DAY,
                     skip={D(2026, 10, 30)}),                                   # midterm slot (unverified)
-    "PHIL385": dict(days={MON, WED, FRI}, time=("14:00", 50), start=FIRST_DAY, end=LAST_DAY,
+    "PHIL385": dict(days={MON, WED, FRI}, slots=[({MON, WED, FRI}, "14:00", 50)], start=FIRST_DAY, end=LAST_DAY,
                     skip={D(2026, 9, 9),                                       # intro remarks only; Matt absent
                           D(2026, 9, 30), D(2026, 10, 2), D(2026, 10, 16), D(2026, 10, 30), D(2026, 11, 20)}),
-    "CPSC310": dict(days={TUE, THU}, time=("15:30", 90), start=D(2026, 9, 10), end=D(2026, 12, 3),
+    "CPSC310": dict(days={TUE, THU}, slots=[({TUE, THU}, "15:30", 90), ({TUE}, "09:00", 120)],           # lab L1N, Zoom
+                    start=D(2026, 9, 10), end=D(2026, 12, 3),
                     skip={D(2026, 10, 29)}),                                   # midterm evening, no Thu lecture
-    "ASIA250": dict(days={MON}, time=None, start=D(2026, 9, 14), end=D(2026, 11, 30), skip=set(),
+    "ASIA250": dict(days={MON}, slots=[], start=D(2026, 9, 14), end=D(2026, 11, 30), skip=set(),   # asynchronous
                     extra={D(2026, 9, 8)}),                                    # week 1 posted Tue Sep 8
 }
 
