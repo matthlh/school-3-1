@@ -29,6 +29,10 @@ GRADES = ("X", "~", "O")
 GRADE_RANK = {"X": 0, "~": 1, "O": 2}          # lower = worse; a topic's session grade is the worst
 MIN_QUESTIONS_PER_TOPIC = 6                    # below this, an X/~ topic is flagged "needs more questions"
 LEECH_X_IN_LAST = (2, 3)                       # ≥2 X in the last 3 asks → leech: rewrite or split
+# A question under a `## Long problems` heading needs paper (Matt, 2026-10-05): never in the bus deck,
+# steps only in a normal session, worked in full against a clock in the Friday set (quiz_pick.py --long).
+LONG_SECTION = "long problems"
+MINUTES_PER_PART = 2                           # the Friday set's clock; a first guess at the midterm's pace
 # Question types the exams reward, per course (first = strongest preference when picking).
 TYPE_PREF = {"CPSC310": ["recall", "critique", "apply", "derive"],
              "PHIL385": ["recall", "apply", "critique", "derive"],
@@ -81,6 +85,12 @@ def qid(course, question):
 Q_RE = re.compile(r"^### Q:\s*(.*)$")
 META_RE = re.compile(r"\*\*Topic:\*\*\s*(.+?)\s+\*\*Lec:\*\*\s*(.+?)\s+\*\*Type:\*\*\s*(\w+)")
 
+def parts(q):
+    """How many answers a long problem asks for: its (a), (b), … labels, else its (i), (ii), … labels, else 3."""
+    letters = set(re.findall(r"\(([a-h])\)", q["q"]))
+    romans = set(re.findall(r"\((i{1,3}|iv|v|vi)\)", q["q"]))
+    return len(letters) or len(romans) or 3
+
 def load_questions(courses=None):
     out = []
     for path in sorted(glob.glob(os.path.join(ROOT, "courses", "*", "02-questions.md"))):
@@ -102,7 +112,8 @@ def _parse_bank(path, course):
         meta = cur["meta"] or ("(untagged)", "?", "recall")
         qs.append(dict(id=qid(course, q), course=course, topic=meta[0].strip(), lec=meta[1].strip(),
                        type=meta[2].strip().lower(), q=q, a="\n".join(cur["a"]).strip(),
-                       file=os.path.relpath(path, ROOT), line=cur["line"], section=cur["section"]))
+                       file=os.path.relpath(path, ROOT), line=cur["line"], section=cur["section"],
+                       long=(cur["section"] or "").lower().startswith(LONG_SECTION)))
 
     for i, line in enumerate(lines, 1):
         if line.startswith("```"):

@@ -125,4 +125,4 @@ $$
 - $$P(Y > 0.5)$$ and $$P(Y \ge 1)$$ are the same event for this $$Y$$, because no possible value sits between 0.5 and 1. Read every inequality against the list of possible values before adding.
 - A random variable's mean comes from its distribution, not from data. $$\sum x\,f(x)$$ replaces the Chapter 1 mean of a sample; they are different objects with different formulas, and they agree only when the values are equally likely.
 
-Questions: 9 in [02-questions.md](../02-questions.md) under "Lec 8". Ledger: 3 topics, due Sep 29.
+Questions: 9 in [02-questions.md](../02-questions.md) under "Lec 8", and 1 under "Long problems". Ledger: 3 topics, due Sep 29.

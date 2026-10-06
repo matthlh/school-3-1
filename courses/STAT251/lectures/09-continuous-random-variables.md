@@ -110,4 +110,4 @@ $$
 - "$$f(x)$$ is a density" means $$f(x)$$ itself is not a probability and can exceed 1. Only areas are probabilities.
 - The cdf is the one object that behaves the same way for discrete and continuous variables: $$F(x) = P(X \le x)$$. Only the way it is computed changes, a sum or an integral.
 
-Questions: 11 in [02-questions.md](../02-questions.md) under "Lec 9". Ledger: 3 topics, due Sep 29.
+Questions: 8 in [02-questions.md](../02-questions.md) under "Lec 9", and 4 under "Long problems". Ledger: 3 topics, due Sep 29.

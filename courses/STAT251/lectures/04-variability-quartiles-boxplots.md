@@ -130,4 +130,4 @@ $$
 ### Next class
 - Chapter 3, Sets and Probability. Chapter 2 (bivariate data) is skipped for now; the schedule puts it with Chapter 11 at the end of the term.
 
-Questions: 17 in [02-questions.md](../02-questions.md) under "Lec 4". Ledger: 3 topics.
+Questions: 17 in [02-questions.md](../02-questions.md) under "Lec 4", and 1 under "Long problems". Ledger: 3 topics.

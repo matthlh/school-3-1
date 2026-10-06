@@ -10,6 +10,8 @@ Format:
 **A:** <answer>
 ```
 
+A problem that needs paper goes under `## Long problems` at the end of this file instead of its lecture's section: a table or tree to build, an integral, a list of ten or more values, or a chain of three or more results that feed each other. It keeps its usual **Lec:** tag, and its answer opens with a numbered Steps list, which is what a normal quiz grades it on. The bus deck never shows it. New lecture and WeBWorK sections go above it.
+
 ---
 
 ## Lec 1–2 — Ch 1: data types, descriptive vs inferential, basic displays (logged 2026-09-11)
@@ -59,13 +61,15 @@ Rounding height to whole cm does not make it discrete; the underlying quantity d
 ### Q: Build a stem-and-leaf plot for 23, 27, 31, 34, 34, 38, 42, 45, 51 and read off the median.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
 **A:** Stem = tens, leaf = units.
-```
-2 | 3 7
-3 | 1 4 4 8
-4 | 2 5
-5 | 1
-```
-Key: 2|3 = 23. With $$n = 9$$ the median is the 5th ordered value, which is 34.
+
+| Stem | Leaves |
+|---|---|
+| 2 | 3 7 |
+| 3 | 1 4 4 8 |
+| 4 | 2 5 |
+| 5 | 1 |
+
+Key: 2 | 3 = 23. With $$n = 9$$ the median is the 5th ordered value, which is 34.
 
 ### Q: When is a pie chart defensible, and when is a bar chart strictly better?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** critique
@@ -159,22 +163,6 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 ### Q: Construct a dot plot for the midterm scores 10, 90, 95, 100, 65, 50, 60, 50, 90, 55, 60, 70 and read off the mode or modes.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
 **A:** Horizontal number line labelled "Grade" from 0 to 100, one dot per score stacked above its value: 10 (1), 50 (2), 55 (1), 60 (2), 65 (1), 70 (1), 90 (2), 95 (1), 100 (1). $$n = 12$$. Three modes: 50, 60 and 90, each twice.
-
-### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
-**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** Stems 2 to 9, with the leaves sorted:
-```
-2 | 5
-3 |
-4 | 1
-5 | 0 5 7
-6 | 2 3 5 9
-7 | 0 2 5 5
-8 | 0 1 2 5
-9 | 0 2 5
-```
-- Empty stems stay in, so the plot keeps the shape of a histogram and the gap in the 30s is visible.
-- With $$n = 20$$ the median is the average of the 10th and 11th ordered values, 70 and 72, so it is 71.
 
 ### Q: Give the symbols for the population mean, standard deviation and proportion, and for each one's sample version. Which are parameters, which are statistics, and which can you usually compute?
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
@@ -446,25 +434,6 @@ An observation is an outlier if it falls more than $$1.5 \times \text{IQR}$$ bel
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** WW1  **Type:** apply
 **A:** (a) 48, the first bar. (b) Skewed right: the tallest bars are at the low end and a thin tail of bars runs out to $100. (c) About 10%: over $30 means every bar from 30–40 up, $$6 + 2 + 0 + 1 + 2 + 1 + 1 = 13$$ students, and $$\frac{13}{120} = 10.8\%$$. Read the bar heights, add the ones in the range, then divide by the class size; do not eyeball the width of the tail.
 
-### Q: WeBWorK-style. Surface flaws on 50 new cars: 0 flaws on 4 cars, 1 flaw on 8, 2 on 15, 3 on 11, 4 on 7, 5 on 4, 6 on 1. From a blank page, find the mean and the sample variance of flaws per car, to two decimals.
-**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
-**A:** Each row is $$f$$ copies of $$x$$, so:
-
-$$
-\begin{aligned}
-n &= \sum f = 50 \\
-\sum fx &= 0 + 8 + 30 + 33 + 28 \\
-&\quad + 20 + 6 = 125 \\
-\bar{x} &= \frac{125}{50} = 2.50 \\
-\sum fx^2 &= 0 + 8 + 60 + 99 + 112 \\
-&\quad + 100 + 36 = 415 \\
-s^2 &= \frac{\sum fx^2 - n\bar{x}^2}{n - 1} \\
-&= \frac{415 - 50 \times 6.25}{49} = \frac{102.5}{49} = 2.09
-\end{aligned}
-$$
-
-Divide by $$n - 1$$: dividing by 50 gives 2.05, the population variance, which is not the sample variance this course uses.
-
 ### Q: WeBWorK-style. Forty rivets have mean length 7.240 and standard deviation 0.312, both in hundredths of an inch. Head office wants millimetres, and one inch is 2.54 cm. Give the mean and the standard deviation in mm to three significant figures, and name the rule you used.
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
 **A:** One hundredth of an inch is $$\frac{25.4}{100} = 0.254$$ mm, so every value is multiplied by $$b = 0.254$$ with no shift ($$a = 0$$). Mean $$7.240 \times 0.254 = 1.84$$ mm. Standard deviation $$0.312 \times 0.254 = 0.0792$$ mm. Rule: for $$y = a + bx$$, $$\bar{y} = a + b\,\bar{x}$$ and $$s_y = |b|\,s_x$$, with the variance scaling by $$b^2$$. A shift alone would leave $$s$$ unchanged.
@@ -670,7 +639,7 @@ $$
 \begin{aligned}
 P(A_1 \cap A_2) &= P(A_1)\,P(A_2 \mid A_1) \\
 &= \frac{4}{52} \cdot \frac{3}{51} = \frac{12}{2652} \\
-&= = \frac{1}{221} \approx 0.0045 \\[4pt]
+&= \frac{1}{221} \approx 0.0045 \\[4pt]
 P(\text{ace, then king}) &= \frac{4}{52} \cdot \frac{4}{51} = \frac{16}{2652} \\
 &= \frac{4}{663} \approx 0.0060
 \end{aligned}
@@ -762,22 +731,6 @@ So they are independent. Product test: $$0.4 \times 0.5 = 0.2 = P(D \cap E)$$. C
 
 ## WeBWorK 2 — Ch 1 and Ch 3 (opened Sep 22, due Tue Sep 29; banked 2026-09-22, numbers changed)
 
-### Q: WeBWorK-style. The times in seconds between twelve consecutive eruptions of a geyser were 913, 887, 902, 869, 931, 878, 895, 908, 862, 890, 921, 874. From a blank page find (a) the sample mean, (b) the sample variance, (c) the sample median and (d) the sample IQR, each to two decimals. Then say why R may hand back a different IQR from the one this course's rule gives.
-**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** WW2  **Type:** derive
-**A:** (a) $$\sum x = 10730$$ and $$n = 12$$, so $$\bar{x} = \frac{10730}{12} = 894.17$$ s. (b) $$\sum (x - \bar{x})^2 = 5089.64$$, so $$s^2 = \frac{5089.64}{11} = 462.69 \text{ s}^2$$. Divide by $$n - 1$$, not $$n$$. (c) Sorted: 862, 869, 874, 878, 887, 890, 895, 902, 908, 913, 921, 931. $$n$$ is even, so the median is the mean of the 6th and 7th values, $$\frac{890 + 895}{2} = 892.50$$ s. (d) By the course's $$np + 0.5$$ rule:
-
-$$
-\begin{aligned}
-Q_1 \text{ position} &= 0.25 \times 12 + 0.5 = 3.5 \\
-Q_1 &= \frac{874 + 878}{2} = 876 \\[4pt]
-Q_3 \text{ position} &= 0.75 \times 12 + 0.5 = 9.5 \\
-Q_3 &= \frac{908 + 913}{2} = 910.5 \\[4pt]
-\text{IQR} &= 910.5 - 876 = 34.50 \text{ s}
-\end{aligned}
-$$
-
-Position 3.5 means the mean of the 3rd and 4th values; position 9.5 means the mean of the 9th and 10th. R's default `quantile` uses type 7, which interpolates at position $$(n - 1)p + 1$$ instead: $$Q_1 = 877$$, $$Q_3 = 909.25$$, $$\text{IQR} = 32.25$$. The WeBWorK problem says so itself — it wants R's answer, the exam wants the $$np + 0.5$$ rule, and the gap between them is only interpolation, never a different definition of a quartile.
-
 ### Q: WeBWorK-style. Side-by-side boxplots of daily hits on a website give this five-number summary, in hits. (a) Which days had outliers? (b) Which day had the largest median? (c) Which day had the largest third quartile? (d) True or false: less than 25% of Thursdays had more hits than the busiest Saturday.
 
 | Day | Min | $$Q_1$$ | Median | $$Q_3$$ | Max | Points outside the whiskers |
@@ -840,21 +793,6 @@ If they were mutually exclusive the overlap would be 0 instead of 0.10 and the u
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** WW2  **Type:** apply
 **A:** (a) Independent. Run the product test: $$P(A)\,P(B) = 0.25 \times 0.40 = 0.10$$, which matches $$P(A \cap B)$$, so the events are independent. They are not mutually exclusive, since the intersection has probability $$0.10 > 0$$. They are not complementary, since $$P(A) + P(B) = 0.65 \ne 1$$ and $$B \ne A^c$$. "Dependent" is exactly what the product test just ruled out. (b) A tree diagram. It enumerates every path through the stages, so the complete set of paths is the sample space and the branch labels are the conditional probabilities. The other three are displays for data you already have, not tools for building a sample space. This problem gives no partial credit, so both halves have to be right.
 
-### Q: Your inventory comes from three plants: 40% from $$A_1$$, 35% from $$A_2$$ and 25% from $$A_3$$. Their defect rates are 6%, 4% and 9%. You pull an item at random and it is defective. Which plant did it most likely come from? Give the posterior probability for each plant, and say why neither "the biggest supplier" nor "the worst quality" is the right answer on its own.
-**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
-**A:** Write $$D$$ for "defective". The joint probabilities, then the law of total probability:
-
-$$
-\begin{aligned}
-P(A_1 \cap D) &= 0.40 \times 0.06 = 0.0240 \\
-P(A_2 \cap D) &= 0.35 \times 0.04 = 0.0140 \\
-P(A_3 \cap D) &= 0.25 \times 0.09 = 0.0225 \\
-P(D) &= 0.0240 + 0.0140 + 0.0225 = 0.0605
-\end{aligned}
-$$
-
-Dividing each joint by $$P(D)$$ gives $$P(A_1 \mid D) = 0.397$$, $$P(A_2 \mid D) = 0.231$$ and $$P(A_3 \mid D) = 0.372$$. $$A_1$$ wins. The point is how close $$A_1$$ and $$A_3$$ are: $$A_1$$ has the largest share but a middling defect rate, $$A_3$$ the worst rate but the smallest share, and the posterior is what settles it — each prior weighted by its own conditional, then renormalised. Answering "$$A_3$$, it has the worst rate" ignores the prior; answering "$$A_1$$, it makes the most" ignores the rate.
-
 ### Q: Two components sit in parallel, and the system works as long as at least one of them works. Let $$F_1$$ be the event that component 1 fails during the day and $$F_2$$ that component 2 fails. (a) Which set is the event that the system fails? (b) Which set is the event that the system works throughout the day? The options for each are $$F_1 \cap F_2$$, $$F_1^c \cap F_2^c$$, $$F_1 \cup F_2$$, $$(F_1 \cup F_2)^c$$ and $$F_1^c \cup F_2^c$$. Say what each of the losing options would describe.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** WW2  **Type:** apply
 **A:** (a) $$F_1 \cap F_2$$. A parallel system survives on one working component, so it fails only when both fail. (b) $$F_1^c \cup F_2^c$$, that is, at least one component works. It is the complement of the answer to (a), and De Morgan turns $$(F_1 \cap F_2)^c$$ into $$F_1^c \cup F_2^c$$. The losing options: $$F_1 \cup F_2$$ is "at least one fails", which is the failure condition for a *series* system, not a parallel one. $$F_1^c \cap F_2^c$$ is "both work", which is stricter than a parallel system needs. $$(F_1 \cup F_2)^c$$ is the same set as $$F_1^c \cap F_2^c$$ by De Morgan, so it is the same wrong answer written the other way round — a good check that you are applying De Morgan rather than guessing.
@@ -887,26 +825,6 @@ $$
 
 (b) $$P(A \cap B) = 0.3$$ equals both $$P(A)$$ and $$P(B)$$, and an intersection can never be larger than either event, so $$A \subseteq B$$ and $$B \subseteq A$$ — the two events are the same event. Then $$A \cap B^c = \emptyset$$ and $$P(A \mid B^c) = \frac{0}{0.7} = 0$$. Knowing $$B$$ did not happen rules $$A$$ out completely. The trap in (b) is reaching for the product rule and reporting $$0.3 \times 0.3$$ or similar; $$A$$ and $$B$$ here are as far from independent as events get.
 
-### Q: A student leaves her iClicker behind with probability $$\frac{1}{3}$$ each time she attends a class, independently, and she sets out with it to attend four classes in four different rooms. (a) She gets home without it — what is the probability she left it in the 4th class? (b) What is the probability, before she sets out, that she will leave it in the 4th class? (c) She gets home without it and is certain she still had it after the first class — now what is the probability it is in the 4th? (d) She has time to check exactly one room. Which class should she try? Give (a) to (c) to three significant figures.
-**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
-**A:** She loses it in class $$k$$ only if she kept it through the first $$k - 1$$ classes and then left it:
-
-$$
-P(\text{lost in class } k) = \left(\frac{2}{3}\right)^{k-1} \cdot \frac{1}{3}
-$$
-
-That gives $$\frac{1}{3}, \frac{2}{9}, \frac{4}{27}, \frac{8}{81}$$ for classes 1 to 4. (b) is the unconditional one asked for directly: $$\frac{8}{81} = 0.0988$$. (a) She arrives home without it whenever any of those happened:
-
-$$
-\begin{aligned}
-P(\text{lost}) &= \frac{1}{3} + \frac{2}{9} + \frac{4}{27} + \frac{8}{81} = \frac{65}{81} \\
-&= 1 - \left(\frac{2}{3}\right)^4 = 1 - \frac{16}{81} \\[4pt]
-P(4\text{th} \mid \text{lost}) &= \frac{8/81}{65/81} = \frac{8}{65} = 0.123
-\end{aligned}
-$$
-
-The second line is the quicker route. (c) Conditioning on having it after class 1 throws away the first branch, so the denominator becomes $$\frac{2}{9} + \frac{4}{27} + \frac{8}{81} = \frac{38}{81}$$ and the answer is $$\frac{8}{38} = \frac{4}{19} = 0.211$$. (d) The first class, with posterior $$\frac{1/3}{65/81} = \frac{27}{65} = 0.415$$ — she is most likely to have lost it at the first opportunity, because every later loss requires surviving all the earlier ones. Note how parts (a) and (b) differ only by the conditioning event, and that the conditioning is what puts $$\frac{65}{81}$$ in the denominator.
-
 ### Q: Factory $$A$$ produces three times as many computers as factory $$B$$. An item from $$A$$ is defective with probability 0.025, and one from $$B$$ with probability 0.04. A computer is picked at random and found to be defective. What is the probability it came from $$A$$, to four decimal places?
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
 **A:** "Three times as many" fixes the priors: $$P(A) = \frac{3}{4} = 0.75$$ and $$P(B) = 0.25$$, since $$A$$ and $$B$$ are the only two producers. Then:
@@ -931,23 +849,6 @@ Two traps worth naming. The ratio "3 times as many" is not a probability — con
 $$
 P(A_i \mid B) = \frac{P(B \mid A_i)\,P(A_i)}{\sum_{k=1}^{n} P(B \mid A_k)\,P(A_k)}
 $$
-
-### Q: Three suppliers provide 50%, 30% and 20% of a store's batteries, with defect rates 2%, 4% and 5%. A battery is found defective. Find the probability it came from each supplier, and check that the three posteriors add to 1.
-**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
-**A:** Define $$S_1, S_2, S_3$$ = supplier and $$D$$ = defective.
-
-$$
-\begin{aligned}
-P(D) &= 0.5(0.02) + 0.3(0.04) \\
-&\quad + 0.2(0.05) \\
-&= 0.010 + 0.012 + 0.010 = 0.032 \\[4pt]
-P(S_1 \mid D) &= \frac{0.010}{0.032} = 0.3125 \\
-P(S_2 \mid D) &= \frac{0.012}{0.032} = 0.375 \\
-P(S_3 \mid D) &= \frac{0.010}{0.032} = 0.3125
-\end{aligned}
-$$
-
-They add to 1 because the suppliers partition the defective batteries. Supplier 2 is the most likely source even though supplier 3 has the worst rate, because supplier 2 ships more.
 
 ### Q: In the three-plant example a student says: "The probability that a plant 2 car is defective is 0.018, so the probability that a defective car is from plant 2 is also about 0.018." Explain the error in one sentence and give the right number.
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** critique
@@ -1151,61 +1052,6 @@ P(0.5 < X < 1.5) &= F(1.5) - F(0.5) \\
 \end{aligned}
 $$
 
-### Q: For $$X \sim U(a, b)$$, derive $$E(X)$$ and $$\operatorname{Var}(X)$$ from the definitions.
-**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** derive
-**A:** Integrate against $$f(x) = \frac{1}{b - a}$$, then use the shortcut:
-
-$$
-\begin{aligned}
-E(X) &= \int_a^b \frac{x}{b - a}\,dx = \frac{b^2 - a^2}{2(b - a)} = \frac{a + b}{2} \\[4pt]
-E(X^2) &= \int_a^b \frac{x^2}{b - a}\,dx = \frac{b^3 - a^3}{3(b - a)} \\
-&= \frac{a^2 + ab + b^2}{3} \\[4pt]
-\operatorname{Var}(X) &= \frac{a^2 + ab + b^2}{3} - \frac{(a + b)^2}{4} \\
-&= \frac{4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2}{12} \\
-&= \frac{(b - a)^2}{12}
-\end{aligned}
-$$
-
-### Q: For $$X \sim \text{Exp}(\lambda)$$, find the cdf and $$P(X > t)$$, then derive $$E(X) = \frac{1}{\lambda}$$ by integration by parts.
-**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** derive
-**A:** The cdf, for $$x \ge 0$$:
-
-$$
-\begin{aligned}
-F(x) &= \int_0^x \lambda e^{-\lambda t}\,dt = 1 - e^{-\lambda x} \\
-P(X > t) &= e^{-\lambda t}
-\end{aligned}
-$$
-
-For the mean, take $$u = x$$ and $$dv = \lambda e^{-\lambda x}\,dx$$, so $$v = -e^{-\lambda x}$$:
-
-$$
-\begin{aligned}
-E(X) &= \int_0^\infty x\,\lambda e^{-\lambda x}\,dx \\
-&= \Big[-x e^{-\lambda x}\Big]_0^\infty + \int_0^\infty e^{-\lambda x}\,dx \\
-&= 0 + \frac{1}{\lambda}
-\end{aligned}
-$$
-
-Parts twice on $$E(X^2)$$ gives $$\frac{2}{\lambda^2}$$, so $$\operatorname{Var}(X) = \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2}$$.
-
-### Q: $$f(x) = \frac{3}{8}x^2$$ on $$[0, 2]$$, the deck's Example 7. Find $$E(X)$$, $$E(X^2)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$, then $$E\left(\frac{1}{X}\right)$$.
-**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
-**A:** Each one is an integral against the same pdf:
-
-$$
-\begin{aligned}
-E(X) &= \frac{3}{8}\int_0^2 x^3\,dx = \frac{3}{8}(4) = \frac{3}{2} \\
-E(X^2) &= \frac{3}{8}\int_0^2 x^4\,dx = \frac{3}{8} \cdot \frac{32}{5} = \frac{12}{5} \\
-\operatorname{Var}(X) &= \frac{12}{5} - \frac{9}{4} = \frac{3}{20} = 0.15 \\
-\operatorname{SD}(X) &\approx 0.387 \\
-E\left(\frac{1}{X}\right) &= \int_0^2 \frac{1}{x} \cdot \frac{3}{8}x^2\,dx \\
-&= \frac{3}{8}\int_0^2 x\,dx = \frac{3}{8}(2) = \frac{3}{4}
-\end{aligned}
-$$
-
-The pdf stays; only the function inside the integral changes.
-
 ### Q: A bus wait time $$X$$ is uniform on $$[0, 20]$$ minutes. Find the mean, the variance, $$P(X > 15)$$ and the 90th percentile.
 **Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
 **A:** Use the uniform results and $$F(x) = \frac{x}{20}$$:
@@ -1253,7 +1099,7 @@ E(X) &= 1(0.15) + 2(0.30) + 3(0.20) + 4(0.35) \\
 \end{aligned}
 $$
 
-The trap is forgetting the fourth face; the pmf must sum to 1 before you take the expectation, and "1 or 2" is a union of disjoint outcomes, not a conditional.
+The trap is forgetting the fourth face; the pmf must sum to 1 before you take the expectation, and "1 or 2" is a union of disjoint outcomes, not a conditional. A faster route when only the mean is asked: for a value from 1 to 4, $$E(X) = P(X \ge 1) + P(X \ge 2) + P(X \ge 3) + P(X \ge 4)$$, and each term comes straight from the given numbers: $$1 + (1 - 0.15) + (1 - 0.45) + (1 - 0.15 - 0.50) = 2.75$$. That is $$4 - 2P(1) - P(1 \text{ or } 2) - P(2 \text{ or } 3)$$ in one line. The variance still needs the full pmf.
 
 ### Q: WeBWorK-style. A random variable $$X$$ has mean $$-9$$ and standard deviation 3. Give the mean and standard deviation of (1) $$Y = X + 4$$, (2) $$V = 5X$$ and (3) $$W = 5X + 4$$, and state the rule you used for each.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** WW3  **Type:** apply
@@ -1268,122 +1114,6 @@ E(aX + b) &= aE(X) + b \\
 $$
 
 (1) $$Y = X + 4$$: mean $$-9 + 4 = -5$$, SD 3 (a shift moves every value the same distance, so spread is untouched). (2) $$V = 5X$$: mean $$5(-9) = -45$$, SD $$5 \times 3 = 15$$. (3) $$W = 5X + 4$$: mean $$-45 + 4 = -41$$, SD 15. The two errors WeBWorK is fishing for are adding the constant to the SD and forgetting that variance scales by $$a^2$$, not $$a$$ — which is why the question asks for SD, where the factor is $$|a|$$.
-
-### Q: WeBWorK-style. A robot fires three shots at a moving target. The first shot hits with probability $$\frac{1}{4}$$. After a hit, the next shot hits with probability $$\frac{1}{2}$$; after a miss, the next shot hits with probability $$\frac{1}{3}$$. Let $$N$$ be the number of hits. From a blank page find the pmf of $$N$$, then $$E(N)$$ rounded to a whole number and $$\operatorname{Var}(N)$$ to two decimals.
-**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** WW3  **Type:** derive
-**A:** The shots are not independent, so draw the tree and multiply along each of the eight paths:
-
-$$
-\begin{aligned}
-\text{HHH} &= \frac{1}{4} \cdot \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{16} \\
-\text{HHM} &= \frac{1}{16} \\
-\text{HMH} &= \frac{1}{4} \cdot \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{24} \\
-\text{HMM} &= \frac{1}{4} \cdot \frac{1}{2} \cdot \frac{2}{3} = \frac{1}{12} \\
-\text{MHH} &= \frac{3}{4} \cdot \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{8} \\
-\text{MHM} &= \frac{1}{8} \\
-\text{MMH} &= \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{1}{3} = \frac{1}{6} \\
-\text{MMM} &= \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{2}{3} = \frac{1}{3}
-\end{aligned}
-$$
-
-Group by hit count. The four sum to 1, which is the check.
-
-$$
-\begin{aligned}
-P(N = 0) &= \frac{1}{3} \\
-P(N = 1) &= \frac{1}{12} + \frac{1}{8} + \frac{1}{6} = \frac{9}{24} = 0.375 \\
-P(N = 2) &= \frac{1}{16} + \frac{1}{24} + \frac{1}{8} = \frac{11}{48} \approx 0.2292 \\
-P(N = 3) &= \frac{1}{16} = 0.0625
-\end{aligned}
-$$
-
-Then the moments:
-
-$$
-\begin{aligned}
-E(N) &= 0.375 + 2(0.2292) + 3(0.0625) = 1.0208 \\
-E(N^2) &= 0.375 + 4(0.2292) + 9(0.0625) = 1.8542 \\
-\operatorname{Var}(N) &= 1.8542 - 1.0208^2 = 0.81
-\end{aligned}
-$$
-
-So $$E(N)$$ is 1 to the nearest whole number. A shortcut for the mean only: $$E(N)$$ is the sum of the three per-shot hit probabilities, $$\frac{1}{4} + \frac{3}{8} + \frac{19}{48} = \frac{49}{48}$$, which matches, but the variance needs the full pmf because the shots are dependent.
-
-### Q: WeBWorK-style. A random variable $$X$$ lives on $$[2, 7]$$ and is described by $$g(x) = 2x - 2$$ there. (a) Show whether $$g$$ is a pdf, and if not find the constant $$c$$ that makes $$c \cdot g(x)$$ one. (b) Find $$P(4 < X < 6)$$. (c) Find $$P(X < 5)$$.
-**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** WW3  **Type:** derive
-**A:** (a) $$g \ge 0$$ on $$[2, 7]$$, but its area is not 1, so $$g$$ is not a pdf:
-
-$$
-\begin{aligned}
-\int_2^7 (2x - 2)\,dx &= \Big[x^2 - 2x\Big]_2^7 \\
-&= (49 - 14) - (4 - 4) = 35
-\end{aligned}
-$$
-
-The normalising constant is $$c = \frac{1}{35}$$, giving $$f(x) = \frac{2x - 2}{35}$$ on $$[2, 7]$$ and 0 elsewhere. Do this step first; every probability below is wrong by a factor of 35 without it.
-
-$$
-\begin{aligned}
-\text{(b)}\ P(4 < X < 6) &= \frac{1}{35}\Big[x^2 - 2x\Big]_4^6 \\
-&= \frac{1}{35}\big[(36 - 12) - (16 - 8)\big] \\
-&= \frac{16}{35} \approx 0.457 \\[4pt]
-\text{(c)}\ P(X < 5) &= \frac{1}{35}\Big[x^2 - 2x\Big]_2^5 \\
-&= \frac{1}{35}(15 - 0) = \frac{15}{35} \approx 0.429
-\end{aligned}
-$$
-
-The lower limit is 2, where the density starts, not 0; and strict or non-strict inequalities give the same area because $$P$$ at a single point is 0.
-
-### Q: WeBWorK-style. The days $$T$$ a butterfly survives after emerging satisfy $$P(T > t) = \frac{25}{(5 + t)^2}$$ for $$t \ge 0$$. (a) Find the probability it dies within 7 days. (b) After how many days would you expect only 10% of a large brood to be alive? (c) Find the mean lifetime. Three-decimal accuracy.
-**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW3  **Type:** derive
-**A:** You are handed the survival function, which is $$1 - F(t)$$, so read everything off it. (a) $$P(T \le 7) = 1 - P(T > 7) = 1 - \frac{25}{144} = 0.826$$. (b) "10% still alive" means $$P(T > t) = 0.10$$, so $$(5 + t)^2 = 250$$, $$5 + t = 15.811$$, $$t = 10.811$$ days. Solve the tail, do not differentiate. (c) Either differentiate to get the pdf $$f(t) = \frac{50}{(5 + t)^3}$$ and integrate $$t \cdot f(t)$$, or use the shortcut for non-negative variables:
-
-$$
-\begin{aligned}
-E(T) &= \int_0^\infty P(T > t)\,dt = \int_0^\infty \frac{25}{(5 + t)^2}\,dt \\
-&= \Big[-\frac{25}{5 + t}\Big]_0^\infty = \frac{25}{5} = 5.000 \text{ days}
-\end{aligned}
-$$
-
-Both routes give 5; the tail integral is faster. Note the mean (5) is below the 10% survival time (10.8), as it must be for a right-skewed lifetime.
-
-### Q: WeBWorK-style. $$X$$ has pdf $$f(x) = \frac{2}{9}(3 - x)$$ for $$0 \le x \le 3$$ and 0 otherwise. (a) Find $$c$$ to one decimal given $$E(X + c) = 4 \cdot E(X - c)$$. (b) Find $$E(X)$$. (c) Find $$P(X > 1)$$. (d) Find $$\operatorname{Var}(X)$$. (e) Find $$q$$ with $$P(X < q) = \frac{1}{4}$$, to three decimals. (f) Two independent observations are taken; find the probability one is below 1 and the other above 1, order mattering.
-**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** WW3  **Type:** derive
-**A:** Get $$E(X)$$ first, since (a) needs it.
-
-$$
-\begin{aligned}
-\text{(b)}\ E(X) &= \int_0^3 x \cdot \frac{2}{9}(3 - x)\,dx \\
-&= \frac{2}{9}\Big[\frac{3x^2}{2} - \frac{x^3}{3}\Big]_0^3 \\
-&= \frac{2}{9}(13.5 - 9) = 1.00
-\end{aligned}
-$$
-
-(a) $$E(X + c) = E(X) + c$$ and $$E(X - c) = E(X) - c$$ by linearity, so $$1 + c = 4(1 - c)$$, $$5c = 3$$, $$c = 0.6$$.
-
-$$
-\begin{aligned}
-\text{(c)}\ P(X > 1) &= \int_1^3 \frac{2}{9}(3 - x)\,dx \\
-&= \frac{2}{9}\Big[3x - \frac{x^2}{2}\Big]_1^3 \\
-&= \frac{2}{9}(4.5 - 2.5) = \frac{4}{9} \approx 0.44 \\[4pt]
-\text{(d)}\ E(X^2) &= \int_0^3 x^2 \cdot \frac{2}{9}(3 - x)\,dx \\
-&= \frac{2}{9}\Big[x^3 - \frac{x^4}{4}\Big]_0^3 \\
-&= \frac{2}{9}(27 - 20.25) = 1.5 \\
-\operatorname{Var}(X) &= 1.5 - 1^2 = 0.50
-\end{aligned}
-$$
-
-(e) Solve the cdf for $$\frac{1}{4}$$; the other root, 5.6, is outside $$[0, 3]$$.
-
-$$
-\begin{aligned}
-F(q) = \int_0^q \frac{2}{9}(3 - x)\,dx &= \frac{6q - q^2}{9} = \frac{1}{4} \\
-q^2 - 6q + 2.25 &= 0 \\
-q &= \frac{6 - \sqrt{27}}{2} = 0.402
-\end{aligned}
-$$
-
-(f) $$P(X < 1) = 1 - \frac{4}{9} = \frac{5}{9}$$. With order mattering there are two ways, low-then-high and high-then-low, each with probability $$\frac{5}{9} \cdot \frac{4}{9}$$ by independence, so $$2 \times \frac{20}{81} = \frac{40}{81} \approx 0.49$$. The trap in (f) is reporting only one ordering.
 
 ## Lec 10 — Ch 4: rules for the mean and variance, covariance, sums and averages, the maximum and minimum (logged 2026-10-02 from the posted decks)
 
@@ -1510,22 +1240,6 @@ P(\min > 100) &= \big(e^{-1}\big)^3 = e^{-3} \approx 0.050
 \end{aligned}
 $$
 
-### Q: Each year's highest flood level $$X$$ on a river is uniform on $$[0, 10]$$ metres, independently across years. Let $$V$$ be the highest level over the next 5 years. Find the cdf of $$V$$, $$P(V > 8)$$, the pdf of $$V$$ and $$E(V)$$.
-**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** apply
-**A:** $$F_X(v) = \frac{v}{10}$$ on $$[0, 10]$$, so on $$[0, 10]$$, with $$F_V = 0$$ below 0 and 1 above 10:
-
-$$
-\begin{aligned}
-F_V(v) &= \left(\frac{v}{10}\right)^5 \\
-P(V > 8) &= 1 - 0.8^5 = 1 - 0.328 = 0.672 \\
-f_V(v) &= 5\left(\frac{v}{10}\right)^4 \frac{1}{10} = \frac{5v^4}{10^5} \\
-E(V) &= \int_0^{10} v \cdot \frac{5v^4}{10^5}\,dv \\
-&= \frac{5}{10^5} \cdot \frac{10^6}{6} \approx 8.33 \text{ metres}
-\end{aligned}
-$$
-
-That is well above one year's mean of 5.
-
 ### Q: Two independent components are in parallel. Their lifetimes are exponential with rates 0.1 and 0.2 per year. Find the probability that the system has failed within 5 years.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** apply
 **A:** The system lifetime is the max, and the components are not identically distributed, so multiply the two different cdfs:
@@ -1638,3 +1352,813 @@ Game B is riskier: same mean, twice the variance.
 ### Q: In Game A (sum of two independent rolls of the die with faces $$-3, -1, 1, 2$$ and probabilities 0.2, 0.3, 0.1, 0.4), find $$P(W_A = -6)$$ and $$P(W_A = 4)$$, and give the two ways to get $$E(W_A)$$.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 11  **Type:** apply
 **A:** $$-6$$ needs two $$-3$$s: $$0.2^2 = 0.04$$. $$4$$ needs two 2s: $$0.4^2 = 0.16$$. The two ways to get the mean are the definition $$E(W_A) = \sum w f(w)$$ over the nine possible sums, and the rule $$E(X_1 + X_2) = E(X_1) + E(X_2) = 0$$, which holds even without independence.
+
+## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
+
+### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
+**Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
+**A:** Steps:
+1. Use the tens digit as the stem and list every stem from 2 to 9, empty ones included.
+2. Put each value's units digit on its stem's row, then sort each row.
+3. Count in from the smallest value. With 20 values the median is the average of the 10th and 11th.
+
+Stems 2 to 9, with the leaves sorted:
+
+| Stem | Leaves |
+|---|---|
+| 2 | 5 |
+| 3 | |
+| 4 | 1 |
+| 5 | 0 5 7 |
+| 6 | 2 3 5 9 |
+| 7 | 0 2 5 5 |
+| 8 | 0 1 2 5 |
+| 9 | 0 2 5 |
+
+- Empty stems stay in, so the plot keeps the shape of a histogram and the gap in the 30s is visible.
+- With $$n = 20$$ the median is the average of the 10th and 11th ordered values, 70 and 72, so it is 71.
+
+### Q: Fifteen students' commute times in minutes were 31, 18, 26, 44, 22, 29, 35, 27, 90, 24, 33, 20, 28, 38, 25. (a) Sort the data and find the mean and the median. (b) Find $$Q_1$$, $$Q_3$$ and the IQR by the course's $$np + 0.5$$ rule. (c) Find the $$1.5 \times \text{IQR}$$ fences, any outliers and where each whisker ends, and say what the box plot shows about the shape. (d) Drop the 90 and recompute the mean and the median. Which one moved, and why?
+**Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
+**A:** Steps:
+1. Sort the values and add them for the mean. The median is at position $$np + 0.5 = 8$$.
+2. Find the quartile positions with $$np + 0.5$$ for $$p = 0.25$$ and $$p = 0.75$$. A position that is not a whole number means the plain average of the two values on either side of it.
+3. The fences sit $$1.5 \times \text{IQR}$$ beyond each quartile. A value outside a fence is an outlier, and each whisker stops at the most extreme value inside its fence.
+4. Recompute without the 90 and compare.
+
+(a) Sorted: 18, 20, 22, 24, 25, 26, 27, 28, 29, 31, 33, 35, 38, 44, 90.
+
+$$
+\begin{aligned}
+\sum x &= 490 \\
+\bar{x} &= \frac{490}{15} \approx 32.67 \text{ min} \\
+\text{median} &= x_{(8)} = 28 \text{ min}
+\end{aligned}
+$$
+
+(b) For $$Q_1$$ the position is $$15 \times 0.25 + 0.5 = 4.25$$, between the 4th and 5th values. For $$Q_3$$ it is $$15 \times 0.75 + 0.5 = 11.75$$, between the 11th and 12th.
+
+$$
+\begin{aligned}
+Q_1 &= \frac{24 + 25}{2} = 24.5 \\
+Q_3 &= \frac{33 + 35}{2} = 34 \\
+\text{IQR} &= 34 - 24.5 = 9.5 \text{ min}
+\end{aligned}
+$$
+
+(c) The fences are $$1.5 \times 9.5 = 14.25$$ beyond the quartiles.
+
+$$
+\begin{aligned}
+\text{lower} &= 24.5 - 14.25 = 10.25 \\
+\text{upper} &= 34 + 14.25 = 48.25
+\end{aligned}
+$$
+
+- 90 is above 48.25, so it is the only outlier, and it is drawn as its own point.
+- The lower whisker ends at 18, the smallest value. The upper whisker ends at 44, the largest value inside the upper fence.
+- The median line sits closer to $$Q_1$$ than to $$Q_3$$, and with the outlier on the high side that means a right skew. The mean, 32.67, is above the median, 28, which agrees.
+
+(d) Without the 90 there are 14 values, so the median is the average of the 7th and 8th, 27 and 28.
+
+$$
+\begin{aligned}
+\bar{x} &= \frac{400}{14} \approx 28.57 \text{ min} \\
+\text{median} &= \frac{27 + 28}{2} = 27.5 \text{ min}
+\end{aligned}
+$$
+
+The mean fell by about 4 minutes and the median by half a minute. The mean uses every value, so one extreme value pulls it. The median depends only on the middle of the sorted list, which is why it is called resistant. Same method as the lecture 4 deck's 20-value example.
+
+### Q: WeBWorK-style. Surface flaws on 50 new cars: 0 flaws on 4 cars, 1 flaw on 8, 2 on 15, 3 on 11, 4 on 7, 5 on 4, 6 on 1. From a blank page, find the mean and the sample variance of flaws per car, to two decimals.
+**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
+**A:** Steps:
+1. Treat each row as $$f$$ copies of the value $$x$$, so $$n = \sum f$$.
+2. The mean is $$\frac{\sum fx}{n}$$.
+3. Get $$\sum fx^2$$, then the sample variance with the shortcut, dividing by $$n - 1$$.
+
+Each row is $$f$$ copies of $$x$$, so:
+
+$$
+\begin{aligned}
+n &= \sum f = 50 \\
+\sum fx &= 0 + 8 + 30 + 33 + 28 \\
+&\quad + 20 + 6 = 125 \\
+\bar{x} &= \frac{125}{50} = 2.50 \\
+\sum fx^2 &= 0 + 8 + 60 + 99 + 112 \\
+&\quad + 100 + 36 = 415 \\
+s^2 &= \frac{\sum fx^2 - n\bar{x}^2}{n - 1} \\
+&= \frac{415 - 50 \times 6.25}{49} = \frac{102.5}{49} = 2.09
+\end{aligned}
+$$
+
+Divide by $$n - 1$$: dividing by 50 gives 2.05, the population variance, which is not the sample variance this course uses.
+
+### Q: WeBWorK-style. The times in seconds between twelve consecutive eruptions of a geyser were 913, 887, 902, 869, 931, 878, 895, 908, 862, 890, 921, 874. From a blank page find (a) the sample mean, (b) the sample variance, (c) the sample median and (d) the sample IQR, each to two decimals. Then say why R may hand back a different IQR from the one this course's rule gives.
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** WW2  **Type:** derive
+**A:** Steps:
+1. Add the twelve values and divide by 12 for the mean.
+2. Add the squared deviations and divide by $$n - 1 = 11$$ for the variance.
+3. Sort the values. With $$n$$ even, the median is the average of the 6th and 7th.
+4. The quartile positions by $$np + 0.5$$ are 3.5 and 9.5, so each quartile averages two neighbouring values. The IQR is $$Q_3 - Q_1$$.
+
+(a) $$\sum x = 10730$$ and $$n = 12$$, so $$\bar{x} = \frac{10730}{12} = 894.17$$ s. (b) $$\sum (x - \bar{x})^2 = 5089.64$$, so $$s^2 = \frac{5089.64}{11} = 462.69 \text{ s}^2$$. Divide by $$n - 1$$, not $$n$$. (c) Sorted: 862, 869, 874, 878, 887, 890, 895, 902, 908, 913, 921, 931. $$n$$ is even, so the median is the mean of the 6th and 7th values, $$\frac{890 + 895}{2} = 892.50$$ s. (d) By the course's $$np + 0.5$$ rule:
+
+$$
+\begin{aligned}
+Q_1 \text{ position} &= 0.25 \times 12 + 0.5 = 3.5 \\
+Q_1 &= \frac{874 + 878}{2} = 876 \\[4pt]
+Q_3 \text{ position} &= 0.75 \times 12 + 0.5 = 9.5 \\
+Q_3 &= \frac{908 + 913}{2} = 910.5 \\[4pt]
+\text{IQR} &= 910.5 - 876 = 34.50 \text{ s}
+\end{aligned}
+$$
+
+Position 3.5 means the mean of the 3rd and 4th values; position 9.5 means the mean of the 9th and 10th. R's default `quantile` uses type 7, which interpolates at position $$(n - 1)p + 1$$ instead: $$Q_1 = 877$$, $$Q_3 = 909.25$$, $$\text{IQR} = 32.25$$. The WeBWorK problem says so itself — it wants R's answer, the exam wants the $$np + 0.5$$ rule, and the gap between them is only interpolation, never a different definition of a quartile.
+
+### Q: In a first-year cohort, 60% take MATH, 45% take STAT and 30% take CHEM. 25% take MATH and STAT, 15% take MATH and CHEM, 10% take STAT and CHEM, and 5% take all three. A student is picked at random. Find (a) the probability they take at least one of the three, (b) the probability they take none, (c) the probability they take exactly one, and (d) $$P(\text{STAT} \mid \text{MATH})$$, and say whether taking MATH and taking STAT are independent.
+**Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** apply
+**A:** Steps:
+1. Name the events $$M$$, $$S$$ and $$C$$, and write every percentage as a probability statement.
+2. (a) is the three-event addition rule, and (b) is its complement.
+3. (c) needs the Venn diagram's regions. Fill the triple overlap first, then each pairwise overlap without it, then each "only" region.
+4. For (d), divide $$P(M \cap S)$$ by $$P(M)$$ and compare the result with $$P(S)$$.
+
+(a) The three-event rule:
+
+$$
+\begin{aligned}
+P(M \cup S \cup C) &= 0.60 + 0.45 + 0.30 \\
+&\quad - 0.25 - 0.15 - 0.10 \\
+&\quad + 0.05 \\
+&= 0.90
+\end{aligned}
+$$
+
+(b) $$1 - 0.90 = 0.10$$.
+
+(c) Each "only" region is the circle minus its two overlaps, plus the triple overlap, which those two subtractions removed twice.
+
+$$
+\begin{aligned}
+\text{MATH only} &= 0.60 - 0.25 - 0.15 + 0.05 \\
+&= 0.25 \\
+\text{STAT only} &= 0.45 - 0.25 - 0.10 + 0.05 \\
+&= 0.15 \\
+\text{CHEM only} &= 0.30 - 0.15 - 0.10 + 0.05 \\
+&= 0.10
+\end{aligned}
+$$
+
+So $$P(\text{exactly one}) = 0.25 + 0.15 + 0.10 = 0.50$$. Check: exactly two is $$0.20 + 0.10 + 0.05 = 0.35$$, and $$0.50 + 0.35 + 0.05 = 0.90$$, which matches (a).
+
+(d) The given event is the denominator.
+
+$$
+\begin{aligned}
+P(S \mid M) &= \frac{P(M \cap S)}{P(M)} \\
+&= \frac{0.25}{0.60} \approx 0.417
+\end{aligned}
+$$
+
+That is not $$P(S) = 0.45$$, so taking MATH and taking STAT are not independent. The product test agrees: $$0.60 \times 0.45 = 0.27$$, not 0.25. Same method as the lecture 5 deck's baseball and hockey example, with a third event.
+
+### Q: A survey of 400 students asks where they live and whether they drive to campus. 240 live on campus, and 90 of those drive. Of the 160 who live off campus, 100 drive. A surveyed student is picked at random. (a) Put the counts in a two-way table with row and column totals. (b) Find $$P(\text{drives})$$. (c) Find $$P(\text{drives} \mid \text{on campus})$$ and $$P(\text{on campus} \mid \text{drives})$$. (d) Are living on campus and driving independent? Show it two ways.
+**Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** apply
+**A:** Steps:
+1. Name the events, $$O$$ = lives on campus and $$D$$ = drives, and fill the table so that every count has a row and a column.
+2. A probability is a count over 400. A conditional probability is a count over the total of the given row or column.
+3. Test independence by comparing $$P(D \mid O)$$ with $$P(D)$$, and again with the product test.
+
+(a)
+
+| | Drives | Does not drive | Total |
+|---|---|---|---|
+| On campus | 90 | 150 | 240 |
+| Off campus | 100 | 60 | 160 |
+| Total | 190 | 210 | 400 |
+
+(b) $$P(D) = \frac{190}{400} = 0.475$$.
+
+(c) The given event fixes the denominator.
+
+$$
+\begin{aligned}
+P(D \mid O) &= \frac{90}{240} = 0.375 \\
+P(O \mid D) &= \frac{90}{190} \approx 0.474
+\end{aligned}
+$$
+
+(d) They are not independent.
+
+- $$P(D \mid O) = 0.375$$ is not $$P(D) = 0.475$$. Living on campus lowers the chance of driving.
+- Product test: $$P(O)\,P(D) = 0.6 \times 0.475 = 0.285$$, but $$P(O \cap D) = \frac{90}{400} = 0.225$$.
+
+The definitions are lecture 6's. The table layout is the one the lecture 7 Bayes activity uses.
+
+### Q: A warehouse has three smoke alarms that work independently. In a fire, alarm 1 sounds with probability 0.9, alarm 2 with probability 0.8 and alarm 3 with probability 0.7. (a) Find the probability that at least one alarm sounds. (b) Find the probability that exactly one sounds. (c) Given that exactly one sounded, find the probability that it was alarm 1. (d) Find the probability that all three sound.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
+**A:** Steps:
+1. Name the events $$A_i$$ = alarm $$i$$ sounds. Independence is given, so intersections multiply, and the complements are independent too.
+2. Do (a) through the complement: at least one sounds unless all three stay silent.
+3. For (b), add the three separate ways for exactly one alarm to sound.
+4. (c) is a conditional probability: alarm 1's way divided by the answer to (b).
+
+(a)
+
+$$
+\begin{aligned}
+P(\text{none}) &= 0.1 \times 0.2 \times 0.3 = 0.006 \\
+P(\text{at least one}) &= 1 - 0.006 = 0.994
+\end{aligned}
+$$
+
+(b) Each way has one alarm sounding and the other two silent.
+
+$$
+\begin{aligned}
+\text{only 1} &= 0.9 \times 0.2 \times 0.3 = 0.054 \\
+\text{only 2} &= 0.1 \times 0.8 \times 0.3 = 0.024 \\
+\text{only 3} &= 0.1 \times 0.2 \times 0.7 = 0.014 \\
+P(\text{exactly one}) &= 0.092
+\end{aligned}
+$$
+
+(c) "Only alarm 1" lies inside "exactly one", so their intersection is just "only alarm 1".
+
+$$
+P(A_1 \mid \text{exactly one}) = \frac{0.054}{0.092} \approx 0.587
+$$
+
+(d) $$0.9 \times 0.8 \times 0.7 = 0.504$$. Same method as the lecture 6 deck's switches example, with unequal probabilities and a conditional at the end.
+
+### Q: A clinic uses a new test for a condition. 5% of the patients tested have the condition. The test is positive for 96% of patients who have it and for 2% of patients who do not. (a) Define events, and write each given number and the two complements you need as probability statements. (b) Build the two-way table of joint probabilities with row and column totals. (c) Find the probability that a patient tests positive. (d) Find the probability that a patient who tests positive has the condition, and the probability that a patient who tests negative does not. (e) Explain why the first answer in (d) is so far below 96%.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
+**A:** Steps:
+1. Name the events, $$C$$ = has the condition and $$T$$ = tests positive. The 5% is $$P(C)$$. The 96% and the 2% are conditionals, given $$C$$ and given $$C^c$$.
+2. Each cell of the table is a prior times a conditional, such as $$P(C \cap T) = P(C)\,P(T \mid C)$$.
+3. Add across and down for the totals. The four cells sum to 1.
+4. A conditional given a test result is one cell divided by that result's column total.
+
+(a) $$P(C) = 0.05$$ and $$P(C^c) = 0.95$$. $$P(T \mid C) = 0.96$$, so $$P(T^c \mid C) = 0.04$$. $$P(T \mid C^c) = 0.02$$, so $$P(T^c \mid C^c) = 0.98$$.
+
+(b) Multiply each row's prior by the conditional for the column:
+
+| | Positive | Negative | Total |
+|---|---|---|---|
+| Has it | 0.048 | 0.002 | 0.05 |
+| Does not | 0.019 | 0.931 | 0.95 |
+| Total | 0.067 | 0.933 | 1 |
+
+(c) $$P(T) = 0.048 + 0.019 = 0.067$$. This is the law of total probability.
+
+(d)
+
+$$
+\begin{aligned}
+P(C \mid T) &= \frac{0.048}{0.067} \approx 0.716 \\
+P(C^c \mid T^c) &= \frac{0.931}{0.933} \approx 0.998
+\end{aligned}
+$$
+
+(e) Patients without the condition outnumber those with it 19 to 1. Their 2% false positives, 0.019 of all patients, are more than a quarter of all positives, 0.067. A positive result raises the chance of having the condition from 5% to about 72%, not to 96%. The 96% is $$P(T \mid C)$$, the reverse conditional. This is the method of the lecture 7 in-class Bayes activity, with new numbers.
+
+### Q: Three suppliers provide 50%, 30% and 20% of a store's batteries, with defect rates 2%, 4% and 5%. A battery is found defective. Find the probability it came from each supplier, and check that the three posteriors add to 1.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
+**A:** Steps:
+1. Name the events, $$S_1$$, $$S_2$$ and $$S_3$$ for the supplier and $$D$$ for defective.
+2. Multiply each supplier's share by its defect rate.
+3. Add the three products for $$P(D)$$.
+4. Divide each product by $$P(D)$$. The three posteriors must add to 1.
+
+Define $$S_1, S_2, S_3$$ = supplier and $$D$$ = defective.
+
+$$
+\begin{aligned}
+P(D) &= 0.5(0.02) + 0.3(0.04) \\
+&\quad + 0.2(0.05) \\
+&= 0.010 + 0.012 + 0.010 = 0.032 \\[4pt]
+P(S_1 \mid D) &= \frac{0.010}{0.032} = 0.3125 \\
+P(S_2 \mid D) &= \frac{0.012}{0.032} = 0.375 \\
+P(S_3 \mid D) &= \frac{0.010}{0.032} = 0.3125
+\end{aligned}
+$$
+
+They add to 1 because the suppliers partition the defective batteries. Supplier 2 is the most likely source even though supplier 3 has the worst rate, because supplier 2 ships more.
+
+### Q: Your inventory comes from three plants: 40% from $$A_1$$, 35% from $$A_2$$ and 25% from $$A_3$$. Their defect rates are 6%, 4% and 9%. You pull an item at random and it is defective. Which plant did it most likely come from? Give the posterior probability for each plant, and say why neither "the biggest supplier" nor "the worst quality" is the right answer on its own.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
+**A:** Steps:
+1. Name the events, $$A_1$$, $$A_2$$ and $$A_3$$ for the plant and $$D$$ for defective. The shares are the priors and the defect rates are $$P(D \mid A_i)$$.
+2. Multiply each prior by its rate for the joint probabilities.
+3. Add the joint probabilities for $$P(D)$$, which is the law of total probability.
+4. Divide each joint probability by $$P(D)$$ for the posteriors, then compare them.
+
+Write $$D$$ for "defective". The joint probabilities, then the law of total probability:
+
+$$
+\begin{aligned}
+P(A_1 \cap D) &= 0.40 \times 0.06 = 0.0240 \\
+P(A_2 \cap D) &= 0.35 \times 0.04 = 0.0140 \\
+P(A_3 \cap D) &= 0.25 \times 0.09 = 0.0225 \\
+P(D) &= 0.0240 + 0.0140 + 0.0225 = 0.0605
+\end{aligned}
+$$
+
+Dividing each joint by $$P(D)$$ gives $$P(A_1 \mid D) = 0.397$$, $$P(A_2 \mid D) = 0.231$$ and $$P(A_3 \mid D) = 0.372$$. $$A_1$$ wins. The point is how close $$A_1$$ and $$A_3$$ are: $$A_1$$ has the largest share but a middling defect rate, $$A_3$$ the worst rate but the smallest share, and the posterior is what settles it — each prior weighted by its own conditional, then renormalised. Answering "$$A_3$$, it has the worst rate" ignores the prior; answering "$$A_1$$, it makes the most" ignores the rate.
+
+### Q: A student leaves her iClicker behind with probability $$\frac{1}{3}$$ each time she attends a class, independently, and she sets out with it to attend four classes in four different rooms. (a) She gets home without it — what is the probability she left it in the 4th class? (b) What is the probability, before she sets out, that she will leave it in the 4th class? (c) She gets home without it and is certain she still had it after the first class — now what is the probability it is in the 4th? (d) She has time to check exactly one room. Which class should she try? Give (a) to (c) to three significant figures.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
+**A:** Steps:
+1. Losing it in class $$k$$ means keeping it through the first $$k - 1$$ classes and then leaving it, so the probability is $$\left(\frac{2}{3}\right)^{k-1} \cdot \frac{1}{3}$$.
+2. (b) is that formula at $$k = 4$$, with no conditioning.
+3. (a) divides it by the probability of losing it at all, $$1 - \left(\frac{2}{3}\right)^4$$.
+4. (c) drops class 1 from that denominator.
+5. (d) compares the four classes' conditional probabilities.
+
+She loses it in class $$k$$ only if she kept it through the first $$k - 1$$ classes and then left it:
+
+$$
+P(\text{lost in class } k) = \left(\frac{2}{3}\right)^{k-1} \cdot \frac{1}{3}
+$$
+
+That gives $$\frac{1}{3}, \frac{2}{9}, \frac{4}{27}, \frac{8}{81}$$ for classes 1 to 4. (b) is the unconditional one asked for directly: $$\frac{8}{81} = 0.0988$$. (a) She arrives home without it whenever any of those happened:
+
+$$
+\begin{aligned}
+P(\text{lost}) &= \frac{1}{3} + \frac{2}{9} + \frac{4}{27} + \frac{8}{81} = \frac{65}{81} \\
+&= 1 - \left(\frac{2}{3}\right)^4 = 1 - \frac{16}{81} \\[4pt]
+P(4\text{th} \mid \text{lost}) &= \frac{8/81}{65/81} = \frac{8}{65} = 0.123
+\end{aligned}
+$$
+
+The second line is the quicker route. (c) Conditioning on having it after class 1 throws away the first branch, so the denominator becomes $$\frac{2}{9} + \frac{4}{27} + \frac{8}{81} = \frac{38}{81}$$ and the answer is $$\frac{8}{38} = \frac{4}{19} = 0.211$$. (d) The first class, with posterior $$\frac{1/3}{65/81} = \frac{27}{65} = 0.415$$ — she is most likely to have lost it at the first opportunity, because every later loss requires surviving all the earlier ones. Note how parts (a) and (b) differ only by the conditioning event, and that the conditioning is what puts $$\frac{65}{81}$$ in the denominator.
+
+### Q: A system has two blocks in series, followed in series by component $$E$$. Block 1 is components $$A$$ and $$B$$ in parallel, and block 2 is components $$C$$ and $$D$$ in parallel. The components work independently, with reliabilities $$A$$ 0.8, $$B$$ 0.7, $$C$$ 0.9, $$D$$ 0.6 and $$E$$ 0.95. (a) Find the reliability of each block and of the system. (b) Find the probability that the system fails. (c) Given that the system works, find the probability that $$A$$ works.
+**Topic:** 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given)  **Lec:** 7  **Type:** apply
+**A:** Steps:
+1. A parallel block fails only if both of its components fail, so its reliability is one minus the product of their failure probabilities.
+2. Everything in series must work, so multiply the two block reliabilities and $$E$$'s.
+3. (b) is the complement of (a).
+4. (c) is a conditional probability. If $$A$$ works, block 1 works, so the numerator needs only block 2 and $$E$$ as well.
+
+(a)
+
+$$
+\begin{aligned}
+P(\text{block 1}) &= 1 - 0.2 \times 0.3 = 0.94 \\
+P(\text{block 2}) &= 1 - 0.1 \times 0.4 = 0.96 \\
+P(\text{system}) &= 0.94 \times 0.96 \times 0.95 \\
+&= 0.8573
+\end{aligned}
+$$
+
+(b) $$1 - 0.8573 = 0.1427$$.
+
+(c) "$$A$$ works and the system works" means $$A$$, block 2 and $$E$$ all work, because $$A$$ alone keeps block 1 working.
+
+$$
+\begin{aligned}
+P(A \cap \text{works}) &= 0.8 \times 0.96 \times 0.95 \\
+&= 0.7296 \\
+P(A \mid \text{works}) &= \frac{0.7296}{0.8573} \approx 0.851
+\end{aligned}
+$$
+
+Knowing the system works raises the chance that $$A$$ works from 0.8 to about 0.85. Same method as the lecture 7 reliability question, with lecture 6's conditional probability on top.
+
+### Q: $$X$$ takes the values $$-1, 0, 2, 5$$ with probabilities $$k, 3k, 4k, 2k$$. (a) Find $$k$$. (b) Write the cdf $$F$$ as a piecewise function defined for every real $$x$$. (c) Use $$F$$ to find $$F(1.5)$$, $$P(X \ge 2)$$ and $$P(X > 2)$$. (d) Find $$E(X)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$. (e) Find $$E[(X - 1)^2]$$ from the pmf.
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** apply
+**A:** Steps:
+1. The probabilities sum to 1, which gives $$k$$.
+2. The cdf is a running sum of the pmf. It is flat between the possible values and jumps at each one.
+3. $$P(X \ge 2) = 1 - F(1)$$ and $$P(X > 2) = 1 - F(2)$$. The equal sign moves the answer by $$P(X = 2)$$.
+4. Get the mean and $$E(X^2)$$ from the pmf, then the variance by the shortcut.
+5. For $$E[g(X)]$$, keep the probabilities and apply $$g$$ to each value.
+
+(a) $$k + 3k + 4k + 2k = 10k = 1$$, so $$k = 0.1$$, and the probabilities are 0.1, 0.3, 0.4 and 0.2.
+
+(b)
+
+$$
+F(x) = \begin{cases}
+0 & x < -1 \\
+0.1 & -1 \le x < 0 \\
+0.4 & 0 \le x < 2 \\
+0.8 & 2 \le x < 5 \\
+1 & x \ge 5
+\end{cases}
+$$
+
+(c) $$F(1.5) = 0.4$$. $$P(X \ge 2) = 1 - F(1) = 1 - 0.4 = 0.6$$. $$P(X > 2) = 1 - F(2) = 1 - 0.8 = 0.2$$.
+
+(d)
+
+$$
+\begin{aligned}
+E(X) &= -0.1 + 0 + 0.8 + 1.0 = 1.7 \\
+E(X^2) &= 0.1 + 0 + 1.6 + 5.0 = 6.7 \\
+\operatorname{Var}(X) &= 6.7 - 1.7^2 = 3.81 \\
+\operatorname{SD}(X) &= \sqrt{3.81} \approx 1.95
+\end{aligned}
+$$
+
+(e) The values of $$(x - 1)^2$$ are 4, 1, 1 and 16.
+
+$$
+\begin{aligned}
+E[(X - 1)^2] &= 4(0.1) + 1(0.3) \\
+&\quad + 1(0.4) + 16(0.2) \\
+&= 0.4 + 0.3 + 0.4 + 3.2 = 4.3
+\end{aligned}
+$$
+
+Check: expanding the square gives $$E(X^2) - 2E(X) + 1 = 6.7 - 3.4 + 1 = 4.3$$. Same method as the lecture 8 deck's Examples 3 to 5.
+
+### Q: WeBWorK-style. A robot fires three shots at a moving target. The first shot hits with probability $$\frac{1}{4}$$. After a hit, the next shot hits with probability $$\frac{1}{2}$$; after a miss, the next shot hits with probability $$\frac{1}{3}$$. Let $$N$$ be the number of hits. From a blank page find the pmf of $$N$$, then $$E(N)$$ rounded to a whole number and $$\operatorname{Var}(N)$$ to two decimals.
+**Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** WW3  **Type:** derive
+**A:** Steps:
+1. The shots are dependent, so draw the three-stage tree with the given conditional probabilities.
+2. Multiply along each of the eight paths.
+3. Group the paths by the number of hits for the pmf, and check that it sums to 1.
+4. Get $$E(N)$$ and $$E(N^2)$$ from the pmf, then the variance by the shortcut.
+
+The shots are not independent, so draw the tree and multiply along each of the eight paths:
+
+$$
+\begin{aligned}
+\text{HHH} &= \frac{1}{4} \cdot \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{16} \\
+\text{HHM} &= \frac{1}{16} \\
+\text{HMH} &= \frac{1}{4} \cdot \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{24} \\
+\text{HMM} &= \frac{1}{4} \cdot \frac{1}{2} \cdot \frac{2}{3} = \frac{1}{12} \\
+\text{MHH} &= \frac{3}{4} \cdot \frac{1}{3} \cdot \frac{1}{2} = \frac{1}{8} \\
+\text{MHM} &= \frac{1}{8} \\
+\text{MMH} &= \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{1}{3} = \frac{1}{6} \\
+\text{MMM} &= \frac{3}{4} \cdot \frac{2}{3} \cdot \frac{2}{3} = \frac{1}{3}
+\end{aligned}
+$$
+
+Group by hit count. The four sum to 1, which is the check.
+
+$$
+\begin{aligned}
+P(N = 0) &= \frac{1}{3} \\
+P(N = 1) &= \frac{1}{12} + \frac{1}{8} + \frac{1}{6} = \frac{9}{24} = 0.375 \\
+P(N = 2) &= \frac{1}{16} + \frac{1}{24} + \frac{1}{8} = \frac{11}{48} \approx 0.2292 \\
+P(N = 3) &= \frac{1}{16} = 0.0625
+\end{aligned}
+$$
+
+Then the moments:
+
+$$
+\begin{aligned}
+E(N) &= 0.375 + 2(0.2292) + 3(0.0625) = 1.0208 \\
+E(N^2) &= 0.375 + 4(0.2292) + 9(0.0625) = 1.8542 \\
+\operatorname{Var}(N) &= 1.8542 - 1.0208^2 = 0.81
+\end{aligned}
+$$
+
+So $$E(N)$$ is 1 to the nearest whole number. A shortcut for the mean only: $$E(N)$$ is the sum of the three per-shot hit probabilities, $$\frac{1}{4} + \frac{3}{8} + \frac{19}{48} = \frac{49}{48}$$, which matches, but the variance needs the full pmf because the shots are dependent.
+
+### Q: $$f(x) = cx$$ for $$1 \le x \le 3$$ and 0 otherwise. (a) Find $$c$$ and check that $$f$$ is a pdf. (b) Find the cdf for every real $$x$$. (c) Find $$P(X > 2)$$ and $$P(1.5 < X < 2.5)$$ from the cdf. (d) Find the median and the IQR. (e) Find $$E(X)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$.
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** apply
+**A:** Steps:
+1. Total area 1 gives $$c$$. Integrate over the support only.
+2. The cdf integrates the pdf from the left end of the support up to $$x$$. It is 0 below the support and 1 above it.
+3. Probabilities are differences of $$F$$, and the endpoints do not matter.
+4. Each quantile solves $$F(x) = p$$. Keep the root inside $$[1, 3]$$.
+5. $$E(X)$$ and $$E(X^2)$$ are integrals against $$f$$, then the variance comes from the shortcut.
+
+(a)
+
+$$
+\begin{aligned}
+\int_1^3 cx\,dx &= c \cdot \frac{9 - 1}{2} = 4c = 1 \\
+c &= \frac{1}{4}
+\end{aligned}
+$$
+
+$$f(x) = \frac{x}{4} \ge 0$$ on $$[1, 3]$$ and its area is 1, so $$f$$ is a pdf.
+
+(b)
+
+$$
+F(x) = \begin{cases}
+0 & x < 1 \\
+\dfrac{x^2 - 1}{8} & 1 \le x \le 3 \\
+1 & x > 3
+\end{cases}
+$$
+
+(c)
+
+$$
+\begin{aligned}
+P(X > 2) &= 1 - F(2) = 1 - \frac{3}{8} = \frac{5}{8} \\
+P(1.5 < X < 2.5) &= F(2.5) - F(1.5) \\
+&= \frac{5.25 - 1.25}{8} = 0.5
+\end{aligned}
+$$
+
+(d) Solving $$\frac{x^2 - 1}{8} = p$$ gives $$x = \sqrt{8p + 1}$$.
+
+$$
+\begin{aligned}
+\text{median} &= \sqrt{5} \approx 2.236 \\
+Q_1 &= \sqrt{3} \approx 1.732 \\
+Q_3 &= \sqrt{7} \approx 2.646 \\
+\text{IQR} &\approx 2.646 - 1.732 = 0.914
+\end{aligned}
+$$
+
+(e)
+
+$$
+\begin{aligned}
+E(X) &= \int_1^3 \frac{x^2}{4}\,dx = \frac{27 - 1}{12} = \frac{13}{6} \\
+E(X^2) &= \int_1^3 \frac{x^3}{4}\,dx = \frac{81 - 1}{16} = 5 \\
+\operatorname{Var}(X) &= 5 - \frac{169}{36} = \frac{11}{36} \\
+\operatorname{SD}(X) &\approx 0.553
+\end{aligned}
+$$
+
+$$E(X) \approx 2.167$$ is below the median, 2.236. The density rises to the right, so the longer tail is on the left, and a left tail pulls the mean below the median. Same method as the lecture 9 deck's Examples 6 and 7.
+
+### Q: $$f(x) = \frac{3}{8}x^2$$ on $$[0, 2]$$, the deck's Example 7. Find $$E(X)$$, $$E(X^2)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$, then $$E\left(\frac{1}{X}\right)$$.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
+**A:** Steps:
+1. Each expectation is an integral of $$g(x)$$ times $$\frac{3}{8}x^2$$ over $$[0, 2]$$.
+2. $$E(X)$$ uses $$g(x) = x$$, $$E(X^2)$$ uses $$x^2$$, and $$E\left(\frac{1}{X}\right)$$ uses $$\frac{1}{x}$$.
+3. Get the variance by the shortcut and the SD as its square root.
+
+Each one is an integral against the same pdf:
+
+$$
+\begin{aligned}
+E(X) &= \frac{3}{8}\int_0^2 x^3\,dx = \frac{3}{8}(4) = \frac{3}{2} \\
+E(X^2) &= \frac{3}{8}\int_0^2 x^4\,dx = \frac{3}{8} \cdot \frac{32}{5} = \frac{12}{5} \\
+\operatorname{Var}(X) &= \frac{12}{5} - \frac{9}{4} = \frac{3}{20} = 0.15 \\
+\operatorname{SD}(X) &\approx 0.387 \\
+E\left(\frac{1}{X}\right) &= \int_0^2 \frac{1}{x} \cdot \frac{3}{8}x^2\,dx \\
+&= \frac{3}{8}\int_0^2 x\,dx = \frac{3}{8}(2) = \frac{3}{4}
+\end{aligned}
+$$
+
+The pdf stays; only the function inside the integral changes.
+
+### Q: For $$X \sim U(a, b)$$, derive $$E(X)$$ and $$\operatorname{Var}(X)$$ from the definitions.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** derive
+**A:** Steps:
+1. Write $$f(x) = \frac{1}{b - a}$$ on $$[a, b]$$.
+2. Integrate $$x\,f(x)$$ over $$[a, b]$$, and factor $$b^2 - a^2 = (b - a)(b + a)$$.
+3. Integrate $$x^2 f(x)$$ the same way, factoring $$b^3 - a^3 = (b - a)(a^2 + ab + b^2)$$.
+4. Use the shortcut and put everything over 12.
+
+Integrate against $$f(x) = \frac{1}{b - a}$$, then use the shortcut:
+
+$$
+\begin{aligned}
+E(X) &= \int_a^b \frac{x}{b - a}\,dx = \frac{b^2 - a^2}{2(b - a)} = \frac{a + b}{2} \\[4pt]
+E(X^2) &= \int_a^b \frac{x^2}{b - a}\,dx = \frac{b^3 - a^3}{3(b - a)} \\
+&= \frac{a^2 + ab + b^2}{3} \\[4pt]
+\operatorname{Var}(X) &= \frac{a^2 + ab + b^2}{3} - \frac{(a + b)^2}{4} \\
+&= \frac{4a^2 + 4ab + 4b^2 - 3a^2 - 6ab - 3b^2}{12} \\
+&= \frac{(b - a)^2}{12}
+\end{aligned}
+$$
+
+### Q: For $$X \sim \text{Exp}(\lambda)$$, find the cdf and $$P(X > t)$$, then derive $$E(X) = \frac{1}{\lambda}$$ by integration by parts.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** derive
+**A:** Steps:
+1. Integrate the pdf from 0 to $$x$$ for the cdf, and take one minus it for $$P(X > t)$$.
+2. For $$E(X)$$, integrate $$x\,\lambda e^{-\lambda x}$$ from 0 to $$\infty$$ by parts, with $$u = x$$ and $$dv = \lambda e^{-\lambda x}\,dx$$.
+3. The boundary term is 0, and the integral left over is $$\frac{1}{\lambda}$$.
+
+The cdf, for $$x \ge 0$$:
+
+$$
+\begin{aligned}
+F(x) &= \int_0^x \lambda e^{-\lambda t}\,dt = 1 - e^{-\lambda x} \\
+P(X > t) &= e^{-\lambda t}
+\end{aligned}
+$$
+
+For the mean, take $$u = x$$ and $$dv = \lambda e^{-\lambda x}\,dx$$, so $$v = -e^{-\lambda x}$$:
+
+$$
+\begin{aligned}
+E(X) &= \int_0^\infty x\,\lambda e^{-\lambda x}\,dx \\
+&= \Big[-x e^{-\lambda x}\Big]_0^\infty + \int_0^\infty e^{-\lambda x}\,dx \\
+&= 0 + \frac{1}{\lambda}
+\end{aligned}
+$$
+
+Parts twice on $$E(X^2)$$ gives $$\frac{2}{\lambda^2}$$, so $$\operatorname{Var}(X) = \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2}$$.
+
+### Q: WeBWorK-style. A random variable $$X$$ lives on $$[2, 7]$$ and is described by $$g(x) = 2x - 2$$ there. (a) Show whether $$g$$ is a pdf, and if not find the constant $$c$$ that makes $$c \cdot g(x)$$ one. (b) Find $$P(4 < X < 6)$$. (c) Find $$P(X < 5)$$.
+**Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** WW3  **Type:** derive
+**A:** Steps:
+1. Check that $$g \ge 0$$ on $$[2, 7]$$, then integrate it over $$[2, 7]$$. The area is not 1, so $$c$$ is one over the area.
+2. Each probability is the integral of $$c \cdot g(x)$$ between its limits. For $$P(X < 5)$$ the lower limit is 2, where the density starts.
+
+(a) $$g \ge 0$$ on $$[2, 7]$$, but its area is not 1, so $$g$$ is not a pdf:
+
+$$
+\begin{aligned}
+\int_2^7 (2x - 2)\,dx &= \Big[x^2 - 2x\Big]_2^7 \\
+&= (49 - 14) - (4 - 4) = 35
+\end{aligned}
+$$
+
+The normalising constant is $$c = \frac{1}{35}$$, giving $$f(x) = \frac{2x - 2}{35}$$ on $$[2, 7]$$ and 0 elsewhere. Do this step first; every probability below is wrong by a factor of 35 without it.
+
+$$
+\begin{aligned}
+\text{(b)}\ P(4 < X < 6) &= \frac{1}{35}\Big[x^2 - 2x\Big]_4^6 \\
+&= \frac{1}{35}\big[(36 - 12) - (16 - 8)\big] \\
+&= \frac{16}{35} \approx 0.457 \\[4pt]
+\text{(c)}\ P(X < 5) &= \frac{1}{35}\Big[x^2 - 2x\Big]_2^5 \\
+&= \frac{1}{35}(15 - 0) = \frac{15}{35} \approx 0.429
+\end{aligned}
+$$
+
+The lower limit is 2, where the density starts, not 0; and strict or non-strict inequalities give the same area because $$P$$ at a single point is 0.
+
+### Q: WeBWorK-style. The days $$T$$ a butterfly survives after emerging satisfy $$P(T > t) = \frac{25}{(5 + t)^2}$$ for $$t \ge 0$$. (a) Find the probability it dies within 7 days. (b) After how many days would you expect only 10% of a large brood to be alive? (c) Find the mean lifetime. Three-decimal accuracy.
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW3  **Type:** derive
+**A:** Steps:
+1. The given function is $$P(T > t) = 1 - F(t)$$, so read probabilities straight off it.
+2. (a) is one minus the survival probability at 7 days.
+3. (b) solves "survival probability = 0.10" for $$t$$.
+4. (c) integrates the survival function from 0 to $$\infty$$. The longer route differentiates for the pdf and integrates $$t\,f(t)$$.
+
+You are handed the survival function, which is $$1 - F(t)$$, so read everything off it. (a) $$P(T \le 7) = 1 - P(T > 7) = 1 - \frac{25}{144} = 0.826$$. (b) "10% still alive" means $$P(T > t) = 0.10$$, so $$(5 + t)^2 = 250$$, $$5 + t = 15.811$$, $$t = 10.811$$ days. Solve the tail, do not differentiate. (c) Either differentiate to get the pdf $$f(t) = \frac{50}{(5 + t)^3}$$ and integrate $$t \cdot f(t)$$, or use the shortcut for non-negative variables:
+
+$$
+\begin{aligned}
+E(T) &= \int_0^\infty P(T > t)\,dt = \int_0^\infty \frac{25}{(5 + t)^2}\,dt \\
+&= \Big[-\frac{25}{5 + t}\Big]_0^\infty = \frac{25}{5} = 5.000 \text{ days}
+\end{aligned}
+$$
+
+Both routes give 5; the tail integral is faster. Note the mean (5) is below the 10% survival time (10.8), as it must be for a right-skewed lifetime.
+
+### Q: WeBWorK-style. $$X$$ has pdf $$f(x) = \frac{2}{9}(3 - x)$$ for $$0 \le x \le 3$$ and 0 otherwise. (a) Find $$c$$ to one decimal given $$E(X + c) = 4 \cdot E(X - c)$$. (b) Find $$E(X)$$. (c) Find $$P(X > 1)$$. (d) Find $$\operatorname{Var}(X)$$. (e) Find $$q$$ with $$P(X < q) = \frac{1}{4}$$, to three decimals. (f) Two independent observations are taken; find the probability one is below 1 and the other above 1, order mattering.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** WW3  **Type:** derive
+**A:** Steps:
+1. Find $$E(X)$$ first by integrating $$x\,f(x)$$, since (a) needs it. (a) then follows from linearity.
+2. (c) integrates $$f$$ from 1 to 3.
+3. (d) needs $$E(X^2)$$, then the shortcut.
+4. (e) sets the cdf equal to $$\frac{1}{4}$$ and keeps the root inside $$[0, 3]$$.
+5. (f) multiplies $$P(X < 1)$$ by $$P(X > 1)$$ and doubles it for the two orders.
+
+Get $$E(X)$$ first, since (a) needs it.
+
+$$
+\begin{aligned}
+\text{(b)}\ E(X) &= \int_0^3 x \cdot \frac{2}{9}(3 - x)\,dx \\
+&= \frac{2}{9}\Big[\frac{3x^2}{2} - \frac{x^3}{3}\Big]_0^3 \\
+&= \frac{2}{9}(13.5 - 9) = 1.00
+\end{aligned}
+$$
+
+(a) $$E(X + c) = E(X) + c$$ and $$E(X - c) = E(X) - c$$ by linearity, so $$1 + c = 4(1 - c)$$, $$5c = 3$$, $$c = 0.6$$.
+
+$$
+\begin{aligned}
+\text{(c)}\ P(X > 1) &= \int_1^3 \frac{2}{9}(3 - x)\,dx \\
+&= \frac{2}{9}\Big[3x - \frac{x^2}{2}\Big]_1^3 \\
+&= \frac{2}{9}(4.5 - 2.5) = \frac{4}{9} \approx 0.44 \\[4pt]
+\text{(d)}\ E(X^2) &= \int_0^3 x^2 \cdot \frac{2}{9}(3 - x)\,dx \\
+&= \frac{2}{9}\Big[x^3 - \frac{x^4}{4}\Big]_0^3 \\
+&= \frac{2}{9}(27 - 20.25) = 1.5 \\
+\operatorname{Var}(X) &= 1.5 - 1^2 = 0.50
+\end{aligned}
+$$
+
+(e) Solve the cdf for $$\frac{1}{4}$$; the other root, 5.6, is outside $$[0, 3]$$.
+
+$$
+\begin{aligned}
+F(q) = \int_0^q \frac{2}{9}(3 - x)\,dx &= \frac{6q - q^2}{9} = \frac{1}{4} \\
+q^2 - 6q + 2.25 &= 0 \\
+q &= \frac{6 - \sqrt{27}}{2} = 0.402
+\end{aligned}
+$$
+
+(f) $$P(X < 1) = 1 - \frac{4}{9} = \frac{5}{9}$$. With order mattering there are two ways, low-then-high and high-then-low, each with probability $$\frac{5}{9} \cdot \frac{4}{9}$$ by independence, so $$2 \times \frac{20}{81} = \frac{40}{81} \approx 0.49$$. The trap in (f) is reporting only one ordering.
+
+### Q: $$X$$ and $$Y$$ have $$E(X) = 10$$, $$\operatorname{Var}(X) = 16$$, $$E(Y) = 6$$, $$\operatorname{Var}(Y) = 9$$ and $$\operatorname{Cov}(X, Y) = -3$$. (a) Find the mean and variance of $$X + Y$$ and of $$X - Y$$. (b) Find the mean, variance and SD of $$W = 2X - 3Y + 5$$. (c) Which answers in (a) and (b) would change if $$X$$ and $$Y$$ were independent, and to what? (d) $$X_1, \dots, X_{25}$$ is a random sample from the distribution of $$X$$. Find the mean and SD of their total and of their average $$\bar{X}$$.
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** apply
+**A:** Steps:
+1. Means follow $$E(aX + bY + c) = aE(X) + bE(Y) + c$$, with no conditions.
+2. Variances follow $$a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y) + 2ab\operatorname{Cov}(X, Y)$$. The constant drops out, and the sign of $$ab$$ affects only the covariance term.
+3. Independence makes the covariance 0. That changes variances and never means.
+4. A random sample is iid, so the total has variance $$n\sigma^2$$ and the average has variance $$\frac{\sigma^2}{n}$$.
+
+(a)
+
+$$
+\begin{aligned}
+E(X + Y) &= 16 \\
+\operatorname{Var}(X + Y) &= 16 + 9 + 2(-3) = 19 \\
+E(X - Y) &= 4 \\
+\operatorname{Var}(X - Y) &= 16 + 9 - 2(-3) = 31
+\end{aligned}
+$$
+
+(b)
+
+$$
+\begin{aligned}
+E(W) &= 2(10) - 3(6) + 5 = 7 \\
+\operatorname{Var}(W) &= 4(16) + 9(9) \\
+&\quad + 2(2)(-3)(-3) \\
+&= 64 + 81 + 36 = 181 \\
+\operatorname{SD}(W) &= \sqrt{181} \approx 13.45
+\end{aligned}
+$$
+
+(c) Only the variances change, because the covariance term becomes 0. $$\operatorname{Var}(X + Y)$$ and $$\operatorname{Var}(X - Y)$$ both become 25, and $$\operatorname{Var}(W)$$ becomes 145. The means stay 16, 4 and 7.
+
+(d) Write $$T = X_1 + \dots + X_{25}$$ for the total.
+
+$$
+\begin{aligned}
+E(T) &= 25(10) = 250 \\
+\operatorname{Var}(T) &= 25(16) = 400 \\
+\operatorname{SD}(T) &= 20 \\
+E(\bar{X}) &= 10 \\
+\operatorname{Var}(\bar{X}) &= \frac{16}{25} = 0.64 \\
+\operatorname{SD}(\bar{X}) &= 0.8
+\end{aligned}
+$$
+
+Same method as the lecture 10 deck's Examples 8 and 9 and its slides on sums and averages.
+
+### Q: Each year's highest flood level $$X$$ on a river is uniform on $$[0, 10]$$ metres, independently across years. Let $$V$$ be the highest level over the next 5 years. Find the cdf of $$V$$, $$P(V > 8)$$, the pdf of $$V$$ and $$E(V)$$.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** apply
+**A:** Steps:
+1. One year's cdf is $$\frac{v}{10}$$ on $$[0, 10]$$.
+2. The 5-year maximum is at most $$v$$ only if every year's level is, so independence gives $$F_V(v) = \left(\frac{v}{10}\right)^5$$.
+3. $$P(V > 8) = 1 - F_V(8)$$.
+4. Differentiate for the pdf, then integrate $$v\,f_V(v)$$ for $$E(V)$$.
+
+$$F_X(v) = \frac{v}{10}$$ on $$[0, 10]$$, so on $$[0, 10]$$, with $$F_V = 0$$ below 0 and 1 above 10:
+
+$$
+\begin{aligned}
+F_V(v) &= \left(\frac{v}{10}\right)^5 \\
+P(V > 8) &= 1 - 0.8^5 = 1 - 0.328 = 0.672 \\
+f_V(v) &= 5\left(\frac{v}{10}\right)^4 \frac{1}{10} = \frac{5v^4}{10^5} \\
+E(V) &= \int_0^{10} v \cdot \frac{5v^4}{10^5}\,dv \\
+&= \frac{5}{10^5} \cdot \frac{10^6}{6} \approx 8.33 \text{ metres}
+\end{aligned}
+$$
+
+That is well above one year's mean of 5.
+
+### Q: Each of three components has a lifetime $$X$$, in years, with pdf $$f(x) = \frac{x}{2}$$ for $$0 \le x \le 2$$, and the three lifetimes are independent. (a) Find the cdf $$F$$ of one lifetime. (b) The three are connected in parallel, with system lifetime $$V$$. Find the cdf of $$V$$ and $$P(V > 1.5)$$. (c) Find the pdf of $$V$$ and $$E(V)$$, and compare $$E(V)$$ with $$E(X)$$. (d) If the three were connected in series instead, with system lifetime $$U$$, find $$P(U > 1)$$.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** apply
+**A:** Steps:
+1. Integrate the pdf for one component's cdf.
+2. A parallel system runs until its last component fails, so $$V$$ is the maximum. $$V \le v$$ exactly when all three lifetimes are at most $$v$$, and independence gives $$F_V(v) = [F(v)]^3$$.
+3. Differentiate with the chain rule for $$f_V$$, then integrate $$v\,f_V(v)$$.
+4. A series system stops at the first failure, so $$U$$ is the minimum. $$U > u$$ exactly when all three last past $$u$$.
+
+(a) $$F(x) = \int_0^x \frac{t}{2}\,dt = \frac{x^2}{4}$$ on $$[0, 2]$$, with 0 below and 1 above.
+
+(b) On $$[0, 2]$$:
+
+$$
+\begin{aligned}
+F_V(v) &= \left(\frac{v^2}{4}\right)^3 = \frac{v^6}{64} \\
+P(V > 1.5) &= 1 - 0.5625^3 \\
+&= 1 - 0.178 = 0.822
+\end{aligned}
+$$
+
+(c)
+
+$$
+\begin{aligned}
+f_V(v) &= 3\left(\frac{v^2}{4}\right)^2 \frac{v}{2} = \frac{3v^5}{32} \\
+E(V) &= \int_0^2 \frac{3v^6}{32}\,dv = \frac{3}{32} \cdot \frac{128}{7} \\
+&= \frac{12}{7} \approx 1.71 \text{ years} \\
+E(X) &= \int_0^2 \frac{x^2}{2}\,dx = \frac{4}{3} \approx 1.33 \text{ years}
+\end{aligned}
+$$
+
+The parallel system outlasts a single component on average, because it keeps running while any one of the three survives.
+
+(d)
+
+$$
+\begin{aligned}
+P(U > 1) &= \big[1 - F(1)\big]^3 \\
+&= \left(\frac{3}{4}\right)^3 = \frac{27}{64} \approx 0.422
+\end{aligned}
+$$
+
+Same method as the lecture 10 deck's maximum slides and the minimum on the lecture 10 page.

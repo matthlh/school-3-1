@@ -1,6 +1,6 @@
 # CPSC310 — Introduction to Software Engineering (2026W1)
 
-**Meets:** Tue/Thu 12:30–2:00pm, LSK (section 103) · Lab Tue 9:00–11:00am on Zoom
+**Meets:** Tue/Thu 3:30–5:00pm, LSK 201 (section 103) · Lab Tue 9:00–11:00am on Zoom
 
 ## Grading
 | Component | Weight | Notes |

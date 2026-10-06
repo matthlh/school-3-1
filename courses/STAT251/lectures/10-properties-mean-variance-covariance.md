@@ -191,4 +191,4 @@ $$
 - For two independent values with the same variance $$\sigma^2$$, $$\operatorname{Var}(X_1 + X_2) = 2\sigma^2$$, but $$\operatorname{Var}(2X_1) = 4\sigma^2$$. A sum of independent values varies less than one value doubled, because their deviations partly cancel.
 - The deck states one direction only: independent random variables have covariance 0.
 
-Questions: 15 in [02-questions.md](../02-questions.md) under "Lec 10". Ledger: 3 topics.
+Questions: 14 in [02-questions.md](../02-questions.md) under "Lec 10", and 3 under "Long problems". Ledger: 3 topics.

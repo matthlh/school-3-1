@@ -37,6 +37,11 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
    course allows it. For CPSC 310 that means `apply`/`critique` on a code or design fragment plus
    `recall` of the reader's exact terms; skip housekeeping slides entirely.
+   A problem that needs paper (a table or tree to build, an integral, ten or more values, or three or more
+   results that feed each other) goes under `## Long problems` at the end of the bank instead of the lecture's
+   section, with the lecture's `**Lec:**` tag and a numbered Steps list opening its answer (Matt, 2026-10-05).
+   For STAT 251 every worked example in the deck or the recording becomes a question, short or long, with the
+   numbers changed.
 3. Add any new topic to `courses/<CODE>/01-topics.md` and to `ledger.md` with `Next = today + 1`,
    then `sh publish.sh "Log <CODE> lec N"` — the notes site redeploys itself.
 4. Report only what changed. No summaries of the notes back to him.
@@ -77,7 +82,7 @@ Career work is a co-priority, so **time efficiency is a hard constraint, not a p
    is read the day it opens (Tuesdays: Sep 22, Sep 29, Oct 6, Oct 13, Oct 20, Nov 3, Nov 17, Nov 24,
    Dec 1) by the morning check through the Chrome WeBWorK tab (morning-check SKILL.md §2b), or sooner
    when he attaches the hardcopy PDF and says `log STAT251 webwork N`. Every problem becomes one bank
-   question under `## WeBWorK N` in `02-questions.md`, tagged `**Lec:** WWN` to the ledger row it
+   question under `## WeBWorK N` in `02-questions.md` (under `## Long problems` when it needs paper), tagged `**Lec:** WWN` to the ledger row it
    exercises (a new row only for a skill no lecture row covers), with the numbers changed and any
    figure turned into a table of counts. The hardcopy and page text stay in `routines/webwork/`
    (git-ignored); no problem is copied verbatim into the public repo. It is graded homework: read and
@@ -91,7 +96,10 @@ one question at a time and grade `X` / `~` / `O`; then `quiz_grade.py "1:O 2:X �
 rows by the ladder below, mirrors `01-topics.md`, logs per-question history in
 `routines/quiz-state.json`, and names the topics that need more questions — write those before the
 session ends. **Never update ledger rows by hand; the script owns them.** `quiz_pick.py --transit`
-builds the 6-question deck the morning check sends to his phone. Last step of every graded session:
+builds the 6-question deck the morning check sends to his phone. **Long problems** (Matt, 2026-10-05: short ones
+"on the bus", longer ones "on the friday study sessions", or "I'll just say the steps") never go in that deck; a
+normal quiz asks them as steps only, the method and the setup without the arithmetic; and the Friday revision
+block opens with `quiz_pick.py --long`, four of them worked in full on paper against a clock. Last step of every graded session:
 `sh publish.sh "Quiz <date>"` — the hosted site shows the new ledger rows and per-question history.
 
 **Spacing ladder** (recompute `Next` from today):

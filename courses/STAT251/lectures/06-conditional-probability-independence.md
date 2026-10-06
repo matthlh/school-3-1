@@ -101,4 +101,4 @@ $$
 - "Given" decides the denominator. $$P(B \mid A)$$ divides by $$P(A)$$; $$P(A \mid B)$$ divides by $$P(B)$$. The numerator $$P(A \cap B)$$ is the same in both, which is what links them and gives Bayes' theorem next class.
 - Independent trials (each coin flip) and independent events (subsets of one sample space) are different objects; the equations define the second.
 
-Questions: 13 in [02-questions.md](../02-questions.md) under "Lec 6". Ledger: 3 topics, due Sep 22.
+Questions: 13 in [02-questions.md](../02-questions.md) under "Lec 6", and 2 under "Long problems". Ledger: 3 topics, due Sep 22.

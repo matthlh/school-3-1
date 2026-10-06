@@ -2,13 +2,17 @@
 """Pick a mixed revision session from the question banks, weighted by the ledger.
 
 Usage:
-  quiz_pick.py [--course CODE ...] [--n N] [--all] [--transit] [--due] [--report] [--date YYYY-MM-DD] [--seed S]
+  quiz_pick.py [--course CODE ...] [--n N] [--all] [--transit | --long] [--due] [--report] [--date YYYY-MM-DD] [--seed S]
 
   default      write routines/quiz-session.json and print the focus block + the numbered session
                (questions WITH answers — for Claude's eyes; ask them one at a time)
   --transit    6 questions by default; also writes routines/runs/<date>-transit.md — questions
                first, answers after a divider — for reading on the bus; the session file is
-               written too, so a reply like "1 O 2 ~ 3 X" can be graded with quiz_grade.py
+               written too, so a reply like "1 O 2 ~ 3 X" can be graded with quiz_grade.py.
+               Short questions only: nothing from a `## Long problems` section.
+  --long       the Friday set: 4 long problems by default, worked in full on paper; prints a clock of
+               MINUTES_PER_PART minutes for each part asked. A normal session may also pick long
+               problems; it marks them "steps only" (say the method and the setup, no arithmetic).
   --all        ignore due dates (exam run-up): every topic is eligible, weighted by grade
   --due        print the due/overdue topic list only (no session file)
   --report     print the focus block only (no session file)
@@ -61,6 +65,7 @@ def main():
     ap.add_argument("--n", type=int)
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--transit", action="store_true")
+    ap.add_argument("--long", action="store_true", help="the Friday set: long problems only, worked in full against a clock")
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--date")
@@ -68,7 +73,10 @@ def main():
     a = ap.parse_args()
     today = dt.date.fromisoformat(a.date) if a.date else L.today_local()
     courses = [c.upper().replace(" ", "") for c in a.course] if a.course else None
-    n = a.n or (6 if a.transit else 10)
+    if a.transit and a.long:
+        ap.error("--transit is short questions only; --long is long problems only")
+    n = a.n or (6 if a.transit else 4 if a.long else 10)
+    mode = "transit" if a.transit else "long" if a.long else "quiz"
     rnd = random.Random(a.seed or today.isoformat())
 
     text, rows = L.load_ledger()
@@ -96,6 +104,8 @@ def main():
         if topic_keys and not any(k in r["topic"].lower() for k in topic_keys):
             continue
         qs = fx["by_topic"].get(r["idx"], [])
+        if a.transit or a.long:      # the bus deck has no room for paper; the Friday set is nothing but
+            qs = [q for q in qs if q.get("long") == a.long]
         if not qs:
             continue
         pr, due = topic_priority(r, today, exams.get(r["course"], (None,))[0], a.all)
@@ -159,19 +169,28 @@ def main():
         q, r = c["q"], c["row"]
         items.append(dict(n=i, id=q["id"], course=q["course"], label=L.COURSE_LABEL[q["course"]],
                           topic=r["topic"], topic_tag=q["topic"], lec=q["lec"], type=q["type"],
-                          ahead=not c["due"], q=q["q"], a=q["a"], file=q["file"], line=q["line"],
+                          ahead=not c["due"], long=q.get("long", False), parts=L.parts(q) if q.get("long") else 1,
+                          q=q["q"], a=q["a"], file=q["file"], line=q["line"],
                           src_title=q["src_title"], src_url=q["src_url"]))
     session = dict(date=today.isoformat(), created=dt.datetime.now().astimezone().isoformat(timespec="minutes"),
-                   mode="transit" if a.transit else "quiz", courses=courses, n=len(items), items=items)
+                   mode=mode, courses=courses, n=len(items), items=items)
     os.makedirs(os.path.dirname(L.SESSION), exist_ok=True)
     with open(L.SESSION, "w", encoding="utf-8") as f:
         json.dump(session, f, indent=1, ensure_ascii=False)
 
     n_due = sum(1 for c in chosen if c["due"])
     print(f"\n== SESSION · {len(items)} questions ({n_due} due, {len(items) - n_due} ahead) · "
-          f"{'transit' if a.transit else 'quiz'} · cap {cap}/topic → {os.path.relpath(L.SESSION, L.ROOT)}")
+          f"{mode} · cap {cap}/topic → {os.path.relpath(L.SESSION, L.ROOT)}")
+    if a.long:
+        total = sum(it["parts"] for it in items)
+        print(f"== Clock: {total} parts × {L.MINUTES_PER_PART} min = {total * L.MINUTES_PER_PART} minutes, on paper, "
+              f"no notes; he reports every part's answer at the end")
     for it in items:
         flag = " (ahead)" if it["ahead"] else ""
+        if it["long"] and not a.long:
+            flag += " (long: steps only)"
+        elif a.long:
+            flag += f" ({it['parts']} parts)"
         print(f"\n{it['n']}. [{it['label']} · {it['topic_tag']} · {it['type']}{flag}] {it['q']}")
         print(f"   A: {it['a']}")
         if it["src_url"]:

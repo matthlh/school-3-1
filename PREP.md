@@ -42,9 +42,9 @@ advance, watching ahead. Passive preview shows no measurable benefit. Bank the t
 | | Morning | Afternoon | Evening |
 |---|---|---|---|
 | **Mon** | 8:00 STAT lecture *(iClicker)*<br>9:30 ASIA novel, 30–35 pp | 12:00 free<br>2:00 PHIL 385<br>**3:00–5:00 STAT problems + close-outs** | Gym · 8pm ASIA quiz backstop |
-| **Tue** | 7:00 career<br>9:00–11:00 CPSC 310 lab | 12:30 CPSC lecture<br>**2:15–4:45 CPSC deliverable + close-out** | Gym · career 8–9 |
+| **Tue** | 7:00 career<br>9:00–11:00 CPSC 310 lab | **1:00–3:30 CPSC deliverable + close-out**<br>3:30–5:00 CPSC lecture | Gym · career 8–9 |
 | **Wed** | 8:00 STAT lecture<br>**9:30–11:00 ASIA lecture + readings + quiz** | 2:00 PHIL 385<br>**3:00–5:00 CPSC deliverable + close-outs** | Badminton 7–9:45 |
-| **Thu** | 7:00 career | 12:30 CPSC lecture<br>**2:15–4:15 PHIL 385 reading + close-outs** | Gym · career 8–9 |
+| **Thu** | 7:00 career | **1:30–3:30 PHIL 385 reading + close-outs**<br>3:30–5:00 CPSC lecture | Gym · career 8–9 |
 | **Fri** | 8:00 STAT lecture<br>**11:00 STAT lab L1K — graded quiz in the lab** | 2:00 PHIL 385<br>**3:00–5:00 RETRIEVAL BLOCK** | Free |
 | **Sat** | Badminton 10–12 | 12:15–2:45 flex *(delete if nothing's due)* | Free |
 | **Sun** | | 1–3 meal prep<br>3:00–3:20 ledger + week plan | Gym |

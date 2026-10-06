@@ -105,4 +105,4 @@ $$
 - Disjoint is also not the same as independent, which arrives Monday. Two disjoint events with positive probability are never independent, because one occurring rules the other out. Lecture 6's deck carries the same warning.
 - The three-event rule comes from applying the two-event rule twice. Write $$A \cup B \cup C$$ as $$(A \cup B) \cup C$$, expand $$P(A \cup B)$$, and use $$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$$, whose two pieces overlap in $$A \cap B \cap C$$.
 
-Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 5". Ledger: 3 topics, due Sep 20.
+Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 5", and 1 under "Long problems". Ledger: 3 topics, due Sep 20.

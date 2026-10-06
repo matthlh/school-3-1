@@ -61,7 +61,7 @@ WEEKLY = [               # open-ended weekly to-dos; tick one and it stays ticke
          notes="Mishima, The Temple of the Golden Pavilion (~260 pp; epub on Canvas, files/47240876). ~30–35 pp/week keeps the Dec 10 paper on schedule. Note page reached + one thing worth quoting."),
     dict(day=FRI, title="Revision block — quiz me ({d:%b %-d})", area="UBC", tags="2h, P1", due_days=0,
          first=dt.date(2026, 9, 18), last=dt.date(2026, 12, 4),
-         notes="Fri 3–5 pm, not optional, not moveable (PREP.md). Say 'quiz me' — overdue ledger topics first."),
+         notes="Fri 3–5 pm, not optional, not moveable (PREP.md). Start with 'friday set': four STAT 251 long problems on paper against a clock, about 30 minutes. Then say 'quiz me' for the overdue ledger topics."),
     dict(day=MON, title="Questions for Kraal (week of {d:%b %-d})", project="PHIL 385", tags="15m, P2", due_days=1,
          first=dt.date(2026, 9, 14), last=dt.date(2026, 11, 30),
          notes="The running list is courses/PHIL385/04-ask-kraal.md (Ask Kraal tab on the notes site). Office hours Wed 12:15-12:45 on Zoom, link on the Canvas front page; email anders.kraal@ubc.ca a day ahead for a slot. Say 'questions for Kraal' here to top the page up from the week's lectures and readings, and paste his answers back so the notes get corrected."),

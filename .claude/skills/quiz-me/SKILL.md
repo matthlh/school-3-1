@@ -37,6 +37,12 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    - `O` = would score full marks on the exam · `~` = right idea, imprecise or missing a piece · `X` = wrong or blank.
    - **CPSC 310:** a correct answer with no reason is `~` until he gives the why. Ask "why?" once.
    - **STAT 251:** apply/derive needs the method, not the number. Right number, no method = `~`.
+   - **Long problems** (flagged `long: steps only`; they sit under `## Long problems` in the bank): ask for the
+     steps, not the arithmetic. He names the method for each part and gives its setup line: which events or which
+     distribution, the formula with the numbers in, the limits of any integral. Grade against the numbered Steps
+     list that opens the bank answer: `O` = every step there, in order, with the right setup · `~` = right method,
+     but a step or a setup detail is missing or wrong (the wrong given event, a wrong limit) · `X` = wrong method
+     or blank. Then show the Steps list and the final answers, not the whole working.
    - **PHIL 385:** exact names, pseudonyms, essay titles, dates. Close = `~`.
    - After an `X` or `~`, also give the link to the notes page it comes from (the item's `Page:` line in the
      pick output) and name the `##` section on that page that covers it when you can tell.
@@ -65,7 +71,8 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | exam ladder T-9…T-5 (term.py) | `--course CODE --all --n 15` — every topic eligible, weighted by weakness |
 | T-4 | `--course CODE --all`, then ask only the X/~ topics the focus block names |
 | PHIL 385 before exam 2–4 | scope to the exam's ~3 weeks: `--course PHIL385 --all --n 15`, skip questions from lectures outside the window |
-| transit deck | `quiz_pick.py --transit` — 6 q; writes `routines/runs/<date>-transit.md` (questions, divider, answers); rebuilds the Transit Deck artifact (morning-check skill §7) |
+| Friday set / "long problems" / the Friday revision block | `quiz_pick.py --long` — 4 long problems (`--n` to change). It prints a clock, 2 minutes a part (`MINUTES_PER_PART` in quizlib.py, a first guess at the midterm's pace). Give him all the stems at once; he works them on paper with no notes and sends every part's answer when the clock runs out. Grade on the numbers: `O` = every part right · `~` = right method throughout but an arithmetic slip · `X` = a wrong method or a part left blank. Correct part by part against the bank answer, then `quiz_grade.py` as usual. Then a normal `quiz me` for the rest of the block. |
+| transit deck | `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers); rebuilds the Transit Deck artifact (morning-check skill §7) |
 | a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | `quiz_grade.py "<paste>"` — bare sequence = session order |
 | "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `Artifact` → `action: "read_db"`, `db_op: "get"`, `collection: "grades"`, `doc_id: "<today's date>"`, `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, run `quiz_grade.py "<replyString>"`, then `action: "write_db"`, `db_op: "update"`, same `collection`/`doc_id`, `data: {"processed": true}`, `if_version` = the `version` the `get` just returned (required — the write rejects `version_mismatch` without it, even though the tool's schema doesn't list it). If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
 
@@ -104,6 +111,11 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-10-05: Matt asked for the lecture examples as practice, split by length: "some of the shorter ones can be
+  quick and on the bus, then some other ones can be on the friday study sessions", or else "I'll just say the
+  steps". Both: STAT 251's bank gained a `## Long problems` section (24 problems that need paper, 14 moved from
+  the lecture and WeBWorK sections, 10 new, each answer opening with a Steps list). The bus deck skips it, a
+  normal quiz asks its problems as steps only, and `--long` builds the Friday set, worked in full against a clock.
 - 2026-09-19 (later): multi-part questions are asked as bullets, one part per bullet, MC options on their
   own lines. STAT 251 and CPSC 310 new questions are worked problems (WeBWorK-style data, code or design to
   critique), not recall; swap recall questions for problems as topics come up for more questions.

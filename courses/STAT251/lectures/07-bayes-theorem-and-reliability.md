@@ -91,4 +91,4 @@ $$
 - The law of total probability is Bayes' denominator. Compute $$P(B)$$ once as the sum over the partition, then every posterior $$P(A_i \mid B)$$ is one path divided by that same number.
 - For reliability questions, label each block as series (all must work, so multiply reliabilities) or parallel (fails only if all fail, so one minus the product of the failure probabilities), then combine the blocks the same way.
 
-Questions: 7 in [02-questions.md](../02-questions.md) under "Lec 7". Ledger: the WeBWorK 2 row for Bayes plus one new row for reliability, due Sep 29.
+Questions: 6 in [02-questions.md](../02-questions.md) under "Lec 7", and 3 under "Long problems". Ledger: the WeBWorK 2 row for Bayes plus one new row for reliability, due Sep 29.

@@ -1,6 +1,6 @@
 # CPSC 310 — logistics
 
-- **Lectures:** Tue/Thu 12:30–2:00, LSK. Section 103 (iClicker code NBOE). Canvas is not used;
+- **Lectures:** Tue/Thu 3:30–5:00, LSK 201. Section 103 (iClicker code NBOE). Canvas is not used;
   the course site has everything and announcements are on Piazza.
 - **Labs:** his registered section is **L1N, Tue 09:00–11:00**, on Zoom. Section Zoom links are in
   Piazza @14 (the passcode links are deliberately not copied into this repo). Lab blocks run

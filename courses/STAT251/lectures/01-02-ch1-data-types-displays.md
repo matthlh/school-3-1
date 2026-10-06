@@ -166,4 +166,4 @@ $$
 - A stem-and-leaf plot shows the shape like a histogram turned on its side, and you can still read the values back off it. The minimum, the maximum and the median come straight off the plot.
 - It only works for small data sets.
 
-Questions: 29 in [02-questions.md](../02-questions.md) under "Lec 1–2". Ledger: 3 topics.
+Questions: 28 in [02-questions.md](../02-questions.md) under "Lec 1–2", and 1 under "Long problems". Ledger: 3 topics.
