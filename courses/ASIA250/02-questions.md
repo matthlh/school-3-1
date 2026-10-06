@@ -203,6 +203,28 @@ Format:
 **Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
 **A:** Born around 1500 CE to a high-caste, wealthy ruling family; a childhood love of Krishna after receiving an image of him from a visiting Brahmin. Married against her will, she refused household, religious and wifely duties, would not bow to her mother-in-law or sleep with her husband, and joined the devotees at the local temple. Her family tried to confine and punish her and then to kill her, including by poison. She then wandered to the places of Krishna's life.
 
+## Lec 2 — Mini-Quiz 2 questions (added 2026-10-05)
+
+### Q: Which statement about shamanism is NOT true? (A) For Mircea Eliade it is a proto-religion from which historical religions developed. (B) It is no longer a living tradition, only a relic of the past like the Indus Valley figurines and the "Proto-Shiva". (C) Shamans developed rhythmic singing, dancing, fasting, meditation and hallucinogens to induce altered states of consciousness. (D) As societies became more hierarchical and complex, shamanism tended to develop into organised religions. (E) All of the above are true.
+**Topic:** Shamanism, ecstasy and enstasy  **Lec:** 2  **Type:** recall
+**A:** (B). Shamanism is still a living tradition. The lecture's example is Korean shamanism today, where a shaman's calling begins with the "divine sickness" (shin byeong).
+
+### Q: True or false: in the early Vedic period Aryan religion was polytheistic, while in the late Vedic period panentheism and the castes were encoded into the Rigveda.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** True. The early hymns worship many gods such as Agni, Indra and Rudra. The late Hymn of Purusha has the universe and the four castes come from the body of the cosmic Purusha, with part of him extending beyond the universe, which is panentheism.
+
+### Q: Name each belief: many gods; many gods but exclusive worship of one; the universe as God's body; the universe as a part of God's body.
+**Topic:** Vedic religion: gods, sacrifice, karma and the castes  **Lec:** 2  **Type:** recall
+**A:** Polytheism, henotheism, pantheism and panentheism, in that order. In panentheism part of God extends beyond the universe.
+
+### Q: Mirabai was a devotee of which of these? (A) Krishna; (B) Shiva; (C) Kama; (D) Kali; (E) shamanism.
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** (A), Krishna. She is the lecture's example of bhakti, loving devotion to a personal god.
+
+### Q: True or false: "purusha" in Samkhya philosophy is synonymous with "shakti".
+**Topic:** Hindu philosophy and bhakti (Upanishads to Krishna)  **Lec:** 2  **Type:** recall
+**A:** False. In Samkhya, purusha is the individual spirit that animates a living being, and it is distinct from matter (prakriti). Shakti is divine energy, considered feminine, of the earth and the goddess.
+
 ## Lec 3 — Going against the Vedas (added 2026-10-05)
 
 ### Q: Which caste is matched with the wrong duty? (A) brahmins: perform rituals and teach; (B) kshatriyas: keep order and fight intruders; (C) vaishyas: make profit while paying taxes and donating; (D) shudras: perform rituals for the merchants; (E) none of the above.
@@ -253,6 +275,28 @@ Format:
 **Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
 **A:** Descent from Tushita Heaven; entering the womb; birth in the garden; training in the arts and sciences; victory in sports; palace life and marriage; renunciation; six years of austerities, then giving them up; victory over Mara; enlightenment under the Bodhi Tree; turning the Wheel of Dharma; parinirvana. Maya dreamed a white elephant entered her side and conceived without intercourse. She gave birth standing, holding a tree branch, and he came out of her side, signifying freedom from passion. Lalita means play or divine sport and vistara means extensive.
 
+## Lec 3 — Mini-Quiz 3 questions (added 2026-10-05)
+
+### Q: Asceticism: (a) involves the control and elimination of desire, sensual pleasures and self-indulgence; (b) is negative because it suppresses something in one's self; (c) is positive because it is believed to produce some forms of spiritual power; (d) helps to induce altered states of consciousness. Which is right: (A) a, (B) b, (C) c, (D) d, (E) all of the above, or (F) a, b and c only?
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** (E), all of the above. The Schmalz slide says asceticism controls desire, is negative because it suppresses part of the self, is positive because it produces power (tapas), and together with other methods induces altered states.
+
+### Q: Match each ashrama to the goal that matters most in it: Brahmacarya (youth), Grihastha (householder), Vanaprastha (retirement), Sannyasa (renunciation). Options: learning the dharma (duties); contributing to society (artha and kama); more focus on liberation; focus on spiritual liberation (moksha).
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** Brahmacarya is learning the dharma. Grihastha is contributing to society through artha and kama. Vanaprastha is more focus on liberation, because retirement is the gradual turn away from the world. Sannyasa is focus on spiritual liberation (moksha). On the real quiz Vanaprastha was matched to contributing to society, which cost half a point.
+
+### Q: True or false: both the Buddha and Mahavira accepted the validity of the Hindu caste system.
+**Topic:** Shramanas against the Vedas: Buddha, Mahavira and asceticism  **Lec:** 3  **Type:** recall
+**A:** False. Both rejected caste. The Buddha said a true brahmin is defined by conduct, not by birth.
+
+### Q: Which statement about the 29 Buddhas is true? (A) There is strong archaeological evidence for each of them. (B) The fourth Buddha lived 4,000 years ago. (C) Siddhartha Gautama began his quest for awakening after meeting the fourth Buddha, countless lifetimes ago. (D) Dipankara is the name of the future Buddha. (E) Mahavira had 23 Buddha predecessors.
+**Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
+**A:** (C). As the ascetic Sumedha he met the fourth Buddha, Dipankara, and vowed to become a Buddha. The future Buddha is Maitreya, number 29, and Mahavira's 23 predecessors were Tirthankaras, not Buddhas.
+
+### Q: True or false: chapter 14 of the Lalitavistara begins with the dream of King Shuddhodana, Siddhartha's father, at a stage when Siddhartha is still called "the Bodhisattva".
+**Topic:** Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds  **Lec:** 3  **Type:** recall
+**A:** True. Chapter 14, "Dreams", opens with Shuddhodana dreaming of his son leaving the palace. Siddhartha is called the Bodhisattva because he has not yet awakened.
+
 ## Lec 4 — The Buddha and his teachings (added 2026-10-05)
 
 ### Q: Which teacher taught Siddhartha the four meditative absorptions (dhyanas), and where does mastering the fourth one lead? (A) Udraka Ramaputra, to nirvana; (B) Alara Kalama, to rebirth in the world of form; (C) Alara Kalama, to nirvana; (D) Udraka Ramaputra, to the formless realm; (E) Channa, to the desire realm.
@@ -302,3 +346,25 @@ Format:
 ### Q: How does the Buddha die, why do Buddhists say he chose to, and what happens to his remains?
 **Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
 **A:** He dies after eating spoiled pork given as an offering. Buddhists hold that he chose to die to teach impermanence. His cremated bone fragments became relics (sharira), enshrined in stupas.
+
+## Lec 4 — Mini-Quiz 4 questions (added 2026-10-05)
+
+### Q: According to Harvey (2013), in which meditative absorption (jhana, dhyana) was the Buddha when he discovered the four Noble Truths? (A) the first; (B) the second; (C) the third; (D) the fourth; (E) none of the above.
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** (D), the fourth absorption. Harvey has him attain the fourth absorption first and then gain the three knowledges. The four Noble Truths come with the third knowledge.
+
+### Q: Entry into which absorption is the basis for the Buddhist dramatization of Siddhartha's conquest of Mara (Kamadeva)? (A) the first; (B) the second; (C) the third; (D) the fourth; (E) none of the above.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** apply
+**A:** (A), the first absorption. Mara rules the desire realm. Entering the first absorption takes the mind out of sense desire and so out of Mara's realm, which the story tells as a victory over him.
+
+### Q: Which heaven does the god Mara (Kama) live in? (A) Tushita heaven in the desire realm; (B) Akanishtha heaven, the highest world of the form realm; (C) Yama's heaven in the desire realm; (D) Paranirmitavasavartin heaven, the highest world of the desire realm; (E) the four worlds of the formless realm.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** (D), Paranirmitavasavartin heaven. Mara rules the desire realm from its highest heaven. Tushita is where Maitreya waits as a god.
+
+### Q: True or false: on coming out of the eighth absorption (the fourth formless absorption, neither perception nor non-perception), Siddhartha discovered his atman.
+**Topic:** Awakening, teaching and death (deeds 10–12)  **Lec:** 4  **Type:** recall
+**A:** False. He realised that there is no atman (anatman). What exists instead is physical matter of five elements and conscious matter of five impermanent skandhas.
+
+### Q: Slide 15 of lecture 4 gives two stories that turn Siddhartha to the middle way. Which one does the animated film "Life of the Buddha" (Lekker 32, 2020) show while he practises austerities? (A) a passing musician teaching his disciple; (B) a variation of the muddy water story; (C) both.
+**Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
+**A:** (B), a variation of the muddy water story. The film does not show the musician. The muddy water clears only when it is left to settle, which points him to the middle way.
