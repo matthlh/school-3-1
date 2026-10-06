@@ -463,17 +463,28 @@ and nothing else.
      a scheduled task at 12:30 on Tuesdays and Thursdays) rewrites the outline from the deck and
      keeps nothing of the chapter version.
    Quiz-bank questions wait for the lecture log. Both commands exit non-zero when the schedule, a
-   deck, the reader index or the chapter cannot be fetched or no longer parses, and the error names
-   the URL. The brief then gets one Heads-up line naming the error instead of staged material, and a
-   lecture whose chapter failed waits for the midday pass to build its outline from the deck.
+   deck, the reader index (read only when today's lecture has no deck) or the chapter cannot be
+   fetched or no longer parses, and the error names the URL. The brief then gets one Heads-up line
+   naming the error instead of staged material, and a lecture whose chapter failed waits for the
+   midday pass to build its outline from the deck.
 2. **STAT 251, ASIA 250** (Canvas, in the §2 Chrome tab, after `canvas_fetch.js`):
-   run `scripts/canvas_materials.js` with `javascript_tool`, read it back with `get_page_text`, save
-   the text to `routines/snapshots/materials-<date>.txt`, then
+   run `scripts/canvas_materials.js` with `javascript_tool`. Like `canvas_fetch.js`, it paints chunk 0
+   and returns `total_len=… chunks=N`, and the last chunk ends with the line `END <n> items`. Read the
+   chunks back as §2 step 4 does (`get_page_text`, then `window.__chunk(i)` and `get_page_text` for
+   each next chunk) until the END line arrives, save them in order, each starting on a new line, to
+   `routines/snapshots/materials-<date>.txt`, then
    ```bash
    python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt
    ```
    It lists every item not marked yet, each with its key (`STAT251:<item id>`) and the Canvas file id
-   of each deck, and it writes nothing. For every listed deck or reading with a file id: pull its
+   of each deck, and it writes nothing. A request that does not load by `canvas_fetch.js`'s rule
+   (anything but a 2xx, a 404 or a 401 "unauthorized") is painted as an `ERR` line. The digest still
+   lists every new item, then names each failed course and request, such as
+   `materials: ASIA250 modules failed (HTTP 500)`, and exits 1. Put them in one Heads-up line; the
+   next run fetches them again. An item whose page did not load shows its `ERR page` line, and
+   `--mark` refuses it. Text without the END line was cut off, and text holding a different number of
+   items than that line names lost or repeated a chunk. Either way the digest lists and marks nothing,
+   says so and exits 1, so read the chunks back again. For every listed deck or reading with a file id: pull its
    text with `scripts/canvadoc_text.js` (recipe in the file header:
    file page → canvadoc session → fetch `urls.pdf_download` → pdf.js; paint, `get_page_text`), then
    write `courses/<CODE>/lectures/_NN-<slug>.md` (STAT 251: lecture number from the page title;

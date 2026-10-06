@@ -6,7 +6,7 @@ Takes the next N lectures from cpsc310_site.load_lectures() dated today or later
 downloads each posted deck with cpsc310_site.fetch_deck() (text extracted into
 routines/slides/cpsc310/) and prints one block per lecture: number, title, date, and the deck
 text's path, or that the deck is not posted yet. Decks go up on lecture day between about 10:40 and
-12:00, after the morning check. When a picked lecture has no deck, the run ends with the reader's
+12:00, after the morning check. When today's lecture has no deck, the run ends with the reader's
 contents: the chapter titles and URLs of the reader index's sidebar, which VitePress renders from
 the site's config.ts (nothing on the site maps lectures to chapters since 2026-09-28, so the skill
 picks the chapter whose title best matches the lecture title).
@@ -102,7 +102,8 @@ def main():
         print("prelecture: nothing to stage (next lectures already have files)")
         return
     decks = {L["n"]: cpsc310_site.fetch_deck(L)[1] for L in picked if L["pdf"]}   # every download before any block prints
-    contents = reader_contents() if any(not L["pdf"] for L in picked) else []
+    # A reader chapter is staged only on its lecture's day, so the index is read only when today's lecture has no deck.
+    contents = reader_contents() if any(not L["pdf"] and L["date"] == today.isoformat() for L in picked) else []
     for L in picked:
         n, d, title, has_deck = L["n"], dt.date.fromisoformat(L["date"]), L["title"], bool(L["pdf"])
         days = (d - today).days
@@ -110,8 +111,10 @@ def main():
         if has_deck:
             print(f"   deck text: {decks[n].relative_to(cpsc310_site.ROOT)}"
                   + (f" · write lectures/_{cpsc310_site.slug(L)}.md" if not has_file(n) else ""))
-        else:
+        elif days == 0:
             print(f"   no deck yet: a reader chapter from the contents below is staged with --chapter {n} URL")
+        else:
+            print("   no deck yet: its reader chapter is staged on its lecture day")
     if contents:
         print(f"\nReader contents ({READER}):")
         for level, title, url in contents:
