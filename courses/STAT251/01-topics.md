@@ -130,3 +130,19 @@ Claude updates `Last`/`Status`/`Streak`/`Next` after each quiz.
   practise computing it.
 - Several outcomes say "using software" (1e, 7i, 8f, 8j) — those are the labs. Don't treat lab
   work as separate from exam prep.
+
+## Look-alikes
+
+Topics that are easy to mix up. When a quiz picks a question from one, a question from its look-alike comes right after it.
+
+| Topic | Look-alike | Why they get confused |
+|---|---|---|
+| 3a–b Random variables and the pmf | 3f Discrete cdf | The pmf gives the probability of one exact value, while the cdf adds up the probabilities of every value up to x, and the two share a letter, lower-case f and capital F. |
+| 3c Continuous random variables and the pdf | 3f Continuous cdf in both directions | A pdf value is a density that can exceed 1 and only areas under it are probabilities, while a cdf value is itself a probability, and each is found from the other by integrating or differentiating. |
+| 3a–b Random variables and the pmf | 3c Continuous random variables and the pdf | Both are written f, but a pmf value is the probability of that value, while a pdf value is not a probability and any single point has probability 0. |
+| 2d–e Independence | 2g Events as sets and Venn diagrams | Disjoint events cannot happen together, while independent events overlap by exactly the product of their probabilities, so two disjoint events with positive probability are never independent. |
+| 2h Conditional probability and the multiplication rule | 2i Bayes' theorem and the law of total probability | Both divide the same intersection, but the given event sets the denominator, so the chance of A given B is not the chance of B given A, and Bayes' theorem turns one into the other. |
+| 2k Reliability of series and parallel systems | 3m–n Maximum and minimum of independent random variables | The same circuits come back as lifetimes: a series system needs every part, so its reliability is a product and its lifetime is the minimum, while a parallel system fails only when every part fails and its lifetime is the maximum. |
+| 3j Rules for the mean and variance | 3j–k Covariance, sums and the sample mean | Doubling one value multiplies its variance by 4, while adding two independent values with that same variance only doubles it, so the two answers get swapped. |
+| 1b Percentiles, quartiles and the IQR | 1b–c Box plots | The fences come from the quartiles and the IQR, but a whisker stops at the last observation inside its fence, not at the fence and not always at the minimum or maximum. |
+| 3d Mean and variance of a discrete random variable | 1b Mean and median | A random variable's mean weights each possible value by its probability, while the Chapter 1 sample mean adds up the data and divides by n, and both are called the mean. |

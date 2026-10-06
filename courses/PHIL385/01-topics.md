@@ -25,3 +25,17 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | 16 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | 2026-09-25 | | | 0 | 2026-09-26 | reading Sep 25–28 |
 | 17 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-05 | | | 0 | 2026-10-06 | reading Oct 5–14 |
 | 18 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-05 | | | 0 | 2026-10-06 | reading Oct 5–14 |
+
+## Look-alikes
+
+Topics that are easy to mix up. When a quiz picks a question from one, a question from its look-alike comes right after it.
+
+| Topic | Look-alike | Why they get confused |
+|---|---|---|
+| The gallery in The Unhappiest One | Ancient Tragedy's Reflection in the Modern | Antigone is in both essays, as a candidate in the gallery of The Unhappiest One and as A's modern Antigone in Ancient Tragedy, so what A says of her in one gets put in the other. |
+| The unhappy consciousness and the three formations | Crop Rotation | Both essays turn on memory and hope, but Crop Rotation's art of remembering and forgetting is a method against boredom, while The Unhappiest One's rememberer and hoper are people absent from themselves. |
+| The Unhappiest One | Kraal on The Unhappiest One | Both describe how the essay ends, but the happiest, a gift of fortune and envy are A's own words, while doxology, paradox and comfort are Kraal's words for it. |
+| First authorship: the 8 pseudonymous works | Second authorship | Johannes Climacus signs Philosophical Crumbs and the Postscript in the first authorship, while Anti-Climacus signs The Sickness unto Death and Practice in Christianity in the second, and the years run on without a gap, 1843 to 1846 and then 1847 to 1855. |
+| Either/Or Preface | How Either/Or is put together | Both cover the book's title and the order of A's and B's papers, so what Eremita says in the Preface and what the printed volumes contain get mixed. |
+| Kierkegaard 1841–43 | Kierkegaard's family losses | The engagement to Regine ends in October 1841, two weeks before he leaves for Berlin and in the year of his dissertation, so the family and engagement dates get mixed with the 1841 to 1843 ones. |
+| Post-Hegelian context | Kierkegaard 1841–43 | Both are timelines that end at Schelling's call to Berlin in 1841, so the dates of the Hegel dispute, 1785 to 1837, get mixed with Kierkegaard's own 1841 to 1843. |

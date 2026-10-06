@@ -2,7 +2,7 @@
 """Pick a mixed revision session from the question banks, weighted by the ledger.
 
 Usage:
-  quiz_pick.py [--course CODE ...] [--topic TEXT ...] [--n N] [--all] [--transit | --long] [--due] [--report] [--date YYYY-MM-DD] [--seed S]
+  quiz_pick.py [--course CODE ...] [--topic TEXT ...] [--n N] [--all] [--transit | --long | --sprint] [--due] [--report] [--date YYYY-MM-DD] [--seed S]
 
   default      write routines/quiz-session.json and print the focus block + the numbered session
                (questions WITH answers — for Claude's eyes; ask them one at a time)
@@ -14,21 +14,36 @@ Usage:
   --long       the Friday set: 4 long problems by default, worked in full on paper; prints a clock of
                MINUTES_PER_PART minutes for each part asked. A normal session may also pick long
                problems; it marks them "steps only" (say the method and the setup, no arithmetic).
-  --all        ignore due dates (exam run-up): every topic is eligible, weighted by grade
-  --due        print the due/overdue topic list only (no session file)
+  --sprint     STAT 251's which-method drill: 10 short apply and derive questions by the usual priority, never a
+               long problem, against a clock of SPRINT_SECONDS each (3 minutes for 10). The answer is the method
+               only: the distribution or rule and the first setup line, no arithmetic; graded O or X. Its session
+               (mode "sprint") goes to routines/quiz-session.json, so plain quiz_grade.py grades it.
+  --all        ignore due dates (exam run-up): every topic but the frozen ones is eligible, weighted by grade
+  --due        print the due/overdue topic list only (no session file), and the unmatched-tag block if any
   --report     print the focus block only (no session file)
 
 Each picked item carries the notes page it comes from (src_title, src_url; quizlib.attach_sources):
 a "Page:" line in the printout, a "Source:" link under its answer in the transit deck.
 The printout and the deck show the stem as written (q_display: bullets, tables and code kept); q is the flat text its id hashes.
 
-Selection: topic priority (overdue days, grade X > ~ > unquizzed > O, ×2 within 7 d of that
-course's exam, ×1.5 within 14 d, ×1.25 within 21 d) + question score (never asked > missed >
-stale > solid, plus a small bonus for the question types that course's exam rewards).
+Selection: topic priority (days late ÷ the topic's ladder interval, grade X > ~ > unquizzed > O,
+×2 within 7 d of that course's exam, ×1.5 within 14 d, ×1.25 within 21 d) + question score (never
+asked > missed > stale > solid, plus a small bonus for the question types that course's exam rewards).
+Due means quizlib.standing: Next today or past, or swept in during the week before an exam that covers
+it. A frozen topic (its exam past, the next one not covering it) is never picked unless --topic names it.
 Every due course gets a quota of the session proportional to the summed priority of its due
 topics (never 0), and the courses are interleaved by weighted round-robin; within a course the
 best-scoring question wins, never the same topic twice in a row, at most CAP questions per topic.
 Leftover slots go to the best remaining due questions, then to not-yet-due topics ("ahead").
+Look-alikes (Brunmair & Richter 2019): when a picked question's topic has a look-alike in its course's
+01-topics.md table (quizlib.load_lookalikes) with an eligible question not yet chosen, the best such question,
+due before ahead, goes right after it and counts toward n. The printout flags it "(look-alike of N)" with a
+"Why paired:" line. A question pulled in this way pulls no look-alike of its own.
+The focus block ends with a "Day-after review" line for each lecture held yesterday that has a log
+(quizlib.day_after): the session opens with 2 minutes of free recall on it. An item whose history holds
+his wrong answers (the `said` of an entry's extra) gets a "Past wrong answers:" line, the distractors
+for asking it as multiple choice. An apply or derive item last graded O is flagged "(variant: last O)":
+it is asked as a live variant with new numbers or code.
 Always refreshes the "## Due now" block in ledger.md (idempotent, nothing else touched).
 """
 import argparse, datetime as dt, json, math, os, random, sys
@@ -36,13 +51,19 @@ import argparse, datetime as dt, json, math, os, random, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import quizlib as L
 
-def topic_priority(row, today, exam_days, force_due):
-    nd = row["next_date"]
-    late = (today - nd).days if nd else None
-    due = force_due or (late is not None and late >= 0)
+WORKED_TYPES = ("apply", "derive")     # worked problems: all --sprint asks, and asked as a live variant when last graded O
+SPRINT_SECONDS = 18                    # --sprint's clock per question: 3 minutes for the default 10
+
+def past_wrong(state, qid):
+    """His recorded wrong answers to one question (the `said` of its history entries' extra), oldest first, each once."""
+    hist = state["questions"].get(qid, {}).get("history", [])
+    return list(dict.fromkeys(e[2]["said"] for e in hist if len(e) > 2 and "said" in e[2]))
+
+def topic_priority(row, standing, late, exam_days, force_due):
+    due = force_due or standing in ("due", "sweep")
     p = 0.0
     if due:
-        p = 100 + (min(late, 20) * 5 if (late and late > 0 and not force_due) else 0)
+        p = 100 + (min(L.lateness(row, late), 20) * 5 if (late > 0 and not force_due) else 0)
     p += {"X": 60, "~": 30, "O": 0}.get(row["grade"], 40)
     if exam_days is not None:
         p *= 2 if exam_days <= 7 else 1.5 if exam_days <= 14 else 1.25 if exam_days <= 21 else 1
@@ -66,8 +87,10 @@ def main():
     ap.add_argument("--topic", action="append", help="keep only ledger rows whose topic contains this text, case-insensitive (repeatable; e.g. the four texts on an exam)")
     ap.add_argument("--n", type=int)
     ap.add_argument("--all", action="store_true")
-    ap.add_argument("--transit", action="store_true")
-    ap.add_argument("--long", action="store_true", help="the Friday set: long problems only, worked in full against a clock")
+    modes = ap.add_mutually_exclusive_group()
+    modes.add_argument("--transit", action="store_true")
+    modes.add_argument("--long", action="store_true", help="the Friday set: long problems only, worked in full against a clock")
+    modes.add_argument("--sprint", action="store_true", help="STAT 251's which-method drill: short apply and derive questions against a clock")
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--date")
@@ -75,45 +98,57 @@ def main():
     a = ap.parse_args()
     today = dt.date.fromisoformat(a.date) if a.date else L.today_local()
     courses = [c.upper().replace(" ", "") for c in a.course] if a.course else None
-    if a.transit and a.long:
-        ap.error("--transit is short questions only; --long is long problems only")
+    if a.sprint:
+        if courses not in (None, ["STAT251"]):
+            ap.error("--sprint is STAT 251 only")
+        courses = ["STAT251"]
     n = a.n or (6 if a.transit else 4 if a.long else 10)
-    mode = "transit" if a.transit else "long" if a.long else "quiz"
+    mode = "transit" if a.transit else "long" if a.long else "sprint" if a.sprint else "quiz"
     rnd = random.Random(a.seed or today.isoformat())
 
     text, rows = L.load_ledger()
     questions = L.load_questions(courses)
     state = L.load_state()
-    exams = L.exams_by_course(today)
+    cal = L.load_calendar()
 
     # Keep ledger.md's Due-now block truthful on every run.
-    L.write_ledger(text, rows, today)
+    L.write_ledger(text, rows, today, cal)
 
     if a.due:
-        for line in L.due_block(rows, today):
+        for line in L.due_block(rows, today, cal) + L.unmatched_block(L.bank_by_topic(rows, questions)[1]):
             print(line)
         return
 
-    fx = L.focus(rows, questions, state, today, exams, courses)
-    L.print_focus(fx, today, exams)
+    fx = L.focus(rows, questions, state, today, cal, courses)
+    L.print_focus(fx, today, cal)
+    for line in L.day_after(today, courses):
+        print(line)
     if a.report:
         return
 
     # ---- candidates
+    looks = L.load_lookalikes(rows)
     cands, prio = [], {}
     topic_keys = [t.lower() for t in a.topic] if a.topic else None
     for r in fx["rows"]:
         if topic_keys and not any(k in r["topic"].lower() for k in topic_keys):
             continue
+        st, late, _ = fx["standing"][r["idx"]]
+        if st == "frozen" and not topic_keys:        # its exam is past and the next one does not cover it
+            continue
         qs = fx["by_topic"].get(r["idx"], [])
         if a.transit or a.long:      # the bus deck has no room for paper; the Friday set is nothing but
             qs = [q for q in qs if q.get("long") == a.long]
+        if a.sprint:                 # which method: short worked problems only, nothing that needs paper
+            qs = [q for q in qs if not q["long"] and q["type"] in WORKED_TYPES]
         if not qs:
             continue
-        pr, due = topic_priority(r, today, exams.get(r["course"], (None,))[0], a.all)
+        exam = L.next_exam(cal, r["course"], today)
+        pr, due = topic_priority(r, st, late, (exam["date"] - today).days if exam else None, a.all)
         prio[r["idx"]] = (pr, due, r["course"])
         for q in qs:
-            cands.append(dict(q=q, row=r, due=due, score=pr + question_score(q, L.history(state, q), today, rnd)))
+            cands.append(dict(q=q, row=r, due=due, pair=None,
+                              score=pr + question_score(q, L.history(state, q), today, rnd)))
     if not cands:
         print("\n== No questions in the bank for that scope. Log a lecture first.")
         sys.exit(1)
@@ -139,15 +174,25 @@ def main():
     def eligible(from_pool, course=None):
         return [c for c in from_pool if c not in chosen and per_topic.get(c["row"]["idx"], 0) < cap
                 and (course is None or c["q"]["course"] == course)]
-    def pick_from(ok):
+    def take(c):
         nonlocal last_course, last_topic
-        pref = [c for c in ok if c["q"]["course"] != last_course] or ok
-        pref = [c for c in pref if c["row"]["idx"] != last_topic] or pref
-        c = pref[0]
         chosen.append(c)
         per_topic[c["row"]["idx"]] = per_topic.get(c["row"]["idx"], 0) + 1
         per_course[c["q"]["course"]] = per_course.get(c["q"]["course"], 0) + 1
         last_course, last_topic = c["q"]["course"], c["row"]["idx"]
+    def pick_from(ok):
+        pref = [c for c in ok if c["q"]["course"] != last_course] or ok
+        pref = [c for c in pref if c["row"]["idx"] != last_topic] or pref
+        c = pref[0]
+        take(c)
+        # Its look-alike goes right after it: confusable topics side by side beat the same topics apart (Brunmair &
+        # Richter 2019). The best eligible question of a paired topic, due before ahead; it counts toward n and
+        # pulls no look-alike of its own.
+        mates = looks.get(c["row"]["idx"], {})
+        alike = [m for m in eligible(due_pool) + eligible(ahead_pool) if m["row"]["idx"] in mates]
+        if alike and len(chosen) < n:
+            alike[0]["pair"] = dict(of=len(chosen), why=mates[alike[0]["row"]["idx"]])
+            take(alike[0])
     # 1) due topics, courses interleaved by smooth weighted round-robin on their quotas
     credit = {c: 0.0 for c in quota}
     while len(chosen) < n:
@@ -173,7 +218,7 @@ def main():
                           topic=r["topic"], topic_tag=q["topic"], lec=q["lec"], type=q["type"],
                           ahead=not c["due"], long=q.get("long", False), parts=L.parts(q) if q.get("long") else 1,
                           q=q["q"], q_display=q["q_display"], a=q["a"], file=q["file"], line=q["line"],
-                          src_title=q["src_title"], src_url=q["src_url"]))
+                          src_title=q["src_title"], src_url=q["src_url"], lookalike=c["pair"]))
     session = dict(date=today.isoformat(), created=dt.datetime.now().astimezone().isoformat(timespec="minutes"),
                    mode=mode, courses=courses, n=len(items), items=items)
     session_path = L.TRANSIT_SESSION if a.transit else L.SESSION
@@ -188,18 +233,34 @@ def main():
         total = sum(it["parts"] for it in items)
         print(f"== Clock: {total} parts × {L.MINUTES_PER_PART} min = {total * L.MINUTES_PER_PART} minutes, on paper, "
               f"no notes; he reports every part's answer at the end")
+    if a.sprint:
+        m, s = divmod(len(items) * SPRINT_SECONDS, 60)
+        print(f"== Clock: {len(items)} questions × {SPRINT_SECONDS} s = " + (f"{m} min {s} s" if s else f"{m} minutes")
+              + ", every stem at once; the answer is the method only: name the distribution or rule and write the first "
+                "setup line, no arithmetic. Grade O or X, nothing in between")
     for it in items:
         flag = " (ahead)" if it["ahead"] else ""
         if it["long"] and not a.long:
             flag += " (long: steps only)"
         elif a.long:
             flag += f" ({it['parts']} parts)"
+        if it["lookalike"]:
+            flag += f" (look-alike of {it['lookalike']['of']})"
+        hist = L.history(state, it)
+        if hist and hist[-1][1] == "O" and it["type"] in WORKED_TYPES:
+            flag += " (variant: last O)"
         print(f"\n{it['n']}. [{it['label']} · {it['topic_tag']} · {it['type']}{flag}] {it['q_display']}")
         print(f"   A: {it['a']}")
         if it["src_url"]:
             print(f"   Page: {it['src_title']} ({it['src_url']})")
+        if it["lookalike"]:
+            print(f"   Why paired: {it['lookalike']['why']}")
+        said = past_wrong(state, it["id"])
+        if said:
+            print("   Past wrong answers: " + " · ".join(f'"{s}"' for s in said))
     if not a.transit:
-        print("\nGrade with:  quiz_grade.py \"1:O 2:X 3:~ …\"   (skip = -, unasked = leave out)")
+        print("\nGrade with:  quiz_grade.py \"1:O3 2:X3/c 3:~2v\"   "
+              "(grade + confidence 1–3, v = variant, /c f m k s = cause; - skips)")
         return
 
     # ---- transit deck

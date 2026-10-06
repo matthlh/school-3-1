@@ -21,3 +21,15 @@ Every topic gets a row. Claude updates `Last`, `Grade`, `Streak`, and `Next` aft
 | 12 | Test doubles and LSP substitutability (stub controls what comes back, spy records what goes out · DIP makes doubles possible · double only an uncontrollable, unobservable, or unsafe-or-slow dependency, otherwise use the real thing · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | 2026-10-01 | — | — | 0 | 2026-10-02 | reader: Testability & Test Doubles, Design Principles; lec 6 deck still to log |
 | 13 | Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) | 7 | 2026-10-01 | — | — | 0 | 2026-10-02 | reader: Blackbox Testing |
 | 14 | Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) | 7 | 2026-10-01 | — | — | 0 | 2026-10-02 | reader: Glassbox Testing |
+
+## Look-alikes
+
+Topics that are easy to mix up. When a quiz picks a question from one, a question from its look-alike comes right after it.
+
+| Topic | Look-alike | Why they get confused |
+|---|---|---|
+| Coupling & connascence | Cohesion & bindings | Coupling is about the ties between units and should be low, while cohesion is about how well the code inside one unit belongs together and should be high, and the deck gives each its own difficulty and risk. |
+| Controllability and observability | Test doubles and LSP substitutability | A stub raises controllability by fixing what a dependency returns, while a spy raises observability by recording what the code sends out, so which double fixes which axis gets swapped. |
+| Code smells | Coupling & connascence | A magic value is connascence of value and almost-duplicate code is connascence of algorithm, so the same fragment can be asked about as a smell or as a connascence type and the names get swapped. |
+| Refactoring | Emergent design and technical debt | Both refactoring lectures cover technical debt and when not to refactor, and only lecture 3's list has the close deadline, so the two lists blur into one with an item missing. |
+| Equivalence class partitioning | Strong test suites and coverage | Partitioning chooses test values from the spec without reading the code, a black-box method, while coverage measures how much of the code the tests run, a glass-box one, and both are used to judge whether a suite is strong. |
