@@ -4,8 +4,7 @@ ledger read/write, per-question history, topic matching, the exam calendar and t
 (frozen topics, the exam-week sweep, the Next date a grade sets), and the focus report.
 
 Files it owns:
-  ledger.md                     — "## Due now" block and the "## All topics" table rows (SRS state)
-  courses/<CODE>/01-topics.md   — best-effort mirror of Last/Grade/Streak/Next per topic row
+  ledger.md                     — "## Due now" block and the "## All topics" table rows (SRS state, its only copy)
   routines/quiz-state.json      — per-question history {id: {course, topic, history: [[date, grade], …]}}; an entry
                                   is [date, grade, extra] when quiz_grade.py had more to store, and extra holds only the
                                   keys given: conf (1–3), cause (concept, forgot, misread, careless or slow), variant
@@ -345,7 +344,7 @@ def session_log_end(lines):
 
 def due_block(rows, today, cal):
     """The Due-now lines: due topics most overdue for their interval first (lateness), a sweep topic marked with its
-    exam, then one line for the frozen topics."""
+    exam, then a line per course with an exam within 21 days (readiness), then one line for the frozen topics."""
     st = {r["idx"]: standing(r, today, cal) for r in rows}
     due = sorted((r for r in rows if st[r["idx"]][0] in ("due", "sweep")),
                  key=lambda r: (-lateness(r, st[r["idx"]][1]), r["next_date"] or today, r["label"]))
@@ -370,6 +369,8 @@ def due_block(rows, today, cal):
         labels = sorted({r["label"] for r in n})
         out = [f"_Nothing due today. Next: {len(n)} topic{'s' if len(n) != 1 else ''} on "
                f"**{d:%a %b %-d}** ({', '.join(labels)})._"]
+    for line in readiness(rows, today, cal):
+        out += ["", line]
     if frozen:
         out += ["", f"_Frozen, not due: {frozen_summary(frozen, st)}. The exam that covered them is past and the "
                     f"course's next exam does not._"]
@@ -555,6 +556,38 @@ def frozen_summary(frozen, st):
         groups[k] = groups.get(k, 0) + 1
     return " · ".join(f"{lab} {n} topic{'s' if n != 1 else ''} from {ex}" for (lab, ex), n in groups.items())
 
+def near_exams(cal, today):
+    """[(exam, course)] for each course whose next exam is at most 21 days away, soonest first: the focus block's
+    "Exams ≤ 21 d" line and the readiness lines."""
+    return sorted(((e, c) for c in cal for e in [next_exam(cal, c, today)] if e and (e["date"] - today).days <= 21),
+                  key=lambda x: x[0]["date"])
+
+RECALL = {"O": 1, "~": 0.5}                     # readiness: a question's last grade as a chance of recalling it now
+
+def readiness(rows, today, cal):
+    """One line per exam in near_exams, for the Due-now block and the focus block (the notes site parses it, so keep
+    the wording). In scope are the bank questions whose ledger row the exam covers (covers(), the scope rule standing()
+    uses, so a frozen row is never in it). Each counts by its last grade, O 1, ~ 0.5, X or never asked 0, and the line
+    gives the mean as a whole percent, rounded half up, then how many in-scope ledger topics no question matches,
+    left out when none. An exam with no in-scope question yet (none of its lectures logged) gets no line. Reads the
+    whole bank and routines/quiz-state.json, whatever --course scopes, so the block quiz_grade.py writes after saving
+    the state counts that session. [] with no exam within 21 days."""
+    by, _ = bank_by_topic(rows, load_questions())
+    state, out = load_state(), []
+    for e, course in near_exams(cal, today):
+        scope = [r for r in rows if r["course"] == course and covers(e, held(r, cal))]
+        qs = [q for r in scope for q in by.get(r["idx"], [])]
+        if not qs:
+            continue
+        recalled = sum(RECALL.get(h[-1][1], 0) for h in (history(state, q) for q in qs) if h)
+        pct = int(100 * recalled / len(qs) + 0.5)
+        bare = sum(1 for r in scope if r["idx"] not in by)
+        out.append(f"_Readiness · {COURSE_LABEL.get(course, course)} {exam_name(e)} · {e['date']:%a %b %-d} · "
+                   f"{pct}% of {len(qs)} in-scope question{'s' if len(qs) != 1 else ''} likely recalled"
+                   + (f" · {bare} {'topics' if bare != 1 else 'topic'} in scope {'have' if bare != 1 else 'has'} no question"
+                      if bare else "") + "._")
+    return out
+
 def exam_cap(r, today, cal):
     """(latest Next a grade today may set, its exam): CAP_DAYS before the first exam ahead that covers the row, or the
     day before it when that day is today or past. An exam today or tomorrow sets no cap (this review is the last before
@@ -662,12 +695,14 @@ def focus(rows, questions, state, today, cal, courses=None):
                 needs_more=needs_more, empty=empty, leeches=leeches, unmatched=unmatched, counts=counts, by_topic=by,
                 rows=rows)
 
-def print_focus(fx, today, cal):
+def print_focus(fx, today, cal, ready):
+    """The focus block. ready: readiness()'s lines for the whole ledger, printed under the exams line as the Due-now
+    block has them; like that line they ignore --course, which scopes fx."""
     print(f"== QUIZ FOCUS for {today:%a %Y-%m-%d}")
-    ex = sorted(((e, c) for c in cal for e in [next_exam(cal, c, today)] if e and (e["date"] - today).days <= 21),
-                key=lambda x: x[0]["date"])
     print("-- Exams ≤ 21 d: " + (" · ".join(f"{COURSE_LABEL.get(c, c)} {exam_name(e)} in {(e['date'] - today).days} d"
-                                          for e, c in ex) or "none"))
+                                          for e, c in near_exams(cal, today)) or "none"))
+    for line in ready:
+        print("   " + line)
     by_course = {}
     for r in fx["due"]:
         by_course[r["label"]] = by_course.get(r["label"], 0) + 1

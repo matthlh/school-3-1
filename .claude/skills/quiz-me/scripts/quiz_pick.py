@@ -39,6 +39,8 @@ Look-alikes (Brunmair & Richter 2019): when a picked question's topic has a look
 01-topics.md table (quizlib.load_lookalikes) with an eligible question not yet chosen, the best such question,
 due before ahead, goes right after it and counts toward n. The printout flags it "(look-alike of N)" with a
 "Why paired:" line. A question pulled in this way pulls no look-alike of its own.
+Under its "Exams ≤ 21 d" line the focus block prints the readiness lines the Due-now block carries
+(quizlib.readiness), for every course whatever --course says.
 The focus block ends with a "Day-after review" line for each lecture held yesterday that has a log
 (quizlib.day_after): the session opens with 2 minutes of free recall on it. An item whose history holds
 his wrong answers (the `said` of an entry's extra) gets a "Past wrong answers:" line, the distractors
@@ -120,7 +122,7 @@ def main():
         return
 
     fx = L.focus(rows, questions, state, today, cal, courses)
-    L.print_focus(fx, today, cal)
+    L.print_focus(fx, today, cal, L.readiness(rows, today, cal))
     for line in L.day_after(today, courses):
         print(line)
     if a.report:

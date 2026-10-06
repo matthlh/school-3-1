@@ -29,7 +29,6 @@ never later than 4 days before the next exam that covers it, and a gap of 3+ day
 lightest day within ±15% of it. Writes:
   routines/quiz-state.json              per-question history + session record
   ledger.md                             All-topics rows, Due-now block, one Session-log line
-  courses/<CODE>/01-topics.md           matching row(s), best effort — warns when no row matches
   routines/quiz/YYYY-MM-DD.md           the session log (appends on a second session that day)
 Then prints the ledger delta, what needs more questions, the share graded O at each confidence (calibration), the
 misses by cause with a fix for each (misses_by_cause), and last the notes pages behind the X and ~ grades, grouped by
@@ -125,45 +124,6 @@ def add_notes(marks, said, why):
             if not text.strip():
                 raise SystemExit(f"{flag} {n}: the text is empty")
             extra[key] = text.strip()
-
-def sync_topics_file(course, topic, last, grade, streak, nxt, dry):
-    """Mirror the row into courses/<CODE>/01-topics.md. Header-driven so both table shapes work
-    (STAT: # | Outcome | Status | Last | Streak | Next; others: # | Topic | Lec | Added | Last |
-    Grade | Streak | Next | Notes). Returns True if a row was updated."""
-    path = os.path.join(L.ROOT, "courses", course, "01-topics.md")
-    if not os.path.exists(path):
-        return False
-    with open(path, encoding="utf-8") as f:
-        lines = f.read().split("\n")
-    codes, tn, hdr, hit = set(L.codes_of(topic)), L.norm(topic), None, False
-    for i, line in enumerate(lines):
-        if not line.startswith("|"):
-            hdr = None
-            continue
-        cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if hdr is None:
-            hdr = {c.lower(): k for k, c in enumerate(cells)}
-            continue
-        if set("".join(cells)) <= set("-: "):
-            continue
-        code_col = hdr.get("#")
-        name_col = hdr.get("outcome", hdr.get("topic"))
-        if name_col is None or name_col >= len(cells):
-            continue
-        rn = L.norm(cells[name_col])
-        code_hit = code_col is not None and code_col < len(cells) and cells[code_col].lower() in codes
-        name_hit = rn == tn or (len(tn) >= 8 and (rn.startswith(tn) or tn.startswith(rn)))
-        if not (code_hit or name_hit):
-            continue
-        for key, val in (("status", grade), ("grade", grade), ("last", last), ("streak", str(streak)), ("next", nxt)):
-            if key in hdr and hdr[key] < len(cells):
-                cells[hdr[key]] = val
-        lines[i] = "| " + " | ".join(cells) + " |"
-        hit = True
-    if hit and not dry:
-        with open(path, "w", encoding="utf-8") as f:
-            f.write("\n".join(lines))
-    return hit
 
 def calibration(graded, extra):
     """Each confidence level given this session with its answers and the share graded O; [] when none was given."""
@@ -290,7 +250,7 @@ def main():
             lost.append((it, g)); continue
         cur = per_topic.get(r["idx"])
         per_topic[r["idx"]] = g if cur is None or L.GRADE_RANK[g] < L.GRADE_RANK[cur] else cur
-    delta, mirror_miss = [], []
+    delta = []
     for r in rows:
         if r["idx"] not in per_topic:
             continue
@@ -300,8 +260,6 @@ def main():
         old = (r["grade"] or "—", r["streak"], r["next"])
         r.update(last=today.isoformat(), grade=g, streak=streak, next=nxt.isoformat(), next_date=nxt)
         delta.append((r, old, f"+{(nxt - today).days} d" + (f"; {why}" if why else "")))
-        if not sync_topics_file(r["course"], r["topic"], r["last"], g, streak, r["next"], a.dry_run):
-            mirror_miss.append(r)
 
     # ---- session log + ledger session-log line
     counts = {g: sum(1 for x in graded.values() if x == g) for g in L.GRADES}
@@ -347,10 +305,6 @@ def main():
     fx = L.focus(rows, questions, state, today, cal)
     for line in L.unmatched_block(fx["unmatched"], lost):
         print(line)
-    if mirror_miss:
-        print("-- ⚠ No matching row in 01-topics.md (ledger.md is authoritative; fix by hand if it matters):")
-        for r in mirror_miss:
-            print(f"   {r['course']} · {r['topic'][:60]}")
     if fx["needs_more"] or fx["leeches"] or fx["empty"]:
         print("-- Needs more questions (write them now, tagged with the same **Topic:**):")
         for r, k in fx["needs_more"]:

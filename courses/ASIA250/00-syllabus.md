@@ -8,8 +8,8 @@ Only live component: optional Zoom Q&A, Fridays 7:30–8:30pm, not graded. **Tex
 ## Grading — 104% available
 | Component | Weight | When |
 |---|---|---|
-| Declare independent-reading option | 1% | **Mon Sep 14, 11:59pm** |
-| Mini-quizzes ×11 | 22% | 5 MC each; open book, one attempt, no timer; **locks the following Monday 11:59pm** |
+| Declaration of independent-reading option | 1% | **Mon Sep 14, 11:59pm** |
+| Mini-quiz ×11 | 22% | 5 MC each; open book, one attempt, no timer; **locks the following Monday 11:59pm** |
 | Short Written Response 1 | 15% | posted ~Oct 5–11, due ~Oct 15 |
 | Short Written Response 2 | 15% | posted ~Nov 2, due ~Nov 12 |
 | Final paper (1000–1500 words) | 47% | questions posted ~Nov 16, **due Dec 10** |

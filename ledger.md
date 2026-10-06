@@ -214,7 +214,7 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Optional Assignment 1 missed and the 2% bonus is gone | 2026-10-03 |
 | CPSC 310 | 100%; D1-Auto 100/100; D1 design analysis 100/100; LAB01 100/100; LAB02 74/100; the total is Canvas only and the labs and design analysis come from PrairieLearn | 2026-10-03 |
 | PHIL 385 | — | |
-| STAT 251 | 37.84%; iClicker 14/37; classes 5 to 9 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 was missed and is a zero with no make-up; the total counts only the iClicker polls and WeBWorK is not on Canvas yet | 2026-10-02 |
+| STAT 251 | 37.84%; iClicker 14/37; classes 5 to 9 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); the total counts only the iClicker polls and WeBWorK is not on Canvas yet | 2026-10-02 |
 
 ## Session log
 | Date | What we did |

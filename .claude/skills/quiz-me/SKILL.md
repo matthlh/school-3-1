@@ -160,6 +160,14 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
   its lecture number can go in the Lec cell.
 - **Exam-week sweep.** From 7 days before an exam (`SWEEP_DAYS`), every topic it covers is due unless it was
   reviewed inside that window. The Due-now block marks such a topic "exam sweep before <exam>".
+- **Readiness.** For each course with an exam within 21 days, the Due-now block prints one line between the due
+  topics and the frozen line, and the focus block prints the same line under `Exams ≤ 21 d`:
+  `_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 40% of 12 in-scope questions likely recalled · 2 topics in scope have no question._`
+  The in-scope questions are the bank questions whose ledger topic that exam covers, by the scope rule above, so a
+  frozen topic never counts. Each counts 1 when its last grade was `O`, 0.5 when `~`, and 0 when `X` or never asked,
+  and the percentage is their mean, rounded half up. The last part counts the in-scope topics with no question in
+  the bank, and it is left out when there are none. The lines cover every course whatever `--course` says, and the
+  notes site parses them, so their wording stays fixed.
 - **Exam cap.** Grading never sets Next later than 4 days before the next exam that covers the topic
   (`CAP_DAYS`). When that day is today or past, Next is the day before the exam. An exam today or tomorrow sets
   no cap, because this review is the last one before it.
@@ -172,8 +180,9 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 - **Unmatched tags.** A tag that matches no ledger row prints one ⚠ block in every `quiz_pick.py` run (`--due`
   included) and in `quiz_grade.py`. It names each tag with its question count and first `file:line`, plus any
   grade this session could not record.
-- `ledger.md` is authoritative. `courses/<CODE>/01-topics.md` rows are mirrored best-effort (by LO
-  code, e.g. `1b–c` → rows 1b and 1c, or by name); the script warns when it finds no row.
+- `ledger.md` holds the only copy of each topic's grade, streak and Next. Grading never writes
+  `courses/<CODE>/01-topics.md`, which keeps the topic list, its notes and the Look-alikes table. The notes site's
+  Topics tab shows each row's grade and next date from the ledger.
 - Knobs at the top of `quizlib.py`: `MIN_QUESTIONS_PER_TOPIC` (6), `LEECH_X_IN_LAST` (2 of 3), `TYPE_PREF`,
   `SWEEP_DAYS` (7), `CAP_DAYS` (4), `SPREAD` (0.15), `NON_CUMULATIVE` and `EXAM_CUTOFF`. Each
   `NON_CUMULATIVE` or `EXAM_CUTOFF` key must name exactly one exam label in term.py, or the scripts stop.
@@ -195,6 +204,9 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-10-06 (mirror): grading no longer copies Last, Grade, Streak and Next into `01-topics.md` (Matt approved).
+  The copy was lossy and had started to match rows of the new Look-alikes tables. Those columns are gone from the
+  topic tables, so `ledger.md` is the only place a topic's status lives, and the site's Topics tab reads it there.
 - 2026-10-06 (modes): four additions (Matt approved). Look-alike topics are served back to back: each
   `01-topics.md` gained a `## Look-alikes` table (STAT 251 9 pairs, CPSC 310 5, PHIL 385 7, ASIA 250 5), and a
   picked question pulls the best question of its look-alike right after it. `--sprint` drills STAT 251 method
