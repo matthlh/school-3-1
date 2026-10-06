@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildTree, courseOf, labelFor, loadAll, loadQuizState, type QuizState, type Texts } from './files'
+import { buildTree, courseOf, labelFor, loadAll, loadQuizState, mainFileCourse, titledByHeader, type QuizState, type Texts } from './files'
 import { parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
-import { darkQuery } from './theme'
 import { tallyByCourse } from './stats'
 import { HREF_HOME, hrefCourse, parseHash, type Route } from './routes'
 import { TopBar, type Crumb } from './TopBar'
@@ -11,7 +10,7 @@ import { CoursePage } from './CoursePage'
 import { Viewer } from './Viewer'
 import { LedgerView } from './LedgerView'
 import { TopicsView } from './TopicsView'
-import { CourseHeader, scopedCourse } from './CourseTabs'
+import { CourseHeader } from './CourseTabs'
 import { QuestionBank } from './QuestionBank'
 import { LinksView } from './LinksView'
 import { SearchResults } from './SearchResults'
@@ -28,26 +27,36 @@ function useRoute(): Route {
   return route
 }
 
+/** The year the academic year began: Sep–Dec dates belong to it and Jan–May dates to the year after, even in January. */
+function termYear(): number {
+  const now = new Date()
+  return now.getMonth() >= 6 ? now.getFullYear() : now.getFullYear() - 1
+}
+
 export default function App() {
   const route = useRoute()
   const tree = useMemo(buildTree, [])
   const [all, setAll] = useState<Texts | null>(null)
+  const [failed, setFailed] = useState(false)
   const [quiz, setQuiz] = useState<QuizState | null>(null)
   const [query, setQuery] = useState('')
   const [pinned, setPinned] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => { loadAll().then(setAll); loadQuizState().then(setQuiz) }, [])
+  useEffect(() => { loadAll().then(setAll, () => setFailed(true)); loadQuizState().then(setQuiz) }, [])
   useEffect(() => { startUpdateChecks() }, [])
-  // New route: back to the top, unless it names a `#section` — then scroll there once the content exists.
+  // New route: back to the top, unless it names a `#section` — then scroll there once the content exists, opening
+  // it if it is folded. On a phone the sidebar covers the page, so following one of its links closes it.
   useEffect(() => {
     setQuery('')
+    if (window.matchMedia('(max-width: 640px)').matches) setPinned(false)
     // After one of our own reloads (update.ts) land where he was, once the content exists.
     if (all) { const y = takeSavedScroll(window.location.hash); if (y !== null) { window.scrollTo(0, y); return } }
     const anchor = route.kind === 'file' ? route.anchor : undefined
-    if (!anchor) { window.scrollTo(0, 0); return }
-    const el = document.getElementById('sec-' + anchor)
-    if (el) el.scrollIntoView({ block: 'start' })
+    const el = anchor ? document.getElementById('sec-' + anchor) : null
+    if (!el) { window.scrollTo(0, 0); return }
+    if (el instanceof HTMLDetailsElement) el.open = true
+    el.scrollIntoView({ block: 'start' })
   }, [route, all])
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -61,17 +70,7 @@ export default function App() {
   const topics = useMemo(() => parseLedgerTopics(all?.['ledger.md'] ?? ''), [all])
 
   const links = useMemo(() => parseLinks(all?.['links.md'] ?? ''), [all])
-  const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', new Date().getFullYear()), [all])
-
-  // Course tints are picked in JS from the colour scheme; re-render when the OS setting flips or the toggle fires.
-  const [, setScheme] = useState(0)
-  useEffect(() => {
-    const onChange = () => setScheme((n) => n + 1)
-    const q = darkQuery()
-    q?.addEventListener('change', onChange)
-    window.addEventListener('themechange', onChange)
-    return () => { q?.removeEventListener('change', onChange); window.removeEventListener('themechange', onChange) }
-  }, [])
+  const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', termYear()), [all])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
 
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
@@ -84,11 +83,12 @@ export default function App() {
   }
   useEffect(() => { document.title = crumbs[crumbs.length - 1].label }, [crumbs])
 
-  const scoped = route.kind === 'course' ? route.code : route.kind === 'file' ? scopedCourse(route.path) : null
+  const scoped = route.kind === 'course' ? route.code : route.kind === 'file' ? mainFileCourse(route.path) : null
 
   let body
-  if (!all) body = <p className="muted">Loading…</p>
-  else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} />
+  if (failed) body = <p className="muted">Some notes failed to load. <button type="button" className="link" onClick={() => window.location.reload()}>Reload</button></p>
+  else if (!all) body = <p className="muted">Loading…</p>
+  else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} onPick={() => setQuery('')} />
   else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} topics={topics} calendar={calendar} />
   else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
@@ -96,7 +96,7 @@ export default function App() {
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} quiz={quiz} all={all} />
   else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
-  else body = <Viewer path={route.path} text={all[route.path]} hideTitle={!!scoped} />
+  else body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} />
 
   return (
     <div className={'wrap' + (pinned ? ' pinned' : '')}>

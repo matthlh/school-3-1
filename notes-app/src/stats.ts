@@ -1,14 +1,9 @@
 import type { QuizHistory } from './files'
 import type { Grade, TopicRow } from './markdown'
+import { todayISO } from './dates'
 
 export interface Tally { solid: number; shaky: number; missed: number; unquizzed: number; due: number; total: number }
 export const EMPTY: Tally = { solid: 0, shaky: 0, missed: 0, unquizzed: 0, due: 0, total: 0 }
-
-const pad = (n: number) => String(n).padStart(2, '0')
-export function todayISO(): string {
-  const d = new Date()
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
-}
 
 function bump(t: Tally, g: Grade | null) {
   if (g === 'O') t.solid++
@@ -19,7 +14,7 @@ function bump(t: Tally, g: Grade | null) {
 }
 
 /** Per-topic tally from ledger rows (the unit the spacing ladder works on). */
-export function tallyTopics(rows: TopicRow[], today = todayISO()): Tally {
+function tallyTopics(rows: TopicRow[], today = todayISO()): Tally {
   const t: Tally = { ...EMPTY }
   for (const r of rows) { bump(t, r.grade); if (r.next && r.next <= today) t.due++ }
   return t
@@ -68,31 +63,4 @@ export async function questionId(course: string, question: string): Promise<stri
     const buf = await crypto.subtle.digest('SHA-1', data)
     return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('').slice(0, 8)
   } catch { return '' }
-}
-
-// ---- dates ----------------------------------------------------------------------------------
-
-const DOW = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
-/** "2026-09-16" → "Wed Sep 16". Anything that is not an ISO date comes back unchanged. */
-export function formatDate(iso: string): string {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim())
-  if (!m) return iso
-  const d = new Date(+m[1], +m[2] - 1, +m[3])
-  return `${DOW[d.getDay()]} ${MON[d.getMonth()]} ${d.getDate()}`
-}
-
-/** "2026-09-29" → "Sep 29", with the year added ("Sep 29, 2027") when it is not this year. Anything that is not an ISO date comes back unchanged. */
-export function shortDate(iso: string): string {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso.trim())
-  if (!m) return iso
-  const d = new Date(+m[1], +m[2] - 1, +m[3])
-  const s = `${MON[d.getMonth()]} ${d.getDate()}`
-  return d.getFullYear() === new Date().getFullYear() ? s : `${s}, ${d.getFullYear()}`
-}
-
-/** Whole days from ISO date `a` to ISO date `b` (positive when `b` is later). */
-export function daysBetween(a: string, b: string): number {
-  return Math.round((new Date(b + 'T12:00:00').getTime() - new Date(a + 'T12:00:00').getTime()) / 86400000)
 }

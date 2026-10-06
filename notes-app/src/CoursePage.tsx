@@ -1,14 +1,29 @@
-import type { Texts, Tree } from './files'
+import type { Entry, Texts, Tree } from './files'
 import { hrefFor } from './files'
 import { afterDash, firstHeading, splitSections, type LinkRow, type TopicRow } from './markdown'
-import { EMPTY, formatDate, todayISO, type Tally } from './stats'
-import { GradeChip, StatBar } from './StatViews'
+import { EMPTY, type Tally } from './stats'
+import { todayISO } from './dates'
+import { LastGrade, NextCell, StatBar } from './ui'
 import { LinkList } from './Links'
 import { Md } from './Md'
 import { usePager } from './Pager'
 
 /** Syllabus sections that belong on the overview (checklists), not in the syllabus view. */
 export const VERIFY = /^(to verify|ask\b|check\b|do this week|open questions|to do)/i
+
+/** One card per notes page: its title from the page's H1, its file label under it. */
+function PageCards({ entries, all }: { entries: Entry[]; all: Texts }) {
+  return (
+    <div className="list">
+      {entries.map((e) => (
+        <a key={e.path} className="card lecture" href={hrefFor(e.path)}>
+          <div className="name">{afterDash(firstHeading(all[e.path] ?? '') ?? e.label)}</div>
+          <div className="sub">{e.label}</div>
+        </a>
+      ))}
+    </div>
+  )
+}
 
 export function CoursePage({ code, tree, all, topics, tallies, links }: {
   code: string; tree: Tree; all: Texts; topics: TopicRow[]; tallies: Record<string, Tally>; links: LinkRow[]
@@ -34,16 +49,13 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
             <>
               <table className="topics">
                 <tbody>
-                  {shown.map((r) => {
-                    const due = !!r.next && r.next <= today
-                    return (
-                      <tr key={r.topic}>
-                        <td><GradeChip g={r.grade} title={/^\d{4}-\d{2}-\d{2}$/.test(r.last) ? `last quizzed ${formatDate(r.last)}` : 'not quizzed yet'} /></td>
-                        <td>{r.topic}</td>
-                        <td className={due ? 'due' : 'muted'}>{r.next ? `${due ? 'due' : 'next'} ${formatDate(r.next)}` : ''}</td>
-                      </tr>
-                    )
-                  })}
+                  {shown.map((r) => (
+                    <tr key={r.topic}>
+                      <td><LastGrade r={r} /></td>
+                      <td>{r.topic}</td>
+                      <NextCell next={r.next} today={today} />
+                    </tr>
+                  ))}
                 </tbody>
               </table>
               {pager}
@@ -52,20 +64,12 @@ export function CoursePage({ code, tree, all, topics, tallies, links }: {
         </section>
 
         <h2 className="section-title">Lectures</h2>
-        {course.lectures.length === 0 ? (
-          <p className="muted">No lectures logged yet.</p>
-        ) : (
-          <div className="list">
-            {course.lectures.map((e) => {
-              const title = afterDash(firstHeading(all[e.path] ?? '') ?? e.label)
-              return (
-                <a key={e.path} className="card lecture" href={hrefFor(e.path)}>
-                  <div className="name">{title}</div>
-                  <div className="sub">{e.label}</div>
-                </a>
-              )
-            })}
-          </div>
+        {course.lectures.length === 0 ? <p className="muted">No lectures logged yet.</p> : <PageCards entries={course.lectures} all={all} />}
+        {course.readings.length > 0 && (
+          <>
+            <h2 className="section-title">Readings</h2>
+            <PageCards entries={course.readings} all={all} />
+          </>
         )}
       </div>
 

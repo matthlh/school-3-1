@@ -10,8 +10,8 @@
 import { useSyncExternalStore } from 'react'
 import { parseHash } from './routes'
 
-export type UpdateStatus = 'current' | 'checking' | 'available' | 'error'
-export interface UpdateInfo {
+type UpdateStatus = 'current' | 'checking' | 'available' | 'error'
+interface UpdateInfo {
   status: UpdateStatus
   /** Stamp of the newer build on the server, when there is one. */
   newer: string | null
@@ -31,7 +31,7 @@ const NAV_RETRY_MS = 30_000
 const RELOADED_KEY = 'reloaded-for'
 const SCROLL_KEY = 'scroll-after-reload'
 
-export const BUILD: string = __BUILD_TIME__
+const BUILD: string = __BUILD_TIME__
 export const buildLabel = (stamp: string = BUILD) =>
   new Date(stamp).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
 
@@ -119,7 +119,7 @@ function armNextNavigation() {
   window.addEventListener('hashchange', onHash)
 }
 
-export async function checkForUpdate(): Promise<UpdateStatus> {
+async function checkForUpdate(): Promise<UpdateStatus> {
   if (inFlight) return inFlight
   if (info.checkedAt !== null && Date.now() - info.checkedAt < MIN_GAP_MS) return info.status
   const startedAt = performance.now()

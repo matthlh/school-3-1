@@ -1,20 +1,13 @@
 import type { Texts, Tree } from './files'
-import { hrefFor } from './files'
-import { afterDash, countQuestions, firstHeading } from './markdown'
+import { courseName, hrefFor } from './files'
+import { countQuestions } from './markdown'
 import { hrefCourse } from './routes'
-import { toneStyle } from './theme'
-
-/** Which routes get the course header + tab strip: the course overview and its four main files. */
-export function scopedCourse(path: string): string | null {
-  const m = /^courses\/([^/]+)\/0[0-3]-[a-z]+\.md$/.exec(path)
-  return m ? m[1] : null
-}
+import { toneStyle } from './tone'
 
 export function CourseHeader({ code, tree, all, current }: { code: string; tree: Tree; all: Texts; current: string }) {
   const course = tree.courses.find((c) => c.code === code)
   if (!course) return null
-  const syllabus = all[`courses/${code}/00-syllabus.md`]
-  const name = syllabus ? afterDash(firstHeading(syllabus) ?? '') : ''
+  const name = courseName(code, all)
   const q = countQuestions(all[`courses/${code}/02-questions.md`])
   const style = toneStyle(code)
   return (

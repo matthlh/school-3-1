@@ -33,17 +33,26 @@ export function afterDash(s: string): string {
   return (i >= 0 ? s.slice(i + 3) : s).replace(/\s*\(20\d\dW\d\)\s*$/, '').trim()
 }
 
-export function extractSection(md: string, heading: RegExp): string | null {
+function extractSection(md: string, heading: RegExp): string | null {
   const s = splitSections(md).find((x) => x.heading && heading.test(x.heading))
   return s ? s.body.trim() : null
 }
 
 export interface Question {
-  id: string; question: string; topic: string; lec: string; type: string; answer: string
+  id: string
+  /** The stem's prose on one line, fenced code left out: what questionId hashes, as the quiz scripts do. */
+  question: string
+  /** The stem exactly as written (line breaks, bullets, tables and code blocks kept): what the card shows. */
+  display: string
+  topic: string; lec: string; type: string; answer: string
 }
 export interface QuestionGroup { title: string | null; questions: Question[] }
 
-/** Parse the `### Q:` / `**Topic:** … **Lec:** … **Type:** …` / `**A:**` format. */
+/**
+ * Parse the `### Q:` / `**Topic:** … **Lec:** … **Type:** …` / `**A:**` format. Mirror of `_parse_bank` in quizlib.py.
+ * `question` keeps the flat, code-less text ids have always hashed; `display` keeps the stem as written. Fenced code
+ * in an answer stays in `answer`. A fence outside any question (the format example atop each bank) is skipped whole.
+ */
 export function parseQuestions(md: string): QuestionGroup[] {
   const groups: QuestionGroup[] = []
   let cur: Question | null = null
@@ -56,25 +65,32 @@ export function parseQuestions(md: string): QuestionGroup[] {
     groups[groups.length - 1].questions.push(q)
   }
   const flush = () => {
-    if (cur) { cur.answer = cur.answer.trim(); push(cur); cur = null; mode = null }
+    if (cur) { cur.display = cur.display.trim(); cur.answer = cur.answer.trim(); push(cur); cur = null; mode = null }
   }
 
   for (const line of md.split('\n')) {
-    if (/^```/.test(line)) { fence = !fence; continue }
-    if (fence) continue
+    if (/^```/.test(line) || fence) {
+      if (/^```/.test(line)) fence = !fence
+      if (cur && mode === 'q') cur.display += '\n' + line
+      else if (cur && mode === 'a') cur.answer += '\n' + line
+      continue
+    }
     if (/^## /.test(line)) { flush(); groups.push({ title: line.slice(3).trim(), questions: [] }); continue }
     if (/^### Q:/.test(line)) {
       flush()
-      cur = { id: `q${++n}`, question: line.replace(/^### Q:\s*/, ''), topic: '', lec: '', type: '', answer: '' }
+      const first = line.replace(/^### Q:\s*/, '')
+      cur = { id: `q${++n}`, question: first, display: first, topic: '', lec: '', type: '', answer: '' }
       mode = 'q'
       continue
     }
     if (!cur) continue
     const meta = /\*\*Topic:\*\*\s*(.*?)\s*\*\*Lec:\*\*\s*(.*?)\s*\*\*Type:\*\*\s*(\S+)/.exec(line)
-    if (meta) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].trim(); mode = null; continue }
+    if (meta) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].trim(); continue }
     if (/^\*\*A:\*\*/.test(line)) { cur.answer = line.replace(/^\*\*A:\*\*\s*/, ''); mode = 'a'; continue }
-    if (mode === 'q' && line.trim()) cur.question += ' ' + line.trim()
-    else if (mode === 'a') cur.answer += '\n' + line
+    if (mode === 'q') {
+      if (line.trim()) cur.question += ' ' + line.trim()
+      cur.display += '\n' + line
+    } else if (mode === 'a') cur.answer += '\n' + line
   }
   flush()
   return groups.filter((g) => g.questions.length > 0)
@@ -98,7 +114,7 @@ export function parseLedgerTopics(md: string): TopicRow[] {
   const rows: TopicRow[] = []
   for (const line of sec.split('\n')) {
     if (!line.trim().startsWith('|')) continue
-    const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
+    const cells = splitRow(line)
     if (cells.length < 7 || cells[0] === 'Course' || /^-+$/.test(cells[0]) || !cells[0]) continue
     const g = cells[4]
     rows.push({
@@ -116,7 +132,7 @@ export function parseLinks(md: string): LinkRow[] {
   const rows: LinkRow[] = []
   for (const line of md.split('\n')) {
     if (!line.trim().startsWith('|')) continue
-    const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
+    const cells = splitRow(line)
     if (cells.length < 3 || cells[0] === 'Course' || /^-+$/.test(cells[0]) || !/^https?:/.test(cells[2])) continue
     rows.push({ course: cells[0].replace(/\s+/g, ''), name: cells[1], url: cells[2] })
   }
@@ -130,6 +146,8 @@ const DATE_RE = /(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)?\s*(Jan|Feb|Mar|Apr|May|Jun|Jul
 /**
  * ledger.md → "## Term calendar" rows with a parseable date. A range ("Sep 11 → Sep 24") keeps its end.
  * A table whose header starts with "Series" (the recurring series) is skipped whole: its rows are weekly, not dated.
+ * `year` is the year the term began. A row is an exam when its What cell opens with the bold exam name
+ * (**Exam 2**, **Midterm**, **Final**), so "exam schedule posted" and "final paper questions posted" are not.
  */
 export function parseCalendar(md: string, year: number): Deadline[] {
   const sec = extractSection(md, /^term calendar/i)
@@ -138,7 +156,7 @@ export function parseCalendar(md: string, year: number): Deadline[] {
   let series = false
   for (const line of sec.split('\n')) {
     if (!line.trim().startsWith('|')) { series = false; continue }
-    const cells = line.trim().split('|').slice(1, -1).map((c) => c.trim())
+    const cells = splitRow(line)
     if (/^series$/i.test(cells[0] ?? '')) series = true
     if (series || cells.length < 3 || cells[0] === 'Date' || /^-+$/.test(cells[0])) continue
     const plain = cells[0].replace(/\*/g, '')
@@ -151,7 +169,7 @@ export function parseCalendar(md: string, year: number): Deadline[] {
     const what = cells[2].replace(/\*\*/g, '').replace(/\s*[—–-]\s+(confirmed|the |course-site|PrairieLearn's).*$/i, '').trim()
     out.push({
       date, time: last[3] ?? '', approx: /^~/.test(plain.trim()), course: cells[1].replace(/\s+/g, ''),
-      what, rawWhat: cells[2], weight: (cells[3] ?? '').replace(/\*/g, '').trim(), exam: /\b(exam|midterm|final)\b/i.test(cells[2]),
+      what, rawWhat: cells[2], weight: (cells[3] ?? '').replace(/\*/g, '').trim(), exam: /^\*\*(exam\b|midterm|final)/i.test(cells[2]),
     })
   }
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))
@@ -162,7 +180,7 @@ export function parseCalendar(md: string, year: number): Deadline[] {
 export interface Table { head: string[]; rows: string[][] }
 
 /** One `| a | b |` line → trimmed cells; `\|` inside a cell stays a pipe. */
-function splitRow(line: string): string[] {
+export function splitRow(line: string): string[] {
   const s = line.trim().replace(/^\|/, '').replace(/\|$/, '')
   return s.split(/(?<!\\)\|/).map((c) => c.replace(/\\\|/g, '|').trim())
 }
@@ -210,8 +228,8 @@ export function courseLabel(code: string): string {
 
 // ---- ledger.md "Grades so far" and "Session log" ---------------------------------------------
 
-export interface GradeItem { name: string; got: string; of: string }
-export interface GradeRow {
+interface GradeItem { name: string; got: string; of: string }
+interface GradeRow {
   /** Course code with spaces removed ("ASIA250"). */
   course: string
   /** The overall percentage at the start of the Score cell, without the sign; null when there is none. */

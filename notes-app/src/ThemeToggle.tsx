@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { currentTheme, setTheme, type Theme } from './theme'
+import { theme, usePref, type Theme } from './prefs'
 
 const OPTIONS: { value: Theme; glyph: string; label: string }[] = [
   { value: 'light', glyph: '☀︎', label: 'Light theme' },
@@ -7,25 +6,20 @@ const OPTIONS: { value: Theme; glyph: string; label: string }[] = [
   { value: 'dark', glyph: '☾︎', label: 'Dark theme' },
 ]
 
-/** Light / Auto / Dark segmented control. Persists to localStorage and dispatches a `themechange` event on window. */
+/** Light / Auto / Dark segmented control. */
 export function ThemeToggle() {
-  const [theme, setCurrent] = useState<Theme>(currentTheme)
-  useEffect(() => {
-    const sync = () => setCurrent(currentTheme())
-    window.addEventListener('themechange', sync)
-    return () => window.removeEventListener('themechange', sync)
-  }, [])
+  const current = usePref(theme)
   return (
     <div className="theme-toggle" role="group" aria-label="Theme">
       {OPTIONS.map((o) => (
         <button
           key={o.value}
           type="button"
-          className={theme === o.value ? 'on' : undefined}
-          aria-pressed={theme === o.value}
+          className={current === o.value ? 'on' : undefined}
+          aria-pressed={current === o.value}
           aria-label={o.label}
           title={o.label}
-          onClick={() => setTheme(o.value)}
+          onClick={() => theme.set(o.value)}
         >{o.glyph}</button>
       ))}
     </div>

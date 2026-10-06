@@ -1,10 +1,11 @@
 import type { Entry, Tree } from './files'
 import { hrefFor } from './files'
 import { HREF_HOME, hrefCourse } from './routes'
-import { toneStyle } from './theme'
+import { toneStyle } from './tone'
 import { pctSolid, type Tally } from './stats'
 import { Logo } from './Logo'
 import { ThemeToggle } from './ThemeToggle'
+import { buildLabel } from './update'
 
 function Link({ entry, current }: { entry: Entry; current: string }) {
   return <a href={hrefFor(entry.path)} className={entry.path === current ? 'cur' : undefined}>{entry.label}</a>
@@ -37,6 +38,9 @@ export function Sidebar({ tree, current, pinned, tallies }: {
               {c.lectures.length > 0 && (
                 <div className="lec">{c.lectures.map((e) => <Link key={e.path} entry={e} current={current} />)}</div>
               )}
+              {c.readings.length > 0 && (
+                <div className="lec">{c.readings.map((e) => <Link key={e.path} entry={e} current={current} />)}</div>
+              )}
             </section>
           )
         })}
@@ -46,7 +50,7 @@ export function Sidebar({ tree, current, pinned, tallies }: {
             {tree.runs.slice(0, 5).map((e) => <Link key={e.path} entry={e} current={current} />)}
           </section>
         )}
-        <p className="built">built {new Date(__BUILD_TIME__).toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</p>
+        <p className="built">built {buildLabel()}</p>
       </nav>
     </>
   )

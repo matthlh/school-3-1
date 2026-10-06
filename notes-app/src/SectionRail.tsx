@@ -6,7 +6,7 @@ import { useLayoutEffect, useState, type CSSProperties } from 'react'
 import { createPortal } from 'react-dom'
 import { hrefAnchor, scrollIfSame } from './routes'
 
-export interface RailSection { id: string; label: string }
+interface RailSection { id: string; label: string }
 
 /** Headings at or above this line (just under the 48px top bar) count as passed. */
 const TOP_LINE = 80

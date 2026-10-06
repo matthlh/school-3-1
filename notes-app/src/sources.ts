@@ -5,7 +5,7 @@ import type { Texts } from './files'
 import { firstHeading, type QuestionGroup } from './markdown'
 import { normQuestion } from './stats'
 
-export interface Source { path: string; title: string }
+interface Source { path: string; title: string }
 
 const LEC_FILE = /^(\d+)(?:-(\d+))?-/            // 05-06-<slug>.md covers lectures 5–6 (as term.py reads it)
 const LEC_TAG = /^(\d+)(?:\s*[–—-]\s*(\d+))?$/   // **Lec:** 6 or 5–6
@@ -68,7 +68,7 @@ function topicLecture(i: number, tags: string[], direct: (string | null)[]): str
  * "Lectures 1–2 notes: …", "Reading notes: Either/Or, "Crop Rotation"". Drops the course, the lecture number and
  * date, a "Ch 3:" prefix, a reading's dates and emphasis markers.
  */
-export function pageTitle(path: string, text: string): string {
+function pageTitle(path: string, text: string): string {
   const name = (path.split('/').pop() ?? '').replace(/\.md$/, '')
   const m = LEC_FILE.exec(name)
   const reading = path.includes('/readings/')

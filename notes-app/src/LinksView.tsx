@@ -1,11 +1,9 @@
 import { firstHeading, splitSections, type LinkRow } from './markdown'
-import { CourseChip } from './DueNow'
-import { toneStyle } from './theme'
+import { Sections } from './Viewer'
+import { CourseChip } from './ui'
+import { toneStyle } from './tone'
 import { LinkList } from './Links'
 import { Md } from './Md'
-
-/** Trailing sections kept for Claude render folded shut, like the Viewer does. */
-const FOLDED = /reference|for claude/i
 
 /** links.md as grouped link lists: "Everywhere" first, then one tinted panel per course (the longest first, the rest in file order). */
 export function LinksView({ text, rows }: { text: string; rows: LinkRow[] }) {
@@ -43,19 +41,7 @@ export function LinksView({ text, rows }: { text: string; rows: LinkRow[] }) {
           </section>
         ))}
       </div>
-      {rest.map((s) =>
-        s.heading && FOLDED.test(s.heading) ? (
-          <details key={s.id} id={'sec-' + s.id}>
-            <summary>{s.heading}</summary>
-            <Md text={s.body} path="links.md" />
-          </details>
-        ) : (
-          <section key={s.id} id={'sec-' + s.id}>
-            {s.heading && <h2>{s.heading}</h2>}
-            <Md text={s.body} path="links.md" />
-          </section>
-        ),
-      )}
+      <Sections sections={rest} path="links.md" />
     </article>
   )
 }

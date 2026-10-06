@@ -4,7 +4,7 @@ import { courseOf, hrefFor } from './files'
 import { parseQuestions, splitTopic, type Question } from './markdown'
 import { sourcesFor } from './sources'
 import { isWeak, lastGrade, questionId, tallyHistories } from './stats'
-import { GradeChip } from './StatViews'
+import { GradeChip } from './ui'
 import { Md } from './Md'
 
 type Mode = 'all' | 'weak' | 'new'
@@ -70,7 +70,7 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
     (mode === 'all' || (mode === 'weak' ? isWeak(histOf(q)) : !histOf(q)))
   const shownCount = flat.filter(keep).length
   const seg = (m: Mode, label: string, n: number) => (
-    <button className={mode === m ? 'on' : ''} onClick={() => setMode(m)}>{label}<span className="k">{n}</span></button>
+    <button type="button" className={mode === m ? 'on' : ''} aria-pressed={mode === m} onClick={() => setMode(m)}>{label}<span className="k">{n}</span></button>
   )
 
   return (
@@ -81,7 +81,7 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
         </div>
       )}
       <div className="toolbar">
-        <div className="seg" role="tablist">
+        <div className="seg" role="group" aria-label="Which questions">
           {seg('all', 'All', total)}
           {asked.length > 0 && seg('weak', 'Weak', weakCount)}
           {asked.length > 0 && seg('new', 'Not asked', total - asked.length)}
@@ -115,13 +115,13 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
           <section key={gi}>
             {g.title && <h2>{g.title}</h2>}
             {qs.map((q, i) => {
-              const shown = allOpen || open.has(q.id)
+              const shown = allOpen !== open.has(q.id) // a card's own toggle flips whatever Show/Hide answers set
               const h = histOf(q)
               const last = h?.history[h.history.length - 1]
               const src = sources.get(q.id)
               return (
                 <div key={q.id} className="q">
-                  <div className="text"><span className="n">{i + 1}.</span> <Md text={q.question} path={path} inline /></div>
+                  <div className="text"><span className="n">{i + 1}.</span> <Md text={q.display} path={path} /></div>
                   <div className="meta">
                     {h && <GradeChip g={lastGrade(h)} title={last ? `last ${last[0]}` : undefined} />}
                     {h && h.history.length > 1 && <span className="hist">{h.history.slice(-6).map(([, g]) => g).join(' ')}</span>}
@@ -132,7 +132,7 @@ export function QuestionBank({ path, text, quiz, all }: { path: string; text: st
                     )}
                     {q.lec && <span className="chip">lec {q.lec}</span>}
                     {q.type && <span className={'chip type-' + q.type}>{q.type}</span>}
-                    <button className="link" onClick={() => toggle(q.id)}>{shown ? 'hide' : 'answer'}</button>
+                    <button type="button" className="link" aria-expanded={shown} onClick={() => toggle(q.id)}>{shown ? 'hide' : 'answer'}</button>
                   </div>
                   {shown && (
                     <div className="ans">

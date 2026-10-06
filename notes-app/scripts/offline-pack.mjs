@@ -17,7 +17,9 @@ import katex from 'katex'
 
 const root = decodeURIComponent(new URL('../..', import.meta.url).pathname)
 const outDir = join(root, 'routines', 'offline')
-const today = new Date().toISOString().slice(0, 10)
+// The local day: toISOString() is UTC, which names an evening's pack for tomorrow.
+const now = new Date()
+const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
 const wantPdf = process.argv.includes('--pdf')
 
 // Reading order: the exam review first, then the two other closed-book courses, then the async one.
@@ -56,7 +58,7 @@ function demote(text) {
     .join('\n')
 }
 
-/** Same `### Q:` / `**Topic:**` / `**A:**` format as src/markdown.ts, but fenced code stays in the text. */
+/** Same `### Q:` / `**Topic:**` / `**A:**` format as src/markdown.ts; `question` is the stem as written, like the site's `display`. */
 function parseQuestions(text) {
   const groups = []
   let cur = null
@@ -68,6 +70,7 @@ function parseQuestions(text) {
   }
   const flush = () => {
     if (cur) {
+      cur.question = cur.question.trim()
       cur.answer = cur.answer.replace(/\n-{3,}\s*$/, '').trim()
       push(cur)
       cur = null
@@ -94,10 +97,9 @@ function parseQuestions(text) {
     }
     if (!cur) continue
     const meta = /\*\*Topic:\*\*\s*(.*?)\s*\*\*Lec:\*\*\s*(.*?)\s*\*\*Type:\*\*\s*(\S+)/.exec(line)
-    if (meta) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].trim(); mode = null; continue }
+    if (meta) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].trim(); continue }
     if (/^\*\*A:\*\*/.test(line)) { cur.answer = line.replace(/^\*\*A:\*\*\s*/, ''); mode = 'a'; continue }
-    if (mode === 'q' && line.trim()) cur.question += (cur.question.endsWith('```') ? '\n' : ' ') + line.trim()
-    else if (mode === 'a') cur.answer += '\n' + line
+    if (mode) cur[field()] += '\n' + line
   }
   flush()
   return groups.filter((g) => g.questions.length)

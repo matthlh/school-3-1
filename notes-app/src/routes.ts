@@ -5,7 +5,9 @@ export type Route =
 
 /** `#/courses/X/file.md#section-id` → file route with an in-page anchor (the element id is `sec-<anchor>`). */
 export function parseHash(hash: string): Route {
-  const s = decodeURIComponent(hash.replace(/^#\/?/, ''))
+  const raw = hash.replace(/^#\/?/, '')
+  let s = raw
+  try { s = decodeURIComponent(raw) } catch { /* a malformed % escape: the raw path matches no file, so the page says Not found */ }
   if (!s) return { kind: 'home' }
   const m = /^course\/([^/]+)$/.exec(s)
   if (m) return { kind: 'course', code: m[1] }

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { Texts, Tree } from './files'
 import { courseOf, hrefFor, labelFor } from './files'
-import { toneStyle } from './theme'
+import { toneStyle } from './tone'
 
 interface Hit { path: string; lines: string[]; score: number }
 
@@ -13,7 +13,8 @@ function Highlight({ text, terms }: { text: string; terms: string[] }) {
   return <>{text.split(re).map((part, i) => (i % 2 ? <mark key={i}>{part}</mark> : part))}</>
 }
 
-export function SearchResults({ query, all, tree }: { query: string; all: Texts; tree: Tree }) {
+/** Hits for every term on one line. `onPick` clears the search, since a hit on the page already open changes no hash. */
+export function SearchResults({ query, all, tree, onPick }: { query: string; all: Texts; tree: Tree; onPick: () => void }) {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean)
   const hits = useMemo<Hit[]>(() => {
     if (terms.length === 0) return []
@@ -34,7 +35,7 @@ export function SearchResults({ query, all, tree }: { query: string; all: Texts;
       {hits.map((h) => {
         const code = courseOf(h.path)
         return (
-          <a key={h.path} className="card wide hit" href={hrefFor(h.path)}>
+          <a key={h.path} className="card wide hit" href={hrefFor(h.path)} onClick={onPick}>
             <div className="name">
               {code && <span className="chip tone" style={toneStyle(code)}>{code}</span>} {labelFor(h.path, tree)}
               <span className="sub"> · {h.score}</span>

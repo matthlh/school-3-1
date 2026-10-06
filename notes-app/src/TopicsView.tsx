@@ -1,6 +1,6 @@
-import { splitSections, type Grade } from './markdown'
-import { GradeChip } from './StatViews'
-import { formatDate, todayISO } from './stats'
+import { splitRow, splitSections, type Grade } from './markdown'
+import { GradeChip, NextCell } from './ui'
+import { formatDate, isISODate, todayISO } from './dates'
 import { Md } from './Md'
 import { usePager } from './Pager'
 
@@ -9,16 +9,15 @@ const LADDER = 'Spacing ladder — X missed: asked again tomorrow · ~ shaky: +3
 interface Row { id: string; text: string; g: Grade | null; last: string; next: string }
 
 /** A topic table with a Status/Grade column → rows; anything else → null (rendered as markdown). */
-function parseTable(body: string): Row[] | null {
+function outcomeRows(body: string): Row[] | null {
   const lines = body.split('\n').filter((l) => l.trim().startsWith('|'))
   if (lines.length < 2) return null
-  const cells = (l: string) => l.trim().split('|').slice(1, -1).map((c) => c.trim())
-  const head = cells(lines[0]).map((h) => h.toLowerCase())
+  const head = splitRow(lines[0]).map((h) => h.toLowerCase())
   const iS = head.findIndex((h) => /status|grade/.test(h))
   const iN = head.findIndex((h) => /^next/.test(h))
   const iL = head.findIndex((h) => /^last/.test(h))
   if (iS < 0) return null
-  return lines.slice(1).map(cells).filter((c) => c.length >= 2 && c[0] && !/^-+$/.test(c[0])).map((c) => ({
+  return lines.slice(1).map(splitRow).filter((c) => c.length >= 2 && c[0] && !/^-+$/.test(c[0])).map((c) => ({
     id: c[0], text: c[1],
     g: c[iS] === 'X' || c[iS] === '~' || c[iS] === 'O' ? c[iS] : null,
     last: iL >= 0 ? c[iL] ?? '' : '', next: iN >= 0 ? c[iN] ?? '' : '',
@@ -33,17 +32,14 @@ function OutcomeTable({ rows, path, today }: { rows: Row[]; path: string; today:
     <>
       <table className="topics outcomes">
         <tbody>
-          {shown.map((r) => {
-            const due = !!r.next && r.next <= today
-            return (
-              <tr key={r.id} className={r.g ? '' : 'later'}>
-                <td><GradeChip g={r.g} title={/^\d{4}-\d{2}-\d{2}$/.test(r.last) ? `last quizzed ${formatDate(r.last)}` : undefined} /></td>
-                <td className="id">{r.id}</td>
-                <td><Md text={r.text} path={path} inline /></td>
-                <td className={due ? 'due' : 'muted'}>{r.next ? `${due ? 'due' : 'next'} ${formatDate(r.next)}` : ''}</td>
-              </tr>
-            )
-          })}
+          {shown.map((r) => (
+            <tr key={r.id} className={r.g ? '' : 'later'}>
+              <td><GradeChip g={r.g} title={isISODate(r.last) ? `last quizzed ${formatDate(r.last)}` : undefined} /></td>
+              <td className="id">{r.id}</td>
+              <td><Md text={r.text} path={path} inline /></td>
+              <NextCell next={r.next} today={today} />
+            </tr>
+          ))}
         </tbody>
       </table>
       {pager}
@@ -51,12 +47,16 @@ function OutcomeTable({ rows, path, today }: { rows: Row[]; path: string; today:
   )
 }
 
-/** 01-topics.md: the preamble is dropped; each chapter is a status table with chips and due dates. */
+/**
+ * 01-topics.md: each chapter is a status table with chips and due dates. The preamble's prose (title, keys) is for
+ * Claude and is dropped, but a file with no chapters keeps its one table there, and that table is shown.
+ */
 export function TopicsView({ path, text }: { path: string; text: string }) {
   const today = todayISO()
-  const [, ...rest] = splitSections(text)
+  const [pre, ...rest] = splitSections(text)
+  const preRows = outcomeRows(pre.body)
   const named = rest.filter((s) => s.heading)
-  const all = named.flatMap((s) => parseTable(s.body) ?? [])
+  const all = [...(preRows ?? []), ...named.flatMap((s) => outcomeRows(s.body) ?? [])]
   const covered = all.filter((r) => r.g).length
   return (
     <article>
@@ -66,8 +66,9 @@ export function TopicsView({ path, text }: { path: string; text: string }) {
         <span className="hint" title={LADDER}>when do topics come back?</span>
         <span className="muted right">{covered} of {all.length} covered</span>
       </div>
+      {preRows && <OutcomeTable rows={preRows} path={path} today={today} />}
       {named.map((s) => {
-        const rows = parseTable(s.body)
+        const rows = outcomeRows(s.body)
         const prose = rows ? withoutTables(s.body) : ''
         return (
           <section key={s.id}>

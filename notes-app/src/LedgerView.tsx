@@ -2,16 +2,15 @@ import { useState } from 'react'
 import type { QuizState } from './files'
 import { firstHeading, parseGrades, parseTable, splitAroundTable, splitLogEntry, splitSections, splitSentences, type Deadline, type Table, type TopicRow } from './markdown'
 import { hrefAnchor, scrollIfSame } from './routes'
-import { toneStyle } from './theme'
-import { formatDate, shortDate, todayISO } from './stats'
+import { toneStyle } from './tone'
+import { formatDate, isISODate, shortDate, todayISO } from './dates'
 import { Md } from './Md'
-import { PAGE, usePager } from './Pager'
-import { CourseChip, DueTable, LastGrade, NothingDue, TopicCell, dueRows, dueTitle, rowKey } from './DueNow'
+import { usePager } from './Pager'
+import { DueTable, NothingDue, dueRows, dueTitle, rowKey } from './DueNow'
+import { CourseChip, LastGrade, TopicCell, calendarChip, isCourseCode } from './ui'
 import { SectionRail } from './SectionRail'
 
 const PATH = 'ledger.md'
-const isCourseCode = (s: string) => /^[A-Z]{2,4}\d{3}[A-Z]?$/.test(s)
-const isDate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s)
 
 /** ledger.md rendered as a dashboard: live Due now, paged All topics / Term calendar / Grades / Session log. */
 export function LedgerView({ text, topics, calendar, quiz }: { text: string; topics: TopicRow[]; calendar: Deadline[]; quiz: QuizState | null }) {
@@ -59,7 +58,7 @@ function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: 
   const [course, setCourse] = useState<string | null>(null)
   const courses = [...new Set(topics.map((t) => t.course))].sort()
   const shown = [...topics].sort(byNext).filter((t) => !course || t.course === course)
-  const { rows, pager } = usePager(shown, PAGE, { resetKey: course })
+  const { rows, pager } = usePager(shown, { resetKey: course })
   const histories = Object.values(quiz?.questions ?? {})
   const answers = histories.reduce((n, h) => n + (h.history?.length ?? 0), 0)
   return (
@@ -88,7 +87,7 @@ function AllTopics({ heading, topics, today, quiz }: { heading: string; topics: 
                 <td className="course nowrap"><CourseChip code={r.course} /></td>
                 <td className="topic"><TopicCell topic={r.topic} /></td>
                 <td className="lec">{r.lec || '—'}</td>
-                <td className="last">{isDate(r.last) ? shortDate(r.last) : '—'}</td>
+                <td className="last">{isISODate(r.last) ? shortDate(r.last) : '—'}</td>
                 <td className="grade"><LastGrade r={r} /></td>
                 <td className={'next' + (due ? ' late' : '')}>{due ? 'due' : r.next ? shortDate(r.next) : '—'}</td>
               </tr>
@@ -105,7 +104,7 @@ function CalendarSection({ heading, body, calendar, today }: { heading: string; 
   const { before, table, after } = splitAroundTable(body)
   const hidden = Math.max(0, (parseTable(table)?.rows.length ?? 0) - calendar.length)
   const upcoming = calendar.findIndex((d) => d.date >= today)
-  const { rows, pager } = usePager(calendar, PAGE, { initialIndex: upcoming >= 0 ? upcoming : calendar.length - 1 })
+  const { rows, pager } = usePager(calendar, { initialIndex: upcoming >= 0 ? upcoming : calendar.length - 1 })
   return (
     <>
       <h2>{heading} <span className="count">{calendar.length}</span></h2>
@@ -117,7 +116,7 @@ function CalendarSection({ heading, body, calendar, today }: { heading: string; 
           </thead>
           <tbody>
             {rows.map((d) => {
-              const chip = isCourseCode(d.course) ? <CourseChip code={d.course} /> : d.course === 'UBC' ? <span className="chip">UBC</span> : null
+              const chip = calendarChip(d.course)
               return (
                 <tr key={`${d.date} ${d.time} ${d.course} ${d.what}`} className={(d.date < today ? 'past' : '') + (d.exam ? ' exam' : '')}>
                   {/* The weekday stays here: it matters on exam days. */}
