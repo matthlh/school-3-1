@@ -368,3 +368,53 @@ Format:
 ### Q: Slide 15 of lecture 4 gives two stories that turn Siddhartha to the middle way. Which one does the animated film "Life of the Buddha" (Lekker 32, 2020) show while he practises austerities? (A) a passing musician teaching his disciple; (B) a variation of the muddy water story; (C) both.
 **Topic:** Renunciation and the path to awakening (deeds 7–9)  **Lec:** 4  **Type:** recall
 **A:** (B), a variation of the muddy water story. The film does not show the musician. The muddy water clears only when it is left to settle, which points him to the middle way.
+
+## Lec 5 — Early Buddhism and Theravada (prepared 2026-10-07 from the deck)
+
+### Q: Which statement about the Pali Canon is NOT made in the lecture? (A) Buddhists had no writing system for over 200 years. (B) Pali is an Indo-Aryan dialect of western India from about the 3rd century BCE. (C) The first Pali inscriptions date to about 25 BCE, over 400 years after the Buddha. (D) The full canon was recorded in its current form in the 1st century CE. (E) Other early canons survive only in fragments and in Chinese and Tibetan translations.
+**Topic:** Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology  **Lec:** 5  **Type:** recall
+**A:** (D). The full canon took its current form in the 5th century CE, about 1000 years after the Buddha. The other four statements are on the slide.
+
+### Q: Fill in the numbers: Buddha Dipankara is number ___; Gautama is number ___; Maitreya is number ___; Sumedha made his vow ___ asamkhyeyas and ___ kalpas ago; one asamkhyeya is 10 to the power ___.
+**Topic:** Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology  **Lec:** 5  **Type:** recall
+**A:** Dipankara is number 4, Gautama 28 and Maitreya 29. Sumedha vowed four asamkhyeyas and one hundred thousand kalpas ago. One asamkhyeya is 10 to the power 140, and a kalpa is the time from the creation of one universe to the creation of the next.
+
+### Q: Why do the Buddhas choose to be born in the human world rather than in a heaven or a lower realm?
+**Topic:** Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology  **Lec:** 5  **Type:** apply
+**A:** The human world is neutral, with both suffering and bliss, so a person can notice suffering and still have the time and freedom to follow the teaching. The divine worlds have almost no suffering, only pleasures, so nothing prompts the search for liberation. The lower worlds (animals, ghosts, hells) have too much suffering and too short a life span to follow the teachings at all. The bodhisattva therefore descends from Tushita heaven, where he was the god Shvetaketu, to become Siddhartha.
+
+### Q: In Vedic religion, why does a dead person remain a ghost, and who is Yama? Give the two ways Buddhist cosmology twists each idea.
+**Topic:** Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology  **Lec:** 5  **Type:** apply
+**A:** In the Vedic view the dead become ghosts (pretas) and stay ghosts until a son feeds them through sacrifice, after which they grow an immortal body and go to the land of Yama, the first being who ever died. Buddhism keeps the words and changes the causes. First, a preta is a ghost because of its own excessive greed, not because it lacks a son, and it is reborn with a huge belly and a tiny throat, a hungry ghost. Second, Yama is split in two: there is a pleasant Yama Heaven where good people are reborn as Yama gods, and Yama himself becomes the Ruler of Hell, a vemanikapeta who tastes both heavenly pleasures and hellish torments and judges the wicked. Feeding ghosts survives as a meritorious act, the Ullambana (O-bon) festival, but the offering goes to the Sangha rather than through a Brahmanical rite.
+
+### Q: Match each realm of rebirth to its cause in the lecture: hells, hungry ghosts, animals, humans, demigods (asuras), gods. Causes: pride, ignorance, sexual desire, jealousy, anger and killing, avarice and hoarding. Which three are the lower realms?
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** Hells come from anger, aversion and killing; hungry ghosts from avarice and hoarding; animals from ignorance; humans from sexual desire; asuras from jealousy; gods from pride. Hells, hungry ghosts and animals are the three lower realms, and humans, asuras and gods the three higher ones.
+
+### Q: In the Second Noble Truth, which animal stands for which poison? (A) pig for craving, chicken for ignorance, snake for aversion; (B) pig for ignorance, chicken for craving, snake for aversion; (C) pig for aversion, chicken for craving, snake for ignorance; (D) pig for ignorance, chicken for aversion, snake for craving.
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** (B). The pig is ignorance of impermanence, the chicken is craving and desire (passion), and the snake is aversion to pain (hatred). The Fourth Noble Truth answers each in turn: knowledge of impermanence (corpse meditation) for the pig, giving up possessions and sex for the chicken, and the four immeasurables for the snake.
+
+### Q: Which statement about the Wheel of Life (Bhavacakra) is NOT made in the lecture? (A) The three poisons sit at the centre. (B) White ascending deeds and black descending deeds come next. (C) The six planes of existence form the main ring. (D) Mara holds the wheel as a mirror to show us reality. (E) The only escape is the Buddhist path.
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** (D). It is Yama, the lord of death and the personification of existence tainted by the poisons, who holds the wheel as a mirror. Mara is the god of desire who opposes the Buddha and is conquered.
+
+### Q: Why does the lecture count giving up sex as an act of generosity, and which poison does that address?
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** apply
+**A:** Giving up possessions and giving up sex are both forms of giving, the opposite of craving, which is the chicken, the second poison. The monastic who renounces them sacrifices his own pleasure toward escaping the cycle of births and deaths for himself and potentially for others, so renunciation is treated as generosity rather than mere deprivation. The deck calls this a sex-negative view: Paul Numrich says sex "epitomizes" the human predicament because the predicament begins with the desire for life's pleasures.
+
+### Q: Which disciple goes with which description? Shariputra, Maudgalyayana, Ananda, Devadatta, Ashvajit. Descriptions: converted the two chief disciples with the Verse of Causality; known for wisdom; known for supernatural powers and saw his mother as a hungry ghost; the Buddha's assistant with the phenomenal memory who opens the sutras with "Thus have I heard"; the cousin who split the order and tried to kill the Buddha.
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** Ashvajit (Assaji), one of the five ascetics and the Buddha's first disciples, converted Shariputra and Maudgalyayana with the Verse of Causality. Shariputra (Sariputta) is wisdom. Maudgalyayana is supernatural abilities and the hungry-ghost mother behind the Ullambana festival. Ananda, the Buddha's cousin, is the assistant with the phenomenal memory, known for compassion, who asked for women's ordination and became an arhat only after the Buddha's death. Devadatta, another cousin, created the schism with stricter rules, tried to kill the Buddha and was swallowed by the earth into the deepest hell.
+
+### Q: Which of these describes conservative Buddhism (including Theravada) rather than innovative Buddhism? (A) Buddhahood is the ideal for everyone. (B) There are innumerable Buddhas and bodhisattvas at a given time. (C) Arhatship is the ideal, with one Buddha and one bodhisattva at a time, and nirvana is final. (D) Nirvana is not the final liberation. (E) Arhatship is not an ideal.
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** (C). Conservative Buddhism accepts arhatship as the ideal, does not aspire to Buddhahood, holds one Buddha and one bodhisattva (Maitreya) at a time, and takes nirvana as final. The other four options describe innovative Buddhism, the subject of the next lectures. Theravada is about 30% of Buddhists: Cambodia 97%, Thailand 90%, Myanmar 80%, Sri Lanka 70%, Laos 67%.
+
+### Q: Give the three baskets of the Pali Canon with the number of books or collections in each, the number of Patimokkha rules for monks and for nuns, and the number of parajika (expulsion) rules for each.
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** The Tipitaka is the Vinaya Pitaka (5 books of monastic rules), the Sutta Pitaka (5 collections) and the Abhidhamma Pitaka (7 books). The Patimokkha has 227 rules for bhikkhus and 311 for bhikkhunis. Parajika rules, which mean expulsion ("Defeat"), number 4 for monks and 8 for nuns. The first rule, no sex, came from the story of Sudinna, who fathered a son with his former wife at his family's request when no rule yet forbade it.
+
+### Q: Name the four immeasurables with their Pali terms, say which poison they extinguish, and say whom Theravada mostly recommends them to.
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** Loving-kindness (metta), compassion (karuna), co-rejoicing (mudita) and equanimity (upekkha). They extinguish aversion and hatred, the snake, the third poison. Theravada mostly recommends them to lay followers, which the deck contrasts with Mahayana, where Avalokitesvara (Guanyin) is the deity of compassion.

@@ -9,6 +9,11 @@ in the question bank instead.
 
 ## Ask these, in this order
 
+- Emailed on Oct 6 asking for a slot in the Wed Oct 7 office hours, with the opera question, the immediacy
+  question and the sensuous-desire question. He replied the same evening: drop by the Zoom, and he answered all
+  three in writing (Answered table below). Still to ask in the 12:15 slot: whether the Exam 2 multiple-choice
+  questions are multi-select with negative marking, and whose view an exam question wants.
+
 - **Is it cheating that A's proof is an opera?** A says only music can express desire, because
   language is reflection. Yet all three of his examples are operas with words: Da Ponte's libretti for
   *Figaro* and *Don Giovanni*, and Schikaneder's for *The Magic Flute*. Does the argument survive the
@@ -113,4 +118,7 @@ Each answer goes in this table, so the lecture pages and the question bank can b
 
 | Date | Question | What he said |
 |---|---|---|
+| 2026-10-06 | Is it a problem for A's argument that his proof is an opera, when all three examples have libretti? | By email. A is not using the operas to prove an argument; he uses them to clarify the stages of desire, and his justification is that music and desire are both expressions of immediacy. The words do create a prima facie problem, but A would call them heuristic rather than essential. It is telling that he praises Mozart and not his librettists Da Ponte and Schikaneder. |
+| 2026-10-06 | Does A live the immediacy he praises, or is he a reflective man admiring what he cannot have? | By email. A makes various attempts at this immediacy, which the Seducer's Diary will show, but he does not take himself to be as paradigmatic as Don Giovanni. |
+| 2026-10-06 | Why build the aesthetic life on sensuous desire? Is it set up for the Judge to answer in Part II? | By email. A is not saying the aesthetic life is built on desire. He is saying that the desire-driven life he studies is one kind of aesthetic life, because what is desired is beauty and aesthetics is concerned with the beautiful. |
 | 2026-09-20 | Exam 3's date — syllabus Fri Oct 30 vs the Canvas quiz page's Nov 20 | Not asked. Matt settled it himself: **Oct 30**. Nov 20 is Exam 4's own slot, so the Canvas date is a setup slip, and Oct 30 is the only timeslot in the term that fits a third in-term exam. |

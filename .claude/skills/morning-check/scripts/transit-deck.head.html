@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Transit Deck</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #f5f2eb;
+    --surface: #ffffff;
+    --surface-line: #e5e0d3;
+    --text: #211f1a;
+    --text-dim: #736c5e;
+    --accent: #2f5d9e;
+    --accent-soft: #e4ecf7;
+    --stat: #3f6d49;
+    --stat-bg: #e3ecdf;
+    --cpsc: #a15a1c;
+    --cpsc-bg: #f3e6d6;
+    --phil321: #7a4ca0;
+    --phil321-bg: #ece2f5;
+    --phil385: #9c3b5a;
+    --phil385-bg: #f6e1e8;
+    --asia: #1f6f75;
+    --asia-bg: #dceceb;
+    --shadow: rgba(33, 31, 26, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a;
+      --surface: #1e2024;
+      --surface-line: #2c2e32;
+      --text: #eae6dd;
+      --text-dim: #948e82;
+      --accent: #86aef0;
+      --accent-soft: #263042;
+      --stat: #86c79a;
+      --stat-bg: #223327;
+      --cpsc: #e2a05c;
+      --cpsc-bg: #3a2a18;
+      --phil321: #c9a2e0;
+      --phil321-bg: #2f2438;
+      --phil385: #e79ab2;
+      --phil385-bg: #3a2029;
+      --asia: #7ec9cf;
+      --asia-bg: #17312f;
+      --shadow: rgba(0, 0, 0, 0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a;
+    --surface: #1e2024;
+    --surface-line: #2c2e32;
+    --text: #eae6dd;
+    --text-dim: #948e82;
+    --accent: #86aef0;
+    --accent-soft: #263042;
+    --stat: #86c79a;
+    --stat-bg: #223327;
+    --cpsc: #e2a05c;
+    --cpsc-bg: #3a2a18;
+    --phil321: #c9a2e0;
+    --phil321-bg: #2f2438;
+    --phil385: #e79ab2;
+    --phil385-bg: #3a2029;
+    --asia: #7ec9cf;
+    --asia-bg: #17312f;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-inline: 16px;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  img { max-width: 100%; }
+  .mono { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; }
+
+  header {
+    padding-block: 18px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .dots { display: flex; gap: 6px; }
+  .dot {
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--surface-line);
+    transition: background 0.2s ease;
+  }
+  .dot.done { background: var(--text-dim); }
+  .dot.active { background: var(--accent); }
+
+  main {
+    flex: 1;
+    display: flex;
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: 6px 18px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--surface-line);
+    border-radius: 18px;
+    box-shadow: 0 1px 2px var(--shadow), 0 12px 28px -18px var(--shadow);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    min-height: 0;
+  }
+  .card-inner {
+    padding: 22px 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .tag {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .tag.stat { color: var(--stat); background: var(--stat-bg); }
+  .tag.cpsc { color: var(--cpsc); background: var(--cpsc-bg); }
+  .tag.phil321 { color: var(--phil321); background: var(--phil321-bg); }
+  .tag.phil385 { color: var(--phil385); background: var(--phil385-bg); }
+  .tag.asia { color: var(--asia); background: var(--asia-bg); }
+
+  .q-num { font-size: 13px; color: var(--text-dim); }
+  .q-text { font-size: 19px; line-height: 1.5; text-wrap: balance; }
+  .verb { font-size: 12px; color: var(--text-dim); font-style: italic; }
+
+  .divider {
+    border: none;
+    border-top: 1px dashed var(--surface-line);
+    margin: 2px 0;
+  }
+  .a-label {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .a-text { font-size: 16px; line-height: 1.55; color: var(--text); }
+  .a-text code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9em;
+    background: var(--accent-soft);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  /* the notes page the question comes from, under the revealed answer */
+  .src-link {
+    align-self: flex-start;
+    margin-top: -6px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-decoration-color: var(--surface-line);
+    text-underline-offset: 3px;
+  }
+  .src-link:hover { color: var(--accent); text-decoration-color: currentColor; }
+  .tap-hint {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-align: center;
+    padding: 12px 0 4px;
+  }
+
+  .grade-prompt {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: center;
+    margin-top: 2px;
+  }
+  .grade-inline { display: flex; gap: 8px; }
+  .grade-inline .g-btn-lg {
+    flex: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 0;
+    border-radius: 10px;
+    border: 1px solid var(--surface-line);
+    background: var(--bg);
+    color: var(--text-dim);
+    cursor: pointer;
+  }
+  .grade-inline .g-btn-lg[data-grade="O"].sel { background: var(--stat-bg); color: var(--stat); border-color: var(--stat); }
+  .grade-inline .g-btn-lg[data-grade="~"].sel { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .grade-inline .g-btn-lg[data-grade="X"].sel { background: var(--cpsc-bg); color: var(--cpsc); border-color: var(--cpsc); }
+
+  nav {
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    gap: 10px;
+    padding-block: 4px 20px;
+  }
+  button.nav-btn {
+    flex: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 13px 10px;
+    border-radius: 12px;
+    border: 1px solid var(--surface-line);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+  }
+  button.nav-btn:disabled { opacity: 0.35; cursor: default; }
+  button.nav-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+  }
+  button:focus-visible, .card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .finish {
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+    padding-block: 8px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .finish h1 { font-size: 20px; margin: 0; text-wrap: balance; }
+  .grade-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--surface-line);
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+  .grade-row .gq { flex: 1; font-size: 13px; line-height: 1.4; color: var(--text); }
+  .grade-row .gq .num { color: var(--text-dim); margin-right: 4px; }
+  .grade-btns { display: flex; gap: 5px; }
+  .g-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--surface-line);
+    background: var(--bg);
+    color: var(--text-dim);
+    cursor: pointer;
+  }
+  .g-btn[data-grade="O"].sel { background: var(--stat-bg); color: var(--stat); border-color: var(--stat); }
+  .g-btn[data-grade="~"].sel { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .g-btn[data-grade="X"].sel { background: var(--cpsc-bg); color: var(--cpsc); border-color: var(--cpsc); }
+
+  .copy-box { display: flex; gap: 8px; align-items: center; }
+  .copy-field {
+    flex: 1;
+    min-width: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--surface-line);
+    background: var(--surface);
+    color: var(--text);
+  }
+  .copy-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--bg);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .copy-btn.copied { background: var(--stat); border-color: var(--stat); }
+  .hint { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+  [hidden] { display: none !important; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .card { transition: transform 0.12s ease; }
+    .card:active { transform: scale(0.99); }
+  }
+
+  .brief-btn {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 20;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--surface-line);
+    background: var(--surface);
+    color: var(--text-dim);
+    box-shadow: 0 1px 2px var(--shadow);
+    cursor: pointer;
+  }
+  .brief-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 30;
+    overflow-y: auto;
+    padding-inline: 16px;
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+  .brief-panel { max-width: 520px; margin-inline: auto; padding-block: 18px 48px; }
+  .brief-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    padding-block: 4px 10px;
+  }
+  .brief-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .brief-date { font-size: 22px; margin: 3px 0 0; text-wrap: balance; }
+  .close-btn {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--surface-line);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .brief-section { margin-bottom: 24px; }
+  .brief-section h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  .brief-section h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    margin: 18px 0 8px;
+  }
+  .brief-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .brief-list li {
+    font-size: 14.5px;
+    line-height: 1.55;
+    padding-left: 15px;
+    position: relative;
+  }
+  .brief-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--text-dim);
+  }
+  .brief-list.heads-up li::before { content: "!"; color: var(--cpsc); font-weight: 700; }
+  .brief-list .proj {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--text-dim);
+    margin-right: 2px;
+  }
+
+  .brief-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .brief-table th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0 8px 6px 0;
+    border-bottom: 1px solid var(--surface-line);
+  }
+  .brief-table td {
+    padding: 9px 8px 9px 0;
+    border-bottom: 1px solid var(--surface-line);
+    line-height: 1.45;
+    vertical-align: top;
+  }
+  .brief-table tr:last-child td { border-bottom: none; }
+  .brief-table td:first-child {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--accent);
+    white-space: nowrap;
+    width: 1%;
+  }
+  .brief-table td:last-child {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    white-space: nowrap;
+    width: 1%;
+    text-align: right;
+  }
+  .warn-line {
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: var(--cpsc-bg);
+    color: var(--cpsc);
+  }
+  .si-block { margin-bottom: 16px; }
+  .si-block h5 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 7px;
+  }
+  .si-keep h5 { color: var(--stat); }
+  .si-start h5 { color: var(--accent); }
+  .si-stop h5 { color: var(--cpsc); }
+  .si-block .brief-list li::before { content: "–"; }
+  .si-keep .brief-list li::before { content: "✓"; color: var(--stat); }
+  .si-stop .brief-list li::before { content: "×"; color: var(--cpsc); }
+
+  .brief-divider { border: none; border-top: 1px solid var(--surface-line); margin: 26px 0; }
+</style>
+<!-- STAT 251 questions carry LaTeX between $$ markers; KaTeX renders it as MathML (no stylesheet needed). -->
+<script src="https://cdn.jsdelivr.net/npm/katex@0.19.0/dist/katex.min.js"></script>
+<style>
+  .q-text math, .a-text math { font-size: 1.05em; }
+  .a-text math[display="block"] { display: block; margin: 10px 0; overflow-x: auto; max-width: 100%; }
+  .mx { white-space: nowrap; }
+  /* Chromium ignores MathML columnalign; these rules line aligned rows up at the = sign as Safari does. */
+  mtable[columnalign^="right left"] > mtr > mtd:nth-child(odd) { text-align: right; padding-right: 0; }
+  mtable[columnalign^="right left"] > mtr > mtd:nth-child(even) { text-align: left; padding-left: 0; }
+  mtable[columnalign^="left"] > mtr > mtd { text-align: left; }
+</style>
+<style>
+  /* Key points: the revealed answer is a checklist, and the ticks set the grade (morning-check §7, 2026-10-06). */
+  .points-label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+  .points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .point { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border: 1px solid var(--surface-line); border-radius: 10px; cursor: pointer; }
+  .point.ticked { background: var(--stat-bg); border-color: var(--stat); }
+  .point .box { flex: none; width: 20px; height: 20px; margin-top: 2px; border: 2px solid var(--text-dim); border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  .point.ticked .box { border-color: var(--stat); color: var(--stat); }
+  .point .p-text { font-size: 15px; line-height: 1.5; flex: 1; }
+  .point .p-text pre, .a-text pre { margin: 4px 0; padding: 8px 10px; background: var(--accent-soft); border-radius: 8px; overflow-x: auto; font-size: 12.5px; line-height: 1.45; }
+  .point .p-text table, .q-text table { border-collapse: collapse; font-size: 13px; margin: 4px 0; }
+  .point .p-text td, .point .p-text th, .q-text td, .q-text th { border: 1px solid var(--surface-line); padding: 3px 7px; }
+  .q-text pre { margin: 6px 0; padding: 8px 10px; background: var(--accent-soft); border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.45; }
+  .q-text ul, .p-text ul { margin: 4px 0; padding-left: 18px; }
+  .q-text p, .p-text p { margin: 0 0 6px; }
+  .tick-count { font-size: 13px; color: var(--text-dim); }
+  .tick-count b { color: var(--text); }
+</style>
+</head>
+<body>

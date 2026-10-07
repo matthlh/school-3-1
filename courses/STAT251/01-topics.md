@@ -49,9 +49,9 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | 3i | Exponential distribution characteristics *(lec 9 video: mean $$\frac{1}{\lambda}$$, variance $$\frac{1}{\lambda^2}$$, by parts)* |
 | 3j | Expectation & variance operators on linear combinations *(lec 10: E(aX + b), the mean of a sum, Var(aX + bY + c) with the covariance term, proof of the shortcut)* |
 | 3k | Var of sum/average vs. var of a multiple *(lec 10: variance of a sum of independent variables, $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$, $$\operatorname{Var}(X_1 + X_2)$$ versus $$\operatorname{Var}(2X_1)$$)* |
-| 3l | pdf/cdf of functions of one RV (simple polynomials) |
-| 3m | pdf/cdf of **min/max** of independent RVs, incl. non-identical *(lec 10: cdf of the max as a product of cdfs, pdf by the chain rule)* |
-| 3n | **Min/max lifetimes of series/parallel circuits** *(lec 10: a parallel system's lifetime is the max, a series system's is the min)* |
+| 3l | pdf/cdf of functions of one RV (simple polynomials) *(lec 12: the cdf method, $$F_Y$$ as a probability statement about $$X$$ then differentiate; $$Y = e^X$$ for a uniform, $$Y = X^2$$ needs both roots)* |
+| 3m | pdf/cdf of **min/max** of independent RVs, incl. non-identical *(lec 10: cdf of the max as a product of cdfs, pdf by the chain rule; lec 12: cdf of the min through the complement, the max of two different uniforms as a piecewise cdf)* |
+| 3n | **Min/max lifetimes of series/parallel circuits** *(lec 10: a parallel system's lifetime is the max, a series system's is the min; lec 12: the min of n exponentials is exponential with rate $$n\lambda$$)* |
 | 3o | Normal properties, incl. preservation under linear transformation |
 | 3p | Normal: probability, percentile, $$\mu$$ given $$\sigma^2$$ (and vice versa), $$\mu$$ and $$\sigma^2$$ from two probabilities |
 | 3q–s | Binomial — recognise, characteristics, compute |
@@ -143,6 +143,7 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | 2d–e Independence | 2g Events as sets and Venn diagrams | Disjoint events cannot happen together, while independent events overlap by exactly the product of their probabilities, so two disjoint events with positive probability are never independent. |
 | 2h Conditional probability and the multiplication rule | 2i Bayes' theorem and the law of total probability | Both divide the same intersection, but the given event sets the denominator, so the chance of A given B is not the chance of B given A, and Bayes' theorem turns one into the other. |
 | 2k Reliability of series and parallel systems | 3m–n Maximum and minimum of independent random variables | The same circuits come back as lifetimes: a series system needs every part, so its reliability is a product and its lifetime is the minimum, while a parallel system fails only when every part fails and its lifetime is the maximum. |
+| 3l Functions of one random variable | 3m–n Maximum and minimum of independent random variables | Both find a new pdf by writing a cdf and differentiating, but a function of one variable rewrites the event in terms of that one variable, while a max or min multiplies the cdfs, or the survival probabilities, of several independent variables.
 | 3j Rules for the mean and variance | 3j–k Covariance, sums and the sample mean | Doubling one value multiplies its variance by 4, while adding two independent values with that same variance only doubles it, so the two answers get swapped. |
 | 1b Percentiles, quartiles and the IQR | 1b–c Box plots | The fences come from the quartiles and the IQR, but a whisker stops at the last observation inside its fence, not at the fence and not always at the minimum or maximum. |
 | 3d Mean and variance of a discrete random variable | 1b Mean and median | A random variable's mean weights each possible value by its probability, while the Chapter 1 sample mean adds up the data and divides by n, and both are called the mean. |

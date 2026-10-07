@@ -1412,6 +1412,77 @@ So $$f_Y(y) = \frac{1}{2y}$$ for $$1 \le y \le e^2$$ and 0 otherwise. Check: the
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW4  **Type:** apply
 **A:** The median of $$X$$ is 1.5. Because $$e^x$$ is increasing, half the values of $$X$$ lie below 1.5 exactly when half the values of $$e^X$$ lie below $$e^{1.5}$$, so the median of $$e^X$$ is $$e^{1.5} \approx 4.48$$. Solving $$F_Y(m) = 0.5$$ gives the same: $$\frac{\ln m}{3} = 0.5$$, so $$m = e^{1.5}$$. The mean does not carry over, because $$E(e^X) \ne e^{E(X)}$$. Here $$E(e^X) = \frac{e^3 - 1}{3} \approx 6.36$$, larger than 4.48 because $$e^x$$ bends upward.
 
+## Lec 12 — Ch 4: maximum and minimum of independent random variables, functions of one random variable (prepared 2026-10-07 from the posted deck)
+
+### Q: $$X_1, \dots, X_n$$ are independent with the same cdf $$F$$. Derive the cdf of $$U = \min\{X_1, \dots, X_n\}$$, and say why the derivation starts from $$P(U > u)$$ instead of $$P(U \le u)$$.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** derive
+**A:** $$U \le u$$ only says that at least one $$X_i$$ is at most $$u$$. That is a union of events, and a union does not factor under independence. $$U > u$$ says every $$X_i$$ is above $$u$$, an intersection, and independence turns an intersection into a product. So take the complement first, factor, then complement back.
+
+$$
+\begin{aligned}
+F_U(u) &= 1 - P(U > u) \\
+&= 1 - P(X_1 > u) \cdots P(X_n > u) \\
+&= 1 - \big[1 - F(u)\big]^n
+\end{aligned}
+$$
+
+The maximum needs no complement because $$V \le v$$ is already the intersection of every $$X_i \le v$$.
+
+### Q: $$X_1$$, $$X_2$$ and $$X_3$$ are independent with cdfs $$F_1$$, $$F_2$$, $$F_3$$ and pdfs $$f_1$$, $$f_2$$, $$f_3$$ that are not all the same. Write the cdf and pdf of $$V = \max\{X_1, X_2, X_3\}$$. Which step of the lecture's derivation is no longer available, and what replaces the chain rule?
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** derive
+**A:** Independence still gives the product of the cdfs. The step that is gone is the last one, where identical distributions turn the product into the power $$[F(v)]^3$$. With three different factors the pdf comes from the product rule, one term per factor differentiated.
+
+$$
+\begin{aligned}
+F_V(v) &= F_1(v)\,F_2(v)\,F_3(v) \\
+f_V(v) &= f_1(v)\,F_2(v)\,F_3(v) \\
+&\quad + F_1(v)\,f_2(v)\,F_3(v) \\
+&\quad + F_1(v)\,F_2(v)\,f_3(v)
+\end{aligned}
+$$
+
+Check: when the three are the same, every term is $$F^2 f$$ and the sum is $$3F^2 f$$, the chain-rule answer.
+
+### Q: Five independent components each have an exponential lifetime with rate 0.2 per year. Write the pdf of the lifetime of the parallel system and of the series system. Which one has a standard name, and what is the mean lifetime of the series system?
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** apply
+**A:** For one component $$F(x) = 1 - e^{-0.2x}$$ and $$f(x) = 0.2e^{-0.2x}$$ for $$x > 0$$. The parallel lifetime is the maximum, the series lifetime is the minimum.
+
+$$
+\begin{aligned}
+f_V(v) &= 5\big(1 - e^{-0.2v}\big)^4\,(0.2)e^{-0.2v} \\[4pt]
+F_U(u) &= 1 - \big(e^{-0.2u}\big)^5 = 1 - e^{-u} \\
+f_U(u) &= e^{-u}
+\end{aligned}
+$$
+
+Both are for positive arguments and 0 otherwise. The minimum is exponential with rate $$5 \times 0.2 = 1$$ per year, so the series system has mean lifetime 1 year, a fifth of one component's 5 years. The maximum has no standard name; its cdf $$(1 - e^{-0.2v})^5$$ is not of the form $$1 - e^{-\lambda v}$$.
+
+### Q: $$X_1 \sim U(0, 10)$$ and $$X_2 \sim U(6, 12)$$ are independent, and $$Y = \max\{X_1, X_2\}$$. Give the support of $$Y$$, and say why $$F_Y$$ has one formula on $$[6, 10]$$ and a different one on $$(10, 12]$$. Do not compute the pdf.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** apply
+**A:** The support is $$[6, 12]$$. $$Y$$ is at least $$X_2$$, which is never below 6, and neither variable is ever above 12. $$F_Y(y) = F_{X_1}(y)\,F_{X_2}(y)$$, and the formula changes wherever either factor changes formula.
+
+$$
+\begin{aligned}
+F_Y(y) &= \frac{y}{10} \cdot \frac{y - 6}{6} \quad (6 \le y \le 10) \\[4pt]
+F_Y(y) &= 1 \cdot \frac{y - 6}{6} \quad (10 < y \le 12)
+\end{aligned}
+$$
+
+On $$[6, 10]$$ both cdfs are strictly between 0 and 1, so both factors are linear. Past 10, $$X_1$$ is certainly at most $$y$$, so $$F_{X_1}(y) = 1$$ and only $$F_{X_2}$$ is left. Below 6, $$F_{X_2}(y) = 0$$ so $$F_Y(y) = 0$$ even though $$F_{X_1}$$ is positive there.
+
+### Q: $$X$$ has pdf $$f_X$$ on $$[-2, 2]$$, and $$Y = X^2$$. Write $$F_Y(y)$$ as a probability statement about $$X$$, say why it is not $$P(X \le \sqrt{y})$$, and give the support of $$Y$$. How does the answer change if $$X$$ lives on $$[0, 2]$$ instead?
+**Topic:** 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots)  **Lec:** 12  **Type:** derive
+**A:** $$X^2 \le y$$ means $$|X| \le \sqrt{y}$$, so both roots bound the event. The support of $$Y$$ is $$[0, 4]$$.
+
+$$
+\begin{aligned}
+F_Y(y) &= P(-\sqrt{y} \le X \le \sqrt{y}) \\
+&= F_X(\sqrt{y}) - F_X(-\sqrt{y})
+\end{aligned}
+$$
+
+$$P(X \le \sqrt{y})$$ is wrong because it also counts $$X < -\sqrt{y}$$, where $$X^2 > y$$, and $$f_X$$ puts probability on negative values. If $$X$$ lives on $$[0, 2]$$, then $$P(X < -\sqrt{y}) = 0$$ and $$F_Y(y) = F_X(\sqrt{y})$$ alone. The pdf follows by the chain rule either way: $$f_Y(y) = \frac{f_X(\sqrt{y}) + f_X(-\sqrt{y})}{2\sqrt{y}}$$, with the second term dropped when $$X$$ is never negative.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -2290,3 +2361,121 @@ m &\approx 33.3 \text{ kWh}
 $$
 
 The upper limit is 100, not infinity; integrating to infinity gives 0.31 instead of 0.06.
+
+### Q: $$X$$ has pdf $$f(x) = \frac{3x^2}{16}$$ for $$-2 \le x \le 2$$ and 0 otherwise, and $$Y = X^2$$. (a) Find the cdf and pdf of $$Y$$ with their support. (b) Find $$P(Y > 1)$$. (c) Check (b) directly from the distribution of $$X$$.
+**Topic:** 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots)  **Lec:** 12  **Type:** derive
+**A:** Steps:
+1. The support of $$Y$$ is the image of $$[-2, 2]$$ under squaring, $$[0, 4]$$.
+2. Write $$F_Y(y) = P(-\sqrt{y} \le X \le \sqrt{y})$$ and integrate $$f$$ between the two roots.
+3. Differentiate $$F_Y$$ for the pdf and check its area is 1.
+4. $$P(Y > 1) = 1 - F_Y(1)$$, then check it as $$P(|X| > 1)$$ from $$f$$.
+
+(a) The cdf, for $$0 \le y \le 4$$:
+
+$$
+\begin{aligned}
+F_Y(y) &= \int_{-\sqrt{y}}^{\sqrt{y}} \frac{3t^2}{16}\,dt \\
+&= \left[\frac{t^3}{16}\right]_{-\sqrt{y}}^{\sqrt{y}} \\
+&= \frac{2y^{3/2}}{16} = \frac{y^{3/2}}{8}
+\end{aligned}
+$$
+
+The pdf is the derivative, $$f_Y(y) = \frac{3}{16}\sqrt{y}$$ for $$0 \le y \le 4$$ and 0 otherwise. Check: $$\int_0^4 \frac{3}{16}\sqrt{y}\,dy = \frac{3}{16} \cdot \frac{2}{3} \cdot 8 = 1$$.
+
+(b) and (c):
+
+$$
+\begin{aligned}
+P(Y > 1) &= 1 - F_Y(1) = 1 - \frac{1}{8} = \frac{7}{8} \\[4pt]
+P(|X| > 1) &= 2\int_1^2 \frac{3x^2}{16}\,dx \\
+&= 2 \cdot \frac{8 - 1}{16} = \frac{7}{8}
+\end{aligned}
+$$
+
+The two agree. The common error is $$F_Y(y) = F_X(\sqrt{y})$$, which gives $$\frac{y^{3/2} + 8}{16}$$, a cdf that is already $$\frac{1}{2}$$ at $$y = 0$$.
+
+### Q: $$X_1 \sim U(10, 30)$$ and $$X_2 \sim U(25, 40)$$ are independent, and $$Y = \max\{X_1, X_2\}$$. (a) Write the cdf of $$Y$$ on every piece. (b) Differentiate for the pdf and check that its area is 1. (c) Find $$P(Y \le 28)$$.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** apply
+**A:** Steps:
+1. Write each uniform's cdf with the regions where it is 0 and where it is 1.
+2. The support of $$Y$$ is $$[25, 40]$$, because $$Y \ge X_2 \ge 25$$ and both variables are at most 40.
+3. Multiply the cdfs. On $$[25, 30]$$ both are linear; on $$(30, 40]$$ $$F_{X_1} = 1$$.
+4. Differentiate each piece, the middle one by the product rule, and add the two areas.
+5. $$P(Y \le 28) = F_Y(28)$$ from the middle piece.
+
+(a) $$F_{X_1}(y) = \frac{y - 10}{20}$$ on $$[10, 30]$$ and $$F_{X_2}(y) = \frac{y - 25}{15}$$ on $$[25, 40]$$, each 0 below its interval and 1 above it.
+
+$$
+F_Y(y) =
+\begin{cases}
+0 & y < 25 \\[2pt]
+\dfrac{(y - 10)(y - 25)}{300} & 25 \le y \le 30 \\[6pt]
+\dfrac{y - 25}{15} & 30 < y \le 40 \\[6pt]
+1 & y > 40
+\end{cases}
+$$
+
+(b) The product rule on the middle piece, then the constant piece:
+
+$$
+\begin{aligned}
+f_Y(y) &= \frac{(y - 25) + (y - 10)}{300} \\
+&= \frac{2y - 35}{300} \quad (25 \le y \le 30) \\[4pt]
+f_Y(y) &= \frac{1}{15} \quad (30 < y \le 40)
+\end{aligned}
+$$
+
+Area check:
+
+$$
+\begin{aligned}
+\int_{25}^{30} \frac{2y - 35}{300}\,dy &= \left[\frac{y^2 - 35y}{300}\right]_{25}^{30} \\
+&= \frac{-150 + 250}{300} = \frac{1}{3} \\[4pt]
+\int_{30}^{40} \frac{1}{15}\,dy &= \frac{10}{15} = \frac{2}{3}
+\end{aligned}
+$$
+
+(c) 28 is in the middle piece:
+
+$$
+\begin{aligned}
+P(Y \le 28) &= \frac{(28 - 10)(28 - 25)}{300} \\
+&= \frac{18 \times 3}{300} = 0.18
+\end{aligned}
+$$
+
+### Q: $$X \sim U(1, 3)$$ and $$Y = X^3$$. (a) Find the cdf and pdf of $$Y$$ with their support by the cdf method. (b) Find $$P(Y > 8)$$ and the median of $$Y$$. (c) Explain why the pdf of $$Y$$ is not constant even though the pdf of $$X$$ is.
+**Topic:** 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots)  **Lec:** 12  **Type:** derive
+**A:** Steps:
+1. The support of $$Y$$ is the image of $$[1, 3]$$ under cubing, $$[1, 27]$$.
+2. Cubing is increasing, so $$X^3 \le y$$ exactly when $$X \le y^{1/3}$$, and $$F_Y(y) = F_X(y^{1/3})$$.
+3. Differentiate for the pdf and check its area.
+4. $$P(Y > 8) = 1 - F_Y(8)$$; the median solves $$F_Y(m) = 0.5$$.
+
+(a) $$F_X(x) = \frac{x - 1}{2}$$ on $$[1, 3]$$.
+
+$$
+\begin{aligned}
+F_Y(y) &= P(X \le y^{1/3}) \\
+&= \frac{y^{1/3} - 1}{2} \quad (1 \le y \le 27) \\[4pt]
+f_Y(y) &= \frac{1}{2} \cdot \frac{1}{3}y^{-2/3} \\
+&= \frac{1}{6}y^{-2/3}
+\end{aligned}
+$$
+
+So $$f_Y(y) = \frac{1}{6}y^{-2/3}$$ for $$1 \le y \le 27$$ and 0 otherwise. Check: $$\int_1^{27} \frac{1}{6}y^{-2/3}\,dy = \frac{1}{6} \cdot 3\big[y^{1/3}\big]_1^{27} = \frac{1}{2}(3 - 1) = 1$$.
+
+(b)
+
+$$
+\begin{aligned}
+P(Y > 8) &= 1 - \frac{8^{1/3} - 1}{2} \\
+&= 1 - \frac{2 - 1}{2} = \frac{1}{2} \\[4pt]
+\frac{m^{1/3} - 1}{2} &= 0.5 \\
+m^{1/3} &= 2, \quad m = 8
+\end{aligned}
+$$
+
+The median of $$Y$$ is the cube of the median of $$X$$, which is 2, because an increasing function carries the median across.
+
+(c) Cubing stretches the axis unevenly. An interval of $$y$$ values near 27 comes from a much shorter interval of $$x$$ values than an interval of the same length near 1, so the probability per unit of $$y$$ falls as $$y$$ grows: $$f_Y(1) = \frac{1}{6}$$ and $$f_Y(27) = \frac{1}{54}$$. The factor $$\frac{1}{3}y^{-2/3}$$ from the chain rule is that stretch.
