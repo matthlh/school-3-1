@@ -786,3 +786,19 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: Which aria did Kraal play for the first stage, who sings it, and which line shows desire that has no object yet?
 **Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
 **A:** "Voi che sapete", sung by Cherubino, the Page, in *The Marriage of Figaro*. The line is "Ricerco un bene fuori di me, non so chi il tiene, non so cos'è": I search for a good outside myself; I don't know who holds it, I don't know what it is. He longs without any particular woman in view, which is A's first stage, desire dreaming.
+
+### Q: According to Kraal, what role do the three operas play in "The Musical Erotic"? Are they A's proof that only music expresses desire?
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** recall
+**A:** No. A does not use the operas to prove his argument. He uses them to clarify the three stages of desire. What justifies that choice is his claim that music and desire are both expressions of immediacy (Kraal, email of Oct 6).
+
+### Q: The operas have words, and A says language is reflection. How would A answer that, according to Kraal, and whom does A praise?
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** critique
+**A:** Kraal grants that the words create a prima facie problem. A would say the words are heuristic, a help, rather than essential to what the music expresses. The sign is that A praises Mozart, the composer, and not the librettists Da Ponte (*Figaro*, *Don Giovanni*) and Schikaneder (*The Magic Flute*).
+
+### Q: True or false, and justify: in "The Musical Erotic", A argues that the aesthetic life must be built on sensuous desire.
+**Topic:** The Musical Erotic: why music  **Lec:** 9  **Type:** critique
+**A:** False. Kraal: A is not saying the aesthetic life is built on desire. He is saying that the desire-driven life he studies is one kind of aesthetic life, because what is desired is beauty, and aesthetics is concerned with the beautiful.
+
+### Q: Does A see himself as a living example of the immediacy he praises in Don Giovanni?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
+**A:** Not fully. Kraal: A makes various attempts at this immediacy, which the Seducer's Diary will show, but he does not take himself to be as paradigmatic an example as Don Giovanni.

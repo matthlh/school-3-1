@@ -190,7 +190,9 @@ The Catalogue Aria, the lines that matter:
 ### Is opera cheating, and the lyrics
 - An opera is a drama sung to an orchestra, so it has words, the libretto, as well as music.
 - A's position is that in these operas the music, not the words, carries the desire. The libretto supplies the situations.
-- Your objection is a good one: if language is reflection, the words should drag the music back toward reflection. A does not fully answer it, which is why it is on the Ask Kraal list.
+- Kraal's answer (email, Oct 6): A is not using the operas to prove his argument. He uses them to clarify the stages of desire, and what justifies that is his claim that music and desire are both expressions of immediacy.
+- Kraal grants that the words create a prima facie problem, meaning a problem at first sight. A would say the words are heuristic, a help for finding your way, rather than essential.
+- The sign of this, Kraal says, is that A praises Mozart, the composer, and never the librettists, Da Ponte and Schikaneder.
 - The 1800s background is not needed for the exam. What you need is in the essay: the three stages, the argument for music, and the claim about the classic.
 
 ### Dreaming, seeking, desiring
@@ -213,7 +215,9 @@ The Catalogue Aria, the lines that matter:
 - The calculating pursuer of enjoyment is a different figure, the reflective seducer of "The Seducer's Diary" at the end of A's papers.
 
 ### Should love be the focus
-- A's subject is not romantic love but the most immediate thing there is, sensuous desire, used as the purest case of the aesthetic life.
+- Kraal's answer (email, Oct 6): A is not saying the aesthetic life is built on desire. He is saying that the desire-driven life he studies is one kind of aesthetic life.
+- The reason it counts as aesthetic: what is desired is beauty, and aesthetics is concerned with the beautiful.
+- On whether A lives the immediacy he praises, Kraal says A makes various attempts at it, which the Seducer's Diary will show, but A does not take himself to be as paradigmatic, meaning as perfect an example, as Don Giovanni.
 - Your doubt about building a life on it is close to where the book is going. Part II is the Judge arguing that a life of immediacy cannot hold together.
 
 ### Nietzsche

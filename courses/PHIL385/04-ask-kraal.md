@@ -12,19 +12,9 @@ in the question bank instead.
 - Emailed on Oct 6 asking for a slot in the Wed Oct 7 office hours, with the opera question, the immediacy
   question and the sensuous-desire question. He replied the same evening: drop by the Zoom, and he answered all
   three in writing (Answered table below). Still to ask in the 12:15 slot: whether the Exam 2 multiple-choice
-  questions are multi-select with negative marking, and whose view an exam question wants.
+  questions are multi-select with negative marking, whose view an exam question wants, and what format the
+  final takes.
 
-- **Is it cheating that A's proof is an opera?** A says only music can express desire, because
-  language is reflection. Yet all three of his examples are operas with words: Da Ponte's libretti for
-  *Figaro* and *Don Giovanni*, and Schikaneder's for *The Magic Flute*. Does the argument survive the
-  libretto, or does opera bring language back in?
-  - From lecture 9 (Oct 5). This is your own question, sharpened.
-- **Does A live the immediacy he praises?** He writes a long, careful, reflective essay about how
-  reflection kills immediacy. Is A a reflective man admiring what he cannot have, and is that what
-  Kierkegaard wants the reader to catch?
-- **Why build the aesthetic life on sensuous desire?** It can feel primitive as the centre of a
-  life-view. Is Kierkegaard starting from the rawest form of the aesthetic on purpose, so the Judge has
-  something to answer in Part II?
 - **Where does the Nietzsche parallel come from?** Nietzsche never read Kierkegaard. Is the Dionysian
   the same insight reached twice, or do both draw on a common source, such as Schopenhauer's view of
   music as a direct copy of the will?
