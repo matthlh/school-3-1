@@ -73,8 +73,9 @@ fires today, named for its item (`T-3 STAT 251 Midterm · FULL TIMED MOCK`, the 
 the item's Term calendar row; the ladders are `term.LADDERS`, one per kind: exam, deliverable, paper and
 assignment, each step with its time tag; once the item's date has passed, or on an exam's own day, its open steps
 are cancelled), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
-for ASIA 250 from Sep 14, the two **daily revision habits** (`Deck: answer the 6 on the bus, tick key
-points (<date>)` and `Quiz me: 10 min before bed (<date>)`, 15m P1 each, area UBC, due today; an open one from
+for ASIA 250 from Sep 14, the **daily habits** (`HABITS` in the script: `Deck: answer the 6 on the bus, tick key
+points (<date>)` and `Quiz me: 10 min before bed (<date>)` in area UBC, plus any personal ones listed in the git-ignored
+`private/habits.json` (none where the file is missing); 15m P1 each, due today; an open one from
 an earlier day, or under an old title, is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
 schedule in `PHIL_READINGS`, from a week before the reading's first class (`Read PHIL385: <title> (class …)`
 1h P1, due the first class, created until the last class, skipped if any open to-do already mentions

@@ -108,17 +108,18 @@ PROJECT_OF = {"STAT251": "STAT 251", "PHIL385": "PHIL 385", "CPSC310": "CPSC 310
 # Daily revision habits (Matt, 2026-09-11): created for today with the date in the title; an open
 # one from an earlier day is cancelled — a missed habit is not a debt that rolls over. Each counts
 # against the budget but gets no start time: its slot is in its title (the bus, bed).
+# (title, tags, notes, area)
 HABITS = [("Deck: answer the 6 on the bus, tick key points", "15m, P1",
            "Open the Transit Deck page linked in this morning's brief. Answer each question in your head, then open its "
            "answer and tick each key point your answer had. Once all 6 are done, say `grade my deck` in Claude and the "
-           "ledger updates itself."),
+           "ledger updates itself.", "UBC"),
           ("Quiz me: 10 min before bed", "15m, P1",
-           "Say `quiz me` in Claude (School 3-1 folder). Ten questions, interleaved, whatever is due. Not a reread.")]
+           "Say `quiz me` in Claude (School 3-1 folder). Ten questions, interleaved, whatever is due. Not a reread.", "UBC")]
 # Titles a habit had before, old → new. An open habit under an old title is cancelled like a missed one, and one he
 # ticked today counts as today's new one ticked. Drop an entry once no open to-do carries its title.
 RENAMED_HABITS = {"Deck: answer the 6 on the bus, reply grades": "Deck: answer the 6 on the bus, tick key points",
                   "Deck: answer the 6 on the bus, tap grades": "Deck: answer the 6 on the bus, tick key points"}
-HABIT_RE = re.compile("^(?:" + "|".join(re.escape(h) for h in [title for title, _, _ in HABITS] + list(RENAMED_HABITS))
+HABIT_RE = re.compile("^(?:" + "|".join(re.escape(h) for h in [title for title, _, _, _ in HABITS] + list(RENAMED_HABITS))
                       + r") \([A-Z][a-z]{2} \d{1,2}\)$")   # a habit's exact title plus its date, like (Oct 6)
 # PHIL 385 readings from the syllabus schedule: (slug, title, first class, last class). Two to-dos
 # each, created from READ_AHEAD_DAYS before the first class: `Read PHIL385: …` (due the first class,
@@ -547,11 +548,11 @@ def habit_todos(auto):
     for old, new in RENAMED_HABITS.items():                 # ticked today under its old title: today's is done
         if auto.closed_by_hand(on(old)):
             auto.known[on(new)] = auto.known[on(old)]
-    current = [on(title) for title, _, _ in HABITS]
+    current = [on(title) for title, _, _, _ in HABITS]
     for t in [t for t in auto.todos if t.is_habit and t.name not in current]:
         auto.close(t, "canceled", "its title changed" if t.name.endswith(f"({today:%b %-d})") else "a missed habit does not roll over")
-    for title, tags, notes in HABITS:
-        auto.create(on(title), tags, area="UBC", when=today, deadline=today, notes=notes)
+    for title, tags, notes, area in HABITS:
+        auto.create(on(title), tags, area=area, when=today, deadline=today, notes=notes)
 
 def reading_todos(auto):
     """The PHIL 385 Read/Log pair of every reading whose window is open. The reading's file completes both; when the
