@@ -8,7 +8,6 @@ each course and quiz you on it.
 ## Read these
 - **`PREP.md`** — what to do in the next two days, weekly, and before an exam. Start here.
 - **`STUDY-SYSTEM.md`** — the process and why it's shaped this way.
-- **`research/course-intel.md`** — grade history and past-student intel per course.
 - **`inbox/WHAT-TO-PASTE.md`** — what to send me.
 - **`ledger.md`** — what's due for review, and every hard date this term.
 - `CLAUDE.md` — my operating rules. You don't need to read it; I do.

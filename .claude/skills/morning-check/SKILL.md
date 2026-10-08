@@ -1038,7 +1038,7 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
   to the PREP ladders) as step 0 · Canvas grades fetched and diffed, table in ledger.md · bonus
   watch · Sunday "Week ahead" block · Piazza bonus nudge · scheduled task actually fires at
   **06:35** (cron `30 6` + jitter), docs aligned · per-instructor grade intel in
-  `research/course-intel.md`.
+  `private/course-intel.md` (local only since 2026-10-08).
 - 2026-09-10 (evening, from Matt's 14 notes): drop booking reminders · drop Academic Integrity
   and Co-op Workshops courses · one-time info goes to `courses/<CODE>/03-logistics.md`, never
   repeated · no separate course-site section · Gmail format stays · Canvas per-course blocks are

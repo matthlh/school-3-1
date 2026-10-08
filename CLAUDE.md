@@ -334,6 +334,11 @@ The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11)
 difference fails the deploy).
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
 passcode links stay out of the repo (point at the Canvas Zoom tab instead).
+`private/` is git-ignored as well and exists only on his Mac: `course-intel.md` (grade data and what past students
+say about each instructor) and `habits.json` (personal daily habits `things_plan.py` adds to HABITS; the plan runs
+without them where the file is missing). The repo is linked from his resume, so anything about his health or another
+person goes there, never in a tracked file. A student's email address (a TA's included) stays out of tracked files;
+instructors' and staff @ubc.ca addresses may stay.
 `publish.sh` (repo root) runs only on main (on any other branch or a detached HEAD it stops before
 committing, since its push sends main) and there commits whatever changed, fetches GitHub's main and rebases onto it if another
 session or a web edit moved it, then pushes; on a real conflict it aborts, keeps the local commit and names
@@ -356,8 +361,8 @@ to that source first, silently, then answer. Never answer a deadline or grade qu
 | what a lecture covered, what a question's answer is | `courses/<CODE>/lectures/`, `02-questions.md` |
 | what to ask the prof, what he already answered | `courses/<CODE>/04-ask-kraal.md` (PHIL 385) |
 | what to do today / this week | Things3 via `things_plan.py`, `PREP.md` |
-| why the system is shaped this way | `STUDY-SYSTEM.md`, `research/course-intel.md` |
-| what past students say, prof reputation, exam style intel | `research/course-intel.md` (refresh: RateMyProfessors, ratemycourses.io, old.reddit.com r/UBC through the Chrome tab — the fetch tools cannot reach Reddit) |
+| why the system is shaped this way | `STUDY-SYSTEM.md`, `private/course-intel.md` (local only) |
+| what past students say, prof reputation, exam style intel | `private/course-intel.md` (local only; refresh: RateMyProfessors, ratemycourses.io, old.reddit.com r/UBC through the Chrome tab — the fetch tools cannot reach Reddit) |
 | what a posted deck or reading says, "pull the slides" | `courses/<CODE>/lectures/_NN-*.md` if staged, else the `canvadoc_text.js` recipe |
 This file and `~/.claude/projects/…/memory/MEMORY.md` load automatically in every session started
 in this folder; the skills listed above are always available. A session started in another folder

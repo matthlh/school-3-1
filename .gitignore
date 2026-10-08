@@ -13,3 +13,5 @@ notes-app/dist/
 # local secrets — never committed
 .env
 .env.*
+# local-only: personal and third-party material kept off the public repo (course intel, private habits)
+private/

@@ -25,7 +25,7 @@ Ten pages ruled in advance so you never have to think about it in a lecture.
 
 **5. ~~Confirm your STAT 251 section and instructor~~ — done.** Lab L1K (Fri 11–12, ESB 1046),
 lectures Premarathna. His 2025W sections averaged 72–74 with ~12% of students at 90+ —
-see `research/course-intel.md` for what that implies.
+see `private/course-intel.md` (local only) for what that implies.
 
 **6. ~~Approve the calendar blocks~~ — done.** Written to your calendar 2026-09-08, recurring
 through Dec 4, plus all CPSC 310 deadlines and the midterm.

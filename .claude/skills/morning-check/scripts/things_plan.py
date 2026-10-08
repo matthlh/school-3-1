@@ -43,8 +43,9 @@ Steps:
      MOCK"); once the item's date has passed (for an exam, from its day), its open steps are cancelled. Existing lecture to-dos
      are reconciled (title, deadline; tags only if untagged) and auto-completed once the lecture
      file exists, except an async one, which he ticks himself after the quiz. Today's two revision
-     habits (HABITS; an open one from an earlier day or under an old title is cancelled) and the PHIL 385 Read/Log pair of
-     every reading in its window (PHIL_READINGS; the reading's file completes both). Open-ended weekly
+     habits plus any in private/habits.json (HABITS; an open one from an earlier day or under an old title
+     is cancelled) and the PHIL 385 Read/Log pair of every reading in its window (PHIL_READINGS; the reading's
+     file completes both). Open-ended weekly
      to-dos (WEEKLY: novel pages, Friday revision block, questions for Kraal, groceries) are created
      one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
   3. Candidates: when ≤ today, OR undated in Anytime, OR deadline ≤ today+PULL_IN_DAYS (a future
@@ -115,6 +116,22 @@ HABITS = [("Deck: answer the 6 on the bus, tick key points", "15m, P1",
            "ledger updates itself.", "UBC"),
           ("Quiz me: 10 min before bed", "15m, P1",
            "Say `quiz me` in Claude (School 3-1 folder). Ten questions, interleaved, whatever is due. Not a reread.", "UBC")]
+PRIVATE_HABITS = os.path.join(ROOT, "private", "habits.json")
+
+def private_habits(path=PRIVATE_HABITS):
+    """Personal daily habits kept out of the public repo (private/ is gitignored): a JSON list of {title, tags, notes,
+    area} that joins HABITS and behaves exactly like it. No file means no extra habits; one that does not parse is
+    named on stderr and skipped, so a typo in it never stops the plan."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            return [(h["title"], h["tags"], h.get("notes", ""), h.get("area", "Personal")) for h in json.load(f)]
+    except FileNotFoundError:
+        return []
+    except (OSError, ValueError, KeyError, TypeError) as e:
+        print(f"things_plan: skipping {path}: {e}", file=sys.stderr)
+        return []
+
+HABITS += private_habits()
 # Titles a habit had before, old → new. An open habit under an old title is cancelled like a missed one, and one he
 # ticked today counts as today's new one ticked. Drop an entry once no open to-do carries its title.
 RENAMED_HABITS = {"Deck: answer the 6 on the bus, reply grades": "Deck: answer the 6 on the bus, tick key points",
@@ -541,7 +558,7 @@ def ladder_todos(auto):
                         notes=f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md.")
 
 def habit_todos(auto):
-    """Today's revision habits, area UBC, due today. Any other open habit is cancelled: one from an earlier day, since a
+    """Today's habits (HABITS), each in its own area, due today. Any other open habit is cancelled: one from an earlier day, since a
     missed habit is not a debt that rolls over, and one under an old title (RENAMED_HABITS)."""
     today = auto.today
     on = lambda title: f"{title} ({today:%b %-d})"
