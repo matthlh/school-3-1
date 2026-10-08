@@ -1483,6 +1483,98 @@ $$
 
 $$P(X \le \sqrt{y})$$ is wrong because it also counts $$X < -\sqrt{y}$$, where $$X^2 > y$$, and $$f_X$$ puts probability on negative values. If $$X$$ lives on $$[0, 2]$$, then $$P(X < -\sqrt{y}) = 0$$ and $$F_Y(y) = F_X(\sqrt{y})$$ alone. The pdf follows by the chain rule either way: $$f_Y(y) = \frac{f_X(\sqrt{y}) + f_X(-\sqrt{y})}{2\sqrt{y}}$$, with the second term dropped when $$X$$ is never negative.
 
+## Lec 13 — Ch 5: the Normal and standard Normal distributions (prepared 2026-10-08 from the before-class deck)
+
+### Q: Grade 7 vocabulary scores are close to $$N(7.2, 1.4^2)$$. Without a table, give the percent of scores between 4.4 and 10.0, the percent above 5.8, and the percent below 3.0. Say which rule you are using and why the second answer is not 68%.
+**Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** apply
+**A:** The 68-95-99.7 rule, because every bound is a whole number of standard deviations from the mean. 4.4 and 10.0 are $$7.2 \pm 2(1.4)$$, so about 95% lie between them. 5.8 is $$\mu - \sigma$$, so above it lies half of the middle 68% plus the whole upper half: $$34\% + 50\% = 84\%$$. 3.0 is $$\mu - 3\sigma$$, so below it lies half of the 0.3% outside three standard deviations, about 0.15%. The second answer is not 68% because 68% is the share within one standard deviation on both sides; "above $$\mu - \sigma$$" keeps the right half of that band and everything beyond it.
+
+### Q: Heights of women aged 20 to 29 are about $$N(65.1, 2.6^2)$$ inches. Find the z-scores of a woman 71 inches tall and one 59 inches tall, and say in words what each number means. Which of the two is more unusual?
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:**
+
+$$
+\begin{aligned}
+z_{71} &= \frac{71 - 65.1}{2.6} = 2.27 \\[4pt]
+z_{59} &= \frac{59 - 65.1}{2.6} = -2.35
+\end{aligned}
+$$
+
+The first woman is 2.27 standard deviations above the mean, the second 2.35 standard deviations below it. The sign gives the side of the mean and the size gives the distance. The 59-inch woman is slightly more unusual, because $$|{-2.35}| > 2.27$$.
+
+### Q: A student scored 620 on the SAT, where scores are $$N(500, 100^2)$$, and 29 on the ACT, where scores are $$N(21, 4.7^2)$$. Which score is relatively higher, and what makes the comparison legitimate?
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:** Standardise both. The SAT z-score is $$\frac{620 - 500}{100} = 1.20$$ and the ACT z-score is $$\frac{29 - 21}{4.7} = 1.70$$. The ACT score is relatively higher: it sits 1.70 standard deviations above its mean against 1.20 for the SAT. The comparison works because both distributions are Normal, and standardising turns each into the same $$N(0, 1)$$ scale, so the two z-scores are positions on one curve. In table terms the SAT score beats about 88.5% of takers and the ACT score about 95.5%.
+
+### Q: Using Table A, find $$P(-1.40 < Z < 0.95)$$. Show the two table values you look up and the arithmetic. Then write the one-line R command that gives the same number.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:** Table A gives areas to the left, so the area between two values is the difference of two left areas.
+
+$$
+\begin{aligned}
+P(-1.40 < Z < 0.95) &= P(Z < 0.95) - P(Z < -1.40) \\
+&= 0.8289 - 0.0808 \\
+&= 0.7481
+\end{aligned}
+$$
+
+In R: `pnorm(0.95) - pnorm(-1.40)`.
+
+### Q: SAT reading scores are $$N(500, 100^2)$$ and you scored 680. What proportion of takers did better than you? Work it through the deck's three steps, and give both R commands, with and without standardising.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:** Step 1, the proportion wanted is $$P(X > 680)$$, the right tail past 680. Step 2, standardise: $$z = \frac{680 - 500}{100} = 1.80$$, so the question is $$P(Z > 1.80)$$. Step 3, Table A gives the left area 0.9641, and the total area is 1.
+
+$$
+\begin{aligned}
+P(X > 680) &= P(Z > 1.80) \\
+&= 1 - 0.9641 \\
+&= 0.0359
+\end{aligned}
+$$
+
+About 3.6% did better. In R: `pnorm(1.8, lower.tail = FALSE)` or `pnorm(680, mean = 500, sd = 100, lower.tail = FALSE)`. The `sd` argument is 100, the standard deviation, even though the course writes the distribution with $$100^2$$.
+
+### Q: SAT reading scores are $$N(500, 100^2)$$. How high must a student score to be in the top 5%? State the backward three-step method as you go, and say what you do when the table has no entry that is exactly the proportion you want.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:** Step 1, top 5% means a cumulative proportion of 0.95 below the unknown score $$x$$; draw the curve with 0.95 to the left of $$x$$. Step 2, find the $$z$$ whose left area is 0.95. Table A has 0.9495 at $$z = 1.64$$ and 0.9505 at $$z = 1.65$$, so take the closer entry, or $$z = 1.645$$ when the question allows the midpoint. Step 3, unstandardise.
+
+$$
+\begin{aligned}
+x &= \mu + z\sigma \\
+&= 500 + 1.645 \times 100 \\
+&= 664.5
+\end{aligned}
+$$
+
+A score of about 665 is needed. When no entry matches exactly, the deck's rule is to use the closest table probability and its $$z$$; $$z = 1.64$$ or $$1.65$$ gives 664 or 665, and either is accepted.
+
+### Q: Table A only lists areas to the left of $$z$$, and only for a limited range. Explain why one such table is enough for every Normal probability, and write $$P(Z > 1.30)$$ in three equivalent ways, with its value.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** derive
+**A:** Two facts. Every Normal variable standardises to $$N(0, 1)$$ by $$Z = \frac{X - \mu}{\sigma}$$, so one curve serves every $$\mu$$ and $$\sigma$$. And the standard Normal is symmetric about zero, so a right tail equals the matching left tail, and any area is one minus its complement.
+
+$$
+\begin{aligned}
+P(Z > 1.30) &= 1 - P(Z \le 1.30) \\
+&= P(Z < -1.30) \\
+&= 1 - 0.9032 = 0.0968
+\end{aligned}
+$$
+
+### Q: $$X \sim N(\mu, \sigma^2)$$ and $$Z = \frac{X - \mu}{\sigma}$$. Using the lecture 10 rules for the mean and variance of $$aX + b$$, show that $$Z$$ has mean 0 and variance 1. What extra fact, not provable from those rules, does the deck add about the distribution of $$Z$$?
+**Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** derive
+**A:** Write $$Z = aX + b$$ with $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
+
+$$
+\begin{aligned}
+E(Z) &= \frac{1}{\sigma} E(X) - \frac{\mu}{\sigma} \\
+&= \frac{\mu - \mu}{\sigma} = 0 \\[4pt]
+\operatorname{Var}(Z) &= \frac{1}{\sigma^2} \operatorname{Var}(X) \\
+&= \frac{\sigma^2}{\sigma^2} = 1
+\end{aligned}
+$$
+
+The rules give the mean and variance of $$Z$$ for any $$X$$, Normal or not. The extra fact is that a linear transformation of a Normal variable is still Normal, so $$Z \sim N(0, 1)$$ exactly. That is why Table A applies, and it is outcome 3o's "preservation under linear transformation".
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -2479,3 +2571,22 @@ $$
 The median of $$Y$$ is the cube of the median of $$X$$, which is 2, because an increasing function carries the median across.
 
 (c) Cubing stretches the axis unevenly. An interval of $$y$$ values near 27 comes from a much shorter interval of $$x$$ values than an interval of the same length near 1, so the probability per unit of $$y$$ falls as $$y$$ grows: $$f_Y(1) = \frac{1}{6}$$ and $$f_Y(27) = \frac{1}{54}$$. The factor $$\frac{1}{3}y^{-2/3}$$ from the chain rule is that stretch.
+
+### Q: Battery lifetimes are $$N(1200, 150^2)$$ hours. Find the proportion that fail before 1000 hours, the proportion that last between 1050 and 1400 hours, and the lifetime that only the longest-lasting 10% exceed. Use Table A.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:** Steps:
+1. Standardise each boundary with $$z = \frac{x - 1200}{150}$$ and draw the area wanted.
+2. Read each left area off Table A; subtract for a between, use one minus for an upper tail.
+3. For the 90th percentile find the $$z$$ with left area 0.90, then unstandardise with $$x = 1200 + 150z$$.
+
+$$
+\begin{aligned}
+P(X < 1000) &= P(Z < -1.33) = 0.0918 \\[4pt]
+P(1050 < X < 1400) &= P(-1.00 < Z < 1.33) \\
+&= 0.9082 - 0.1587 = 0.7495 \\[4pt]
+P(Z < z) = 0.90 &\Rightarrow z = 1.28 \\
+x &= 1200 + 1.28 \times 150 = 1392
+\end{aligned}
+$$
+
+About 9.2% fail before 1000 hours, about 75% last between 1050 and 1400 hours, and only the top 10% last beyond about 1392 hours.
