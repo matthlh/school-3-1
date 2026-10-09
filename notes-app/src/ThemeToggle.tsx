@@ -10,7 +10,7 @@ const OPTIONS: { value: Theme; glyph: string; label: string }[] = [
 export function ThemeToggle() {
   const current = usePref(theme)
   return (
-    <div className="theme-toggle" role="group" aria-label="Theme">
+    <div className="seg compact" role="group" aria-label="Theme">
       {OPTIONS.map((o) => (
         <button
           key={o.value}

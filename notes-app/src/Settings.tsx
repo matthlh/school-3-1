@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { ThemeToggle } from './ThemeToggle'
-import { PALETTES, VISUALS, nextVisual, palette, usePref, visual } from './prefs'
+import { PALETTES, VISUALS, VISUAL_ORDER, palette, usePref, visual } from './prefs'
 import { buildLabel } from './update'
 
-/** Gear button in the top bar. The popover holds Appearance, Colours and the Super secret settings button. */
+/** Gear button in the top bar. The popover holds Appearance, Colours, Secret visuals and the build time. */
 export function Settings() {
   const [open, setOpen] = useState(false)
   const effect = usePref(visual)
   const ref = useRef<HTMLDivElement>(null)
   const gearRef = useRef<HTMLButtonElement>(null)
-  const secretRef = useRef<HTMLButtonElement>(null)
 
   // Click outside or Escape closes the popover; Escape hands focus back to the gear.
   useEffect(() => {
@@ -45,23 +44,13 @@ export function Settings() {
           </div>
           <div className="row">
             <span className="lbl">Secret visuals</span>
-            <button
-              ref={secretRef}
-              type="button"
-              className={'btn secret' + (effect !== 'off' ? ' on' : '')}
-              title="Each click moves to the next effect. Links keep working."
-              onClick={() => visual.set(nextVisual(effect))}
-            >{effect === 'off' ? 'Super secret settings…' : VISUALS[effect].label}</button>
+            <VisualPicker />
           </div>
           <div className="row">
             <span className="lbl">Version</span>
             <span className="val">built {buildLabel()}</span>
           </div>
-          {effect !== 'off' && (
-            <p className="hintline">
-              {VISUALS[effect].hint} <button type="button" className="link" onClick={() => { visual.set('off'); secretRef.current?.focus() }}>Turn off</button>
-            </p>
-          )}
+          {effect !== 'off' && <p className="hintline">{VISUALS[effect].hint}</p>}
         </div>
       )}
     </div>
@@ -84,6 +73,25 @@ function PalettePicker() {
           style={{ '--sw-page': `light-dark(${p.light.page}, ${p.dark.page})`, '--sw-accent': `light-dark(${p.light.accent}, ${p.dark.accent})` } as CSSProperties}
           onClick={() => palette.set(p.id)}
         />
+      ))}
+    </div>
+  )
+}
+
+/** Off and the three effects side by side, one click each, in the same control as the theme switch. */
+function VisualPicker() {
+  const current = usePref(visual)
+  return (
+    <div className="seg compact" role="group" aria-label="Secret visuals">
+      {VISUAL_ORDER.map((v) => (
+        <button
+          key={v}
+          type="button"
+          className={current === v ? 'on' : undefined}
+          aria-pressed={current === v}
+          title={VISUALS[v].hint || 'No effect'}
+          onClick={() => visual.set(v)}
+        >{VISUALS[v].label}</button>
       ))}
     </div>
   )
