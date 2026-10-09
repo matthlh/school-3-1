@@ -55,9 +55,9 @@ export const PALETTES: { id: Palette; label: string; light: Swatch; dark: Swatch
 /** Mist is the stylesheet's base tokens; every other palette is a block keyed on <html data-palette> in styles.css. */
 export const palette = pref<Palette>('palette', PALETTES.map((p) => p.id), 'mist')
 
-// "Secret visuals": Minecraft's old Super Secret Settings button, for a notes site. Each click moves to the next
-// effect. Effects are pure CSS keyed on <html data-visual>, scoped to the content so the settings popover stays
-// readable and every link keeps working.
+// "Secret visuals": Minecraft's old Super Secret Settings, for a notes site. Settings shows Off and the effects
+// side by side, one click each. Effects are pure CSS keyed on <html data-visual>, scoped to the content so the
+// settings popover stays readable and every link keeps working.
 type Visual = 'off' | 'abstract' | 'blobs' | 'wireframe'
 export const VISUALS: Record<Visual, { label: string; hint: string }> = {
   off: { label: 'Off', hint: '' },
@@ -65,9 +65,9 @@ export const VISUALS: Record<Visual, { label: string; hint: string }> = {
   blobs: { label: 'Blobs', hint: 'The page through a blur. Links still work.' },
   wireframe: { label: 'Wireframe', hint: 'Outlines only. Links still work.' },
 }
-const VISUAL_ORDER = Object.keys(VISUALS) as Visual[]
+/** Picker order: Off first, then the effects as VISUALS lists them. */
+export const VISUAL_ORDER = Object.keys(VISUALS) as Visual[]
 export const visual = pref<Visual>('visual', VISUAL_ORDER, 'off')
-export const nextVisual = (v: Visual): Visual => VISUAL_ORDER[(VISUAL_ORDER.indexOf(v) + 1) % VISUAL_ORDER.length]
 
 // The browser chrome (meta theme-color) takes the current palette's page colour for the theme showing now: a forced
 // theme wins, otherwise the OS decides. It follows a theme or palette pick and, in Auto, the OS flipping.
