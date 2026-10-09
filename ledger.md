@@ -68,7 +68,7 @@ _57 topics due as of Thu Oct 8. Say **quiz me**._
 
 _Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 0% of 16 in-scope questions likely recalled._
 
-_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 1% of 125 in-scope questions likely recalled._
+_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 1% of 137 in-scope questions likely recalled._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is past and the course's next exam does not._
 
@@ -137,6 +137,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | CPSC 310 | Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) | 7 | — | — | 0 | 2026-10-02 |
 | CPSC 310 | Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) | 7 | — | — | 0 | 2026-10-02 |
 | CPSC 310 | Design patterns I: Adapter and Composite (four-step analysis: change, pain, mechanism, cost · scattered is coupling, tangled is cohesion · mechanism from abstraction, obliviousness, trigger · when patterns help or hurt · Adapter: one interface per client, gain in degree · Composite: component, leaf, composite; cheap new node, costly new operation) | 8 | — | — | 0 | 2026-10-07 |
+| CPSC 310 | Design patterns II: Decorator (adds behaviour to one object at run time, not to the class · a decorator is a component and has a component · the caller asks the outermost wrapper and each wrapper changes the answer of what it wraps · costs: one class per add-on, order changes the result, long chains, identity and instanceof · java.io streams · composition over inheritance · Adapter changes the interface, Decorator the behaviour, Composite holds many) | 9 | — | — | 0 | 2026-10-09 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
@@ -194,7 +195,8 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | Fri Oct 2, 08:00 → Thu Oct 15, 23:59 | CPSC 310 | **LAB04 DIP, LSP & Testability** on PrairieLearn. Close date read on PrairieLearn 2026-10-03; PRAQ04 practice closes the same time | 10% pool | |
 | ~Thu Oct 15 | ASIA 250 | **Short Written Response 1** | 15% | paper |
 | ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | | |
-| Fri Oct 16, 18:05 | CPSC 310 | **D2** — Make it evolvable (individual): refactor filterSections and filterRooms into one filter behind an interface, then add the IN operator. PrairieLearn DELIV2 closes 18:05; the spec says 18:00 · pair formation in Oct 16–22 lab | 5% | deliverable |
+| Fri Oct 9, 09:00 | CPSC 310 | **D3/D4 team formation opens** (instructions on Piazza; find a partner in lab; team repos provisioned from Mon Oct 19; the team is to be entered "by end of day", with the date on Piazza) | | |
+| Fri Oct 16, 18:05 | CPSC 310 | **D2** — Make it evolvable (individual): refactor filterSections and filterRooms into one filter behind an interface, then add the IN operator. PrairieLearn DELIV2 closes 18:05; the spec says 18:00 · D3/D4 team formation opens Fri Oct 9 (deck 05b), repos from Oct 19 | 5% | deliverable |
 | **Fri Oct 16, 14:00–14:50** | PHIL 385 | **Exam 2** | 15% | exam |
 | ~Thu Oct 22, 23:59 | STAT 251 | WeBWorK 5 — opens Oct 13. The Canvas calendar event added Oct 8 says Thu Oct 22, the same Thursday pattern as sets 3 and 4; read the real date off WeBWorK on Oct 13 | | |
 | **Sat Oct 24** | STAT 251 | **Written Assignment 1** — confirmed by Matt 2026-09-11; the Oct 31 Canvas calendar entry is wrong | ~5% | assignment |
@@ -335,3 +337,5 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-06 | CPSC 310 lec 8 logged from the posted deck (Patterns I: Adapter and Composite; Matt absent): 12 questions, 1 ledger topic due Oct 7. |
 | 2026-10-07 | Morning check: ASIA 250 Optional Assignment 2 opened (+2% bonus, due Fri Nov 6), to-do and calendar row added. CPSC 310 D1-Manual and D1-Total posted 100/100 on Canvas, total 94.9%. Kraal answered three Musical Erotic questions by email. STAT 251 lecture 12 and ASIA 250 lecture 5 prepared from their decks: 8 and 12 questions, 4 new topics. WeBWorK signed out. Transit deck now grades by key-point ticks. |
 | 2026-10-08 | Morning check: STAT 251 lecture 13 deck (Ch 5 Normal) prepared for Friday, 9 questions, 2 topics due Oct 9; the Ch 4 activity sheet unlocks Fri 07:30. Canvas calendar shows WeBWorK 5 due Thu Oct 22, so the ledger and Things3 moved from Oct 20. CPSC 310 lecture 9 outline from the reader (Decorator and State). WeBWorK signed out. Yesterday's deck ungraded, replaced. Ramp declined the iOS internship. |
+| 2026-10-08 | STAT 251 lec 12 logged (Wed Oct 7; Matt absent) from the after-class deck and the Panopto recording. New In class section with what he said to write in a worked answer: "by independence" beside the product step, every cdf for all real numbers, and uniform facts may sit on the cheat sheet in an exam. No clicker questions were asked. 1 question added, 6 under Lec 12 plus 3 long problems. |
+| 2026-10-08 | CPSC 310 lec 9 logged (Thu Oct 8; Matt absent) from the posted deck 05b-patterns-ii.pdf and the reader's Decorator and Composite sections. The site retitled the lecture Composite & Decorator, so State waits for a later deck. 12 questions, 1 ledger topic due Oct 9, look-alike row against Design patterns I. The deck announced D3/D4 team formation opening Fri Oct 9 with repos from Oct 19: calendar row and to-do added. PHIL 385 lec 10 (Oct 7) has no record and stays unlogged. |

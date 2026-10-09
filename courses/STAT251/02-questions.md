@@ -1412,7 +1412,7 @@ So $$f_Y(y) = \frac{1}{2y}$$ for $$1 \le y \le e^2$$ and 0 otherwise. Check: the
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW4  **Type:** apply
 **A:** The median of $$X$$ is 1.5. Because $$e^x$$ is increasing, half the values of $$X$$ lie below 1.5 exactly when half the values of $$e^X$$ lie below $$e^{1.5}$$, so the median of $$e^X$$ is $$e^{1.5} \approx 4.48$$. Solving $$F_Y(m) = 0.5$$ gives the same: $$\frac{\ln m}{3} = 0.5$$, so $$m = e^{1.5}$$. The mean does not carry over, because $$E(e^X) \ne e^{E(X)}$$. Here $$E(e^X) = \frac{e^3 - 1}{3} \approx 6.36$$, larger than 4.48 because $$e^x$$ bends upward.
 
-## Lec 12 — Ch 4: maximum and minimum of independent random variables, functions of one random variable (prepared 2026-10-07 from the posted deck)
+## Lec 12 — Ch 4: maximum and minimum of independent random variables, functions of one random variable (logged 2026-10-08 from the after-class deck and the recording; Matt absent)
 
 ### Q: $$X_1, \dots, X_n$$ are independent with the same cdf $$F$$. Derive the cdf of $$U = \min\{X_1, \dots, X_n\}$$, and say why the derivation starts from $$P(U > u)$$ instead of $$P(U \le u)$$.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** derive
@@ -1482,6 +1482,22 @@ F_Y(y) &= P(-\sqrt{y} \le X \le \sqrt{y}) \\
 $$
 
 $$P(X \le \sqrt{y})$$ is wrong because it also counts $$X < -\sqrt{y}$$, where $$X^2 > y$$, and $$f_X$$ puts probability on negative values. If $$X$$ lives on $$[0, 2]$$, then $$P(X < -\sqrt{y}) = 0$$ and $$F_Y(y) = F_X(\sqrt{y})$$ alone. The pdf follows by the chain rule either way: $$f_Y(y) = \frac{f_X(\sqrt{y}) + f_X(-\sqrt{y})}{2\sqrt{y}}$$, with the second term dropped when $$X$$ is never negative.
+
+### Q: $$X_1 \sim U(20, 40)$$ and $$X_2 \sim U(35, 50)$$ are independent and $$Y = \max\{X_1, X_2\}$$. On an exam a student writes $$F_Y(y) = \frac{y - 20}{20} \cdot \frac{y - 35}{15}$$ and differentiates it. Name the two things the instructor said must be written here, and supply what is missing.
+**Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** critique
+**A:** First, the product step has no reason beside it. Multiplying $$P(X_1 \le y)$$ by $$P(X_2 \le y)$$ is only allowed because $$X_1$$ and $$X_2$$ are independent, and he said not to write the product down without "by independence" beside it. Second, the cdf is stated on one range only, and he said a cdf must be given for all real numbers.
+
+$$
+F_Y(y) =
+\begin{cases}
+0 & y < 35 \\[2pt]
+\dfrac{(y - 20)(y - 35)}{300} & 35 \le y \le 40 \\[6pt]
+\dfrac{y - 35}{15} & 40 < y \le 50 \\[6pt]
+1 & y > 50
+\end{cases}
+$$
+
+The middle piece stops at 40 because $$F_{X_1}$$ is already 1 past 40, and the product is 0 below 35 because $$F_{X_2}$$ is. The pdf comes from differentiating every piece: $$\frac{2y - 55}{300}$$ on $$[35, 40]$$, $$\frac{1}{15}$$ on $$(40, 50]$$, and 0 elsewhere.
 
 ## Lec 13 — Ch 5: the Normal and standard Normal distributions (prepared 2026-10-08 from the before-class deck)
 

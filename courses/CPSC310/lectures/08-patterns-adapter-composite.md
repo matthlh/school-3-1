@@ -3,10 +3,10 @@
 Deck: [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). Reader: [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/), which covers Adapter and Composite plus the Factory, Strategy, State and Decorator that later decks will use. Questions: 12 in [the bank](../02-questions.md) under "Lec 8". Matt was absent; the deck was posted before class, so there is no In class section.
 
 ## Learning goals
-- Find a decision in existing code that is likely to change, and see where knowledge of it is scattered or tangled.
-- Explain a design pattern as four things: the change, the pain, the mechanism and the cost.
-- Refactor unfamiliar code towards a pattern in small steps that keep its behaviour the same. Today's two are Adapter and Composite.
-- Decide whether a pattern is worth its cost in a given situation.
+- Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
+- Describe a pattern by its change, its pain, its mechanism and its cost.
+- Move unfamiliar code to a pattern one behaviour-preserving step at a time. Today's targets are Adapter and Composite.
+- Judge whether a pattern pays for itself in a given situation.
 
 ## Slides, organized
 ### Module 2 starts: designing for change (slides 2–5)
@@ -63,4 +63,4 @@ Deck: [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patte
 - The reader's Design Patterns chapter states each pattern's effect in Module 1 terms. Without Adapter, every client of several sources has scattered changes with connascence of type or algorithm per source and tangles business logic with parsing. With it, a client has connascence of type with one interface, and the main gain is in degree: one dependency instead of one per source. The reader also says adapters do not have to share an interface; the deck's `MusicSource` does, because the report needs to loop over them.
 - Without Composite, traversal logic is duplicated in every role that has reports, which is scattered change with connascence of algorithm. With it, the client is down to connascence of type. The reader's example is `Employee.getBudget()`: a leaf returns its salary, a Manager returns its salary plus `getBudget()` of each report, and the client cannot tell which it has.
 - The deck's "scattered" and "tangled" are the reader's words for a coupling problem and a cohesion problem respectively. Pain is always one of those two.
-- The deck says nothing about Factory, Strategy, State or Decorator; the reader chapter does, and Thursday's deck (05b) is Factory and Decorator.
+- The deck says nothing about Factory, Strategy, State or Decorator; the reader chapter does, and the lecture 9 deck (05b) turned out to be Composite again plus Decorator.

@@ -1,6 +1,6 @@
 # STAT 251 — Lec 12 (Wed Oct 7) — Ch 4: the maximum and minimum of independent random variables, functions of one random variable
 
-No page from you yet, and no recording yet. This file is the posted after-class deck organised for study, `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753). It finishes the maximum from lecture 10, adds the minimum, and works four examples. The answer files for Examples 9, 10 and 11 are scanned handwriting with no text layer, so those three are worked here from scratch; Example 12 is worked in the deck itself.
+You were absent, so there is no page from you. This file is the posted after-class deck organised for study, `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with the recording's remarks under In class. It finishes the maximum from lecture 10, adds the minimum, and works four examples. The answer files for Examples 9, 10 and 11 are scanned handwriting with no text layer, so those three are worked here from scratch; Example 12 is worked in the deck itself.
 
 ## Learning goals (slide 2)
 - Slide 2 repeats the Chapter 4 outcome list. The one this lecture covers is the last: the maximum and minimum of independent random variables.
@@ -202,10 +202,35 @@ $$
 - Review lecture 12 and the related textbook sections before the next class.
 - The next class starts Chapter 5, the normal distribution.
 
+## In class (from the recording)
+- Announcements.
+  - Lab 2 runs this week and Lab 3 next week.
+  - Monday Oct 12 is a holiday, so the Monday lab sections get an individual lab posted online on Friday after the last lab, due the following Monday, with no office hours that Monday. Your section is Friday, so your lab does not change.
+  - WeBWorK 3 closes Thursday Oct 8 after its extension, and WeBWorK 4 is open and due next Thursday, Oct 15.
+- He went back over lecture 10 because students had asked about it.
+  - The topics: properties of expectation and variance, covariance, independence, linear combinations, and independent and identically distributed random variables.
+  - Identically distributed means every variable comes from the same distribution, and a random sample is i.i.d.
+  - His example was ten midterm grades drawn from a normal distribution with mean 78 and standard deviation 6: one distribution, ten different observed numbers, and no grade depending on another.
+- Why the maximum is a random variable.
+  - Four bulbs chosen from one population give four observed lifetimes between 0 and 100 hours, and a different set of four bulbs gives a different maximum.
+  - Before the bulbs are observed the maximum is random. After, it is a realization. The same holds for the minimum.
+  - The distribution of the maximum is what answers a question such as the probability that the maximum lies between 60 and 80 hours, and it gives the mean and standard deviation of the maximum.
+- The cdf of the maximum was derived as on the slides, then the cdf of the minimum through the complement. He called the complement the trick for the minimum: the minimum being at most $$u$$ is hard to use, while every variable being above $$u$$ is an intersection, and an intersection of independent events multiplies.
+- Example 12 in full.
+  - He asked whether the two uniforms are identical. They are not: they are both uniform but have different distributions, so the cdf of the maximum is a product of two different cdfs and not a power.
+  - He wrote the product only for 35 to 40, because $$F_{X_2}$$ is 0 below 35 and $$F_{X_1}$$ is 1 above 40, and said that working out the ranges is the part that matters.
+- What he said to write in a worked answer.
+  - Write "by independence" beside the step that multiplies the probabilities. He said not to write the product without that reason beside it.
+  - A cdf must be given for all real numbers, every piece including the 0 and 1 pieces, for discrete and continuous variables alike.
+  - In an exam the uniform pdf, its cdf, its mean and its variance can sit on the cheat sheet and need not be derived, but $$a$$ and $$b$$ must be identified correctly.
+- Example 11 was worked quickly from the posted solution. The maximum of exponentials is not exponential, the minimum is exponential with rate $$n\lambda$$, and the solution file is on the Canvas page. The posted solution skips one step, and he said skipping steps is fine once the understanding is there.
+- Examples 9 and 10 are change-of-variable problems, which he did not work. The detailed solutions are posted, WeBWorK 4 has a similar question, and he asked you to try them before reading the solutions. For $$Y = X^2$$ the support of $$Y$$ needs care because $$X$$ takes negative values.
+- No clicker questions today; he ran out of time. Next class starts Chapter 5, the normal distribution.
+
 ## Clarifications
 - Slide 14 writes $$x_1$$ where it means $$x_2$$ in the support of $$X_2$$. The interval is $$35 \le x_2 \le 50$$, as the formulas on slides 15 to 17 assume.
 - Slide 15 gives the cdf of $$Y$$ only for $$35 \le y \le 40$$. It is not the whole cdf; the four-piece version on slide 16 is, and the pdf on slide 17 comes from differentiating every piece.
 - In Example 10 the deck does not say why the cdf uses both roots. $$X^2 \le y$$ means $$|X| \le \sqrt{y}$$, and the pdf of $$X$$ puts probability on negative values, so $$P(X \le \sqrt{y})$$ alone is wrong.
 - The deck leaves the supports of the pdfs in Examples 9 to 11 implicit. They are $$e^{-1} \le y \le e$$, $$0 \le y \le 9$$, and $$y > 0$$ or $$w > 0$$.
 
-Questions: 5 in [02-questions.md](../02-questions.md) under "Lec 12", and 3 under "Long problems". Ledger: 1 new topic, 3l, plus the existing 3m–n row.
+Questions: 6 in [02-questions.md](../02-questions.md) under "Lec 12", and 3 under "Long problems". Ledger: 1 new topic, 3l, plus the existing 3m–n row.
