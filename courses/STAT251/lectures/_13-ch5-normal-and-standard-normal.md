@@ -1,6 +1,6 @@
 # STAT 251 · Lecture 13 · Ch 5: the Normal and standard Normal distributions (Fri Oct 9, 2026)
 
-Prepared 2026-10-08 from the before-class deck `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides). The Chapter 4 activity sheet (A2) and the after-class deck unlock on Fri Oct 9 at 07:30 and are folded in then. 9 questions banked under Lec 13, one of them under Long problems.
+Prepared 2026-10-08 from the before-class deck `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides). Updated 2026-10-09 from the after-class deck (30 slides, the same slides plus the worked answers already on this page) and the Chapter 4 in-class activity sheet A2 with its solution. 10 questions banked under Lec 13, two of them under Long problems.
 
 ## Slides, organized
 
@@ -58,6 +58,54 @@ $$
 ### What is next (slide 25)
 
 - The summary slide lists the Normal distribution, the 68-95-99.7 rule, z-scores, the standard Normal distribution and probability calculations. The next class continues Chapter 5.
+
+## In class
+
+### Chapter 4 activity A2: a shifted exponential (worksheet, before the Chapter 5 slides)
+
+- The class opened with a worksheet on one continuous random variable before the Normal slides started. The pdf is $$f(x) = e^{-(x - 2)}$$ for $$x \ge 2$$ and 0 elsewhere, an exponential with rate 1 that starts at 2 instead of 0.
+- Part (i)(a) asks you to verify that $$f$$ is a pdf. The two checks are that $$f(x) \ge 0$$ for every $$x$$ and that the total area is 1.
+
+$$
+\begin{aligned}
+\int_{2}^{\infty} e^{-(x-2)}\,dx &= \left[-e^{-(x-2)}\right]_{2}^{\infty} \\
+&= 0 - (-1) = 1
+\end{aligned}
+$$
+
+- Part (i)(b) asks for the cdf. Integrate the pdf from the start of the support up to $$x$$, and state the cdf for every real $$x$$.
+
+$$
+F(x) =
+\begin{cases}
+0 & x < 2 \\
+1 - e^{-(x-2)} & x \ge 2
+\end{cases}
+$$
+
+- Part (i)(c) asks you to shade $$P(1 < X < 3)$$ on the sketch of the pdf. The region from 1 to 2 has no area because the pdf is 0 there, so only the strip from 2 to 3 is shaded.
+- Part (i)(d) finds the same probability from the cdf. Because 1 is below the support, $$F(1) = 0$$.
+
+$$
+\begin{aligned}
+P(1 < X < 3) &= F(3) - F(1) \\
+&= \left(1 - e^{-1}\right) - 0 \\
+&\approx 0.632
+\end{aligned}
+$$
+
+- Part (i)(e) asks for a second method and a check. Integrate the pdf directly from 2 to 3, since it is 0 from 1 to 2, and the same $$1 - e^{-1}$$ comes out.
+- Part (ii) asks for the median, the value exceeded 50% of the time. Set $$F(m) = 0.5$$ and solve.
+
+$$
+\begin{aligned}
+1 - e^{-(m-2)} &= 0.5 \\
+e^{-(m-2)} &= 0.5 \\
+m &= 2 + \ln 2 \approx 2.693
+\end{aligned}
+$$
+
+- The point of the sheet is the Chapter 4 routine on a support that does not start at 0: check the pdf, build the cdf with its two cases, read probabilities off the cdf, and get the median by inverting $$F$$.
 
 ## Clarifications
 

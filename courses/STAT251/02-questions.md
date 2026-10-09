@@ -2606,3 +2606,54 @@ x &= 1200 + 1.28 \times 150 = 1392
 $$
 
 About 9.2% fail before 1000 hours, about 75% last between 1050 and 1400 hours, and only the top 10% last beyond about 1392 hours.
+
+### Q: A continuous random variable $$X$$ has pdf $$f(x) = e^{-(x - 3)}$$ for $$x \ge 3$$ and 0 elsewhere. (a) Verify that $$f$$ is a pdf. (b) Find the cdf $$F(x)$$ for every real $$x$$. (c) Find $$P(2 < X < 5)$$ from the cdf, then check it by integrating the pdf. (d) Find the median of $$X$$.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 13  **Type:** derive
+**A:** Steps:
+1. Check $$f(x) \ge 0$$ everywhere and integrate the pdf over its support to get 1.
+2. Integrate the pdf from the start of the support to $$x$$ for the cdf, and write the 0 case for $$x$$ below the support.
+3. Read the probability as $$F(5) - F(2)$$, remembering that $$F(2) = 0$$, then integrate the pdf from 3 to 5 as the check.
+4. Set $$F(m) = 0.5$$ and solve for $$m$$.
+
+(a) $$e^{-(x-3)} > 0$$ for every $$x \ge 3$$, and the total area is 1.
+
+$$
+\begin{aligned}
+\int_{3}^{\infty} e^{-(x-3)}\,dx &= \left[-e^{-(x-3)}\right]_{3}^{\infty} \\
+&= 0 - (-1) = 1
+\end{aligned}
+$$
+
+(b) The cdf has two cases, and the "0 below the support" case is part of the answer.
+
+$$
+F(x) =
+\begin{cases}
+0 & x < 3 \\
+1 - e^{-(x-3)} & x \ge 3
+\end{cases}
+$$
+
+(c) Since 2 is below the support, $$F(2) = 0$$.
+
+$$
+\begin{aligned}
+P(2 < X < 5) &= F(5) - F(2) \\
+&= 1 - e^{-2} \\
+&\approx 0.865
+\end{aligned}
+$$
+
+The check integrates the pdf from 3 to 5, because the pdf is 0 between 2 and 3, and gives the same $$1 - e^{-2}$$.
+
+(d) Solve $$F(m) = 0.5$$.
+
+$$
+\begin{aligned}
+1 - e^{-(m-3)} &= 0.5 \\
+e^{-(m-3)} &= 0.5 \\
+m &= 3 + \ln 2 \approx 3.693
+\end{aligned}
+$$
+
+- Common slip: treating the lower limit as 0 instead of 3. The support starts at 3, so every integral starts there and $$F$$ is 0 before it.
