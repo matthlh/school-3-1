@@ -1629,6 +1629,110 @@ $$
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 13  **Type:** apply
 **A:** Use the cdf you have: $$P(2 < X < 5) = F(5) - F(2) = (1 - e^{-1}) - 0 \approx 0.632$$. The student used the pdf's formula where it does not hold. The pdf is 0 below 4, so the integral runs from 4 to 5, not 2 to 5. A probability of 7.02 is impossible, which is the check that should have caught it.
 
+## Lec 14 — Ch 5: Normal facts, linear combinations and the sample mean (prepared 2026-10-10 from the before-class deck; numbers changed)
+
+### Q: $$X \sim N(20, 4^2)$$ and $$Y = 3X - 5$$. State the distribution of $$Y$$ with both parameters, say which part of the claim is new beyond the Chapter 4 rules, and find $$P(Y > 70)$$.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** By Fact 1, a linear function of a Normal variable is Normal: $$Y \sim N(3 \times 20 - 5,\; 3^2 \times 4^2) = N(55, 144)$$, so $$\operatorname{SD}(Y) = 12$$. The mean and variance come from the Chapter 4 rules for $$aX + b$$; the new part is the shape, that $$Y$$ is still Normal.
+
+$$
+\begin{aligned}
+P(Y > 70) &= P\!\left(Z > \frac{70 - 55}{12}\right) \\
+&= P(Z > 1.25) \\
+&= 1 - 0.8944 = 0.1056
+\end{aligned}
+$$
+
+### Q: Show that standardising, $$Z = \frac{X - \mu}{\sigma}$$ for $$X \sim N(\mu, \sigma^2)$$, is a special case of Fact 1 ($$Y = aX + b$$ is Normal with mean $$a\mu + b$$ and variance $$a^2\sigma^2$$). Name $$a$$ and $$b$$ and derive the two parameters of $$Z$$.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** derive
+**A:** Write $$Z = \frac{1}{\sigma} X - \frac{\mu}{\sigma}$$, so $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
+
+$$
+\begin{aligned}
+E(Z) &= a\mu + b = \frac{\mu}{\sigma} - \frac{\mu}{\sigma} = 0 \\
+\operatorname{Var}(Z) &= a^2\sigma^2 = \frac{\sigma^2}{\sigma^2} = 1
+\end{aligned}
+$$
+
+Fact 1 adds that $$Z$$ is Normal, so $$Z \sim N(0, 1)$$. That is why one table of $$\Phi$$ serves every Normal distribution.
+
+### Q: $$X_1 \sim N(10, 2^2)$$ and $$X_2 \sim N(14, 3^2)$$ are independent. Let $$D = X_1 - X_2$$. Give the distribution of $$D$$ and find $$P(X_1 > X_2)$$. A classmate wrote $$\operatorname{Var}(D) = 4 - 9 = -5$$; say what went wrong.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** $$D$$ is a linear combination with $$a_1 = 1$$ and $$a_2 = -1$$, so by Fact 2 it is Normal with mean $$10 - 14 = -4$$ and variance $$1^2 \times 4 + (-1)^2 \times 9 = 13$$. So $$D \sim N(-4, 13)$$ and $$\operatorname{SD}(D) = \sqrt{13} = 3.606$$.
+
+$$
+\begin{aligned}
+P(X_1 > X_2) &= P(D > 0) \\
+&= P\!\left(Z > \frac{0 - (-4)}{3.606}\right) \\
+&= P(Z > 1.11) \\
+&= 1 - 0.8665 = 0.1335
+\end{aligned}
+$$
+
+The classmate subtracted variances. Coefficients enter the variance squared, so a minus sign in the combination still adds variance; a variance can never be negative.
+
+### Q: Four bolts are laid end to end. Each length is independently $$N(50, 0.2^2)$$ mm. Give the distribution of the total length $$T$$ and find $$P(T > 200.6)$$. Why is $$\operatorname{Var}(T)$$ not $$16 \times 0.04$$?
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** The bolts are identically distributed and independent, so Fact 2 with every $$a_i = 1$$ gives $$T \sim N(4 \times 50,\; 4 \times 0.04) = N(200, 0.16)$$ and $$\operatorname{SD}(T) = 0.4$$.
+
+$$
+\begin{aligned}
+P(T > 200.6) &= P\!\left(Z > \frac{200.6 - 200}{0.4}\right) \\
+&= P(Z > 1.5) \\
+&= 1 - 0.9332 = 0.0668
+\end{aligned}
+$$
+
+$$16 \times 0.04$$ would be the variance of $$4X_1$$, one bolt's length scaled by 4. Four different bolts vary independently, so their variances add once each: $$4 \times 0.04$$, not $$4^2 \times 0.04$$.
+
+### Q: $$X_1, \ldots, X_n$$ is a Normal sample with mean $$\mu$$ and variance $$\sigma^2$$. Derive $$E(\bar{X})$$ and $$\operatorname{Var}(\bar{X})$$ from the Chapter 4 rules, say which of the two steps needs independence, and say where the claim that $$\bar{X}$$ is Normal comes from.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** derive
+**A:** Write $$\bar{X} = \frac{1}{n}(X_1 + \cdots + X_n)$$ and pull the constant out.
+
+$$
+\begin{aligned}
+E(\bar{X}) &= \frac{1}{n}\{E(X_1) + \cdots + E(X_n)\} \\
+&= \frac{1}{n}\{n\mu\} = \mu \\[6pt]
+\operatorname{Var}(\bar{X}) &= \frac{1}{n^2}\{\operatorname{Var}(X_1) + \cdots + \operatorname{Var}(X_n)\} \\
+&= \frac{1}{n^2}\{n\sigma^2\} = \frac{\sigma^2}{n}
+\end{aligned}
+$$
+
+The mean step holds for any variables, because expectation of a sum always adds. The variance step needs independence, because otherwise covariance terms appear in the sum. The shape comes from Fact 2: $$\bar{X}$$ is a linear combination of independent Normals with every $$a_i = \frac{1}{n}$$, so it is Normal, $$\bar{X} \sim N(\mu, \frac{\sigma^2}{n})$$.
+
+### Q: Test scores are $$N(100, 12^2)$$. For a random sample of 16 students, find $$P(\bar{X} > 106)$$, then find $$P(X > 106)$$ for one student. Explain in one sentence why the two differ so much.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** By Fact 3, $$\bar{X} \sim N(100, \frac{144}{16}) = N(100, 9)$$, so $$\operatorname{SD}(\bar{X}) = 3$$.
+
+$$
+\begin{aligned}
+P(\bar{X} > 106) &= P\!\left(Z > \frac{106 - 100}{3}\right) = P(Z > 2) \\
+&= 1 - 0.9772 = 0.0228 \\[6pt]
+P(X > 106) &= P\!\left(Z > \frac{106 - 100}{12}\right) = P(Z > 0.5) \\
+&= 1 - 0.6915 = 0.3085
+\end{aligned}
+$$
+
+An average of 16 scores varies with standard deviation $$\frac{12}{\sqrt{16}} = 3$$, a quarter of one score's 12, so a mean 6 points above 100 is two standard deviations out while a single score 6 points above is only half of one.
+
+### Q: What do $$\phi$$ and $$\Phi$$ denote in the deck's notation? Write $$P(-0.4 < Z < 1.2)$$ using $$\Phi$$ and evaluate it from Table A. What is $$\Phi(0)$$, and why?
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** $$\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$$ is the standard Normal pdf, and $$\Phi(z) = P(Z \le z) = \int_{-\infty}^{z} \phi(t)\, dt$$ is the standard Normal cdf, the area to the left of $$z$$ that Table A lists.
+
+$$
+\begin{aligned}
+P(-0.4 < Z < 1.2) &= \Phi(1.2) - \Phi(-0.4) \\
+&= 0.8849 - 0.3446 \\
+&= 0.5403
+\end{aligned}
+$$
+
+$$\Phi(0) = 0.5$$, because the standard Normal is symmetric about 0, so half the area lies to the left of it.
+
+### Q: Mark each claim true or false and fix the false ones. (a) For a sample of 25 from $$N(\mu, \sigma^2)$$, $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{25}$$. (b) If $$X$$ is Normal then $$-2X + 7$$ is Normal with variance $$-2\sigma^2$$. (c) $$E(\bar{X}) = \mu$$ holds even if the sample values are not independent.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** (a) False. $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{25}$$, so $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{\sqrt{25}} = \frac{\sigma}{5}$$; the square root shrinks the spread by $$\sqrt{n}$$, not $$n$$. (b) False in the variance. $$-2X + 7$$ is Normal by Fact 1, with mean $$-2\mu + 7$$ and variance $$(-2)^2\sigma^2 = 4\sigma^2$$; a variance is never negative. (c) True. Expectation of a sum always adds, so the mean of $$\bar{X}$$ is $$\mu$$ regardless of independence; only the variance formula needs it.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -2695,3 +2799,49 @@ m &= 3 + \ln 2 \approx 3.693
 $$
 
 - Common slip: treating the lower limit as 0 instead of 3. The support starts at 3, so every integral starts there and $$F$$ is 0 before it.
+
+### Q: Adult passenger weight on a regional airline is about $$N(78, 12^2)$$ kg. (a) Find the probability that one passenger weighs between 60 kg and 95 kg. (b) A 40-seat plane has a passenger weight limit of 3300 kg. Find the probability that a full flight exceeds it, once through the total and once through the sample mean, and show the two z-values agree. (c) Find the weight that only the heaviest 5% of passengers exceed.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
+**A:** Steps:
+1. Standardise both ends of the interval in (a) and subtract the two Table A areas.
+2. For (b), write the total as a sum of 40 independent Normals (Fact 2, all $$a_i = 1$$): mean $$40\mu$$, variance $$40\sigma^2$$.
+3. Standardise the limit against the total and read the upper tail.
+4. Repeat through $$\bar{X} \sim N(\mu, \frac{\sigma^2}{40})$$ with the limit divided by 40.
+5. For (c), find the $$z$$ with 0.95 to its left and unstandardise.
+
+(a)
+
+$$
+\begin{aligned}
+z_{60} &= \frac{60 - 78}{12} = -1.50 \\
+z_{95} &= \frac{95 - 78}{12} = 1.42 \\
+P(60 < X < 95) &= \Phi(1.42) - \Phi(-1.50) \\
+&= 0.9222 - 0.0668 = 0.8554
+\end{aligned}
+$$
+
+(b) Total route. $$T = X_1 + \cdots + X_{40} \sim N(40 \times 78,\; 40 \times 144) = N(3120, 5760)$$, so $$\operatorname{SD}(T) = \sqrt{5760} = 75.89$$.
+
+$$
+\begin{aligned}
+P(T > 3300) &= P\!\left(Z > \frac{3300 - 3120}{75.89}\right) \\
+&= P(Z > 2.37) \\
+&= 1 - 0.9911 = 0.0089
+\end{aligned}
+$$
+
+Mean route. The total exceeds 3300 exactly when the mean exceeds $$\frac{3300}{40} = 82.5$$. $$\bar{X} \sim N(78, \frac{144}{40}) = N(78, 3.6)$$, $$\operatorname{SD}(\bar{X}) = 1.897$$.
+
+$$
+z = \frac{82.5 - 78}{1.897} = 2.37
+$$
+
+The same $$z$$, so the same 0.0089. Dividing numerator and denominator of the total's z by 40 gives the mean's z, which is why the routes always agree.
+
+(c) The area 0.95 to the left sits between 1.64 and 1.65 in Table A, so $$z = 1.645$$.
+
+$$
+x = 78 + 1.645 \times 12 = 97.7 \text{ kg}
+$$
+
+Common slips: using $$40 \times 12$$ or $$40^2 \times 144$$ for the total's spread (the right variance is $$40 \times 144$$ because independent variances add once each), and standardising the mean with $$\sigma$$ instead of $$\frac{\sigma}{\sqrt{n}}$$.
