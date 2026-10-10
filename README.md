@@ -20,7 +20,7 @@ each course and quiz you on it.
 | `courses/ASIA250/` | Introduction to Buddhism (online, async) | 104% available; 47% final paper |
 | `courses/PHIL385/` | Existentialism (Kierkegaard) | 100% exams; 45% is MC |
 
-PHIL 321 was dropped on 2026-09-19; its folder is in `archive/PHIL321-dropped/`.
+PHIL 321 was dropped on 2026-09-19; its folder stays on the Mac, outside the repo.
 
 Each course holds `00-syllabus.md`, `01-topics.md` (the topic list and its look-alikes; grades live in `ledger.md`), `02-questions.md`
 (the quiz bank), `03-logistics.md` (office hours, links, tools, dates — the one-time reference the

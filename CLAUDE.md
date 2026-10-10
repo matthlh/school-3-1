@@ -223,7 +223,7 @@ likely get right), and ends by naming each frozen topic.
   exceptions, concession letters included.
   **Intel (2026-09-10):** Shooklyn 2025W: section averages 82–86, a third of the class at 90+.
   96 here is normal, not heroic — bank it, don't over-invest.
-- **PHIL 321** — dropped for good on 2026-09-19 after sitting in on two lectures. Folder is in `archive/PHIL321-dropped/`;
+- **PHIL 321** — dropped for good on 2026-09-19 after sitting in on two lectures. Folder is in `archive/PHIL321-dropped/` (git-ignored, local only);
   do not mention it in briefs, quizzes or the site. He may add a fifth course (a science breadth such as EOS 112) in a later term.
 
 ## AI use

@@ -15,3 +15,6 @@ notes-app/dist/
 .env.*
 # local-only: personal and third-party material kept off the public repo (course intel, private habits)
 private/
+
+# dropped-course material kept on his Mac only (PHIL 321, dropped 2026-09-19)
+archive/
