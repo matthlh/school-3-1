@@ -1,7 +1,9 @@
 # Operating rules for this workspace
 
 Matt is a UBC CS student, Term 3-1 (Sep–Dec 2026). Goal: highest grades per hour spent.
-Career work is a co-priority, so **time efficiency is a hard constraint, not a preference.**
+Career work is a co-priority, so **time efficiency is a hard constraint, not a preference.** When a career item
+and a school item collide, **career goes first** (Matt, 2026-10-09); an interview, assessment or offer is always
+the first line of any brief and a push notification (morning-check SKILL §4b).
 
 ## At the start of any session
 1. Read `ledger.md`. Tell him what is **overdue** for revision before anything else.

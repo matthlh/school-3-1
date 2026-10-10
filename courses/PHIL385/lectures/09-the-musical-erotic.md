@@ -120,10 +120,10 @@ Kraal is playing one aria per stage. "Voi che sapete" was played on Oct 5; Papag
 
 The refrain's first four lines open verses 2 and 3 as well; they are written out once here.
 
-### Stage 3, desiring: *Don Giovanni* (1787), not played yet
+### Stage 3, desiring: *Don Giovanni* (1787)
 - The aria that states the third stage most directly is Don Giovanni's "Fin ch'han dal vino" (Act 1), known as the Champagne Aria. He orders a party, plans to flirt with "this one and that one", and wants ten more names on his list by morning. It is very fast and breathless, which is the point: desire with endless energy.
 - The other likely choice is Leporello's Catalogue Aria, "Madamina, il catalogo è questo" (Act 1). The servant reads out his master's list of conquests, ending "ma in Ispagna son già mille e tre", but in Spain, already one thousand and three. He adds that his master does not care whether she is rich, ugly or beautiful: desire aimed at woman as such, which is A's third stage.
-- Both texts are by Da Ponte, 1787. Tell Claude which one Kraal plays.
+- Both texts are by Da Ponte, 1787. Kraal went through the Catalogue Aria and a seduction scene on Oct 9; see the [lecture 11 page](11-don-giovanni-and-the-catalogue.md).
 
 "Fin ch'han dal vino", in full:
 

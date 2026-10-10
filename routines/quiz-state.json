@@ -129,6 +129,10 @@
     [
      "2026-09-11",
      "X"
+    ],
+    [
+     "2026-10-09",
+     "~"
     ]
    ]
   },
@@ -357,6 +361,10 @@
     [
      "2026-09-17",
      "X"
+    ],
+    [
+     "2026-10-10",
+     "X"
     ]
    ]
   },
@@ -427,6 +435,10 @@
     [
      "2026-09-18",
      "X"
+    ],
+    [
+     "2026-10-09",
+     "X"
     ]
    ]
   },
@@ -447,6 +459,10 @@
     [
      "2026-09-19",
      "X"
+    ],
+    [
+     "2026-10-10",
+     "~"
     ]
    ]
   },
@@ -637,6 +653,10 @@
     [
      "2026-09-19",
      "X"
+    ],
+    [
+     "2026-10-10",
+     "X"
     ]
    ]
   },
@@ -667,6 +687,10 @@
     [
      "2026-09-19",
      "X"
+    ],
+    [
+     "2026-10-10",
+     "X"
     ]
    ]
   },
@@ -696,6 +720,10 @@
    "history": [
     [
      "2026-09-19",
+     "X"
+    ],
+    [
+     "2026-10-10",
      "X"
     ]
    ]
@@ -777,6 +805,326 @@
     [
      "2026-10-02",
      "X"
+    ]
+   ]
+  },
+  "49745e65": {
+   "course": "STAT251",
+   "topic": "1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)",
+   "history": [
+    [
+     "2026-10-09",
+     "~"
+    ]
+   ]
+  },
+  "349c5ce5": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: why music",
+   "history": [
+    [
+     "2026-10-09",
+     "~"
+    ]
+   ]
+  },
+  "485e2fa5": {
+   "course": "STAT251",
+   "topic": "1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)",
+   "history": [
+    [
+     "2026-10-09",
+     "O"
+    ]
+   ]
+  },
+  "79f25f70": {
+   "course": "ASIA250",
+   "topic": "The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths",
+   "history": [
+    [
+     "2026-10-09",
+     "X"
+    ]
+   ]
+  },
+  "2c6c48ec": {
+   "course": "STAT251",
+   "topic": "2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "2866f9a7": {
+   "course": "STAT251",
+   "topic": "2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "b91e7616": {
+   "course": "STAT251",
+   "topic": "2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "05550eaa": {
+   "course": "CPSC310",
+   "topic": "Cohesion & bindings",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "35286dce": {
+   "course": "STAT251",
+   "topic": "2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "3548df3f": {
+   "course": "STAT251",
+   "topic": "2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "2851f580": {
+   "course": "ASIA250",
+   "topic": "Aesthetic experience and the faith frame",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "3b5b4a00": {
+   "course": "STAT251",
+   "topic": "2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "5e7a609c": {
+   "course": "CPSC310",
+   "topic": "Cohesion & bindings",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "582e367c": {
+   "course": "STAT251",
+   "topic": "2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "161bb3f5": {
+   "course": "STAT251",
+   "topic": "2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "4526d815": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: the three stages",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "63c77e1c": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: Don Giovanni",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "45108513": {
+   "course": "STAT251",
+   "topic": "2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)",
+   "history": [
+    [
+     "2026-10-10",
+     "~"
+    ]
+   ]
+  },
+  "1da5b347": {
+   "course": "STAT251",
+   "topic": "2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "2f78e1ec": {
+   "course": "CPSC310",
+   "topic": "Coupling & connascence",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "fb0997f4": {
+   "course": "CPSC310",
+   "topic": "Cohesion & bindings",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "4949b186": {
+   "course": "STAT251",
+   "topic": "2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)",
+   "history": [
+    [
+     "2026-10-10",
+     "~"
+    ]
+   ]
+  },
+  "a099bd88": {
+   "course": "STAT251",
+   "topic": "2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)",
+   "history": [
+    [
+     "2026-10-10",
+     "~"
+    ]
+   ]
+  },
+  "ba2a18b0": {
+   "course": "CPSC310",
+   "topic": "Three fluencies",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "e295ab93": {
+   "course": "STAT251",
+   "topic": "2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "0d13a1d3": {
+   "course": "STAT251",
+   "topic": "2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)",
+   "history": [
+    [
+     "2026-10-10",
+     "~"
+    ]
+   ]
+  },
+  "db3b14c1": {
+   "course": "STAT251",
+   "topic": "2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)",
+   "history": [
+    [
+     "2026-10-10",
+     "O"
+    ]
+   ]
+  },
+  "e8d8c7f3": {
+   "course": "STAT251",
+   "topic": "2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "9df5dc85": {
+   "course": "ASIA250",
+   "topic": "Aesthetic experience and the faith frame",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "d6356c4b": {
+   "course": "STAT251",
+   "topic": "2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)",
+   "history": [
+    [
+     "2026-10-09",
+     "~",
+     {
+      "conf": 2,
+      "cause": "concept",
+      "said": "(a) wrote 1; (c) only-regions 20/10/5 without adding the triple back, exactly one = 35%; (d) correct 0.417, dependent"
+     }
+    ]
+   ]
+  },
+  "02a45a64": {
+   "course": "STAT251",
+   "topic": "2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)",
+   "history": [
+    [
+     "2026-10-09",
+     "~",
+     {
+      "conf": 2,
+      "cause": "careless",
+      "said": "table, P(D)=190/400, 90/240 and 90/190 all right; wrote the conditional as P(D)∩P(On)/P(On) and the two conditionals multiplied; (d) product test started, crossed out"
+     }
     ]
    ]
   }
@@ -1421,6 +1769,258 @@
      "e41af027",
      "PHIL385",
      "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-09",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "49745e65",
+     "STAT251",
+     "~"
+    ],
+    [
+     2,
+     "60c3206c",
+     "CPSC310",
+     "~"
+    ],
+    [
+     3,
+     "349c5ce5",
+     "PHIL385",
+     "~"
+    ],
+    [
+     4,
+     "485e2fa5",
+     "STAT251",
+     "O"
+    ],
+    [
+     5,
+     "612ccd57",
+     "ASIA250",
+     "X"
+    ],
+    [
+     6,
+     "79f25f70",
+     "ASIA250",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "mode": "transit",
+   "n": 30,
+   "note": "",
+   "results": [
+    [
+     1,
+     "2c6c48ec",
+     "STAT251",
+     "O"
+    ],
+    [
+     2,
+     "945d38a4",
+     "CPSC310",
+     "X"
+    ],
+    [
+     3,
+     "2866f9a7",
+     "STAT251",
+     "O"
+    ],
+    [
+     4,
+     "dfb0c686",
+     "ASIA250",
+     "X"
+    ],
+    [
+     5,
+     "b91e7616",
+     "STAT251",
+     "O"
+    ],
+    [
+     6,
+     "7eaf1166",
+     "CPSC310",
+     "X"
+    ],
+    [
+     7,
+     "05550eaa",
+     "CPSC310",
+     "X"
+    ],
+    [
+     8,
+     "35286dce",
+     "STAT251",
+     "O"
+    ],
+    [
+     9,
+     "ab21764f",
+     "CPSC310",
+     "~"
+    ],
+    [
+     10,
+     "3548df3f",
+     "STAT251",
+     "O"
+    ],
+    [
+     11,
+     "2851f580",
+     "ASIA250",
+     "X"
+    ],
+    [
+     12,
+     "3b5b4a00",
+     "STAT251",
+     "O"
+    ],
+    [
+     13,
+     "d4614826",
+     "CPSC310",
+     "X"
+    ],
+    [
+     14,
+     "5e7a609c",
+     "CPSC310",
+     "X"
+    ],
+    [
+     15,
+     "582e367c",
+     "STAT251",
+     "O"
+    ],
+    [
+     16,
+     "161bb3f5",
+     "STAT251",
+     "X"
+    ],
+    [
+     17,
+     "4526d815",
+     "PHIL385",
+     "O"
+    ],
+    [
+     18,
+     "63c77e1c",
+     "PHIL385",
+     "O"
+    ],
+    [
+     19,
+     "45108513",
+     "STAT251",
+     "~"
+    ],
+    [
+     20,
+     "1da5b347",
+     "STAT251",
+     "O"
+    ],
+    [
+     21,
+     "2f78e1ec",
+     "CPSC310",
+     "X"
+    ],
+    [
+     22,
+     "fb0997f4",
+     "CPSC310",
+     "O"
+    ],
+    [
+     23,
+     "4949b186",
+     "STAT251",
+     "~"
+    ],
+    [
+     24,
+     "a099bd88",
+     "STAT251",
+     "~"
+    ],
+    [
+     25,
+     "ba2a18b0",
+     "CPSC310",
+     "X"
+    ],
+    [
+     26,
+     "e295ab93",
+     "STAT251",
+     "X"
+    ],
+    [
+     27,
+     "0d13a1d3",
+     "STAT251",
+     "~"
+    ],
+    [
+     28,
+     "db3b14c1",
+     "STAT251",
+     "O"
+    ],
+    [
+     29,
+     "e8d8c7f3",
+     "STAT251",
+     "X"
+    ],
+    [
+     30,
+     "9df5dc85",
+     "ASIA250",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-09",
+   "mode": "long",
+   "n": 2,
+   "note": "",
+   "results": [
+    [
+     1,
+     "d6356c4b",
+     "STAT251",
+     "~"
+    ],
+    [
+     2,
+     "02a45a64",
+     "STAT251",
+     "~"
     ]
    ]
   }

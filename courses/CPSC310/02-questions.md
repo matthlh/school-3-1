@@ -38,9 +38,13 @@ Format:
 **Topic:** What SE is  **Lec:** 1  **Type:** derive
 **A:** It needs to be easy to evolve, maintain and test, because it will be changed many times by many people over years. You cannot rely on taste to decide which of two designs supports that better, so you need measurable ways to compare two designs of the same thing and to state the trade-off between them. Reasoning about designs by measurement rather than by preference is what "analytical" means here.
 
-### Q: Name the three fluencies the reader says CPSC 310 builds (Holmes 2026). Names only.
+### Q: The reader names three fluencies. Two of them are requirements fluency and validation fluency. What is the third, and what question does it answer?
 **Topic:** Three fluencies  **Lec:** 1  **Type:** recall
-**A:** Decomposition fluency, requirements fluency, and validation fluency.
+**A:** Decomposition fluency. It answers "how should this be split into parts?"
+
+### Q: Match each fluency to its question. Fluencies: decomposition, requirements, validation. Questions: "how do I know it does that?", "what is actually being asked for?", "how should this be split into parts?"
+**Topic:** Three fluencies  **Lec:** 1  **Type:** recall
+**A:** Decomposition: how should this be split into parts? Requirements: what is actually being asked for? Validation: how do I know it does that?
 
 ### Q: A classmate writes a 300-line Python script that scrapes one dataset for their thesis, runs it, gets the numbers, and never opens it again. By the reader's terms, is that code or software? Which of the three adjectives decides it, and does Analytical Code Design apply?
 **Topic:** What SE is  **Lec:** 1  **Type:** apply
@@ -129,13 +133,21 @@ Format:
 
 ## Lec 2 — Coupling (logged 2026-09-15, deck 02a-coupling.pdf + reader Change Difficulty)
 
-### Q: Coupling is measured on three axes. Name them and give a one-line definition of each.
+### Q: Two of coupling's three axes are degree and locality. Name the third and say what it measures.
 **Topic:** Coupling & connascence  **Lec:** 2  **Type:** recall
-**A:** Degree: how many components a dependency touches. Locality: how far apart the dependent components are. Strength (connascence): how much effort it takes to change the dependency.
+**A:** Strength, also called connascence. It measures how much effort it takes to change the dependency.
 
-### Q: List the five connascence types in increasing order of cost to change, one line each.
+### Q: Define degree and locality as axes of coupling, one line each, and say which one a dependency between two files in different packages scores worse on than the same dependency inside one file.
 **Topic:** Coupling & connascence  **Lec:** 2  **Type:** recall
-**A:** Name (what something is called) · Type (the shape of the data) · Value (a shared literal) · Position (argument order) · Algorithm (a computation both sides must do the same way).
+**A:** Degree is how many components a dependency touches. Locality is how far apart the dependent components are. The cross-package dependency scores worse on locality; its degree is unchanged.
+
+### Q: Name the two cheapest connascence types and the most expensive one, and say what each is about.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** recall
+**A:** Cheapest: name (what something is called) and type (the shape of the data). Most expensive: algorithm (a computation both sides must do the same way).
+
+### Q: Put value, position and algorithm connascence in increasing order of cost to change, and give the one-line meaning of value and position. These are the three you left out last time.
+**Topic:** Coupling & connascence  **Lec:** 2  **Type:** recall
+**A:** Value, then position, then algorithm. Value: both sides share a literal, such as a magic number. Position: both sides agree on argument order. The full order is name, type, value, position, algorithm.
 
 ### Q: `createInvoice(customerId, startDate, endDate, total, tax)` is called from several modules. One caller swaps `total` and `tax`. Which connascence type is this, and why is the bug worse than a compile error?
 **Topic:** Coupling & connascence  **Lec:** 2  **Type:** apply

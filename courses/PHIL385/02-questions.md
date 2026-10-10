@@ -802,3 +802,63 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: Does A see himself as a living example of the immediacy he praises in Don Giovanni?
 **Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
 **A:** Not fully. Kraal: A makes various attempts at this immediacy, which the Seducer's Diary will show, but he does not take himself to be as paradigmatic an example as Don Giovanni.
+
+## Lec 10 — missed; the first two stages, from the reading (Wed Oct 7, written 2026-10-09)
+
+### Q: In A's first stage, how do desire and its object relate?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 10  **Type:** recall
+**A:** They are not yet separate. The object exists only as something dreamt inside the desire, so the desire does not know what it wants. That is why the stage is called dreaming.
+
+### Q: What mood does A give the first stage, and what mood the second?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 10  **Type:** recall
+**A:** The first stage, Cherubino's, is quiet and melancholy, a longing with no aim. The second, Papageno's, is cheerful and lively.
+
+### Q: In the second stage the object of desire separates from desire. In what form does it appear, and what does desire then do?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 10  **Type:** apply
+**A:** It appears outside desire, as the many: all the women in the world. Desire turns outward and looks among them, but does not yet desire any one of them; it seeks one that it can desire (p. 90).
+
+### Q: True or false, and justify: A's three stages follow the order in which Mozart wrote the operas.
+**Topic:** The Musical Erotic: the three stages  **Lec:** 10  **Type:** critique
+**A:** False. The order is the growth of desire: dreaming (*Figaro*, 1786), seeking (*The Magic Flute*, 1791), desiring (*Don Giovanni*, 1787). *The Magic Flute* is the latest opera but the middle stage.
+
+### Q: Which character from *The Magic Flute* does A take as the picture of the second stage: the hero Tamino or the bird-catcher Papageno?
+**Topic:** The Musical Erotic: the three stages  **Lec:** 10  **Type:** recall
+**A:** Papageno, the bird-catcher. In his first aria he wants a net to catch girls by the dozen, which is desire looking among the many.
+
+## Lec 11 — Don Giovanni: desire for woman in general (Fri Oct 9, logged 2026-10-09)
+
+### Q: In Mozart's *Don Giovanni*, who sings the Catalogue Aria, what is the catalogue, and how many women does it list for Spain?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** recall
+**A:** Leporello, Don Giovanni's servant, sings it to Donna Elvira. The catalogue is his list of the women his master has loved, country by country: 640 in Italy, 231 in Germany, 100 in France, 91 in Turkey, and 1,003 in Spain.
+
+### Q: What did Kraal take Leporello's catalogue to show about desire at the third stage?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** recall
+**A:** The list is never closed. There is always room for another name, so desire at the third stage cannot be satisfied: each woman won only points to the next.
+
+### Q: According to the Catalogue Aria, what is Don Giovanni's "dominant passion"?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** recall
+**A:** The young beginner ("la giovin principiante"), a young, inexperienced girl. The same aria says he conquers even old women for the pleasure of adding them to the list, and does not care whether a woman is rich, ugly or beautiful.
+
+### Q: What does Don Giovanni desire in each woman, according to A, and why does it not matter to him whether she is rich, ugly or beautiful?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** apply
+**A:** He desires what she has in common with every other woman, the feminine or womanhood in general, not anything extraordinary about her. Since what he wants is the same in all of them, the differences between women do not matter to him, and his desire has the same force for each one.
+
+### Q: Kraal called Don Giovanni a tragedy for the women. Explain why.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** apply
+**A:** Each woman is the object of his desire, but the desire was never for her as a person; it was for womanhood in general. So each is replaceable, and the only difference that counts for him is whether she has been seduced yet. She stays the same person while he moves on, and the tragedy is that she believed it was about her and finds out only afterwards.
+
+### Q: True or false, and justify: Don Giovanni uses desire as a cure for boredom, the way Crop Rotation recommends.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** critique
+**A:** False. Don Giovanni plans nothing; he simply desires, which is what makes him immediate. Crop Rotation's cure is a reflective technique, and it rejects the extensive method of chasing ever more new things, which is what an endless list of new women would look like.
+
+### Q: Who wrote "The Seducer's Diary"? Give A's claim, Eremita's suspicion and Kraal's view.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** recall
+**A:** A presents it as a diary written by Johannes that he only found and copied. Eremita, in the Preface, suspects A wrote it himself. Kraal treats A, the author of "The Musical Erotic", as the Diary's author, and reads the Diary as A's own attempts at the immediacy he praises in Don Giovanni.
+
+### Q: True or false, and justify: in A's account, Don Giovanni seduces by planning and deceiving.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** 11  **Type:** critique
+**A:** False. A says Don Giovanni does not really seduce in that sense: he desires, and the desire itself works seductively. Seduction by plan is reflective, and belongs to the seducer of the Diary, Johannes.
+
+### Q: Kraal traced desire from wanting someone, to wanting one among a set, to wanting the particular. Match each to its stage, character and opera.
+**Topic:** The Musical Erotic: the three stages  **Lec:** 11  **Type:** apply
+**A:** Wanting someone, in the abstract, is stage 1, dreaming: Cherubino in *The Marriage of Figaro*. Wanting one among a set is stage 2, seeking: Papageno in *The Magic Flute*. Wanting the particular is stage 3, desiring: Don Giovanni in *Don Giovanni*.

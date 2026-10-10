@@ -217,7 +217,7 @@ only path; the token-based fetcher was deleted on 2026-10-06.
    Confirm the Dashboard loads (get_page_text shows course cards). If it's a CWL login page,
    stop this source: nothing is ever typed into it. Put one line under Heads-up —
    `Canvas signed out since <last signed-in line in routines/keepalive.log, else the newest
-   routines/snapshots/canvas-*.json date> — sign in at canvas.ubc.ca in Chrome, then say
+   routines/snapshots/canvas-*.json date> — sign in at https://canvas.ubc.ca/ in Chrome, then say
    "fetch canvas"` — and send the same words with
    `PushNotification` (status `proactive`) so he sees it the moment he is at the keyboard. The
    `fetch canvas` recipe (fetch skill) re-runs only the Canvas half once he has signed in.
@@ -306,7 +306,8 @@ line; Claude never signs in). Read-only: never touch an answer box, Preview, Sub
   reporting anything.** Reporting a set as unread when it is actually done is worse than a slow run —
   it kept a completed WeBWorK 1 in the plan for days.
 - Fallback when the domain is denied or the tab is still signed out after three attempts: one Heads-up
-  line, nothing more — "WeBWorK signed out; WeBWorK N status unknown, due <date>." No push
+  line, nothing more — "WeBWorK signed out; WeBWorK N status unknown, due <date>. Sign in:
+  https://webwork.elearning.ubc.ca/webwork2/2026W1_V_STAT_V_251_101_2026W1". No push
   notification and no chasing (Matt, 2026-10-02: "it's only stats and it's weekly assignments anyways,
   so just give the note"). He attaches the hardcopy PDF with `log STAT251 webwork N` when he wants it
   banked.
@@ -371,7 +372,12 @@ applying is a separate session he starts himself.
    still waiting on. Run that with `search_threads` (pageSize 25) and open each hit with `get_thread`.
 3. For each thread where an employer is writing about one of his applications (not a job alert, not
    a newsletter, not LinkedIn):
-   - One bullet under the Career block: `- <Company> · <what they said or asked, 8 words or fewer>`.
+   - One bullet under the Career block: `- <Company> · <date of the email> · <what they said or asked, 8 words or
+     fewer>`. Every reply bullet carries the email's date (Matt, 2026-10-09: "make sure to have the date in replies").
+   - **An interview invite, an assessment, or an offer is the first line of the whole brief**, above Plan today, in
+     bold, with the company, the date it arrived and any date it asks for (Matt, 2026-10-09: "I just need to see that
+     and I don't want to miss that"). It also goes out as a PushNotification (status proactive) in the same words.
+     The Career block repeats it. Nothing else in the brief gets this treatment.
    - If it clearly belongs to exactly one row of `data/APPLICATIONS.md` (company and role both
      match), record that the email arrived:
      `python3 "/Users/matthe/Documents/CodingProjects/Projects/Career/scripts/run.py" mark-app <job_id> note "<sender>: <subject>"`.
@@ -386,6 +392,31 @@ applying is a separate session he starts himself.
    invite or posting update from there gets the same treatment here.
 4. A reply to one of his applications goes in this block, not in §4's Career bucket, so the same
    email never appears twice. Job alerts and recruiter mail stay in §4.
+4b. **LinkedIn, through its emails only** (Matt, 2026-10-09: "start looking through my LinkedIn notifications").
+   Run `in:inbox is:unread from:linkedin.com newer_than:2d (message OR InMail OR "sent you" OR "accepted your
+   invitation" OR "replied" OR recruiter)` with `search_threads` and open the hits that are a person writing to him:
+   a recruiter message or InMail, a reply to one of his outreach messages, an accepted connection from someone in
+   the Career repo's contacts. Each becomes a Career-block bullet with its date (`- LinkedIn · <Name, Company> ·
+   <date> · <what they said, 8 words or fewer>`); a recruiter message about a role he applied to is treated as an
+   employer reply (step 3), and one that asks for a time or sends an assessment gets the first-line treatment and
+   the Things3 date. An accepted connection or a reply to his outreach is also recorded in the Career repo with
+   `run.py mark <email> replied` when the person is in `data/contacts.jsonl`. Job alerts, "someone you may know",
+   newsletters and profile-view notices stay a one-line count in §4. **Never open linkedin.com itself**, in Chrome
+   or otherwise: the Career repo's rule is that LinkedIn automation risks a restricted account, which would cost
+   the alumni filter. If the emails are thin, the fix is his LinkedIn notification settings (messages and
+   connections by email on), not browsing the site.
+5. **Career beats school when they collide** (Matt, 2026-10-09: "if there's something important between my school
+   and my career, prioritize the career first"). When a career date and a school date need the same hours, the
+   plan table puts the career item first and the ⚠ line names the school item that moves, not the other way round.
+   The planner's Career reserve is the floor, not the cap.
+6. **Applying is allowed without asking, with one hold** (Matt, 2026-10-09). Companies worth applying to that turn
+   up in the Substack newsletters, in email or in his LinkedIn notes are applied to straight away in a Career
+   session, following the Career repo's applying recipe, and the brief reports what went out. The hold: big tech
+   and medium-sized tech, or any company where he plausibly has a referral (the Career repo's referral list, a
+   named contact there, or a company Bill or his mother knows), is **not** applied to; it is listed under the
+   Career block as "held for a referral: <company> · <role> · closes <date>" and he decides. The morning check
+   itself still does not apply at 06:35: it lists the candidates, and the applying happens in the session he is
+   present for or the one this routine hands off to (see the Career repo's `CLAUDE.md`, Applying).
 
 ### 5. Piazza (Chrome — needs the extension's site permission, see the note below)
 Class feeds (new UI; `get_page_text` only returns the welcome note, so use `read_page`
@@ -408,7 +439,10 @@ out the earlier "denial sticks for the session" theory (a stored allow/deny woul
 own); it looks instead like a transient extension/MCP connection hiccup, most likely right after a
 fresh `tabs_context_mcp{createIfEmpty:true}` tab group spins up. So: **a bare "not allowed" with no
 prompt shown is not evidence of a real block** — just retry. Only fall back once a domain has
-failed **3** consecutive attempts, and say so in one line under Heads-up. `piazza.com`,
+failed **3** consecutive attempts, and say so in one line under Heads-up. **Every signed-out or
+blocked-source line carries the site's link** (Canvas, WeBWorK, Piazza, PrairieLearn, SCOPE), because
+Matt signs in himself from the brief (2026-10-09: "just give me the link if it needs a login"); the
+Piazza links are in §5 and the rest in root `links.md`. `piazza.com`,
 `us.prairielearn.com`, and `canvas.ubc.ca` are all on the extension's always-allow list, so a
 genuine new-domain approval prompt shouldn't be needed for any of them any more — if one ever
 actually appears (visible in a screenshot, not just this error text), that's the real "ask Matt to
@@ -760,6 +794,7 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 
 ## Brief
 
+**🔔 <Company> · interview / assessment / offer · arrived <date> · <what it asks for and by when>**   ← only when §4b found one; first line, bold, nothing above it
 **Plan today — 5.75 of 6 h**   ← the planner's items (§1b) rendered as a TABLE, not its raw bullets
 | Start | Est | What | When |         (Matt, 2026-09-20: the " · "-joined bullet list read as a wall)
 |---|---|---|---|                      every item the planner picked gets a row, same order
@@ -808,7 +843,8 @@ Time check: how long did <what> take?   ← the plan's last line; his answer goe
 |---|---|---|
 | <Day Mon D time> | <Company> · <role, or N roles> | <referral or blank> |
 - <N> more companies close by <date>. Full list: data/APPLICATIONS.md
-- <Company> · <what the employer said>     one bullet per reply found in §4b step 3
+- <Company> · <email date> · <what the employer said>     one bullet per reply found in §4b step 3
+- held for a referral: <Company> · <role> · closes <date>   big or medium tech, his call (§4b step 6)
 
 **Week ahead**              Sundays only (or when asked): one bullet per hard date in the
 - ...                       next 14 days from ledger.md + Things3 + term.py, then
@@ -958,6 +994,11 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-10-09 (Matt): interviews, assessments and offers are the brief's first line and a push, every employer
+  reply carries its date, career outranks school when they collide, and applying no longer waits for his say
+  except big or medium tech where a referral is plausible (§4b steps 5–6). The keepalive task now also touches
+  WeBWorK, and a signed-out line always carries the sign-in link; SCOPE is his to sign in to, no keepalive.
+  LinkedIn is read through its notification emails (§4b step 4b), never the site.
 - 2026-10-06 (Matt: "make all the changes above"):
   - The countdown dates live only in the ledger's Term calendar. A Kind column marks the countdown rows, `term.py`
     reads them, and the STAT 251 written assignments get their own ladder.

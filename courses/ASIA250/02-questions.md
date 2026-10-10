@@ -88,9 +88,13 @@ Format:
 **Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** apply
 **A:** The second driver. An aesthetic experience is putting a mental frame over an object and observing it for an extended time. That experience leads to value formation, and values (Schwartz 1994: preferred ways of acting or being that serve as guiding principles) drive behaviour. The second driver's peace of mind produces calm driving; the first is hijacked by emotion. A hypothetical third driver who reads the jam as God's punishment is having an aesthetic experience through a faith frame.
 
-### Q: What is axiology, and what does "axiological aesthetics" claim about religious experience?
+### Q: Axiology is the theory of what? One word.
 **Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** recall
-**A:** Axiology is value theory. Axiological aesthetics studies how values are constructed as a result of experiencing things. Its claim is that religious experience is a form of aesthetic experience in this sense, and that it is not limited to art: anything in the world can be the object of the aesthetic gaze.
+**A:** Value. Axiology is value theory, the study of what people count as good or worth wanting.
+
+### Q: "Axiological aesthetics" makes one claim about religious experience and one claim about what can be looked at aesthetically. State both.
+**Topic:** Aesthetic experience and the faith frame  **Lec:** 1  **Type:** recall
+**A:** Religious experience is a form of aesthetic experience, because both build values out of sustained attention to something. And the aesthetic gaze is not limited to art: anything in the world, a ritual, a story or a traffic jam, can be its object.
 
 ### Q: What makes a religion a "world religion" by the lecture's definition, and give the lecture's four figures on Buddhism's size and distribution.
 **Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
@@ -100,10 +104,13 @@ Format:
 **Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
 **A:** Conservative: the disciple aims at nirvana, liberation from the cycle of births and deaths, and becomes an arhat; one universe has only one Buddha at a time; nothing is created; this became modern Theravada. Progressive: the follower declares as a bodhisattva, a future Buddha, to lead others to the same realisation; there are multiple universes, so bodhisattvas can become Buddhas quickly elsewhere; a Buddha creates his own Buddha Land where bodhisattvas are reborn to train; this became most of the Buddhist world.
 
-### Q: What is an arhat, and what are the three poisons an arhat is free from? Say which poison the lecture glosses as the illusion of one's own self.
+### Q: In one sentence, what is an arhat?
 **Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
-**A:** An arhat is a liberated follower of the Buddha who does not get reborn. The three poisons are anger, passion and ignorance. Ignorance is glossed as the illusion of one's own self.
+**A:** A liberated follower of the Buddha who will not be reborn.
 
+### Q: Name the three poisons, and say which one the lecture explains as the illusion of having a self.
+**Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
+**A:** Anger, passion and ignorance. Ignorance is the one glossed as the illusion of one's own self.
 
 ### Q: A follower says: "I will not stop at my own liberation; I declare myself a future Buddha so I can lead others there." Which early school is that, what is the word for that follower, and what did that school become?
 **Topic:** Buddhism as a world religion and the early schools (arhat vs bodhisattva)  **Lec:** 1  **Type:** recall
@@ -402,6 +409,14 @@ Format:
 ### Q: Why does the lecture count giving up sex as an act of generosity, and which poison does that address?
 **Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** apply
 **A:** Giving up possessions and giving up sex are both forms of giving, the opposite of craving, which is the chicken, the second poison. The monastic who renounces them sacrifices his own pleasure toward escaping the cycle of births and deaths for himself and potentially for others, so renunciation is treated as generosity rather than mere deprivation. The deck calls this a sex-negative view: Paul Numrich says sex "epitomizes" the human predicament because the predicament begins with the desire for life's pleasures.
+
+### Q: The deck lists three marks of existence, the lakshanas. Name them with the one-word English gloss the deck gives each.
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** Anatman, no soul. Anitya, impermanence. Nirvana, the end of dukkha, which is suffering. The word nirvana literally means "blowing out".
+
+### Q: A friend says "the three poisons and the three lakshanas are the same list". Correct them: which three are poisons, which three are marks, and what kind of thing is each list about?
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** The poisons are anger, passion and ignorance, shown at the centre of the Wheel of Life as the snake, the chicken and the pig. They are faults of the mind that keep a being in the cycle of rebirth. The lakshanas are anatman, anitya and nirvana. They are facts about existence that the Buddha realised: there is no permanent self, everything changes, and only blowing out is final peace. Poisons are what you must give up; marks are what is true.
 
 ### Q: Which disciple goes with which description? Shariputra, Maudgalyayana, Ananda, Devadatta, Ashvajit. Descriptions: converted the two chief disciples with the Verse of Causality; known for wisdom; known for supernatural powers and saw his mother as a hungry ghost; the Buddha's assistant with the phenomenal memory who opens the sutras with "Thus have I heard"; the cousin who split the order and tried to kill the Buddha.
 **Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall

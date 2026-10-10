@@ -23,6 +23,7 @@ quiz scripts own them. The Topic here starts with the words of the ledger topic,
 | 16 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | 2026-09-25 | reading Sep 25–28 |
 | 17 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-05 | reading Oct 5–14 |
 | 18 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-05 | reading Oct 5–14 |
+| 19 | The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) | 11 | 2026-10-09 | reading Oct 5–14 |
 
 ## Look-alikes
 
@@ -37,3 +38,4 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | Either/Or Preface | How Either/Or is put together | Both cover the book's title and the order of A's and B's papers, so what Eremita says in the Preface and what the printed volumes contain get mixed. |
 | Kierkegaard 1841–43 | Kierkegaard's family losses | The engagement to Regine ends in October 1841, two weeks before he leaves for Berlin and in the year of his dissertation, so the family and engagement dates get mixed with the 1841 to 1843 ones. |
 | Post-Hegelian context | Kierkegaard 1841–43 | Both are timelines that end at Schelling's call to Berlin in 1841, so the dates of the Hegel dispute, 1785 to 1837, get mixed with Kierkegaard's own 1841 to 1843. |
+| The Musical Erotic: Don Giovanni | The Musical Erotic: the three stages | Don Giovanni is the third stage in both, so lecture 11's points (woman in general, the catalogue, the replaceable women) get mixed with the stage summary from lecture 9. |

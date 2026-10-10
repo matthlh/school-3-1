@@ -6,23 +6,10 @@ Rows whose Next is on or before today are due.
 
 <!-- due as of 2026-10-09 -->
 
-_60 topics due as of Fri Oct 9. Say **quiz me**._
+_44 topics due as of Fri Oct 9. Say **quiz me**._
 
-- STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 22 d · last unquizzed
-- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 21 d · last unquizzed
 - CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 21 d · last unquizzed
-- ASIA 250 · Aesthetic experience and the faith frame · overdue 19 d · last X
-- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 19 d · last X
-- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 19 d · last X
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 19 d · last X
-- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 19 d · last X
-- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 19 d · last unquizzed
-- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 19 d · last unquizzed
-- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 19 d · last unquizzed
-- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 17 d · last unquizzed
-- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 17 d · last unquizzed
 - STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 17 d · last unquizzed
-- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 16 d · last unquizzed
 - CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 12 d · last unquizzed
 - CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 12 d · last unquizzed
 - CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 12 d · last unquizzed
@@ -51,8 +38,6 @@ _60 topics due as of Fri Oct 9. Say **quiz me**._
 - ASIA 250 · Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds · overdue 3 d · last unquizzed
 - ASIA 250 · Renunciation and the path to awakening (deeds 7–9) · overdue 3 d · last unquizzed
 - ASIA 250 · Awakening, teaching and death (deeds 10–12) · overdue 3 d · last unquizzed
-- PHIL 385 · The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) · overdue 3 d · last unquizzed
-- PHIL 385 · The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) · overdue 3 d · last unquizzed
 - STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 19 d · last O
 - STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 19 d · last O
 - STAT 251 · Descriptive vs. inferential statistics · overdue 16 d · last O
@@ -62,18 +47,17 @@ _60 topics due as of Fri Oct 9. Say **quiz me**._
 - ASIA 250 · Defining religion, myth and ritual · overdue 13 d · last O
 - STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 13 d · last O
 - ASIA 250 · Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology · overdue 1 d · last unquizzed
-- ASIA 250 · The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths · overdue 1 d · last unquizzed
 - ASIA 250 · The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules · overdue 1 d · last unquizzed
 - STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 1 d · last unquizzed
 - CPSC 310 · Design patterns II: Decorator (adds behaviour to one object at run time, not to the class · a decorator is a component and has a component · the caller asks the outermost wrapper and each wrapper changes the answer of what it wraps · costs: one class per add-on, order changes the result, long chains, identity and instanceof · java.io streams · composition over inheritance · Adapter changes the interface, Decorator the behaviour, Composite holds many) · due today · last unquizzed
 - STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · due today · last unquizzed
 - STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · due today · last unquizzed
 
-_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 0% of 16 in-scope questions likely recalled._
+_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 8% of 30 in-scope questions likely recalled._
 
-_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 1% of 137 in-scope questions likely recalled._
+_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 137 in-scope questions likely recalled._
 
-_Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 6% of 206 in-scope questions likely recalled._
+_Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 12% of 211 in-scope questions likely recalled._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is past and the course's next exam does not._
 
@@ -104,16 +88,16 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | STAT 251 | 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) | 3 | 2026-09-17 | O | 1 | 2026-09-24 |
 | STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | 2026-09-18 | O | 1 | 2026-09-25 |
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | 2026-09-19 | ~ | 0 | 2026-09-22 |
-| STAT 251 | 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) | 4 | — | — | 0 | 2026-09-17 |
+| STAT 251 | 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) | 4 | 2026-10-09 | ~ | 0 | 2026-10-12 |
 | STAT 251 | 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) | 4 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | STAT 251 | 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) | 4 | 2026-09-19 | O | 1 | 2026-09-26 |
-| STAT 251 | 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) | 5 | — | — | 0 | 2026-09-20 |
-| STAT 251 | 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) | 5 | — | — | 0 | 2026-09-20 |
-| STAT 251 | 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) | 5 | — | — | 0 | 2026-09-20 |
-| STAT 251 | 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) | 6 | — | — | 0 | 2026-09-22 |
-| STAT 251 | 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) | 6 | — | — | 0 | 2026-09-22 |
+| STAT 251 | 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) | 5 | 2026-10-10 | O | 1 | 2026-10-17 |
+| STAT 251 | 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) | 5 | 2026-10-10 | ~ | 0 | 2026-10-13 |
+| STAT 251 | 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) | 5 | 2026-10-09 | ~ | 1 | 2026-10-13 |
+| STAT 251 | 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) | 6 | 2026-10-09 | ~ | 0 | 2026-10-13 |
+| STAT 251 | 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) | 6 | 2026-10-10 | X | 0 | 2026-10-11 |
 | STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | — | — | 0 | 2026-09-22 |
-| STAT 251 | 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) | WW2 | — | — | 0 | 2026-09-23 |
+| STAT 251 | 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) | WW2 | 2026-10-10 | X | 0 | 2026-10-11 |
 | STAT 251 | 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) | 7 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) | 8 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) | 8 | — | — | 0 | 2026-09-29 |
@@ -127,12 +111,12 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | STAT 251 | 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) | 12 | — | — | 0 | 2026-10-08 |
 | STAT 251 | 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) | 13 | — | — | 0 | 2026-10-09 |
 | STAT 251 | 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) | 13 | — | — | 0 | 2026-10-09 |
-| CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
+| CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-10-09 | ~ | 0 | 2026-10-11 |
+| CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-10-10 | X | 0 | 2026-10-11 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
-| CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | 2026-09-19 | X | 0 | 2026-09-20 |
-| CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | — | — | 0 | 2026-09-18 |
+| CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | 2026-10-10 | X | 0 | 2026-10-11 |
+| CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | 2026-10-10 | X | 0 | 2026-10-11 |
 | CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | — | — | 0 | 2026-09-18 |
 | CPSC 310 | Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) | 4 | — | — | 0 | 2026-09-27 |
 | CPSC 310 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | — | — | 0 | 2026-09-27 |
@@ -159,11 +143,12 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | PHIL 385 | Crop Rotation (boredom a root of all evil · idleness vs boredom · extensive vs intensive · limitation · remembering and forgetting · no friendship, marriage or office · arbitrariness) | 5–6 | — | — | 0 | 2026-09-22 |
 | PHIL 385 | The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | — | — | 0 | 2026-09-26 |
-| PHIL 385 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | — | — | 0 | 2026-10-06 |
-| PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | — | — | 0 | 2026-10-06 |
+| PHIL 385 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-10 | O | 1 | 2026-10-12 |
+| PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-09 | ~ | 0 | 2026-10-12 |
+| PHIL 385 | The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) | 11 | 2026-10-10 | O | 1 | 2026-10-12 |
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
-| ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
+| ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-10-10 | X | 0 | 2026-10-11 |
+| ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-10-09 | X | 0 | 2026-10-10 |
 | ASIA 250 | Shamanism, ecstasy and enstasy | 2 | — | — | 0 | 2026-10-03 |
 | ASIA 250 | Vedic religion: gods, sacrifice, karma and the castes | 2 | — | — | 0 | 2026-10-03 |
 | ASIA 250 | Hindu philosophy and bhakti (Upanishads to Krishna) | 2 | — | — | 0 | 2026-10-03 |
@@ -172,7 +157,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | ASIA 250 | Renunciation and the path to awakening (deeds 7–9) | 4 | — | — | 0 | 2026-10-06 |
 | ASIA 250 | Awakening, teaching and death (deeds 10–12) | 4 | — | — | 0 | 2026-10-06 |
 | ASIA 250 | Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology | 5 | — | — | 0 | 2026-10-08 |
-| ASIA 250 | The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths | 5 | — | — | 0 | 2026-10-08 |
+| ASIA 250 | The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths | 5 | 2026-10-09 | X | 0 | 2026-10-10 |
 | ASIA 250 | The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules | 5 | — | — | 0 | 2026-10-08 |
 
 ## Term calendar — hard dates
@@ -346,3 +331,6 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-08 | STAT 251 lec 12 logged (Wed Oct 7; Matt absent) from the after-class deck and the Panopto recording. New In class section with what he said to write in a worked answer: "by independence" beside the product step, every cdf for all real numbers, and uniform facts may sit on the cheat sheet in an exam. No clicker questions were asked. 1 question added, 6 under Lec 12 plus 3 long problems. |
 | 2026-10-08 | CPSC 310 lec 9 logged (Thu Oct 8; Matt absent) from the posted deck 05b-patterns-ii.pdf and the reader's Decorator and Composite sections. The site retitled the lecture Composite & Decorator, so State waits for a later deck. 12 questions, 1 ledger topic due Oct 9, look-alike row against Design patterns I. The deck announced D3/D4 team formation opening Fri Oct 9 with repos from Oct 19: calendar row and to-do added. PHIL 385 lec 10 (Oct 7) has no record and stays unlogged. |
 | 2026-10-09 | Morning check: STAT 251 Pre-lab Quiz Lab 2 scored 4/4 and the Canvas total rose to 58.56%. CPSC 310 LAB03 closed at 90% on PrairieLearn; LAB05 Design Patterns opened, closes Thu Oct 22 (calendar row and Things3 deadline, which had said Oct 15). STAT 251 lecture 13 page gained the Chapter 4 activity A2 as an In class section and one long problem. WeBWorK signed out. Yesterday's deck ungraded, replaced. Five application receipts (Belvedere, CTC, TWG Global AI, Perpay, Bot Auto). |
+| 2026-10-09 | Quiz (transit): 6 q · 1 O / 3 ~ / 2 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 5 ledger rows moved |
+| 2026-10-10 | Quiz (transit): 30 q · 12 O / 5 ~ / 13 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 12 ledger rows moved |
+| 2026-10-09 | Quiz (long): 2 q · 0 O / 2 ~ / 0 X · STAT 251 · 2 ledger rows moved |

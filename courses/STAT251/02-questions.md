@@ -525,6 +525,15 @@ $$
 
 That last step is De Morgan's law, $$(A \cap B)^c = A^c \cup B^c$$.
 
+### Q: Translate each phrase into set notation for events $$A$$ and $$B$$, then say which two of the five are the same event by De Morgan.
+- "A happens but B does not"
+- "neither happens"
+- "at least one happens"
+- "not both happen"
+- "both fail to happen"
+**Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** apply
+**A:** "A but not B" is $$A \cap B^c$$, also written $$A \setminus B$$. "Neither" is $$A^c \cap B^c$$. "At least one" is $$A \cup B$$. "Not both" is $$(A \cap B)^c$$, which equals $$A^c \cup B^c$$. "Both fail" is $$A^c \cap B^c$$, the same event as "neither", and by De Morgan it equals $$(A \cup B)^c$$. The two that match are "neither" and "both fail to happen".
+
 ### Q: $$P(A) = 0.3$$, $$P(B) = 0.5$$ and $$P(A \cap B) = 0.1$$. Which of these are true? (i) $$A$$ and $$B$$ are disjoint. (ii) $$P(A \cup B) = 0.7$$. (iii) $$P(A^c \cap B) = 0.4$$. (iv) $$P(A^c) = 0.7$$. (v) $$B \subset A$$.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** critique
 **A:** (i) False: disjoint events have $$P(A \cap B) = 0$$, and here it is 0.1. (ii) True: $$0.3 + 0.5 - 0.1 = 0.7$$. (iii) True: the part of $$B$$ outside $$A$$ is $$0.5 - 0.1 = 0.4$$. (iv) True: $$1 - 0.3$$. (v) False: if $$B \subset A$$ then $$P(A \cap B)$$ would equal $$P(B) = 0.5$$, and $$P(B) \le P(A)$$ would have to hold, but $$0.5 > 0.3$$.
