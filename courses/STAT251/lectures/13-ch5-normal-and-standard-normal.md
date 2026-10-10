@@ -1,6 +1,6 @@
-# STAT 251 · Lecture 13 · Ch 5: the Normal and standard Normal distributions (Fri Oct 9, 2026)
+# STAT 251 — Lec 13 (Fri Oct 9) — Ch 4 activity A2, and Ch 5: the Normal and standard Normal distributions
 
-Prepared 2026-10-08 from the before-class deck `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides). Updated 2026-10-09 from the after-class deck (30 slides, the same slides plus the worked answers already on this page) and the Chapter 4 in-class activity sheet A2 with its solution. 10 questions banked under Lec 13, two of them under Long problems.
+You were absent, so there is no page from you. This file is the posted decks organised for study, the before-class `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and the after-class `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, the same slides plus worked answers), with the Chapter 4 activity sheet A2 and its solution, and the recording's remarks under In class. Class reached slide 11, the SAT and ACT comparison. Slides 12 to 25, the standard Normal, Table A and the forward and backward calculations, are written up below from the deck and are expected next class, Wed Oct 14.
 
 ## Slides, organized
 
@@ -59,7 +59,23 @@ $$
 
 - The summary slide lists the Normal distribution, the 68-95-99.7 rule, z-scores, the standard Normal distribution and probability calculations. The next class continues Chapter 5.
 
-## In class
+## In class (from the recording)
+
+### Announcements
+
+- Lab 2 ends today, and Lab 3 runs next week.
+- Monday Oct 12 is a holiday: no lectures, no labs and no office hours.
+  - The Monday lab sections get their lab posted online next Friday and do it individually, with four days to submit.
+  - Your section is Friday, so your lab does not change.
+- The Lab 3 pre-reading goes up today.
+- WeBWorK 3 closed yesterday. WeBWorK 4 is due next Thursday, Oct 15.
+- He asked you to work through lecture 12's Examples 9 and 10 with their posted solutions, because WeBWorK 4 has questions of the same kind.
+
+### Notation, because students asked after lecture 12
+
+- Capital $$F_X(x)$$ is the cdf of the random variable $$X$$. Lowercase $$f_X(x)$$ is its pdf when $$X$$ is continuous and its pmf when $$X$$ is discrete.
+- The subscript names the random variable, which matters once there are several, such as $$F_{X_1}$$ and $$F_{X_2}$$ for the maximum.
+- $$F_W(w) = P(W \le w)$$ is the definition. Evaluating it at a number $$a$$ means plugging $$a$$ in, so $$F_W(a) = P(W \le a)$$.
 
 ### Chapter 4 activity A2: a shifted exponential (worksheet, before the Chapter 5 slides)
 
@@ -94,7 +110,10 @@ P(1 < X < 3) &= F(3) - F(1) \\
 \end{aligned}
 $$
 
-- Part (i)(e) asks for a second method and a check. Integrate the pdf directly from 2 to 3, since it is 0 from 1 to 2, and the same $$1 - e^{-1}$$ comes out.
+- This part was the first clicker question. The answer was (b), $$1 - e^{-1}$$, and only 59% got it.
+  - He said the cdf from part (b) gives it in under a minute by plugging in 3 and 1.
+  - The students who integrated again were the ones who got it wrong. Once you have the cdf, use it.
+- Part (i)(e) asks for a second method and a check. Integrate the pdf directly from 2 to 3, since it is 0 from 1 to 2, and the same $$1 - e^{-1}$$ comes out. Integrating the formula from 1 to 3 is wrong, because $$f$$ is 0 from 1 to 2, so the limits are 2 to 3.
 - Part (ii) asks for the median, the value exceeded 50% of the time. Set $$F(m) = 0.5$$ and solve.
 
 $$
@@ -105,7 +124,29 @@ m &= 2 + \ln 2 \approx 2.693
 \end{aligned}
 $$
 
+- He went through the median as a multiple-choice item without polling it. Two statements were correct, $$P(X \ge m) = 0.5$$ and $$F(m) = 0.5$$, because the median splits the area into two halves of 0.5.
+- On a written question graded by the TAs, the exact form $$m = 2 + \ln 2$$ gets full marks. Only a question that asks for a number of decimal places needs the calculator.
 - The point of the sheet is the Chapter 4 routine on a support that does not start at 0: check the pdf, build the cdf with its two cases, read probabilities off the cdf, and get the median by inverting $$F$$.
+
+### Chapter 5, slides 3 to 11
+
+- The Normal distribution matters because most statistical models assume it. When data are not Normal, analysts often transform them until they are, and then the results have to be explained on the transformed scale.
+- A theoretical Normal curve is exactly symmetric. Real data are never exactly Normal, and roughly Normal is enough to call them Normal.
+- The mean $$\mu$$ can be any real number, and $$\sigma$$ is always positive.
+- On slide 5 the narrower curve, $$\sigma = 15$$, has the higher peak than $$\sigma = 25$$. Both areas must be 1, so the narrower curve has to be taller.
+- He showed the pdf formula and said never to use it to calculate probabilities. Integrating it is not practical, and the z-scores and Table A from the next slides are the method.
+- Notation: $$Y \sim N(200, 25)$$ means a mean of 200 and a variance of 25, so $$\sigma = 5$$. Some textbooks, the STAT 200 one among them, write the standard deviation second. This course always writes the variance.
+- To check whether data are Normal, draw a histogram, not a box plot, and look for a roughly symmetric single-peaked bell. Only then apply the 68-95-99.7 rule.
+- For the Iowa example he sketched the curve first. Mark $$\mu$$ and three equally spaced standard deviations either side: 2.19, 3.74, 5.29, 6.84, 8.39, 9.94 and 11.49. Questions are much easier to answer from the sketch.
+- The second clicker question was the percent of scores above 5.29. The answer was (c), 84%, which is the 0.5 above the mean plus the 0.34 between $$\mu - \sigma$$ and $$\mu$$. Some students still got it wrong.
+- The rule only works at exactly one, two or three standard deviations from the mean. It cannot give $$P(X > 5)$$ or $$P(6.5 < X < 7.5)$$ for the Iowa scores exactly, only a range, and z-scores with Table A are how those are found.
+- On the heights example he described $$z = 2.07$$ as on the large side, since about 95% of women are within two standard deviations of the mean. The ACT score is the better one because its z-score is further out to the right.
+- The recording says $$\sigma = 2.9$$ for the heights and 4.2 for the ACT in passing, but both calculations use the deck's 2.8 and 4.7.
+
+### Office hours
+
+- He said the TAs report that almost no one comes to office hours, which he suspects is because students take finished solutions from AI tools.
+- He asked for questions to come to his and the TAs' office hours instead, where they check the concept before explaining. Some WeBWorK questions are meant to be challenging, which is why each set is open for at least a week.
 
 ## Clarifications
 
@@ -113,3 +154,5 @@ $$
 - Table A gives the area to the left. The deck's slide 21 picks the table entry closest to the target proportion rather than interpolating. If an exam question asks for 0.90, use 0.8997 and $$z = 1.28$$.
 - Slide 6's formula came through the text layer broken. The pdf written above is the standard Normal density formula and matches the textbook.
 - The 68-95-99.7 rule is an approximation. Table A gives 0.6827, 0.9545 and 0.9973, and a question that asks for a table answer wants those, not the rounded rule.
+
+Questions: 13 in [02-questions.md](../02-questions.md) under "Lec 13", and 2 under "Long problems". Ledger: 2 topics, 3o and 3p, plus the existing 3f row.

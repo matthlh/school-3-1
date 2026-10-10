@@ -1499,7 +1499,7 @@ $$
 
 The middle piece stops at 40 because $$F_{X_1}$$ is already 1 past 40, and the product is 0 below 35 because $$F_{X_2}$$ is. The pdf comes from differentiating every piece: $$\frac{2y - 55}{300}$$ on $$[35, 40]$$, $$\frac{1}{15}$$ on $$(40, 50]$$, and 0 elsewhere.
 
-## Lec 13 — Ch 5: the Normal and standard Normal distributions (prepared 2026-10-08 from the before-class deck)
+## Lec 13 — Ch 5: the Normal and standard Normal distributions (logged 2026-10-09 from the decks, the activity sheet and the recording)
 
 ### Q: Grade 7 vocabulary scores are close to $$N(7.2, 1.4^2)$$. Without a table, give the percent of scores between 4.4 and 10.0, the percent above 5.8, and the percent below 3.0. Say which rule you are using and why the second answer is not 68%.
 **Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** apply
@@ -1590,6 +1590,35 @@ E(Z) &= \frac{1}{\sigma} E(X) - \frac{\mu}{\sigma} \\
 $$
 
 The rules give the mean and variance of $$Z$$ for any $$X$$, Normal or not. The extra fact is that a linear transformation of a Normal variable is still Normal, so $$Z \sim N(0, 1)$$ exactly. That is why Table A applies, and it is outcome 3o's "preservation under linear transformation".
+
+### Q: $$Y \sim N(300, 36)$$ in this course's notation. Give the mean, the variance and the standard deviation of $$Y$$. What would the same symbols mean in a textbook that writes the standard deviation second?
+**Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** apply
+**A:** The second number is the variance, so the mean is 300, the variance is 36 and the standard deviation is 6. A textbook that writes $$N(\text{mean}, \text{SD})$$ would mean a standard deviation of 36, a variance of 1296. This course always writes the variance, so read $$N(500, 100^2)$$ as a standard deviation of 100.
+
+### Q: You have a data set and want to know whether the 68-95-99.7 rule can be applied to it. Which graph do you draw, and what do you look for? Why is a box plot not enough?
+**Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** recall
+**A:** Draw a histogram and look for a roughly symmetric, single-peaked bell shape. Real data are never exactly Normal, and roughly Normal is enough. A box plot shows only the five-number summary, so it cannot show whether there is one peak or two: a two-peaked data set can have a perfectly symmetric box plot.
+
+### Q: Exam scores are $$N(6.5, 1.5^2)$$. Can the 68-95-99.7 rule give $$P(X > 5)$$ exactly? Can it give $$P(X > 6)$$ exactly? For any part it cannot answer, say what it does tell you and find the exact value.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**A:** 5 is exactly one standard deviation below the mean, so the rule gives $$P(X > 5) = 0.5 + 0.34 = 0.84$$. 6 is not a whole number of standard deviations from the mean. It sits between $$\mu - \sigma = 5$$ and $$\mu = 6.5$$, so the rule only says $$P(X > 6)$$ is between 0.5 and 0.84. The exact value needs a z-score and Table A.
+
+$$
+\begin{aligned}
+z &= \frac{6 - 6.5}{1.5} = -0.33 \\
+P(X > 6) &= P(Z > -0.33) \\
+&= 1 - 0.3707 \\
+&= 0.6293
+\end{aligned}
+$$
+
+### Q: $$m$$ is the median of a continuous random variable $$X$$ with pdf $$f$$ and cdf $$F$$. Which are true: (a) $$P(X \ge m) = 0.5$$, (b) $$f(m) = 0.5$$, (c) $$F(m) = 0.5$$, (d) $$P(X = m) = 0.5$$?
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 13  **Type:** recall
+**A:** (a) and (c). The median splits the area under $$f$$ into two halves, so the area above it and the area below it, $$F(m)$$, are both 0.5. (b) is false because $$f(m)$$ is the height of the curve, not an area. (d) is false because a continuous $$X$$ has probability 0 at any single value. To find $$m$$, solve $$F(m) = 0.5$$. On a written question the exact form, such as $$4 + \ln 2$$, gets full marks; give decimals only when the question asks for them.
+
+### Q: $$X$$ has cdf $$F(x) = 1 - e^{-(x - 4)}$$ for $$x \ge 4$$ and $$F(x) = 0$$ for $$x < 4$$. Find $$P(2 < X < 5)$$ in one line. A student instead integrates $$e^{-(x - 4)}$$ from 2 to 5 and gets about 7.02. What went wrong?
+**Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 13  **Type:** apply
+**A:** Use the cdf you have: $$P(2 < X < 5) = F(5) - F(2) = (1 - e^{-1}) - 0 \approx 0.632$$. The student used the pdf's formula where it does not hold. The pdf is 0 below 4, so the integral runs from 4 to 5, not 2 to 5. A probability of 7.02 is impossible, which is the check that should have caught it.
 
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
