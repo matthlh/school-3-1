@@ -358,6 +358,11 @@ skill only ever reads mail, never archives/deletes it itself.
 ### 4b. Career: internship applications (local; Matt, 2026-10-02)
 The Career repo keeps the record of every internship application: what went out, what he still has
 to send on an employer's own site, and what closes soon. This step reads that record and his mail.
+Since 2026-10-10 a separate 06:05 scheduled task, `applications-inbox-sweep` (Career repo), has already
+flipped application receipts to `applied`, noted rejections, logged replies to his cold emails in
+`data/contacts.jsonl` and marked receipts read before this check runs; its run file is
+`drafts/inbox-sweeps/<date>.md` in the Career repo. Read that file first and do not re-note what it
+handled; this step still owns the brief's Career block and the interview-first line.
 It never applies, never sends anything, and never opens SCOPE: SCOPE needs his CWL login, and
 applying is a separate session he starts himself.
 1. Run

@@ -1127,6 +1127,66 @@
      }
     ]
    ]
+  },
+  "7ed01c1f": {
+   "course": "STAT251",
+   "topic": "2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "bb6cd534": {
+   "course": "CPSC310",
+   "topic": "Refactoring",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "46b2afa1": {
+   "course": "CPSC310",
+   "topic": "Emergent design and technical debt",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "88c6181d": {
+   "course": "STAT251",
+   "topic": "2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)",
+   "history": [
+    [
+     "2026-10-10",
+     "~"
+    ]
+   ]
+  },
+  "9e5cc436": {
+   "course": "ASIA250",
+   "topic": "Shamanism, ecstasy and enstasy",
+   "history": [
+    [
+     "2026-10-10",
+     "X"
+    ]
+   ]
+  },
+  "822a51f9": {
+   "course": "STAT251",
+   "topic": "3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)",
+   "history": [
+    [
+     "2026-10-10",
+     "~"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -2019,6 +2079,50 @@
     [
      2,
      "02a45a64",
+     "STAT251",
+     "~"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-10",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "7ed01c1f",
+     "STAT251",
+     "X"
+    ],
+    [
+     2,
+     "bb6cd534",
+     "CPSC310",
+     "X"
+    ],
+    [
+     3,
+     "46b2afa1",
+     "CPSC310",
+     "X"
+    ],
+    [
+     4,
+     "88c6181d",
+     "STAT251",
+     "~"
+    ],
+    [
+     5,
+     "9e5cc436",
+     "ASIA250",
+     "X"
+    ],
+    [
+     6,
+     "822a51f9",
      "STAT251",
      "~"
     ]

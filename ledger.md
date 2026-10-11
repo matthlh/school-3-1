@@ -6,12 +6,9 @@ Rows whose Next is on or before today are due.
 
 <!-- due as of 2026-10-10 -->
 
-_46 topics due as of Sat Oct 10. Say **quiz me**._
+_41 topics due as of Sat Oct 10. Say **quiz me**._
 
-- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 22 d · last unquizzed
-- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 18 d · last unquizzed
 - CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 13 d · last unquizzed
-- CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 13 d · last unquizzed
 - CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 13 d · last unquizzed
 - CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 13 d · last unquizzed
 - STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 11 d · last unquizzed
@@ -19,12 +16,10 @@ _46 topics due as of Sat Oct 10. Say **quiz me**._
 - STAT 251 · 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) · overdue 11 d · last unquizzed
 - STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 11 d · last unquizzed
 - STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 11 d · last unquizzed
-- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 11 d · last unquizzed
 - STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 11 d · last unquizzed
 - CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 8 d · last unquizzed
 - CPSC 310 · Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) · overdue 8 d · last unquizzed
 - CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 8 d · last unquizzed
-- ASIA 250 · Shamanism, ecstasy and enstasy · overdue 7 d · last unquizzed
 - ASIA 250 · Vedic religion: gods, sacrifice, karma and the castes · overdue 7 d · last unquizzed
 - ASIA 250 · Hindu philosophy and bhakti (Upanishads to Krishna) · overdue 7 d · last unquizzed
 - STAT 251 · 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) · overdue 7 d · last unquizzed
@@ -98,14 +93,14 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | STAT 251 | 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) | 5 | 2026-10-09 | ~ | 1 | 2026-10-13 |
 | STAT 251 | 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) | 6 | 2026-10-09 | ~ | 0 | 2026-10-13 |
 | STAT 251 | 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) | 6 | 2026-10-10 | X | 0 | 2026-10-11 |
-| STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | — | — | 0 | 2026-09-22 |
+| STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | 2026-10-10 | X | 0 | 2026-10-11 |
 | STAT 251 | 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) | WW2 | 2026-10-10 | X | 0 | 2026-10-11 |
 | STAT 251 | 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) | 7 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) | 8 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) | 8 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) | 8 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) | 9 | — | — | 0 | 2026-09-29 |
-| STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | — | — | 0 | 2026-09-29 |
+| STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | 2026-10-10 | ~ | 0 | 2026-10-14 |
 | STAT 251 | 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) | 9 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) | 10 | — | — | 0 | 2026-10-03 |
 | STAT 251 | 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) | 10 | — | — | 0 | 2026-10-03 |
@@ -120,9 +115,9 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | 2026-10-10 | X | 0 | 2026-10-11 |
 | CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | 2026-10-10 | X | 0 | 2026-10-11 |
-| CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | — | — | 0 | 2026-09-18 |
+| CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | 2026-10-10 | X | 0 | 2026-10-11 |
 | CPSC 310 | Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) | 4 | — | — | 0 | 2026-09-27 |
-| CPSC 310 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | — | — | 0 | 2026-09-27 |
+| CPSC 310 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | 2026-10-10 | X | 0 | 2026-10-11 |
 | CPSC 310 | Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) | 5 | — | — | 0 | 2026-09-27 |
 | CPSC 310 | Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) | 5 | — | — | 0 | 2026-09-27 |
 | CPSC 310 | Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | — | — | 0 | 2026-10-02 |
@@ -152,7 +147,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-10-10 | X | 0 | 2026-10-11 |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-10-09 | X | 0 | 2026-10-10 |
-| ASIA 250 | Shamanism, ecstasy and enstasy | 2 | — | — | 0 | 2026-10-03 |
+| ASIA 250 | Shamanism, ecstasy and enstasy | 2 | 2026-10-10 | X | 0 | 2026-10-11 |
 | ASIA 250 | Vedic religion: gods, sacrifice, karma and the castes | 2 | — | — | 0 | 2026-10-03 |
 | ASIA 250 | Hindu philosophy and bhakti (Upanishads to Krishna) | 2 | — | — | 0 | 2026-10-03 |
 | ASIA 250 | Shramanas against the Vedas: Buddha, Mahavira and asceticism | 3 | — | — | 0 | 2026-10-06 |
@@ -338,3 +333,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-10 | Quiz (transit): 30 q · 12 O / 5 ~ / 13 X · ASIA 250, CPSC 310, PHIL 385, STAT 251 · 12 ledger rows moved |
 | 2026-10-09 | Quiz (long): 2 q · 0 O / 2 ~ / 0 X · STAT 251 · 2 ledger rows moved |
 | 2026-10-10 | Morning check: STAT 251 lecture 14 before-class deck prepared for Wed Oct 14 (Normal facts, linear combinations, the sample mean), 8 questions and 1 long problem, 1 topic due Oct 11; Pre-lab Quiz Lab 3 posted (2 pts, due Fri Oct 16); WeBWorK signed in, WeBWorK 4 due Thu Oct 15 confirmed and WeBWorK 5 opens Tue Oct 13. Planview interview Fri Oct 16 12:00 collides with STAT lab and PHIL 385 Exam 2. CPSC TA application (due Sun Oct 25) added to Things3. Five application receipts and one Nuvo reply noted in the Career ledger. |
+| 2026-10-10 | Quiz (transit): 6 q · 0 O / 2 ~ / 4 X · ASIA 250, CPSC 310, STAT 251 · 5 ledger rows moved |
