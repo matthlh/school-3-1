@@ -1187,6 +1187,66 @@
      "~"
     ]
    ]
+  },
+  "12b7f00c": {
+   "course": "STAT251",
+   "topic": "3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)",
+   "history": [
+    [
+     "2026-10-11",
+     "~"
+    ]
+   ]
+  },
+  "d5143ef5": {
+   "course": "STAT251",
+   "topic": "1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)",
+   "history": [
+    [
+     "2026-10-11",
+     "O"
+    ]
+   ]
+  },
+  "70255757": {
+   "course": "CPSC310",
+   "topic": "Testable by design",
+   "history": [
+    [
+     "2026-10-11",
+     "X"
+    ]
+   ]
+  },
+  "ead9a749": {
+   "course": "STAT251",
+   "topic": "3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)",
+   "history": [
+    [
+     "2026-10-11",
+     "~"
+    ]
+   ]
+  },
+  "ff2aa593": {
+   "course": "STAT251",
+   "topic": "1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)",
+   "history": [
+    [
+     "2026-10-11",
+     "O"
+    ]
+   ]
+  },
+  "a71ce3ca": {
+   "course": "ASIA250",
+   "topic": "Hindu philosophy and bhakti (Upanishads to Krishna)",
+   "history": [
+    [
+     "2026-10-11",
+     "X"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -2125,6 +2185,50 @@
      "822a51f9",
      "STAT251",
      "~"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-11",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "12b7f00c",
+     "STAT251",
+     "~"
+    ],
+    [
+     2,
+     "d5143ef5",
+     "STAT251",
+     "O"
+    ],
+    [
+     3,
+     "70255757",
+     "CPSC310",
+     "X"
+    ],
+    [
+     4,
+     "ead9a749",
+     "STAT251",
+     "~"
+    ],
+    [
+     5,
+     "ff2aa593",
+     "STAT251",
+     "O"
+    ],
+    [
+     6,
+     "a71ce3ca",
+     "ASIA250",
+     "X"
     ]
    ]
   }
