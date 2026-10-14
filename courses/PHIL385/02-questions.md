@@ -863,6 +863,32 @@ They do not line up, and the editor role flips between the two books. In *Either
 **Topic:** The Musical Erotic: the three stages  **Lec:** 11  **Type:** apply
 **A:** Wanting someone, in the abstract, is stage 1, dreaming: Cherubino in *The Marriage of Figaro*. Wanting one among a set is stage 2, seeking: Papageno in *The Magic Flute*. Wanting the particular is stage 3, desiring: Don Giovanni in *Don Giovanni*.
 
+## Reading: "The Musical Erotic" — the introduction, and things that belong together (pp. 52–55 of the PDF, written 2026-10-13)
+
+### Q: What is the opening section of "The Musical Erotic" called, and which four pairs does A give of things that belong together?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** It is the "Platitudinous Introduction", and A refers back to it by that name later, when he says the sensual in its immediacy can be expressed only in music. It opens with the happy Greek view that calls the world a cosmos, an orderly whole. A says the same wisdom rules in the world of ideals, joining together things that belong together: Axel with Valborg, the pair of lovers; Homer with the Trojan War; Raphael with Catholicism; and Mozart with Don Juan.
+
+### Q: True or false, and justify: A says it was an accident, a lucky meeting of forces, that Mozart got Don Juan as his subject.
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** critique
+**A:** False. That is the view A attacks and calls a wretched unbelief. It holds that lovers find each other by accident, since a hundred other girls would have done as well, and that many a poet would be as immortal as Homer, or many a composer as Mozart, if only they had got the chance. A says this view comforts mediocre minds, because it lets them believe their lack of fame is a mistake of fate, and he calls it a convenient optimism that every high-minded soul finds repugnant. For A the union of Mozart and Don Juan is good fortune, which is not the same as the fortuitous.
+
+### Q: How many factors does the fortuitous have, according to A, and how many does good fortune have? Use his Homer example.
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** apply
+**A:** The fortuitous has one factor: the accident that the most remarkable epic theme imaginable, the Trojan War, fell to Homer's lot. Good fortune has two: that the most remarkable epic material came to Homer, with the accent on Homer as much as on the material. A calls historical fortune a divine conjunction of historical forces, and says this harmony is what sounds in every work we call classic. So too with Mozart: it was good fortune that perhaps the only true musical subject was granted to Mozart.
+
+### Q: A admits that insisting on Mozart's first place is childish. How does he describe himself, and what does he threaten to do if the church refuses him?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** Everyone in the small band of immortals is equally high, because infinitely high, so arguing over first and last place is childish, like squabbling over one's place in line at confirmation. Still, A says he is like a young girl in love with Mozart and must have him placed highest whatever the cost. He will petition the deacon, the priest, the dean, the bishop and the whole consistory. If they refuse, he will leave the congregation and form a sect that not only places Mozart highest but accepts no one besides Mozart. He says Mozart cost him his reason and is the only pillar keeping everything from collapsing into chaos for him. Only then does he offer a considered proof of Mozart's claim.
+
+### Q: In the introduction, what makes a work classic, and what goes wrong if you stress only Homer's subject or only Homer's poetic activity?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** apply
+**A:** In a classic the two forces, matter and form, cohere so absolutely that a later reflective age can hardly separate them even in thought without a misunderstanding. Stress only Homer's luck in getting the best epic subject, and you forget that the subject reaches us only through Homer's grasp of it, transformed by him. Stress only his poetic activity, and you forget that the poem could never have been what it is unless its form was the material's own. The poet wants his material, and wanting rightly is a gift, the mystery of genius, like a divining rod that wants only where what it wants is present. A notes that one school of aesthetics stressed form one-sidedly, odd since its members followed Hegel, who stressed the subject matter.
+
+### Q: Which single work makes Mozart a classic composer, according to A? How does Homer's *Batrachomyomachia* help him argue that one work is enough?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** *Don Giovanni*, which A calls Mozart's acceptance piece, the work that wins him admission among the immortals. Usually a single work, or a single set of works, stamps an artist as a classic. Homer also wrote the *Batrachomyomachia*, the mock-epic battle of the frogs and mice, and it did not make him a classic. That is not because its subject is trivial: the balance of matter and form is what makes a classic. If the artist alone made a work classic, everything he produced would be classic, the way a bee always builds the same cell, and saying he was just luckier with one work answers nothing. So lumping all Mozart's works together as equally great does him no service. All classics rank equally, because each ranks infinitely high, so any ordering of them has to rest on something inessential, which leads to A's rule for sorting them into classes.
+
 ## Reading: "The Musical Erotic" — ranking the classics, and why only music (pp. 56–60 of the PDF, written 2026-10-13)
 
 ### Q: What rule does A use to sort the classic works into classes, and why does he call the rule "contingent"?
