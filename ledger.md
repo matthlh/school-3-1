@@ -6,7 +6,7 @@ Rows whose Next is on or before today are due.
 
 <!-- due as of 2026-10-14 -->
 
-_55 topics due as of Wed Oct 14. Say **quiz me**._
+_56 topics due as of Wed Oct 14, 1 of them from an exam-week sweep. Say **quiz me**._
 
 - CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 17 d · last unquizzed
 - STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 15 d · last unquizzed
@@ -63,8 +63,9 @@ _55 topics due as of Wed Oct 14. Say **quiz me**._
 - CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · due today · last X
 - STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · due today · last X
 - STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · due today · last ~
+- PHIL 385 · The Musical Erotic: Plato, Christianity and the demonic (Republic's reason, spirit and appetite · the Phaedrus chariot · the Symposium ladder against A's stages · Christianity made desire sinful and the sensual a principle · music as demonic · Il dissoluto punito and the ending) · exam sweep before Exam 2 14:00 on Fri Oct 16 · last unquizzed
 
-_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 4% of 79 in-scope questions likely recalled._
+_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 4% of 88 in-scope questions likely recalled._
 
 _Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 150 in-scope questions likely recalled._
 
@@ -159,6 +160,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | PHIL 385 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-10 | O | 1 | 2026-10-12 |
 | PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-13 | O | 1 | 2026-10-15 |
 | PHIL 385 | The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) | 11 | 2026-10-10 | O | 1 | 2026-10-12 |
+| PHIL 385 | The Musical Erotic: Plato, Christianity and the demonic (Republic's reason, spirit and appetite · the Phaedrus chariot · the Symposium ladder against A's stages · Christianity made desire sinful and the sensual a principle · music as demonic · Il dissoluto punito and the ending) | 12 | — | — | 0 | 2026-10-15 |
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-10-10 | X | 0 | 2026-10-11 |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-10-09 | X | 0 | 2026-10-10 |

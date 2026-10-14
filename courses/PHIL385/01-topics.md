@@ -24,6 +24,7 @@ quiz scripts own them. The Topic here starts with the words of the ledger topic,
 | 17 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-05 | reading Oct 5–14 |
 | 18 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-05 | reading Oct 5–14 |
 | 19 | The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) | 11 | 2026-10-09 | reading Oct 5–14 |
+| 20 | The Musical Erotic: Plato, Christianity and the demonic (Republic's reason, spirit and appetite · the Phaedrus chariot · the Symposium ladder against A's stages · Christianity made desire sinful and the sensual a principle · music as demonic · Il dissoluto punito and the ending) | 12 | 2026-10-14 | reading Oct 5–14 |
 
 ## Look-alikes
 
@@ -39,3 +40,4 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | Kierkegaard 1841–43 | Kierkegaard's family losses | The engagement to Regine ends in October 1841, two weeks before he leaves for Berlin and in the year of his dissertation, so the family and engagement dates get mixed with the 1841 to 1843 ones. |
 | Post-Hegelian context | Kierkegaard 1841–43 | Both are timelines that end at Schelling's call to Berlin in 1841, so the dates of the Hegel dispute, 1785 to 1837, get mixed with Kierkegaard's own 1841 to 1843. |
 | The Musical Erotic: Don Giovanni | The Musical Erotic: the three stages | Don Giovanni is the third stage in both, so lecture 11's points (woman in general, the catalogue, the replaceable women) get mixed with the stage summary from lecture 9. |
+| The Musical Erotic: Plato, Christianity and the demonic | The Musical Erotic: why music | Music as a Christian art appears in both: lecture 9 has A's page 75 claim, lecture 12 has Kraal's Greek-versus-Christian contrast and the demonic, so the two get merged. |

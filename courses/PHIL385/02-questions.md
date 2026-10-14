@@ -1116,3 +1116,41 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: A sets the isolated individual a dilemma about tragic guilt. State both horns, and say what kind of dialectic joins family guilt to the individual instead.
 **Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** derive
 **A:** Either the isolated individual is absolutely the creator of his own destiny, in which case nothing tragic remains, only evil, or individuals are mere modifications of the eternal substance of existence, and the tragic is lost again. Tragic guilt is inherited guilt, a substantial category like original sin, and the dialectic that joins the guilt of the family to the individual is objective, not subjective. Essentially it is piety, which A says cannot harm the individual: if one member suffers, all suffer, and the individual participates in the guilt.
+
+## Lec 12 — the last lecture on The Musical Erotic: desire qua desire, Plato, Christianity and the demonic (Wed Oct 14, logged 2026-10-14)
+
+### Q: Kraal gave the three parts of the soul from Plato's *Republic*. Name them, with Plato's own term for the middle one, and say what makes a person just and beautiful on that view.
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** recall
+**A:** Reason, drive, which is Plato's spirited part (thumos), and desire, which is appetite. A person is righteous when the three are in balance under reason; all three must be present. On the Greek view the moral person is the beautiful one and the beautiful person the moral one.
+
+### Q: Describe the chariot in Plato's *Phaedrus* as Kraal gave it. What does each part stand for, and what is the goal?
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** recall
+**A:** The soul is a charioteer driving two horses. The charioteer is reason. The white horse is drive, Plato's spirited or noble part. The black horse is desire, appetite. The goal is to have the horses pull in perfect proportion, so the person is balanced. You do not kill the black horse; you bring it under balance.
+
+### Q: Which Plato dialogue has the ladder from desiring one beautiful body up to the Form of Beauty, and how does that ladder run opposite to A's three stages?
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** apply
+**A:** The *Symposium*, in Diotima's speech. Plato's ladder climbs from the particular body to all beautiful bodies, to beautiful souls and knowledge, and finally to the abstract Form of Beauty, and the climb is the work of reason. A's stages go the other way, from the abstract dream of "the one" (Cherubino), through seeking among the many (Papageno), to the particular woman (Don Giovanni), and every stage is immediate, with no reason in it.
+
+### Q: Contrast the Greek and the Christian attitudes to desire as Kraal set them out, and give A's claim about what Christianity did to the sensual.
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** recall
+**A:** For the Greeks desire is one part of a balanced soul, nothing shameful, so they "would have smiled" at Don Giovanni. For Christianity desire is sinful and to be reduced, as many New Testament passages say, so Christendom would not smile. A's claim: by setting spirit against flesh Christianity excluded the sensual, and in excluding it made the sensual a principle of its own for the first time. That is why music, the art of that principle, is a Christian art and was not developed in antiquity.
+
+### Q: Why did Kraal say music is "demonic" for A? Give the chain, and A's own formula for Don Juan and Faust.
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** derive
+**A:** Desire can overpower a person; to be overpowered is what the demonic means; music is the medium of desire; so music is demonic. In A's text the sensual takes the form of the demonic "in aesthetic indifference" when spirit has excluded it but not yet judged it. Don Juan is the demonic specified as the sensual; Faust is the demonic specified as the spiritual.
+
+### Q: What is the subtitle of *Don Giovanni*, how does the opera end, and what did Kraal say A does with that ending?
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** recall
+**A:** *Il dissoluto punito*, "The Rake Punished", Kraal's "the punishment of the libertine"; the libretto is Da Ponte's, who had Dante's hell in mind. Don Giovanni is dragged down to hell by the statue of the Commendatore. Kraal said A leaves the punishment out because it does not fit his view, and cherry-picks the parts of the opera he likes.
+
+### Q: True or false, and justify: A never mentions Don Giovanni's descent into hell.
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** critique
+**A:** False as a claim about the text, though it is Kraal's view that A sets the punishment aside. A discusses the Commendatore's return in his section on the opera's structure and calls it "a monstrous irony": Don Giovanni overcomes every obstacle, but you cannot kill a ghost, and only a spirit can coerce him, because he is immediacy and spirit is its negation. Earlier A says that once reflection enters, the sensual realm appears as the realm of sin, Don Juan is slain and the music ends. A keeps the ending but reads it aesthetically, as spirit ending immediacy, not as a moral lesson.
+
+### Q: What does "desire qua desire" mean, and what did Kraal mean by "there is no half and half"?
+**Topic:** The Musical Erotic: Plato, Christianity and the demonic  **Lec:** 12  **Type:** recall
+**A:** Desire taken purely as itself, with no reflection, logic or reasoning mixed in; that is what makes Don Giovanni immediate rather than a planning seducer. "No half and half" is A's "absolutely": sensual love is absolutely faithless and loves not one but all, and Don Giovanni is always absolutely victorious, without the doubt that love of the soul carries.
+
+### Q: Kraal noted that older philosophers often misquoted, caring more for the idea a text inspired than for fidelity, and that A does the same with Mozart. How does A himself answer the charge that he reads into the music what is not there?
+**Topic:** The Musical Erotic: why music  **Lec:** 12  **Type:** critique
+**A:** A admits the reader may doubt how far what he says is in Mozart's music and how far he reads it in, and answers that the reader will find in the music not only the little he presents but infinitely more. He says the whole inquiry is "written only for those in love". It fits Kraal's email point that A praises Mozart, not the librettists: what A takes from the operas is the idea the music gives him, not the text.
