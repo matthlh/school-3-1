@@ -6,16 +6,11 @@ Rows whose Next is on or before today are due.
 
 <!-- due as of 2026-10-13 -->
 
-_58 topics due as of Tue Oct 13. Say **quiz me**._
+_52 topics due as of Tue Oct 13. Say **quiz me**._
 
 - CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 16 d · last unquizzed
-- CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 16 d · last unquizzed
 - STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 14 d · last unquizzed
-- STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 14 d · last unquizzed
 - STAT 251 · 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) · overdue 14 d · last unquizzed
-- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 14 d · last unquizzed
-- STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 14 d · last unquizzed
-- CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 11 d · last unquizzed
 - CPSC 310 · Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) · overdue 11 d · last unquizzed
 - CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 11 d · last unquizzed
 - ASIA 250 · Vedic religion: gods, sacrifice, karma and the castes · overdue 10 d · last unquizzed
@@ -59,7 +54,6 @@ _58 topics due as of Tue Oct 13. Say **quiz me**._
 - ASIA 250 · Hindu philosophy and bhakti (Upanishads to Krishna) · overdue 1 d · last X
 - CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 1 d · last X
 - CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 2 d · last ~
-- PHIL 385 · The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) · overdue 1 d · last ~
 - STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 1 d · last ~
 - PHIL 385 · The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) · overdue 1 d · last O
 - PHIL 385 · The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) · overdue 1 d · last O
@@ -67,11 +61,11 @@ _58 topics due as of Tue Oct 13. Say **quiz me**._
 - STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · due today · last ~
 - STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · due today · last ~
 
-_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 7% of 38 in-scope questions likely recalled._
+_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 9% of 38 in-scope questions likely recalled._
 
-_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 140 in-scope questions likely recalled._
+_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 3% of 140 in-scope questions likely recalled._
 
-_Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 13% of 221 in-scope questions likely recalled._
+_Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 14% of 221 in-scope questions likely recalled._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is past and the course's next exam does not._
 
@@ -113,12 +107,12 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | 2026-10-10 | X | 0 | 2026-10-11 |
 | STAT 251 | 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) | WW2 | 2026-10-10 | X | 0 | 2026-10-11 |
 | STAT 251 | 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) | 7 | — | — | 0 | 2026-09-29 |
-| STAT 251 | 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) | 8 | — | — | 0 | 2026-09-29 |
+| STAT 251 | 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) | 8 | 2026-10-13 | O | 1 | 2026-10-20 |
 | STAT 251 | 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) | 8 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) | 8 | 2026-10-11 | ~ | 0 | 2026-10-15 |
-| STAT 251 | 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) | 9 | — | — | 0 | 2026-09-29 |
+| STAT 251 | 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) | 9 | 2026-10-13 | X | 0 | 2026-10-14 |
 | STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | 2026-10-10 | ~ | 0 | 2026-10-14 |
-| STAT 251 | 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) | 9 | — | — | 0 | 2026-09-29 |
+| STAT 251 | 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) | 9 | 2026-10-13 | ~ | 0 | 2026-10-16 |
 | STAT 251 | 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) | 10 | — | — | 0 | 2026-10-03 |
 | STAT 251 | 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) | 10 | — | — | 0 | 2026-10-03 |
 | STAT 251 | 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) | 10 | — | — | 0 | 2026-10-03 |
@@ -135,9 +129,9 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | 2026-10-10 | X | 0 | 2026-10-11 |
 | CPSC 310 | Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) | 4 | — | — | 0 | 2026-09-27 |
 | CPSC 310 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | 2026-10-10 | X | 0 | 2026-10-11 |
-| CPSC 310 | Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) | 5 | — | — | 0 | 2026-09-27 |
+| CPSC 310 | Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) | 5 | 2026-10-13 | X | 0 | 2026-10-14 |
 | CPSC 310 | Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) | 5 | 2026-10-11 | X | 0 | 2026-10-12 |
-| CPSC 310 | Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | — | — | 0 | 2026-10-02 |
+| CPSC 310 | Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | 2026-10-13 | ~ | 0 | 2026-10-16 |
 | CPSC 310 | Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) | 7 | — | — | 0 | 2026-10-02 |
 | CPSC 310 | Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) | 7 | — | — | 0 | 2026-10-02 |
 | CPSC 310 | Design patterns I: Adapter and Composite (four-step analysis: change, pain, mechanism, cost · scattered is coupling, tangled is cohesion · mechanism from abstraction, obliviousness, trigger · when patterns help or hurt · Adapter: one interface per client, gain in degree · Composite: component, leaf, composite; cheap new node, costly new operation) | 8 | — | — | 0 | 2026-10-07 |
@@ -159,7 +153,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is 
 | PHIL 385 | The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-10 | O | 1 | 2026-10-12 |
-| PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-09 | ~ | 0 | 2026-10-12 |
+| PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-13 | O | 1 | 2026-10-15 |
 | PHIL 385 | The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) | 11 | 2026-10-10 | O | 1 | 2026-10-12 |
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-10-10 | X | 0 | 2026-10-11 |
@@ -354,3 +348,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-11 | Morning check: no course changes on Canvas, PrairieLearn, Piazza or the CPSC 310 site; WeBWorK signed out; ASIA 250 SWR1 not on Canvas yet. Seven untagged career to-dos tagged in Things3. Brock and DarkVision chats booked (Oct 12, Oct 15); Harvey receipt noted in the Career ledger. |
 | 2026-10-11 | Quiz (transit): 6 q · 2 O / 2 ~ / 2 X · ASIA 250, CPSC 310, STAT 251 · 4 ledger rows moved |
 | 2026-10-12 | Morning check: ASIA 250 SWR1 is up and due Thu Oct 22 23:59, not Oct 15 (calendar row and Things3 updated). No other course changes; WeBWorK signed out. Realm Alliance rejection and a TWG Global AI coffee-chat offer in the Career mail. |
+| 2026-10-13 | Quiz (transit): 6 q · 2 O / 2 ~ / 2 X · CPSC 310, PHIL 385, STAT 251 · 6 ledger rows moved |

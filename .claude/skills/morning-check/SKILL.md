@@ -659,6 +659,9 @@ until then. PHIL 385 is unchanged (nothing to pull).
    `$$` spans as their own tokens before any markdown rule touches them (a `$$` line, the LaTeX and a `$$` line
    make a display equation; `$$…$$` inside a line is inline), and their renderer hands the untouched LaTeX to
    KaTeX.
+   **Brief overlay (Matt, 2026-10-13: "for the morning, deck include more info if needed"):** `--brief` is the whole
+   brief, not a stub: first-line career alert, Plan today table, Rolled to tomorrow, Today's classes, New since
+   yesterday, Heads-up and the Career block, as HTML, so the phone shows everything the chat brief does.
    **Notes link (2026-10-05):** give each item `src` and `srcTitle` from the session item's `src_url` and
    `src_title` (the transit md's `Source:` line under each answer); the page links that notes page under the
    revealed answer.
@@ -695,8 +698,12 @@ until then. PHIL 385 is unchanged (nothing to pull).
         markdown step shows it as text and not as a one-item list.
    3. On the page the points sit under the label "Key points: tick each one your answer had". Each point is a row
       with a check box that a tap toggles, and a line under the list counts them live ("2 of 3 ticked · ~").
-      `gradeOf` below turns a card's ticks into its grade: `O` when every point is ticked, `~` when some are, `X`
-      when none are. Nothing auto-advances and there is no Skip: once the answer is revealed, the primary button
+      `gradeOf` below turns a card's ticks into its grade: `O` when every point is ticked, `~` when at least half are, `X`
+      when fewer than half are, so 1 of 5 and 4 of 5 never grade alike (Matt, 2026-10-13). The page also saves each card's
+      count as `score` (`4/5`) beside its grade and shows it on the finish list; the ledger ladder still reads only the grade.
+      A display equation of several aligned rows is one key point per row (`splitAligned` in the builder; a row starting
+      `&=` continues the one above), so each value is ticked on its own. Points are 48 px tap rows with a live score bar
+      and All / None buttons. Nothing auto-advances and there is no Skip: once the answer is revealed, the primary button
       reads Next → (Finish → on the last card). Prev and Back to deck still work, and ticks can change.
    4. The page saves on every tap on a point and on Finish, as it saved on every O/~/X tap and on Finish
       before: the same `.set()` on `grades/<date>` with the same fields (`date`, `items` of `{idx, course,
@@ -761,8 +768,8 @@ until then. PHIL 385 is unchanged (nothing to pull).
      return out.map((x) => x.trim().replace(/\u0000(\d+)\u0000/g, (_, n) => held[n])).filter(Boolean);
    }
 
-   // O when every point is ticked, ~ when some are, X when none are.
-   const gradeOf = (ticks) => (ticks.every(Boolean) ? 'O' : ticks.some(Boolean) ? '~' : 'X');
+   // O when every point is ticked, ~ when at least half are, X when fewer than half are (Matt, 2026-10-13).
+   const gradeOf = (ticks) => { const n = ticks.filter(Boolean).length; return n === ticks.length ? 'O' : n * 2 >= ticks.length ? '~' : 'X'; };
    ```
 
 **Transit Deck artifact (fixed URL, update in place):**

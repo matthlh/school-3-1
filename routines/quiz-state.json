@@ -1247,6 +1247,66 @@
      "X"
     ]
    ]
+  },
+  "3c9528f1": {
+   "course": "STAT251",
+   "topic": "3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)",
+   "history": [
+    [
+     "2026-10-13",
+     "~"
+    ]
+   ]
+  },
+  "d761c912": {
+   "course": "CPSC310",
+   "topic": "Controllability and observability",
+   "history": [
+    [
+     "2026-10-13",
+     "X"
+    ]
+   ]
+  },
+  "5cc0379f": {
+   "course": "CPSC310",
+   "topic": "Test doubles and LSP substitutability",
+   "history": [
+    [
+     "2026-10-13",
+     "~"
+    ]
+   ]
+  },
+  "4418bca6": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: why music",
+   "history": [
+    [
+     "2026-10-13",
+     "O"
+    ]
+   ]
+  },
+  "9c1e0d4a": {
+   "course": "STAT251",
+   "topic": "3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)",
+   "history": [
+    [
+     "2026-10-13",
+     "X"
+    ]
+   ]
+  },
+  "135a99c7": {
+   "course": "STAT251",
+   "topic": "3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)",
+   "history": [
+    [
+     "2026-10-13",
+     "O"
+    ]
+   ]
   }
  },
  "sessions": [
@@ -2229,6 +2289,50 @@
      "a71ce3ca",
      "ASIA250",
      "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-13",
+   "mode": "transit",
+   "n": 6,
+   "note": "",
+   "results": [
+    [
+     1,
+     "3c9528f1",
+     "STAT251",
+     "~"
+    ],
+    [
+     2,
+     "d761c912",
+     "CPSC310",
+     "X"
+    ],
+    [
+     3,
+     "5cc0379f",
+     "CPSC310",
+     "~"
+    ],
+    [
+     4,
+     "4418bca6",
+     "PHIL385",
+     "O"
+    ],
+    [
+     5,
+     "9c1e0d4a",
+     "STAT251",
+     "X"
+    ],
+    [
+     6,
+     "135a99c7",
+     "STAT251",
+     "O"
     ]
    ]
   }

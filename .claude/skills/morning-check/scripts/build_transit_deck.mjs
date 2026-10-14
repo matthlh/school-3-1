@@ -54,7 +54,27 @@ function keyPoints(md) {
       prev.block = prev.block || u.block;
     } else out.push({ ...u });
   }
-  return out.map((u) => u.text);
+  return out.flatMap((u) => splitAligned(u.text));
+}
+// One value per key point (Matt, 2026-10-13): a display equation of several aligned rows becomes one point per row.
+// A row that starts with &= , &\\quad or &\\approx continues the row above it.
+function splitAligned(text) {
+  const m = text.match(/^([\s\S]*?)\$\$\s*\n\s*\\begin\{aligned\}([\s\S]*?)\\end\{aligned\}\s*\n\s*\$\$([\s\S]*)$/);
+  if (!m) return [text];
+  const rows = [];
+  for (const raw of m[2].split(/\\\\(?:\[[^\]]*\])?/)) {
+    const r = raw.trim();
+    if (!r) continue;
+    if (rows.length && /^&\s*(=|\\quad|\\approx|\\le|\\ge)/.test(r)) rows[rows.length - 1] += ' \\\\\n' + r;
+    else rows.push(r);
+  }
+  if (rows.length < 2) return [text];
+  const lead = m[1].trim();
+  const wrap = (r) => '$$\n\\begin{aligned}\n' + r + '\n\\end{aligned}\n$$';
+  const pts = rows.map(wrap);
+  if (lead) pts[0] = lead + '\n\n' + pts[0];
+  if (m[3].trim()) pts.push(m[3].trim());
+  return pts;
 }
 function sentences(text) {
   const held = [];
@@ -167,8 +187,9 @@ ${briefHtml}
   // One item per session question: q and each key point are rendered markdown with the $$ spans kept for mathify.
   const QUESTIONS = ${JSON.stringify(QUESTIONS, null, 1)};
   const DATE_ID = '${date}';
-  // O when every point is ticked, ~ when some are, X when none are.
-  const gradeOf = (ticks) => (ticks.every(Boolean) ? 'O' : ticks.some(Boolean) ? '~' : 'X');
+  // O when every point is ticked, ~ when at least half are, X when fewer than half are (Matt, 2026-10-13: 1 of 5 and 4 of 5
+  // must not grade alike). The exact count is saved beside the grade as score.
+  const gradeOf = (ticks) => { const n = ticks.filter(Boolean).length; return n === ticks.length ? 'O' : n * 2 >= ticks.length ? '~' : 'X'; };
 
   let idx = 0;
   let revealed = false;
@@ -205,7 +226,7 @@ ${briefHtml}
     try {
       await db.doc(\`grades/\${DATE_ID}\`).set({
         date: DATE_ID,
-        items: QUESTIONS.map((item, i) => ({ idx: i + 1, course: item.course, grade: gradeAt(i) })),
+        items: QUESTIONS.map((item, i) => ({ idx: i + 1, course: item.course, grade: gradeAt(i), score: shown[i] ? ticks[i].filter(Boolean).length + '/' + ticks[i].length : null })),
         replyString: buildReplyString(),
         updatedAt: new Date().toISOString(),
       });
@@ -234,10 +255,12 @@ ${briefHtml}
       html += \`
         <hr class="divider" />
         <div class="points-label mono">Key points: tick each one your answer had</div>
+        <div class="score-bar" id="score-bar"><div class="score-fill" id="score-fill"></div></div>
         <ul class="points" id="points">\${item.points.map((p, k) => \`
-          <li class="point\${t[k] ? ' ticked' : ''}" data-k="\${k}"><span class="box">\${t[k] ? '✓' : ''}</span><div class="p-text">\${mathify(p)}</div></li>\`).join('')}
+          <li class="point\${t[k] ? ' ticked' : ''}" data-k="\${k}" role="checkbox" aria-checked="\${t[k]}"><span class="box">\${t[k] ? '✓' : ''}</span><div class="p-text">\${mathify(p)}</div></li>\`).join('')}
         </ul>
-        <div class="tick-count mono" id="tick-count"></div>
+        <div class="tick-row"><div class="tick-count mono" id="tick-count"></div>
+          <button class="mini-btn mono" id="tick-all">All</button><button class="mini-btn mono" id="tick-none">None</button></div>
         \${item.src ? \`<a class="src-link" href="\${esc(item.src)}" target="_blank" rel="noopener">\${esc(item.srcTitle || 'Lecture notes')}</a>\` : ''}
       \`;
     } else {
@@ -247,16 +270,23 @@ ${briefHtml}
     cardInner.scrollTop = 0;
     if (revealed) {
       renderCount();
+      const paint = () => cardInner.querySelectorAll('.point').forEach((li) => {
+        const on = ticks[idx][+li.dataset.k];
+        li.classList.toggle('ticked', on);
+        li.querySelector('.box').textContent = on ? '✓' : '';
+        li.setAttribute('aria-checked', on);
+      });
       cardInner.querySelectorAll('.point').forEach((li) => li.addEventListener('click', (e) => {
         if (e.target.closest('a')) return;
         e.stopPropagation();
         const k = +li.dataset.k;
         ticks[idx][k] = !ticks[idx][k];
-        li.classList.toggle('ticked', ticks[idx][k]);
-        li.querySelector('.box').textContent = ticks[idx][k] ? '✓' : '';
-        renderCount();
-        persistGrades();
+        if (navigator.vibrate) navigator.vibrate(8);
+        paint(); renderCount(); persistGrades();
       }));
+      const setAll = (v) => (e) => { e.stopPropagation(); ticks[idx].fill(v); paint(); renderCount(); persistGrades(); };
+      document.getElementById('tick-all').addEventListener('click', setAll(true));
+      document.getElementById('tick-none').addEventListener('click', setAll(false));
     }
     prevBtn.disabled = idx === 0;
     nextBtn.textContent = revealed ? (idx === QUESTIONS.length - 1 ? 'Finish →' : 'Next →') : 'Reveal';
@@ -267,6 +297,8 @@ ${briefHtml}
     const t = ticks[idx];
     const n = t.filter(Boolean).length;
     el.innerHTML = \`<b>\${n}</b> of \${t.length} ticked · <b>\${gradeOf(t)}</b>\`;
+    const f = document.getElementById('score-fill');
+    if (f) { f.style.width = (100 * n / t.length) + '%'; f.dataset.g = gradeOf(t); }
   }
 
   function reveal() { revealed = true; shown[idx] = true; renderCard(); persistGrades(); }
@@ -293,7 +325,7 @@ ${briefHtml}
       const row = document.createElement('div');
       row.className = 'grade-row';
       const g = gradeAt(i);
-      const chip = g ? \`<span class="g-btn sel" data-grade="\${g}" style="cursor:default;">\${g}</span>\` : \`<span class="hint">not revealed</span>\`;
+      const chip = g ? \`<span class="hint mono" style="margin-right:6px">\${ticks[i].filter(Boolean).length}/\${ticks[i].length}</span><span class="g-btn sel" data-grade="\${g}" style="cursor:default;">\${g}</span>\` : \`<span class="hint">not revealed</span>\`;
       row.innerHTML = \`<div class="gq"><span class="num mono">\${i + 1}.</span>\${item.course}</div><div class="grade-btns">\${chip}</div>\`;
       rowsEl.appendChild(row);
     });

@@ -518,6 +518,16 @@
   .q-text pre { margin: 6px 0; padding: 8px 10px; background: var(--accent-soft); border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.45; }
   .q-text ul, .p-text ul { margin: 4px 0; padding-left: 18px; }
   .q-text p, .p-text p { margin: 0 0 6px; }
+  .point { min-height: 48px; padding: 12px 12px; -webkit-tap-highlight-color: transparent; user-select: none; }
+  .point:active { transform: scale(0.99); }
+  .point .box { width: 26px; height: 26px; font-size: 17px; margin-top: 0; }
+  .score-bar { height: 6px; border-radius: 3px; background: var(--surface-line); overflow: hidden; }
+  .score-fill { height: 100%; width: 0; background: var(--cpsc); transition: width 0.15s ease; }
+  .score-fill[data-g="~"] { background: var(--accent); }
+  .score-fill[data-g="O"] { background: var(--stat); }
+  .tick-row { display: flex; align-items: center; gap: 8px; }
+  .tick-row .tick-count { flex: 1; }
+  .mini-btn { font-size: 12px; padding: 7px 12px; border-radius: 8px; border: 1px solid var(--surface-line); background: var(--bg); color: var(--text-dim); cursor: pointer; }
   .tick-count { font-size: 13px; color: var(--text-dim); }
   .tick-count b { color: var(--text); }
 </style>
