@@ -148,6 +148,7 @@ const body = `
   <h1>Deck done</h1>
   <p class="hint" id="sync-status">Saving your grades…</p>
   <div id="grade-rows"></div>
+  <div id="reread"></div>
   <div class="copy-box">
     <input class="copy-field mono" id="copy-field" readonly value="" />
     <button class="copy-btn mono" id="copy-btn">Copy</button>
@@ -187,9 +188,10 @@ ${briefHtml}
   // One item per session question: q and each key point are rendered markdown with the $$ spans kept for mathify.
   const QUESTIONS = ${JSON.stringify(QUESTIONS, null, 1)};
   const DATE_ID = '${date}';
-  // O when every point is ticked, ~ when at least half are, X when fewer than half are (Matt, 2026-10-13: 1 of 5 and 4 of 5
-  // must not grade alike). The exact count is saved beside the grade as score.
-  const gradeOf = (ticks) => { const n = ticks.filter(Boolean).length; return n === ticks.length ? 'O' : n * 2 >= ticks.length ? '~' : 'X'; };
+  // Share of key points ticked → grade (Matt, 2026-10-13): 100% O (Easy), 80-99% O (Good, the ledger holds the streak),
+  // 50-79% ~ (Hard), under 50% X (Again). The exact count is saved beside the grade as score.
+  const gradeOf = (ticks) => { const r = ticks.filter(Boolean).length / ticks.length; return r >= 0.8 ? 'O' : r >= 0.5 ? '~' : 'X'; };
+  const levelOf = (ticks) => { const r = ticks.filter(Boolean).length / ticks.length; return r === 1 ? 'Easy' : r >= 0.8 ? 'Good' : r >= 0.5 ? 'Hard' : 'Again'; };
 
   let idx = 0;
   let revealed = false;
@@ -296,7 +298,7 @@ ${briefHtml}
     if (!el) return;
     const t = ticks[idx];
     const n = t.filter(Boolean).length;
-    el.innerHTML = \`<b>\${n}</b> of \${t.length} ticked · <b>\${gradeOf(t)}</b>\`;
+    el.innerHTML = \`<b>\${n}</b> of \${t.length} ticked · <b>\${gradeOf(t)}</b> · \${levelOf(t)}\`;
     const f = document.getElementById('score-fill');
     if (f) { f.style.width = (100 * n / t.length) + '%'; f.dataset.g = gradeOf(t); }
   }
@@ -330,6 +332,13 @@ ${briefHtml}
       rowsEl.appendChild(row);
     });
     document.getElementById('copy-field').value = buildReplyString();
+    // Reread list: every card under 100%, with its notes page and the key points not ticked.
+    const reread = QUESTIONS.map((q, i) => ({ q, i })).filter(({ q, i }) => shown[i] && ticks[i].some((v) => !v));
+    const rr = document.getElementById('reread');
+    rr.innerHTML = reread.length ? '<h2 class="rr-h mono">Reread</h2>' + reread.map(({ q, i }) => \`
+      <div class="rr-card"><div class="rr-top"><span class="tag \${q.tag}">\${q.course}</span><span class="mono hint">\${ticks[i].filter(Boolean).length}/\${ticks[i].length} · \${levelOf(ticks[i])}</span></div>
+        \${q.src ? \`<a class="src-link" style="margin:6px 0" href="\${esc(q.src)}" target="_blank" rel="noopener">\${esc(q.srcTitle || 'Lecture notes')}</a>\` : ''}
+        <ul class="rr-list">\${q.points.map((p, k) => ticks[i][k] ? '' : \`<li class="p-text">\${mathify(p)}</li>\`).join('')}</ul></div>\`).join('') : '';
     const statusEl = document.getElementById('sync-status');
     const saved = await persistGrades();
     statusEl.textContent = saved ? 'Saved — next time just tell Claude "grade my deck".'

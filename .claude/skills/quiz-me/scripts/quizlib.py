@@ -79,8 +79,12 @@ def gap(grade, streak):
         return 7 if streak <= 1 else 16 if streak == 2 else 35
     return 3 if grade == "~" else 1
 
-def next_after(grade, streak):
-    """CLAUDE.md spacing ladder. Returns (new_streak, days_until_next)."""
+def next_after(grade, streak, good=False):
+    """CLAUDE.md spacing ladder. Returns (new_streak, days_until_next). good marks an O the deck scored 80-99%
+    (Matt, 2026-10-13): the streak holds at its rung (at least 1) instead of climbing, so only a full score moves up."""
+    if good and grade == "O":
+        s = max(streak, 1)
+        return s, gap("O", s)
     s = 0 if grade == "X" else streak + 1 if grade == "O" else streak
     return s, gap(grade, s)
 
