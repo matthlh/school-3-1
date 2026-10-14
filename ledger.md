@@ -61,7 +61,7 @@ _52 topics due as of Tue Oct 13. Say **quiz me**._
 - STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · due today · last ~
 - STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · due today · last ~
 
-_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 5% of 69 in-scope questions likely recalled._
+_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 4% of 79 in-scope questions likely recalled._
 
 _Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 3% of 140 in-scope questions likely recalled._
 

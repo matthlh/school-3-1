@@ -1024,3 +1024,95 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: Contrast the musical Don Juan with the reflective one. Which is the extensive seducer and which the intensive one, what does each enjoy, and how many must each seduce?
 **Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** apply
 **A:** The musical Don Juan is the extensive seducer. He wins his object at a single stroke, a flick of the wrist, he enjoys the satisfaction, and he has to seduce 1,003; obstacles only inflame him, and his victory is certain. The reflective, self-aware Don Juan is the intensive seducer. He enjoys the deception and the cunning, and he needs to seduce only one, so what interests us is how he does it: every small step counts, like a conjuring trick. Once Don Juan is an individual struggling against real obstacles, he falls in the category of the interesting. Faust, a later version of Don Giovanni who has the category of spirit, fits the second type: he seduces only one girl but destroys her far more intensely, and the power of such a seducer is speech, which means lies. "The Seducer's Diary", at the end of A's papers, is a seducer of this second kind.
+
+## Reading: "The Musical Erotic", the last part (pp. 100–117 of the PDF, skimmed by Claude 2026-10-13)
+
+### Q: Why, according to A, can only a ghost stop Don Giovanni, and what does he call the Commendatore's return?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** Don Giovanni is sensual life in its immediacy, and the negation of immediacy is spirit. No power on earth can coerce him, so only a spirit, a ghost, can. A calls the Commendatore's return "a monstrous irony", because Don Giovanni can beat every obstacle but you cannot kill a ghost, and irony is the taskmaster of the immediate life. In Molière the statue is a dramatic stumbling block instead, and modern comedy would simply put Don Juan in a debtor's gaol.
+
+### Q: Why does Leporello's bond to his master make sense in the opera, when Sganarelle's does not in Molière?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** In the opera Don Giovanni is a force, and Leporello is drawn to him and absorbed by an obscure sympathy he cannot see through; that is what makes Leporello a musical figure, and why he cannot tear himself away. In Molière Don Juan is a particular individual, so Sganarelle relates to him as to an individual, and there is no rational ground for his staying when he is not even paid.
+
+### Q: True or false, and justify: A takes the remark that Molière's Don Juan is more moral than Mozart's as a fair criticism of the opera.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** critique
+**A:** False. Properly understood, A says, the remark praises the opera. In the opera Don Giovanni is a seducer, not just talked about as one, and the music is seductive, which is its greatness. The opera's aspiration is extremely moral and its impression salutary, because everything in it is big and has genuine pathos. Calling it immoral is the foolishness of people caught by details who cannot grasp a whole.
+
+### Q: How does A contrast opera with drama in their unity, their pace and the kind of action each can hold?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** Drama's unity is a thought: everything is converted into action and situation, and it hurries toward the fall. Opera's unity is a mood: it lingers, expands in time and space, and moves horizontally. Opera is not reflective enough for character and action and expresses unreflective, substantial passion instead. An action in the strict sense, a deed done with a conscious purpose, cannot be set to music, so the action in an opera can only be immediate action.
+
+### Q: Which figure does A call the opera's "common denominator", what are the other figures, and who is the one exception to his power?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** Don Giovanni. The others are not characters but passions he posits: Elvira loves him, Anna hates him, Zerlina fears him, and Ottavio and Masetto go along for the sake of brotherhood-in-law, so all are in his power. A's image is a solar system, the others lit only on the side turned toward him. The exception is the Commendatore, who is consciousness, so Don Giovanni has no power over him. He is kept in the background and appears only twice; the second time "he speaks no more, he judges".
+
+### Q: What makes Elvira's first aria a musical situation rather than a dramatic one, for A?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** apply
+**A:** Don Giovanni stays in the background, unseen even by the audience, and his jeering laughter is flung into the pause in her aria, so her passion, which A calls love's hatred, blazes up again. We are meant to hear him inside Elvira, since her passion is posited through him. If both were characters, the unexpected encounter would be the situation and the staging would be a mistake, because two characters cannot harmonize that way.
+
+### Q: Which two arias does A say must go from *Don Giovanni*, and why?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** Ottavio's and Anna's. They are concert pieces rather than dramatic music, and Ottavio and Anna are too insignificant as figures to justify holding up the action. With those two removed, A says, the musical-dramatic pace of the opera is perfect as no other.
+
+### Q: Which does A name as the most epic moment in the opera, and which as the most lyrical? Give his reason for each.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** The most epic moment is Leporello's second aria, the list, sung to Elvira: Leporello is the epic narrator of his master's whole life, and he forgets himself in Don Giovanni as he sings it. The most lyrical moment is the champagne aria: it has no dramatic situation, but in it Don Giovanni dissolves into music, "his life, foaming like champagne", and the keynote of the opera sounds in it. The banquet in the finale is a situation rather than a lyrical moment, Don Giovanni driven to life's furthest point.
+
+### Q: What does A say about the overture: when it should be composed, where its focus lies, and what mood Don Giovanni's life is born in?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** An overture should be composed last, so that the composer is steeped in the music; Mozart's is a perfect masterpiece, enough on its own to prove the opera a classic. Its focus is Don Giovanni, not Don Giovanni and the Commendatore: the deep voice of the opening grows weaker and is dragged into the race, and earnest returns only in the finale. Don Giovanni's life is born in dread, a substantial dread that is his energy and his demonic joy of life, and not in despair. The opera then rightly begins with Leporello, whose first aria belongs with the overture.
+
+### Q: Name the three numbered sections of A's treatment of *Don Giovanni*, and the heading he gives the essay's closing page.
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** reading  **Type:** recall
+**A:** 1. Sensual Genius Specified as Seduction. 2. Other Adaptations of Don Juan, Considered in Relation to the Musical Interpretation. 3. The Inner Musical Structure of the Opera. The closing page is the Platitudinous Postlude, matching the Platitudinous Introduction, and it returns to Mozart's good fortune and to *Don Giovanni* as the highest of the classics.
+
+## Reading: "Ancient Tragedy's Reflection in the Modern" (Sep 25–28; read by Claude 2026-10-13, frozen until the final)
+
+### Q: Give the essay's full heading, who it is read before, and where it sits among A's papers.
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** "Ancient Tragedy's Reflection in the Modern. An Essay in the Fragmentary Endeavour", read before the Symparanekromenoi, the same society A addresses in "The Unhappiest One". It is the third of A's papers, right after "The Musical Erotic". A describes the society's genre as the art of writing posthumous papers, which should feel like a ruin.
+
+### Q: Which of Aristotle's terms does A use in the essay, and what does he take from each?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** Thought (dianoia) and character (ethos) as the sources of tragic action, with the end (telos) as the main thing, so that the characters are there for the sake of the action. Guilt (hamartia), which Aristotle requires the hero to have and which A reads as lying between activity and passivity in Greek tragedy. Fear and pity, the moods tragedy arouses: A reads fear as the mood of the particular event and pity as the mood of the total impression, which is why pity shares the dialectic of tragic guilt.
+
+### Q: A says his age tends toward comedy. What two signs does he give, and what line sums up the second?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** Isolation and the flight from responsibility. To be isolated is to assert oneself numerically, and the associations formed against isolation only confirm it, since a hundred asserting themselves as a hundred is the same move; A calls them infusoria in the body of a dissolving state, like the political clubs of Greece's decline. The age is melancholy enough to know what responsibility is and runs from it: "everyone wants to rule, no one wants the responsibility", his example being a French statesman who would take office only if the secretary of state were made responsible. The isolated individual is comic because he asserts his accidental individuality against necessity.
+
+### Q: A calls the tragic a maternal love. What is the paternal love, what is the ethical, and what do the two kinds of leniency share?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** The tragic has an infinite leniency: from the aesthetic side it is what divine love and mercy are, a maternal love that soothes. The ethical is strict and harsh, like the judge who rules that the thief pleading his mother's habits is a thief and not a thief's mother. The religious is a paternal love, the ethical mollified by continuity, which is also what gives the tragic its leniency. The aesthetic grants its pause before the opposition of sin is pressed home; the religious grants it only after. The age disdains both tragedy's tears and divine mercy.
+
+### Q: What does A take from Hegel's *Aesthetics* on pity?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** Hegel separates ordinary compassion, which concerns the finite side of suffering, from true tragic pity, and says true pity is sympathy at the same time with the sufferer's justification. A keeps the second point as "straight to the point", sets the first aside as a misunderstanding that applies to any tragedy, and ties the kinds of compassion to the kinds of tragic guilt instead.
+
+### Q: True or false, and justify: A says remorse is the highest form of tragic pain.
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** critique
+**A:** False. Remorse is the bitterest pain, but it has an ethical reality, not an aesthetic one. Its total transparency removes all aesthetic interest, and it refuses to be looked at, least of all by a spectator. The modern age works toward it as its highest tragic interest, which A puts with the age's other confusions: wanting to be edified in the theatre and influenced aesthetically in church. When the individual is left wholly to himself, his guilt is sin and his pain remorse, and the tragic is gone.
+
+### Q: Which Greek play does A single out as a tragedy of suffering, and how does its hero differ from the modern Antigone?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** Sophocles' *Philoctetes*, Greek tragedy's own transition from sorrow to pain, with a high degree of reflection that objectivity still sustains: the hero rests in his unchangeable fate. Philoctetes complains that no one understands his pain, which A calls typically Greek and a deep human need. The modern Antigone does not want anyone to learn of her pain. His solitude on the island is an outward truth, which makes his pain less; her solitude is only figurative, and that unreality is what makes her pain real.
+
+### Q: Complete A's formula: true tragic sorrow requires an element of what, and true tragic pain an element of what? Which needs transparency and which opaqueness?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** True tragic sorrow requires an element of guilt, true tragic pain an element of innocence. Sorrow requires transparency, pain opaqueness. The more innocence, the deeper the sorrow, but pressed to the limit this leaves aesthetics: the synthesis of absolute innocence and absolute guilt is metaphysical, which is why Christ's life is not called a tragedy.
+
+### Q: Why does A make his modern tragic figure a woman?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** A woman has the substantiality that sorrow needs to show itself, and as a member of a reflective world she has reflection enough to feel pain. Her reflection must not be infinite, or it would refract her out of her inherited guilt and so out of sorrow; as it is, it refracts her into her sorrow and turns it into pain at every moment.
+
+### Q: A says anxiety is the modern tragic category. Give his two proofs that anxiety is reflection, and his three examples.
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** From language: one is anxious "about something", so the anxiety is separated from its object, whereas "my sorrow" can name what I sorrow over. From time: one cannot be anxious about the present, only about the past or the future, which are reflective, while Greek sorrow lives in the present tense. Anxiety both loves and fears its object, like an erotic glance. The examples are Hamlet, tragic because he suspects his mother's guilt; Robert le Diable, asking how he came to cause so much evil; and Hogne, begotten by a troll, seeing his shape in the water.
+
+### Q: What does A's modern Antigone not know, and why does he call that the modern feature?
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** recall
+**A:** Whether her father himself knew his guilt. Oedipus is dead in A's version, honoured by the people; while he lived she could not confide in him, since he might not have known, and now confiding in anyone else would disgrace him. That ignorance inside her knowledge keeps her sorrow in motion and turns it into pain, which is the disquietude A calls the modern feature. Her public enthusiasm for her father is her only vent, and even that is pain, since anyone seeing her suffer might pick up the trail.
+
+### Q: A sets the isolated individual a dilemma about tragic guilt. State both horns, and say what kind of dialectic joins family guilt to the individual instead.
+**Topic:** Ancient Tragedy's Reflection in the Modern  **Lec:** reading  **Type:** derive
+**A:** Either the isolated individual is absolutely the creator of his own destiny, in which case nothing tragic remains, only evil, or individuals are mere modifications of the eternal substance of existence, and the tragic is lost again. Tragic guilt is inherited guilt, a substantial category like original sin, and the dialectic that joins the guilt of the family to the individual is objective, not subjective. Essentially it is piety, which A says cannot harm the individual: if one member suffers, all suffer, and the individual participates in the guilt.

@@ -367,7 +367,7 @@ It never applies, never sends anything, and never opens SCOPE: SCOPE needs his C
 applying is a separate session he starts himself.
 1. Run
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/Projects/Career/scripts/run.py" applications
+   python3 "/Users/matthe/Documents/CodingProjects/Projects/Groundwork/scripts/run.py" applications
    ```
    It rewrites `data/APPLICATIONS.md` in the Career repo and prints the **Career** block between
    the `===` lines. Paste the block into the brief verbatim, the same way the planner's block is
@@ -385,7 +385,7 @@ applying is a separate session he starts himself.
      The Career block repeats it. Nothing else in the brief gets this treatment.
    - If it clearly belongs to exactly one row of `data/APPLICATIONS.md` (company and role both
      match), record that the email arrived:
-     `python3 "/Users/matthe/Documents/CodingProjects/Projects/Career/scripts/run.py" mark-app <job_id> note "<sender>: <subject>"`.
+     `python3 "/Users/matthe/Documents/CodingProjects/Projects/Groundwork/scripts/run.py" mark-app <job_id> note "<sender>: <subject>"`.
      That logs the email without deciding what it means. **Never** run `mark-app` with interview,
      offer or rejected: the status is his call. Put the ready-to-paste command for the likely status
      under Details → Career instead. Some companies have more than one application (the ledger shows
