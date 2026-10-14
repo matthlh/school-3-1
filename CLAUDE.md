@@ -147,6 +147,10 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
 | `O` solid | 2 | +16 days |
 | `O` solid | 3+ | +35 days |
 
+The transit deck scores each card by the share of key points ticked (Matt, 2026-10-13): 100% is an Easy, an `O` that climbs the
+ladder as above; 80–99% is a Good, an `O` whose streak holds at its rung (`--score N 4/5` on `quiz_grade.py`); 50–79% is `~`; under
+50% is `X`.
+
 Two adjustments follow the ladder. Next is never later than 4 days before the first exam at least 2 days away that
 covers the topic (the day before that exam once that day has passed), and a gap of 3 days or more moves up to 15% either way, at
 least a day, to the day with the fewest topics due. From 7 days before an exam, every topic it covers is due

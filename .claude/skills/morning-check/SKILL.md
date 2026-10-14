@@ -613,7 +613,7 @@ until then. PHIL 385 is unchanged (nothing to pull).
    that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
    half-graded) and not already `processed: true`: run `quiz_grade.py --transit <doc_id> "<replyString>"` (quiz-me
    skill; `--transit` grades the deck's own session file, which no quiz picked since can overwrite, and the doc_id,
-   which is the deck's date, makes it refuse that file when it holds another day's deck), then mark that doc with
+   which is the deck's date, makes it refuse that file when it holds another day's deck), passing each item's saved `score` as `--score N 4/5` (the Good level needs it; without it an O is an Easy), then mark that doc with
    `ArtifactData` `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and
    `if_version` = the `version` the query returned for that doc, so it is never graded
    twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
@@ -698,8 +698,10 @@ until then. PHIL 385 is unchanged (nothing to pull).
         markdown step shows it as text and not as a one-item list.
    3. On the page the points sit under the label "Key points: tick each one your answer had". Each point is a row
       with a check box that a tap toggles, and a line under the list counts them live ("2 of 3 ticked · ~").
-      `gradeOf` below turns a card's ticks into its grade: `O` when every point is ticked, `~` when at least half are, `X`
-      when fewer than half are, so 1 of 5 and 4 of 5 never grade alike (Matt, 2026-10-13). The page also saves each card's
+      `gradeOf` below turns a card's ticks into its grade: `O` at 80% or more ticked (100% is an Easy, 80–99% a Good), `~` at 50–79% (Hard), `X`
+      under 50% (Again), so 1 of 5 and 4 of 5 never grade alike (Matt, 2026-10-13). A Good holds its topic's streak
+      at its rung instead of climbing (`quizlib.next_after(..., good=True)`). The finish screen lists a **Reread** card for
+      every card under 100%: its notes page and the key points he did not tick. The page also saves each card's
       count as `score` (`4/5`) beside its grade and shows it on the finish list; the ledger ladder still reads only the grade.
       A display equation of several aligned rows is one key point per row (`splitAligned` in the builder; a row starting
       `&=` continues the one above), so each value is ticked on its own. Points are 48 px tap rows with a live score bar
@@ -768,8 +770,8 @@ until then. PHIL 385 is unchanged (nothing to pull).
      return out.map((x) => x.trim().replace(/\u0000(\d+)\u0000/g, (_, n) => held[n])).filter(Boolean);
    }
 
-   // O when every point is ticked, ~ when at least half are, X when fewer than half are (Matt, 2026-10-13).
-   const gradeOf = (ticks) => { const n = ticks.filter(Boolean).length; return n === ticks.length ? 'O' : n * 2 >= ticks.length ? '~' : 'X'; };
+   // 80% or more ticked is O (100% Easy, 80-99% Good), 50-79% is ~ (Hard), under 50% is X (Again) (Matt, 2026-10-13).
+   const gradeOf = (ticks) => { const r = ticks.filter(Boolean).length / ticks.length; return r >= 0.8 ? 'O' : r >= 0.5 ? '~' : 'X'; };
    ```
 
 **Transit Deck artifact (fixed URL, update in place):**
