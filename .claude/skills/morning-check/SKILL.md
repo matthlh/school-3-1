@@ -1008,6 +1008,7 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-10-14 (Matt: "something's wrong with the priority"): `things_plan.py` scores work due today or tomorrow above work whose date has passed. Before, overdue scored 1000 and due-tomorrow 900, and the was-planned and rollover bonuses kept old revision steps above LAB04 and WeBWorK 4 closing the next day; overdue now takes the 2–3 day band's 700 and wins ties by date.
 - 2026-10-09 (Matt): interviews, assessments and offers are the brief's first line and a push, every employer
   reply carries its date, career outranks school when they collide, and applying no longer waits for his say
   except big or medium tech where a referral is plausible (§4b steps 5–6). The keepalive task now also touches

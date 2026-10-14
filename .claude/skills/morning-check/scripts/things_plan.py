@@ -633,7 +633,10 @@ def plan(today, budget, todos, state):
         s = 0
         if t.due:
             d = (t.due - today).days
-            s += 1000 if d <= 0 else 900 if d == 1 else 700 if d <= 3 else 500 if d <= 7 else 300 if d <= 14 else 100
+            # Due today or tomorrow is still winnable, so it outranks work whose date has already passed by more than
+            # the was-planned and rollover bonuses together; overdue work scores like the 2-3 day band and wins its ties
+            # by date (Matt, 2026-10-14: LAB04 and WeBWorK 4, closing the next day, lost to week-old revision steps).
+            s += 1000 if 0 <= d <= 1 else 700 if d <= 3 else 500 if d <= 7 else 300 if d <= 14 else 100
         s += PRIO_SCORE.get(t.prio, 100)
         if t.when and t.when <= today:
             s += 100
