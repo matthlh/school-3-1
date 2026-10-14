@@ -14,6 +14,13 @@
   must be booked ≥7 days ahead.
 - **AI:** allowed on labs and the project if you can explain everything you submit; not on exams.
 
+## Midterm format (Piazza @163, Kyle, Oct 13)
+
+- Full midterm details and a practice exam are promised for the week of Oct 12.
+- The problem types will be similar to the labs and scaffolded, so they are doable on paper.
+- Design patterns are tested as problem-solving (tangling, scattering, their coupling and cohesion causes, testability), not as pattern names to memorise, so a pattern not seen in a lab can appear.
+- This is the first instructor statement on format; the earlier classmate reports (all true/false, or all multiple choice) stay unverified.
+
 ## AutoTest — how the project deliverables are graded (course site, 2026-09-16)
 - Code is graded automatically on every push to `main`.
 - Feedback on a specific commit is requested by posting a **commit comment** reading `@310-bot #d1` (the deliverable number changes per deliverable). A commit *message* does not work, and neither does a comment on a pull request.

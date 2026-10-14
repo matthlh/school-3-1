@@ -84,7 +84,7 @@ $$
 - Part (a), one passenger between 73 kg and 105 kg. Standardise both ends: $$z = \frac{73 - 85}{15} = -0.80$$ and $$z = \frac{105 - 85}{15} = 1.33$$. Then $$P(-0.80 < Z < 1.33) = \Phi(1.33) - \Phi(-0.80) = 0.9082 - 0.2119 = 0.6963$$.
 - Part (b), a 50-seat commuter plane with total weight $$T = X_1 + \cdots + X_{50}$$ exceeding 4350 kg. By Fact 2 with every $$a_i = 1$$, $$T \sim N(50 \times 85, 50 \times 15^2) = N(4250, 11250)$$, so $$\operatorname{SD}(T) = \sqrt{11250} = 106.07$$. Then $$P(T > 4350) = P\!\left(Z > \frac{4350 - 4250}{106.07}\right) = P(Z > 0.94) = 1 - 0.8264 = 0.1736$$.
 - The same question through $$\bar{X}$$: total above 4350 means the mean above 87, and $$\bar{X} \sim N(85, \frac{225}{50})$$ with $$\operatorname{SD} = 2.121$$, so $$z = \frac{87 - 85}{2.121} = 0.94$$ again. The two routes always agree.
-- The deck gives the set-up only; the answers above are worked here and should be checked against the after-class deck.
+- Checked against the after-class deck `Lecture_14_Chapter_5_CanvasPost_AL.pdf` on Oct 14: it gets the same 0.6963 and 0.1736. Its part (a) uses symmetry instead of a negative-z lookup, writing $$P(Z < -0.8) = P(Z > 0.8) = 1 - 0.7881 = 0.2119$$, and its part (b) goes through the total only, with $$\mu_T = 50 \times 85 = 4250$$ and $$\sigma_T^2 = 50 \times 15^2 = 11250$$. The after-class deck adds no new examples, and the lecture 15 page says the class finishes these slides on Friday before starting Chapter 6.
 
 ### What is next (slide 7)
 
