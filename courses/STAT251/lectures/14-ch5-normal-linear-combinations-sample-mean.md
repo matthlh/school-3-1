@@ -1,6 +1,6 @@
 # STAT 251 — Lec 14 (Wed Oct 14) — Ch 5: Normal facts, linear combinations and the sample mean
 
-Built before class from the posted before-class deck `Lecture_14_Chapter_5_BL_CanvasPost.pdf` (7 slides); the after-class deck and the recording are added once they are up. The lecture page says the class first finishes lecture 13's remaining slides (the standard Normal, Table A, forward and backward calculations, written up on the [lecture 13 page](13-ch5-normal-and-standard-normal.md)) and then covers the slides below. 8 questions banked under Lec 14 and one long problem.
+You were absent, so there is no page from you. This file is the posted decks organised for study, the before-class `Lecture_14_Chapter_5_BL_CanvasPost.pdf` (7 slides) and the after-class `Lecture_14_Chapter_5_CanvasPost_AL.pdf`, with the recording's remarks under In class. The class first finished lecture 13's slides 12 to 24, the standard Normal, Table A and the forward and backward calculations, which are written up on the [lecture 13 page](13-ch5-normal-and-standard-normal.md). It then reached slide 2 of this deck, the symbols $$\phi$$ and $$\Phi$$, and ran three clicker questions. Facts 1 to 3 and the airline example are written up below from the deck and are expected on Friday, Oct 16, before Chapter 6 starts.
 
 ## Slides, organized
 
@@ -90,7 +90,48 @@ $$
 
 - Review lecture 14 and the matching textbook sections. The next class starts Chapter 6, Bernoulli and Binomial random variables.
 
+## In class (from the recording)
+
+### Announcements
+
+- Lab 3 runs this week. The Monday lab group's materials go up on Friday afternoon, and that group has about four days to do the lab alone and submit it on Gradescope.
+- WeBWorK 4 is due tomorrow, Thursday Oct 15.
+- Written Assignment 1 has six questions, and you submit only five. The last question is practice for Chapter 6.
+  - Some questions are easy and some are harder, so start early and leave time to ask him, the TAs or Piazza.
+  - Open the Written Assignments module and check now that you can get into Gradescope. If you cannot, use the contact email given there; he cannot fix access the day before the deadline.
+  - Upload each question separately, as a clear photo or a PDF, so you can replace one answer later without redoing the rest.
+- The Midterm Exam Information module is up. The midterm is Friday Oct 30.
+
+### Lecture 13's remaining slides
+
+- He recapped lecture 13: two parameters, the bell shape, the 68-95-99.7 rule and z-scores. Never use the Normal pdf to calculate.
+- Standardising any Normal gives the one standard Normal, so one table answers every Normal question.
+- Z-scores beyond about 3 in either direction hardly matter. The table stops at 3.49, where the cumulative probability is already 0.9998.
+- Round a z-score to two decimals before you look it up, because the table only has two.
+- This class uses only the positive-z table. By symmetry, $$P(Z < -1.25) = P(Z > 1.25) = 1 - 0.8944 = 0.1056$$.
+- Always draw the picture before you look anything up.
+- What a written answer must show (he said each step earns part marks):
+  - Define the random variable in words, because the question will not.
+  - Write its distribution, such as $$X \sim N(500, 100^2)$$.
+  - Write the probability statement you want, such as $$P(X > 650)$$.
+  - Standardise, then use the table, with the picture beside it. The picture lets the grader see a correct method even if the arithmetic slips.
+- Backward problems use the closest table entry, as on the lecture 13 page: 0.8997 gives $$z = 1.28$$ and a score of 628 for the top 10%.
+- He skipped the R slides and asked you to try them yourself.
+
+### This deck, slide 2
+
+- "Briefly describe" on an exam means two or three sentences, to the point.
+- He introduced $$\phi$$ and $$\Phi$$ because the textbook writes its answers with them, and students had asked. $$\Phi(z)$$ is the table value, so $$\Phi(0) = 0.5$$.
+
+### Clicker questions
+
+- The first asked whether $$P(Z < 5)$$ is about 0. False: everything below 5 is almost all of the area, so it is almost 1.
+- The second compared the area from 1.5 to 2.10 with the matching area on the negative side. True, by symmetry. He said not to calculate anything for a question like that, only to draw it.
+- The third asked for the cutoff of the lowest 5%. The answer was (d). By symmetry, the cutoff is the negative of the value with 0.95 to its left. The recording ends while he looks up 0.95. It sits exactly halfway between 0.9495 at 1.64 and 0.9505 at 1.65, so the cutoff is about $$-1.645$$.
+
 ## Clarifications
 
 - The deck writes the pdf's constant as $$\frac{1}{\sqrt{2\pi\sigma^2}}$$ and lecture 13 wrote it as $$\frac{1}{\sigma\sqrt{2\pi}}$$. They are the same number.
 - Fact 2 needs independence for the variance formula. Without it the covariance terms from lecture 10 come back, and the deck does not say whether the combination stays Normal when the variables are dependent (it does for jointly Normal variables, which is beyond this course).
+
+Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 14", and 1 under "Long problems". Ledger: the existing 3o linear combinations row and the 3p z-scores row.

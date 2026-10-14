@@ -1629,7 +1629,7 @@ $$
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 13  **Type:** apply
 **A:** Use the cdf you have: $$P(2 < X < 5) = F(5) - F(2) = (1 - e^{-1}) - 0 \approx 0.632$$. The student used the pdf's formula where it does not hold. The pdf is 0 below 4, so the integral runs from 4 to 5, not 2 to 5. A probability of 7.02 is impossible, which is the check that should have caught it.
 
-## Lec 14 — Ch 5: Normal facts, linear combinations and the sample mean (prepared 2026-10-10 from the before-class deck; numbers changed)
+## Lec 14 — Ch 5: Normal facts, linear combinations and the sample mean (logged 2026-10-14 from the decks and the recording; numbers changed)
 
 ### Q: $$X \sim N(20, 4^2)$$ and $$Y = 3X - 5$$. State the distribution of $$Y$$ with both parameters, say which part of the claim is new beyond the Chapter 4 rules, and find $$P(Y > 70)$$.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
@@ -1732,6 +1732,45 @@ $$\Phi(0) = 0.5$$, because the standard Normal is symmetric about 0, so half the
 ### Q: Mark each claim true or false and fix the false ones. (a) For a sample of 25 from $$N(\mu, \sigma^2)$$, $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{25}$$. (b) If $$X$$ is Normal then $$-2X + 7$$ is Normal with variance $$-2\sigma^2$$. (c) $$E(\bar{X}) = \mu$$ holds even if the sample values are not independent.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
 **A:** (a) False. $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{25}$$, so $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{\sqrt{25}} = \frac{\sigma}{5}$$; the square root shrinks the spread by $$\sqrt{n}$$, not $$n$$. (b) False in the variance. $$-2X + 7$$ is Normal by Fact 1, with mean $$-2\mu + 7$$ and variance $$(-2)^2\sigma^2 = 4\sigma^2$$; a variance is never negative. (c) True. Expectation of a sum always adds, so the mean of $$\bar{X}$$ is $$\mu$$ regardless of independence; only the variance formula needs it.
+
+### Q: $$Z$$ is standard Normal. True or false, without a table: (a) $$P(Z < 4.2)$$ is about 0. (b) $$P(-2.4 < Z < -1.3) = P(1.3 < Z < 2.4)$$. Then give the value in (b) from Table A.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** recall
+**A:** (a) False. 4.2 is far above the mean, so everything below it is almost the whole area, and $$P(Z < 4.2)$$ is almost 1. The table stops at 3.49, where the cumulative probability is already 0.9998. (b) True, because the standard Normal curve is symmetric about 0, so the two strips are mirror images. Draw it rather than calculate. The value is $$\Phi(2.40) - \Phi(1.30) = 0.9918 - 0.9032 = 0.0886$$.
+
+### Q: Find the cutoff $$a$$ with $$P(Z < a) = 0.025$$, using only the positive-z table. Then find the score that cuts off the lowest 2.5% when scores are $$N(70, 8^2)$$.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** apply
+**A:** The lowest 2.5% is in the left tail, so $$a$$ is negative. By symmetry, $$-a$$ has 0.975 of the area to its left. Table A has 0.9750 exactly at 1.96, so $$a = -1.96$$. Unstandardise:
+
+$$
+\begin{aligned}
+x &= \mu + z\sigma \\
+&= 70 + (-1.96)(8) \\
+&= 54.32
+\end{aligned}
+$$
+
+### Q: A written question says: exam scores are $$N(60, 8^2)$$; what proportion of students score above 70? List what a full-marks answer writes down, in order, and give the answer.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** apply
+**A:** Each step earns part marks, and the picture lets the grader see a correct method even if the arithmetic slips.
+1. Define the random variable in words: $$X$$ is a student's exam score. The question does not do this for you.
+2. State its distribution: $$X \sim N(60, 8^2)$$.
+3. Write the probability statement: $$P(X > 70)$$.
+4. Standardise, draw the curve with the right tail shaded, and use the table.
+
+$$
+\begin{aligned}
+P(X > 70) &= P\left(Z > \frac{70 - 60}{8}\right) \\
+&= P(Z > 1.25) \\
+&= 1 - 0.8944 \\
+&= 0.1056
+\end{aligned}
+$$
+
+5. Say it in words: about 10.6% of students score above 70.
+
+### Q: Standardising gives $$z = 1.2873$$. What do you look up in Table A, and what is $$P(Z < z)$$? What does "briefly describe" ask for on this course's exams?
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** recall
+**A:** The table only has two decimals, so round to 1.29 and look up row 1.2, column .09: $$P(Z < 1.29) = 0.9015$$. "Briefly describe" means two or three sentences, to the point, not a page.
 
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 

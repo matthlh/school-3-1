@@ -68,7 +68,7 @@ _Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 4% of 79 in-scope questions
 
 _Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 150 in-scope questions likely recalled._
 
-_Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 14% of 221 in-scope questions likely recalled._
+_Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 14% of 225 in-scope questions likely recalled._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1. The exam that covered them is past and the course's next exam does not._
 

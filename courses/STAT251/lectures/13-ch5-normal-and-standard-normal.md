@@ -1,6 +1,6 @@
 # STAT 251 — Lec 13 (Fri Oct 9) — Ch 4 activity A2, and Ch 5: the Normal and standard Normal distributions
 
-You were absent, so there is no page from you. This file is the posted decks organised for study, the before-class `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and the after-class `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, the same slides plus worked answers), with the Chapter 4 activity sheet A2 and its solution, and the recording's remarks under In class. Class reached slide 11, the SAT and ACT comparison. Slides 12 to 25, the standard Normal, Table A and the forward and backward calculations, are written up below from the deck and are expected next class, Wed Oct 14.
+You were absent, so there is no page from you. This file is the posted decks organised for study, the before-class `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and the after-class `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, the same slides plus worked answers), with the Chapter 4 activity sheet A2 and its solution, and the recording's remarks under In class. Class reached slide 11, the SAT and ACT comparison. Slides 12 to 25, the standard Normal, Table A and the forward and backward calculations, are written up below from the deck and were covered at the start of lecture 14 on Oct 14. The [lecture 14 page](14-ch5-normal-linear-combinations-sample-mean.md) has what was said about them.
 
 ## Slides, organized
 
