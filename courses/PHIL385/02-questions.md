@@ -862,3 +862,37 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: Kraal traced desire from wanting someone, to wanting one among a set, to wanting the particular. Match each to its stage, character and opera.
 **Topic:** The Musical Erotic: the three stages  **Lec:** 11  **Type:** apply
 **A:** Wanting someone, in the abstract, is stage 1, dreaming: Cherubino in *The Marriage of Figaro*. Wanting one among a set is stage 2, seeking: Papageno in *The Magic Flute*. Wanting the particular is stage 3, desiring: Don Giovanni in *Don Giovanni*.
+
+## Reading: "The Musical Erotic" — ranking the classics, and why only music (pp. 56–60 of the PDF, written 2026-10-13)
+
+### Q: What rule does A use to sort the classic works into classes, and why does he call the rule "contingent"?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** The more abstract, and so the poorer, the idea and the medium, the less likely the work can ever be repeated: once it has found its expression, it has it once and for all. The more concrete, and so the richer, the idea and the medium, the more likely it is that further works of the same kind will follow. He calls the rule contingent because it only counts how many works a class can hold. It does not say one classic is better than another, since every classic is equally perfect. Before this he rejects sorting the classics by subject matter, by form, or by how rich the medium is, because in a classic the idea and the form cannot be pulled apart.
+
+### Q: According to A, what makes an idea concrete, and what makes a medium concrete? Which medium is the most concrete, and which is the most abstract?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** An idea becomes concrete by being filled with history. A medium is concrete to the degree that it comes close to language, and language is the most concrete medium of all. The most abstract medium is the one farthest from language.
+
+### Q: How does A use sculpture and Homer to illustrate his rule for sorting the classics?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** apply
+**A:** Sculpture's idea is entirely abstract, with no relation to history, and its medium is abstract too, so the class of classic sculptures will hold only a few works. Homer's epic has a concrete idea and language as its medium, so the class of classic epics can hold several works that are all equally classic, because history keeps supplying new epic material.
+
+### Q: Architecture has the most abstract medium. Why does A not put it at the top, and what does he rank the classics by instead?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** The most abstract medium does not always carry the most abstract idea. Architecture's medium is the most abstract, but its ideas are closely tied to history, more closely than sculpture's are. So A chooses to rank by how abstract the idea is, not the medium.
+
+### Q: The most abstract idea, for A, is sensuous genius ("the spirit of sensuality" in the PDF). Why can it not be expressed in sculpture, in painting or in poetry, and why can music express it?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** Not in sculpture, because it is a quality of inwardness, and sculpture shows outer form. Not in painting, because it has no fixed outline: it is energy, storm, impatience and passion, existing in a succession of moments rather than in a single moment, and only what exists in a single moment can be painted. Not in poetry, because although a succession of moments sounds epic, it has not reached the level of words; it stays immediate. Music can express it because music has time in it, yet it does not express the historical.
+
+### Q: Why will Mozart never have a rival, according to A? Use his comparisons with Goethe's *Faust* and with Greek sculpture.
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** apply
+**A:** In *Don Giovanni* the most abstract idea meets the most abstract medium, so it can be expressed only once; any composer who tried to compete could only write *Don Giovanni* again. Goethe's *Faust* is a genuine classic, but its idea is historical and its medium is language, so every significant age will have its own *Faust*. *Don Giovanni* stays the only one of its kind, like the classic sculptures of Greece. Its idea is even more abstract than sculpture's, which is why there are several classic sculptures but only one such work in music. A later adds (p. 95) that writing a Don Juan after Mozart would be like writing a post-Homeric *Iliad*.
+
+### Q: True or false, and justify: A puts *Don Giovanni* first among the classics because it is Mozart's greatest masterpiece, the most perfect work of art.
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** critique
+**A:** False. For A every classic is equally perfect, so the ranking is not about quality. *Don Giovanni* comes first because its idea, sensuous genius, is the most abstract idea there is, and music is the only medium for it, so it is the one work of its kind and can never be repeated. Calling it a magnum opus misses that point.
+
+### Q: Right after ranking *Don Giovanni* first among the classics, what does A admit about his own argument?
+**Topic:** The Musical Erotic: why music  **Lec:** reading  **Type:** recall
+**A:** He drops the inquiry and says it was written only for those in love, like a lovers' quarrel over nothing. He admits he has made almost no attempt to prove that *Don Giovanni* is a classic at all. He simply assumes it, and says the rest of the essay will throw light on it along the way.
