@@ -1772,6 +1772,81 @@ $$
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** recall
 **A:** The table only has two decimals, so round to 1.29 and look up row 1.2, column .09: $$P(Z < 1.29) = 0.9015$$. "Briefly describe" means two or three sentences, to the point, not a page.
 
+## WeBWorK 5 — Ch 5 (opened Oct 13, due Thu Oct 22; banked 2026-10-15, numbers changed)
+
+### Q: WeBWorK-style. The length of a coil of copper wire has mean 120 m and standard deviation 8 m. Four coils are chosen at random. What is the variance of the total length? Pick one: 2 $$\mathrm{m}^2$$, 32 $$\mathrm{m}^2$$, 256 $$\mathrm{m}^2$$, 480 $$\mathrm{m}^2$$ or 1024 $$\mathrm{m}^2$$.
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** WW5  **Type:** apply
+**A:** 256 $$\mathrm{m}^2$$. The total is a sum of four independent lengths, so the variances add and the standard deviations do not.
+
+$$
+\begin{aligned}
+\operatorname{Var}(X_1 + \dots + X_4) &= 4 \times 8^2 \\
+&= 256
+\end{aligned}
+$$
+
+The trap options are 32, which adds the standard deviations, and 1024, which is $$\operatorname{Var}(4X) = 16 \times 64$$, the variance of one coil measured four times over, not of four different coils.
+
+### Q: WeBWorK-style. Which Normal distribution has the widest spread: mean 5 with standard deviation 1.5, mean $$-2$$ with standard deviation 4, mean 10 with standard deviation 2.5, mean 0 with standard deviation 3, or none of them?
+**Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** WW5  **Type:** apply
+**A:** The one with mean $$-2$$ and standard deviation 4. The spread of a Normal distribution is set by $$\sigma$$ alone; $$\mu$$ only slides the curve along the axis, so a large or negative mean says nothing about width.
+
+### Q: WeBWorK-style. $$X \sim N(30, 2^2)$$. What is $$E(X^2)$$: 896, 900, 902, 904, or not enough information?
+**Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** WW5  **Type:** apply
+**A:** 904. Rearrange the variance shortcut $$\operatorname{Var}(X) = E(X^2) - \mu^2$$.
+
+$$
+\begin{aligned}
+E(X^2) &= \operatorname{Var}(X) + \mu^2 \\
+&= 4 + 900 = 904
+\end{aligned}
+$$
+
+The mean and variance are enough; the Normal shape is not even needed. The trap is 900, which forgets the variance term.
+
+### Q: WeBWorK-style. Chain lengths are Normal with mean 3.5 cm and standard deviation 0.3 cm. Find $$\ell$$ with $$P(L > \ell) = 0.02$$. Pick one: 0.30, 2.88, 3.50, 4.12 or 5.55 cm.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** WW5  **Type:** apply
+**A:** 4.12 cm. This is a backward problem: an upper tail of 0.02 means an area of 0.98 to the left, so find the $$z$$ with $$\Phi(z) = 0.98$$, then unstandardise.
+
+$$
+\begin{aligned}
+z &= 2.054 \\
+\ell &= \mu + z\sigma \\
+&= 3.5 + 2.054 \times 0.3 \\
+&= 4.12
+\end{aligned}
+$$
+
+The trap is 2.88, which uses $$-2.054$$ and gives the value with 2% below it.
+
+### Q: WeBWorK-style. $$X \sim N(50, 6^2)$$. Which is the interquartile range: 54.05 - 45.95 = 8.09, 56 - 44 = 12, 61.76 - 38.24 = 23.52, 51.51 - 48.49 = 3.02, or 50.67 - 49.33 = 1.34?
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** WW5  **Type:** apply
+**A:** 54.05 - 45.95 = 8.09. The quartiles sit at $$\Phi(z) = 0.25$$ and $$0.75$$, which is $$z = \pm 0.6745$$, so each quartile is $$0.6745\sigma$$ from the mean.
+
+$$
+\begin{aligned}
+Q_3 &= 50 + 0.6745 \times 6 = 54.05 \\
+Q_1 &= 50 - 0.6745 \times 6 = 45.95 \\
+\text{IQR} &= 1.349\sigma = 8.09
+\end{aligned}
+$$
+
+The traps are $$\mu \pm \sigma$$ (12, the middle 68%) and $$\mu \pm 1.96\sigma$$ (23.52, the middle 95%).
+
+### Q: WeBWorK-style. Windscreen wipers last on average 4 years, Normal with standard deviation 1.5 years. Find the probability that a wiper's lifetime is not within 1.2 years of the mean.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** WW5  **Type:** apply
+**A:** 0.4238. "Not within 1.2 years of the mean" is both tails, $$|X - 4| > 1.2$$, so both tails of $$Z$$ beyond $$1.2 / 1.5 = 0.8$$.
+
+$$
+\begin{aligned}
+P(|Z| > 0.8) &= 2\,(1 - \Phi(0.8)) \\
+&= 2\,(1 - 0.7881) \\
+&= 0.4238
+\end{aligned}
+$$
+
+The usual miss is reporting one tail, 0.2119, or the inside, 0.5762.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -1850,7 +1925,7 @@ $$
 The mean fell by about 4 minutes and the median by half a minute. The mean uses every value, so one extreme value pulls it. The median depends only on the middle of the sorted list, which is why it is called resistant. Same method as the lecture 4 deck's 20-value example.
 
 ### Q: WeBWorK-style. Surface flaws on 50 new cars: 0 flaws on 4 cars, 1 flaw on 8, 2 on 15, 3 on 11, 4 on 7, 5 on 4, 6 on 1. From a blank page, find the mean and the sample variance of flaws per car, to two decimals.
-**Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
+**Topic:** 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
 **A:** Steps:
 1. Treat each row as $$f$$ copies of the value $$x$$, so $$n = \sum f$$.
 2. The mean is $$\frac{\sum fx}{n}$$.
@@ -2770,7 +2845,7 @@ The median of $$Y$$ is the cube of the median of $$X$$, which is 2, because an i
 (c) Cubing stretches the axis unevenly. An interval of $$y$$ values near 27 comes from a much shorter interval of $$x$$ values than an interval of the same length near 1, so the probability per unit of $$y$$ falls as $$y$$ grows: $$f_Y(1) = \frac{1}{6}$$ and $$f_Y(27) = \frac{1}{54}$$. The factor $$\frac{1}{3}y^{-2/3}$$ from the chain rule is that stretch.
 
 ### Q: Battery lifetimes are $$N(1200, 150^2)$$ hours. Find the proportion that fail before 1000 hours, the proportion that last between 1050 and 1400 hours, and the lifetime that only the longest-lasting 10% exceed. Use Table A.
-**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
 **A:** Steps:
 1. Standardise each boundary with $$z = \frac{x - 1200}{150}$$ and draw the area wanted.
 2. Read each left area off Table A; subtract for a between, use one minus for an upper tail.
@@ -2884,3 +2959,73 @@ x = 78 + 1.645 \times 12 = 97.7 \text{ kg}
 $$
 
 Common slips: using $$40 \times 12$$ or $$40^2 \times 144$$ for the total's spread (the right variance is $$40 \times 144$$ because independent variances add once each), and standardising the mean with $$\sigma$$ instead of $$\frac{\sigma}{\sqrt{n}}$$.
+
+### Q: WeBWorK-style. Two battery types for a chainsaw have independent Normal lifetimes before recharge: Duxcell with mean 12 and standard deviation 2.5 minutes, Infinitycell with mean 20 and standard deviation 4 minutes. (a) Find the probability a Duxcell lasts longer than an Infinitycell. (b) Find the probability an Infinitycell lasts more than twice as long as a Duxcell. (c) Two Duxcells are used one after the other. How long a job finishes on them with probability 0.75?
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** WW5  **Type:** apply
+**A:** Steps:
+1. Turn each comparison into one linear combination of the two variables, which is Normal because the parts are independent Normals.
+2. Its mean follows the coefficients; its variance follows the squared coefficients, and the variances add even when the combination subtracts.
+3. Standardise and read $$\Phi$$, or go backward from the probability to $$z$$ for part (c).
+
+Let $$D \sim N(12, 2.5^2)$$ and $$I \sim N(20, 4^2)$$.
+
+(a) $$P(D > I) = P(D - I > 0)$$, and $$D - I \sim N(-8,\; 6.25 + 16) = N(-8, 22.25)$$ with standard deviation 4.717.
+
+$$
+\begin{aligned}
+P(D - I > 0) &= P\!\left(Z > \frac{0 + 8}{4.717}\right) \\
+&= P(Z > 1.70) \\
+&= 1 - 0.9554 = 0.0446
+\end{aligned}
+$$
+
+(b) $$P(I > 2D) = P(I - 2D > 0)$$, and $$I - 2D \sim N(20 - 24,\; 16 + 4 \times 6.25) = N(-4, 41)$$ with standard deviation 6.403.
+
+$$
+\begin{aligned}
+P(I - 2D > 0) &= P\!\left(Z > \frac{4}{6.403}\right) \\
+&= P(Z > 0.62) \\
+&= 1 - 0.7324 = 0.2676
+\end{aligned}
+$$
+
+(c) The job time is $$T = D_1 + D_2 \sim N(24,\; 2 \times 6.25) = N(24, 12.5)$$ with standard deviation 3.536. Finishing with probability 0.75 means $$P(T \ge t) = 0.75$$, so $$t$$ is the 25th percentile, $$z = -0.6745$$.
+
+$$
+\begin{aligned}
+t &= 24 - 0.6745 \times 3.536 \\
+&= 21.6 \text{ minutes}
+\end{aligned}
+$$
+
+The variance in (c) is $$2\sigma^2$$, not $$(2\sigma)^2$$: two different batteries, not one battery doubled. In (b) the coefficient 2 is squared in the variance, so $$2D$$ contributes $$4 \times 6.25$$.
+
+### Q: WeBWorK-style. Alice's walk to the bus stop is $$N(10, 3)$$ in minutes with variance 3, the wait is Normal with mean 5 and standard deviation 2, the bus ride is Normal with mean 22 and standard deviation 4, and the walk from the loop to the lecture is $$N(15, 5)$$ with variance 5. The four legs are independent. (a) Find the mean of her total travel time. (b) Find its standard deviation. (c) Class starts at 8:00 sharp and she leaves at 7:00. Find the probability she is not late.
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** WW5  **Type:** apply
+**A:** Steps:
+1. The total is a sum of independent Normals, so it is Normal; add the means.
+2. Add the variances, converting each standard deviation to a variance first, then take the square root once at the end.
+3. "Not late" is $$T \le 60$$: standardise and read $$\Phi$$.
+
+(a) $$E(T) = 10 + 5 + 22 + 15 = 52$$ minutes.
+
+(b) The variances are 3, $$2^2 = 4$$, $$4^2 = 16$$ and 5.
+
+$$
+\begin{aligned}
+\operatorname{Var}(T) &= 3 + 4 + 16 + 5 = 28 \\
+\operatorname{SD}(T) &= \sqrt{28} = 5.29
+\end{aligned}
+$$
+
+(c)
+
+$$
+\begin{aligned}
+P(T \le 60) &= P\!\left(Z \le \frac{60 - 52}{5.29}\right) \\
+&= P(Z \le 1.51) \\
+&= 0.93
+\end{aligned}
+$$
+
+The miss to watch for is mixing the two kinds of given numbers: two legs give a variance and two give a standard deviation, and adding standard deviations (3 + 2 + 4 + 5) is wrong either way.
