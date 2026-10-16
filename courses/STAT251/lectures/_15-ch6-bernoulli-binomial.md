@@ -1,6 +1,6 @@
 # STAT 251 — Lec 15 (Fri Oct 16) — Ch 6: Bernoulli and Binomial distributions
 
-Built before class from the posted Chapter 6 deck `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The lecture page says the class first goes through the lecture 14 after-class slides (Normal examples, on the [lecture 14 page](_14-ch5-normal-linear-combinations-sample-mean.md)), then the Chapter 5 Normal worksheet `A5_ch5_normal_worksheet`, then these Chapter 6 slides. A mean-and-variance derivation file for Bernoulli and Binomial is promised after class. No questions are banked yet; they come with the full prep on lecture day.
+Built before class from the posted Chapter 6 deck `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The lecture page says the class first goes through the lecture 14 after-class slides (Normal examples, on the [lecture 14 page](_14-ch5-normal-linear-combinations-sample-mean.md)), then the Chapter 5 Normal worksheet `A5_ch5_normal_worksheet`, then these Chapter 6 slides. A mean-and-variance derivation file for Bernoulli and Binomial is promised after class. Questions: 8 in [the bank](../02-questions.md) under "Lec 15" (7 short, 1 long problem), banked on lecture day from this deck; the recording and the after-class derivation file are checked when they are posted.
 
 ## Slides, organized
 

@@ -41,7 +41,7 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | 3a | Identify discrete vs. continuous *(lec 8: finite set or sequence of values versus an interval; P at a point is 0 for continuous)* |
 | 3b | Probabilities over finite discrete sets *(lec 8: pmf properties, find k, probability statements)* |
 | 3c | Continuous probabilities using calculus *(lec 9: probability as area under the pdf, endpoints do not matter)* |
-| 3d | Mean/variance of discrete RVs (Bernoulli, Binomial, Geometric, Poisson) *(lec 8: general discrete mean and variance, the shortcut; named distributions later)* |
+| 3d | Mean/variance of discrete RVs (Bernoulli, Binomial, Geometric, Poisson) *(lec 8: general discrete mean and variance, the shortcut; lec 15: Bernoulli $$p$$ and $$p(1 - p)$$, Binomial $$np$$ and $$np(1 - p)$$)* |
 | 3e | Find constants making a pdf legitimate *(lec 9: total area 1 gives the constant)* |
 | 3f | pdf ↔ cdf both directions *(lec 8: discrete cdf as a step function; lec 9: integrate f to get F, differentiate F to get f)* |
 | 3g | Mean/var/median/IQR of continuous RVs (integration by parts) *(lec 9 video: E and Var by integration, median and quartiles from F, Example 7)* |
@@ -54,7 +54,7 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | 3n | **Min/max lifetimes of series/parallel circuits** *(lec 10: a parallel system's lifetime is the max, a series system's is the min; lec 12: the min of n exponentials is exponential with rate $$n\lambda$$)* |
 | 3o | Normal properties, incl. preservation under linear transformation *(lec 13: symmetric bell shape, $$\mu$$ is the centre and the median, $$\sigma$$ the spread, the 68-95-99.7 rule, the pdf; $$Z = \frac{X - \mu}{\sigma}$$ is $$N(0, 1)$$; lec 14: $$aX + b$$ stays Normal, a linear combination of independent Normals is Normal with means added by the coefficients and variances by their squares, $$\phi$$ and $$\Phi$$)* |
 | 3p | Normal: probability, percentile, $$\mu$$ given $$\sigma^2$$ (and vice versa), $$\mu$$ and $$\sigma^2$$ from two probabilities *(lec 13: z-scores, Table A areas to the left, forward and backward three-step calculations, pnorm)* |
-| 3q–s | Binomial — recognise, characteristics, compute |
+| 3q–s | Binomial — recognise, characteristics, compute *(lec 15: a Bernoulli trial is 1 on success and 0 on failure, mean $$p$$ and variance $$p(1 - p)$$; the Binomial counts successes in $$n$$ independent trials with one $$p$$, pmf $$\binom{n}{x} p^{x}(1 - p)^{n - x}$$, mean $$np$$, variance $$np(1 - p)$$; the three assumptions and the 10% condition for sampling without replacement)* |
 | 3t–v | Geometric — recognise, characteristics (incl. **return period**), compute |
 | 3w–y | Poisson **process** — recognise, counts in an interval, **wait time between events** |
 | 3z–aa | Poisson distribution — characteristics, compute |
@@ -149,3 +149,4 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | 1b Percentiles, quartiles and the IQR | 1b–c Box plots | The fences come from the quartiles and the IQR, but a whisker stops at the last observation inside its fence, not at the fence and not always at the minimum or maximum. |
 | 3d Mean and variance of a discrete random variable | 1b Mean and median | A random variable's mean weights each possible value by its probability, while the Chapter 1 sample mean adds up the data and divides by n, and both are called the mean. |
 | 3o Linear combinations of Normals and the sample mean | 3j–k Covariance, sums and the sample mean | Both give a sum's mean and variance by the same arithmetic, but the Chapter 4 version works for any variables and stops at the two numbers, while the Normal fact adds the shape, so only when the parts are Normal and independent can a probability for the sum or the mean be read from Table A. |
+| 3q–s Bernoulli and Binomial distributions | 3j–k Covariance, sums and the sample mean | A Binomial count is the sum of n independent Bernoulli trials, so its mean np and variance np(1 − p) are the Chapter 4 sum rules applied to identical parts; the Binomial answer is the sum's, so dividing the variance by n, as for the sample mean, is the wrong move here. |

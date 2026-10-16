@@ -10,7 +10,90 @@ Format:
 **A:** <answer>
 ```
 
-A problem that needs paper goes under `## Long problems` at the end of this file instead of its lecture's section: a table or tree to build, an integral, a list of ten or more values, or a chain of three or more results that feed each other. It keeps its usual **Lec:** tag, and its answer opens with a numbered Steps list, which is what a normal quiz grades it on. The bus deck never shows it. New lecture and WeBWorK sections go above it.
+A problem that needs paper goes under `## Lec 15 — Ch 6: Bernoulli and Binomial distributions (prepared 2026-10-16 from the before-class deck; numbers changed; the recording and the after-class derivation file are checked in when they are posted)
+
+### Q: Parts from a machine pass inspection with probability 0.9, independently of one another. Let $$X$$ be the number that pass among 6 parts. Name the distribution of $$X$$ with its parameters, check the three assumptions, and find $$P(X = 5)$$.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
+**A:** $$X \sim \text{Bin}(6, 0.9)$$. The assumptions hold: there are $$n = 6$$ trials, each ends in pass or fail; the trials are independent; every trial has the same $$p = 0.9$$.
+
+$$
+\begin{aligned}
+P(X = 5) &= \binom{6}{5} 0.9^{5} \times 0.1^{1} \\
+&= 6 \times 0.59049 \times 0.1 \\
+&= 0.3543
+\end{aligned}
+$$
+
+### Q: Derive $$E(X)$$ and $$\operatorname{Var}(X)$$ for $$X \sim \text{Bernoulli}(p)$$ from the definitions of a discrete mean and variance. Then say what the mean and variance become for the number of successes in $$n$$ independent trials, and which Chapter 4 rule you used.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** derive
+**A:** $$X$$ takes the value 1 with probability $$p$$ and 0 with probability $$1 - p$$.
+
+$$
+\begin{aligned}
+E(X) &= 0 \times (1 - p) + 1 \times p = p \\
+E(X^2) &= 0^2 (1 - p) + 1^2 p = p \\
+\operatorname{Var}(X) &= E(X^2) - [E(X)]^2 \\
+&= p - p^2 = p(1 - p)
+\end{aligned}
+$$
+
+The Binomial count is the sum of $$n$$ such variables. Means add always, so $$E = np$$; the variables are independent, so the variances add too, $$\operatorname{Var} = np(1 - p)$$. That is the Chapter 4 rule for the variance of a sum of independent variables, with every coefficient equal to 1.
+
+### Q: Explain in two sentences why the Binomial pmf has the factor $$\binom{n}{x}$$ in front of $$p^{x}(1 - p)^{n - x}$$. Then evaluate $$\binom{7}{2}$$, $$\binom{5}{5}$$ and $$\binom{n}{0}$$.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** derive
+**A:** One particular order of $$x$$ successes and $$n - x$$ failures has probability $$p^{x}(1 - p)^{n - x}$$ by independence. There are $$\binom{n}{x}$$ different orders, each with that same probability, and the orders are disjoint events, so the probabilities add.
+
+$$
+\begin{aligned}
+\binom{7}{2} &= \frac{7!}{2!\,5!} = \frac{7 \times 6}{2} = 21 \\
+\binom{5}{5} &= \frac{5!}{5!\,0!} = 1 \\
+\binom{n}{0} &= \frac{n!}{0!\,n!} = 1
+\end{aligned}
+$$
+
+Both of the last two use $$0! = 1$$.
+
+### Q: An inspector draws 15 phones without replacement from a shipment of 120, of which 8% are defective. Can the number of defectives be modelled as Binomial? Name the assumption at risk and the rule that decides. Would the answer change for a shipment of 200?
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
+**A:** Sampling without replacement makes the trials dependent, so the independence assumption is at risk. The 10% condition decides: the Binomial model may be used when the sample is at most 10% of the population. Here $$\frac{15}{120} = 12.5\%$$, more than 10%, so the Binomial model cannot be used.
+
+For a shipment of 200 the sample is $$\frac{15}{200} = 7.5\%$$, within the condition, so the count is modelled as $$\text{Bin}(15, 0.08)$$.
+
+### Q: Which of these counts are Binomial, and with what parameters? For each one that is not, name the assumption that fails. (a) The number of sixes in 10 rolls of a fair die. (b) The number of rolls of a fair die until the first six. (c) The number of defective bulbs in a box of 20 when each bulb is defective with probability 0.02 independently. (d) The number of red cards among 5 drawn without replacement from a 52-card deck.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
+**A:** (a) Binomial, $$\text{Bin}(10, \frac{1}{6})$$: fixed trials, two outcomes, independent, same $$p$$.
+
+(b) Not Binomial. The number of trials is not fixed; the variable counts trials until the first success, which is the Geometric distribution of the next lecture.
+
+(c) Binomial, $$\text{Bin}(20, 0.02)$$.
+
+(d) The draws are without replacement, so the trials are dependent, but $$\frac{5}{52} = 9.6\%$$ is within the 10% condition, so the count is modelled as $$\text{Bin}(5, 0.5)$$.
+
+### Q: $$X \sim \text{Bin}(12, 0.25)$$. Find $$E(X)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$, then $$P(X \le 1)$$.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
+**A:** $$
+\begin{aligned}
+E(X) &= 12 \times 0.25 = 3 \\
+\operatorname{Var}(X) &= 12 \times 0.25 \times 0.75 = 2.25 \\
+\operatorname{SD}(X) &= \sqrt{2.25} = 1.5
+\end{aligned}
+$$
+
+$$P(X \le 1)$$ adds the two smallest values.
+
+$$
+\begin{aligned}
+P(X = 0) &= 0.75^{12} = 0.0317 \\
+P(X = 1) &= 12 \times 0.25 \times 0.75^{11} = 0.1267 \\
+P(X \le 1) &= 0.0317 + 0.1267 = 0.1584
+\end{aligned}
+$$
+
+### Q: A classmate writes: "For $$X \sim \text{Bernoulli}(0.3)$$ the pmf is $$P(X = x) = 0.3^{x} \times 0.7^{1 - x}$$, so $$P(X = 2) = 0.3^{2} \times 0.7^{-1} = 0.129$$." What is wrong, and what are $$P(X = 2)$$ and $$\operatorname{Var}(X)$$?
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** critique
+**A:** The pmf formula only applies on the support $$x = 0, 1$$; a Bernoulli variable is 1 on a success and 0 on a failure and takes no other value. So $$P(X = 2) = 0$$. The variance is $$p(1 - p) = 0.3 \times 0.7 = 0.21$$.
+
+## Long problems` at the end of this file instead of its lecture's section: a table or tree to build, an integral, a list of ten or more values, or a chain of three or more results that feed each other. It keeps its usual **Lec:** tag, and its answer opens with a numbered Steps list, which is what a normal quiz grades it on. The bus deck never shows it. New lecture and WeBWorK sections go above it.
 
 ---
 
@@ -3029,3 +3112,46 @@ P(T \le 60) &= P\!\left(Z \le \frac{60 - 52}{5.29}\right) \\
 $$
 
 The miss to watch for is mixing the two kinds of given numbers: two legs give a variance and two give a standard deviation, and adding standard deviations (3 + 2 + 4 + 5) is wrong either way.
+
+### Q: A quiz has 8 multiple-choice questions with 4 options each, and a student guesses every answer at random. Let $$X$$ be the number of correct answers. (a) Name the distribution of $$X$$ and check the assumptions. (b) Find $$P(X = 2)$$. (c) Find $$P(X \ge 1)$$. (d) Find $$E(X)$$ and $$\operatorname{SD}(X)$$. (e) The pass mark is 50%. Is a guesser expected to pass?
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
+**A:** Steps:
+1. Check the three Binomial assumptions and write down $$n$$ and $$p$$.
+2. Use the pmf for one value; use the complement of $$X = 0$$ for "at least one".
+3. Mean $$np$$, variance $$np(1 - p)$$, then the square root once.
+4. Compare the expected score with the pass mark.
+
+(a) Each question is one trial with two outcomes, right or wrong; the guesses are independent; each has the same chance $$p = \frac{1}{4}$$. So $$X \sim \text{Bin}(8, 0.25)$$.
+
+(b)
+
+$$
+\begin{aligned}
+P(X = 2) &= \binom{8}{2} 0.25^{2} \times 0.75^{6} \\
+&= 28 \times 0.0625 \times 0.1780 \\
+&= 0.3115
+\end{aligned}
+$$
+
+(c)
+
+$$
+\begin{aligned}
+P(X \ge 1) &= 1 - P(X = 0) \\
+&= 1 - 0.75^{8} \\
+&= 1 - 0.1001 = 0.8999
+\end{aligned}
+$$
+
+(d)
+
+$$
+\begin{aligned}
+E(X) &= 8 \times 0.25 = 2 \\
+\operatorname{Var}(X) &= 8 \times 0.25 \times 0.75 = 1.5 \\
+\operatorname{SD}(X) &= \sqrt{1.5} = 1.22
+\end{aligned}
+$$
+
+(e) No. The expected score is 2 of 8, which is 25%, half the pass mark. The miss to watch for in (c) is adding $$P(X = 1)$$ through $$P(X = 8)$$ one by one instead of using the complement.
+

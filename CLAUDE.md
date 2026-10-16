@@ -166,9 +166,12 @@ likely get right), and ends by naming each frozen topic.
   change, and why — "the same thing the lab assignments ask". So the bank is weighted to `apply` and
   `critique` on unseen code, with the reader's terminology (cohesion vs. connascence, LSP, test
   doubles, the pattern set, API change severity) as the vocabulary underneath; always make him
-  justify. Unverified format reports: a classmate said (2026-10-02) the exams are all true/false; Matt heard
-  (2026-10-05) they are all multiple choice. So from lecture 6 on bank questions as "True or false, and justify"
-  or as a multiple-choice question over a fragment or a claim, answer with the verdict then the reason. Course housekeeping (learning objectives, roadmap weeks, slide diagrams about AI) is not
+  justify. **Midterm format, settled by the instructor (Piazza @180, 2026-10-15):** on paper, a mix of true/false,
+  multiple choice, short answer and long answer; every question involves reading code, and short and long answers
+  need some handwritten TypeScript; one handwritten cheat sheet allowed. The earlier classmate reports (all
+  true/false, all multiple choice) were wrong. So bank questions as "True or false, and justify", as a multiple-choice
+  question over a fragment or a claim, or as a short-answer "write the fragment" task; answer with the verdict then
+  the reason, and make him write a few lines of TypeScript by hand when the question fits. Course housekeeping (learning objectives, roadmap weeks, slide diagrams about AI) is not
   exam material — do not bank it. No past papers exist for this version (exams are private; the
   CSSS bank stops at 2009), so labs and iClicker questions are the only format samples. Do **not** let him sink unbounded hours into the
   deliverables — the bucket grading means extra hours past "meets spec" return nothing.
