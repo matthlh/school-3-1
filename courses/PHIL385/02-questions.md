@@ -737,6 +737,28 @@ They do not line up, and the editor role flips between the two books. In *Either
 - Against no ties: B says a life of moods has no self, and that marriage is where first love lasts.
 - Against fate as comfort: it gives up responsibility for your own deeds, which B says is what having a self means. A's own words admit the modern person is in despair, which is where B's half of the book begins.
 
+## Exam 2 — the real questions (Fri Oct 16, as Matt recalled them)
+
+### Q: Exam 2, question 1: who is Mozart's character for the seeking stage?
+**Topic:** The Musical Erotic: the three stages  **Lec:** exam2  **Type:** recall
+**A:** Papageno, the bird-catcher in *The Magic Flute* (1791). Desire has woken and looks among the many but desires none of them yet; A's best word for it is "it discovers". Not Tamino, whom A calls an unmusical figure.
+
+### Q: Exam 2, question 2: which Mozart opera is A's picture of the dreaming stage?
+**Topic:** The Musical Erotic: the three stages  **Lec:** exam2  **Type:** recall
+**A:** *The Marriage of Figaro* (1786), through the Page, Cherubino. Desire has not yet separated from its object and longs for "the one" in the abstract. The aria Kraal played was "Voi che sapete".
+
+### Q: Exam 2, question 3: what does A mean by saying the desired rests "androgynously" in the Page's desire?
+**Topic:** The Musical Erotic: the three stages  **Lec:** exam2  **Type:** recall
+**A:** In the first stage desire is so indeterminate, and its object so little separated from it, that the desired rests androgynously inside the desire, the way male and female share one blossom in plant life; desire and its object are joined and both neuter. A finds it fitting that the Page's part is set for a woman's voice, since that contradiction hints at the stage's own.
+
+### Q: Exam 2, question 4: what does A say about music and the demonic?
+**Topic:** The Musical Erotic: why music  **Lec:** exam2  **Type:** recall
+**A:** Music's absolute object is sensual genius, the sensual that Christianity shuts out and, by shutting it out, posits as a principle; so music is a Christian art, and it is the demonic. The sensual takes the form of the demonic "in aesthetic indifference" when spirit has excluded it but not yet judged it; Don Juan is the demonic specified as the sensual, Faust the demonic specified as the spiritual. Kraal's chain: desire overpowers a person, being overpowered is the demonic, music is desire's medium, so music is demonic.
+
+### Q: Exam 2, question 5: what does the number 1,003 mean in the Catalogue Aria?
+**Topic:** The Musical Erotic: Don Giovanni  **Lec:** exam2  **Type:** recall
+**A:** It is the count for Spain on Leporello's list. A says the number is odd and accidental, which gives the impression the list is by no means closed: Don Giovanni is still on the move, and his desire never ends. Pictured as a particular individual, 1,003 would be comic; heard as a force of nature in music, the number could just as well be any number.
+
 ## Lec 9 — The Musical Erotic: why music, and the three stages (Mon Oct 5, logged 2026-10-05)
 
 ### Q: Name the three immediate erotic stages in A's essay, in order. For each, give the Mozart character, the opera and the year it premiered.

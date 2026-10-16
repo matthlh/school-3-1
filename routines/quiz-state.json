@@ -1307,6 +1307,104 @@
      "O"
     ]
    ]
+  },
+  "6e4e5a73": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: Plato, Christianity and the demonic",
+   "history": [
+    [
+     "2026-10-15",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "11294247": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: why music",
+   "history": [
+    [
+     "2026-10-15",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept",
+      "said": "Axel with Valborg was not one of the pairs"
+     }
+    ]
+   ]
+  },
+  "c6e0bad1": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: Plato, Christianity and the demonic",
+   "history": [
+    [
+     "2026-10-15",
+     "O",
+     {
+      "conf": 2
+     }
+    ]
+   ]
+  },
+  "530ef0bb": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: why music",
+   "history": [
+    [
+     "2026-10-15",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept",
+      "said": "that Mozart's other operas are equally classic"
+     }
+    ]
+   ]
+  },
+  "4c654ea4": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: Plato, Christianity and the demonic",
+   "history": [
+    [
+     "2026-10-15",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "55312a1d": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: why music",
+   "history": [
+    [
+     "2026-10-15",
+     "O",
+     {
+      "conf": 2
+     }
+    ]
+   ]
+  },
+  "8a654b79": {
+   "course": "PHIL385",
+   "topic": "The Musical Erotic: Plato, Christianity and the demonic",
+   "history": [
+    [
+     "2026-10-15",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
   }
  },
  "sessions": [
@@ -2333,6 +2431,56 @@
      "135a99c7",
      "STAT251",
      "O"
+    ]
+   ]
+  },
+  {
+   "date": "2026-10-15",
+   "mode": "quiz",
+   "n": 7,
+   "note": "",
+   "results": [
+    [
+     1,
+     "6e4e5a73",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "11294247",
+     "PHIL385",
+     "X"
+    ],
+    [
+     3,
+     "c6e0bad1",
+     "PHIL385",
+     "O"
+    ],
+    [
+     4,
+     "530ef0bb",
+     "PHIL385",
+     "X"
+    ],
+    [
+     5,
+     "4c654ea4",
+     "PHIL385",
+     "X"
+    ],
+    [
+     6,
+     "55312a1d",
+     "PHIL385",
+     "O"
+    ],
+    [
+     7,
+     "8a654b79",
+     "PHIL385",
+     "X"
     ]
    ]
   }
