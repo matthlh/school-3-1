@@ -753,7 +753,7 @@ They do not line up, and the editor role flips between the two books. In *Either
 
 ### Q: Exam 2, question 4: what does A say about music and the demonic?
 **Topic:** The Musical Erotic: why music  **Lec:** exam2  **Type:** recall
-**A:** Music's absolute object is sensual genius, the sensual that Christianity shuts out and, by shutting it out, posits as a principle; so music is a Christian art, and it is the demonic. The sensual takes the form of the demonic "in aesthetic indifference" when spirit has excluded it but not yet judged it; Don Juan is the demonic specified as the sensual, Faust the demonic specified as the spiritual. Kraal's chain: desire overpowers a person, being overpowered is the demonic, music is desire's medium, so music is demonic.
+**A:** Music's absolute object is sensual genius, the sensual that Christianity shuts out and, by shutting it out, posits as a principle; so music is a Christian art, and it is the demonic. The sensual takes the form of the demonic "in aesthetic indifference" when spirit has excluded it but not yet judged it; Don Juan is the demonic specified as the sensual, Faust the demonic specified as the spiritual. Kraal's chain: desire overpowers a person, being overpowered is the demonic, music is desire's medium, so music is demonic. Distractor to avoid, which Matt picked on the exam: that music inspires demonic deeds. A's claim is about what music expresses, not what it causes.
 
 ### Q: Exam 2, question 5: what does the number 1,003 mean in the Catalogue Aria?
 **Topic:** The Musical Erotic: Don Giovanni  **Lec:** exam2  **Type:** recall
