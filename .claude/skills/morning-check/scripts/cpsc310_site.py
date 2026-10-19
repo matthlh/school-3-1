@@ -71,7 +71,8 @@ def parse_schedule(doc):
         raise RuntimeError(f"{page} no longer parses: no 'Week by week' heading followed by a table")
     tbl = m.group(1)
     head = [text(h) for h in re.findall(r"<th(?:\s[^>]*)?>(.*?)</th>", tbl, flags=re.S)]
-    if head != COLUMNS:
+    # the third column was 'Unit' until Oct 2026, then 'Readings'; it is skipped either way
+    if head[:2] + head[3:] != COLUMNS[:2] + COLUMNS[3:] or head[2] not in ("Unit", "Readings"):
         raise RuntimeError(f"{page} no longer parses: the week table header is {' | '.join(head) or 'empty'},"
                            f" expected {' | '.join(COLUMNS)}")
     lectures = []
@@ -81,7 +82,7 @@ def parse_schedule(doc):
             continue
         if len(c) != len(COLUMNS):
             raise RuntimeError(f"{page} no longer parses: a week row has {len(c)} cells, expected {len(COLUMNS)}: {text(row)}")
-        wk, dates, _unit, lec, lab, due = c
+        wk, dates, _readings, lec, lab, due = c
         # "Sep 8, 10" / "Sep 29, Oct 1" → list of dates for the week's Tue/Thu slots
         ds, mon = [], None
         for tok in text(dates).split(","):
