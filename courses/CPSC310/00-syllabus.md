@@ -77,11 +77,11 @@ unanswerable afterwards.
 | 4 Sep 29/Oct 1 | Testability · Test doubles & DI | Lab 4 Testability & seams, Oct 2–8 | |
 | 5 Oct 6/8 | Adapter & Composite · Factory & Decorator | Lab 5 Patterns, Oct 9–15 | |
 | 6 Oct 13/15 | API change severity · API design | Lab 6 API design (pair formation), Oct 16–22 | **D2 Fri Oct 16** |
-| 7 Oct 20/22 | Testing pyramid · Layered architecture | Lab 7 Layers & test strategy, Oct 23–29 | |
-| 8 Oct 27 | Synthesis & midterm review (no Thu class) | project time | **Midterm Thu Oct 29** |
+| 7 Oct 20/22 | API design & versioning · REST API design | Lab 7 Check-in 1 (API design & versioning) and practice midterm, Oct 23–29 | |
+| 8 Oct 27 | Synthesis & midterm review (no Thu class) | Check-in 2 and project time, Oct 30–Nov 5 | **Midterm Thu Oct 29** |
 | 9 Nov 3/5 | Requirements · Ethics & IP | none (fall break Nov 9–11) | **D3 Fri Nov 6** |
-| 10 Nov 12 | Information security (no Tue class) | Lab 8 Requirements, Nov 13–19 | |
-| 11 Nov 17/19 | Specification & modeling | Lab 9 Specification, Nov 20–26 | |
+| 10 Nov 12 | Information security (no Tue class) | Lab 8 Check-in 3, requirements, Nov 13–19 | |
+| 11 Nov 17/19 | Specification & modeling | Lab 9 Check-in 4, specification, Nov 20–26 | |
 | 12 Nov 24/26 | Continuous integration · Team coordination | Lab 10 Process & metrics, Nov 27–Dec 3 | **D4 Fri Nov 27** |
 | 13 Dec 1/3 | Process metrics · GenAI | | Final: university-scheduled |
 
