@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 10 (Tue Oct 13) — Patterns III: State and the Open/Closed Principle
 
-Deck: [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-patterns-iii.pdf), 12 slides, posted on lecture day. Reader: [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/), the State section. Questions: 10 in [the bank](../02-questions.md) under "Lec 10". The course schedule called this lecture "API change severity and versioning" before the deck went up, so the reader-chapter outline that stood here was replaced by the deck. Built from the deck alone; Matt's notes are added under Your notes when he sends them.
+Deck: [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-patterns-iii.pdf), 12 slides, posted on lecture day. Reader: [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/), the State section. Questions: 10 in [the bank](../02-questions.md) under "Lec 10". The course schedule called this lecture "API change severity and versioning" before the deck went up, so the reader-chapter outline that stood here was replaced by the deck. Built from the deck alone; Matt takes no notes in this course.
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.

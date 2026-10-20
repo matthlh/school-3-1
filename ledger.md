@@ -70,7 +70,7 @@ _61 topics due as of Tue Oct 20. Say **quiz me**._
 - STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 3 d · last O
 - STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · due today · last O
 
-_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 159 in-scope questions likely recalled._
+_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 170 in-scope questions likely recalled._
 
 _Readiness · STAT 251 Midterm 08:00 · Fri Oct 30 · 13% of 241 in-scope questions likely recalled._
 
@@ -150,6 +150,8 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | CPSC 310 | Design patterns II: Decorator (adds behaviour to one object at run time, not to the class · a decorator is a component and has a component · the caller asks the outermost wrapper and each wrapper changes the answer of what it wraps · costs: one class per add-on, order changes the result, long chains, identity and instanceof · java.io streams · composition over inheritance · Adapter changes the interface, Decorator the behaviour, Composite holds many) | 9 | — | — | 0 | 2026-10-09 |
 | CPSC 310 | Design patterns III: State and the Open/Closed Principle (states become objects, transitions become methods · the context holds one state and forwards every event · each state handles every event and calls setState to move on · costs: one class per state, transitions spread out, a new event touches every state, public setState · OCP: open for extension, closed for modification, by depending on an abstraction · every pattern has a closed axis: new implementations cheap, new operations expensive · three questions before adding an extension point) | 10 | — | — | 0 | 2026-10-15 |
 | CPSC 310 | Boundaries: core, edges, ports and adapters (business logic in the core, which imports nothing and does no I/O · everything else at the edge: I/O, parsing, validation, config, services · a port is an interface the core owns, in its terms · an adapter implements the port with real resources · every dependency points inward · SRP: one reason to change · test at the narrowest level that can see the bug: unit with a double, integration with a temp file, one or two e2e) | 11 | — | — | 0 | 2026-10-17 |
+| CPSC 310 | Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) | 12 | — | — | 0 | 2026-10-21 |
+| CPSC 310 | API design and change severity (information hiding · obliviousness · easy to use, hard to misuse · contract completeness · start with the task · APIs are forever · MAJOR, MINOR, PATCH, NONE by what the client must do · semver and REST versioning from the reader) | 12 | — | — | 0 | 2026-10-21 |
 | PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
