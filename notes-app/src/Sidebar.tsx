@@ -25,6 +25,7 @@ export function Sidebar({ tree, current, pinned, tallies }: {
         </div>
         <Link entry={{ path: 'ledger.md', label: 'Ledger' }} current={current} />
         <Link entry={{ path: 'links.md', label: 'Links' }} current={current} />
+        <Link entry={{ path: 'GOALS.md', label: 'Goals' }} current={current} />
         {tree.courses.map((c) => {
           const pct = tallies[c.code] ? pctSolid(tallies[c.code]) : null
           return (

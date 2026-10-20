@@ -9,6 +9,7 @@ type Loader = () => Promise<string>
 const raw = {
   ...import.meta.glob('../../ledger.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../links.md', { query: '?raw', import: 'default' }),
+  ...import.meta.glob('../../GOALS.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../courses/**/*.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../routines/runs/*.md', { query: '?raw', import: 'default' }),
 } as Record<string, Loader>
@@ -154,6 +155,7 @@ export function courseOf(path: string): string | null {
 export function labelFor(path: string, tree: Tree): string {
   if (path === 'ledger.md') return 'Ledger'
   if (path === 'links.md') return 'Links'
+  if (path === 'GOALS.md') return 'Goals'
   for (const c of tree.courses) {
     const e = [...c.main, ...c.lectures, ...c.readings].find((x) => x.path === path)
     if (e) return e.label
