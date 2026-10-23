@@ -433,3 +433,45 @@ Format:
 ### Q: Name the four immeasurables with their Pali terms, say which poison they extinguish, and say whom Theravada mostly recommends them to.
 **Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
 **A:** Loving-kindness (metta), compassion (karuna), co-rejoicing (mudita) and equanimity (upekkha). They extinguish aversion and hatred, the snake, the third poison. Theravada mostly recommends them to lay followers, which the deck contrasts with Mahayana, where Avalokitesvara (Guanyin) is the deity of compassion.
+
+## Lec 6 — Mahayana, the Greater Vehicle (prepared 2026-10-23 from the deck)
+
+### Q: Which statement about the conservative schools is NOT made in the lecture? (A) The Sarvastivada held that dharmas exist in the three times, past, present and future. (B) The Sautrantika held that everything exists only for a moment and that the sutras are enough. (C) Most conservative schools, including modern Theravada, took a middle position between the two. (D) The Sautrantika built the longest Abhidharma list, 100 dharmas. (E) Theravada's Abhidharma has 82 dharmas.
+**Topic:** Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas  **Lec:** 6  **Type:** recall
+**A:** (D). The Sautrantika said there is no need to search for dharmas at all; the 100-dharma lists belong to some Mahayana schools. The other four statements are on the slides.
+
+### Q: Match each analogy to its school: atoms combining into chemical elements; quantum mechanics, where division leads to an infinite regress. Then give each school's name in English.
+**Topic:** Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas  **Lec:** 6  **Type:** apply
+**A:** Atoms combining into elements is the Sarvastivada, "everything exists": know the dharmas, as you would the number of protons, and you understand every combination. Quantum mechanics is the Sautrantika, "the sutras are enough": the dharmas themselves are not indivisible and last less than a split second, so only the teaching on momentariness matters.
+
+### Q: Which school split from the Sthaviravada because it found arhatship an insufficient goal, and what two reasons does the lecture give? Name its transcendentalist sub-school.
+**Topic:** Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas  **Lec:** 6  **Type:** recall
+**A:** The Mahasamghikas, the "Great Assembly". First, the Buddha came to be seen as ever more splendid, a transcendent being (lokottara) with powers such as creating a Buddha Land. Second, the elders counted as arhats looked like ordinary people: they got sick, grew old, died violent deaths and had wet dreams, so becoming like them seemed not worth pursuing. The sub-school is the Lokottaravada (Transcendentalism), which spread the belief in the 32 Marks of a Great Man and, toward the 1st century CE, gave rise to Mahayana.
+
+### Q: The progressives say arhats keep a residue of each of the three poisons. Give the residue for ignorance, for passion and for aversion, and say whether the conservatives accept this.
+**Topic:** Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas  **Lec:** 6  **Type:** recall
+**A:** Ignorance: arhats realised there is no self (anatman) but have not directly experienced the impermanence of the phenomenal world. Passion: they can still have nocturnal emissions, a sign of subconscious desire. Aversion: they lack enough compassion because of world-denying practice such as corpse meditation and strict rule-keeping. The conservatives do not accept these failings as valid.
+
+### Q: Why is "Hinayana" a term to avoid, and how do Theravada and Mahayana differ in scriptures and region?
+**Topic:** Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas  **Lec:** 6  **Type:** recall
+**A:** Hinayana, "Smaller Vehicle", is a polemical, pejorative name Mahayana gave the conservative schools, so it should not be used for Theravada. Theravada uses the Pali Canon and is "Southern Buddhism" in Southeast Asia, the only conservative school surviving today. Mahayana uses scriptures in Sanskrit, then Chinese and Tibetan, has many schools, and is "Northern Buddhism" in Nepal, Tibet and East Asia.
+
+### Q: In the Mahayana list of ten paramitas, which six are essential, and which four are built from them? Name one virtue on the Theravada list of ten paramis that is not on the Mahayana list.
+**Topic:** Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas  **Lec:** 6  **Type:** recall
+**A:** The six essential ones are generosity, morality, patience, energy, meditation and wisdom. The four derived ones are skillful means (generosity and wisdom), resolution, power and knowledge. The Theravada list also has renunciation, truthfulness, loving-kindness and equanimity, none of which are on the Mahayana list.
+
+### Q: Theravada says there can be only one Buddha in a universe while his teaching lasts. How does Mahayana answer this problem for someone who takes the Bodhisattva Vow, and what does the vow say?
+**Topic:** Mahayana emptiness, skillful means and the great bodhisattvas  **Lec:** 6  **Type:** apply
+**A:** The vow is: "I vow to practice the Buddha's teachings to become a Buddha in the future and to save all the living beings!" Mahayana answers the one-Buddha problem with infinite universes, a multiverse: in some a Buddha is teaching, in some his teaching endures after him, and in some there is no Buddha now, so a bodhisattva can be reborn where there is none and become the Buddha there.
+
+### Q: What does emptiness (sunya) mean in Mahayana? Give the three things every thing depends on, and the image the Brahmajala Sutra uses for interdependence.
+**Topic:** Mahayana emptiness, skillful means and the great bodhisattvas  **Lec:** 6  **Type:** recall
+**A:** Emptiness means every thing is empty of independent existence. Each thing depends on its parts, since nothing is indivisible; on causes and conditions, as a seed needs water, soil and sun; and on our minds, which divide and classify the world. The image is Brahma's Net, where each knot holds a jewel that reflects all the others, each unique and yet connected.
+
+### Q: Compare the two meditations in the lecture's axiology: what each one experiences, which value it builds, and one ethical outcome of each.
+**Topic:** Mahayana emptiness, skillful means and the great bodhisattvas  **Lec:** 6  **Type:** apply
+**A:** The conservative meditation experiences impermanence by scanning sensations as they rise and pass, and builds detachment; its outcomes include renunciate precepts, monastic life and a monastic community apart from the world. The progressive meditation experiences emptiness of self and phenomena, watching all sensations like a magic show until subject and object disappear, and builds compassion; its outcomes include the bodhisattva ideal and precepts, a weaker line between monastics and laity (the Vimalakirti Sutra) and a multi-universe community of bodhisattvas.
+
+### Q: Match each bodhisattva to what the lecture says about them: Maitreya, Manjushri, Samantabhadra, Kshitigarbha, Akashagarbha, Avalokiteshvara. Descriptions: a sword that cuts through samsara; ten vows of selfless service and the model of the path; a layman named Ajita now in Tushita heaven; began as a Brahmin woman who freed her mother from hell; a space-like mind that told Kukai in a dream to sail to China; feminised as Guanyin in China.
+**Topic:** Mahayana emptiness, skillful means and the great bodhisattvas  **Lec:** 6  **Type:** recall
+**A:** Manjushri holds the sword of wisdom. Samantabhadra has the ten vows and is the model of the Mahayana path. Maitreya was the layman Ajita and lives in Tushita until he comes as the next Buddha. Kshitigarbha began as the Brahmin woman and now wanders the hells as a monk. Akashagarbha is the space-like mind and the one whose eulogy Kukai recited before his dream. Avalokiteshvara became the female Guanyin in China, where compassion is a yin quality.
