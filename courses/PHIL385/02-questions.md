@@ -1176,3 +1176,71 @@ They do not line up, and the editor role flips between the two books. In *Either
 ### Q: Kraal noted that older philosophers often misquoted, caring more for the idea a text inspired than for fidelity, and that A does the same with Mozart. How does A himself answer the charge that he reads into the music what is not there?
 **Topic:** The Musical Erotic: why music  **Lec:** 12  **Type:** critique
 **A:** A admits the reader may doubt how far what he says is in Mozart's music and how far he reads it in, and answers that the reader will find in the music not only the little he presents but infinitely more. He says the whole inquiry is "written only for those in love". It fits Kraal's email point that A praises Mozart, not the librettists: what A takes from the operas is the idea the music gives him, not the text.
+
+## Lec 13–14 — "The Seducer's Diary": Johannes and Cordelia (Mon Oct 19 and Wed Oct 21, logged 2026-10-25 from Owen's shared notes)
+
+### Q: Who is the seducer of "The Seducer's Diary", who claims to have found the diary, and what did Kraal say about who really wrote it?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** recall
+**A:** The seducer is Johannes, "Johannes the Seducer". A says in his preface to the diary that he found it and copied it. Kraal's line, drawn as "Author A Facade" and "Real Author A", is that A wrote the diary himself, so Johannes is A's own creation and the facade is A acting a part.
+
+### Q: What does Johannes call the highest enjoyment, and what did Kraal mean by calling his romance "counterfactual"?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** recall
+**A:** The highest enjoyment is to have someone desire you like a god, to make a woman fall absolutely in love with him. It is counterfactual because the goal is not to get the girl to give everything but to bring her to the point where she would give everything freely. The feeling of being desired and needed absolutely is the prize, not the act.
+
+### Q: True or false, and justify: Johannes wants Cordelia to give herself to him because he compels her.
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** critique
+**A:** False. He wants a spiritual seduction in which she gives herself freely, with no ethical or moral compulsion, because "only when it is free is it beautiful". Compulsion would spoil the enjoyment, which is why he arranges things so that she breaks the engagement herself.
+
+### Q: Name the stages of the Cordelia case as the lecture laid them out, in order.
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** recall
+**A:** Observing (he notices her for the first time and is caught up in her details), infatuation (his life develops meaning through her), the plan, trap or strategy, then deception, which he justifies to himself. The affair ends with the engagement she breaks and the "final enjoyment".
+
+### Q: Describe Kraal's two-Johannes diagram. What are the two figures, and what passes between each of them and Cordelia?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** recall
+**A:** The upper figure is the facade, A acting a part, and it has direct communication with Cordelia. The lower, dotted figure is the real A, doing the reflection and calculation that tune the performance, and it only watches her from behind the facade. Kraal's phrase was "the mastermind behind the actor".
+
+### Q: Set Johannes against Don Giovanni on one point: how does each of them seduce, and why does one of them need a diary?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** apply
+**A:** Don Giovanni is the immediate seducer: he desires and acts in the moment, which is why only music can present him. Johannes is a reflective seducer: every move is planned, observed and adjusted, so his seduction unfolds in time and in prose, and a diary is the form that fits a calculating mind. The lecture's "reflection + calculation" is the whole difference.
+
+### Q: How does Johannes justify deceiving Cordelia, in the lecture's two steps?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 14  **Type:** recall
+**A:** First, he treats deception as the key to romantic love rather than a fault in it. Second, he argues that in any romance someone is bound to be deceived, either the girl deceives the man or the man the girl, so he might as well be the one acting. Kraal flagged the duplicity of this: the deception is of her and of himself.
+
+### Q: Why does Johannes get engaged to Cordelia, and who ends the engagement?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 14  **Type:** recall
+**A:** He thinks engagements are silly because they go against the freedom that romantic love needs, so the engagement is a step in the plan, not a commitment. Cordelia breaks it off, which is what he wanted, and she still comes back to him afterwards, which is the point of the design.
+
+### Q: What is the paradox the lecture named at the end of the diary, and what follows from it for how the diary ends?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 14  **Type:** apply
+**A:** Johannes wants Cordelia most while there is resistance in their love and no longer wants her once she desires him totally. So the "final enjoyment" is also the end of his interest, and the diary stops when the seduction is complete. Conquest kills the thing he was after.
+
+### Q: What did Kraal mean by the "meta-level" of inner and outer in the diary?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 14  **Type:** recall
+**A:** Everyone has an inner world of thoughts and an outer world in which others see only the physical person, and the two are not the same. The diary shows the gap at its widest: Cordelia sees the facade, the reader sees the calculating inner life, and nothing in Johannes's outward conduct reveals it.
+
+## Lec 15 — "Diapsalmata": moralizing and the meaning of life (Fri Oct 23, logged 2026-10-25 from Owen's shared notes)
+
+### Q: Why did Kraal say it is easy to moralize about Johannes, and what does moralizing presuppose?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** recall
+**A:** The diary presents Johannes as a bad man, so "how could he do this" comes naturally. But moralizing presupposes a standard: definite views on how one should live and how one should not, in short a view of what a human life should be like. The Diapsalmata show that A has no such standard, so there is nothing in his own papers to moralize from.
+
+### Q: What are the Diapsalmata, and what does the lecture read them as the voice of?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** recall
+**A:** They are the short aphorisms that open A's papers in Either/Or Part I. The lecture reads them as the voice of someone who lacks a belief about the meaning of life: disappointed with philosophy, with no clear moral view of what you are supposed to do, for whom everything seems regrettable, and with only a very short philosophy of his own.
+
+### Q: State Kraal's "digression" about discussing someone's thoughts, and say what it implies for A.
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** apply
+**A:** If you discuss someone's thoughts you reduce them to a series of beliefs that can never be objectively verified, so beliefs about how one should live, or the meaning of life, are subjective. For A that means no one can tell him what to believe, and finding it out for himself is hard, which is where his naive youthful confidence about the meaning of life was lost.
+
+### Q: True or false, and justify: the lecture's point was that evolutionary biology gives the meaning of life, namely replicating your genes.
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** critique
+**A:** False. Reproduction is a precondition of life, and the lecture's point was that a precondition of life cannot be its meaning. "You must replicate your genes" says what keeps the species going, not why you should live, so the example shows what A is missing rather than supplying it.
+
+### Q: Multiple choice. According to the lecture's map of the Diapsalmata, which of these is NOT something A says about the meaning of life? (a) It cannot be to die. (b) Perhaps only God knows it. (c) It is to serve others. (d) He knows what he wants even if he does not know what he knows.
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** recall
+**A:** (c). The map has: it cannot be to die, it cannot come from a precondition or an evolutionary perspective, perhaps only God knows, he becomes disappointed with philosophy, he has no clear moral views and everything seems regrettable, he has a very short philosophy, and he knows what he wants even if he does not know what he knows. Nothing about serving others.
+
+### Q: What did A once think was the best and most enjoyable thing, and how does that connect the Diapsalmata back to the diary?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** apply
+**A:** Romantic love, in the past. Kraal's note was "for a while it was Cordelia": the seducer's absolute desire was A's one candidate for a meaning of life, and the diary shows it ending the moment it is satisfied, which is why the Diapsalmata voice has given up on it. Johannes knows what he finds fun and enjoyable and pursues that, because he has no belief about what he should do.

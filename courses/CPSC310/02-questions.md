@@ -932,3 +932,114 @@ The third way is a new parameter with a default, `checkout(book, duration, durat
 ### Q: A REST API has one route, `POST /checkout`, and needs a breaking change to its request body. Give the reader's four-step sequence for shipping it without breaking clients, and say what the team should have done at the start to make step two cleaner.
 **Topic:** API design and change severity (information hiding · obliviousness · easy to use, hard to misuse · contract completeness · start with the task · APIs are forever · MAJOR, MINOR, PATCH, NONE by what the client must do · semver and REST versioning from the reader)  **Lec:** 12  **Type:** recall
 **A:** Run `/checkout` alone; add `/v2/checkout` beside it so both run; mark `/checkout` deprecated and ask clients to move; remove `/checkout` once every client has moved. Starting with a `/v1` prefix would have given the breaking version an obvious place to go from the first day. Breaking changes in REST are shipped side by side like this because running several live versions is costly, so the usual rule is to change REST APIs only in backwards-compatible ways, such as an opt-in `/checkoutSpecific` route or optional parameters.
+
+## Lec 13 — REST API Design (logged 2026-10-25 from the deck and the reader)
+
+### Q: A rider's app sends the request below and gets the response below. Name each part of the request (method, path, query, headers, body) and each part of the response (status, headers, body), say which status class the response is in and what that class means, then name the one thing in the request the reader says a request of this method should not carry.
+
+```
+GET /bikes?station=s2&limit=20
+Accept: application/json
+
+{"rider": "alex"}
+```
+
+```
+200 OK
+Content-Type: application/json
+
+{"bikes": [{"id": "b1", "href": "/bikes/b1"}]}
+```
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** apply
+**A:** Request: the method is `GET`; the path is `/bikes`; the query is `station=s2&limit=20`; the one header is `Accept: application/json`, which asks for JSON back; the body is `{"rider": "alex"}`. Response: the status is `200 OK`; the one header is `Content-Type: application/json`, which says what the body is; the body is the JSON list of bikes. 200 is in the 2XX class, which means the request worked (4XX would mean the client's request was the problem, 5XX that the server failed). The body is the thing that should not be there: a GET has no body, because the URI alone names what is wanted, and the deck's table marks GET and DELETE as body-less. Anything the client wants to say goes in the query.
+
+### Q: True or false, and justify: "To start a trip the app should send `POST /bikes/b1/trips` with the rider in the body, because POST is the method that creates a resource."
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** critique
+**A:** False as a design choice, even though POST does create. POST is the one method that is not idempotent: if the dock's connection drops after the server started the trip but before the app saw the 201, the app retries and a second trip starts for the same bike. The deck's check is "what happens if the client retries?", and the retry at the dock is exactly the problem Idempotency solved. The deck's design is `PUT /bikes/b1/trips/t-4f2a {"rider": "alex"}`: the client chooses the trip id, the first call answers 201 with the new trip, and a resend answers 200 and changes nothing. PUT creates when the client picks the URI, so "use PUT for anything a client may resend" wins over "POST creates".
+
+### Q: New requirement for the bike share: a rider can report a bike as damaged with a note, staff can see every open report for a bike, and staff can clear one report. Model it as resources. Write the URIs and, for each, what GET, PUT, POST and DELETE do or why they are refused, with the status code each success returns.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** apply
+**A:** The action "report damage" becomes a thing, a report, under the bike it belongs to.
+
+| Resource | GET | PUT | POST | DELETE |
+|---|---|---|---|---|
+| `/bikes/{id}/reports` (collection) | 200, the bike's reports, each as a link | refused: would replace the whole list | 201, creates a report from the body (note) and returns its URI | refused: would wipe every report |
+| `/bikes/{id}/reports/{rid}` (one report) | 200, the report | 200, replaces the report, which is how staff clear it (`"cleared": true`) | refused, nothing to do | 200, removes the report |
+
+Two acceptable variations: a client-chosen report id with `PUT /bikes/{id}/reports/{rid}` creating it (201 first time, 200 on a resend), which makes a flaky-connection retry safe; and `GET /bikes/{id}/reports?open=true` for the open ones. What is not acceptable is a verb in the URL such as `POST /bikes/b1/reportDamage` or `/clearReport`, because that models the action instead of the thing and a generic HTTP tool cannot tell what it does.
+
+### Q: Which one of these requests breaks the deck's Statelessness constraint? (a) `GET /stations?hasBikes=true&page=3&size=20` (b) `GET /stations/more` (c) `GET /stations?hasBikes=true`, answered with a page of stations plus a `next` link (d) `PUT /bikes/b1/trips/t-4f2a {"rider": "alex"}`. Name the check the deck gives for the constraint and apply it to your choice.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** apply
+**A:** (b). The check is "could a different server answer this request?" `/stations/more` only means something to the server that remembers which page this client saw last, so a second server, or the same one after a restart, cannot answer it. The request has to carry the client's position itself, as (a) does with `page=3&size=20` and as (c) does by handing the client a `next` link that already contains it. (d) carries the whole trip in the request, so any server can store it. The reader makes the same point with `GET /:query/:rowNum` instead of `GET /:query/next`.
+
+### Q: A bike share API has one endpoint, `POST /api` with a body like `{"action": "deleteBike", "id": "b3"}`. When the bike does not exist it answers `200 OK` with `{"ok": false, "error": "no such bike"}`. Name the two ways this breaks Uniform Interface, give the deck's check for that constraint, and rewrite the exchange as a RESTful request and the response for the missing bike.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** critique
+**A:** First, the method does not mean what it means everywhere else: a POST is "here is data, do something with it", and the real verb, delete, is hidden in the body where only this API's clients know to look. Second, the status code does not report the outcome: a failure travels as 200 with an error inside the body, so a standard HTTP library sees success. The check is "could a generic tool handle this request correctly without knowing your API?", and here it could not. Rewritten:
+
+```
+DELETE /bikes/b3
+```
+
+```
+404 Not Found
+```
+
+Now the method says what happens, the URI says to what, and a 4XX tells any client, library or proxy that the request named something that is not there, with no API-specific parsing.
+
+### Q: The stations endpoint answers `GET /stations/s2` with `{"id": "s2", "bikeIds": ["b1", "b4"]}`, and the app fetches each bike with `fetch("/bikes/" + id + "?fields=basic&limit=20")`. The server team then moves bikes to `/v2/bikes/{id}` and changes the page size. Which of the deck's constraints does the design break, what is its check, what breaks on the day of the change, and how should the response look instead? Write the JSON.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** critique
+**A:** Connectedness: responses should link to related resources so that clients follow links instead of building URLs. The check is "does the client ever build a URL itself?", and `"/bikes/" + id + "?fields=basic&limit=20"` is the client building one. On the day of the change every app still asks `/bikes/b1`, gets 404, and the page size it hard-coded is wrong; the server cannot move or re-page anything without breaking clients. The response should carry the links:
+
+```json
+{"id": "s2",
+ "self": "/stations/s2",
+ "bikes": [{"id": "b1", "href": "/v2/bikes/b1"},
+           {"id": "b4", "href": "/v2/bikes/b4"}],
+ "next": "/stations/s2/bikes?page=2"}
+```
+
+The client follows `href` and `next`; the server owns every URL and can change paths, versions or page size without touching the app. This is the problem Connectedness solved in the deck's table, changing the page size.
+
+### Q: Give the status code the bike share should return for each exchange, with one reason each: (1) `GET /bikes/b99` and there is no bike b99. (2) `POST /bikes` with a body that has no id field. (3) `PUT /bikes/b1/trips/t-4f2a {"rider": "alex"}` the first time. (4) The same PUT resent after a timeout. (5) The database behind `GET /stations` is down. (6) `POST /bikes {"id": "b1", ...}` when bike b1 already exists, using the reader's code.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** apply
+**A:** (1) 404 Not Found: the URI names nothing, a client-side problem. (2) 400 Bad Request: the request is malformed, so 4XX, and it is the client's job to fix it. (3) 201 Created: a new resource now exists at the URI the client chose. (4) 200 OK: the trip is already there and the resend changed nothing; the deck's slide 11 gives exactly this pair, and the different code does not break idempotency because the state is the same. (5) 500 Internal Server Error: the request was fine and the server failed, so 5XX. (6) 409 Conflict, the reader's POST code for a resource that already exists. Two things to keep apart: the class (2XX worked, 4XX client, 5XX server) tells the client who has to act, and the code within the class says what happened.
+
+### Q: Here is the handler behind `PUT /bikes/:id/trips/:tripId`. Say whether it satisfies the deck's Idempotency constraint and show the failing retry, then rewrite it so a resend leaves the same state, returning 201 the first time and 200 after.
+
+```ts
+const trips: Trip[] = [];
+app.put("/bikes/:id/trips/:tripId", (req, res) => {
+  trips.push({ id: req.params.tripId, bike: req.params.id, rider: req.body.rider });
+  res.status(201).json(trips[trips.length - 1]);
+});
+```
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** apply
+**A:** It does not. The method is PUT, which promises "store this at the URL, replacing whatever is there", but the handler appends: two identical requests leave two trips with id `t-4f2a` in the array, so sending twice does not leave the same state as sending once. The dock retry the deck worries about would double-start the trip. Keyed storage fixes it:
+
+```ts
+const trips = new Map<string, Trip>();
+app.put("/bikes/:id/trips/:tripId", (req, res) => {
+  const existed = trips.has(req.params.tripId);
+  const trip = { id: req.params.tripId, bike: req.params.id, rider: req.body.rider };
+  trips.set(trip.id, trip);
+  res.status(existed ? 200 : 201).json(trip);
+});
+```
+
+`set` on the same key replaces, so the state after two calls equals the state after one. The code changes from 201 to 200 but the resource does not, and idempotency is about the state, not the status.
+
+### Q: The deck lists four bike share requirements that REST models poorly: live dock counts on the map as bikes come and go; unlocking the physical dock when the rider taps "unlock"; a price quote for a ride between two stations; reserving a bike and paying in one step. For each, say which of the summary's three awkward kinds it is (or that it is a fourth kind), why REST's model of things you store and change does not fit, and the closest RESTful shape you could force it into.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** apply
+**A:** Live dock counts are pushing updates: REST is request and response, the client asks and the server answers, so the server has no way to send a change the client did not ask for; the forced shape is the client polling `GET /stations/s2` every few seconds, which is late and wasteful. Unlocking the dock is a command to hardware: nothing is stored or changed on the server, an action happens in the world, and a retry of a "command" is not harmless; the forced shape is a resource for the lock's wanted state, `PUT /docks/d7/lock {"locked": false}`, which is idempotent but hides that the real outcome is physical. The price quote is a computation, not a thing you store: there is no resource before the question is asked; the forced shape is `GET /quotes?from=s1&to=s2` (a read with no stored thing behind it) or `POST /quotes` that creates and stores a quote with an id, paying with storage for a thing nobody needs kept. Reserve and pay is steps that must succeed together: two resources, a reservation and a payment, each with its own PUT or POST, so one can succeed and the other fail and REST has no transaction across requests; the forced shape is one new resource, `POST /orders`, whose creation does both inside the server, which works but means the "thing" exists only to make two steps atomic.
+
+### Q: Both PUT and POST can create a resource. Which one of these statements about the difference matches the deck and the reader? (a) PUT creates only collections and POST only members. (b) PUT creates when the client chooses the URI and a repeat changes nothing; POST creates at a URI the server chooses and a repeat creates again. (c) POST is idempotent and PUT is not, so POST is safer to retry. (d) Only POST may carry a body, so only POST can create.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** recall
+**A:** (b). The reader's table says PUT updates the resource at a known URI and can create one when the client picks a new URI, and POST creates a resource and returns the URI the server gave it; PUT and DELETE are idempotent, POST is not. The deck's slide 9 adds a bike with `POST bikes/`, which returns the new bike's URI, and slide 11 starts a trip with `PUT /bikes/b1/trips/t-4f2a`, an id the app chose, so a resend gets 200 and changes nothing. (a) invents a rule; (c) is backwards; (d) is wrong because PUT carries a body too, and the deck's table says so.
+
+### Q: True or false, and justify: "The weather request should be `GET /v1/forecast` with the headers `X-City: Vancouver` and `X-Days: 3`, because headers are where a request's parameters go."
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** critique
+**A:** False. The reader's rule is that headers carry metadata about the exchange, such as the wanted format (`Accept: application/json`), the encoding or credentials, and never the resource or the request's data. Which city and how many days name the resource being asked for, so they belong in the URI: the deck's own request is `GET /v1/forecast?city=Vancouver&days=3`. Two costs of the header version: a generic tool or a cache keys on the URL, so every city's forecast would look like the same resource, and a client cannot bookmark, log or link the request. Request data that is not part of the name, such as the text to translate, goes in the body of a POST.
+
+### Q: Name the deck's four RESTful design properties. For each, give its one-line definition, the bike share problem the deck says it solved, and the check question to ask of a design.
+**Topic:** REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination)  **Lec:** 13  **Type:** recall
+**A:** Uniform Interface: clients act on resources with only the standard methods, which mean the same thing in every API, and status codes report the outcome. It solved working with standard HTTP libraries. Check: could a generic tool handle this request correctly without knowing your API? Idempotency: sending a request twice leaves the same state as sending it once; every method but POST. It solved retries at the dock. Check: what happens if the client retries? Statelessness: each request carries everything needed to understand it, and the server keeps the resources, not what the client has done. It solved the `/stations/more` endpoint. Check: could a different server answer this request? Connectedness: responses link to related resources, so clients follow links instead of building URLs. It solved changing the page size. Check: does the client ever build a URL itself?
