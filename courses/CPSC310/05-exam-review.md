@@ -133,8 +133,8 @@ abstract class CollectionsReport {
 - You cannot test every input, so split them into classes the spec treats the same way and test one value per class. It works from the spec, not the code, so it is **black-box**, and it avoids the confirmation bias of testing code you wrote.
 - Derive classes from two directions. The **input domain** starts from the parameter types, is narrowed by preconditions, then split into valid and invalid. The **output range** starts from the return type plus documented errors, split by postconditions into normal and error classes. Errors count as promised outputs.
 - `getLetterGrade`: A 80 to 100, B 68 to 79, C 55 to 67, D 50 to 54, F 0 to 49, `RangeError` outside 0 to 100. Input: 1 valid class, 2 invalid. Output: 5 normal, 1 error. Nine classes; the string "80" and `null` are not tested because they are outside the parameter type.
-- One value can cover an input class and an output class at once: 72 is "valid" and "B". The deck's picks: −10, 25, 52, 60, 72, 90, 110.
-- Then add the **boundaries**, one value on each side of every edge, because bugs cluster there (`>=` written as `>`): −1 and 0, 49 and 50, 54 and 55, 67 and 68, 79 and 80, 100 and 101.
+- One value can cover an input class and an output class at once: 72 is "valid" and "B". The deck's picks: -10, 25, 52, 60, 72, 90, 110.
+- Then add the **boundaries**, one value on each side of every edge, because bugs cluster there (`>=` written as `>`): -1 and 0, 49 and 50, 54 and 55, 67 and 68, 79 and 80, 100 and 101.
 - Why partition both views: they diverge when an output depends on a combination of inputs. Input partitioning finds values the code might mishandle (invalid, empty, extreme). Output partitioning finds behaviours no single input points to, such as "can the GPA go over the maximum?"
 
 ### Coverage
