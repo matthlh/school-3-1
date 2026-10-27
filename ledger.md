@@ -4,82 +4,82 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-<!-- due as of 2026-10-25 -->
+<!-- due as of 2026-10-27 -->
 
-_72 topics due as of Sun Oct 25, 4 of them from an exam-week sweep. Say **quiz me**._
+_72 topics due as of Tue Oct 27. Say **quiz me**._
 
-- CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 28 d · last unquizzed
-- STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 26 d · last unquizzed
-- STAT 251 · 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) · overdue 26 d · last unquizzed
-- CPSC 310 · Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) · overdue 23 d · last unquizzed
-- CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 23 d · last unquizzed
-- ASIA 250 · Vedic religion: gods, sacrifice, karma and the castes · overdue 22 d · last unquizzed
-- STAT 251 · 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) · overdue 22 d · last unquizzed
-- STAT 251 · 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) · overdue 22 d · last unquizzed
-- STAT 251 · 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) · overdue 22 d · last unquizzed
-- ASIA 250 · Shramanas against the Vedas: Buddha, Mahavira and asceticism · overdue 19 d · last unquizzed
-- ASIA 250 · Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds · overdue 19 d · last unquizzed
-- ASIA 250 · Renunciation and the path to awakening (deeds 7–9) · overdue 19 d · last unquizzed
-- ASIA 250 · Awakening, teaching and death (deeds 10–12) · overdue 19 d · last unquizzed
-- CPSC 310 · Design patterns I: Adapter and Composite (four-step analysis: change, pain, mechanism, cost · scattered is coupling, tangled is cohesion · mechanism from abstraction, obliviousness, trigger · when patterns help or hurt · Adapter: one interface per client, gain in degree · Composite: component, leaf, composite; cheap new node, costly new operation) · overdue 18 d · last unquizzed
-- ASIA 250 · Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology · overdue 17 d · last unquizzed
-- ASIA 250 · The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules · overdue 17 d · last unquizzed
-- STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 17 d · last unquizzed
-- CPSC 310 · Design patterns II: Decorator (adds behaviour to one object at run time, not to the class · a decorator is a component and has a component · the caller asks the outermost wrapper and each wrapper changes the answer of what it wraps · costs: one class per add-on, order changes the result, long chains, identity and instanceof · java.io streams · composition over inheritance · Adapter changes the interface, Decorator the behaviour, Composite holds many) · overdue 16 d · last unquizzed
-- STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · overdue 16 d · last unquizzed
-- STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · overdue 16 d · last unquizzed
-- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 15 d · last X
-- ASIA 250 · The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths · overdue 15 d · last X
-- ASIA 250 · Aesthetic experience and the faith frame · overdue 14 d · last X
-- ASIA 250 · Shamanism, ecstasy and enstasy · overdue 14 d · last X
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 14 d · last X
-- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 14 d · last X
-- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 14 d · last X
-- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 14 d · last X
-- CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 14 d · last X
-- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 14 d · last X
-- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 14 d · last X
-- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 14 d · last X
-- STAT 251 · 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ) · overdue 14 d · last unquizzed
-- ASIA 250 · Hindu philosophy and bhakti (Upanishads to Krishna) · overdue 13 d · last X
-- CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 13 d · last X
-- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 33 d · last ~
-- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 33 d · last ~
-- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 33 d · last ~
-- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 33 d · last ~
-- CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 11 d · last X
-- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 11 d · last X
-- CPSC 310 · Design patterns III: State and the Open/Closed Principle (states become objects, transitions become methods · the context holds one state and forwards every event · each state handles every event and calls setState to move on · costs: one class per state, transitions spread out, a new event touches every state, public setState · OCP: open for extension, closed for modification, by depending on an abstraction · every pattern has a closed axis: new implementations cheap, new operations expensive · three questions before adding an extension point) · overdue 10 d · last unquizzed
-- CPSC 310 · Boundaries: core, edges, ports and adapters (business logic in the core, which imports nothing and does no I/O · everything else at the edge: I/O, parsing, validation, config, services · a port is an interface the core owns, in its terms · an adapter implements the port with real resources · every dependency points inward · SRP: one reason to change · test at the narrowest level that can see the bug: unit with a double, integration with a temp file, one or two e2e) · overdue 8 d · last unquizzed
-- STAT 251 · 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement) · overdue 8 d · last unquizzed
-- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 35 d · last O
-- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 35 d · last O
-- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 14 d · last ~
-- STAT 251 · Descriptive vs. inferential statistics · overdue 32 d · last O
-- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 31 d · last O
-- STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 13 d · last ~
-- ASIA 250 · Defining religion, myth and ritual · overdue 29 d · last O
-- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 29 d · last O
-- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 12 d · last ~
-- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 12 d · last ~
-- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 12 d · last ~
-- CPSC 310 · Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) · overdue 4 d · last unquizzed
-- CPSC 310 · API design and change severity (information hiding · obliviousness · easy to use, hard to misuse · contract completeness · start with the task · APIs are forever · MAJOR, MINOR, PATCH, NONE by what the client must do · semver and REST versioning from the reader) · overdue 4 d · last unquizzed
-- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 11 d · last ~
-- STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 10 d · last ~
-- CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 9 d · last ~
-- STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 9 d · last ~
-- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 8 d · last O
-- ASIA 250 · Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas · overdue 1 d · last unquizzed
-- ASIA 250 · Mahayana emptiness, skillful means and the great bodhisattvas · overdue 1 d · last unquizzed
-- STAT 251 · 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail) · overdue 1 d · last unquizzed
-- STAT 251 · 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ) · overdue 1 d · last unquizzed
-- STAT 251 · 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation) · overdue 1 d · last unquizzed
-- STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 5 d · last O
-- CPSC 310 · REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination) · exam sweep before Midterm 19:00 on Thu Oct 29 · last unquizzed
-- PHIL 385 · The Seducer's Diary: Johannes and Cordelia (A as the real author behind the Johannes facade · reflective seduction against Don Giovanni's immediacy · the free gift as the highest enjoyment · observing, infatuation, plan, deception · the engagement Cordelia breaks · the final enjoyment and the resistance paradox) · exam sweep before Exam 3 14:00 on Fri Oct 30 · last unquizzed
-- PHIL 385 · Diapsalmata: moralizing and the meaning of life (moralizing presupposes a standard · beliefs about how to live cannot be verified · A lacks a belief about the meaning of life · precondition is not meaning · disappointed with philosophy, perhaps only God knows · romantic love was the best thing, for a while it was Cordelia) · exam sweep before Exam 3 14:00 on Fri Oct 30 · last unquizzed
-- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · exam sweep before Midterm 08:00 on Fri Oct 30 · last O
+- CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 30 d · last unquizzed
+- STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 28 d · last unquizzed
+- STAT 251 · 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) · overdue 28 d · last unquizzed
+- CPSC 310 · Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) · overdue 25 d · last unquizzed
+- CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 25 d · last unquizzed
+- ASIA 250 · Vedic religion: gods, sacrifice, karma and the castes · overdue 24 d · last unquizzed
+- STAT 251 · 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) · overdue 24 d · last unquizzed
+- STAT 251 · 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) · overdue 24 d · last unquizzed
+- STAT 251 · 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) · overdue 24 d · last unquizzed
+- ASIA 250 · Shramanas against the Vedas: Buddha, Mahavira and asceticism · overdue 21 d · last unquizzed
+- ASIA 250 · Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds · overdue 21 d · last unquizzed
+- ASIA 250 · Renunciation and the path to awakening (deeds 7–9) · overdue 21 d · last unquizzed
+- ASIA 250 · Awakening, teaching and death (deeds 10–12) · overdue 21 d · last unquizzed
+- CPSC 310 · Design patterns I: Adapter and Composite (four-step analysis: change, pain, mechanism, cost · scattered is coupling, tangled is cohesion · mechanism from abstraction, obliviousness, trigger · when patterns help or hurt · Adapter: one interface per client, gain in degree · Composite: component, leaf, composite; cheap new node, costly new operation) · overdue 20 d · last unquizzed
+- ASIA 250 · Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology · overdue 19 d · last unquizzed
+- ASIA 250 · The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules · overdue 19 d · last unquizzed
+- STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 19 d · last unquizzed
+- CPSC 310 · Design patterns II: Decorator (adds behaviour to one object at run time, not to the class · a decorator is a component and has a component · the caller asks the outermost wrapper and each wrapper changes the answer of what it wraps · costs: one class per add-on, order changes the result, long chains, identity and instanceof · java.io streams · composition over inheritance · Adapter changes the interface, Decorator the behaviour, Composite holds many) · overdue 18 d · last unquizzed
+- STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · overdue 18 d · last unquizzed
+- STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · overdue 18 d · last unquizzed
+- ASIA 250 · Buddhism as a world religion and the early schools (arhat vs bodhisattva) · overdue 17 d · last X
+- ASIA 250 · The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths · overdue 17 d · last X
+- ASIA 250 · Aesthetic experience and the faith frame · overdue 16 d · last X
+- ASIA 250 · Shamanism, ecstasy and enstasy · overdue 16 d · last X
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 16 d · last X
+- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 16 d · last X
+- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 16 d · last X
+- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 16 d · last X
+- CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 16 d · last X
+- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 16 d · last X
+- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 16 d · last X
+- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 16 d · last X
+- STAT 251 · 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ) · overdue 16 d · last unquizzed
+- ASIA 250 · Hindu philosophy and bhakti (Upanishads to Krishna) · overdue 15 d · last X
+- CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 15 d · last X
+- CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 13 d · last X
+- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 13 d · last X
+- CPSC 310 · Design patterns III: State and the Open/Closed Principle (states become objects, transitions become methods · the context holds one state and forwards every event · each state handles every event and calls setState to move on · costs: one class per state, transitions spread out, a new event touches every state, public setState · OCP: open for extension, closed for modification, by depending on an abstraction · every pattern has a closed axis: new implementations cheap, new operations expensive · three questions before adding an extension point) · overdue 12 d · last unquizzed
+- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 35 d · last ~
+- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 35 d · last ~
+- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 35 d · last ~
+- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 35 d · last ~
+- CPSC 310 · Boundaries: core, edges, ports and adapters (business logic in the core, which imports nothing and does no I/O · everything else at the edge: I/O, parsing, validation, config, services · a port is an interface the core owns, in its terms · an adapter implements the port with real resources · every dependency points inward · SRP: one reason to change · test at the narrowest level that can see the bug: unit with a double, integration with a temp file, one or two e2e) · overdue 10 d · last unquizzed
+- STAT 251 · 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement) · overdue 10 d · last unquizzed
+- CPSC 310 · Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) · overdue 6 d · last unquizzed
+- CPSC 310 · API design and change severity (information hiding · obliviousness · easy to use, hard to misuse · contract completeness · start with the task · APIs are forever · MAJOR, MINOR, PATCH, NONE by what the client must do · semver and REST versioning from the reader) · overdue 6 d · last unquizzed
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 16 d · last ~
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 37 d · last O
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 37 d · last O
+- STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 15 d · last ~
+- STAT 251 · Descriptive vs. inferential statistics · overdue 34 d · last O
+- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 33 d · last O
+- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 14 d · last ~
+- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 14 d · last ~
+- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 14 d · last ~
+- ASIA 250 · Defining religion, myth and ritual · overdue 31 d · last O
+- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 31 d · last O
+- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 13 d · last ~
+- STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 12 d · last ~
+- CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 11 d · last ~
+- STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 11 d · last ~
+- ASIA 250 · Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas · overdue 3 d · last unquizzed
+- ASIA 250 · Mahayana emptiness, skillful means and the great bodhisattvas · overdue 3 d · last unquizzed
+- STAT 251 · 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail) · overdue 3 d · last unquizzed
+- STAT 251 · 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ) · overdue 3 d · last unquizzed
+- STAT 251 · 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation) · overdue 3 d · last unquizzed
+- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 10 d · last O
+- STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 7 d · last O
+- CPSC 310 · REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination) · overdue 1 d · last unquizzed
+- PHIL 385 · The Seducer's Diary: Johannes and Cordelia (A as the real author behind the Johannes facade · reflective seduction against Don Giovanni's immediacy · the free gift as the highest enjoyment · observing, infatuation, plan, deception · the engagement Cordelia breaks · the final enjoyment and the resistance paradox) · overdue 1 d · last unquizzed
+- PHIL 385 · Diapsalmata: moralizing and the meaning of life (moralizing presupposes a standard · beliefs about how to live cannot be verified · A lacks a belief about the meaning of life · precondition is not meaning · disappointed with philosophy, perhaps only God knows · romantic love was the best thing, for a while it was Cordelia) · overdue 1 d · last unquizzed
+- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 1 d · last O
 
 _Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 182 in-scope questions likely recalled._
 
@@ -283,10 +283,10 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 
 | Course | Score | As of |
 |---|---|---|
-| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Optional Assignment 1 missed and the 2% bonus is gone | 2026-10-15 |
+| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 missed and locked at 0; Optional Assignment 1 missed and the 2% bonus is gone; SWR1 submitted and not marked yet | 2026-10-27 |
 | CPSC 310 | 94.9%; D1-Auto 100/100; D1-Manual 100/100; D1-Total 100/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; the Canvas total averages the five posted items and the labs come from PrairieLearn | 2026-10-23 |
 | PHIL 385 | total hidden on Canvas; Exam2 12/15; Exam1 not marked yet | 2026-10-22 |
-| STAT 251 | 58.56%; iClicker 14/37; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; classes 5 to 9 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); the total counts the iClicker polls and the pre-lab quiz and WeBWorK is not on Canvas yet | 2026-10-22 |
+| STAT 251 | 70.2%; iClicker 14/86; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; Pre-lab Quiz Lab 4 4/4; Lab 2 9.5/10; Lab 3 9/10; classes 5 to 9 and 11 to 18 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); WeBWorK is not on Canvas yet | 2026-10-27 |
 
 ## Session log
 | Date | What we did |
@@ -399,3 +399,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-20 | Morning check: CPSC 310 lec 12–13 retitled (API design & versioning, REST API design) and Lab 7–9 renamed for the D3/D4 check-ins; lec 12 outline staged; Chrome sources not read. |
 | 2026-10-21 | Morning check: Pagefreezer interview Thu flagged; Things3 plan rebuilt at 8 h (SWR1 does not fit); Chrome sources not read for the third day. |
 | 2026-10-23 | Morning check (ran at 15:00): CPSC 310 LAB05 closed at 100% and the to-do closed. STAT 251 lectures 16–18 and ASIA 250 lecture 6 prepared from their decks: 19 and 10 questions, 5 new topics; the STAT 251 bank's lecture 15 section, pasted into the header on Oct 16, moved back and 181 formulas render again. WeBWorK 7–9 moved to Thursdays per the Canvas calendar. ASIA 250 SWR1 submitted. WeBWorK signed out. |
+| 2026-10-27 | Morning check (Oct 26 run, finished 02:30 Oct 27 after the Mac slept): STAT 251 Canvas total 70.2% with Lab 2 9.5/10, Lab 3 9/10 and Pre-lab Lab 4 4/4; iClicker classes 11–18 all 0, so 14 of 86. ASIA 250 Mini-Quiz 6 locked unsubmitted at 0. Pre-lab Lab 4 to-do closed. WeBWorK signed out; STAT lec 19 page not built (Chrome dropped). |
