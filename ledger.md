@@ -283,7 +283,7 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 
 | Course | Score | As of |
 |---|---|---|
-| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 missed and locked at 0; Optional Assignment 1 missed and the 2% bonus is gone; SWR1 submitted and not marked yet | 2026-10-27 |
+| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 missed and locked at 0; Optional Assignment 1 missed and the 2% bonus is gone; SWR1 95/100 | 2026-10-27 |
 | CPSC 310 | 94.9%; D1-Auto 100/100; D1-Manual 100/100; D1-Total 100/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; the Canvas total averages the five posted items and the labs come from PrairieLearn | 2026-10-23 |
 | PHIL 385 | total hidden on Canvas; Exam2 12/15; Exam1 not marked yet | 2026-10-22 |
 | STAT 251 | 70.2%; iClicker 14/86; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; Pre-lab Quiz Lab 4 4/4; Lab 2 9.5/10; Lab 3 9/10; classes 5 to 9 and 11 to 18 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); WeBWorK is not on Canvas yet | 2026-10-27 |
@@ -400,3 +400,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-21 | Morning check: Pagefreezer interview Thu flagged; Things3 plan rebuilt at 8 h (SWR1 does not fit); Chrome sources not read for the third day. |
 | 2026-10-23 | Morning check (ran at 15:00): CPSC 310 LAB05 closed at 100% and the to-do closed. STAT 251 lectures 16–18 and ASIA 250 lecture 6 prepared from their decks: 19 and 10 questions, 5 new topics; the STAT 251 bank's lecture 15 section, pasted into the header on Oct 16, moved back and 181 formulas render again. WeBWorK 7–9 moved to Thursdays per the Canvas calendar. ASIA 250 SWR1 submitted. WeBWorK signed out. |
 | 2026-10-27 | Morning check (Oct 26 run, finished 02:30 Oct 27 after the Mac slept): STAT 251 Canvas total 70.2% with Lab 2 9.5/10, Lab 3 9/10 and Pre-lab Lab 4 4/4; iClicker classes 11–18 all 0, so 14 of 86. ASIA 250 Mini-Quiz 6 locked unsubmitted at 0. Pre-lab Lab 4 to-do closed. WeBWorK signed out; STAT lec 19 page not built (Chrome dropped). |
+| 2026-10-27 | Morning check re-run (09:05): ASIA 250 SWR1 marked 95/100 and recorded in Grades so far. WeBWorK still signed out; STAT 251 lec 19 page still not built. |
