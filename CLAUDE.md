@@ -297,7 +297,7 @@ lectures and the countdowns: every row of the ledger's Term calendar that has a 
 paper, assignment, admin), with the PREP.md ladder steps (T-10 starts Phase 2). That table is the only copy
 of the countdown dates, and term.py works out from its exam rows which lectures an exam replaces. term.py keeps the
 weekly timetable, the holidays (`NO_CLASS`) and each course's own cancelled classes (`skip`); quizlib.py's
-`EXAM_CUTOFF` keeps the CPSC 310 midterm's scope cutoff (Oct 22), a scope rather than a date the table holds. Every
+`EXAM_CUTOFF` keeps the CPSC 310 midterm's scope cutoff (Oct 20, lecture 12; the Oct 27 review deck took REST off the midterm), a scope rather than a date the table holds. Every
 brief chases unlogged lectures. Canvas grades are tracked per run; the table is in
 `ledger.md`.
 

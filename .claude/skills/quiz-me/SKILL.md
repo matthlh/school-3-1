@@ -155,9 +155,9 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
   An exam's name (`exam_name`) is its label up to the first dash, parenthesis, comma or semicolon. term.py writes the
   label as the bold name, the start time, then the weight, so the name keeps the start time (`Exam 2 14:00`,
   `Midterm 19:00`). PHIL 385's Exam 1 is plain `Exam 1`, because its bold name runs on past a dash.
-  - A cutoff in `EXAM_CUTOFF` ends a scope earlier. The CPSC 310 midterm (Thu Oct 29) covers lectures 1–13,
-    through Thu Oct 22. The syllabus says through week 6 (Oct 15) and the schedule page says Oct 22, and the
-    wider date stands until that is confirmed.
+  - A cutoff in `EXAM_CUTOFF` ends a scope earlier. The CPSC 310 midterm (Thu Oct 29) covers lectures 1–12,
+    through Tue Oct 20: the Oct 27 review deck says REST (lecture 13, Oct 22) is not on it. The syllabus had said
+    week 6 (Oct 15) and the schedule page Oct 22.
   - A non-cumulative exam covers only the lectures after that course's previous exam. `NON_CUMULATIVE` lists
     PHIL 385 Exams 2, 3 and 4. Every final is cumulative.
   - A topic is in an exam's scope when any lecture in its ledger Lec cell is. A Lec that is not a lecture

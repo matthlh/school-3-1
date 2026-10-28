@@ -56,9 +56,9 @@ SPREAD = 0.15                                  # a gap of 3+ days may move this 
 # here; a non-cumulative exam starts after that course's previous exam. Keys match the Term calendar's exam labels,
 # any case.
 NON_CUMULATIVE = {"PHIL385": ("exam 2", "exam 3", "exam 4")}   # PHIL 385's final is cumulative
-# CPSC 310's syllabus says the midterm covers through week 6 (Thu Oct 15); its schedule page says through Thu Oct 22.
-# Until that is confirmed, the wider cutoff, so nothing in scope is skipped.
-EXAM_CUTOFF = {("CPSC310", "midterm"): dt.date(2026, 10, 22)}
+# CPSC 310's midterm covers lectures 1 to 12, through Tue Oct 20: the Oct 27 review deck (slide 2) says REST, lecture 13
+# on Oct 22, is not on the midterm. The syllabus had said week 6 (Oct 15) and the schedule page Oct 22.
+EXAM_CUTOFF = {("CPSC310", "midterm"): dt.date(2026, 10, 20)}
 
 # ---- dates / text --------------------------------------------------------------------------
 

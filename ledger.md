@@ -83,7 +83,7 @@ _74 topics due as of Wed Oct 28. Say **quiz me**._
 - STAT 251 · 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width) · due today · last unquizzed
 - STAT 251 · 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts) · due today · last unquizzed
 
-_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 182 in-scope questions likely recalled._
+_Readiness · CPSC 310 Midterm 19:00 · Thu Oct 29 · 2% of 170 in-scope questions likely recalled._
 
 _Readiness · PHIL 385 Exam 3 14:00 · Fri Oct 30 · 0% of 16 in-scope questions likely recalled._
 
@@ -244,7 +244,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | **Tue Oct 27, 23:59** | STAT 251 | **Written Assignment 1** — extended two days by the instructor: the lecture 18 Canvas page (seen 2026-10-22) strikes "Sunday, October 25" and says Tuesday, October 27. Was Sat Oct 24 (Matt, 2026-09-11). submitted on Gradescope 2026-10-27 23:5x, 7-page typed PDF | ~5% | assignment |
 | Tue Oct 27, 09:00–11:00 | CPSC 310 | **D3 plan check-in** with the TA in lab L1N, about 15 minutes (D3 spec, released by Oct 19). The D3 process check-in follows in the Nov 3 lab | part of D3 manual mark | |
 | Fri Oct 23 → Thu Oct 29, 23:59 | CPSC 310 | **LAB06 Synthesis: Code Analysis and Boundaries** on PrairieLearn. Close date read on PrairieLearn 2026-10-22 (the Things3 to-do had Oct 22) | 10% pool | |
-| Thu Oct 29, 19:00–21:00 | CPSC 310 | **Midterm** — through Wk 6 (lecture 13, Oct 22). On paper in HEBB 100 (last names HAN to SEK); true/false, MC, short and long answer, all over code, some handwritten TypeScript; one handwritten cheat sheet; Tue Oct 27 is a review lecture and Thu Oct 29 has no lecture (Piazza @180) | 25% | exam |
+| Thu Oct 29, 19:00–21:00 | CPSC 310 | **Midterm** — lectures 1 to 12 (through Oct 20); REST (lecture 13) is not on it (review deck, Oct 27). On paper in HEBB 100 (last names HAN to SEK); true/false, MC, short and long answer, all over code, some handwritten TypeScript; one handwritten cheat sheet; Tue Oct 27 is a review lecture and Thu Oct 29 has no lecture (Piazza @180) | 25% | exam |
 | **Fri Oct 30, 08:00–08:50** | STAT 251 | **Midterm** — confirmed by Matt 2026-09-11; the Nov 4 Canvas calendar entry is wrong | 22% | exam |
 | Fri Oct 30, 11:20–11:40 + 11:45–12:00 | STAT 251 | In-lab quiz + follow-up questions, section **L1K** (Fri 11–12, ESB 1046, TA Zachary) — 3 + 3 pts, same morning as the midterm | | |
 | **Fri Oct 30, 14:00–14:50** | PHIL 385 | **Exam 3** (7 MC) | 15% | exam |

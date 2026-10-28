@@ -1,6 +1,6 @@
 # CPSC 310 — Midterm review (Thu Oct 29, 19:00–21:00, HEBB 100)
 
-On paper: true/false, multiple choice, short and long answer, every question over code you have not seen, some handwritten TypeScript, one handwritten cheat sheet. Covers lectures 1 to 13. Four blocks below, about 20 minutes each. After each block answer its three questions in chat before moving on; the answers are what transfers, not the reading.
+On paper: true/false, multiple choice, short and long answer, every question over code you have not seen, some handwritten TypeScript, one handwritten cheat sheet. Covers lectures 1 to 12; the Oct 27 review deck says REST (lecture 13) is not on the midterm, so the REST section at the end is for the final. The [cheat sheet](06-cheat-sheet.md) is this page compressed to two handwritten sides. Four blocks below, about 20 minutes each. After each block answer its three questions in chat before moving on; the answers are what transfers, not the reading.
 
 ## Block 1 · The cost of change (lectures 1 to 4)
 
@@ -253,7 +253,7 @@ class Whip implements Drink {
 - REST APIs change in backwards-compatible ways where possible; a necessary breaking change ships as `/v2/checkout` beside `/checkout`, the old route is deprecated and removed once every client has moved.
 - One deck-versus-reader split: the deck puts performance improvements under PATCH, the reader under minor. Rule: a structural, opt-in addition is minor; a behavioural, nothing-to-change improvement is patch.
 
-### REST
+### REST (not on the midterm, review deck Oct 27; kept for the final)
 - A **request** has a method, a path, a query, headers and a body. A **response** has a status, headers and a body. **2XX** worked (200, 201 Created), **4XX** the client's request was the problem (400, 404), **5XX** the server failed (500).
 
 | Method | Meaning | Body | Idempotent |

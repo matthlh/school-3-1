@@ -77,6 +77,7 @@ const MAIN: [string, string][] = [
   ['02-questions.md', 'Question bank'],
   ['04-ask-kraal.md', 'Ask Kraal'],
   ['05-exam-review.md', 'Exam review'],
+  ['06-cheat-sheet.md', 'Cheat sheet'],
 ]
 
 /** "01-02-ch1-data-types-displays.md" → "01–02 · ch1 data types displays"; "crop-rotation.md" → "crop rotation" */

@@ -19,7 +19,7 @@
 - Thu Oct 29, 19:00 to 21:00, on paper. Arrive 15 minutes early with UBC ID, pencils and erasers; phones and watches off and in the bag.
 - Room by last name: GWHB 1004 for ABB to GUR, HEBB 100 for HAN to SEK (Matt), SHRM B1001 for SEN to ZOU.
 - Question types: some true/false, multiple choice, short answer and long answer. Every question involves reading code, and short and long answers need some handwritten TypeScript. The exam is designed to keep writing small.
-- Each question type mirrors something from lecture, the PrairieLearn labs and practice problems, or the project. Content covers everything through the prior week (lecture 13, Oct 22), which matches quizlib's EXAM_CUTOFF.
+- Each question type mirrors something from lecture, the PrairieLearn labs and practice problems, or the project. Content covers everything through the prior week. The Oct 27 review deck (slide 2) says REST is not on the midterm, so the scope is lectures 1 to 12 (Oct 20), which is quizlib's EXAM_CUTOFF.
 - Cheat sheet: one 8.5 by 11 sheet, handwritten only (no tablet printouts), both sides, collected at the end. Kyle says to fill it with what helps apply principles and TypeScript syntax, not trivia.
 - Practice exam: released the week of Oct 12 to 16; Lab 7 asks for evidence that it was printed, completed and marked on paper. Length and content may differ from the real exam.
 - Schedule: Lab 7 is released early and holds testable material, with the lab slot used to meet the D3 group. Tue Oct 27 is a review lecture (topic poll the week before). Thu Oct 29 lecture is cancelled. Office hours continue.
