@@ -1972,6 +1972,56 @@ E(X) &= 12 \times 0.25 = 3 \\
 \end{aligned}
 $$
 
+### Q: $$X \sim \text{Bin}(8, 0.3)$$. A classmate writes $$P(X \ge 2) = 1 - P(X = 1)$$ and $$P(X > 3) = 1 - P(X \le 3)$$. Which line is right, which is wrong and why, and what is $$P(X \ge 2)$$?
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** critique
+**A:** The second line is right: "more than 3" starts at 4, so its complement is "at most 3". The first line is wrong, because the complement of "at least 2" is "0 or 1", and the classmate dropped $$P(X = 0)$$.
+
+$$
+\begin{aligned}
+P(X = 0) &= 0.7^8 = 0.0576 \\
+P(X = 1) &= 8(0.3)(0.7)^7 = 0.1977 \\
+P(X \ge 2) &= 1 - 0.0576 - 0.1977 \\
+&= 0.7447
+\end{aligned}
+$$
+
+### Q: Each of 7 emergency generators starts with probability 0.95, independently of the others. Find the probability that all 7 start, the probability that at least 6 start, and the expected number that fail to start.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** apply
+**A:** $$X \sim \text{Bin}(7, 0.95)$$ counts the generators that start.
+
+$$
+\begin{aligned}
+P(X = 7) &= 0.95^7 = 0.6983 \\
+P(X = 6) &= 7(0.95)^6(0.05) = 0.2573 \\
+P(X \ge 6) &= 0.6983 + 0.2573 = 0.9556
+\end{aligned}
+$$
+
+The failures are $$7 - X \sim \text{Bin}(7, 0.05)$$, so the expected number that fail is $$7 \times 0.05 = 0.35$$.
+
+### Q: $$X \sim \text{Bin}(n, p)$$ counts successes and $$Y = n - X$$ counts failures. Show that $$Y \sim \text{Bin}(n, 1 - p)$$, then use it to find $$P(X \ge 10)$$ for $$X \sim \text{Bin}(12, 0.9)$$ with three terms instead of ten.
+**Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** derive
+**A:** $$Y = y$$ is the same event as $$X = n - y$$, and $$\binom{n}{n - y} = \binom{n}{y}$$:
+
+$$
+\begin{aligned}
+P(Y = y) &= P(X = n - y) \\
+&= \binom{n}{n - y} p^{n - y}(1 - p)^{y} \\
+&= \binom{n}{y} (1 - p)^{y} p^{n - y}
+\end{aligned}
+$$
+
+which is the $$\text{Bin}(n, 1 - p)$$ pmf. "At least 10 successes" is "at most 2 failures", with $$Y \sim \text{Bin}(12, 0.1)$$:
+
+$$
+\begin{aligned}
+P(X \ge 10) &= P(Y \le 2) \\
+&= 0.9^{12} + 12(0.1)(0.9)^{11} + 66(0.1)^2(0.9)^{10} \\
+&= 0.2824 + 0.3766 + 0.2301 \\
+&= 0.8891
+\end{aligned}
+$$
+
 ## Lec 17 — Ch 6: Binomial suitability, Activity 7 and the Geometric distribution (prepared 2026-10-23 from the after-class deck and the Activity 7 solutions; numbers changed)
 
 ### Q: Can the Binomial model the count, and why? (a) A pool has 8 civil and 4 computer science students, and a team of 4 is picked at random; $$X$$ is the number of computer science students on the team. (b) A pool has 300 civil and 200 computer science students, and a committee of 12 is picked at random; $$X$$ is the same count.
@@ -2109,6 +2159,165 @@ $$
 **Topic:** 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ)  **Lec:** 18  **Type:** apply
 **A:** The sample of 80 is Binomial, because there is a fixed number of trials $$n = 80$$ and each part is a success or not, so the count cannot pass 80. The cable is Poisson, because defects fall at a rate along a continuous length with no fixed number of trials, so the count has no upper limit. The fact that decides it is whether there is a fixed $$n$$.
 
+
+## Lec 19 — Ch 6: Activity 6, the Poisson count and the exponential wait (prepared 2026-10-28 from the deck and the Activity 6 solutions; numbers changed)
+
+### Q: The times between earthquakes in a region are modelled as exponential with an estimated rate of 0.18 per year. Find the probability that the next recurrence interval is shorter than 8 months.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** The rate is per year, so 8 months is $$t = \frac{8}{12} = 0.667$$ years. With $$T \sim \text{Exp}(0.18)$$:
+
+$$
+\begin{aligned}
+P(T < 0.667) &= 1 - e^{-0.18 \times 0.667} \\
+&= 1 - e^{-0.12} \\
+&= 0.1131
+\end{aligned}
+$$
+
+Using $$t = 8$$ gives $$1 - e^{-1.44} = 0.763$$, which is the probability of an interval shorter than 8 years.
+
+### Q: A histogram of observed recurrence intervals, in years, has these bars past 4 years. Bar 4 to 6: density 0.09. Bar 6 to 8: density 0.06. Bar 8 to 12: density 0.025. Bar 12 to 20: density 0.0075. What proportion of the observed intervals exceed 4 years? Compare it with the exponential model's value at rate 0.18 per year, and say why the two need not match.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** A bar's proportion is its density times its width.
+
+$$
+\begin{aligned}
+0.09 \times 2 &= 0.18 \\
+0.06 \times 2 &= 0.12 \\
+0.025 \times 4 &= 0.10 \\
+0.0075 \times 8 &= 0.06 \\
+\text{total} &= 0.46
+\end{aligned}
+$$
+
+The model gives $$P(T > 4) = e^{-0.18 \times 4} = e^{-0.72} = 0.487$$. The histogram is a sample and the rate is estimated from that same sample, so the observed 0.46 sits near the model's 0.487 but not on it.
+
+### Q: Events follow a Poisson process at rate $$\lambda$$ per hour, and $$T$$ is the wait until the first event. Derive the cdf and the pdf of $$T$$ from the Poisson count, and state $$P(T > t)$$ in both languages.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** derive
+**A:** The wait exceeds $$t$$ exactly when the count $$X_t$$ in $$(0, t]$$ is zero, and $$X_t \sim \text{Poisson}(\lambda t)$$.
+
+$$
+\begin{aligned}
+P(T > t) &= P(X_t = 0) \\
+&= \frac{e^{-\lambda t}(\lambda t)^0}{0!} = e^{-\lambda t} \\
+F(t) &= 1 - P(T > t) = 1 - e^{-\lambda t} \\
+f(t) &= \frac{d}{dt} F(t) = \lambda e^{-\lambda t}, \quad t \ge 0
+\end{aligned}
+$$
+
+So $$T \sim \text{Exp}(\lambda)$$, and "no events in $$t$$ hours" and "the first event is after $$t$$ hours" are one event with probability $$e^{-\lambda t}$$.
+
+### Q: Earthquakes strong enough to be felt hit a region at 0.3 per year as a Poisson process. Find the probability of no felt earthquake in the next 6 years, once through the Poisson count and once through the waiting time, and check the two agree.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** Count: $$X \sim \text{Poisson}(0.3 \times 6 = 1.8)$$, so $$P(X = 0) = e^{-1.8} = 0.1653$$.
+
+Wait: $$T \sim \text{Exp}(0.3)$$, so $$P(T > 6) = e^{-0.3 \times 6} = e^{-1.8} = 0.1653$$.
+
+They agree because "no earthquakes in 6 years" and "the first earthquake comes after year 6" are the same event.
+
+### Q: Felt earthquakes hit at 0.3 per year as a Poisson process, and one has just happened. Write the event "the 6th earthquake from now comes more than 20 years from now" as a statement about a Poisson count, name that count's distribution, and write the probability as a sum. Then write the complement event the same way. Give the value for checking only.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** The 6th earthquake is more than 20 years away exactly when at most 5 earthquakes fall in the next 20 years. Let $$Y$$ be the count in 20 years, $$Y \sim \text{Poisson}(0.3 \times 20 = 6)$$.
+
+$$
+\begin{aligned}
+P(W_6 > 20) &= P(Y \le 5) \\
+&= \sum_{y = 0}^{5} \frac{e^{-6} \times 6^y}{y!} \\
+&= 0.4457
+\end{aligned}
+$$
+
+The complement, "the 6th earthquake comes within 20 years", is $$P(Y \ge 6) = 1 - 0.4457 = 0.5543$$. The one just past is not counted, because the clock starts after it.
+
+### Q: Recurrence intervals are exponential with an annual rate of 0.2403. A classmate writes two lines: "$$P(T < 10 \text{ months}) = 1 - e^{-0.2403 \times 10} = 0.9096$$" and "$$P(T > 5) = 1 - e^{-0.2403 \times 5} = 0.699$$". Find the error in each and give the correct values.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** critique
+**A:** The first line uses 10 with a rate that is per year, so it is the probability of an interval under 10 years. Ten months is $$\frac{10}{12}$$ years:
+
+$$
+P\left(T < \frac{10}{12}\right) = 1 - e^{-0.2403 \times 0.833} = 0.1815
+$$
+
+The second line uses the cdf for an upper tail. "Longer than 5" is one minus the cdf:
+
+$$
+P(T > 5) = e^{-0.2403 \times 5} = 0.301
+$$
+
+### Q: Felt earthquakes hit at 0.3 per year as a Poisson process. Three years have passed with none. Find the probability that the next 2 years also have none, using the definition of conditional probability, and compare it with the unconditional probability of a quiet 2-year stretch.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** Let $$T$$ be the wait from the start. "None in the next 2 years, given none in the first 3" is $$T > 5$$ given $$T > 3$$.
+
+$$
+\begin{aligned}
+P(T > 5 \mid T > 3) &= \frac{P(T > 5)}{P(T > 3)} \\
+&= \frac{e^{-1.5}}{e^{-0.9}} = e^{-0.6} \\
+&= 0.5488
+\end{aligned}
+$$
+
+The unconditional $$P(T > 2) = e^{-0.6}$$ is the same number: the three quiet years do not change the chance of the next two. Equivalently, counts on the two non-overlapping intervals are independent, so the first three years tell you nothing about the next two.
+
+### Q: Customers reach a counter as a Poisson process, and the time between arrivals averages 2.5 minutes. (a) Give the rate per minute and the distribution of the time between arrivals. (b) Find the probability that the next customer arrives within 1 minute. (c) Find the expected number of arrivals in 10 minutes and the probability of exactly 4 in 10 minutes.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** (a) The mean wait is $$\frac{1}{\lambda} = 2.5$$, so $$\lambda = 0.4$$ per minute and $$T \sim \text{Exp}(0.4)$$.
+
+(b)
+
+$$
+P(T \le 1) = 1 - e^{-0.4} = 0.3297
+$$
+
+(c) The count in 10 minutes is $$X \sim \text{Poisson}(0.4 \times 10 = 4)$$, so $$E(X) = 4$$ and
+
+$$
+P(X = 4) = \frac{e^{-4} \times 4^4}{4!} = 0.1954
+$$
+
+The miss to avoid is using 2.5 as the rate, which gives $$1 - e^{-2.5}$$ in (b).
+
+### Q: Which distribution fits each count, with what parameters, and what single fact about the setup decides it? Tiles in a box of 40 are cracked with probability 0.03, independently. (a) The number of cracked tiles in one box. (b) The number of boxes opened until the first box that has at least one cracked tile. (c) Potholes occur along a highway at 1.5 per km; the number of potholes in a 2 km stretch. (d) The distance driven from a pothole to the next one. (e) The morning wait for a bus is exponential with mean 8 minutes; the number of the next 5 mornings on which the wait exceeds 10 minutes.
+**Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
+**A:**
+- (a) $$\text{Bin}(40, 0.03)$$: a fixed number of trials and a count of successes.
+- (b) $$\text{Geo}(p)$$ with $$p = 1 - 0.97^{40} = 0.704$$: trials until the first success, where one trial is one box and its success probability comes from (a).
+- (c) $$\text{Poisson}(1.5 \times 2 = 3)$$: events at a rate over a region with no fixed number of trials.
+- (d) $$\text{Exp}(1.5)$$ per km: the gap until the next event of a Poisson process, with distance in the role of time.
+- (e) $$\text{Bin}(5, p)$$ with $$p = P(T > 10) = e^{-10/8} = 0.2865$$: five fixed trials, each a success when its exponential wait passes the cutoff.
+
+### Q: Three counts: (a) the number of sixes in 10 rolls of a fair die, (b) the number of rolls until the first six, (c) the number of typos on a page when typos fall at 0.8 per page. Name each distribution and give its mean and variance. Which count has no upper limit, and which has a mean equal to its variance?
+**Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
+**A:**
+- (a) $$\text{Bin}(10, \frac{1}{6})$$: mean $$\frac{10}{6} = 1.667$$, variance $$10 \times \frac{1}{6} \times \frac{5}{6} = 1.389$$.
+- (b) $$\text{Geo}(\frac{1}{6})$$: mean $$6$$, variance $$\frac{5/6}{(1/6)^2} = 30$$.
+- (c) $$\text{Poisson}(0.8)$$: mean 0.8, variance 0.8.
+
+The Geometric and the Poisson have no upper limit; the Binomial stops at 10. Only the Poisson has mean equal to variance.
+
+### Q: A classmate models the number of customers arriving at a shop in an hour as $$\text{Bin}(60, p)$$, with $$p$$ the chance that a customer arrives in any given minute. What does this model get wrong about arrivals, which model fits better, and when do the two models agree?
+**Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** critique
+**A:** The Binomial caps the count at 60 and allows at most one arrival per minute, but two customers can arrive in the same minute and there is no fixed number of trials. Arrivals at a constant rate with independent non-overlapping intervals are a Poisson process, so the hourly count is $$\text{Poisson}(\lambda)$$ with $$\lambda$$ the hourly rate. The two agree when $$n$$ is large and $$p$$ small, which is the Poisson approximation to the Binomial run in reverse: $$\text{Bin}(60, p)$$ is close to $$\text{Poisson}(60p)$$ when $$60p < 5$$.
+
+### Q: A machine's parts fail as a Poisson process at 0.02 per hour. For each question name the model and write the probability: (a) at least one failure in an 8-hour shift; (b) the first failure is more than 100 hours away; (c) the number of the next 5 shifts with no failure, and the probability that all 5 are failure-free.
+**Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
+**A:** (a) The count in 8 hours is $$X \sim \text{Poisson}(0.02 \times 8 = 0.16)$$:
+
+$$
+P(X \ge 1) = 1 - e^{-0.16} = 0.1479
+$$
+
+(b) The wait is $$T \sim \text{Exp}(0.02)$$:
+
+$$
+P(T > 100) = e^{-0.02 \times 100} = e^{-2} = 0.1353
+$$
+
+(c) A shift is failure-free with probability $$e^{-0.16} = 0.8521$$, so the number of failure-free shifts is $$Y \sim \text{Bin}(5, 0.8521)$$ and
+
+$$
+P(Y = 5) = 0.8521^5 = 0.4493
+$$
+
+which is also $$e^{-0.16 \times 5} = e^{-0.8}$$, no failure in 40 hours.
 
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
@@ -3429,3 +3638,83 @@ P(Y \ge 4) &= \binom{5}{4}p^4(1 - p) + p^5 \\
 $$
 
 The usual miss is using the mean 4 as the rate, which gives $$1 - e^{-8}$$.
+
+### Q: Activity 6 with new numbers. A region's 80 recorded recurrence intervals between earthquakes give an estimated rate of 0.32 per year, and the intervals are modelled as exponential. (a) Find the probability that the next interval is shorter than 9 months. (b) The histogram's bars past 4 years are: 4 to 6 years, density 0.07; 6 to 8, density 0.035; 8 to 12, density 0.0125; 12 to 16, density 0.005. Find the observed proportion of intervals longer than 4 years and the model's value. (c) Using a Poisson count, find the probability of no earthquakes in 4 years. (d) Explain why (b) and (c) give the same model value. (e) An earthquake has just occurred. Find the probability of waiting more than 25 years for the 8th earthquake after it.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
+**A:** Steps:
+1. Convert months to years, then use the exponential cdf.
+2. Observed proportion is the sum of density times width; model value is $$e^{-\lambda t}$$.
+3. The count in $$t$$ years is $$\text{Poisson}(\lambda t)$$; take its zero term.
+4. Say the two events are the same event.
+5. Translate "the 8th event after 25 years" into "at most 7 events in 25 years" and sum eight Poisson terms.
+
+(a) $$t = \frac{9}{12} = 0.75$$ years.
+
+$$
+\begin{aligned}
+P(T < 0.75) &= 1 - e^{-0.32 \times 0.75} \\
+&= 1 - e^{-0.24} = 0.2134
+\end{aligned}
+$$
+
+(b) Observed:
+
+$$
+\begin{aligned}
+0.07 \times 2 &= 0.14 \\
+0.035 \times 2 &= 0.07 \\
+0.0125 \times 4 &= 0.05 \\
+0.005 \times 4 &= 0.02 \\
+\text{total} &= 0.28
+\end{aligned}
+$$
+
+Model: $$P(T > 4) = e^{-0.32 \times 4} = e^{-1.28} = 0.2780$$. The sample proportion is close to the model.
+
+(c) $$X \sim \text{Poisson}(0.32 \times 4 = 1.28)$$, so $$P(X = 0) = e^{-1.28} = 0.2780$$.
+
+(d) Waiting more than 4 years for the next earthquake is the event of no earthquakes in 4 years, so $$P(T > 4) = P(X = 0)$$ and both are $$e^{-1.28}$$.
+
+(e) The 8th earthquake is more than 25 years away exactly when at most 7 fall in the next 25 years. $$Y \sim \text{Poisson}(0.32 \times 25 = 8)$$:
+
+$$
+\begin{aligned}
+P(Y \le 7) &= \sum_{y = 0}^{7} \frac{e^{-8} \times 8^y}{y!} \\
+&= e^{-8}(1 + 8 + 32 + 85.33 + 170.67 \\
+&\quad + 273.07 + 364.09 + 416.10) \\
+&= 0.4530
+\end{aligned}
+$$
+
+### Q: Calls reach a call centre as a Poisson process at 4 per minute. (a) Find the probability of more than 6 calls in a given minute. (b) Find the probability of no calls in a 30-second stretch, once through the Poisson count and once through the waiting time. (c) Call a 30-second stretch quiet when it has no calls. In 10 non-overlapping 30-second stretches, name the distribution of the number of quiet ones and find the probability of at least 2. (d) Name the distribution of the number of 30-second stretches until the first quiet one and give its mean.
+**Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
+**A:** Steps:
+1. One minute's count is $$\text{Poisson}(4)$$; "more than 6" is one minus the terms for 0 to 6.
+2. Scale the rate to 30 seconds, $$\lambda t = 2$$, and take the zero term; match it with $$P(T > 0.5)$$ for $$T \sim \text{Exp}(4)$$.
+3. Quiet stretches out of 10 are $$\text{Bin}(10, e^{-2})$$, because the stretches do not overlap; "at least 2" is the complement of 0 and 1.
+4. Stretches until the first quiet one are $$\text{Geo}(e^{-2})$$ with mean $$e^{2}$$.
+
+(a) $$X \sim \text{Poisson}(4)$$:
+
+$$
+\begin{aligned}
+P(X \le 6) &= e^{-4}\left(1 + 4 + 8 + \frac{32}{3} + \frac{32}{3} + \frac{128}{15} + \frac{256}{45}\right) \\
+&= 0.8893 \\
+P(X > 6) &= 0.1107
+\end{aligned}
+$$
+
+(b) Count: $$X_{0.5} \sim \text{Poisson}(4 \times 0.5 = 2)$$, so $$P(X_{0.5} = 0) = e^{-2} = 0.1353$$. Wait: $$T \sim \text{Exp}(4)$$ per minute, so $$P(T > 0.5) = e^{-4 \times 0.5} = e^{-2} = 0.1353$$.
+
+(c) Each stretch is quiet with probability $$p = 0.1353$$ and the stretches are independent, so $$Y \sim \text{Bin}(10, 0.1353)$$.
+
+$$
+\begin{aligned}
+P(Y = 0) &= 0.8647^{10} = 0.2336 \\
+P(Y = 1) &= 10(0.1353)(0.8647)^9 = 0.3656 \\
+P(Y \ge 2) &= 1 - 0.2336 - 0.3656 \\
+&= 0.4008
+\end{aligned}
+$$
+
+(d) $$N \sim \text{Geo}(0.1353)$$ with mean $$\frac{1}{0.1353} = 7.39$$ stretches, about 3.7 minutes.

@@ -1,12 +1,12 @@
 # STAT 251 — Lec 18 (Fri Oct 23) — Ch 6: The Poisson distribution, the Poisson process and the Poisson approximation
 
-Prepared 2026-10-23 from the after-class deck `Lecture_18_Chapter_6_CanvasPost_AL.pdf` (17 slides with solutions). The recording was not posted when this page was written. Questions: 9 in [the bank](../02-questions.md) under "Lec 18" (7 short, 2 long problems).
+You sent no page for this lecture, so this file is the after-class deck `Lecture_18_Chapter_6_CanvasPost_AL.pdf` (17 slides with solutions) organised for study. The Panopto recording was not read. Questions: 9 in [the bank](../02-questions.md) under "Lec 18" (7 short, 2 long problems).
 
 ## Slides, organized
 
 ### The Poisson distribution (slides 3 and 4)
 
-- The Poisson is a discrete distribution for the number of events in a fixed interval of time or space, when events happen independently at a known constant rate.
+- The **Poisson** is a discrete distribution for the number of events in a fixed interval of time or space, when events happen independently at a known constant rate.
 - Written $$X \sim \text{Poisson}(\lambda)$$ with rate $$\lambda > 0$$:
 
 $$
@@ -26,11 +26,20 @@ $$
 ### Mean and variance (slide 5)
 
 - $$E(X) = \lambda$$ and $$\operatorname{Var}(X) = \lambda$$: the mean and the variance are the same number.
-- The deck leaves the derivation as an exercise.
+- The deck leaves the derivation as an exercise; the mean goes like this.
+
+$$
+\begin{aligned}
+E(X) &= \sum_{x = 1}^{\infty} x \frac{\lambda^x e^{-\lambda}}{x!} \\
+&= \lambda e^{-\lambda} \sum_{x = 1}^{\infty} \frac{\lambda^{x - 1}}{(x - 1)!} \\
+&= \lambda e^{-\lambda} e^{\lambda} \\
+&= \lambda
+\end{aligned}
+$$
 
 ### The Poisson process (slide 6)
 
-- Four properties make a count a Poisson process.
+- Four properties make a count a **Poisson process**.
   - Counts on intervals that do not overlap are independent.
   - The number of events in an interval is proportional to the length of the interval.
   - The probability of an event in an interval of a given length does not change from one interval to another.
@@ -39,7 +48,7 @@ $$
 
 ### Waiting times are exponential (slide 7)
 
-- If the count in each unit interval is $$\text{Poisson}(\lambda)$$, the time $$T$$ between two events, or until the first event, is continuous and exponential:
+- If the count in each unit interval is $$\text{Poisson}(\lambda)$$, the time $$T$$ between two events, or until the first event, is continuous and **exponential**:
 
 $$
 \begin{aligned}
@@ -59,7 +68,7 @@ $$
 \begin{aligned}
 P(X_5 > 3) &= 1 - P(X_5 \le 3) \\
 &= 1 - e^{-15}\left(1 + 15 + \frac{15^2}{2} + \frac{15^3}{6}\right) \\
-&= 0.9997
+&= 0.9998
 \end{aligned}
 $$
 
@@ -76,13 +85,13 @@ $$
 $$
 \begin{aligned}
 P(X > 3) &\approx 1 - e^{-1}\left(1 + 1 + \frac{1}{2} + \frac{1}{6}\right) \\
-&= 0.0189
+&= 0.0190
 \end{aligned}
 $$
 
 ### Example 6: an exponential feeding a Binomial (slides 14 to 16)
 
-- Time to be served in a cafeteria is exponential with mean 3 minutes, so $$\lambda = \frac{1}{3}$$.
+- Time to be served in a cafeteria is exponential with mean 3 minutes, so $$\lambda = \frac{1}{3}$$ per minute.
 - One day, served in under 1 minute: $$P(X < 1) = 1 - e^{-1/3} = 0.283$$.
 - Over the next 6 days, the number of days $$Y$$ served in under a minute is $$\text{Bin}(6, 0.283)$$.
 - At least five of the six days:
@@ -97,3 +106,10 @@ $$
 ### Next class (slide 17)
 
 - More Poisson examples and an activity.
+
+## Clarifications
+
+- The deck prints 0.9997 for Example 4 and 0.0189 for Example 5's approximation. The sums are 0.99979 and 0.01899, which round to 0.9998 and 0.0190; the deck truncated. Either rounding earns the mark, but show the sum.
+- The second process property is about the expected count: the mean number of events in an interval is the rate times its length, $$\lambda t$$, which is why $$X_t \sim \text{Poisson}(\lambda t)$$. The count itself varies.
+- The exponential's $$\lambda$$ is the Poisson rate per unit of time, so put $$t$$ in that unit before using $$e^{-\lambda t}$$. In Example 6 a mean of 3 minutes gives a rate of $$\frac{1}{3}$$ per minute; using 3 as the rate is the standard miss.
+- Example 6 is the chapter's pattern for combining models: one distribution gives a per-day probability $$p$$, and a Binomial counts the days out of $$n$$ on which that event happens.
