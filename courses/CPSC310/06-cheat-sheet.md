@@ -1,192 +1,162 @@
 # CPSC 310 — Midterm cheat sheet (Thu Oct 29, 19:00, HEBB 100)
 
-One 8.5 by 11 sheet, handwritten, both sides, collected at the end. Kyle's rule: write what helps you apply the principles and the TypeScript syntax, not trivia. Copy Side 1 and Side 2 below by hand; writing it is the first study pass. REST (lecture 13) is not on the midterm, so it is left off. If you run out of room, drop sections in this order: the HTTP lines, the reader's API advice list, the coverage example numbers, the test-levels table.
+One 8.5 by 11 sheet, handwritten, both sides. Every question is over code you have not seen and asks what is wrong, what you would change, and why. So the sheet is built for that: the recipe for each question type, a diagnosis table you scan for the tell in the code, one worked example per type, then compact reference tables and code skeletons. Lay it out in that order with a ruler line between zones. REST (lecture 13) is not on the midterm. If you run short of room, drop zone 6 first, then the HTTP lines, then the syntax list.
 
-## Side 1 · Module 1 and testing
+## Side 1
 
-### How to answer (top of the sheet)
-- Critique question: name the term, then the cost it imposes on the next change (footprint, magnitude, risk), then the lever by its reader name, then what the fix costs.
-- Never say "bad design" without naming the cost. Every question is "what does the next change cost, where does the cost come from, which lever lowers it".
-- True or false: verdict first, then one sentence with the exact term, then the rule or counterexample it rests on.
-- Lab stems to expect: degree, connascence type, how you would find out (compile error or runs wrong); data, logic or order binding; controllability, observability; precondition, postcondition.
-- Cost of a change: magnitude is how big (lines); footprint is how widespread (methods, classes, files, modules, services). The risk is missing part of the footprint.
+### Zone 1 · Recipes, one per question type
 
-### Coupling
-- Coupling is the relationship between components, formed by dependencies (imports, calls, shared data, assumptions). It produces footprint. Loosen it, never try to remove it.
-- Explicit dependency: the compiler sees it, so a missed site is a build error. Implicit: only shows at run time (string keys, `switch (field)`, rows parsed by position, literals in tests). Tell: "if I change this, what tells me?" If nothing until it runs, implicit.
+**True or false, and justify.**
+1. Verdict.
+2. The rule, in the reader's words.
+3. The case that decides it: a counterexample if false, the mechanism if true.
 
-| Axis | Question | Lever |
-|---|---|---|
-| Degree | How many components share it? | Fewer shared interfaces |
-| Locality | How far apart do they sit? | Pull shared code into one module |
-| Strength (connascence) | How much effort to change it? | Move up the table toward Name |
+**What is wrong here, what would you change, why.**
+1. Find the tell in the diagnosis table.
+2. Name it with the exact term.
+3. Name the cost: what the next change costs (footprint across files, found by hand because the compiler cannot see it) or the risk it adds.
+4. Name the fix by its catalogue name and write two or three lines of it.
+5. One line on what the fix costs (an interface, more classes).
 
-| Connascence | Must agree on | Example | Missed site |
+**Which pattern, is it a good fit.**
+1. Change: which decision varies.
+2. Pain: scatter (coupling, one edit per place) or tangle (cohesion, mixed with unrelated code).
+3. Mechanism: the abstraction, who calls it without knowing the concrete type, what triggers the call.
+4. Cost: the indirection added, and the closed axis (new implementation cheap, new operation expensive).
+5. If requirements are stable or there is one concrete case, say the pattern hurts.
+
+**Why is this hard to test, make it testable.**
+1. Controllability: which input or dependency the code gets for itself (clock, random, `new`, a global).
+2. Observability: which result only leaves as a print or a side effect.
+3. Fix: parameters in, values out; an interface plus constructor injection (DIP).
+4. Double: stub controls what comes back, spy records what was sent.
+5. The double must keep the interface's contract, not just its shape (LSP).
+
+**Partition this function.**
+1. Input: parameter type, narrowed by preconditions, split valid and invalid.
+2. Output: return type plus thrown errors, split normal and error.
+3. One value per class; one value may cover an input class and an output class.
+4. A boundary pair on each side of every edge.
+5. Count the classes.
+
+**Severity and next version.**
+1. For each change ask what the client must do: change code is MAJOR; nothing, new feature is MINOR; nothing, behaviour improves is PATCH; nothing at all is NONE.
+2. Bump the worst, reset the numbers below it.
+
+### Zone 2 · Diagnosis table: you see, it is, it costs, do this
+
+| You see in the code | It is | It costs | Do this |
 |---|---|---|---|
-| Name | What it is called | rename `findUserById` | compile error |
-| Type | Shape of the data | add required `age` field | compile error |
-| Value | Meaning of a literal | `1.25` in two files, `"+25%"` in a third | runs, wrong |
-| Position | An ordering | `createInvoice(total, tax)` swapped | compiles, silently wrong |
-| Algorithm | Same computation same way | encoder here, decoder there | runs, wrong |
+| The same literal (`1.25`, `"+25%"`, a URL) in several files | connascence of Value, a magic value | runs wrong when one copy changes; found by hand | one named constant (replace magic number) |
+| Several arguments of one type; a call site has them swapped | connascence of Position | compiles, silently wrong | a parameter object with named fields (drops to Type) |
+| `switch (kind)` or `if (type === "x")` repeated in several clients | connascence of Algorithm, duplicated dispatch | every new kind edits every switch | an interface and one class per kind (Adapter, State, Decorator); clients drop to Type |
+| An encoder here and a decoder there; two copies of one rule | connascence of Algorithm, almost-duplicate code | both must change together and nothing says so | pull up or extract method; a shared sequence with one varying step becomes a template method |
+| String keys, rows parsed by position, literals inside tests | implicit dependency | nothing fails until it runs | make it explicit with types and named fields |
+| Many components import the same thing | high degree | one change, many edits | fewer shared interfaces; one interface instead of one per source |
+| The same agreement kept in two modules or services | poor locality | footprint crosses the boundary | pull the shared code into one module |
+| `a.b.c.d()` chains; a method uses another class's fields | feature envy, Law of Demeter | coupled to that class's internals | move the method there: `fido.beChased()` |
+| A method whose statements share no data, logic or order binding | low cohesion | change is hard to understand and risky | extract method or extract class; the statement with no binding moves out |
+| A field used by two of ten methods | low class cohesion | unrelated code moves together | extract a class around that field and those methods |
+| `new SmtpClient()`, `Date.now()`, `Math.random()`, a global, inside the method | uncontrollable | a test cannot set the input | pass it in as a parameter or through the constructor; interface plus stub |
+| Only `console.log`, a file write, or `void` | unobservable | a test cannot assert | return the value; spy on the dependency |
+| A subclass throws for inputs the parent accepts, or has extra effects | LSP violation: stronger precondition or weaker postcondition | callers written for the parent break | do not subclass, or make the subclass accept at least as much |
+| A double returns `undefined` where the interface promises a throw | LSP violation: shape without contract | tests pass, code is wrong | make the double honour EFFECTS |
+| The core imports `fs`, `express` or `axios`; parsing sits inside the rule | boundary leak, SRP broken | a storage change edits the rule; the rule cannot be unit tested | a port interface in the core, an adapter at the edge, `main.ts` wires them |
+| An API exposes internal arrays or fields; the caller must call in an order | information hiding, easy to misuse | clients couple to internals, and APIs are forever | return immutable results; make the wrong order impossible with types |
+| A public method removed or renamed; a parameter type changed | MAJOR change | every client edits code | add beside it and deprecate; a union type or a defaulted parameter instead |
+| Refactoring while tests are red, or inside a bug fix | process error | cannot tell which change broke it | green first; fix, then refactor; tests before and after |
 
-- Name and Type fail at compile time; Value, Position and Algorithm fail at run time, so you find the footprint by hand.
-- On the exam: same literal in several files is Value; a long list of same-typed arguments is Position; two components implementing halves of one protocol is Algorithm. A `switch` per variant in each client is Algorithm; an interface drops it to Type; one interface instead of one per source drops Degree.
+### Zone 3 · Worked examples, one per type
 
-### Cohesion
-- Cohesion is the relationship within one unit: how focused it is on one complete task. Low cohesion makes a change difficult (work out what the unit does first) and risky (an edit disturbs unrelated code). High cohesion means more, smaller classes, and that is the intended trade.
+- True or false: "a good time to refactor is while fixing a bug". False. A refactoring preserves behaviour and a bug fix changes it on purpose, so a later failure cannot be attributed to either. Fix, get green, then refactor.
+- Critique: `applyDiscount(0.15, price)` compiles and the tests pass. Connascence of Position: both arguments are numbers and their order is the agreement. The type checker sees number, number and cannot object. Fix: `applyDiscount({ price, pct })`, which drops it to Type, so a swap is a compile error.
+- Pattern: `Group` holds a `Shape[]` and `area()` sums the members. Composite: Component is `Shape`, Leaf is `Circle`, Composite is `Group`. Adding `Triangle` is one class, cheap. Adding `perimeter()` touches the interface and every class, expensive.
+- Test: `sendReminder(id)` builds an email and calls `new SmtpClient().send(e)`. Uncontrollable because it constructs its own client; unobservable because nothing is returned. Fix: `sendReminder(id, mailer: Mailer)` and a `SpyMailer` with `sent: Email[]`; assert on `sent[0]`.
+- Partition: a percentage 0 to 100 returns fail below 50, pass from 50 to 84, distinction from 85, and throws outside. Input: 1 valid, 2 invalid. Output: 3 normal, 1 error. Boundaries: -1 and 0, 49 and 50, 84 and 85, 100 and 101.
+- Severity: version 2.4.3. `search()` gains an optional `limit`: MINOR. An unstable sort becomes stable: PATCH. `delete(id)` throws instead of returning false: MAJOR. Result 3.0.0.
 
-| Binding | Two statements that | Example |
+## Side 2
+
+### Zone 4 · Reference tables
+
+| Connascence | Agree on | Missed site |
 |---|---|---|
-| Data | read or write the same data | total, min, max from one `readings` array |
-| Logic | sit in the same branch and run because it held | delete cache file and send "cache cleared" email |
-| Order (reader: timing) | must run in a fixed sequence | logger, config, database, server |
+| Name | what it is called | compile error |
+| Type | shape of the data | compile error |
+| Value | meaning of a literal | runs wrong |
+| Position | an ordering | compiles, wrong |
+| Algorithm | same computation | runs wrong |
 
-- A pair with several bindings belongs together; a statement sharing nothing with its neighbours moves out first. Class tell: a field used by only two methods belongs with them, elsewhere.
+- Coupling axes: degree (how many share it), locality (how far apart), strength (connascence, how hard to change). Loosen, never remove.
+- Bindings: data (same data), logic (same branch), order (fixed sequence). Several bindings means keep together.
 
-### Refactoring and debt
-- Refactoring is a predictable, meaning-preserving (behaviour-preserving) transformation. No feature, no fix.
-- Process: tests pass, examine coupling and cohesion, pick one refactoring, apply, tests pass again, repeat. Tests run twice so a later failure can only be the refactoring.
-- Do not refactor when tests fail, when a rewrite is right, near a deadline, or while fixing a bug (a fix changes behaviour on purpose; mixing hides which change did what). Never on a schedule: on a smell, around a feature, in review.
-- Catalogue: rename, move, extract method, extract interface, extract class, pull up, push down, replace magic number or string with constant, replace inheritance with delegation.
-- Reader examples: `Invoice.printOwing()` banner plus sum shared logic and order but no data, so Extract Method into `getOwing()`. `RoomsParser` and `CourseProcessor` had matching shapes, so Extract Interface `IParser`, coupling drops to Type.
-- Three signs a change is hard, each with its abstraction: same change in several places (consolidate), collides with a teammate (split the tangle), too obscure (make it readable). Rule of three: do it, note the duplicate, refactor on the third. Early abstraction can hurt.
-- Technical debt is the extra cost of changing later because of earlier shortcuts; it compounds like interest. Not all debt is bad; bad debt slows the team or raises risk.
+| Pattern | Intent | Shape | Cheap | Expensive |
+|---|---|---|---|---|
+| Adapter | foreign interface into the one clients expect | one adapter per source behind one interface | new source | new query on the interface |
+| Composite | tree, one and many treated alike | Component, Leaf, Composite holds components | new role | new operation |
+| Decorator | add behaviour to one object at run time | is a Component and has a Component | new add-on | new property |
+| State | behaviour changes with state | context holds one state, forwards every event; states call `setState()` | new state | new event |
 
-| Smell | Coupling it creates | Fix |
-|---|---|---|
-| Feature envy (method wants another class's fields; Law of Demeter tell is a long chain `a.b.c.d()`) | to that class's internals | move the behaviour there: `fido.beChased()` |
-| Magic values | connascence of Value | named constant |
-| Almost-duplicate code | connascence of Algorithm | pull up the shared part; a sequence with one varying step becomes a template method |
+- Adapter changes the interface and keeps behaviour. Decorator keeps the interface and changes behaviour. Composite keeps the interface and holds many. Decorator order matters: large times 1.2 outside a 100 shot on a 400 latte is 600, inside it is 580.
+- OCP: open for extension, closed for modification, by depending on an abstraction. Before adding an extension point: what will vary, what must stay stable, is the variation likely.
+- Pattern costs to quote: one class per variant; Decorator order cannot be enforced and `instanceof` breaks; State transitions spread out and `setState()` is public; Composite and Adapter make a new operation expensive.
 
-### Testability
-- Controllability: the degree to which a test can set the inputs and state the code depends on. Lowered by hidden inputs (clock, randomness), global or shared state, dependencies the code constructs itself (`new SmtpClient()`), hard preconditions. Raised by passing inputs and dependencies in as parameters.
-- Observability: the degree to which a test can inspect results and effects. Lowered by output only printed, intermediate values never returned, private state, effects on external systems. Raised by returning values.
-- Reader adds isolateability (locate a fault inside the unit; controllability plus observability give it) and automatability.
-- Deck example: `printStatus()` writes to `console.log` (unobservable) and reads `Date.now()` itself (uncontrollable). Fix: pass the clock in, return the string.
-- Contract: REQUIRES (preconditions), MODIFIES, EFFECTS (postconditions). Write the test from the contract first as Given, When, Then; it shows which state the class must expose (`Animal` needed `isHungry()` and `amountEaten()`). TDD: red, green, refactor.
-
-### Doubles, DIP, LSP
-- Double a dependency only when it is uncontrollable (bank, clock), unobservable (cannot see what was sent) or unsafe or slow (money, network). Fast, deterministic, side-effect free: use the real thing.
-- DIP: depend on abstractions, not implementations. `buyCoffee` takes an `IReader`; the real reader and the test's reader both implement it. That is what makes a double possible.
-- Stub controls what comes back (approving reader, declining reader): controllability. Spy records what was sent (recording reader): observability. One object can be both (`FakeLocator`). Reader's generic word: fake.
-- Compiling is not enough: any object with `charge(): boolean` compiles as an `IReader`, but types check shape, not contract.
-- LSP: a property provable about objects of type T holds for objects of any subtype S. A subclass must not break the superclass's promises. A double is a subtype of the interface, so LSP decides whether it is valid.
-- LSP methods rule: for the same inputs a subtype must not strengthen preconditions (widening is fine) and must not weaken postconditions (narrowing is fine). Penguin needs height under 50 cm: stronger precondition. Setting width also changes height: weakened postcondition.
-- Costs of doubles: another layer; doubles drift and must be updated when the interface changes; the real implementation still needs its own tests.
-
-### Suites, partitions, coverage
-- Strong suite: right inputs (every spec behaviour), precise checks (would notice a wrong answer), reliable results (deterministic, doubles for the rest), covers most behaviour.
-- Build order: requirements; stubs with specifications; behavioural tests against the specs; implement until green; measure the suite (coverage, mutants); then structural tests. Spec tests test only the spec.
-- Equivalence class partitioning is black-box, from the spec. Input domain: parameter type, narrowed by preconditions, split valid and invalid. Output range: return type plus documented errors, split by postconditions into normal and error. One value per class; one value can cover an input class and an output class. Then boundaries: one value each side of every edge (`>=` written as `>`).
-- `getLetterGrade` 0 to 100: input 1 valid and 2 invalid, output 5 normal and 1 error, 9 classes; picks -10, 25, 52, 60, 72, 90, 110; boundaries -1 and 0, 49 and 50, 54 and 55, 67 and 68, 79 and 80, 100 and 101. `"80"` and `null` are outside the type, not tested.
-- Partition both views because they diverge when an output depends on a combination of inputs.
-- Coverage: line, statement (every statement on the line), branch (each outcome of each decision), path (every combination). Two independent ifs, one test: 67% line, 50% branch, 25% path; 100% takes 1, 2, 4 tests. Limits: no correctness check, fooled by assertion-free tests, ignores the input space, thresholds gamed. ECP says what to test; coverage says what ran.
-
-| Level | Where | How many | Trade |
-|---|---|---|---|
-| Unit | within a boundary, doubles for dependencies | most | fast, localizes faults, only isolation |
-| Integration | between boundaries, real adapter on a real resource (temp file) | several per boundary | bridges the two |
-| End-to-end | across boundaries, as used | a few | real assurance, poor localization, many reasons to fail, expensive |
-
-- Test at the narrowest level that can see the bug.
-
-### HTTP (Lab 1)
-- 2XX worked (200, 201 Created, 204), 4XX client's fault (400 malformed request, 404 missing, 422 well-formed but invalid), 5XX server failed. PUT is idempotent (resend, same state); POST is not. A missing `await` returns a pending Promise and the error escapes.
-
-## Side 2 · Patterns, boundaries, APIs, TypeScript
-
-### Pattern analysis
-- A design pattern is a tried and true solution to a recurring design problem, what emerges when you keep a likely change local. Not a diagram to copy, not a library, not a rule. Structural (Adapter, Composite, Decorator), creational, behavioural (State).
-- Four questions, all four every time: Change (which decision varies), Pain (does it scatter, a coupling problem, or tangle, a cohesion problem), Mechanism (abstraction that gives it one home; polymorphism so callers stay oblivious; the trigger that calls it), Cost (indirection added, worth it?).
-- Help when change is likely, variability exists, coupling hurts. Hurt when requirements are stable, one concrete case, abstraction costs more than the benefit.
-
-| Pattern | Intent | Mechanism | Cost |
-|---|---|---|---|
-| Adapter | convert an interface into the one clients expect | `MusicSource.getRecords()`, one adapter per platform, report loops over `MusicSource[]` | one class per platform; shared record carries only fields every platform has |
-| Composite | compose objects into trees, treat one and many uniformly | Component interface; Leaf answers for itself; Composite holds components and asks each (`Manager.getTotalSalary()` sums reports) | one class per role; new operation touches the interface and every class |
-| Decorator | attach behaviour to one object at run time | decorator is a Component and has a Component; call enters the outermost wrapper, each changes the inner answer: `new Large(new Whip(new Latte()))` | one class per add-on; order changes the result and cannot be enforced; wrappers cannot see each other; `instanceof` breaks |
-| State | object changes behaviour with its state, an OO state machine | `PhoneState` interface; context holds one state and forwards every event; each state handles every event and calls `setState()` | one class per state; transitions spread out; new event touches every state; `setState()` public |
-
-- Adapter changes the interface, keeps behaviour. Decorator keeps the interface, changes behaviour. Composite keeps the interface, holds many in a tree. Decorator order: 400 latte, large times 1.2 outside a 100 shot gives 600, inside gives 580.
-- OCP: open for extension, closed for modification, by depending on an abstraction and adding a new implementation. Every pattern is open to new implementations, closed to new operations.
-
-| Pattern | Cheap (one new class) | Expensive (every class) |
-|---|---|---|
-| Adapter | new music service | new query on `MusicSource` |
-| Composite | new role | new operation (average salary) |
-| Decorator | new add-on | new property (calories) |
-| State | new state | new button |
-
-- Before adding an extension point: what will vary, what must stay stable for dependants, is the variation really likely. Each one costs an interface, a dispatch, more classes.
-
-### Boundaries
-- Business logic: the rules that make the system worth having; changes when the business changes. Everything else moves data in and out (files, DB, UI, services, logging, caching, auth); changes when the world outside changes.
-- Core holds business logic, imports nothing from outside, does no I/O. Edges hold I/O, parsing, validation, config such as paths, services.
-- Port: an interface the core owns, in the core's terms (`BookingStore`). Adapter: implements the port with real resources (`JsonBookingStore`). `main.ts` picks the adapter. Every dependency points inward (DIP). Unlike lecture 8's Adapter, the port belongs to the core, so a storage change cannot leak in.
-- Mixing costs: every change risks the others; no job testable alone; no job reusable alone. SRP: one reason to change. After the split a file rename touches the adapter, a new rule touches the core (plain-object unit tests), a new frontend is a new edge calling `book()`.
-- Tests follow the parts: many unit with a fake store, a few integration with a temp file, one or two end-to-end through `main.ts`.
-
-### API design and change severity
-- An API is how programs communicate. APIs are forever: once published it is a dependency for many clients. Internals change freely; the surface rarely, never breaking.
-- Start with the task: what should be easy, what sequence feels natural, what mistakes should it prevent.
-
-| Principle | Ask of the fragment |
+| Testing list | Items |
 |---|---|
-| Information hiding | internal state or structure exposed? |
-| Obliviousness | must the caller know the implementation to use it right? |
-| Easy to use, hard to misuse | can the types prevent wrong order or bad arguments? |
-| Contract completeness | do signatures and JSDoc say what can go wrong and what callers can rely on? |
+| Strong suite | right inputs, precise checks, reliable results, covers most behaviour |
+| Build order | requirements, stubs with specs, behavioural tests, implement to green, measure (coverage, mutants), structural tests |
+| Coverage | line, statement, branch, path; two independent ifs and one test give 67, 50, 25 percent; full needs 1, 2, 4 tests |
+| Coverage limits | no correctness, fooled by assertion-free tests, ignores the input space, thresholds gamed |
+| Levels | unit within a boundary with doubles (most); integration between boundaries on a real resource (several per boundary); end-to-end across (a few, poor fault localization) |
+| Double when | uncontrollable, unobservable, unsafe or slow; otherwise use the real thing |
+| Double costs | another layer, drift from the real thing, the real one still needs tests |
 
-- Reader's advice: do one thing; stay small (hard to shrink later); short parameter lists; return descriptive objects, not primitives; errors in the API's own terms; immutable return values; design for the developer.
+- LSP: a property provable of type T holds for any subtype S. Methods rule: no stronger preconditions, no weaker postconditions, for the same inputs.
+- Contract: REQUIRES, MODIFIES, EFFECTS. Test from the contract first as Given, When, Then. TDD: red, green, refactor.
+- Refactoring: meaning-preserving, no feature, no fix; tests twice. Not when tests fail, when rewriting, near a deadline, during a bug fix. Rule of three. Signs a change is hard: same edit in several places, collides with a teammate, too obscure. Debt is interest on a shortcut.
 
 | Severity | Client must | Example |
 |---|---|---|
-| MAJOR | change code | remove a method, change a parameter type, throw where it returned |
-| MINOR | nothing; new compatible functionality, structural | new method, optional parameter |
-| PATCH | nothing; compatible behavioural improvement | bug fix, performance (deck) |
+| MAJOR | change code | remove a method, change a type, throw where it returned |
+| MINOR | nothing, new feature | new method, optional parameter |
+| PATCH | nothing, behaviour improves | bug fix, performance (deck) |
 | NONE | nothing | refactoring |
 
-- Semver Major.Minor.Patch: bump the most severe, reset below. 3.8.1 then fix 3.8.2, optional parameter 3.9.0, breaking 4.0.0.
-- `checkout(book, duration: number)` to a `Duration` object breaks at compile time; reinterpreting the number as weeks keeps the signature and breaks at run time, worse. Non-breaking routes: union `number | Duration`, new method, new parameter with a default. A defect fix is breaking when clients rely on the defect. Performance: deck says PATCH, reader says minor; structural opt-in is minor, behavioural nothing-to-change is patch.
+- Semver: 3.8.1 then a fix 3.8.2, an optional parameter 3.9.0, a breaking change 4.0.0. A defect fix is breaking when clients rely on the defect. `checkout(book, duration: number)` to a `Duration` object breaks at compile time; reinterpreting the number as weeks breaks at run time, worse; non-breaking routes are a union `number | Duration`, a new method, or a defaulted parameter.
+- API principles: information hiding, obliviousness, easy to use and hard to misuse, contract completeness. Reader: do one thing, stay small, short parameter lists, return objects not primitives, errors in the API's terms, immutable results, design for the developer.
+- Boundaries: business logic is the rules that make the system worth having; the core holds it, imports nothing, does no I/O; edges do I/O, parsing, validation, config. A port is an interface the core owns in its own terms; an adapter implements it with real resources; dependencies point inward. Mixing costs: every change risks the others, nothing testable alone, nothing reusable alone. SRP: one reason to change.
+- HTTP (Lab 1): 2XX worked (200, 201 Created, 204), 4XX client's fault (400 malformed, 404 missing, 422 well-formed but invalid), 5XX server failed. PUT is idempotent, POST is not. A missing `await` returns a pending Promise and the error escapes.
 
-### TypeScript syntax
+### Zone 5 · Code skeletons
+
 ```ts
 interface Drink { getDescription(): string; getPriceCents(): number; }
-class Latte implements Drink {
-  getDescription() { return "latte"; }
-  getPriceCents() { return 400; }
-}
-class Whip implements Drink {                      // Decorator: is a Drink, has a Drink
-  constructor(private inner: Drink) {}             // declares and assigns the field
+class Whip implements Drink {                        // Decorator: is a Drink, has a Drink
+  constructor(private inner: Drink) {}               // declares and assigns the field
   getDescription() { return this.inner.getDescription() + ", whip"; }
   getPriceCents()  { return this.inner.getPriceCents() + 75; }
 }
-abstract class Report {                            // Template method: parent owns the order
-  public print(): void { console.log("==="); this.body(); console.log("==="); }
+abstract class Report {                              // Template method: parent owns the order
+  print(): void { console.log("==="); this.body(); console.log("==="); }
   protected abstract body(): void;
 }
-class Csv extends Report { protected body() { console.log("a,b"); } }
-interface Employee { getTotalSalary(): number; }   // Composite
-class Manager implements Employee {
+class Manager implements Employee {                  // Composite node
   private reports: Employee[] = [];
   constructor(private salary: number) {}
   add(e: Employee): void { this.reports.push(e); }
   getTotalSalary() { return this.salary + this.reports.reduce((s, e) => s + e.getTotalSalary(), 0); }
 }
-interface PhoneState { press(p: Phone): void; call(p: Phone): void; }   // State
+interface PhoneState { press(p: Phone): void; }     // State
 class Phone {
   private state: PhoneState = new Locked();
   setState(s: PhoneState) { this.state = s; }
   press() { this.state.press(this); }
 }
-class Locked implements PhoneState {
-  press(p: Phone) { p.setState(new Unlocked()); }
-  call(p: Phone) { throw new Error("locked"); }
-}
+class Locked implements PhoneState { press(p: Phone) { p.setState(new Unlocked()); } }
 interface BookingStore { load(): Promise<Booking[]>; save(b: Booking[]): Promise<void>; }  // port
-class FakeStore implements BookingStore {           // stub and spy in one
-  public saved: Booking[][] = [];                   // spy: records what was sent
-  constructor(private data: Booking[]) {}           // stub: controls what comes back
+class FakeStore implements BookingStore {            // stub and spy in one
+  public saved: Booking[][] = [];                    // spy: what was sent
+  constructor(private data: Booking[]) {}            // stub: what comes back
   async load() { return this.data; }
   async save(b: Booking[]) { this.saved.push(b); }
 }
@@ -196,15 +166,8 @@ async function book(req: Request, store: BookingStore, now: () => Date): Promise
   if (all.some((b) => overlaps(b, req))) throw new DoubleBooked(req.room);
   return { ...req, at: now() };
 }
-```
-- Types: `string number boolean void`, `T[]`, union `number | Duration`, optional `limit?: number`, default `limit = 10`, literal `"asc" | "desc"`, `type Row = { id: string; n: number }`, `Map<string, number>`, `Record<string, number>`, generic `function first<T>(xs: T[]): T | undefined`.
-- Guards: `x instanceof Foo`, `typeof x === "string"`, `x === undefined`, `a?.b`, `a ?? fallback`.
-- Arrays: `.map((x) => x * 2)`, `.filter`, `.reduce((acc, x) => acc + x, 0)`, `.find`, `.some`, `.every`, `.forEach`, spread `[...xs, y]`, `{ ...obj, k: v }`, destructure `const { id, name } = user;`.
-- `async f(): Promise<T>` and `await`; `Promise.all([...])`; a forgotten `await` yields a pending Promise (always truthy) and the rejection escapes.
-- Test shape (mocha, chai):
-```ts
 describe("book", () => {
-  it("rejects a double booking", async () => {        // Given, When, Then
+  it("rejects a double booking", async () => {       // Given, When, Then
     const store = new FakeStore([existing]);
     try { await book(req, store, () => new Date(0)); expect.fail("should throw"); }
     catch (e) { expect(e).to.be.instanceOf(DoubleBooked); }
@@ -212,4 +175,20 @@ describe("book", () => {
   });
 });
 ```
-- Terms the marker looks for: footprint, magnitude, connascence of Name, Type, Value, Position, Algorithm, degree, locality, strength, data, logic, order binding, controllability, observability, stub, spy, DIP, LSP, precondition, postcondition, equivalence class, boundary, branch coverage, scatter, tangle, abstraction, polymorphism, closed axis, port, adapter, SRP, information hiding, obliviousness, MAJOR, MINOR, PATCH.
+
+- Syntax: `T[]`, union `number | Duration`, optional `limit?: number`, default `limit = 10`, `type Row = { id: string; n: number }`, `Map<string, number>`, generic `function first<T>(xs: T[]): T | undefined`, `x instanceof Foo`, `typeof x === "string"`, `a?.b`, `a ?? fallback`, `.map`, `.filter`, `.reduce((acc, x) => acc + x, 0)`, `.find`, `.some`, spread `[...xs, y]` and `{ ...obj, k: v }`, `const { id } = user;`, `async f(): Promise<T>` with `await`, `Promise.all([...])`.
+
+### Zone 6 · Terms in one line each
+
+- Footprint: how many places a change touches. Magnitude: how big it is.
+- Coupling: the relationship between components through dependencies; it produces footprint. Cohesion: how focused one unit is on one task.
+- Connascence: what two pieces of code must agree on; the strength axis of coupling. Binding: what two statements share (data, logic, order).
+- Refactoring: a predictable, meaning-preserving transformation. Technical debt: the extra cost of changing later because of an earlier shortcut.
+- Controllability: can a test set the inputs and state. Observability: can a test inspect the results and effects. Isolateability: can a fault be located inside the unit.
+- Test double: a stand-in for a dependency. Stub: controls what comes back. Spy: records what was sent. Fake: the reader's generic word.
+- DIP: depend on abstractions, not implementations. LSP: a subtype must keep the supertype's promises.
+- Precondition: what REQUIRES of the caller. Postcondition: what EFFECTS promises.
+- Equivalence class: inputs the spec treats alike. Boundary: a value on each side of an edge. Coverage: how much code the tests ran.
+- Design pattern: a tried and true solution to a recurring design problem. Scatter: coupling pain. Tangle: cohesion pain. Closed axis: the kind of change a pattern makes expensive.
+- Port: an interface the core owns. Adapter: its implementation on real resources. SRP: one reason to change.
+- Information hiding: callers cannot see internals. Obliviousness: callers need not know the implementation. Semver: Major.Minor.Patch.
