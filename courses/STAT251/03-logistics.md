@@ -11,6 +11,7 @@
 - iClicker grades are synced to the Canvas gradebook every few weeks. The sync misses an iClicker account whose email or name differs from Canvas, so set the iClicker name to the Canvas name; he enters those grades by hand at the end of term (said in lecture 9).
 - Answering iClicker questions when you are not in the classroom counts as cheating. The lecture 10 Canvas page says so in its reminders.
 - Only 35 lecture days this term, so overflow goes into short posted videos. The first covers lecture 9's slides 16 to 26 (mean and variance, uniform, exponential, Example 7), and it is posted on the lecture 9 page.
+- A lab-absence form must be submitted in the same week as the missed lab, or it is not accepted (Canvas announcement, Oct 28).
 - **Tools:** WeBWorK only via the Canvas WeBWorK tab (else the roster won't sync) · iClicker Cloud —
   join via the Canvas link and press *sync* or participation isn't graded · Gradescope for written
   assignments (link appears with WA1) · Piazza (don't post answers before due dates).

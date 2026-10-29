@@ -22,6 +22,7 @@
 - Each question type mirrors something from lecture, the PrairieLearn labs and practice problems, or the project. Content covers everything through the prior week. The Oct 27 review deck (slide 2) says REST is not on the midterm, so the scope is lectures 1 to 12 (Oct 20), which is quizlib's EXAM_CUTOFF.
 - Cheat sheet: one 8.5 by 11 sheet, handwritten only (no tablet printouts), both sides, collected at the end. Kyle says to fill it with what helps apply principles and TypeScript syntax, not trivia.
 - Practice exam: released the week of Oct 12 to 16; Lab 7 asks for evidence that it was printed, completed and marked on paper. Length and content may differ from the real exam.
+- The practice exam is Piazza @192 (Kyle, pinned, Oct 16): two PDFs, the exam and a code booklet, plus `SAMPLE_SOL_UPDATED.pdf`. Kyle's instructions are to print it, do it by hand without the internet, and time each question and the whole thing; it is meant to run about as long as the real two hours. The solution was corrected on Oct 28 (5a, 5d and 6b), and question 3c's LSP answer is disputed in the followups and unanswered. LAB07.1 on PrairieLearn is only a reflection on having done it.
 - Schedule: Lab 7 is released early and holds testable material, with the lab slot used to meet the D3 group. Tue Oct 27 is a review lecture (topic poll the week before). Thu Oct 29 lecture is cancelled. Office hours continue.
 - The earlier classmate reports (all true/false, or all multiple choice) were both wrong; do not reopen them.
 
