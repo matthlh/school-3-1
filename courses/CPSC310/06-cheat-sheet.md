@@ -10,7 +10,7 @@ How to use it: find the words from the question in the table, go to that block, 
 | "equivalence class", "partition", "boundary value" | partitions | D |
 | "line / statement / branch / path coverage", "how many tests" | coverage | E |
 | "which pattern", "identify the pattern", a story about adding new kinds | pick the pattern | F |
-| "is it a good fit", "downside", "trade-off", "what is expensive" | pattern cost | G |
+| "Change", "Pain", "Mechanism", "scatter or tangle", "Reflect", "is it a good fit", "downside", "cost" | pattern analysis | G |
 | two line numbers and "Data", "Logic", "Order" | cohesion bindings | H |
 | "precondition", "postcondition", "violates LSP", `extends` | LSP | I |
 | "Major", "Minor", "Patch", "None", a version number, "rewrite as Minor" | versioning | J |
@@ -179,19 +179,46 @@ class Locked implements PhoneState {                 // a concrete state
 }
 ```
 
-## G. Pattern cost and fit
+## G. Pattern analysis: Change, Pain, Mechanism, Cost
 
-Write these four lines, filled in:
-
-1. Cheap: adding a new **[kind]** is one new class.
-2. Expensive: adding a new method to the interface means editing every class.
-3. Cost: more classes and one more layer to read through.
-4. If there's only one kind and it won't change: "the pattern is overkill".
+1. **Change**: what new thing keeps getting added? List every spot you'd edit to add one.
+   - Write: "Adding **[new thing]** means a new class plus edits in **[class]**: **[each spot]**."
+2. **Pain**: scatter or tangle?
+   - **Scatter** (coupling): one class names many concrete classes, so every new one edits it. Give the connascence (usually **Name**: class names and method names), the degree (how many classes it's tied to, plus 1 per new one), and explicit (the compiler checks it) or implicit.
+   - **Tangle** (cohesion): one method mixes its main job with per-kind details, like an `if` or `switch` on the kind, or translating fields.
+3. **Mechanism**, three parts:
+   - **Abstraction**: what do the changing classes have in common? That becomes one interface with one method. What's different hides behind it.
+   - **Oblivious caller**: the main class holds a list of the interface and never names a concrete class.
+   - **Trigger**: when is the interface method called, and by whom?
+4. **Cost**: one class per kind, one more layer to read through, and a new method on the interface means editing every class. Only one kind that never changes: the pattern is overkill.
+5. **Reflect**: a new kind is now one new class plus one line to register it. The main class doesn't change.
 
 Extra costs to name if asked:
 
 - Decorator: the order of add-ons can't be enforced.
 - State: `setState` is public, and the transitions are spread over many classes.
+
+Worked: `WeatherStation` creates `EmailAlert`, `DashboardDisplay` and `PhoneNotification` itself and calls `sendAlert`, `render` and `push`. The team wants `SlackAlert`.
+
+- Change: a new `SlackAlert` class, plus a new field and a new call in `WeatherStation.update()`.
+- Pain: scatter. Connascence of Name with each subscriber's class and method name. Degree 3, plus 1 per subscriber. Explicit.
+- Mechanism: all three take `(tempC, humidity)` and react. Only the method name and what they do differ.
+
+```ts
+interface Subscriber { update(tempC: number, humidity: number): void; }
+
+class WeatherStation {
+  private subs: Subscriber[] = [];
+  subscribe(s: Subscriber): void { this.subs.push(s); }
+  update(tempC: number, humidity: number): void {
+    for (const s of this.subs) s.update(tempC, humidity);
+  }
+}
+```
+
+- Trigger: `WeatherStation.update()` calls `update` on every subscriber.
+- Cost: every subscriber must implement `Subscriber`, or get an adapter if you can't edit it.
+- Reflect: Slack is one new class plus `station.subscribe(new SlackAlert())`. `WeatherStation` never changes.
 
 ## H. Cohesion: Data, Logic, Order for two lines
 
