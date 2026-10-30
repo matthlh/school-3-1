@@ -41,22 +41,47 @@ For each marked line, answer two True/False:
 
 ## C. Make it testable / test doubles
 
-1. Find the hidden input (`new X()`, clock, random, global). Make it a constructor parameter typed as an interface.
-2. Find the hidden output (print, save, send). Return it, or send it to an interface you pass in.
-3. In the test, pass a **stub** for the input (returns a fixed answer) and a **spy** for the output (records what it got).
-4. Assert on the return value or on `spy.sent`.
+Before: the test can't choose the hour, and a real email gets sent that the test can't see.
+
+```ts
+class Reminder {
+  run(): void {
+    const hour = new Date().getHours();                 // hidden input
+    new SmtpMailer().send(`Reminder for ${hour}:00`);   // hidden output
+  }
+}
+```
+
+1. Hidden input (`new Date()`, `Math.random()`, a global): make it a constructor parameter.
+2. Hidden output (`new X().send`, a print, a save): make an interface for it and pass it in through the constructor. Or just `return` the value.
+3. Real code passes the real things: `new Reminder(new SmtpMailer(), () => new Date())`.
+
+After:
 
 ```ts
 interface Mailer { send(m: string): void; }
+
 class Reminder {
   constructor(private mailer: Mailer, private now: () => Date) {}
+  run(): void {
+    const hour = this.now().getHours();
+    this.mailer.send(`Reminder for ${hour}:00`);
+  }
 }
+```
+
+4. Test: pass a **stub** for the input, a fake that always gives the value you chose. Pass a **spy** for the output, a fake that writes down what it was given.
+5. Check what the spy wrote down.
+
+```ts
 class SpyMailer implements Mailer {
   sent: string[] = [];
   send(m: string) { this.sent.push(m); }
 }
+
 const spy = new SpyMailer();
-new Reminder(spy, () => new Date(2026, 9, 29, 9)).run();   // stub clock: always 9:00
+const stubClock = () => new Date(2026, 9, 29, 9);   // always 9:00
+new Reminder(spy, stubClock).run();
 expect(spy.sent[0]).to.equal("Reminder for 9:00");
 ```
 
