@@ -210,11 +210,12 @@ log("done");                  // 3
 
 ## I. LSP
 
-1. Put the parent method next to the child method. Find the lines only the child has.
-2. Pre: does the child **throw or refuse** an input the parent accepted? **Strengthened**. Accepts something the parent refused? **Weakened**. Neither? **Unaffected**.
-3. Post: is there any input where the parent's result or effect does **not** happen in the child (it throws, skips, or returns something else)? **Weakened**. Child promises extra on top? **Strengthened**. Neither? **Unaffected**.
-4. Violates LSP: **True** if pre is Strengthened or post is Weakened. Otherwise **False**.
-5. Test: the input the child refuses, then what the parent would give.
+1. Find the lines only the child has.
+2. Pre: does the child refuse an input the parent took? **Strengthened**. If not, **Unaffected**.
+3. Post: is there an input where the child doesn't do what the parent did? **Weakened**. If not, **Unaffected**.
+4. Violates: pre Strengthened or post Weakened means **True**.
+5. Test: call it with the refused input, then expect what the parent gives.
+6. Rare: pre Weakened or post Strengthened means the child gives more. Never a violation.
 
 ```ts
 queue.enqueue("");                      // the input the child refuses
