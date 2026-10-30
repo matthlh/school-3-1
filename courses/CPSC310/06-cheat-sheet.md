@@ -108,10 +108,29 @@ True/False facts:
 
 ## E. Coverage
 
-1. Count the separate `if`s. An `else if` chain counts as one.
-2. Line or statement: usually 1 test, if all the `if`s can be true together.
-3. Branch: every `if` true once and false once. Two separate `if`s: 2 tests.
-4. Path: every combination. Two separate `if`s: 4 tests. Three: 8.
+1. Look at how the `if`s are written. There are two shapes.
+
+```ts
+// Separate ifs: each one runs on its own, both can be true
+if (a) x++;
+if (b) y++;
+
+// A chain: only one branch ever runs
+if (a) x++;
+else if (b) y++;
+else z++;
+```
+
+2. Read the number of tests off the table.
+
+| Code | Line or statement | Branch | Path |
+|---|---|---|---|
+| 2 separate `if`s, no `else` | 1 | 2 | 4 |
+| 3 separate `if`s, no `else` | 1 | 2 | 8 |
+| 1 chain with 3 branches | 3 | 3 | 3 |
+
+- Separate `if`s: line needs 1 test with everything true. Branch needs everything true once and everything false once. Path is 2 times 2 for each `if`.
+- A chain: every column is the number of branches, because one test can only go down one branch.
 
 ## F. Pick the pattern
 
