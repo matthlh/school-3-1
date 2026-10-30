@@ -30,7 +30,7 @@
 | WeBWorK 5 | Opened Tue Oct 13; due **Thu Oct 22, 23:59** (read off WeBWorK 2026-10-15) | 8 problems, 21 points, banked 2026-10-15 |
 | WeBWorK 5–10 | Open Tue Oct 13 · Oct 20 · Nov 3 · Nov 17 · Nov 24 · Dec 1 (from WeBWorK). Sets 1 and 2 closed seven days after opening and sets 3 and 4 nine days after (the Canvas calendar now shows set 5 due Thu Oct 22, the same pattern), so each due date is confirmed inside WeBWorK on its open day | |
 | Pre-lab quizzes, Labs 2–8 | Fri Oct 9 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
-| In-lab quiz + follow-up (L1K) | Fri Oct 30, 11:20–11:40 and 11:45–12:00 | 3 + 3 |
+| In-lab quiz + follow-up (L1K) | In every Friday lab, about a 20-minute window. No lab in week 8 (Oct 26–30), per the syllabus schedule | 3 + 3 per lab |
 | Post-lab survey | Fri Nov 13, 23:59 | 1 |
 | Written Assignment 1 | **Sat Oct 24** (confirmed 2026-09-11; ignore the Oct 31 Canvas calendar entry) | 52 |
 | Written Assignment 2 | Wed Dec 2 | 40 |
@@ -75,4 +75,4 @@
 - WeBWorK problem pages: `<course URL>/Assignment-0N/k/` for problem k; `/Assignment-0N/` is the problem list (which are done, Download Hardcopy). Claude reads sets there the day they open and banks them as practice questions; it never enters answers.
 - WeBWorK 1 opened Sep 14 and is due **Tuesday Sep 22, 23:59**, confirmed on the WeBWorK assignment list 2026-09-16 (the Canvas calendar entry sits at midnight on Sep 22 and had been read as Mon Sep 21).
 - Future sets open (WeBWorK, 2026-09-16): 02 Tue Sep 22 · 03 Sep 29 · 04 Oct 6 · 05 Oct 13 · 06 Oct 20 · 07 Nov 3 · 08 Nov 17 · 09 Nov 24 · 10 Dec 1, all 00:00. On each open day the morning check reads that set's due date off the list and fixes the ledger, logistics and Things3 entry.
-- The remaining WeBWorK calendar entries all sit at midnight on the day after the date recorded here, so the whole series may be one day later than listed. Confirm each one inside WeBWorK itself; WeBWorK 6 would move from Thu Oct 29 to Fri Oct 30, which is already the STAT midterm, the in-lab quiz and PHIL 385 Exam 3.
+- The remaining WeBWorK calendar entries all sit at midnight on the day after the date recorded here, so the whole series may be one day later than listed. Confirm each one inside WeBWorK itself; WeBWorK 6 would move from Thu Oct 29 to Fri Oct 30, which is already the STAT midterm and PHIL 385 Exam 3.

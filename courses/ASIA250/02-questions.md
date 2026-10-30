@@ -475,3 +475,45 @@ Format:
 ### Q: Match each bodhisattva to what the lecture says about them: Maitreya, Manjushri, Samantabhadra, Kshitigarbha, Akashagarbha, Avalokiteshvara. Descriptions: a sword that cuts through samsara; ten vows of selfless service and the model of the path; a layman named Ajita now in Tushita heaven; began as a Brahmin woman who freed her mother from hell; a space-like mind that told Kukai in a dream to sail to China; feminised as Guanyin in China.
 **Topic:** Mahayana emptiness, skillful means and the great bodhisattvas  **Lec:** 6  **Type:** recall
 **A:** Manjushri holds the sword of wisdom. Samantabhadra has the ten vows and is the model of the Mahayana path. Maitreya was the layman Ajita and lives in Tushita until he comes as the next Buddha. Kshitigarbha began as the Brahmin woman and now wanders the hells as a monk. Akashagarbha is the space-like mind and the one whose eulogy Kukai recited before his dream. Avalokiteshvara became the female Guanyin in China, where compassion is a yin quality.
+
+## Lec 7 — Buddhism enters China: Confucianism and Daoism (prepared 2026-10-30 from the deck)
+
+### Q: Which emperor's dream is credited with bringing Buddhism to China, what did he dream, and what did he found?
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** Emperor Ming of the Eastern Han (28 to 75 CE). He dreamed of a golden figure riding a white horse from the west who helped him wipe out the Xiongnu nomads, and the figure was taken to be the Buddha. He founded the White Horse Monastery in Luoyang in 68 CE. Buddhism had come along the Silk Road with monks and merchants around the 1st century CE.
+
+### Q: True or false: the lecture treats Confucianism as a philosophy or practical ethics rather than a religion. Justify with the deck's three ways it is religious.
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** apply
+**A:** False. The deck calls it an immanent religion, focused on order in this world (the state, the home, the family) rather than a transcendent one. It is religious through its ideals of this-worldly harmony, through ritual efficacy (ritual feeds the dead ancestors), and through an afterlife populated by ancestors.
+
+### Q: What is de, how is it passed down from Heaven to a retainer, and what keeps it flowing?
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** De is virtue or moral power, a mystical religious power. Kings get it from the spirits of their ancestors, ancestors get it from Heaven (tian), and retainers get it through loyalty and filial piety toward their own ancestors. Proper rituals, sacrifices, dances and music keep it flowing from the source.
+
+### Q: Name the five relationships, and say what they stand for in their extended form.
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** Emperor and minister, father and son, elder and younger brother, husband and wife, and friends. Extended, they stand for all of society: superiors and subordinates at work, generations of a family, siblings and cousins, spouses and in-laws, and classmates and colleagues.
+
+### Q: At a Confucian ancestral rite, who ideally acts as the personator (shi) for a dead grandfather and for a dead grandmother, and why can't the son act?
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** The grandson acts for the grandfather, and the grandson's wife acts for the grandmother, so the role is gendered. The son and daughter-in-law cannot be personators because they are the ones most responsible for showing reverence and humility to the dead.
+
+### Q: Which is NOT a contrast the lecture draws between wu and bing? (A) Wu is honorific and religious; bing is a plain term. (B) Wu was a posthumous title of nobles. (C) Bing is paired with "maxim" in Sunzi's Bing fa. (D) Wu means soldiers and weapons. (E) Wu is paired with "art" for martial arts.
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** apply
+**A:** (D). Soldiers, weapons and strategy are bing, the military. Wu, the martial, is a virtue (wude) with religious connotations, and some translators wrongly mix the two.
+
+### Q: Who were King Wen and King Wu, and which side of Zhou culture does each embody?
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** King Wen (1152 to 1050 BCE) embodies the civil (wen): he preferred negotiation with the Shang and is credited with the 8 trigrams and 64 hexagrams used in divination. King Wu (died 1046 BCE) embodies the martial (wu): he conquered the last Shang king at the Battle of Muye by his martial virtue.
+
+### Q: Why did the Sui and Tang create the imperial examinations, what did the civil exam test, and what happened to many who failed? Give the example of a failed candidate who rebelled.
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** To curb the hereditary military aristocracy and warlords by appointing scholars, even to command military posts. The civil exam tested the Confucian classics, history and literature, and about 1 in 100 passed after a decade or more of study. Dropouts often became Daoist hermits or Buddhist monks. Huang Chao (835 to 884) failed, smuggled salt, rebelled during famine, took Chang'an in 881 and declared the Qi dynasty.
+
+### Q: Give the Daoist sequence from primordial chaos to the five phases, and say what the uncarved block is contrasted with.
+**Topic:** Daoism: qi, yin and yang, immortality and the three hero journeys  **Lec:** 7  **Type:** recall
+**A:** Primordial chaos (dao) splits into vital material (qi), qi splits into yin and yang, and yin and yang give the five phases (wuxing). The Daoist uncarved block, innate ability gained by returning to nature, is contrasted with the Confucian carving and polishing, constant refinement of ritual propriety.
+
+### Q: Match each hero journey to its way of cultivating selflessness and its reward: Confucian, Buddhist, Daoist.
+**Topic:** Daoism: qi, yin and yang, immortality and the three hero journeys  **Lec:** 7  **Type:** apply
+**A:** Confucian: sincerity in embodying role models, rewarded with spiritual immortality as ancestral de and effortless action in any role. Buddhist: revealing the illusion of self through meditation, rewarded with Buddhahood or rebirth as a bodhisattva and spontaneity in helping beings. Daoist: accumulating qi and returning to innate simplicity, rewarded with physical immortality and control of the five elements.

@@ -2319,6 +2319,56 @@ $$
 
 which is also $$e^{-0.16 \times 5} = e^{-0.8}$$, no failure in 40 hours.
 
+## WeBWorK 6 — Ch 6 and Ch 7 (opened by Oct 30, due Thu Nov 12; banked 2026-10-30, numbers changed)
+
+### Q: WeBWorK-style. Bulb lifetimes are exponential with mean 0.8 years. A tester records each bulb as a success when it lasts more than 1.2 years. Find (a) the probability that the first success is the 4th bulb, (b) the probability that the second success is the 7th bulb given that the first was the 2nd, and (c) the probability that the first success falls on an odd-numbered bulb.
+**Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** WW6  **Type:** apply
+**A:** The per-bulb success probability comes from the exponential upper tail, and the count of bulbs to a success is Geometric with that $$p$$.
+
+$$
+\begin{aligned}
+p &= P(Y > 1.2) \\
+&= e^{-1.2 / 0.8} \\
+&= e^{-1.5} = 0.2231
+\end{aligned}
+$$
+
+(a) Three failures, then a success.
+
+$$
+\begin{aligned}
+P(N = 4) &= p(1 - p)^3 \\
+&= 0.2231 \times 0.7769^3 \\
+&= 0.105
+\end{aligned}
+$$
+
+(b) The trials are independent, so after the first success at bulb 2 the wait starts over: the second success at bulb 7 is a first success 5 bulbs later, $$p(1 - p)^4 = 0.081$$.
+
+(c) Add the odd terms, a geometric series with ratio $$(1 - p)^2$$.
+
+$$
+\begin{aligned}
+P(\text{odd}) &= \sum_{k = 0}^{\infty} p(1 - p)^{2k} \\
+&= \frac{p}{1 - (1 - p)^2} \\
+&= \frac{1}{2 - p} = 0.56
+\end{aligned}
+$$
+
+### Q: WeBWorK-style. A help centre is built for at most 30 visitors a day. Daily visitors are Normal with mean 18 and variance 25. Find (a) the return period of an overloaded day, to the nearest day, and (b) the probability that the design number is not exceeded before the 8th day.
+**Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** WW6  **Type:** apply
+**A:** An overloaded day is a success with probability $$p = P(X > 30)$$; the days until the first one are Geometric, and the return period is its mean $$\frac{1}{p}$$. The variance is 25, so $$\sigma = 5$$.
+
+$$
+\begin{aligned}
+p &= P\left(Z > \frac{30 - 18}{5}\right) \\
+&= P(Z > 2.4) = 0.0082 \\
+\frac{1}{p} &= 122 \text{ days}
+\end{aligned}
+$$
+
+(b) "Not exceeded before the 8th day" means days 1 to 7 are all fine, $$P(N > 7) = (1 - p)^7 = 0.9918^7 = 0.944$$. The trap is using $$\sigma = 25$$, the variance, in the z-score.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -3718,3 +3768,48 @@ P(Y \ge 2) &= 1 - 0.2336 - 0.3656 \\
 $$
 
 (d) $$N \sim \text{Geo}(0.1353)$$ with mean $$\frac{1}{0.1353} = 7.39$$ stretches, about 3.7 minutes.
+
+### Q: WeBWorK-style. Potholes on a highway follow a Poisson process with mean 1.6 per km; $$X$$ is the distance between two successive potholes. Find (a) the probability of at least one pothole in the next 1.5 km, (b) the distribution of $$X$$, (c) the mean and standard deviation of $$X$$, (d) the median of $$X$$, (e) the probability of travelling more than 2.5 km before meeting the next three potholes, and (f) by the Central Limit Theorem on a sum of exponentials, the probability of travelling more than 20 km before meeting the next 30 potholes.
+**Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** WW6  **Type:** apply
+**A:** Steps:
+1. Scale the rate to the stretch and take one minus the Poisson zero term.
+2. The gap between events of a rate-$$\lambda$$ process is $$\text{Exp}$$ with mean $$\frac{1}{\lambda}$$, and its standard deviation equals its mean.
+3. Solve $$F(m) = 0.5$$ for the median.
+4. "More than 2.5 km before the 3rd pothole" is "at most 2 potholes in 2.5 km", a Poisson cdf.
+5. The distance to the 30th pothole is a sum of 30 independent exponentials; give the sum its mean and variance, then a Normal tail.
+
+(a) $$\lambda t = 1.6 \times 1.5 = 2.4$$, so $$P = 1 - e^{-2.4} = 0.909$$.
+
+(b) $$X \sim \text{Exp}$$ with mean $$\frac{1}{1.6}$$. The traps put the mean at 1.6 or call $$X$$ Poisson.
+
+(c) Mean and standard deviation are both $$\frac{1}{1.6} = 0.625$$ km.
+
+(d) The median.
+
+$$
+\begin{aligned}
+1 - e^{-1.6 m} &= 0.5 \\
+m &= \frac{\ln 2}{1.6} = 0.43 \text{ km}
+\end{aligned}
+$$
+
+(e) $$N_{2.5} \sim \text{Poisson}(4)$$.
+
+$$
+\begin{aligned}
+P(N_{2.5} \le 2) &= e^{-4}(1 + 4 + 8) \\
+&= 13e^{-4} = 0.238
+\end{aligned}
+$$
+
+(f) $$S = X_1 + \dots + X_{30}$$.
+
+$$
+\begin{aligned}
+E(S) &= 30 \times 0.625 = 18.75 \\
+\operatorname{SD}(S) &= \sqrt{30} \times 0.625 \\
+&= 3.4233 \\
+z &= \frac{20 - 18.75}{3.4233} = 0.3651 \\
+P(S > 20) &= 0.358
+\end{aligned}
+$$
