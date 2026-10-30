@@ -25,23 +25,50 @@ One 8.5 by 11 sheet, handwritten, both sides. Every question is over code you ha
 4. Cost: the indirection added, and the closed axis (new implementation cheap, new operation expensive).
 5. If requirements are stable or there is one concrete case, say the pattern hurts.
 
+**Coupling: degree, strength, how you find out.**
+1. Degree: count the classes named in the "Compare" sentence. A named outside system, such as the program that writes a file, counts as one.
+2. Strength: write what the parts must agree on, then pick the last of Name, Type, Value, Position, Algorithm that applies. The same formula written in two places is Algorithm. `any` hides a Type agreement, which makes it implicit.
+3. How you find out: Name or Type breaks the build. Value, Position, Algorithm, and Type hidden by `any` compile and run silently wrong. A crash only comes from something missing or null.
+4. Fix: write the agreement down once, as a shared type, a named constant or one shared function.
+
 **Why is this hard to test, make it testable.**
 1. Controllability: which input or dependency the code gets for itself (clock, random, `new`, a global).
 2. Observability: which result only leaves as a print or a side effect.
 3. Fix: parameters in, values out; an interface plus constructor injection (DIP).
 4. Double: stub controls what comes back, spy records what was sent.
 5. The double must keep the interface's contract, not just its shape (LSP).
+6. For a marked line, controllability: trace the `if`s above it and ask whether the test can make every one true with inputs it passes. A made-up name often gets there.
+7. For a marked line, observability: does its result come back through `return`? A file, a module-level variable or a private field with no getter means no.
+8. Demonstrate it: give both versions the same inputs. The hidden-input version can only be checked with `oneOf` every outcome, and the `void` version only with `undefined`.
 
 **Partition this function.**
 1. Input: parameter type, narrowed by preconditions, split valid and invalid.
 2. Output: return type plus thrown errors, split normal and error.
 3. One value per class; one value may cover an input class and an output class.
-4. A boundary pair on each side of every edge.
-5. Count the classes.
+4. Boundary values on every edge: the value on it, just outside and just inside, so 54, 55 and 56 for an edge at 55. For strings and arrays use the length: 0, 1 and 2.
+5. Input partitions come only from the input line. Output partitions come from the returns and the throws.
+6. Count the classes.
+7. Partitions come from the spec, not the code, so they never promise path coverage.
+
+**LSP: preconditions, postconditions, violates, test.**
+1. Pre: does the child reject an input the parent took? Then strengthened. Accepts more is weakened. Same is unaffected.
+2. Post: after the call, is everything the parent promised still true? If not, weakened. Promises more is strengthened.
+3. It violates LSP only when pre is strengthened or post is weakened.
+4. Test, written once against the interface type: call with the input the child rejects, then expect what the parent promises.
+
+```ts
+queue.enqueue("");                      // the input the child rejects
+expect(queue.dequeue()).to.equal("");   // what the parent promises
+```
 
 **Severity and next version.**
 1. For each change ask what the client must do: change code is MAJOR; nothing, new feature is MINOR; nothing, behaviour improves is PATCH; nothing at all is NONE.
 2. Bump the worst, reset the numbers below it.
+3. Rewrite a MAJOR as MINOR: make the new parameter optional with a default, or add the new method beside the old one and deprecate the old.
+
+```ts
+on(event: string, handler: () => void, priority: number = 0): void
+```
 
 ### Zone 2 · Diagnosis table: you see, it is, it costs, do this
 
@@ -70,6 +97,8 @@ One 8.5 by 11 sheet, handwritten, both sides. Every question is over code you ha
 
 - True or false: "a good time to refactor is while fixing a bug". False. A refactoring preserves behaviour and a bug fix changes it on purpose, so a later failure cannot be attributed to either. Fix, get green, then refactor.
 - Critique: `applyDiscount(0.15, price)` compiles and the tests pass. Connascence of Position: both arguments are numbers and their order is the agreement. The type checker sees number, number and cannot object. Fix: `applyDiscount({ price, pct })`, which drops it to Type, so a swap is a compile error.
+- Coupling: `computeTotal` returns `subtotal + subtotal * taxRate` and `exportSummaryTotal` returns `subtotal * (1 + taxRate)`. Degree 2, Algorithm, silently wrong. Fix: one shared function both call.
+- Coupling: `ShoppingCart.items` is `any[]`, callers add `{ sku, qty }`, and `validateItem` compares with `===`. Degree 2, Type kept implicit by `any`, silently wrong. Fix: `interface Item { sku: string; qty: number }` in both. `===` on two separately built objects is always false.
 - Pattern: `Group` holds a `Shape[]` and `area()` sums the members. Composite: Component is `Shape`, Leaf is `Circle`, Composite is `Group`. Adding `Triangle` is one class, cheap. Adding `perimeter()` touches the interface and every class, expensive.
 - Test: `sendReminder(id)` builds an email and calls `new SmtpClient().send(e)`. Uncontrollable because it constructs its own client; unobservable because nothing is returned. Fix: `sendReminder(id, mailer: Mailer)` and a `SpyMailer` with `sent: Email[]`; assert on `sent[0]`.
 - Partition: a percentage 0 to 100 returns fail below 50, pass from 50 to 84, distinction from 85, and throws outside. Input: 1 valid, 2 invalid. Output: 3 normal, 1 error. Boundaries: -1 and 0, 49 and 50, 84 and 85, 100 and 101.
