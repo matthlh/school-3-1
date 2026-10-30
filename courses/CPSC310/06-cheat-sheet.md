@@ -210,6 +210,11 @@ log("done");                  // 3
 
 ## I. LSP
 
+| | Weakened | Strengthened | Unaffected |
+|---|---|---|---|
+| **Pre** | child accepts more inputs: OK | child refuses an input the parent took: **VIOLATES** | same inputs: OK |
+| **Post** | child skips what the parent did for some input: **VIOLATES** | child promises more: OK | same result: OK |
+
 1. Find the lines only the child has.
 2. Pre: does the child refuse an input the parent took? **Strengthened**. If not, **Unaffected**.
 3. Post: is there an input where the child doesn't do what the parent did? **Weakened**. If not, **Unaffected**.
