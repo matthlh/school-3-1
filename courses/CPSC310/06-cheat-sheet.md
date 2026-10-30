@@ -183,9 +183,10 @@ class Locked implements PhoneState {                 // a concrete state
 
 1. **Change**: what new thing keeps getting added? List every spot you'd edit to add one.
    - Write: "Adding **[new thing]** means a new class plus edits in **[class]**: **[each spot]**."
-2. **Pain**: scatter or tangle?
-   - **Scatter** (coupling): one class names many concrete classes, so every new one edits it. Give the connascence (usually **Name**: class names and method names), the degree (how many classes it's tied to, plus 1 per new one), and explicit (the compiler checks it) or implicit.
-   - **Tangle** (cohesion): one method mixes its main job with per-kind details, like an `if` or `switch` on the kind, or translating fields.
+2. **Pain**: look at where the edits from step 1 land.
+   - All in **one** class or method, mixed into its main job: **Tangle** (cohesion). Say the new lines have only a loose data or logic binding with the rest.
+   - The **same** edit repeated in several methods or classes: **Scatter** (coupling). Give the connascence (usually **Name**: class names and method names), the degree, and explicit (the compiler checks it) or implicit.
+   - Both can be true. Say "it would also scatter if more methods had to call the new class".
 3. **Mechanism**, three parts:
    - **Abstraction**: what do the changing classes have in common? That becomes one interface with one method. What's different hides behind it.
    - **Oblivious caller**: the main class holds a list of the interface and never names a concrete class.
@@ -201,24 +202,31 @@ Extra costs to name if asked:
 Worked: `WeatherStation` creates `EmailAlert`, `DashboardDisplay` and `PhoneNotification` itself and calls `sendAlert`, `render` and `push`. The team wants `SlackAlert`.
 
 - Change: a new `SlackAlert` class, plus a new field and a new call in `WeatherStation.update()`.
-- Pain: scatter. Connascence of Name with each subscriber's class and method name. Degree 3, plus 1 per subscriber. Explicit.
-- Mechanism: all three take `(tempC, humidity)` and react. Only the method name and what they do differ.
+- Pain: **tangle**. Every edit lands inside `WeatherStation`, mixed into `update()`, and each subscriber line has only a loose binding with the rest. It would also scatter if more `WeatherStation` methods had to call Slack.
+- Mechanism: shared is the trigger, a weather update with `tempC` and `humidity`. That becomes the interface method. Different is how each one reacts: email, render, push.
 
 ```ts
-interface Subscriber { update(tempC: number, humidity: number): void; }
+interface WeatherObserver { onUpdate(tempC: number, humidity: number): void; }
 
 class WeatherStation {
-  private subs: Subscriber[] = [];
-  subscribe(s: Subscriber): void { this.subs.push(s); }
+  private observers: WeatherObserver[] = [];
+  subscribe(o: WeatherObserver): void { this.observers.push(o); }
   update(tempC: number, humidity: number): void {
-    for (const s of this.subs) s.update(tempC, humidity);
+    for (const o of this.observers) o.onUpdate(tempC, humidity);
   }
 }
 ```
 
-- Trigger: `WeatherStation.update()` calls `update` on every subscriber.
-- Cost: every subscriber must implement `Subscriber`, or get an adapter if you can't edit it.
-- Reflect: Slack is one new class plus `station.subscribe(new SlackAlert())`. `WeatherStation` never changes.
+- Reflect: Slack is one new class that implements `WeatherObserver`, plus `station.subscribe(new SlackAlert())`. `WeatherStation` is untouched and never names a subscriber.
+- If the old classes can't be edited: one **Adapter** per class.
+
+```ts
+class EmailAdapter implements WeatherObserver {
+  constructor(private email: EmailAlert) {}
+  onUpdate(tempC: number, humidity: number) { this.email.sendAlert(tempC, humidity); }
+}
+station.subscribe(new EmailAdapter(new EmailAlert()));
+```
 
 ## H. Cohesion: Data, Logic, Order for two lines
 
