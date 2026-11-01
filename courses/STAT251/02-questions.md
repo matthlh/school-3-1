@@ -7,7 +7,11 @@ Format:
 ```
 ### Q: <question>
 **Topic:** <topic name>  **Lec:** <n>  **Type:** recall | apply | derive | critique
-**A:** <answer>
+**A:** Key:
+1. <the core: what the question asks for; missing it makes the answer wrong>
+2. <each other point a full-marks answer needs, one checkable fact or step per line>
+
+<the explanation: working, reasons, sources>
 ```
 
 A problem that needs paper goes under `## Long problems` at the end of this file instead of its lecture's section: a table or tree to build, an integral, a list of ten or more values, or a chain of three or more results that feed each other. It keeps its usual **Lec:** tag, and its answer opens with a numbered Steps list, which is what a normal quiz grades it on. The bus deck never shows it. New lecture and WeBWorK sections go above it.
@@ -18,7 +22,13 @@ A problem that needs paper goes under `## Long problems` at the end of this file
 
 ### Q: Classify each variable as categorical-nominal, categorical-ordinal, discrete, or continuous: (a) number of siblings (b) height in cm (c) blood type (d) letter grade (e) postal code (f) time to run 100 m.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) Number of siblings is discrete.
+2. (b) Height in cm and (f) time to run 100 m are continuous.
+3. (c) Blood type and (e) postal code are nominal.
+4. (d) Letter grade is ordinal.
+5. Postal code is nominal because its digits are labels, so arithmetic on them is meaningless.
+
 - (a) discrete
 - (b) continuous
 - (c) nominal
@@ -28,7 +38,11 @@ A problem that needs paper goes under `## Long problems` at the end of this file
 
 ### Q: State the test that decides whether a numerical variable is discrete or continuous.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** derive
-**A:**
+**A:** Key:
+1. Discrete means the possible values are countable, so they can be listed as 0, 1, 2, and so on, typically counts.
+2. Continuous means there is always another possible value between any two, so it can take any value in an interval, typically measurements.
+3. Rounding does not make a variable discrete; the underlying quantity decides.
+
 - Discrete: the possible values are countable (you can list them 0, 1, 2, …), typically counts.
 - Continuous: between any two possible values there is always another, so it can take any value in an interval. Typically measurements.
 
@@ -36,31 +50,64 @@ Rounding height to whole cm does not make it discrete; the underlying quantity d
 
 ### Q: A poll of 1,000 Canadians finds 52% support a policy; the headline says "a majority of Canadians support it". Which part is descriptive, which is inferential, and what does the inferential part need that the descriptive part doesn't?
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** apply
-**A:** "52% of the 1,000" is descriptive — it summarises the data in hand. "Majority of Canadians" is inferential — it generalises from sample to population. Inference needs a statement of uncertainty (margin of error / confidence, Ch 8) and an assumption about how the sample was drawn; description needs neither.
+**A:** Key:
+1. The "52% of the 1,000" part is descriptive, because it summarises the data in hand.
+2. The "majority of Canadians" part is inferential, because it generalises from the sample to the population.
+3. Inference needs a statement of uncertainty, such as a margin of error or a confidence level.
+4. Inference needs an assumption about how the sample was drawn.
+
+"52% of the 1,000" is descriptive — it summarises the data in hand. "Majority of Canadians" is inferential — it generalises from sample to population. Inference needs a statement of uncertainty (margin of error / confidence, Ch 8) and an assumption about how the sample was drawn; description needs neither.
 
 ### Q: Define descriptive and inferential statistics in one line each, and name the object each one makes claims about.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
-**A:**
+**A:** Key:
+1. Descriptive statistics are methods to organise, display and summarise the data you actually have.
+2. Descriptive claims are about the sample or data set.
+3. Inferential statistics are methods to draw conclusions, predictions or decisions from a sample.
+4. Inferential claims are about the population and its parameters, estimated from sample statistics.
+
 - Descriptive: methods to organise, display and summarise the data you actually have. Claims about the sample or data set.
 - Inferential: methods to draw conclusions, predictions or decisions from a sample. Claims about the population (its parameters), estimated from sample statistics.
 
 ### Q: Bar chart vs histogram — name two structural differences and the data type each is for.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** recall
-**A:**
+**A:** Key:
+1. A bar chart is for categorical data, with one bar per category.
+2. A histogram is for numerical data grouped into bins.
+3. Bar chart bars have gaps between them, while histogram bars touch.
+4. Bar chart order is arbitrary unless ordinal, while histogram order is fixed by the number line.
+
 - Bar chart: categorical data. One bar per category, gaps between bars, category order arbitrary unless ordinal.
 - Histogram: numerical data grouped into bins. Bars touch, order fixed by the number line, bin width is a choice you make.
 
 ### Q: You have 25 integer scores ranging from 1 to 12. Dot plot or histogram? Justify.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** apply
-**A:** Dot plot. Small n and only ~12 distinct values, so every observation can be shown individually — repeats, gaps and outliers stay visible and no binning decision is imposed. A histogram would either merge values (losing information) or degenerate into a dot plot drawn with bars.
+**A:** Key:
+1. A dot plot.
+2. Small $$n$$ and only about 12 distinct values let every observation be shown, so repeats, gaps and outliers stay visible.
+3. A dot plot imposes no binning decision, while a histogram would merge values or become a dot plot drawn with bars.
+
+Dot plot. Small n and only ~12 distinct values, so every observation can be shown individually — repeats, gaps and outliers stay visible and no binning decision is imposed. A histogram would either merge values (losing information) or degenerate into a dot plot drawn with bars.
 
 ### Q: What can you read off a stem-and-leaf plot that you cannot read off a histogram of the same data? What's the cost?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** recall
-**A:** The actual data values — hence the exact median, min, max and any individual observation — while still seeing shape (skew, modes, outliers). Cost: only practical for small data sets, and the stem unit fixes the bin width so you can't tune resolution freely.
+**A:** Key:
+1. A stem-and-leaf plot shows the actual data values, so the exact median, minimum, maximum and any observation can be read.
+2. It still shows the shape: skew, modes and outliers.
+3. Its cost is that it is only practical for small data sets.
+4. Its cost is that the stem unit fixes the bin width, so the resolution cannot be tuned freely.
+
+The actual data values — hence the exact median, min, max and any individual observation — while still seeing shape (skew, modes, outliers). Cost: only practical for small data sets, and the stem unit fixes the bin width so you can't tune resolution freely.
 
 ### Q: Build a stem-and-leaf plot for 23, 27, 31, 34, 34, 38, 42, 45, 51 and read off the median.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** Stem = tens, leaf = units.
+**A:** Key:
+1. Stems are tens and leaves are units, giving rows 2 | 3 7, 3 | 1 4 4 8, 4 | 2 5 and 5 | 1.
+2. The plot carries a key saying 2 | 3 means 23.
+3. With $$n = 9$$ the median is the 5th ordered value.
+4. The median is 34.
+
+Stem = tens, leaf = units.
 
 | Stem | Leaves |
 |---|---|
@@ -73,17 +120,34 @@ Key: 2 | 3 = 23. With $$n = 9$$ the median is the 5th ordered value, which is 34
 
 ### Q: When is a pie chart defensible, and when is a bar chart strictly better?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** critique
-**A:**
+**A:** Key:
+1. A pie is defensible for one categorical variable whose categories are parts of a single whole, when the message is share of total.
+2. A pie needs few categories, about 5 or fewer.
+3. A bar chart wins when sizes must be compared precisely, there are many categories, or groups are compared.
+4. People judge lengths far more accurately than angles or areas.
+
 - Pie: one categorical variable, categories are parts of a single whole, few categories (about 5 or fewer), and the message is "share of total".
 - Bar chart wins when you must compare category sizes precisely, there are many categories, or you compare across groups. People judge lengths far more accurately than angles or areas.
 
 ### Q: A frequency table has a relative-frequency column. How is it computed, what must it sum to, and why bother when you already have counts?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** apply
-**A:** Relative frequency is the count divided by n, and the column sums to 1 (100%). It puts data sets of different sizes on one scale so distributions can be compared. It is also the empirical version of a probability distribution, which Ch 3–4 use directly.
+**A:** Key:
+1. Relative frequency is the count divided by $$n$$.
+2. The column sums to 1, or 100%.
+3. It puts data sets of different sizes on one scale so their distributions can be compared.
+4. It is the empirical version of a probability distribution.
+
+Relative frequency is the count divided by n, and the column sums to 1 (100%). It puts data sets of different sizes on one scale so distributions can be compared. It is also the empirical version of a probability distribution, which Ch 3–4 use directly.
 
 ### Q: Write the two-step decision procedure for classifying any variable, then apply it to: marital status, finishing position in a race (1st/2nd/3rd), finishing time.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** derive
-**A:**
+**A:** Key:
+1. Step 1: if arithmetic on the values means nothing, it is categorical, nominal with no natural order and ordinal with one.
+2. Step 2: if arithmetic means something, it is numerical, discrete for a countable list and continuous for any value in an interval.
+3. Marital status is nominal.
+4. Race position is ordinal, since it is ordered but the gap from 1st to 2nd is not a fixed quantity.
+5. Finishing time is continuous.
+
 1. Does arithmetic on the values (differences, averages) mean anything? If no, it is categorical: nominal if there is no natural order, ordinal if there is.
 2. If yes, it is numerical: discrete if the possible values form a countable list (counts), continuous if it can take any value in an interval (measurements).
 
@@ -91,15 +155,31 @@ Marital status: nominal. Race position: ordinal (ordered, but the gap from 1st t
 
 ### Q: Why is a postal code categorical even though it is made of letters and digits, and which kind of categorical? Give two other "numbers that are really labels".
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
-**A:** Arithmetic on it is meaningless — an "average postal code" or V6T + V5K has no interpretation; the characters identify an area, they don't measure anything. Nominal (no natural order). Others: student number, phone number, jersey number, SIN, product ID.
+**A:** Key:
+1. Arithmetic on a postal code is meaningless, because its characters identify an area rather than measure anything.
+2. It is nominal, since there is no natural order.
+3. Two other examples from: student number, phone number, jersey number, SIN, product ID.
+
+Arithmetic on it is meaningless — an "average postal code" or V6T + V5K has no interpretation; the characters identify an area, they don't measure anything. Nominal (no natural order). Others: student number, phone number, jersey number, SIN, product ID.
 
 ### Q: A student classifies "number of stars in a product review (1–5)" as discrete "because it's a count". What is the better classification and why?
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** critique
-**A:** Ordinal categorical. The stars are ranks, not counts of anything: 4 stars is not "twice" 2 stars, and the gap from 1 to 2 need not equal the gap from 4 to 5. Same for Likert scales (strongly disagree … strongly agree). Rule: numbers used as ordered labels are ordinal, not discrete.
+**A:** Key:
+1. Star ratings are ordinal categorical, not discrete.
+2. The stars are ranks, not counts of anything, so 4 stars is not twice 2 stars.
+3. The gap from 1 to 2 stars need not equal the gap from 4 to 5.
+
+Ordinal categorical. The stars are ranks, not counts of anything: 4 stars is not "twice" 2 stars, and the gap from 1 to 2 need not equal the gap from 4 to 5. Same for Likert scales (strongly disagree … strongly agree). Rule: numbers used as ordered labels are ordinal, not discrete.
 
 ### Q: Classify: (a) T-shirt size (S/M/L/XL) (b) phone number (c) temperature in °C (d) number of goals in a match (e) eye colour (f) pain rating 0–10.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) T-shirt size is ordinal.
+2. (b) Phone number and (e) eye colour are nominal.
+3. (c) Temperature in °C is continuous.
+4. (d) Number of goals in a match is discrete.
+5. (f) Pain rating 0–10 is ordinal, because a rating scale gives ranks, not counts.
+
 - (a) ordinal
 - (b) nominal
 - (c) continuous
@@ -109,14 +189,23 @@ Marital status: nominal. Race position: ordinal (ordered, but the gap from 1st t
 
 ### Q: For each variable name the display you would reach for and why: letter grade (A/B/C/D/F), study time in hours, pass/fail.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. Letter grade is ordinal, so a bar chart with the bars in grade order.
+2. Study time is continuous, so a histogram, or a dot plot if $$n$$ is small.
+3. Pass/fail is nominal and binary, so a bar chart, or a pie since there are only two parts of one whole.
+
 - Letter grade: ordinal, so a bar chart with bars in grade order (order matters, gaps between bars).
 - Study time: continuous, so a histogram (bins on a number line, bars touch), or a dot plot if n is small.
 - Pass/fail: nominal and binary, so a bar chart. A pie is defensible with only two parts of one whole.
 
 ### Q: For each statement, descriptive or inferential? Name the word that gives away each inferential one. (a) "The mean height of the 40 students in this class is 172 cm." (b) "Based on this class, UBC students average about 172 cm." (c) "Of 500 sampled bulbs, 3 were defective." (d) "The factory's defect rate is about 0.6% ± 0.7%."
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) is descriptive, a fact about the data in hand.
+2. (b) is inferential: "UBC students" names a population larger than the 40 measured.
+3. (c) is descriptive.
+4. (d) is inferential: "the factory's rate" is a population parameter, and the $$\pm$$ is the uncertainty inference carries.
+
 - (a) descriptive — a fact about the data in hand.
 - (b) inferential — "UBC students" names a population larger than the 40 measured.
 - (c) descriptive.
@@ -124,7 +213,13 @@ Marital status: nominal. Race position: ordinal (ordered, but the gap from 1st t
 
 ### Q: Define population, sample, parameter, statistic, and say which pair descriptive statistics works with and which pair inference connects.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
-**A:**
+**A:** Key:
+1. A population is the whole group of interest, and a sample is the subset actually measured.
+2. A parameter is a number describing the population, such as $$\mu$$, $$p$$ or $$\sigma$$, usually unknown.
+3. A statistic is a number computed from the sample, such as $$\bar{x}$$, $$\hat{p}$$ or $$s$$.
+4. Descriptive statistics works with the sample and its statistics.
+5. Inference uses a statistic to make a claim about the parameter, from sample to population.
+
 - Population: the whole group of interest.
 - Sample: the subset actually measured.
 - Parameter: a number describing the population ($$\mu$$, $$p$$, $$\sigma$$), usually unknown.
@@ -134,7 +229,12 @@ Descriptive statistics works with the sample and its statistics. Inference uses 
 
 ### Q: A student says "descriptive statistics are the objective facts; inferential statistics are guesses." Correct each definition in one sentence, and name what inference adds so that it is not a guess.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** critique
-**A:**
+**A:** Key:
+1. Descriptive statistics organise, display and summarise the data you have, and claim things only about that data.
+2. Inferential statistics draw conclusions about a population from a sample.
+3. Inference is not a guess because it quantifies its own uncertainty, with a margin of error and confidence level or a p-value.
+4. That uncertainty is computed under an explicit assumption about how the sample was drawn, such as random sampling.
+
 - Descriptive: methods to organise, display and summarise the data you have (tables, graphs, mean, SD). Claims only about that data.
 - Inferential: methods to draw conclusions about a population from a sample.
 
@@ -142,38 +242,84 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: Give an example where the descriptive summary is perfectly correct but any inference from it is worthless, and say what that shows inference depends on.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** apply
-**A:** A poll of 1,000 visitors to a political party's website finds 52% support the party. "52% of these 1,000" is exactly right as a description; "52% of Canadians" is worthless because the sample is self-selected, not representative. Inference depends on how the sample was collected — random sampling is what justifies generalising and what lets you compute the uncertainty.
+**A:** Key:
+1. An example with a self-selected sample, such as 52% of 1,000 visitors to a party's website supporting the party.
+2. The description of those 1,000 is exactly right, but generalising to Canadians is worthless because the sample is not representative.
+3. Inference depends on how the sample was collected; random sampling justifies generalising and lets you compute the uncertainty.
+
+A poll of 1,000 visitors to a political party's website finds 52% support the party. "52% of these 1,000" is exactly right as a description; "52% of Canadians" is worthless because the sample is self-selected, not representative. Inference depends on how the sample was collected — random sampling is what justifies generalising and what lets you compute the uncertainty.
 
 ### Q: If a census measures every member of the population, is there any inferential statistics left to do about that population? Explain.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** critique
-**A:** No. The "sample" is the population, so each statistic *is* the parameter and there is no sampling uncertainty — it is all descriptive. Inference reappears only if you want to generalise beyond the census (to next year, to a process, to a larger population).
+**A:** Key:
+1. No, there is no inference left to do about that population.
+2. The sample is the population, so each statistic is the parameter and there is no sampling uncertainty.
+3. Inference reappears only to generalise beyond the census, such as to next year, a process or a larger population.
+
+No. The "sample" is the population, so each statistic *is* the parameter and there is no sampling uncertainty — it is all descriptive. Inference reappears only if you want to generalise beyond the census (to next year, to a process, to a larger population).
 
 ### Q: You have 25 observations with minimum 175 and maximum 265 and want 5 intervals. Walk through building the histogram: range, interval width, what goes in the frequency table, and how the bars are drawn.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** $$\text{Range} = 265 - 175 = 90$$. $$\text{Width} = 90 \div 5 = 18$$ (the deck then rounds to convenient equal-width bins 170–190, 190–210, … 250–270). Cut the range into equal-width intervals, count the observations in each to make the frequency table, then draw one bar per interval with height equal to its frequency (or relative frequency); bars touch because the axis is a number line. Label both axes and give a heading. A value that sits exactly on a boundary is counted in the interval where it is the upper end, so 230 goes in 210–230; lecture 3 gave that rule.
+**A:** Key:
+1. The range is maximum minus minimum, $$265 - 175 = 90$$, and the width is the range over 5 intervals, $$\frac{90}{5} = 18$$.
+2. The frequency table counts the observations in each equal-width interval.
+3. Each interval gets one bar with height equal to its frequency or relative frequency, and the bars touch because the axis is a number line.
+4. Both axes are labelled and the graph has a heading.
+5. A boundary value is counted in the interval where it is the upper end, so 230 goes in 210–230.
+
+$$\text{Range} = 265 - 175 = 90$$. $$\text{Width} = 90 \div 5 = 18$$ (the deck then rounds to convenient equal-width bins 170–190, 190–210, … 250–270). Cut the range into equal-width intervals, count the observations in each to make the frequency table, then draw one bar per interval with height equal to its frequency (or relative frequency); bars touch because the axis is a number line. Label both axes and give a heading. A value that sits exactly on a boundary is counted in the interval where it is the upper end, so 230 goes in 210–230; lecture 3 gave that rule.
 
 ### Q: The lecture-2 slides split variables into categorical and quantitative. Give both definitions, then classify: number of siblings, county of residence, commute distance in km, blood type.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
-**A:** Categorical: each observation belongs to one of a set of categories. Quantitative: observations take numerical values that represent different magnitudes of the variable. Siblings: quantitative, discrete. County: categorical, nominal. Commute km: quantitative, continuous. Blood type: categorical, nominal. The deck says "quantitative" where the notes say "numerical"; same thing.
+**A:** Key:
+1. Categorical: each observation belongs to one of a set of categories.
+2. Quantitative: observations take numerical values that represent different magnitudes of the variable.
+3. Number of siblings is quantitative discrete, and commute distance in km is quantitative continuous.
+4. County of residence and blood type are categorical nominal.
+
+Categorical: each observation belongs to one of a set of categories. Quantitative: observations take numerical values that represent different magnitudes of the variable. Siblings: quantitative, discrete. County: categorical, nominal. Commute km: quantitative, continuous. Blood type: categorical, nominal. The deck says "quantitative" where the notes say "numerical"; same thing.
 
 ### Q: State the deck's definitions of a discrete and a continuous quantitative variable, and give the three one-line characterisations of statistics from the "What is Statistics?" slide.
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
-**A:** Discrete: the possible values form a set of separate numbers, such as 0, 1, 2, 3, …. Continuous: the possible values form an interval. Statistics is (1) a science involving the design of studies, data collection, summarising and analysing data, interpreting results and drawing conclusions; (2) the science of learning from data and of measuring, controlling and communicating uncertainty; (3) a branch of applied mathematics dealing with data collection, organisation, analysis, interpretation and presentation.
+**A:** Key:
+1. Discrete: the possible values form a set of separate numbers, such as 0, 1, 2, 3.
+2. Continuous: the possible values form an interval.
+3. Statistics is a science involving study design, data collection, summarising and analysing data, interpreting results and drawing conclusions.
+4. Statistics is the science of learning from data and of measuring, controlling and communicating uncertainty.
+5. Statistics is a branch of applied mathematics dealing with data collection, organisation, analysis, interpretation and presentation.
+
+Discrete: the possible values form a set of separate numbers, such as 0, 1, 2, 3, …. Continuous: the possible values form an interval. Statistics is (1) a science involving the design of studies, data collection, summarising and analysing data, interpreting results and drawing conclusions; (2) the science of learning from data and of measuring, controlling and communicating uncertainty; (3) a branch of applied mathematics dealing with data collection, organisation, analysis, interpretation and presentation.
 
 ### Q: Construct a dot plot for the midterm scores 10, 90, 95, 100, 65, 50, 60, 50, 90, 55, 60, 70 and read off the mode or modes.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** derive
-**A:** Horizontal number line labelled "Grade" from 0 to 100, one dot per score stacked above its value: 10 (1), 50 (2), 55 (1), 60 (2), 65 (1), 70 (1), 90 (2), 95 (1), 100 (1). $$n = 12$$. Three modes: 50, 60 and 90, each twice.
+**A:** Key:
+1. A number line labelled Grade from 0 to 100, with one dot per score stacked above its value.
+2. The stacks are 10 (1), 50 (2), 55 (1), 60 (2), 65 (1), 70 (1), 90 (2), 95 (1) and 100 (1), with $$n = 12$$.
+3. There are three modes, 50, 60 and 90, each appearing twice.
+
+Horizontal number line labelled "Grade" from 0 to 100, one dot per score stacked above its value: 10 (1), 50 (2), 55 (1), 60 (2), 65 (1), 70 (1), 90 (2), 95 (1), 100 (1). $$n = 12$$. Three modes: 50, 60 and 90, each twice.
 
 ### Q: Give the symbols for the population mean, standard deviation and proportion, and for each one's sample version. Which are parameters, which are statistics, and which can you usually compute?
 **Topic:** Descriptive vs inferential  **Lec:** 1–2  **Type:** recall
-**A:**
+**A:** Key:
+1. The population mean, standard deviation and proportion are $$\mu$$, $$\sigma$$ and $$p$$.
+2. The sample versions are $$\bar{x}$$, $$s$$ and $$\hat{p}$$.
+3. The population values are parameters and the sample values are statistics.
+4. You can always compute the statistics from the data in hand.
+5. The parameters are usually unknown, because the population is too large to measure in full, so inference estimates them.
+
 - The population mean $$\mu$$, the population standard deviation $$\sigma$$ and the population proportion $$p$$ are parameters. They describe the population.
 - The sample mean $$\bar{x}$$, the sample standard deviation $$s$$ and the sample proportion $$\hat{p}$$ are statistics. They are computed from the sample.
 - You can always compute the statistics from the data in hand. The parameters are usually unknown, because the population is too large, or infinite, to measure in full, and inference uses the statistics to estimate them.
 
 ### Q: Which of these is continuous? (a) the number of people waiting in a line (b) the number of speeding tickets a driver has (c) the weight of a dog (d) shoe size, sold in half sizes. Justify each.
 **Topic:** 1a Types of data  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. Only (c), the weight of a dog, is continuous.
+2. (a) and (b) are discrete because they are counts.
+3. A weight can take any value in an interval; recording it to one decimal only reflects the scale's precision.
+4. (d) Shoe size is discrete because 6, 6.5 and 7 are separate values with no size in between.
+
 - (a) Discrete, because it is a count.
 - (b) Discrete, because it is a count.
 - (c) Continuous. A weight can take any value in an interval, and recording it to one decimal only reflects the scale's precision.
@@ -182,7 +328,11 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: A stem-and-leaf plot says the leaf unit is 10. What value does the row 5 | 7 stand for, and can the value 692 be shown exactly? What does 5 | 7 mean if the leaf unit is 0.1?
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. With a leaf unit of 10, the row 5 | 7 is 570.
+2. 692 cannot be shown exactly: it goes on stem 6 with leaf 9, which stands for 690.
+3. With a leaf unit of 0.1, the row 5 | 7 is 5.7.
+
 - With a leaf unit of 10, the leaf counts tens and the stem counts hundreds, so 5 | 7 is 570.
 - 692 cannot be shown exactly. It goes on stem 6 with leaf 9, which stands for 690, so the last digit is lost.
 - With a leaf unit of 0.1, the row 5 | 7 is 5.7.
@@ -190,7 +340,12 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: A survey question has 25 possible answers. Pie chart or bar chart, and how would you make the bars easiest to compare? Then say how exam percentages, which are numerical, could be shown in a pie chart at all.
 **Topic:** 1b–c Displays  **Lec:** 1–2  **Type:** apply
-**A:**
+**A:** Key:
+1. A bar chart, because a pie with 25 slices cannot be read while bar heights are easy to compare.
+2. Sort the bars from tallest to shortest, which makes a Pareto chart.
+3. Exam percentages must first be grouped into categories, such as letter-grade bands.
+4. Each band then gets a slice sized by its percentage of students, and the percentages add to 100%.
+
 - A bar chart. A pie with 25 slices cannot be read, while bar heights are easy to compare. This was the lecture 2 iClicker.
 - Sort the bars from tallest to shortest. A sorted bar graph is called a Pareto chart.
 - Exam percentages must first be grouped into categories, such as letter-grade bands. Each band then gets a slice sized by its percentage of students, and the percentages add to 100%.
@@ -199,89 +354,202 @@ It is not a guess because it quantifies its own uncertainty (a margin of error a
 
 ### Q: A histogram of household incomes peaks near $60k and has a tail stretching out to $500k. Name the shape, say which side the tail is on and where the peak sits, and state whether the mean is above or below the median. Justify the last part.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
-**A:** Right-skewed (skewed to the right). The long tail is on the right, toward the high values, and the peak sits on the left. Mean > median: the few very large incomes add a lot to the sum, so the mean is dragged into the tail, while the median depends only on the middle of the ordered list and barely moves.
+**A:** Key:
+1. The shape is right-skewed.
+2. The long tail is on the right, toward the high values, and the peak sits on the left.
+3. The mean is above the median.
+4. The few very large incomes drag the mean into the tail, while the median depends only on the middle of the ordered list.
+
+Right-skewed (skewed to the right). The long tail is on the right, toward the high values, and the peak sits on the left. Mean > median: the few very large incomes add a lot to the sum, so the mean is dragged into the tail, while the median depends only on the middle of the ordered list and barely moves.
 
 ### Q: A student says "right-skewed means the hump is on the right side of the histogram." Correct the statement and give the rule for naming a skew.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** critique
-**A:** Wrong way round. Skew is named after the long tail, not the peak: a right-skewed histogram has its long tail pointing right and its hump on the left. Rule: find the side with the longer, thinner tail; that side names the skew. Symmetric means the two sides are mirror images.
+**A:** Key:
+1. Wrong way round: a right-skewed histogram has its long tail pointing right and its hump on the left.
+2. Rule: the skew is named after the side with the longer, thinner tail, not after the peak.
+
+Wrong way round. Skew is named after the long tail, not the peak: a right-skewed histogram has its long tail pointing right and its hump on the left. Rule: find the side with the longer, thinner tail; that side names the skew. Symmetric means the two sides are mirror images.
 
 ### Q: Define unimodal, bimodal and multimodal. Heights of all UBC students, men and women pooled, come out bimodal. Why, and what does that suggest you should do before summarising with one mean?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
-**A:** The type of mound counts the clear peaks: unimodal one, bimodal two, multimodal more than two. Two peaks usually mean two subpopulations with different centres have been mixed, here men and women. A single mean would land between the two peaks and describe almost nobody, so split the groups and summarise each.
+**A:** Key:
+1. Unimodal has one clear peak, bimodal two and multimodal more than two.
+2. Two peaks mean two subpopulations with different centres were mixed, here men and women.
+3. A single mean would land between the two peaks and describe almost nobody.
+4. Split the groups and summarise each one separately.
+
+The type of mound counts the clear peaks: unimodal one, bimodal two, multimodal more than two. Two peaks usually mean two subpopulations with different centres have been mixed, here men and women. A single mean would land between the two peaks and describe almost nobody, so split the groups and summarise each.
 
 ### Q: A frequency table for five equal-width intervals reads 1, 2, 0, 10, 5. Do you drop the empty interval when you draw the histogram? What must the bar heights add to, and why do the bars touch?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
-**A:** No. The interval stays on the axis with a bar of height zero, so the gap in the data is visible, the same reason an empty stem stays in a stem-and-leaf plot. The heights add to $$n = 18$$ (or to 1 if you plotted relative frequencies). Bars touch because the horizontal axis is a continuous number line and adjacent intervals share an endpoint.
+**A:** Key:
+1. No, the empty interval stays on the axis with a bar of height zero.
+2. Keeping it makes the gap in the data visible.
+3. The heights add to $$n = 18$$, or to 1 with relative frequencies.
+4. The bars touch because the horizontal axis is a continuous number line and adjacent intervals share an endpoint.
+
+No. The interval stays on the axis with a bar of height zero, so the gap in the data is visible, the same reason an empty stem stays in a stem-and-leaf plot. The heights add to $$n = 18$$ (or to 1 if you plotted relative frequencies). Bars touch because the horizontal axis is a continuous number line and adjacent intervals share an endpoint.
 
 ### Q: Exam scores: 95, 92, 90, 88, 85, 84, 80, 60, 40. Without drawing anything, say which way this is skewed, then compute the mean and median and check that they agree with your answer.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** derive
-**A:** Most scores are high with two stragglers far below, so the long tail is on the left: left-skewed. The sum is 714 and $$n = 9$$, so $$\bar{x} = \frac{714}{9} \approx 79.3$$. The median is the 5th ordered value, 85. $$\text{Mean} < \text{median}$$, which is the signature of a left tail.
+**A:** Key:
+1. Left-skewed, because most scores are high and two stragglers far below make a long left tail.
+2. The mean is the sum over $$n$$: $$\bar{x} = \frac{714}{9}$$.
+3. $$\bar{x} \approx 79.3$$.
+4. The median is the 5th ordered value, 85.
+5. The mean below the median confirms a left tail.
+
+Most scores are high with two stragglers far below, so the long tail is on the left: left-skewed. The sum is 714 and $$n = 9$$, so $$\bar{x} = \frac{714}{9} \approx 79.3$$. The median is the 5th ordered value, 85. $$\text{Mean} < \text{median}$$, which is the signature of a left tail.
 
 ### Q: 40 observations run from 3.2 to 9.8 and you want 6 intervals. Compute the width, propose convenient equal-width intervals that cover the data, and state what the frequency column must sum to. What changes if you use 12 intervals instead?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** derive
-**A:** $$\text{Range} = 9.8 - 3.2 = 6.6$$, so $$\text{width} = \frac{6.6}{6} = 1.1$$. Round to a convenient width that still covers the data, for example 1.2 starting at 3.0: 3.0–4.2, 4.2–5.4, 5.4–6.6, 6.6–7.8, 7.8–9.0, 9.0–10.2, and say which endpoint each interval includes so a boundary value is counted once. The counts sum to $$n = 40$$. With 12 intervals the width halves to about 0.55: more detail but bumpier bars and more near-empty intervals. The number of intervals is a choice, and it changes how the shape looks.
+**A:** Key:
+1. $$\text{Range} = 9.8 - 3.2 = 6.6$$, so the width is $$\frac{6.6}{6} = 1.1$$.
+2. Round to a convenient width that covers the data, such as 1.2 from 3.0: 3.0–4.2, 4.2–5.4, up to 9.0–10.2.
+3. State which endpoint each interval includes, so a boundary value is counted once.
+4. The frequency column sums to $$n = 40$$.
+5. With 12 intervals the width halves to about 0.55, giving more detail but bumpier bars and more near-empty intervals.
+
+$$\text{Range} = 9.8 - 3.2 = 6.6$$, so $$\text{width} = \frac{6.6}{6} = 1.1$$. Round to a convenient width that still covers the data, for example 1.2 starting at 3.0: 3.0–4.2, 4.2–5.4, 5.4–6.6, 6.6–7.8, 7.8–9.0, 9.0–10.2, and say which endpoint each interval includes so a boundary value is counted once. The counts sum to $$n = 40$$. With 12 intervals the width halves to about 0.55: more detail but bumpier bars and more near-empty intervals. The number of intervals is a choice, and it changes how the shape looks.
 
 ### Q: State the median rule for odd and even n. Apply it to 12, 14, 15, 17, 20, 24, 24, 27, 29, then to the same list with 30 appended.
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** 3  **Type:** derive
-**A:** Order the data first. Odd $$n$$: the median is the $$\frac{n+1}{2}$$-th value. Even $$n$$: average the $$\frac{n}{2}$$-th and $$\left(\frac{n}{2}+1\right)$$-th values. For $$n = 9$$ the median is the 5th value, 20. With 30 appended $$n = 10$$, so average the 5th and 6th values: $$\frac{20 + 24}{2} = 22$$.
+**A:** Key:
+1. Order the data; for odd $$n$$ the median is the $$\frac{n+1}{2}$$-th value.
+2. For even $$n$$, average the $$\frac{n}{2}$$-th and $$\left(\frac{n}{2}+1\right)$$-th values.
+3. For $$n = 9$$ the median is the 5th value, 20.
+4. With 30 appended, $$n = 10$$ and the median is $$\frac{20 + 24}{2} = 22$$.
+
+Order the data first. Odd $$n$$: the median is the $$\frac{n+1}{2}$$-th value. Even $$n$$: average the $$\frac{n}{2}$$-th and $$\left(\frac{n}{2}+1\right)$$-th values. For $$n = 9$$ the median is the 5th value, 20. With 30 appended $$n = 10$$, so average the 5th and 6th values: $$\frac{20 + 24}{2} = 22$$.
 
 ### Q: The deck's example 4, 6, 8, 7, 5 hours has mean 6. Replace the 8 with 80 and recompute the mean and the median. What property of the median does this show, and what are the sample mean's symbol and formula?
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** 3  **Type:** derive
-**A:** Original: ordered 4, 5, 6, 7, 8, mean $$\frac{30}{5} = 6$$, median 6. After: 4, 5, 6, 7, 80, mean $$\frac{102}{5} = 20.4$$, median still 6. The median is resistant to extreme values; the mean is not. The sample mean is $$\bar{x} = \frac{x_1 + \dots + x_n}{n}$$, the sum of the observations divided by how many there are.
+**A:** Key:
+1. The new mean is the new sum over $$n$$: $$\bar{x} = \frac{4 + 5 + 6 + 7 + 80}{5} = \frac{102}{5}$$.
+2. The new mean is 20.4, up from 6.
+3. The median stays 6, the middle of 4, 5, 6, 7, 80.
+4. The median is resistant to extreme values and the mean is not.
+5. The sample mean is $$\bar{x} = \frac{x_1 + \dots + x_n}{n}$$, the sum of the observations over how many there are.
+
+Original: ordered 4, 5, 6, 7, 8, mean $$\frac{30}{5} = 6$$, median 6. After: 4, 5, 6, 7, 80, mean $$\frac{102}{5} = 20.4$$, median still 6. The median is resistant to extreme values; the mean is not. The sample mean is $$\bar{x} = \frac{x_1 + \dots + x_n}{n}$$, the sum of the observations divided by how many there are.
 
 ### Q: "The median is preferred for skewed data because it is the relative mean." Fix the reason, then give two situations where the mean is the better choice.
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** 3  **Type:** critique
-**A:** There is no "relative mean". The median is preferred because it is resistant: extreme values in the long tail drag the mean toward them, so the median stays closer to a typical observation. The mean is better when the distribution is roughly symmetric with no outliers (then $$\text{mean} \approx \text{median}$$ and the mean uses every value), and when you need a total, since $$\text{mean} \times n$$ gives the sum (total revenue, total hours).
+**A:** Key:
+1. The median is preferred because it is resistant; there is no "relative mean".
+2. Extreme values in the long tail drag the mean toward them, while the median stays near a typical observation.
+3. The mean is better for roughly symmetric data with no outliers, where it is close to the median and uses every value.
+4. The mean is better when you need a total, since $$\text{mean} \times n$$ gives the sum.
+
+There is no "relative mean". The median is preferred because it is resistant: extreme values in the long tail drag the mean toward them, so the median stays closer to a typical observation. The mean is better when the distribution is roughly symmetric with no outliers (then $$\text{mean} \approx \text{median}$$ and the mean uses every value), and when you need a total, since $$\text{mean} \times n$$ gives the sum (total revenue, total hours).
 
 ### Q: A real-estate board reports that detached houses sold last month had a mean price of $2.4M and a median of $1.7M. What does the gap tell you about the shape of the price distribution, what causes it, and which number describes a typical house?
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** 3  **Type:** apply
-**A:** Mean well above median means a long right tail: right-skewed. A few very expensive houses add a lot to the sum and pull the mean up, while the median only tracks the middle sale. The median describes the typical house; the mean is inflated by the top end. Symmetric data would show $$\text{mean} \approx \text{median}$$, and $$\text{mean} < \text{median}$$ would mean a left tail.
+**A:** Key:
+1. A mean well above the median means a long right tail, so the prices are right-skewed.
+2. A few very expensive houses add a lot to the sum and pull the mean up, while the median only tracks the middle sale.
+3. The median describes the typical house.
+
+Mean well above median means a long right tail: right-skewed. A few very expensive houses add a lot to the sum and pull the mean up, while the median only tracks the middle sale. The median describes the typical house; the mean is inflated by the top end. Symmetric data would show $$\text{mean} \approx \text{median}$$, and $$\text{mean} < \text{median}$$ would mean a left tail.
 
 ### Q: Compute the mean, median and range of 48, 49, 50, 51, 52 and of 30, 40, 50, 60, 70. What does the comparison prove about describing a distribution?
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** derive
-**A:** First set: mean 50, median 50, range 4. Second set: mean 50, median 50, range 40. Centre and spread are separate features: two data sets can share a centre and differ completely in spread, so a measure of centre alone does not describe a distribution.
+**A:** Key:
+1. First set: mean 50, median 50, range 4.
+2. Second set: mean 50, median 50, range 40.
+3. Centre and spread are separate features, so a measure of centre alone does not describe a distribution.
+
+First set: mean 50, median 50, range 4. Second set: mean 50, median 50, range 40. Centre and spread are separate features: two data sets can share a centre and differ completely in spread, so a measure of centre alone does not describe a distribution.
 
 ### Q: Define an outlier as the deck does. Compute the range of 70, 46, 62, 64, 15, 78, 56, 64, 69, 49, then recompute it with the 15 removed. What does that show, and which of mean and median reacts the same way?
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** apply
-**A:** An outlier is an observation far from the rest of the data, unusually large or unusually small. $$\text{Range} = 78 - 15 = 63$$. Without the 15 the minimum is 46 and the range is $$78 - 46 = 32$$. One observation halved it, because the range uses only the two extremes. The mean reacts the same way, pulled toward the outlier; the median barely moves.
+**A:** Key:
+1. An outlier is an observation far from the rest of the data, unusually large or unusually small.
+2. The range is maximum minus minimum, $$78 - 15 = 63$$.
+3. Without the 15 the range is $$78 - 46 = 32$$.
+4. One observation halved the range, because the range uses only the two extremes.
+5. The mean reacts the same way, pulled toward the outlier, while the median barely moves.
+
+An outlier is an observation far from the rest of the data, unusually large or unusually small. $$\text{Range} = 78 - 15 = 63$$. Without the 15 the minimum is 46 and the range is $$78 - 46 = 32$$. One observation halved it, because the range uses only the two extremes. The mean reacts the same way, pulled toward the outlier; the median barely moves.
 
 ### Q: Define centre and spread in one sentence each, name every measure of each you have so far, and say which measures and which display come next class.
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** recall
-**A:** Centre is a single value standing for a typical observation, where the data cluster: the measures so far are the mean and the median. Spread is how far the observations sit from each other or from the centre, also called variability or dispersion: the only measure so far is the range. Next class adds variance, standard deviation and the interquartile range, plus the boxplot that displays the median, quartiles and outliers.
+**A:** Key:
+1. Centre is a single value standing for a typical observation, where the data cluster.
+2. The measures of centre so far are the mean and the median.
+3. Spread is how far the observations sit from each other or from the centre, also called variability or dispersion.
+4. The only measure of spread so far is the range.
+5. Next class adds variance, standard deviation, the interquartile range and the boxplot.
+
+Centre is a single value standing for a typical observation, where the data cluster: the measures so far are the mean and the median. Spread is how far the observations sit from each other or from the centre, also called variability or dispersion: the only measure so far is the range. Next class adds variance, standard deviation and the interquartile range, plus the boxplot that displays the median, quartiles and outliers.
 
 
 ### Q: A lab reports "range: 12 to 41". Is that the range as the course defines it? Give the correct value and say what a range of 0 would mean.
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** apply
-**A:** No. The range is a single number, maximum minus minimum, so here it is $$41 - 12 = 29$$. "12 to 41" is the span of the data, not the range. A range of 0 means every observation is identical, so there is no spread at all.
+**A:** Key:
+1. No: the range is a single number, maximum minus minimum.
+2. The range here is $$41 - 12 = 29$$.
+3. A range of 0 means every observation is identical, so there is no spread.
+
+No. The range is a single number, maximum minus minimum, so here it is $$41 - 12 = 29$$. "12 to 41" is the span of the data, not the range. A range of 0 means every observation is identical, so there is no spread at all.
 
 ### Q: Data: 3, 5, 5, 6, 7, 8, 40. Compute the mean, the median and the range. Then drop the 40 and recompute all three. Which measures changed a lot, which barely moved, and what is the word the course uses for a measure that barely moves?
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** derive
-**A:** With the 40: $$\bar{x} = \frac{74}{7} \approx 10.6$$, median 6, range 37. Without it: $$\bar{x} = \frac{34}{6} \approx 5.7$$, median 5.5, range 5. The mean and the range are pulled hard by the single extreme value, because the mean uses every value in its sum and the range uses only the two ends. The median barely moves because it only depends on the middle position. A measure that is not much affected by an outlier is called resistant, so the median is resistant and the mean and range are not.
+**A:** Key:
+1. With the 40: $$\bar{x} = \frac{74}{7} \approx 10.6$$, median 6, range 37.
+2. Without the 40: $$\bar{x} = \frac{34}{6} \approx 5.7$$, median 5.5, range 5.
+3. The mean and the range change a lot, while the median barely moves.
+4. The mean uses every value in its sum and the range uses the two ends, while the median depends only on the middle position.
+5. A measure that barely moves is called resistant.
+
+With the 40: $$\bar{x} = \frac{74}{7} \approx 10.6$$, median 6, range 37. Without it: $$\bar{x} = \frac{34}{6} \approx 5.7$$, median 5.5, range 5. The mean and the range are pulled hard by the single extreme value, because the mean uses every value in its sum and the range uses only the two ends. The median barely moves because it only depends on the middle position. A measure that is not much affected by an outlier is called resistant, so the median is resistant and the mean and range are not.
 
 ### Q: Give the deck's definition of an outlier in one sentence, and say why the $$1.5 \times \text{IQR}$$ rule is not the definition.
 **Topic:** 1d Centre vs spread (what each measures · range · same centre, different spread)  **Lec:** 3  **Type:** recall
-**A:** An outlier is an observation that lies far from the rest of the data, unusually large or unusually small. The $$1.5 \times \text{IQR}$$ fence is a later working rule for flagging candidates once quartiles are available, not the definition, and the deck introduces the idea before any fence: an outlier is identified by its distance from the bulk of the data, whatever tool is used to decide "far". On an exam, though, the $$1.5 \times \text{IQR}$$ rule from lecture 4 is how you decide which values count as outliers.
+**A:** Key:
+1. An outlier is an observation that lies far from the rest of the data, unusually large or unusually small.
+2. The $$1.5 \times \text{IQR}$$ fence is a later working rule for flagging candidates once quartiles exist, not the definition.
+
+An outlier is an observation that lies far from the rest of the data, unusually large or unusually small. The $$1.5 \times \text{IQR}$$ fence is a later working rule for flagging candidates once quartiles are available, not the definition, and the deck introduces the idea before any fence: an outlier is identified by its distance from the bulk of the data, whatever tool is used to decide "far". On an exam, though, the $$1.5 \times \text{IQR}$$ rule from lecture 4 is how you decide which values count as outliers.
 
 ### Q: iClicker from lecture 3: the distribution of prices of detached houses sold in a city is (a) symmetric (b) left-skewed (c) right-skewed (d) bimodal. Pick one and justify it using the tail and the position of the mean relative to the median.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
-**A:** (c) right-skewed. Prices cannot go below zero and most houses cluster in a middle band, but a small number of very expensive houses stretch the tail far to the right, toward the high values. Those few pull the mean above the median, the signature of a right tail. Left-skewed would need a long tail of very cheap houses, and bimodal would need two separate clusters of prices.
+**A:** Key:
+1. (c) right-skewed.
+2. A small number of very expensive houses stretch the tail far to the right, toward the high values.
+3. Those few pull the mean above the median, the signature of a right tail.
+
+(c) right-skewed. Prices cannot go below zero and most houses cluster in a middle band, but a small number of very expensive houses stretch the tail far to the right, toward the high values. Those few pull the mean above the median, the signature of a right tail. Left-skewed would need a long tail of very cheap houses, and bimodal would need two separate clusters of prices.
 
 ### Q: The 25 hours-worked values include 230 and 250, and the intervals are 170–190, 190–210, 210–230, 230–250 and 250–270. Which interval gets each of those two values under the course's rule, and why must the rule stay the same at every boundary?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
-**A:**
+**A:** Key:
+1. A boundary value goes in the interval where it is the upper end, so 230 goes in 210–230.
+2. 250 goes in 230–250, not 250–270.
+3. The rule must be the same at every boundary, or some values get pushed up and others down and the counts stop describing the data.
+
 - A value on a boundary goes in the interval where it is the upper end. So 230 goes in 210 to 230, and 250 goes in 230 to 250, not in 250 to 270.
 - The rule must be the same at every boundary. Otherwise some boundary values get pushed up and others down, and the counts stop describing the data. The deck's counts of 1, 2, 7, 10 and 5 only come out with this rule.
 
 ### Q: You have 25 observations. Why would a histogram with 2 intervals, or with 10, be a poor choice, and what is the course's rule of thumb for the number of intervals?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** critique
-**A:**
+**A:** Key:
+1. Two bars cannot show a shape, a centre or a spread.
+2. Ten intervals spread 25 values so thinly that most bars hold only 0 to 3 values and the shape gets lost.
+3. The rule of thumb is 5 to 15 intervals, with more only for large data sets.
+4. For 25 values, 5 or 6 intervals is about right.
+
 - Two bars cannot show a shape, a centre or a spread, which is the whole point of the graph.
 - Ten intervals spread 25 values so thinly that most bars hold only 0 to 3 values, and the shape gets lost.
 - The rule of thumb is 5 to 15 intervals, with more only for large data sets. For 25 values, 5 or 6 is about right, and the two give a similar picture.
 
 ### Q: A relative frequency histogram of resting heart rates for 400 people has intervals 50–60, 60–70, 70–80, 80–90 and 90–100 with bar heights 0.05, 0.20, 0.40, 0.25 and 0.10. Using the course's boundary rule, how many people had a rate of at most 80, and how many had a rate above 80?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** apply
-**A:**
+**A:** Key:
+1. At most 80 is the first three bars, because 80 ends the 70–80 interval: $$(0.05 + 0.20 + 0.40) \times 400$$.
+2. That is $$0.65 \times 400 = 260$$ people.
+3. Above 80 is the last two bars: $$(0.25 + 0.10) \times 400 = 140$$ people.
+
 - A rate of exactly 80 is in the 70–80 interval, the one it ends, so the people with a rate of at most 80 are the first three bars.
 
 $$
@@ -296,17 +564,33 @@ $$
 
 ### Q: True or false, and justify: a bar chart of the number of students in each faculty, with the tallest bar on the right and the bars shrinking toward the left, shows a left-skewed distribution.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** 3  **Type:** critique
-**A:** False. Skewness describes a numerical variable on a number line, so it is read from a histogram. Faculties are categories with no fixed order, so the same bars could be rearranged into any shape, and the shape of a bar chart means nothing. This was the lecture 3 iClicker, and the answer was "none of these".
+**A:** Key:
+1. False.
+2. Skewness describes a numerical variable on a number line, so it is read from a histogram.
+3. Faculties are categories with no fixed order, so the bars could be rearranged into any shape and the bar chart's shape means nothing.
+
+False. Skewness describes a numerical variable on a number line, so it is read from a histogram. Faculties are categories with no fixed order, so the same bars could be rearranged into any shape, and the shape of a bar chart means nothing. This was the lecture 3 iClicker, and the answer was "none of these".
 
 ### Q: True or false, and justify: the median is always one of the data values.
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** 3  **Type:** critique
-**A:** False. With an odd number of values the median is the middle value, so it is a data value. With an even number it is the average of the two middle values, which is a data value only when those two are equal. The list 12, 14, 15, 17, 20, 24, 24, 27, 29, 30 has median $$\frac{20 + 24}{2} = 22$$, and 22 is not in the list.
+**A:** Key:
+1. False.
+2. With an odd number of values the median is the middle value, so it is a data value.
+3. With an even number it is the average of the two middle values, a data value only when those two are equal.
+
+False. With an odd number of values the median is the middle value, so it is a data value. With an even number it is the average of the two middle values, which is a data value only when those two are equal. The list 12, 14, 15, 17, 20, 24, 24, 27, 29, 30 has median $$\frac{20 + 24}{2} = 22$$, and 22 is not in the list.
 
 ## Lec 4 — Ch 1: variability, percentiles and quartiles, box plots (logged 2026-09-16)
 
 ### Q: The deck's example: the hours five students spent studying per week are 4, 6, 8, 7, 5. From a blank page, compute the sample variance and the sample standard deviation, showing every deviation, and give the units of each.
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** derive
-**A:** $$\bar{x} = \frac{30}{5} = 6$$. Deviations $$-2, 0, 2, 1, -1$$; squares 4, 0, 4, 1, 1; sum 10.
+**A:** Key:
+1. Sample variance with $$\bar{x} = 6$$: $$s^2 = \frac{(-2)^2 + 0^2 + 2^2 + 1^2 + (-1)^2}{5 - 1}$$.
+2. $$s^2 = \frac{10}{4} = 2.5$$.
+3. $$s = \sqrt{2.5} \approx 1.58$$.
+4. The variance is in $$\text{hours}^2$$ and the standard deviation is in hours.
+
+$$\bar{x} = \frac{30}{5} = 6$$. Deviations $$-2, 0, 2, 1, -1$$; squares 4, 0, 4, 1, 1; sum 10.
 
 $$
 \begin{aligned}
@@ -319,11 +603,23 @@ The formula is $$s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}$$. The shortcut $$\s
 
 ### Q: Which statement about the sample standard deviation $$s$$ is false, and why? (a) $$s \ge 0$$, with $$s = 0$$ only when every observation is the same value. (b) $$s$$ has the same units as the data, and $$s^2$$ has those units squared. (c) $$s$$ is resistant: one extreme observation moves it about as little as it moves the median. (d) Strong skew or a few outliers can inflate $$s$$ a great deal.
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** critique
-**A:** (c) is false. $$s$$ squares every deviation from the mean, so one far-out value adds a huge term to the sum and also shifts $$\bar{x}$$ toward it; the median only counts positions, so it barely moves. (a), (b) and (d) are the deck's stated properties.
+**A:** Key:
+1. (c) is false: $$s$$ is not resistant.
+2. $$s$$ squares every deviation, so one far-out value adds a huge term to the sum and also shifts $$\bar{x}$$ toward it.
+3. The median only counts positions, so it barely moves.
+
+(c) is false. $$s$$ squares every deviation from the mean, so one far-out value adds a huge term to the sum and also shifts $$\bar{x}$$ toward it; the median only counts positions, so it barely moves. (a), (b) and (d) are the deck's stated properties.
 
 ### Q: A sample of daily temperatures has mean 20 °C and variance 9. Every value is converted to Fahrenheit by $$y = \frac{9}{5}x + 32$$. Give the mean, variance and standard deviation in Fahrenheit, then state the general rule for $$y = a + bx$$ and say which constant affects which.
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** derive
-**A:** Mean $$1.8 \times 20 + 32 = 68$$ °F. Variance $$1.8^2 \times 9 = 29.16$$. $$s = 1.8 \times 3 = 5.4$$ °F. The general rule:
+**A:** Key:
+1. Use $$y = a + bx$$ with $$a = 32$$, $$b = 1.8$$: $$\bar{y} = 1.8(20) + 32$$, $$s_y^2 = 1.8^2(9)$$, $$s_y = 1.8(3)$$.
+2. The mean is 68 °F.
+3. The variance is 29.16 and the standard deviation is 5.4 °F.
+4. The general rule is $$\bar{y} = a + b\,\bar{x}$$, $$s_y^2 = b^2 s_x^2$$ and $$s_y = |b|\,s_x$$.
+5. The constant $$a$$ shifts the mean only, while $$b$$ scales the mean and scales the spread by $$|b|$$.
+
+Mean $$1.8 \times 20 + 32 = 68$$ °F. Variance $$1.8^2 \times 9 = 29.16$$. $$s = 1.8 \times 3 = 5.4$$ °F. The general rule:
 
 $$
 \begin{aligned}
@@ -337,11 +633,25 @@ The added constant $$a$$ shifts the mean only; the multiplier $$b$$ scales the m
 
 ### Q: Household incomes in a city are strongly right-skewed, with a handful of billionaires. Which pair should a report use for centre and spread? (a) mean and $$s$$ (b) median and IQR (c) mean and IQR (d) median and range. Justify, and say what happens to each of $$s$$, the median and the IQR if one billionaire's income doubles.
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** apply
-**A:** (b). The median and the IQR are set by positions in the sorted data, so the tail cannot drag them; the mean and $$s$$ use every value's distance from the mean and are inflated by the tail. The range is worse still, built from the two extremes. If one billionaire's income doubles, $$s$$ rises sharply because of the larger squared deviation, while the median and the IQR do not change at all.
+**A:** Key:
+1. (b) median and IQR.
+2. The median and the IQR are set by positions in the sorted data, so the tail cannot drag them.
+3. The mean and $$s$$ use every value's distance from the mean and are inflated by the tail.
+4. If one billionaire's income doubles, $$s$$ rises sharply.
+5. The median and the IQR do not change at all.
+
+(b). The median and the IQR are set by positions in the sorted data, so the tail cannot drag them; the mean and $$s$$ use every value's distance from the mean and are inflated by the tail. The range is worse still, built from the two extremes. If one billionaire's income doubles, $$s$$ rises sharply because of the larger squared deviation, while the median and the IQR do not change at all.
 
 ### Q: Sorted data from the deck ($$n = 20$$): 12 14 17 22 22 24 25 26 27 29 30 31 33 34 35 35 39 40 42 59. Using the deck's $$np + 0.5$$ rule, compute $$Q_1$$, the median and $$Q_3$$, then the IQR. Show the value of $$np + 0.5$$ each time.
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** derive
-**A:** For $$p = 0.25$$, $$np + 0.5 = 20 \times 0.25 + 0.5 = 5.5$$, not an integer, so average the 5th and 6th values. For $$p = 0.5$$ it is 10.5, and for $$p = 0.75$$ it is 15.5.
+**A:** Key:
+1. For $$Q_1$$, $$np + 0.5 = 20 \times 0.25 + 0.5 = 5.5$$, so $$Q_1 = \frac{x_{(5)} + x_{(6)}}{2}$$.
+2. $$Q_1 = \frac{22 + 24}{2} = 23$$.
+3. The median's position is 10.5, so it is $$\frac{29 + 30}{2} = 29.5$$.
+4. The position for $$Q_3$$ is 15.5, so $$Q_3 = \frac{35 + 35}{2} = 35$$.
+5. $$\text{IQR} = 35 - 23 = 12$$.
+
+For $$p = 0.25$$, $$np + 0.5 = 20 \times 0.25 + 0.5 = 5.5$$, not an integer, so average the 5th and 6th values. For $$p = 0.5$$ it is 10.5, and for $$p = 0.75$$ it is 15.5.
 
 $$
 \begin{aligned}
@@ -355,26 +665,60 @@ $$\text{IQR} = 35 - 23 = 12$$.
 
 ### Q: Sorted data, $$n = 15$$: 3 5 7 8 10 12 14 15 18 20 22 25 27 30 33. Find $$Q(0.3)$$, $$Q(0.35)$$ and $$Q(0.9)$$ by the deck's rule. Then say in words what the value of $$Q(0.3)$$ means and check it against the data.
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
-**A:** $$Q(0.3)$$: $$15 \times 0.3 + 0.5 = 5$$, an integer, so $$Q(0.3) = x_{(5)} = 10$$. $$Q(0.35)$$: $$5.25 + 0.5 = 5.75$$, between 5 and 6, so $$Q(0.35) = \frac{x_{(5)} + x_{(6)}}{2} = \frac{10 + 12}{2} = 11$$, the plain average, not a weighted value like 11.5. $$Q(0.9)$$: $$13.5 + 0.5 = 14$$, so $$Q(0.9) = x_{(14)} = 30$$. $$Q(0.3) = 10$$ means about 30% of the observations are smaller than 10: four of fifteen are (3, 5, 7, 8), which is 27%, close to 30%.
+**A:** Key:
+1. $$Q(0.3)$$: $$15 \times 0.3 + 0.5 = 5$$, an integer, so $$Q(0.3) = x_{(5)} = 10$$.
+2. $$Q(0.35)$$: the position is 5.75, so $$Q(0.35) = \frac{x_{(5)} + x_{(6)}}{2} = \frac{10 + 12}{2} = 11$$.
+3. $$Q(0.9)$$: the position is 14, so $$Q(0.9) = x_{(14)} = 30$$.
+4. $$Q(0.3) = 10$$ means about 30% of the observations are smaller than 10.
+5. Check: four of fifteen values (3, 5, 7, 8) are below 10, which is 27%.
+
+$$Q(0.3)$$: $$15 \times 0.3 + 0.5 = 5$$, an integer, so $$Q(0.3) = x_{(5)} = 10$$. $$Q(0.35)$$: $$5.25 + 0.5 = 5.75$$, between 5 and 6, so $$Q(0.35) = \frac{x_{(5)} + x_{(6)}}{2} = \frac{10 + 12}{2} = 11$$, the plain average, not a weighted value like 11.5. $$Q(0.9)$$: $$13.5 + 0.5 = 14$$, so $$Q(0.9) = x_{(14)} = 30$$. $$Q(0.3) = 10$$ means about 30% of the observations are smaller than 10: four of fifteen are (3, 5, 7, 8), which is 27%, close to 30%.
 
 ### Q: Sorted data: 4, 7, 9, 12, 15, 18, 22, 30, 41. Using the course's $$np + 0.5$$ rule:
 - Find the position and value of the 40th percentile.
 - Find $$Q_1$$ and $$Q_3$$, then the IQR.
 - Say what you do when $$np + 0.5$$ lands on a whole number versus a half.
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** derive
-**A:** $$n = 9$$. 40th percentile: $$9 \times 0.40 + 0.5 = 4.1$$, between the 4th and 5th values, so $$\frac{12 + 15}{2} = 13.5$$ by the course's averaging rule for any non-integer position. $$Q_1$$: $$9 \times 0.25 + 0.5 = 2.75$$, so $$\frac{7 + 9}{2} = 8$$. $$Q_3$$: $$9 \times 0.75 + 0.5 = 7.25$$, so $$\frac{22 + 30}{2} = 26$$. $$\text{IQR} = 26 - 8 = 18$$. A whole-number position means take that ordered value; anything else means average the two ordered values on either side.
+**A:** Key:
+1. The 40th percentile's position is $$9 \times 0.40 + 0.5 = 4.1$$, between the 4th and 5th values.
+2. The 40th percentile is $$\frac{12 + 15}{2} = 13.5$$.
+3. $$Q_1$$ has position 2.75, so $$Q_1 = \frac{7 + 9}{2} = 8$$.
+4. $$Q_3$$ has position 7.25, so $$Q_3 = \frac{22 + 30}{2} = 26$$ and $$\text{IQR} = 18$$.
+5. A whole-number position takes that ordered value; any other position averages the two ordered values on either side.
+
+$$n = 9$$. 40th percentile: $$9 \times 0.40 + 0.5 = 4.1$$, between the 4th and 5th values, so $$\frac{12 + 15}{2} = 13.5$$ by the course's averaging rule for any non-integer position. $$Q_1$$: $$9 \times 0.25 + 0.5 = 2.75$$, so $$\frac{7 + 9}{2} = 8$$. $$Q_3$$: $$9 \times 0.75 + 0.5 = 7.25$$, so $$\frac{22 + 30}{2} = 26$$. $$\text{IQR} = 26 - 8 = 18$$. A whole-number position means take that ordered value; anything else means average the two ordered values on either side.
 
 ### Q: For the same $$n = 15$$ data, compute $$Q_1$$ two ways: with the $$np + 0.5$$ rule, and as the median of the lower half of the data (the seven values below the median). Do they agree? What does the deck say about this, and which rule do you use on a computation question?
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
-**A:** $$np + 0.5$$ rule: $$15 \times 0.25 + 0.5 = 4.25$$, so $$Q_1 = \frac{x_{(4)} + x_{(5)}}{2} = \frac{8 + 10}{2} = 9$$. The lower half 3, 5, 7, 8, 10, 12, 14 has median 8. They disagree. The deck says different textbooks and software use slightly different quartile rules, so sources can differ. The $$np + 0.5$$ rule is the procedure the deck states, so use it unless the question fixes another rule. For the deck's own 20-value example the two rules happen to agree.
+**A:** Key:
+1. By the rule the position is $$15 \times 0.25 + 0.5 = 4.25$$, so $$Q_1 = \frac{x_{(4)} + x_{(5)}}{2}$$.
+2. By the rule, $$Q_1 = \frac{8 + 10}{2} = 9$$.
+3. The lower half 3, 5, 7, 8, 10, 12, 14 has median 8, so the two methods disagree.
+4. Different textbooks and software use slightly different quartile rules, so sources can differ.
+5. Use the $$np + 0.5$$ rule unless the question fixes another rule.
+
+$$np + 0.5$$ rule: $$15 \times 0.25 + 0.5 = 4.25$$, so $$Q_1 = \frac{x_{(4)} + x_{(5)}}{2} = \frac{8 + 10}{2} = 9$$. The lower half 3, 5, 7, 8, 10, 12, 14 has median 8. They disagree. The deck says different textbooks and software use slightly different quartile rules, so sources can differ. The $$np + 0.5$$ rule is the procedure the deck states, so use it unless the question fixes another rule. For the deck's own 20-value example the two rules happen to agree.
 
 ### Q: The 75th percentile of a data set is (a) the value three quarters of the way from the minimum to the maximum (b) a value with 75% of the observations at or below it (c) the mean of the top quarter of the data (d) the same thing as $$Q_1$$. Pick one, show with the data 1, 2, 3, 4, 5, 6, 7, 100 why (a) is wrong, and name the three quartiles as percentiles.
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
-**A:** (b). Percentiles count observations, not distance along the range. For 1, 2, 3, 4, 5, 6, 7, 100 the point three quarters of the way from 1 to 100 is about 75, but by the $$np + 0.5$$ rule the position is $$8 \times 0.75 + 0.5 = 6.5$$, so the 75th percentile is $$\frac{x_{(6)} + x_{(7)}}{2} = \frac{6 + 7}{2} = 6.5$$. $$Q_1$$ is the 25th percentile, $$Q_2$$ (the median) is the 50th and $$Q_3$$ is the 75th.
+**A:** Key:
+1. (b), a value with 75% of the observations at or below it.
+2. Percentiles count observations, not distance along the range, and three quarters of the way from 1 to 100 is about 75.
+3. By the rule the position is $$8 \times 0.75 + 0.5 = 6.5$$, so the 75th percentile is $$\frac{6 + 7}{2} = 6.5$$.
+4. $$Q_1$$ is the 25th percentile, $$Q_2$$ (the median) the 50th and $$Q_3$$ the 75th.
+
+(b). Percentiles count observations, not distance along the range. For 1, 2, 3, 4, 5, 6, 7, 100 the point three quarters of the way from 1 to 100 is about 75, but by the $$np + 0.5$$ rule the position is $$8 \times 0.75 + 0.5 = 6.5$$, so the 75th percentile is $$\frac{x_{(6)} + x_{(7)}}{2} = \frac{6 + 7}{2} = 6.5$$. $$Q_1$$ is the 25th percentile, $$Q_2$$ (the median) is the 50th and $$Q_3$$ is the 75th.
 
 ### Q: Twenty marks have $$Q_1 = 23$$ and $$Q_3 = 35$$. Compute the fences for the $$1.5 \times \text{IQR}$$ rule, state the rule in words, and say which of the marks 4, 5, 52, 53, 59 are outliers.
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
-**A:** $$\text{IQR} = 12$$ and $$1.5 \times \text{IQR} = 18$$, so the fences are:
+**A:** Key:
+1. $$\text{IQR} = 35 - 23 = 12$$ and $$1.5 \times \text{IQR} = 18$$, so the fences are $$23 - 18$$ and $$35 + 18$$.
+2. The lower fence is 5 and the upper fence is 53.
+3. An outlier lies more than $$1.5 \times \text{IQR}$$ below $$Q_1$$ or more than $$1.5 \times \text{IQR}$$ above $$Q_3$$.
+4. 4 and 59 are outliers.
+5. 5, 52 and 53 are not outliers, since 5 and 53 sit exactly on the fences rather than beyond them.
+
+$$\text{IQR} = 12$$ and $$1.5 \times \text{IQR} = 18$$, so the fences are:
 
 $$
 \begin{aligned}
@@ -387,37 +731,78 @@ An observation is an outlier if it falls more than $$1.5 \times \text{IQR}$$ bel
 
 ### Q: Build the box plot for the deck's 20 values (12 14 17 22 22 24 25 26 27 29 30 31 33 34 35 35 39 40 42 59). Give the five-number summary, the fences, where each whisker ends, and any point plotted separately. Then say what the plot shows about shape.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** derive
-**A:** Five-number summary: min 12, $$Q_1$$ 23, median 29.5, $$Q_3$$ 35, max 59. IQR 12, fences 5 and 53. 59 is above 53, so it is drawn as a star beyond the whisker. The left whisker ends at 12, the smallest value inside the fences; the right whisker ends at 42, the largest value at or under 53. The box runs from 23 to 35 with a line at 29.5. The median sits almost centrally in the box and the left whisker (11 long) is a little longer than the right (7 long), so the middle of the data is roughly symmetric; the single high outlier is the only sign of a right tail.
+**A:** Key:
+1. The five-number summary is min 12, $$Q_1 = 23$$, median 29.5, $$Q_3 = 35$$ and max 59.
+2. $$\text{IQR} = 12$$, so the fences are $$23 - 18 = 5$$ and $$35 + 18 = 53$$.
+3. 59 is above 53, so it is plotted separately beyond the whisker as an outlier.
+4. The left whisker ends at 12 and the right whisker at 42, the most extreme values inside the fences.
+5. The median sits almost centrally in the box, so the middle is roughly symmetric, with the single high outlier the only sign of a right tail.
+
+Five-number summary: min 12, $$Q_1$$ 23, median 29.5, $$Q_3$$ 35, max 59. IQR 12, fences 5 and 53. 59 is above 53, so it is drawn as a star beyond the whisker. The left whisker ends at 12, the smallest value inside the fences; the right whisker ends at 42, the largest value at or under 53. The box runs from 23 to 35 with a line at 29.5. The median sits almost centrally in the box and the left whisker (11 long) is a little longer than the right (7 long), so the middle of the data is roughly symmetric; the single high outlier is the only sign of a right tail.
 
 ### Q: "The whiskers of a box plot always run to the minimum and the maximum of the data, and the median line always sits in the middle of the box." Correct both halves. Then: a box plot's right whisker ends at 42 but the data's maximum is 59. What must be true?
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** critique
-**A:** Whiskers end at the most extreme observations still inside the fences $$Q_1 - 1.5 \times \text{IQR}$$ and $$Q_3 + 1.5 \times \text{IQR}$$; they reach the minimum and maximum only when there are no outliers, and they never extend to the fences themselves. The median line sits wherever the median falls between $$Q_1$$ and $$Q_3$$, so it is central only when the middle half of the data is symmetric. If the whisker stops at 42 while the maximum is 59, then 59 lies above the upper fence and is an outlier plotted on its own, and 42 is the largest observation inside the fence.
+**A:** Key:
+1. Whiskers end at the most extreme observations still inside the fences $$Q_1 - 1.5 \times \text{IQR}$$ and $$Q_3 + 1.5 \times \text{IQR}$$.
+2. Whiskers reach the minimum and maximum only when there are no outliers.
+3. The median line sits wherever the median falls, so it is central only when the middle half of the data is symmetric.
+4. 59 lies above the upper fence and is an outlier plotted on its own.
+5. 42 is the largest observation inside the upper fence.
+
+Whiskers end at the most extreme observations still inside the fences $$Q_1 - 1.5 \times \text{IQR}$$ and $$Q_3 + 1.5 \times \text{IQR}$$; they reach the minimum and maximum only when there are no outliers, and they never extend to the fences themselves. The median line sits wherever the median falls between $$Q_1$$ and $$Q_3$$, so it is central only when the middle half of the data is symmetric. If the whisker stops at 42 while the maximum is 59, then 59 lies above the upper fence and is an outlier plotted on its own, and 42 is the largest observation inside the fence.
 
 ### Q: A box plot has its median line close to $$Q_1$$, the left edge of the box, and a right whisker much longer than the left one. The distribution is most likely (a) symmetric (b) left-skewed (c) right-skewed (d) bimodal. Pick one, say what in the plot tells you, and explain why (d) can never be read off a box plot.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
-**A:** (c). The lower half of the data is crammed into a short interval below the median while the upper half stretches far to the right, so the long tail is on the high side: right-skewed. Outliers do not move the median line; the crowding of the middle half does. A box plot cannot show bimodality because it collapses the data to five numbers and hides the shape between them; that is what a histogram is for.
+**A:** Key:
+1. (c) right-skewed.
+2. The median near $$Q_1$$ means the lower half of the data is crammed into a short interval below the median.
+3. The upper half stretches far to the right, so the long tail is on the high side.
+4. A box plot cannot show bimodality because it collapses the data to five numbers and hides the shape between them.
+
+(c). The lower half of the data is crammed into a short interval below the median while the upper half stretches far to the right, so the long tail is on the high side: right-skewed. Outliers do not move the median line; the crowding of the middle half does. A box plot cannot show bimodality because it collapses the data to five numbers and hides the shape between them; that is what a histogram is for.
 
 ### Q: The deck shows side-by-side box plots of chemistry and physics grades. Name three things you can compare directly from them, one thing you cannot see, and the situation where a histogram is the better choice.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** apply
-**A:** You can compare the centres (median lines), the spreads (box length, which is the IQR, and whisker span), and the skew and outliers of each group, all on one scale. You cannot see the shape between the five numbers: modality, gaps, or how many observations each group has. Use a histogram when the shape of one distribution is the point, especially to check for two humps.
+**A:** Key:
+1. You can compare the centres, from the median lines.
+2. You can compare the spreads, from the box length (the IQR) and the whisker span.
+3. You can compare the skew and the outliers of each group, all on one scale.
+4. You cannot see the shape between the five numbers: modality, gaps, or how many observations each group has.
+5. Use a histogram when the shape of one distribution is the point, especially to check for two humps.
+
+You can compare the centres (median lines), the spreads (box length, which is the IQR, and whisker span), and the skew and outliers of each group, all on one scale. You cannot see the shape between the five numbers: modality, gaps, or how many observations each group has. Use a histogram when the shape of one distribution is the point, especially to check for two humps.
 
 ### Q: Every score in a class gets 5 bonus points. Say what happens to the mean, the median, $$Q_1$$, $$Q_3$$, the IQR, the range and the standard deviation. Then answer again for multiplying every score by 1.1 instead.
 **Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 4  **Type:** apply
-**A:**
+**A:** Key:
+1. Adding 5 moves the mean, the median, $$Q_1$$ and $$Q_3$$ up by 5.
+2. Adding 5 leaves the IQR, the range and the standard deviation unchanged, because the distances between values do not change.
+3. Multiplying by 1.1 multiplies every measure of position by 1.1.
+4. Multiplying by 1.1 also multiplies the IQR, the range and the standard deviation by 1.1, since every distance grows by 10%.
+
 - Adding 5 moves every value up by 5, so every measure of position moves up by 5: the mean, the median, $$Q_1$$ and $$Q_3$$.
 - The measures of spread stay the same, because the distances between values do not change: the IQR, the range and the standard deviation. This was the lecture 4 iClicker, with answer (e).
 - Multiplying by 1.1 multiplies every measure of position by 1.1, and every measure of spread by 1.1 too, since every distance grows by 10%. The variance is multiplied by $$1.1^2 = 1.21$$.
 
 ### Q: Two smooth density curves on the same axes have the same centre, and one is much narrower than the other. Which one must have the higher peak, and why? Which has the larger standard deviation?
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** 4  **Type:** apply
-**A:**
+**A:** Key:
+1. The narrower curve must have the higher peak.
+2. The area under each curve is the total probability, 1, so a curve squeezed into a narrower range must rise higher.
+3. The wider curve has the larger standard deviation, because its values spread farther from the centre.
+
 - The narrower curve must have the higher peak. The area under each curve is the total probability, 1, so a curve squeezed into a narrower range has to rise higher to keep the same area.
 - The wider curve has the larger standard deviation, because its values spread farther from the centre.
 - Drawing the narrow curve with the lower peak on the same scale is wrong. He made this point in lecture 4, ahead of Chapter 4.
 
 ### Q: From a box plot alone, which of these can you read: the median, the mean, the IQR, the range, and whether there are outliers? Say why for any you cannot.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** 4  **Type:** recall
-**A:**
+**A:** Key:
+1. Everything but the mean can be read: the median, the IQR, the range and the outliers.
+2. The mean cannot be read, because a box plot is built from the five-number summary and the fences, none of which uses it.
+3. The median is the line inside the box, and the IQR is the length of the box, from $$Q_1$$ to $$Q_3$$.
+4. The range runs from the lowest point drawn to the highest, counting outliers plotted beyond the whiskers.
+
 - The median is the line inside the box.
 - The IQR is the length of the box, from $$Q_1$$ to $$Q_3$$.
 - The range is the distance from the lowest point drawn to the highest, counting any outliers plotted beyond the whiskers.
@@ -428,31 +813,73 @@ An observation is an outlier if it falls more than $$1.5 \times \text{IQR}$$ bel
 
 ### Q: WeBWorK-style. A histogram of exam scores has bins 40–50: 1, 50–60: 2, 60–70: 4, 70–80: 9, 80–90: 17, 90–100: 12. Is the data skewed right, symmetric or skewed left, and is the mean bigger than the median, smaller, or about equal? Answer in the WeBWorK form (SKEWED LEFT, MEDIAN, and so on) and justify from the tail.
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** WW1  **Type:** apply
-**A:** SKEWED LEFT and MEDIAN. The peak sits at 80–90 and the counts fade slowly toward the low scores (4, 2, 1), so the long tail points left. A left tail drags the mean below the median, so the median is the bigger one. WeBWorK 1's version showed the mirror image: a right-skewed histogram with the mean bigger.
+**A:** Key:
+1. SKEWED LEFT.
+2. The peak is at 80–90 and the counts fade slowly toward the low scores (4, 2, 1), so the long tail points left.
+3. MEDIAN is the bigger one, because a left tail drags the mean below the median.
+
+SKEWED LEFT and MEDIAN. The peak sits at 80–90 and the counts fade slowly toward the low scores (4, 2, 1), so the long tail points left. A left tail drags the mean below the median, so the median is the bigger one. WeBWorK 1's version showed the mirror image: a right-skewed histogram with the mean bigger.
 
 ### Q: WeBWorK-style. 120 students report how much cash they are carrying. Bins in dollars: 0–10: 48, 10–20: 37, 20–30: 22, 30–40: 6, 40–50: 2, 50–60: 0, 60–70: 1, 70–80: 2, 80–90: 1, 90–100: 1. (a) How many students carry under $10? (b) Is the histogram symmetric, skewed right, skewed left, or none of these? (c) Is the share carrying over $30 above 30%, between 20% and 30%, about 10%, or less than 3%?
 **Topic:** 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers)  **Lec:** WW1  **Type:** apply
-**A:** (a) 48, the first bar. (b) Skewed right: the tallest bars are at the low end and a thin tail of bars runs out to $100. (c) About 10%: over $30 means every bar from 30–40 up, $$6 + 2 + 0 + 1 + 2 + 1 + 1 = 13$$ students, and $$\frac{13}{120} = 10.8\%$$. Read the bar heights, add the ones in the range, then divide by the class size; do not eyeball the width of the tail.
+**A:** Key:
+1. (a) 48 students, the first bar.
+2. (b) Skewed right: the tallest bars are at the low end and a thin tail of bars runs out to 100 dollars.
+3. (c) Over 30 dollars is every bar from 30–40 up: $$\frac{6 + 2 + 0 + 1 + 2 + 1 + 1}{120} = \frac{13}{120}$$.
+4. That is $$10.8\%$$, so about 10%.
+
+(a) 48, the first bar. (b) Skewed right: the tallest bars are at the low end and a thin tail of bars runs out to $100. (c) About 10%: over $30 means every bar from 30–40 up, $$6 + 2 + 0 + 1 + 2 + 1 + 1 = 13$$ students, and $$\frac{13}{120} = 10.8\%$$. Read the bar heights, add the ones in the range, then divide by the class size; do not eyeball the width of the tail.
 
 ### Q: WeBWorK-style. Forty rivets have mean length 7.240 and standard deviation 0.312, both in hundredths of an inch. Head office wants millimetres, and one inch is 2.54 cm. Give the mean and the standard deviation in mm to three significant figures, and name the rule you used.
 **Topic:** 1b Variance and standard deviation (n − 1 formula · units · not resistant · effect of y = a + bx)  **Lec:** WW1  **Type:** derive
-**A:** One hundredth of an inch is $$\frac{25.4}{100} = 0.254$$ mm, so every value is multiplied by $$b = 0.254$$ with no shift ($$a = 0$$). Mean $$7.240 \times 0.254 = 1.84$$ mm. Standard deviation $$0.312 \times 0.254 = 0.0792$$ mm. Rule: for $$y = a + bx$$, $$\bar{y} = a + b\,\bar{x}$$ and $$s_y = |b|\,s_x$$, with the variance scaling by $$b^2$$. A shift alone would leave $$s$$ unchanged.
+**A:** Key:
+1. Multiply by $$b = 0.254$$ mm per hundredth of an inch with $$a = 0$$: mean $$7.240 \times 0.254$$, SD $$0.312 \times 0.254$$.
+2. The mean is 1.84 mm.
+3. The standard deviation is 0.0792 mm.
+4. The rule: for $$y = a + bx$$, $$\bar{y} = a + b\,\bar{x}$$ and $$s_y = |b|\,s_x$$.
+
+One hundredth of an inch is $$\frac{25.4}{100} = 0.254$$ mm, so every value is multiplied by $$b = 0.254$$ with no shift ($$a = 0$$). Mean $$7.240 \times 0.254 = 1.84$$ mm. Standard deviation $$0.312 \times 0.254 = 0.0792$$ mm. Rule: for $$y = a + bx$$, $$\bar{y} = a + b\,\bar{x}$$ and $$s_y = |b|\,s_x$$, with the variance scaling by $$b^2$$. A shift alone would leave $$s$$ unchanged.
 
 ### Q: WeBWorK-style. A boxplot of the lifetimes in months of 30 light bulbs has its lower whisker ending at 2.1, a box from 10.2 to 43.7 with the heavy line at 25.0, and its upper whisker ending at 89.6, with no separate points. Which of 10.2, 25.0, 30.3, 43.7, 89.6 is the median? Give the IQR, say whether 89.6 is an outlier, and say what the 30.3 could be.
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** WW1  **Type:** apply
-**A:** The median is the heavy line inside the box, 25.0. The box edges are $$Q_1 = 10.2$$ and $$Q_3 = 43.7$$, and the whisker ends are the minimum and the maximum. $$\text{IQR} = 43.7 - 10.2 = 33.5$$. The upper fence is $$43.7 + 1.5 \times 33.5 = 93.95$$, so 89.6 is inside it and is not an outlier, which is why the whisker reaches it. 30.3 appears nowhere on the plot, so it is a distractor. The mean is never shown on a boxplot; here it would sit above the median because the upper half is stretched out.
+**A:** Key:
+1. The median is the heavy line inside the box, 25.0.
+2. $$\text{IQR} = 43.7 - 10.2 = 33.5$$.
+3. The upper fence is $$43.7 + 1.5 \times 33.5 = 93.95$$, so 89.6 is inside it and is not an outlier.
+4. 30.3 could be the mean, which a boxplot never shows; it sits above the 25.0 median because the upper half is stretched out.
+
+The median is the heavy line inside the box, 25.0. The box edges are $$Q_1 = 10.2$$ and $$Q_3 = 43.7$$, and the whisker ends are the minimum and the maximum. $$\text{IQR} = 43.7 - 10.2 = 33.5$$. The upper fence is $$43.7 + 1.5 \times 33.5 = 93.95$$, so 89.6 is inside it and is not an outlier, which is why the whisker reaches it. 30.3 appears nowhere on the plot. It could be the mean, which a boxplot never shows: here the mean sits above the median because the upper half is stretched out, and 30.3 is above 25.0.
 
 ### Q: WeBWorK-style, three quick MC. (a) If a distribution is skewed to the left, is the mean less than, greater than, or equal to the median? (b) What percent of the observations lie at or below the third quartile? (c) Which is most affected when an extreme high outlier is added: the standard deviation, the median, or the IQR?
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** WW1  **Type:** apply
-**A:** (a) Less than: the left tail pulls the mean down. (b) 75%, since Q3 is the 75th percentile; the box between Q1 and Q3 holds the middle 50%. (c) The standard deviation, because it squares the outlier's distance from the mean; the median and the IQR depend only on positions in the sorted data and barely move. WeBWorK 1 asked the mirror versions: right skew, the 50% between Q1 and Q3, and the least affected measure.
+**A:** Key:
+1. (a) The mean is less than the median, because the left tail pulls the mean down.
+2. (b) 75%, since $$Q_3$$ is the 75th percentile.
+3. (c) The standard deviation, because it squares the outlier's distance from the mean.
+4. The median and the IQR depend only on positions in the sorted data and barely move.
+
+(a) Less than: the left tail pulls the mean down. (b) 75%, since Q3 is the 75th percentile; the box between Q1 and Q3 holds the middle 50%. (c) The standard deviation, because it squares the outlier's distance from the mean; the median and the IQR depend only on positions in the sorted data and barely move. WeBWorK 1 asked the mirror versions: right skew, the 50% between Q1 and Q3, and the least affected measure.
 
 ### Q: WeBWorK-style. A survey asks Vancouver renters from different neighbourhoods and building types what they pay in monthly rent. What is the variable of interest: (A) the renters, (B) the neighbourhood, (C) the building type, (D) the monthly rent paid by a renter? Say what the other three are, and classify the variable.
 **Topic:** 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous)  **Lec:** WW1  **Type:** apply
-**A:** (D). The variable of interest is the quantity the survey measures on each individual. The renters are the individuals, the units the data are collected on; neighbourhood and building type are other variables describing them, both categorical. Monthly rent is numerical and continuous, a dollar amount that can take any value in a range.
+**A:** Key:
+1. (D), the monthly rent paid by a renter.
+2. The renters are the individuals, the units the data are collected on.
+3. Neighbourhood and building type are other variables describing them, both categorical.
+4. Monthly rent is numerical and continuous.
+
+(D). The variable of interest is the quantity the survey measures on each individual. The renters are the individuals, the units the data are collected on; neighbourhood and building type are other variables describing them, both categorical. Monthly rent is numerical and continuous, a dollar amount that can take any value in a range.
 
 ### Q: WeBWorK-style. Four people's weekly incomes are $1450, $2100, $1700 and $212000. Compute the mean and the median, then say which better represents these people's income and why.
 **Topic:** 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report)  **Lec:** WW1  **Type:** derive
-**A:** The mean:
+**A:** Key:
+1. The mean is the sum over 4: $$\frac{1450 + 2100 + 1700 + 212000}{4}$$.
+2. The mean is $$\frac{217250}{4} = \$54{,}312.50$$.
+3. With even $$n = 4$$ the median averages the 2nd and 3rd sorted values: $$\frac{1700 + 2100}{2} = \$1{,}900$$.
+4. The median better represents these people's income.
+5. Three of the four earn near $$\$1{,}900$$, while the one outlier drags the mean to a figure nobody earns.
+
+The mean:
 
 $$
 \begin{aligned}
@@ -465,13 +892,25 @@ Sorted: 1450, 1700, 2100, 212000; $$n = 4$$ is even, so the median is the averag
 
 ### Q: WeBWorK-style. A stemplot of nine physics point totals out of 200 reads 12 | 3 7, 13 | 0 4 9, 14 | 2 5, 15 | (empty), 16 | 1, 17 | 8. (a) Write out the data set. (b) This stemplot is most like which display: a time plot, a histogram with classes 120–130, 130–140 and so on, a boxplot, or the five-number summary? (c) Give the lowest score as a percentage of the total possible.
 **Topic:** 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf  **Lec:** WW1  **Type:** apply
-**A:** (a) 123, 127, 130, 134, 139, 142, 145, 161, 178: the stem is the hundreds and tens digits, the leaf the ones digit. (b) A histogram with classes 120–130, 130–140 and so on: each stem is a class and the row length is its bar, only with the actual values kept, and the empty stem 15 is an empty bin. (c) $$\frac{123}{200} = 61.5\%$$.
+**A:** Key:
+1. (a) The data are 123, 127, 130, 134, 139, 142, 145, 161, 178.
+2. (b) A histogram with classes 120–130, 130–140 and so on.
+3. Each stem is a class and its row length is the bar, and the empty stem 15 is an empty bin.
+4. (c) $$\frac{123}{200} = 61.5\%$$.
+
+(a) 123, 127, 130, 134, 139, 142, 145, 161, 178: the stem is the hundreds and tens digits, the leaf the ones digit. (b) A histogram with classes 120–130, 130–140 and so on: each stem is a class and the row length is its bar, only with the actual values kept, and the empty stem 15 is an empty bin. (c) $$\frac{123}{200} = 61.5\%$$.
 
 ## Lec 5 — Ch 3: sets and probability, the addition rule (logged 2026-09-19 from the posted deck)
 
 ### Q: A fair coin is flipped three times. Write the sample space, list the outcomes of $$A$$ = "at least two tails" and $$B$$ = "exactly two heads", say whether $$A$$ and $$B$$ are disjoint, and find $$P(A \cup B)$$.
 **Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
-**A:** $$S$$ = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}, eight equally likely outcomes. $$A$$ = {TTT, TTH, THT, HTT} and $$B$$ = {HHT, HTH, THH}. An outcome with exactly two heads has exactly one tail, so nothing is in both and $$A$$ and $$B$$ are disjoint. Then:
+**A:** Key:
+1. $$S$$ is eight equally likely outcomes: HHH, HHT, HTH, HTT, THH, THT, TTH, TTT.
+2. $$A$$ is {TTT, TTH, THT, HTT} and $$B$$ is {HHT, HTH, THH}.
+3. $$A$$ and $$B$$ are disjoint, because exactly two heads means exactly one tail.
+4. Because they are disjoint, $$P(A \cup B) = \frac{4}{8} + \frac{3}{8} = \frac{7}{8}$$.
+
+$$S$$ = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}, eight equally likely outcomes. $$A$$ = {TTT, TTH, THT, HTT} and $$B$$ = {HHT, HTH, THH}. An outcome with exactly two heads has exactly one tail, so nothing is in both and $$A$$ and $$B$$ are disjoint. Then:
 
 $$
 P(A \cup B) = P(A) + P(B) = \frac{4}{8} + \frac{3}{8} = \frac{7}{8}
@@ -481,7 +920,13 @@ The only outcome left out is HHH, which checks: $$1 - \frac{1}{8}$$.
 
 ### Q: Write the sample space for (i) the number of auto accidents in BC next year and (ii) the lifetimes in hours of two components, $$(X_1, X_2)$$. For each, say whether $$S$$ is discrete or continuous, finite or infinite, and univariate or bivariate. Then write the events "more than 100 accidents" and, for a system that runs only while both components run, "the system fails within 10 hours".
 **Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
-**A:** (i) $$S = \{0, 1, 2, 3, \dots\}$$: discrete, infinite, univariate. More than 100 accidents is $$\{101, 102, 103, \dots\}$$. (ii) $$S = \{(x_1, x_2) : x_1 \ge 0,\ x_2 \ge 0\}$$: continuous, infinite, bivariate. The system fails within 10 hours as soon as either component does, so the event and its complement (the system still running at 10 hours) are:
+**A:** Key:
+1. (i) $$S = \{0, 1, 2, 3, \dots\}$$, which is discrete, infinite and univariate.
+2. More than 100 accidents is $$\{101, 102, 103, \dots\}$$.
+3. (ii) $$S = \{(x_1, x_2) : x_1 \ge 0,\ x_2 \ge 0\}$$, which is continuous, infinite and bivariate.
+4. The system fails within 10 hours as soon as either component does: $$\{(x_1, x_2) : 0 \le x_1 < 10 \text{ or } 0 \le x_2 < 10\}$$.
+
+(i) $$S = \{0, 1, 2, 3, \dots\}$$: discrete, infinite, univariate. More than 100 accidents is $$\{101, 102, 103, \dots\}$$. (ii) $$S = \{(x_1, x_2) : x_1 \ge 0,\ x_2 \ge 0\}$$: continuous, infinite, bivariate. The system fails within 10 hours as soon as either component does, so the event and its complement (the system still running at 10 hours) are:
 
 $$
 \begin{aligned}
@@ -494,11 +939,21 @@ The "or" in the event becomes "and" in the complement.
 
 ### Q: Two fair dice are rolled. Describe the sample space and its size, then find $$P(\text{the sum is } 7)$$ and $$P(\text{the sum is at least } 10)$$.
 **Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
-**A:** $$S$$ is the 36 ordered pairs (first die, second die), all equally likely. Sum 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), six outcomes, so $$P = \frac{6}{36} = \frac{1}{6}$$. Sum at least 10: three outcomes give 10, two give 11, one gives 12, six in all, so $$P = \frac{6}{36} = \frac{1}{6}$$. Order matters: (3,4) and (4,3) are different outcomes, which is what makes the 36 outcomes equally likely.
+**A:** Key:
+1. $$S$$ is the 36 equally likely ordered pairs (first die, second die).
+2. Sum 7 has six outcomes, (1,6) through (6,1), so $$P = \frac{6}{36} = \frac{1}{6}$$.
+3. Sum at least 10 has $$3 + 2 + 1 = 6$$ outcomes, so $$P = \frac{6}{36} = \frac{1}{6}$$.
+
+$$S$$ is the 36 ordered pairs (first die, second die), all equally likely. Sum 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), six outcomes, so $$P = \frac{6}{36} = \frac{1}{6}$$. Sum at least 10: three outcomes give 10, two give 11, one gives 12, six in all, so $$P = \frac{6}{36} = \frac{1}{6}$$. Order matters: (3,4) and (4,3) are different outcomes, which is what makes the 36 outcomes equally likely.
 
 ### Q: A jar holds three red marbles and two blue ones. Two marbles are drawn without replacement. Set up a sample space of equally likely outcomes and use it to find $$P(\text{both red})$$ and $$P(\text{one of each colour})$$.
 **Topic:** 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting)  **Lec:** 5  **Type:** apply
-**A:** Label the marbles R1, R2, R3, B1, B2 and record the draws in order: $$5 \times 4 = 20$$ ordered pairs, all equally likely.
+**A:** Key:
+1. Label the marbles R1, R2, R3, B1, B2 and record the draws in order: $$5 \times 4 = 20$$ equally likely ordered pairs.
+2. $$P(\text{both red}) = \frac{3 \times 2}{20} = 0.3$$.
+3. $$P(\text{one of each}) = \frac{3 \times 2 + 2 \times 3}{20} = 0.6$$.
+
+Label the marbles R1, R2, R3, B1, B2 and record the draws in order: $$5 \times 4 = 20$$ ordered pairs, all equally likely.
 
 $$
 \begin{aligned}
@@ -512,7 +967,13 @@ Check: $$0.3 + 0.6 + 0.1 = 1$$. Unordered pairs also work (10 equally likely pai
 
 ### Q: Two circles $$A$$ and $$B$$ overlap inside a rectangle $$S$$. Name the region for each of $$A \cap B^c$$, $$A^c \cap B$$, $$(A \cup B)^c$$ and $$A^c \cup B^c$$, and write each probability in terms of $$P(A)$$, $$P(B)$$ and $$P(A \cap B)$$.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** apply
-**A:** $$A \cap B^c$$ is the part of $$A$$ outside the overlap. $$A^c \cap B$$ is the part of $$B$$ outside the overlap. $$(A \cup B)^c$$ is the rectangle outside both circles. $$A^c \cup B^c$$ is everything except the overlap, because an outcome fails to be in both exactly when it is outside at least one of them.
+**A:** Key:
+1. $$A \cap B^c$$ is the part of $$A$$ outside the overlap, with probability $$P(A) - P(A \cap B)$$.
+2. $$A^c \cap B$$ is the part of $$B$$ outside the overlap, with probability $$P(B) - P(A \cap B)$$.
+3. $$(A \cup B)^c$$ is the rectangle outside both circles, with probability $$1 - P(A) - P(B) + P(A \cap B)$$.
+4. $$A^c \cup B^c$$ is everything except the overlap, with probability $$1 - P(A \cap B)$$.
+
+$$A \cap B^c$$ is the part of $$A$$ outside the overlap. $$A^c \cap B$$ is the part of $$B$$ outside the overlap. $$(A \cup B)^c$$ is the rectangle outside both circles. $$A^c \cup B^c$$ is everything except the overlap, because an outcome fails to be in both exactly when it is outside at least one of them.
 
 $$
 \begin{aligned}
@@ -532,15 +993,35 @@ That last step is De Morgan's law, $$(A \cap B)^c = A^c \cup B^c$$.
 - "not both happen"
 - "both fail to happen"
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** apply
-**A:** "A but not B" is $$A \cap B^c$$, also written $$A \setminus B$$. "Neither" is $$A^c \cap B^c$$. "At least one" is $$A \cup B$$. "Not both" is $$(A \cap B)^c$$, which equals $$A^c \cup B^c$$. "Both fail" is $$A^c \cap B^c$$, the same event as "neither", and by De Morgan it equals $$(A \cup B)^c$$. The two that match are "neither" and "both fail to happen".
+**A:** Key:
+1. "A but not B" is $$A \cap B^c$$.
+2. "Neither" and "both fail" are $$A^c \cap B^c$$, which by De Morgan equals $$(A \cup B)^c$$.
+3. "At least one" is $$A \cup B$$.
+4. "Not both" is $$(A \cap B)^c$$, which equals $$A^c \cup B^c$$.
+5. The two that are the same event are "neither" and "both fail to happen".
+
+"A but not B" is $$A \cap B^c$$, also written $$A \setminus B$$. "Neither" is $$A^c \cap B^c$$. "At least one" is $$A \cup B$$. "Not both" is $$(A \cap B)^c$$, which equals $$A^c \cup B^c$$. "Both fail" is $$A^c \cap B^c$$, the same event as "neither", and by De Morgan it equals $$(A \cup B)^c$$. The two that match are "neither" and "both fail to happen".
 
 ### Q: $$P(A) = 0.3$$, $$P(B) = 0.5$$ and $$P(A \cap B) = 0.1$$. Which of these are true? (i) $$A$$ and $$B$$ are disjoint. (ii) $$P(A \cup B) = 0.7$$. (iii) $$P(A^c \cap B) = 0.4$$. (iv) $$P(A^c) = 0.7$$. (v) $$B \subset A$$.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** critique
-**A:** (i) False: disjoint events have $$P(A \cap B) = 0$$, and here it is 0.1. (ii) True: $$0.3 + 0.5 - 0.1 = 0.7$$. (iii) True: the part of $$B$$ outside $$A$$ is $$0.5 - 0.1 = 0.4$$. (iv) True: $$1 - 0.3$$. (v) False: if $$B \subset A$$ then $$P(A \cap B)$$ would equal $$P(B) = 0.5$$, and $$P(B) \le P(A)$$ would have to hold, but $$0.5 > 0.3$$.
+**A:** Key:
+1. (ii), (iii) and (iv) are true; (i) and (v) are false.
+2. (i) fails because disjoint events have $$P(A \cap B) = 0$$, and here it is 0.1.
+3. (ii) is the addition rule, $$0.3 + 0.5 - 0.1 = 0.7$$.
+4. (iii) is $$0.5 - 0.1 = 0.4$$ and (iv) is $$1 - 0.3 = 0.7$$.
+5. (v) fails because $$B \subset A$$ would force $$P(B) \le P(A)$$, but $$0.5 > 0.3$$.
+
+(i) False: disjoint events have $$P(A \cap B) = 0$$, and here it is 0.1. (ii) True: $$0.3 + 0.5 - 0.1 = 0.7$$. (iii) True: the part of $$B$$ outside $$A$$ is $$0.5 - 0.1 = 0.4$$. (iv) True: $$1 - 0.3$$. (v) False: if $$B \subset A$$ then $$P(A \cap B)$$ would equal $$P(B) = 0.5$$, and $$P(B) \le P(A)$$ would have to hold, but $$0.5 > 0.3$$.
 
 ### Q: Suppose $$A \subset B$$. Show that $$P(A \cap B) = P(A)$$ and that $$P(A) \le P(B)$$, and give a die-roll example.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** derive
-**A:** Every outcome of $$A$$ is in $$B$$, so $$A \cap B$$ is $$A$$ itself and $$P(A \cap B) = P(A)$$. Split $$B$$ into the disjoint pieces $$A$$ and $$B \cap A^c$$. By additivity:
+**A:** Key:
+1. Every outcome of $$A$$ is in $$B$$, so $$A \cap B = A$$ and $$P(A \cap B) = P(A)$$.
+2. Split $$B$$ into the disjoint pieces $$A$$ and $$B \cap A^c$$, so $$P(B) = P(A) + P(B \cap A^c)$$ by additivity.
+3. The second term is at least 0, so $$P(B) \ge P(A)$$.
+4. Example: $$A$$ is rolling a 6 and $$B$$ is rolling an even number, so $$\frac{1}{6} \le \frac{3}{6}$$.
+
+Every outcome of $$A$$ is in $$B$$, so $$A \cap B$$ is $$A$$ itself and $$P(A \cap B) = P(A)$$. Split $$B$$ into the disjoint pieces $$A$$ and $$B \cap A^c$$. By additivity:
 
 $$
 P(B) = P(A) + P(B \cap A^c) \ge P(A)
@@ -550,11 +1031,22 @@ since the second term is at least 0. Example: $$A$$ = roll a 6, $$B$$ = roll an 
 
 ### Q: A student argues: "odd and even on a die are disjoint and they are complements, so any two disjoint events are complements of each other." Fix the claim, and say where independence fits.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** 5  **Type:** critique
-**A:** Disjoint means the events share no outcome, so $$P(A \cap B) = 0$$. Complementary means disjoint and together filling $$S$$, so $$P(A) + P(B) = 1$$. Odd and even satisfy both. $$A = \{1\}$$ and $$B = \{2\}$$ are disjoint, but $$P(A) + P(B) = \frac{1}{3}$$, so they are not complements. Independence is a third idea, defined next lecture through $$P(A \cap B) = P(A)\,P(B)$$. Disjoint events with positive probability are never independent, because one occurring rules the other out.
+**A:** Key:
+1. Complementary means disjoint and together filling $$S$$, so disjoint events need not be complements.
+2. Counterexample: $$A = \{1\}$$ and $$B = \{2\}$$ are disjoint, but $$P(A) + P(B) = \frac{1}{3}$$.
+3. Independence is a separate idea, defined by $$P(A \cap B) = P(A)\,P(B)$$.
+4. Disjoint events with positive probability are never independent, because one occurring rules the other out.
+
+Disjoint means the events share no outcome, so $$P(A \cap B) = 0$$. Complementary means disjoint and together filling $$S$$, so $$P(A) + P(B) = 1$$. Odd and even satisfy both. $$A = \{1\}$$ and $$B = \{2\}$$ are disjoint, but $$P(A) + P(B) = \frac{1}{3}$$, so they are not complements. Independence is a third idea, defined next lecture through $$P(A \cap B) = P(A)\,P(B)$$. Disjoint events with positive probability are never independent, because one occurring rules the other out.
 
 ### Q: From a blank page, state the general addition rule for $$P(A \cup B)$$, explain from a Venn diagram why the last term is subtracted, and state the disjoint special case.
 **Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** derive
-**A:** The rule:
+**A:** Key:
+1. $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$.
+2. Adding $$P(A)$$ and $$P(B)$$ counts the overlap twice, once in each circle, so its probability is subtracted once.
+3. For disjoint events $$P(A \cap B) = 0$$, so $$P(A \cup B) = P(A) + P(B)$$.
+
+The rule:
 
 $$
 P(A \cup B) = P(A) + P(B) - P(A \cap B)
@@ -564,7 +1056,13 @@ Adding $$P(A)$$ and $$P(B)$$ counts every outcome in the overlap twice, once in 
 
 ### Q: In a survey, 78% of respondents follow soccer or basketball, 52% follow soccer and 40% follow basketball. Find the probability that a randomly chosen respondent (a) follows both, (b) follows neither, (c) follows soccer but not basketball.
 **Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** apply
-**A:** (a) The addition rule gives $$P(\text{both})$$. (b) Neither is the complement of the union. (c) Soccer but not basketball is soccer minus both.
+**A:** Key:
+1. (a) The addition rule: $$0.78 = 0.52 + 0.40 - P(\text{both})$$.
+2. $$P(\text{both}) = 0.14$$.
+3. (b) Neither is the complement of the union: $$1 - 0.78 = 0.22$$.
+4. (c) Soccer but not basketball is soccer minus both: $$0.52 - 0.14 = 0.38$$.
+
+(a) The addition rule gives $$P(\text{both})$$. (b) Neither is the complement of the union. (c) Soccer but not basketball is soccer minus both.
 
 $$
 \begin{aligned}
@@ -579,11 +1077,24 @@ Check: basketball only is $$0.40 - 0.14 = 0.26$$, and $$0.38 + 0.14 + 0.26 + 0.2
 
 ### Q: A loaded die has $$P(1) = P(2) = P(3) = 0.1$$ and $$P(4) = P(5) = 0.2$$. Find $$P(6)$$, then $$P(\text{even})$$, $$P(\text{at least } 5)$$ and $$P(\text{not a } 6)$$, naming the rule each step uses.
 **Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** apply
-**A:** Outcome probabilities sum to 1, so $$P(6) = 1 - 0.7 = 0.3$$. An event's probability is the sum over its outcomes: $$P(\text{even}) = 0.1 + 0.2 + 0.3 = 0.6$$ and $$P(\text{at least } 5) = 0.2 + 0.3 = 0.5$$. Complement rule: $$P(\text{not a } 6) = 1 - 0.3 = 0.7$$. Every value sits between 0 and 1, as the properties require.
+**A:** Key:
+1. Outcome probabilities sum to 1: $$P(6) = 1 - (0.1 + 0.1 + 0.1 + 0.2 + 0.2)$$.
+2. $$P(6) = 0.3$$.
+3. An event's probability is the sum over its outcomes: $$P(\text{even}) = 0.1 + 0.2 + 0.3 = 0.6$$.
+4. $$P(\text{at least } 5) = 0.2 + 0.3 = 0.5$$.
+5. The complement rule gives $$P(\text{not a } 6) = 1 - 0.3 = 0.7$$.
+
+Outcome probabilities sum to 1, so $$P(6) = 1 - 0.7 = 0.3$$. An event's probability is the sum over its outcomes: $$P(\text{even}) = 0.1 + 0.2 + 0.3 = 0.6$$ and $$P(\text{at least } 5) = 0.2 + 0.3 = 0.5$$. Complement rule: $$P(\text{not a } 6) = 1 - 0.3 = 0.7$$. Every value sits between 0 and 1, as the properties require.
 
 ### Q: Derive the three-event addition rule $$P(A \cup B \cup C) = P(A) + P(B) + P(C) - P(A \cap B) - P(A \cap C) - P(B \cap C) + P(A \cap B \cap C)$$ from the two-event rule.
 **Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 5  **Type:** derive
-**A:** Write $$A \cup B \cup C$$ as $$(A \cup B) \cup C$$ and apply the two-event rule:
+**A:** Key:
+1. Write $$A \cup B \cup C$$ as $$(A \cup B) \cup C$$ and apply the two-event rule: $$P(A \cup B) + P(C) - P\big((A \cup B) \cap C\big)$$.
+2. Expand $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$.
+3. Distribute the intersection: $$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$$.
+4. Those pieces overlap in $$A \cap B \cap C$$, so $$P\big((A \cup B) \cap C\big) = P(A \cap C) + P(B \cap C) - P(A \cap B \cap C)$$.
+
+Write $$A \cup B \cup C$$ as $$(A \cup B) \cup C$$ and apply the two-event rule:
 
 $$
 \begin{aligned}
@@ -607,7 +1118,14 @@ Substituting gives the rule. This is the slide 15 exercise, left for lecture 6.
 
 ### Q: From a blank page, define $$P(A \mid B)$$, say why $$P(B)$$ must be positive, and say what the ratio measures on a Venn diagram. Then derive both forms of the multiplication rule.
 **Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** derive
-**A:** The definition:
+**A:** Key:
+1. $$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$.
+2. $$P(B)$$ must be positive because dividing by zero is undefined, and $$P(B) = 0$$ leaves nothing to condition on.
+3. On a Venn diagram it is the fraction of $$B$$'s region that lies inside $$A$$.
+4. Multiplying through gives $$P(A \cap B) = P(A \mid B)\,P(B)$$.
+5. Starting from $$P(B \mid A) = \frac{P(A \cap B)}{P(A)}$$ gives $$P(A \cap B) = P(B \mid A)\,P(A)$$.
+
+The definition:
 
 $$
 P(A \mid B) = \frac{P(A \cap B)}{P(B)}
@@ -624,7 +1142,13 @@ $$
 
 ### Q: $$P(A) = 0.5$$, $$P(B) = 0.3$$ and $$P(B \mid A) = 0.4$$. Find $$P(A \cap B)$$, $$P(A \mid B)$$ and $$P(A \cup B)$$.
 **Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** apply
-**A:** Work in this order:
+**A:** Key:
+1. The multiplication rule: $$P(A \cap B) = P(B \mid A)\,P(A) = 0.4 \times 0.5$$.
+2. $$P(A \cap B) = 0.20$$.
+3. $$P(A \mid B) = \frac{0.20}{0.3} = \frac{2}{3}$$.
+4. $$P(A \cup B) = 0.5 + 0.3 - 0.2 = 0.6$$.
+
+Work in this order:
 
 $$
 \begin{aligned}
@@ -638,11 +1162,21 @@ $$P(B \mid A) = 0.4$$ and $$P(A \mid B) = \frac{2}{3}$$ differ because they shar
 
 ### Q: A student writes $$P(A \mid B) = \frac{P(A \cap B)}{P(A)}$$. What is wrong? With $$P(A) = 0.6$$, $$P(B) = 0.4$$ and $$P(A \cap B) = 0.36$$, give the correct $$P(A \mid B)$$ and $$P(B \mid A)$$.
 **Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** critique
-**A:** The denominator must be the given event, which is $$B$$. $$P(A \mid B) = \frac{0.36}{0.4} = 0.9$$ and $$P(B \mid A) = \frac{0.36}{0.6} = 0.6$$. The student's formula computes $$P(B \mid A)$$ and labels it $$P(A \mid B)$$.
+**A:** Key:
+1. The denominator must be the given event, $$B$$; the student's formula computes $$P(B \mid A)$$.
+2. $$P(A \mid B) = \frac{0.36}{0.4} = 0.9$$.
+3. $$P(B \mid A) = \frac{0.36}{0.6} = 0.6$$.
+
+The denominator must be the given event, which is $$B$$. $$P(A \mid B) = \frac{0.36}{0.4} = 0.9$$ and $$P(B \mid A) = \frac{0.36}{0.6} = 0.6$$. The student's formula computes $$P(B \mid A)$$ and labels it $$P(A \mid B)$$.
 
 ### Q: Two cards are drawn without replacement from a standard 52-card deck. Use the multiplication rule to find $$P(\text{both are aces})$$ and $$P(\text{the first is an ace and the second is a king})$$.
 **Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** 6  **Type:** apply
-**A:** Let $$A_1$$ = first card is an ace and $$A_2$$ = second card is an ace.
+**A:** Key:
+1. The multiplication rule: $$P(A_1 \cap A_2) = P(A_1)\,P(A_2 \mid A_1) = \frac{4}{52} \cdot \frac{3}{51}$$.
+2. $$P(\text{both aces}) = \frac{1}{221} \approx 0.0045$$.
+3. $$P(\text{ace, then king}) = \frac{4}{52} \cdot \frac{4}{51} = \frac{4}{663} \approx 0.0060$$.
+
+Let $$A_1$$ = first card is an ace and $$A_2$$ = second card is an ace.
 
 $$
 \begin{aligned}
@@ -658,7 +1192,11 @@ The second factor is conditional because the first draw changed the deck.
 
 ### Q: State the three equivalent conditions for $$A$$ and $$B$$ to be independent, and show that $$P(A \cap B) = P(A)\,P(B)$$ implies $$P(A \mid B) = P(A)$$.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** derive
-**A:** The three conditions are $$P(A \mid B) = P(A)$$, $$P(B \mid A) = P(B)$$, and $$P(A \cap B) = P(A)\,P(B)$$. From the third, when $$P(B) > 0$$:
+**A:** Key:
+1. $$A$$ and $$B$$ are independent when $$P(A \mid B) = P(A)$$, $$P(B \mid A) = P(B)$$, or $$P(A \cap B) = P(A)\,P(B)$$.
+2. With $$P(B) > 0$$, $$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A)\,P(B)}{P(B)} = P(A)$$.
+
+The three conditions are $$P(A \mid B) = P(A)$$, $$P(B \mid A) = P(B)$$, and $$P(A \cap B) = P(A)\,P(B)$$. From the third, when $$P(B) > 0$$:
 
 $$
 P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A)\,P(B)}{P(B)} = P(A)
@@ -668,11 +1206,21 @@ Independence is checked with one of these equations and never read off a Venn di
 
 ### Q: "These two events are disjoint, so they are independent." Correct this with the one-line reason and a die example.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** critique
-**A:** Disjoint means $$P(A \cap B) = 0$$. Independence would need $$P(A)\,P(B) = 0$$, so one of the events would have to be impossible. Disjoint events with positive probability are never independent: knowing $$A$$ happened tells you $$B$$ did not. Die: $$A$$ = odd and $$B$$ = even are disjoint, and $$P(A \mid B) = 0$$ while $$P(A) = \frac{1}{2}$$.
+**A:** Key:
+1. Disjoint events with positive probability are never independent.
+2. Disjoint means $$P(A \cap B) = 0$$, so independence would need $$P(A)\,P(B) = 0$$, making one event impossible.
+3. Die example: odd and even are disjoint, and $$P(\text{odd} \mid \text{even}) = 0$$ while $$P(\text{odd}) = \frac{1}{2}$$.
+
+Disjoint means $$P(A \cap B) = 0$$. Independence would need $$P(A)\,P(B) = 0$$, so one of the events would have to be impossible. Disjoint events with positive probability are never independent: knowing $$A$$ happened tells you $$B$$ did not. Die: $$A$$ = odd and $$B$$ = even are disjoint, and $$P(A \mid B) = 0$$ while $$P(A) = \frac{1}{2}$$.
 
 ### Q: Flip a fair coin and roll a fair die. Let $$A$$ = head and $$B$$ = the die shows 1 or 2. List $$A \cap B$$ and use the product test to decide whether $$A$$ and $$B$$ are independent.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
-**A:** The 12 outcomes (coin, die) are equally likely. $$A$$ has 6 outcomes, $$B$$ = {(H,1), (H,2), (T,1), (T,2)} has 4, and $$A \cap B$$ = {(H,1), (H,2)} has 2.
+**A:** Key:
+1. The product test: compare $$P(A \cap B) = \frac{2}{12}$$ with $$P(A)\,P(B) = \frac{1}{2} \cdot \frac{1}{3}$$.
+2. $$A \cap B$$ is {(H,1), (H,2)}, 2 of the 12 equally likely outcomes.
+3. Both equal $$\frac{1}{6}$$, so $$A$$ and $$B$$ are independent.
+
+The 12 outcomes (coin, die) are equally likely. $$A$$ has 6 outcomes, $$B$$ = {(H,1), (H,2), (T,1), (T,2)} has 4, and $$A \cap B$$ = {(H,1), (H,2)} has 2.
 
 $$
 \begin{aligned}
@@ -685,7 +1233,13 @@ They agree, so $$A$$ and $$B$$ are independent. The test needs an intersection t
 
 ### Q: Twelve smoke detectors each work with probability 0.98, independently. Find $$P(\text{all work})$$ and $$P(\text{at least one fails})$$, and say why the complement is the only sensible route.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
-**A:** Define $$A_i$$ = detector $$i$$ works. By independence:
+**A:** Key:
+1. By independence, $$P(\text{all work}) = 0.98^{12}$$.
+2. $$P(\text{all work}) \approx 0.785$$.
+3. By the complement, $$P(\text{at least one fails}) = 1 - 0.785 = 0.215$$.
+4. "At least one fails" splits into 1 to 12 failures in many arrangements, while "all work" is one intersection of independent events.
+
+Define $$A_i$$ = detector $$i$$ works. By independence:
 
 $$
 \begin{aligned}
@@ -700,11 +1254,22 @@ $$
 
 ### Q: A question gives $$P(A) = 0.3$$ and $$P(B) = 0.6$$ and asks for $$P(A \cap B)$$. A student answers 0.18. What did they assume, when is that allowed, and what can be said otherwise?
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** critique
-**A:** They assumed independence and multiplied. That is allowed only when the question states independence or the events are physically independent, like a coin and a die. Otherwise $$P(A \cap B)$$ is not determined by $$P(A)$$ and $$P(B)$$ alone; you need $$P(A \mid B)$$, $$P(B \mid A)$$ or $$P(A \cup B)$$. Without that, all you can say is $$0 \le P(A \cap B) \le 0.3$$.
+**A:** Key:
+1. They assumed independence and multiplied, $$0.3 \times 0.6$$.
+2. That is allowed only when the question states independence or the events are physically independent, like a coin and a die.
+3. Otherwise you need more, such as $$P(A \mid B)$$, $$P(B \mid A)$$ or $$P(A \cup B)$$.
+4. Without that, all you can say is $$0 \le P(A \cap B) \le 0.3$$.
+
+They assumed independence and multiplied. That is allowed only when the question states independence or the events are physically independent, like a coin and a die. Otherwise $$P(A \cap B)$$ is not determined by $$P(A)$$ and $$P(B)$$ alone; you need $$P(A \mid B)$$, $$P(B \mid A)$$ or $$P(A \cup B)$$. Without that, all you can say is $$0 \le P(A \cap B) \le 0.3$$.
 
 ### Q: If $$A$$ and $$B$$ are independent, prove that $$A^c$$ and $$B$$ are independent, then name the other two pairs the deck lists.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** derive
-**A:** The product test for $$A^c$$ and $$B$$:
+**A:** Key:
+1. The product test: $$P(A^c \cap B) = P(B) - P(A \cap B) = P(B) - P(A)\,P(B)$$.
+2. That factors as $$\big(1 - P(A)\big)P(B) = P(A^c)\,P(B)$$, so $$A^c$$ and $$B$$ are independent.
+3. The other two pairs are $$A$$ and $$B^c$$, and $$A^c$$ and $$B^c$$.
+
+The product test for $$A^c$$ and $$B$$:
 
 $$
 \begin{aligned}
@@ -719,7 +1284,13 @@ The same argument gives $$A$$ and $$B^c$$, and applying it twice gives $$A^c$$ a
 
 ### Q: $$P(D) = 0.4$$, $$P(E) = 0.5$$ and $$P(D \cup E) = 0.7$$. Find $$P(E \mid D)$$ and decide whether $$D$$ and $$E$$ are independent, two ways.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 6  **Type:** apply
-**A:** The addition rule gives the intersection first:
+**A:** Key:
+1. The addition rule gives the intersection: $$P(D \cap E) = 0.4 + 0.5 - 0.7 = 0.2$$.
+2. $$P(E \mid D) = \frac{0.2}{0.4} = 0.5$$.
+3. $$P(E \mid D) = P(E)$$, so $$D$$ and $$E$$ are independent.
+4. The product test agrees: $$0.4 \times 0.5 = 0.2 = P(D \cap E)$$.
+
+The addition rule gives the intersection first:
 
 $$
 \begin{aligned}
@@ -732,11 +1303,22 @@ So they are independent. Product test: $$0.4 \times 0.5 = 0.2 = P(D \cap E)$$. C
 
 ### Q: A fair coin gives 2 heads in 10 flips. Does that contradict $$P(\text{heads}) = 0.5$$? Describe the graph the lecture used of the proportion of heads against the number of flips.
 **Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** recall
-**A:** No. 0.5 is the long-run relative frequency, not a promise about ten flips. The graph plots $$\frac{\text{heads}}{n}$$ against $$n$$. At $$n = 1$$ it is 0 or 1, then it wanders, and it settles near 0.5 as $$n$$ grows, close by 10,000 flips but not necessarily by 100. Short-run outcomes are random.
+**A:** Key:
+1. No: 0.5 is the long-run relative frequency, not a promise about ten flips.
+2. The graph plots $$\frac{\text{heads}}{n}$$ against $$n$$.
+3. It starts at 0 or 1, wanders, and settles near 0.5 as $$n$$ grows.
+
+No. 0.5 is the long-run relative frequency, not a promise about ten flips. The graph plots $$\frac{\text{heads}}{n}$$ against $$n$$. At $$n = 1$$ it is 0 or 1, then it wanders, and it settles near 0.5 as $$n$$ grows, close by 10,000 flips but not necessarily by 100. Short-run outcomes are random.
 
 ### Q: In 400 rolls of a die a student sees 80 sixes and says the probability of a six is 0.2. What is right and what is wrong in that claim?
 **Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** critique
-**A:** $$\frac{80}{400} = 0.2$$ is an observed relative frequency, an estimate from a finite run. The probability is the long-run limit of that proportion, $$\frac{1}{6} \approx 0.167$$ for a fair die. At 400 rolls, 0.2 is within ordinary variation. If the proportion stayed near 0.2 as $$n$$ grew, that would be evidence the die is not fair, not a redefinition of the probability.
+**A:** Key:
+1. Wrong: the probability is the long-run limit of the proportion, $$\frac{1}{6} \approx 0.167$$ for a fair die, not the observed 0.2.
+2. Right: $$\frac{80}{400} = 0.2$$ is an observed relative frequency, an estimate from a finite run.
+3. At 400 rolls, 0.2 is within ordinary variation.
+4. A proportion that stayed near 0.2 as $$n$$ grew would be evidence the die is not fair.
+
+$$\frac{80}{400} = 0.2$$ is an observed relative frequency, an estimate from a finite run. The probability is the long-run limit of that proportion, $$\frac{1}{6} \approx 0.167$$ for a fair die. At 400 rolls, 0.2 is within ordinary variation. If the proportion stayed near 0.2 as $$n$$ grew, that would be evidence the die is not fair, not a redefinition of the probability.
 
 ## WeBWorK 2 — Ch 1 and Ch 3 (opened Sep 22, due Tue Sep 29; banked 2026-09-22, numbers changed)
 
@@ -752,11 +1334,23 @@ So they are independent. Product test: $$0.4 \times 0.5 = 0.2 = P(D \cap E)$$. C
 | Fri | 230 | 290 | 340 | 400 | 460 | — |
 | Sat | 150 | 200 | 240 | 285 | 330 | 90 |
 **Topic:** 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons)  **Lec:** WW2  **Type:** apply
-**A:** (a) Tuesday and Saturday, the only two rows with a point drawn outside the whiskers. A whisker end is never an outlier; whiskers stop at the most extreme value still inside the $$1.5 \times \text{IQR}$$ fences, so only the separately plotted dots count. (b) Thursday, 450. (c) Thursday, 520. It does not have to be the same day as the largest median, so check the column you were asked about. (d) False. The busiest Saturday is 330. Thursday's $$Q_1$$ is 380, and $$Q_1$$ is the 25th percentile, so about 75% of Thursdays are above 380 and therefore above 330 — far more than 25%, not fewer. The trap is reading "less than 25%" off the medians instead of off a quartile.
+**A:** Key:
+1. (a) Tuesday and Saturday, the only days with points plotted outside the whiskers.
+2. (b) Thursday, with median 450.
+3. (c) Thursday, with $$Q_3 = 520$$.
+4. (d) False.
+5. Thursday's $$Q_1$$ of 380 is above the busiest Saturday's 330, so about 75% of Thursdays had more hits.
+
+(a) Tuesday and Saturday, the only two rows with a point drawn outside the whiskers. A whisker end is never an outlier; whiskers stop at the most extreme value still inside the $$1.5 \times \text{IQR}$$ fences, so only the separately plotted dots count. (b) Thursday, 450. (c) Thursday, 520. It does not have to be the same day as the largest median, so check the column you were asked about. (d) False. The busiest Saturday is 330. Thursday's $$Q_1$$ is 380, and $$Q_1$$ is the 25th percentile, so about 75% of Thursdays are above 380 and therefore above 330 — far more than 25%, not fewer. The trap is reading "less than 25%" off the medians instead of off a quartile.
 
 ### Q: Events $$A$$ and $$B$$ are mutually exclusive with $$P(A) = 0.35$$ and $$P(B) = 0.45$$. Find $$P(A \cup B)$$. Then say what would have to be true for $$P(A) = 0.6$$ and $$P(B) = 0.5$$ to describe two mutually exclusive events.
 **Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** WW2  **Type:** apply
-**A:** Mutually exclusive means $$A \cap B = \emptyset$$, so $$P(A \cap B) = 0$$ and the general addition rule collapses:
+**A:** Key:
+1. Mutually exclusive means $$P(A \cap B) = 0$$, so $$P(A \cup B) = P(A) + P(B) = 0.35 + 0.45$$.
+2. $$P(A \cup B) = 0.8$$.
+3. The second pair is impossible, because $$P(A \cup B)$$ would be 1.1 and no probability exceeds 1.
+
+Mutually exclusive means $$A \cap B = \emptyset$$, so $$P(A \cap B) = 0$$ and the general addition rule collapses:
 
 $$
 \begin{aligned}
@@ -769,7 +1363,14 @@ The second pair is impossible: $$P(A \cup B)$$ would have to be 1.1, and no prob
 
 ### Q: A two-stage tree has first-stage branches $$A$$ and $$B$$ with $$P(A) = 0.6$$ and $$P(B) = 0.4$$. From $$A$$ the second-stage branches are $$C$$ with probability 0.3 and $$D$$ with probability 0.7; from $$B$$ they are $$C$$ with probability 0.8 and $$D$$ with probability 0.2. Find (a) $$P(C \mid A)$$, (b) $$P(D \mid B)$$, (c) $$P(A \cap C)$$, (d) $$P(B \cap D)$$, (e) $$P(C)$$, (f) $$P(D)$$.
 **Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** WW2  **Type:** apply
-**A:** (a) 0.3 and (b) 0.2 are read straight off the second-stage branches: a branch label in a tree already *is* a conditional probability, given everything upstream of it. For the rest, multiply along a path and add across paths:
+**A:** Key:
+1. (a) 0.3 and (b) 0.2 are read straight off the second-stage branches, which are conditional probabilities.
+2. (c) Multiply along the path: $$P(A \cap C) = 0.6 \times 0.3 = 0.18$$.
+3. (d) $$P(B \cap D) = 0.4 \times 0.2 = 0.08$$.
+4. (e) Add across paths: $$P(C) = 0.18 + 0.4 \times 0.8 = 0.50$$.
+5. (f) $$P(D) = 0.6 \times 0.7 + 0.08 = 0.50$$, which also equals $$1 - P(C)$$.
+
+(a) 0.3 and (b) 0.2 are read straight off the second-stage branches: a branch label in a tree already *is* a conditional probability, given everything upstream of it. For the rest, multiply along a path and add across paths:
 
 $$
 \begin{aligned}
@@ -787,7 +1388,13 @@ $$P(D)$$ also equals $$1 - P(C)$$ because $$C$$ and $$D$$ partition the second s
 
 ### Q: Events $$A$$ and $$B$$ are independent with $$P(A) = 0.5$$ and $$P(B) = 0.2$$. Find $$P(A \cup B)$$ to two decimals. Then explain why the answer would be bigger, not smaller, if $$A$$ and $$B$$ were mutually exclusive instead.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** WW2  **Type:** apply
-**A:** Independence gives the overlap:
+**A:** Key:
+1. Independence gives the overlap: $$P(A \cap B) = 0.5 \times 0.2 = 0.10$$.
+2. $$P(A \cup B) = 0.5 + 0.2 - 0.10 = 0.60$$.
+3. If they were mutually exclusive the overlap would be 0, so the union would be 0.70.
+4. Independence puts a real overlap in, and subtracting it shrinks the union.
+
+Independence gives the overlap:
 
 $$
 \begin{aligned}
@@ -800,15 +1407,33 @@ If they were mutually exclusive the overlap would be 0 instead of 0.10 and the u
 
 ### Q: Two quick multiple-choice items. (a) $$P(A) = 0.25$$, $$P(B) = 0.40$$ and $$P(A \text{ and } B) = 0.10$$. Are $$A$$ and $$B$$ mutually exclusive, dependent, independent, or complementary? (b) Which is the useful graphical method for constructing the sample space of a multi-stage experiment: a histogram, an ogive, a pie chart, or a tree diagram? Justify each.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** WW2  **Type:** apply
-**A:** (a) Independent. Run the product test: $$P(A)\,P(B) = 0.25 \times 0.40 = 0.10$$, which matches $$P(A \cap B)$$, so the events are independent. They are not mutually exclusive, since the intersection has probability $$0.10 > 0$$. They are not complementary, since $$P(A) + P(B) = 0.65 \ne 1$$ and $$B \ne A^c$$. "Dependent" is exactly what the product test just ruled out. (b) A tree diagram. It enumerates every path through the stages, so the complete set of paths is the sample space and the branch labels are the conditional probabilities. The other three are displays for data you already have, not tools for building a sample space. This problem gives no partial credit, so both halves have to be right.
+**A:** Key:
+1. (a) Independent, by the product test: $$P(A)\,P(B) = 0.25 \times 0.40 = 0.10 = P(A \cap B)$$.
+2. They are not mutually exclusive, since the intersection has probability $$0.10 > 0$$.
+3. They are not complementary, since $$P(A) + P(B) = 0.65 \ne 1$$.
+4. (b) A tree diagram, since its complete set of paths through the stages is the sample space.
+
+(a) Independent. Run the product test: $$P(A)\,P(B) = 0.25 \times 0.40 = 0.10$$, which matches $$P(A \cap B)$$, so the events are independent. They are not mutually exclusive, since the intersection has probability $$0.10 > 0$$. They are not complementary, since $$P(A) + P(B) = 0.65 \ne 1$$ and $$B \ne A^c$$. "Dependent" is exactly what the product test just ruled out. (b) A tree diagram. It enumerates every path through the stages, so the complete set of paths is the sample space and the branch labels are the conditional probabilities. The other three are displays for data you already have, not tools for building a sample space. This problem gives no partial credit, so both halves have to be right.
 
 ### Q: Two components sit in parallel, and the system works as long as at least one of them works. Let $$F_1$$ be the event that component 1 fails during the day and $$F_2$$ that component 2 fails. (a) Which set is the event that the system fails? (b) Which set is the event that the system works throughout the day? The options for each are $$F_1 \cap F_2$$, $$F_1^c \cap F_2^c$$, $$F_1 \cup F_2$$, $$(F_1 \cup F_2)^c$$ and $$F_1^c \cup F_2^c$$. Say what each of the losing options would describe.
 **Topic:** 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)  **Lec:** WW2  **Type:** apply
-**A:** (a) $$F_1 \cap F_2$$. A parallel system survives on one working component, so it fails only when both fail. (b) $$F_1^c \cup F_2^c$$, that is, at least one component works. It is the complement of the answer to (a), and De Morgan turns $$(F_1 \cap F_2)^c$$ into $$F_1^c \cup F_2^c$$. The losing options: $$F_1 \cup F_2$$ is "at least one fails", which is the failure condition for a *series* system, not a parallel one. $$F_1^c \cap F_2^c$$ is "both work", which is stricter than a parallel system needs. $$(F_1 \cup F_2)^c$$ is the same set as $$F_1^c \cap F_2^c$$ by De Morgan, so it is the same wrong answer written the other way round — a good check that you are applying De Morgan rather than guessing.
+**A:** Key:
+1. (a) $$F_1 \cap F_2$$, because a parallel system fails only when both components fail.
+2. (b) $$F_1^c \cup F_2^c$$, at least one component works, the complement of (a) by De Morgan.
+3. $$F_1 \cup F_2$$ is "at least one fails", the failure condition for a series system.
+4. $$F_1^c \cap F_2^c$$ is "both work", which is stricter than a parallel system needs.
+5. $$(F_1 \cup F_2)^c$$ equals $$F_1^c \cap F_2^c$$ by De Morgan, the same wrong answer.
+
+(a) $$F_1 \cap F_2$$. A parallel system survives on one working component, so it fails only when both fail. (b) $$F_1^c \cup F_2^c$$, that is, at least one component works. It is the complement of the answer to (a), and De Morgan turns $$(F_1 \cap F_2)^c$$ into $$F_1^c \cup F_2^c$$. The losing options: $$F_1 \cup F_2$$ is "at least one fails", which is the failure condition for a *series* system, not a parallel one. $$F_1^c \cap F_2^c$$ is "both work", which is stricter than a parallel system needs. $$(F_1 \cup F_2)^c$$ is the same set as $$F_1^c \cap F_2^c$$ by De Morgan, so it is the same wrong answer written the other way round — a good check that you are applying De Morgan rather than guessing.
 
 ### Q: Components $$A$$ and $$B$$ sit in parallel, and that whole block sits in series with component $$C$$. The components fail independently, with $$P(A \text{ fails}) = 0.2$$, $$P(B \text{ fails}) = 0.15$$ and $$P(C \text{ fails}) = 0.1$$. Find the reliability of the system to three decimal places.
 **Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** WW2  **Type:** derive
-**A:** Do the parallel block first. It fails only if both fail, and independence lets you multiply. The block and $$C$$ are in series, so the system works only if both work:
+**A:** Key:
+1. Parallel block first, then series with $$C$$: $$P(\text{works}) = (1 - 0.2 \times 0.15)(1 - 0.1)$$.
+2. The block fails with probability 0.03, so it works with probability 0.97.
+3. The reliability is $$0.97 \times 0.9 = 0.873$$.
+
+Do the parallel block first. It fails only if both fail, and independence lets you multiply. The block and $$C$$ are in series, so the system works only if both work:
 
 $$
 \begin{aligned}
@@ -822,7 +1447,13 @@ Two rules, one each way: parallel means multiply the *failure* probabilities, se
 
 ### Q: Two parts, same setup each time. (a) $$P(A) = 0.3$$, $$P(B) = 0.5$$ and $$P(A \cap B) = 0.2$$. Find $$P(A \mid B^c)$$ as a fraction. (b) Now $$P(A) = 0.3$$, $$P(B) = 0.3$$ and $$P(A \cap B) = 0.3$$. Find $$P(A \mid B^c)$$, and say what the three numbers force to be true about $$A$$ and $$B$$.
 **Topic:** 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)  **Lec:** WW2  **Type:** derive
-**A:** (a) The given event is the denominator. Split $$A$$ along $$B$$:
+**A:** Key:
+1. (a) $$P(A \mid B^c) = \frac{P(A \cap B^c)}{P(B^c)} = \frac{0.3 - 0.2}{1 - 0.5}$$.
+2. (a) $$P(A \mid B^c) = \frac{0.1}{0.5} = \frac{1}{5}$$.
+3. (b) $$P(A \cap B) = 0.3$$ equals both $$P(A)$$ and $$P(B)$$, so $$A$$ and $$B$$ are the same event.
+4. (b) Then $$A \cap B^c = \emptyset$$, so $$P(A \mid B^c) = \frac{0}{0.7} = 0$$.
+
+(a) The given event is the denominator. Split $$A$$ along $$B$$:
 
 $$
 \begin{aligned}
@@ -836,7 +1467,12 @@ $$
 
 ### Q: Factory $$A$$ produces three times as many computers as factory $$B$$. An item from $$A$$ is defective with probability 0.025, and one from $$B$$ with probability 0.04. A computer is picked at random and found to be defective. What is the probability it came from $$A$$, to four decimal places?
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** WW2  **Type:** derive
-**A:** "Three times as many" fixes the priors: $$P(A) = \frac{3}{4} = 0.75$$ and $$P(B) = 0.25$$, since $$A$$ and $$B$$ are the only two producers. Then:
+**A:** Key:
+1. Bayes with priors $$\frac{3}{4}$$ and $$\frac{1}{4}$$: $$P(A \mid D) = \frac{0.75(0.025)}{0.75(0.025) + 0.25(0.04)}$$.
+2. $$P(D) = 0.01875 + 0.01 = 0.02875$$.
+3. $$P(A \mid D) = \frac{0.01875}{0.02875} = 0.6522$$.
+
+"Three times as many" fixes the priors: $$P(A) = \frac{3}{4} = 0.75$$ and $$P(B) = 0.25$$, since $$A$$ and $$B$$ are the only two producers. Then:
 
 $$
 \begin{aligned}
@@ -853,7 +1489,14 @@ Two traps worth naming. The ratio "3 times as many" is not a probability — con
 
 ### Q: Starting from the definition of conditional probability, derive Bayes' theorem for a partition $$A_1, \dots, A_n$$ and an event $$B$$, and say where the law of total probability enters.
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** derive
-**A:** Start from $$P(A_i \mid B) = \frac{P(A_i \cap B)}{P(B)}$$. The numerator is $$P(B \mid A_i)\,P(A_i)$$ by the multiplication rule. For the denominator, $$B$$ is the union of the disjoint pieces $$A_1 \cap B, \dots, A_n \cap B$$, so $$P(B)$$ is the sum of $$P(B \mid A_k)\,P(A_k)$$ over $$k$$, which is the law of total probability. Putting them together:
+**A:** Key:
+1. Start from $$P(A_i \mid B) = \frac{P(A_i \cap B)}{P(B)}$$.
+2. The numerator is $$P(B \mid A_i)\,P(A_i)$$ by the multiplication rule.
+3. $$B$$ is the union of the disjoint pieces $$A_k \cap B$$, so $$P(B) = \sum_{k=1}^{n} P(B \mid A_k)\,P(A_k)$$.
+4. That denominator is where the law of total probability enters.
+5. The result is $$P(A_i \mid B) = \frac{P(B \mid A_i)\,P(A_i)}{\sum_{k=1}^{n} P(B \mid A_k)\,P(A_k)}$$.
+
+Start from $$P(A_i \mid B) = \frac{P(A_i \cap B)}{P(B)}$$. The numerator is $$P(B \mid A_i)\,P(A_i)$$ by the multiplication rule. For the denominator, $$B$$ is the union of the disjoint pieces $$A_1 \cap B, \dots, A_n \cap B$$, so $$P(B)$$ is the sum of $$P(B \mid A_k)\,P(A_k)$$ over $$k$$, which is the law of total probability. Putting them together:
 
 $$
 P(A_i \mid B) = \frac{P(B \mid A_i)\,P(A_i)}{\sum_{k=1}^{n} P(B \mid A_k)\,P(A_k)}
@@ -861,7 +1504,12 @@ $$
 
 ### Q: In the three-plant example a student says: "The probability that a plant 2 car is defective is 0.018, so the probability that a defective car is from plant 2 is also about 0.018." Explain the error in one sentence and give the right number.
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** critique
-**A:** Those are reverse conditionals: $$P(D \mid A_2) = 0.018$$ is given, while $$P(A_2 \mid D)$$ weighs plant 2's defective output against the defective output of all three plants.
+**A:** Key:
+1. They are reverse conditionals: $$P(D \mid A_2) = 0.018$$ is given, while $$P(A_2 \mid D)$$ weighs plant 2's defects against all three plants'.
+2. Total probability: $$P(D) = 0.0035 + 0.0036 + 0.0090 = 0.0161$$.
+3. $$P(A_2 \mid D) = \frac{0.0036}{0.0161} \approx 0.224$$.
+
+Those are reverse conditionals: $$P(D \mid A_2) = 0.018$$ is given, while $$P(A_2 \mid D)$$ weighs plant 2's defective output against the defective output of all three plants.
 
 $$
 \begin{aligned}
@@ -872,7 +1520,13 @@ $$
 
 ### Q: A test detects a disease with probability 0.95 when it is present and gives a false positive with probability 0.08 when it is absent. 4% of people have the disease. Draw the tree and find $$P(\text{disease} \mid \text{positive})$$.
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
-**A:** First split: disease 0.04, no disease 0.96. Second split: positive 0.95 or negative 0.05 on the disease branch, positive 0.08 or negative 0.92 on the other. Multiply along the two positive paths:
+**A:** Key:
+1. Bayes: $$P(\text{disease} \mid \text{positive}) = \frac{0.04(0.95)}{0.04(0.95) + 0.96(0.08)}$$.
+2. The tree splits first into disease 0.04 and no disease 0.96, then positive 0.95 on the disease branch and 0.08 on the other.
+3. $$P(\text{positive}) = 0.038 + 0.0768 = 0.1148$$.
+4. $$P(\text{disease} \mid \text{positive}) = \frac{0.038}{0.1148} \approx 0.331$$.
+
+First split: disease 0.04, no disease 0.96. Second split: positive 0.95 or negative 0.05 on the disease branch, positive 0.08 or negative 0.92 on the other. Multiply along the two positive paths:
 
 $$
 \begin{aligned}
@@ -887,7 +1541,13 @@ Most positives come from the large healthy group, which is why the posterior is 
 
 ### Q: Two bins are equally likely to be picked from. Bin I has 2% defective parts and bin II has 6%. Given a defective part, find $$P(\text{bin I})$$. Why is it below one half, and what would make it exactly one half?
 **Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 7  **Type:** apply
-**A:** The two paths and the posterior:
+**A:** Key:
+1. Bayes with the total probability of a defective as the denominator: $$P(I \mid D) = \frac{0.5(0.02)}{0.5(0.02) + 0.5(0.06)}$$.
+2. $$P(D) = 0.04$$, so $$P(I \mid D) = 0.25$$.
+3. It is below one half because bin I contributes fewer of the defective parts.
+4. Equal defect rates would make it exactly one half, since the prior is already even.
+
+The two paths and the posterior:
 
 $$
 \begin{aligned}
@@ -901,7 +1561,12 @@ It is below one half because bin I contributes fewer of the defective parts. Equ
 
 ### Q: A system has components $$A$$ and $$B$$ in parallel, followed in series by $$C$$ and then $$D$$. The reliabilities are $$A$$ 0.7, $$B$$ 0.6, $$C$$ 0.95 and $$D$$ 0.9, and the components work independently. Find the reliability of the system.
 **Topic:** 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given)  **Lec:** 7  **Type:** apply
-**A:** The parallel block fails only if both $$A$$ and $$B$$ fail. The system needs the block, $$C$$ and $$D$$ all working, so by independence:
+**A:** Key:
+1. Parallel block, then series with $$C$$ and $$D$$: $$R = (1 - 0.3 \times 0.4)(0.95)(0.9)$$.
+2. The block works with probability $$1 - 0.3 \times 0.4 = 0.88$$.
+3. The reliability is $$0.88 \times 0.95 \times 0.9 = 0.7524$$.
+
+The parallel block fails only if both $$A$$ and $$B$$ fail. The system needs the block, $$C$$ and $$D$$ all working, so by independence:
 
 $$
 \begin{aligned}
@@ -914,17 +1579,35 @@ With the deck's numbers (0.6, 0.5, 0.9, 0.9) the same steps give $$0.8 \times 0.
 
 ### Q: Three components each work with probability 0.9, independently. Compare the reliability of all three in series with all three in parallel, and name the rule each layout uses.
 **Topic:** 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given)  **Lec:** 7  **Type:** apply
-**A:** Series needs every component to work, so the reliability is the product $$0.9^3 = 0.729$$. Parallel fails only if every component fails, so the reliability is $$1 - 0.1^3 = 0.999$$. Series uses the multiplication rule for independent events; parallel uses the complement of that rule applied to the failures.
+**A:** Key:
+1. Series needs every component working: $$0.9^3 = 0.729$$.
+2. Parallel fails only if every component fails: $$1 - 0.1^3 = 0.999$$.
+3. Series uses the multiplication rule for independent events.
+4. Parallel uses the complement of that rule applied to the failures.
+
+Series needs every component to work, so the reliability is the product $$0.9^3 = 0.729$$. Parallel fails only if every component fails, so the reliability is $$1 - 0.1^3 = 0.999$$. Series uses the multiplication rule for independent events; parallel uses the complement of that rule applied to the failures.
 
 ## Lec 8 — Ch 4: random variables, the pmf, the cdf, mean and variance (logged 2026-09-28 from the posted deck and the recording)
 
 ### Q: Two fair dice, one green and one red, are rolled and $$Y$$ = green score minus red score. List the possible values of $$Y$$, find $$P(Y = 0)$$ and $$P(Y = 4)$$, and say whether $$Y$$ is discrete.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** apply
-**A:** The 36 ordered pairs are equally likely. Differences run from $$1 - 6 = -5$$ to $$6 - 1 = 5$$, so the possible values are $$-5, -4, \dots, 4, 5$$, eleven values. $$P(Y = 0)$$ counts the six doubles, $$\frac{6}{36} = \frac{1}{6}$$. $$P(Y = 4)$$ needs (5, 1) or (6, 2), so $$\frac{2}{36} = \frac{1}{18}$$. $$Y$$ is discrete: a finite set of separate values with probability at each one.
+**A:** Key:
+1. Over the 36 equally likely ordered pairs, the possible values are $$-5, -4, \dots, 4, 5$$, eleven values.
+2. $$P(Y = 0)$$ counts the six doubles: $$\frac{6}{36} = \frac{1}{6}$$.
+3. $$P(Y = 4)$$ needs (5, 1) or (6, 2): $$\frac{2}{36} = \frac{1}{18}$$.
+4. $$Y$$ is discrete, a finite set of separate values.
+
+The 36 ordered pairs are equally likely. Differences run from $$1 - 6 = -5$$ to $$6 - 1 = 5$$, so the possible values are $$-5, -4, \dots, 4, 5$$, eleven values. $$P(Y = 0)$$ counts the six doubles, $$\frac{6}{36} = \frac{1}{6}$$. $$P(Y = 4)$$ needs (5, 1) or (6, 2), so $$\frac{2}{36} = \frac{1}{18}$$. $$Y$$ is discrete: a finite set of separate values with probability at each one.
 
 ### Q: Flip a fair coin four times and let $$X$$ be the number of heads. Give the pmf as a table and check both pmf properties.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** apply
-**A:** Sixteen equally likely outcomes. The counts with 0, 1, 2, 3, 4 heads are 1, 4, 6, 4, 1, so:
+**A:** Key:
+1. Sixteen equally likely outcomes, with 1, 4, 6, 4, 1 ways to get 0, 1, 2, 3, 4 heads.
+2. $$f(0)$$ to $$f(4)$$ are $$\frac{1}{16}, \frac{4}{16}, \frac{6}{16}, \frac{4}{16}, \frac{1}{16}$$.
+3. Every value is at least 0.
+4. The values sum to $$\frac{16}{16} = 1$$.
+
+Sixteen equally likely outcomes. The counts with 0, 1, 2, 3, 4 heads are 1, 4, 6, 4, 1, so:
 
 | $$x$$ | 0 | 1 | 2 | 3 | 4 |
 |---|---|---|---|---|---|
@@ -934,7 +1617,14 @@ Every value is at least 0, and the sum is $$\frac{16}{16} = 1$$, so it is a pmf.
 
 ### Q: $$Y$$ takes the values $$-2, 0, 3, 6$$ with probabilities $$2c, 0.3, c, 4c$$. Find $$c$$, then $$P(Y = 6)$$, $$P(Y \ge 0)$$, $$P(Y < 0)$$ and $$P(Y > 1.5)$$, writing each as probability statements before the numbers.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** apply
-**A:** $$f$$ is a pmf, so the probabilities sum to 1. The possible values above 1.5 are 3 and 6.
+**A:** Key:
+1. The pmf sums to 1: $$2c + 0.3 + c + 4c = 1$$.
+2. $$7c = 0.7$$, so $$c = 0.1$$.
+3. $$P(Y = 6) = 4c = 0.4$$.
+4. $$P(Y \ge 0) = P(Y = 0) + P(Y = 3) + P(Y = 6) = 0.8$$, and $$P(Y < 0) = P(Y = -2) = 0.2$$.
+5. $$P(Y > 1.5) = P(Y = 3) + P(Y = 6) = 0.5$$.
+
+$$f$$ is a pmf, so the probabilities sum to 1. The possible values above 1.5 are 3 and 6.
 
 $$
 \begin{aligned}
@@ -951,11 +1641,23 @@ $$
 
 ### Q: Which of these tables can be a pmf? (i) Values 1, 2, 3 with probabilities 0.5, 0.6, $$-0.1$$. (ii) Values 0, 1 with 0.45, 0.55. (iii) Values 1, 2, 3, 4 with 0.1, 0.2, 0.3, 0.5. Name the property each failure breaks, and say which one is Bernoulli.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 8  **Type:** critique
-**A:** (i) No: a probability of $$-0.1$$ breaks $$f(x) \ge 0$$, and the sum being 1 does not rescue it. (ii) Yes, both properties hold, and it is Bernoulli because the only values are 0 and 1. (iii) No: the sum is 1.1, which breaks the total of 1.
+**A:** Key:
+1. Only table (ii) can be a pmf, because both pmf properties hold for it.
+2. (i) fails because $$-0.1$$ breaks $$f(x) \ge 0$$, even though its sum is 1.
+3. (iii) fails because its probabilities sum to 1.1, breaking the total of 1.
+4. (ii) is Bernoulli because its only values are 0 and 1.
+
+(i) No: a probability of $$-0.1$$ breaks $$f(x) \ge 0$$, and the sum being 1 does not rescue it. (ii) Yes, both properties hold, and it is Bernoulli because the only values are 0 and 1. (iii) No: the sum is 1.1, which breaks the total of 1.
 
 ### Q: For $$X$$ = the number of heads in four fair flips, write the cdf as a piecewise function, then evaluate $$F(1.5)$$, $$F(-1)$$, $$F(4)$$ and $$P(X > 2)$$.
 **Topic:** 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F)  **Lec:** 8  **Type:** apply
-**A:** Running sums of $$\frac{1}{16}, \frac{4}{16}, \frac{6}{16}, \frac{4}{16}, \frac{1}{16}$$ give:
+**A:** Key:
+1. The cdf is the running sum of the pmf $$\frac{1}{16}, \frac{4}{16}, \frac{6}{16}, \frac{4}{16}, \frac{1}{16}$$, a step function jumping at 0 to 4.
+2. $$F(x)$$ is 0 below 0, then $$\frac{1}{16}, \frac{5}{16}, \frac{11}{16}, \frac{15}{16}$$ on $$[0, 1), [1, 2), [2, 3), [3, 4)$$, and 1 from 4 on.
+3. $$F(1.5) = \frac{5}{16}$$, $$F(-1) = 0$$ and $$F(4) = 1$$.
+4. $$P(X > 2) = 1 - F(2) = 1 - \frac{11}{16} = \frac{5}{16}$$.
+
+Running sums of $$\frac{1}{16}, \frac{4}{16}, \frac{6}{16}, \frac{4}{16}, \frac{1}{16}$$ give:
 
 $$
 F(x) = \begin{cases}
@@ -972,11 +1674,22 @@ $$F(1.5) = \frac{5}{16}$$, $$F(-1) = 0$$, $$F(4) = 1$$, and $$P(X > 2) = 1 - F(2
 
 ### Q: For the number of heads in three fair flips, a student computes $$P(X \ge 2)$$ as $$1 - F(2)$$. What is wrong, and what are the correct $$P(X \ge 2)$$ and $$P(X > 2)$$?
 **Topic:** 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F)  **Lec:** 8  **Type:** critique
-**A:** $$1 - F(2)$$ is $$P(X > 2)$$, which leaves out $$X = 2$$. $$P(X \ge 2) = 1 - F(1) = 1 - \frac{4}{8} = \frac{4}{8}$$, while $$P(X > 2) = 1 - F(2) = \frac{1}{8}$$. For a discrete variable the equal sign moves the answer by $$f(2) = \frac{3}{8}$$.
+**A:** Key:
+1. $$1 - F(2)$$ is $$P(X > 2)$$, so it leaves out $$X = 2$$.
+2. $$P(X \ge 2) = 1 - F(1) = 1 - \frac{4}{8} = \frac{4}{8}$$.
+3. $$P(X > 2) = 1 - F(2) = \frac{1}{8}$$.
+
+$$1 - F(2)$$ is $$P(X > 2)$$, which leaves out $$X = 2$$. $$P(X \ge 2) = 1 - F(1) = 1 - \frac{4}{8} = \frac{4}{8}$$, while $$P(X > 2) = 1 - F(2) = \frac{1}{8}$$. For a discrete variable the equal sign moves the answer by $$f(2) = \frac{3}{8}$$.
 
 ### Q: $$X$$ is the score on a fair die. Find $$E(X)$$ and $$\operatorname{Var}(X)$$ by the shortcut, then explain what $$E(X) = 3.5$$ means when no face shows 3.5.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** derive
-**A:** With $$f(x) = \frac{1}{6}$$ at 1 to 6:
+**A:** Key:
+1. Use $$f(x) = \frac{1}{6}$$ at 1 to 6 and the shortcut $$\operatorname{Var}(X) = E(X^2) - [E(X)]^2$$.
+2. $$E(X) = \frac{21}{6} = 3.5$$.
+3. $$E(X^2) = \frac{91}{6}$$, so $$\operatorname{Var}(X) = \frac{91}{6} - 3.5^2 = \frac{35}{12} \approx 2.92$$.
+4. 3.5 is the long-run average score over hypothetically many rolls, not a value one roll can show.
+
+With $$f(x) = \frac{1}{6}$$ at 1 to 6:
 
 $$
 \begin{aligned}
@@ -991,7 +1704,14 @@ $$
 
 ### Q: $$Y$$ takes $$-2, 0, 3, 6$$ with probabilities 0.2, 0.3, 0.1, 0.4. Find $$E(Y)$$, $$E(Y^2)$$, $$\operatorname{Var}(Y)$$ and $$\operatorname{SD}(Y)$$.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** apply
-**A:** Weight each value by its probability:
+**A:** Key:
+1. Weight each value by its probability: $$E(Y) = -2(0.2) + 0(0.3) + 3(0.1) + 6(0.4)$$.
+2. $$E(Y) = 2.3$$.
+3. $$E(Y^2) = 4(0.2) + 9(0.1) + 36(0.4) = 16.1$$.
+4. $$\operatorname{Var}(Y) = 16.1 - 2.3^2 = 10.81$$.
+5. $$\operatorname{SD}(Y) = \sqrt{10.81} \approx 3.29$$.
+
+Weight each value by its probability:
 
 $$
 \begin{aligned}
@@ -1006,13 +1726,25 @@ $$
 
 ### Q: "The mean of a random variable is the sum of its values divided by how many there are, like Chapter 1." Correct the claim, and say when the two formulas happen to agree.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 8  **Type:** critique
-**A:** Chapter 1's mean is a statistic of $$n$$ data values. A random variable's mean is $$\mu = \sum x\,f(x)$$, a weighted average of the possible values with the pmf as weights; the distribution, not a count of data, carries the information. The two agree only when every possible value is equally likely, as for a fair die, where $$\sum x\,f(x) = \frac{1 + \dots + 6}{6}$$.
+**A:** Key:
+1. A random variable's mean is $$\mu = \sum x\,f(x)$$, a weighted average of the possible values with the pmf as weights.
+2. Chapter 1's mean is a statistic of $$n$$ data values; for a random variable the distribution carries the information.
+3. The two agree when every possible value is equally likely, as for a fair die.
+
+Chapter 1's mean is a statistic of $$n$$ data values. A random variable's mean is $$\mu = \sum x\,f(x)$$, a weighted average of the possible values with the pmf as weights; the distribution, not a count of data, carries the information. The two agree whenever the weights do not move the average, for example when every possible value is equally likely, as for a fair die, where $$\sum x\,f(x) = \frac{1 + \dots + 6}{6}$$.
 
 ## Lec 9 — Ch 4: continuous random variables, the pdf and cdf, uniform and exponential (logged 2026-09-28 from the posted deck and the recording)
 
 ### Q: $$f(x) = cx$$ on $$[0, 4]$$ and 0 elsewhere. Find $$c$$, confirm $$f$$ is a pdf, and find $$P(1 \le X \le 3)$$ and $$P(X = 2)$$.
 **Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** apply
-**A:** The total area must be 1:
+**A:** Key:
+1. Set the total area to 1: $$\int_0^4 cx\,dx = 8c = 1$$.
+2. $$c = \frac{1}{8}$$.
+3. $$f(x) = \frac{x}{8} \ge 0$$ on the support with total area 1, so it is a pdf.
+4. $$P(1 \le X \le 3) = \int_1^3 \frac{x}{8}\,dx = \frac{9 - 1}{16} = 0.5$$.
+5. $$P(X = 2) = 0$$, because a single point has no area.
+
+The total area must be 1:
 
 $$
 \int_0^4 cx\,dx = 8c = 1 \;\Rightarrow\; c = \frac{1}{8}
@@ -1028,15 +1760,32 @@ $$P(X = 2) = 0$$, because a single point has no area.
 
 ### Q: A student says $$f(x) = 2$$ on $$[0, 0.5]$$ cannot be a pdf because a probability cannot exceed 1. Respond.
 **Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** critique
-**A:** $$f$$ is a density, not a probability. The tests are $$f \ge 0$$ and total area 1, and here the area is $$2 \times 0.5 = 1$$, so it is a valid pdf, the uniform distribution on $$[0, 0.5]$$. Only areas under $$f$$ are probabilities, and every one of them is at most 1.
+**A:** Key:
+1. The student is wrong: $$f(x) = 2$$ on $$[0, 0.5]$$ is a valid pdf, the uniform distribution on $$[0, 0.5]$$.
+2. $$f$$ is a density, not a probability; only areas under $$f$$ are probabilities, and each is at most 1.
+3. The tests are $$f \ge 0$$ and total area 1, and here the area is $$2 \times 0.5 = 1$$.
+
+$$f$$ is a density, not a probability. The tests are $$f \ge 0$$ and total area 1, and here the area is $$2 \times 0.5 = 1$$, so it is a valid pdf, the uniform distribution on $$[0, 0.5]$$. Only areas under $$f$$ are probabilities, and every one of them is at most 1.
 
 ### Q: Why are $$P(a \le X \le b)$$ and $$P(a < X < b)$$ equal for a continuous $$X$$ but not for a discrete one? Give a discrete example where they differ.
 **Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** recall
-**A:** For a continuous $$X$$, $$P(X = a) = P(X = b) = 0$$, so including or excluding the endpoints changes nothing. For a discrete $$X$$ the endpoints can carry probability. With $$X$$ = the number of heads in three flips, $$P(1 \le X \le 2) = \frac{6}{8}$$ while $$P(1 < X < 2) = 0$$, since no possible value lies strictly between 1 and 2.
+**A:** Key:
+1. For a continuous $$X$$, $$P(X = a) = P(X = b) = 0$$, so including or excluding the endpoints changes nothing.
+2. For a discrete $$X$$ the endpoints can carry probability.
+3. For heads in three flips, $$P(1 \le X \le 2) = \frac{6}{8}$$ while $$P(1 < X < 2) = 0$$.
+
+For a continuous $$X$$, $$P(X = a) = P(X = b) = 0$$, so including or excluding the endpoints changes nothing. For a discrete $$X$$ the endpoints can carry probability. With $$X$$ = the number of heads in three flips, $$P(1 \le X \le 2) = \frac{6}{8}$$ while $$P(1 < X < 2) = 0$$, since no possible value lies strictly between 1 and 2.
 
 ### Q: For $$f(x) = \frac{x}{8}$$ on $$[0, 4]$$, find the cdf as a piecewise function, recover $$f$$ by differentiation, and find $$P(X > 3)$$ and the median.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** derive
-**A:** Integrate from the left end of the support:
+**A:** Key:
+1. Integrate from the left end of the support: $$F(x) = \int_0^x \frac{t}{8}\,dt = \frac{x^2}{16}$$ for $$0 \le x \le 4$$.
+2. $$F(x) = 0$$ for $$x < 0$$ and $$F(x) = 1$$ for $$x > 4$$.
+3. Differentiating $$\frac{x^2}{16}$$ gives $$\frac{x}{8}$$, the pdf back.
+4. $$P(X > 3) = 1 - F(3) = 1 - \frac{9}{16} = \frac{7}{16}$$.
+5. The median solves $$\frac{x^2}{16} = 0.5$$, so it is $$\sqrt{8} \approx 2.83$$.
+
+Integrate from the left end of the support:
 
 $$
 F(x) = \int_0^x \frac{t}{8}\,dt = \frac{x^2}{16}, \qquad 0 \le x \le 4
@@ -1046,11 +1795,23 @@ with $$F(x) = 0$$ for $$x < 0$$ and $$F(x) = 1$$ for $$x > 4$$. Differentiating 
 
 ### Q: $$X$$ is uniform on $$[0, 100]$$, the deck's Example 6. Find $$Q_1$$, $$Q_3$$ and the IQR, and $$P(X > 85)$$.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** apply
-**A:** $$F(x) = \frac{x}{100}$$ on $$[0, 100]$$. $$Q_1$$ solves $$\frac{x}{100} = 0.25$$, so $$Q_1 = 25$$; $$Q_3$$ solves $$\frac{x}{100} = 0.75$$, so $$Q_3 = 75$$; $$\text{IQR} = 50$$. $$P(X > 85) = 1 - F(85) = 0.15$$.
+**A:** Key:
+1. Use $$F(x) = \frac{x}{100}$$ and solve $$F(x) = 0.25$$ and $$F(x) = 0.75$$ for the quartiles.
+2. $$Q_1 = 25$$ and $$Q_3 = 75$$.
+3. $$\text{IQR} = 50$$.
+4. $$P(X > 85) = 1 - F(85) = 0.15$$.
+
+$$F(x) = \frac{x}{100}$$ on $$[0, 100]$$. $$Q_1$$ solves $$\frac{x}{100} = 0.25$$, so $$Q_1 = 25$$; $$Q_3$$ solves $$\frac{x}{100} = 0.75$$, so $$Q_3 = 75$$; $$\text{IQR} = 50$$. $$P(X > 85) = 1 - F(85) = 0.15$$.
 
 ### Q: Given $$F(x) = \frac{x^3}{8}$$ on $$[0, 2]$$, a student writes $$P(X < 1) = F(2) - F(1) = \frac{7}{8}$$. Fix the error, then compute $$P(X < 1)$$, $$P(X \ge 1)$$ and $$P(0.5 < X < 1.5)$$.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** critique
-**A:** $$F(2) - F(1)$$ is $$P(1 < X < 2)$$. The three asked for:
+**A:** Key:
+1. The error: $$F(2) - F(1)$$ is $$P(1 < X < 2)$$, while $$P(X < 1)$$ is $$F(1)$$ alone.
+2. $$P(X < 1) = F(1) = \frac{1}{8}$$.
+3. $$P(X \ge 1) = 1 - F(1) = \frac{7}{8}$$.
+4. $$P(0.5 < X < 1.5) = F(1.5) - F(0.5) = \frac{3.375 - 0.125}{8} \approx 0.406$$.
+
+$$F(2) - F(1)$$ is $$P(1 < X < 2)$$. The three asked for:
 
 $$
 \begin{aligned}
@@ -1063,7 +1824,14 @@ $$
 
 ### Q: A bus wait time $$X$$ is uniform on $$[0, 20]$$ minutes. Find the mean, the variance, $$P(X > 15)$$ and the 90th percentile.
 **Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
-**A:** Use the uniform results and $$F(x) = \frac{x}{20}$$:
+**A:** Key:
+1. Use the uniform results with $$F(x) = \frac{x}{20}$$: $$E(X) = \frac{0 + 20}{2}$$ and $$\operatorname{Var}(X) = \frac{20^2}{12}$$.
+2. The mean is 10 minutes.
+3. The variance is $$\frac{400}{12} \approx 33.3$$.
+4. $$P(X > 15) = 1 - 0.75 = 0.25$$.
+5. The 90th percentile solves $$\frac{x}{20} = 0.9$$, giving 18 minutes.
+
+Use the uniform results and $$F(x) = \frac{x}{20}$$:
 
 $$
 \begin{aligned}
@@ -1077,7 +1845,13 @@ The 90th percentile solves $$\frac{x}{20} = 0.9$$, giving 18 minutes.
 
 ### Q: A component's time to failure $$X$$ is exponential with mean 200 hours. Find $$\lambda$$, $$P(X > 300)$$, $$P(100 < X < 300)$$ and the median lifetime.
 **Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** apply
-**A:** $$E(X) = \frac{1}{\lambda} = 200$$, so $$\lambda = 0.005$$ per hour. Then:
+**A:** Key:
+1. $$E(X) = \frac{1}{\lambda} = 200$$, so $$\lambda = 0.005$$ per hour.
+2. $$P(X > 300) = e^{-1.5} \approx 0.223$$.
+3. $$P(100 < X < 300) = F(300) - F(100) = e^{-0.5} - e^{-1.5} \approx 0.383$$.
+4. The median solves $$1 - e^{-\lambda m} = 0.5$$, so $$m = 200 \ln 2 \approx 139$$ hours.
+
+$$E(X) = \frac{1}{\lambda} = 200$$, so $$\lambda = 0.005$$ per hour. Then:
 
 $$
 \begin{aligned}
@@ -1094,21 +1868,42 @@ The median is below the mean because the distribution is right-skewed.
 
 ### Q: One problem gives a pdf $$f(x)$$. Another gives $$P(T > t) = \frac{16}{(4 + t)^2}$$ for $$t \ge 0$$. How do you get a probability from each, and how do you tell which one you were handed? Find $$P(T \le 4)$$.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** apply
-**A:** Read the left side of the equals sign. A pdf $$f(x)$$ is a height, not a probability, so you integrate it over the range you want. $$P(\dots)$$ or $$F(x)$$ is already a probability, so you plug the number in. Here $$P(T > 4) = \frac{16}{64} = 0.25$$, and $$P(T \le 4)$$ is its complement, $$1 - 0.25 = 0.75$$.
+**A:** Key:
+1. A pdf $$f(x)$$ is a height, not a probability, so you integrate it over the range you want.
+2. A $$P(\dots)$$ or $$F(x)$$ is already a probability, so you plug the number in.
+3. You tell them apart by reading the left side of the equals sign.
+4. $$P(T > 4) = \frac{16}{64} = 0.25$$, so $$P(T \le 4) = 1 - 0.25 = 0.75$$.
+
+Read the left side of the equals sign. A pdf $$f(x)$$ is a height, not a probability, so you integrate it over the range you want. $$P(\dots)$$ or $$F(x)$$ is already a probability, so you plug the number in. Here $$P(T > 4) = \frac{16}{64} = 0.25$$, and $$P(T \le 4)$$ is its complement, $$1 - 0.25 = 0.75$$.
 
 ### Q: Why is $$P(X = c) = 0$$ for a continuous $$X$$, and where does the total probability of 1 sit if every single value has probability 0?
 **Topic:** 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)  **Lec:** 9  **Type:** recall
-**A:** A continuous $$X$$ can take endlessly many values, such as 1, 1.1, 1.01 and 1.001. If each exact value had even a chance of 0.001, a thousand of them would already add to 1 and the rest would push the total past 1, so each one must be exactly 0. The 1 sits in ranges, the way length does on a ruler: the point from 1 to 1 has length $$1 - 1 = 0$$, but the stretch from 0 to 2 has length 2. A range's probability is its area under $$f$$, and the area over the whole support is 1.
+**A:** Key:
+1. Each exact value must have probability 0: $$X$$ takes endlessly many values, so any positive chance each would push the total past 1.
+2. The total probability sits in ranges: a range's probability is its area under $$f$$.
+3. The area under $$f$$ over the whole support is 1.
+
+A continuous $$X$$ can take endlessly many values, such as 1, 1.1, 1.01 and 1.001. If each exact value had even a chance of 0.001, a thousand of them would already add to 1 and the rest would push the total past 1, so each one must be exactly 0. The 1 sits in ranges, the way length does on a ruler: the point from 1 to 1 has length $$1 - 1 = 0$$, but the stretch from 0 to 2 has length 2. A range's probability is its area under $$f$$, and the area over the whole support is 1.
 
 ### Q: Why is $$E(X) = \int x\,f(x)\,dx$$ the same idea as the discrete mean $$\sum x\,P(X = x)$$, and what changes for $$E(\sqrt{X})$$?
 **Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 9  **Type:** recall
-**A:** Both are each value times its chance, added up. In the continuous case the chance of landing in a thin strip near $$x$$ is $$f(x)\,dx$$, and the integral does the adding. For $$E(\sqrt{X})$$, or any function of $$X$$, replace the $$x$$ in front of $$f(x)$$ with what is inside the brackets, giving $$\int \sqrt{x}\,f(x)\,dx$$. The $$f(x)$$ itself never changes.
+**A:** Key:
+1. Both are each value times its chance, added up.
+2. In the continuous case the chance of a thin strip near $$x$$ is $$f(x)\,dx$$, and the integral does the adding.
+3. For $$E(\sqrt{X})$$, replace the $$x$$ in front of $$f(x)$$ to get $$\int \sqrt{x}\,f(x)\,dx$$, with $$f(x)$$ unchanged.
+
+Both are each value times its chance, added up. In the continuous case the chance of landing in a thin strip near $$x$$ is $$f(x)\,dx$$, and the integral does the adding. For $$E(\sqrt{X})$$, or any function of $$X$$, replace the $$x$$ in front of $$f(x)$$ with what is inside the brackets, giving $$\int \sqrt{x}\,f(x)\,dx$$. The $$f(x)$$ itself never changes.
 
 ## WeBWorK 3 — Ch 4 (opened Sep 29, due Tue Oct 6; banked 2026-09-29, numbers changed)
 
 ### Q: WeBWorK-style. An unevenly balanced four-sided die has $$P(1) = 0.15$$, $$P(1 \text{ or } 2) = 0.45$$ and $$P(2 \text{ or } 3) = 0.50$$. You win the amount showing on the die. From a blank page, build the full pmf and then find your expected winnings.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** WW3  **Type:** apply
-**A:** The three facts pin down the pmf one face at a time:
+**A:** Key:
+1. Build the pmf face by face: $$P(2) = 0.45 - 0.15$$, $$P(3) = 0.50 - P(2)$$ and $$P(4) = 1 - P(1) - P(2) - P(3)$$.
+2. The pmf is $$P(1) = 0.15$$, $$P(2) = 0.30$$, $$P(3) = 0.20$$ and $$P(4) = 0.35$$.
+3. $$E(X) = 1(0.15) + 2(0.30) + 3(0.20) + 4(0.35) = 2.75$$ dollars.
+
+The three facts pin down the pmf one face at a time:
 
 $$
 \begin{aligned}
@@ -1124,7 +1919,13 @@ The trap is forgetting the fourth face; the pmf must sum to 1 before you take th
 
 ### Q: WeBWorK-style. A random variable $$X$$ has mean $$-9$$ and standard deviation 3. Give the mean and standard deviation of (1) $$Y = X + 4$$, (2) $$V = 5X$$ and (3) $$W = 5X + 4$$, and state the rule you used for each.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** WW3  **Type:** apply
-**A:** For a linear change $$aX + b$$, the mean follows the whole transformation and the spread follows only the multiplier:
+**A:** Key:
+1. Use $$E(aX + b) = aE(X) + b$$ and $$\operatorname{SD}(aX + b) = |a| \cdot \operatorname{SD}(X)$$.
+2. $$Y = X + 4$$ has mean $$-5$$ and SD 3, because a shift leaves the spread untouched.
+3. $$V = 5X$$ has mean $$-45$$ and SD 15.
+4. $$W = 5X + 4$$ has mean $$-41$$ and SD 15.
+
+For a linear change $$aX + b$$, the mean follows the whole transformation and the spread follows only the multiplier:
 
 $$
 \begin{aligned}
@@ -1140,7 +1941,13 @@ $$
 
 ### Q: From the definition $$\operatorname{Var}(X) = E[(X - \mu)^2]$$, prove the shortcut $$\operatorname{Var}(X) = E(X^2) - [E(X)]^2$$, and name the rule used at each step.
 **Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** 10  **Type:** derive
-**A:** Expand the square, then use two rules: the expectation of a sum is the sum of the expectations, and constants come out of $$E$$, so $$E(2\mu X) = 2\mu E(X) = 2\mu^2$$ and $$E(\mu^2) = \mu^2$$.
+**A:** Key:
+1. Expand the square: $$E[(X - \mu)^2] = E[X^2 - 2\mu X + \mu^2]$$.
+2. The expectation of a sum is the sum of the expectations: $$E(X^2) - E(2\mu X) + E(\mu^2)$$.
+3. Constants come out of $$E$$, so $$E(2\mu X) = 2\mu^2$$ and $$E(\mu^2) = \mu^2$$.
+4. This leaves $$E(X^2) - 2\mu^2 + \mu^2 = E(X^2) - [E(X)]^2$$.
+
+Expand the square, then use two rules: the expectation of a sum is the sum of the expectations, and constants come out of $$E$$, so $$E(2\mu X) = 2\mu E(X) = 2\mu^2$$ and $$E(\mu^2) = \mu^2$$.
 
 $$
 \begin{aligned}
@@ -1153,7 +1960,14 @@ $$
 
 ### Q: $$X$$ has mean 4 and variance 9. Find $$E(3X - 5)$$, $$\operatorname{Var}(3X - 5)$$, $$\operatorname{SD}(3X - 5)$$, $$E(X^2)$$ and $$E[(X - 2)^2]$$.
 **Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** 10  **Type:** apply
-**A:** The $$-5$$ shifts the values and does not spread them. $$E(X^2)$$ comes from rearranging the shortcut.
+**A:** Key:
+1. Apply the linear rules: $$E(3X - 5) = 3E(X) - 5$$ and $$\operatorname{Var}(3X - 5) = 3^2 \operatorname{Var}(X)$$.
+2. $$E(3X - 5) = 3(4) - 5 = 7$$.
+3. $$\operatorname{Var}(3X - 5) = 3^2(9) = 81$$, so $$\operatorname{SD}(3X - 5) = 9$$.
+4. $$E(X^2) = \operatorname{Var}(X) + [E(X)]^2 = 9 + 16 = 25$$.
+5. $$E[(X - 2)^2] = E(X^2) - 4E(X) + 4 = 25 - 16 + 4 = 13$$.
+
+The $$-5$$ shifts the values and does not spread them. $$E(X^2)$$ comes from rearranging the shortcut.
 
 $$
 \begin{aligned}
@@ -1169,11 +1983,24 @@ $$
 
 ### Q: Three claims about random variables $$X$$ and $$Y$$, each with positive variance. Correct each one. (a) $$\operatorname{Var}(X - Y) = \operatorname{Var}(X) - \operatorname{Var}(Y)$$ when $$X$$ and $$Y$$ are independent. (b) $$\operatorname{Var}(2X) = 2\operatorname{Var}(X)$$. (c) $$E(XY) = E(X)E(Y)$$ for any $$X$$ and $$Y$$.
 **Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** 10  **Type:** critique
-**A:** (a) For independent $$X$$ and $$Y$$, $$\operatorname{Var}(X - Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)$$, because $$\operatorname{Var}(-Y) = (-1)^2\operatorname{Var}(Y)$$. With $$\operatorname{Var}(X) = \operatorname{Var}(Y) = 4$$ the claim gives 0, but the right answer is 8. (b) $$\operatorname{Var}(2X) = 2^2\operatorname{Var}(X) = 4\operatorname{Var}(X)$$. (c) $$E(XY) = E(X)E(Y)$$ needs independence. Take $$Y = X$$: then $$E(XY) = E(X^2)$$, which is larger than $$[E(X)]^2$$ by $$\operatorname{Var}(X)$$.
+**A:** Key:
+1. (a) is wrong: for independent $$X$$ and $$Y$$, $$\operatorname{Var}(X - Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)$$.
+2. The variances add because $$\operatorname{Var}(-Y) = (-1)^2\operatorname{Var}(Y)$$.
+3. (b) $$\operatorname{Var}(2X) = 2^2\operatorname{Var}(X) = 4\operatorname{Var}(X)$$.
+4. (c) $$E(XY) = E(X)E(Y)$$ needs independence.
+5. With $$Y = X$$, $$E(XY) = E(X^2)$$, which is larger than $$[E(X)]^2$$ by $$\operatorname{Var}(X)$$.
+
+(a) For independent $$X$$ and $$Y$$, $$\operatorname{Var}(X - Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)$$, because $$\operatorname{Var}(-Y) = (-1)^2\operatorname{Var}(Y)$$. With $$\operatorname{Var}(X) = \operatorname{Var}(Y) = 4$$ the claim gives 0, but the right answer is 8. (b) $$\operatorname{Var}(2X) = 2^2\operatorname{Var}(X) = 4\operatorname{Var}(X)$$. (c) $$E(XY) = E(X)E(Y)$$ needs independence. Take $$Y = X$$: then $$E(XY) = E(X^2)$$, which is larger than $$[E(X)]^2$$ by $$\operatorname{Var}(X)$$.
 
 ### Q: $$\operatorname{Var}(X) = 4$$, $$\operatorname{Var}(Y) = 9$$ and $$\operatorname{Cov}(X, Y) = -1.5$$. Find $$\operatorname{Var}(3X + 2Y)$$ and $$\operatorname{Var}(X - 2Y)$$, then find both again assuming $$X$$ and $$Y$$ are independent.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** apply
-**A:** Use $$\operatorname{Var}(aX + bY) = a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y) + 2ab\operatorname{Cov}(X, Y)$$.
+**A:** Key:
+1. Use $$a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y) + 2ab\operatorname{Cov}(X, Y)$$: $$\operatorname{Var}(3X + 2Y) = 9(4) + 4(9) + 2(3)(2)(-1.5)$$.
+2. $$\operatorname{Var}(3X + 2Y) = 36 + 36 - 18 = 54$$.
+3. $$\operatorname{Var}(X - 2Y) = 4 + 4(9) + 2(1)(-2)(-1.5) = 46$$.
+4. Independent means $$\operatorname{Cov} = 0$$, so the answers become 72 and 40.
+
+Use $$\operatorname{Var}(aX + bY) = a^2\operatorname{Var}(X) + b^2\operatorname{Var}(Y) + 2ab\operatorname{Cov}(X, Y)$$.
 
 $$
 \begin{aligned}
@@ -1188,11 +2015,23 @@ Independent means $$\operatorname{Cov} = 0$$, so the answers become 72 and 40. T
 
 ### Q: $$E(X) = 2$$, $$E(Y) = 5$$ and $$E(XY) = 8$$. Find $$\operatorname{Cov}(X, Y)$$, say what its sign means, and say whether $$X$$ and $$Y$$ can be independent.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** apply
-**A:** $$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y) = 8 - 10 = -2$$. A negative covariance means large $$X$$ values tend to come with small $$Y$$ values, and small with large. They cannot be independent, because independent random variables have covariance 0.
+**A:** Key:
+1. $$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y) = 8 - 10$$.
+2. $$\operatorname{Cov}(X, Y) = -2$$.
+3. A negative covariance means large $$X$$ values tend to come with small $$Y$$ values, and small with large.
+4. They cannot be independent, because independent random variables have covariance 0.
+
+$$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y) = 8 - 10 = -2$$. A negative covariance means large $$X$$ values tend to come with small $$Y$$ values, and small with large. They cannot be independent, because independent random variables have covariance 0.
 
 ### Q: $$X_1, \dots, X_n$$ are independent, each with mean $$\mu$$ and variance $$\sigma^2$$. Derive $$E(\bar{X}) = \mu$$ and $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$, and name the one step that needs independence.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** derive
-**A:** $$\bar{X} = \frac{X_1 + \dots + X_n}{n}$$. The mean uses only linearity. For the variance, a constant comes out of a variance squared, and independence makes every covariance 0, so the variance of the sum is the sum of the variances. That step is the only one that needs independence.
+**A:** Key:
+1. Write $$\bar{X} = \frac{X_1 + \dots + X_n}{n}$$ and use linearity: $$E(\bar{X}) = \frac{1}{n}(n\mu) = \mu$$.
+2. A constant comes out of a variance squared: $$\operatorname{Var}(\bar{X}) = \frac{1}{n^2}\operatorname{Var}(X_1 + \dots + X_n)$$.
+3. Every covariance is 0, so the variance of the sum is $$n\sigma^2$$, giving $$\frac{\sigma^2}{n}$$.
+4. The variance-of-the-sum step is the only one that needs independence.
+
+$$\bar{X} = \frac{X_1 + \dots + X_n}{n}$$. The mean uses only linearity. For the variance, a constant comes out of a variance squared, and independence makes every covariance 0, so the variance of the sum is the sum of the variances. That step is the only one that needs independence.
 
 $$
 \begin{aligned}
@@ -1204,7 +2043,13 @@ $$
 
 ### Q: A machine fills bottles independently, each with mean 500 ml and SD 4 ml. Find the mean and SD of the total in a pack of 6, and of the average of 16 bottles. Then compare $$\operatorname{Var}(X_1 + X_2)$$ with $$\operatorname{Var}(2X_1)$$.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** apply
-**A:** Total of 6: mean $$6(500) = 3000$$ ml, variance $$6(16) = 96$$, SD $$\approx 9.80$$ ml. Average of 16: mean 500 ml, variance $$\frac{16}{16} = 1$$, SD 1 ml. The two variances to compare:
+**A:** Key:
+1. Independent bottles add means and variances: the total of 6 has mean $$6(500)$$ and variance $$6(4^2)$$.
+2. The total of 6 has mean 3000 ml, variance 96 and SD $$\approx 9.80$$ ml.
+3. The average of 16 has mean 500 ml, variance $$\frac{16}{16} = 1$$ and SD 1 ml.
+4. $$\operatorname{Var}(X_1 + X_2) = 16 + 16 = 32$$, while $$\operatorname{Var}(2X_1) = 4(16) = 64$$.
+
+Total of 6: mean $$6(500) = 3000$$ ml, variance $$6(16) = 96$$, SD $$\approx 9.80$$ ml. Average of 16: mean 500 ml, variance $$\frac{16}{16} = 1$$, SD 1 ml. The two variances to compare:
 
 $$
 \begin{aligned}
@@ -1217,7 +2062,13 @@ Two independent bottles partly cancel each other's errors; one bottle doubled do
 
 ### Q: $$X_1$$, $$X_2$$ and $$X_3$$ are independent, with means 2, 3 and 5 and variances 1, 4 and 9. Find the mean and variance of $$Y = X_1 + X_2 + X_3$$ and of $$W = X_1 - 2X_2 + X_3$$.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** apply
-**A:** Each coefficient is squared in the variance, so the $$-2$$ adds 16.
+**A:** Key:
+1. Each coefficient is squared in the variance, so the $$-2$$ contributes $$(-2)^2(4) = 16$$.
+2. $$E(Y) = 10$$ and $$\operatorname{Var}(Y) = 1 + 4 + 9 = 14$$.
+3. $$E(W) = 2 - 2(3) + 5 = 1$$.
+4. $$\operatorname{Var}(W) = 1 + 16 + 9 = 26$$.
+
+Each coefficient is squared in the variance, so the $$-2$$ adds 16.
 
 $$
 \begin{aligned}
@@ -1231,7 +2082,13 @@ $$
 
 ### Q: A system has $$n$$ independent components with the same lifetime cdf $$F$$ and pdf $$f$$. Derive the cdf and pdf of the system lifetime when the components are in parallel, then when they are in series.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** derive
-**A:** Parallel: the system runs until the last component fails, so its lifetime is $$V = \max$$. $$V \le v$$ exactly when every component has failed by $$v$$, so by independence and the chain rule:
+**A:** Key:
+1. Parallel lifetime is $$V = \max$$; $$V \le v$$ means every component has failed by $$v$$, so by independence $$F_V(v) = [F(v)]^n$$.
+2. By the chain rule, $$f_V(v) = n[F(v)]^{n-1} f(v)$$.
+3. Series lifetime is $$U = \min$$; $$U > u$$ means every component still works, so $$F_U(u) = 1 - [1 - F(u)]^n$$.
+4. $$f_U(u) = n[1 - F(u)]^{n-1} f(u)$$.
+
+Parallel: the system runs until the last component fails, so its lifetime is $$V = \max$$. $$V \le v$$ exactly when every component has failed by $$v$$, so by independence and the chain rule:
 
 $$
 F_V(v) = \big[F(v)\big]^n \qquad f_V(v) = n\big[F(v)\big]^{n-1} f(v)
@@ -1249,7 +2106,12 @@ $$
 
 ### Q: Three independent components each have an exponential lifetime with rate 0.01 per hour. Find the probability that the system lasts more than 100 hours when the three are in parallel, and when they are in series.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** apply
-**A:** One component first. Then the parallel system, whose lifetime is the max, and the series system, whose lifetime is the min. Parallel needs all three to fail; series needs only one.
+**A:** Key:
+1. Parallel lifetime is the max, so $$P(\max \le 100) = F(100)^3$$ with $$F(100) = 1 - e^{-0.01 \times 100} = 1 - e^{-1}$$.
+2. Parallel: $$P(\max > 100) = 1 - 0.632^3 \approx 0.747$$.
+3. Series lifetime is the min: $$P(\min > 100) = (e^{-1})^3 = e^{-3} \approx 0.050$$.
+
+One component first. Then the parallel system, whose lifetime is the max, and the series system, whose lifetime is the min. Parallel needs all three to fail; series needs only one.
 
 $$
 \begin{aligned}
@@ -1263,7 +2125,11 @@ $$
 
 ### Q: Two independent components are in parallel. Their lifetimes are exponential with rates 0.1 and 0.2 per year. Find the probability that the system has failed within 5 years.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 10  **Type:** apply
-**A:** The system lifetime is the max, and the components are not identically distributed, so multiply the two different cdfs:
+**A:** Key:
+1. The system lifetime is the max, so multiply the two different cdfs: $$F_V(5) = (1 - e^{-0.5})(1 - e^{-1})$$.
+2. $$F_V(5) = 0.3935 \times 0.6321 \approx 0.249$$.
+
+The system lifetime is the max, and the components are not identically distributed, so multiply the two different cdfs:
 
 $$
 \begin{aligned}
@@ -1276,21 +2142,33 @@ The $$[F(v)]^n$$ shortcut applies only when every component has the same cdf.
 
 ### Q: A question says $$X_1, \dots, X_n$$ are a random sample from a distribution with mean $$\mu$$ and variance $$\sigma^2$$. What two assumptions does "random sample" carry, and which of $$E(\bar{X}) = \mu$$ and $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ needs which?
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** derive
-**A:**
+**A:** Key:
+1. A random sample means the $$X_i$$ are independent and identically distributed (iid).
+2. $$E(\bar{X}) = \mu$$ needs only the common mean, because the mean of a sum always adds.
+3. $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ needs the common variance and also independence, which makes every covariance term 0.
+
 - A random sample means the $$X_i$$ are independent and identically distributed, often written iid. Independent means no value affects another. Identically distributed means they all come from one distribution, so they share the mean $$\mu$$ and the variance $$\sigma^2$$.
 - $$E(\bar{X}) = \mu$$ needs only the common mean, because the mean of a sum always adds.
 - $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{n}$$ needs the common variance and also independence, which makes every covariance term 0 so that the variances add.
 
 ### Q: True or false, and justify each: (a) $$\operatorname{Cov}(X, Y) = 50$$ shows that $$X$$ and $$Y$$ are strongly related. (b) If $$X$$ and $$Y$$ are independent, then $$\operatorname{Cov}(X, Y) = 0$$. (c) If $$\operatorname{Cov}(X, Y) = 0$$, then $$X$$ and $$Y$$ are independent.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 10  **Type:** critique
-**A:**
+**A:** Key:
+1. (a) False: covariance gives only the direction of a linear relationship, and its size depends on the units.
+2. (b) True: independence gives $$E(XY) = E(X)E(Y)$$, so $$\operatorname{Cov}(X, Y) = 0$$.
+3. (c) False: a covariance of 0 rules out a linear relationship, not every kind of dependence.
+
 - (a) False. Covariance gives only the direction of a linear relationship, and a positive value means the two tend to rise together. Its size depends on the units, so it says nothing about strength. The correlation, in Chapter 11, measures strength.
 - (b) True. Independence gives $$E(XY) = E(X)E(Y)$$, so $$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y) = 0$$.
 - (c) False. The deck states only the direction in (b). A covariance of 0 rules out a linear relationship, not every kind of dependence.
 
 ### Q: $$X$$ is continuous with pdf $$f$$, cdf $$F$$ and median $$m$$. Which of these are true? (a) $$F(m) = 0.5$$ (b) $$\int_{-\infty}^{m} f(x)\,dx = 0.5$$ (c) $$\int_{m}^{\infty} f(x)\,dx = 0.5$$ (d) $$P(X > m) = 0.5$$
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 10  **Type:** apply
-**A:**
+**A:** Key:
+1. All four are true.
+2. (a) defines the median through the cdf, and (b) is the same statement as an integral, since $$F(m) = \int_{-\infty}^{m} f(x)\,dx$$.
+3. (c) holds because the total area is 1, leaving $$1 - 0.5 = 0.5$$ to the right of $$m$$, and (d) is (c) as a probability.
+
 - All four are true. The median splits the area under $$f$$ in half.
 - (a) defines the median through the cdf.
 - (b) is the same statement as an integral, since $$F(m) = \int_{-\infty}^{m} f(x)\,dx$$.
@@ -1302,7 +2180,14 @@ The $$[F(v)]^n$$ shortcut applies only when every component has the same cdf.
 
 ### Q: A four-sided die has faces $$-2$$, $$0$$, $$1$$ and $$3$$ with probabilities $$k$$, $$2k$$, $$3k$$ and $$4k$$. Find $$k$$, then $$E(X)$$, $$E(X^2)$$ and $$\operatorname{Var}(X)$$.
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 11  **Type:** apply
-**A:** The probabilities sum to 1, so $$10k = 1$$ and $$k = 0.1$$. Each probability is then between 0 and 1, as a pmf needs.
+**A:** Key:
+1. The probabilities sum to 1: $$k + 2k + 3k + 4k = 10k = 1$$.
+2. $$k = 0.1$$.
+3. $$E(X) = -2(0.1) + 0(0.2) + 1(0.3) + 3(0.4) = 1.3$$.
+4. $$E(X^2) = 4(0.1) + 1(0.3) + 9(0.4) = 4.3$$.
+5. $$\operatorname{Var}(X) = 4.3 - 1.3^2 = 2.61$$.
+
+The probabilities sum to 1, so $$10k = 1$$ and $$k = 0.1$$. Each probability is then between 0 and 1, as a pmf needs.
 
 $$
 \begin{aligned}
@@ -1319,7 +2204,14 @@ $$
 
 ### Q: For the same die (faces $$-2, 0, 1, 3$$ with probabilities 0.1, 0.2, 0.3, 0.4; $$E(X) = 1.3$$, $$\operatorname{Var}(X) = 2.61$$), let $$Y = 3X + 2$$. Write the pmf of $$Y$$, find $$E(Y)$$ and $$\operatorname{Var}(Y)$$ with the linear rules, and say what the $$+2$$ does to each.
 **Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** 11  **Type:** apply
-**A:** $$Y$$ takes $$-4$$, $$2$$, $$5$$ and $$11$$ with the same probabilities 0.1, 0.2, 0.3 and 0.4.
+**A:** Key:
+1. Use the linear rules: $$E(Y) = 3E(X) + 2$$ and $$\operatorname{Var}(Y) = 3^2\operatorname{Var}(X)$$.
+2. $$Y$$ takes $$-4$$, 2, 5 and 11 with the same probabilities 0.1, 0.2, 0.3 and 0.4.
+3. $$E(Y) = 3(1.3) + 2 = 5.9$$.
+4. $$\operatorname{Var}(Y) = 3^2(2.61) = 23.49$$.
+5. The $$+2$$ shifts the mean by 2 and does nothing to the variance, because moving every value equally leaves the spread unchanged.
+
+$$Y$$ takes $$-4$$, $$2$$, $$5$$ and $$11$$ with the same probabilities 0.1, 0.2, 0.3 and 0.4.
 
 $$
 \begin{aligned}
@@ -1332,7 +2224,12 @@ The $$+2$$ shifts the mean by 2 and does nothing to the variance, because moving
 
 ### Q: For the same die (faces $$-2, 0, 1, 3$$ with probabilities 0.1, 0.2, 0.3, 0.4; $$E(X) = 1.3$$), find $$E(X^3)$$ and compare it with $$[E(X)]^3$$. Why can no shortcut rule give $$E(X^3)$$?
 **Topic:** 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean)  **Lec:** 11  **Type:** apply
-**A:**
+**A:** Key:
+1. Compute from the pmf: $$E(X^3) = -8(0.1) + 0 + 1(0.3) + 27(0.4)$$.
+2. $$E(X^3) = 10.3$$.
+3. $$[E(X)]^3 = 1.3^3 = 2.197$$, so the two are not equal.
+4. The rules move constants through $$E$$ only for linear $$aX + b$$; any other $$g$$ needs $$E[g(X)] = \sum g(x) f(x)$$ from the pmf.
+
 
 $$
 \begin{aligned}
@@ -1346,7 +2243,14 @@ $$[E(X)]^3 = 1.3^3 = 2.197$$, so they are not equal. The rules only move constan
 
 ### Q: A die has faces $$-3, -1, 1, 2$$ with probabilities 0.2, 0.3, 0.1, 0.4, so $$E(X) = 0$$ and $$\operatorname{Var}(X) = 3.8$$. Game A pays the sum of two independent rolls; Game B pays twice one roll. Find $$P(W_A = -2)$$, then the mean and variance of each game's winning, and say which game is riskier.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 11  **Type:** apply
-**A:** A sum of $$-2$$ comes from $$(-3, 1)$$, $$(1, -3)$$ or $$(-1, -1)$$, and independent rolls multiply.
+**A:** Key:
+1. A sum of $$-2$$ comes from $$(-3, 1)$$, $$(1, -3)$$ or $$(-1, -1)$$, and independent rolls multiply: $$2(0.2)(0.1) + 0.3^2$$.
+2. $$P(W_A = -2) = 0.13$$.
+3. Both means are 0.
+4. $$\operatorname{Var}(W_A) = 3.8 + 3.8 = 7.6$$ and $$\operatorname{Var}(W_B) = 2^2(3.8) = 15.2$$.
+5. Game B is riskier: same mean, twice the variance.
+
+A sum of $$-2$$ comes from $$(-3, 1)$$, $$(1, -3)$$ or $$(-1, -1)$$, and independent rolls multiply.
 
 $$
 \begin{aligned}
@@ -1368,17 +2272,34 @@ Game B is riskier: same mean, twice the variance.
 
 ### Q: True or false, and justify: if $$X_1$$ and $$X_2$$ are independent copies of $$X$$, then $$X_1 + X_2$$ and $$2X$$ have the same distribution, so they have the same variance.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 11  **Type:** critique
-**A:** False. They have the same mean, $$2\mu$$, but not the same distribution or variance. Independent variances add, so $$\operatorname{Var}(X_1 + X_2) = 2\sigma^2$$, while a constant multiple squares, so $$\operatorname{Var}(2X) = 4\sigma^2$$. In general the sum of $$n$$ independent copies has variance $$n\sigma^2$$ and $$nX$$ has $$n^2\sigma^2$$. Two rolls can land high and low and partly cancel; doubling one roll scales every deviation by 2.
+**A:** Key:
+1. False: $$X_1 + X_2$$ and $$2X$$ have the same mean, $$2\mu$$, but not the same distribution or variance.
+2. Independent variances add, so $$\operatorname{Var}(X_1 + X_2) = 2\sigma^2$$.
+3. A constant multiple squares, so $$\operatorname{Var}(2X) = 4\sigma^2$$.
+
+False. They have the same mean, $$2\mu$$, but not the same distribution or variance. Independent variances add, so $$\operatorname{Var}(X_1 + X_2) = 2\sigma^2$$, while a constant multiple squares, so $$\operatorname{Var}(2X) = 4\sigma^2$$. In general the sum of $$n$$ independent copies has variance $$n\sigma^2$$ and $$nX$$ has $$n^2\sigma^2$$. Two rolls can land high and low and partly cancel; doubling one roll scales every deviation by 2.
 
 ### Q: In Game A (sum of two independent rolls of the die with faces $$-3, -1, 1, 2$$ and probabilities 0.2, 0.3, 0.1, 0.4), find $$P(W_A = -6)$$ and $$P(W_A = 4)$$, and give the two ways to get $$E(W_A)$$.
 **Topic:** 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements)  **Lec:** 11  **Type:** apply
-**A:** $$-6$$ needs two $$-3$$s: $$0.2^2 = 0.04$$. $$4$$ needs two 2s: $$0.4^2 = 0.16$$. The two ways to get the mean are the definition $$E(W_A) = \sum w f(w)$$ over the nine possible sums, and the rule $$E(X_1 + X_2) = E(X_1) + E(X_2) = 0$$, which holds even without independence.
+**A:** Key:
+1. Independent rolls multiply: $$-6$$ needs two $$-3$$s and 4 needs two 2s.
+2. $$P(W_A = -6) = 0.2^2 = 0.04$$.
+3. $$P(W_A = 4) = 0.4^2 = 0.16$$.
+4. One way to the mean is the definition $$E(W_A) = \sum w f(w)$$ over the nine possible sums.
+5. The other is $$E(X_1 + X_2) = E(X_1) + E(X_2) = 0$$, which holds even without independence.
+
+$$-6$$ needs two $$-3$$s: $$0.2^2 = 0.04$$. $$4$$ needs two 2s: $$0.4^2 = 0.16$$. The two ways to get the mean are the definition $$E(W_A) = \sum w f(w)$$ over the nine possible sums, and the rule $$E(X_1 + X_2) = E(X_1) + E(X_2) = 0$$, which holds even without independence.
 
 ## WeBWorK 4 — Ch 4 (opened Oct 6, due Thu Oct 15; banked 2026-10-06, numbers changed)
 
 ### Q: WeBWorK-style. A repair time $$T$$ is exponential with mean 5 hours. Given that a repair has already taken more than 10 hours, what is the probability it takes at least 10.5 hours? Pick the right form: $$e^{-0.1}$$, $$1 - e^{-0.1}$$, $$e^{-2.1}$$ or $$1 - \frac{1}{5}e^{-0.1}$$.
 **Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** WW4  **Type:** apply
-**A:** The answer is $$e^{-0.1} \approx 0.905$$. The exponential is memoryless: having already lasted 10 hours does not change the chance of lasting another half hour. With mean 5 the rate is $$\lambda = \frac{1}{5}$$, and $$P(T > t) = e^{-t/5}$$.
+**A:** Key:
+1. Condition with $$\lambda = \frac{1}{5}$$ and $$P(T > t) = e^{-t/5}$$: $$P(T \ge 10.5 \mid T > 10) = \frac{e^{-10.5/5}}{e^{-10/5}}$$.
+2. The answer is $$e^{-0.1} \approx 0.905$$.
+3. The exponential is memoryless: having lasted 10 hours does not change the chance of lasting another half hour.
+
+The answer is $$e^{-0.1} \approx 0.905$$. The exponential is memoryless: having already lasted 10 hours does not change the chance of lasting another half hour. With mean 5 the rate is $$\lambda = \frac{1}{5}$$, and $$P(T > t) = e^{-t/5}$$.
 
 $$
 \begin{aligned}
@@ -1392,7 +2313,13 @@ The trap options are $$1 - e^{-0.1}$$, which is the chance of finishing within t
 
 ### Q: WeBWorK-style. A component's lifetime has pdf $$f(x) = \frac{1}{120}e^{-x/120}$$ for $$x > 0$$. Four such components work independently. (1) Wired in series, what is the system's lifetime $$Y$$ and its distribution? (2) Wired in parallel, what changes?
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** WW4  **Type:** apply
-**A:** (1) A series system dies when the first component dies, so $$Y = \min(X_1, \dots, X_4)$$. The minimum of independent exponentials is exponential with the rates added:
+**A:** Key:
+1. Series: $$Y = \min(X_1, \dots, X_4)$$, so $$P(Y > y) = (e^{-y/120})^4$$.
+2. $$P(Y > y) = e^{-y/30}$$, so $$Y$$ is exponential with mean 30 hours.
+3. Parallel: $$Y = \max(X_1, \dots, X_4)$$, with cdf $$(1 - e^{-y/120})^4$$.
+4. The maximum is not exponential, because that cdf is not of the form $$1 - e^{-\lambda y}$$.
+
+(1) A series system dies when the first component dies, so $$Y = \min(X_1, \dots, X_4)$$. The minimum of independent exponentials is exponential with the rates added:
 
 $$
 \begin{aligned}
@@ -1405,7 +2332,13 @@ So $$Y$$ is exponential with mean 30 hours. (2) A parallel system runs until the
 
 ### Q: WeBWorK-style. $$X$$ is uniform on $$[0, 2]$$ and $$Y = e^X$$. Find the pdf of $$Y$$, including its support, by the cdf method.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW4  **Type:** derive
-**A:** Write the cdf of $$Y$$ as a statement about $$X$$, use the uniform cdf, then differentiate. Since $$e^x$$ is increasing, $$Y \le y$$ exactly when $$X \le \ln y$$, and $$Y$$ runs from $$e^0 = 1$$ to $$e^2$$.
+**A:** Key:
+1. Cdf method: since $$e^x$$ is increasing, $$F_Y(y) = P(X \le \ln y)$$.
+2. With the uniform cdf, $$F_Y(y) = \frac{\ln y - 0}{2}$$.
+3. Differentiating gives $$f_Y(y) = \frac{1}{2y}$$.
+4. The support is $$1 \le y \le e^2$$, with $$f_Y(y) = 0$$ otherwise.
+
+Write the cdf of $$Y$$ as a statement about $$X$$, use the uniform cdf, then differentiate. Since $$e^x$$ is increasing, $$Y \le y$$ exactly when $$X \le \ln y$$, and $$Y$$ runs from $$e^0 = 1$$ to $$e^2$$.
 
 $$
 \begin{aligned}
@@ -1419,13 +2352,24 @@ So $$f_Y(y) = \frac{1}{2y}$$ for $$1 \le y \le e^2$$ and 0 otherwise. Check: the
 
 ### Q: WeBWorK-style. $$X$$ is uniform on $$(0, 3)$$. Find the median of $$e^X$$ to two decimals, and say why the same shortcut does not give the mean.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** WW4  **Type:** apply
-**A:** The median of $$X$$ is 1.5. Because $$e^x$$ is increasing, half the values of $$X$$ lie below 1.5 exactly when half the values of $$e^X$$ lie below $$e^{1.5}$$, so the median of $$e^X$$ is $$e^{1.5} \approx 4.48$$. Solving $$F_Y(m) = 0.5$$ gives the same: $$\frac{\ln m}{3} = 0.5$$, so $$m = e^{1.5}$$. The mean does not carry over, because $$E(e^X) \ne e^{E(X)}$$. Here $$E(e^X) = \frac{e^3 - 1}{3} \approx 6.36$$, larger than 4.48 because $$e^x$$ bends upward.
+**A:** Key:
+1. Because $$e^x$$ is increasing, the median of $$e^X$$ is $$e$$ raised to the median of $$X$$, which is 1.5.
+2. The median of $$e^X$$ is $$e^{1.5} \approx 4.48$$.
+3. The mean does not carry over, because $$E(e^X) \ne e^{E(X)}$$.
+
+The median of $$X$$ is 1.5. Because $$e^x$$ is increasing, half the values of $$X$$ lie below 1.5 exactly when half the values of $$e^X$$ lie below $$e^{1.5}$$, so the median of $$e^X$$ is $$e^{1.5} \approx 4.48$$. Solving $$F_Y(m) = 0.5$$ gives the same: $$\frac{\ln m}{3} = 0.5$$, so $$m = e^{1.5}$$. The mean does not carry over, because $$E(e^X) \ne e^{E(X)}$$. Here $$E(e^X) = \frac{e^3 - 1}{3} \approx 6.36$$, larger than 4.48 because $$e^x$$ bends upward.
 
 ## Lec 12 — Ch 4: maximum and minimum of independent random variables, functions of one random variable (logged 2026-10-08 from the after-class deck and the recording; Matt absent)
 
 ### Q: $$X_1, \dots, X_n$$ are independent with the same cdf $$F$$. Derive the cdf of $$U = \min\{X_1, \dots, X_n\}$$, and say why the derivation starts from $$P(U > u)$$ instead of $$P(U \le u)$$.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** derive
-**A:** $$U \le u$$ only says that at least one $$X_i$$ is at most $$u$$. That is a union of events, and a union does not factor under independence. $$U > u$$ says every $$X_i$$ is above $$u$$, an intersection, and independence turns an intersection into a product. So take the complement first, factor, then complement back.
+**A:** Key:
+1. Start from the complement: $$F_U(u) = 1 - P(U > u)$$, where $$U > u$$ means every $$X_i$$ is above $$u$$.
+2. By independence, $$P(U > u) = P(X_1 > u) \cdots P(X_n > u) = [1 - F(u)]^n$$.
+3. So $$F_U(u) = 1 - [1 - F(u)]^n$$.
+4. $$U \le u$$ is a union of events, which does not factor; $$U > u$$ is an intersection, which independence turns into a product.
+
+$$U \le u$$ only says that at least one $$X_i$$ is at most $$u$$. That is a union of events, and a union does not factor under independence. $$U > u$$ says every $$X_i$$ is above $$u$$, an intersection, and independence turns an intersection into a product. So take the complement first, factor, then complement back.
 
 $$
 \begin{aligned}
@@ -1439,7 +2383,13 @@ The maximum needs no complement because $$V \le v$$ is already the intersection 
 
 ### Q: $$X_1$$, $$X_2$$ and $$X_3$$ are independent with cdfs $$F_1$$, $$F_2$$, $$F_3$$ and pdfs $$f_1$$, $$f_2$$, $$f_3$$ that are not all the same. Write the cdf and pdf of $$V = \max\{X_1, X_2, X_3\}$$. Which step of the lecture's derivation is no longer available, and what replaces the chain rule?
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** derive
-**A:** Independence still gives the product of the cdfs. The step that is gone is the last one, where identical distributions turn the product into the power $$[F(v)]^3$$. With three different factors the pdf comes from the product rule, one term per factor differentiated.
+**A:** Key:
+1. Independence still gives the product: $$F_V(v) = F_1(v)\,F_2(v)\,F_3(v)$$.
+2. The step no longer available is turning the product into the power $$[F(v)]^3$$, which needs identical distributions.
+3. The product rule replaces the chain rule, with one term per factor differentiated.
+4. $$f_V(v) = f_1(v)F_2(v)F_3(v) + F_1(v)f_2(v)F_3(v) + F_1(v)F_2(v)f_3(v)$$.
+
+Independence still gives the product of the cdfs. The step that is gone is the last one, where identical distributions turn the product into the power $$[F(v)]^3$$. With three different factors the pdf comes from the product rule, one term per factor differentiated.
 
 $$
 \begin{aligned}
@@ -1454,7 +2404,14 @@ Check: when the three are the same, every term is $$F^2 f$$ and the sum is $$3F^
 
 ### Q: Five independent components each have an exponential lifetime with rate 0.2 per year. Write the pdf of the lifetime of the parallel system and of the series system. Which one has a standard name, and what is the mean lifetime of the series system?
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** apply
-**A:** For one component $$F(x) = 1 - e^{-0.2x}$$ and $$f(x) = 0.2e^{-0.2x}$$ for $$x > 0$$. The parallel lifetime is the maximum, the series lifetime is the minimum.
+**A:** Key:
+1. Parallel is the max and series the min, with $$F(x) = 1 - e^{-0.2x}$$ and $$f(x) = 0.2e^{-0.2x}$$ for one component.
+2. $$f_V(v) = 5(1 - e^{-0.2v})^4(0.2)e^{-0.2v}$$ for $$v > 0$$.
+3. $$F_U(u) = 1 - (e^{-0.2u})^5 = 1 - e^{-u}$$, so $$f_U(u) = e^{-u}$$ for $$u > 0$$.
+4. The minimum has the standard name: it is exponential with rate $$5 \times 0.2 = 1$$ per year.
+5. The series system's mean lifetime is 1 year.
+
+For one component $$F(x) = 1 - e^{-0.2x}$$ and $$f(x) = 0.2e^{-0.2x}$$ for $$x > 0$$. The parallel lifetime is the maximum, the series lifetime is the minimum.
 
 $$
 \begin{aligned}
@@ -1468,7 +2425,13 @@ Both are for positive arguments and 0 otherwise. The minimum is exponential with
 
 ### Q: $$X_1 \sim U(0, 10)$$ and $$X_2 \sim U(6, 12)$$ are independent, and $$Y = \max\{X_1, X_2\}$$. Give the support of $$Y$$, and say why $$F_Y$$ has one formula on $$[6, 10]$$ and a different one on $$(10, 12]$$. Do not compute the pdf.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** apply
-**A:** The support is $$[6, 12]$$. $$Y$$ is at least $$X_2$$, which is never below 6, and neither variable is ever above 12. $$F_Y(y) = F_{X_1}(y)\,F_{X_2}(y)$$, and the formula changes wherever either factor changes formula.
+**A:** Key:
+1. $$F_Y(y) = F_{X_1}(y)\,F_{X_2}(y)$$, and its formula changes wherever either factor changes formula.
+2. The support is $$[6, 12]$$, because $$Y$$ is at least $$X_2$$, never below 6, and neither variable exceeds 12.
+3. On $$[6, 10]$$ both factors are linear: $$F_Y(y) = \frac{y}{10} \cdot \frac{y - 6}{6}$$.
+4. Past 10, $$F_{X_1}(y) = 1$$, so $$F_Y(y) = \frac{y - 6}{6}$$ on $$(10, 12]$$.
+
+The support is $$[6, 12]$$. $$Y$$ is at least $$X_2$$, which is never below 6, and neither variable is ever above 12. $$F_Y(y) = F_{X_1}(y)\,F_{X_2}(y)$$, and the formula changes wherever either factor changes formula.
 
 $$
 \begin{aligned}
@@ -1481,7 +2444,13 @@ On $$[6, 10]$$ both cdfs are strictly between 0 and 1, so both factors are linea
 
 ### Q: $$X$$ has pdf $$f_X$$ on $$[-2, 2]$$, and $$Y = X^2$$. Write $$F_Y(y)$$ as a probability statement about $$X$$, say why it is not $$P(X \le \sqrt{y})$$, and give the support of $$Y$$. How does the answer change if $$X$$ lives on $$[0, 2]$$ instead?
 **Topic:** 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots)  **Lec:** 12  **Type:** derive
-**A:** $$X^2 \le y$$ means $$|X| \le \sqrt{y}$$, so both roots bound the event. The support of $$Y$$ is $$[0, 4]$$.
+**A:** Key:
+1. $$X^2 \le y$$ means $$|X| \le \sqrt{y}$$, so $$F_Y(y) = P(-\sqrt{y} \le X \le \sqrt{y}) = F_X(\sqrt{y}) - F_X(-\sqrt{y})$$.
+2. $$P(X \le \sqrt{y})$$ is wrong because it also counts $$X < -\sqrt{y}$$, where $$X^2 > y$$.
+3. The support of $$Y$$ is $$[0, 4]$$.
+4. If $$X$$ lives on $$[0, 2]$$, then $$P(X < -\sqrt{y}) = 0$$ and $$F_Y(y) = F_X(\sqrt{y})$$ alone.
+
+$$X^2 \le y$$ means $$|X| \le \sqrt{y}$$, so both roots bound the event. The support of $$Y$$ is $$[0, 4]$$.
 
 $$
 \begin{aligned}
@@ -1494,7 +2463,14 @@ $$P(X \le \sqrt{y})$$ is wrong because it also counts $$X < -\sqrt{y}$$, where $
 
 ### Q: $$X_1 \sim U(20, 40)$$ and $$X_2 \sim U(35, 50)$$ are independent and $$Y = \max\{X_1, X_2\}$$. On an exam a student writes $$F_Y(y) = \frac{y - 20}{20} \cdot \frac{y - 35}{15}$$ and differentiates it. Name the two things the instructor said must be written here, and supply what is missing.
 **Topic:** 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels)  **Lec:** 12  **Type:** critique
-**A:** First, the product step has no reason beside it. Multiplying $$P(X_1 \le y)$$ by $$P(X_2 \le y)$$ is only allowed because $$X_1$$ and $$X_2$$ are independent, and he said not to write the product down without "by independence" beside it. Second, the cdf is stated on one range only, and he said a cdf must be given for all real numbers.
+**A:** Key:
+1. The product step needs "by independence" written beside it, because multiplying the cdfs is allowed only since $$X_1$$ and $$X_2$$ are independent.
+2. The cdf must be given for all real numbers, not on one range only.
+3. $$F_Y(y) = 0$$ for $$y < 35$$ and $$F_Y(y) = 1$$ for $$y > 50$$.
+4. $$F_Y(y) = \frac{(y - 20)(y - 35)}{300}$$ on $$[35, 40]$$ and $$\frac{y - 35}{15}$$ on $$(40, 50]$$, since $$F_{X_1} = 1$$ past 40.
+5. The pdf is $$\frac{2y - 55}{300}$$ on $$[35, 40]$$, $$\frac{1}{15}$$ on $$(40, 50]$$, and 0 elsewhere.
+
+First, the product step has no reason beside it. Multiplying $$P(X_1 \le y)$$ by $$P(X_2 \le y)$$ is only allowed because $$X_1$$ and $$X_2$$ are independent, and he said not to write the product down without "by independence" beside it. Second, the cdf is stated on one range only, and he said a cdf must be given for all real numbers.
 
 $$
 F_Y(y) =
@@ -1512,11 +2488,23 @@ The middle piece stops at 40 because $$F_{X_1}$$ is already 1 past 40, and the p
 
 ### Q: Grade 7 vocabulary scores are close to $$N(7.2, 1.4^2)$$. Without a table, give the percent of scores between 4.4 and 10.0, the percent above 5.8, and the percent below 3.0. Say which rule you are using and why the second answer is not 68%.
 **Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** apply
-**A:** The 68-95-99.7 rule, because every bound is a whole number of standard deviations from the mean. 4.4 and 10.0 are $$7.2 \pm 2(1.4)$$, so about 95% lie between them. 5.8 is $$\mu - \sigma$$, so above it lies half of the middle 68% plus the whole upper half: $$34\% + 50\% = 84\%$$. 3.0 is $$\mu - 3\sigma$$, so below it lies half of the 0.3% outside three standard deviations, about 0.15%. The second answer is not 68% because 68% is the share within one standard deviation on both sides; "above $$\mu - \sigma$$" keeps the right half of that band and everything beyond it.
+**A:** Key:
+1. Use the 68-95-99.7 rule, because every bound is a whole number of standard deviations from the mean.
+2. 4.4 and 10.0 are $$7.2 \pm 2(1.4)$$, so about 95% of scores lie between them.
+3. 5.8 is $$\mu - \sigma$$, so $$34\% + 50\% = 84\%$$ lie above it.
+4. 3.0 is $$\mu - 3\sigma$$, so about 0.15% lie below it.
+5. It is not 68% because 68% is the share within one SD on both sides, while above $$\mu - \sigma$$ also includes everything beyond.
+
+The 68-95-99.7 rule, because every bound is a whole number of standard deviations from the mean. 4.4 and 10.0 are $$7.2 \pm 2(1.4)$$, so about 95% lie between them. 5.8 is $$\mu - \sigma$$, so above it lies half of the middle 68% plus the whole upper half: $$34\% + 50\% = 84\%$$. 3.0 is $$\mu - 3\sigma$$, so below it lies half of the 0.3% outside three standard deviations, about 0.15%. The second answer is not 68% because 68% is the share within one standard deviation on both sides; "above $$\mu - \sigma$$" keeps the right half of that band and everything beyond it.
 
 ### Q: Heights of women aged 20 to 29 are about $$N(65.1, 2.6^2)$$ inches. Find the z-scores of a woman 71 inches tall and one 59 inches tall, and say in words what each number means. Which of the two is more unusual?
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
-**A:**
+**A:** Key:
+1. Standardise: $$z_{71} = \frac{71 - 65.1}{2.6}$$ and $$z_{59} = \frac{59 - 65.1}{2.6}$$.
+2. $$z_{71} = 2.27$$: the first woman is 2.27 standard deviations above the mean.
+3. $$z_{59} = -2.35$$: the second woman is 2.35 standard deviations below the mean.
+4. The 59-inch woman is slightly more unusual, because $$|{-2.35}| > 2.27$$.
+
 
 $$
 \begin{aligned}
@@ -1529,11 +2517,23 @@ The first woman is 2.27 standard deviations above the mean, the second 2.35 stan
 
 ### Q: A student scored 620 on the SAT, where scores are $$N(500, 100^2)$$, and 29 on the ACT, where scores are $$N(21, 4.7^2)$$. Which score is relatively higher, and what makes the comparison legitimate?
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
-**A:** Standardise both. The SAT z-score is $$\frac{620 - 500}{100} = 1.20$$ and the ACT z-score is $$\frac{29 - 21}{4.7} = 1.70$$. The ACT score is relatively higher: it sits 1.70 standard deviations above its mean against 1.20 for the SAT. The comparison works because both distributions are Normal, and standardising turns each into the same $$N(0, 1)$$ scale, so the two z-scores are positions on one curve. In table terms the SAT score beats about 88.5% of takers and the ACT score about 95.5%.
+**A:** Key:
+1. Standardise both scores: $$\frac{620 - 500}{100}$$ for the SAT and $$\frac{29 - 21}{4.7}$$ for the ACT.
+2. The z-scores are 1.20 for the SAT and 1.70 for the ACT.
+3. The ACT score is relatively higher.
+4. The comparison is legitimate because both are Normal, and standardising puts each on the same $$N(0, 1)$$ scale.
+
+Standardise both. The SAT z-score is $$\frac{620 - 500}{100} = 1.20$$ and the ACT z-score is $$\frac{29 - 21}{4.7} = 1.70$$. The ACT score is relatively higher: it sits 1.70 standard deviations above its mean against 1.20 for the SAT. The comparison works because both distributions are Normal, and standardising turns each into the same $$N(0, 1)$$ scale, so the two z-scores are positions on one curve. In table terms the SAT score beats about 88.5% of takers and the ACT score about 95.5%.
 
 ### Q: Using Table A, find $$P(-1.40 < Z < 0.95)$$. Show the two table values you look up and the arithmetic. Then write the one-line R command that gives the same number.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
-**A:** Table A gives areas to the left, so the area between two values is the difference of two left areas.
+**A:** Key:
+1. Subtract two left areas: $$P(-1.40 < Z < 0.95) = P(Z < 0.95) - P(Z < -1.40)$$.
+2. The table values are 0.8289 and 0.0808.
+3. $$P(-1.40 < Z < 0.95) = 0.8289 - 0.0808 = 0.7481$$.
+4. In R: `pnorm(0.95) - pnorm(-1.40)`.
+
+Table A gives areas to the left, so the area between two values is the difference of two left areas.
 
 $$
 \begin{aligned}
@@ -1547,7 +2547,13 @@ In R: `pnorm(0.95) - pnorm(-1.40)`.
 
 ### Q: SAT reading scores are $$N(500, 100^2)$$ and you scored 680. What proportion of takers did better than you? Work it through the deck's three steps, and give both R commands, with and without standardising.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
-**A:** Step 1, the proportion wanted is $$P(X > 680)$$, the right tail past 680. Step 2, standardise: $$z = \frac{680 - 500}{100} = 1.80$$, so the question is $$P(Z > 1.80)$$. Step 3, Table A gives the left area 0.9641, and the total area is 1.
+**A:** Key:
+1. Standardise the right tail: $$P(X > 680) = P\left(Z > \frac{680 - 500}{100}\right) = P(Z > 1.80)$$.
+2. Table A gives 0.9641, so $$P(X > 680) = 1 - 0.9641 = 0.0359$$, about 3.6% of takers.
+3. Standardised in R: `pnorm(1.8, lower.tail = FALSE)`.
+4. Unstandardised in R: `pnorm(680, mean = 500, sd = 100, lower.tail = FALSE)`, with `sd` the standard deviation.
+
+Step 1, the proportion wanted is $$P(X > 680)$$, the right tail past 680. Step 2, standardise: $$z = \frac{680 - 500}{100} = 1.80$$, so the question is $$P(Z > 1.80)$$. Step 3, Table A gives the left area 0.9641, and the total area is 1.
 
 $$
 \begin{aligned}
@@ -1561,7 +2567,13 @@ About 3.6% did better. In R: `pnorm(1.8, lower.tail = FALSE)` or `pnorm(680, mea
 
 ### Q: SAT reading scores are $$N(500, 100^2)$$. How high must a student score to be in the top 5%? State the backward three-step method as you go, and say what you do when the table has no entry that is exactly the proportion you want.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
-**A:** Step 1, top 5% means a cumulative proportion of 0.95 below the unknown score $$x$$; draw the curve with 0.95 to the left of $$x$$. Step 2, find the $$z$$ whose left area is 0.95. Table A has 0.9495 at $$z = 1.64$$ and 0.9505 at $$z = 1.65$$, so take the closer entry, or $$z = 1.645$$ when the question allows the midpoint. Step 3, unstandardise.
+**A:** Key:
+1. Backward method: top 5% means 0.95 to the left of $$x$$; find $$z$$ with left area 0.95, then unstandardise with $$x = \mu + z\sigma$$.
+2. The $$z$$ with left area 0.95 lies between 1.64 and 1.65 in Table A, so $$z = 1.645$$.
+3. $$x = 500 + 1.645 \times 100 = 664.5$$, so a score of about 665 is needed.
+4. With no exact table entry, use the closest table probability and its $$z$$.
+
+Step 1, top 5% means a cumulative proportion of 0.95 below the unknown score $$x$$; draw the curve with 0.95 to the left of $$x$$. Step 2, find the $$z$$ whose left area is 0.95. Table A has 0.9495 at $$z = 1.64$$ and 0.9505 at $$z = 1.65$$, so take the closer entry, or $$z = 1.645$$ when the question allows the midpoint. Step 3, unstandardise.
 
 $$
 \begin{aligned}
@@ -1575,7 +2587,14 @@ A score of about 665 is needed. When no entry matches exactly, the deck's rule i
 
 ### Q: Table A only lists areas to the left of $$z$$, and only for a limited range. Explain why one such table is enough for every Normal probability, and write $$P(Z > 1.30)$$ in three equivalent ways, with its value.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** derive
-**A:** Two facts. Every Normal variable standardises to $$N(0, 1)$$ by $$Z = \frac{X - \mu}{\sigma}$$, so one curve serves every $$\mu$$ and $$\sigma$$. And the standard Normal is symmetric about zero, so a right tail equals the matching left tail, and any area is one minus its complement.
+**A:** Key:
+1. Every Normal standardises to $$N(0, 1)$$ by $$Z = \frac{X - \mu}{\sigma}$$, so one curve serves every $$\mu$$ and $$\sigma$$.
+2. The standard Normal is symmetric about zero, so a right tail equals the matching left tail.
+3. Any area is one minus its complement.
+4. $$P(Z > 1.30) = 1 - P(Z \le 1.30) = P(Z < -1.30)$$.
+5. $$P(Z > 1.30) = 1 - 0.9032 = 0.0968$$.
+
+Two facts. Every Normal variable standardises to $$N(0, 1)$$ by $$Z = \frac{X - \mu}{\sigma}$$, so one curve serves every $$\mu$$ and $$\sigma$$. And the standard Normal is symmetric about zero, so a right tail equals the matching left tail, and any area is one minus its complement.
 
 $$
 \begin{aligned}
@@ -1587,7 +2606,13 @@ $$
 
 ### Q: $$X \sim N(\mu, \sigma^2)$$ and $$Z = \frac{X - \mu}{\sigma}$$. Using the lecture 10 rules for the mean and variance of $$aX + b$$, show that $$Z$$ has mean 0 and variance 1. What extra fact, not provable from those rules, does the deck add about the distribution of $$Z$$?
 **Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** derive
-**A:** Write $$Z = aX + b$$ with $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
+**A:** Key:
+1. Write $$Z = aX + b$$ with $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
+2. $$E(Z) = \frac{1}{\sigma}E(X) - \frac{\mu}{\sigma} = 0$$.
+3. $$\operatorname{Var}(Z) = \frac{1}{\sigma^2}\operatorname{Var}(X) = 1$$.
+4. The extra fact is that a linear transformation of a Normal variable is still Normal, so $$Z \sim N(0, 1)$$ exactly.
+
+Write $$Z = aX + b$$ with $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
 
 $$
 \begin{aligned}
@@ -1602,15 +2627,32 @@ The rules give the mean and variance of $$Z$$ for any $$X$$, Normal or not. The 
 
 ### Q: $$Y \sim N(300, 36)$$ in this course's notation. Give the mean, the variance and the standard deviation of $$Y$$. What would the same symbols mean in a textbook that writes the standard deviation second?
 **Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** apply
-**A:** The second number is the variance, so the mean is 300, the variance is 36 and the standard deviation is 6. A textbook that writes $$N(\text{mean}, \text{SD})$$ would mean a standard deviation of 36, a variance of 1296. This course always writes the variance, so read $$N(500, 100^2)$$ as a standard deviation of 100.
+**A:** Key:
+1. In this course the second number is the variance.
+2. The mean is 300, the variance is 36 and the standard deviation is 6.
+3. A textbook writing $$N(\text{mean}, \text{SD})$$ would mean a standard deviation of 36, a variance of 1296.
+
+The second number is the variance, so the mean is 300, the variance is 36 and the standard deviation is 6. A textbook that writes $$N(\text{mean}, \text{SD})$$ would mean a standard deviation of 36, a variance of 1296. This course always writes the variance, so read $$N(500, 100^2)$$ as a standard deviation of 100.
 
 ### Q: You have a data set and want to know whether the 68-95-99.7 rule can be applied to it. Which graph do you draw, and what do you look for? Why is a box plot not enough?
 **Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** 13  **Type:** recall
-**A:** Draw a histogram and look for a roughly symmetric, single-peaked bell shape. Real data are never exactly Normal, and roughly Normal is enough. A box plot shows only the five-number summary, so it cannot show whether there is one peak or two: a two-peaked data set can have a perfectly symmetric box plot.
+**A:** Key:
+1. Draw a histogram.
+2. Look for a roughly symmetric, single-peaked bell shape.
+3. A box plot shows only the five-number summary, so it cannot show whether there is one peak or two.
+
+Draw a histogram and look for a roughly symmetric, single-peaked bell shape. Real data are never exactly Normal, and roughly Normal is enough. A box plot shows only the five-number summary, so it cannot show whether there is one peak or two: a two-peaked data set can have a perfectly symmetric box plot.
 
 ### Q: Exam scores are $$N(6.5, 1.5^2)$$. Can the 68-95-99.7 rule give $$P(X > 5)$$ exactly? Can it give $$P(X > 6)$$ exactly? For any part it cannot answer, say what it does tell you and find the exact value.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 13  **Type:** apply
-**A:** 5 is exactly one standard deviation below the mean, so the rule gives $$P(X > 5) = 0.5 + 0.34 = 0.84$$. 6 is not a whole number of standard deviations from the mean. It sits between $$\mu - \sigma = 5$$ and $$\mu = 6.5$$, so the rule only says $$P(X > 6)$$ is between 0.5 and 0.84. The exact value needs a z-score and Table A.
+**A:** Key:
+1. Yes for $$P(X > 5)$$: 5 is exactly $$\mu - \sigma$$, so $$P(X > 5) = 0.5 + 0.34 = 0.84$$.
+2. No for $$P(X > 6)$$: 6 is not a whole number of standard deviations from the mean.
+3. The rule only says $$P(X > 6)$$ is between 0.5 and 0.84.
+4. Standardise: $$P(X > 6) = P\left(Z > \frac{6 - 6.5}{1.5}\right) = P(Z > -0.33)$$.
+5. $$P(X > 6) = 1 - 0.3707 = 0.6293$$.
+
+5 is exactly one standard deviation below the mean, so the rule gives $$P(X > 5) = 0.5 + 0.34 = 0.84$$. 6 is not a whole number of standard deviations from the mean. It sits between $$\mu - \sigma = 5$$ and $$\mu = 6.5$$, so the rule only says $$P(X > 6)$$ is between 0.5 and 0.84. The exact value needs a z-score and Table A.
 
 $$
 \begin{aligned}
@@ -1623,17 +2665,35 @@ $$
 
 ### Q: $$m$$ is the median of a continuous random variable $$X$$ with pdf $$f$$ and cdf $$F$$. Which are true: (a) $$P(X \ge m) = 0.5$$, (b) $$f(m) = 0.5$$, (c) $$F(m) = 0.5$$, (d) $$P(X = m) = 0.5$$?
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 13  **Type:** recall
-**A:** (a) and (c). The median splits the area under $$f$$ into two halves, so the area above it and the area below it, $$F(m)$$, are both 0.5. (b) is false because $$f(m)$$ is the height of the curve, not an area. (d) is false because a continuous $$X$$ has probability 0 at any single value. To find $$m$$, solve $$F(m) = 0.5$$. On a written question the exact form, such as $$4 + \ln 2$$, gets full marks; give decimals only when the question asks for them.
+**A:** Key:
+1. (a) and (c) are true.
+2. The median splits the area under $$f$$ in half, so $$P(X \ge m) = F(m) = 0.5$$.
+3. (b) is false because $$f(m)$$ is the height of the curve, not an area.
+4. (d) is false because a continuous $$X$$ has probability 0 at any single value.
+
+(a) and (c). The median splits the area under $$f$$ into two halves, so the area above it and the area below it, $$F(m)$$, are both 0.5. (b) is false because $$f(m)$$ is the height of the curve, not an area. (d) is false because a continuous $$X$$ has probability 0 at any single value. To find $$m$$, solve $$F(m) = 0.5$$. On a written question the exact form, such as $$4 + \ln 2$$, gets full marks; give decimals only when the question asks for them.
 
 ### Q: $$X$$ has cdf $$F(x) = 1 - e^{-(x - 4)}$$ for $$x \ge 4$$ and $$F(x) = 0$$ for $$x < 4$$. Find $$P(2 < X < 5)$$ in one line. A student instead integrates $$e^{-(x - 4)}$$ from 2 to 5 and gets about 7.02. What went wrong?
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 13  **Type:** apply
-**A:** Use the cdf you have: $$P(2 < X < 5) = F(5) - F(2) = (1 - e^{-1}) - 0 \approx 0.632$$. The student used the pdf's formula where it does not hold. The pdf is 0 below 4, so the integral runs from 4 to 5, not 2 to 5. A probability of 7.02 is impossible, which is the check that should have caught it.
+**A:** Key:
+1. Use the cdf: $$P(2 < X < 5) = F(5) - F(2) = (1 - e^{-1}) - 0$$.
+2. $$P(2 < X < 5) \approx 0.632$$.
+3. The student used the pdf's formula where it does not hold: the pdf is 0 below 4, so the integral runs from 4 to 5.
+
+Use the cdf you have: $$P(2 < X < 5) = F(5) - F(2) = (1 - e^{-1}) - 0 \approx 0.632$$. The student used the pdf's formula where it does not hold. The pdf is 0 below 4, so the integral runs from 4 to 5, not 2 to 5. A probability of 7.02 is impossible, which is the check that should have caught it.
 
 ## Lec 14 — Ch 5: Normal facts, linear combinations and the sample mean (logged 2026-10-14 from the decks and the recording; numbers changed)
 
 ### Q: $$X \sim N(20, 4^2)$$ and $$Y = 3X - 5$$. State the distribution of $$Y$$ with both parameters, say which part of the claim is new beyond the Chapter 4 rules, and find $$P(Y > 70)$$.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
-**A:** By Fact 1, a linear function of a Normal variable is Normal: $$Y \sim N(3 \times 20 - 5,\; 3^2 \times 4^2) = N(55, 144)$$, so $$\operatorname{SD}(Y) = 12$$. The mean and variance come from the Chapter 4 rules for $$aX + b$$; the new part is the shape, that $$Y$$ is still Normal.
+**A:** Key:
+1. By Fact 1, $$Y$$ is Normal with mean $$3 \times 20 - 5$$ and variance $$3^2 \times 4^2$$.
+2. $$Y \sim N(55, 144)$$, so $$\operatorname{SD}(Y) = 12$$.
+3. The new part beyond the Chapter 4 rules is the shape: $$Y$$ is still Normal.
+4. $$P(Y > 70) = P\left(Z > \frac{70 - 55}{12}\right) = P(Z > 1.25)$$.
+5. $$P(Y > 70) = 1 - 0.8944 = 0.1056$$.
+
+By Fact 1, a linear function of a Normal variable is Normal: $$Y \sim N(3 \times 20 - 5,\; 3^2 \times 4^2) = N(55, 144)$$, so $$\operatorname{SD}(Y) = 12$$. The mean and variance come from the Chapter 4 rules for $$aX + b$$; the new part is the shape, that $$Y$$ is still Normal.
 
 $$
 \begin{aligned}
@@ -1645,7 +2705,13 @@ $$
 
 ### Q: Show that standardising, $$Z = \frac{X - \mu}{\sigma}$$ for $$X \sim N(\mu, \sigma^2)$$, is a special case of Fact 1 ($$Y = aX + b$$ is Normal with mean $$a\mu + b$$ and variance $$a^2\sigma^2$$). Name $$a$$ and $$b$$ and derive the two parameters of $$Z$$.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** derive
-**A:** Write $$Z = \frac{1}{\sigma} X - \frac{\mu}{\sigma}$$, so $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
+**A:** Key:
+1. Write $$Z = \frac{1}{\sigma} X - \frac{\mu}{\sigma}$$, so $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
+2. $$E(Z) = a\mu + b = \frac{\mu}{\sigma} - \frac{\mu}{\sigma} = 0$$.
+3. $$\operatorname{Var}(Z) = a^2\sigma^2 = \frac{\sigma^2}{\sigma^2} = 1$$.
+4. Fact 1 adds that $$Z$$ is Normal, so $$Z \sim N(0, 1)$$.
+
+Write $$Z = \frac{1}{\sigma} X - \frac{\mu}{\sigma}$$, so $$a = \frac{1}{\sigma}$$ and $$b = -\frac{\mu}{\sigma}$$.
 
 $$
 \begin{aligned}
@@ -1658,7 +2724,14 @@ Fact 1 adds that $$Z$$ is Normal, so $$Z \sim N(0, 1)$$. That is why one table o
 
 ### Q: $$X_1 \sim N(10, 2^2)$$ and $$X_2 \sim N(14, 3^2)$$ are independent. Let $$D = X_1 - X_2$$. Give the distribution of $$D$$ and find $$P(X_1 > X_2)$$. A classmate wrote $$\operatorname{Var}(D) = 4 - 9 = -5$$; say what went wrong.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
-**A:** $$D$$ is a linear combination with $$a_1 = 1$$ and $$a_2 = -1$$, so by Fact 2 it is Normal with mean $$10 - 14 = -4$$ and variance $$1^2 \times 4 + (-1)^2 \times 9 = 13$$. So $$D \sim N(-4, 13)$$ and $$\operatorname{SD}(D) = \sqrt{13} = 3.606$$.
+**A:** Key:
+1. By Fact 2 with $$a_1 = 1$$ and $$a_2 = -1$$, $$D$$ is Normal with mean $$10 - 14$$ and variance $$1^2 \times 4 + (-1)^2 \times 9$$.
+2. $$D \sim N(-4, 13)$$, with $$\operatorname{SD}(D) = \sqrt{13} = 3.606$$.
+3. $$P(X_1 > X_2) = P(D > 0) = P\left(Z > \frac{0 - (-4)}{3.606}\right) = P(Z > 1.11)$$.
+4. $$P(X_1 > X_2) = 1 - 0.8665 = 0.1335$$.
+5. The classmate subtracted variances; coefficients enter squared, so a minus sign still adds variance.
+
+$$D$$ is a linear combination with $$a_1 = 1$$ and $$a_2 = -1$$, so by Fact 2 it is Normal with mean $$10 - 14 = -4$$ and variance $$1^2 \times 4 + (-1)^2 \times 9 = 13$$. So $$D \sim N(-4, 13)$$ and $$\operatorname{SD}(D) = \sqrt{13} = 3.606$$.
 
 $$
 \begin{aligned}
@@ -1673,7 +2746,13 @@ The classmate subtracted variances. Coefficients enter the variance squared, so 
 
 ### Q: Four bolts are laid end to end. Each length is independently $$N(50, 0.2^2)$$ mm. Give the distribution of the total length $$T$$ and find $$P(T > 200.6)$$. Why is $$\operatorname{Var}(T)$$ not $$16 \times 0.04$$?
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
-**A:** The bolts are identically distributed and independent, so Fact 2 with every $$a_i = 1$$ gives $$T \sim N(4 \times 50,\; 4 \times 0.04) = N(200, 0.16)$$ and $$\operatorname{SD}(T) = 0.4$$.
+**A:** Key:
+1. By Fact 2 with every $$a_i = 1$$, $$T \sim N(4 \times 50,\; 4 \times 0.04)$$.
+2. $$T \sim N(200, 0.16)$$, so $$\operatorname{SD}(T) = 0.4$$.
+3. $$P(T > 200.6) = P\left(Z > \frac{200.6 - 200}{0.4}\right) = P(Z > 1.5) = 1 - 0.9332 = 0.0668$$.
+4. $$16 \times 0.04$$ is the variance of $$4X_1$$, one bolt scaled by 4; four independent bolts add their variances once each.
+
+The bolts are identically distributed and independent, so Fact 2 with every $$a_i = 1$$ gives $$T \sim N(4 \times 50,\; 4 \times 0.04) = N(200, 0.16)$$ and $$\operatorname{SD}(T) = 0.4$$.
 
 $$
 \begin{aligned}
@@ -1687,7 +2766,13 @@ $$16 \times 0.04$$ would be the variance of $$4X_1$$, one bolt's length scaled b
 
 ### Q: $$X_1, \ldots, X_n$$ is a Normal sample with mean $$\mu$$ and variance $$\sigma^2$$. Derive $$E(\bar{X})$$ and $$\operatorname{Var}(\bar{X})$$ from the Chapter 4 rules, say which of the two steps needs independence, and say where the claim that $$\bar{X}$$ is Normal comes from.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** derive
-**A:** Write $$\bar{X} = \frac{1}{n}(X_1 + \cdots + X_n)$$ and pull the constant out.
+**A:** Key:
+1. Write $$\bar{X} = \frac{1}{n}(X_1 + \cdots + X_n)$$ and pull the constant out: $$E(\bar{X}) = \frac{1}{n}\{n\mu\} = \mu$$.
+2. $$\operatorname{Var}(\bar{X}) = \frac{1}{n^2}\{n\sigma^2\} = \frac{\sigma^2}{n}$$.
+3. The variance step needs independence, because otherwise covariance terms appear; the mean step holds for any variables.
+4. Normality comes from Fact 2: $$\bar{X}$$ is a linear combination of independent Normals with every $$a_i = \frac{1}{n}$$.
+
+Write $$\bar{X} = \frac{1}{n}(X_1 + \cdots + X_n)$$ and pull the constant out.
 
 $$
 \begin{aligned}
@@ -1702,7 +2787,13 @@ The mean step holds for any variables, because expectation of a sum always adds.
 
 ### Q: Test scores are $$N(100, 12^2)$$. For a random sample of 16 students, find $$P(\bar{X} > 106)$$, then find $$P(X > 106)$$ for one student. Explain in one sentence why the two differ so much.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
-**A:** By Fact 3, $$\bar{X} \sim N(100, \frac{144}{16}) = N(100, 9)$$, so $$\operatorname{SD}(\bar{X}) = 3$$.
+**A:** Key:
+1. By Fact 3, $$\bar{X} \sim N(100, \frac{144}{16}) = N(100, 9)$$, so $$\operatorname{SD}(\bar{X}) = 3$$.
+2. $$P(\bar{X} > 106) = P\left(Z > \frac{106 - 100}{3}\right) = P(Z > 2) = 0.0228$$.
+3. $$P(X > 106) = P\left(Z > \frac{106 - 100}{12}\right) = P(Z > 0.5) = 0.3085$$.
+4. The mean of 16 has SD $$\frac{12}{\sqrt{16}} = 3$$, so 6 points is two SDs for the mean but half an SD for one score.
+
+By Fact 3, $$\bar{X} \sim N(100, \frac{144}{16}) = N(100, 9)$$, so $$\operatorname{SD}(\bar{X}) = 3$$.
 
 $$
 \begin{aligned}
@@ -1717,7 +2808,14 @@ An average of 16 scores varies with standard deviation $$\frac{12}{\sqrt{16}} = 
 
 ### Q: What do $$\phi$$ and $$\Phi$$ denote in the deck's notation? Write $$P(-0.4 < Z < 1.2)$$ using $$\Phi$$ and evaluate it from Table A. What is $$\Phi(0)$$, and why?
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
-**A:** $$\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$$ is the standard Normal pdf, and $$\Phi(z) = P(Z \le z) = \int_{-\infty}^{z} \phi(t)\, dt$$ is the standard Normal cdf, the area to the left of $$z$$ that Table A lists.
+**A:** Key:
+1. $$\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$$ is the standard Normal pdf.
+2. $$\Phi(z) = P(Z \le z)$$ is the standard Normal cdf, the area to the left of $$z$$ that Table A lists.
+3. $$P(-0.4 < Z < 1.2) = \Phi(1.2) - \Phi(-0.4)$$.
+4. $$P(-0.4 < Z < 1.2) = 0.8849 - 0.3446 = 0.5403$$.
+5. $$\Phi(0) = 0.5$$, because the standard Normal is symmetric about 0.
+
+$$\phi(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}$$ is the standard Normal pdf, and $$\Phi(z) = P(Z \le z) = \int_{-\infty}^{z} \phi(t)\, dt$$ is the standard Normal cdf, the area to the left of $$z$$ that Table A lists.
 
 $$
 \begin{aligned}
@@ -1731,15 +2829,30 @@ $$\Phi(0) = 0.5$$, because the standard Normal is symmetric about 0, so half the
 
 ### Q: Mark each claim true or false and fix the false ones. (a) For a sample of 25 from $$N(\mu, \sigma^2)$$, $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{25}$$. (b) If $$X$$ is Normal then $$-2X + 7$$ is Normal with variance $$-2\sigma^2$$. (c) $$E(\bar{X}) = \mu$$ holds even if the sample values are not independent.
 **Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 14  **Type:** apply
-**A:** (a) False. $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{25}$$, so $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{\sqrt{25}} = \frac{\sigma}{5}$$; the square root shrinks the spread by $$\sqrt{n}$$, not $$n$$. (b) False in the variance. $$-2X + 7$$ is Normal by Fact 1, with mean $$-2\mu + 7$$ and variance $$(-2)^2\sigma^2 = 4\sigma^2$$; a variance is never negative. (c) True. Expectation of a sum always adds, so the mean of $$\bar{X}$$ is $$\mu$$ regardless of independence; only the variance formula needs it.
+**A:** Key:
+1. (a) False: $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{\sqrt{25}} = \frac{\sigma}{5}$$, because the spread shrinks by $$\sqrt{n}$$, not $$n$$.
+2. (b) False in the variance: $$-2X + 7$$ is Normal with variance $$(-2)^2\sigma^2 = 4\sigma^2$$.
+3. (c) True: expectation of a sum always adds, so $$E(\bar{X}) = \mu$$ regardless of independence.
+
+(a) False. $$\operatorname{Var}(\bar{X}) = \frac{\sigma^2}{25}$$, so $$\operatorname{SD}(\bar{X}) = \frac{\sigma}{\sqrt{25}} = \frac{\sigma}{5}$$; the square root shrinks the spread by $$\sqrt{n}$$, not $$n$$. (b) False in the variance. $$-2X + 7$$ is Normal by Fact 1, with mean $$-2\mu + 7$$ and variance $$(-2)^2\sigma^2 = 4\sigma^2$$; a variance is never negative. (c) True. Expectation of a sum always adds, so the mean of $$\bar{X}$$ is $$\mu$$ regardless of independence; only the variance formula needs it.
 
 ### Q: $$Z$$ is standard Normal. True or false, without a table: (a) $$P(Z < 4.2)$$ is about 0. (b) $$P(-2.4 < Z < -1.3) = P(1.3 < Z < 2.4)$$. Then give the value in (b) from Table A.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** recall
-**A:** (a) False. 4.2 is far above the mean, so everything below it is almost the whole area, and $$P(Z < 4.2)$$ is almost 1. The table stops at 3.49, where the cumulative probability is already 0.9998. (b) True, because the standard Normal curve is symmetric about 0, so the two strips are mirror images. Draw it rather than calculate. The value is $$\Phi(2.40) - \Phi(1.30) = 0.9918 - 0.9032 = 0.0886$$.
+**A:** Key:
+1. (a) False: almost the whole area lies below 4.2, so $$P(Z < 4.2)$$ is almost 1.
+2. (b) True, because the standard Normal is symmetric about 0, so the two strips are mirror images.
+3. The value is $$\Phi(2.40) - \Phi(1.30) = 0.9918 - 0.9032 = 0.0886$$.
+
+(a) False. 4.2 is far above the mean, so everything below it is almost the whole area, and $$P(Z < 4.2)$$ is almost 1. The table stops at 3.49, where the cumulative probability is already 0.9998. (b) True, because the standard Normal curve is symmetric about 0, so the two strips are mirror images. Draw it rather than calculate. The value is $$\Phi(2.40) - \Phi(1.30) = 0.9918 - 0.9032 = 0.0886$$.
 
 ### Q: Find the cutoff $$a$$ with $$P(Z < a) = 0.025$$, using only the positive-z table. Then find the score that cuts off the lowest 2.5% when scores are $$N(70, 8^2)$$.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** apply
-**A:** The lowest 2.5% is in the left tail, so $$a$$ is negative. By symmetry, $$-a$$ has 0.975 of the area to its left. Table A has 0.9750 exactly at 1.96, so $$a = -1.96$$. Unstandardise:
+**A:** Key:
+1. The lowest 2.5% is the left tail, so $$a$$ is negative and by symmetry $$-a$$ has 0.975 of the area to its left.
+2. Table A has 0.9750 at 1.96, so $$a = -1.96$$.
+3. Unstandardise: $$x = 70 + (-1.96)(8) = 54.32$$.
+
+The lowest 2.5% is in the left tail, so $$a$$ is negative. By symmetry, $$-a$$ has 0.975 of the area to its left. Table A has 0.9750 exactly at 1.96, so $$a = -1.96$$. Unstandardise:
 
 $$
 \begin{aligned}
@@ -1751,7 +2864,14 @@ $$
 
 ### Q: A written question says: exam scores are $$N(60, 8^2)$$; what proportion of students score above 70? List what a full-marks answer writes down, in order, and give the answer.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** apply
-**A:** Each step earns part marks, and the picture lets the grader see a correct method even if the arithmetic slips.
+**A:** Key:
+1. Write the probability statement and standardise: $$P(X > 70) = P\left(Z > \frac{70 - 60}{8}\right) = P(Z > 1.25)$$.
+2. The answer opens by defining the random variable in words: $$X$$ is a student's exam score.
+3. It then states the distribution, $$X \sim N(60, 8^2)$$, before the probability statement.
+4. It draws the curve with the right tail shaded.
+5. It gives $$1 - 0.8944 = 0.1056$$ and says it in words: about 10.6% of students score above 70.
+
+Each step earns part marks, and the picture lets the grader see a correct method even if the arithmetic slips.
 1. Define the random variable in words: $$X$$ is a student's exam score. The question does not do this for you.
 2. State its distribution: $$X \sim N(60, 8^2)$$.
 3. Write the probability statement: $$P(X > 70)$$.
@@ -1770,13 +2890,22 @@ $$
 
 ### Q: Standardising gives $$z = 1.2873$$. What do you look up in Table A, and what is $$P(Z < z)$$? What does "briefly describe" ask for on this course's exams?
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 14  **Type:** recall
-**A:** The table only has two decimals, so round to 1.29 and look up row 1.2, column .09: $$P(Z < 1.29) = 0.9015$$. "Briefly describe" means two or three sentences, to the point, not a page.
+**A:** Key:
+1. Round to two decimals, 1.29, and look up row 1.2, column .09.
+2. $$P(Z < 1.29) = 0.9015$$.
+3. "Briefly describe" means two or three sentences, to the point.
+
+The table only has two decimals, so round to 1.29 and look up row 1.2, column .09: $$P(Z < 1.29) = 0.9015$$. "Briefly describe" means two or three sentences, to the point, not a page.
 
 ## WeBWorK 5 — Ch 5 (opened Oct 13, due Thu Oct 22; banked 2026-10-15, numbers changed)
 
 ### Q: WeBWorK-style. The length of a coil of copper wire has mean 120 m and standard deviation 8 m. Four coils are chosen at random. What is the variance of the total length? Pick one: 2 $$\mathrm{m}^2$$, 32 $$\mathrm{m}^2$$, 256 $$\mathrm{m}^2$$, 480 $$\mathrm{m}^2$$ or 1024 $$\mathrm{m}^2$$.
 **Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** WW5  **Type:** apply
-**A:** 256 $$\mathrm{m}^2$$. The total is a sum of four independent lengths, so the variances add and the standard deviations do not.
+**A:** Key:
+1. The total is a sum of four independent lengths, so the variances add: $$4 \times 8^2$$.
+2. The variance is 256 $$\mathrm{m}^2$$.
+
+256 $$\mathrm{m}^2$$. The total is a sum of four independent lengths, so the variances add and the standard deviations do not.
 
 $$
 \begin{aligned}
@@ -1789,11 +2918,19 @@ The trap options are 32, which adds the standard deviations, and 1024, which is 
 
 ### Q: WeBWorK-style. Which Normal distribution has the widest spread: mean 5 with standard deviation 1.5, mean $$-2$$ with standard deviation 4, mean 10 with standard deviation 2.5, mean 0 with standard deviation 3, or none of them?
 **Topic:** 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula)  **Lec:** WW5  **Type:** apply
-**A:** The one with mean $$-2$$ and standard deviation 4. The spread of a Normal distribution is set by $$\sigma$$ alone; $$\mu$$ only slides the curve along the axis, so a large or negative mean says nothing about width.
+**A:** Key:
+1. Mean $$-2$$ with standard deviation 4 has the widest spread.
+2. The spread is set by $$\sigma$$ alone; $$\mu$$ only slides the curve along the axis.
+
+The one with mean $$-2$$ and standard deviation 4. The spread of a Normal distribution is set by $$\sigma$$ alone; $$\mu$$ only slides the curve along the axis, so a large or negative mean says nothing about width.
 
 ### Q: WeBWorK-style. $$X \sim N(30, 2^2)$$. What is $$E(X^2)$$: 896, 900, 902, 904, or not enough information?
 **Topic:** 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut)  **Lec:** WW5  **Type:** apply
-**A:** 904. Rearrange the variance shortcut $$\operatorname{Var}(X) = E(X^2) - \mu^2$$.
+**A:** Key:
+1. Rearrange the variance shortcut: $$E(X^2) = \operatorname{Var}(X) + \mu^2 = 4 + 900$$.
+2. $$E(X^2) = 904$$.
+
+904. Rearrange the variance shortcut $$\operatorname{Var}(X) = E(X^2) - \mu^2$$.
 
 $$
 \begin{aligned}
@@ -1806,7 +2943,12 @@ The mean and variance are enough; the Normal shape is not even needed. The trap 
 
 ### Q: WeBWorK-style. Chain lengths are Normal with mean 3.5 cm and standard deviation 0.3 cm. Find $$\ell$$ with $$P(L > \ell) = 0.02$$. Pick one: 0.30, 2.88, 3.50, 4.12 or 5.55 cm.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** WW5  **Type:** apply
-**A:** 4.12 cm. This is a backward problem: an upper tail of 0.02 means an area of 0.98 to the left, so find the $$z$$ with $$\Phi(z) = 0.98$$, then unstandardise.
+**A:** Key:
+1. Backward: an upper tail of 0.02 means finding $$z$$ with $$\Phi(z) = 0.98$$, then $$\ell = \mu + z\sigma$$.
+2. $$z = 2.054$$, so $$\ell = 3.5 + 2.054 \times 0.3$$.
+3. $$\ell = 4.12$$ cm.
+
+4.12 cm. This is a backward problem: an upper tail of 0.02 means an area of 0.98 to the left, so find the $$z$$ with $$\Phi(z) = 0.98$$, then unstandardise.
 
 $$
 \begin{aligned}
@@ -1821,7 +2963,12 @@ The trap is 2.88, which uses $$-2.054$$ and gives the value with 2% below it.
 
 ### Q: WeBWorK-style. $$X \sim N(50, 6^2)$$. Which is the interquartile range: 54.05 - 45.95 = 8.09, 56 - 44 = 12, 61.76 - 38.24 = 23.52, 51.51 - 48.49 = 3.02, or 50.67 - 49.33 = 1.34?
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** WW5  **Type:** apply
-**A:** 54.05 - 45.95 = 8.09. The quartiles sit at $$\Phi(z) = 0.25$$ and $$0.75$$, which is $$z = \pm 0.6745$$, so each quartile is $$0.6745\sigma$$ from the mean.
+**A:** Key:
+1. The quartiles sit at $$\Phi(z) = 0.25$$ and $$0.75$$, which is $$z = \pm 0.6745$$.
+2. $$Q_3 = 50 + 0.6745 \times 6 = 54.05$$ and $$Q_1 = 50 - 0.6745 \times 6 = 45.95$$.
+3. The IQR is $$54.05 - 45.95 = 8.09$$.
+
+54.05 - 45.95 = 8.09. The quartiles sit at $$\Phi(z) = 0.25$$ and $$0.75$$, which is $$z = \pm 0.6745$$, so each quartile is $$0.6745\sigma$$ from the mean.
 
 $$
 \begin{aligned}
@@ -1835,7 +2982,11 @@ The traps are $$\mu \pm \sigma$$ (12, the middle 68%) and $$\mu \pm 1.96\sigma$$
 
 ### Q: WeBWorK-style. Windscreen wipers last on average 4 years, Normal with standard deviation 1.5 years. Find the probability that a wiper's lifetime is not within 1.2 years of the mean.
 **Topic:** 3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** WW5  **Type:** apply
-**A:** 0.4238. "Not within 1.2 years of the mean" is both tails, $$|X - 4| > 1.2$$, so both tails of $$Z$$ beyond $$1.2 / 1.5 = 0.8$$.
+**A:** Key:
+1. Not within 1.2 years is both tails, $$|X - 4| > 1.2$$, so $$P(|Z| > 0.8) = 2(1 - \Phi(0.8))$$.
+2. $$2(1 - 0.7881) = 0.4238$$.
+
+0.4238. "Not within 1.2 years of the mean" is both tails, $$|X - 4| > 1.2$$, so both tails of $$Z$$ beyond $$1.2 / 1.5 = 0.8$$.
 
 $$
 \begin{aligned}
@@ -1851,7 +3002,12 @@ The usual miss is reporting one tail, 0.2119, or the inside, 0.5762.
 
 ### Q: Parts from a machine pass inspection with probability 0.9, independently of one another. Let $$X$$ be the number that pass among 6 parts. Name the distribution of $$X$$ with its parameters, check the three assumptions, and find $$P(X = 5)$$.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
-**A:** $$X \sim \text{Bin}(6, 0.9)$$. The assumptions hold: there are $$n = 6$$ trials, each ends in pass or fail; the trials are independent; every trial has the same $$p = 0.9$$.
+**A:** Key:
+1. $$X \sim \text{Bin}(6, 0.9)$$, so $$P(X = 5) = \binom{6}{5} 0.9^{5} \times 0.1^{1}$$.
+2. The three assumptions hold: $$n = 6$$ pass-or-fail trials, independent trials, and the same $$p = 0.9$$ on every trial.
+3. $$P(X = 5) = 0.3543$$.
+
+$$X \sim \text{Bin}(6, 0.9)$$. The assumptions hold: there are $$n = 6$$ trials, each ends in pass or fail; the trials are independent; every trial has the same $$p = 0.9$$.
 
 $$
 \begin{aligned}
@@ -1863,7 +3019,13 @@ $$
 
 ### Q: Derive $$E(X)$$ and $$\operatorname{Var}(X)$$ for $$X \sim \text{Bernoulli}(p)$$ from the definitions of a discrete mean and variance. Then say what the mean and variance become for the number of successes in $$n$$ independent trials, and which Chapter 4 rule you used.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** derive
-**A:** $$X$$ takes the value 1 with probability $$p$$ and 0 with probability $$1 - p$$.
+**A:** Key:
+1. $$E(X) = 0 \times (1 - p) + 1 \times p = p$$.
+2. $$E(X^2) = p$$, so $$\operatorname{Var}(X) = p - p^2 = p(1 - p)$$.
+3. The count in $$n$$ independent trials is a sum of $$n$$ Bernoullis, so $$E = np$$ and $$\operatorname{Var} = np(1 - p)$$.
+4. The rule used is the variance of a sum of independent variables, with every coefficient equal to 1.
+
+$$X$$ takes the value 1 with probability $$p$$ and 0 with probability $$1 - p$$.
 
 $$
 \begin{aligned}
@@ -1878,7 +3040,13 @@ The Binomial count is the sum of $$n$$ such variables. Means add always, so $$E 
 
 ### Q: Explain in two sentences why the Binomial pmf has the factor $$\binom{n}{x}$$ in front of $$p^{x}(1 - p)^{n - x}$$. Then evaluate $$\binom{7}{2}$$, $$\binom{5}{5}$$ and $$\binom{n}{0}$$.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** derive
-**A:** One particular order of $$x$$ successes and $$n - x$$ failures has probability $$p^{x}(1 - p)^{n - x}$$ by independence. There are $$\binom{n}{x}$$ different orders, each with that same probability, and the orders are disjoint events, so the probabilities add.
+**A:** Key:
+1. One particular order of $$x$$ successes and $$n - x$$ failures has probability $$p^{x}(1 - p)^{n - x}$$ by independence.
+2. There are $$\binom{n}{x}$$ disjoint orders with that same probability, so the probabilities add.
+3. $$\binom{7}{2} = \frac{7 \times 6}{2} = 21$$.
+4. $$\binom{5}{5} = 1$$ and $$\binom{n}{0} = 1$$, both using $$0! = 1$$.
+
+One particular order of $$x$$ successes and $$n - x$$ failures has probability $$p^{x}(1 - p)^{n - x}$$ by independence. There are $$\binom{n}{x}$$ different orders, each with that same probability, and the orders are disjoint events, so the probabilities add.
 
 $$
 \begin{aligned}
@@ -1892,13 +3060,24 @@ Both of the last two use $$0! = 1$$.
 
 ### Q: An inspector draws 15 phones without replacement from a shipment of 120, of which 8% are defective. Can the number of defectives be modelled as Binomial? Name the assumption at risk and the rule that decides. Would the answer change for a shipment of 200?
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
-**A:** Sampling without replacement makes the trials dependent, so the independence assumption is at risk. The 10% condition decides: the Binomial model may be used when the sample is at most 10% of the population. Here $$\frac{15}{120} = 12.5\%$$, more than 10%, so the Binomial model cannot be used.
+**A:** Key:
+1. Sampling without replacement puts the independence assumption at risk, and the 10% condition decides.
+2. $$\frac{15}{120} = 12.5\%$$ is more than 10%, so the Binomial model cannot be used.
+3. For 200, $$\frac{15}{200} = 7.5\%$$ is within the condition, so the count is $$\text{Bin}(15, 0.08)$$.
+
+Sampling without replacement makes the trials dependent, so the independence assumption is at risk. The 10% condition decides: the Binomial model may be used when the sample is at most 10% of the population. Here $$\frac{15}{120} = 12.5\%$$, more than 10%, so the Binomial model cannot be used.
 
 For a shipment of 200 the sample is $$\frac{15}{200} = 7.5\%$$, within the condition, so the count is modelled as $$\text{Bin}(15, 0.08)$$.
 
 ### Q: Which of these counts are Binomial, and with what parameters? For each one that is not, name the assumption that fails. (a) The number of sixes in 10 rolls of a fair die. (b) The number of rolls of a fair die until the first six. (c) The number of defective bulbs in a box of 20 when each bulb is defective with probability 0.02 independently. (d) The number of red cards among 5 drawn without replacement from a 52-card deck.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
-**A:** (a) Binomial, $$\text{Bin}(10, \frac{1}{6})$$: fixed trials, two outcomes, independent, same $$p$$.
+**A:** Key:
+1. (a) is Binomial, $$\text{Bin}(10, \frac{1}{6})$$.
+2. (b) is not Binomial: the number of trials is not fixed, since it counts trials until the first success (Geometric).
+3. (c) is Binomial, $$\text{Bin}(20, 0.02)$$.
+4. (d) is without replacement, but $$\frac{5}{52} = 9.6\%$$ is within the 10% condition, so it is modelled as $$\text{Bin}(5, 0.5)$$.
+
+(a) Binomial, $$\text{Bin}(10, \frac{1}{6})$$: fixed trials, two outcomes, independent, same $$p$$.
 
 (b) Not Binomial. The number of trials is not fixed; the variable counts trials until the first success, which is the Geometric distribution of the next lecture.
 
@@ -1908,7 +3087,12 @@ For a shipment of 200 the sample is $$\frac{15}{200} = 7.5\%$$, within the condi
 
 ### Q: $$X \sim \text{Bin}(12, 0.25)$$. Find $$E(X)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$, then $$P(X \le 1)$$.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** apply
-**A:**
+**A:** Key:
+1. Use $$E = np$$ and $$\operatorname{Var} = np(1 - p)$$: $$12 \times 0.25$$ and $$12 \times 0.25 \times 0.75$$.
+2. $$E(X) = 3$$, $$\operatorname{Var}(X) = 2.25$$ and $$\operatorname{SD}(X) = 1.5$$.
+3. $$P(X \le 1) = 0.75^{12} + 12 \times 0.25 \times 0.75^{11}$$.
+4. $$P(X \le 1) = 0.0317 + 0.1267 = 0.1584$$.
+
 
 $$
 \begin{aligned}
@@ -1930,13 +3114,24 @@ $$
 
 ### Q: A classmate writes: "For $$X \sim \text{Bernoulli}(0.3)$$ the pmf is $$P(X = x) = 0.3^{x} \times 0.7^{1 - x}$$, so $$P(X = 2) = 0.3^{2} \times 0.7^{-1} = 0.129$$." What is wrong, and what are $$P(X = 2)$$ and $$\operatorname{Var}(X)$$?
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 15  **Type:** critique
-**A:** The pmf formula only applies on the support $$x = 0, 1$$; a Bernoulli variable is 1 on a success and 0 on a failure and takes no other value. So $$P(X = 2) = 0$$. The variance is $$p(1 - p) = 0.3 \times 0.7 = 0.21$$.
+**A:** Key:
+1. The pmf formula applies only on the support $$x = 0, 1$$; a Bernoulli variable takes no other value.
+2. $$P(X = 2) = 0$$.
+3. $$\operatorname{Var}(X) = p(1 - p) = 0.3 \times 0.7 = 0.21$$.
+
+The pmf formula only applies on the support $$x = 0, 1$$; a Bernoulli variable is 1 on a success and 0 on a failure and takes no other value. So $$P(X = 2) = 0$$. The variance is $$p(1 - p) = 0.3 \times 0.7 = 0.21$$.
 
 ## Lec 16 — Ch 6: Binomial examples (prepared 2026-10-23 from the after-class deck; numbers changed)
 
 ### Q: A biased coin lands heads with probability 0.6 and is tossed 6 times. Let $$X$$ be the number of heads. Find $$P(X = 5)$$, then the mean and the standard deviation of $$X$$.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** apply
-**A:** $$X \sim \text{Bin}(6, 0.6)$$. The 6 in front counts the orders in which the one tail can fall.
+**A:** Key:
+1. $$X \sim \text{Bin}(6, 0.6)$$, so $$P(X = 5) = \binom{6}{5}(0.6)^5(0.4)^1$$.
+2. $$P(X = 5) = 0.1866$$.
+3. $$E(X) = 6 \times 0.6 = 3.6$$.
+4. $$\operatorname{SD}(X) = \sqrt{6 \times 0.6 \times 0.4} = 1.2$$.
+
+$$X \sim \text{Bin}(6, 0.6)$$. The 6 in front counts the orders in which the one tail can fall.
 
 $$
 \begin{aligned}
@@ -1951,7 +3146,12 @@ $$
 
 ### Q: $$X \sim \text{Bin}(12, 0.25)$$. Write each event as a sum of pmf terms or as a complement, without computing: (a) fewer than 2, (b) at most 3, (c) at least 2, (d) more than 10.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) $$P(X < 2) = P(X = 0) + P(X = 1)$$.
+2. (b) $$P(X \le 3) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)$$, including 3.
+3. (c) $$P(X \ge 2) = 1 - P(X = 0) - P(X = 1)$$, the complement of (a).
+4. (d) $$P(X > 10) = P(X = 11) + P(X = 12)$$.
+
 - (a) $$P(X < 2) = P(X = 0) + P(X = 1)$$, because "fewer than 2" stops at 1.
 - (b) $$P(X \le 3) = P(X = 0) + P(X = 1) + P(X = 2) + P(X = 3)$$, because "at most" includes 3.
 - (c) $$P(X \ge 2) = 1 - P(X = 0) - P(X = 1)$$, the complement of (a), which saves eleven terms.
@@ -1959,7 +3159,13 @@ $$
 
 ### Q: 25% of drivers come to a complete stop at a flashing red light. Twelve drivers are chosen at random. Find the probability that exactly 3 stop, the expected number who stop, and the standard deviation of that number.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** apply
-**A:** $$X \sim \text{Bin}(12, 0.25)$$, assuming drivers act independently.
+**A:** Key:
+1. $$X \sim \text{Bin}(12, 0.25)$$, assuming independent drivers, so $$P(X = 3) = \binom{12}{3}(0.25)^3(0.75)^9$$.
+2. $$P(X = 3) = 0.2581$$.
+3. $$E(X) = 12 \times 0.25 = 3$$.
+4. $$\operatorname{SD}(X) = \sqrt{12 \times 0.25 \times 0.75} = 1.5$$.
+
+$$X \sim \text{Bin}(12, 0.25)$$, assuming drivers act independently.
 
 $$
 \begin{aligned}
@@ -1974,7 +3180,13 @@ $$
 
 ### Q: $$X \sim \text{Bin}(8, 0.3)$$. A classmate writes $$P(X \ge 2) = 1 - P(X = 1)$$ and $$P(X > 3) = 1 - P(X \le 3)$$. Which line is right, which is wrong and why, and what is $$P(X \ge 2)$$?
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** critique
-**A:** The second line is right: "more than 3" starts at 4, so its complement is "at most 3". The first line is wrong, because the complement of "at least 2" is "0 or 1", and the classmate dropped $$P(X = 0)$$.
+**A:** Key:
+1. The first line is wrong: the complement of "at least 2" is "0 or 1", and it drops $$P(X = 0)$$.
+2. The second line is right: "more than 3" starts at 4, so its complement is "at most 3".
+3. $$P(X \ge 2) = 1 - 0.7^8 - 8(0.3)(0.7)^7$$.
+4. $$P(X \ge 2) = 1 - 0.0576 - 0.1977 = 0.7447$$.
+
+The second line is right: "more than 3" starts at 4, so its complement is "at most 3". The first line is wrong, because the complement of "at least 2" is "0 or 1", and the classmate dropped $$P(X = 0)$$.
 
 $$
 \begin{aligned}
@@ -1987,7 +3199,13 @@ $$
 
 ### Q: Each of 7 emergency generators starts with probability 0.95, independently of the others. Find the probability that all 7 start, the probability that at least 6 start, and the expected number that fail to start.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** apply
-**A:** $$X \sim \text{Bin}(7, 0.95)$$ counts the generators that start.
+**A:** Key:
+1. $$X \sim \text{Bin}(7, 0.95)$$ counts the starts, so $$P(X = 7) = 0.95^7$$.
+2. $$P(X = 7) = 0.6983$$.
+3. $$P(X \ge 6) = 0.6983 + 7(0.95)^6(0.05) = 0.6983 + 0.2573 = 0.9556$$.
+4. The failures are $$\text{Bin}(7, 0.05)$$, so the expected number that fail is $$7 \times 0.05 = 0.35$$.
+
+$$X \sim \text{Bin}(7, 0.95)$$ counts the generators that start.
 
 $$
 \begin{aligned}
@@ -2001,7 +3219,14 @@ The failures are $$7 - X \sim \text{Bin}(7, 0.05)$$, so the expected number that
 
 ### Q: $$X \sim \text{Bin}(n, p)$$ counts successes and $$Y = n - X$$ counts failures. Show that $$Y \sim \text{Bin}(n, 1 - p)$$, then use it to find $$P(X \ge 10)$$ for $$X \sim \text{Bin}(12, 0.9)$$ with three terms instead of ten.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 16  **Type:** derive
-**A:** $$Y = y$$ is the same event as $$X = n - y$$, and $$\binom{n}{n - y} = \binom{n}{y}$$:
+**A:** Key:
+1. $$Y = y$$ is the event $$X = n - y$$, so $$P(Y = y) = \binom{n}{n - y} p^{n - y}(1 - p)^{y}$$.
+2. Since $$\binom{n}{n - y} = \binom{n}{y}$$, this is the $$\text{Bin}(n, 1 - p)$$ pmf.
+3. At least 10 successes is at most 2 failures: $$P(X \ge 10) = P(Y \le 2)$$ with $$Y \sim \text{Bin}(12, 0.1)$$.
+4. $$P(Y \le 2) = 0.9^{12} + 12(0.1)(0.9)^{11} + 66(0.1)^2(0.9)^{10}$$.
+5. $$P(X \ge 10) = 0.2824 + 0.3766 + 0.2301 = 0.8891$$.
+
+$$Y = y$$ is the same event as $$X = n - y$$, and $$\binom{n}{n - y} = \binom{n}{y}$$:
 
 $$
 \begin{aligned}
@@ -2026,13 +3251,23 @@ $$
 
 ### Q: Can the Binomial model the count, and why? (a) A pool has 8 civil and 4 computer science students, and a team of 4 is picked at random; $$X$$ is the number of computer science students on the team. (b) A pool has 300 civil and 200 computer science students, and a committee of 12 is picked at random; $$X$$ is the same count.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 17  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) No: the team is 4 of 12 people, so picking without replacement makes the trials dependent and $$p$$ not constant.
+2. (b) Yes: the committee is 12 of 500, 2.4% of the pool, so the 10% condition holds.
+3. In (b), $$X$$ is approximately $$\text{Bin}(12, 0.4)$$.
+
 - (a) No. The team is 4 of 12 people, a third of the pool, so picking without replacement changes the chance of a computer science student after every pick; the trials are not independent and $$p$$ is not constant.
 - (b) Yes. The committee is 12 of 500, 2.4% of the pool, so the 10% condition holds and $$X$$ is approximately $$\text{Bin}(12, 0.4)$$.
 
 ### Q: A quiz question has 5 options and a student guesses. Passing needs at least half the questions right. Find the probability a guesser passes a 4-question quiz, and say whether a 10-question quiz is easier or harder to pass by guessing, and why.
 **Topic:** 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement)  **Lec:** 17  **Type:** apply
-**A:** On 4 questions, $$X \sim \text{Bin}(4, 0.2)$$ and passing needs $$X \ge 2$$:
+**A:** Key:
+1. $$X \sim \text{Bin}(4, 0.2)$$ and passing needs $$P(X \ge 2) = 1 - 0.8^4 - 4(0.2)(0.8)^3$$.
+2. $$P(X \ge 2) = 1 - 0.4096 - 0.4096 = 0.1808$$.
+3. The 10-question quiz is harder to pass by guessing.
+4. With more questions a guesser's score settles closer to its expected 20%, so reaching 50% gets less likely.
+
+On 4 questions, $$X \sim \text{Bin}(4, 0.2)$$ and passing needs $$X \ge 2$$:
 
 $$
 \begin{aligned}
@@ -2047,7 +3282,14 @@ The 10-question quiz is harder to pass, because with more questions a guesser's 
 
 ### Q: 3% of accounts in a large population are in error, and accounts are audited one at a time. Let $$X$$ be the number audited until the first error. (a) Name the distribution of $$X$$. (b) Find the probability that the 8th account is the first error. (c) Find the probability that the first 40 accounts are all error-free. (d) Find the expected number of audits to the first error and the variance.
 **Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** 17  **Type:** apply
-**A:** (a) $$X \sim \text{Geo}(0.03)$$.
+**A:** Key:
+1. (a) $$X \sim \text{Geo}(0.03)$$.
+2. (b) $$P(X = 8) = (0.97)^7(0.03) = 0.0242$$.
+3. (c) The first 40 all clean is $$X > 40$$, so $$P(X > 40) = (0.97)^{40} = 0.2957$$.
+4. (d) $$E(X) = \frac{1}{0.03} = 33.3$$.
+5. $$\operatorname{Var}(X) = \frac{0.97}{0.03^2} = 1077.8$$.
+
+(a) $$X \sim \text{Geo}(0.03)$$.
 
 $$
 \begin{aligned}
@@ -2062,7 +3304,13 @@ In (c) the event "the first 40 are clean" is $$X > 40$$, so it is one minus the 
 
 ### Q: Derive the Geometric cdf $$F(x) = 1 - (1 - p)^x$$ from the pmf, and name the series result you need.
 **Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** 17  **Type:** derive
-**A:** Work through the complement and factor out the first term, then use the geometric series $$1 + r + r^2 + \cdots = \frac{1}{1 - r}$$ for $$0 < r < 1$$, with $$r = 1 - p$$.
+**A:** Key:
+1. Go through the complement: $$F(x) = 1 - \sum_{k = x + 1}^{\infty} p(1 - p)^{k - 1}$$.
+2. Factor out the first term: $$F(x) = 1 - p(1 - p)^x \sum_{j = 0}^{\infty}(1 - p)^j$$.
+3. The geometric series $$1 + r + r^2 + \cdots = \frac{1}{1 - r}$$ with $$r = 1 - p$$ gives $$\frac{1}{p}$$.
+4. So $$F(x) = 1 - p(1 - p)^x \times \frac{1}{p} = 1 - (1 - p)^x$$.
+
+Work through the complement and factor out the first term, then use the geometric series $$1 + r + r^2 + \cdots = \frac{1}{1 - r}$$ for $$0 < r < 1$$, with $$r = 1 - p$$.
 
 $$
 \begin{aligned}
@@ -2078,7 +3326,12 @@ A shortcut that checks it: $$X > x$$ means the first $$x$$ independent trials al
 
 ### Q: A river floods in a given year with probability 0.04, independently from year to year. What is the return period of a flood, and what is the probability of no flood in the next 10 years?
 **Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** 17  **Type:** apply
-**A:** The years until the first flood are $$\text{Geo}(0.04)$$. The return period is the expected wait, $$\frac{1}{0.04} = 25$$ years. No flood in 10 years means the first flood comes after year 10:
+**A:** Key:
+1. The years until the first flood are $$\text{Geo}(0.04)$$, and the return period is the expected wait $$\frac{1}{0.04}$$.
+2. The return period is 25 years.
+3. No flood in 10 years is $$P(X > 10) = (0.96)^{10} = 0.665$$.
+
+The years until the first flood are $$\text{Geo}(0.04)$$. The return period is the expected wait, $$\frac{1}{0.04} = 25$$ years. No flood in 10 years means the first flood comes after year 10:
 
 $$
 P(X > 10) = (0.96)^{10} = 0.665
@@ -2088,7 +3341,12 @@ $$
 
 ### Q: Show that $$f(x) = \frac{\lambda^x e^{-\lambda}}{x!}$$ for $$x = 0, 1, 2, \ldots$$ is a valid pmf, and state the mean and variance of $$X \sim \text{Poisson}(\lambda)$$.
 **Topic:** 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ)  **Lec:** 18  **Type:** derive
-**A:** Every term is positive because $$\lambda > 0$$. The terms add to 1 by the series $$e^{k} = \sum_{x = 0}^{\infty} \frac{k^x}{x!}$$:
+**A:** Key:
+1. The terms sum to 1 by the exponential series: $$e^{-\lambda}\sum_{x = 0}^{\infty}\frac{\lambda^x}{x!} = e^{-\lambda}e^{\lambda} = 1$$.
+2. Every term is positive because $$\lambda > 0$$.
+3. The mean and the variance are both $$\lambda$$.
+
+Every term is positive because $$\lambda > 0$$. The terms add to 1 by the series $$e^{k} = \sum_{x = 0}^{\infty} \frac{k^x}{x!}$$:
 
 $$
 \begin{aligned}
@@ -2101,7 +3359,12 @@ The mean and the variance are both $$\lambda$$.
 
 ### Q: Calls reach a help desk at 2 per minute during a busy period, and the Poisson process assumptions hold. Find the probability of more than 2 calls in a 3-minute interval.
 **Topic:** 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ)  **Lec:** 18  **Type:** apply
-**A:** The rate scales with the interval, so $$X_3 \sim \text{Poisson}(2 \times 3 = 6)$$.
+**A:** Key:
+1. The rate scales with the interval: $$X_3 \sim \text{Poisson}(2 \times 3 = 6)$$.
+2. $$P(X_3 > 2) = 1 - e^{-6}\left(1 + 6 + \frac{6^2}{2}\right) = 1 - 25e^{-6}$$.
+3. $$P(X_3 > 2) = 0.938$$.
+
+The rate scales with the interval, so $$X_3 \sim \text{Poisson}(2 \times 3 = 6)$$.
 
 $$
 \begin{aligned}
@@ -2116,9 +3379,15 @@ The usual miss is keeping $$\lambda = 2$$ for a 3-minute interval.
 
 ### Q: Name the four properties of a Poisson process. Then say which property fails in each case: (a) buses that arrive in bunches of three at once; (b) shoppers per hour at a mall, counted across the whole day.
 **Topic:** 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ)  **Lec:** 18  **Type:** critique
-**A:** The four properties:
+**A:** Key:
+1. The first two: counts on non-overlapping intervals are independent, and the expected count in an interval is proportional to its length.
+2. The last two: every interval of a given length has the same chance of an event, and two events cannot happen at once.
+3. (a) breaks the last property, because three arrivals happen together.
+4. (b) breaks the constant-rate property, because the mall is busier at lunch than at 9 am.
+
+The four properties:
 - Counts on intervals that do not overlap are independent.
-- The count in an interval is proportional to its length.
+- The expected count in an interval is proportional to its length, $$\lambda$$ per unit.
 - The chance of an event in an interval of a given length is the same for every interval.
 - Two events cannot happen at the same instant.
 
@@ -2126,7 +3395,13 @@ The usual miss is keeping $$\lambda = 2$$ for a 3-minute interval.
 
 ### Q: Calls reach a help desk at 2 per minute. Let $$T$$ be the time from one call to the next. Name the distribution of $$T$$, find its mean, and find the probability that more than a minute passes with no call. Check the last answer through the Poisson count.
 **Topic:** 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ)  **Lec:** 18  **Type:** apply
-**A:** $$T \sim \text{Exp}(2)$$, with mean $$\frac{1}{2}$$ minute.
+**A:** Key:
+1. $$T \sim \text{Exp}(2)$$.
+2. The mean of $$T$$ is $$\frac{1}{2}$$ minute.
+3. $$P(T > 1) = 1 - F(1) = e^{-2 \times 1} = 0.135$$.
+4. Check: $$P(X_1 = 0) = e^{-2} = 0.135$$ for $$X_1 \sim \text{Poisson}(2)$$, the same number.
+
+$$T \sim \text{Exp}(2)$$, with mean $$\frac{1}{2}$$ minute.
 
 $$
 \begin{aligned}
@@ -2139,14 +3414,25 @@ Check: no call in one minute is $$P(X_1 = 0)$$ with $$X_1 \sim \text{Poisson}(2)
 
 ### Q: For each Binomial, say whether the Poisson approximation may be used and, if so, with what $$\lambda$$: (a) $$\text{Bin}(30, 0.3)$$; (b) $$\text{Bin}(200, 0.01)$$; (c) $$\text{Bin}(15, 0.02)$$.
 **Topic:** 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation)  **Lec:** 18  **Type:** apply
-**A:** The rule needs $$n \ge 20$$ and $$np < 5$$.
+**A:** Key:
+1. The rule needs $$n \ge 20$$ and $$np < 5$$.
+2. (a) No: $$np = 9$$ is not below 5.
+3. (b) Yes: $$n = 200$$ and $$np = 2$$, so $$\text{Poisson}(2)$$.
+4. (c) No: $$n = 15$$ is below 20.
+
+The rule needs $$n \ge 20$$ and $$np < 5$$.
 - (a) No: $$n = 30$$ is large enough but $$np = 9$$ is not below 5.
 - (b) Yes: $$n = 200$$ and $$np = 2$$, so $$\text{Poisson}(2)$$.
 - (c) No: $$np = 0.3$$ is small but $$n = 15$$ is below 20.
 
 ### Q: 1.5% of chips from a line are faulty. In a sample of 100, use the Poisson approximation to find the probability of exactly 2 faulty chips and of at least one, after checking the conditions.
 **Topic:** 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation)  **Lec:** 18  **Type:** apply
-**A:** $$n = 100 \ge 20$$ and $$np = 1.5 < 5$$, so $$X$$ is approximately $$\text{Poisson}(1.5)$$.
+**A:** Key:
+1. $$n = 100 \ge 20$$ and $$np = 1.5 < 5$$, so $$X$$ is approximately $$\text{Poisson}(1.5)$$.
+2. $$P(X = 2) \approx \frac{1.5^2 e^{-1.5}}{2!} = 0.251$$.
+3. $$P(X \ge 1) \approx 1 - e^{-1.5} = 0.777$$.
+
+$$n = 100 \ge 20$$ and $$np = 1.5 < 5$$, so $$X$$ is approximately $$\text{Poisson}(1.5)$$.
 
 $$
 \begin{aligned}
@@ -2157,14 +3443,23 @@ $$
 
 ### Q: A count is described as "the number of defectives in a sample of 80 parts" in one problem and "the number of defects per metre of cable" in another. Which distribution fits each, and what single fact about the setup tells you?
 **Topic:** 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ)  **Lec:** 18  **Type:** apply
-**A:** The sample of 80 is Binomial, because there is a fixed number of trials $$n = 80$$ and each part is a success or not, so the count cannot pass 80. The cable is Poisson, because defects fall at a rate along a continuous length with no fixed number of trials, so the count has no upper limit. The fact that decides it is whether there is a fixed $$n$$.
+**A:** Key:
+1. The sample of 80 is Binomial: a fixed $$n = 80$$ trials, each a success or not, so the count cannot pass 80.
+2. The cable is Poisson: defects fall at a rate along a continuous length, so the count has no upper limit.
+3. The deciding fact is whether there is a fixed $$n$$.
+
+The sample of 80 is Binomial, because there is a fixed number of trials $$n = 80$$ and each part is a success or not, so the count cannot pass 80. The cable is Poisson, because defects fall at a rate along a continuous length with no fixed number of trials, so the count has no upper limit. The fact that decides it is whether there is a fixed $$n$$.
 
 
 ## Lec 19 — Ch 6: Activity 6, the Poisson count and the exponential wait (prepared 2026-10-28 from the deck and the Activity 6 solutions; numbers changed)
 
 ### Q: The times between earthquakes in a region are modelled as exponential with an estimated rate of 0.18 per year. Find the probability that the next recurrence interval is shorter than 8 months.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
-**A:** The rate is per year, so 8 months is $$t = \frac{8}{12} = 0.667$$ years. With $$T \sim \text{Exp}(0.18)$$:
+**A:** Key:
+1. Convert to the rate's unit, $$t = \frac{8}{12} = 0.667$$ years, so $$P(T < 0.667) = 1 - e^{-0.18 \times 0.667}$$.
+2. $$P(T < 0.667) = 1 - e^{-0.12} = 0.1131$$.
+
+The rate is per year, so 8 months is $$t = \frac{8}{12} = 0.667$$ years. With $$T \sim \text{Exp}(0.18)$$:
 
 $$
 \begin{aligned}
@@ -2178,7 +3473,13 @@ Using $$t = 8$$ gives $$1 - e^{-1.44} = 0.763$$, which is the probability of an 
 
 ### Q: A histogram of observed recurrence intervals, in years, has these bars past 4 years. Bar 4 to 6: density 0.09. Bar 6 to 8: density 0.06. Bar 8 to 12: density 0.025. Bar 12 to 20: density 0.0075. What proportion of the observed intervals exceed 4 years? Compare it with the exponential model's value at rate 0.18 per year, and say why the two need not match.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
-**A:** A bar's proportion is its density times its width.
+**A:** Key:
+1. A bar's proportion is its density times its width.
+2. The bars give $$0.18 + 0.12 + 0.10 + 0.06 = 0.46$$.
+3. The model gives $$P(T > 4) = e^{-0.18 \times 4} = e^{-0.72} = 0.487$$.
+4. They need not match because the histogram is a sample and the rate is estimated from that same sample.
+
+A bar's proportion is its density times its width.
 
 $$
 \begin{aligned}
@@ -2194,7 +3495,13 @@ The model gives $$P(T > 4) = e^{-0.18 \times 4} = e^{-0.72} = 0.487$$. The histo
 
 ### Q: Events follow a Poisson process at rate $$\lambda$$ per hour, and $$T$$ is the wait until the first event. Derive the cdf and the pdf of $$T$$ from the Poisson count, and state $$P(T > t)$$ in both languages.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** derive
-**A:** The wait exceeds $$t$$ exactly when the count $$X_t$$ in $$(0, t]$$ is zero, and $$X_t \sim \text{Poisson}(\lambda t)$$.
+**A:** Key:
+1. $$T > t$$ exactly when the count $$X_t$$ in $$(0, t]$$ is zero, with $$X_t \sim \text{Poisson}(\lambda t)$$.
+2. $$P(T > t) = P(X_t = 0) = e^{-\lambda t}$$, so no events in $$t$$ hours and the first event after $$t$$ hours are one event.
+3. $$F(t) = 1 - e^{-\lambda t}$$.
+4. $$f(t) = \lambda e^{-\lambda t}$$ for $$t \ge 0$$, so $$T \sim \text{Exp}(\lambda)$$.
+
+The wait exceeds $$t$$ exactly when the count $$X_t$$ in $$(0, t]$$ is zero, and $$X_t \sim \text{Poisson}(\lambda t)$$.
 
 $$
 \begin{aligned}
@@ -2209,7 +3516,13 @@ So $$T \sim \text{Exp}(\lambda)$$, and "no events in $$t$$ hours" and "the first
 
 ### Q: Earthquakes strong enough to be felt hit a region at 0.3 per year as a Poisson process. Find the probability of no felt earthquake in the next 6 years, once through the Poisson count and once through the waiting time, and check the two agree.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
-**A:** Count: $$X \sim \text{Poisson}(0.3 \times 6 = 1.8)$$, so $$P(X = 0) = e^{-1.8} = 0.1653$$.
+**A:** Key:
+1. Count: $$X \sim \text{Poisson}(0.3 \times 6 = 1.8)$$, so $$P(X = 0) = e^{-1.8}$$.
+2. Wait: $$T \sim \text{Exp}(0.3)$$, so $$P(T > 6) = e^{-0.3 \times 6} = e^{-1.8}$$.
+3. Both equal 0.1653.
+4. They agree because no earthquake in 6 years and the first earthquake after year 6 are the same event.
+
+Count: $$X \sim \text{Poisson}(0.3 \times 6 = 1.8)$$, so $$P(X = 0) = e^{-1.8} = 0.1653$$.
 
 Wait: $$T \sim \text{Exp}(0.3)$$, so $$P(T > 6) = e^{-0.3 \times 6} = e^{-1.8} = 0.1653$$.
 
@@ -2217,7 +3530,13 @@ They agree because "no earthquakes in 6 years" and "the first earthquake comes a
 
 ### Q: Felt earthquakes hit at 0.3 per year as a Poisson process, and one has just happened. Write the event "the 6th earthquake from now comes more than 20 years from now" as a statement about a Poisson count, name that count's distribution, and write the probability as a sum. Then write the complement event the same way. Give the value for checking only.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
-**A:** The 6th earthquake is more than 20 years away exactly when at most 5 earthquakes fall in the next 20 years. Let $$Y$$ be the count in 20 years, $$Y \sim \text{Poisson}(0.3 \times 20 = 6)$$.
+**A:** Key:
+1. The 6th earthquake is more than 20 years away exactly when at most 5 fall in the next 20 years: $$P(W_6 > 20) = P(Y \le 5)$$.
+2. $$Y \sim \text{Poisson}(0.3 \times 20 = 6)$$.
+3. $$P(Y \le 5) = \sum_{y = 0}^{5} \frac{e^{-6} \times 6^y}{y!} = 0.4457$$.
+4. The complement is $$P(Y \ge 6) = 1 - 0.4457 = 0.5543$$.
+
+The 6th earthquake is more than 20 years away exactly when at most 5 earthquakes fall in the next 20 years. Let $$Y$$ be the count in 20 years, $$Y \sim \text{Poisson}(0.3 \times 20 = 6)$$.
 
 $$
 \begin{aligned}
@@ -2231,7 +3550,13 @@ The complement, "the 6th earthquake comes within 20 years", is $$P(Y \ge 6) = 1 
 
 ### Q: Recurrence intervals are exponential with an annual rate of 0.2403. A classmate writes two lines: "$$P(T < 10 \text{ months}) = 1 - e^{-0.2403 \times 10} = 0.9096$$" and "$$P(T > 5) = 1 - e^{-0.2403 \times 5} = 0.699$$". Find the error in each and give the correct values.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** critique
-**A:** The first line uses 10 with a rate that is per year, so it is the probability of an interval under 10 years. Ten months is $$\frac{10}{12}$$ years:
+**A:** Key:
+1. The first line puts 10 into a per-year rate, giving an interval under 10 years; 10 months is $$\frac{10}{12}$$ years.
+2. $$P\left(T < \frac{10}{12}\right) = 1 - e^{-0.2403 \times 0.833} = 0.1815$$.
+3. The second line uses the cdf for an upper tail; longer than 5 is one minus the cdf.
+4. $$P(T > 5) = e^{-0.2403 \times 5} = 0.301$$.
+
+The first line uses 10 with a rate that is per year, so it is the probability of an interval under 10 years. Ten months is $$\frac{10}{12}$$ years:
 
 $$
 P\left(T < \frac{10}{12}\right) = 1 - e^{-0.2403 \times 0.833} = 0.1815
@@ -2245,7 +3570,12 @@ $$
 
 ### Q: Felt earthquakes hit at 0.3 per year as a Poisson process. Three years have passed with none. Find the probability that the next 2 years also have none, using the definition of conditional probability, and compare it with the unconditional probability of a quiet 2-year stretch.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
-**A:** Let $$T$$ be the wait from the start. "None in the next 2 years, given none in the first 3" is $$T > 5$$ given $$T > 3$$.
+**A:** Key:
+1. None in the next 2 given none in the first 3 is $$P(T > 5 \mid T > 3) = \frac{P(T > 5)}{P(T > 3)}$$.
+2. $$\frac{e^{-1.5}}{e^{-0.9}} = e^{-0.6} = 0.5488$$.
+3. The unconditional $$P(T > 2) = e^{-0.6}$$ is the same number: the three quiet years do not change the chance.
+
+Let $$T$$ be the wait from the start. "None in the next 2 years, given none in the first 3" is $$T > 5$$ given $$T > 3$$.
 
 $$
 \begin{aligned}
@@ -2259,7 +3589,13 @@ The unconditional $$P(T > 2) = e^{-0.6}$$ is the same number: the three quiet ye
 
 ### Q: Customers reach a counter as a Poisson process, and the time between arrivals averages 2.5 minutes. (a) Give the rate per minute and the distribution of the time between arrivals. (b) Find the probability that the next customer arrives within 1 minute. (c) Find the expected number of arrivals in 10 minutes and the probability of exactly 4 in 10 minutes.
 **Topic:** 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width)  **Lec:** 19  **Type:** apply
-**A:** (a) The mean wait is $$\frac{1}{\lambda} = 2.5$$, so $$\lambda = 0.4$$ per minute and $$T \sim \text{Exp}(0.4)$$.
+**A:** Key:
+1. (a) The mean wait is $$\frac{1}{\lambda} = 2.5$$, so $$\lambda = 0.4$$ per minute and $$T \sim \text{Exp}(0.4)$$.
+2. (b) $$P(T \le 1) = 1 - e^{-0.4} = 0.3297$$.
+3. (c) The count in 10 minutes is $$X \sim \text{Poisson}(0.4 \times 10 = 4)$$, so $$E(X) = 4$$.
+4. $$P(X = 4) = \frac{e^{-4} \times 4^4}{4!} = 0.1954$$.
+
+(a) The mean wait is $$\frac{1}{\lambda} = 2.5$$, so $$\lambda = 0.4$$ per minute and $$T \sim \text{Exp}(0.4)$$.
 
 (b)
 
@@ -2277,7 +3613,13 @@ The miss to avoid is using 2.5 as the rate, which gives $$1 - e^{-2.5}$$ in (b).
 
 ### Q: Which distribution fits each count, with what parameters, and what single fact about the setup decides it? Tiles in a box of 40 are cracked with probability 0.03, independently. (a) The number of cracked tiles in one box. (b) The number of boxes opened until the first box that has at least one cracked tile. (c) Potholes occur along a highway at 1.5 per km; the number of potholes in a 2 km stretch. (d) The distance driven from a pothole to the next one. (e) The morning wait for a bus is exponential with mean 8 minutes; the number of the next 5 mornings on which the wait exceeds 10 minutes.
 **Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) $$\text{Bin}(40, 0.03)$$: a fixed number of trials and a count of successes.
+2. (b) $$\text{Geo}(p)$$ with $$p = 1 - 0.97^{40} = 0.704$$: boxes until the first box with a cracked tile.
+3. (c) $$\text{Poisson}(1.5 \times 2 = 3)$$: events at a rate over a region with no fixed number of trials.
+4. (d) $$\text{Exp}(1.5)$$ per km: the gap until the next event of a Poisson process.
+5. (e) $$\text{Bin}(5, p)$$ with $$p = P(T > 10) = e^{-10/8} = 0.2865$$: five fixed trials.
+
 - (a) $$\text{Bin}(40, 0.03)$$: a fixed number of trials and a count of successes.
 - (b) $$\text{Geo}(p)$$ with $$p = 1 - 0.97^{40} = 0.704$$: trials until the first success, where one trial is one box and its success probability comes from (a).
 - (c) $$\text{Poisson}(1.5 \times 2 = 3)$$: events at a rate over a region with no fixed number of trials.
@@ -2286,7 +3628,13 @@ The miss to avoid is using 2.5 as the rate, which gives $$1 - e^{-2.5}$$ in (b).
 
 ### Q: Three counts: (a) the number of sixes in 10 rolls of a fair die, (b) the number of rolls until the first six, (c) the number of typos on a page when typos fall at 0.8 per page. Name each distribution and give its mean and variance. Which count has no upper limit, and which has a mean equal to its variance?
 **Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
-**A:**
+**A:** Key:
+1. (a) $$\text{Bin}(10, \frac{1}{6})$$: mean $$\frac{10}{6} = 1.667$$, variance $$10 \times \frac{1}{6} \times \frac{5}{6} = 1.389$$.
+2. (b) $$\text{Geo}(\frac{1}{6})$$: mean 6, variance $$\frac{5/6}{(1/6)^2} = 30$$.
+3. (c) $$\text{Poisson}(0.8)$$: mean 0.8, variance 0.8.
+4. The Geometric and the Poisson have no upper limit; the Binomial stops at 10.
+5. Only the Poisson has its mean equal to its variance.
+
 - (a) $$\text{Bin}(10, \frac{1}{6})$$: mean $$\frac{10}{6} = 1.667$$, variance $$10 \times \frac{1}{6} \times \frac{5}{6} = 1.389$$.
 - (b) $$\text{Geo}(\frac{1}{6})$$: mean $$6$$, variance $$\frac{5/6}{(1/6)^2} = 30$$.
 - (c) $$\text{Poisson}(0.8)$$: mean 0.8, variance 0.8.
@@ -2295,11 +3643,23 @@ The Geometric and the Poisson have no upper limit; the Binomial stops at 10. Onl
 
 ### Q: A classmate models the number of customers arriving at a shop in an hour as $$\text{Bin}(60, p)$$, with $$p$$ the chance that a customer arrives in any given minute. What does this model get wrong about arrivals, which model fits better, and when do the two models agree?
 **Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** critique
-**A:** The Binomial caps the count at 60 and allows at most one arrival per minute, but two customers can arrive in the same minute and there is no fixed number of trials. Arrivals at a constant rate with independent non-overlapping intervals are a Poisson process, so the hourly count is $$\text{Poisson}(\lambda)$$ with $$\lambda$$ the hourly rate. The two agree when $$n$$ is large and $$p$$ small, which is the Poisson approximation to the Binomial run in reverse: $$\text{Bin}(60, p)$$ is close to $$\text{Poisson}(60p)$$ when $$60p < 5$$.
+**A:** Key:
+1. The Binomial caps the count at 60 and allows at most one arrival per minute, but two customers can arrive in the same minute.
+2. A Poisson process fits better: the hourly count is $$\text{Poisson}(\lambda)$$ with $$\lambda$$ the hourly rate.
+3. They agree when $$n$$ is large and $$p$$ small: $$\text{Bin}(60, p)$$ is close to $$\text{Poisson}(60p)$$ when $$60p < 5$$.
+
+The Binomial caps the count at 60 and allows at most one arrival per minute, but two customers can arrive in the same minute and there is no fixed number of trials. Arrivals at a constant rate with independent non-overlapping intervals are a Poisson process, so the hourly count is $$\text{Poisson}(\lambda)$$ with $$\lambda$$ the hourly rate. The two agree when $$n$$ is large and $$p$$ small, which is the Poisson approximation to the Binomial run in reverse: $$\text{Bin}(60, p)$$ is close to $$\text{Poisson}(60p)$$ when $$60p < 5$$.
 
 ### Q: A machine's parts fail as a Poisson process at 0.02 per hour. For each question name the model and write the probability: (a) at least one failure in an 8-hour shift; (b) the first failure is more than 100 hours away; (c) the number of the next 5 shifts with no failure, and the probability that all 5 are failure-free.
 **Topic:** 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts)  **Lec:** 19  **Type:** apply
-**A:** (a) The count in 8 hours is $$X \sim \text{Poisson}(0.02 \times 8 = 0.16)$$:
+**A:** Key:
+1. (a) $$X \sim \text{Poisson}(0.02 \times 8 = 0.16)$$, so $$P(X \ge 1) = 1 - e^{-0.16}$$.
+2. $$P(X \ge 1) = 0.1479$$.
+3. (b) $$T \sim \text{Exp}(0.02)$$, so $$P(T > 100) = e^{-0.02 \times 100} = e^{-2} = 0.1353$$.
+4. (c) A shift is failure-free with probability $$e^{-0.16} = 0.8521$$, so the count is $$Y \sim \text{Bin}(5, 0.8521)$$.
+5. $$P(Y = 5) = 0.8521^5 = 0.4493$$.
+
+(a) The count in 8 hours is $$X \sim \text{Poisson}(0.02 \times 8 = 0.16)$$:
 
 $$
 P(X \ge 1) = 1 - e^{-0.16} = 0.1479
@@ -2323,7 +3683,14 @@ which is also $$e^{-0.16 \times 5} = e^{-0.8}$$, no failure in 40 hours.
 
 ### Q: WeBWorK-style. Bulb lifetimes are exponential with mean 0.8 years. A tester records each bulb as a success when it lasts more than 1.2 years. Find (a) the probability that the first success is the 4th bulb, (b) the probability that the second success is the 7th bulb given that the first was the 2nd, and (c) the probability that the first success falls on an odd-numbered bulb.
 **Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** WW6  **Type:** apply
-**A:** The per-bulb success probability comes from the exponential upper tail, and the count of bulbs to a success is Geometric with that $$p$$.
+**A:** Key:
+1. The bulb count to a success is Geometric with $$p = P(Y > 1.2) = e^{-1.2/0.8}$$.
+2. $$p = e^{-1.5} = 0.2231$$.
+3. (a) $$P(N = 4) = p(1 - p)^3 = 0.2231 \times 0.7769^3 = 0.105$$.
+4. (b) By independence the wait restarts after bulb 2, so the answer is $$p(1 - p)^4 = 0.081$$.
+5. (c) Summing the odd terms gives $$\frac{p}{1 - (1 - p)^2} = \frac{1}{2 - p} = 0.56$$.
+
+The per-bulb success probability comes from the exponential upper tail, and the count of bulbs to a success is Geometric with that $$p$$.
 
 $$
 \begin{aligned}
@@ -2357,7 +3724,13 @@ $$
 
 ### Q: WeBWorK-style. A help centre is built for at most 30 visitors a day. Daily visitors are Normal with mean 18 and variance 25. Find (a) the return period of an overloaded day, to the nearest day, and (b) the probability that the design number is not exceeded before the 8th day.
 **Topic:** 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail)  **Lec:** WW6  **Type:** apply
-**A:** An overloaded day is a success with probability $$p = P(X > 30)$$; the days until the first one are Geometric, and the return period is its mean $$\frac{1}{p}$$. The variance is 25, so $$\sigma = 5$$.
+**A:** Key:
+1. An overloaded day has $$p = P(X > 30) = P\left(Z > \frac{30 - 18}{5}\right)$$, and the days to the first one are Geometric.
+2. $$p = P(Z > 2.4) = 0.0082$$.
+3. (a) The return period is $$\frac{1}{p} = 122$$ days.
+4. (b) Days 1 to 7 must all be fine: $$P(N > 7) = (1 - p)^7 = 0.9918^7 = 0.944$$.
+
+An overloaded day is a success with probability $$p = P(X > 30)$$; the days until the first one are Geometric, and the return period is its mean $$\frac{1}{p}$$. The variance is 25, so $$\sigma = 5$$.
 
 $$
 \begin{aligned}
