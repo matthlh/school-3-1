@@ -159,6 +159,11 @@ def main():
         per_course[c["q"]["course"]] = per_course.get(c["q"]["course"], 0) + 1
         last_course, last_topic = c["q"]["course"], c["row"]["idx"]
     def pick_from(ok):
+        # Breadth first (Matt, 2026-11-01): every topic gets one question before any gets a second. Ranking by score
+        # alone let each X topic (180) take its 3 slots before any unquizzed topic (160) got one, so a 50-question
+        # session asked lectures 15-19 nothing.
+        fewest = min(per_topic.get(c["row"]["idx"], 0) for c in ok)
+        ok = [c for c in ok if per_topic.get(c["row"]["idx"], 0) == fewest]
         pref = [c for c in ok if c["q"]["course"] != last_course] or ok
         pref = [c for c in pref if c["row"]["idx"] != last_topic] or pref
         c = pref[0]

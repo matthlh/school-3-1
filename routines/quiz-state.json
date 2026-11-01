@@ -603,6 +603,14 @@
     [
      "2026-09-19",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -845,6 +853,13 @@
     [
      "2026-10-09",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1
+     }
     ]
    ]
   },
@@ -885,6 +900,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -915,6 +938,13 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1
+     }
     ]
    ]
   },
@@ -935,6 +965,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 2,
+      "cause": "slow"
+     }
     ]
    ]
   },
@@ -955,6 +993,13 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 2
+     }
     ]
    ]
   },
@@ -1005,6 +1050,13 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
     ]
    ]
   },
@@ -1045,6 +1097,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1055,6 +1115,13 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
     ]
    ]
   },
@@ -1085,6 +1152,13 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
     ]
    ]
   },
@@ -1095,6 +1169,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1135,6 +1217,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1145,6 +1235,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1155,6 +1253,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1175,6 +1281,14 @@
     [
      "2026-10-10",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1215,6 +1329,13 @@
     [
      "2026-10-11",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1
+     }
     ]
    ]
   },
@@ -1245,6 +1366,13 @@
     [
      "2026-10-11",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1
+     }
     ]
    ]
   },
@@ -1265,6 +1393,14 @@
     [
      "2026-10-13",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1295,6 +1431,14 @@
     [
      "2026-10-13",
      "X"
+    ],
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 2,
+      "cause": "concept"
+     }
     ]
    ]
   },
@@ -1398,6 +1542,427 @@
    "history": [
     [
      "2026-10-15",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "731c3506": {
+   "course": "STAT251",
+   "topic": "2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)",
+   "history": [
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 3,
+      "cause": "slow"
+     }
+    ]
+   ]
+  },
+  "7770ae5b": {
+   "course": "CPSC310",
+   "topic": "Coupling & connascence",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "a41ad4c4": {
+   "course": "ASIA250",
+   "topic": "Vedic religion: gods, sacrifice, karma and the castes",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1
+     }
+    ]
+   ]
+  },
+  "f3906211": {
+   "course": "STAT251",
+   "topic": "2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "847e15c1": {
+   "course": "STAT251",
+   "topic": "2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "c1c74baa": {
+   "course": "STAT251",
+   "topic": "2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 2
+     }
+    ]
+   ]
+  },
+  "d8d42f95": {
+   "course": "STAT251",
+   "topic": "2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3,
+      "score": "4/5"
+     }
+    ]
+   ]
+  },
+  "c2544e87": {
+   "course": "STAT251",
+   "topic": "2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "4d7a4d93": {
+   "course": "STAT251",
+   "topic": "2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "7bf46112": {
+   "course": "STAT251",
+   "topic": "2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "bb93b8e2": {
+   "course": "STAT251",
+   "topic": "2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 3,
+      "cause": "misread"
+     }
+    ]
+   ]
+  },
+  "007c99be": {
+   "course": "STAT251",
+   "topic": "3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)",
+   "history": [
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 2,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "5ae30032": {
+   "course": "CPSC310",
+   "topic": "Three fluencies",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "af2cee3d": {
+   "course": "STAT251",
+   "topic": "3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "29021105": {
+   "course": "STAT251",
+   "topic": "3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)",
+   "history": [
+    [
+     "2026-11-01",
+     "~",
+     {
+      "conf": 1,
+      "cause": "careless"
+     }
+    ]
+   ]
+  },
+  "947ca0ec": {
+   "course": "CPSC310",
+   "topic": "Refactoring",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "90f84ef4": {
+   "course": "CPSC310",
+   "topic": "Emergent design and technical debt",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "71fce2b5": {
+   "course": "STAT251",
+   "topic": "3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0)",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "03f07b6f": {
+   "course": "STAT251",
+   "topic": "3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "5344166f": {
+   "course": "ASIA250",
+   "topic": "Buddhism as a world religion and the early schools (arhat vs bodhisattva)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "63c0811a": {
+   "course": "ASIA250",
+   "topic": "The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "9c21dfa9": {
+   "course": "CPSC310",
+   "topic": "Coupling & connascence",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "f3d85495": {
+   "course": "CPSC310",
+   "topic": "Cohesion & bindings",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 3
+     }
+    ]
+   ]
+  },
+  "fefb8722": {
+   "course": "STAT251",
+   "topic": "3p Z-scores and standard Normal calculations (z = (x - μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "7d951827": {
+   "course": "STAT251",
+   "topic": "3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "c217f9f6": {
+   "course": "STAT251",
+   "topic": "3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "1cadc400": {
+   "course": "CPSC310",
+   "topic": "Three fluencies",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 1
+     }
+    ]
+   ]
+  },
+  "f4487197": {
+   "course": "ASIA250",
+   "topic": "Hindu philosophy and bhakti (Upanishads to Krishna)",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "c390c051": {
+   "course": "ASIA250",
+   "topic": "Vedic religion: gods, sacrifice, karma and the castes",
+   "history": [
+    [
+     "2026-11-01",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept"
+     }
+    ]
+   ]
+  },
+  "5aac9364": {
+   "course": "CPSC310",
+   "topic": "Test doubles and LSP substitutability",
+   "history": [
+    [
+     "2026-11-01",
+     "O",
+     {
+      "conf": 1
+     }
+    ]
+   ]
+  },
+  "3fd3e517": {
+   "course": "ASIA250",
+   "topic": "Hindu philosophy and bhakti (Upanishads to Krishna)",
+   "history": [
+    [
+     "2026-11-01",
      "X",
      {
       "conf": 1,
@@ -2480,6 +3045,314 @@
      7,
      "8a654b79",
      "PHIL385",
+     "X"
+    ]
+   ]
+  },
+  {
+   "date": "2026-11-01",
+   "mode": "quiz",
+   "n": 50,
+   "note": "",
+   "results": [
+    [
+     1,
+     "e8d8c7f3",
+     "STAT251",
+     "O"
+    ],
+    [
+     2,
+     "e295ab93",
+     "STAT251",
+     "O"
+    ],
+    [
+     3,
+     "05550eaa",
+     "CPSC310",
+     "X"
+    ],
+    [
+     4,
+     "2f78e1ec",
+     "CPSC310",
+     "O"
+    ],
+    [
+     5,
+     "0f687b02",
+     "ASIA250",
+     "X"
+    ],
+    [
+     6,
+     "79f25f70",
+     "ASIA250",
+     "X"
+    ],
+    [
+     7,
+     "161bb3f5",
+     "STAT251",
+     "O"
+    ],
+    [
+     8,
+     "731c3506",
+     "STAT251",
+     "~"
+    ],
+    [
+     9,
+     "5e7a609c",
+     "CPSC310",
+     "~"
+    ],
+    [
+     10,
+     "7770ae5b",
+     "CPSC310",
+     "O"
+    ],
+    [
+     11,
+     "7ed01c1f",
+     "STAT251",
+     "~"
+    ],
+    [
+     12,
+     "a71ce3ca",
+     "ASIA250",
+     "X"
+    ],
+    [
+     13,
+     "a41ad4c4",
+     "ASIA250",
+     "X"
+    ],
+    [
+     14,
+     "46b2afa1",
+     "CPSC310",
+     "X"
+    ],
+    [
+     15,
+     "bb6cd534",
+     "CPSC310",
+     "~"
+    ],
+    [
+     16,
+     "f3906211",
+     "STAT251",
+     "X"
+    ],
+    [
+     17,
+     "847e15c1",
+     "STAT251",
+     "O"
+    ],
+    [
+     18,
+     "c1c74baa",
+     "STAT251",
+     "O"
+    ],
+    [
+     19,
+     "d8d42f95",
+     "STAT251",
+     "O"
+    ],
+    [
+     20,
+     "2851f580",
+     "ASIA250",
+     "X"
+    ],
+    [
+     21,
+     "70255757",
+     "CPSC310",
+     "X"
+    ],
+    [
+     22,
+     "c2544e87",
+     "STAT251",
+     "O"
+    ],
+    [
+     23,
+     "4d7a4d93",
+     "STAT251",
+     "O"
+    ],
+    [
+     24,
+     "ba2a18b0",
+     "CPSC310",
+     "X"
+    ],
+    [
+     25,
+     "7bf46112",
+     "STAT251",
+     "O"
+    ],
+    [
+     26,
+     "bb93b8e2",
+     "STAT251",
+     "X"
+    ],
+    [
+     27,
+     "9df5dc85",
+     "ASIA250",
+     "X"
+    ],
+    [
+     28,
+     "9c1e0d4a",
+     "STAT251",
+     "~"
+    ],
+    [
+     29,
+     "007c99be",
+     "STAT251",
+     "~"
+    ],
+    [
+     30,
+     "5ae30032",
+     "CPSC310",
+     "X"
+    ],
+    [
+     31,
+     "9e5cc436",
+     "ASIA250",
+     "X"
+    ],
+    [
+     32,
+     "af2cee3d",
+     "STAT251",
+     "O"
+    ],
+    [
+     33,
+     "29021105",
+     "STAT251",
+     "~"
+    ],
+    [
+     34,
+     "947ca0ec",
+     "CPSC310",
+     "X"
+    ],
+    [
+     35,
+     "90f84ef4",
+     "CPSC310",
+     "X"
+    ],
+    [
+     36,
+     "71fce2b5",
+     "STAT251",
+     "O"
+    ],
+    [
+     37,
+     "03f07b6f",
+     "STAT251",
+     "X"
+    ],
+    [
+     38,
+     "5344166f",
+     "ASIA250",
+     "X"
+    ],
+    [
+     39,
+     "63c0811a",
+     "ASIA250",
+     "X"
+    ],
+    [
+     40,
+     "9c21dfa9",
+     "CPSC310",
+     "X"
+    ],
+    [
+     41,
+     "f3d85495",
+     "CPSC310",
+     "O"
+    ],
+    [
+     42,
+     "fefb8722",
+     "STAT251",
+     "X"
+    ],
+    [
+     43,
+     "7d951827",
+     "STAT251",
+     "X"
+    ],
+    [
+     44,
+     "c217f9f6",
+     "STAT251",
+     "X"
+    ],
+    [
+     45,
+     "1cadc400",
+     "CPSC310",
+     "O"
+    ],
+    [
+     46,
+     "f4487197",
+     "ASIA250",
+     "X"
+    ],
+    [
+     47,
+     "c390c051",
+     "ASIA250",
+     "X"
+    ],
+    [
+     48,
+     "d761c912",
+     "CPSC310",
+     "X"
+    ],
+    [
+     49,
+     "5aac9364",
+     "CPSC310",
+     "O"
+    ],
+    [
+     50,
+     "3fd3e517",
+     "ASIA250",
      "X"
     ]
    ]

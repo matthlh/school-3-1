@@ -129,8 +129,10 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 - **Within a topic:** never-asked first, then last-missed, then stalest, plus a small bonus for the
   question types that course's exam rewards (CPSC 310 recall/critique · STAT 251 apply/derive ·
   PHIL 385 and ASIA 250 recall).
-- **Interleave:** within the quotas, never the same topic twice in a row, cap per topic =
-  max(3, n ÷ due topics); leftover slots go to the best remaining due questions, then *(ahead)* ones.
+- **Interleave:** within the quotas, breadth first: every topic gets one question before any topic gets a second
+  (Matt, 2026-11-01: a 50-question session had asked 24 topics, three questions each for the X ones, and nothing from
+  STAT 251 lectures 15–19). Never the same topic twice in a row, cap per topic = max(3, n ÷ due topics); leftover
+  slots go to the best remaining due questions, then *(ahead)* ones.
 - **Look-alikes** (Brunmair & Richter 2019: confusable topics side by side beat the same topics apart). Each
   course's `01-topics.md` ends with a `## Look-alikes` table, `| Topic | Look-alike | Why they get confused |`.
   When a picked question's topic has a look-alike with an eligible question not yet chosen, the best such question
@@ -243,6 +245,12 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-11-01 (breadth): the first 50-question session (an artifact page, graded from its saved taps) asked 24 topics
+  and none of STAT 251 lectures 15–19, because every X topic took its 3 slots before any unquizzed topic got one.
+  The picker now goes breadth first; the same pick on a copy covered 42 topics. Matt's calls from the session: 24 of
+  27 misses were material he had not studied yet (ASIA 250 unwatched, CPSC 310 never reviewed), and his confidence
+  was well calibrated (1 → 7% O, 3 → 80% O). The FSRS shadow trial ended undecided (31 scored reviews of about 1077
+  needed), so the ladder stays.
 - 2026-10-06 (mirror): grading no longer copies Last, Grade, Streak and Next into `01-topics.md` (Matt approved).
   The copy was lossy and had started to match rows of the new Look-alikes tables. Those columns are gone from the
   topic tables, so `ledger.md` is the only place a topic's status lives, and the site's Topics tab reads it there.

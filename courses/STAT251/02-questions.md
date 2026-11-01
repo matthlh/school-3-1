@@ -2840,11 +2840,11 @@ So $$E(N)$$ is 1 to the nearest whole number. A shortcut for the mean only: $$E(
 ### Q: $$f(x) = cx$$ for $$1 \le x \le 3$$ and 0 otherwise. (a) Find $$c$$ and check that $$f$$ is a pdf. (b) Find the cdf for every real $$x$$. (c) Find $$P(X > 2)$$ and $$P(1.5 < X < 2.5)$$ from the cdf. (d) Find the median and the IQR. (e) Find $$E(X)$$, $$\operatorname{Var}(X)$$ and $$\operatorname{SD}(X)$$.
 **Topic:** 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)  **Lec:** 9  **Type:** apply
 **A:** Steps:
-1. Total area 1 gives $$c$$. Integrate over the support only.
-2. The cdf integrates the pdf from the left end of the support up to $$x$$. It is 0 below the support and 1 above it.
-3. Probabilities are differences of $$F$$, and the endpoints do not matter.
-4. Each quantile solves $$F(x) = p$$. Keep the root inside $$[1, 3]$$.
-5. $$E(X)$$ and $$E(X^2)$$ are integrals against $$f$$, then the variance comes from the shortcut.
+1. (a) Set the total area to 1: $$\int_1^3 cx\,dx = 1$$, which gives $$c = \frac{1}{4}$$.
+2. (b) Integrate from the left end of the support: $$F(x) = \int_1^x \frac{t}{4}\,dt = \frac{x^2 - 1}{8}$$ on $$[1, 3]$$, with 0 below 1 and 1 above 3.
+3. (c) Use differences of $$F$$: $$P(X > 2) = 1 - F(2)$$ and $$P(1.5 < X < 2.5) = F(2.5) - F(1.5)$$.
+4. (d) Solve $$F(x) = p$$ for $$x$$, which gives $$x = \sqrt{8p + 1}$$, then put in $$p = 0.5$$, $$0.25$$ and $$0.75$$. The IQR is $$Q_3 - Q_1$$.
+5. (e) $$E(X) = \int_1^3 x \cdot \frac{x}{4}\,dx$$ and $$E(X^2) = \int_1^3 x^2 \cdot \frac{x}{4}\,dx$$, then $$\operatorname{Var}(X) = E(X^2) - E(X)^2$$.
 
 (a)
 
@@ -2857,7 +2857,15 @@ $$
 
 $$f(x) = \frac{x}{4} \ge 0$$ on $$[1, 3]$$ and its area is 1, so $$f$$ is a pdf.
 
-(b)
+(b) Integrate the pdf from 1 up to $$x$$:
+
+$$
+\begin{aligned}
+F(x) &= \int_1^x \frac{t}{4}\,dt \\
+&= \frac{t^2}{8}\Big|_1^x \\
+&= \frac{x^2 - 1}{8}
+\end{aligned}
+$$
 
 $$
 F(x) = \begin{cases}
@@ -2877,16 +2885,29 @@ P(1.5 < X < 2.5) &= F(2.5) - F(1.5) \\
 \end{aligned}
 $$
 
-(d) Solving $$\frac{x^2 - 1}{8} = p$$ gives $$x = \sqrt{8p + 1}$$.
+(d) A quantile is the $$x$$ where the cdf reaches $$p$$, so set $$F(x) = p$$ and solve:
 
 $$
 \begin{aligned}
-\text{median} &= \sqrt{5} \approx 2.236 \\
-Q_1 &= \sqrt{3} \approx 1.732 \\
-Q_3 &= \sqrt{7} \approx 2.646 \\
-\text{IQR} &\approx 2.646 - 1.732 = 0.914
+\frac{x^2 - 1}{8} &= p \\
+x^2 &= 8p + 1 \\
+x &= \sqrt{8p + 1}
 \end{aligned}
 $$
+
+The median, $$Q_1$$ and $$Q_3$$ are $$p = 0.5$$, $$0.25$$ and $$0.75$$. That is where the 5, 3 and 7 come from: $$8p + 1$$ is $$8(0.5) + 1 = 5$$, $$8(0.25) + 1 = 3$$ and $$8(0.75) + 1 = 7$$.
+
+$$
+\begin{aligned}
+m &= \sqrt{5} \approx 2.236 \\
+Q_1 &= \sqrt{3} \approx 1.732 \\
+Q_3 &= \sqrt{7} \approx 2.646 \\
+\text{IQR} &= 2.646 - 1.732 \\
+&= 0.914
+\end{aligned}
+$$
+
+Each root is inside $$[1, 3]$$, as a quantile must be. The negative roots are outside the support, so they are dropped.
 
 (e)
 
