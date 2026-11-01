@@ -2,7 +2,7 @@
 // The site never works out for itself what is due: every due, sweep and frozen mark comes from this block (parseDueBlock
 // in markdown.ts).
 import { useMemo } from 'react'
-import { examOnly, parseDueBlock, whenLabel, whenTitle, type DueBlock, type DueItem, type DueWhen, type FrozenGroup, type Readiness, type TopicRow } from './markdown'
+import { NOT_STUDIED, examOnly, parseDueBlock, whenLabel, whenTitle, type DueBlock, type DueItem, type DueWhen, type FrozenGroup, type Readiness, type TopicRow } from './markdown'
 import { daysBetween, formatDate, todayISO } from './dates'
 import { CourseChip, GradeChip, TopicCell } from './ui'
 import { usePager } from './Pager'
@@ -167,5 +167,6 @@ export function StandingCell({ s, next }: { s: Standing | null; next: string }) 
   if (s?.kind === 'frozen') {
     return <td className="standing" title={`Not due: ${examOnly(s.exam)} covered it and is past, and the course's next exam does not cover it.`}>frozen</td>
   }
+  if (next === NOT_STUDIED) return <td className="standing" title="He has not studied this lecture yet, so nothing is due until he has.">not studied</td>
   return <td className="standing">{next ? `next ${formatDate(next)}` : ''}</td>
 }

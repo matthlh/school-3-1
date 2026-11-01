@@ -44,7 +44,17 @@ the first line of any brief and a push notification (morning-check SKILL §4b).
    section, with the lecture's `**Lec:**` tag and a numbered Steps list opening its answer (Matt, 2026-10-05).
    For STAT 251 every worked example in the deck or the recording becomes a question, short or long, with the
    numbers changed.
-3. Add any new topic to `ledger.md` with `Next = today + 1` and to `courses/<CODE>/01-topics.md` (no status
+   **Every answer opens with its key** (Matt, 2026-11-01): `**A:** Key:`, then numbered one-line points, then a
+   blank line and the explanation. Point 1 is the core, the thing the question asks for (the verdict or the letter,
+   the name or date, or for a STAT 251 calculation the method with its numbers in, never the final number alone);
+   the rest are the other things a full-marks answer needs (the reason, each other part, the final value). One to
+   five points, each one checkable fact or step, inline math only. Sources, iClicker results and "the trap is"
+   asides stay in the explanation, never in the key. A long problem's Steps list is its key the same way.
+3. Add any new topic to `ledger.md` with `Next = today + 1` when he has studied the lecture (he attended and sent
+   notes, or says he has studied it), or with `not studied` when the page was prepared before he studied it (full
+   lecture prep, an ASIA 250 lecture he has not watched); a `not studied` topic is never due or picked until
+   `quiz_pick.py --studied <COURSE> <lec>` starts it on the day he says he has studied that lecture (Matt,
+   2026-11-01). Add it also to `courses/<CODE>/01-topics.md` (no status
    columns: the ledger is the only status copy; the topic's text starts with the ledger topic's words, a STAT 251
    one with its outcome codes), plus a `## Look-alikes` row there when it is easily confused with an existing
    topic. Then run `quiz_pick.py --due` (quiz-me scripts), which checks the new rows, look-alikes and tags (fix what
@@ -113,7 +123,10 @@ ahead that covers the topic; topics frozen after a non-cumulative exam are skipp
 covers). Look-alike topics (the `## Look-alikes` table in each `01-topics.md`) come back to back, and the day after
 a logged lecture the first session opens with 2 minutes of free recall. I ask one question at a time (Matt
 approved all of this on 2026-10-06):
-- He answers with a confidence of 1–3 ("B, 2"); a confident miss gets one line on why he was sure.
+- He answers with a confidence of 1–3 ("B, 2"); a confident miss gets one line on why he was sure. A right answer at
+  confidence 1 or 2 is a Good: its topic holds its rung instead of climbing.
+- He is graded against the answer's key: missing point 1 (the core) is `X`, the core with something else missing is
+  `~`, every point is `O`. A question he calls badly written is not graded (`-`) and gets rewritten the same day.
 - A miss gets a one-letter cause (c concept, f forgot, m misread, k careless, s slow) and comes back 2–3
   questions later until he gets it right; only the first try is graded.
 - An apply or derive question he last got right comes back as a variant with new numbers or code.
@@ -125,7 +138,7 @@ below, logs per-question history in `routines/quiz-state.json`, prints calibrati
 misses with his reasons, and names the topics
 that need more questions — write those before the session ends. **Never update ledger rows by hand; the script
 owns them.** `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone: each answer
-shows as a checklist of key points whose ticks set the grade, and "grade my deck" runs
+shows as the answer's key, a checklist whose ticks set the grade, and "grade my deck" runs
 `quiz_grade.py --transit <deck date>` on the taps. `--transit` stops while a deck from another day
 waits ungraded and when today's deck already exists; `--replace` is the only way past either (morning-check §7 step 1
 says when). `quiz_pick.py --sprint` is the STAT 251 "which method?" drill:
@@ -147,9 +160,10 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
 | `O` solid | 2 | +16 days |
 | `O` solid | 3+ | +35 days |
 
-The transit deck scores each card by the share of key points ticked (Matt, 2026-10-13): 100% is an Easy, an `O` that climbs the
-ladder as above; 80–99% is a Good, an `O` whose streak holds at its rung (`--score N 4/5` on `quiz_grade.py`); 50–79% is `~`; under
-50% is `X`.
+The deck and any artifact quiz grade each card by the same rule (Matt, 2026-11-01, replacing the 2026-10-13 share-of-points
+scores): he taps his confidence, which reveals the key; the core not ticked is `X`, the core with a point missing is `~`, every
+point is `O`, which climbs the ladder at confidence 3 and holds its rung (a Good) at 1 or 2. A Bad question tap leaves the card
+ungraded and lists it for me to rewrite at grading.
 
 Two adjustments follow the ladder. Next is never later than 4 days before the first exam at least 2 days away that
 covers the topic (the day before that exam once that day has passed), and a gap of 3 days or more moves up to 15% either way, at

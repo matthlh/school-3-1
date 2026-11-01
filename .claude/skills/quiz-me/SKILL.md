@@ -45,7 +45,11 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
      long as the others, shuffled and lettered. If a variant is due too, ask the variant instead.
 3. Grade, then one line of correction (for `X`, the full bank answer). Move on. Never reveal the
    answer early; "skip" / "idk" = `X`. Never coach mid-session — the attempt to recall it is the point.
-   - `O` = would score full marks on the exam · `~` = right idea, imprecise or missing a piece · `X` = wrong or blank.
+   - Grade against the answer's key (its `Key:` or `Steps:` list, CLAUDE.md step 2): the core (point 1) missing or
+     wrong is `X`, the core with another point missing is `~`, every point is `O`. Blank or "idk" is `X`. A right
+     answer at confidence 1 or 2 is still `O`; quiz_grade.py makes it a Good, which holds its topic's rung.
+   - **Bad question.** When he says a question or its key is wrong or ambiguous, grade it `-` (not assessed), fix it
+     in the bank before the session ends, and never count it as a miss (Matt, 2026-11-01).
    - **CPSC 310:** a correct answer with no reason is `~` until he gives the why. Ask "why?" once.
    - **STAT 251:** apply/derive needs the method, not the number. Right number, no method = `~`.
    - **Long problems** (flagged `long: steps only`; they sit under `## Long problems` in the bank): ask for the
@@ -96,6 +100,7 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | quiz me on STAT251 | `--course STAT251` (repeat the flag for several) |
 | quick quiz / 5 questions | `--n 5` (default 10, ~1 min each) |
 | what's due | `quiz_pick.py --due` — no session written |
+| "studied / watched <COURSE> lec N" | `quiz_pick.py --studied <COURSE> N` (several lectures or a range `5-7`): that lecture's `not studied` topics come due today. Nothing else starts them. |
 | how am I doing / weakest topics | `quiz_pick.py --report` |
 | exam ladder T-9…T-5 (term.py) | `--course CODE --all --n 15` — every topic but the frozen ones eligible, weighted by weakness |
 | T-4 | `--course CODE --all`, then ask only the X/~ topics the focus block names |
@@ -104,8 +109,9 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | STAT sprint / which method | `quiz_pick.py --sprint` — 10 short STAT 251 apply or derive questions by the usual priority, never a long problem (`--n` to change). It prints a clock of 18 s a question, 3 minutes for 10 (`SPRINT_SECONDS` in quiz_pick.py). Give him all the questions at once. For each one he names the distribution or rule and writes the first setup line, with no arithmetic, and sends them all when the clock runs out. Grade `O` (right method and setup line) or `X` (anything else, blank included), never `~`. Correct each `X` with the method from the bank answer, then plain `quiz_grade.py` as usual; the session's mode is `sprint`. |
 | transit deck | First grade any fully tapped deck ("grade my deck" below). Then `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers) and its own session file, `routines/transit-session.json`, which `quiz_grade.py --transit <deck date>` grades (the deck date is that file's `date`, the day it was picked, and the deck page saves its taps under the same date); rebuilds the Transit Deck artifact (morning-check skill §7). `--transit` stops in two cases: a deck from another day is waiting ungraded (a new deck would strand its taps), or today's deck already exists, graded or not (a second deck under the same date would mix its taps with the first's). `--replace` is the only way past either; morning-check §7 step 1 says when to use it. |
 | a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | Right after you quizzed him in this conversation, it grades that session: `quiz_grade.py "<paste>"`, a bare sequence in session order. A bare reply in a conversation where you did not just quiz him answers the transit deck: `quiz_grade.py --transit <deck date> "<paste>"`. The deck date is the `date` in `routines/transit-session.json`, and the deck's title shows the same day (`Transit deck — Tue Oct 6`). |
-| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `ArtifactData` with `action: "get"`, `collection: "grades"`, `doc_id` = the `date` in `routines/transit-session.json` (the deck page's fixed DATE_ID) and `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, run `quiz_grade.py --transit <doc_id> "<replyString>"` (the script refuses the session file if it holds another day's deck), then `ArtifactData` with `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and `if_version` = the `version` the get returned. If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
-| is FSRS better yet / the FSRS shadow trial (Oct 6 – Nov 1) | `fsrs_shadow.py` — read-only: replays `routines/quiz-state.json` through FSRS-6 with its default parameters beside the ladder, prints log loss, RMSE and a 5-bin calibration table for FSRS and the ladder baseline, then one verdict line, always last (the Sunday weekly brief quotes it). `--since YYYY-MM-DD` scores only reviews from that day on. The ladder keeps scheduling; Matt adopts FSRS only if it beats the ladder baseline. |
+| "artifact quiz N items" / "make a quiz page" | `quiz_pick.py --n N`, then `node ../../morning-check/scripts/build_transit_deck.mjs --date <today> --session routines/quiz-session.json --title "<Mon D> Review Quiz" --out <scratchpad>/review-quiz.html`, and publish it as a new artifact with `capabilities: {"db": {}}` and the session file beside it as `session.json` (so a later session can grade it with `--session`). "Grade it" reads `grades/<date>` from that artifact as for the deck below and runs plain `quiz_grade.py "<replyString>"` (`--date` if picked on an earlier day, `--session` with the artifact's `session.json` if `routines/quiz-session.json` is gone). The first one was 2026-11-01. |
+| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `ArtifactData` with `action: "get"`, `collection: "grades"`, `doc_id` = the `date` in `routines/transit-session.json` (the deck page's fixed DATE_ID) and `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, first rewrite each question the doc marks `flagged: true` (grade `-`), then run `quiz_grade.py --transit <doc_id> "<replyString>"` (the script refuses the session file if it holds another day's deck), then `ArtifactData` with `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and `if_version` = the `version` the get returned. If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
+| is FSRS better yet / the FSRS shadow trial (from Oct 6, running until it decides) | `fsrs_shadow.py` — read-only: replays `routines/quiz-state.json` through FSRS-6 with its default parameters beside the ladder, prints log loss, RMSE and a 5-bin calibration table for FSRS and the ladder baseline, then one verdict line, always last (the Sunday weekly brief quotes it). `--since YYYY-MM-DD` scores only reviews from that day on. The ladder keeps scheduling; Matt adopts FSRS only if it beats the ladder baseline. |
 
 A new quiz pick overwrites `routines/quiz-session.json`; its ungraded questions are simply not recorded. A new
 transit deck never replaces a waiting deck or today's deck unless `--replace` says so (the transit row above). If he
@@ -115,6 +121,11 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 ## What the scripts decide (don't second-guess them)
 - **Due.** A topic is due when its Next date is today or past, or when the exam-week sweep below pulls it in.
   A frozen topic is never due.
+- **Not studied** (Matt, 2026-11-01). A ledger row whose Next cell reads `not studied` is a lecture he has not studied
+  yet: never due, never picked (not even by `--all` or the sweep; `--topic` still can), and not counted as weak or
+  short of questions. The focus block counts them per course. `--studied <COURSE> <lec>` sets their Next to today.
+  Rows get it when a lecture is banked before he studies it (CLAUDE.md step 3); ASIA 250's 17 rows were set on
+  2026-11-01, when he said he had watched and read none of it.
 - **Topic priority** = due (100, plus 5 for each ladder interval it is late, up to 20) + grade (`X` 60 ·
   unquizzed 40 · `~` 30 · `O` 0), ×2 within 7 d of the first exam ahead that covers the topic (Exam scope below),
   ×1.5 within 14 d, ×1.25 within 21 d. A topic no exam ahead covers gets no boost. Not-due topics only fill
@@ -245,6 +256,16 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-11-01 (keys, not studied): after the 50-question session Matt had ChatGPT review the system and asked for the
+  valid parts. Done: every answer now opens with an explicit key whose first point is the core, and the grade
+  follows the core (X without it, ~ with a gap, O with everything) instead of the share of sentences ticked, which
+  had counted commentary like iClicker results as points; an O at confidence 1–2 holds its rung (`--score` gone); a
+  Bad question tap or "that question is wrong" grades `-` and gets the question rewritten (q37 was regraded that
+  way); topics he has not studied read `not studied` and stay out of the queue until `--studied`. Not done, on
+  purpose: a skill layer under topics (one-point-per-fact keys and per-question history give the same evidence),
+  a five-state model (repair is the leech flag, paused is frozen, learning is the X rung), a time-budgeted
+  review/repair/new mix (breadth-first plus not-studied covers it) and new exam rules (the cap and sweep already
+  re-ask a miss before the exam). The FSRS shadow trial keeps running until it decides.
 - 2026-11-01 (breadth): the first 50-question session (an artifact page, graded from its saved taps) asked 24 topics
   and none of STAT 251 lectures 15–19, because every X topic took its 3 slots before any unquizzed topic got one.
   The picker now goes breadth first; the same pick on a copy covered 42 topics. Matt's calls from the session: 24 of

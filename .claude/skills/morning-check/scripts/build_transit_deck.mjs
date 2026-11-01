@@ -1,9 +1,13 @@
 #!/usr/bin/env node
-// build_transit_deck.mjs — build routines/transit-deck.html from routines/transit-session.json (morning-check §7 step 2).
-//   node build_transit_deck.mjs --date 2026-10-07 --brief routines/runs/2026-10-07-brief.html [--session PATH] [--out PATH]
-// The page shows each answer as a checklist of key points (keyPoints below, copied from the skill) and the ticks set the
-// grade; it saves grades/<date> through the artifact db exactly as the O/~/X page did. --brief is an HTML fragment
-// (the brief sections) placed inside the Brief ↗ overlay. Publish the result with the Artifact tool at the fixed URL.
+// build_transit_deck.mjs — build a quiz page from a quiz_pick.py session: the morning transit deck (morning-check §7
+// step 2) and any quiz he asks for as an artifact.
+//   node build_transit_deck.mjs --date 2026-10-07 [--brief routines/runs/2026-10-07-brief.html] [--title "Transit Deck"]
+//                               [--session PATH] [--out PATH]
+// Each card: he answers in his head, taps how sure he is (1-3), which reveals the answer's rubric, its Key: list (a
+// short question) or its Steps: list (a long problem). The first point is the core. He ticks what his answer had:
+// core not ticked is X, every point ticked is O, anything between is ~ (Matt, 2026-11-01). A miss can take a cause, and
+// a Bad question flag takes a card out of grading. Every tap saves grades/<date> through the artifact db; reopening the
+// page restores the taps. --brief adds the Brief ↗ overlay (an HTML fragment). Publish the result with the Artifact tool.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,83 +16,17 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..', '..', '..');
 const args = Object.fromEntries(process.argv.slice(2).map((a, i, all) => a.startsWith('--') ? [a.slice(2), all[i + 1]] : []).filter(Boolean));
 const date = args.date || new Date().toISOString().slice(0, 10);
+const title = args.title || 'Transit Deck';
 const sessionPath = args.session || path.join(ROOT, 'routines', 'transit-session.json');
 const outPath = args.out || path.join(ROOT, 'routines', 'transit-deck.html');
 const { marked } = await import(path.join(ROOT, 'notes-app', 'node_modules', 'marked', 'lib', 'marked.esm.js'));
 marked.setOptions({ gfm: true, breaks: true });
 
-// --- key points (morning-check SKILL.md §7, copied exactly) ---
-function keyPoints(md) {
-  const units = [];
-  let para = null;
-  const flush = () => {
-    if (para) sentences(para.text).forEach((s, k) =>
-      units.push({ text: k ? s : para.num + s, block: false, item: para.item && !k }));
-    para = null;
-  };
-  const lines = md.split('\n');
-  for (let i = 0; i < lines.length; i++) {
-    const t = lines[i].trim();
-    const close = t.startsWith('```') ? '```' : t === '$$' ? '$$' : null;
-    if (close || t.startsWith('|')) {
-      flush();
-      let j = i;
-      if (close) do j++; while (j < lines.length && lines[j].trim() !== close);
-      else while (j + 1 < lines.length && lines[j + 1].trim().startsWith('|')) j++;
-      units.push({ text: lines.slice(i, j + 1).join('\n'), block: true, item: false });
-      i = j;
-    } else if (!t) flush();
-    else {
-      const m = t.match(/^(?:[-*+]|(\d+)[.)])\s+(.*)/);
-      if (m) { flush(); para = { text: m[2], num: m[1] ? m[1] + '. ' : '', item: true }; }
-      else if (para) para.text += ' ' + t;
-      else para = { text: t, num: '', item: false };
-    }
-  }
-  flush();
-  const out = [];
-  for (const u of units) {
-    const prev = out[out.length - 1];
-    if (prev && (/:$/.test(prev.text) || (!u.block && !u.item && /^\p{Ll}/u.test(u.text)))) {
-      prev.text += (prev.block || u.block ? '\n\n' : ' ') + u.text;
-      prev.block = prev.block || u.block;
-    } else out.push({ ...u });
-  }
-  return out.flatMap((u) => splitAligned(u.text));
-}
-// One value per key point (Matt, 2026-10-13): a display equation of several aligned rows becomes one point per row.
-// A row that starts with &= , &\\quad or &\\approx continues the row above it.
-function splitAligned(text) {
-  const m = text.match(/^([\s\S]*?)\$\$\s*\n\s*\\begin\{aligned\}([\s\S]*?)\\end\{aligned\}\s*\n\s*\$\$([\s\S]*)$/);
-  if (!m) return [text];
-  const rows = [];
-  for (const raw of m[2].split(/\\\\(?:\[[^\]]*\])?/)) {
-    const r = raw.trim();
-    if (!r) continue;
-    if (rows.length && /^&\s*(=|\\quad|\\approx|\\le|\\ge)/.test(r)) rows[rows.length - 1] += ' \\\\\n' + r;
-    else rows.push(r);
-  }
-  if (rows.length < 2) return [text];
-  const lead = m[1].trim();
-  const wrap = (r) => '$$\n\\begin{aligned}\n' + r + '\n\\end{aligned}\n$$';
-  const pts = rows.map(wrap);
-  if (lead) pts[0] = lead + '\n\n' + pts[0];
-  if (m[3].trim()) pts.push(m[3].trim());
-  return pts;
-}
-function sentences(text) {
-  const held = [];
-  const s = text.replace(/\$\$[\s\S]+?\$\$|`[^`]+`/g, (m) => `\u0000${held.push(m) - 1}\u0000`);
-  const out = [];
-  let from = 0;
-  for (const m of s.matchAll(/[.!?]["”’')\]*_]*(?=\s+(?:[\p{Lu}\d"“‘*_\u0000]|\((?:[a-hA-H]|[ivx]+|\d)\)))/gu)) {
-    const before = s.slice(0, m.index);
-    if (/(?:^|[\s"“‘(])\p{Lu}$/u.test(before) || /(?:^|[\s(])(?:e\.g|i\.e|vs|cf|pp?)$/i.test(before)) continue;
-    out.push(s.slice(from, m.index + m[0].length));
-    from = m.index + m[0].length;
-  }
-  out.push(s.slice(from));
-  return out.map((x) => x.trim().replace(/\u0000(\d+)\u0000/g, (_, n) => held[n])).filter(Boolean);
+// The rubric opens every bank answer: "Key:" (a short question) or "Steps:" (a long problem), then numbered one-line
+// points, then a blank line and the explanation. A question without one stops the build: fix the bank.
+function rubric(md) {
+  const m = md.match(/^(Key|Steps):\n((?:\d+\.\s.*(?:\n|$))+)\s*([\s\S]*)$/);
+  return m ? { points: m[2].trim().split('\n').map((l) => l.replace(/^\d+\.\s+/, '')), rest: m[3].trim() } : null;
 }
 
 // --- the three-step math order: $$ spans out, markdown, spans back (display spans with <br>) ---
@@ -111,19 +49,20 @@ const items = session.items || session;
 const tagOf = (c) => /STAT/.test(c) ? 'stat' : /CPSC/.test(c) ? 'cpsc' : /PHIL ?321/.test(c) ? 'phil321' : /PHIL/.test(c) ? 'phil385' : 'asia';
 const QUESTIONS = items.map((it, i) => {
   const course = (it.label || it.course || '').replace(/\s+/g, ' ').trim();
-  const points = keyPoints(it.a || '').map(render);
-  if (!points.length) { console.error(`item ${i + 1} (${course}) has no key points: fix the bank answer first`); process.exit(1); }
-  const q = { course, tag: tagOf(course), verb: it.type || it.verb || '', q: render(it.q_display || it.q || ''), points };
+  const r = rubric(it.a || '');
+  if (!r) { console.error(`item ${i + 1} (${course}, ${it.file}:${it.line}) has no Key: or Steps: list: fix the bank answer first`); process.exit(1); }
+  const q = { course, tag: tagOf(course), verb: it.type || '', q: render(it.q_display || it.q || ''), points: r.points.map(render),
+              long: !!it.long, work: r.rest ? render(r.rest) : '' };
   if (it.src_url) { q.src = it.src_url; q.srcTitle = it.src_title || 'Lecture notes'; }
   return q;
 });
 const courses = [...new Set(QUESTIONS.map((q) => q.course.replace(' ', '')))].join(' · ');
-const briefHtml = args.brief ? fs.readFileSync(path.resolve(ROOT, args.brief), 'utf8') : '<p class="hint">No brief attached.</p>';
+const brief = args.brief ? fs.readFileSync(path.resolve(ROOT, args.brief), 'utf8') : null;
 const niceDate = new Date(date + 'T12:00:00').toLocaleDateString('en-CA', { weekday: 'short', month: 'short', day: 'numeric' }).replace(/\.,?/g, '').replace(',', '');
-const head = fs.readFileSync(path.join(HERE, 'transit-deck.head.html'), 'utf8');
+const head = fs.readFileSync(path.join(HERE, 'transit-deck.head.html'), 'utf8').replace('<title>Transit Deck</title>', `<title>${title}</title>`);
 
 const body = `
-<button class="brief-btn mono" id="brief-open">Brief ↗</button>
+${brief ? '<button class="brief-btn mono" id="brief-open">Brief ↗</button>' : ''}
 
 <header>
   <div class="eyebrow">
@@ -131,32 +70,35 @@ const body = `
     <span class="mono" id="progress-label">1 / ${QUESTIONS.length}</span>
   </div>
   <div class="dots" id="dots"></div>
+  <div class="tally mono" id="tally"></div>
 </header>
 
 <main id="deck-main">
-  <div class="card" id="card" tabindex="0" role="button" aria-label="Tap to reveal answer">
+  <div class="card" id="card">
     <div class="card-inner" id="card-inner"></div>
   </div>
 </main>
 
 <nav id="deck-nav">
   <button class="nav-btn mono" id="prev-btn">← Prev</button>
-  <button class="nav-btn mono primary" id="next-btn">Reveal</button>
+  <button class="nav-btn mono primary" id="next-btn">Pick 1, 2 or 3</button>
 </nav>
 
 <div class="finish" id="finish" hidden>
-  <h1>Deck done</h1>
+  <h1>Done</h1>
   <p class="hint" id="sync-status">Saving your grades…</p>
+  <div class="tally mono" id="finish-tally"></div>
   <div id="grade-rows"></div>
+  <div id="flagged"></div>
   <div id="reread"></div>
   <div class="copy-box">
     <input class="copy-field mono" id="copy-field" readonly value="" />
     <button class="copy-btn mono" id="copy-btn">Copy</button>
   </div>
-  <p class="hint">Fallback only — if the save above worked, just tell Claude "grade my deck" next time and skip typing this.</p>
-  <button class="nav-btn mono" id="back-btn" style="align-self:flex-start;">← Back to deck</button>
+  <p class="hint">Only if the save failed: paste this line to Claude.</p>
+  <button class="nav-btn mono" id="back-btn" style="align-self:flex-start;">← Back</button>
 </div>
-
+${brief ? `
 <div class="brief-overlay" id="brief-overlay" hidden>
   <div class="brief-panel">
     <div class="brief-head">
@@ -166,9 +108,9 @@ const body = `
       </div>
       <button class="close-btn mono" id="brief-close" aria-label="Close brief">&#10005;</button>
     </div>
-${briefHtml}
+${brief}
   </div>
-</div>
+</div>` : ''}
 
 <script>
   // $$…$$ inside a line is inline math; a $$ … $$ span containing a line break (or <br>) is a display equation.
@@ -185,23 +127,32 @@ ${briefHtml}
     });
   }
   const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
-  // One item per session question: q and each key point are rendered markdown with the $$ spans kept for mathify.
+  // One item per session question: q, each point and the explanation are rendered markdown with $$ spans kept for mathify.
   const QUESTIONS = ${JSON.stringify(QUESTIONS, null, 1)};
   const DATE_ID = '${date}';
-  // Share of key points ticked → grade (Matt, 2026-10-13): 100% O (Easy), 80-99% O (Good, the ledger holds the streak),
-  // 50-79% ~ (Hard), under 50% X (Again). The exact count is saved beside the grade as score.
-  const gradeOf = (ticks) => { const r = ticks.filter(Boolean).length / ticks.length; return r >= 0.8 ? 'O' : r >= 0.5 ? '~' : 'X'; };
-  const levelOf = (ticks) => { const r = ticks.filter(Boolean).length / ticks.length; return r === 1 ? 'Easy' : r >= 0.8 ? 'Good' : r >= 0.5 ? 'Hard' : 'Again'; };
+  const N = QUESTIONS.length;
+  // The first point is the core (Matt, 2026-11-01): core not ticked is X, every point ticked is O, anything between is ~.
+  const gradeOf = (t) => (!t[0] ? 'X' : t.every(Boolean) ? 'O' : '~');
+  const CONFS = [[1, 'Guess'], [2, 'Think so'], [3, 'Sure']];
+  const CAUSES = [['c', 'concept'], ['f', 'forgot'], ['m', 'misread'], ['k', 'careless'], ['s', 'slow']];
 
   let idx = 0;
   let revealed = false;
-  const ticks = QUESTIONS.map((q) => Array(q.points.length).fill(false));
-  const shown = Array(QUESTIONS.length).fill(false);   // a card's grade exists once its answer was revealed
-  const gradeAt = (i) => (shown[i] ? gradeOf(ticks[i]) : null);
+  let ticks = QUESTIONS.map((q) => Array(q.points.length).fill(false));
+  const shown = Array(N).fill(false);     // a card has a grade once its answer was revealed
+  const conf = Array(N).fill(null);       // 1 guess, 2 think so, 3 sure, tapped before the answer shows
+  const cause = Array(N).fill(null);      // c f m k s, on a ~ or X
+  const flagged = Array(N).fill(false);   // Bad question: not graded, fixed by Claude at grading
+  const gradeAt = (i) => (flagged[i] ? '-' : shown[i] ? gradeOf(ticks[i]) : null);
+  const labelOf = (i) => { const g = gradeAt(i); return g === 'X' ? 'core missed' : g === '~' ? 'partial'
+    : g === 'O' ? (conf[i] === 3 ? 'right · climbs' : 'right · holds, you were not sure') : g === '-' ? 'not graded' : ''; };
+  // quiz_grade.py tokens: grade, confidence, then /cause on a ~ or X ("1:O3 2:X2/c 3:-").
+  const tokenAt = (i) => { const g = gradeAt(i); if (!g) return null; if (g === '-') return \`\${i + 1}:-\`;
+    return \`\${i + 1}:\${g}\${conf[i] || ''}\${g !== 'O' && cause[i] ? '/' + cause[i] : ''}\`; };
+  const buildReplyString = () => QUESTIONS.map((_, i) => tokenAt(i)).filter(Boolean).join(' ');
 
   const dotsEl = document.getElementById('dots');
   const progressLabel = document.getElementById('progress-label');
-  const cardEl = document.getElementById('card');
   const cardInner = document.getElementById('card-inner');
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
@@ -209,116 +160,165 @@ ${briefHtml}
   const deckNav = document.getElementById('deck-nav');
   const headerEl = document.querySelector('header');
   const finishEl = document.getElementById('finish');
-
   QUESTIONS.forEach(() => { const d = document.createElement('div'); d.className = 'dot'; dotsEl.appendChild(d); });
 
   let db = null;
-  let dbReady = (async () => {
+  const dbReady = (async () => {
     try { db = (window.claude && window.claude.use) ? await window.claude.use('db') : null; } catch (e) { db = null; }
     return db;
   })();
-
-  function buildReplyString() {
-    return QUESTIONS.map((_, i) => { const g = gradeAt(i); return g ? \`\${i + 1} \${g}\` : null; }).filter(Boolean).join(' ');
-  }
-
+  let restored = false;                   // nothing is saved until the saved doc, if any, has been read back
   async function persistGrades() {
     await dbReady;
-    if (!db) return false;
+    if (!db || !restored) return false;
     try {
       await db.doc(\`grades/\${DATE_ID}\`).set({
         date: DATE_ID,
-        items: QUESTIONS.map((item, i) => ({ idx: i + 1, course: item.course, grade: gradeAt(i), score: shown[i] ? ticks[i].filter(Boolean).length + '/' + ticks[i].length : null })),
+        items: QUESTIONS.map((item, i) => ({ idx: i + 1, course: item.course, grade: gradeAt(i), conf: conf[i],
+          cause: ['~', 'X'].includes(gradeAt(i)) ? cause[i] : null, flagged: flagged[i], ticks: ticks[i] })),
         replyString: buildReplyString(),
         updatedAt: new Date().toISOString(),
       });
       return true;
     } catch (e) { return false; }
   }
+  // Pick up where he left off: the saved doc holds every revealed card's ticks, confidence, cause and flag.
+  dbReady.then(async (d) => {
+    if (d) {
+      try {
+        const snap = await d.doc(\`grades/\${DATE_ID}\`).get();
+        if (snap.exists && !shown.some(Boolean) && !flagged.some(Boolean)) {
+          (snap.data().items || []).forEach((it, i) => {
+            if (i >= N || !it.grade) return;
+            flagged[i] = !!it.flagged; shown[i] = true; conf[i] = it.conf || null; cause[i] = it.cause || null;
+            if (Array.isArray(it.ticks) && it.ticks.length === ticks[i].length) ticks[i] = it.ticks.map(Boolean);
+          });
+          const next = shown.indexOf(false);
+          idx = next === -1 ? N - 1 : next; revealed = shown[idx];
+          renderCard();
+        }
+      } catch (e) { /* unreadable: start fresh, saving over it */ }
+    }
+    restored = true;
+  });
 
+  function renderTally(el) {
+    const gs = QUESTIONS.map((_, i) => gradeAt(i));
+    const n = (g) => gs.filter((x) => x === g).length;
+    el.innerHTML = \`<span><b>\${gs.filter(Boolean).length}</b>/\${N} done</span><span>O <b>\${n('O')}</b></span>\`
+      + \`<span>~ <b>\${n('~')}</b></span><span>X <b>\${n('X')}</b></span>\${n('-') ? \`<span>flagged <b>\${n('-')}</b></span>\` : ''}\`;
+  }
   function renderDots() {
     [...dotsEl.children].forEach((d, i) => {
       d.classList.toggle('active', i === idx);
-      d.classList.toggle('done', i < idx || (i === idx && shown[i]));
+      d.classList.toggle('done', !!gradeAt(i));
+      const g = gradeAt(i);
+      if (g) d.dataset.g = g; else delete d.dataset.g;
     });
+    renderTally(document.getElementById('tally'));
   }
 
   function renderCard() {
     const item = QUESTIONS[idx];
-    progressLabel.textContent = \`\${idx + 1} / \${QUESTIONS.length}\`;
+    progressLabel.textContent = \`\${idx + 1} / \${N}\`;
     renderDots();
+    const confName = conf[idx] ? CONFS[conf[idx] - 1][1] : '';
     let html = \`
-      <span class="tag \${item.tag}">\${item.course}</span>
-      <div class="q-num mono">Question \${idx + 1} <span class="verb">· \${item.verb}</span></div>
+      <span class="tag \${item.tag}">\${item.course}</span>\${item.long ? '<span class="long-badge mono">Steps only</span>' : ''}
+      <div class="q-num mono">Question \${idx + 1} <span class="verb">· \${item.verb}</span>\${revealed && confName ? \`<span class="conf-chip">· \${confName}</span>\` : ''}</div>
       <div class="q-text">\${mathify(item.q)}</div>
+      \${item.long ? '<div class="long-note">Give the method and the setup line for each part. Skip the arithmetic.</div>' : ''}
     \`;
     if (revealed) {
       const t = ticks[idx];
       html += \`
         <hr class="divider" />
-        <div class="points-label mono">Key points: tick each one your answer had</div>
-        <div class="score-bar" id="score-bar"><div class="score-fill" id="score-fill"></div></div>
-        <ul class="points" id="points">\${item.points.map((p, k) => \`
-          <li class="point\${t[k] ? ' ticked' : ''}" data-k="\${k}" role="checkbox" aria-checked="\${t[k]}"><span class="box">\${t[k] ? '✓' : ''}</span><div class="p-text">\${mathify(p)}</div></li>\`).join('')}
+        <div class="points-label mono">\${item.long ? 'Steps: tick each one you named with the right setup' : 'Key: tick each point your answer had'}</div>
+        <div class="score-bar"><div class="score-fill" id="score-fill"></div></div>
+        <ul class="points">\${item.points.map((p, k) => \`
+          <li class="point\${k === 0 ? ' core' : ''}\${t[k] ? ' ticked' : ''}" data-k="\${k}" role="checkbox" aria-checked="\${t[k]}"><span class="box">\${t[k] ? '✓' : ''}</span><div class="p-text">\${k === 0 && item.points.length > 1 ? '<span class="core-tag mono">Core: miss it and the card is X</span>' : ''}\${mathify(p)}</div></li>\`).join('')}
         </ul>
         <div class="tick-row"><div class="tick-count mono" id="tick-count"></div>
           <button class="mini-btn mono" id="tick-all">All</button><button class="mini-btn mono" id="tick-none">None</button></div>
+        <div id="cause-box"></div>
+        \${item.work ? \`<details class="work"><summary class="mono">\${item.long ? 'Full working' : 'Explanation'}</summary><div class="a-text">\${mathify(item.work)}</div></details>\` : ''}
         \${item.src ? \`<a class="src-link" href="\${esc(item.src)}" target="_blank" rel="noopener">\${esc(item.srcTitle || 'Lecture notes')}</a>\` : ''}
+        <button class="flag-btn mono\${flagged[idx] ? ' on' : ''}" id="flag-btn">\${flagged[idx] ? 'Flagged: not graded' : 'Bad question'}</button>
+        \${flagged[idx] ? '<div class="flag-note">This card is left out of your grades. Claude rewrites it when you say grade.</div>' : ''}
       \`;
     } else {
-      html += \`<div class="tap-hint">tap card to reveal answer</div>\`;
+      html += \`<div class="conf-label mono">Answer it in your head or on paper, then: how sure are you?</div>
+        <div class="conf-row">\${CONFS.map(([n, label]) => \`<button class="conf-btn mono" data-conf="\${n}"><b>\${n}</b>\${label}</button>\`).join('')}</div>\`;
     }
     cardInner.innerHTML = html;
     cardInner.scrollTop = 0;
     if (revealed) {
       renderCount();
-      const paint = () => cardInner.querySelectorAll('.point').forEach((li) => {
-        const on = ticks[idx][+li.dataset.k];
-        li.classList.toggle('ticked', on);
-        li.querySelector('.box').textContent = on ? '✓' : '';
-        li.setAttribute('aria-checked', on);
-      });
       cardInner.querySelectorAll('.point').forEach((li) => li.addEventListener('click', (e) => {
         if (e.target.closest('a')) return;
-        e.stopPropagation();
         const k = +li.dataset.k;
         ticks[idx][k] = !ticks[idx][k];
         if (navigator.vibrate) navigator.vibrate(8);
-        paint(); renderCount(); persistGrades();
+        li.classList.toggle('ticked', ticks[idx][k]);
+        li.querySelector('.box').textContent = ticks[idx][k] ? '✓' : '';
+        li.setAttribute('aria-checked', ticks[idx][k]);
+        renderCount(); persistGrades();
       }));
-      const setAll = (v) => (e) => { e.stopPropagation(); ticks[idx].fill(v); paint(); renderCount(); persistGrades(); };
+      const setAll = (v) => () => { ticks[idx].fill(v); renderCard(); persistGrades(); };
       document.getElementById('tick-all').addEventListener('click', setAll(true));
       document.getElementById('tick-none').addEventListener('click', setAll(false));
+      document.getElementById('flag-btn').addEventListener('click', () => { flagged[idx] = !flagged[idx]; renderCard(); persistGrades(); });
+    } else {
+      cardInner.querySelectorAll('.conf-btn').forEach((b) => b.addEventListener('click', () => reveal(+b.dataset.conf)));
     }
     prevBtn.disabled = idx === 0;
-    nextBtn.textContent = revealed ? (idx === QUESTIONS.length - 1 ? 'Finish →' : 'Next →') : 'Reveal';
+    nextBtn.disabled = !revealed;
+    nextBtn.textContent = revealed ? (idx === N - 1 ? 'Finish →' : 'Next →') : 'Pick 1, 2 or 3';
+  }
+  // A miss (~ or X) asks for its cause; the row goes away once the ticks reach O.
+  function renderCause() {
+    const box = document.getElementById('cause-box');
+    if (!box) return;
+    if (!['~', 'X'].includes(gradeAt(idx))) { box.innerHTML = ''; return; }
+    box.innerHTML = \`<div class="cause-label mono">Why the miss? (optional)</div>
+      <div class="cause-row">\${CAUSES.map(([c, w]) => \`<button class="cause-btn mono\${cause[idx] === c ? ' sel' : ''}" data-c="\${c}">\${c} · \${w}</button>\`).join('')}</div>\`;
+    box.querySelectorAll('.cause-btn').forEach((b) => b.addEventListener('click', () => {
+      cause[idx] = cause[idx] === b.dataset.c ? null : b.dataset.c;
+      renderCause(); persistGrades();
+    }));
   }
   function renderCount() {
     const el = document.getElementById('tick-count');
     if (!el) return;
     const t = ticks[idx];
     const n = t.filter(Boolean).length;
-    el.innerHTML = \`<b>\${n}</b> of \${t.length} ticked · <b>\${gradeOf(t)}</b> · \${levelOf(t)}\`;
+    el.innerHTML = flagged[idx] ? 'not graded' : \`<b>\${n}</b> of \${t.length} · <b>\${gradeOf(t)}</b> · \${labelOf(idx)}\`;
     const f = document.getElementById('score-fill');
     if (f) { f.style.width = (100 * n / t.length) + '%'; f.dataset.g = gradeOf(t); }
+    renderCause();
+    renderDots();
   }
 
-  function reveal() { revealed = true; shown[idx] = true; renderCard(); persistGrades(); }
+  function reveal(c) { conf[idx] = c; revealed = true; shown[idx] = true; renderCard(); persistGrades(); }
   function goNext() {
-    if (!revealed) { reveal(); return; }
-    if (idx < QUESTIONS.length - 1) { idx += 1; revealed = shown[idx]; renderCard(); }
+    if (!revealed) return;
+    if (idx < N - 1) { idx += 1; revealed = shown[idx]; renderCard(); }
     else showFinish();
   }
   function goPrev() { if (idx === 0) return; idx -= 1; revealed = shown[idx]; renderCard(); }
-
-  cardEl.addEventListener('click', () => { if (!revealed) goNext(); });
-  cardEl.addEventListener('keydown', (e) => {
-    if (e.target.closest('a')) return;
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (!revealed) goNext(); }
+  document.addEventListener('keydown', (e) => {
+    if (!finishEl.hidden || e.target.closest('input, a, button, summary')) return;
+    if (!revealed && ['1', '2', '3'].includes(e.key)) reveal(+e.key);
+    else if (e.key === 'ArrowRight') goNext();
+    else if (e.key === 'ArrowLeft') goPrev();
   });
   nextBtn.addEventListener('click', goNext);
   prevBtn.addEventListener('click', goPrev);
 
+  function backTo(i) {
+    finishEl.hidden = true; headerEl.hidden = false; deckMain.hidden = false; deckNav.hidden = false;
+    idx = i; revealed = shown[idx]; renderCard();
+  }
   async function showFinish() {
     deckMain.hidden = true; deckNav.hidden = true; headerEl.hidden = true; finishEl.hidden = false;
     const rowsEl = document.getElementById('grade-rows');
@@ -327,28 +327,30 @@ ${briefHtml}
       const row = document.createElement('div');
       row.className = 'grade-row';
       const g = gradeAt(i);
-      const chip = g ? \`<span class="hint mono" style="margin-right:6px">\${ticks[i].filter(Boolean).length}/\${ticks[i].length}</span><span class="g-btn sel" data-grade="\${g}" style="cursor:default;">\${g}</span>\` : \`<span class="hint">not revealed</span>\`;
-      row.innerHTML = \`<div class="gq"><span class="num mono">\${i + 1}.</span>\${item.course}</div><div class="grade-btns">\${chip}</div>\`;
+      const chip = g && g !== '-' ? \`<span class="hint mono" style="margin-right:6px">\${ticks[i].filter(Boolean).length}/\${ticks[i].length}</span><span class="g-btn sel" data-grade="\${g}" style="cursor:default;">\${g}</span>\`
+        : \`<span class="hint">\${g === '-' ? 'flagged' : 'not revealed'}</span>\`;
+      row.innerHTML = \`<div class="gq"><span class="num mono">\${i + 1}.</span>\${item.course}\${conf[i] ? \` <span class="hint mono">· conf \${conf[i]}\${['~', 'X'].includes(g) && cause[i] ? ' · ' + cause[i] : ''}</span>\` : ''}</div><div class="grade-btns">\${chip}</div>\`;
+      row.addEventListener('click', () => backTo(i));
       rowsEl.appendChild(row);
     });
+    renderTally(document.getElementById('finish-tally'));
     document.getElementById('copy-field').value = buildReplyString();
-    // Reread list: every card under 100%, with its notes page and the key points not ticked.
-    const reread = QUESTIONS.map((q, i) => ({ q, i })).filter(({ q, i }) => shown[i] && ticks[i].some((v) => !v));
-    const rr = document.getElementById('reread');
-    rr.innerHTML = reread.length ? '<h2 class="rr-h mono">Reread</h2>' + reread.map(({ q, i }) => \`
-      <div class="rr-card"><div class="rr-top"><span class="tag \${q.tag}">\${q.course}</span><span class="mono hint">\${ticks[i].filter(Boolean).length}/\${ticks[i].length} · \${levelOf(ticks[i])}</span></div>
+    const fl = QUESTIONS.map((q, i) => ({ q, i })).filter(({ i }) => flagged[i]);
+    document.getElementById('flagged').innerHTML = fl.length ? '<h2 class="rr-h mono">Flagged for Claude to fix</h2>'
+      + fl.map(({ q, i }) => \`<div class="rr-card"><span class="tag \${q.tag}">\${q.course}</span> <span class="mono hint">question \${i + 1}</span></div>\`).join('') : '';
+    // Reread: every graded card short of O, with its notes page and the points he did not tick.
+    const reread = QUESTIONS.map((q, i) => ({ q, i })).filter(({ i }) => ['~', 'X'].includes(gradeAt(i)));
+    document.getElementById('reread').innerHTML = reread.length ? '<h2 class="rr-h mono">Reread</h2>' + reread.map(({ q, i }) => \`
+      <div class="rr-card"><div class="rr-top"><span class="tag \${q.tag}">\${q.course}</span><span class="mono hint">\${ticks[i].filter(Boolean).length}/\${ticks[i].length} · \${labelOf(i)}</span></div>
         \${q.src ? \`<a class="src-link" style="margin:6px 0" href="\${esc(q.src)}" target="_blank" rel="noopener">\${esc(q.srcTitle || 'Lecture notes')}</a>\` : ''}
         <ul class="rr-list">\${q.points.map((p, k) => ticks[i][k] ? '' : \`<li class="p-text">\${mathify(p)}</li>\`).join('')}</ul></div>\`).join('') : '';
-    const statusEl = document.getElementById('sync-status');
+    const open = QUESTIONS.filter((_, i) => !gradeAt(i)).length;
     const saved = await persistGrades();
-    statusEl.textContent = saved ? 'Saved — next time just tell Claude "grade my deck".'
-                                 : "Couldn't save automatically — copy the line below and paste it in chat.";
+    document.getElementById('sync-status').textContent = (saved ? 'Saved. Tell Claude "grade it".' : "Couldn't save. Copy the line below and paste it to Claude.")
+      + (open ? \` \${open} cards are not revealed yet; tap a row to go back to one.\` : '');
   }
 
-  document.getElementById('back-btn').addEventListener('click', () => {
-    finishEl.hidden = true; headerEl.hidden = false; deckMain.hidden = false; deckNav.hidden = false;
-    idx = QUESTIONS.length - 1; revealed = shown[idx]; renderCard();
-  });
+  document.getElementById('back-btn').addEventListener('click', () => backTo(N - 1));
   document.getElementById('copy-btn').addEventListener('click', async () => {
     const val = buildReplyString();
     const btn = document.getElementById('copy-btn');
@@ -357,8 +359,8 @@ ${briefHtml}
     btn.textContent = 'Copied'; btn.classList.add('copied');
     setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1400);
   });
-  document.getElementById('brief-open').addEventListener('click', () => { document.getElementById('brief-overlay').hidden = false; });
-  document.getElementById('brief-close').addEventListener('click', () => { document.getElementById('brief-overlay').hidden = true; });
+  ${brief ? `document.getElementById('brief-open').addEventListener('click', () => { document.getElementById('brief-overlay').hidden = false; });
+  document.getElementById('brief-close').addEventListener('click', () => { document.getElementById('brief-overlay').hidden = true; });` : ''}
 
   renderCard();
 </script>

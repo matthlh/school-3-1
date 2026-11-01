@@ -1793,19 +1793,6 @@
     ]
    ]
   },
-  "03f07b6f": {
-   "course": "STAT251",
-   "topic": "3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F)",
-   "history": [
-    [
-     "2026-11-01",
-     "X",
-     {
-      "conf": 3
-     }
-    ]
-   ]
-  },
   "5344166f": {
    "course": "ASIA250",
    "topic": "Buddhism as a world religion and the early schools (arhat vs bodhisattva)",
@@ -3052,8 +3039,8 @@
   {
    "date": "2026-11-01",
    "mode": "quiz",
-   "n": 50,
-   "note": "",
+   "n": 49,
+   "note": "q37 not assessed: its answer key was badly written (fixed the same day)",
    "results": [
     [
      1,
@@ -3270,12 +3257,6 @@
      "71fce2b5",
      "STAT251",
      "O"
-    ],
-    [
-     37,
-     "03f07b6f",
-     "STAT251",
-     "X"
     ],
     [
      38,

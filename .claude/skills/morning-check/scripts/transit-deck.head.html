@@ -536,5 +536,38 @@
   .tick-count { font-size: 13px; color: var(--text-dim); }
   .tick-count b { color: var(--text); }
 </style>
+<style>
+  /* 2026-11-01: confidence before the answer, the core point, a Bad question flag, and a progress bar that fits 50 cards. */
+  .dots { gap: 2px; }
+  .dot { flex: 1; min-width: 0; width: auto; height: 6px; }
+  .dot[data-g="O"] { background: var(--stat); }
+  .dot[data-g="~"] { background: var(--accent); }
+  .dot[data-g="X"] { background: var(--cpsc); }
+  .dot[data-g="-"] { background: var(--text-dim); opacity: 0.4; }
+  .dot.active { outline: 2px solid var(--text); outline-offset: 1px; }
+  .tally { font-size: 12px; color: var(--text-dim); display: flex; gap: 12px; flex-wrap: wrap; }
+  .tally b { color: var(--text); font-weight: 600; }
+  .long-badge { display: inline-block; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 8px; margin-left: 6px; }
+  .long-note { font-size: 13px; color: var(--text-dim); margin-top: 8px; font-style: italic; }
+  .conf-label, .cause-label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); margin-top: 14px; }
+  .conf-row, .cause-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .conf-btn { flex: 1; min-width: 0; font-size: 13px; padding: 12px 6px; border-radius: 10px; border: 1px solid var(--surface-line); background: var(--bg); color: var(--text); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .conf-btn b { font-size: 17px; }
+  .conf-btn:hover { border-color: var(--accent); }
+  .conf-chip { font-size: 12px; color: var(--text-dim); margin-left: 6px; }
+  .cause-btn { font-size: 12px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--surface-line); background: var(--bg); color: var(--text-dim); cursor: pointer; }
+  .cause-btn.sel { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .point.core { border-width: 2px; }
+  .core-tag { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 2px; }
+  details.work { margin-top: 12px; border-top: 1px solid var(--surface-line); padding-top: 10px; }
+  details.work summary { cursor: pointer; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+  details.work .a-text { font-size: 15px; line-height: 1.55; overflow-x: auto; }
+  details.work table { border-collapse: collapse; font-size: 13px; margin: 6px 0; }
+  details.work td, details.work th { border: 1px solid var(--surface-line); padding: 3px 7px; }
+  .flag-btn { align-self: flex-start; font-size: 12px; padding: 7px 12px; border-radius: 8px; border: 1px dashed var(--surface-line); background: transparent; color: var(--text-dim); cursor: pointer; }
+  .flag-btn.on { border-style: solid; border-color: var(--cpsc); color: var(--cpsc); }
+  .flag-note { font-size: 13px; color: var(--cpsc); }
+  .grade-row { cursor: pointer; }
+</style>
 </head>
 <body>

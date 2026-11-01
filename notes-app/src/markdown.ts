@@ -117,6 +117,9 @@ export interface TopicRow {
 }
 
 /** Rows of `## All topics` — course codes normalised ("STAT 251" → "STAT251"). */
+/** A ledger Next cell for a lecture he has not studied yet: never due until quiz_pick.py --studied gives it a date. */
+export const NOT_STUDIED = 'not studied'
+
 export function parseLedgerTopics(md: string): TopicRow[] {
   const sec = extractSection(md, /^all topics/i)
   if (!sec) return []
@@ -129,7 +132,7 @@ export function parseLedgerTopics(md: string): TopicRow[] {
     rows.push({
       course: cells[0].replace(/\s+/g, ''), topic: cells[1], lec: cells[2], last: cells[3],
       grade: g === 'X' || g === '~' || g === 'O' ? g : null,
-      streak: parseInt(cells[5], 10) || 0, next: /^\d{4}-\d{2}-\d{2}$/.test(cells[6]) ? cells[6] : '',
+      streak: parseInt(cells[5], 10) || 0, next: /^\d{4}-\d{2}-\d{2}$/.test(cells[6]) || cells[6] === NOT_STUDIED ? cells[6] : '',
     })
   }
   return rows

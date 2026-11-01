@@ -6,7 +6,7 @@ Rows whose Next is on or before today are due.
 
 <!-- due as of 2026-11-01 -->
 
-_50 topics due as of Sun Nov 1. Say **quiz me**._
+_39 topics due as of Sun Nov 1. Say **quiz me**._
 
 - CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 35 d · last unquizzed
 - STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 33 d · last unquizzed
@@ -15,13 +15,7 @@ _50 topics due as of Sun Nov 1. Say **quiz me**._
 - CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 30 d · last unquizzed
 - STAT 251 · 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) · overdue 29 d · last unquizzed
 - STAT 251 · 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) · overdue 29 d · last unquizzed
-- ASIA 250 · Shramanas against the Vedas: Buddha, Mahavira and asceticism · overdue 26 d · last unquizzed
-- ASIA 250 · Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds · overdue 26 d · last unquizzed
-- ASIA 250 · Renunciation and the path to awakening (deeds 7–9) · overdue 26 d · last unquizzed
-- ASIA 250 · Awakening, teaching and death (deeds 10–12) · overdue 26 d · last unquizzed
 - CPSC 310 · Design patterns I: Adapter and Composite (four-step analysis: change, pain, mechanism, cost · scattered is coupling, tangled is cohesion · mechanism from abstraction, obliviousness, trigger · when patterns help or hurt · Adapter: one interface per client, gain in degree · Composite: component, leaf, composite; cheap new node, costly new operation) · overdue 25 d · last unquizzed
-- ASIA 250 · Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology · overdue 24 d · last unquizzed
-- ASIA 250 · The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules · overdue 24 d · last unquizzed
 - STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 24 d · last unquizzed
 - CPSC 310 · Design patterns II: Decorator (adds behaviour to one object at run time, not to the class · a decorator is a component and has a component · the caller asks the outermost wrapper and each wrapper changes the answer of what it wraps · costs: one class per add-on, order changes the result, long chains, identity and instanceof · java.io streams · composition over inheritance · Adapter changes the interface, Decorator the behaviour, Composite holds many) · overdue 23 d · last unquizzed
 - STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · overdue 23 d · last unquizzed
@@ -34,8 +28,6 @@ _50 topics due as of Sun Nov 1. Say **quiz me**._
 - STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 40 d · last ~
 - CPSC 310 · Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) · overdue 11 d · last unquizzed
 - CPSC 310 · API design and change severity (information hiding · obliviousness · easy to use, hard to misuse · contract completeness · start with the task · APIs are forever · MAJOR, MINOR, PATCH, NONE by what the client must do · semver and REST versioning from the reader) · overdue 11 d · last unquizzed
-- ASIA 250 · Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas · overdue 8 d · last unquizzed
-- ASIA 250 · Mahayana emptiness, skillful means and the great bodhisattvas · overdue 8 d · last unquizzed
 - STAT 251 · 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail) · overdue 8 d · last unquizzed
 - STAT 251 · 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ) · overdue 8 d · last unquizzed
 - STAT 251 · 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation) · overdue 8 d · last unquizzed
@@ -49,14 +41,11 @@ _50 topics due as of Sun Nov 1. Say **quiz me**._
 - STAT 251 · Descriptive vs. inferential statistics · overdue 39 d · last O
 - STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 38 d · last O
 - STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 16 d · last ~
-- ASIA 250 · Defining religion, myth and ritual · overdue 36 d · last O
 - STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 36 d · last O
 - STAT 251 · 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width) · overdue 4 d · last unquizzed
 - STAT 251 · 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts) · overdue 4 d · last unquizzed
 - STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 15 d · last O
 - STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 12 d · last O
-- ASIA 250 · Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial · overdue 1 d · last unquizzed
-- ASIA 250 · Daoism: qi, yin and yang, immortality and the three hero journeys · overdue 1 d · last unquizzed
 - STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 6 d · last O
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 2 14:00 · PHIL 385 2 topics from Exam 3 14:00. The exam that covered them is past and the course's next exam does not._
@@ -109,7 +98,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | STAT 251 | 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) | 8 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) | 8 | 2026-10-11 | ~ | 0 | 2026-10-15 |
 | STAT 251 | 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) | 9 | 2026-11-01 | ~ | 0 | 2026-11-05 |
-| STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | 2026-11-01 | X | 0 | 2026-11-02 |
+| STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | 2026-11-01 | ~ | 0 | 2026-11-04 |
 | STAT 251 | 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) | 9 | 2026-10-13 | ~ | 0 | 2026-10-16 |
 | STAT 251 | 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) | 10 | — | — | 0 | 2026-10-03 |
 | STAT 251 | 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) | 10 | 2026-11-01 | X | 0 | 2026-11-02 |
@@ -167,23 +156,23 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | PHIL 385 | The Musical Erotic: Plato, Christianity and the demonic (Republic's reason, spirit and appetite · the Phaedrus chariot · the Symposium ladder against A's stages · Christianity made desire sinful and the sensual a principle · music as demonic · Il dissoluto punito and the ending) | 12 | 2026-10-15 | X | 0 | 2026-10-16 |
 | PHIL 385 | The Seducer's Diary: Johannes and Cordelia (A as the real author behind the Johannes facade · reflective seduction against Don Giovanni's immediacy · the free gift as the highest enjoyment · observing, infatuation, plan, deception · the engagement Cordelia breaks · the final enjoyment and the resistance paradox) | 13 | — | — | 0 | 2026-10-26 |
 | PHIL 385 | Diapsalmata: moralizing and the meaning of life (moralizing presupposes a standard · beliefs about how to live cannot be verified · A lacks a belief about the meaning of life · precondition is not meaning · disappointed with philosophy, perhaps only God knows · romantic love was the best thing, for a while it was Cordelia) | 15 | — | — | 0 | 2026-10-26 |
-| ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | 2026-09-26 |
-| ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-11-01 | X | 0 | 2026-11-02 |
-| ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-11-01 | X | 0 | 2026-11-02 |
-| ASIA 250 | Shamanism, ecstasy and enstasy | 2 | 2026-11-01 | X | 0 | 2026-11-02 |
-| ASIA 250 | Vedic religion: gods, sacrifice, karma and the castes | 2 | 2026-11-01 | X | 0 | 2026-11-02 |
-| ASIA 250 | Hindu philosophy and bhakti (Upanishads to Krishna) | 2 | 2026-11-01 | X | 0 | 2026-11-02 |
-| ASIA 250 | Shramanas against the Vedas: Buddha, Mahavira and asceticism | 3 | — | — | 0 | 2026-10-06 |
-| ASIA 250 | Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds | 3 | — | — | 0 | 2026-10-06 |
-| ASIA 250 | Renunciation and the path to awakening (deeds 7–9) | 4 | — | — | 0 | 2026-10-06 |
-| ASIA 250 | Awakening, teaching and death (deeds 10–12) | 4 | — | — | 0 | 2026-10-06 |
-| ASIA 250 | Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology | 5 | — | — | 0 | 2026-10-08 |
-| ASIA 250 | The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths | 5 | 2026-11-01 | X | 0 | 2026-11-02 |
-| ASIA 250 | The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules | 5 | — | — | 0 | 2026-10-08 |
-| ASIA 250 | Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas | 6 | — | — | 0 | 2026-10-24 |
-| ASIA 250 | Mahayana emptiness, skillful means and the great bodhisattvas | 6 | — | — | 0 | 2026-10-24 |
-| ASIA 250 | Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial | 7 | — | — | 0 | 2026-10-31 |
-| ASIA 250 | Daoism: qi, yin and yang, immortality and the three hero journeys | 7 | — | — | 0 | 2026-10-31 |
+| ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | not studied |
+| ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-11-01 | X | 0 | not studied |
+| ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-11-01 | X | 0 | not studied |
+| ASIA 250 | Shamanism, ecstasy and enstasy | 2 | 2026-11-01 | X | 0 | not studied |
+| ASIA 250 | Vedic religion: gods, sacrifice, karma and the castes | 2 | 2026-11-01 | X | 0 | not studied |
+| ASIA 250 | Hindu philosophy and bhakti (Upanishads to Krishna) | 2 | 2026-11-01 | X | 0 | not studied |
+| ASIA 250 | Shramanas against the Vedas: Buddha, Mahavira and asceticism | 3 | — | — | 0 | not studied |
+| ASIA 250 | Buddhist sacred history: Buddha numbers, Jatakas and the twelve great deeds | 3 | — | — | 0 | not studied |
+| ASIA 250 | Renunciation and the path to awakening (deeds 7–9) | 4 | — | — | 0 | not studied |
+| ASIA 250 | Awakening, teaching and death (deeds 10–12) | 4 | — | — | 0 | not studied |
+| ASIA 250 | Early canons and the Buddha's biography: Pali Canon, 29 Buddhas, ten virtues and Buddhist cosmology | 5 | — | — | 0 | not studied |
+| ASIA 250 | The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths | 5 | 2026-11-01 | X | 0 | not studied |
+| ASIA 250 | The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules | 5 | — | — | 0 | not studied |
+| ASIA 250 | Mahayana and the conservative schools: Sarvastivada, Sautrantika, Mahasamghikas, arhats' failings and the paramitas | 6 | — | — | 0 | not studied |
+| ASIA 250 | Mahayana emptiness, skillful means and the great bodhisattvas | 6 | — | — | 0 | not studied |
+| ASIA 250 | Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial | 7 | — | — | 0 | not studied |
+| ASIA 250 | Daoism: qi, yin and yang, immortality and the three hero journeys | 7 | — | — | 0 | not studied |
 
 ## Term calendar — hard dates
 
@@ -384,4 +373,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-10-29 | Morning check (ran 10:28–14:25): STAT 251 lab-absence forms now same-week only (logistics). CPSC 310 Piazza @268 duplicated the labs in PrairieLearn. Chrome dropped, so Canvas, Piazza, PrairieLearn and WeBWorK were not read. |
 | 2026-10-30 | Morning check: CPSC 310 LAB06 closed at 0% and the Canvas total rose to 95.68%; LAB08 Midterm Reflection due Nov 12 (Piazza @279). STAT 251 WeBWorK 6 read off WeBWorK and banked (2 short, 1 long); mid-term TA evaluation due Nov 6. PHIL 385 Exam 3 room Buch A 201. ASIA 250 lecture 7 prepared from the deck with 10 questions and 2 new topics. The Oct 29 deck was untapped and replaced. |
 | 2026-10-31 | Morning check: PHIL 385 Exam 3 marked 5/15 on Canvas; STAT 251 Pre-lab Quiz Lab 5 is due Fri Nov 6 (row added, Things3 deadline moved from Nov 13, recurring note fixed); Canvas now shows PHIL 385 Exam 4 at 13:00 PST, flagged; Planview and Nanopath rejections; Oct 30 deck untapped, replaced. |
-| 2026-11-01 | Quiz (quiz): 50 q · 16 O / 7 ~ / 27 X · ASIA 250, CPSC 310, STAT 251 · 24 ledger rows moved |
+| 2026-11-01 | Quiz (quiz): 49 q · 16 O / 7 ~ / 26 X · ASIA 250, CPSC 310, STAT 251 · 24 ledger rows moved · q37 not assessed: its answer key was badly written (fixed the same day) |

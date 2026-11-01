@@ -594,12 +594,14 @@ until then. PHIL 385 is unchanged (nothing to pull).
   2026-10-06). Keep the underscore: term.py still counts the lecture unlogged and the `Log …` to-do stays
   open, which is his reminder to send notes after class.
 - **Bank the questions now:** 6–12 per lecture into `02-questions.md` (long ones under `## Long problems`),
-  with the topics added to `01-topics.md` and `ledger.md` (Next = tomorrow), run `check-math.mjs` on every
+  with the topics added to `01-topics.md` and `ledger.md` (Next = `not studied`: he has not studied it yet, so
+  nothing is due until he sends notes or says he has studied it, and then `quiz_pick.py --studied <COURSE> <lec>`
+  starts it; Matt, 2026-11-01), run `check-math.mjs` on every
   touched file, then `quiz_pick.py --due` and `npm run parity` as CLAUDE.md step 3 says. A STAT 251 or ASIA 250
   item is marked with `canvas_materials_digest.py --mark` once its page is written.
 - **When he sends notes** (`log <COURSE> lec N`): rename `_NN` → `NN`, add `## Your notes` with his words
-  verbatim, and adjust the page and its questions only where his notes add or correct something. Report what
-  changed, nothing else.
+  verbatim, and adjust the page and its questions only where his notes add or correct something. Then
+  `quiz_pick.py --studied <COURSE> N` starts that lecture's topics (due today). Report what changed, nothing else.
 - **Brief:** the Today's classes line points at the page and names the question count. A lecture with no
   deck yet is "no deck posted", as before.
 
@@ -613,7 +615,7 @@ until then. PHIL 385 is unchanged (nothing to pull).
    that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
    half-graded) and not already `processed: true`: run `quiz_grade.py --transit <doc_id> "<replyString>"` (quiz-me
    skill; `--transit` grades the deck's own session file, which no quiz picked since can overwrite, and the doc_id,
-   which is the deck's date, makes it refuse that file when it holds another day's deck), passing each item's saved `score` as `--score N 4/5` (the Good level needs it; without it an O is an Easy), then mark that doc with
+   which is the deck's date, makes it refuse that file when it holds another day's deck), after rewriting any question the doc marks `flagged` (key rule 4 below), then mark that doc with
    `ArtifactData` `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and
    `if_version` = the `version` the query returned for that doc, so it is never graded
    twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
@@ -636,8 +638,8 @@ until then. PHIL 385 is unchanged (nothing to pull).
    - (B) Today's deck already exists (`routines/runs/<today>-transit.md`), graded or not, because a second deck
      under the same date would mix its taps with the first's. This is a second run today: skip steps 1 and 2 and
      keep this morning's deck.
-2. Rebuild the artifact for today: same design (one question per card, tap to reveal, the answer as a
-   checklist of key points whose ticks set the grade (Key points below), a "Brief ↗" button top-right that
+2. Rebuild the artifact for today with `build_transit_deck.mjs --date <today> --brief <brief html>`: one question per
+   card, a confidence tap to reveal, the answer's key as a checklist whose ticks set the grade (The key below), a "Brief ↗" button top-right that
    opens today's full Brief + Details as an overlay) with today's 6 questions and today's report
    substituted in. Republish with `Artifact`,
    passing `url:` (the fixed URL below — **never omit it**, or it forks a new artifact instead of
@@ -671,108 +673,27 @@ until then. PHIL 385 is unchanged (nothing to pull).
    renders both as markdown: a fenced block as an HTML-escaped `<pre><code>`, a pipe table as `<table>`, `- `
    lines as a list, and any other line break as `<br>`. That replaces turning every newline into `<br>`, so code
    keeps its indentation and tables their columns, and it runs only after the `$$` spans are out.
-   **Key points (2026-10-06, Matt approved):** people over-credit themselves when they grade their own answers
-   (Dunlosky & Rawson 2012), so the revealed answer is a checklist of its key points and his ticks set the grade.
-   There is no O/~/X tap.
-   1. When you fill the items, split each session item's raw `a` with `keyPoints` below, copied exactly, before
-      step 1 of the Math order. Each point then goes through the three steps on its own, as a whole answer did,
-      and the page item carries the rendered points as `points` in place of `a`. An item with no points means an
-      empty bank answer: stop and fix the bank, because a card with nothing to tick would grade `O`.
-   2. The rules `keyPoints` applies:
-      - A fenced code block, a display equation (a `$$` line through the next `$$` line) or a table (consecutive
-        lines starting with `|`) is one unit and is never split. A blank line or a new `- `, `* ` or `1. ` line
-        starts a new paragraph or list item.
-      - A paragraph or list item splits into sentences after `.`, `?` or `!` and any closing quote, bracket, `*`
-        or `_`, when a space follows and then a capital, a digit, an opening quote, `*`, `_`, a `$$` span, inline
-        code or a part label such as `(b)`. It never splits inside a `$$` span or inline code, after `e.g.`,
-        `i.e.`, `vs.`, `cf.`, `p.` or `pp.`, or after a lone capital letter, so "S. Kierkegaard" stays whole (and
-        so does "a friend of B. It is called…", as one point).
-      - Two kinds of fragment cannot stand alone, and they merge. A unit ending in `:` is a lead-in ("The rule:",
-        "Then:") and joins the unit after it. A unit that starts with a lowercase letter outside a list item is
-        the rest of a sentence a display equation interrupted, and joins the unit before it. A block joins with
-        a blank line and a sentence with a space.
-      - Nothing else merges. A one-word verdict ("False.", "(b).") stays its own point, so a right
-        verdict without its reason grades `~`, as quiz-me grades it. A bare number opening an answer ("1831. His
-        followers…") reads as a list number and stays with its sentence. There is no cap on the number of points.
-      - A `- ` marker is dropped. A list number stays in front of its item, joined by a no-break space, so the
-        markdown step shows it as text and not as a one-item list.
-   3. On the page the points sit under the label "Key points: tick each one your answer had". Each point is a row
-      with a check box that a tap toggles, and a line under the list counts them live ("2 of 3 ticked · ~").
-      `gradeOf` below turns a card's ticks into its grade: `O` at 80% or more ticked (100% is an Easy, 80–99% a Good), `~` at 50–79% (Hard), `X`
-      under 50% (Again), so 1 of 5 and 4 of 5 never grade alike (Matt, 2026-10-13). A Good holds its topic's streak
-      at its rung instead of climbing (`quizlib.next_after(..., good=True)`). The finish screen lists a **Reread** card for
-      every card under 100%: its notes page and the key points he did not tick. The page also saves each card's
-      count as `score` (`4/5`) beside its grade and shows it on the finish list; the ledger ladder still reads only the grade.
-      A display equation of several aligned rows is one key point per row (`splitAligned` in the builder; a row starting
-      `&=` continues the one above), so each value is ticked on its own. Points are 48 px tap rows with a live score bar
-      and All / None buttons. Nothing auto-advances and there is no Skip: once the answer is revealed, the primary button
-      reads Next → (Finish → on the last card). Prev and Back to deck still work, and ticks can change.
-   4. The page saves on every tap on a point and on Finish, as it saved on every O/~/X tap and on Finish
-      before: the same `.set()` on `grades/<date>` with the same fields (`date`, `items` of `{idx, course,
-      grade}`, `replyString`, `updatedAt`). A revealed card's `grade` is `gradeOf` its ticks, so `X` when he
-      ticked nothing, and an unrevealed card's is null. `replyString` ("1 O 2 ~ 3 X") is built from those
-      grades, so step 0 and quiz-me's "grade my deck", which read only `items[].grade`, `replyString` and
-      `processed`, work unchanged.
-   ```js
-   // Key points of one answer: the session item's raw markdown `a` → its points in order (morning-check §7).
-   function keyPoints(md) {
-     const units = [];                                  // {text, block, item}
-     let para = null;
-     const flush = () => {
-       if (para) sentences(para.text).forEach((s, k) =>
-         units.push({ text: k ? s : para.num + s, block: false, item: para.item && !k }));
-       para = null;
-     };
-     const lines = md.split('\n');
-     for (let i = 0; i < lines.length; i++) {
-       const t = lines[i].trim();
-       const close = t.startsWith('```') ? '```' : t === '$$' ? '$$' : null;
-       if (close || t.startsWith('|')) {                // code block, display equation, table: one unit, never split
-         flush();
-         let j = i;
-         if (close) do j++; while (j < lines.length && lines[j].trim() !== close);
-         else while (j + 1 < lines.length && lines[j + 1].trim().startsWith('|')) j++;
-         units.push({ text: lines.slice(i, j + 1).join('\n'), block: true, item: false });
-         i = j;
-       } else if (!t) flush();
-       else {
-         const m = t.match(/^(?:[-*+]|(\d+)[.)])\s+(.*)/);
-         if (m) { flush(); para = { text: m[2], num: m[1] ? m[1] + '. ' : '', item: true }; }
-         else if (para) para.text += ' ' + t;
-         else para = { text: t, num: '', item: false };
-       }
-     }
-     flush();
-     const out = [];
-     for (const u of units) {
-       const prev = out[out.length - 1];
-       // a lead-in ending in ':' takes what follows; a lowercase start outside a list item finishes what precedes
-       if (prev && (/:$/.test(prev.text) || (!u.block && !u.item && /^\p{Ll}/u.test(u.text)))) {
-         prev.text += (prev.block || u.block ? '\n\n' : ' ') + u.text;
-         prev.block = prev.block || u.block;
-       } else out.push({ ...u });
-     }
-     return out.map((u) => u.text);
-   }
-
-   function sentences(text) {
-     const held = [];                                   // $$ spans and inline code are never split
-     const s = text.replace(/\$\$[\s\S]+?\$\$|`[^`]+`/g, (m) => `\u0000${held.push(m) - 1}\u0000`);
-     const out = [];
-     let from = 0;
-     for (const m of s.matchAll(/[.!?]["”’')\]*_]*(?=\s+(?:[\p{Lu}\d"“‘*_\u0000]|\((?:[a-hA-H]|[ivx]+|\d)\)))/gu)) {
-       const before = s.slice(0, m.index);
-       if (/(?:^|[\s"“‘(])\p{Lu}$/u.test(before) || /(?:^|[\s(])(?:e\.g|i\.e|vs|cf|pp?)$/i.test(before)) continue;
-       out.push(s.slice(from, m.index + m[0].length));
-       from = m.index + m[0].length;
-     }
-     out.push(s.slice(from));
-     return out.map((x) => x.trim().replace(/\u0000(\d+)\u0000/g, (_, n) => held[n])).filter(Boolean);
-   }
-
-   // 80% or more ticked is O (100% Easy, 80-99% Good), 50-79% is ~ (Hard), under 50% is X (Again) (Matt, 2026-10-13).
-   const gradeOf = (ticks) => { const r = ticks.filter(Boolean).length / ticks.length; return r >= 0.8 ? 'O' : r >= 0.5 ? '~' : 'X'; };
-   ```
+   **The key (Matt, 2026-11-01; replaces the 2026-10-06 sentence-split key points and the 2026-10-13 share scores):**
+   people over-credit themselves when they grade their own answers (Dunlosky & Rawson 2012), so the page never asks
+   for O/~/X. `build_transit_deck.mjs` does all of this; build the page with it, never by hand.
+   1. Every bank answer opens with its rubric: `Key:` (a short question) or `Steps:` (a long problem), numbered
+      one-line points, then a blank line and the explanation (CLAUDE.md step 2). Point 1 is the core. The builder
+      stops on a picked question without one: fix that bank answer and build again.
+   2. Each card opens on the question and three confidence buttons, 1 Guess, 2 Think so, 3 Sure. The tap reveals the
+      key as tick rows (point 1 marked Core), the explanation folded under it, and the notes link.
+   3. The ticks set the grade: the core not ticked is `X`, the core with any other point unticked is `~`, every point is
+      `O`. An `O` at confidence 3 climbs the ladder; at 1 or 2 it is a Good and holds its rung (quiz_grade.py reads
+      the confidence from the token). A `~` or `X` offers the five cause chips, optional.
+   4. **Bad question** takes a card out of grading: its token is `N:-` and the doc marks it `flagged: true`. Before
+      grading a doc, rewrite every flagged question in the bank (the key, the explanation or the stem, whichever is
+      wrong) and say which.
+   5. Every tap saves `grades/<date>` with `.set()`: `date`, `items` of `{idx, course, grade, conf, cause, flagged,
+      ticks}` (`grade` is null until revealed, `-` when flagged), `replyString` in quiz_grade.py tokens
+      (`1:O3 2:X1/c 3:-`) and `updatedAt`. Reopening the page reads the doc back and resumes at the first unrevealed
+      card. Step 0 and "grade my deck" pass `replyString` to `quiz_grade.py --transit <date>` unchanged; there is no
+      `--score` any more.
+   6. The finish screen lists every card with its grade (a tap goes back to it), the flagged cards, and a Reread card
+      for each `~` and `X` with its notes page and the points he did not tick.
 
 **Transit Deck artifact (fixed URL, update in place):**
 https://claude.ai/code/artifact/c537efc7-50cf-4476-9aa5-b118cd0fa480

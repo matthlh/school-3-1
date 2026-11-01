@@ -53,6 +53,9 @@ def main():
     modes.add_argument("--sprint", action="store_true", help="STAT 251's which-method drill: short apply and derive questions against a clock")
     ap.add_argument("--replace", action="store_true",
                     help="with --transit: discard an ungraded deck from another day, or today's deck, and build a new one")
+    ap.add_argument("--studied", nargs="+", metavar="ARG",
+                    help="COURSE LEC [LEC ...]: he has studied these lectures, so their not-studied topics come due today "
+                         "(e.g. --studied ASIA250 5 6, or a range 5-7)")
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--date")
@@ -86,6 +89,22 @@ def main():
             raise SystemExit(f"Today's deck ({today.isoformat()}) is already built ({os.path.relpath(deck_md, L.ROOT)}). "
                              "Keep it: a second deck under the same date would mix its taps with the first's. Pass "
                              "--replace only to discard it on purpose.")
+    if a.studied:                        # start the schedule of the topics he has now studied: Next = today
+        if len(a.studied) < 2:
+            ap.error("--studied takes a course and at least one lecture: --studied ASIA250 5 6")
+        code, lecs = a.studied[0].upper().replace(" ", ""), set()
+        for tok in a.studied[1:]:
+            lo, _, hi = tok.partition("-")
+            if not (lo.isdigit() and (not hi or hi.isdigit())):
+                ap.error(f"--studied: '{tok}' is not a lecture number or a range like 5-7")
+            lecs.update(range(int(lo), int(hi or lo) + 1))
+        started = [r for r in rows if r["course"] == code and r["next"] == L.NOT_STUDIED and L.lec_span(r["lec"])
+                   and lecs & set(range(L.lec_span(r["lec"])[0], L.lec_span(r["lec"])[1] + 1))]
+        if not started:
+            raise SystemExit(f"--studied: no not-studied {code} topic has a lecture in {sorted(lecs)}; nothing changed")
+        for r in started:
+            r["next"], r["next_date"] = today.isoformat(), today
+            print(f"studied · {r['label']} · Lec {r['lec']} · {r['topic'][:70]} · due today")
     questions = L.load_questions()       # the whole bank, parsed once: readiness counts every course
     scoped = [q for q in questions if not courses or q["course"] in courses]
     state = L.load_state()
@@ -93,7 +112,7 @@ def main():
     block = L.due_block(rows, today, cal, ready)
     L.write_ledger(L.ledger_text(text, rows, block))    # keep ledger.md's Due-now block truthful on every run
 
-    if a.due:
+    if a.due or a.studied:
         for line in block + L.unmatched_block(L.bank_by_topic(rows, scoped)[1]):
             print(line)
         return
@@ -113,6 +132,8 @@ def main():
             continue
         st, late, _ = fx["standing"][r["idx"]]
         if st == "frozen" and not topic_keys:        # its exam is past and the next one does not cover it
+            continue
+        if st == "unstudied" and not topic_keys:     # nothing to recall yet: he has not studied that lecture
             continue
         qs = fx["by_topic"].get(r["idx"], [])
         if a.transit or a.long:      # the bus deck has no room for paper; the Friday set is nothing but

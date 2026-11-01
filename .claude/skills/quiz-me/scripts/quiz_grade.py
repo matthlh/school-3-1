@@ -10,12 +10,12 @@ Usage:
   options: --date YYYY-MM-DD  --dry-run  --transit DECK_DATE | --session PATH  --note "free text for the log"
            --said N "text"   his wrong answer to question N, an X or ~ (repeatable)
            --why N "text"    why he was sure, for question N, an X at confidence 3 (repeatable)
-           --score N 4/5     the deck's ticked key points for question N (repeatable). An O scored 80-99% is a Good:
-                             its topic's streak holds at its rung instead of climbing; 100% (or no score) is an Easy
 
 A token is <grade><conf?></cause?>. The grade is O, ~ (p means the same) or X, or - for skipped. conf is 1, 2 or 3,
 his confidence before he saw the answer. /cause goes on an X or ~ only: c concept, f forgot, m misread, k careless,
-s slow. A live variant takes its question's grade. A question number given twice, or anything else malformed, stops
+s slow. An O given at confidence 1 or 2 is a Good: right, but he was not sure, so its topic's streak holds at its
+rung instead of climbing (Matt, 2026-11-01; it replaced the deck's 80-99% score rule). An O at 3, or with no
+confidence, is an Easy and climbs. A live variant takes its question's grade. A question number given twice, or anything else malformed, stops
 the script before it writes. A history entry is [date, grade], or [date, grade, extra] when there is more to store;
 extra holds only the keys given: conf, cause (the full word), said and why.
 
@@ -212,8 +212,6 @@ def main():
                     help="his wrong answer to question N, an X or ~ (repeatable)")
     ap.add_argument("--why", nargs=2, action="append", default=[], metavar=("N", "TEXT"),
                     help="why he was sure, for question N, an X at confidence 3 (repeatable)")
-    ap.add_argument("--score", nargs=2, action="append", default=[], metavar=("N", "A/B"),
-                    help="the deck's ticked key points for question N, e.g. 4/5 (repeatable)")
     a = ap.parse_args()
     today = dt.date.fromisoformat(a.date) if a.date else L.today_local()
     plain = not (a.transit or a.session)          # neither flag: the quiz picked today
@@ -238,13 +236,6 @@ def main():
     items = {it["n"]: it for it in session["items"]}
     marks = parse_grades(a.grades, len(items))
     add_notes(marks, a.said, a.why)
-    scores = {}
-    for n, sc in a.score:
-        m = re.fullmatch(r"(\d+)/(\d+)", sc)
-        if not (n.isdecimal() and int(n) in marks and marks[int(n)][0] and m and 0 <= int(m.group(1)) <= int(m.group(2)) > 0):
-            raise SystemExit(f"--score {n} {sc}: needs a graded question and a score like 4/5")
-        scores[int(n)] = (int(m.group(1)), int(m.group(2)))
-        marks[int(n)][1]["score"] = sc
     graded = {k: g for k, (g, _) in marks.items() if g}
     extra = {k: x for k, (g, x) in marks.items() if g and x}
     if not graded:
@@ -269,7 +260,7 @@ def main():
             lost.append(it); continue
         cur = per_topic.get(r["idx"])
         per_topic[r["idx"]] = g if cur is None or L.GRADE_RANK[g] < L.GRADE_RANK[cur] else cur
-        if g == "O" and k in scores and scores[k][0] < scores[k][1]:
+        if g == "O" and extra.get(k, {}).get("conf") in (1, 2):    # right but unsure: a Good holds its rung
             good_topic[r["idx"]] = True
     if lost:
         raise SystemExit("These questions' ledger topics, stored when the session was picked, name no ledger row now, so "

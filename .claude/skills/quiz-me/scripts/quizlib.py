@@ -36,6 +36,7 @@ import term                                    # the morning check's term.py: th
 COURSE_LABEL = {"STAT251": "STAT 251", "CPSC310": "CPSC 310", "PHIL385": "PHIL 385", "ASIA250": "ASIA 250"}
 LABEL_COURSE = {v: k for k, v in COURSE_LABEL.items()}
 GRADES = ("X", "~", "O")
+NOT_STUDIED = "not studied"   # a ledger Next cell: the lecture is in the bank but he has not studied it, so nothing is due
 GRADE_RANK = {"X": 0, "~": 1, "O": 2}          # lower = worse; a topic's session grade is the worst
 MIN_QUESTIONS_PER_TOPIC = 6                    # below this, an X/~ topic is flagged "needs more questions"
 LEECH_X_IN_LAST = (2, 3)                       # ≥2 X in the last 3 asks → leech: rewrite or split
@@ -80,8 +81,9 @@ def gap(grade, streak):
     return 3 if grade == "~" else 1
 
 def next_after(grade, streak, good=False):
-    """CLAUDE.md spacing ladder. Returns (new_streak, days_until_next). good marks an O the deck scored 80-99%
-    (Matt, 2026-10-13): the streak holds at its rung (at least 1) instead of climbing, so only a full score moves up."""
+    """CLAUDE.md spacing ladder. Returns (new_streak, days_until_next). good marks an O given at confidence 1 or 2
+    (Matt, 2026-11-01; before that, an O the deck scored 80-99%): the streak holds at its rung (at least 1) instead of
+    climbing, so only a sure O moves up."""
     if good and grade == "O":
         s = max(streak, 1)
         return s, gap("O", s)
@@ -385,7 +387,7 @@ def due_block(rows, today, cal, ready):
     else:
         upcoming = {}
         for r in rows:
-            d = next_due(r, today, cal) if st[r["idx"]][0] != "frozen" else None
+            d = next_due(r, today, cal) if st[r["idx"]][0] not in ("frozen", "unstudied") else None
             if d:
                 upcoming.setdefault(d, []).append(r)
         if upcoming:
@@ -549,12 +551,16 @@ def standing(r, today, cal):
       due     its Next is today or earlier.
       sweep   the course's next exam covers it and is at most SWEEP_DAYS away, and it has not been reviewed since that
               window opened: due though its Next is later.
+      unstudied  its Next cell is NOT_STUDIED: he has not studied that lecture yet, so it is never due or picked until
+              `quiz_pick.py --studied` starts its schedule (Matt, 2026-11-01).
       later   none of these.
     Days late is today minus Next when due, else 0. exam is the exam behind frozen or sweep, else None."""
     lecs, nxt = held(r, cal), next_exam(cal, r["course"], today)
     past = [e for e in cal.get(r["course"], {}).get("exams", []) if e["date"] < today and covers(e, lecs)]
     if nxt and past and not covers(nxt, lecs):
         return "frozen", 0, past[-1]
+    if r["next"] == NOT_STUDIED:
+        return "unstudied", 0, None
     if r["next_date"] and r["next_date"] <= today:
         return "due", (today - r["next_date"]).days, None
     if nxt and covers(nxt, lecs):
@@ -701,7 +707,8 @@ def focus(rows, questions, state, today, cal, courses=None):
     by, unmatched = bank_by_topic(rows, questions)
     st = {r["idx"]: standing(r, today, cal) for r in rows}
     frozen = [r for r in rows if st[r["idx"]][0] == "frozen"]
-    live = [r for r in rows if st[r["idx"]][0] != "frozen"]
+    unstudied = [r for r in rows if st[r["idx"]][0] == "unstudied"]
+    live = [r for r in rows if st[r["idx"]][0] not in ("frozen", "unstudied")]
     due = [r for r in live if st[r["idx"]][0] in ("due", "sweep")]
     overdue = [r for r in due if st[r["idx"]][1] > 0]
     sweep = [r for r in due if st[r["idx"]][0] == "sweep"]
@@ -718,7 +725,7 @@ def focus(rows, questions, state, today, cal, courses=None):
     counts = {}
     for q in questions:
         counts[q["course"]] = counts.get(q["course"], 0) + 1
-    return dict(due=due, overdue=overdue, sweep=sweep, frozen=frozen, standing=st, weak=weak, unquizzed=unquizzed,
+    return dict(due=due, overdue=overdue, sweep=sweep, frozen=frozen, unstudied=unstudied, standing=st, weak=weak, unquizzed=unquizzed,
                 needs_more=needs_more, empty=empty, leeches=leeches, unmatched=unmatched, counts=counts, by_topic=by,
                 rows=rows)
 
@@ -745,6 +752,12 @@ def print_focus(fx, today, cal, ready):
             print("   Still live because Lec is not a lecture number: "
                   + " · ".join(f"{r['label']} {r['topic'].split(' (')[0]} (Lec {r['lec']})" for r in loose)
                   + ". Put their lecture numbers in ledger.md's Lec column so they can freeze.")
+    if fx["unstudied"]:
+        by = {}
+        for r in fx["unstudied"]:
+            by[r["label"]] = by.get(r["label"], 0) + 1
+        print("-- Not studied yet, not due: " + " · ".join(f"{k} {v} topic{'s' if v != 1 else ''}" for k, v in sorted(by.items()))
+              + ". When he has studied a lecture: quiz_pick.py --studied <COURSE> <lec>.")
     if fx["weak"]:
         print("-- Weakest: " + " · ".join(f"{r['label']} {r['topic'][:40]} [{r['grade']}]" for r in fx["weak"][:6]))
     if fx["needs_more"] or fx["empty"] or fx["leeches"]:
