@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 4 (Tue Sep 22) — Refactoring
 
-Deck: [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/03a-refactoring.pdf). Reader: [Refactoring](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/refactoring/). Questions: 9 in [the bank](../02-questions.md) under "Lec 4".
+Deck: [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/03a-refactoring.pdf). Reader: [Refactoring](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/refactoring/). Questions: 11 in [the bank](../02-questions.md) under "Lec 4".
 
 ## Learning goals
 - Spot the structural problems in code that get in the way of a new feature.

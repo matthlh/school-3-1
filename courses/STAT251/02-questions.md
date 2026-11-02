@@ -1320,6 +1320,61 @@ No. 0.5 is the long-run relative frequency, not a promise about ten flips. The g
 
 $$\frac{80}{400} = 0.2$$ is an observed relative frequency, an estimate from a finite run. The probability is the long-run limit of that proportion, $$\frac{1}{6} \approx 0.167$$ for a fair die. At 400 rolls, 0.2 is within ordinary variation. If the proportion stayed near 0.2 as $$n$$ grew, that would be evidence the die is not fair, not a redefinition of the probability.
 
+### Q: Multiple choice. A simulation flips a fair coin and records the proportion of heads: 0.30 after 10 flips, 0.46 after 100, 0.507 after 1,000 and 0.4992 after 10,000. Which statement is correct? (a) The coin is biased toward tails, since 10 flips gave 0.30. (b) The proportion wanders in the short run and settles near 0.5 as $$n$$ grows. (c) After the low start, the coin produced extra heads to catch up. (d) By 10,000 flips the number of heads must be exactly 5,000.
+**Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** apply
+**A:** Key:
+1. (b): probability is the long-run relative frequency, and the short run is random.
+2. (a) is wrong, because 3 heads in 10 flips is ordinary short-run variation for a fair coin.
+3. (c) is wrong, because flips are independent: the low start is diluted by many later flips, not cancelled.
+4. (d) is wrong, because only the proportion settles near 0.5, and 4,992 heads gives 0.4992.
+
+(b). This is the lecture's proportion-of-heads graph: $$\frac{\text{heads}}{n}$$ starts far from 0.5, wanders, and settles near 0.5 as $$n$$ grows. Ten flips say almost nothing about the coin. The coin has no memory, so it never "catches up"; the early shortfall of heads just becomes a smaller and smaller share of the total. The count of heads does not have to hit 5,000: 4,992 heads in 10,000 flips is a proportion of 0.4992, which is what "settles near 0.5" means.
+
+### Q: A roulette wheel has 18 red, 18 black and 2 green pockets. After 8 blacks in a row, a player says red is now "due", because in the long run red comes up $$\frac{18}{38}$$ of the time. What is wrong with the reasoning, and what does the long-run frequency actually promise?
+**Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** critique
+**A:** Key:
+1. The reasoning is wrong: spins are independent, so $$P(\text{red}) = \frac{18}{38} \approx 0.474$$ on the next spin, whatever came before.
+2. The long-run frequency promises only that the proportion of reds settles near $$\frac{18}{38}$$ as the number of spins grows.
+3. The proportion settles because a short streak is swamped by many later spins, not because later spins make up for it.
+
+The wheel has no memory. Each spin is independent of the last, so the conditional probability of red given 8 blacks equals the plain probability of red:
+
+$$
+\begin{aligned}
+P(R \mid 8\text{ B}) &= P(R) \\
+&= \frac{18}{38} \approx 0.474
+\end{aligned}
+$$
+
+"In the long run" describes the proportion over a very large number of spins. Eight blacks are a short run, which is random. Over the next 10,000 spins they barely move the proportion, so it can settle near $$\frac{18}{38}$$ without any spin favouring red.
+
+### Q: A simulation of a network runs 5,000 independent trials and the link fails in 1,240 of them. A second run of 40 trials gives 14 failures. (a) Estimate $$P(\text{failure})$$ from each run. (b) Which estimate do you trust more, and why? (c) What do you expect the proportion to do if the first run is extended to 50,000 trials?
+**Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** apply
+**A:** Key:
+1. (a) $$\frac{1240}{5000} = 0.248$$ from the long run and $$\frac{14}{40} = 0.35$$ from the short run.
+2. (b) Trust 0.248, because a relative frequency settles near the probability only as $$n$$ grows, and 40 trials can wander far.
+3. (c) It should stay close to 0.248 and wander less, settling nearer the true probability, without being guaranteed to hit any exact value.
+
+Each estimate is an observed relative frequency:
+
+$$
+\begin{aligned}
+\hat{p}_1 &= \frac{1240}{5000} = 0.248 \\
+\hat{p}_2 &= \frac{14}{40} = 0.35
+\end{aligned}
+$$
+
+Probability is the long-run proportion, so the estimate from 5,000 trials is far closer to the long run than the one from 40. A short run of 40 is exactly the part of the proportion-of-heads graph that still wanders. Extending to 50,000 trials moves further right on that graph, where the proportion changes little from one trial to the next.
+
+### Q: Give the long-run relative-frequency meaning of each statement. (a) A forecast says there is a 70% chance of rain tomorrow. (b) A part has probability 0.002 of being defective. (c) Why does neither statement tell you what will happen tomorrow or to the next part?
+**Topic:** 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows)  **Lec:** 6  **Type:** apply
+**A:** Key:
+1. (a) Over many days with conditions like tomorrow's, it rains on about 70% of them.
+2. (b) Over a long run of parts, about 2 in every 1,000 are defective.
+3. (c) A probability describes the long run, and a single day or a single part is one short-run outcome, which is random.
+
+(a) The 70% is the proportion of rainy days among a very large number of days like tomorrow, not a claim that it will rain 70% of tomorrow. (b) $$0.002 = \frac{2}{1000}$$, so in a long production run about 2 parts per 1,000 fail. (c) Tomorrow is one day and the next part is one part. The long-run proportion says nothing certain about a single trial, just as $$P(\text{heads}) = 0.5$$ does not stop ten flips from giving two heads.
+
 ## WeBWorK 2 — Ch 1 and Ch 3 (opened Sep 22, due Tue Sep 29; banked 2026-09-22, numbers changed)
 
 ### Q: WeBWorK-style. Side-by-side boxplots of daily hits on a website give this five-number summary, in hits. (a) Which days had outliers? (b) Which day had the largest median? (c) Which day had the largest third quartile? (d) True or false: less than 25% of Thursdays had more hits than the busiest Saturday.

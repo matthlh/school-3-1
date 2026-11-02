@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 5 (Thu Sep 24) — Testability
 
-Deck: [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectures/03b-testability.pdf). Reader: [Testability](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/), with the contract material from [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). Questions: 10 in [the bank](../02-questions.md) under "Lec 5".
+Deck: [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectures/03b-testability.pdf). Reader: [Testability](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/), with the contract material from [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). Questions: 12 in [the bank](../02-questions.md) under "Lec 5".
 
 ## Learning goals
 - Use the two testability axes, controllability and observability, to analyse a piece of code and to improve it.

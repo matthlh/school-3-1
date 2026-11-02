@@ -653,6 +653,65 @@ Priya: no. The deck says not to refactor while tests are failing. The process st
 
 A refactoring is by definition meaning-preserving: behaviour after must equal behaviour before. The only practical evidence of that is the suite giving the same result. Running it first proves the baseline is green, so a later failure belongs to your change rather than to something already broken. Running it after each small step means a failure points at the one transformation just made, which is easy to undo or fix. If you make ten moves and test once, a red suite could come from any of them, and finding which one costs more than the refactoring saved. The deck's cycle ("repeat until the change is localized") is built from these small tested steps.
 
+### Q: Shared setup for all parts. The team must add a fourth shipping region, `"north"`, next sprint.
+```ts
+function shippingCost(region: string, kg: number): number {
+  switch (region) {
+    case "local": return 5 + kg * 0.5;
+    case "national": return 10 + kg * 1.2;
+    case "international": return 25 + kg * 3;
+    default: throw new Error("unknown region");
+  }
+}
+function deliveryDays(region: string): number {
+  switch (region) {
+    case "local": return 1;
+    case "national": return 4;
+    case "international": return 12;
+    default: throw new Error("unknown region");
+  }
+}
+function regionLabel(region: string): string {
+  if (region === "local") return "Local";
+  if (region === "national") return "Canada-wide";
+  return "International";
+}
+```
+(a) Which of the deck's three warning signs does the new region trigger, and why does that sign raise the chance of a bug here? (b) What kind of abstraction should be introduced, and should it happen before or after adding `"north"`? (c) Write by hand the TypeScript for a structure in which a new region is one edit.
+**Topic:** Emergent design and technical debt  **Lec:** 4  **Type:** apply
+**A:** Key:
+1. (a) The change has to be made in more than one place, because all three functions encode the region list.
+2. A missed edit site is a bug, and here `regionLabel` would silently label `"north"` as International instead of failing.
+3. (b) Remove the scattering by putting each region's facts in one place, before adding `"north"` and on a green suite.
+4. (c) One table, such as a `Record<Region, RegionInfo>` holding the base cost, cost per kilogram, days and label, which every function reads, so `"north"` is one new entry.
+
+(a) The first warning sign: the same change must be made in three places. Each extra edit site is a chance to miss one, and the missed one here fails quietly, since `regionLabel` has no error case and would print "International" for a northern parcel. (b) Consolidate the duplicated, scattered region knowledge into one place. The deck says to refactor before the change: get the suite green, restructure in small steps with the tests run after each, commit, and only then add `"north"` as the feature. (c) One possible answer:
+
+```ts
+type Region = "local" | "national" | "international";
+interface RegionInfo { base: number; perKg: number; days: number; label: string; }
+const REGIONS: Record<Region, RegionInfo> = {
+  local:         { base: 5,  perKg: 0.5, days: 1,  label: "Local" },
+  national:      { base: 10, perKg: 1.2, days: 4,  label: "Canada-wide" },
+  international: { base: 25, perKg: 3,   days: 12, label: "International" },
+};
+const shippingCost = (r: Region, kg: number) => REGIONS[r].base + kg * REGIONS[r].perKg;
+const deliveryDays = (r: Region) => REGIONS[r].days;
+const regionLabel = (r: Region) => REGIONS[r].label;
+```
+
+Adding `"north"` to `Region` without an entry is now a compile error, because a `Record` needs every key. In lecture 2's terms the three switches were connascence of value spread over three functions; the table keeps the agreement in one place. An interface with one class per region would also work.
+
+### Q: True or false, and justify each. (a) "A team with good engineers carries no technical debt." (b) "If adding a feature hurts, you are probably paying interest on technical debt." (c) "Technical debt shows up in the bug count, so you can watch it build." (d) "When a change will land in the same file a teammate is editing, split the tangled functionality before making it."
+**Topic:** Emergent design and technical debt  **Lec:** 4  **Type:** critique
+**A:** Key:
+1. (a) False: not all technical debt is bad, and a quick solution is often the right call when its future cost is judged worth it.
+2. (b) True: it is the deck's rule of thumb, and the pain is the extra cost that earlier shortcuts added.
+3. (c) False: debt builds up invisibly, like interest, and shows up as a rising cost per feature, with code smells hinting where it sits.
+4. (d) True: a likely merge conflict or shared file is one of the three warning signs, and splitting tangled functionality is the abstraction that removes it.
+
+(a) False. The deck says not all technical debt is bad; the bad kind is the kind that slows the team down or raises risk. The reader adds that taking a shortcut is often right, as long as the future cost is judged worth it. (b) True. Technical debt is the extra cost of changing the system later because of earlier shortcuts, and pain while making a change is that cost being paid. (c) False. The deck says debt accumulates invisibly. Its visible effect is slide 21's chart: cost per feature climbs year after year without refactoring. (d) True. Colliding with a teammate's work is the second warning sign, and its remedy is to split apart the tangled pieces before the change, so the two of you stop landing in the same file.
+
 ## Lec 5 — Testability (logged 2026-09-26, deck 03b-testability.pdf + reader Testability, contract material from Design Principles; no in-class notes)
 
 ### Q: Define controllability and observability in the deck's words, and give the four things the deck says lower each one.
@@ -800,6 +859,51 @@ The cycle: write a failing test, make the test pass, refactor your code. The thr
 5. If it only exposes an implementation detail, test through the behaviour the queue affects instead.
 
 It depends on what the accessor exposes. The deck's accessors expose state the specification already promises: EFFECTS says the animal is not hungry and has eaten more, so `isHungry()` and `amountEaten()` let any client, not only the test, check the promised behaviour. That raises observability without leaking the design. `getInternalQueue()` exposes the representation: tests become coupled to how the class works rather than what it promises, so any internal change breaks them, and clients can start depending on it too. The test to apply: does the accessor answer a question the specification talks about, preferably read-only? If yes, add it. If it only exposes an implementation detail, test through the behaviour the queue affects (what gets returned or processed, and in what order) instead, or return that result as a value.
+
+### Q: Shared setup for all parts.
+```ts
+class Queue<T> {
+  private items: T[] = [];
+  enqueue(x: T): void { this.items.push(x); }
+  // REQUIRES: the queue is not empty
+  // MODIFIES: this
+  // EFFECTS: removes the oldest element and returns it
+  dequeue(): T { return this.items.shift() as T; }
+}
+```
+(a) Write the Given, When, Then of a black-box test that checks both halves of the EFFECTS clause. (b) Write that test by hand in TypeScript with `expect`. (c) A teammate adds a test that dequeues from an empty queue and expects `undefined`. Is it a good test?
+**Topic:** Testable by design  **Lec:** 5  **Type:** apply
+**A:** Key:
+1. (a) Given a queue holding 1 then 2, when it dequeues, then it returns 1 and 1 is no longer in the queue.
+2. (b) The test enqueues 1 and 2, expects `dequeue()` to return 1, then checks the removal through public behaviour: the next `dequeue()` returns 2, or a read-only `size()` is 1.
+3. The private array cannot be asserted on, so the removal needs a second call or a read-only query.
+4. (c) No: an empty queue violates REQUIRES, so the specification promises nothing and the test pins down behaviour no client may rely on.
+5. Either delete it, or change the contract to say what happens on an empty queue (for example, that it throws) and test that.
+
+(a) Given a new queue with 1 and then 2 enqueued. When it dequeues. Then it returns 1, and 1 has left the queue. Two elements are needed, because with one element "removes the oldest" cannot be told apart from "removes any". (b) One possible answer:
+
+```ts
+it("dequeue returns and removes the oldest element", () => {
+  const q = new Queue<number>();   // Given
+  q.enqueue(1);
+  q.enqueue(2);
+  const first = q.dequeue();       // When
+  expect(first).to.equal(1);       // Then
+  expect(q.dequeue()).to.equal(2);
+});
+```
+
+The second `dequeue()` checks the removal through the public interface. Adding a read-only `size()` would also be a good change, because the specification talks about removal, just as the deck added `isHungry()` to `Animal`. (c) No. It tests a call that breaks the precondition, so whatever the code does today is unspecified and may change. If empty-queue behaviour matters, put it in the contract first.
+
+### Q: True or false, and justify each. (a) "In TDD the refactor step may change what the code does, as long as the tests still pass." (b) "Writing the tests after the code gives the same design, just later." (c) "To make private state observable for a test, the deck makes the fields public." (d) "Writing the Given, When, Then from the specification before coding shows which state the class must make observable."
+**Topic:** Testable by design  **Lec:** 5  **Type:** critique
+**A:** Key:
+1. (a) False: refactoring is meaning-preserving, so new behaviour starts with a new failing test, and the passing suite is the evidence that nothing changed.
+2. (b) False: test-first forces inputs to arrive as parameters and results to come back as values, while test-after often means restructuring the code.
+3. (c) False: the deck adds read-only queries such as `isHungry()`, since public fields allow writes and couple clients to the representation.
+4. (d) True: the Then step needs every promised effect to be checkable, which is how `Animal` came to need `isHungry()` and `amountEaten()`.
+
+(a) False. Slide 7's cycle is write a failing test, make it pass, refactor. Refactoring changes how the code is written, not what it does; a change in behaviour belongs in the next red test. (b) False. The reader says writing tests first forces the code into a testable structure from the start, while untestable code written first has to be restructured later. (c) False. The deck adds `isHungry()` and `amountEaten()`, read-only queries for state the specification already promises. Public fields would let tests and clients write the state and tie them to the representation. (d) True. Slide 6 writes the test as a black box from the specification, finds that nothing reports `hungry`, and adds the queries the Then step needs.
 
 ## Lec 7 — Test robustness (logged 2026-10-01, deck 04b-test-robustness.pdf + reader Blackbox Testing and Glassbox Testing; no in-class notes)
 
