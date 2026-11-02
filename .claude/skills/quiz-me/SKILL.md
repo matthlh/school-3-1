@@ -101,7 +101,7 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | quick quiz / 5 questions | `--n 5` (default 10, ~1 min each) |
 | what's due | `quiz_pick.py --due` — no session written |
 | "studied / watched <COURSE> lec N" | `quiz_pick.py --studied <COURSE> N` (several lectures or a range `5-7`): that lecture's `not studied` topics come due today. Nothing else starts them. |
-| "I haven't studied <COURSE> lec N" | `quiz_pick.py --not-studied <COURSE> N` (or a range): those topics read `not studied` and leave the queue; add `--topic <text>` to take only some of a lecture's topics. Set 2026-11-02: CPSC 310 lectures 8–10 and 13, and lecture 12's API design topic (he studied everything else up to the midterm); STAT 251 is studied through lecture 19. |
+| "I haven't studied <COURSE> lec N" | `quiz_pick.py --not-studied <COURSE> N` (or a range): those topics read `not studied` and leave the queue; add `--topic <text>` to take only some of a lecture's topics. Set 2026-11-01: CPSC 310 lectures 8–10 and 13, and lecture 12's API design topic (he studied everything else up to the midterm); STAT 251 is studied through lecture 19. |
 | how am I doing / weakest topics | `quiz_pick.py --report` |
 | exam ladder T-9…T-5 (term.py) | `--course CODE --all --n 15` — every topic but the frozen ones eligible, weighted by weakness |
 | T-4 | `--course CODE --all`, then ask only the X/~ topics the focus block names |
