@@ -68,7 +68,7 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | 4b | Binomial → Normal approximation |
 | 4c | Poisson → Normal approximation |
 | 4d | **Continuity correction** — why it matters |
-| 4e | CLT applied to sums and averages |
+| 4e | CLT applied to sums and averages *(lec 21: statistic vs parameter, the sampling distribution, $$\bar{X}$$ has mean $$\mu$$ and standard error $$\frac{\sigma}{\sqrt{n}}$$, exactly Normal from a Normal population, approximately $$N(\mu, \frac{\sigma^2}{n})$$ from any population when $$n \ge 20$$, the total $$T \approx N(n\mu, n\sigma^2)$$; ledger row 4e)* |
 
 ## 5. Foundations of inference · Ch 8
 | # | Outcome |
@@ -152,6 +152,7 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | 1b Percentiles, quartiles and the IQR | 1b–c Box plots | The fences come from the quartiles and the IQR, but a whisker stops at the last observation inside its fence, not at the fence and not always at the minimum or maximum. |
 | 3d Mean and variance of a discrete random variable | 1b Mean and median | A random variable's mean weights each possible value by its probability, while the Chapter 1 sample mean adds up the data and divides by n, and both are called the mean. |
 | 3o Linear combinations of Normals and the sample mean | 3j–k Covariance, sums and the sample mean | Both give a sum's mean and variance by the same arithmetic, but the Chapter 4 version works for any variables and stops at the two numbers, while the Normal fact adds the shape, so only when the parts are Normal and independent can a probability for the sum or the mean be read from Table A. |
+| 4e CLT for averages and sums | 3o Linear combinations of Normals and the sample mean | Both end at X̄ ~ N(μ, σ²/n) and T with mean nμ and variance nσ², but lecture 14 needs a Normal population and is exact for any n, while the CLT takes any population and is only approximate, and only once n ≥ 20. |
 | 3q–s Bernoulli and Binomial distributions | 3j–k Covariance, sums and the sample mean | A Binomial count is the sum of n independent Bernoulli trials, so its mean np and variance np(1 − p) are the Chapter 4 sum rules applied to identical parts; the Binomial answer is the sum's, so dividing the variance by n, as for the sample mean, is the wrong move here. |
 | 3t–v Geometric distribution | 3q–s Bernoulli and Binomial distributions | Both are built from independent trials with one success probability, but the Binomial fixes the number of trials and counts the successes, while the Geometric counts the trials until the first success, so its values start at 1 and have no upper limit. |
 | 3w–aa Poisson process and Poisson distribution | 3g–i Mean, variance, uniform and exponential | The same rate runs both, but the Poisson counts events in an interval and is discrete with the rate as its mean, while the exponential is the continuous waiting time between events with one over the rate as its mean, so the two means get swapped. |

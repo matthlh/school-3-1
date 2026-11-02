@@ -162,7 +162,8 @@ PHIL_READINGS = [
 ]
 READ_AHEAD_DAYS, LOG_WINDOW_DAYS = 7, 21     # create a reading's to-dos a week before its first class; keep chasing a log 3 weeks after its last
 ASYNC_LOCK_DAYS = {"ASIA250": 7}   # async course → days from lecture publish to its mini-quiz hard lock
-ASYNC_LOCK_OVERRIDE = {("ASIA250", 5): dt.date(2026, 10, 13)}   # lock moved by the instructor (lec 5: Thanksgiving, announced Oct 5)
+ASYNC_LOCK_OVERRIDE = {("ASIA250", 5): dt.date(2026, 10, 13),   # lock moved by the instructor (lec 5: Thanksgiving, announced Oct 5)
+                       ("ASIA250", 8): dt.date(2026, 11, 12)}   # lec 8: reading break, Mini-Quiz 8 due Nov 12 (announced Nov 2)
 # weekly mode (--week): preferred days per project/area from PREP.md's weekly rhythm
 RHYTHM = {"STAT 251": [MON, WED, FRI], "CPSC 310": [TUE, WED], "PHIL 385": [THU, MON], "ASIA 250": [WED, TUE],
           "Career": [TUE, THU], "Personal": [SAT, SUN]}

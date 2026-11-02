@@ -3923,6 +3923,119 @@ $$
 
 (b) "Not exceeded before the 8th day" means days 1 to 7 are all fine, $$P(N > 7) = (1 - p)^7 = 0.9918^7 = 0.944$$. The trap is using $$\sigma = 25$$, the variance, in the z-score.
 
+## Lec 21 — Ch 7: statistics, sampling distributions and the Central Limit Theorem (prepared 2026-11-02 from the deck; Canvas calls it Lecture 22; numbers changed)
+
+### Q: A study of 200 UBC commuters finds a mean commute of 34 minutes. For each, say whether it is a statistic or a parameter: (a) the 34 minutes, (b) the mean commute of all UBC commuters, (c) the standard deviation of the 200 commutes, (d) the proportion of all UBC commuters who bike. Which of them is known in practice?
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** recall
+**A:** Key:
+1. (a) and (c) are statistics; (b) and (d) are parameters.
+2. A statistic summarises the sample, a parameter summarises the population.
+3. Only the statistics are known; a parameter's value is unknown in practice and is estimated by a statistic.
+
+The 34 minutes is $$\bar{x}$$ and the sample standard deviation is $$s$$, both computed from the 200 people. The mean $$\mu$$ and the proportion of all commuters describe the whole population, which nobody measured. A statistic changes from sample to sample (sampling variability); a parameter is one fixed, unknown number.
+
+### Q: Exam scores in a large course are Normal with mean 70 and standard deviation 12. A random sample of 16 scores is taken. What is the distribution of $$\bar{X}$$, and what is $$P(\bar{X} > 73)$$?
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. $$\bar{X}$$ is exactly Normal because the population is Normal: $$\bar{X} \sim N(70, \frac{144}{16})$$, standard error $$\frac{12}{\sqrt{16}} = 3$$.
+2. $$z = \frac{73 - 70}{3} = 1$$.
+3. $$P(\bar{X} > 73) = 1 - \Phi(1) = 0.1587$$.
+
+No CLT is needed here: a sample mean from a Normal population is Normal for any $$n$$, even 16, which is under the book's 20.
+
+$$
+\begin{aligned}
+SE &= \frac{\sigma}{\sqrt{n}} = \frac{12}{4} = 3 \\
+z &= \frac{73 - 70}{3} = 1 \\
+P(\bar{X} > 73) &= 1 - 0.8413 \\
+&= 0.1587
+\end{aligned}
+$$
+
+### Q: Call lengths at a help desk are exponential with mean 5 minutes (so the standard deviation is also 5). For a random sample of 36 calls, find the approximate probability that the average call is under 4.5 minutes, and say why a Normal calculation is allowed.
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. By the CLT, $$n = 36 \ge 20$$ makes $$\bar{X} \approx N(5, \frac{25}{36})$$ even though the population is skewed; standard error $$\frac{5}{6} = 0.833$$.
+2. $$z = \frac{4.5 - 5}{0.833} = -0.6$$.
+3. $$P(\bar{X} < 4.5) \approx \Phi(-0.6) = 0.2743$$.
+
+The exponential is strongly right-skewed, so a single call cannot be treated as Normal, but the average of 36 can.
+
+$$
+\begin{aligned}
+SE &= \frac{5}{\sqrt{36}} = 0.833 \\
+z &= \frac{4.5 - 5}{0.833} = -0.6 \\
+P(\bar{X} < 4.5) &\approx 0.2743
+\end{aligned}
+$$
+
+### Q: A shipment holds 40 bags of rice. Each bag's weight has mean 2.0 kg and standard deviation 0.3 kg, and the weights are independent. Find the approximate probability that the shipment's total weight exceeds 81 kg.
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. CLT for a sum: $$T \approx N(n\mu, n\sigma^2) = N(80, 3.6)$$, standard deviation $$0.3\sqrt{40} = 1.897$$.
+2. $$z = \frac{81 - 80}{1.897} = 0.53$$.
+3. $$P(T > 81) \approx 1 - \Phi(0.53) = 0.298$$.
+
+The question is about a total, so use $$T = n\bar{X}$$ rather than the average. The same answer comes from the average: $$T > 81$$ means $$\bar{X} > 2.025$$, and $$\frac{2.025 - 2}{0.3 / \sqrt{40}} = 0.53$$.
+
+$$
+\begin{aligned}
+E(T) &= 40 \times 2.0 = 80 \\
+\operatorname{Var}(T) &= 40 \times 0.09 = 3.6 \\
+\operatorname{SD}(T) &= \sqrt{3.6} = 1.897 \\
+z &= \frac{81 - 80}{1.897} = 0.53 \\
+P(T > 81) &= 1 - 0.7019 \\
+&= 0.298
+\end{aligned}
+$$
+
+### Q: True or false, and justify: the Central Limit Theorem says that as the sample size grows, the population distribution becomes Normal.
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. False: the CLT is about the sampling distribution of $$\bar{X}$$, not the population.
+2. The population keeps its shape; a larger sample only shows that shape more clearly.
+3. For large $$n$$ ($$n \ge 20$$), $$\bar{X}$$ is approximately $$N(\mu, \frac{\sigma^2}{n})$$ whatever the population's shape.
+
+A histogram of one big sample from a skewed population is still skewed. What turns Normal is the histogram of many sample means, each from its own sample of size $$n$$, which is what the StatSpace applet in the lecture shows.
+
+### Q: Starting from $$T = n\bar{X}$$, derive the mean and variance of the total $$T = X_1 + \cdots + X_n$$ of a random sample with mean $$\mu$$ and variance $$\sigma^2$$. How does the standard deviation of the total compare with the standard error of the mean as $$n$$ grows?
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** derive
+**A:** Key:
+1. $$E(T) = nE(\bar{X}) = n\mu$$.
+2. $$\operatorname{Var}(T) = n^2 \operatorname{Var}(\bar{X}) = n^2 \times \frac{\sigma^2}{n} = n\sigma^2$$.
+3. The constant $$n$$ comes out of the variance squared.
+4. $$\operatorname{SD}(T) = \sigma\sqrt{n}$$ grows with $$n$$, while the standard error $$\frac{\sigma}{\sqrt{n}}$$ shrinks.
+
+$$
+\begin{aligned}
+E(T) &= E(n\bar{X}) \\
+&= nE(\bar{X}) = n\mu \\
+\operatorname{Var}(T) &= \operatorname{Var}(n\bar{X}) \\
+&= n^2 \operatorname{Var}(\bar{X}) \\
+&= n^2 \times \frac{\sigma^2}{n} \\
+&= n\sigma^2
+\end{aligned}
+$$
+
+Adding up more values makes the total less predictable in absolute terms, but averaging divides by $$n$$, so the average gets more precise. With the CLT, $$T \approx N(n\mu, n\sigma^2)$$ for large $$n$$.
+
+### Q: A population has standard deviation $$\sigma = 6$$. (a) What sample size makes the standard error of $$\bar{X}$$ equal to 1.5? (b) If the sample size is then multiplied by 4, what happens to the standard error?
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. (a) $$\frac{6}{\sqrt{n}} = 1.5$$ gives $$\sqrt{n} = 4$$, so $$n = 16$$.
+2. (b) The standard error halves, to 0.75, because it falls with $$\sqrt{n}$$ and $$\sqrt{4} = 2$$.
+
+$$
+\begin{aligned}
+\frac{6}{\sqrt{n}} &= 1.5 \\
+\sqrt{n} &= 4 \\
+n &= 16 \\
+\frac{6}{\sqrt{64}} &= 0.75
+\end{aligned}
+$$
+
+To halve the standard error you need four times the data, not twice. A common slip is dividing $$\sigma$$ by $$n$$ instead of $$\sqrt{n}$$.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?

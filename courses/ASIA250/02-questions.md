@@ -1220,3 +1220,88 @@ True. De flows down from the ancestors through ritual (li). When the ruler perfo
 2. Confucianism and Daoism are Chinese and did not spread across the globe along it, and bandits had no role.
 
 False. Around the 1st century CE Buddhism spread from India through Central Asia and reached China slowly along the Silk Road, carried peacefully by monks and merchants. Confucianism and Daoism are native to China, and bandits are not part of the story.
+
+## Lec 8 — Pure Land and Zen Buddhism take over East Asia (prepared 2026-11-02 from the deck)
+
+### Q: Name the three problems Buddhism met when it reached China, and the three ways Buddhists responded.
+**Topic:** Pure Land Buddhism: the three problems in China, Amitabha, the gradual path and Shinran  **Lec:** 8  **Type:** recall
+**A:** Key:
+1. Problems: China had no concept of reincarnation; Confucians attacked Buddhists as unfilial and asocial; Daoists ridiculed their shaved heads, their neglect of qi and their disrespect for immortals.
+2. Response one: downplay human reincarnation and preach karma leading to heavens, hells and hungry ghosts.
+3. Response two: rituals built on Confucian ancestor veneration, such as freeing hungry ghosts (Maudgalyayana, the Obon and Ghost festivals) and worship of Kshitigarbha.
+4. Response three: immediate rebirth in a Buddha's Pure Land.
+
+The Pure Land answer covered all three critics: it filled the Confucian gap in afterlife concerns, those reborn there bless their relatives (filial piety), and it was an easier alternative to Daoist immortality that looked like a Daoist paradise.
+
+### Q: True or false, and justify: according to the lecture, being reborn in a Pure Land is the same as reaching nirvana.
+**Topic:** Pure Land Buddhism: the three problems in China, Amitabha, the gradual path and Shinran  **Lec:** 8  **Type:** apply
+**A:** Key:
+1. False: a Pure Land is a temporary stop outside samsara, not the final goal.
+2. Previous karma is suspended there while the faithful train under the Buddha's guidance.
+3. Once mature as bodhisattvas they leave, their karma returns them to samsara, and they go on to become Buddhas.
+
+The deck's image is a magical hotel: you check in to practise while resting from samsara and check out when ready. That is why Pure Land Buddhism is called gradual. Pure Lands arose because nirvana was hard to imagine, as a land of light and jewels where the Buddha's pure mind and body dwell on.
+
+### Q: State Shinran's paradox about the Pure Land and explain his reasoning. What did his movement become?
+**Topic:** Pure Land Buddhism: the three problems in China, Amitabha, the gradual path and Shinran  **Lec:** 8  **Type:** recall
+**A:** Key:
+1. "Even if a good person can reach the Pure Land, how much more so an evil person!"
+2. Amitabha's merit is so great that saying his name once with faith guarantees rebirth in his Pure Land.
+3. Good people rely on their own effort and lack faith in his grace; evil people admit their powerlessness and rely on it wholeheartedly.
+4. Shin Buddhism: no Vinaya or bodhisattva precepts, centred on gratitude and faith in Amitabha, non-celibate, Japan's largest denomination with 22 million believers.
+
+Shinran (1173 to 1263) lived with the nun Eshin-ni and fathered six children with her. The deck notes the misogynist implication that women count among those with bad karma, yet the doctrine gives them equal or even preferential access.
+
+### Q: Which is NOT something the lecture says about Pure Lands? (A) Bodhisattvas reborn there are exclusively male. (B) Avalokiteshvara stands to Amitabha's right. (C) They are heavens of the Hindu kind, where pleasure rewards good karma. (D) Visiting Buddhas appear there as reflections in the jewels of Brahma's Net. (E) Chanting the Buddha's name can lead to rebirth there.
+**Topic:** Pure Land Buddhism: the three problems in China, Amitabha, the gradual path and Shinran  **Lec:** 8  **Type:** recall
+**A:** Key:
+1. (C).
+2. Pure Lands are free from suffering and bodhisattvas are reborn there by a Buddha's grace, unlike Hindu heavens.
+
+The deck likens Buddhas to creator gods of Hinduism for making these lands, but stresses they are not heavens. The Pure Land is homosocial, which is (A). Mahasthamaprapta, the bodhisattva of power, is the other attendant.
+
+### Q: Contrast the gradual path of Pure Land Buddhism with the subitist path of Chan/Zen, and say who can be enlightened on the Zen path compared with Theravada.
+**Topic:** Chan/Zen: subitism, paradox and koans, Bodhidharma, Rinzai vs Soto and antinomianism  **Lec:** 8  **Type:** apply
+**A:** Key:
+1. Pure Land is gradual: the person leaves samsara for a Pure Land and slowly becomes a bodhisattva, then a Buddha.
+2. Zen is subitist: awakening, the direct experience of emptiness, comes in a flash, transmitted mind to mind from master to disciple.
+3. In Zen a lay person can be enlightened, since monastic discipline is only one finger pointing to the moon; in Theravada only monastics become arhats.
+
+The finger pointing to the moon is Zen's image for its teachings: once you see the moon you let go of the finger and carry on as monk, nun or lay person.
+
+### Q: Give Bodhidharma's four-line verse, and tell the story of how Huike became his disciple and was enlightened.
+**Topic:** Chan/Zen: subitism, paradox and koans, Bodhidharma, Rinzai vs Soto and antinomianism  **Lec:** 8  **Type:** recall
+**A:** Key:
+1. A separate transmission outside scripture; not founded on words and letters; point directly at the human mind; see your nature and become Buddha.
+2. Bodhidharma refused Huike, who cut off his left arm to show his dedication.
+3. "I want to free my mind." "Show me your mind and I will set it free." "I cannot find it." "Then I have freed your mind," and Huike was enlightened.
+
+Bodhidharma (Japanese Daruma) was an Indian monk who came to China in the 6th century CE, told Emperor Wu of Liang to doubt his achievements, was sent to Shaolin, and sat facing a wall for nine years. The Japanese lines are kyoge betsuden, furyu monji, jikishi ninshin, kensho jobutsu.
+
+### Q: What is a koan, how does Zen use paradox, and what is the moment it aims for called? Give the Hara Tanzan story as an example.
+**Topic:** Chan/Zen: subitism, paradox and koans, Bodhidharma, Rinzai vs Soto and antinomianism  **Lec:** 8  **Type:** apply
+**A:** Key:
+1. A koan ("public case", like a court hearing) is a master-disciple dialogue that captures a moment of awakening.
+2. Its comic paradox jams rational, dualistic thinking, so the world is experienced without subject or objects.
+3. That moment is awakening: satori in Japanese, wu in Chinese.
+4. Tanzan carried a woman over mud; his companion objected; Tanzan said, "I left the woman at the shore, while you are still carrying her," and the companion awakened.
+
+Zen's distrust of words comes from Daoism (Zhuangzi's butterfly dream): the sign is not the thing, and language is built on the duality Buddhist practice tries to transcend. Koan practice runs in three steps: visualize the scene, let the doubt intensify, then become the koan.
+
+### Q: How do the Rinzai and Soto schools differ in meditation, and which film for SWR2 shows Soto practice?
+**Topic:** Chan/Zen: subitism, paradox and koans, Bodhidharma, Rinzai vs Soto and antinomianism  **Lec:** 8  **Type:** recall
+**A:** Key:
+1. Rinzai (Linji) meditates on koans; when a koan is solved the theater of consciousness arises naturally.
+2. Soto (Caodong) meditates on the theater of consciousness itself and reads koans only in study, to verify its experience.
+3. *Fancy Dance*.
+
+Both schools still aim at the same direct experience of emptiness. *Mandala*, the other SWR2 film, shows Korean Buddhism's return to celibate monasticism after WWII.
+
+### Q: What is antinomianism in Zen, and what does Linji's "If you meet the Buddha, kill the Buddha" show? How does the tradition limit it?
+**Topic:** Chan/Zen: subitism, paradox and koans, Bodhidharma, Rinzai vs Soto and antinomianism  **Lec:** 8  **Type:** apply
+**A:** Key:
+1. Antinomianism is precept-breaking: a master acts as if free of all laws, moral standards included, to shock a ready student, or himself, into awakening.
+2. Linji's saying is shock therapy, since killing the Buddha would be Buddhism's greatest sin.
+3. The safety valve: kill the Buddha and the world is doomed; do not kill him and there is no salvation, a double impasse to meditate on.
+
+Many koans are antinomian, such as "a dog has no Buddha nature". Linji (died 866 CE) is Rinzai in Japanese; the saying is from the Linjilu, which Mishima misspells as Rinsairoku. Japan abolished monastic celibacy at the end of the 19th century.
