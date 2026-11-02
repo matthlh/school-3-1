@@ -950,6 +950,48 @@ The Tipitaka is the Vinaya Pitaka (5 books of monastic rules), the Sutta Pitaka 
 
 Loving-kindness (metta), compassion (karuna), co-rejoicing (mudita) and equanimity (upekkha). They extinguish aversion and hatred, the snake, the third poison. Theravada mostly recommends them to lay followers, which the deck contrasts with Mahayana, where Avalokitesvara (Guanyin) is the deity of compassion.
 
+## Lec 5 — Mini-Quiz 5 questions (added 2026-11-01)
+
+### Q: The Fourth Noble Truth is that one can follow a moderate ascetic path aspiring to eliminate ignorance, desire and aversion. Match each of the three with its practice: by meditating on loving-kindness, compassion, co-rejoicing and equanimity; by meditating on impermanence; by giving up possessions and sex.
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** Key:
+1. Ignorance is eliminated by meditating on impermanence.
+2. Desire is eliminated by giving up possessions and sex.
+3. Aversion is eliminated by meditating on loving-kindness, compassion, co-rejoicing and equanimity.
+
+Ignorance is the pig, extinguished by direct knowledge of impermanence in meditation, including meditation on decomposing corpses. Desire is the rooster, extinguished by giving up possessions and sex. Aversion is the snake, extinguished by the four meditations: loving-kindness (metta), compassion (karuna), co-rejoicing (mudita) and equanimity (upekkha).
+
+### Q: Why is the human world the ideal setting for following the Buddha's teachings? (A) humans have enough intelligence to understand the Dharma; (B) suffering in the human world is not as intense as in the lower realms; (C) the pleasures of the human world are not as intense as in the higher realms; (D) all of the above; (E) none of the above.
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** Key:
+1. (D), all of the above.
+2. The human world is neutral: it has both suffering and bliss, so it neither crushes nor distracts.
+
+(D), all of the above. The lecture calls the human world neutral. The lower realms suffer too much to follow the teachings, the god realms are too pleasant and distracting, and only humans have the intelligence to understand the Dharma.
+
+### Q: True or false: early Buddhism agrees with Brahmanical Hinduism that a preta needs to be fed through proper rituals by his or her son.
+**Topic:** The Buddha's teaching: three lakshanas, karma, the six realms and the Four Noble Truths  **Lec:** 5  **Type:** recall
+**A:** Key:
+1. False: in Buddhism a preta is a hungry ghost because of its own excessive greed in life.
+2. Needing a son to feed the dead is the Vedic reason, which Buddhism drops.
+
+False. In Buddhism pretas live as hungry ghosts because they had excessive greed, not because they have no son to feed them. The son feeding the ancestor is the Vedic idea. Maudgalyayana sees his own mother as a preta.
+
+### Q: True or false: according to Harvey (2013), in Southern Buddhism (Theravada) the most assiduous meditators are members of the Sangha in the "forest" tradition.
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** Key:
+1. True: the forest-tradition monks are Theravada's most dedicated meditators.
+
+True. Harvey's chapter 11 says the most assiduous Theravada meditators are the forest-dwelling monks, such as Ajahn Chah's monastery in "The Mindful Way". Town and village monks are more occupied with study and ritual.
+
+### Q: In the documentary "The Mindful Way" (BBC, 1977), how often do the monks recite all the Vinaya rules and confess their transgressions? (A) once a year; (B) every day; (C) every two hours; (D) twice a month; (E) never.
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** Key:
+1. (D), twice a month.
+2. The recitation is of the Patimokkha, the 227 rules for monks, on the new-moon and full-moon observance days.
+
+(D), twice a month. The monks recite the Patimokkha, the 227 rules for bhikkhus, on the observance days at the new and full moon, and confess their lapses before the recitation.
+
 ## Lec 6 — Mahayana, the Greater Vehicle (prepared 2026-10-23 from the deck)
 
 ### Q: Which statement about the conservative schools is NOT made in the lecture? (A) The Sarvastivada held that dharmas exist in the three times, past, present and future. (B) The Sautrantika held that everything exists only for a moment and that the sutras are enough. (C) Most conservative schools, including modern Theravada, took a middle position between the two. (D) The Sautrantika built the longest Abhidharma list, 100 dharmas. (E) Theravada's Abhidharma has 82 dharmas.
@@ -1137,3 +1179,44 @@ Primordial chaos (dao) splits into vital material (qi), qi splits into yin and y
 3. Daoist: accumulating qi and returning to innate simplicity, rewarded with physical immortality and control of the five elements.
 
 Confucian: sincerity in embodying role models, rewarded with spiritual immortality as ancestral de and effortless action in any role. Buddhist: revealing the illusion of self through meditation, rewarded with Buddhahood or rebirth as a bodhisattva and spontaneity in helping beings. Daoist: accumulating qi and returning to innate simplicity, rewarded with physical immortality and control of the five elements.
+
+## Lec 7 — Mini-Quiz 7 questions (added 2026-11-01)
+
+### Q: Which one of the following is NOT a key concept of Confucianism? (A) power (de); (B) vital energy (qi); (C) martiality (wu); (D) civility (wen); (E) emptiness (kong).
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** Key:
+1. (E), emptiness (kong), which is a Buddhist concept.
+2. De, qi, wen and wu are all Confucian: moral power, vital energy (Mencius), the civil and the martial.
+
+(E), emptiness (kong). Emptiness (shunyata) is Mahayana Buddhist. Confucianism has de (moral power), qi (vital energy, Mencius's "flood-like qi"), wen (civility) and wu (martiality).
+
+### Q: Complete the two sayings of Confucius (Analects 2.3): "Govern people by regulations, and they will..." and "Govern them by moral power (de), and they will..." The two endings are "come to you of their own accord" and "flee from you".
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** Key:
+1. Regulations: they will flee from you.
+2. Moral power (de): they will come to you of their own accord.
+
+Govern people by regulations and punishments and they will flee from you. Govern them by moral power (de) and ritual and they will come to you of their own accord. The ruler governs by de and ritual, not by force.
+
+### Q: True or false: according to Confucius, when the flow of ancestral de is reestablished through ritual, both the ruler and his subjects realize their full potential.
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** Key:
+1. True: ritual keeps de flowing from the ancestors, and that flow lets ruler and subjects realize their potential.
+
+True. De flows down from the ancestors through ritual (li). When the ruler performs the rituals properly the flow is restored, and both the ruler and his subjects realize their full potential.
+
+### Q: Which one of these is NOT a correct description of Xiwangmu, the Queen Mother of the West? (A) she is a powerful immortal believed to live on mythical Mount Kunlun; (B) she can bestow blessings on mortals, even the elixir of immortality itself; (C) she reached nirvana at the age of 80 after eating spoiled pork; (D) people attending her heavenly banquet can achieve immortality if they deserve it; (E) all of the above are correct.
+**Topic:** Daoism: qi, yin and yang, immortality and the three hero journeys  **Lec:** 7  **Type:** recall
+**A:** Key:
+1. (C): dying at 80 after spoiled pork is the Buddha's story, not hers.
+2. She lives on Mount Kunlun, gives the elixir of immortality, and her banquet with the peaches of immortality can make the deserving immortal.
+
+(C). The Buddha died at 80 after a meal of spoiled pork (lecture 4). Xiwangmu is the Daoist immortal on Mount Kunlun who holds the elixir of immortality that Chang'e stole, and whose banquet serves the peaches of immortality.
+
+### Q: True or false: the Silk Road was instrumental in spreading Confucianism and Daoism across the globe through the agency of travelling monks, merchants and bandits.
+**Topic:** Buddhism enters China and Confucianism: de, li, filial piety, the five relationships and civil vs martial  **Lec:** 7  **Type:** recall
+**A:** Key:
+1. False: the Silk Road carried Buddhism into China, around the 1st century CE, peacefully through monks and merchants.
+2. Confucianism and Daoism are Chinese and did not spread across the globe along it, and bandits had no role.
+
+False. Around the 1st century CE Buddhism spread from India through Central Asia and reached China slowly along the Silk Road, carried peacefully by monks and merchants. Confucianism and Daoism are native to China, and bandits are not part of the story.
