@@ -56,6 +56,9 @@ def main():
     ap.add_argument("--studied", nargs="+", metavar="ARG",
                     help="COURSE LEC [LEC ...]: he has studied these lectures, so their not-studied topics come due today "
                          "(e.g. --studied ASIA250 5 6, or a range 5-7)")
+    ap.add_argument("--not-studied", nargs="+", metavar="ARG",
+                    help="COURSE LEC [LEC ...]: he has not studied these lectures yet, so their topics leave the queue "
+                         "until --studied (narrow to some of a lecture's topics with --topic)")
     ap.add_argument("--due", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--date")
@@ -89,17 +92,31 @@ def main():
             raise SystemExit(f"Today's deck ({today.isoformat()}) is already built ({os.path.relpath(deck_md, L.ROOT)}). "
                              "Keep it: a second deck under the same date would mix its taps with the first's. Pass "
                              "--replace only to discard it on purpose.")
-    if a.studied:                        # start the schedule of the topics he has now studied: Next = today
-        if len(a.studied) < 2:
-            ap.error("--studied takes a course and at least one lecture: --studied ASIA250 5 6")
-        code, lecs = a.studied[0].upper().replace(" ", ""), set()
-        for tok in a.studied[1:]:
+    def lecture_rows(args, flag):
+        """--studied / --not-studied COURSE LEC [LEC ...]: the course's ledger rows with a lecture in those numbers,
+        narrowed by --topic when given."""
+        if len(args) < 2:
+            ap.error(f"{flag} takes a course and at least one lecture: {flag} ASIA250 5 6")
+        code, lecs = args[0].upper().replace(" ", ""), set()
+        for tok in args[1:]:
             lo, _, hi = tok.partition("-")
             if not (lo.isdigit() and (not hi or hi.isdigit())):
-                ap.error(f"--studied: '{tok}' is not a lecture number or a range like 5-7")
+                ap.error(f"{flag}: '{tok}' is not a lecture number or a range like 5-7")
             lecs.update(range(int(lo), int(hi or lo) + 1))
-        started = [r for r in rows if r["course"] == code and r["next"] == L.NOT_STUDIED and L.lec_span(r["lec"])
-                   and lecs & set(range(L.lec_span(r["lec"])[0], L.lec_span(r["lec"])[1] + 1))]
+        keys = [t.lower() for t in a.topic] if a.topic else None
+        return code, lecs, [r for r in rows if r["course"] == code and L.lec_span(r["lec"])
+                            and lecs & set(range(L.lec_span(r["lec"])[0], L.lec_span(r["lec"])[1] + 1))
+                            and (not keys or any(k in r["topic"].lower() for k in keys))]
+    if a.not_studied:                    # he has not studied these yet: out of the queue until --studied
+        code, lecs, hit = lecture_rows(a.not_studied, "--not-studied")
+        if not hit:
+            raise SystemExit(f"--not-studied: no {code} topic has a lecture in {sorted(lecs)}; nothing changed")
+        for r in hit:
+            r["next"], r["next_date"] = L.NOT_STUDIED, None
+            print(f"not studied · {r['label']} · Lec {r['lec']} · {r['topic'][:70]}")
+    if a.studied:                        # start the schedule of the topics he has now studied: Next = today
+        code, lecs, hit = lecture_rows(a.studied, "--studied")
+        started = [r for r in hit if r["next"] == L.NOT_STUDIED]
         if not started:
             raise SystemExit(f"--studied: no not-studied {code} topic has a lecture in {sorted(lecs)}; nothing changed")
         for r in started:
@@ -112,7 +129,7 @@ def main():
     block = L.due_block(rows, today, cal, ready)
     L.write_ledger(L.ledger_text(text, rows, block))    # keep ledger.md's Due-now block truthful on every run
 
-    if a.due or a.studied:
+    if a.due or a.studied or a.not_studied:
         for line in block + L.unmatched_block(L.bank_by_topic(rows, scoped)[1]):
             print(line)
         return
