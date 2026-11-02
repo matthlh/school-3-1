@@ -1194,14 +1194,15 @@ The lab format is the best exam sample there is: single-choice, "select every st
 
 (a) 3: three places hold the same list and nothing marks them as the same fact. (b) Value: three places must hold the same literal strings. Not name (each list has a different name) and not algorithm (the membership check is not the agreement, the contents are). (c) Silently wrong: the build is clean and the tests pass, and one place advertises a code another rejects until a customer complains. Fix: one shared constant, degree 1.
 
-### Q: True or false, and justify: "A settings store is read with `const retries = store.get("retries") as number`, and the reader runs `for (let i = 0; i < retries; i++) retry()`. The strongest connascence between whoever writes that key and this reader is connascence of type."
+### Q: True or false, and justify: "A settings store is read with `store.get("retries") as number` and `.toFixed(0)` is called on the result. The strongest connascence between whoever writes that key and this reader is connascence of type."
 **Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
 **A:** Key:
-1. False: the strongest connascence is connascence of name.
-2. Both sides must agree on what the setting is called, the key `"retries"`, and the `as number` cast checks nothing.
-3. Renaming the key on one side is silently wrong: the reader gets `undefined`, the loop never runs, and nothing fails.
+1. False: the strongest connascence is value, because both sides must agree on the literal key `"retries"`.
+2. Type connascence is present too, but it is weaker, and the `as number` cast is an assumption, not a check.
+3. The degree is 2: whoever writes the key and this reader.
+4. A wrong value is a runtime crash: `store.set("retries", "3")` compiles, then `.toFixed` throws a TypeError.
 
-False. It is connascence of name: both sides must agree on what the setting is called, the key `"retries"`, and nothing checks that agreement. The `as number` cast is an assumption, not a check, so the type agreement is weaker and unenforced. Degree is 2 (the writer of the key and the reader). How you find out: rename the key on the writer's side and the reader gets `undefined`; `i < undefined` is false, so the loop never retries, with no error and a clean build. Silently wrong. This matches Lab 2's marked answer (name, silently wrong).
+False. It is connascence of value: both sides must agree on the literal key `"retries"`, and nothing checks that agreement. Type connascence is present too, but it is the weaker of the two, and the `as number` cast is an assumption, not a check. Degree is 2 (the writer of the key and the reader). How you find out: `store.set("retries", "3")` compiles, then `.toFixed` throws a TypeError at run time. Misspelling the key on either side also crashes, because `get` returns `undefined` and `undefined.toFixed` throws. So this one is a runtime crash, not silently wrong and not caught by the compiler. (Lab 2's marked answer: 2, value, runtime crash.)
 
 ### Q: True or false, and justify: "Two classes compute a line total independently, one as `price * qty * (1 + tax)` and the other as `price * qty + price * qty * tax`. Since no literal is shared between them, there is no coupling."
 **Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
@@ -1220,7 +1221,7 @@ False. Connascence of algorithm, degree 2: both must derive the same rule and no
 3. Returning 2 for sent is silently wrong: it compiles, the notifier goes quiet and the dashboard reports sent orders as failed.
 4. The fix is a union type `"draft" | "sent" | "failed"`, which turns value into name so the compiler visits every site.
 
-(a) 3 modules, 5 literal sites if you count comparisons; either is fine if you say which you counted. (b) Value: three places must agree that 1 means sent, and only a comment records the encoding. Not type: everything is a number and stays a number; what is in dispute is which number means what. (c) Silently wrong: it compiles, the notifier goes quiet and the dashboard tells a customer their sent order failed. (d) A union type `"draft" | "sent" | "failed"`: value becomes name, and the compiler visits every site when a case is added. Lab 2's marked answer for its own version of this question was 6, type, build fails. This version changes only which number means sent, which the deck's definitions make value; check the lab's wording on PrairieLearn before the final.
+(a) 3 modules, 5 literal sites if you count comparisons; either is fine if you say which you counted. (b) Value: three places must agree that 1 means sent, and only a comment records the encoding. Not type: everything is a number and stays a number; what is in dispute is which number means what. (c) Silently wrong: it compiles, the notifier goes quiet and the dashboard tells a customer their sent order failed. (d) A union type `"draft" | "sent" | "failed"`: value becomes name, and the compiler visits every site when a case is added. (Lab 2's marked answer: 3, value, silently wrong. Your first attempt said 6, type, build fails.)
 
 ### Q: `static distance(x1, y1, x2, y2)` is called as `distance(a[0], a[1], b[0], b[1])` where a and b are bare `number[]`. (a) Degree? (b) Connascence? (c) Swap x2 and y2 in the signature only. What happens? (d) Fix?
 **Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** apply
@@ -1230,7 +1231,7 @@ False. Connascence of algorithm, degree 2: both must derive the same rule and no
 3. (c) Silently wrong: the call still compiles and returns a number, the wrong one.
 4. (d) A named shape `{ x: number; y: number }`, so a transposed call does not compile and position becomes name.
 
-(a) 2, plus a second positional agreement the caller carries on its own: every caller of the `number[]` version has to know index 0 is x. (b) Position: both sides must agree on the order of four values. Not type: all four really are numbers on both sides, which is exactly why the type system cannot help. (c) Silently wrong: the call still compiles and still returns a number, the wrong one. (d) A named shape `{ x: number; y: number }`: the call cannot be transposed in a way that compiles, so position becomes name. (Lab 2 answer was 5, name, runtime crash.)
+(a) 2, plus a second positional agreement the caller carries on its own: every caller of the `number[]` version has to know index 0 is x. (b) Position: both sides must agree on the order of four values. Not type: all four really are numbers on both sides, which is exactly why the type system cannot help. (c) Silently wrong: the call still compiles and still returns a number, the wrong one. (d) A named shape `{ x: number; y: number }`: the call cannot be transposed in a way that compiles, so position becomes name. (Lab 2's marked answer: 2, position, silently wrong. Your first attempt said 5, name, runtime crash.)
 
 ### Q: True or false, and justify: "A login checker re-implements the password hashing loop instead of calling the hasher. Because both copies contain the literal multiplier 31, this is connascence of value."
 **Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** critique
@@ -1260,7 +1261,7 @@ False. There is connascence of type, made implicit instead of explicit: every ca
 3. (c) Silently wrong: every name comes in backwards with a clean build and green tests, since both columns are strings.
 4. (d) Read the header row and look columns up by name, so position becomes value.
 
-(a) 3, and the third party is not in your repository. An agreement's parties are whoever has to hold it, not whoever is checked into your source control, and the party outside is the one you cannot watch change. Answering 2 is tidy and wrong in the direction that matters. (b) Position: column order and parameter order must match, and only a comment records which order. (c) Silently wrong: every name comes in backwards with a clean build and green tests, since both columns are strings. (d) Read the header row and look columns up by name; position becomes value. (Lab 2 answer was 2, type, runtime crash.)
+(a) 3, and the third party is not in your repository. An agreement's parties are whoever has to hold it, not whoever is checked into your source control, and the party outside is the one you cannot watch change. Answering 2 is tidy and wrong in the direction that matters. (b) Position: column order and parameter order must match, and only a comment records which order. (c) Silently wrong: every name comes in backwards with a clean build and green tests, since both columns are strings. (d) Read the header row and look columns up by name; position becomes value. (Lab 2's marked answer: 3, position, silently wrong. Your first attempt said 2, type, runtime crash.)
 
 ### Q: True or false, and justify: "Of the five kinds of connascence, name is the one the build catches for you: rename the method and every call site fails to compile."
 **Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** recall
@@ -1268,7 +1269,7 @@ False. There is connascence of type, made implicit instead of explicit: every ca
 1. True.
 2. Name is the weakest kind and the only one the compiler reports at every call site; the others crash at run time or are silently wrong.
 
-True. Name is the weakest kind in the table and the only one in the Lab 2 set where the compiler reports the break, at every call site, with a message naming the problem. A method defined once and called once by name is degree 2, name, build fails. Every other kind in the worksheet was either a runtime crash or silently wrong. (Lab 2 answer was algorithm and silently wrong.)
+True. Name is the weakest kind in the table and the only one in the Lab 2 set where the compiler reports the break, at every call site, with a message naming the problem. A method defined once and called once by name is degree 2, name, build fails. Every other kind in the worksheet was either a runtime crash or silently wrong. (Lab 2's marked answer: 2, name, build fails. Your first attempt said algorithm, silently wrong.)
 
 ### Q: State the Lab 2 procedure for working out how a coupling will be found, and name the three outcomes in order from best to worst.
 **Topic:** Coupling & connascence  **Lec:** Lab 2  **Type:** recall
@@ -1287,7 +1288,7 @@ Make the smallest change to one side that makes the other wrong, then ask what h
 2. (b) 4 and 5: data false, logic true, order false, since neither reads the other, both run on the same call, and swapping changes nothing.
 3. (c) 2 and 4: data false, logic true, order false, since they share nothing but the same condition, and swapping leaves the program identical.
 
-(a) All three true: 2 reads what 1 produced (data), both run whenever the function is called (logic), and swapping them does not compile (order). (b) Data false, logic true, order false: one appends to the audit log, the other increments a counter, neither reads the other, both run on the same call, and swapping them changes nothing. (c) Data false, logic true, order false: tax and the audit log have nothing in common, but they happen under the same condition, and swapping them leaves the program identical. (Lab 2 answers were F F F, T T F, T T T.)
+(a) All three true: 2 reads what 1 produced (data), both run whenever the function is called (logic), and swapping them does not compile (order). (b) Data false, logic true, order false: one appends to the audit log, the other increments a counter, neither reads the other, both run on the same call, and swapping them changes nothing. (c) Data false, logic true, order false: tax and the audit log have nothing in common, but they happen under the same condition, and swapping them leaves the program identical. (Lab 2's marked answers: T T T, F T F, F T F. Your first attempt said F F F, T T F, T T T.)
 
 ### Q: True or false, and justify: "Two statements in the same function body always share a logic binding."
 **Topic:** Cohesion & bindings  **Lec:** Lab 2  **Type:** critique
@@ -1322,7 +1323,7 @@ False. They share a data binding (same array, same field), but order binding nee
 2. (B, C): data true, logic false (C runs only under the flag), order true (C reads `seatsLeft`, which B modifies).
 3. (D, E): data false, logic true (both run once at the end of every call), order false (metrics do not care whether the mail has gone out).
 
-(A, B): all three true. B fills what A declared, both run every sweep, and A below B does not compile. (B, C): data true (same array, same list), logic false (C runs only under the flag), order true (C decides "at risk" from `seatsLeft`, which B modified). (D, E): data false (promoted count vs notices list), logic true (both once at the end of every call), order false (metrics do not care whether the mail has gone out). (Lab 2 answers were F F T, F T T, T T T.)
+(A, B): all three true. B fills what A declared, both run every sweep, and A below B does not compile. (B, C): data true (same array, same list), logic false (C runs only under the flag), order true (C decides "at risk" from `seatsLeft`, which B modified). (D, E): data false (promoted count vs notices list), logic true (both once at the end of every call), order false (metrics do not care whether the mail has gone out). (Lab 2's marked answers: T T T, T F T, F T F. Your first attempt said F F T, F T T, T T T.)
 
 ### Q: A shipping calculator and a checkout summary both compare `orderTotal >= 75`, and the summary also computes `75 - orderTotal`. (a) How many places must be edited to change the threshold? (b) Connascence before and after extracting `FREE_SHIPPING_THRESHOLD`? (c) True or false: "After the constant is extracted the two classes are no longer coupled."
 **Topic:** Coupling & connascence  **Lec:** Lab 3  **Type:** apply
