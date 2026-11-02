@@ -130,6 +130,9 @@ review. An outcome without a code, such as 1+, is found by its words instead.
   practise computing it.
 - Several outcomes say "using software" (1e, 7i, 8f, 8j) — those are the labs. Don't treat lab
   work as separate from exam prep.
+- **Presentation costs marks on written answers** (lecture 20). Define the random variable in
+  words and give its distribution with both parameters; "X is Normal" with no mean and variance
+  earns only part marks. Write the general formula before substituting numbers.
 
 ## Look-alikes
 

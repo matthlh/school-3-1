@@ -3734,6 +3734,132 @@ $$
 
 which is also $$e^{-0.16 \times 5} = e^{-0.8}$$, no failure in 40 hours.
 
+## Lec 20 — Midterm exam review: the four iClicker questions and how answers are marked (prepared 2026-11-01 from the deck and the recording; numbers changed)
+
+### Q: Nine delivery times, in minutes, are 12, 14, 15, 15, 16, 17, 18, 19, 20. The 20 is mistyped as 200. Which of the mean, median, range, standard deviation, $$Q_1$$, $$Q_3$$ and IQR change, and why?
+**Topic:** 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences)  **Lec:** 20  **Type:** apply
+**A:** Key:
+1. The mean, the range and the standard deviation change; the median, $$Q_1$$, $$Q_3$$ and the IQR do not.
+2. The mean and the standard deviation use every value, and the range uses the two extremes, so one bad value moves them.
+3. With $$n = 9$$, the median is the 5th sorted value, $$Q_1$$ averages the 2nd and 3rd and $$Q_3$$ averages the 7th and 8th, so none of them touches the largest value.
+4. The mean goes from 16.22 to 36.22 and the range from 8 to 188.
+
+This was the lecture 20 iClicker, where the answer was the IQR. By the $$np + 0.5$$ rule, $$9 \times 0.25 + 0.5 = 2.75$$, so $$Q_1 = \frac{14 + 15}{2} = 14.5$$, and $$9 \times 0.75 + 0.5 = 7.25$$, so $$Q_3 = \frac{18 + 19}{2} = 18.5$$. Both stay put, so the IQR stays 4, and the median stays 16. The standard deviation jumps from 2.54 to 61.45. A summary built from every value or from the extremes is sensitive to outliers; one built from the middle half is not.
+
+### Q: $$P(A) = 0.3$$ and $$P(B) = 0.6$$. Which statement is true? (a) If $$A$$ and $$B$$ are disjoint, $$P(A \cup B) = 0.72$$. (b) If $$A$$ and $$B$$ are independent, $$P(A \cup B) = 0.90$$. (c) If $$A$$ and $$B$$ are independent, $$P(A \cup B) = 0.72$$. (d) If $$A$$ and $$B$$ are disjoint, $$P(A \cup B) = 0.18$$.
+**Topic:** 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule)  **Lec:** 20  **Type:** apply
+**A:** Key:
+1. (c): independent events multiply for the intersection, so $$P(A \cap B) = 0.18$$ and $$P(A \cup B) = 0.3 + 0.6 - 0.18 = 0.72$$.
+2. Disjoint events have $$P(A \cap B) = 0$$, so their union is 0.90, which rules out (a) and (d).
+3. (b) uses the disjoint value for independent events.
+
+The general addition rule holds for any two events; the condition only decides the intersection.
+
+$$
+\begin{aligned}
+P(A \cap B) &= 0.3 \times 0.6 = 0.18 \\
+P(A \cup B) &= 0.3 + 0.6 - 0.18 \\
+&= 0.72
+\end{aligned}
+$$
+
+In the lecture 20 iClicker only 68% got the matching question right: most wrong answers took the disjoint sum and missed that the option paired it with independence. Read which condition each option names before you compute.
+
+### Q: $$\operatorname{Var}(W) = 2$$, $$\operatorname{Var}(X) = 5$$, $$\operatorname{Var}(Y) = 1$$ and $$\operatorname{Cov}(X, Y) = 1.5$$. $$W$$ is independent of $$X$$ and of $$Y$$. Find $$\operatorname{Var}(T)$$ for $$T = 3W + 2X - 4Y$$: (a) 51 (b) 54 (c) 78 (d) 30.
+**Topic:** 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄)  **Lec:** 20  **Type:** apply
+**A:** Key:
+1. $$W$$ is independent of $$X$$ and $$Y$$, so $$\operatorname{Cov}(W, X) = \operatorname{Cov}(W, Y) = 0$$ and only the $$X, Y$$ covariance term stays.
+2. The variances enter with squared coefficients: $$9(2) + 4(5) + 16(1) = 54$$.
+3. The covariance term is $$2(2)(-4)(1.5) = -24$$, so $$\operatorname{Var}(T) = 30$$, answer (d).
+
+$$
+\begin{aligned}
+\operatorname{Var}(T) &= 3^2(2) + 2^2(5) + (-4)^2(1) \\
+&\quad + 2(2)(-4)(1.5) \\
+&= 18 + 20 + 16 - 24 \\
+&= 30
+\end{aligned}
+$$
+
+Each wrong option is one slip: (b) 54 ignores the covariance, (c) 78 drops the minus sign on $$Y$$'s coefficient in the covariance term, and (a) 51 leaves the coefficients out of it, $$54 - 2(1.5)$$. In the lecture 20 iClicker this kind of question was answered correctly by only 50%.
+
+### Q: The standard Normal table runs from about $$z = -3.49$$ to $$z = 3.49$$. Give (a) $$P(Z > 4.6)$$, (b) $$P(Z < 6.2)$$ and (c) $$P(-5.1 < Z < 0)$$, and say why no table entry is needed.
+**Topic:** 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm)  **Lec:** 20  **Type:** apply
+**A:** Key:
+1. At the table's ends the left areas are already 0.0002 and 0.9998, so beyond them the probabilities are taken as 0 or 1.
+2. (a) $$P(Z > 4.6) \approx 0$$.
+3. (b) $$P(Z < 6.2) \approx 1$$.
+4. (c) $$P(-5.1 < Z < 0) \approx 0.5 - 0 = 0.5$$.
+
+Almost all the area lies within 3 standard deviations of the mean, 99.7% by the empirical rule, which is why the table stops near 3.49. For (c), $$P(Z < 0) = 0.5$$ by symmetry and $$P(Z < -5.1) \approx 0$$. This was the lecture 20 iClicker ($$P(Z > 5)$$, about 0), and the instructor called it an easy mark.
+
+### Q: Bottle fills are Normal with mean 500 mL and standard deviation 8 mL, independently from bottle to bottle. A question asks for the distribution of the mean fill of 16 bottles, and a student writes "$$\bar{X}$$ is Normal with mean 500". What does that earn, and what is the full-marks answer?
+**Topic:** 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ)  **Lec:** 20  **Type:** critique
+**A:** Key:
+1. Part marks only: the random variable is not defined in words and the variance is missing.
+2. Define it: $$\bar{X}$$ is the mean fill, in mL, of the 16 bottles.
+3. $$\bar{X} \sim N(500, 4)$$, because the variance is $$\frac{\sigma^2}{n} = \frac{64}{16} = 4$$, a standard deviation of 2 mL.
+4. $$\bar{X}$$ is Normal because it is a linear combination of independent Normals.
+
+In lecture 20 the instructor said that naming a Normal distribution without its mean and variance earns only part marks, and that the random variable must be defined from the question's wording, because the question will not define it for you.
+
+$$
+\begin{aligned}
+\bar{X} &\sim N\left(\mu, \frac{\sigma^2}{n}\right) \\
+&= N\left(500, \frac{8^2}{16}\right) \\
+&= N(500, 4)
+\end{aligned}
+$$
+
+### Q: The wait for a shuttle is uniform between 5 and 15 minutes. Write the working that earns full marks for the mean and the standard deviation of the wait.
+**Topic:** 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F)  **Lec:** 20  **Type:** apply
+**A:** Key:
+1. Define the variable and its distribution first: $$X$$ is the wait in minutes, $$X \sim U(5, 15)$$.
+2. $$E(X) = \frac{a + b}{2} = \frac{5 + 15}{2} = 10$$ minutes.
+3. $$\operatorname{Var}(X) = \frac{(b - a)^2}{12} = \frac{100}{12} = 8.33$$, so $$\operatorname{SD}(X) = 2.89$$ minutes.
+
+In lecture 20 the instructor named the common mistake: copying numbers from the cheat sheet into a formula without saying what the random variable is or which distribution it has. State $$X$$, the distribution and its parameters, write the general formula, then substitute.
+
+$$
+\begin{aligned}
+E(X) &= \frac{5 + 15}{2} = 10 \\
+\operatorname{Var}(X) &= \frac{(15 - 5)^2}{12} \\
+&= 8.33 \\
+\operatorname{SD}(X) &= \sqrt{8.33} = 2.89
+\end{aligned}
+$$
+
+### Q: For which of these may you answer with a tree diagram, and what must the tree still show for full marks? Then answer (c).
+- (a) A part comes from one of three machines with known shares and defect rates; find $$P(\text{machine 2} \mid \text{defective})$$.
+- (b) A die is rolled twice; find $$P(\text{first roll is 6} \mid \text{sum at least 10})$$.
+- (c) A fair coin is flipped three times; find $$P(\text{first flip heads} \mid \text{exactly two heads})$$.
+**Topic:** 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior)  **Lec:** 20  **Type:** apply
+**A:** Key:
+1. (a) and (c) suit a tree, because they have few branches: three then two, and 8 outcomes. (b) has 36 outcomes, so list them in a table instead.
+2. A tree still needs each event defined in words with a letter, a probability on every branch, and the conditional probability formula written before the numbers.
+3. (c) $$P(H_1 \mid \text{two heads}) = \frac{2}{8} \div \frac{3}{8} = \frac{2}{3}$$.
+
+In lecture 20 the instructor said a tree diagram can replace Bayes' theorem, as long as the events are defined and the formula is written, and that it suits only a small number of outcomes: three coin flips yes, two dice rolls no. For (c), two heads in three flips is HHT, HTH or THH, each with probability $$\frac{1}{8}$$, and the first flip is heads in two of them.
+
+$$
+\begin{aligned}
+P(H_1 \mid \text{two heads}) &= \frac{P(\text{HHT}, \text{HTH})}{P(\text{HHT}, \text{HTH}, \text{THH})} \\
+&= \frac{2}{8} \div \frac{3}{8} = \frac{2}{3}
+\end{aligned}
+$$
+
+For (b), the table gives 6 outcomes with a sum of at least 10, three of them with a first roll of 6, so the answer is $$\frac{3}{6} = \frac{1}{2}$$.
+
+### Q: True or false, and justify each. (a) A Venn diagram shows that $$A$$ and $$B$$ are independent. (b) Disjoint events show on a Venn diagram as regions that do not overlap. (c) If $$P(A \mid B) = P(A)$$, then $$P(A \cap B) = P(A)\,P(B)$$ and $$P(B \mid A) = P(B)$$. (d) $$P(A) = 0.5$$, $$P(B) = 0.4$$ and $$P(A \cap B) = 0.2$$, so $$A$$ and $$B$$ are independent.
+**Topic:** 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement)  **Lec:** 20  **Type:** critique
+**A:** Key:
+1. (a) False: a Venn diagram shows which outcomes the events share, not whether $$P(A \cap B) = P(A)\,P(B)$$, so independence is checked with an equation.
+2. (b) True: disjoint events share no outcome, so their regions do not overlap.
+3. (c) True: the three tests are equivalent, so if one holds the other two hold.
+4. (d) True: $$0.5 \times 0.4 = 0.2 = P(A \cap B)$$.
+
+The instructor made point (a) in lecture 20: disjointness can be drawn, independence cannot. The three equivalent tests are $$P(A \cap B) = P(A)\,P(B)$$, $$P(A \mid B) = P(A)$$ and $$P(B \mid A) = P(B)$$.
+
 ## WeBWorK 6 — Ch 6 and Ch 7 (opened by Oct 30, due Thu Nov 12; banked 2026-10-30, numbers changed)
 
 ### Q: WeBWorK-style. Bulb lifetimes are exponential with mean 0.8 years. A tester records each bulb as a success when it lasts more than 1.2 years. Find (a) the probability that the first success is the 4th bulb, (b) the probability that the second success is the 7th bulb given that the first was the 2nd, and (c) the probability that the first success falls on an odd-numbered bulb.
