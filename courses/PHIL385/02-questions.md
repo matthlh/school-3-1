@@ -2768,3 +2768,307 @@ False. Reproduction is a precondition of life, and the lecture's point was that 
 3. The diary shows that desire ending the moment it is satisfied, which is why the Diapsalmata voice has given up on it.
 
 Romantic love, in the past. Kraal's note was "for a while it was Cordelia": the seducer's absolute desire was A's one candidate for a meaning of life, and the diary shows it ending the moment it is satisfied, which is why the Diapsalmata voice has given up on it. Johannes knows what he finds fun and enjoyable and pursues that, because he has no belief about what he should do.
+
+## Lec 18 — "The Aesthetic Validity of Marriage": B's warning to A, and the ethical against the aesthetic (Mon Nov 2, logged 2026-11-02)
+
+### Q: Who writes "The Aesthetic Validity of Marriage", to whom, in what form, and what does marriage stand for in the essay?
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. B, Judge William, writes it to A.
+2. It is a letter, the first of B's two letters that make up Part II of *Either/Or*.
+3. Marriage stands for the ethical; Kraal's framing is that even on the aesthetic's own terms the ethical wins.
+
+B chose the letter form because it allows "admonitory and urgent tones" and keeps A from debating in general terms. Kraal's line was that if you play the game of life on the aesthetic's own parameter, the ethical still triumphs, because marriage turns out more aesthetic than romantic love.
+
+### Q: State B's two-fold task in the essay.
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. To show the aesthetic significance of marriage, against A's view that marriage is unaesthetic and boring in the long run.
+2. To show how the aesthetic can be sustained in marriage against life's obstacles, over time.
+
+B prefixes each task with a short "polemical prologue" that answers A's sarcasm. He calls fighting for marriage his vocation as a husband, "pro aris et focis", for hearth and home.
+
+### Q: How does B say he feels toward A, and what is his warning?
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. He loves A "like a son, a brother, a friend", with an aesthetic love and "with the fear and trembling of a religious love".
+2. The warning is about A himself: "I am warning you not about the world but about yourself, and I am warning the world about you."
+3. A is wasting his life: it "will be nothing but approach-runs", conscience will unroll a record of "wasted possibilities", and "you accomplish nothing".
+
+Kraal's gloss: B tells A he has one chance at life, has talents and responsibilities he should take up, and is on a self-destructive path he will regret. B also says he would warn a daughter against A. He adds that A is not an enemy of marriage but only mocks and observes it, loves "the accidental", and lacks faith.
+
+### Q: Where did Kraal say the marriage vow comes from, and what does B say about where marriage belongs?
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Kraal: the vow comes from Christianity, around the year 1100.
+2. B: marriage belongs to Christianity; the pagan nations, for all the sensuality of the Orient and the beauty of Greece, and Judaism did not perfect it.
+3. In the ceremony the Church "exacts a vow", and the vow, the intention, gives marital love its law of motion.
+
+The Church made marriage a sacrament in the twelfth century, which is the fact behind Kraal's date.
+
+### Q: Reconstruct the argument Kraal drew from B about love and the ethical, and give B's own sentence for it.
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** derive
+**A:** Key:
+1. If love is inconsistent with the ethical, and the ethical (duty) always turns up eventually in a love relation, then love cannot last.
+2. If love cannot last, love loses.
+3. So if love is inconsistent with the ethical, love loses.
+4. B's sentence: "If duty is the enemy of love, and love cannot defeat this enemy, then love is not the true victor."
+
+The argument is aimed at A, who praises love as the highest thing: A must deny that duty is love's enemy, or admit that his love loses and that he has disparaged it.
+
+### Q: True or false, and justify: B concludes from his argument that one should live by duty and responsibility rather than by love.
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** critique
+**A:** Key:
+1. False.
+2. B's view is that duty is love's friend, not its rival: "You regard duty as the enemy of love, I regard it as its friend."
+3. "Duty here is just one thing, truly to love", and the aesthetic, the ethical and the religious are "the three great allies".
+
+The argument is a trap for A: if duty were love's enemy, love would lose, so A, who makes love the highest, must give up the premise. B says duty is not "one climate and love another"; duty makes his love "the true, temperate climate". Love held apart from duty is despair, which is why B rejects it, not because duty outranks love.
+
+### Q: What distinguishes love from lust, according to B?
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Love has "the stamp of the eternal"; lust does not.
+2. The sensual is "the instantaneous" and at best makes the moment of pleasure into "a little eternity".
+3. The true eternity in love needs "a determination of the will".
+
+Romantic love rests on the sensual and beauty but is noble because of the consciousness of the eternal it takes up. B says A's "clever head" has conspired with his "lust", so that he renews the illusion of first love in new girls.
+
+### Q: B quotes "do it or do not do it, you will regret both". Whose line is it, where is it from, and when does B say it is justified?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. It is A's own line, from the Diapsalmata.
+2. B says it is justified only for someone who cannot see the aesthetic, the ethical and the religious as "the three great allies".
+3. For such a person "life is without meaning".
+
+B calls it A's "pet theory" and uses it as the end point of taking duty to be love's enemy: that view is despair, whether A feels its pain or tries to forget it.
+
+## Reading: "The Aesthetic Validity of Marriage" (Nov 2–6; read by Claude 2026-11-02)
+
+### Q: Give B's criteria of romantic love.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. It is immediate: "to see her and to love her were one and the same".
+2. It rests on natural necessity and on beauty, sensual beauty and the beauty that shows through the sensual.
+3. It has nobility from the consciousness of the eternal it takes up, which is what separates love from lust.
+
+B says the old romances end where they should begin, with the lovers united in the fifth act, and that their struggle is entirely external; today money has replaced cruel fathers, with a rich uncle dying in the fifth act.
+
+### Q: The reflective age, B says, struck out on two paths against romantic love. Describe both and his verdict on each.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. The immoral path keeps the temporal "refined in a sensual eternity, in the eternal instant of the embrace"; Byron's "love is heaven, marriage hell"; marriages for a period with a way out, like giving notice of a change of address.
+2. The respectable path is the marriage of convenience, really "the marriage of reason": a capitulation to life, with despair as its only solace.
+3. Verdict: the first is absolutely immoral though it brings thought a step nearer the goal as "a formal protest against marriage"; the second is as immoral as it is unaesthetic, because a calculation is always temporal and so lacks the eternal.
+
+The immoral path's new definition of unhappy love is to be loved when one is no longer in love. The marriage of reason is entered into by people who have learnt that love is an illusion and concerns itself with "the prose of life".
+
+### Q: Distinguish egoistic from sympathetic melancholy in B's letter, and say what B makes of the age's retreat from marriage.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Egoistic melancholy fears for itself: "perhaps fate will tie me to another that is truly the ideal".
+2. Sympathetic melancholy, "more painful and also somewhat nobler", fears for itself for the other's sake: "perhaps what the beloved finds captivating in me will be taken from me".
+3. Both treat every day as "examination day", and the age neutralizes marriage out of cowardice and self-indulgence, not, as the Middle Ages did, because the unmarried life was thought more perfect.
+
+B calls melancholy "the defect of our time" and says marriages contracted for a period only sap the energy of married life.
+
+### Q: Why, for B, must conjugal love not begin with doubt, and what is the "higher concentric immediacy"?
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. A marriage built on doubt would divorce marriage from love by annihilating first love.
+2. Instead first love is taken up unchanged into "a higher concentric immediacy", which enriches it rather than impoverishing it.
+3. The higher thing is the religious, "where rational reflection ends", and there love finds the infinity reflective love sought in vain.
+
+B wants no rift in the ethical like the one between faith and knowledge in the intellectual sphere.
+
+### Q: What is the substance of marriage for B, and what does marriage presuppose? Whom does he call the traitors of marriage?
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. The substance of marriage is love, "the being in love"; without it a shared life is sensual satisfaction or a partnership.
+2. Marriage does not evoke love; it presupposes it "as something present, not past". Marriage has an ethical and religious factor and rests on resignation; being in love does not.
+3. The traitors are not the seducers or the divorced but the husbands who rebel only in thought, "like lunatics each in his matrimonial cell", sighing for the engagement.
+
+People who marry first and expect love to follow are "dove-fanciers" shutting two doves in a cage. If the thought-rebels were right, love would belong to the engagement and no one should marry.
+
+### Q: Which Mozart figure does B use, for what, and how does first love differ from it?
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** apply
+**A:** Key:
+1. The Page in *Figaro*, Cherubino, as the state before first love: "love makes blind", a "dreaming yet searching state".
+2. First love by contrast is "an absolute wakefulness", aimed at "a single, definite, actual object" which is all there is for it.
+
+B is reusing A's own example from "The Musical Erotic" but places it before first love rather than as a stage of it. The philistine who looks for a partner in the newspaper has excluded himself from first love altogether.
+
+### Q: List the features B gives first love.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Absolute wakefulness, directed at one definite living being.
+2. Sensual but not simply sensual, since the sensual as such comes forth only in reflection and first love has no reflection.
+3. It presupposes itself back into all eternity and forward into all eternity.
+4. It is "the unity of freedom and necessity" and of "the universal and the singular", and has all this immediately.
+
+The two are drawn to each other by an irresistible power and feel their freedom in it. B offers himself as "the noble father" who lets them come together "in the name of God".
+
+### Q: How, for B, do the lovers relate their first love to God without changing it, and what image does he use?
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. They thank God for their love; no reflection joins, and the love is "assumed into a higher concentricity".
+2. The thanksgiving carries an intention, to hold on to the love, and that lifts first love into the ethical.
+3. The image is a swimming belt worn by someone who has never been in mortal danger.
+
+Thanking God also changes the man: instead of feeling he has conquered the girl, he humbles himself, and "it is in truth far more beautiful to take the beloved as a gift from the hand of God than to have subdued the whole world to conquer her". Possession becomes "daily possession throughout a whole lifetime".
+
+### Q: Give A's three offences at the altar and B's reply to each.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. He is solemnly made her master: B says he already is, and his coquetry about wanting to be her slave is idolatry.
+2. His beloved is declared a sinner: the Church proclaims sin only as woman's lot in general, and woman is "meek" and "much nearer to God than man".
+3. A third power binds them to fidelity: it does not impose itself, the religiously developed seek it, and lovers swear by the moon and the stars anyway.
+
+A's wider objection is that the Christian God is spirit and negates beauty and the sensual. B answers that "flesh is not sensuality, it is selfishness", so even the spiritual can be carnal, that the innocent sensual can be taken into Christianity, and that Scripture has "no special blessing for bachelors".
+
+### Q: What does B make of the saying "one loves only once", and what is preferential love?
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. The aesthetic, the religious and the ethical all say it, and marriage steps in to make it real; the Church looks with suspicion on a second marriage.
+2. Earthly love is preferential love, its defect and its advantage: it begins by loving several and ends in loving one, while spiritual love loves all.
+3. The unhappy are of two kinds, those yearning for the ideal and those unwilling to hold on to it; the latter are the real seducers.
+
+"One loves only once, one marries twice, three times" is the saying B refuses, since if people loved several times marriage would come into question.
+
+### Q: Why must marriage have no "why", and which three reputable "whys" does B examine?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Marriage has its teleology in itself; "the less 'why' the more love", and a finite why is "a swarm".
+2. The three: a school for character, children (propagating the race), and a home.
+3. Each is one-sided, so "as ridiculous as they are anaesthetic and irreligious"; marrying for a purpose fails because "the fault is precisely that he has a purpose".
+
+The despicable whys (money, jealousy, prospects of inheritance) B refuses to discuss. The result puts marriage level with first love, and "the aesthetic in marriage is this: that it conceals a multitude of 'why's' which life reveals in all their blessedness".
+
+### Q: Tell the story of the official at the tea-table, and what B wishes such husbands.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. A, visiting a government official's family, asked "why does one marry, why, why?", and the host answered that "marriage is a good school for character", then outdid himself in absurdity.
+2. B reproached A for the women's sake, especially the wife who perhaps loved her husband.
+3. B wishes every such husband "a Xanthippe for his wife and as wicked children as possible", so that he has the means to attain his purpose.
+
+B grants that marriage is a "genesis of character", but anyone who marries for that reason should go to any other school than love's.
+
+### Q: What does B say about children and about marrying for a home?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Marrying to propagate the race, "stud-farm purposes", is irrelevant to marriage; Genesis gives the reason as "it was not good that man should be alone", and adds "and He blessed them".
+2. Children are still a blessing: the poor woman trading in the square with her baby, whom B would paint if he were a painter; the Chinese saying "bring your children up well, and you will come to know what you owe your parents".
+3. Marrying for a home: the bored bachelor who makes a young girl a "galley-slave" is despicable; among common folk marrying for a home can be fine, because the home is seen as a duty and a vocation.
+
+States have rewarded fertility and Christianity has at times rewarded celibacy. A, "a stranger and an alien in the world", has no home and is only ever a welcome guest, which B calls a humiliation.
+
+### Q: What does the wedding ceremony do, according to B, and how does he answer A's objection that it reminds one of one's "numerical significance"?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. It surveys the genesis of the human race and ties the marriage to the universal, leading the lovers back to the first couple.
+2. It proclaims sin as the lot of man in general, never "you are now about to commit a sin", with the three punishments: pain in childbirth, the woman's obedience, bread in the sweat of the brow.
+3. It asks questions to make firm, not to cause vacillation, takes the couple's love for granted since "the Church is not a match-maker", and exacts a vow.
+4. Reply to A: love is a unity of the universal and the singular, and the great thing is "in the singular to possess the universal", so each marriage is "an individual and a symbol at the same time".
+
+The ceremony does not bring the lovers to a standstill; it "lets what was already in motion proceed openly". Conclusion of the first task: marriage is "the transfiguration of first love, and is even more beautiful than it".
+
+### Q: "The aesthetic lies not in the immediate but in the acquired." Explain with B's account of marriage's law of motion.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** derive
+**A:** Key:
+1. First love is "an unreal An-sich" with no inner history, like a sleepwalker who falls the moment you say his name.
+2. Marital love is "armed": in the intention the will is directed inward, so it has a law of motion and an inner history.
+3. Marriage is "the immediacy which has mediacy in itself, the infinity which has the finite in itself, an eternity which has the temporal in itself", so it is ideal in both the classical and the romantic sense.
+4. Hence "it is marriage that is poetic", and first love lacks "the second aesthetic ideal, the element of history".
+
+Against the young men who cry "de omnibus dubitandum", B says love is a province of giving, not acquiring; the beauty is in the immediate's being acquired along with the doubt, not in exertion alone. He compares faith: a miracle-working faith would have no history, because the history of faith is its appropriation in life.
+
+### Q: In what sense is secretiveness the absolute condition of the aesthetic in marriage, and what is the inward condition?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. Outwardly, secretiveness toward the world: marital love does not run off to an uninhabited island but keeps its secret while remaining among people.
+2. Inwardly, the condition is the opposite: "openheartedness, uprightness, publicity on the largest conceivable scale", which takes courage.
+3. "You fear that when the enigma has gone love will cease, while I believe that only when it has gone does love begin."
+
+A's castle in the air, with him on the ground floor and his wife in the left wing of the first floor, is B's example of clinging to immediacy as a category of nature.
+
+### Q: Why does B say the "secrecy system" never makes a happy marriage, and when does he advise against marrying?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. An aesthetically beautiful marriage is always a happy one, and B has never seen a happy marriage built on secrecy: the wife as slave, the "misplaced solicitude" that calls woman weak ("the woman is just as strong as the man, maybe stronger"), and the gifted husband who arranged his wife's whole world like Potemkin's landscapes.
+2. The life-principle of marriage is "honesty, openheartedness, revelation, understanding"; a couple should "live on a good understanding".
+3. Never marry if you have "a secret which cannot be dragged out of you without costing you your life".
+
+Goethe's *Elective Affinities* shows what secretiveness leads to: had Edward confided to his wife that he loved another, the affair would have been "a divertissement in the drama of the marriage".
+
+### Q: What is B's protest against A's word "habit"?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** critique
+**A:** Key:
+1. "Habit" is used properly only of what is bad; it designates something unfree, and of the good "one can never talk of habit".
+2. Monotony can be the expression of something beautiful, like an even tempo in music.
+3. Even if monotony were unavoidable, the task would be to preserve love under it, since "despair can never be a task; it is a convenience".
+
+What A calls habit is simply the historical side of marriage. A's error is that he thinks abstractly, in "the categories of love", not historically.
+
+### Q: Contrast the conqueror and the possessor as B does.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. A calls himself "a conqueror who cannot possess"; B grants that most natures are formed for conquering, but going downhill takes more strength than going uphill.
+2. "Possession is conquering in reverse": to conquer needs pride, violence, greed, eating and drinking; to possess needs humility, patience, contentment, praying and fasting.
+3. The religious element in marriage "will dethrone the conqueror and let the possessor come into view", so marriage is built for "lasting possession".
+
+A's own maxim, "the great thing isn't the original but the acquired", counts against him: conquering is the original, possessing the acquired. The possessor also conquers, like the countryman who conquers by digging the earth.
+
+### Q: Distinguish external from internal history, and say what art and poetry can and cannot represent.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. External history is the struggle for something that lies outside; internal history begins with the possession and is the acquiring of it. "Only internal history is true history."
+2. Art and poetry prefer external history and the moment: pride, courage, a hero conquering or dying can be shown in a moment.
+3. Humility, patience and "a cross-bearer who every day takes up his cross" cannot, because their point is that they happen every day; the aesthetic that outruns representation is realized "by being lived".
+
+The arts move from space to time: sculpture, painting (as Schelling noted), music, which vanishes in time, and poetry, the most complete. The highest in aesthetics is to feel oneself "a character in the play written by God", at once "composer and composition".
+
+### Q: Compare B's faithful husband with the faithful knight, and say who triumphs over time.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. The knight waits fifteen years and then comes the moment of his reward, which poetry concentrates.
+2. The husband is faithful for fifteen years while possessing, and constantly acquires the fidelity he has; his enemy is "that most dangerous enemy which is time".
+3. The knight "has killed time"; the husband "has not killed time but saved and preserved it in eternity", so only he triumphs over time.
+
+B's riddle is to live in eternity yet hear the parlour clock strike so that it prolongs one's eternity, against the medieval story of the man who woke in hell, asked "What time is it?", and was told "An eternity."
+
+### Q: What does B say about living in hope and in recollection, and what is his point about the silver and golden weddings?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. People divide into those who live mainly in hope and those who live mainly in recollection; both have a wrong relation to time, and the healthy individual lives in both at once.
+2. Recollection "puts a cross on the note of the instant", so an erotic moment this year is increased by the memory of one last year.
+3. The world's ages run gold, silver, copper, iron; in marriage "the silver wedding comes first and then the golden wedding", so marriage's later weddings are declared more beautiful than the first.
+
+A bachelor's jubilee is thought laughable, because the single state is assumed never to grasp the true present, the unity of hope and recollection. The married love's predicates (faithful, constant, humble, patient, and so on) are all inward and temporal, and it is "the divine through being the everyday".
+
+### Q: How does B answer A's "cane of duty", and what does "duty here is just one thing" mean?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** critique
+**A:** Key:
+1. A says that behind the closed door "out comes the cane and we are told it's a duty"; B says A's fear of being compelled shows he does not believe in the eternity of first love, so for A "love is clearly not the highest thing".
+2. Duty is love's friend: "duty here is just one thing, truly to love", not a catalogue of rules of etiquette.
+3. The husband who feared his wife thought he loved her only from duty was doing exactly what duty enjoins; the "more" one can do is to do what duty enjoins, translating it from the external to the internal.
+4. Duty "has a mortal hatred of false love, yes, it kills it", and its language is in the future tense, to suggest the historical.
+
+Love and duty are like the "t" and the "e" in the syllable "te": say one and you say the other. B: "Duty is not for me one climate and love another; duty makes my love into the true, temperate climate."
+
+### Q: What is A's "no mishmash" objection to marriage, and how does B answer it?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** critique
+**A:** Key:
+1. A: everything else is either duty or love; marriage alone is "a monstrosity", a "hermaphroditic ambiguity", since one cannot say where the boundary of a pledge to love lies, which tribunal judges it, or what power compels.
+2. B: even an official's calling is not a sum of appointments, since the State presupposes the enthusiasm it cannot check.
+3. In marriage the main thing is inward, and the check is "you yourself"; demanding an outside check is a way to worm out of duty or to have oneself declared incompetent.
+
+B adds that his insistence on duty is not the prosaic common sense of people who destroyed the immediate and took to duty in old age; duty has been "our love's first and only confidant".
+
+### Q: How does B close the letter?
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall
+**A:** Key:
+1. "Dixi et animam meam liberavi", I have spoken and freed my soul, meant as a healthy breath (respiratio), not an unburdening.
+2. The Serbian legend of the giant with the immense appetite who sits down with a poor cottager; the cottager first says a prayer, "and behold! there is enough for them both".
+3. An invitation: no standing invitation "for ever", but "come when you want, always welcome".
+
+B wrote for a fortnight of evenings with A, figuratively, "outside my door", and sends a greeting from his wife.

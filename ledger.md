@@ -55,6 +55,8 @@ _46 topics due as of Mon Nov 2. Say **quiz me**._
 - STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · due today · last X
 - STAT 251 · 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ) · due today · last X
 
+_Readiness · PHIL 385 Exam 4 14:00 · Fri Nov 20 · 0% of 33 in-scope questions likely recalled._
+
 _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 2 14:00 · PHIL 385 2 topics from Exam 3 14:00. The exam that covered them is past and the course's next exam does not._
 
 - PHIL 385 · Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) · frozen after Exam 1
@@ -164,6 +166,9 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | PHIL 385 | The Musical Erotic: Plato, Christianity and the demonic (Republic's reason, spirit and appetite · the Phaedrus chariot · the Symposium ladder against A's stages · Christianity made desire sinful and the sensual a principle · music as demonic · Il dissoluto punito and the ending) | 12 | 2026-10-15 | X | 0 | 2026-10-16 |
 | PHIL 385 | The Seducer's Diary: Johannes and Cordelia (A as the real author behind the Johannes facade · reflective seduction against Don Giovanni's immediacy · the free gift as the highest enjoyment · observing, infatuation, plan, deception · the engagement Cordelia breaks · the final enjoyment and the resistance paradox) | 13 | — | — | 0 | 2026-10-26 |
 | PHIL 385 | Diapsalmata: moralizing and the meaning of life (moralizing presupposes a standard · beliefs about how to live cannot be verified · A lacks a belief about the meaning of life · precondition is not meaning · disappointed with philosophy, perhaps only God knows · romantic love was the best thing, for a while it was Cordelia) | 15 | — | — | 0 | 2026-10-26 |
+| PHIL 385 | The Aesthetic Validity of Marriage: B's task and tone (Judge William's letter to A · two tasks: marriage is aesthetic and stays so · loves A like a son, brother and friend · warns A about himself · the vow from Christianity about 1100 · if duty is love's enemy, love is not the true victor · the close) | 18 | — | — | 0 | 2026-11-03 |
+| PHIL 385 | The Aesthetic Validity of Marriage: first love and the reflective age (love has the stamp of the eternal, lust does not · the immoral and the respectable paths · egoistic and sympathetic melancholy · first love's features · the Page as the state before first love · thanking God lifts it into a higher concentricity · the altar objections · one loves only once) | 18 | — | — | 0 | 2026-11-03 |
+| PHIL 385 | The Aesthetic Validity of Marriage: marriage's history, habit and duty (no why: character, children, home · the wedding ceremony · the aesthetic lies in the acquired · inner history · conqueror vs possessor · habit only of the bad · the husband preserves time · duty the friend of love · the three great allies) | 18 | — | — | 0 | 2026-11-03 |
 | ASIA 250 | Defining religion, myth and ritual | 1 | 2026-09-19 | O | 1 | not studied |
 | ASIA 250 | Aesthetic experience and the faith frame | 1 | 2026-11-01 | X | 0 | not studied |
 | ASIA 250 | Buddhism as a world religion and the early schools (arhat vs bodhisattva) | 1 | 2026-11-01 | X | 0 | not studied |
