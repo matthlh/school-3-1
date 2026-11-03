@@ -931,15 +931,22 @@ Ashvajit (Assaji), one of the five ascetics and the Buddha's first disciples, co
 
 (C). Conservative Buddhism accepts arhatship as the ideal, does not aspire to Buddhahood, holds one Buddha and one bodhisattva (Maitreya) at a time, and takes nirvana as final. The other four options describe innovative Buddhism, the subject of the next lectures. Theravada is about 30% of Buddhists: Cambodia 97%, Thailand 90%, Myanmar 80%, Sri Lanka 70%, Laos 67%.
 
-### Q: Give the three baskets of the Pali Canon with the number of books or collections in each, the number of Patimokkha rules for monks and for nuns, and the number of parajika (expulsion) rules for each.
+### Q: Name the three baskets of the Pali Canon and how many books or collections each holds.
 **Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
 **A:** Key:
-1. The three baskets are the Vinaya Pitaka, the Sutta Pitaka and the Abhidhamma Pitaka.
-2. They hold 5 books of monastic rules, 5 collections and 7 books respectively.
-3. The Patimokkha has 227 rules for bhikkhus and 311 for bhikkhunis.
-4. Parajika (expulsion) rules number 4 for monks and 8 for nuns.
+1. The Vinaya Pitaka holds 5 books of monastic rules.
+2. The Sutta Pitaka holds 5 collections.
+3. The Abhidhamma Pitaka holds 7 books.
 
-The Tipitaka is the Vinaya Pitaka (5 books of monastic rules), the Sutta Pitaka (5 collections) and the Abhidhamma Pitaka (7 books). The Patimokkha has 227 rules for bhikkhus and 311 for bhikkhunis. Parajika rules, which mean expulsion ("Defeat"), number 4 for monks and 8 for nuns. The first rule, no sex, came from the story of Sudinna, who fathered a son with his former wife at his family's request when no rule yet forbade it.
+Together they are the Tipitaka, the "three baskets".
+
+### Q: How many Patimokkha rules do monks and nuns keep, and how many of those are parajika (expulsion) rules?
+**Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall
+**A:** Key:
+1. The Patimokkha has 227 rules for bhikkhus (monks) and 311 for bhikkhunis (nuns).
+2. The parajika rules number 4 for monks and 8 for nuns.
+
+Parajika means "Defeat": breaking one of these rules means expulsion. The first rule, no sex, came from the story of Sudinna, who fathered a son with his former wife at his family's request when no rule yet forbade it.
 
 ### Q: Name the four immeasurables with their Pali terms, say which poison they extinguish, and say whom Theravada mostly recommends them to.
 **Topic:** The disciples, Theravada and the Vinaya: arhats, conservative vs innovative Buddhism, the three baskets and the monastic rules  **Lec:** 5  **Type:** recall

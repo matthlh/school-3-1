@@ -35,7 +35,17 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    write the same math in readable plain form (P(A | B), σ²/n, ∫₀² x dx) instead of pasting raw LaTeX; the
    wording stays exactly as written.
    - **Confidence first.** He answers with his confidence from 1 to 3, before he sees the answer: "B, 2".
-     1 is a guess, 2 is think so, 3 is sure. If he leaves it out, ask for it in one word before you grade.
+     1 is a guess, 2 is think so, 3 is sure. If he leaves it out, never ask for it (Matt, 2026-11-02: the prompts
+     broke the flow). Read it from his wording when the wording is clear ("I think" or "maybe" is 2, "guess" or
+     "no idea, but" is 1), and otherwise grade without one.
+   - **A question about the question is not an attempt.** When he asks what a word in the question means ("What
+     is an aria?"), answer in one or two plain sentences that do not give away the answer, then wait for his
+     attempt. Nothing is graded and no answer is shown until he attempts, says "idk" or skips. When the word is
+     itself what the question tests, say so in one line and let him attempt or pass.
+   - **More than five facts: ask in parts.** When a question asks for more than about five separate facts (three
+     stages, each with its character, opera and year, is twelve), ask the core first (the items and what
+     separates them), then the matching, then any dates. Grade the question once against its whole key, and split
+     it in the bank at step 6.
    - **Live variants.** When the item's last grade was `O` and its type is apply or derive, ask a variant instead
      of the original. Change the numbers or the code, keep the method, and work out its answer before you ask.
      The printout flags such an item `(variant: last O)`. Its grade is the question's grade, with no mark for the
@@ -43,11 +53,28 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    - **Multiple choice from his own wrong answers.** When the printout shows past wrong answers for a CPSC 310 or
      PHIL 385 item, ask it as multiple choice. Give up to 3 of them plus the right answer, the right one about as
      long as the others, shuffled and lettered. If a variant is due too, ask the variant instead.
-3. Grade, then one line of correction (for `X`, the full bank answer). Move on. Never reveal the
-   answer early; "skip" / "idk" = `X`. Never coach mid-session — the attempt to recall it is the point.
+3. Grade, say why it earns that grade, then move on. Never reveal the answer early; "skip" / "idk" = `X`. Never
+   give a hint before his attempt; the attempt to recall it is the point.
    - Grade against the answer's key (its `Key:` or `Steps:` list, CLAUDE.md step 2): the core (point 1) missing or
      wrong is `X`, the core with another point missing is `~`, every point is `O`. Blank or "idk" is `X`. A right
      answer at confidence 1 or 2 is still `O`; quiz_grade.py makes it a Good, which holds its topic's rung.
+   - **Say why (Matt, 2026-11-02).** The feedback names the key points he gave, restated from his own words, so he
+     knows what earned the grade: "Correct: you gave the core, that each woman thinks he wants her as herself while
+     he wants what she shares with every woman." For a `~`, name the key point he left out and give it. For an `X`,
+     give the key, plus one sentence from the explanation when the core needs it to make sense. A detail from the
+     explanation that is not in the key is labelled "Not needed for full marks:" or left out, never added as if it
+     were required.
+   - **Term or idea.** When his word differs from the key's term, find out whether the idea is right before you
+     grade. If his wording fits both a right and a wrong reading (he said "pure desire" for desire desiring), ask
+     one short question first: "What do you mean by pure desire?" Then:
+     - The right idea under the wrong term counts as half the point, because the exams ask for the term: `~` when
+       it is the core, cause `f`. The feedback says the idea is right and gives the term: "The idea is right; A's
+       term is desire desiring."
+     - A wrong idea is graded by the key as usual, cause `c`, and the feedback explains the idea, not only the word.
+   - **One follow-up on a right answer.** After an `O` on a concept question (PHIL 385, ASIA 250, a CPSC 310
+     principle), you may ask one short question that links it to another idea from the same lecture: after "he
+     desires the feminine in every woman", ask "How does that explain why wealth or beauty do not matter to him?"
+     At most one every five questions. It is not graded; a miss on it becomes a new bank question at step 6.
    - **Bad question.** When he says a question or its key is wrong or ambiguous, grade it `-` (not assessed), fix it
      in the bank before the session ends, and never count it as a miss (Matt, 2026-11-01).
    - **CPSC 310:** a correct answer with no reason is `~` until he gives the why. Ask "why?" once.
@@ -63,16 +90,24 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
      order. Add its `Why paired:` sentence to its correction, so he compares the two while both are fresh.
    - After an `X` or `~`, also give the link to the notes page it comes from (the item's `Page:` line in the
      pick output) and name the `##` section on that page that covers it when you can tell.
-   - **Cause.** After an `X` or `~`, he names the cause in one letter: `c` concept (he did not understand it),
-     `f` forgot (he knew it once), `m` misread the question, `k` careless slip, `s` slow. You may propose one,
-     and he confirms it in one word. A confident miss (`X` at 3) also gets one line, "Why were you sure?", and
-     his reason goes in with `--why`.
+   - **Cause.** Every `X` or `~` gets a one-letter cause: `c` concept (he did not understand it), `f` forgot (he
+     knew it once), `m` misread the question, `k` careless slip, `s` slow. Set it yourself from his answer and say
+     the letter in the feedback line, so he can correct it (Matt, 2026-11-02: asking every time broke the flow).
+     A wrong idea is `c`; the right idea without the term or fact, or a blank on a topic he has studied, is `f`;
+     an answer to a different question is `m`; a slip inside a method he got right is `k`. Ask him only when you
+     cannot tell `c` from `f`, since they need different fixes. A confident miss (`X` at 3) also gets one line,
+     "Why were you sure?", unless the term-or-idea question already showed it; his reason goes in with `--why`.
    - For a CPSC 310 or PHIL 385 miss, keep his wrong answer in a few words for `--said` (step 5), so later
      sessions can offer it as a distractor.
-4. **Relearn until correct (Matt, 2026-10-06; replaces the second pass).** A missed question (`X` or `~`) comes
-   back 2 or 3 questions later in the same session, as he first saw it, until he gets it right once. After the
-   last new question, the misses still open come back in turn. Only the first attempt is graded. A re-ask needs
-   no confidence or cause; if he misses it again, give the correction again.
+4. **Relearn until correct (Matt, 2026-10-06; delay and variant 2026-11-02).** A missed question (`X` or `~`)
+   comes back after at least 4 other questions, or at the end when fewer are left, until he gets it right once.
+   Ask it as a variant that needs the same idea, not the same words, so it tests the idea rather than the
+   answer he just read: the reverse direction for a fact (which pseudonym wrote it, then what that pseudonym
+   wrote), new numbers for a calculation, another fragment for a code critique, or a "why" about the point he
+   missed. Repeat it as first written only when no honest variant exists. After the last new question, the
+   misses still open come back in turn. Only the first attempt is graded, and the next session brings an `X`
+   back anyway (the ladder makes it due the next day). A re-ask needs no confidence or cause; if he misses it
+   again, give the correction again.
 5. Stop when every miss has been answered right once, or when he says stop. Grade the first attempts only:
    `python3 "$S/quiz_grade.py" "1:O3 2:X3/c 3:~2/m 4:O1" --said 2 "his answer" --why 2 "his reason"` —
    **always one quoted string** (an unquoted `~` becomes the shell's home directory).
@@ -85,7 +120,8 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 6. The script lists **Needs more questions** (X/~ topics with < 6 questions, leech questions missed
    ≥ 2 of the last 3). Write them now into `02-questions.md` under the lecture's section, same
    `**Topic:**` tag, aimed at *what he got wrong* from a different angle — not a rephrase. Split a
-   leech into two smaller questions and delete the original. Say how many you added, one line.
+   leech into two smaller questions and delete the original. Split a question you asked in parts the same way.
+   Say how many you added, one line.
    The **Misses by cause** block gives a fix for each cause. Do the `concept` one now, the same way: add or
    rewrite a question on that notes page.
 7. Report ≤ 10 lines: grades table (course · topic · grade), ledger delta (topic → next date),
@@ -257,6 +293,17 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-11-02 (feedback): Matt passed on ChatGPT's review of a PHIL 385 session and asked for the valid parts. The
+  session had treated a vocabulary question ("What is an aria?") as an attempt, treated "pure desire" as a wrong
+  answer without asking what he meant, asked twelve facts in one question, answered an `O` with extra facts of
+  unclear weight, and asked "Confidence?" and "Cause?" after nearly every answer. Now: a question about the
+  question is not an attempt; an unclear term gets one "what do you mean" before grading, and a right idea under
+  the wrong term is `~` with cause `f`; questions of more than about five facts are asked in parts and split
+  (three split in the banks: the three stages with character, opera and year; Kierkegaard's family deaths; the
+  Pali Canon numbers); the feedback says which key points earned the grade and labels anything else as not
+  needed; confidence is never prompted for and the cause is set by me; a miss returns after at least 4 other
+  questions as a variant; one ungraded follow-up linking ideas is allowed every five questions. Kept: the
+  confidence scale itself (it schedules a Good) and "why were you sure" on a confident miss, which is rare.
 - 2026-11-01 (keys, not studied): after the 50-question session Matt had ChatGPT review the system and asked for the
   valid parts. Done: every answer now opens with an explicit key whose first point is the core, and the grade
   follows the core (X without it, ~ with a gap, O with everything) instead of the share of sentences ticked, which

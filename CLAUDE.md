@@ -39,6 +39,8 @@ the first line of any brief and a push notification (morning-check SKILL §4b).
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
    course allows it. For CPSC 310 that means `apply`/`critique` on a code or design fragment plus
    `recall` of the reader's exact terms; skip housekeeping slides entirely.
+   One question asks for at most about five facts (Matt, 2026-11-02). A list whose items each carry several facts
+   becomes separate questions: the items and what separates them, then the matching, then any dates.
    A problem that needs paper (a table or tree to build, an integral, ten or more values, or three or more
    results that feed each other) goes under `## Long problems` at the end of the bank instead of the lecture's
    section, with the lecture's `**Lec:**` tag and a numbered Steps list opening its answer (Matt, 2026-10-05).
@@ -123,12 +125,16 @@ ahead that covers the topic; topics frozen after a non-cumulative exam are skipp
 covers). Look-alike topics (the `## Look-alikes` table in each `01-topics.md`) come back to back, and the day after
 a logged lecture the first session opens with 2 minutes of free recall. I ask one question at a time (Matt
 approved all of this on 2026-10-06):
-- He answers with a confidence of 1–3 ("B, 2"); a confident miss gets one line on why he was sure. A right answer at
-  confidence 1 or 2 is a Good: its topic holds its rung instead of climbing.
+- He answers with a confidence of 1–3 ("B, 2"), never prompted for when he leaves it out; a confident miss gets one
+  line on why he was sure. A right answer at confidence 1 or 2 is a Good: its topic holds its rung instead of climbing.
+- A question about a word in the question is not an attempt: I explain the word without the answer and wait.
 - He is graded against the answer's key: missing point 1 (the core) is `X`, the core with something else missing is
   `~`, every point is `O`. A question he calls badly written is not graded (`-`) and gets rewritten the same day.
-- A miss gets a one-letter cause (c concept, f forgot, m misread, k careless, s slow) and comes back 2–3
-  questions later until he gets it right; only the first try is graded.
+  The feedback names the key points that earned the grade and labels any other detail as not needed. When his word
+  differs from the key's term, I ask what he means first; the right idea under the wrong term is `~`, cause `f`.
+- A miss gets a one-letter cause (c concept, f forgot, m misread, k careless, s slow) that I set from his answer, and
+  comes back after at least 4 other questions as a variant that needs the same idea, until he gets it right; only
+  the first try is graded (Matt, 2026-11-02).
 - An apply or derive question he last got right comes back as a variant with new numbers or code.
 - A CPSC 310 or PHIL 385 question he has missed before comes as multiple choice built from his own wrong answers.
 

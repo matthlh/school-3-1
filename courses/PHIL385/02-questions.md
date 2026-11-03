@@ -623,16 +623,38 @@ Each pseudonymous book holds out a life-view for the reader to judge, and the si
 
 ## Lec 3 — Kierkegaard's life, and the formations of the unhappy (Wed Sep 16, logged 2026-09-16)
 
-### Q: Between what ages did Kierkegaard lose most of his family? Name who died and when, say who was left, and give the date of his father's death.
+### Q: Between what ages did Kierkegaard lose most of his family, how many of them died, and who was left?
 **Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
 **A:** Key:
 1. He lost most of his family between the ages of 6 and 21.
-2. Søren Michael died 14 September 1819, Maren Kirstine 15 March 1822, Nicoline Christine 10 September 1832.
-3. Niels Andreas died 21 September 1833, his mother Ane 31 July 1834, Petrea Severine 29 December 1834.
-4. The one left was Peter Christian, 1805–1888, later Bishop of Aalborg.
-5. His father Michael Pedersen died on 9 August 1838.
+2. Five of his six siblings and his mother died.
+3. The one left was his brother Peter Christian, 1805–1888, later Bishop of Aalborg.
 
-Between 6 and 21. He was born 5 May 1813, the youngest of seven. His brother Søren Michael died on 14 September 1819, when Søren was 6; his sister Maren Kirstine on 15 March 1822 (8); his sister Nicoline Christine on 10 September 1832 (19); his brother Niels Andreas on 21 September 1833 (20); his mother Ane on 31 July 1834 (21); and his sister Petrea Severine on 29 December 1834 (21). Five of his six siblings and his mother, inside fifteen years. Both married sisters died after childbirth. The one left is Peter Christian, 1805–1888, later Bishop of Aalborg. His father Michael Pedersen died on 9 August 1838, when Søren was 25.
+He was born 5 May 1813, the youngest of seven. Five of his six siblings and his mother died inside fifteen years, from 1819 to 1834. Both married sisters died after childbirth.
+
+### Q: Which two of Kierkegaard's siblings died in his childhood, and when?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** Key:
+1. His brother Søren Michael died in 1819, when Søren was 6.
+2. His sister Maren Kirstine died in 1822, when he was 8.
+
+Søren Michael died on 14 September 1819 and Maren Kirstine on 15 March 1822. The other four deaths came ten years later, from 1832 to 1834.
+
+### Q: Which four members of Kierkegaard's family died between 1832 and 1834, when he was 19 to 21?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** Key:
+1. His sister Nicoline Christine died in 1832 and his brother Niels Andreas in 1833.
+2. His mother Ane and his sister Petrea Severine both died in 1834.
+
+The dates are 10 September 1832 for Nicoline Christine (he was 19), 21 September 1833 for Niels Andreas (20), 31 July 1834 for his mother Ane (21) and 29 December 1834 for Petrea Severine (21).
+
+### Q: When did Kierkegaard's father die, and how old was Søren?
+**Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
+**A:** Key:
+1. His father Michael Pedersen died on 9 August 1838.
+2. Søren was 25.
+
+That is four years after the last of the deaths of 1832 to 1834.
 
 ### Q: What is the "great earthquake", what does Kierkegaard actually say in it, and what are the two things it is commonly said to contain but does not?
 **Topic:** Kierkegaard's family losses  **Lec:** 3  **Type:** recall
@@ -1668,15 +1690,21 @@ It is the count for Spain on Leporello's list. A says the number is odd and acci
 
 ## Lec 9 — The Musical Erotic: why music, and the three stages (Mon Oct 5, logged 2026-10-05)
 
-### Q: Name the three immediate erotic stages in A's essay, in order. For each, give the Mozart character, the opera and the year it premiered.
+### Q: Name the three immediate erotic stages in A's essay, in order.
 **Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
 **A:** Key:
 1. The three stages in order are desire dreaming, desire seeking and desire desiring.
-2. Dreaming is the Page, Cherubino, in *The Marriage of Figaro* (1786).
-3. Seeking is Papageno, the bird-catcher, in *The Magic Flute* (1791).
-4. Desiring is Don Giovanni, in *Don Giovanni* (1787).
 
-Stage 1, desire dreaming: the Page, Cherubino, in *The Marriage of Figaro* (1786). Stage 2, desire seeking: Papageno, the bird-catcher, in *The Magic Flute* (1791). Stage 3, desire desiring: Don Giovanni, in *Don Giovanni* (1787). The order follows desire's growth, not the dates, so *The Magic Flute* is the latest opera but the middle stage.
+Dreaming has not woken to any object and longs for "the one" in the abstract. Seeking has woken and looks among the many but desires none of them yet. Desiring wants each particular woman as an instance of woman as such. The order follows desire's growth.
+
+### Q: Give the Mozart character and opera for each of A's three stages.
+**Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** recall
+**A:** Key:
+1. Dreaming is the Page, Cherubino, in *The Marriage of Figaro*.
+2. Seeking is Papageno, the bird-catcher, in *The Magic Flute*.
+3. Desiring is Don Giovanni, in *Don Giovanni*.
+
+The order follows desire's growth, not the dates: *Figaro* premiered in 1786, *Don Giovanni* in 1787 and *The Magic Flute* in 1791, so *The Magic Flute* is the latest opera but the middle stage.
 
 ### Q: What separates the first stage from the second? Answer with Cherubino and Papageno.
 **Topic:** The Musical Erotic: the three stages  **Lec:** 9  **Type:** apply
