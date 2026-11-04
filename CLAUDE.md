@@ -143,7 +143,8 @@ grade; `--said N "…"` keeps his wrong answer and `--why N "…"` why he was su
 below, logs per-question history in `routines/quiz-state.json`, prints calibration, misses by cause and confident
 misses with his reasons, and names the topics
 that need more questions — write those before the session ends. **Never update ledger rows by hand; the script
-owns them.** `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone: each answer
+owns them.** `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone (paused since
+2026-11-04 with the bed quiz; morning-check §7 says what runs instead): each answer
 shows as the answer's key, a checklist whose ticks set the grade, and "grade my deck" runs
 `quiz_grade.py --transit <deck date>` on the taps. `--transit` stops while a deck from another day
 waits ungraded and when today's deck already exists; `--replace` is the only way past either (morning-check §7 step 1
@@ -285,9 +286,12 @@ to the Gmail digest, PrairieLearn is skipped, one line under Heads-up either way
 `scripts/things_today.applescript` and written with `scripts/things_add.py` (idempotent; projects
 `CPSC 310`/`STAT 251`/`PHIL 385`/`ASIA 250` under area `UBC`; areas `Career`, `Personal`). **Things3 is a plan, not a pile (2026-09-11):** ~6 h of work a day outside class. Every to-do carries
 an estimate tag (`15m` `30m` `1h` `2h` `3h`, `event` = fixed slot) and a priority tag (`P1` must ·
-`P2` this week · `P3` whenever). `scripts/things_plan.py` runs in every morning check (and on "plan my
-day"): it creates the lecture close-out, PREP-ladder, weekly-novel, daily habit (bus deck, quiz before bed;
-an open one from an earlier day is cancelled) and PHIL 385 reading Read/Log to-dos itself, fills the 6 h
+`P2` this week · `P3` whenever). **Personal fixed-time events (badminton, gym, appointments, social plans) go on
+Google Calendar only, never into Things3** (Matt, 2026-11-04: "you don't need to add it to things3, just calendar is
+fine"). `scripts/things_plan.py` runs in every morning check (and on "plan my
+day"): it creates the lecture close-out, PREP-ladder, weekly-novel, daily habit (bus deck, quiz before bed, both
+paused since 2026-11-04 by `PAUSED_HABITS` because he was not doing them, with a Someday to-do "Restart daily quizzing"
+under UBC; an open one from an earlier day is cancelled) and PHIL 385 reading Read/Log to-dos itself, fills the 6 h
 by priority, schedules the winners Today and the losers Tomorrow (rollover count in
 `routines/plan-state.json` so nothing starves), and prints the brief's **Plan today** block. That block gives
 each P1 a start time from 09:00 (or from now, rounded up to the quarter hour, on a later run) that skips lecture, lab

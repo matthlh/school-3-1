@@ -4036,6 +4036,182 @@ $$
 
 To halve the standard error you need four times the data, not twice. A common slip is dividing $$\sigma$$ by $$n$$ instead of $$\sqrt{n}$$.
 
+## Lec 22 — Ch 7: CLT examples, the CLT activity and the Normal approximation to the Binomial (prepared 2026-11-04 from the after-class deck, the activity solutions and the recording's slide index; Canvas calls it Lecture 23; numbers changed)
+
+### Q: Repair bills at a garage are right-skewed with mean 300 dollars and standard deviation 240 dollars. Find the approximate probability that the mean of a random sample of 45 bills is under 250 dollars, and say what allows a Normal calculation.
+**Topic:** 4e CLT for averages and sums  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. The CLT: the bills are skewed, but $$n = 45 \ge 20$$, so $$\bar{X} \approx N\left(300, \frac{240^2}{45}\right)$$ with standard error $$\frac{240}{\sqrt{45}} = 35.78$$.
+2. $$z = \frac{250 - 300}{35.78} = -1.40$$.
+3. $$P(\bar{X} < 250) \approx 1 - \Phi(1.40) = 0.0808$$.
+
+One bill is not Normal, so the exact lecture 14 result does not apply; the sample size is what lets the average be treated as Normal. This is the deck's Example 1 with new numbers.
+
+$$
+\begin{aligned}
+SE &= \frac{240}{\sqrt{45}} = 35.78 \\
+z &= \frac{250 - 300}{35.78} \\
+&= -1.40 \\
+P(\bar{X} < 250) &\approx P(Z > 1.40) \\
+&= 1 - 0.9192 \\
+&= 0.0808
+\end{aligned}
+$$
+
+The trap is dividing by 240, one bill's standard deviation, which gives $$z = -0.21$$ and treats the average as if it varied as much as one bill.
+
+### Q: Checkout times at a café are Normal with mean 4 minutes and standard deviation 1.5 minutes. For 6 randomly chosen customers, find the probability that their average checkout time is at most 4.5 minutes, and say whether the CLT is needed.
+**Topic:** 4e CLT for averages and sums  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. No CLT is needed: the times are Normal, so $$\bar{X}$$ is exactly $$N\left(4, \frac{1.5^2}{6}\right)$$ for any $$n$$, with standard error $$\frac{1.5}{\sqrt{6}} = 0.612$$.
+2. $$z = \frac{4.5 - 4}{0.612} = 0.82$$.
+3. $$P(\bar{X} \le 4.5) = \Phi(0.82) = 0.7939$$.
+
+The average of independent Normal values is a linear combination of Normals, so it is Normal whatever $$n$$ is (lecture 14). That $$n = 6$$ is under 20 does not matter here. This is the deck's Example 2 with new numbers.
+
+$$
+\begin{aligned}
+SE &= \frac{1.5}{\sqrt{6}} = 0.612 \\
+z &= \frac{4.5 - 4}{0.612} \\
+&= 0.82 \\
+P(\bar{X} \le 4.5) &= 0.7939
+\end{aligned}
+$$
+
+The trap is using 1.5 instead of the standard error, which gives $$z = 0.33$$ and 0.6293.
+
+### Q: Commute distances of a city's workers are right-skewed with mean 14 km and standard deviation 9 km. For each probability, say whether the CLT can be used to find it, and why.
+- (a) The average distance of 50 randomly chosen workers is over 15 km.
+- (b) One randomly chosen worker commutes over 15 km.
+- (c) The average distance of 10 randomly chosen workers is over 15 km.
+**Topic:** 4e CLT for averages and sums  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. (a) Yes: $$n = 50 \ge 20$$, so the average is approximately $$N\left(14, \frac{81}{50}\right)$$ whatever the shape of one distance.
+2. (b) No: one worker's distance keeps the population's skewed shape; the CLT is about an average or a sum of many values.
+3. (c) No: $$n = 10 < 20$$ and the population is not Normal, so neither the CLT nor the exact Normal result applies.
+
+This is the lecture's first clicker question ("Can the CLT be used?") on a new scenario, with two contrasts added. The CLT never changes the population: one value from a skewed population is still skewed. It only says that the average of many values is close to Normal, and this course counts 20 or more as many.
+
+### Q: Juice bottle fill volumes are Normal with mean 500 mL and standard deviation 4 mL, and an inspector averages 4 bottles. True or false, and justify: because 4 is fewer than 20, the Normal table cannot be used for the average.
+**Topic:** 4e CLT for averages and sums  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. False: the volumes are Normal, so the average is exactly Normal for any $$n$$, here $$N\left(500, \frac{4^2}{4}\right)$$ with standard error 2 mL.
+2. The reason is that $$\bar{X}$$ is a linear combination of independent Normals, not the CLT.
+3. The $$n \ge 20$$ rule belongs to the CLT, which is needed only when the population is not Normal.
+
+This is the lecture's second clicker question ("Do we need the CLT?", answer No) on a new scenario. The linear-combination result is from lecture 14. For example, $$P(\bar{X} < 497) = P(Z < -1.50) = 1 - 0.9332 = 0.0668$$ is an exact answer, not an approximation.
+
+### Q: Repair times at a bike shop are exponential with rate $$\lambda = 0.05$$ per minute. For a random sample of 64 repairs, find the approximate probability that the average repair time is between 18 and 23 minutes.
+**Topic:** 4e CLT for averages and sums  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. By the CLT, since $$n = 64 \ge 20$$, $$\bar{X} \approx N\left(\mu, \frac{\sigma^2}{n}\right)$$ with $$\mu = \sigma = \frac{1}{\lambda} = 20$$ minutes.
+2. The standard error is $$\frac{20}{\sqrt{64}} = 2.5$$ minutes.
+3. $$z = \frac{18 - 20}{2.5} = -0.80$$ and $$z = \frac{23 - 20}{2.5} = 1.20$$.
+4. $$P \approx \Phi(1.20) - \Phi(-0.80) = 0.8849 - 0.2119 = 0.6730$$.
+
+This is the in-class CLT activity with new numbers. For an exponential the standard deviation equals the mean, $$\frac{1}{\lambda}$$, because the variance is $$\frac{1}{\lambda^2}$$. One repair time is strongly skewed, so only the CLT makes the average Normal.
+
+$$
+\begin{aligned}
+SE &= \frac{20}{\sqrt{64}} = 2.5 \\
+&P(18 < \bar{X} < 23) \\
+&= P(-0.80 < Z < 1.20) \\
+&= 0.8849 - (1 - 0.7881) \\
+&= 0.6730
+\end{aligned}
+$$
+
+### Q: 30% of a city's adults cycle to work. In a random sample of 50 adults, $$X$$ is the number who cycle. Check that the Normal approximation is allowed, then use it with the continuity correction to find the probability that fewer than 12 cycle.
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. $$np = 15 \ge 5$$ and $$n(1 - p) = 35 \ge 5$$, so $$X \approx N(15, 10.5)$$ with $$\sigma = \sqrt{10.5} = 3.240$$.
+2. Fewer than 12 is at most 11, so $$P(X < 12) = P(X \le 11) \approx P(Y \le 11.5)$$.
+3. $$z = \frac{11.5 - 15}{3.240} = -1.08$$.
+4. $$P \approx 1 - \Phi(1.08) = 1 - 0.8599 = 0.1401$$.
+
+$$X \sim \text{Bin}(50, 0.3)$$, with mean $$np = 50 \times 0.3 = 15$$ and variance $$np(1 - p) = 15 \times 0.7 = 10.5$$. The bar for 11 runs from 10.5 to 11.5, so "at most 11" ends at 11.5.
+
+$$
+\begin{aligned}
+z &= \frac{11.5 - 15}{\sqrt{10.5}} \\
+&= -1.08 \\
+P(Y \le 11.5) &= 1 - 0.8599 \\
+&= 0.1401
+\end{aligned}
+$$
+
+The exact Binomial answer is 0.1390. Cutting at 12 instead gives 0.1762, because it adds half of the bar for 12, which is not in the event. Cutting at 11 gives 0.1093, because it drops half of the bar for 11.
+
+### Q: $$X$$ is a Binomial count and $$Y$$ is the Normal variable that approximates it. With the continuity correction, which probability for $$Y$$ replaces each of these?
+- (a) $$P(X \le 12)$$
+- (b) $$P(X < 12)$$
+- (c) $$P(X \ge 12)$$
+- (d) $$P(X > 12)$$
+**Topic:** 4d Continuity correction  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. (a) $$P(Y \le 12.5)$$.
+2. (b) $$X < 12$$ is $$X \le 11$$, so $$P(Y \le 11.5)$$.
+3. (c) $$P(Y \ge 11.5)$$.
+4. (d) $$X > 12$$ is $$X \ge 13$$, so $$P(Y \ge 12.5)$$.
+
+Each whole number $$k$$ stands for the bar from $$k - 0.5$$ to $$k + 0.5$$. Turn $$<$$ and $$>$$ into $$\le$$ and $$\ge$$ first, then include the whole bar. This is the deck's slide 12 table with 12 in place of 4. "At most 12" contains the bar for 12, which ends at 12.5. "At least 12" also contains it, and it starts at 11.5. The strict versions leave the bar for 12 out, so (b) ends where the bar for 11 ends and (d) starts where the bar for 13 starts. The usual slip is (b) or (d): writing $$P(Y \le 12.5)$$ for $$P(X < 12)$$ counts the value 12, which "fewer than 12" excludes.
+
+### Q: A student guesses every answer on a 40-question true-or-false quiz, so the number correct is $$X \sim \text{Bin}(40, 0.5)$$. Why does the Normal approximation to $$P(X = 20)$$ need the continuity correction? Check the conditions and find the approximation.
+**Topic:** 4d Continuity correction  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. A continuous $$Y$$ has $$P(Y = 20) = 0$$, so the value 20 must become its bar: $$P(X = 20) \approx P(19.5 \le Y \le 20.5)$$.
+2. $$np = 20 \ge 5$$ and $$n(1 - p) = 20 \ge 5$$, so $$Y \sim N(20, 10)$$ with $$\sigma = \sqrt{10} = 3.162$$.
+3. $$z = \pm \frac{0.5}{3.162} = \pm 0.16$$.
+4. $$P \approx \Phi(0.16) - \Phi(-0.16) = 0.5636 - 0.4364 = 0.1272$$.
+
+The variance is $$np(1 - p) = 40 \times 0.5 \times 0.5 = 10$$. Without the correction the approximation would say 0, which is clearly wrong, since 20 is the most likely score.
+
+$$
+\begin{aligned}
+z &= \frac{20.5 - 20}{\sqrt{10}} \\
+&= 0.16 \\
+P &= 0.5636 - (1 - 0.5636) \\
+&= 0.1272
+\end{aligned}
+$$
+
+The exact Binomial answer is $$\binom{40}{20}0.5^{40} = 0.1254$$.
+
+### Q: For each Binomial count, say whether you may use the Poisson approximation, the Normal approximation, or neither, and why.
+- (a) $$\text{Bin}(300, 0.01)$$
+- (b) $$\text{Bin}(40, 0.3)$$
+- (c) $$\text{Bin}(30, 0.9)$$
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** 22  **Type:** apply
+**A:** Key:
+1. (a) Poisson, (b) Normal, (c) neither.
+2. (a) $$n = 300 \ge 20$$ and $$np = 3 < 5$$, so $$\text{Poisson}(3)$$; the small $$np$$ also rules out the Normal.
+3. (b) $$np = 12$$ and $$n(1 - p) = 28$$ are both at least 5, so $$N(12, 8.4)$$; $$np \ge 5$$ rules out the Poisson.
+4. (c) $$n(1 - p) = 3 < 5$$ rules out the Normal and $$np = 27$$ rules out the Poisson, so use the exact Binomial.
+
+The Poisson approximation needs $$n \ge 20$$ and $$np < 5$$. The Normal approximation needs $$np \ge 5$$ and $$n(1 - p) \ge 5$$. The two approximations cover different shapes. The Poisson is for rare successes (few expected, $$np < 5$$), where the Binomial piles up near 0. The Normal is for counts with at least 5 expected successes and at least 5 expected failures, where the Binomial is bell-shaped. In (c) the failures are rare, so the counts pile up near 30 and the Normal's bell does not fit. The Poisson rule is from lecture 18 and the Normal rule from lecture 22.
+
+### Q: Use the Central Limit Theorem to explain why $$X \sim \text{Bin}(n, p)$$ is approximately Normal when $$n$$ is large, and derive its mean and variance that way. Why is the condition written with $$np$$ and $$n(1 - p)$$ instead of $$n$$ alone?
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** 22  **Type:** derive
+**A:** Key:
+1. $$X = B_1 + \cdots + B_n$$ is a sum of $$n$$ independent $$\text{Bernoulli}(p)$$ trials, so the CLT for a sum makes it approximately Normal.
+2. Each trial has mean $$p$$ and variance $$p(1 - p)$$, so the sum has mean $$np$$ and variance $$np(1 - p)$$.
+3. So $$X \approx N(np, np(1 - p))$$.
+4. $$np$$ and $$n(1 - p)$$ are the expected successes and failures; with $$p$$ near 0 or 1 the counts pile up at one end, so both must be at least 5.
+
+Each $$B_i$$ is 1 for a success and 0 for a failure, so adding them counts the successes. The CLT for a sum (lecture 21) says $$T \approx N(n\mu, n\sigma^2)$$, and here $$\mu = p$$ and $$\sigma^2 = p(1 - p)$$.
+
+$$
+\begin{aligned}
+E(X) &= E(B_1) + \cdots + E(B_n) \\
+&= np \\
+\operatorname{Var}(X) &= \operatorname{Var}(B_1) + \cdots \\
+&\quad + \operatorname{Var}(B_n) \\
+&= np(1 - p)
+\end{aligned}
+$$
+
+The variances add because the trials are independent. The deck states the result without this reason; the reason is what connects it to the CLT. For an example of why $$n$$ alone is not enough, $$\text{Bin}(20, 0.05)$$ has $$np = 1$$, and its probabilities for 0, 1, 2 and 3 are 0.358, 0.377, 0.189 and 0.060, a lopsided shape with no bell.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -5501,3 +5677,50 @@ z &= \frac{20 - 18.75}{3.4233} = 0.3651 \\
 P(S > 20) &= 0.358
 \end{aligned}
 $$
+
+### Q: A basketball player makes each free throw with probability 0.5, independently, and takes 12 shots; $$X$$ is the number made. Find $$P(X \ge 9)$$ (a) exactly, (b) by the Normal approximation without the continuity correction, and (c) by the Normal approximation with it. Which approximation is closer, and why?
+**Topic:** 4d Continuity correction  **Lec:** 22  **Type:** apply
+**A:** Steps:
+1. Exact: $$X \sim \text{Bin}(12, 0.5)$$, so add the pmf terms for 9, 10, 11 and 12, each with the factor $$0.5^{12}$$.
+2. Check $$np = 6 \ge 5$$ and $$n(1 - p) = 6 \ge 5$$, then $$Y \sim N(6, 3)$$.
+3. Without the correction: $$P(Y \ge 9)$$, standardised with $$\sigma = \sqrt{3}$$.
+4. With it: "at least 9" starts at the bottom of the bar for 9, so $$P(Y \ge 8.5)$$.
+5. The corrected one is closer, because without the correction the cut at 9 drops the lower half of the bar for 9.
+
+This is the deck's Example 3 with new numbers and the upper tail, so the correction subtracts 0.5 instead of adding it.
+
+(a) With $$p = 0.5$$ every term has the factor $$0.5^{12} = \frac{1}{4096}$$.
+
+$$
+\begin{aligned}
+P(X \ge 9) &= \frac{220 + 66 + 12 + 1}{4096} \\
+&= \frac{299}{4096} \\
+&= 0.0730
+\end{aligned}
+$$
+
+(b) The mean is $$np = 12 \times 0.5 = 6$$ and the variance is $$np(1 - p) = 12 \times 0.5 \times 0.5 = 3$$.
+
+$$
+\begin{aligned}
+P(X \ge 9) &\approx P(Y \ge 9) \\
+&= P\left(Z \ge \frac{9 - 6}{\sqrt{3}}\right) \\
+&= P(Z \ge 1.73) \\
+&= 1 - 0.9582 \\
+&= 0.0418
+\end{aligned}
+$$
+
+(c) The bar for 9 runs from 8.5 to 9.5, and "at least 9" includes all of it.
+
+$$
+\begin{aligned}
+P(X \ge 9) &\approx P(Y \ge 8.5) \\
+&= P\left(Z \ge \frac{8.5 - 6}{\sqrt{3}}\right) \\
+&= P(Z \ge 1.44) \\
+&= 1 - 0.9251 \\
+&= 0.0749
+\end{aligned}
+$$
+
+The corrected 0.0749 is much closer to the exact 0.0730. Without the correction the answer is little more than half the exact one. With $$n = 12$$ the standard deviation is only 1.732, so half a unit is 0.29 standard deviations, which is why the correction matters so much for a small $$n$$.

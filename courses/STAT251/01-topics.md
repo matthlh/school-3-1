@@ -65,10 +65,10 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | # | Outcome |
 |---|---|
 | 4a | Binomial → Poisson approximation |
-| 4b | Binomial → Normal approximation |
+| 4b | Binomial → Normal approximation *(lec 22: use $$N(np, np(1 - p))$$ when both $$np \ge 5$$ and $$n(1 - p) \ge 5$$; the Binomial is a sum of $$n$$ Bernoulli trials, so the CLT for a sum applies; Example 3 compares the exact Binomial with the approximation without and with the continuity correction; ledger row 4b)* |
 | 4c | Poisson → Normal approximation |
-| 4d | **Continuity correction** — why it matters |
-| 4e | CLT applied to sums and averages *(lec 21: statistic vs parameter, the sampling distribution, $$\bar{X}$$ has mean $$\mu$$ and standard error $$\frac{\sigma}{\sqrt{n}}$$, exactly Normal from a Normal population, approximately $$N(\mu, \frac{\sigma^2}{n})$$ from any population when $$n \ge 20$$, the total $$T \approx N(n\mu, n\sigma^2)$$; ledger row 4e)* |
+| 4d | **Continuity correction** — why it matters *(lec 22: the bar for a whole number $$k$$ runs from $$k - 0.5$$ to $$k + 0.5$$, so at most $$k$$ ends at $$k + 0.5$$ and at least $$k$$ starts at $$k - 0.5$$, strict inequalities are rewritten first, and without it the approximation to $$P(X = k)$$ is 0, because the continuous Normal $$Y$$ has $$P(Y = k) = 0$$; Example 3 gave 0.0287 without it and 0.0571 with it, against the exact 0.0547; ledger row 4d)* |
+| 4e | CLT applied to sums and averages *(lec 21: statistic vs parameter, the sampling distribution, $$\bar{X}$$ has mean $$\mu$$ and standard error $$\frac{\sigma}{\sqrt{n}}$$, exactly Normal from a Normal population, approximately $$N(\mu, \frac{\sigma^2}{n})$$ from any population when $$n \ge 20$$, the total $$T \approx N(n\mu, n\sigma^2)$$; lec 22: the CLT is needed for a skewed population with $$n \ge 20$$ and not needed for a Normal population, where $$\bar{X}$$ is exactly Normal for any $$n$$, and the activity on the average of 100 exponential call lengths; ledger row 4e)* |
 
 ## 5. Foundations of inference · Ch 8
 | # | Outcome |
@@ -160,3 +160,4 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | 3y Waiting times in a Poisson process | 3w–aa Poisson process and Poisson distribution | Both answers are e^(−λt), but for the count it is the Poisson zero term P(X_t = 0) and for the wait it is the exponential upper tail P(T > t); a wait longer than t is the count being 0, a wait for the kth event is the count being at most k − 1, and the 1 − belongs to the cdf side only. |
 | 3bb Poisson approximation to the Binomial | 3w–aa Poisson process and Poisson distribution | Both end in a Poisson pmf, but the approximation stands in for a Binomial with a fixed n and uses λ = np, allowed only when n ≥ 20 and np < 5, while a real Poisson count has a rate per interval, λt, and no n at all, so writing λ = np for a rate problem or checking n ≥ 20 for a Poisson process are the two crossed wires. |
 | 3cc Which distribution fits | 3q–s Bernoulli and Binomial distributions | A which-model question is usually lost by defaulting to the Binomial: a Binomial count needs a fixed n with a success probability on every trial, a Geometric counts trials to the first success, a Poisson has a rate and no n, and an exponential is a time rather than a count. |
+| 4b Normal approximation to the Binomial | 3bb Poisson approximation to the Binomial | Both stand in for a Binomial count, but the Poisson is for rare successes, with n at least 20 and np below 5, while the Normal needs np and n(1 - p) both at least 5 and takes the continuity correction, so the conditions decide which one is allowed. |

@@ -49,7 +49,7 @@ Wonder whether both can be right, but one is more instinctual and natural, and a
 - Kraal's point: the marriage vow comes from Christianity, around 1100. The Church made marriage a sacrament in the twelfth century. B himself says marriage belongs to Christianity: neither the pagan nations, for all the sensuality of the Orient and the beauty of Greece, nor Judaism perfected it.
 - In the essay the Church "exacts a vow", and the vow, the intention, is what gives marital love its "law of motion" and so its history.
 
-### Love and lust (your page 443)
+### Love and lust
 - B's line: "what distinguishes love from lust is its having the stamp of the eternal". The sensual is "the instantaneous", and it tries to make the moment of pleasure "into a little eternity".
 - On A: B says A's "clever head" has conspired with his "lust", so that he renews the illusion of first love by finding it in new girls, which "betrays as much desperation as depravity".
 
@@ -63,5 +63,14 @@ Wonder whether both can be right, but one is more instinctual and natural, and a
 ### Your personal note
 - B agrees with half of it. He admits that "far more natures are formed for conquering than for possessing", that A's kind of nature is the natural one, and that possessing (going downhill) takes more strength than conquering (going uphill).
 - He denies the other half: A's "that's just how you are" is not a given. A keeps every mood "as a constant possibility" and so is answerable for it. B's "society" is not the point; the point is time, since possessing is the acquired, and "the great thing isn't the original but the acquired".
+
+### From Owen's notes of the same lecture
+- Owen's shared page (on the [lecture 19 page](19-the-ethical-as-the-more-aesthetic.md)) covers this lecture too, and his Background and argument match yours. These points add to your page.
+- Owen writes the argument as six lines. He splits your P1 into its two conditions and adds a sixth: B argues he can vindicate love by joining it with the ethical. That sixth line is B's own answer, duty as love's "friend", as in the fix above.
+- Owen glosses premise 2, that the ethical always comes up eventually in a love relation, as "the after 6 months things". The six months is the lecture's example, not the essay's. In the essay B tells A that A thinks duty must come into view "sooner or later", in romantic love as well as in married love.
+- Owen adds that B is not angry with A. B says it is "impossible really to be angry with you", because A's evil has some good nature and childishness mixed in.
+- Owen also has B telling A he still has time to change. B's lines are "You are still young" and "your life is passing", and he hopes A may one day find "a centre" for his eccentric movements.
+- Owen, like you, gives page 443 for B's claim that A does not understand love. Owen's page numbers run about 50 to 60 higher than your PDF's file pages, so 443 is probably PDF pages 386–387, not the love-and-lust lines on PDF pages 342 and 396. This is inferred from the page offsets.
+- On PDF pages 386–387 B tells A that he fears love ends once "the enigma" is gone, while B holds that only then does love begin, and that one truly loves only when one knows what one loves.
 
 Questions: 8 in [02-questions.md](../02-questions.md) under "Lec 18". Ledger: 3 new topics (one for the lecture, two for the reading), due Nov 3.

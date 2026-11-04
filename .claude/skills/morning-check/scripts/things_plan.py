@@ -132,6 +132,10 @@ def private_habits(path=PRIVATE_HABITS):
         return []
 
 HABITS += private_habits()
+# Paused habits (Matt, 2026-11-04: "Remove the daily quizing for now, I haven't been doing it"). They stay in HABITS so
+# HABIT_RE still knows them, but none is created, and an open one is cancelled like a missed habit. Take a title out
+# of this set to restart it.
+PAUSED_HABITS = {"Deck: answer the 6 on the bus, tick key points", "Quiz me: 10 min before bed"}
 # Titles a habit had before, old → new. An open habit under an old title is cancelled like a missed one, and one he
 # ticked today counts as today's new one ticked. Drop an entry once no open to-do carries its title.
 RENAMED_HABITS = {"Deck: answer the 6 on the bus, reply grades": "Deck: answer the 6 on the bus, tick key points",
@@ -559,17 +563,21 @@ def ladder_todos(auto):
                         notes=f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md.")
 
 def habit_todos(auto):
-    """Today's habits (HABITS), each in its own area, due today. Any other open habit is cancelled: one from an earlier day, since a
-    missed habit is not a debt that rolls over, and one under an old title (RENAMED_HABITS)."""
+    """Today's habits (HABITS minus PAUSED_HABITS), each in its own area, due today. Any other open habit is cancelled: one
+    from an earlier day, since a missed habit is not a debt that rolls over, one under an old title (RENAMED_HABITS), and a
+    paused one."""
     today = auto.today
     on = lambda title: f"{title} ({today:%b %-d})"
     for old, new in RENAMED_HABITS.items():                 # ticked today under its old title: today's is done
         if auto.closed_by_hand(on(old)):
             auto.known[on(new)] = auto.known[on(old)]
-    current = [on(title) for title, _, _, _ in HABITS]
+    live = [h for h in HABITS if h[0] not in PAUSED_HABITS]
+    current = [on(title) for title, _, _, _ in live]
+    paused = {on(title) for title in PAUSED_HABITS}
     for t in [t for t in auto.todos if t.is_habit and t.name not in current]:
-        auto.close(t, "canceled", "its title changed" if t.name.endswith(f"({today:%b %-d})") else "a missed habit does not roll over")
-    for title, tags, notes, area in HABITS:
+        auto.close(t, "canceled", "the habit is paused" if t.name in paused
+                   else "its title changed" if t.name.endswith(f"({today:%b %-d})") else "a missed habit does not roll over")
+    for title, tags, notes, area in live:
         auto.create(on(title), tags, area=area, when=today, deadline=today, notes=notes)
 
 def reading_todos(auto):

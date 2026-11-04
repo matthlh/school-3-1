@@ -76,7 +76,8 @@ are cancelled), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
 for ASIA 250 from Sep 14, the **daily habits** (`HABITS` in the script: `Deck: answer the 6 on the bus, tick key
 points (<date>)` and `Quiz me: 10 min before bed (<date>)` in area UBC, plus any personal ones listed in the git-ignored
 `private/habits.json` (none where the file is missing); 15m P1 each, due today; an open one from
-an earlier day, or under an old title, is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
+an earlier day, or under an old title, is cancelled, never rolled; a title in `PAUSED_HABITS` is not created and an
+open one is cancelled, which holds both UBC habits since 2026-11-04), and the **PHIL 385 reading pair** from the syllabus
 schedule in `PHIL_READINGS`, from a week before the reading's first class (`Read PHIL385: <title> (class …)`
 1h P1, due the first class, created until the last class, skipped if any open to-do already mentions
 the title; `Log PHIL385 reading: <title>` 15m P1, due the last class; both are completed once
@@ -152,6 +153,9 @@ After it runs:
   a lecture + its readings 2h · deliverable/paper *session* 2h (the item repeats daily until done)
   · SWR/WA 3h · exams and in-lab quizzes `event` · anything admin 15m. P1 = has a date or a
   grade; P2 = career or setup work that matters this week; P3 = everything else.
+- A personal fixed-time event (badminton, gym, an appointment, a social plan) never goes into Things3. Put it on
+  Google Calendar (primary calendar; search for it first so it is not doubled), and cancel any Things3 to-do that
+  carries one (Matt, 2026-11-04).
 - Every to-do you add this run (sync rule below) gets `--tags` too. Untagged = 30m and flagged.
 - Never hand-schedule things into Today outside the planner ("shuffle to tomorrow" = move out +
   `--budget H`); set `--when`/`--deadline` and tags
@@ -605,6 +609,12 @@ until then. PHIL 385 is unchanged (nothing to pull).
 - **Brief:** the Today's classes line points at the page and names the question count. A lecture with no
   deck yet is "no deck posted", as before.
 
+**Paused (Matt, 2026-11-04: "Remove the daily quizing for now, I haven't been doing it").** No deck had been tapped
+since Oct 13. While `PAUSED_HABITS` in `things_plan.py` holds the deck habit, run step 0 only, so a deck he does tap
+still gets graded, and skip steps 1 and 2: no new deck and no artifact rebuild. Run `quiz_pick.py --due` instead, so
+the ledger's Due now block stays fresh. The brief's Review block becomes one line, "Review: daily deck paused since
+Nov 4." The rest of this section is how it runs when he restarts it.
+
 **Review = the transit deck, as a phone artifact (2026-09-13).** Two parts, in order:
 
 0. **Pull yesterday's grades first, before generating anything new.** The deck lives at a fixed
@@ -818,7 +828,8 @@ give advice; everything else in the brief stays reporting.
                         "published <sha>" or "nothing to publish" (§8)
 ```
 Calendar events (classes, gym, badminton) never appear in **Plan today** — Things3 holds tasks, not
-the timetable; today's lectures have their own block.
+the timetable; today's lectures have their own block. Personal events live on Google Calendar only, never as a
+Things3 to-do (Matt, 2026-11-04: "you don't need to add it to things3, just calendar is fine").
 
 **Formatting rule (Matt, 2026-09-10 evening):** never join items into a paragraph with " · ".
 Header line, then bullets, one item per bullet, in the brief AND every details section. He
@@ -929,6 +940,10 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-11-04 (Matt): personal fixed-time events go on Google Calendar, not Things3; the "Badminton (Wed night)"
+  to-do was cancelled and the event put on the calendar. The daily bus deck and bed quiz are paused (`PAUSED_HABITS`
+  in `things_plan.py`, twelve untapped decks since Oct 13), so §7 builds no deck until he restarts them; a Someday
+  to-do "Restart daily quizzing (bus deck + bed quiz)" under UBC holds the idea.
 - 2026-10-14 (Matt: "something's wrong with the priority"): `things_plan.py` scores work due today or tomorrow above work whose date has passed. Before, overdue scored 1000 and due-tomorrow 900, and the was-planned and rollover bonuses kept old revision steps above LAB04 and WeBWorK 4 closing the next day; overdue now takes the 2–3 day band's 700 and wins ties by date.
 - 2026-10-09 (Matt): interviews, assessments and offers are the brief's first line and a push, every employer
   reply carries its date, career outranks school when they collide, and applying no longer waits for his say

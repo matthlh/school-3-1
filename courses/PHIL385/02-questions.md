@@ -2871,6 +2871,115 @@ Romantic love rests on the sensual and beauty but is noble because of the consci
 
 B calls it A's "pet theory" and uses it as the end point of taking duty to be love's enemy: that view is despair, whether A feels its pain or tries to forget it.
 
+## Lec 19 — "The Aesthetic Validity of Marriage" continued: the ethical as the more aesthetic (Wed Nov 4, logged 2026-11-04 from Owen's shared notes)
+
+### Q: Kraal said B's major argument, that the ethical ends up more aesthetic than the immediate aesthetic passion, goes back to Plato. What principle did he take from Plato, and how does it apply to marriage?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. The beautiful derives its value from the good.
+2. The good is the ethical, so the aesthetic gets its value from the ethical.
+3. Marriage stands for the ethical, so it ends up more beautiful than first love.
+
+The work is Plato's *Republic*. In Book VI the Form of the Good is the most important thing to know, because just things, beautiful things and the rest are beneficial only through their relation to it. The link to Plato is Kraal's, and B does not name Plato in the assigned text. B's own words for the conclusion are that marriage is the "transfiguration" of first love (the same love, kept and made more glorious) and "even more beautiful than it", and that "really it is marriage that is poetic".
+
+### Q: Kraal set the aesthetic against the ethical in two comparisons, "Children" and "Confinement". Give both sides of each, and the conclusion he drew.
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. Children: dying childless and alone, against dying with the people you love around you.
+2. Confinement: keeping your inner secrets shut in and relying on deception, against sharing your biggest secrets with your lover openly.
+3. In each pair the first life is the aesthetic one and the second the ethical one, and the ethical one is the good.
+
+Both pictures are Kraal's, built from B's letter. B's word for the confinement side is "secretiveness", and for the open side openheartedness, uprightness and "publicity". B does not use the deathbed picture as a reason to marry (next question).
+
+### Q: True or false, and justify: B argues that one should marry so as to have children around one's deathbed.
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** critique
+**A:** Key:
+1. False.
+2. B quotes married people saying their children and grandchildren will "close our eyes" and mourn them, as their consolation, not as his argument.
+3. Marrying for children or for a home is one of the one-sided "whys" B rejects, because marriage must have no "why".
+
+The deathbed comparison is Kraal's picture of two lives, not B's reason for marrying. B still calls children "a blessing", with the poor woman in the square and her baby as his example. His own warning about A's end is different: A's life will close with only the recollection of conscience and its record "of wasted possibilities".
+
+### Q: In the "Confinement" comparison, why can a lover who keeps himself secret from his beloved not truly love, by B's reasoning?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** derive
+**A:** Key:
+1. Love is giving oneself, and one can give oneself only by going out of oneself, while secretiveness wants to remain in itself.
+2. Making an impression from a distance, so that the girl loves an image she made herself, is "not love but the coquetry of the seducer".
+3. The one who loves has lost himself in the other, and in forgetting himself he is revealed to the other.
+
+So B calls openness "the life-principle of love" and inward secretiveness its death, and says it takes courage to reveal oneself as one truly is. The secrecy B keeps is toward the outside world, not between husband and wife. A's castle in the air, with his wife in a separate wing, ran on "secretiveness, mystification, refined coquetry".
+
+### Q: Why, according to Kraal, does marriage represent the ethical?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. Because it represents promise keeping.
+2. The promise is the vow the Church exacts at the wedding.
+
+"Promise keeping" is Kraal's phrase. B's own words for it are vow, intention and duty. The vow carries the intention, which gives married love a "law of motion" (a direction it develops in over time) and an inner history, and B says the language of duty is in the future tense, to suggest the historical. A's "no mishmash" objection attacks the same promise: what does it mean "to pledge oneself to love"? Kraal's Monday point that the vow comes from Christianity around 1100 belongs here.
+
+### Q: Why, according to Kraal, does A not really love Cordelia, and whose test is he applying?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. Their love is bound to a stretch of time, not eternal: it lasts only as long as the seduction.
+2. The test is B's: what separates love from lust is "the stamp of the eternal".
+
+The verdict on Cordelia is Kraal's. Cordelia is not in B's letter but in "The Seducer's Diary", which Kraal reads as A's own. B's lines on A fit it: A thinks any girl should count herself lucky to be his sweetheart "even for a week", and he renews first love by finding its illusion in new girls, which "betrays as much desperation as depravity". In the Diary, Johannes loses interest once Cordelia desires him completely.
+
+### Q: Give the five steps of Kraal's diagram of marriage, in order.
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. The defining characteristic of marriage is love.
+2. Love is not lust.
+3. But love is not devoid of the sensuous, and the sensuous is not lust.
+4. Love, its sensuous side included, carries a stamp of the eternal.
+5. The change from romantic love into married (conjugal) love happens through the ethical will: intention and decision.
+
+Each step is B's: marriage's "substance" is love; love differs from lust by "the stamp of the eternal"; first love is "not simply sensual"; the true eternity needs "a determination of the will". Two notes hang off the diagram: a civil marriage does not "require love" (at step 1), and romantic love seeks to become conjugal love (at step 4).
+
+### Q: True or false, and justify: since love is not lust, B holds that married love must leave the sensual behind.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 19  **Type:** critique
+**A:** Key:
+1. False: love is not devoid of the sensuous, and the sensuous is not lust.
+2. First love has the sensual in it but is "not simply sensual", and marriage is "sensual yet spiritual".
+3. Lust is the sensual on its own, "the instantaneous" that wants instant satisfaction, without the stamp of the eternal.
+
+This is step 3 of Kraal's diagram. B does rank the spiritual higher: the higher "the heaven over the marriage bed", the more aesthetic the marriage. But marriage keeps the sensual, now in "a yet deeper opposition" to the spiritual. B's reply to A about the altar makes the same point: "flesh is not sensuality, it is selfishness".
+
+### Q: What does the civil-marriage note on Kraal's diagram say, which step does it point at, and where does B himself call a kind of marriage "civil"?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. A civil marriage, one without religious officials, does not "require love".
+2. It points at step 1: the defining characteristic of marriage is love.
+3. B uses "a civil arrangement" for the reflective age's marriage for a period, and says such unions "are not marriages".
+
+The civil arrangement is ended by notifying the authority, the way one gives notice of a change of address. For B a shared life without love is only the satisfaction of sensual desire or "an association, a partnership". The Church does not ask whether the couple love each other either, but because it "takes it for granted". The note is the lecture's, not B's.
+
+### Q: On Kraal's diagram, romantic love "will seek to transform into conjugal love". What does "conjugal" mean, and why does romantic love seek this?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** derive
+**A:** Key:
+1. Conjugal love is married love.
+2. Romantic love already carries the stamp of the eternal: it means to last for ever.
+3. On its own its eternity is "illusory", because it has no inner history.
+4. The true eternity needs "a determination of the will", the intention and vow of marriage, so romantic love must become married love to be what it claims.
+
+B says romantic love, being non-historical, "goes astray or comes to a standstill". He would not call the change a replacement: first love enters marriage "without being changed", and his word for the result is "transfiguration" (the same love, kept and made more glorious).
+
+### Q: Which philosopher do some readers say Judge William (B) follows, and what in his letter supports it?
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. Hegel: some argue that B is a Hegelian.
+2. His Hegelian vocabulary, for example first love as "an unreal An-sich" (the in-itself).
+3. B imagines A begging him to keep away from "any attempt at mediation", the Hegelians' word for reconciling opposites.
+
+The lecture mentioned this as an aside. It is a reading of B, and B does not name Hegel in the letter. More of his Hegelian vocabulary: marriage is "the immediacy which has mediacy in itself", and love is a unity of "the universal and the singular". Hegel's *Philosophy of Right* (1820) makes marriage the first ethical relationship, love given a lasting and lawful form, which is close to B's case. Against the label, B is alarmed by the young men who cry "de omnibus dubitandum" (doubt everything), a slogan of the Hegelian philosophy then in fashion in Copenhagen.
+
+### Q: Multiple choice. According to the lecture, B's argument that the ethical is the more aesthetic goes back to which work? (a) Plato's *Republic* (b) Plato's *Symposium* (c) Hegel's *Philosophy of Right* (d) Aristotle's *Nicomachean Ethics*
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall
+**A:** Key:
+1. (a) Plato's *Republic*.
+
+The principle Kraal took from it is that the beautiful derives its value from the good. The *Symposium* is Plato's dialogue on love, which makes (b) the tempting wrong answer. The *Philosophy of Right* is the Hegel book whose account of marriage is close to B's, one reason some readers call B a Hegelian.
+
 ## Reading: "The Aesthetic Validity of Marriage" (Nov 2–6; read by Claude 2026-11-02)
 
 ### Q: Give B's criteria of romantic love.
