@@ -160,8 +160,8 @@ After it runs:
 - Never hand-schedule things into Today outside the planner ("shuffle to tomorrow" = move out +
   `--budget H`); set `--when`/`--deadline` and tags
   and let it decide. If a ⚠ OVER BUDGET line appears, that is the one decision for Matt in the brief.
-- Paste the planner output verbatim as the first block of the brief. It replaces the old
-  "Do today" block — hard deadlines and ladder steps are to-dos now, so they are in the plan.
+- Turn the planner's picked items into the brief's numbered Plan today list (Report format below): task, estimate,
+  when due, link. Its start times and most ⚠ lines stay in Details (Matt, 2026-11-05).
 
 **Surge days — 8–10 h (Matt, 2026-09-20: "if something is really urgent, yeah I dont mind doing
 8-10 hrs of works js lmk and remind me").** The 6 h budget is the default, not a ceiling. When a run
@@ -374,9 +374,9 @@ applying is a separate session he starts himself.
    python3 "/Users/matthe/Documents/CodingProjects/Projects/Groundwork/scripts/run.py" applications
    ```
    It rewrites `data/APPLICATIONS.md` in the Career repo and prints the **Career** block between
-   the `===` lines. Paste the block into the brief verbatim, the same way the planner's block is
-   pasted: it already keeps the rules below (dated rows as a table, four rows at most, one counted
-   line for the rest). If the command fails, one Heads-up line and move on.
+   the `===` lines. That block goes in Details → Career only; the brief's Career block is built from email (steps
+   2–4), because the ledger's counts and nudge lists go stale (Matt, 2026-11-05). If the command fails, one
+   Details line and move on.
 2. Run it again with `query=1` on the end. It prints one Gmail search covering every company he is
    still waiting on. Run that with `search_threads` (pageSize 25) and open each hit with `get_thread`.
 3. For each thread where an employer is writing about one of his applications (not a job alert, not
@@ -740,56 +740,39 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 ## Brief
 
 **🔔 <Company> · interview / assessment / offer · arrived <date> · <what it asks for and by when>**   ← only when §4b found one; first line, bold, nothing above it
-**Plan today — 5.75 of 6 h**   ← the planner's items (§1b) rendered as a TABLE, not its raw bullets
-| Start | Est | What | When |         (Matt, 2026-09-20: the " · "-joined bullet list read as a wall)
-|---|---|---|---|                      every item the planner picked gets a row, same order
-| 09:00 | 2 h | <project> · <what> | <due, or "overdue since <d>"> |   Start = the planner's time, P1 rows only
-|  | 15m | UBC · Deck: answer the 6 on the bus | due today |   habits, P2 and P3 rows leave Start blank
-|  | event | <project> · <what> | <time> |   [event] = fixed slot, costs no budget
-PHIL 385 Exam 2 is tomorrow, so today plans 3 h instead of 6 h.   ← the day before an exam only
-Scaled by your actual times: 1h ×1.5.   ← only once a time tag has 5 recorded times
-⚠ <item> is due <d> and there is no room for it today.   ← plain words, its own line
-⚠ <item> would end after 22:30, so it moves to tomorrow.   ← the sleep cutoff, its own line ("so it is not planned today" when it was not in Today)
-⚠ An 8 h day would fit <what, in marks>. Say the word.   ← the longer-day offer, rule below
-Cushion: <course> <item> has 6 h of work before it, 40 h free.   ← one line per date with an exam, deliverable, paper or assignment within 14 days
-⚠ <course> <item> has 14 h of work before <date> but only 12 h free.   ← replaces that date's Cushion line when it does not fit
+**Format (Matt, 2026-11-05: "just do like numbered … much easier to read, also, too many logistics"):** every list
+in the brief is a numbered or bulleted list, never a table and never a run of ⚠ lines. Plan today is numbered in the
+order to do them, one line each: `N. Task (est) [when due] - link`. No start times, no project prefix unless the title
+needs it, the link only when one exists (the to-do's own `links.md` row, a lecture page, a Canvas page). Logistics
+(clock skew, which source was read, script output, planner bookkeeping) go in Details, never the brief.
 
-**Rolled to tomorrow — N items**   ← also from the planner; omit the whole block if empty
-- Dated ones only, one per bullet: <project> · <what> · rolled 4× · due <d>
-- Then ONE closing bullet for the undated tail: "Twelve more, undated P2/P3. Rolling longest: …"
-First thing tomorrow: <what>.   ← the planner's line, right under the rolled list
-Time check: how long did <what> take?   ← the plan's last line; his answer goes to `--actual` (§1b)
-**Week ahead — 25 of 42 h** (Mon Sep 14 → Sun Sep 20)   ← the Sunday 15:00 weekly-plan brief, verbatim from `--week`
-- Mon 14 · 5.5/6 h · <what> · <what> (+2)
-- ⚠ OVER BUDGET Thu Sep 17: … has no room before Sep 18   ← the one decision
+**Plan today — 6 of 6 h**   ← the planner's picked items (§1b), numbered, same order
+1. LAB07 API Design & Versioning (1 h) [closes today 23:59] - https://us.prairielearn.com/pl/course_instance/231184
+2. Optional Assignment 2 (30m) [due Fri] - <link>
+3. Dentist (event) [15:20]
+- At most two warning bullets under the list: the biggest deadline that did not fit, and the 8 h offer when §1b's
+  test passes. The rest of the planner's ⚠ lines (overdue backlog, cushion lines) go in Details as a count.
 
-**Today's classes**         one bullet per lecture AND per lab happening today (none on weekends):
-- <course> · <section> <time> · lab   labs first when they run earlier · section, time, room or
-    <what is due>                     Zoom, and what is due
-- <course> · <time> · <topic>         time · topic from the slide/page title, course-site row
-- ...                                 or reading schedule (§7) · the staged outline (§7 step 3)
+**Rolled to tomorrow**   ← omit if empty
+- First thing tomorrow: <what>.
+- Dated rolled items, one bullet each; then one bullet counting the undated tail.
 
-**Review — 6 questions**    today's 6 phone-deck questions (§7). In the CHAT BRIEF give
-- <course> · <short version>          only a short version — the topic and the ask, ~12 words, never the
-- ...                                 full worked question (Matt, 2026-09-20: the long ones made the
-- Transit Deck: <url>                 brief unreadable). The run file keeps them in full. Answers and
-                                      grading live on the artifact. "- Bank empty" if the script exits 1.
+**Today's classes**
+- <course> · <time> · <topic> - <lecture page link if one exists>   labs first when they run earlier
 
 **New since yesterday**
-- <course> · <what> · <source>        new deadlines, announcements, Piazza instructor
-- ...                                 notes, PrairieLearn items, grades. "- Nothing new" if none.
+- <course> · <what>   one fact per bullet; "Nothing new." as one line if none
 
 **Heads-up**
-- Unlogged lectures: <course> (<date>) · <course> (<date>)
-- <due in 2–7 days / date conflict / blocked source / overdue ledger topic>
+- Unlogged: <course> (<dates>), one bullet per course
+- <blocked source with its sign-in link / date conflict / due in 2–7 days>
 
-**Career: <N> applied, <N> interviews, <N> offers**   ← §4b, printed by run.py, pasted verbatim
-| Closes | Still to apply | Note |          up to 4 rows, one per company, next 3 days only
-|---|---|---|
-| <Day Mon D time> | <Company> · <role, or N roles> | <referral or blank> |
-- <N> more companies close by <date>. Full list: data/APPLICATIONS.md
-- <Company> · <email date> · <what the employer said>     one bullet per reply found in §4b step 3
-- held for a referral: <Company> · <role> · closes <date>   big or medium tech, his call (§4b step 6)
+**Career**   ← from email only (Matt, 2026-11-05: "at least track emails, because most of what you're tracking are out
+of date"). Build it from §4b steps 2–4 (employer replies, LinkedIn people messages, SCOPE), one bullet each with its
+date. Do not paste run.py's counts, stale INTERVIEW lines, "quiet 14+ days" or "postings close later" lines; they
+go in Details. An interview, assessment or offer still goes first in the whole brief. "No employer emails since
+<last run date>." when there are none.
+- <Company> · <email date> · <what they said, 8 words or fewer>
 
 **Week ahead**              Sundays only (or when asked): one bullet per hard date in the
 - ...                       next 14 days from ledger.md + Things3 + term.py, then
@@ -893,7 +876,7 @@ the brief is scanned in about twenty seconds, so length is the enemy, not missin
 file holds the detail.
 - **One line, one fact, twelve words or fewer.** A bullet that needs a comma-spliced second clause
   belongs in Details.
-- **Plan today and any dated list is a table**, not bullets — the ` · ` separators inside a bullet
+- **Plan today is a numbered list and every other list is bullets** (2026-11-05, replacing the 2026-09-20 table) — the ` · ` separators inside a bullet
   are what made it read as a wall.
 - **Bold only the thing that changes his morning** — a hard lock, a collision, an ⚠. If three
   things are bold, nothing is.
@@ -940,6 +923,9 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-11-05 (Matt): the brief's Plan today is a numbered list, `N. Task (est) [when due] - link`, with no start
+  times; every other block is bullets; logistics and most ⚠ lines move to Details; the Career block is built from
+  email only, not run.py's stale counts.
 - 2026-11-04 (Matt): personal fixed-time events go on Google Calendar, not Things3; the "Badminton (Wed night)"
   to-do was cancelled and the event put on the calendar. The daily bus deck and bed quiz are paused (`PAUSED_HABITS`
   in `things_plan.py`, twelve untapped decks since Oct 13), so §7 builds no deck until he restarts them; a Someday

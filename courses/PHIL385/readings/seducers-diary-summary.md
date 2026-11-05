@@ -1,6 +1,6 @@
 # PHIL 385 — Summary: *Either/Or*, "The Seducer's Diary"
 
-A summary of the Diary from the book, for reading before you read it. It was Exam 3 material and comes back on the cumulative final. Lecture notes are on the [lectures 13–15 page](../lectures/13-15-seducers-diary-and-diapsalmata.md).
+A summary of the Diary from the book, for reading before you read it. It was Exam 3 material and comes back on the cumulative final. Lecture notes are on the [lectures 13–15 page](../lectures/13-17-seducers-diary-and-diapsalmata.md).
 
 ## What it is
 

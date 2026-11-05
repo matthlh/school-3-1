@@ -1,6 +1,6 @@
-# PHIL 385 — Lec 13–15 (Mon Oct 19, Wed Oct 21, Fri Oct 23) — "The Seducer's Diary" and "Diapsalmata"
+# PHIL 385 — Lec 13–17 (Mon Oct 19 to Wed Oct 28) — "The Seducer's Diary" and "Diapsalmata"
 
-## Your notes (Owen's shared Notion page "Diapsalmata + Shadowgraphs + Seducers Diary", read 2026-10-25; it covers the week Oct 19–23 without separating the three days)
+## Your notes (Owen's shared Notion page "Diapsalmata + Shadowgraphs + Seducers Diary", read 2026-10-25; it covers the whole Exam 3 unit, Oct 19 to Oct 28, without separating the days; Matt confirmed on 2026-11-05 that there is no separate page for Oct 26 and Oct 28)
 All of this stuff is the content of exam 3
 
 Seducers Diary

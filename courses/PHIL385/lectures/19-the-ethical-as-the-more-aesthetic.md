@@ -116,7 +116,7 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 
 ### Kraal: A does not really love Cordelia
 - This is Kraal's claim: A's love for Cordelia is bound to a stretch of time and is not "eternal", so it is not really love.
-- Cordelia is not in B's letter. She is the girl of "The Seducer's Diary", which Kraal reads as A's own work (see the [lectures 13–15 page](13-15-seducers-diary-and-diapsalmata.md)).
+- Cordelia is not in B's letter. She is the girl of "The Seducer's Diary", which Kraal reads as A's own work (see the [lectures 13–15 page](13-17-seducers-diary-and-diapsalmata.md)).
 - The test Kraal applies is B's: love differs from lust by "the stamp of the eternal".
 - B's lines about A fit the claim. A thinks any girl should count herself lucky to be his sweetheart "even for a week".
 - B also says A renews first love by finding its illusion in new girls, which "betrays as much desperation as depravity".

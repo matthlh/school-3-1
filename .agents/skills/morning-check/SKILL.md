@@ -25,7 +25,7 @@ info (office hours, policies, schedules, links, course structure) is NOT repeate
 **Before touching sources:**
 0. Run term status — it is local and instant:
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/term.py"
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/term.py"
    ```
    It prints (a) **unlogged lectures** per course — lectures held vs. files in
    `courses/<CODE>/lectures/` — and (b) the **countdown** to every exam/deliverable with the
@@ -52,7 +52,7 @@ PST = UTC−8. A Canvas due of `T06:59:59Z` is "23:59 the previous day, Pacific"
 
 ### 1. Things3 (local app)
 ```bash
-osascript "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/things_today.applescript"
+osascript "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/things_today.applescript"
 ```
 Prints Today (with project/area/due/tags), Inbox count, Upcoming ≤14 days, open projects.
 
@@ -62,7 +62,7 @@ Matt has ~6 h of work time a day outside class. Every to-do carries two tags: an
 **priority** (`P1` must — deadline- or grade-bound · `P2` should this week · `P3` whenever).
 Run this **after** the Canvas/PrairieLearn/Gmail sync (so new deadlines are already in Things3):
 ```bash
-python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/things_plan.py"
+python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/things_plan.py"
 ```
 It (1) creates the automatic to-dos — one `Log <CODE> lec N (<date>)` per unlogged lecture from term.py
 (15m, P1, **deadline = the lecture date**, so a missed close-out reads "OVERDUE since Sep 9", not "due
@@ -76,7 +76,8 @@ are cancelled), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
 for ASIA 250 from Sep 14, the **daily habits** (`HABITS` in the script: `Deck: answer the 6 on the bus, tick key
 points (<date>)` and `Quiz me: 10 min before bed (<date>)` in area UBC, plus any personal ones listed in the git-ignored
 `private/habits.json` (none where the file is missing); 15m P1 each, due today; an open one from
-an earlier day, or under an old title, is cancelled, never rolled), and the **PHIL 385 reading pair** from the syllabus
+an earlier day, or under an old title, is cancelled, never rolled; a title in `PAUSED_HABITS` is not created and an
+open one is cancelled, which holds both UBC habits since 2026-11-04), and the **PHIL 385 reading pair** from the syllabus
 schedule in `PHIL_READINGS`, from a week before the reading's first class (`Read PHIL385: <title> (class …)`
 1h P1, due the first class, created until the last class, skipped if any open to-do already mentions
 the title; `Log PHIL385 reading: <title>` 15m P1, due the last class; both are completed once
@@ -129,7 +130,7 @@ The printed block, top to bottom (Matt, 2026-10-06):
 
 **Weekly mode — Sundays 15:00 (scheduled task `weekly-plan`) and "plan my week":** run
 ```bash
-python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/things_plan.py" --week
+python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/things_plan.py" --week
 ```
 It places next week's work on days: everything due Mon→Sun (+3 days) and any undated P1 item gets a
 when-date — a hand-set day is kept if it fits, otherwise the project's rhythm day (`RHYTHM`: STAT Mon,
@@ -143,7 +144,7 @@ The weekly-plan task posts it as its own ≤12-line brief (block + hard dates in
 writes `routines/runs/<date>-week.md`; the daily run never calls `--week`. On any other day, "plan my week" =
 `--week --next-week` (the coming Mon→Sun); add `--dry-run` to preview.
 Until the FSRS shadow trial decides (it needs about 30 scored reviews and had 5 on 2026-10-06), the weekly-plan brief also carries the one-line
-verdict that `python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/quiz-me/scripts/fsrs_shadow.py"` prints last.
+verdict that `python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/fsrs_shadow.py"` prints last.
 
 After it runs:
 - If it lists items under **Needs an estimate/priority tag**, tag them yourself from the title
@@ -152,12 +153,15 @@ After it runs:
   a lecture + its readings 2h · deliverable/paper *session* 2h (the item repeats daily until done)
   · SWR/WA 3h · exams and in-lab quizzes `event` · anything admin 15m. P1 = has a date or a
   grade; P2 = career or setup work that matters this week; P3 = everything else.
+- A personal fixed-time event (badminton, gym, an appointment, a social plan) never goes into Things3. Put it on
+  Google Calendar (primary calendar; search for it first so it is not doubled), and cancel any Things3 to-do that
+  carries one (Matt, 2026-11-04).
 - Every to-do you add this run (sync rule below) gets `--tags` too. Untagged = 30m and flagged.
 - Never hand-schedule things into Today outside the planner ("shuffle to tomorrow" = move out +
   `--budget H`); set `--when`/`--deadline` and tags
   and let it decide. If a ⚠ OVER BUDGET line appears, that is the one decision for Matt in the brief.
-- Paste the planner output verbatim as the first block of the brief. It replaces the old
-  "Do today" block — hard deadlines and ladder steps are to-dos now, so they are in the plan.
+- Turn the planner's picked items into the brief's numbered Plan today list (Report format below): task, estimate,
+  when due, link. Its start times and most ⚠ lines stay in Details (Matt, 2026-11-05).
 
 **Surge days — 8–10 h (Matt, 2026-09-20: "if something is really urgent, yeah I dont mind doing
 8-10 hrs of works js lmk and remind me").** The 6 h budget is the default, not a ceiling. When a run
@@ -186,7 +190,7 @@ next morning's run both carry one line on whether the surge item actually closed
 **Sync rule:** every new dated item found in Canvas / PrairieLearn / the CPSC 310 site / Piazza
 instructor notes gets added to Things3 in the same run, via:
 ```bash
-python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/things_add.py" \
+python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/things_add.py" \
   --title "WeBWorK 3" --project "STAT 251" --when 2026-09-29 --deadline 2026-10-06 --tags "2h, P1" --notes "Due Tue 23:59, no late"
 ```
 Idempotent by title within the project (re-running updates instead of duplicating). Projects are
@@ -233,7 +237,7 @@ only path; the token-based fetcher was deleted on 2026-10-06.
    Large results get saved to a tool-results file — that's expected.
 5. Reassemble + digest + diff:
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/canvas_digest.py" <path-to-tool-results-file-or-json>
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/canvas_digest.py" <path-to-tool-results-file-or-json>
    ```
    It accepts either the raw tool-results file or a plain JSON file, saves the snapshot, and
    prints: **grades** (current score per course, `CHANGED from …` when it moved), then a per-course
@@ -266,7 +270,7 @@ Gotchas (learned 2026-09-10):
   (sliding) or it counts 24 h from sign-in (absolute — Matt's bet) is what `routines/keepalive.log`
   settles: the `canvas-keepalive` scheduled task touches canvas.ubc.ca at 13:00 and 21:00, logs
   `signed-in` / `signed-out`, and push-nudges him when it finds the CWL page. Sliding means he never
-  signs in again; absolute means one 10 s sign-in a day at the nudge. Codex never signs in either
+  signs in again; absolute means one 10 s sign-in a day at the nudge. Claude never signs in either
   way — a hard rule, asked and answered 2026-09-13.
 - The extension blocks any `javascript_tool` *return value* containing query strings and any
   script containing the word "credentials". That's why the script strips `?…` from URLs and
@@ -278,7 +282,7 @@ Gotchas (learned 2026-09-10):
 ### 2b. WeBWorK — STAT 251 (Chrome; the extension was allowed on webwork.elearning.ubc.ca 2026-09-16)
 Course: https://webwork.elearning.ubc.ca/webwork2/2026W1_V_STAT_V_251_101_2026W1 — Matt is logged in
 through his Chrome session. If the page is a login form, treat it like a Canvas sign-out (one Heads-up
-line; Codex never signs in). Read-only: never touch an answer box, Preview, Submit or Check Answers.
+line; Claude never signs in). Read-only: never touch an answer box, Preview, Submit or Check Answers.
 - **Every run:** `navigate` to the course URL and `get_page_text`. The Assignments list shows each open
   set's due date and each future set's open date. A changed date goes to Things3 (`WeBWorK N`), the
   ledger term calendar and `courses/STAT251/03-logistics.md` (drop the `~` once confirmed).
@@ -293,7 +297,7 @@ line; Codex never signs in). Read-only: never touch an answer box, Preview, Subm
   or the first run after it: open `<course>/Assignment-0N/` (the problem list gives the count), then each
   `<course>/Assignment-0N/k/` with `get_page_text`. A problem whose text refers to a figure ("histogram
   shown below", a boxplot, a stemplot) gets a `computer` screenshot, and the counts are read off the
-  image. Save the text to `routines/webwork/stat251-wwNN.txt`, then bank it per AGENTS.md log step 8:
+  image. Save the text to `routines/webwork/stat251-wwNN.txt`, then bank it per CLAUDE.md log step 8:
   one question per problem under `## WeBWorK N` in `courses/STAT251/02-questions.md`, numbers changed,
   `**Lec:** WWN`, tagged to existing ledger rows. Brief line under STAT 251:
   "WeBWorK N open · k problems banked · due <date>".
@@ -322,7 +326,7 @@ prints in §7), **Syllabus** (policies), **Project** (deliverable specs, linked 
 released). On 2026-09-28 the site removed its Course Materials unit pages, which were the only place
 that matched lectures to reader chapters, so §7 now picks the chapter by its title. Run
 ```bash
-python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/cpsc310_site.py"
+python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/cpsc310_site.py"
 ```
 It diffs the schedule against `routines/snapshots/cpsc310-site.json`, downloads any newly posted deck
 to `routines/slides/cpsc310/` (git-ignored — course material stays out of the public repo) with the
@@ -370,9 +374,9 @@ applying is a separate session he starts himself.
    python3 "/Users/matthe/Documents/CodingProjects/Projects/Groundwork/scripts/run.py" applications
    ```
    It rewrites `data/APPLICATIONS.md` in the Career repo and prints the **Career** block between
-   the `===` lines. Paste the block into the brief verbatim, the same way the planner's block is
-   pasted: it already keeps the rules below (dated rows as a table, four rows at most, one counted
-   line for the rest). If the command fails, one Heads-up line and move on.
+   the `===` lines. That block goes in Details → Career only; the brief's Career block is built from email (steps
+   2–4), because the ledger's counts and nudge lists go stale (Matt, 2026-11-05). If the command fails, one
+   Details line and move on.
 2. Run it again with `query=1` on the end. It prints one Gmail search covering every company he is
    still waiting on. Run that with `search_threads` (pageSize 25) and open each hit with `get_thread`.
 3. For each thread where an employer is writing about one of his applications (not a job alert, not
@@ -421,7 +425,7 @@ applying is a separate session he starts himself.
    named contact there, or a company Bill or his mother knows), is **not** applied to; it is listed under the
    Career block as "held for a referral: <company> · <role> · closes <date>" and he decides. The morning check
    itself still does not apply at 06:35: it lists the candidates, and the applying happens in the session he is
-   present for or the one this routine hands off to (see the Career repo's `AGENTS.md`, Applying).
+   present for or the one this routine hands off to (see the Career repo's `CLAUDE.md`, Applying).
 
 ### 5. Piazza (Chrome — needs the extension's site permission, see the note below)
 Class feeds (new UI; `get_page_text` only returns the welcome note, so use `read_page`
@@ -491,7 +495,7 @@ recordings or notes), so nothing is staged for it. A staged `_NN` file is a plai
 and nothing else.
 1. **CPSC 310** (public site, no browser):
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/prelecture.py" --n 2
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/prelecture.py" --n 2
    ```
    It takes the next two lectures that have no log or outline yet. When a lecture's deck is posted,
    it downloads the deck (text in `routines/slides/cpsc310/NN-*.txt`) and names the
@@ -502,7 +506,7 @@ and nothing else.
    - **Before the deck** (a lecture day, today's lecture only): pick the chapter whose title best
      matches the lecture title and stage it:
      ```bash
-     python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/prelecture.py" --chapter N "<chapter URL>"
+     python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/prelecture.py" --chapter N "<chapter URL>"
      ```
      It writes the chapter's text to `routines/prelecture/cpsc310/NN-<slug>.txt`. Write
      `lectures/_NN-<slug>.md` from it as a plain-sentence outline of the chapter's claims, only the
@@ -528,7 +532,7 @@ and nothing else.
    each next chunk) until the END line arrives, save them in order, each starting on a new line, to
    `routines/snapshots/materials-<date>.txt`, then
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt
    ```
    It lists every item not marked yet, each with its key (`STAT251:<item id>`) and the Canvas file id
    of each deck, and it writes nothing. A request that does not load by `canvas_fetch.js`'s rule
@@ -543,12 +547,12 @@ and nothing else.
    file page → canvadoc session → fetch `urls.pdf_download` → pdf.js; paint, `get_page_text`), then
    write `courses/<CODE>/lectures/_NN-<slug>.md` (STAT 251: lecture number from the page title;
    ASIA 250: week number) — plain-sentence outline of the deck (formulas in LaTeX between `$$` markers, per
-   AGENTS.md), main topics in slide order, and a
+   CLAUDE.md), main topics in slide order, and a
    `## Likely quiz targets` line for ASIA 250. A reading (not a deck) goes to
    `courses/<CODE>/readings/_<slug>.md` as an outline. Big books (Harvey, Luhrmann): extract only the
    assigned page range. Then mark what is done, in one call:
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt --mark STAT251:<item id> ASIA250:<item id>
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morning-check/scripts/canvas_materials_digest.py" routines/snapshots/materials-<date>.txt --mark STAT251:<item id> ASIA250:<item id>
    ```
    - Mark a deck or reading once its outline or reading file is written. If the file is already there
      (an earlier run or the fetch skill wrote it without marking), mark it without pulling again.
@@ -568,7 +572,7 @@ and nothing else.
    the PrairieLearn assessment for CPSC 310, the pre-lab quiz for STAT 251 — taken from the
    PrairieLearn read (§6) and the ledger, never from memory. Cancelled CPSC 310 labs: Wed Sep 30 and
    Mon Oct 12.
-4. **Lecture log later** (AGENTS.md rule): when he logs a lecture whose `_NN` file is still an outline, the
+4. **Lecture log later** (CLAUDE.md rule): when he logs a lecture whose `_NN` file is still an outline, the
    outline is the clarification source and every deck-only claim becomes a question, then the `_NN` file is
    deleted (its content lives on in the questions and the notes file's Clarifications). A full study page
    (Full lecture prep, below) is renamed instead.
@@ -588,7 +592,7 @@ until then. PHIL 385 is unchanged (nothing to pull).
   Reference; ASIA: captions if the Canvas video has a track, otherwise deck only and say so; CPSC has
   none), and the assigned reader chapter or readings.
 - **Write the page as the real study page, not an outline:** `courses/<CODE>/lectures/_NN-<slug>.md` in
-  the course's lecture-file shape (CPSC 310: the deck-organised format in AGENTS.md; STAT 251 and ASIA 250:
+  the course's lecture-file shape (CPSC 310: the deck-organised format in CLAUDE.md; STAT 251 and ASIA 250:
   `## Slides, organized`, `## In class` from the recording when there is one, `## Clarifications` where the
   deck and the recording or reader disagree), formulas in LaTeX. No pre-lecture questions (dropped on
   2026-10-06). Keep the underscore: term.py still counts the lecture unlogged and the `Log …` to-do stays
@@ -597,13 +601,19 @@ until then. PHIL 385 is unchanged (nothing to pull).
   with the topics added to `01-topics.md` and `ledger.md` (Next = `not studied`: he has not studied it yet, so
   nothing is due until he sends notes or says he has studied it, and then `quiz_pick.py --studied <COURSE> <lec>`
   starts it; Matt, 2026-11-01), run `check-math.mjs` on every
-  touched file, then `quiz_pick.py --due` and `npm run parity` as AGENTS.md step 3 says. A STAT 251 or ASIA 250
+  touched file, then `quiz_pick.py --due` and `npm run parity` as CLAUDE.md step 3 says. A STAT 251 or ASIA 250
   item is marked with `canvas_materials_digest.py --mark` once its page is written.
 - **When he sends notes** (`log <COURSE> lec N`): rename `_NN` → `NN`, add `## Your notes` with his words
   verbatim, and adjust the page and its questions only where his notes add or correct something. Then
   `quiz_pick.py --studied <COURSE> N` starts that lecture's topics (due today). Report what changed, nothing else.
 - **Brief:** the Today's classes line points at the page and names the question count. A lecture with no
   deck yet is "no deck posted", as before.
+
+**Paused (Matt, 2026-11-04: "Remove the daily quizing for now, I haven't been doing it").** No deck had been tapped
+since Oct 13. While `PAUSED_HABITS` in `things_plan.py` holds the deck habit, run step 0 only, so a deck he does tap
+still gets graded, and skip steps 1 and 2: no new deck and no artifact rebuild. Run `quiz_pick.py --due` instead, so
+the ledger's Due now block stays fresh. The brief's Review block becomes one line, "Review: daily deck paused since
+Nov 4." The rest of this section is how it runs when he restarts it.
 
 **Review = the transit deck, as a phone artifact (2026-09-13).** Two parts, in order:
 
@@ -626,7 +636,7 @@ until then. PHIL 385 is unchanged (nothing to pull).
    not an error.
 1. Run
    ```bash
-   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.Codex/skills/quiz-me/scripts/quiz_pick.py" --transit
+   python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/quiz_pick.py" --transit
    ```
    It picks 6 due/weak questions across courses (interleaved, exam-weighted, not-due topics fill the
    rest), writes `routines/runs/<date>-transit.md` (questions, a divider, then answers) plus the
@@ -677,7 +687,7 @@ until then. PHIL 385 is unchanged (nothing to pull).
    people over-credit themselves when they grade their own answers (Dunlosky & Rawson 2012), so the page never asks
    for O/~/X. `build_transit_deck.mjs` does all of this; build the page with it, never by hand.
    1. Every bank answer opens with its rubric: `Key:` (a short question) or `Steps:` (a long problem), numbered
-      one-line points, then a blank line and the explanation (AGENTS.md step 2). Point 1 is the core. The builder
+      one-line points, then a blank line and the explanation (CLAUDE.md step 2). Point 1 is the core. The builder
       stops on a picked question without one: fix that bank answer and build again.
    2. Each card opens on the question and three confidence buttons, 1 Guess, 2 Think so, 3 Sure. The tap reveals the
       key as tick rows (point 1 marked Core), the explanation folded under it, and the notes link.
@@ -730,56 +740,39 @@ overwriting it. The Canvas digest diffs against today's earlier snapshot in that
 ## Brief
 
 **🔔 <Company> · interview / assessment / offer · arrived <date> · <what it asks for and by when>**   ← only when §4b found one; first line, bold, nothing above it
-**Plan today — 5.75 of 6 h**   ← the planner's items (§1b) rendered as a TABLE, not its raw bullets
-| Start | Est | What | When |         (Matt, 2026-09-20: the " · "-joined bullet list read as a wall)
-|---|---|---|---|                      every item the planner picked gets a row, same order
-| 09:00 | 2 h | <project> · <what> | <due, or "overdue since <d>"> |   Start = the planner's time, P1 rows only
-|  | 15m | UBC · Deck: answer the 6 on the bus | due today |   habits, P2 and P3 rows leave Start blank
-|  | event | <project> · <what> | <time> |   [event] = fixed slot, costs no budget
-PHIL 385 Exam 2 is tomorrow, so today plans 3 h instead of 6 h.   ← the day before an exam only
-Scaled by your actual times: 1h ×1.5.   ← only once a time tag has 5 recorded times
-⚠ <item> is due <d> and there is no room for it today.   ← plain words, its own line
-⚠ <item> would end after 22:30, so it moves to tomorrow.   ← the sleep cutoff, its own line ("so it is not planned today" when it was not in Today)
-⚠ An 8 h day would fit <what, in marks>. Say the word.   ← the longer-day offer, rule below
-Cushion: <course> <item> has 6 h of work before it, 40 h free.   ← one line per date with an exam, deliverable, paper or assignment within 14 days
-⚠ <course> <item> has 14 h of work before <date> but only 12 h free.   ← replaces that date's Cushion line when it does not fit
+**Format (Matt, 2026-11-05: "just do like numbered … much easier to read, also, too many logistics"):** every list
+in the brief is a numbered or bulleted list, never a table and never a run of ⚠ lines. Plan today is numbered in the
+order to do them, one line each: `N. Task (est) [when due] - link`. No start times, no project prefix unless the title
+needs it, the link only when one exists (the to-do's own `links.md` row, a lecture page, a Canvas page). Logistics
+(clock skew, which source was read, script output, planner bookkeeping) go in Details, never the brief.
 
-**Rolled to tomorrow — N items**   ← also from the planner; omit the whole block if empty
-- Dated ones only, one per bullet: <project> · <what> · rolled 4× · due <d>
-- Then ONE closing bullet for the undated tail: "Twelve more, undated P2/P3. Rolling longest: …"
-First thing tomorrow: <what>.   ← the planner's line, right under the rolled list
-Time check: how long did <what> take?   ← the plan's last line; his answer goes to `--actual` (§1b)
-**Week ahead — 25 of 42 h** (Mon Sep 14 → Sun Sep 20)   ← the Sunday 15:00 weekly-plan brief, verbatim from `--week`
-- Mon 14 · 5.5/6 h · <what> · <what> (+2)
-- ⚠ OVER BUDGET Thu Sep 17: … has no room before Sep 18   ← the one decision
+**Plan today — 6 of 6 h**   ← the planner's picked items (§1b), numbered, same order
+1. LAB07 API Design & Versioning (1 h) [closes today 23:59] - https://us.prairielearn.com/pl/course_instance/231184
+2. Optional Assignment 2 (30m) [due Fri] - <link>
+3. Dentist (event) [15:20]
+- At most two warning bullets under the list: the biggest deadline that did not fit, and the 8 h offer when §1b's
+  test passes. The rest of the planner's ⚠ lines (overdue backlog, cushion lines) go in Details as a count.
 
-**Today's classes**         one bullet per lecture AND per lab happening today (none on weekends):
-- <course> · <section> <time> · lab   labs first when they run earlier · section, time, room or
-    <what is due>                     Zoom, and what is due
-- <course> · <time> · <topic>         time · topic from the slide/page title, course-site row
-- ...                                 or reading schedule (§7) · the staged outline (§7 step 3)
+**Rolled to tomorrow**   ← omit if empty
+- First thing tomorrow: <what>.
+- Dated rolled items, one bullet each; then one bullet counting the undated tail.
 
-**Review — 6 questions**    today's 6 phone-deck questions (§7). In the CHAT BRIEF give
-- <course> · <short version>          only a short version — the topic and the ask, ~12 words, never the
-- ...                                 full worked question (Matt, 2026-09-20: the long ones made the
-- Transit Deck: <url>                 brief unreadable). The run file keeps them in full. Answers and
-                                      grading live on the artifact. "- Bank empty" if the script exits 1.
+**Today's classes**
+- <course> · <time> · <topic> - <lecture page link if one exists>   labs first when they run earlier
 
 **New since yesterday**
-- <course> · <what> · <source>        new deadlines, announcements, Piazza instructor
-- ...                                 notes, PrairieLearn items, grades. "- Nothing new" if none.
+- <course> · <what>   one fact per bullet; "Nothing new." as one line if none
 
 **Heads-up**
-- Unlogged lectures: <course> (<date>) · <course> (<date>)
-- <due in 2–7 days / date conflict / blocked source / overdue ledger topic>
+- Unlogged: <course> (<dates>), one bullet per course
+- <blocked source with its sign-in link / date conflict / due in 2–7 days>
 
-**Career: <N> applied, <N> interviews, <N> offers**   ← §4b, printed by run.py, pasted verbatim
-| Closes | Still to apply | Note |          up to 4 rows, one per company, next 3 days only
-|---|---|---|
-| <Day Mon D time> | <Company> · <role, or N roles> | <referral or blank> |
-- <N> more companies close by <date>. Full list: data/APPLICATIONS.md
-- <Company> · <email date> · <what the employer said>     one bullet per reply found in §4b step 3
-- held for a referral: <Company> · <role> · closes <date>   big or medium tech, his call (§4b step 6)
+**Career**   ← from email only (Matt, 2026-11-05: "at least track emails, because most of what you're tracking are out
+of date"). Build it from §4b steps 2–4 (employer replies, LinkedIn people messages, SCOPE), one bullet each with its
+date. Do not paste run.py's counts, stale INTERVIEW lines, "quiet 14+ days" or "postings close later" lines; they
+go in Details. An interview, assessment or offer still goes first in the whole brief. "No employer emails since
+<last run date>." when there are none.
+- <Company> · <email date> · <what they said, 8 words or fewer>
 
 **Week ahead**              Sundays only (or when asked): one bullet per hard date in the
 - ...                       next 14 days from ledger.md + Things3 + term.py, then
@@ -818,7 +811,8 @@ give advice; everything else in the brief stays reporting.
                         "published <sha>" or "nothing to publish" (§8)
 ```
 Calendar events (classes, gym, badminton) never appear in **Plan today** — Things3 holds tasks, not
-the timetable; today's lectures have their own block.
+the timetable; today's lectures have their own block. Personal events live on Google Calendar only, never as a
+Things3 to-do (Matt, 2026-11-04: "you don't need to add it to things3, just calendar is fine").
 
 **Formatting rule (Matt, 2026-09-10 evening):** never join items into a paragraph with " · ".
 Header line, then bullets, one item per bullet, in the brief AND every details section. He
@@ -859,7 +853,7 @@ Script names, file paths and JSON keys are never brief material regardless; they
 **Word list — his words, not mine.** He said 2026-09-20 "fuck it i'll just slowly correct what's
 good and what isn't", so this table grows one row at a time as he corrects a word. Applying a
 correction means changing it *everywhere he reads it* in the same session — the brief, `ledger.md`,
-`PREP.md`, `README.md`, `STUDY-SYSTEM.md`, `AGENTS.md`, both skills, the planner's to-do titles and
+`PREP.md`, `README.md`, `STUDY-SYSTEM.md`, `CLAUDE.md`, both skills, the planner's to-do titles and
 the notes site — not just in that day's reply. Renaming a generated to-do also means renaming the
 open one in Things3 and its key in `routines/plan-state.json`, or the next run makes a duplicate.
 
@@ -882,7 +876,7 @@ the brief is scanned in about twenty seconds, so length is the enemy, not missin
 file holds the detail.
 - **One line, one fact, twelve words or fewer.** A bullet that needs a comma-spliced second clause
   belongs in Details.
-- **Plan today and any dated list is a table**, not bullets — the ` · ` separators inside a bullet
+- **Plan today is a numbered list and every other list is bullets** (2026-11-05, replacing the 2026-09-20 table) — the ` · ` separators inside a bullet
   are what made it read as a wall.
 - **Bold only the thing that changes his morning** — a hard lock, a collision, an ⚠. If three
   things are bold, nothing is.
@@ -929,6 +923,13 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
 ---
 
 ## Tuning log (newest first)
+- 2026-11-05 (Matt): the brief's Plan today is a numbered list, `N. Task (est) [when due] - link`, with no start
+  times; every other block is bullets; logistics and most ⚠ lines move to Details; the Career block is built from
+  email only, not run.py's stale counts.
+- 2026-11-04 (Matt): personal fixed-time events go on Google Calendar, not Things3; the "Badminton (Wed night)"
+  to-do was cancelled and the event put on the calendar. The daily bus deck and bed quiz are paused (`PAUSED_HABITS`
+  in `things_plan.py`, twelve untapped decks since Oct 13), so §7 builds no deck until he restarts them; a Someday
+  to-do "Restart daily quizzing (bus deck + bed quiz)" under UBC holds the idea.
 - 2026-10-14 (Matt: "something's wrong with the priority"): `things_plan.py` scores work due today or tomorrow above work whose date has passed. Before, overdue scored 1000 and due-tomorrow 900, and the was-planned and rollover bonuses kept old revision steps above LAB04 and WeBWorK 4 closing the next day; overdue now takes the 2–3 day band's 700 and wins ties by date.
 - 2026-10-09 (Matt): interviews, assessments and offers are the brief's first line and a push, every employer
   reply carries its date, career outranks school when they collide, and applying no longer waits for his say
@@ -1002,7 +1003,7 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
   Sep 24, not Sep 18, and corrected ledger.md/Things3.
 - 2026-09-11 (evening, corrected): Piazza and PrairieLearn are **not** permanently blocked — the
   morning's "hard block" diagnosis was wrong. Both read fine from a session that holds the
-  Codex-in-Chrome site permission; the two failures were sessions where the new-domain grant was
+  Claude-in-Chrome site permission; the two failures were sessions where the new-domain grant was
   never given (unattended scheduled run, then the same session continued by hand), and the denial
   stuck for the session. Fix: always-allow `piazza.com` and `us.prairielearn.com` in the extension.
   Rule stays: one attempt per run, then Gmail-digest fallback / skip. Tab-cleanup rule kept.

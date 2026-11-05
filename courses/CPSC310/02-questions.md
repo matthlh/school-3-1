@@ -2179,3 +2179,130 @@ False. The reader's rule is that headers carry metadata about the exchange, such
 4. Connectedness: responses link to related resources so clients follow links; solved changing the page size; its check is whether the client ever builds a URL itself.
 
 Uniform Interface: clients act on resources with only the standard methods, which mean the same thing in every API, and status codes report the outcome. It solved working with standard HTTP libraries. Check: could a generic tool handle this request correctly without knowing your API? Idempotency: sending a request twice leaves the same state as sending it once; every method but POST. It solved retries at the dock. Check: what happens if the client retries? Statelessness: each request carries everything needed to understand it, and the server keeps the resources, not what the client has done. It solved the `/stations/more` endpoint. Check: could a different server answer this request? Connectedness: responses link to related resources, so clients follow links instead of building URLs. It solved changing the page size. Check: does the client ever build a URL itself?
+
+---
+
+## Lec 16 — Modelling & Specification (logged 2026-11-05 from deck 09b-model-specs.pdf; no reader chapter covers it; Matt was at the dentist and takes no notes in this course; written in the exam formats: true/false with justification, multiple choice, short answer with handwritten TypeScript)
+
+### Q: A team gets a two-page email from the registrar describing a section waitlist and starts writing TypeScript from it the same afternoon. Name the deck's four representations in order, say which two the team skipped, and for each skipped one say who or what checks it and what it would have caught.
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** apply
+**A:** Key:
+1. Requirements, models, specifications, code; the team skipped models and specifications.
+2. A model is checked by walkthroughs; it decides what there is to specify and finds what the requirements omit.
+3. A specification (documentation and tests) is what developers code from, and it checks the code because the tests run against the implementation.
+4. Requirements are checked by the non-technical stakeholders, which the email already got.
+
+Slides 3 and 4. The point of the chain is that each step has its own checker: stakeholders read the requirements, a walkthrough exercises the model, and tests exercise the code. Going straight from an email to code means the first time anyone finds out the email never said what happens when two seats free up at once is when a user hits it.
+
+### Q: A request reads: "Each study room can be booked for at most two hours. A student may hold at most one booking at a time. A booking can be cancelled until ten minutes before it starts. Staff can block a room for maintenance, which cancels any booking in that window." Using the deck's grammar hints, extract the candidate classes, fields, operations and rules, and say which hint produced each.
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** apply
+**A:** Key:
+1. Nouns become classes or fields: Room and Booking are classes; a booking's start, length and student id are fields; "staff" and "student" are ids, not classes we hold.
+2. Verbs someone does become operations: book, cancel, block.
+3. Limits, conditions and consequences become rules: at most two hours; one booking per student; cancel only until ten minutes before the start; a block cancels the bookings in its window.
+4. The hints give candidates only; shape, evaluate and revise come next.
+
+Slide 7's table: a noun (or an adjective that classifies a noun) usually becomes a class or field, a verb someone does becomes an operation, and a limit, condition or consequence becomes a rule. Whether a noun is a class or a field is slide 9's question, asked next: a booking has its own data and rules about how it changes, so it is a class; a start time is just a value, so it is a field.
+
+### Q: Which one of these should be modelled as a class rather than a field or an operation, by the deck's test? (a) The number of seats in a lecture hall. (b) A student's position in a waitlist. (c) A seat at a concert, which has a number, a price and an occupant. (d) The name of a section. Give the test and apply it to all four.
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** apply
+**A:** Key:
+1. (c).
+2. Test: just a value of something else is a field; its own data or rules about how it changes make a class; something always computable from other state is an operation.
+3. (a) is a count, a field; (d) is a name, a field; (b) is computed from the order of the line, an operation.
+4. Lecture hall seats are interchangeable, so a count; concert seats each carry data, so a class.
+
+Slide 9 uses exactly this contrast: the same word, "seat", is a field in one request and a class in another. The deciding question is never the word but whether the thing carries data or rules of its own.
+
+### Q: In the waitlist model, Section holds a Waitlist and an enrolment list. The request says a student cannot join the waitlist of a section they are already enrolled in, and that student names and emails live in the Student Information System. Answer the deck's two shaping questions for Section and Waitlist, say on which class `join` must be defined and why, and say what Student becomes in this model.
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** apply
+**A:** Key:
+1. Ownership: Section creates its own Waitlist and controls its lifetime, so composition.
+2. Encapsulation: the "not already enrolled" rule is a rule about the section that depends on the waitlist, so the operation that could break it, `join`, must be defined on Section (or go through it) so Section can enforce it.
+3. Student is not a class here: the data lives elsewhere, so the model keeps a student id field and associates by id.
+4. Operations that touch only the line's order, such as reading a position, can stay on Waitlist.
+
+Slide 10. Ownership asks who controls B's lifetime: yes means A creates B directly (composition), no means A accepts an instance made elsewhere (association). Encapsulation asks whether a rule about A depends on B: yes means operations that could break the rule go on A. The enrolment check needs both the enrolment list and the waitlist, and only Section sees both. Student is the trap: a prominent noun in the request that still ends up as an id field, because nothing about a student is stored or changed in this system.
+
+### Q: Classify each sentence as an invariant, a precondition, a postcondition or an exceptional case, and give the deck's one-line definition of each kind: (1) "The waitlist never holds more than 50 students." (2) "Call `join` only once the section is full." (3) "After `leave`, every student behind the leaver moves up one place and nobody else changes." (4) "`join` returns `{ ok: false, reason: "already-waiting" }` and changes nothing when the student is already in line."
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** apply
+**A:** Key:
+1. (1) invariant: always true about the object between operations.
+2. (2) precondition: must be true before the call, and it is the caller's job.
+3. (3) postcondition: what the operation guarantees afterwards, including what does not change.
+4. (4) exceptional case: what the operation checks itself, and the result it gives when it cannot proceed.
+5. One sentence of a request often gives both an invariant and a rule on the operation that keeps it: "at most 50" is (1) and also a "full" exceptional case on `join`.
+
+Slide 11. The split that matters for tests and for code is who checks: a precondition is assumed by the operation and promised by the caller, an exceptional case is checked by the operation and reported in its result. The "nobody else changes" half of (3) is part of the postcondition, not decoration; the deck says a postcondition includes what does not change.
+
+### Q: Run this scenario through the waitlist sketch, writing the state after every call: Ada, Ben and Cy join a full section; a seat frees up; while Ada's offer is still open, a second seat frees up. Where does the walkthrough get stuck, what are the two possible reasons the deck gives for getting stuck, and what do you do in each case?
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** derive
+**A:** Key:
+1. State: after the three joins the line is Ada, Ben, Cy; after the first drop the line is Ada, Ben, Cy and the offer is Ada with 24 hours; the second drop is where it sticks.
+2. The request does not say whether Ben is offered the second seat while Ada's offer is open, or whether it waits.
+3. Reason one, a gap in the model: a field or operation is missing, so change the model. Reason two, the requirement does not say: decide the behaviour and record it, or ask the stakeholder.
+4. The model is complete when no scenario fails and every open question needs the stakeholder's input.
+
+Slides 12 and 13. The walkthrough rule is to use only the fields and operations in the sketch and write the state after each call. The second-seat case is a requirements gap, not a model gap: the sketch can represent two open offers or a queue of free seats, but nothing in the request picks one. That goes in the issue as a decision ("offer the next student in line at once; a student holds at most one offer") or a question for the registrar.
+
+### Q: A teammate documents `leave` on the waitlist like this. Label each line with the rule kind it claims to be, say which lines are wrong or missing by the deck's definitions, and rewrite the comment in the deck's style.
+```ts
+/**
+ * Removes a student from the line.
+ * Precondition: the student is in the line; if not, returns { ok: false, reason: "not-waiting" }.
+ * Postcondition: the student is no longer in the line.
+ */
+leave(id: StudentId): LeaveResult;
+```
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** critique
+**A:** Key:
+1. The "precondition" line is really an exceptional case: a precondition is the caller's job and is not checked, but this one is checked and answered with a reason.
+2. The postcondition is incomplete: it must say what else changes (everyone behind moves up one) and what does not (nobody ahead moves, the maximum is unchanged).
+3. Rewrite: `@param id` is a valid student id, not checked (precondition); on success `{ ok: true }`, the student is gone and each student behind moves up one place, nobody ahead moves (postcondition); otherwise `{ ok: false, reason: "not-waiting" }`, unchanged (exceptional case).
+4. The class invariant (no duplicates, never over the maximum) stays on the interface comment, not on `leave`.
+
+Slide 14 marks each sentence of the `join` comment as invariant, precondition, postcondition or exceptional, and the two give-aways are "not checked" for a precondition and a reason code in the result for an exceptional case. Calling a checked condition a precondition is the common slip: it tells the caller they must guarantee something the operation already guards.
+
+### Q: Write two Mocha tests for `join` in the deck's given, when, then shape, one for the postcondition "the student is last in line and nobody else moves" and one for the exceptional case "already-waiting". Then say what a third test for the precondition "call only once the section is full" should look like.
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** apply
+**A:** Key:
+1. There is no third test: preconditions are not tested, because behaviour when one is violated is unspecified.
+2. Postcondition test: given a full section whose line is Ada and Ben, when Cy joins, then the result is `{ ok: true, position: 3 }` and the line reads Ada, Ben, Cy.
+3. Exceptional test: given a line holding Ada, when Ada joins again, then the result is `{ ok: false, reason: "already-waiting" }` and the line is unchanged.
+4. Each clause of the specification gets at least one test, and each walkthrough step becomes one.
+
+Slide 15. In TypeScript, roughly:
+```ts
+it("join puts the student last and moves nobody", () => {
+  const w = fullSectionWith(["ada", "ben"]);          // given
+  const r = w.join("cy");                             // when
+  expect(r).to.deep.equal({ ok: true, position: 3 }); // then
+  expect(w.order()).to.deep.equal(["ada", "ben", "cy"]);
+});
+it("join refuses a student already in line", () => {
+  const w = fullSectionWith(["ada"]);
+  const r = w.join("ada");
+  expect(r).to.deep.equal({ ok: false, reason: "already-waiting" });
+  expect(w.order()).to.deep.equal(["ada"]);
+});
+```
+The "unchanged" assertion in the second test is the postcondition half of an exceptional case and is easy to forget. A test that calls `join` on a section that is not full is testing nothing the specification promises, so whatever it asserts is a guess.
+
+### Q: True or false, and justify: "A walkthrough and a unit test check the same thing, so once the unit tests pass the walkthrough was wasted effort."
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** critique
+**A:** Key:
+1. False.
+2. A walkthrough evaluates the model, by hand, before any code exists; a unit test makes the specification executable and checks the implementation.
+3. Models determine what is specified and specifications determine what is tested, so a gap the walkthrough would have found never becomes a test at all.
+4. The walkthrough is also what turns requirement silences into recorded decisions or stakeholder questions, which tests cannot do.
+
+Slide 16's summary pairs them deliberately: walkthroughs for the model, unit tests for the specification. They sit at different links of the requirements, models, specifications, code chain, and each walkthrough step is the source of a later test's given, when, then.
+
+### Q: Which one of these matches the deck's summary of what each kind of rule constrains and what each checking activity evaluates? (a) Invariants constrain operations; preconditions, postconditions and exceptional cases constrain classes; walkthroughs check the code. (b) Invariants constrain classes; preconditions, postconditions and exceptional cases constrain operations; walkthroughs evaluate the model and unit tests make the specification executable. (c) All four rule kinds constrain operations; tests evaluate the model. (d) Invariants and preconditions constrain classes; postconditions constrain operations; walkthroughs replace tests.
+**Topic:** Modelling & specification  **Lec:** 16  **Type:** recall
+**A:** Key:
+1. (b).
+2. Invariants belong to classes, the other three to operations.
+3. Walkthroughs evaluate the model; unit tests make the specification executable.
+
+Slide 16. (a) swaps the two groups, (c) puts invariants on operations and tests on the model, (d) makes walkthroughs a substitute for tests when the deck has them doing different jobs.
