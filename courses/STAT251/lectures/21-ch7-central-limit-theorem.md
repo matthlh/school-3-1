@@ -100,7 +100,7 @@ From the recording's captions, in the order the class went.
 
 ### Announcements
 
-- Lab 5 runs this week, with its pre-lab quiz.
+- Lab 5 runs the week of Nov 2, with its pre-lab quiz.
 - WeBWorK 6 is due Thu Nov 12, because Mon Nov 9 to Wed Nov 11 is the break, with no classes.
 - There are no labs the week of Nov 9. Lab 6 is the week of Nov 16.
 - He asked everyone to complete the midterm TA evaluation.
@@ -153,14 +153,14 @@ The sample distribution looks like the population distribution but is not the sa
 
 ### Clicker question
 
-- The question: sampling distributions describe the distribution of (A) parameters, (B) statistics, (C) both parameters and statistics, or (D) neither. A frame shows 124 responses; the split was not checked.
+- The question: sampling distributions describe the distribution of (A) parameters, (B) statistics, (C) both parameters and statistics, or (D) neither. A frame shows 124 responses. The recording does not give how the answers split.
 - The answer is (B), statistics. A sampling distribution is always the distribution of a statistic.
 - The reason: a statistic such as $$\bar{x}$$ takes a different value in each sample, so it is a random variable and has a distribution. A parameter such as $$\mu$$ is one fixed number, so it has no distribution.
 - The sampling distribution of $$\bar{X}$$ is centred at $$\mu$$ and shows how close $$\bar{x}$$ tends to land to it, but $$\mu$$ itself does not vary. That is why (C) is wrong.
 
 ### Midterm feedback and how answers are marked
 
-He said this especially for students who watch the recordings instead of coming to class. The marking rules from the midterm review (define the random variable, name the distribution and its parameters, write the formula before the numbers) are under How written answers are marked on the [lecture 20 page](_20-midterm-exam-review.md#in-class-from-the-recording). What he added:
+He said this especially for students who watch the recordings instead of coming to class. The marking rules from the midterm review (define the random variable, name the distribution and its parameters, write the formula before the numbers) are under How written answers are marked on the [lecture 20 page](20-midterm-exam-review.md#in-class-from-the-recording). What he added:
 
 - The midterm was built to take the whole 48 minutes, so the time pressure was deliberate. Answering four and a half of the five questions is still a good grade.
 - WeBWorK and written-assignment questions are harder than exam questions, because you have a week or more for them.
@@ -189,4 +189,4 @@ He ran the first StatSpace applet, sampling from a non-Normal population. The po
 ## Clarifications
 
 - The standard error $$\frac{\sigma}{\sqrt{n}}$$ uses the population standard deviation $$\sigma$$. Dividing the variance by $$n$$ gives $$\frac{\sigma^2}{n}$$; dividing the standard deviation by $$n$$ instead of $$\sqrt{n}$$ is the usual slip.
-- The deck's $$n \ge 20$$ is the textbook's rule of thumb, not a cutoff where $$\bar{X}$$ switches to Normal. The instructor said 20 is fine to use in this course, the usual rule elsewhere is $$n > 30$$, and a highly skewed population can need more (How large the sample must be, under In class). A Normal population needs no minimum at all.
+- The deck's $$n \ge 20$$ is the textbook's rule of thumb, not a cutoff where $$\bar{X}$$ switches to Normal. The instructor said 20 is fine to use in this course, the usual rule elsewhere is $$n > 30$$, and a highly skewed population can need more than 30 (How large the sample must be, under In class). A Normal population needs no minimum at all.

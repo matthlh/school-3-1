@@ -4055,31 +4055,27 @@ This is the lecture 21 clicker question ("Sampling distributions describe the di
 1. False: the CLT only makes $$\bar{X}$$ approximately Normal, and 30 is a rule of thumb, not a guarantee.
 2. How large $$n$$ must be depends on the population's shape; a highly skewed population can need more than 30.
 3. $$\bar{X}$$ is exactly Normal only when the population is Normal, and then for any $$n$$.
-4. In this course the textbook's $$n \ge 20$$ is accepted as large.
 
-In lecture 21 the instructor said there is no clear-cut rule. The usual rule of thumb is $$n > 30$$, the textbook uses 20, sometimes 15 is enough, and even 30 is not enough for a highly skewed population. The StatSpace applet showed it: from a right-skewed population of weekly coffee cups, samples of 30 gave a sampling distribution of $$\bar{x}$$ that was still a bit skewed, while samples of 50 gave an approximately Normal one. When you do use the CLT in a written answer, write "by CLT".
+In lecture 21 the instructor said there is no clear-cut rule. The usual rule of thumb is $$n > 30$$. The textbook uses 20, and using 20 in this course is fine. Sometimes 15 is enough, and even 30 is not enough for a highly skewed population. The StatSpace applet showed it: from a right-skewed population of weekly coffee cups, samples of 30 gave a sampling distribution of $$\bar{x}$$ that was still a bit skewed, while samples of 50 gave an approximately Normal one. When you do use the CLT in a written answer, write "by CLT".
 
 ### Q: The number of library books a UBC student borrows in a term is right-skewed: most borrow 0 to 2 and a few borrow 20 or more. The mean is 3 books and the standard deviation is 4 books. A simulation draws 1000 random samples of size $$n$$ and plots a histogram of the 1000 sample means.
-- (a) For $$n = 8$$, give that histogram's centre, its standard error and its shape.
-- (b) For $$n = 64$$, give the same three.
-- (c) Describe the histogram of the 64 values in one of those samples.
+- (a) For $$n = 8$$, what shape does that histogram have?
+- (b) For $$n = 64$$, give that histogram's centre, its standard error and its shape.
+- (c) What shape does the histogram of the 64 values in one of those samples have?
 **Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
 **A:** Key:
-1. Both histograms of means are centred at $$\mu = 3$$, because $$E(\bar{X}) = \mu$$ for any $$n$$.
-2. (a) The standard error is $$\frac{4}{\sqrt{8}} = 1.41$$, and the shape is still right-skewed, because 8 values from a skewed population are too few for the CLT.
-3. (b) The standard error is $$\frac{4}{\sqrt{64}} = 0.5$$, and by the CLT the shape is approximately Normal, $$\bar{X} \approx N(3, 0.25)$$.
-4. (c) That is the sample distribution, which looks like the population: right-skewed, with a mean near 3 and a standard deviation near 4.
+1. (b) By the CLT, $$\bar{X} \approx N(3, 0.25)$$: centred at 3, standard error $$\frac{4}{\sqrt{64}} = 0.5$$, approximately Normal.
+2. (a) Still right-skewed, because 8 values from a skewed population are too few for the CLT.
+3. (c) Right-skewed like the population, because that histogram is the sample distribution, not a sampling distribution.
 
 $$
 \begin{aligned}
-SE_{8} &= \frac{4}{\sqrt{8}} \\
-&= 1.41 \\
-SE_{64} &= \frac{4}{\sqrt{64}} \\
-&= 0.5
+SE &= \frac{4}{\sqrt{64}} = 0.5 \\
+\operatorname{Var}(\bar{X}) &= 0.5^2 = 0.25
 \end{aligned}
 $$
 
-This is the lecture 21 StatSpace applet with new numbers. There the population was cups of coffee per week, right-skewed with mean 2.5. Samples of 10 gave a sampling distribution that was still skewed, samples of 50 gave an approximately Normal one centred at 2.5, and samples of 100 gave a narrower one. In the histogram of means, the horizontal axis is the value of $$\bar{x}$$ and each observation is one whole sample's mean. The centre and the standard error hold for any $$n$$; only the Normal shape needs the CLT. A bigger sample does two different things: one sample's histogram looks more like the skewed population, while the histogram of means looks more Normal and gets narrower. The trap is answering Normal for (c), as if a large sample made the data themselves Normal.
+This is the lecture 21 StatSpace applet with new numbers. There the population was cups of coffee per week, right-skewed with mean 2.5. Samples of 10 gave a sampling distribution that was still skewed, samples of 50 gave an approximately Normal one centred at 2.5, and samples of 100 gave a narrower one. In the histogram of means, the horizontal axis is the value of $$\bar{x}$$ and each observation is one whole sample's mean. The centre and the standard error hold for any $$n$$; only the Normal shape needs the CLT. For $$n = 8$$ the histogram of means is also centred at 3, with standard error $$\frac{4}{\sqrt{8}} = 1.41$$, but it is not yet Normal. A bigger sample does two different things: one sample's histogram looks more like the skewed population, with a mean near 3 and a standard deviation near 4, while the histogram of means looks more Normal and gets narrower. The trap is answering Normal for (c), as if a large sample made the data themselves Normal.
 
 ## Lec 22 — Ch 7: CLT examples, the CLT activity and the Normal approximation to the Binomial (prepared 2026-11-04 from the after-class deck, the activity solutions and the recording's slide index; Canvas calls it Lecture 23; numbers changed)
 
