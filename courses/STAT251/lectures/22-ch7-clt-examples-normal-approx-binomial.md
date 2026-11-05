@@ -6,7 +6,7 @@ You missed this class and sent no page, so this file is the after-class deck `Le
 
 ### Chapter 7 learning outcomes (slide 2)
 
-- The same five outcomes as the [lecture 21 page](_21-ch7-central-limit-theorem.md), which defines the statistic, the sampling distribution, the standard error and the CLT itself.
+- The same five outcomes as the [lecture 21 page](21-ch7-central-limit-theorem.md), which defines the statistic, the sampling distribution, the standard error and the CLT itself.
 - This class covers examples of the CLT and the Normal approximation to the Binomial.
 - The Normal approximation to the Poisson is the next class's topic.
 

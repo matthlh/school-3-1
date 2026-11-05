@@ -3923,7 +3923,7 @@ $$
 
 (b) "Not exceeded before the 8th day" means days 1 to 7 are all fine, $$P(N > 7) = (1 - p)^7 = 0.9918^7 = 0.944$$. The trap is using $$\sigma = 25$$, the variance, in the z-score.
 
-## Lec 21 — Ch 7: statistics, sampling distributions and the Central Limit Theorem (prepared 2026-11-02 from the deck; Canvas calls it Lecture 22; numbers changed)
+## Lec 21 — Ch 7: statistics, sampling distributions and the Central Limit Theorem (prepared 2026-11-02 from the deck, updated 2026-11-04 from the recording; Canvas calls it Lecture 22; numbers changed)
 
 ### Q: A study of 200 UBC commuters finds a mean commute of 34 minutes. For each, say whether it is a statistic or a parameter: (a) the 34 minutes, (b) the mean commute of all UBC commuters, (c) the standard deviation of the 200 commutes, (d) the proportion of all UBC commuters who bike. Which of them is known in practice?
 **Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** recall
@@ -4035,6 +4035,51 @@ n &= 16 \\
 $$
 
 To halve the standard error you need four times the data, not twice. A common slip is dividing $$\sigma$$ by $$n$$ instead of $$\sqrt{n}$$.
+
+### Q: A survey firm studies the monthly rents of Vancouver renters by drawing a random sample of 40 renters. Which of these has a sampling distribution?
+- (a) The mean rent of all Vancouver renters, $$\mu$$.
+- (b) The mean rent $$\bar{x}$$ of the 40 renters in the sample.
+- (c) Both (a) and (b).
+- (d) Neither (a) nor (b).
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. (b): a sampling distribution is the distribution of a statistic.
+2. $$\bar{x}$$ changes from one sample of 40 to the next, so the sample mean is a random variable and has a distribution.
+3. $$\mu$$ is one fixed number, unknown but constant, so it has no distribution, which rules out (a) and (c).
+
+This is the lecture 21 clicker question ("Sampling distributions describe the distribution of ...", answer (B), statistics) on a concrete stem. The trap is (c). The sampling distribution of $$\bar{X}$$ is centred at $$\mu$$ and shows how close $$\bar{x}$$ tends to land to it, so $$\mu$$ appears in it, but $$\mu$$ itself does not change from sample to sample.
+
+### Q: True or false, and justify: a random sample of at least 30 guarantees that the sampling distribution of $$\bar{X}$$ is Normal, whatever the population.
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** critique
+**A:** Key:
+1. False: the CLT only makes $$\bar{X}$$ approximately Normal, and 30 is a rule of thumb, not a guarantee.
+2. How large $$n$$ must be depends on the population's shape; a highly skewed population can need more than 30.
+3. $$\bar{X}$$ is exactly Normal only when the population is Normal, and then for any $$n$$.
+4. In this course the textbook's $$n \ge 20$$ is accepted as large.
+
+In lecture 21 the instructor said there is no clear-cut rule. The usual rule of thumb is $$n > 30$$, the textbook uses 20, sometimes 15 is enough, and even 30 is not enough for a highly skewed population. The StatSpace applet showed it: from a right-skewed population of weekly coffee cups, samples of 30 gave a sampling distribution of $$\bar{x}$$ that was still a bit skewed, while samples of 50 gave an approximately Normal one. When you do use the CLT in a written answer, write "by CLT".
+
+### Q: The number of library books a UBC student borrows in a term is right-skewed: most borrow 0 to 2 and a few borrow 20 or more. The mean is 3 books and the standard deviation is 4 books. A simulation draws 1000 random samples of size $$n$$ and plots a histogram of the 1000 sample means.
+- (a) For $$n = 8$$, give that histogram's centre, its standard error and its shape.
+- (b) For $$n = 64$$, give the same three.
+- (c) Describe the histogram of the 64 values in one of those samples.
+**Topic:** 4e CLT for averages and sums (statistic vs parameter · sampling distribution of X̄ · mean μ and standard error σ/√n · exactly Normal from a Normal population · any population with n ≥ 20 gives X̄ ≈ N(μ, σ²/n) · the total T ≈ N(nμ, nσ²))  **Lec:** 21  **Type:** apply
+**A:** Key:
+1. Both histograms of means are centred at $$\mu = 3$$, because $$E(\bar{X}) = \mu$$ for any $$n$$.
+2. (a) The standard error is $$\frac{4}{\sqrt{8}} = 1.41$$, and the shape is still right-skewed, because 8 values from a skewed population are too few for the CLT.
+3. (b) The standard error is $$\frac{4}{\sqrt{64}} = 0.5$$, and by the CLT the shape is approximately Normal, $$\bar{X} \approx N(3, 0.25)$$.
+4. (c) That is the sample distribution, which looks like the population: right-skewed, with a mean near 3 and a standard deviation near 4.
+
+$$
+\begin{aligned}
+SE_{8} &= \frac{4}{\sqrt{8}} \\
+&= 1.41 \\
+SE_{64} &= \frac{4}{\sqrt{64}} \\
+&= 0.5
+\end{aligned}
+$$
+
+This is the lecture 21 StatSpace applet with new numbers. There the population was cups of coffee per week, right-skewed with mean 2.5. Samples of 10 gave a sampling distribution that was still skewed, samples of 50 gave an approximately Normal one centred at 2.5, and samples of 100 gave a narrower one. In the histogram of means, the horizontal axis is the value of $$\bar{x}$$ and each observation is one whole sample's mean. The centre and the standard error hold for any $$n$$; only the Normal shape needs the CLT. A bigger sample does two different things: one sample's histogram looks more like the skewed population, while the histogram of means looks more Normal and gets narrower. The trap is answering Normal for (c), as if a large sample made the data themselves Normal.
 
 ## Lec 22 — Ch 7: CLT examples, the CLT activity and the Normal approximation to the Binomial (prepared 2026-11-04 from the after-class deck, the activity solutions and the recording's slide index; Canvas calls it Lecture 23; numbers changed)
 
