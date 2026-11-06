@@ -11,7 +11,7 @@
 | Lab ×8 | 7% | in-lab quiz (3) + follow-up (3), written in a ~20-min window during the Friday lab — no make-up at home |
 | Pre-lab quizzes ×7 | 2% | short Canvas quiz on the lab handout before Labs 2–8; opens ~1 week before, due Fri 23:59 |
 | Written assignments ×2 | 10% | WA1 **Sat Oct 24** (52 pts) · WA2 **Wed Dec 2** (40 pts), via Gradescope; posted ≥10 days ahead |
-| **Midterm** | **22%** | **Fri Oct 30, 8:00–8:50am**, regular classroom; versions A/B; no make-up (approved concession → weight to final) |
+| **Midterm** | **22%** | **Fri Oct 30, 8:00–8:50am**, regular classroom; versions A/B; no make-up (approved concession → weight to final); a higher final percentage replaces the midterm grade (announced in lecture 23, Nov 6) |
 | **Final** | **45%** | Dec 11–22. **Must pass the final to pass the course.** |
 | *Piazza bonus* | *+1%* | 10+ endorsed answers |
 
@@ -23,6 +23,7 @@
 - Exams do not cover textbook material beyond what the lectures cover. Premarathna said so after class when asked directly; the TA on Piazza had said neither exam was written yet and to ask him.
 - Cheat sheets: the midterm allows one handwritten letter-size sheet, one side; the final allows two sides, which can be two one-sided sheets. Written on a tablet and printed is fine; typed or pasted slides are not. Two students with matching sheets lose them for that exam. Said in lecture 7, Sep 23.
 - He does not set theoretical proofs, but a short "show that" (for example, that Aᶜ and B are independent when A and B are) has appeared on a midterm.
+- Written answers earn part marks for the method: define the random variable in words, name its distribution and parameter, check the approximation's condition, and write "continuity correction" by any 0.5. Midterm answers that gave only the number lost marks (lecture 23, Nov 6).
 - The final is cumulative over chapters 1, 2, 3, 4, 5, 6, 7, 8, 10, 11.
 
 ## Rules that cost points

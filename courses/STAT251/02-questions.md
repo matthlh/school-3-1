@@ -4253,6 +4253,152 @@ $$
 
 The variances add because the trials are independent. The deck states the result without this reason; the reason is what connects it to the CLT. For an example of why $$n$$ alone is not enough, $$\text{Bin}(20, 0.05)$$ has $$np = 1$$, and its probabilities for 0, 1, 2 and 3 are 0.358, 0.377, 0.189 and 0.060, a lopsided shape with no bell.
 
+## Lec 23 — Ch 7: the Normal approximation to the Poisson; Ch 8: point estimation and unbiased estimators (prepared 2026-11-06 from the after-class deck, the Chapter 8 deck and the recording; Canvas calls it Lecture 24; numbers changed)
+
+### Q: Calls reach a help desk as a Poisson count with a mean of 40 per hour. Find the approximate probability of more than 45 calls in an hour, and say what allows a Normal calculation.
+**Topic:** 4c Normal approximation to the Poisson  **Lec:** 23  **Type:** apply
+**A:** Key:
+1. $$X \sim \text{Poisson}(40)$$ and $$\lambda = 40 \ge 20$$, so $$X \approx N(40, 40)$$ with standard deviation $$\sqrt{40} = 6.325$$.
+2. Continuity correction: $$P(X > 45) = P(X \ge 46) \approx P(Y \ge 45.5)$$.
+3. $$z = \frac{45.5 - 40}{6.325} = 0.87$$.
+4. $$P \approx 1 - \Phi(0.87) = 0.1922$$.
+
+This is the deck's Example 4(a) with new numbers. The exact Poisson answer is 0.1903, so the approximation is close.
+
+$$
+\begin{aligned}
+P(X > 45) &= P(X \ge 46) \\
+&\approx P(Y \ge 45.5) \\
+&= P\left(Z \ge \frac{45.5 - 40}{\sqrt{40}}\right) \\
+&= P(Z \ge 0.87) \\
+&= 1 - 0.8078 \\
+&= 0.1922
+\end{aligned}
+$$
+
+The trap is starting at 45 or 46 instead of 45.5: "more than 45" is "at least 46", and the bar for 46 starts at 45.5.
+
+### Q: Calls reach a help desk as a Poisson count with a mean of 40 per hour. Find the approximate probability of between 35 and 48 calls in an hour, inclusive.
+**Topic:** 4c Normal approximation to the Poisson  **Lec:** 23  **Type:** apply
+**A:** Key:
+1. $$X \approx N(40, 40)$$ because $$\lambda = 40 \ge 20$$, with standard deviation $$\sqrt{40} = 6.325$$.
+2. Inclusive, so both end bars count: $$P(35 \le X \le 48) \approx P(34.5 \le Y \le 48.5)$$.
+3. $$z_1 = \frac{34.5 - 40}{6.325} = -0.87$$ and $$z_2 = \frac{48.5 - 40}{6.325} = 1.34$$.
+4. $$P \approx \Phi(1.34) - \Phi(-0.87) = 0.7177$$.
+
+This is the deck's Example 4(b) with new numbers. "Inclusive" is what decides the correction: the bar for 35 starts at 34.5 and the bar for 48 ends at 48.5.
+
+$$
+\begin{aligned}
+z_1 &= \frac{34.5 - 40}{\sqrt{40}} = -0.87 \\
+z_2 &= \frac{48.5 - 40}{\sqrt{40}} = 1.34 \\
+P &= 0.9099 - 0.1922 \\
+&= 0.7177
+\end{aligned}
+$$
+
+### Q: Calls reach a help desk as a Poisson count with a mean of 40 per hour. Use the Normal approximation to find the probability of exactly 40 calls in an hour. What would you get without the continuity correction, and why?
+**Topic:** 4d Continuity correction  **Lec:** 23  **Type:** apply
+**A:** Key:
+1. With the correction, exactly 40 is the bar from 39.5 to 40.5: $$P(39.5 \le Y \le 40.5)$$ with $$Y \sim N(40, 40)$$.
+2. $$z = \pm\frac{0.5}{6.325} = \pm 0.08$$, so $$P \approx 2\Phi(0.08) - 1 = 0.0638$$.
+3. Without it the answer is 0, because a continuous variable has probability 0 at a single point.
+
+The exact Poisson probability is 0.0629. This is the one case where leaving out the correction does not just make the answer worse but makes it 0.
+
+$$
+\begin{aligned}
+P(X = 40) &\approx P(39.5 \le Y \le 40.5) \\
+&= \Phi(0.08) - \Phi(-0.08) \\
+&= 0.5319 - 0.4681 \\
+&= 0.0638
+\end{aligned}
+$$
+
+### Q: A count $$X$$ is approximated by a Normal variable $$Y$$. Rewrite each event with the continuity correction.
+- (a) $$X < 12$$
+- (b) $$X \ge 12$$
+- (c) $$X > 12$$
+- (d) $$X \le 12$$
+- (e) $$X = 12$$
+**Topic:** 4d Continuity correction  **Lec:** 23  **Type:** recall
+**A:** Key:
+1. (a) $$X \le 11$$, so $$Y \le 11.5$$.
+2. (b) $$Y \ge 11.5$$.
+3. (c) $$X \ge 13$$, so $$Y \ge 12.5$$.
+4. (d) $$Y \le 12.5$$.
+5. (e) $$11.5 \le Y \le 12.5$$.
+
+The bar for a whole number $$k$$ runs from $$k - 0.5$$ to $$k + 0.5$$, because neighbouring counts are 1 apart. Rewrite a strict inequality on whole numbers first, then include every bar the event covers in full. The instructor's advice was to draw the bars rather than memorise the table.
+
+### Q: For each case, say whether a Normal approximation with a continuity correction is appropriate, and why.
+- (a) $$X \sim \text{Poisson}(8)$$
+- (b) $$X \sim \text{Poisson}(30)$$
+- (c) A continuous uniform variable approximated by a Normal
+**Topic:** 4c Normal approximation to the Poisson  **Lec:** 23  **Type:** apply
+**A:** Key:
+1. (a) No: $$\lambda = 8 < 20$$, so the Normal approximation is not allowed; use the Poisson pmf.
+2. (b) Yes: $$\lambda = 30 \ge 20$$, so $$X \approx N(30, 30)$$, with the continuity correction because $$X$$ is a count.
+3. (c) No continuity correction: the uniform is already continuous, and the correction is only for a discrete variable approximated by a continuous one.
+
+A student asked in class whether a small rate can be scaled up, for example 1 per second becoming 20 per 20 seconds. The instructor said that changes the question: the rate has to match the interval the question asks about.
+
+### Q: $$X \sim \text{Binomial}(100, 0.3)$$ is approximated by a Normal. A student standardises with $$z = \frac{x - 30}{\sqrt{21} / \sqrt{100}}$$. True or false, and justify: this is correct, because the CLT always divides by $$\sqrt{n}$$.
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** 23  **Type:** apply
+**A:** Key:
+1. False: the random variable is one count $$X$$, not a sample mean $$\bar{X}$$.
+2. The count's own standard deviation is $$\sqrt{np(1 - p)} = \sqrt{21} = 4.58$$, so $$z = \frac{x - 30}{4.58}$$.
+3. Dividing by $$\sqrt{n}$$ is only for $$\bar{X}$$, whose standard error is $$\frac{\sigma}{\sqrt{n}}$$.
+
+A student asked this in class. The instructor's answer was to ask first which random variable the question is about, then use that variable's mean and standard deviation. The student's version gives a standard deviation of 0.46, ten times too small.
+
+### Q: In a written STAT 251 answer that uses a Normal approximation to a count, name the four things the instructor said earn part marks besides the final number.
+**Topic:** 4d Continuity correction  **Lec:** 23  **Type:** recall
+**A:** Key:
+1. Define the random variable in words, for example "X is the number of particles emitted in 1 second".
+2. Name its distribution and parameter, for example $$X \sim \text{Poisson}(55)$$.
+3. Check the condition for the approximation, for example $$\lambda \ge 20$$, and give the Normal's mean and variance.
+4. Write "continuity correction" where the 0.5 is added or subtracted.
+
+He said the TAs found many midterm answers that reached the right number with no method shown, which loses marks. A multiple-choice question needs no work shown.
+
+### Q: Define a point estimate and an interval estimate, say which is more useful and why, and give the catch with an interval.
+**Topic:** 5b–d Point and interval estimation and unbiased estimators  **Lec:** 23  **Type:** recall
+**A:** Key:
+1. A point estimate gives the parameter one value; an interval estimate gives a range with a lower and an upper bound.
+2. The interval is more useful, because a point estimate does not say how close it is likely to be to the parameter.
+3. The catch: an interval that is too wide is useless even though it contains the parameter, so its width, set by the sampling distribution's variability, matters.
+
+The instructor's example: "the mean is 100 dollars" against "between 90 and 110 dollars" against "between 50 and 150 dollars". Estimation is needed only because the population's data are not available; with the whole population, the parameters could be calculated directly.
+
+### Q: What is the difference between an estimator and an estimate? Give an example of each for the population mean.
+**Topic:** 5b–d Point and interval estimation and unbiased estimators  **Lec:** 23  **Type:** recall
+**A:** Key:
+1. An estimator is the formula or rule, for example $$\bar{X} = \frac{1}{n}\sum X_i$$.
+2. An estimate is the number that formula gives for one sample, for example $$\bar{x} = 78$$.
+
+The estimator is a random variable with a sampling distribution; the estimate is one observed value of it. The pairs used in the course are $$\bar{x}$$ for $$\mu$$, $$s$$ for $$\sigma$$ and $$\hat{p}$$ for $$p$$.
+
+### Q: $$X_1, X_2, X_3, X_4$$ is a random sample from a population with mean $$\mu$$ and variance $$\sigma^2$$. For the estimators $$\hat{\theta}_1 = X_1$$, $$\hat{\theta}_2 = \bar{X}$$ and $$\hat{\theta}_3 = \frac{X_1 + X_2 + X_3}{4}$$ of $$\mu$$, find each bias, and say which one is best and why.
+**Topic:** 5b–d Point and interval estimation and unbiased estimators  **Lec:** 23  **Type:** derive
+**A:** Key:
+1. Bias is $$E(\hat{\theta}) - \mu$$: $$\hat{\theta}_1$$ and $$\hat{\theta}_2$$ have bias 0, and $$\hat{\theta}_3$$ has $$E = \frac{3\mu}{4}$$, so bias $$-\frac{\mu}{4}$$.
+2. The standard errors of the two unbiased ones are $$\sigma$$ for $$X_1$$ and $$\frac{\sigma}{2}$$ for $$\bar{X}$$.
+3. $$\bar{X}$$ is best: it is unbiased and has the smaller standard error.
+
+An estimator is unbiased when $$E(\hat{\theta}) = \theta$$. Among unbiased estimators the one with the smaller standard error is better, which is the deck's second property of a good estimator.
+
+$$
+\begin{aligned}
+E(\hat{\theta}_3) &= \frac{\mu + \mu + \mu}{4} \\
+&= \frac{3\mu}{4} \\
+\operatorname{bias}(\hat{\theta}_3) &= \frac{3\mu}{4} - \mu \\
+&= -\frac{\mu}{4} \\
+\operatorname{Var}(\bar{X}) &= \frac{\sigma^2}{4} \\
+\operatorname{SD}(\bar{X}) &= \frac{\sigma}{2}
+\end{aligned}
+$$
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -5765,3 +5911,37 @@ P(X \ge 9) &\approx P(Y \ge 8.5) \\
 $$
 
 The corrected 0.0749 is much closer to the exact 0.0730. Without the correction the answer is little more than half the exact one. With $$n = 12$$ the standard deviation is only 1.732, so half a unit is 0.29 standard deviations, which is why the correction matters so much for a small $$n$$.
+
+### Q: A cafeteria's time to serve one customer is exponential with mean 0.8 minutes. Over 100 independent days, one customer is timed each day. Find the approximate probability that the customer is served in under 1 minute on at least 75 of the 100 days.
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** 23  **Type:** apply
+**A:** Steps:
+1. One day: $$T \sim \text{Exp}(\lambda = 1.25)$$, so $$p = P(T < 1) = 1 - e^{-1.25} = 0.7135$$.
+2. Days: $$X \sim \text{Bin}(100, 0.7135)$$, the number of days served in under 1 minute.
+3. Check $$np = 71.35 \ge 5$$ and $$n(1 - p) = 28.65 \ge 5$$, so $$X \approx N(71.35, 20.44)$$ with standard deviation 4.521.
+4. Continuity correction: $$P(X \ge 75) \approx P(Y \ge 74.5)$$, so $$z = \frac{74.5 - 71.35}{4.521} = 0.70$$.
+5. $$P \approx 1 - \Phi(0.70) = 0.2420$$.
+
+This is the cafeteria example the instructor recalled from Chapter 6 in class, where an exponential probability feeds a Binomial count; with 100 days the Binomial needs 26 terms, and the Normal approximation replaces them with one table lookup. The exact Binomial answer is 0.2456.
+
+$$
+\begin{aligned}
+p &= 1 - e^{-1.25} \\
+&= 1 - 0.2865 \\
+&= 0.7135 \\
+\mu &= 100 \times 0.7135 \\
+&= 71.35 \\
+\sigma^2 &= 71.35 \times 0.2865 \\
+&= 20.44 \\
+\sigma &= 4.521
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+P(X \ge 75) &\approx P(Y \ge 74.5) \\
+&= P\left(Z \ge \frac{74.5 - 71.35}{4.521}\right) \\
+&= P(Z \ge 0.70) \\
+&= 1 - 0.7580 \\
+&= 0.2420
+\end{aligned}
+$$
