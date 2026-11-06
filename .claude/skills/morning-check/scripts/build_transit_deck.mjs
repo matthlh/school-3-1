@@ -4,8 +4,10 @@
 //   node build_transit_deck.mjs --date 2026-10-07 [--brief routines/runs/2026-10-07-brief.html] [--title "Transit Deck"]
 //                               [--session PATH] [--out PATH]
 // Each card: he answers in his head, taps how sure he is (1-3), which reveals the answer's rubric, its Key: list (a
-// short question) or its Steps: list (a long problem). The first point is the core. He ticks what his answer had:
-// core not ticked is X, every point ticked is O, anything between is ~ (Matt, 2026-11-01). A miss can take a cause, and
+// short question), its Steps: list (a long problem) or its Parts: list (independent parts, 2026-11-06). In a Key or
+// Steps list the first point is the core. He ticks what his answer had: core not ticked is X, every point ticked is O,
+// anything between is ~ (Matt, 2026-11-01). A Parts list has no core: every part is O, at least half is ~, fewer is X.
+// A miss can take a cause, and
 // a Bad question flag takes a card out of grading. Every tap saves grades/<date> through the artifact db; reopening the
 // page restores the taps. --brief adds the Brief ↗ overlay (an HTML fragment). Publish the result with the Artifact tool.
 import fs from 'node:fs';
@@ -22,11 +24,12 @@ const outPath = args.out || path.join(ROOT, 'routines', 'transit-deck.html');
 const { marked } = await import(path.join(ROOT, 'notes-app', 'node_modules', 'marked', 'lib', 'marked.esm.js'));
 marked.setOptions({ gfm: true, breaks: true });
 
-// The rubric opens every bank answer: "Key:" (a short question) or "Steps:" (a long problem), then numbered one-line
-// points, then a blank line and the explanation. A question without one stops the build: fix the bank.
+// The rubric opens every bank answer: "Key:" (a short question), "Steps:" (a long problem) or "Parts:" (independent
+// parts of equal weight), then numbered one-line points, then a blank line and the explanation. A question without one
+// stops the build: fix the bank.
 function rubric(md) {
-  const m = md.match(/^(Key|Steps):\n((?:\d+\.\s.*(?:\n|$))+)\s*([\s\S]*)$/);
-  return m ? { points: m[2].trim().split('\n').map((l) => l.replace(/^\d+\.\s+/, '')), rest: m[3].trim() } : null;
+  const m = md.match(/^(Key|Steps|Parts):\n((?:\d+\.\s.*(?:\n|$))+)\s*([\s\S]*)$/);
+  return m ? { parts: m[1] === 'Parts', points: m[2].trim().split('\n').map((l) => l.replace(/^\d+\.\s+/, '')), rest: m[3].trim() } : null;
 }
 
 // --- the three-step math order: $$ spans out, markdown, spans back (display spans with <br>) ---
@@ -50,9 +53,9 @@ const tagOf = (c) => /STAT/.test(c) ? 'stat' : /CPSC/.test(c) ? 'cpsc' : /PHIL ?
 const QUESTIONS = items.map((it, i) => {
   const course = (it.label || it.course || '').replace(/\s+/g, ' ').trim();
   const r = rubric(it.a || '');
-  if (!r) { console.error(`item ${i + 1} (${course}, ${it.file}:${it.line}) has no Key: or Steps: list: fix the bank answer first`); process.exit(1); }
+  if (!r) { console.error(`item ${i + 1} (${course}, ${it.file}:${it.line}) has no Key:, Steps: or Parts: list: fix the bank answer first`); process.exit(1); }
   const q = { course, tag: tagOf(course), verb: it.type || '', q: render(it.q_display || it.q || ''), points: r.points.map(render),
-              long: !!it.long, work: r.rest ? render(r.rest) : '' };
+              long: !!it.long, parts: r.parts, work: r.rest ? render(r.rest) : '' };
   if (it.src_url) { q.src = it.src_url; q.srcTitle = it.src_title || 'Lecture notes'; }
   return q;
 });
@@ -132,7 +135,12 @@ ${brief}
   const DATE_ID = '${date}';
   const N = QUESTIONS.length;
   // The first point is the core (Matt, 2026-11-01): core not ticked is X, every point ticked is O, anything between is ~.
-  const gradeOf = (t) => (!t[0] ? 'X' : t.every(Boolean) ? 'O' : '~');
+  // A Parts card has no core (2026-11-06): every part is O, at least half is ~, fewer is X.
+  const gradeOf = (t, q) => {
+    const n = t.filter(Boolean).length;
+    if (q && q.parts) return n === t.length ? 'O' : 2 * n >= t.length ? '~' : 'X';
+    return !t[0] ? 'X' : t.every(Boolean) ? 'O' : '~';
+  };
   const CONFS = [[1, 'Guess'], [2, 'Think so'], [3, 'Sure']];
   const CAUSES = [['c', 'concept'], ['f', 'forgot'], ['m', 'misread'], ['k', 'careless'], ['s', 'slow']];
 
@@ -143,8 +151,8 @@ ${brief}
   const conf = Array(N).fill(null);       // 1 guess, 2 think so, 3 sure, tapped before the answer shows
   const cause = Array(N).fill(null);      // c f m k s, on a ~ or X
   const flagged = Array(N).fill(false);   // Bad question: not graded, fixed by Claude at grading
-  const gradeAt = (i) => (flagged[i] ? '-' : shown[i] ? gradeOf(ticks[i]) : null);
-  const labelOf = (i) => { const g = gradeAt(i); return g === 'X' ? 'core missed' : g === '~' ? 'partial'
+  const gradeAt = (i) => (flagged[i] ? '-' : shown[i] ? gradeOf(ticks[i], QUESTIONS[i]) : null);
+  const labelOf = (i) => { const g = gradeAt(i); return g === 'X' ? (QUESTIONS[i].parts ? 'under half' : 'core missed') : g === '~' ? 'partial'
     : g === 'O' ? (conf[i] === 3 ? 'right · climbs' : 'right · holds, you were not sure') : g === '-' ? 'not graded' : ''; };
   // quiz_grade.py tokens: grade, confidence, then /cause on a ~ or X ("1:O3 2:X2/c 3:-").
   const tokenAt = (i) => { const g = gradeAt(i); if (!g) return null; if (g === '-') return \`\${i + 1}:-\`;
@@ -236,7 +244,7 @@ ${brief}
         <div class="points-label mono">\${item.long ? 'Steps: tick each one you named with the right setup' : 'Key: tick each point your answer had'}</div>
         <div class="score-bar"><div class="score-fill" id="score-fill"></div></div>
         <ul class="points">\${item.points.map((p, k) => \`
-          <li class="point\${k === 0 ? ' core' : ''}\${t[k] ? ' ticked' : ''}" data-k="\${k}" role="checkbox" aria-checked="\${t[k]}"><span class="box">\${t[k] ? '✓' : ''}</span><div class="p-text">\${k === 0 && item.points.length > 1 ? '<span class="core-tag mono">Core: miss it and the card is X</span>' : ''}\${mathify(p)}</div></li>\`).join('')}
+          <li class="point\${k === 0 && !item.parts ? ' core' : ''}\${t[k] ? ' ticked' : ''}" data-k="\${k}" role="checkbox" aria-checked="\${t[k]}"><span class="box">\${t[k] ? '✓' : ''}</span><div class="p-text">\${k === 0 && item.points.length > 1 && !item.parts ? '<span class="core-tag mono">Core: miss it and the card is X</span>' : ''}\${k === 0 && item.parts ? '<span class="core-tag mono">Parts: each counts the same; half or more is ~</span>' : ''}\${mathify(p)}</div></li>\`).join('')}
         </ul>
         <div class="tick-row"><div class="tick-count mono" id="tick-count"></div>
           <button class="mini-btn mono" id="tick-all">All</button><button class="mini-btn mono" id="tick-none">None</button></div>
@@ -292,9 +300,9 @@ ${brief}
     if (!el) return;
     const t = ticks[idx];
     const n = t.filter(Boolean).length;
-    el.innerHTML = flagged[idx] ? 'not graded' : \`<b>\${n}</b> of \${t.length} · <b>\${gradeOf(t)}</b> · \${labelOf(idx)}\`;
+    el.innerHTML = flagged[idx] ? 'not graded' : \`<b>\${n}</b> of \${t.length} · <b>\${gradeOf(t, QUESTIONS[idx])}</b> · \${labelOf(idx)}\`;
     const f = document.getElementById('score-fill');
-    if (f) { f.style.width = (100 * n / t.length) + '%'; f.dataset.g = gradeOf(t); }
+    if (f) { f.style.width = (100 * n / t.length) + '%'; f.dataset.g = gradeOf(t, QUESTIONS[idx]); }
     renderCause();
     renderDots();
   }
@@ -346,7 +354,7 @@ ${brief}
         <ul class="rr-list">\${q.points.map((p, k) => ticks[i][k] ? '' : \`<li class="p-text">\${mathify(p)}</li>\`).join('')}</ul></div>\`).join('') : '';
     const open = QUESTIONS.filter((_, i) => !gradeAt(i)).length;
     const saved = await persistGrades();
-    document.getElementById('sync-status').textContent = (saved ? 'Saved. Tell Claude "grade it".' : "Couldn't save. Copy the line below and paste it to Claude.")
+    document.getElementById('sync-status').textContent = (saved ? 'Saved. Every card you graded counts, even if you stop here: the next morning check records them in the ledger, or say "grade my deck" to record them now.' : "Couldn't save. Copy the line below and paste it to Claude.")
       + (open ? \` \${open} cards are not revealed yet; tap a row to go back to one.\` : '');
   }
 

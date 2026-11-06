@@ -10,8 +10,17 @@ Two scripts with one JSON hand-off. Both live in `.claude/skills/quiz-me/scripts
 
 - **Pick:** `quiz_pick.py` writes `routines/quiz-session.json` (`--transit`: `routines/transit-session.json`) and prints the session *with answers*
   (for my eyes only). It also refreshes the **Due now** block in `ledger.md` every run.
-- **Grade:** `quiz_grade.py "1:O 2:X 3:~"` grades the quiz picked today, records everything and deletes the session file.
+- **Grade:** `quiz_grade.py "3:O"` records question 3 the moment it is graded: its history, its ledger row, the
+  Session-log line (2026-11-06). The session file stays open until every question is recorded (a skip `-` counts),
+  so a stop loses nothing; the same grade sent twice is recorded once (a `--said` sent with it is still kept);
+  `--undo N` takes one back, reopening the last finished quiz when none is open (`--transit DATE --undo N` for a
+  deck); `--finish` closes a session early. `--session FILE` uses the pending or filed copy of the same session when
+  one exists, so an artifact's `session.json` never records an answer twice. A row another session moved in between
+  is not rebuilt from this session's old snapshot: only the answers recorded from then on apply to it.
   `--transit <deck date>` grades the transit deck's file instead, and only if it holds that day's deck.
+- **Ids:** `quiz_ids.py` (2026-11-06). Every question carries `**Id:** xxxxxxxx` at the end of its meta line, and
+  its history is filed under it, so rewording a stem keeps its history. `quiz_pick.py` stamps new questions on
+  every run. Never copy an Id: a split part's meta line goes in without one (a duplicate stops every run).
 
 Never edit the ledger's All-topics rows by hand. The scripts own them.
 
@@ -55,9 +64,14 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
      long as the others, shuffled and lettered. If a variant is due too, ask the variant instead.
 3. Grade, say why it earns that grade, then move on. Never reveal the answer early; "skip" / "idk" = `X`. Never
    give a hint before his attempt; the attempt to recall it is the point.
-   - Grade against the answer's key (its `Key:` or `Steps:` list, CLAUDE.md step 2): the core (point 1) missing or
-     wrong is `X`, the core with another point missing is `~`, every point is `O`. Blank or "idk" is `X`. A right
-     answer at confidence 1 or 2 is still `O`; quiz_grade.py makes it a Good, which holds its topic's rung.
+   - Grade against the answer's key (its `Key:`, `Steps:` or `Parts:` list, CLAUDE.md step 2). In a `Key:` or
+     `Steps:` list the core (point 1) missing or wrong is `X`, the core with another point missing is `~`, every point
+     is `O`. A `Parts:` list has no core (2026-11-06): every part right is `O`, at least half is `~`, fewer is `X`, and
+     the feedback names the parts he missed. Blank or "idk" is `X`. A right answer at confidence 1 or 2 is still `O`;
+     quiz_grade.py makes it a Good, which holds its topic's rung.
+   - **Only what the question asks.** A key point the stem never asks for (a reason, a date, a second fact) is not a
+     requirement: grade without it and fix the question at step 6, by adding the ask to the stem or moving the point
+     into the explanation.
    - **Say why (Matt, 2026-11-02).** The feedback names the key points he gave, restated from his own words, so he
      knows what earned the grade: "Correct: you gave the core, that each woman thinks he wants her as herself while
      he wants what she shares with every woman." For a `~`, name the key point he left out and give it. For an `X`,
@@ -108,9 +122,12 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
    misses still open come back in turn. Only the first attempt is graded, and the next session brings an `X`
    back anyway (the ladder makes it due the next day). A re-ask needs no confidence or cause; if he misses it
    again, give the correction again.
-5. Stop when every miss has been answered right once, or when he says stop. Grade the first attempts only:
-   `python3 "$S/quiz_grade.py" "1:O3 2:X3/c 3:~2/m 4:O1" --said 2 "his answer" --why 2 "his reason"` —
-   **always one quoted string** (an unquoted `~` becomes the shell's home directory).
+5. **Record each first attempt as soon as you grade it** (2026-11-06), in the same turn as the feedback:
+   `python3 "$S/quiz_grade.py" "2:X3/c" --said 2 "his answer"` — **always one quoted string** (an unquoted `~`
+   becomes the shell's home directory). The script records it at once and prints one line. Re-asks of a miss are
+   never recorded. When every question is recorded, the same call prints the full report for step 7. When he stops
+   early, `quiz_grade.py --finish` closes the session and prints it. A wrong grade is fixed with `--undo N`, then the
+   right one. Sending a recorded question's grade again does nothing, so after an interruption just re-send.
    - A token is the grade (`O`, `~` or `X`; `p` means `~`, `-` means skipped), then his confidence, then `/`
      and the cause letter on an `X` or `~`. A live variant gets its question's grade.
    - `--said N "text"` records his wrong answer to an `X` or `~`. `--why N "text"` records why he was sure, on
@@ -120,8 +137,10 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 6. The script lists **Needs more questions** (X/~ topics with < 6 questions, leech questions missed
    ≥ 2 of the last 3). Write them now into `02-questions.md` under the lecture's section, same
    `**Topic:**` tag, aimed at *what he got wrong* from a different angle — not a rephrase. Split a
-   leech into two smaller questions and delete the original. Split a question you asked in parts the same way.
-   Say how many you added, one line.
+   leech into two smaller questions and delete the original, then `quiz_ids.py --retire <its id> "leech split"` so
+   its history is kept as retired. Split a question you asked in parts the same way, except that the part carrying
+   the original's main ask keeps its meta line and **Id:**, and the other parts get a meta line without one. A
+   reworded stem keeps its Id. Say how many you added, one line.
    The **Misses by cause** block gives a fix for each cause. Do the `concept` one now, the same way: add or
    rewrite a question on that notes page.
 7. Report ≤ 10 lines: grades table (course · topic · grade), ledger delta (topic → next date),
@@ -147,13 +166,15 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | transit deck | First grade any fully tapped deck ("grade my deck" below). Then `quiz_pick.py --transit` — 6 short q, never a long problem; writes `routines/runs/<date>-transit.md` (questions, divider, answers) and its own session file, `routines/transit-session.json`, which `quiz_grade.py --transit <deck date>` grades (the deck date is that file's `date`, the day it was picked, and the deck page saves its taps under the same date); rebuilds the Transit Deck artifact (morning-check skill §7). `--transit` stops in two cases: a deck from another day is waiting ungraded (a new deck would strand its taps), or today's deck already exists, graded or not (a second deck under the same date would mix its taps with the first's). `--replace` is the only way past either; morning-check §7 step 1 says when to use it. |
 | a pasted reply like `1 O 2 ~ 3 X` or `O ~ X O O X` | Right after you quizzed him in this conversation, it grades that session: `quiz_grade.py "<paste>"`, a bare sequence in session order. A bare reply in a conversation where you did not just quiz him answers the transit deck: `quiz_grade.py --transit <deck date> "<paste>"`. The deck date is the `date` in `routines/transit-session.json`, and the deck's title shows the same day (`Transit deck — Tue Oct 6`). |
 | "artifact quiz N items" / "make a quiz page" | `quiz_pick.py --n N`, then `node ../../morning-check/scripts/build_transit_deck.mjs --date <today> --session routines/quiz-session.json --title "<Mon D> Review Quiz" --out <scratchpad>/review-quiz.html`, and publish it as a new artifact with `capabilities: {"db": {}}` and the session file beside it as `session.json` (so a later session can grade it with `--session`). "Grade it" reads `grades/<date>` from that artifact as for the deck below and runs plain `quiz_grade.py "<replyString>"` (`--date` if picked on an earlier day, `--session` with the artifact's `session.json` if `routines/quiz-session.json` is gone). The first one was 2026-11-01. |
-| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `ArtifactData` with `action: "get"`, `collection: "grades"`, `doc_id` = the `date` in `routines/transit-session.json` (the deck page's fixed DATE_ID) and `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). If every item in `items` has a grade and it isn't already `processed: true`, first rewrite each question the doc marks `flagged: true` (grade `-`), then run `quiz_grade.py --transit <doc_id> "<replyString>"` (the script refuses the session file if it holds another day's deck), then `ArtifactData` with `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and `if_version` = the `version` the get returned. If some items are still `null`, tell him which question numbers are ungraded instead of grading a partial deck — the page overwrites the whole doc on every tap, so grading it mid-session strands the rest. If nothing's there yet, say so — don't invent a reply. |
+| "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `ArtifactData` with `action: "get"`, `collection: "grades"`, `doc_id` = the `date` in `routines/transit-session.json` (the deck page's fixed DATE_ID) and `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). Unless it is already `processed: true`, first rewrite each question the doc marks `flagged: true` (grade `-`), then run `quiz_grade.py --transit <doc_id> "<replyString>"` with the cards he has graded so far, partial or not (2026-11-06): cards already recorded are skipped, so the same doc can be graded again after more taps, and the session closes by itself once every card is in. A deck that `--replace` filed away still takes its unrecorded
+taps (`--transit <its date>` finds it in `routines/quiz/sessions/`) and says it is closed. Mark the doc `processed: true` (`ArtifactData` `action: "update"`, the same `url`, `collection` and `doc_id`, `if_version` = the `version` the get returned) once every item has a grade or the script says the deck is closed. If nothing's there yet, say so — don't invent a reply. |
 | is FSRS better yet / the FSRS shadow trial (from Oct 6, running until it decides) | `fsrs_shadow.py` — read-only: replays `routines/quiz-state.json` through FSRS-6 with its default parameters beside the ladder, prints log loss, RMSE and a 5-bin calibration table for FSRS and the ladder baseline, then one verdict line, always last (the Sunday weekly brief quotes it). `--since YYYY-MM-DD` scores only reviews from that day on. The ladder keeps scheduling; Matt adopts FSRS only if it beats the ladder baseline. |
 
-A new quiz pick overwrites `routines/quiz-session.json`; its ungraded questions are simply not recorded. A new
-transit deck never replaces a waiting deck or today's deck unless `--replace` says so (the transit row above). If he
-sends grades and no session file exists, say so — never invent one. Plain grading also refuses a quiz session
-picked on an earlier day; when it really is that day's quiz, `--date <its date>` grades it as that day.
+A new quiz pick replaces an open `routines/quiz-session.json`: the answers recorded from it are already in the ledger,
+the file goes to `routines/quiz/sessions/`, and its unanswered questions are simply not asked. A new transit deck never
+replaces a waiting deck or today's deck unless `--replace` says so (the transit row above). If he sends grades and no
+session file exists, say so — never invent one. Plain grading also refuses a quiz session picked on an earlier day;
+when it really is that day's quiz, `--date <its date>` grades it as that day.
 
 ## What the scripts decide (don't second-guess them)
 - **Due.** A topic is due when its Next date is today or past, or when the exam-week sweep below pulls it in.
@@ -174,9 +195,16 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 - **Course quotas:** every due course gets slots in proportion to the summed priority of its due topics,
   never fewer than one, and the courses are interleaved by weighted round-robin. So a course with an exam
   coming and six unquizzed topics gets most of the session, and a two-topic course cannot crowd it out.
-- **Within a topic:** never-asked first, then last-missed, then stalest, plus a small bonus for the
-  question types that course's exam rewards (CPSC 310 recall/critique · STAT 251 apply/derive ·
-  PHIL 385 and ASIA 250 recall).
+- **Per-question schedule (2026-11-06).** Each question keeps its own place on the ladder, replayed from its own
+  history (`card_state`), so an `O` on one question no longer pushes out a sibling he missed, and an `X` on one no
+  longer calls back siblings he knows. The topic row still groups them: its Next is the earlier of the topic's own
+  ladder date (which brings its unasked questions in) and the Next of each of its asked questions
+  (`sync_card_dues`, on every pick and every grade; it only ever moves a Next earlier). A row's Next can therefore
+  be earlier than its Last.
+- **Within a topic:** questions whose own Next has come first (missed ones before shaky ones), then never-asked
+  ones, then asked ones that are not due yet, which only fill a session as *(ahead)* items; plus a small bonus for
+  the question types that course's exam rewards (CPSC 310 recall/critique · STAT 251 apply/derive · PHIL 385 and
+  ASIA 250 recall).
 - **Interleave:** within the quotas, breadth first: every topic gets one question before any topic gets a second
   (Matt, 2026-11-01: a 50-question session had asked 24 topics, three questions each for the X ones, and nothing from
   STAT 251 lectures 15–19). Never the same topic twice in a row, cap per topic = max(3, n ÷ due topics); leftover
@@ -197,7 +225,8 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
   `Past wrong answers:` line lists the `said` texts in its history, oldest first, each once. The focus block ends
   with one `Day-after review` line for each lecture held yesterday (term.py's lecture dates) that has a log, with
   its notes page, scoped to `--course`.
-- **Topic session grade** = the worst grade among its questions. Ladder from CLAUDE.md:
+- **Topic session grade** = the worst grade among its questions recorded this session, applied to the row as it stood
+  before the session, so recording answers one at a time moves it exactly as one batch would. Ladder from CLAUDE.md:
   `X` streak 0, +1 d · `~` +3 d · `O` streak+1, +7 / +16 / +35 d. The exam cap and load balancing below
   adjust the Next date it gives.
 - **Exam scope.** The exams are the ledger's Term calendar rows with Kind `exam`, which term.py loads, and lecture
@@ -242,11 +271,14 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 - **Readiness.** For each course whose next exam is within 21 days, one line comes after the due topics (or the
   Nothing-due line) and before the frozen lines, and the focus block prints the same line under `Exams ≤ 21 d`.
   An exam with no in-scope question yet (none of its lectures logged) gets no line.
-  `_Readiness · PHIL 385 Exam 2 14:00 · Fri Oct 16 · 40% of 12 in-scope questions likely recalled · 2 topics in scope have no question._`
+  `_Readiness · PHIL 385 Exam 4 13:00 · Fri Nov 20 · 31% of 120 in-scope questions likely recalled · 52% asked · 71% right last time · 2 topics in scope have no question._`
   The in-scope questions are the bank questions whose ledger topic that exam covers, by the scope rule above, so a
-  frozen topic never counts. Each counts 1 when its last grade was `O`, 0.5 when `~`, and 0 when `X` or never asked,
-  and the percentage is their mean, rounded half up. The last part counts the in-scope topics with no question in
-  the bank, and it is left out when there are none. The lines cover every course whatever `--course` says.
+  frozen topic never counts. Three numbers, kept apart (2026-11-06): **likely recalled** is the mean chance of
+  recalling each question today, its last grade (`O` 1, `~` 0.5, `X` or never asked 0) times 0.9 for each ladder gap
+  since that answer (`RETAIN`), so an old `O` no longer counts as certain; **asked** is the share asked at least once
+  (coverage); **right last time** is the share of the asked ones whose last answer was right, `~` as half (accuracy;
+  `none asked yet` when none was). Percentages round half up. The last part counts the in-scope topics with no
+  question in the bank, and it is left out when there are none. The lines cover every course whatever `--course` says.
   Grading counts the session it is grading, `--dry-run` included.
 - **Exam cap.** The cap is the latest date a grade today may set as Next. It comes from the first exam that covers
   the topic and is at least 2 days away: 4 days before that exam (`CAP_DAYS`), or the day before it when that day is
@@ -279,10 +311,15 @@ picked on an earlier day; when it really is that day's quiz, `--date <its date>`
 - `SCHOOL_ROOT=<copy>` points the scripts at a copy of the workspace for testing.
 
 ## Files
-- `routines/quiz-session.json` — pending session (deleted on grade; a new quiz pick replaces it)
-- `routines/transit-session.json` — the transit deck's pending session, written by `quiz_pick.py --transit` and graded with `quiz_grade.py --transit <deck date>`, usually the next morning (deleted on grade; a new deck replaces a waiting one, or follows today's, only with `--replace`)
-- `routines/quiz-state.json` — per-question history and session records. A history entry is `[date, grade]`, or
-  `[date, grade, extra]` where `extra` holds only what was given: `conf`, `cause` (the full word), `said`, `why`
+- `routines/quiz-session.json` — the open session. Each recorded item gets `done`; `before` keeps the ledger rows as
+  they stood before the session. Moved to `routines/quiz/sessions/<id>.json` once every item is recorded or on
+  `--finish`; a new quiz pick files an open one there too.
+- `routines/transit-session.json` — the transit deck's open session, written by `quiz_pick.py --transit` and graded with `quiz_grade.py --transit <deck date>` from the deck page's taps, partial or not (a new deck replaces a waiting one, or follows today's, only with `--replace`)
+- `routines/quiz-state.json` — per-question history and session records, tracked because the site shows it. A
+  history entry is `[date, grade]`, or `[date, grade, extra]` where `extra` holds only what was given: `conf` and
+  `cause` (the full word). A record whose question left the bank keeps its history and gets `retired` (why).
+- `routines/quiz-private.json` — git-ignored: his wrong answers (`said`) and why he was sure (`why`), by question id
+  (moved out of the public quiz-state.json on 2026-11-06)
 - `routines/quiz/YYYY-MM-DD.md` — session log: grades, misses with the correct answer, ledger delta
 - `routines/runs/YYYY-MM-DD-transit.md` — the deck the morning check sends to his phone
 
@@ -293,6 +330,19 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-11-06 (audit): Matt passed on a ChatGPT audit of the whole quiz system and asked for the changes. Done: every
+  question has a permanent `**Id:**` (all 988 stamped with the ids they already had, so no history moved; 17 loose
+  records from questions cut in September and October kept as retired), so rewording keeps history; each question
+  is scheduled on its own ladder inside its topic, and a due topic asks its due and new questions before ones that
+  are not due; each answer is recorded the moment it is graded, a re-sent grade counts once, `--undo` takes one
+  back, and a partial deck is recorded instead of waiting for the last tap; `Parts:` keys for questions with
+  independent parts, graded by count, and no key point the stem does not ask for (all four banks reviewed by an editor
+and a checker each: about 530 keys became Parts, 40 questions were split into 84, about 180 unasked points left the
+keys or got an ask in the stem, no fact or Id lost); readiness
+  decays old answers and reports coverage and accuracy separately; his wrong answers moved to the git-ignored
+  quiz-private.json; the Codex copies became links to these files. Not done: a review mode on the public notes site
+  with its own database (Supabase). It needs an account only Matt can create and a multi-day build, and the deck
+  page already saves every tap privately on claude.ai and syncs across devices, so the deck page is the review page.
 - 2026-11-02 (feedback): Matt passed on ChatGPT's review of a PHIL 385 session and asked for the valid parts. The
   session had treated a vocabulary question ("What is an aria?") as an attempt, treated "pure desire" as a wrong
   answer without asking what he meant, asked twelve facts in one question, answered an `O` with extra facts of
@@ -363,5 +413,5 @@ commit message, never an attribution trailer.
   `db` capability). "Grade my deck" pulls `grades/<date>` from there instead of a pasted reply; the
   morning check also sweeps it for anything ungraded before building the next day's deck.
 - 2026-09-11 built. Matt asked for one skill across all courses that decides focus, flags weak
-  topics that need more questions, and keeps the SRS. Question IDs are a hash of course + text, so
-  editing a question's wording resets its history (fine; the topic row keeps the schedule).
+  topics that need more questions, and keeps the SRS. Question IDs were a hash of course + text, so
+  editing a question's wording reset its history (replaced by stamped ids on 2026-11-06).

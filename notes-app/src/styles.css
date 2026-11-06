@@ -125,6 +125,19 @@ nav .lec { margin-left: 24px; border-left: 2px solid var(--line, var(--border));
 nav .lec a { padding-left: 8px; font-size: 12.5px; color: var(--fg2); }
 nav section.course a.cur { background: var(--tint); color: var(--ink); }
 nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
+/* Folding (2026-11-06): a chevron before each course name, and Lectures / Readings toggles inside an open course. */
+nav h3 { display: flex; align-items: center; }
+nav h3 > a, nav h3 > span { flex: 1; min-width: 0; }
+nav .nav-chev { flex: none; width: 18px; padding: 0; margin-right: -6px; border: 0; background: none; color: var(--muted2);
+                font-size: 11px; cursor: pointer; line-height: 1; }
+nav .nav-chev:hover, nav .nav-toggle:hover { color: var(--fg); }
+nav .nav-group { margin: 1px 0 0 22px; }
+nav .nav-toggle { display: flex; align-items: center; gap: 6px; width: 100%; padding: 3px 8px; border: 0; border-radius: 6px;
+                  background: none; color: var(--muted); font: inherit; font-size: 12.5px; text-align: left; cursor: pointer; }
+nav .nav-toggle:hover { background: var(--hover); }
+nav .nav-toggle .chev { width: 10px; font-size: 10px; color: var(--muted2); }
+nav .nav-toggle .count { margin-left: auto; font-size: 11px; color: var(--muted2); }
+nav .nav-group .lec { margin-left: 10px; }
 @media (max-width: 640px) {
   /* A pinned sidebar covers the page instead of squeezing it to 130px, and starts under the top bar so ☰ closes it. */
   .wrap.pinned { padding-left: 0; }
@@ -448,3 +461,9 @@ article pre code.hljs { display: block; font-size: 13px; line-height: 1.55; colo
 .hljs-punctuation, .hljs-operator { color: var(--hl-punct); }
 .hljs-emphasis { font-style: italic; }
 .hljs-strong { font-weight: 700; }
+
+/* "About this page": a page's opening notes (how it was built, where its sources are) fold shut above the content
+   (Matt, 2026-11-06: the descriptions were for Claude and got in the way of reading). */
+details.about { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
+details.about > summary { cursor: pointer; color: var(--muted2); font-size: 12px; list-style: revert; }
+details.about[open] > summary { margin-bottom: 4px; }

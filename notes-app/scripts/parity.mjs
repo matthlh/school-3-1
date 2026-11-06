@@ -1,6 +1,6 @@
 // Parser parity. Every courses/*/02-questions.md is parsed twice: by the quiz scripts (`_parse_bank` in
-// .claude/skills/quiz-me/scripts/quizlib.py) and by the site (`parseQuestions` in src/markdown.ts, the id from
-// `questionId` in src/stats.ts). Both must find the same questions in the same order, with the same id, question,
+// .claude/skills/quiz-me/scripts/quizlib.py) and by the site (`parseQuestions` in src/markdown.ts, the id from the
+// question's **Id:** stamp, else `questionId` in src/stats.ts). Both must find the same questions in the same order, with the same id, question,
 // display, answer, topic, lec and type; otherwise the site shows a question differently from how the quiz asks it, files
 // its history under another id, or lists it under another topic, lecture or type.
 //   npm run parity      (the Pages build runs it before building)
@@ -65,7 +65,7 @@ for (const bank of banks) {
   const course = bank.split('/')[1]
   const site = []
   for (const q of parseQuestions(readFileSync(join(root, bank), 'utf8')).flatMap((g) => g.questions)) {
-    site.push({ id: await questionId(course, q.question), question: q.question, display: q.display, answer: q.answer, topic: q.topic, lec: q.lec, type: q.type })
+    site.push({ id: q.stamp || await questionId(course, q.question), question: q.question, display: q.display, answer: q.answer, topic: q.topic, lec: q.lec, type: q.type })
   }
   const theirs = scripts[bank]
   total += theirs.length

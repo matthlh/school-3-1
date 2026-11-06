@@ -33,8 +33,9 @@ the first line of any brief and a push notification (morning-check SKILL §4b).
    `\%` inside math. `### Q:` lines take inline math only; ledger topic labels and `**Topic:**` tags stay plain
    Unicode, because they are matched as text; his pasted notes stay verbatim. Check every file before
    publishing: `node notes-app/scripts/check-math.mjs <files>` prints parse errors and leftover Unicode
-   math. Rewording a `### Q:` line changes that question's id, so its history in `routines/quiz-state.json`
-   detaches unless the key is moved to the new id.
+   math. Every question's meta line ends with its permanent id, `**Id:** 3f2a9c1b` (2026-11-06), which its history
+   in `routines/quiz-state.json` is filed under, so rewording a stem keeps its history. `quiz_pick.py` stamps new
+   questions on every run; write a new question's meta line without one, and never copy an Id onto a split part.
 2. Extract every testable claim into `courses/<CODE>/02-questions.md` in the Q/A format.
    Aim for 6–12 questions per lecture. Prefer `apply` and `derive` over `recall` where the
    course allows it. For CPSC 310 that means `apply`/`critique` on a code or design fragment plus
@@ -52,6 +53,11 @@ the first line of any brief and a push notification (morning-check SKILL §4b).
    the rest are the other things a full-marks answer needs (the reason, each other part, the final value). One to
    five points, each one checkable fact or step, inline math only. Sources, iClicker results and "the trap is"
    asides stay in the explanation, never in the key. A long problem's Steps list is its key the same way.
+   **A question with independent parts of equal weight** (classify six variables, name three works, match four pairs)
+   opens `**A:** Parts:` instead (2026-11-06): one point per part, in the stem's order, never two parts in one point,
+   at most five, and no core, so the grade is by count. More parts than five, or unrelated asks, are separate
+   questions. **Every key point is something the stem asks for:** a reason, date or second fact in the key needs
+   its ask in the stem ("…, and say why"), or it belongs in the explanation.
 3. Add any new topic to `ledger.md` with `Next = today + 1` when he has studied the lecture (he attended and sent
    notes, or says he has studied it), or with `not studied` when the page was prepared before he studied it (full
    lecture prep, an ASIA 250 lecture he has not watched); a `not studied` topic is never due or picked until
@@ -129,7 +135,9 @@ approved all of this on 2026-10-06):
   line on why he was sure. A right answer at confidence 1 or 2 is a Good: its topic holds its rung instead of climbing.
 - A question about a word in the question is not an attempt: I explain the word without the answer and wait.
 - He is graded against the answer's key: missing point 1 (the core) is `X`, the core with something else missing is
-  `~`, every point is `O`. A question he calls badly written is not graded (`-`) and gets rewritten the same day.
+  `~`, every point is `O`. A `Parts:` key has no core: every part is `O`, at least half is `~`, fewer is `X`. A key
+  point the stem never asks for is not required. A question he calls badly written is not graded (`-`) and gets
+  rewritten the same day.
   The feedback names the key points that earned the grade and labels any other detail as not needed. When his word
   differs from the key's term, I ask what he means first; the right idea under the wrong term is `~`, cause `f`.
 - A miss gets a one-letter cause (c concept, f forgot, m misread, k careless, s slow) that I set from his answer, and
@@ -138,15 +146,20 @@ approved all of this on 2026-10-06):
 - An apply or derive question he last got right comes back as a variant with new numbers or code.
 - A CPSC 310 or PHIL 385 question he has missed before comes as multiple choice built from his own wrong answers.
 
-Then `quiz_grade.py "1:O3 2:X3/c 3:~2/m"` (grade, confidence, `/` and the cause; a live variant takes its question's
-grade; `--said N "…"` keeps his wrong answer and `--why N "…"` why he was sure) moves the ledger rows by the ladder
-below, logs per-question history in `routines/quiz-state.json`, prints calibration, misses by cause and confident
-misses with his reasons, and names the topics
-that need more questions — write those before the session ends. **Never update ledger rows by hand; the script
+Each first attempt is recorded the moment it is graded (2026-11-06): `quiz_grade.py "3:X3/c"` (grade, then the
+optional confidence and `/` cause; a live variant takes its question's grade; `--said N "…"` keeps his wrong answer and
+`--why N "…"` why he was sure, both in the git-ignored `routines/quiz-private.json`) moves that topic's ledger row by
+the ladder below and logs the question's history in `routines/quiz-state.json` at once, so a session that stops
+halfway loses nothing. The same grade sent twice counts once, `--undo N` takes one back, and `--finish` closes a session
+early. When the session closes it prints calibration, misses by cause and confident misses with his reasons, and
+names the topics that need more questions — write those before the session ends. Each question also keeps its own
+place on the ladder, from its own history: a topic comes due when any one of its asked questions does, and a due topic
+asks its due and new questions before the ones he already knows (quiz-me SKILL, "Per-question schedule"). **Never update ledger rows by hand; the script
 owns them.** `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone (paused since
 2026-11-04 with the bed quiz; morning-check §7 says what runs instead): each answer
-shows as the answer's key, a checklist whose ticks set the grade, and "grade my deck" runs
-`quiz_grade.py --transit <deck date>` on the taps. `--transit` stops while a deck from another day
+shows as the answer's key, a checklist whose ticks set the grade, every tap is saved privately in the artifact,
+and the next morning check (or "grade my deck") runs `quiz_grade.py --transit <deck date>` on whatever he tapped, a
+partial deck included. `--transit` stops while a deck from another day
 waits ungraded and when today's deck already exists; `--replace` is the only way past either (morning-check §7 step 1
 says when). `quiz_pick.py --sprint` is the STAT 251 "which method?" drill:
 10 short questions in 3 minutes, method and first setup line only. **FSRS shadow trial** (from 2026-10-06):
@@ -169,7 +182,8 @@ block opens with `quiz_pick.py --long`, four of them worked in full on paper aga
 
 The deck and any artifact quiz grade each card by the same rule (Matt, 2026-11-01, replacing the 2026-10-13 share-of-points
 scores): he taps his confidence, which reveals the key; the core not ticked is `X`, the core with a point missing is `~`, every
-point is `O`, which climbs the ladder at confidence 3 and holds its rung (a Good) at 1 or 2. A Bad question tap leaves the card
+point is `O`, which climbs the ladder at confidence 3 and holds its rung (a Good) at 1 or 2. A `Parts:` card is graded by
+count: every part `O`, at least half `~`, fewer `X`. A Bad question tap leaves the card
 ungraded and lists it for me to rewrite at grading.
 
 Two adjustments follow the ladder. Next is never later than 4 days before the first exam at least 2 days away that
@@ -177,8 +191,9 @@ covers the topic (the day before that exam once that day has passed), and a gap 
 least a day, to the day with the fewest topics due. From 7 days before an exam, every topic it covers is due
 unless it was reviewed that week. After a non-cumulative exam (PHIL 385) its topics freeze until a later exam of
 the course covers them. Details: the quiz-me SKILL, "What the scripts decide". Each due-now block in `ledger.md`
-opens with the date it was written, has a readiness line per exam within 21 days (the share of its questions he would
-likely get right), and ends by naming each frozen topic.
+opens with the date it was written, has a readiness line per exam within 21 days (three separate numbers: the share of its
+questions he would likely recall today, with old answers decayed by time; the share asked at least once; and the
+share of those right the last time), and ends by naming each frozen topic.
 
 ## Course-specific rules
 - **CPSC 310** — 65% of the grade is two closed-book exams (25% mid + 40% final); the project
@@ -293,7 +308,12 @@ day"): it creates the lecture close-out, PREP-ladder, weekly-novel, daily habit 
 paused since 2026-11-04 by `PAUSED_HABITS` because he was not doing them, with a Someday to-do "Restart daily quizzing"
 under UBC; an open one from an earlier day is cancelled) and PHIL 385 reading Read/Log to-dos itself, fills the 6 h
 by priority, schedules the winners Today and the losers Tomorrow (rollover count in
-`routines/plan-state.json` so nothing starves), and prints the brief's **Plan today** block. That block gives
+`routines/plan-state.json`), and prints the brief's **Plan today** block. A to-do that loses again after 5 rollovers
+(`STUCK_AFTER`, 2026-11-06) is stuck: a pinned or P1 one, or one due within 3 days or overdue, keeps rolling and is
+listed under **Stuck** for him to split, defer or drop; a P3 with no deadline goes to Someday; any other stuck to-do
+goes to the weekly planner's free day (next week, or before its deadline) with a note saying why, and to Someday if
+it sticks again with no deadline (a dated one, or one he brought back from Someday, is listed under Stuck instead).
+Deadlines never change. That block gives
 each P1 a start time from 09:00 (or from now, rounded up to the quarter hour, on a later run) that skips lecture, lab
 and exam slots, puts a lecture's log after that lecture and never runs past 22:30 (an item that would end later
 leaves today's plan), a Cushion line for each date within 14 days that has an exam, deliverable, paper or assignment
@@ -341,7 +361,12 @@ Weight columns, `×N` for a component of several items (`LAB ×10`), `+N%` for b
 total that stays open) and the ledger's Grades so far; an item belongs to the component whose first word starts its
 name, so graded items are named to match (`Mini-quiz 4 9/10`). Its target is stored per viewer under `target`
 (default 96). A table that does not parse, or an item that fits no single component, shows the problem instead of
-numbers, and dropped scores are not modelled.
+numbers, and dropped scores are not modelled. A component whose score another one replaces when that is higher ends
+its Component cell with `(replaced by <Component> if higher)`, naming the other row exactly, after any `×N` or
+`(running)` (STAT 251: `**Midterm** (replaced by Final if higher)`, 2026-11-06); the panel counts it at the better of
+the two in both the projection and the average needed. A misspelt mark, an unknown or bonus component or a chain of
+replacements shows an error, and a row that says "must pass" or "scaled" gets one sentence saying the panel does not
+check or model it.
 A course may add `04-ask-kraal.md` (PHIL 385 has one, 2026-09-14): the running list of questions to put to
 the instructor plus an Answered table; add the file to `MAIN` in `notes-app/src/files.ts` to give it a tab. Conventions the
 site relies on (Matt, 2026-09-11): syllabus = grading, exam format, project, one schedule, then a `## To verify`
@@ -366,7 +391,9 @@ The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11)
 `npm run parity` confirms that quizlib and the site read every question bank alike, topic, lec and type included (a
 difference fails the deploy).
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
-passcode links stay out of the repo (point at the Canvas Zoom tab instead).
+passcode links stay out of the repo (point at the Canvas Zoom tab instead). The one tracked file there is
+`routines/quiz-state.json`, because the site shows each question's history: dates, grades, confidence and cause only.
+His wrong answers and his reasons stay in the git-ignored `routines/quiz-private.json` (2026-11-06).
 `private/` is git-ignored as well and exists only on his Mac: `course-intel.md` (grade data and what past students
 say about each instructor) and `habits.json` (personal daily habits `things_plan.py` adds to HABITS; the plan runs
 without them where the file is missing). The repo is linked from his resume, so anything about his health or another
@@ -400,6 +427,9 @@ to that source first, silently, then answer. Never answer a deadline or grade qu
 This file and `~/.claude/projects/…/memory/MEMORY.md` load automatically in every session started
 in this folder; the skills listed above are always available. A session started in another folder
 has none of this — tell him to open this folder.
+**Codex shares all of it (2026-11-06).** `AGENTS.md` is a short entry point that tells Codex to read this file, and
+`.agents/skills/` holds links to `.claude/skills/`, so both assistants run one copy of every rule and script. Edit
+only the files here and under `.claude/skills/`; never copy them into `.agents/`.
 
 ## Things not to do
 - Don't suggest rereading, highlighting, or recopying notes. Low-utility; costs time.

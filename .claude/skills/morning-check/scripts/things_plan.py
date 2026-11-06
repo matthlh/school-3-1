@@ -63,9 +63,18 @@ Steps:
      deadline) stays where it is.
   6. Apply: selected → scheduled Today. Was-in-Today-but-lost → scheduled Tomorrow (+1 rollover in
      routines/plan-state.json). Unpicked Anytime items stay put.
-  7. Print the brief block: Plan today (a start time on each P1) / Rolled to tomorrow / Needs an
-     estimate / warnings / a Cushion line per date within CUSHION_DAYS that has an exam, deliverable,
-     paper or assignment, counting all the work due before it / First thing tomorrow. The Time check
+     Stuck (stuck()): a to-do that loses again after STUCK_AFTER rollovers stops competing blindly. One that is
+     pinned, P1, or due within STUCK_KEEP_DAYS (overdue included) still rolls to tomorrow and is flagged for a
+     decision. Any other one moves out of the daily plan with a note saying why and when: a P3 with no deadline
+     goes to Someday; any other goes to the day the weekly planner would pick (free_day), a day of next week when
+     it has no deadline, else a day from the day after tomorrow to the end of next week, before its deadline when
+     one has room. One that comes back and gets stuck again goes to Someday when it has no deadline, else it is
+     flagged; one he brought back from Someday is only flagged. A move does not count as a rollover, and nothing
+     changes a deadline. state["stuck"] keeps the last move per to-do id.
+  7. Print the brief block: Plan today (a start time on each P1) / Rolled to tomorrow / Stuck (the flagged
+     to-dos, most rolled first, and a count of the moved ones) / Needs an estimate / warnings / a Cushion
+     line per date within CUSHION_DAYS that has an exam, deliverable, paper or assignment, counting all the
+     work due before it / First thing tomorrow. The Time check
      comes last: its query runs after the plan is applied, so a failure there leaves the plan in place.
 """
 import argparse, datetime as dt, json, os, re, statistics, subprocess, sys
@@ -87,6 +96,9 @@ DAY_START = "09:00"      # suggested start times run from here (a later run for 
 STUDY_END = "22:30"      # sleep: nothing in the plan ends later; a line that would leaves today's plan (docstring step 5)
 CUSHION_DAYS = 14        # a Cushion line for each date within N days that has an exam, deliverable, paper or assignment
 MIN_SAMPLES = 5          # a tag plans as tag × median(actual ÷ tag) once --actual has timed this many of it
+STUCK_AFTER = 5          # a to-do that has rolled this many times and loses again is stuck: moved out or flagged (step 6)
+STUCK_KEEP_DAYS = 3      # a stuck to-do due within N days, or overdue, stays in the daily plan and is flagged, never moved
+STUCK_SHOW = 5           # the Stuck block names this many flagged to-dos, most rolled first, and counts the rest
 DEFAULT_EST_H = 0.5      # untagged items count as this and get flagged
 EST = {"15m": 0.25, "30m": 0.5, "1h": 1.0, "2h": 2.0, "3h": 3.0, "event": 0.0}
 PRIO_SCORE = {"P1": 300, "P2": 150, "P3": 0}
@@ -690,15 +702,78 @@ def plan(today, budget, todos, state):
                 and t.when and t.when <= today]
     return selected, rollover, warn, cands
 
-def apply(today, selected, rollover, state, todos):
+def stuck(today, rollover, todos, state):
+    """The to-dos in today's roll that had already rolled STUCK_AFTER times (docstring step 6), as (moves, flags).
+    moves: [(to-do, its new day or "someday", rollovers so far)], which apply() makes and which then leave the roll.
+    flags: [(to-do, rollovers counting today's, why it stays)], most rolled first; they still roll to tomorrow.
+    Events, habits and anything tagged `pin` are never moved, and no deadline changes."""
+    rolled, before = state.get("rolled", {}), state.get("stuck", {})
+    next_mon, end = week_window(today, next_week=True)
+    days = [today + dt.timedelta(days=i) for i in range(2, (end - today).days + 1)]   # tomorrow takes today's roll
+    cap = {d: budget_for(d, state) for d in days}
+    load = {d: sum(t.est for t in todos if t.when == d and t.lst not in ("Inbox", "Someday")) for d in days}
+    moves, flags = [], []
+    for t in rollover:
+        n = rolled.get(t.id, 0)
+        if n < STUCK_AFTER or t.is_event or t.is_habit:
+            continue
+        prior = before.get(t.id)
+        stays = None                                     # why it stays in the daily plan ("" = its priority or deadline says so)
+        if "pin" in t.tags:
+            stays = "pinned"
+        elif t.prio == "P1" or (t.due and (t.due - today).days <= STUCK_KEEP_DAYS):
+            stays = ""
+        elif prior and prior["to"] == "someday":
+            stays = "back from Someday"                  # he brought it back by hand: never moved again
+        elif prior and t.due:
+            stays = f"moved on {dt.date.fromisoformat(prior['date']):%b %-d} and rolled again"
+        elif prior or (t.prio == "P3" and not t.due):
+            moves.append((t, "someday", n))
+            continue
+        else:
+            tiers = ([[d for d in days if d < t.due], [d for d in days if d <= t.due]] if t.due
+                     else [[d for d in days if d >= next_mon]])
+            tiers = [x for x in tiers if x]
+            if tiers:
+                d = free_day(t, tiers, load, cap) or min(tiers[0], key=lambda d: (day_weight(load, d), d))
+                load[d] += t.est
+                moves.append((t, d, n))
+                continue
+            stays = "no day before its deadline"
+        due = ("no deadline" if not t.due else f"overdue since {t.due:%b %-d}" if t.due < today
+               else "due today" if t.due == today else f"due {t.due:%b %-d}")
+        flags.append((t, n + 1, ", ".join(x for x in (t.prio or "no priority", fmt_h(t.est), due, stays) if x)))
+    flags.sort(key=lambda f: -f[1])                      # stable: a tie keeps the roll's score order
+    return moves, flags
+
+def stuck_note(t, to, n, today):
+    """The sentence a stuck move appends to the to-do's notes: when and why it moved, and what happens next."""
+    why = f"Moved by the planner on {today:%a %b %-d}: it rolled {n} times without fitting the daily plan"
+    if to == "someday":
+        return why + ", so it is in Someday now. Give it a date, or move it to Anytime, to plan it again."
+    return (why + f", so it waits until {to:%a %b %-d}. If it rolls again, "
+            + ("it is listed in the brief for a decision." if t.due else "it goes to Someday."))
+
+def apply(today, selected, rollover, state, todos, moves=()):
     ids_today = [t.id for t in selected if not t.id.startswith("new-") and t.when != today]
     ids_tmrw = [t.id for t in rollover if not t.id.startswith("new-")]
-    if ids_today or ids_tmrw:
+    moves = [m for m in moves if not m[0].id.startswith("new-")]
+    if ids_today or ids_tmrw or moves:
         lines = ['tell application "Things3"', '  set theBase to current date', '  set time of theBase to 0']
         for i in ids_today:
             lines.append(f'  schedule (to do id "{i}") for theBase')
         for i in ids_tmrw:
             lines.append(f'  schedule (to do id "{i}") for (theBase + 1 * days)')
+        for t, to, n in moves:                           # stuck (docstring step 6): append the note, then move it
+            note = _as_text(stuck_note(t, to, n, today))
+            lines += [f'  set oldNotes to notes of to do id "{t.id}"',
+                      '  if oldNotes is "" then',
+                      f'    set notes of to do id "{t.id}" to {note}',
+                      '  else',
+                      f'    set notes of to do id "{t.id}" to oldNotes & linefeed & linefeed & {note}',
+                      '  end if',
+                      f'  move (to do id "{t.id}") to list "Someday"' if to == "someday" else
+                      f'  schedule (to do id "{t.id}") for (theBase + {(to - today).days} * days)']
         lines.append('end tell')
         osa("\n".join(lines))
     rolled = state.get("rolled", {})
@@ -707,6 +782,11 @@ def apply(today, selected, rollover, state, todos):
     for i in ids_tmrw:
         rolled[i] = rolled.get(i, 0) + 1
     state["rolled"] = rolled
+    moved = {k: v for k, v in state.get("stuck", {}).items() if k in open_ids}
+    for t, to, n in moves:
+        moved[t.id] = {"title": t.name, "date": today.isoformat(), "to": to if to == "someday" else to.isoformat(),
+                       "rolled": n}
+    state["stuck"] = moved
     state["last"] = {"date": today.isoformat(), "selected": [t.name for t in selected],
                      "rolled": [t.name for t in rollover]}
     save_state(state)
@@ -861,6 +941,23 @@ def budget_for(d, state):
     """A date's hour budget: the --budget set for it, else its weekday's, times LIGHT_EVE the day before an exam."""
     return state.get("budget", {}).get(d.isoformat(), BUDGET_H[d.weekday()] * (LIGHT_EVE if exams_on(d + dt.timedelta(days=1)) else 1))
 
+def day_weight(load, d):
+    """How full day d looks when choosing a day: its load, plus WEEKEND_PENALTY_H on a weekend so weekdays fill first."""
+    return load[d] + (WEEKEND_PENALTY_H if d.weekday() >= SAT else 0)
+
+def free_day(t, tiers, load, cap):
+    """The weekly planner's day for t: in the first tier of days with room for it, its project's first rhythm day with
+    room, else the lightest day with room. None when no day in any tier has room."""
+    for tier in tiers:
+        fits = [d for d in tier if load[d] + t.est <= cap[d]]
+        for wd in RHYTHM.get(t.project or t.area, []):
+            d = next((d for d in fits if d.weekday() == wd), None)
+            if d:
+                return d
+        if fits:
+            return min(fits, key=lambda d: (day_weight(load, d), d))
+    return None
+
 def plan_week(today, todos, state, next_week=False):
     """Place next week's work on days. Weekly owns when-dates, daily owns Today/Tomorrow:
     - items already dated inside the window are load; events, WEEKLY instances, ladder steps and
@@ -894,10 +991,6 @@ def plan_week(today, todos, state, next_week=False):
         if in_window or (t.when is None and (due_in or undated_must)):   # a date outside the window is left alone
             movable.append(t)
     movable.sort(key=lambda t: (t.due or dt.date.max, -PRIO_SCORE.get(t.prio, 100), -t.est, t.name))
-
-    def weight(d):
-        return load[d] + (WEEKEND_PENALTY_H if d.weekday() >= SAT else 0)
-
     changes, warn = [], []
     for t in movable:
         tiers = [[d for d in days if d < t.due], [d for d in days if d <= t.due]] if t.due else [days]
@@ -907,24 +1000,13 @@ def plan_week(today, todos, state, next_week=False):
             if keep:
                 load[keep] += t.est; on_day[keep].append(t)
             continue
-        fits = lambda d: load[d] + t.est <= cap[d]
-        chosen = None
-        if keep and fits(keep) and any(keep in x for x in tiers):
+        if keep and load[keep] + t.est <= cap[keep] and any(keep in x for x in tiers):
             chosen = keep
         else:
-            for tier in tiers:
-                for wd in RHYTHM.get(t.project or t.area, []):
-                    chosen = next((d for d in tier if d.weekday() == wd and fits(d)), None)
-                    if chosen:
-                        break
-                if not chosen:
-                    ok = [d for d in tier if fits(d)]
-                    chosen = min(ok, key=lambda d: (weight(d), d)) if ok else None
-                if chosen:
-                    break
+            chosen = free_day(t, tiers, load, cap)
         if chosen is None:                                   # nothing fits: least-loaded allowed day, flagged
             tier = tiers[0]
-            chosen = keep if keep in tier else min(tier, key=lambda d: (weight(d), d))
+            chosen = keep if keep in tier else min(tier, key=lambda d: (day_weight(load, d), d))
             warn.append(f"OVER BUDGET {chosen:%a %b %-d}: {short(t.name, 40)} ({fmt_h(t.est)}) has no room before "
                         + (f"{t.due:%b %-d}" if t.due else "the weekend"))
         load[chosen] += t.est; on_day[chosen].append(t)
@@ -976,7 +1058,24 @@ def print_week(days, cap, load, on_day, changes, warn, dry):
     for w in warn:
         print(f"- ⚠ {w}")
 
-def print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, auto, state, dry):
+def print_stuck(moves, flags):
+    """The Stuck block: the flagged to-dos that need his decision, most rolled first, then one line counting the moves
+    (each one also has an auto line)."""
+    if not (moves or flags):
+        return
+    print(f"**Stuck** (rolled {STUCK_AFTER}× or more: split, defer or drop)")
+    for t, n, why in flags[:STUCK_SHOW]:
+        print(f"- {t.where()} · {t.name[:80]} · rolled {n}× · {why}")
+    rest = flags[STUCK_SHOW:]
+    if rest:
+        lo, hi = rest[-1][1], rest[0][1]
+        print(f"- +{len(rest)} more, rolled {lo}×" + (f" to {hi}×" if hi != lo else ""))
+    later = sum(1 for _, to, _ in moves if to != "someday")
+    parts = [f"{later} to a later day" if later else "", f"{len(moves) - later} to Someday" if len(moves) > later else ""]
+    if moves:
+        print(f"- Moved out of the daily plan: {' and '.join(p for p in parts if p)}, each named in an auto line")
+
+def print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, auto, state, dry, moves=(), flags=()):
     """The brief's Plan today block, down to First thing tomorrow; main prints the Time check line after it."""
     used = sum(t.est for row, _ in kept for t in row)
     print(f"**Plan today — {used:g} of {budget:g} h**{'  (DRY RUN)' if dry else ''}")
@@ -1004,6 +1103,7 @@ def print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, a
         for t in rollover:
             n = state.get("rolled", {}).get(t.id, 0)
             print(f"- {t.where()} · {t.name[:80]}" + (f" · rolled {n}×" if n else ""))
+    print_stuck(moves, flags)
     need = [t for t in cands if not t.est_tag or not t.prio]
     if need:
         print("**Needs an estimate/priority tag** (15m/30m/1h/2h/3h + P1/P2/P3)")
@@ -1077,18 +1177,26 @@ def main():
         start = max(start, -(-(now.hour * 60 + now.minute) // 15) * 15)
     kept, dropped = clock(today, plan_rows(selected, today, start), start)
     for row in dropped:                                   # no time left before STUDY_END: the line leaves today's plan
-        moves = False
         for t in row:
             selected.remove(t)
             if t.when and t.when <= today:                # it was in Today: it rolls like any other item that did not fit
                 rollover.append(t)
-                moves = True
-        warn.append(f"{'; '.join(short(t.name, 40) for t in row)} ({fmt_h(sum(t.est for t in row))}) would end after {STUDY_END}, "
-                    + ("so it moves to tomorrow" if moves else "so it is not planned today"))
     rollover.sort(key=lambda t: (-t.score, t.due or dt.date.max))
+    moves, flags = stuck(today, rollover, todos, state)   # docstring step 6: a move leaves the roll
+    dest = {t.id: to for t, to, _ in moves}
+    for t, to, n in moves:
+        rollover.remove(t)
+        auto.append(f"{'moved to Someday' if to == 'someday' else f'deferred to {to:%a %b %-d}'}: {t.name[:80]} "
+                    f"(rolled {n}×)")
+    for row in dropped:                                   # the 22:30 warnings, after stuck() so each names where it went
+        tos = [dest[t.id] for t in row if t.id in dest]
+        where = ("so it goes to Someday" if "someday" in tos else f"so it is deferred to {min(tos):%a %b %-d}" if tos
+                 else "so it moves to tomorrow" if any(t in rollover for t in row) else "so it is not planned today")
+        warn.append(f"{'; '.join(short(t.name, 40) for t in row)} ({fmt_h(sum(t.est for t in row))}) would end after "
+                    f"{STUDY_END}, {where}")
     if not a.dry_run:
-        apply(today, selected, rollover, state, todos)
-    print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, auto, state, a.dry_run)
+        apply(today, selected, rollover, state, todos, moves)
+    print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, auto, state, a.dry_run, moves, flags)
     check = time_check(today, state, completed(day=today - dt.timedelta(days=1)))   # after apply: a failure here leaves the plan in place
     if check:
         print(f"- Time check: how long did {check} take?")

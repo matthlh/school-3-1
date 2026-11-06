@@ -6,7 +6,7 @@ Rows whose Next is on or before today are due.
 
 <!-- due as of 2026-11-06 -->
 
-_53 topics due as of Fri Nov 6. Say **quiz me**._
+_55 topics due as of Fri Nov 6. Say **quiz me**._
 
 - CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 40 d · last unquizzed
 - STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 38 d · last unquizzed
@@ -17,8 +17,13 @@ _53 topics due as of Fri Nov 6. Say **quiz me**._
 - STAT 251 · 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) · overdue 34 d · last unquizzed
 - STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 29 d · last unquizzed
 - STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · overdue 28 d · last unquizzed
+- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 25 d · last X
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 24 d · last X
+- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 24 d · last X
+- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 20 d · last X
 - CPSC 310 · Boundaries: core, edges, ports and adapters (business logic in the core, which imports nothing and does no I/O · everything else at the edge: I/O, parsing, validation, config, services · a port is an interface the core owns, in its terms · an adapter implements the port with real resources · every dependency points inward · SRP: one reason to change · test at the narrowest level that can see the bug: unit with a double, integration with a temp file, one or two e2e) · overdue 20 d · last unquizzed
 - STAT 251 · 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement) · overdue 20 d · last unquizzed
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 48 d · last ~
 - CPSC 310 · Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) · overdue 16 d · last unquizzed
 - CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 45 d · last ~
 - CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 45 d · last ~
@@ -29,40 +34,37 @@ _53 topics due as of Fri Nov 6. Say **quiz me**._
 - STAT 251 · 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation) · overdue 13 d · last unquizzed
 - STAT 251 · 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width) · overdue 9 d · last unquizzed
 - STAT 251 · 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts) · overdue 9 d · last unquizzed
-- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 26 d · last ~
 - STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 25 d · last ~
-- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 24 d · last ~
-- STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 22 d · last ~
+- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 25 d · last ~
+- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 24 d · last ~
+- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 24 d · last ~
+- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 24 d · last ~
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 55 d · last O
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 55 d · last O
+- STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 23 d · last ~
+- STAT 251 · Descriptive vs. inferential statistics · overdue 53 d · last O
 - STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 21 d · last ~
-- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 47 d · last O
-- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 47 d · last O
-- STAT 251 · Descriptive vs. inferential statistics · overdue 44 d · last O
 - STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 43 d · last O
 - STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 41 d · last O
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 4 d · last X
 - CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 4 d · last X
-- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 4 d · last X
 - CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 4 d · last X
 - CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 4 d · last X
 - CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 4 d · last X
 - CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 4 d · last X
-- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 4 d · last X
-- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 4 d · last X
 - STAT 251 · 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) · overdue 4 d · last X
 - STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · overdue 4 d · last X
 - STAT 251 · 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ) · overdue 4 d · last X
+- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 24 d · last O
+- CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 21 d · last O
 - PHIL 385 · The Aesthetic Validity of Marriage: B's task and tone (Judge William's letter to A · two tasks: marriage is aesthetic and stays so · loves A like a son, brother and friend · warns A about himself · the vow from Christianity about 1100 · if duty is love's enemy, love is not the true victor · the close) · overdue 3 d · last unquizzed
 - PHIL 385 · The Aesthetic Validity of Marriage: first love and the reflective age (love has the stamp of the eternal, lust does not · the immoral and the respectable paths · egoistic and sympathetic melancholy · first love's features · the Page as the state before first love · thanking God lifts it into a higher concentricity · the altar objections · one loves only once) · overdue 3 d · last unquizzed
 - PHIL 385 · The Aesthetic Validity of Marriage: marriage's history, habit and duty (no why: character, children, home · the wedding ceremony · the aesthetic lies in the acquired · inner history · conqueror vs possessor · habit only of the bad · the husband preserves time · duty the friend of love · the three great allies) · overdue 3 d · last unquizzed
 - STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 20 d · last O
+- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 42 d · last O
 - STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 17 d · last O
-- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 3 d · last ~
-- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 11 d · last O
-- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 2 d · last ~
-- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 2 d · last ~
-- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 1 d · last ~
+- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 2 d · last ~
 
-_Readiness · PHIL 385 Exam 4 14:00 · Fri Nov 20 · 0% of 45 in-scope questions likely recalled._
+_Readiness · PHIL 385 Exam 4 14:00 · Fri Nov 20 · 0% of 45 in-scope questions likely recalled · 0% asked · none asked yet._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 2 14:00 · PHIL 385 2 topics from Exam 3 14:00. The exam that covered them is past and the course's next exam does not._
 
@@ -93,28 +95,28 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 
 | Course | Topic | Lec | Last | Grade | Streak | Next |
 |--------|-------|-----|------|-------|--------|------|
-| STAT 251 | 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
-| STAT 251 | Descriptive vs. inferential statistics | 1–2 | 2026-09-16 | O | 1 | 2026-09-23 |
-| STAT 251 | 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf | 1–2 | 2026-09-13 | O | 1 | 2026-09-20 |
+| STAT 251 | 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) | 1–2 | 2026-09-13 | O | 1 | 2026-09-12 |
+| STAT 251 | Descriptive vs. inferential statistics | 1–2 | 2026-09-16 | O | 1 | 2026-09-14 |
+| STAT 251 | 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf | 1–2 | 2026-09-13 | O | 1 | 2026-09-12 |
 | STAT 251 | 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) | 3 | 2026-09-17 | O | 1 | 2026-09-24 |
-| STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | 2026-10-11 | O | 2 | 2026-10-26 |
+| STAT 251 | 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) | 3 | 2026-10-11 | O | 2 | 2026-09-25 |
 | STAT 251 | 1d Centre vs spread (what each measures · range · same centre, different spread) | 3 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | STAT 251 | 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) | 4 | 2026-10-09 | ~ | 0 | 2026-10-12 |
 | STAT 251 | 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) | 4 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | STAT 251 | 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) | 4 | 2026-09-19 | O | 1 | 2026-09-26 |
 | STAT 251 | 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) | 5 | 2026-10-10 | O | 1 | 2026-10-17 |
-| STAT 251 | 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) | 5 | 2026-11-01 | ~ | 0 | 2026-11-04 |
-| STAT 251 | 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) | 5 | 2026-10-09 | ~ | 1 | 2026-10-13 |
-| STAT 251 | 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) | 6 | 2026-11-01 | X | 0 | 2026-11-02 |
-| STAT 251 | 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) | 6 | 2026-11-01 | O | 1 | 2026-11-08 |
-| STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | 2026-11-01 | ~ | 0 | 2026-11-03 |
-| STAT 251 | 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) | WW2 | 2026-11-01 | X | 0 | 2026-11-02 |
+| STAT 251 | 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) | 5 | 2026-11-01 | ~ | 0 | 2026-10-13 |
+| STAT 251 | 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) | 5 | 2026-10-09 | ~ | 1 | 2026-10-12 |
+| STAT 251 | 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) | 6 | 2026-11-01 | X | 0 | 2026-10-12 |
+| STAT 251 | 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) | 6 | 2026-11-01 | O | 1 | 2026-10-13 |
+| STAT 251 | 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) | 6 | 2026-11-01 | ~ | 0 | 2026-10-13 |
+| STAT 251 | 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) | WW2 | 2026-11-01 | X | 0 | 2026-10-13 |
 | STAT 251 | 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) | 7 | — | — | 0 | 2026-09-29 |
 | STAT 251 | 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) | 8 | 2026-10-13 | O | 1 | 2026-10-20 |
 | STAT 251 | 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) | 8 | — | — | 0 | 2026-09-29 |
-| STAT 251 | 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) | 8 | 2026-10-11 | ~ | 0 | 2026-10-15 |
-| STAT 251 | 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) | 9 | 2026-11-01 | ~ | 0 | 2026-11-05 |
-| STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | 2026-11-01 | ~ | 0 | 2026-11-04 |
+| STAT 251 | 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) | 8 | 2026-10-11 | ~ | 0 | 2026-10-14 |
+| STAT 251 | 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) | 9 | 2026-11-01 | ~ | 0 | 2026-11-04 |
+| STAT 251 | 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) | 9 | 2026-11-01 | ~ | 0 | 2026-10-13 |
 | STAT 251 | 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) | 9 | 2026-10-13 | ~ | 0 | 2026-10-16 |
 | STAT 251 | 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) | 10 | — | — | 0 | 2026-10-03 |
 | STAT 251 | 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) | 10 | 2026-11-01 | X | 0 | 2026-11-02 |
@@ -134,18 +136,18 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | STAT 251 | 4d Continuity correction (the bar for a whole number k runs from k − 0.5 to k + 0.5 · turn fewer than and more than into at most and at least first · at most k ends at k + 0.5, at least k starts at k − 0.5 · P(X = k) becomes P(k − 0.5 ≤ Y ≤ k + 0.5) · only for a count approximated by a Normal) | 22 | — | — | 0 | not studied |
 | STAT 251 | 4c Normal approximation to the Poisson (λ ≥ 20 · X ≈ N(λ, λ), the mean and variance both λ · standardise with √λ · continuity correction as for the Binomial · "approximate probability" in the question is the hint) | 23 | — | — | 0 | not studied |
 | STAT 251 | 5b–d Point and interval estimation and unbiased estimators (inference from a sample to a population · point estimate is one number, interval estimate a range · estimator is the formula, estimate its value · unbiased when E(θ̂) = θ, bias E(θ̂) − θ · X̄ unbiased for μ, S² for σ² · of two unbiased estimators the smaller standard error wins) | 23 | — | — | 0 | not studied |
-| CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-10-09 | ~ | 0 | 2026-10-11 |
-| CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-11-01 | X | 0 | 2026-11-02 |
+| CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-10-09 | ~ | 0 | 2026-09-19 |
+| CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-11-01 | X | 0 | 2026-10-13 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | CPSC 310 | Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
 | CPSC 310 | Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) | 2 | 2026-11-01 | X | 0 | 2026-11-02 |
-| CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | 2026-11-01 | X | 0 | 2026-11-02 |
+| CPSC 310 | Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) | 3 | 2026-11-01 | X | 0 | 2026-10-17 |
 | CPSC 310 | Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) | 3 | 2026-11-01 | X | 0 | 2026-11-02 |
 | CPSC 310 | Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) | 4 | — | — | 0 | 2026-09-27 |
 | CPSC 310 | Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) | 4 | 2026-11-01 | X | 0 | 2026-11-02 |
 | CPSC 310 | Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) | 5 | 2026-11-01 | X | 0 | 2026-11-02 |
 | CPSC 310 | Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) | 5 | 2026-11-01 | X | 0 | 2026-11-02 |
-| CPSC 310 | Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | 2026-11-01 | O | 1 | 2026-11-07 |
+| CPSC 310 | Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) | 6–7 | 2026-11-01 | O | 1 | 2026-10-16 |
 | CPSC 310 | Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) | 7 | — | — | 0 | 2026-10-02 |
 | CPSC 310 | Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) | 7 | — | — | 0 | 2026-10-02 |
 | CPSC 310 | Design patterns I: Adapter and Composite (four-step analysis: change, pain, mechanism, cost · scattered is coupling, tangled is cohesion · mechanism from abstraction, obliviousness, trigger · when patterns help or hurt · Adapter: one interface per client, gain in degree · Composite: component, leaf, composite; cheap new node, costly new operation) | 8 | — | — | 0 | not studied |
@@ -156,11 +158,11 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | CPSC 310 | API design and change severity (information hiding · obliviousness · easy to use, hard to misuse · contract completeness · start with the task · APIs are forever · MAJOR, MINOR, PATCH, NONE by what the client must do · semver and REST versioning from the reader) | 12 | — | — | 0 | not studied |
 | CPSC 310 | REST API design (request: method, path, query, headers, body · response: status, headers, body · 2XX worked, 4XX client problem, 5XX server failed · model things, not actions: URIs as resources, methods as verbs, a trip becomes a resource · Uniform Interface, Idempotency, Statelessness, Connectedness and the check question for each · PUT for anything a client may resend · poor fit: live updates, hardware commands, quotes, steps that must succeed together · reader: URI vs URL, headers carry metadata, codes per verb, client-tracked pagination) | 13 | — | — | 0 | not studied |
 | CPSC 310 | Modelling & specification (requirements, models, specifications, code, and who checks each · a model records structure, operations and rules, never how · extract, shape, evaluate, revise or ask · noun to class or field, verb to operation, limit to rule · a value is a field, own data or rules make a class, computable means an operation · ownership: composition vs association · encapsulation: a rule about A that depends on B puts the operation on A · invariant, precondition, postcondition, exceptional case · walkthrough: state after every call, stuck means model gap or requirement silent · one test per clause, given when then, preconditions not tested) | 16 | — | — | 0 | not studied |
-| PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
-| PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | 2026-09-19 | X | 0 | 2026-09-20 |
+| PHIL 385 | Post-Hegelian context (Hegel d. 1831 · Right/Left Hegelians · Strauss · pantheism = atheism) | 1 | 2026-09-19 | X | 0 | 2026-09-17 |
+| PHIL 385 | Kierkegaard 1841–43 (dissertation · Schelling in Berlin · Either/Or debut) | 1 | 2026-09-19 | X | 0 | 2026-09-18 |
+| PHIL 385 | First authorship: the 8 pseudonymous works (titles · dates · pseudonyms) | 1 | 2026-09-19 | X | 0 | 2026-09-19 |
+| PHIL 385 | Pseudonymity and the 18 discourses (perspectives ≠ his views · own-name discourses) | 1 | 2026-09-19 | X | 0 | 2026-09-18 |
+| PHIL 385 | Second authorship (Works of Love · Sickness unto Death · Anti-Climacus · preferential vs neighbour love) | 1 | 2026-09-19 | X | 0 | 2026-09-17 |
 | PHIL 385 | Either/Or Preface (Victor Eremita · inner/outer · the desk · A and B · the title) | 1 | 2026-09-16 | ~ | 0 | 2026-09-19 |
 | PHIL 385 | The Unhappiest One (Symparanekromenoi · empty grave · Solon · hope vs recollection) | 2 | 2026-09-19 | X | 0 | 2026-09-20 |
 | PHIL 385 | How Either/Or is put together (Et Livs-Fragment · A's eight pieces · B's three · the Jutland sermon) | 2 | 2026-10-02 | X | 0 | 2026-10-03 |
@@ -173,7 +175,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | PHIL 385 | The aesthetic life-view (two senses of aesthetic · Kraal's three-part recipe · freedom as the exit door · Camus and Meursault) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | Ancient Tragedy's Reflection in the Modern (substantial ties · stands and falls on his own deeds · tragic guilt between the extremes · absolute vs relative · sorrow vs pain) | 7 | — | — | 0 | 2026-09-26 |
 | PHIL 385 | The Musical Erotic: the three stages (desire dreams, seeks, desires · Cherubino in Figaro 1786 · Papageno in The Magic Flute 1791 · Don Giovanni 1787) | 9 | 2026-10-10 | O | 1 | 2026-10-12 |
-| PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-15 | X | 0 | 2026-10-16 |
+| PHIL 385 | The Musical Erotic: why music (desire as immediacy · language as reflection · painting and sculpture as representation · the classic · music as a Christian art · Nietzsche's Apollonian and Dionysian) | 9 | 2026-10-15 | X | 0 | 2026-10-12 |
 | PHIL 385 | The Musical Erotic: Don Giovanni (woman in general, not the extraordinary · the catalogue that never closes · the young beginner · why the women are replaceable · A as the Diary's author) | 11 | 2026-10-10 | O | 1 | 2026-10-12 |
 | PHIL 385 | The Musical Erotic: Plato, Christianity and the demonic (Republic's reason, spirit and appetite · the Phaedrus chariot · the Symposium ladder against A's stages · Christianity made desire sinful and the sensual a principle · music as demonic · Il dissoluto punito and the ending) | 12 | 2026-10-15 | X | 0 | 2026-10-16 |
 | PHIL 385 | The Seducer's Diary: Johannes and Cordelia (A as the real author behind the Johannes facade · reflective seduction against Don Giovanni's immediacy · the free gift as the highest enjoyment · observing, infatuation, plan, deception · the engagement Cordelia breaks · the final enjoyment and the resistance paradox) | 13 | — | — | 0 | 2026-10-26 |
@@ -225,7 +227,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | **Tue Oct 13, 23:59** | ASIA 250 | **Mini-Quiz 5** (lecture 5) — hard lock. One day later than the Monday pattern because Oct 12 is Thanksgiving (instructor announcement, Oct 5) | 2% | |
 | **Thu Oct 15, 23:59** | STAT 251 | **WeBWorK 4** (no late). Read off WeBWorK on its open day, Oct 6; 6 problems, 20 points. Two days later than the seven-day pattern, like WeBWorK 3 | WW pool | |
 | Fri Oct 2, 08:00 → Thu Oct 15, 23:59 | CPSC 310 | **LAB04 DIP, LSP & Testability** on PrairieLearn. Close date read on PrairieLearn 2026-10-03; PRAQ04 practice closes the same time | 10% pool | |
-| ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October) — check for 3 exams in 24 h (hardship) | | |
+| ~Thu Oct 15 | UBC | December exam schedule posted on the SSC (usually mid-October). Checked 2026-11-06: no hardship, since the finals are Dec 11, Dec 14 and Dec 18 | | |
 | Fri Oct 9, 08:00 → Thu Oct 22, 23:59 | CPSC 310 | **LAB05 Design Patterns** on PrairieLearn. Close date read on PrairieLearn 2026-10-09 | 10% pool | |
 | **Thu Oct 22, 23:59** | ASIA 250 | **Short Written Response 1** — published Oct 11 with the due date moved from the ~Oct 15 guess to Oct 22 (Canvas, locks Oct 26) | 15% | paper |
 | Fri Oct 9, 09:00 | CPSC 310 | **D3/D4 team formation opens** (instructions on Piazza; find a partner in lab; team repos provisioned from Mon Oct 19; the team is to be entered "by end of day", with the date on Piazza) | | |
@@ -259,10 +261,10 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | Mon Dec 7 | — | Last day of classes · last ASIA quiz due | | |
 | ~Tue Dec 8, 23:59 | STAT 251 | WeBWorK 10 — the Canvas calendar agrees on Tue Dec 8 (seen 2026-10-23); not yet read off WeBWorK. Pre-lab quiz Lab 8 is Fri Dec 11 | | |
 | **Thu Dec 10** | ASIA 250 | **FINAL PAPER** (1000–1500 words) | 47% | paper |
-| Fri Dec 11 | UBC | Exam period starts (Dec 11–22) — finals TBA, check SSC | | admin |
-| Dec 11–22 | STAT 251 | **Final** — must pass to pass course | 45% | |
-| Dec 11–22 | PHIL 385 | **Final**, cumulative | 40% | |
-| **Fri Dec 18, 12:00–14:30** | CPSC 310 | **Final**, cumulative: longer than the midterm, more code to read and write, open-ended design questions (Piazza @290, Nov 3) | 40% | exam |
+| Fri Dec 11 | UBC | Exam period starts (Dec 11–22). All three finals are on the UBC exam schedule (seen 2026-11-06); no rooms posted yet | | admin |
+| **Fri Dec 11, 15:30–18:00** | PHIL 385 | **Final**, cumulative. In person, room not posted yet (UBC exam schedule, seen 2026-11-06). Format and length not announced, so 18:00 is the end of the 2.5-hour exam slot. The ASIA 250 final paper is due the day before | 40% | exam |
+| **Mon Dec 14, 15:30–18:00** | STAT 251 | **Final**, cumulative over chapters 1–8, 10 and 11; must pass to pass the course, and replaces the midterm's 22% if higher. In person, room not posted yet (UBC exam schedule, seen 2026-11-06). Length not announced, so 18:00 is the end of the 2.5-hour exam slot | 45% | exam |
+| **Fri Dec 18, 12:00–14:30** | CPSC 310 | **Final**, cumulative: longer than the midterm, more code to read and write, open-ended design questions (Piazza @290, Nov 3). In person, room not posted yet (UBC exam schedule, seen 2026-11-06) | 40% | exam |
 
 > **Oct 29–30 is the crunch of the term.** The CPSC 310 midterm is Thu Oct 29, 19:00–21:00. On Fri Oct 30 the STAT 251 midterm is at 08:00, the STAT in-lab quiz at 11:20 and PHIL 385 Exam 3 at 14:00. Prep for all four must be finished by Oct 28. PHIL 385 Exam 3 is settled at Fri Oct 30 (Matt, 2026-09-20); Canvas' Nov 20 is a setup slip and is not to be reopened.
 
@@ -281,9 +283,9 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 
 | Course | Score | As of |
 |---|---|---|
-| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 missed and locked at 0; Mini-Quiz 7 10/10; Optional Assignment 1 missed and the 2% bonus is gone; SWR1 95/100 | 2026-11-04 |
-| CPSC 310 | 88.23%; D1-Auto 100/100; D1-Manual 100/100; D1-Total 100/100; D2-Auto 100/100; D2-Manual 95.83/100; D2-Total 97.5/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; LAB06 0/100; LAB07 100/100; midterm marked on Gradescope and not on Canvas yet; the labs come from PrairieLearn | 2026-11-06 |
-| PHIL 385 | total hidden on Canvas; Exam2 12/15; Exam3 5/15; Exam1 not marked yet | 2026-10-31 |
+| ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 0/10; Mini-Quiz 6 was missed and locked at 0; Mini-Quiz 7 10/10; Optional Assignment 1 missed and the 2% bonus is gone; Short Written Response 1 95/100 | 2026-11-04 |
+| CPSC 310 | 88.23%; D1-Auto 100/100; D1-Manual 100/100; D2-Auto 100/100; D2-Manual 95.83/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; LAB06 0/100; LAB07 100/100; midterm marked on Gradescope and not on Canvas yet; the labs come from PrairieLearn | 2026-11-06 |
+| PHIL 385 | total hidden on Canvas; Exam 2 12/15; Exam 3 5/15; Exam 1 not marked yet | 2026-10-31 |
 | STAT 251 | 64.79%; Midterm 22.5/36; iClicker 14/86; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; Pre-lab Quiz Lab 4 4/4; Pre-lab Quiz Lab 5 4/4; Lab 2 9.5/10; Lab 3 9/10; classes 5 to 9, 11, 13 to 19 and 22 to 24 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); WeBWorK is not on Canvas yet | 2026-11-06 |
 
 ## Session log
@@ -411,3 +413,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-11-05 | Logged STAT 251 lec 20 (midterm review, page already built from the deck and recording) and lec 21 (Canvas Lecture 22, CLT): lec 21's page gained an In class section from the Nov 2 captions (the iClicker on sampling distributions, how large n must be, the applets, the instructor's midterm and marking feedback) and 3 questions, 10 in all. Ledger rows unchanged; 4e stays not studied. |
 | 2026-11-06 | Morning check (ran about 11:00): STAT 251 midterm marked 22.5/36 and the Canvas total fell to 64.79%; polls 19 and 22 to 24 scored 0. CPSC 310 LAB07 closed at 100% and LAB08 is done. ASIA 250 Optional Assignment 2 submitted. Amazon SDE intern online assessment (due about Wed Nov 11) added to Things3. WeBWorK signed out. |
 | 2026-11-06 | Logged STAT 251 lec 23 (Canvas Lecture 24: the Normal approximation to the Poisson, the continuity correction again, and the start of Chapter 8 on point estimation and unbiased estimators) from the after-class deck, the Chapter 8 deck and the recording: 10 questions and 1 long problem, 2 new topics (4c, 5b–d), not studied. The final now replaces the midterm when it is higher (syllabus updated). Slide 7 of the deck has an arithmetic slip, noted on the page. |
+| 2026-11-06 | Final exam dates from the UBC exam schedule (Matt's screenshot): PHIL 385 Fri Dec 11 15:30, STAT 251 Mon Dec 14 15:30, CPSC 310 Fri Dec 18 12:00, no rooms yet. The PHIL and STAT rows are now exam rows, ending at 18:00, the end of the 2.5-hour slot, until a length is posted. Syllabi and STAT logistics updated; no 3-in-24-h hardship. |

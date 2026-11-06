@@ -10,7 +10,7 @@
 | Exam 2 | 15% | Fri Oct 16, 2:00–2:50pm | MC, 7 questions |
 | Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm | MC, 7 questions |
 | Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC, 7 questions |
-| Final | 40% | Dec 11–22, TBD | cumulative |
+| Final | 40% | Fri Dec 11, 3:30pm, in person; room and length not posted yet | cumulative; course grades are often scaled up at the end and have never been scaled down |
 
 *Three in-term exams are **multiple choice, 7 questions each**, marked on factual accuracy alone
 (each question ≈ 2.1% of the course grade). One is an **essay exam**: 2 questions, max 500 words
@@ -61,7 +61,7 @@ in 50 minutes, typed in Respondus. Exams 2–4 are **not cumulative**; only the 
 | W Dec 2 | Heidegger |
 | F Dec 4 | Sartre and de Beauvoir |
 | M Dec 7 | Camus |
-| Dec 11–22 | **Final**, cumulative |
+| F Dec 11 | **Final**, cumulative, 3:30pm |
 
 ## To verify
 - [x] Which of the four in-term exams is the essay exam? Exam 1: its Canvas quiz has 2 questions, the others 7 (2026-09-19). Confirm in passing.

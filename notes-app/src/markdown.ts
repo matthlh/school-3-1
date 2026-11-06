@@ -46,6 +46,9 @@ export interface Question {
   /** The stem exactly as written (line breaks, bullets, tables and code blocks kept): what the card shows. */
   display: string
   topic: string; lec: string; type: string; answer: string
+  /** The permanent id at the end of the meta line (`**Id:** 3f2a9c1b`), or '' before the quiz scripts stamp one. A
+   *  stamped question's history is filed under it, whatever its stem says now. */
+  stamp: string
 }
 export interface QuestionGroup { title: string | null; questions: Question[] }
 
@@ -82,14 +85,18 @@ export function parseQuestions(md: string): QuestionGroup[] {
     if (/^### Q:/.test(line)) {
       flush()
       const first = line.replace(/^### Q:\s*/, '')
-      cur = { id: `q${++n}`, question: first, display: first, topic: '', lec: '', type: '', answer: '' }
+      cur = { id: `q${++n}`, question: first, display: first, topic: '', lec: '', type: '', answer: '', stamp: '' }
       mode = 'q'
       continue
     }
     if (!cur) continue
     if (/^# /.test(line) || line.trim() === '---') { flush(); continue }
     const meta = /\*\*Topic:\*\*\s*(.+?)\s+\*\*Lec:\*\*\s*(.+?)\s+\*\*Type:\*\*\s*(\w+)/.exec(line)
-    if (meta && !cur.type) { cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].toLowerCase(); continue }
+    if (meta && !cur.type) {
+      cur.topic = meta[1].trim(); cur.lec = meta[2].trim(); cur.type = meta[3].toLowerCase()
+      cur.stamp = /\s+\*\*Id:\*\*\s*([0-9a-f]{8})\s*$/.exec(line)?.[1] ?? ''
+      continue
+    }
     if (/^\*\*A:\*\*/.test(line)) {
       const rest = line.slice('**A:**'.length).trim()
       cur.answer = mode === 'a' ? cur.answer + '\n' + rest : rest   // a second **A:** line extends the answer
@@ -205,7 +212,8 @@ export interface FrozenGroup { course: string; count: number; exam: string }
 /** One frozen bullet: a ledger row the scheduler keeps from coming due, and the exam it is frozen after. */
 interface FrozenRow { course: string; topic: string; exam: string }
 
-/** A course whose next exam is at most 21 days away, with the share of its in-scope questions likely recalled now. */
+/** A course whose next exam is at most 21 days away: the share of its in-scope questions likely recalled now (last
+ *  grade decayed by time), the share asked at least once, and the share of those right the last time. */
 export interface Readiness {
   course: string
   /** As the block names it, start time included: "Exam 2 14:00". */
@@ -214,6 +222,10 @@ export interface Readiness {
   date: string
   percent: number
   questions: number
+  /** Share of the in-scope questions asked at least once; null in a block written before 2026-11-06. */
+  asked: number | null
+  /** Share of the asked ones whose last answer was right (~ as half); null when none was asked or in an older block. */
+  right: number | null
   /** Topics in scope that no question matches. */
   bare: number
 }
@@ -245,6 +257,7 @@ const DUE_SUMMARY = new RegExp(`^_(\\d+) topics? due as of (${DAY})(?:, (\\d+) o
 const DUE_NOTHING = new RegExp(`^_(Nothing due today\\. Next: \\d+ topics? on \\*\\*${DAY}\\*\\* \\([^)]+\\)\\.)_$`)
 const DUE_UNSCHEDULED = /^_(Nothing scheduled yet\b[^_]*)_$/
 const DUE_READY = new RegExp(`^_Readiness · (${LABEL}) (.+?) · (${DAY}) · (\\d+)% of (\\d+) in-scope questions? likely recalled`
+  + '(?: · (\\d+)% asked · (?:(\\d+)% right last time|none asked yet))?'
   + '(?: · (\\d+) topics? in scope (?:has|have) no question)?\\._$')
 const DUE_FROZEN = /^_Frozen, not due: (.+?)\. ([^_]+)_$/
 const FROZEN_GROUP = new RegExp(`^(${LABEL}) (\\d+) topics? from (.+)$`)
@@ -337,7 +350,8 @@ export function parseDueBlock(ledger: string): DueParse {
       if (head) return fail('The block has more than one summary line.')
       head = { count: 0, day: null, swept: 0, nothing: m[1] }
     } else if ((m = DUE_READY.exec(line))) {
-      readiness.push({ course: m[1].replace(' ', ''), exam: m[2], date: m[3], percent: +m[4], questions: +m[5], bare: +(m[6] ?? 0) })
+      readiness.push({ course: m[1].replace(' ', ''), exam: m[2], date: m[3], percent: +m[4], questions: +m[5],
+        asked: m[6] === undefined ? null : +m[6], right: m[7] === undefined ? null : +m[7], bare: +(m[8] ?? 0) })
     } else if ((m = DUE_FROZEN.exec(line))) {
       if (frozenWhy !== null) return fail('The block has two frozen lines.')
       for (const part of m[1].split(' · ')) {
@@ -416,7 +430,8 @@ export function courseLabel(code: string): string {
 // ---- a syllabus's "## Grading" table, for the what-if panel on a course page ------------------
 
 export interface GradeComponent {
-  /** As the syllabus names it, without bold, italics, the count or the running mark: "WeBWorK" from "WeBWorK ×10". */
+  /** As the syllabus names it, without bold, italics, the count, the running mark or the replacement mark: "WeBWorK"
+   *  from "WeBWorK ×10". */
   name: string
   /** Percent of the course grade; for a bonus, the points it adds on top of the 100. */
   weight: number
@@ -428,13 +443,22 @@ export interface GradeComponent {
   running: boolean
   /** Another cell of its row says scores are dropped ("lowest dropped"), which the what-if panel does not model. */
   drops: boolean
+  /** Marked "(replaced by Final if higher)" at the end of its Component cell: the named component's percentage replaces
+   *  this one's score when it is higher. The name as that component's row spells it; null without the mark. */
+  replacedBy: string | null
+  /** Another cell of its row says it must be passed to pass the course ("Must pass the final"), which the panel does not
+   *  check. */
+  mustPass: boolean
+  /** Another cell of its row says grades are scaled ("course grades are often scaled up"), which the panel does not model. */
+  scaled: boolean
 }
 
 /**
  * The first table under a syllabus's `## Grading` heading (Component | Weight | …) → its components, or the one problem
  * that stopped the parse. All or nothing: a missing section, table or column, one weight not written like "4%",
- * "**22%**" or "*+1%*", or a running component with a count, fails the whole table, so the panel never shows numbers
- * from part of it.
+ * "**22%**" or "*+1%*", a running component with a count, or a replacement mark that is misspelt, names no single other
+ * component, involves a bonus or a 0% weight, or names a component that is itself replaced, fails the whole table, so
+ * the panel never shows numbers from part of it.
  */
 export function parseWeights(syllabus: string): { components: GradeComponent[] } | { error: string } {
   const sec = extractSection(syllabus, /^grading\b/i)
@@ -449,17 +473,37 @@ export function parseWeights(syllabus: string): { components: GradeComponent[] }
   const components: GradeComponent[] = []
   for (const cells of table.rows) {
     const cell = (i: number) => (cells[i] ?? '').replace(/\*/g, '').trim()
-    const counted = /^(.*?)\s*×\s*([1-9]\d*)$/.exec(cell(nameAt))
-    const running = /^(.*?)\s*\(running\)$/.exec(counted ? counted[1] : cell(nameAt))
-    const name = running ? running[1] : counted ? counted[1] : cell(nameAt)
+    const replaced = /^(.*?)\s*\(replaced by\s+(?:the\s+)?(.+?)\s+if higher\)$/i.exec(cell(nameAt))
+    const rest = replaced ? replaced[1] : cell(nameAt)
+    const counted = /^(.*?)\s*×\s*([1-9]\d*)$/.exec(rest)
+    const running = /^(.*?)\s*\(running\)$/.exec(counted ? counted[1] : rest)
+    const name = running ? running[1] : counted ? counted[1] : rest
     const weight = /^(\+?)(\d+(?:\.\d+)?)%$/.exec(cell(weightAt))
     if (!name) return { error: 'A row of the grading table has no component name.' }
+    if (/\([^)]*\breplac/i.test(name)) {
+      return { error: `The Component cell "${cell(nameAt)}" has a replacement mark the panel cannot read. Write it as (replaced by Final if higher) at the end of the cell.` }
+    }
     if (!weight) return { error: `The weight of ${name}, "${cell(weightAt)}", is not a percentage like 4% or +1%.` }
     if (running && counted) return { error: `${name} is marked running, so it holds one item and takes no count like ×${counted[2]}.` }
+    const says = (re: RegExp) => cells.some((c, i) => i !== nameAt && i !== weightAt && re.test(c))
     components.push({
       name, weight: Number(weight[2]), count: counted ? Number(counted[2]) : null, bonus: weight[1] === '+', running: !!running,
-      drops: cells.some((c, i) => i !== nameAt && i !== weightAt && /\bdropped\b/i.test(c)),
+      drops: says(/\bdropped\b/i), replacedBy: replaced ? replaced[2] : null, mustPass: says(/\bmust pass\b/i), scaled: says(/\bscaled\b/i),
     })
+  }
+  for (const c of components) {
+    if (c.replacedBy === null) continue
+    const want = c.replacedBy.toLowerCase()
+    const by = components.filter((d) => d.name.toLowerCase() === want)
+    if (by.length !== 1) {
+      return { error: `${c.name} is replaced by ${c.replacedBy} if higher, but the grading table has ${by.length ? 'more than one component' : 'no component'} named ${c.replacedBy}.` }
+    }
+    const b = by[0]
+    if (b === c) return { error: `${c.name} is marked as replaced by itself.` }
+    if (c.bonus || b.bonus) return { error: `${c.name} is replaced by ${b.name} if higher, but a bonus can neither replace a score nor be replaced.` }
+    if (c.weight === 0 || b.weight === 0) return { error: `${c.name} is replaced by ${b.name} if higher, but one of them weighs 0%, so it has no percentage to compare.` }
+    if (b.replacedBy !== null) return { error: `${c.name} is replaced by ${b.name}, which is itself replaced by ${b.replacedBy}. The panel models one replacement at a time.` }
+    c.replacedBy = b.name
   }
   return { components }
 }

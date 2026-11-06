@@ -1,6 +1,8 @@
 // The what-if panel on a course page: the course grade the rest of the term projects to, and the average the rest
 // needs for a target. Weights come from the syllabus's Grading table (parseWeights), graded items from the ledger's
-// Grades so far (parseLedgerGrades). The target is kept per viewer in localStorage under "target".
+// Grades so far (parseLedgerGrades). A component marked "(replaced by Final if higher)" counts at the better of its
+// own score and the Final's percentage, in the projection and in the average needed. The target is kept per viewer in
+// localStorage under "target".
 import { useMemo, useState } from 'react'
 import { hrefFor, type Texts } from './files'
 import { parseLedgerGrades, parseWeights, type GradeComponent, type GradeItem } from './markdown'
@@ -17,17 +19,28 @@ interface Row extends GradeComponent {
   open: number
 }
 
+/** A component whose score another one's percentage replaces when that is higher. */
+interface Replacement {
+  /** The component replaced ("Midterm"). */
+  row: Row
+  /** The component whose percentage can replace it ("Final"). */
+  by: Row
+}
+
 interface Breakdown {
   /** Most points open first, bonuses last. */
   rows: Row[]
   /** The non-bonus weights' sum: 100 when the table is right. */
   total: number
-  /** Non-bonus points graded, earned and still open. */
+  /** Non-bonus points graded, earned and still open. Earned is the raw item points: it leaves out what a graded
+   *  replacing component adds (project(s, 0) - bonus includes that). */
   graded: number
   earned: number
   open: number
   /** Points earned on bonuses, on top of the 100. */
   bonus: number
+  /** The replacement rules; none for most courses. */
+  replaced: Replacement[]
 }
 
 /** 93.6735 → "93.7"; 45 → "45". */
@@ -101,6 +114,7 @@ function breakdown(components: GradeComponent[], items: GradeItem[]): Breakdown 
   }
   const core = rows.filter((r) => !r.bonus)
   const sum = (rs: Row[], f: (r: Row) => number) => rs.reduce((s, r) => s + f(r), 0)
+  const byName = new Map(rows.map((r) => [r.name, r]))
   return {
     rows: [...rows].sort((a, b) => Number(a.bonus) - Number(b.bonus) || b.open - a.open),
     total: sum(core, (r) => r.weight),
@@ -108,16 +122,61 @@ function breakdown(components: GradeComponent[], items: GradeItem[]): Breakdown 
     earned: sum(core, (r) => r.earned),
     open: sum(core, (r) => r.open),
     bonus: sum(rows.filter((r) => r.bonus), (r) => r.earned),
+    // parseWeights has checked that each replacedBy names exactly one other non-bonus component.
+    replaced: rows.flatMap((r) => (r.replacedBy === null ? [] : [{ row: r, by: byName.get(r.replacedBy)! }])),
   }
+}
+
+/** A replaced component's own points, and the points the other's percentage would give it, with `pct` on the rest. */
+function sides({ row, by }: Replacement, pct: number): { own: number; theirs: number } {
+  return { own: row.earned + (row.open * pct) / 100, theirs: (row.weight * (by.earned + (by.open * pct) / 100)) / by.weight }
+}
+
+/**
+ * The course grade with `pct` percent on everything not yet graded: earned points, bonuses, the open points at `pct`,
+ * and for each replacement the points the other component's percentage adds when it beats the replaced score.
+ */
+function project(s: Breakdown, pct: number): number {
+  let grade = s.earned + s.bonus + (s.open * pct) / 100
+  for (const r of s.replaced) {
+    const { own, theirs } = sides(r, pct)
+    grade += Math.max(0, theirs - own)
+  }
+  return grade
+}
+
+/**
+ * The average, in percent, everything not yet graded needs for the target: 0 or less once it is secured, above 100 when
+ * it is out of reach. Without a replacement the grade is one straight line in that average. A replacement bends the
+ * line upward where the other percentage starts to beat the replaced score, so the grade is a straight line between
+ * those bends and rises throughout, and the answer is solved on the piece the target falls in.
+ */
+function needed(s: Breakdown, target: number): number {
+  const floor = project(s, 0)
+  if (s.replaced.length === 0) return (100 * (target - floor)) / s.open
+  if (floor >= target) return 0
+  const bends = s.replaced.map((r) => {
+    // own and theirs are both straight lines in pct, so they cross where their difference is 0.
+    const at0 = sides(r, 0), at100 = sides(r, 100)
+    const d0 = at0.theirs - at0.own, d100 = at100.theirs - at100.own
+    return d0 === d100 ? NaN : (100 * d0) / (d0 - d100)
+  })
+  const cuts = [0, ...bends.filter((p) => p > 0 && p < 100), 100].sort((a, b) => a - b)
+  for (let i = 1; i < cuts.length; i++) {
+    const [a, b] = [cuts[i - 1], cuts[i]]
+    const [ga, gb] = [project(s, a), project(s, b)]
+    if (gb >= target) return a + ((target - ga) / (gb - ga)) * (b - a)   // ga < target here, so gb > ga
+  }
+  return Infinity
 }
 
 /** The average everything not yet graded needs for the target, or the sentence that says why there is none. */
 function verdict(s: Breakdown, target: number): { need: number } | { say: string } {
-  const have = s.earned + s.bonus
+  const have = project(s, 0)
   if (s.open === 0) return { say: `Everything is graded, and the course grade of ${fmt(have)}% ${have >= target ? 'reaches' : 'is short of'} the target.` }
-  const need = (100 * (target - have)) / s.open
+  const need = needed(s, target)
   if (need <= 0) return { say: `The target is already secured. 0% on everything not yet graded still gives ${fmt(have)}%.` }
-  if (need > 100) return { say: `The target is out of reach. Even 100% on everything not yet graded gives ${fmt(have + s.open)}%.` }
+  if (need > 100) return { say: `The target is out of reach. Even 100% on everything not yet graded gives ${fmt(project(s, 100))}%.` }
   return { need }
 }
 
@@ -162,6 +221,9 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
   const running = s.rows.filter((r) => r.running)
   const drops = s.rows.filter((r) => r.drops && !r.running)   // a running score stays open, so its drop changes nothing here
   const openBonus = s.rows.filter((r) => r.bonus && r.open > 0)
+  const mustPass = s.rows.filter((r) => r.mustPass)
+  // A replaced component with nothing open still moves while the component that can replace it is open.
+  const settled = (r: Row) => r.open === 0 && !s.replaced.some((x) => x.row === r && x.by.open > 0)
   return (
     <section className="panel whatif">
       {head}
@@ -178,7 +240,7 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
       {t === null || a === null || v === null ? <p className="muted">Enter percentages from 0 to 100.</p> : (
         <div className="whatif-stats">
           <div>
-            <div className="num">{fmt(s.earned + s.bonus + (s.open * a) / 100)}%</div>
+            <div className="num">{fmt(project(s, a))}%</div>
             <div className="say">Projected course grade, with {fmt(a)}% on everything not yet graded.</div>
           </div>
           {'need' in v ? (
@@ -190,14 +252,14 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
         </div>
       )}
       <p className="small">
-        {s.graded === 0 ? 'Nothing is graded yet.' : `${fmt(s.graded)} of the ${fmt(s.total)} points are graded so far, and ${fmt(s.earned)} of them are earned.`}
+        {s.graded === 0 ? 'Nothing is graded yet.' : `${fmt(s.graded)} of the ${fmt(s.total)} points are graded so far, and ${fmt(project(s, 0) - s.bonus)} of them are earned.`}
         {s.bonus > 0 && ` Bonuses add ${fmt(s.bonus)} more.`}
       </p>
       <table className="whatif-table">
         <thead><tr><th>Component</th><th>Graded so far</th><th className="open">Points open</th></tr></thead>
         <tbody>
           {s.rows.map((r) => (
-            <tr key={r.name} className={r.bonus || r.open === 0 ? 'quiet' : undefined}>
+            <tr key={r.name} className={r.bonus || settled(r) ? 'quiet' : undefined}>
               <td>{r.name}{r.count !== null && ` ×${r.count}`} <span className="w">{r.bonus && '+'}{fmt(r.weight)}%</span></td>
               <td>
                 <span className="items">
@@ -205,6 +267,7 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
                   {r.running ? <span className="muted">running</span>
                     : r.count !== null ? <span className="muted">{r.items.length} of {r.count}</span>
                     : r.items.length === 0 && <span className="muted">—</span>}
+                  {r.replacedBy !== null && <span className="muted">or {r.replacedBy} if higher</span>}
                 </span>
               </td>
               <td className="open">{r.bonus && r.open > 0 ? 'not assumed' : fmt(r.open)}</td>
@@ -217,6 +280,19 @@ export function WhatIf({ code, all }: { code: string; all: Texts }) {
           {r.name} shows its running score, but its {fmt(r.weight)}% stays open until the final score is in, so the assumption applies to it.
         </p>
       ))}
+      {s.replaced.map(({ row, by }) => (
+        <p key={row.name} className="small muted">
+          {row.name} takes {by.name}'s percentage whenever that beats its own{row.open === 0 && row.items.length > 0 ? ` ${fmt((100 * row.earned) / row.weight)}%` : ''}, and the projection and the average needed both count this.
+        </p>
+      ))}
+      {mustPass.length > 0 && (
+        <p className="small muted">
+          {andList(mustPass.map((r) => r.name))} must be passed to pass the course, which the panel does not check.
+        </p>
+      )}
+      {s.rows.some((r) => r.scaled) && (
+        <p className="small muted">The syllabus says course grades can be scaled, and the panel shows the grade before any scaling.</p>
+      )}
       {drops.length > 0 && (
         <p className="small muted">
           {andList(drops.map((r) => r.name))} {drops.length === 1 ? 'drops its' : 'drop their'} lowest scores at the end of term. The panel ignores the drop and counts every score.

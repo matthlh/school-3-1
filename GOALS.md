@@ -2,6 +2,8 @@
 
 Written Tue Oct 20, reordered Sat Oct 31, week 8 of 13. Four goals, in priority order. Everything else this term is either in service of one of these or gets cut.
 
+## Priority
+
 School moved above Career on Oct 31. The one carve-out: a booked interview, assessment or offer call keeps its slot, because it is fixed in time and rare. Everything else in Career moves around school deadlines.
 
 ## Where things stand on Oct 31

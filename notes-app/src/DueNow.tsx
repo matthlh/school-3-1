@@ -109,7 +109,8 @@ function DueTable({ items }: { items: DueItem[] }) {
   )
 }
 
-/** One line per course with an exam within 21 days: "Exam 2 on Fri Oct 16 at 14:00. 0% of 12 in-scope questions likely recalled." */
+/** One line per course with an exam within 21 days: "Exam 2 on Fri Oct 16 at 14:00. 31% of 120 in-scope questions likely
+ *  recalled now. 52% asked so far, 71% of those right last time." Recall, coverage and accuracy stay separate numbers. */
 function ReadinessList({ rows }: { rows: Readiness[] }) {
   const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
   return (
@@ -122,7 +123,8 @@ function ReadinessList({ rows }: { rows: Readiness[] }) {
           return (
             <li key={`${r.course}|${r.exam}`}>
               <CourseChip code={r.course} />{' '}
-              <b>{exam}</b> on {r.date}{time && ` at ${time}`}. <b>{r.percent}%</b> of {plural(r.questions, 'in-scope question', 'in-scope questions')} likely recalled.
+              <b>{exam}</b> on {r.date}{time && ` at ${time}`}. <b>{r.percent}%</b> of {plural(r.questions, 'in-scope question', 'in-scope questions')} likely recalled now.
+              {r.asked !== null && ` ${r.asked}% asked so far${r.right !== null ? `, ${r.right}% of those right last time` : ''}.`}
               {r.bare > 0 && ` ${plural(r.bare, 'topic in scope has', 'topics in scope have')} no question.`}
             </li>
           )

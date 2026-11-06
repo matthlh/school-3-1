@@ -1,6 +1,6 @@
 # PHIL 385 — Summary: *Either/Or*, "The Seducer's Diary"
 
-A summary of the Diary from the book, for reading before you read it. It was Exam 3 material and comes back on the cumulative final. Lecture notes are on the [lectures 13–15 page](../lectures/13-17-seducers-diary-and-diapsalmata.md).
+A summary of the Diary from the book, for reading before you read it. Page numbers are your PDF's: the Diary is PDF pp. 199–331, A's preface pp. 199–208 and the entries from p. 209. It was Exam 3 material and comes back on the cumulative final. Lecture notes are on the [lectures 13–15 page](../lectures/13-17-seducers-diary-and-diapsalmata.md).
 
 ## What it is
 
@@ -12,20 +12,20 @@ A summary of the Diary from the book, for reading before you read it. It was Exa
 
 ## The story in order
 
-1. **April 4th to May 6th.** Johannes first watches other girls: one getting out of a coach, one walking on Østergade, and one waiting for her lover at an exhibition. On April 9th on Langelinie, a girl in a green cape overwhelms him and he loses sight of her. He searches for her for weeks.
-2. **The 12th to the 16th.** He lets a girl sheltering from the rain go because of the green cape. On the 15th he sees the green-cape girl again by the lake between Nørreport and Østerport. He watches her from the window of a family he knows. As he rushes out he knocks the arm of a lady serving tea, the host makes him stay for tea, and he loses her again.
-3. **The 19th to the 22nd.** He hears a friend call her Cordelia. From the Jansen family he learns that she is Cordelia Wahl, the orphaned daughter of a harsh Navy captain, and that she lives quietly with her aunt. On the 22nd he is introduced to her at Mrs Jansen's and stays cool.
-4. **The 30th to June 3rd.** He keeps crossing her path without engaging her. He overhears her secretly playing a Swedish melody on the piano. He decides she has never been in love and that her ideal is Joan of Arc.
-5. **June 5th to 7th.** He finds Edvard, a shy merchant's son who is in love with Cordelia. He befriends Edvard and uses him to get into the Wahl home. At tea he talks farming with the aunt while Edvard courts Cordelia, and he hears every word they say.
-6. **July 3rd.** He builds Edvard up so that Edvard's failure will teach Cordelia to look down on ordinary love. She now hates and fears Johannes and wants to compete with him. In an undated entry soon after, he reads Bürger's *Lenore* to her from a book he had Edvard lend her. Then he kills the mood by talking about bookbinding with the aunt.
-7. **July 23rd.** Having chosen an engagement as his tool, he spreads a rumour that he is in love with a young girl. Then, with Cordelia listening, he gives the aunt a deliberately ambiguous speech about the rumour and brushes off every question.
-8. **August 2nd.** He finds her alone and proposes in plain, conventional words. She sends him to her aunt, the aunt agrees, and they are engaged.
-9. **August onward.** Edvard is furious but still depends on Johannes. Johannes takes Cordelia to his uncle's house, which is full of kissing engaged couples, so that she will come to dislike being engaged. He starts the *first war*, in which he retreats so that she will pursue him.
-10. **The letters (no dates).** Thirty of his letters to her are printed. The letters stir her up while his conversation cools her down. They grow shorter and more erotic, and once he hides a note in her knitting at a party.
-11. **The turn (no date).** He writes *Jacta est alea* (the die is cast) and pulls away, so she uses erotic means to win him back. In a game of quoits he hints at exchanging rings, and she throws both rings straight up so he cannot catch them.
-12. **September 16th.** Cordelia breaks the engagement herself. Her aunt is surprised but does not pressure her.
-13. **After the break.** She goes to the country with her aunt's permission. Johannes writes to her and prepares a house for her. It has a copy of her room at home, a piano like the Jansens', and Apuleius's *Cupid and Psyche* with a sprig of myrtle marking the page.
-14. **September 24th and 25th.** At a quarter to twelve at night he drives out to her. The next day he writes that it is over, that he never wants to see her again and will not say goodbye. He wonders whether he could make her believe she was the one who grew tired of him.
+1. **April 4th to May 6th.** (PDF p. 209) Johannes first watches other girls: one getting out of a coach, one walking on Østergade, and one waiting for her lover at an exhibition. On April 9th on Langelinie, a girl in a green cape overwhelms him and he loses sight of her. He searches for her for weeks.
+2. **The 12th to the 16th.** (PDF p. 221) He lets a girl sheltering from the rain go because of the green cape. On the 15th he sees the green-cape girl again by the lake between Nørreport and Østerport. He watches her from the window of a family he knows. As he rushes out he knocks the arm of a lady serving tea, the host makes him stay for tea, and he loses her again.
+3. **The 19th to the 22nd.** (PDF p. 226) He hears a friend call her Cordelia. From the Jansen family he learns that she is Cordelia Wahl, the orphaned daughter of a harsh Navy captain, and that she lives quietly with her aunt. On the 22nd he is introduced to her at Mrs Jansen's and stays cool.
+4. **The 30th to June 3rd.** (PDF p. 230) He keeps crossing her path without engaging her. He overhears her secretly playing a Swedish melody on the piano. He decides she has never been in love and that her ideal is Joan of Arc.
+5. **June 5th to 7th.** (PDF p. 235) He finds Edvard, a shy merchant's son who is in love with Cordelia. He befriends Edvard and uses him to get into the Wahl home. At tea he talks farming with the aunt while Edvard courts Cordelia, and he hears every word they say.
+6. **July 3rd.** (PDF p. 247) He builds Edvard up so that Edvard's failure will teach Cordelia to look down on ordinary love. She now hates and fears Johannes and wants to compete with him. In an undated entry soon after, he reads Bürger's *Lenore* to her from a book he had Edvard lend her. Then he kills the mood by talking about bookbinding with the aunt.
+7. **July 23rd.** (PDF p. 253) Having chosen an engagement as his tool, he spreads a rumour that he is in love with a young girl. Then, with Cordelia listening, he gives the aunt a deliberately ambiguous speech about the rumour and brushes off every question.
+8. **August 2nd.** (PDF p. 256) He finds her alone and proposes in plain, conventional words. She sends him to her aunt, the aunt agrees, and they are engaged.
+9. **August onward.** (PDF p. 260) Edvard is furious but still depends on Johannes. Johannes takes Cordelia to his uncle's house, which is full of kissing engaged couples, so that she will come to dislike being engaged. He starts the *first war*, in which he retreats so that she will pursue him.
+10. **The letters (no dates).** (PDF p. 267) Thirty of his letters to her are printed. The letters stir her up while his conversation cools her down. They grow shorter and more erotic, and once he hides a note in her knitting at a party.
+11. **The turn (no date).** (PDF p. 309) He writes *Jacta est alea* (the die is cast) and pulls away, so she uses erotic means to win him back. In a game of quoits he hints at exchanging rings, and she throws both rings straight up so he cannot catch them.
+12. **September 16th.** (PDF p. 323) Cordelia breaks the engagement herself. Her aunt is surprised but does not pressure her.
+13. **After the break.** (PDF p. 329) She goes to the country with her aunt's permission. Johannes writes to her and prepares a house for her. It has a copy of her room at home, a piano like the Jansens', and Apuleius's *Cupid and Psyche* with a sprig of myrtle marking the page.
+14. **September 24th and 25th.** (PDF p. 330) At a quarter to twelve at night he drives out to her. The next day he writes that it is over, that he never wants to see her again and will not say goodbye. He wonders whether he could make her believe she was the one who grew tired of him.
 
 ## How Johannes works
 

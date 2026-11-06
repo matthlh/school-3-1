@@ -12,7 +12,7 @@
 | D3 ×2 | 5% | project, in pairs; half autograded, half design analysis |
 | D4 ×2 | 5% | project, in pairs; half autograded, half design analysis |
 | **Midterm** | **25%** | **Thu Oct 29, 19:00–21:00**, in person, on paper, covers weeks 1–6 |
-| **Final** | **40%** | university-scheduled, 2.5 h, cumulative |
+| **Final** | **40%** | **Fri Dec 18, 12:00–14:30**, in person, cumulative; room not posted yet |
 
 **65% is two closed-book exams.** The "project is everything" reputation comes from earlier
 versions of the course and does not apply to 26W1.
@@ -83,7 +83,7 @@ unanswerable afterwards.
 | 10 Nov 12 | Information security (no Tue class) | Lab 8 Check-in 3, requirements, Nov 13–19 | |
 | 11 Nov 17/19 | Specification & modeling | Lab 9 Check-in 4, specification, Nov 20–26 | |
 | 12 Nov 24/26 | Continuous integration · Team coordination | Lab 10 Process & metrics, Nov 27–Dec 3 | **D4 Fri Nov 27** |
-| 13 Dec 1/3 | Process metrics · GenAI | | Final: university-scheduled |
+| 13 Dec 1/3 | Process metrics · GenAI | | Final: Fri Dec 18, 12:00 |
 
 Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks.
 
@@ -98,5 +98,5 @@ Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks
 ## To verify
 - [ ] Midterm scope: the syllabus says it covers everything through the end of week 6 (Thu Oct 15), but the schedule page says it covers through Thu Oct 22. Ask on Piazza which is right; until then, study through Oct 22.
 - [ ] Is T/F negative marking still used on exams? (The labs use it: +1, -0.5, 0 blank.)
-- [ ] Final exam date (published ≥3 weeks before the end of classes)
+- [x] Final exam date: Fri Dec 18, 12:00–14:30 (UBC exam schedule, seen 2026-11-06).
 - [ ] Do deliverables ever get posted to Canvas? (Canvas has nothing for this course; deadlines come from the calendar.)

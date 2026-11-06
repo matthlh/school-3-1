@@ -87,7 +87,11 @@ the title; `Log PHIL385 reading: <title>` 15m P1, due the last class; both are c
 a 1 h Career reserve, then everything else, with a 1.5 h cap on P3 filler, (4) gives the plan a clock
 (below), and (5) applies it: picked items are scheduled Today, anything that was in Today and
 lost is scheduled Tomorrow (counted as a rollover in `routines/plan-state.json`, which bumps it
-next time so nothing starves), undated Anytime items stay in the pool. `--dry-run` previews;
+next time so nothing starves), undated Anytime items stay in the pool. A to-do that loses again after 5 rollovers
+(2026-11-06) stops competing blindly: a pinned or P1 one, or one due within 3 days or overdue, still rolls and is
+flagged under **Stuck**; any other one moves out with a one-sentence note, a P3 with no deadline to Someday, the rest
+to the day the weekly planner would pick, and to Someday on a second stick when it has no deadline (a dated one, or one
+he brought back from Someday, is flagged instead). `--dry-run` previews;
 `--budget 3` trims a short day and is remembered for that date (no Career reserve on a trimmed day);
 `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos; knobs are
 at the top of the script. A future when-date he set by hand holds unless the deadline is within a day.
@@ -114,6 +118,9 @@ The printed block, top to bottom (Matt, 2026-10-06):
   quarter hour, and a line names the factors in use (`Scaled by your actual times: 1h ×1.5`). The start times,
   the cushion and the weekly mode use the same numbers.
 - **Rolled to tomorrow**, **Needs an estimate/priority tag**, the Inbox count and the ⚠ lines follow as before.
+- **Stuck** follows Rolled to tomorrow. It lists up to 5 flagged to-dos, most rolled first, each with its roll count,
+  priority, estimate and deadline state, then a `+N more` line and one `Moved out of the daily plan` count. Each move
+  also has an auto line.
 - A `Cushion:` line covers each date in the next 14 days that has an exam, deliverable, paper or assignment
   (an admin date gets none), in date order. Its hours count all the work due before that date, so each line
   includes the lines above it: every open course to-do due by then, plus every ladder step still to come before
@@ -259,6 +266,10 @@ CPSC 310 also takes its lab scores from PrairieLearn (§6), because Canvas only 
 **Score cell format** (the notes site parses it): an optional total first (`100%`), then items as `Name got/of`, all separated
 by `;`, then any plain remarks, each its own `;`-separated piece with no commas or parentheses inside it. Example: `100%; D1-Auto 100/100; LAB01 100/100; LAB02 74/100; the total is
 Canvas only and the labs come from PrairieLearn`. A course whose Canvas total is hidden starts with `total hidden on Canvas;`.
+**Item names match the syllabus's Grading table** (the Grade what-if panel places each item by its name, and an item it
+cannot place blanks the panel): `Exam 2`, never `Exam2`; ASIA 250's responses as `Short Written Response 1`; one item
+per part a component counts, so CPSC 310's `D1-Auto` and `D1-Manual` and no `D1-Total`; a missed item as `0/10` with
+the remark after it (`Mini-Quiz 6 0/10; Mini-Quiz 6 was missed and locked at 0`), so the panel counts it.
 **Bonus watch:** any announcement, Piazza note, or email containing "bonus" / "extra credit" becomes a
 **Plan today** to-do (`things_add.py … --tags "30m, P1" --when today`) — Premarathna adds small bonuses through the term and Matt takes every one.
 
@@ -621,19 +632,17 @@ Nov 4." The rest of this section is how it runs when he restarts it.
    Artifact URL (below) with the `db` capability declared; the page writes each day's taps to
    `grades/<date>` there as he grades (or he says "grade my deck" ad hoc mid-day — same mechanism,
    see the quiz-me skill's Variants table). Query it: `ArtifactData` with `action: "query"`,
-   `collection: "grades"` and `url` = the fixed URL below. For every returned doc
-   that is **complete** (every item in `items` has a non-null `grade` — nobody left the deck
-   half-graded) and not already `processed: true`: run `quiz_grade.py --transit <doc_id> "<replyString>"` (quiz-me
+   `collection: "grades"` and `url` = the fixed URL below. For every returned doc that is not already
+   `processed: true` and has at least one graded item: run `quiz_grade.py --transit <doc_id> "<replyString>"` (quiz-me
    skill; `--transit` grades the deck's own session file, which no quiz picked since can overwrite, and the doc_id,
-   which is the deck's date, makes it refuse that file when it holds another day's deck), after rewriting any question the doc marks `flagged` (key rule 4 below), then mark that doc with
+   which is the deck's date, makes it refuse that file when it holds another day's deck), after rewriting any
+   question the doc marks `flagged` (key rule 4 below). **A partial doc is graded too** (2026-11-06: "stop whenever;
+   completed attempts remain recorded"): each card is recorded once, the cards already recorded are skipped when the
+   same doc is graded again after more taps, and the session file stays open for the rest. Mark the doc
    `ArtifactData` `action: "update"`, the same `url`, `collection` and `doc_id`, `data: {"processed": true}` and
-   `if_version` = the `version` the query returned for that doc, so it is never graded
-   twice. **Leave a partial doc alone** — the page overwrites the whole document on every tap
-   (a `.set()`, not a merge), so grading it mid-session would burn the pending
-   `transit-session.json` before he's tapped the rest, and those later taps would have nowhere valid
-   to land. Report what got graded under **New since yesterday** the way a normal quiz session
-   would (grades, ledger delta). Nothing complete and unprocessed just means nothing to report —
-   not an error.
+   `if_version` = the `version` the query returned, only once every item has a grade, so it is never graded twice.
+   Report what got graded under **New since yesterday** the way a normal quiz session would (grades, ledger delta).
+   Nothing graded and unprocessed just means nothing to report — not an error.
 1. Run
    ```bash
    python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/quiz_pick.py" --transit
@@ -686,13 +695,14 @@ Nov 4." The rest of this section is how it runs when he restarts it.
    **The key (Matt, 2026-11-01; replaces the 2026-10-06 sentence-split key points and the 2026-10-13 share scores):**
    people over-credit themselves when they grade their own answers (Dunlosky & Rawson 2012), so the page never asks
    for O/~/X. `build_transit_deck.mjs` does all of this; build the page with it, never by hand.
-   1. Every bank answer opens with its rubric: `Key:` (a short question) or `Steps:` (a long problem), numbered
-      one-line points, then a blank line and the explanation (CLAUDE.md step 2). Point 1 is the core. The builder
-      stops on a picked question without one: fix that bank answer and build again.
+   1. Every bank answer opens with its rubric: `Key:` (a short question), `Steps:` (a long problem) or `Parts:`
+      (independent parts of equal weight, 2026-11-06), numbered one-line points, then a blank line and the explanation
+      (CLAUDE.md step 2). In a Key or Steps list point 1 is the core; a Parts list has none. The builder stops on a
+      picked question without one: fix that bank answer and build again.
    2. Each card opens on the question and three confidence buttons, 1 Guess, 2 Think so, 3 Sure. The tap reveals the
-      key as tick rows (point 1 marked Core), the explanation folded under it, and the notes link.
+      key as tick rows (point 1 marked Core on a Key or Steps card), the explanation folded under it, and the notes link.
    3. The ticks set the grade: the core not ticked is `X`, the core with any other point unticked is `~`, every point is
-      `O`. An `O` at confidence 3 climbs the ladder; at 1 or 2 it is a Good and holds its rung (quiz_grade.py reads
+      `O`. A Parts card is graded by count: every part `O`, at least half `~`, fewer `X`. An `O` at confidence 3 climbs the ladder; at 1 or 2 it is a Good and holds its rung (quiz_grade.py reads
       the confidence from the token). A `~` or `X` offers the five cause chips, optional.
    4. **Bad question** takes a card out of grading: its token is `N:-` and the doc marks it `flagged: true`. Before
       grading a doc, rewrite every flagged question in the bank (the key, the explanation or the stem, whichever is
@@ -756,6 +766,10 @@ needs it, the link only when one exists (the to-do's own `links.md` row, a lectu
 **Rolled to tomorrow**   ← omit if empty
 - First thing tomorrow: <what>.
 - Dated rolled items, one bullet each; then one bullet counting the undated tail.
+
+**Stuck**   ← omit if empty
+- <task> (rolled N×): split, defer or drop?   one bullet per listed to-do, then the +N more count. A to-do listed
+  here is left out of the Rolled bullets; the moved-out count and auto lines go in Details.
 
 **Today's classes**
 - <course> · <time> · <topic> - <lecture page link if one exists>   labs first when they run earlier

@@ -36,7 +36,7 @@
 | Written Assignment 2 | Wed Dec 2 | 40 |
 | Midterm | **Fri Oct 30, 08:00–08:50**, regular classroom (confirmed 2026-09-11; ignore the Nov 4 Canvas entry) | 29 |
 | Labs 1–8 | in lab | 10 each |
-| Final | Dec 11–22 | 84 |
+| Final | **Mon Dec 14, 15:30**, in person; room and length not posted yet | 84 |
 
 ## Textbook, solutions and suggested problems (Canvas module "Textbook & Suggested Problems", as of 2026-09-11)
 - The course textbook is `textBook_coursenotes.pdf` on Canvas (file 47723417). There are no solutions for chapters 1 and 2. Other chapters have partial solution PDFs on the same page.

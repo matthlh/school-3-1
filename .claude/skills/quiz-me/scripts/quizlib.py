@@ -7,11 +7,17 @@ Files it owns:
   ledger.md                     — "## Due now" block and the "## All topics" table rows (SRS state, its only copy)
   routines/quiz-state.json      — per-question history {id: {course, topic, history: [[date, grade], …]}}; an entry
                                   is [date, grade, extra] when quiz_grade.py had more to store, and extra holds only the
-                                  keys given: conf (1–3), cause (concept, forgot, misread, careless or slow), said (his
-                                  wrong answer) and why (why he was sure)
-  routines/quiz-session.json    — the pending session written by quiz_pick.py, consumed by quiz_grade.py
-  routines/transit-session.json — the same for the transit deck, which is graded the next morning (--transit), so a
-                                  quiz picked in between can neither overwrite it nor take its grades
+                                  keys given: conf (1–3) and cause (concept, forgot, misread, careless or slow). A record
+                                  whose question left the bank keeps its history and gets `retired` (why). Tracked: the
+                                  public site renders it, so nothing personal goes in it.
+  routines/quiz-private.json    — what he said: {id: [[date, {said, why}], …]}, his wrong answers and why he was sure.
+                                  Git-ignored, because the repo is public (2026-11-06).
+  routines/quiz-session.json    — the pending session written by quiz_pick.py. quiz_grade.py records each answer the
+                                  moment it is graded (the item gets `done`) and keeps the file until every item is done,
+                                  so a stop loses nothing and a retry records nothing twice (quiz_grade.py's docstring).
+  routines/transit-session.json — the same for the transit deck, which is graded from the deck page's taps (--transit),
+                                  so a quiz picked in between can neither overwrite it nor take its grades
+  routines/quiz/sessions/       — finished sessions, by session id, kept so --undo can reopen one
   routines/quiz/YYYY-MM-DD.md   — human-readable session log
 
 Set SCHOOL_ROOT to point at a copy of the workspace when testing.
@@ -23,9 +29,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))   # the workspace this script sits in
 LEDGER = os.path.join(ROOT, "ledger.md")
 STATE = os.path.join(ROOT, "routines", "quiz-state.json")
+PRIVATE = os.path.join(ROOT, "routines", "quiz-private.json")
 SESSION = os.path.join(ROOT, "routines", "quiz-session.json")
 TRANSIT_SESSION = os.path.join(ROOT, "routines", "transit-session.json")
 QUIZ_DIR = os.path.join(ROOT, "routines", "quiz")
+SESSIONS_DIR = os.path.join(QUIZ_DIR, "sessions")
 RUNS_DIR = os.path.join(ROOT, "routines", "runs")
 MC_SCRIPTS = os.path.join(ROOT, ".claude", "skills", "morning-check", "scripts")
 SITE_URL = "https://matthlh.github.io/school-3-1/"   # the public notes site; a page is SITE_URL + "#/" + its path
@@ -112,12 +120,18 @@ def codes_of(topic):
     return [f"{num}{chr(c)}" for c in range(ord(a), ord(b) + 1)]
 
 def qid(course, question):
+    """A new question's id: sha1(course|norm(stem))[:8]. Only for a question that has no **Id:** yet; once stamp_ids has
+    written it into the meta line, the stamp is the id, so rewording the stem keeps the question's history."""
     return hashlib.sha1(f"{course}|{norm(question)}".encode()).hexdigest()[:8]
 
 # ---- question bank -------------------------------------------------------------------------
 
 Q_RE = re.compile(r"^### Q:\s*(.*)$")
 META_RE = re.compile(r"\*\*Topic:\*\*\s*(.+?)\s+\*\*Lec:\*\*\s*(.+?)\s+\*\*Type:\*\*\s*(\w+)")
+# A question's permanent id, at the end of its meta line (2026-11-06): `**Topic:** … **Lec:** … **Type:** apply  **Id:** 3f2a9c1b`.
+# The site and quiz-state.json key history by it. stamp_ids writes it once; a split or copied question must not carry
+# its source's id (a duplicate stops every run), so the new part's meta line goes in without one and gets its own.
+ID_RE = re.compile(r"\s+\*\*Id:\*\*\s*([0-9a-f]{8})\s*$")
 
 def parts(q):
     """How many answers a long problem asks for: its (a), (b), … labels, else its (i), (ii), … labels, else 3."""
@@ -150,7 +164,8 @@ def _parse_bank(path, course):
             return
         q = " ".join(l.strip() for l in cur["q"] if l.strip())
         meta = cur["meta"] or ("(untagged)", "?", "recall")
-        qs.append(dict(id=qid(course, q), course=course, topic=meta[0].strip(), lec=meta[1].strip(),
+        qs.append(dict(id=cur["stamp"] or qid(course, q), stamp=cur["stamp"], meta_line=cur["meta_line"],
+                       course=course, topic=meta[0].strip(), lec=meta[1].strip(),
                        type=meta[2].strip().lower(), q=q, q_display="\n".join(cur["show"]).strip(),
                        a="\n".join(cur["a"]).strip(), file=os.path.relpath(path, ROOT), line=cur["line"],
                        section=cur["section"], long=(cur["section"] or "").lower().startswith(LONG_SECTION)))
@@ -169,7 +184,8 @@ def _parse_bank(path, course):
         m = Q_RE.match(line)
         if m:
             flush()
-            cur = dict(line=i, q=[m.group(1)], show=[m.group(1)], meta=None, a=[], in_a=False, section=section)
+            cur = dict(line=i, q=[m.group(1)], show=[m.group(1)], meta=None, stamp=None, meta_line=None, a=[], in_a=False,
+                       section=section)
             continue
         if cur is None:
             continue
@@ -178,7 +194,9 @@ def _parse_bank(path, course):
             continue
         mm = META_RE.search(line)
         if mm and cur["meta"] is None:
-            cur["meta"] = mm.groups()
+            cur["meta"], cur["meta_line"] = mm.groups(), i
+            st = ID_RE.search(line)
+            cur["stamp"] = st.group(1) if st else None
             continue
         if line.startswith("**A:**"):
             cur["in_a"] = True
@@ -190,7 +208,49 @@ def _parse_bank(path, course):
             cur["q"].append(line)
             cur["show"].append(line)
     flush()
+    seen = {}
+    for q in qs:
+        if q["stamp"] and q["stamp"] in seen:
+            raise SystemExit(f"{q['file']}:{q['meta_line']} and line {seen[q['stamp']]} both carry **Id:** {q['stamp']}. A "
+                             "split or copied question must not keep its source's id: delete the **Id:** from the new one's "
+                             "meta line (the next quiz_pick.py run gives it its own).")
+        if q["stamp"]:
+            seen[q["stamp"]] = q["meta_line"]
     return qs
+
+def stamp_ids(state=None):
+    """Write an **Id:** at the end of every bank question's meta line that has none, so its id outlives rewording. The id
+    is qid() of the stem as it is now, the id its history has always been filed under, or, when another question of the
+    course already has that id, the hash of the stem and a counter. Returns [(file, line, id)] for the stamps written.
+    quiz_pick.py runs it first on every run, so a question logged today is stamped before it is ever asked."""
+    out = []
+    for path in sorted(glob.glob(os.path.join(ROOT, "courses", "*", "02-questions.md"))):
+        course = os.path.basename(os.path.dirname(path))
+        qs = _parse_bank(path, course)
+        todo = [q for q in qs if not q["stamp"] and q["meta_line"]]
+        if not todo:
+            continue
+        taken = {q["stamp"] for q in qs if q["stamp"]}
+        with open(path, encoding="utf-8") as f:
+            lines = f.read().split("\n")
+        for q in todo:
+            new, k = qid(course, q["q"]), 1
+            while new in taken:
+                k += 1
+                new = qid(course, f"{q['q']} #{k}")
+            taken.add(new)
+            i = q["meta_line"] - 1
+            lines[i] = lines[i].rstrip() + f"  **Id:** {new}"
+            out.append((os.path.relpath(path, ROOT), q["meta_line"], new))
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
+    return out
+
+def orphans(state, questions):
+    """History records whose id no bank question carries and that are not marked retired: history that came loose when
+    a question was reworded before it had a stamp, or deleted. [(id, record)]."""
+    ids = {q["id"] for q in questions}
+    return [(k, v) for k, v in state["questions"].items() if k not in ids and not v.get("retired") and v.get("history")]
 
 # ---- source pages (the lecture or reading notes each question comes from) -------------------
 # Mirrored in notes-app/src/sources.ts, which links each question card to the same page: keep the rules in step.
@@ -328,10 +388,12 @@ def load_ledger():
                          next=nxt, next_date=parse_date(nxt), idx=i))
     return text, rows
 
-def ledger_text(text, rows, due, log_line=None):
+def ledger_text(text, rows, due, log_line=None, replace=None):
     """ledger.md's new text, built in memory: the All-topics rows rewritten from `rows` (by idx), the Due-now block
-    replaced by `due` (due_block's lines) and, given log_line, that row added to the end of the Session log table.
-    Everything else stays byte-identical. Writes nothing (write_ledger does), so a stop here leaves every file as it was."""
+    replaced by `due` (due_block's lines) and, given log_line, that row added to the end of the Session log table, or
+    put in place of the line `replace` when the table still holds it (a session recorded one answer at a time keeps
+    one line; log_line None with `replace` removes it). Everything else stays byte-identical. Writes nothing
+    (write_ledger does), so a stop here leaves every file as it was."""
     lines = text.split("\n")
     for r in rows:
         lines[r["idx"]] = (f"| {r['label']} | {r['topic']} | {r['lec']} | {r['last'] or '—'} | "
@@ -340,7 +402,13 @@ def ledger_text(text, rows, due, log_line=None):
     if start is not None:
         end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith("## ")), len(lines))
         lines[start:end] = ["## Due now", ""] + due + [""]
-    if log_line:
+    if replace and replace in lines:
+        i = lines.index(replace)
+        if log_line:
+            lines[i] = log_line
+        else:
+            del lines[i]
+    elif log_line:
         lines.insert(session_log_end(lines), log_line)
     return "\n".join(lines)
 
@@ -486,6 +554,17 @@ def save_state(state):
     with open(STATE, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=1, ensure_ascii=False)
 
+def load_private():
+    if os.path.exists(PRIVATE):
+        with open(PRIVATE, encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_private(priv):
+    os.makedirs(os.path.dirname(PRIVATE), exist_ok=True)
+    with open(PRIVATE, "w", encoding="utf-8") as f:
+        json.dump(priv, f, indent=1, ensure_ascii=False)
+
 def history(state, q):
     """(date, grade) for each answer to q, oldest first. An entry's extra, if it has one, is left out."""
     return [(parse_date(e[0]), e[1]) for e in state["questions"].get(q["id"], {}).get("history", [])]
@@ -493,6 +572,52 @@ def history(state, q):
 def is_leech(hist):
     k, n = LEECH_X_IN_LAST
     return sum(1 for _, g in hist[-n:] if g == "X") >= k
+
+# ---- per-question schedule (2026-11-06) -----------------------------------------------------
+# Each question keeps its own place on the ladder, from its own history, so an O on one question no longer pushes its
+# unasked or missed siblings out with it, and an X on one no longer calls its mastered siblings back. The ledger row
+# still groups a topic's questions: its Next is the earliest of the topic's own ladder date (which brings its unasked
+# questions in) and the Next of each question of it that has been asked (sync_card_dues), and the picker asks a due
+# topic's due questions first, then its new ones, and its not-due ones only to fill a session.
+
+def card_state(entries, row, cal):
+    """(streak, gap, next date) of one question by the CLAUDE.md ladder, replayed over its own history entries (oldest
+    first; a Good, an O at confidence 1 or 2, holds its rung), each Next capped by exam_cap from the day of that answer
+    as a topic's is. None when it was never asked."""
+    if not entries:
+        return None
+    streak, days, nxt = 0, 1, None
+    for e in entries:
+        d, g = parse_date(e[0]), e[1]
+        if d is None or g not in GRADES:
+            continue
+        good = g == "O" and len(e) > 2 and e[2].get("conf") in (1, 2)
+        streak, days = next_after(g, streak, good=good)
+        nxt = d + dt.timedelta(days=days)
+        cap = exam_cap(row, d, cal) if row is not None else None
+        if cap and nxt > cap[0]:
+            nxt = cap[0]
+    return (streak, days, nxt) if nxt else None
+
+def card_next(state, q, row, cal):
+    """The question's own Next date (card_state), or None when it was never asked."""
+    cs = card_state(state["questions"].get(q["id"], {}).get("history", []), row, cal)
+    return cs[2] if cs else None
+
+def sync_card_dues(rows, questions, state, cal, only=None):
+    """Pull each ledger row's Next forward to the earliest Next of its asked questions, so a topic comes due when any one
+    of its questions does. A not-studied row is left alone. `only`: row idxs to touch (quiz_grade.py passes the rows it
+    just moved); None = every row. Returns the rows it changed. Never moves a Next later: only grading does that."""
+    by, _ = bank_by_topic(rows, questions)
+    changed = []
+    for r in rows:
+        if (only is not None and r["idx"] not in only) or r["next"] == NOT_STUDIED:
+            continue
+        due = [d for d in (card_next(state, q, r, cal) for q in by.get(r["idx"], [])) if d]
+        if due and (r["next_date"] is None or min(due) < r["next_date"]):
+            r.update(next=min(due).isoformat(), next_date=min(due))
+            changed.append(r)
+    return changed
 
 # ---- exams and the schedule ----------------------------------------------------------------
 
@@ -596,27 +721,44 @@ def near_exams(cal, today):
     return sorted(((e, c) for c in cal for e in [next_exam(cal, c, today)] if e and (e["date"] - today).days <= 21),
                   key=lambda x: x[0]["date"])
 
-RECALL = {"O": 1, "~": 0.5}                     # readiness: a question's last grade as a chance of recalling it now
+RECALL = {"O": 1, "~": 0.5}                     # readiness: a question's last grade as a chance of recalling it then
+RETAIN = 0.9                                    # ... which falls to this share of itself over one ladder gap, and on
+
+def recall_now(entries, row, cal, today):
+    """The chance he recalls a question today: its last grade (RECALL, X 0) decayed by RETAIN per ladder gap since that
+    answer, so an O from five weeks ago no longer counts as certain. 0 when never asked."""
+    cs = card_state(entries, row, cal)
+    if not cs:
+        return 0.0
+    d, g = parse_date(entries[-1][0]), entries[-1][1]
+    return RECALL.get(g, 0) * RETAIN ** (max(0, (today - d).days) / cs[1])
 
 def readiness(rows, today, cal, state, questions):
     """One line per exam in near_exams, for the Due-now block and the focus block (the notes site parses it, so keep
     the wording). In scope are the bank questions whose ledger row the exam covers (covers(), the scope rule standing()
-    uses, so a frozen row is never in it). Each counts by its last grade, O 1, ~ 0.5, X or never asked 0, and the line
-    gives the mean as a whole percent (pct), then how many in-scope ledger topics no question matches, left out when
-    none. An exam with no in-scope question yet (none of its lectures logged) gets no line. `questions` is the whole
+    uses, so a frozen row is never in it). The line gives three numbers, kept apart (2026-11-06): the mean chance of
+    recalling each one today (recall_now: the last grade decayed by time, never asked 0), the share asked at least once
+    (coverage), and the share of the asked ones whose last answer was an O (accuracy, ~ as half), then how many
+    in-scope ledger topics no question matches, left out when none. An exam with no in-scope question yet (none of its
+    lectures logged) gets no line. `questions` is the whole
     bank, whatever --course scopes, and `state` the per-question history: the caller passes the ones it already holds,
     so quiz_grade.py counts the session it is grading before it writes anything. [] with no exam within 21 days."""
     by, _ = bank_by_topic(rows, questions)
     out = []
     for e, course in near_exams(cal, today):
         scope = [r for r in rows if r["course"] == course and covers(e, held(r, cal))]
-        qs = [q for r in scope for q in by.get(r["idx"], [])]
+        qs = [(q, r) for r in scope for q in by.get(r["idx"], [])]
         if not qs:
             continue
-        recalled = sum(RECALL.get(h[-1][1], 0) for h in (history(state, q) for q in qs) if h)
+        ents = [(state["questions"].get(q["id"], {}).get("history", []), r) for q, r in qs]
+        recalled = sum(recall_now(h, r, cal, today) for h, r in ents)
+        asked = [h for h, _ in ents if h]
+        right = sum(RECALL.get(h[-1][1], 0) for h in asked)
         bare = sum(1 for r in scope if r["idx"] not in by)
         out.append(f"_Readiness · {COURSE_LABEL.get(course, course)} {exam_name(e)} · {e['date']:%a %b %-d} · "
                    f"{pct(recalled, len(qs))}% of {len(qs)} in-scope question{'s' if len(qs) != 1 else ''} likely recalled"
+                   f" · {pct(len(asked), len(qs))}% asked · "
+                   + (f"{pct(right, len(asked))}% right last time" if asked else "none asked yet")
                    + (f" · {bare} {'topics' if bare != 1 else 'topic'} in scope {'have' if bare != 1 else 'has'} no question"
                       if bare else "") + "._")
     return out
@@ -722,12 +864,13 @@ def focus(rows, questions, state, today, cal, courses=None):
         elif r["grade"] in ("X", "~") and k < MIN_QUESTIONS_PER_TOPIC:
             needs_more.append((r, k))
     leeches = [q for q in questions if is_leech(history(state, q))]
+    loose = orphans(state, questions) if not courses else []
     counts = {}
     for q in questions:
         counts[q["course"]] = counts.get(q["course"], 0) + 1
     return dict(due=due, overdue=overdue, sweep=sweep, frozen=frozen, unstudied=unstudied, standing=st, weak=weak, unquizzed=unquizzed,
                 needs_more=needs_more, empty=empty, leeches=leeches, unmatched=unmatched, counts=counts, by_topic=by,
-                rows=rows)
+                rows=rows, orphans=loose)
 
 def print_focus(fx, today, cal, ready):
     """The focus block. ready: readiness()'s lines for the whole ledger, printed under the exams line as the Due-now
@@ -770,4 +913,9 @@ def print_focus(fx, today, cal, ready):
             print(f"   LEECH {COURSE_LABEL[q['course']]} · {q['q'][:70]}… · missed ≥{LEECH_X_IN_LAST[0]} of last {LEECH_X_IN_LAST[1]} — rewrite or split it")
     for line in unmatched_block(fx["unmatched"]):
         print(line)
+    if fx["orphans"]:
+        print(f"-- ⚠ {len(fx['orphans'])} history record{'s' if len(fx['orphans']) != 1 else ''} match no bank question "
+              "(a question deleted, or reworded before it had an **Id:**). Put the id back on the question it belongs to, "
+              "or run quiz_ids.py --retire ID \"why\" to keep the history as retired: "
+              + " · ".join(f"{k} {v['course']} {v['topic'][:30]}" for k, v in fx["orphans"][:8]))
     print("-- Bank: " + " · ".join(f"{COURSE_LABEL[c]} {fx['counts'].get(c, 0)} q" for c in COURSE_LABEL))

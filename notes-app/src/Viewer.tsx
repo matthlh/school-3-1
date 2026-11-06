@@ -36,9 +36,18 @@ export function Viewer({ path, text, hideTitle }: { path: string; text: string; 
   const shown = /\/00-syllabus\.md$/.test(path) ? rest.filter((s) => !(s.heading && VERIFY.test(s.heading))) : rest
   const named = shown.filter((s) => s.heading)
 
+  // The text between the title and the first `## ` section is the page's opening note: how it was built, its sources,
+  // what it covers. It folds into "About this page" when the page has sections after it; a page that is all preamble
+  // shows it as the page.
+  const h1 = /^\s*#\s[^\n]*\n?/.exec(preBody)?.[0] ?? ''
+  const intro = preBody.slice(h1.length)
+  const fold = shown.length > 0 && intro.trim() !== ''
   return (
     <article>
-      {preBody.trim() && <Md text={preBody} path={path} />}
+      {h1.trim() && <Md text={h1} path={path} />}
+      {fold
+        ? <details className="about"><summary>About this page</summary><Md text={intro} path={path} /></details>
+        : intro.trim() && <Md text={intro} path={path} />}
       {named.length >= 3 && (
         <div className="contents">
           {named.map((s) => <a key={s.id} className="chip" href={hrefAnchor(path, s.id)} onClick={scrollIfSame}>{s.heading}</a>)}

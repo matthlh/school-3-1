@@ -76,10 +76,23 @@ export default function App() {
     const onKey = (e: KeyboardEvent) => {
       const typing = (e.target as HTMLElement)?.tagName === 'INPUT'
       if (e.key === '/' && !typing) { e.preventDefault(); searchRef.current?.focus() }
+      if (e.key === 'Escape') setPinned(false)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
+  // An open sidebar closes on a click anywhere outside it (Matt, 2026-11-06: not only through ☰). The ☰ button is left
+  // to its own toggle, and a click inside the sidebar, its links included, keeps it open.
+  useEffect(() => {
+    if (!pinned) return
+    const onDown = (e: PointerEvent) => {
+      const t = e.target as Element | null
+      if (t?.closest('nav, button.menu')) return
+      setPinned(false)
+    }
+    document.addEventListener('pointerdown', onDown)
+    return () => document.removeEventListener('pointerdown', onDown)
+  }, [pinned])
 
   const topics = useMemo(() => parseLedgerTopics(all?.['ledger.md'] ?? ''), [all])
   const due = useDue(all?.['ledger.md'] ?? '')

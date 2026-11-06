@@ -78,7 +78,7 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
     const rows = q.topic ? matchTopic(code, q.topic, loCodes(q.topic), topics) : []
     return [q.id, rows.length === 1 ? rows[0].topic : q.topic]
   })), [flat, code, topics])
-  const histOf = (q: Question): QuizHistory | undefined => historyOf(code, q.question)
+  const histOf = (q: Question): QuizHistory | undefined => historyOf(code, q)
   /** A question's Topic, Lec and Type as a bank URL writes them; '' where the tag is missing. */
   const tagKeys = (q: Question): Pick<BankView, 'topic' | 'lec' | 'type'> => {
     const topic = topicOf.get(q.id) ?? ''

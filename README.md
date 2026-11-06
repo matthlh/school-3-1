@@ -31,9 +31,9 @@ morning brief never repeats), and `lectures/`.
 |---|---|
 | `log CPSC310 lec 7` | file your notes, extract questions, schedule them |
 | `quiz me` | mixed revision across everything due, weighted to what you've missed and to the nearest exam (`/quiz-me`) |
-| `quiz me on STAT251` | scoped to one course; `quick quiz` = 5 questions. Answer with how sure you are (1–3), give a one-letter cause after a miss; a miss comes back until you get it |
+| `quiz me on STAT251` | scoped to one course; `quick quiz` = 5 questions. How sure you are (1–3) is optional; each answer is saved the moment it is graded, so you can stop any time; a miss comes back later in the session as a variant |
 | `STAT sprint` | 10 short STAT 251 questions in 3 minutes: name the method and write the first setup line only (`quiz_pick.py --sprint`) |
-| `grade my deck` / `1 O 2 ~ 3 X` | Grades the transit deck. Tick each answer's key points on the deck page (the ticks set the grade), then say `grade my deck`, or paste the grades from your phone. Pasted grades work for any quiz session too. The ledger updates. |
+| `grade my deck` / `1 O 2 ~ 3 X` | Records the transit deck now. Tick each answer's key points on the deck page (the ticks set the grade); every tap is saved there, and the next morning check records whatever you graded, even a half-finished deck. Pasted grades work for any quiz session too. |
 | `took 45m on <to-do>` | answers the brief's Time check (`things_plan.py --actual`); after 5 answers per estimate tag, estimates scale to your real times |
 | `is FSRS better yet` | checks whether FSRS predicts your misses better than the current spacing rules (`fsrs_shadow.py`); it changes nothing |
 | `what's due?` | read the ledger, list due/overdue topics |

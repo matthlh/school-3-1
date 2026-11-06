@@ -11,8 +11,8 @@
 | Lab ×8 | 7% | in-lab quiz (3) + follow-up (3), written in a ~20-min window during the Friday lab — no make-up at home |
 | Pre-lab quizzes ×7 | 2% | short Canvas quiz on the lab handout before Labs 2–8; opens ~1 week before, due Fri 23:59 |
 | Written assignments ×2 | 10% | WA1 **Sat Oct 24** (52 pts) · WA2 **Wed Dec 2** (40 pts), via Gradescope; posted ≥10 days ahead |
-| **Midterm** | **22%** | **Fri Oct 30, 8:00–8:50am**, regular classroom; versions A/B; no make-up (approved concession → weight to final); a higher final percentage replaces the midterm grade (announced in lecture 23, Nov 6) |
-| **Final** | **45%** | Dec 11–22. **Must pass the final to pass the course.** |
+| **Midterm** (replaced by Final if higher) | **22%** | **Fri Oct 30, 8:00–8:50am**, regular classroom; versions A/B; no make-up (approved concession → weight to final); the replacement rule was announced in lecture 23, Nov 6 |
+| **Final** | **45%** | **Mon Dec 14, 3:30pm**, in person; room and length not posted yet. **Must pass the final to pass the course.** |
 | *Piazza bonus* | *+1%* | 10+ endorsed answers |
 
 **33% is non-exam work** — bank all of it plus the Piazza bonus and the exams need ~92.5% for a 96.
@@ -49,7 +49,7 @@
 | 12 | Nov 23–27 | Ch 8, 10 | WW 8 | Lab 7 |
 | 13 | Nov 30–Dec 4 | Ch 10, 2–11 · **WA2 due Wed Dec 2** | WW 9 | Lab 8 |
 | 14 | Dec 7 | Ch 2–11 | WW 10 | — |
-| — | Dec 11–22 | **Final** | | |
+| — | Mon Dec 14 | **Final**, 3:30pm | | |
 
 Chapters: 1 descriptive stats · 3 probability · 4–6 random variables · 7 CLT · 8 estimation and
 testing · 10 ANOVA · 2 & 11 regression. Schedule is tentative; changes come by announcement.
