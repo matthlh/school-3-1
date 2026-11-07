@@ -103,25 +103,32 @@ def interleave(cs):
 def review_plan(rows, questions, state, cal, today):
     """routines/review-plan.json, the public plan the website's Review page reads (2026-11-06). It holds nothing that
     ledger.md and quiz-state.json do not already publish: no answer and nothing he wrote.
-      rows   each ledger row's key ("STAT251|<topic>") -> the dates of the exams that cover it, for the exam cap
-      cards  each question's id -> its row's key
-      queue  the short questions to ask, best first: every due one, then every new one of a studied topic, courses
-             taken in turn. The page leaves out any answered since, on any device."""
+      rows   each live ledger row's key ("STAT251|<topic>") -> the dates of the exams that cover it, for the exam cap;
+             live is studied and not frozen, so the page never brings back a topic the scripts have set aside
+      cards  each question of a live row: its id -> its row's key
+      queue  the short questions to ask, best first, courses taken in turn: every asked one whose date has come (and a
+             sweep topic's best), then the never-asked ones of due topics, then those of the other studied topics. The
+             page leaves out any answered since, on any device.
+      due    how many of the queue's first entries are due; the rest are new."""
     fx = L.focus(rows, questions, state, today, cal)
     cands, _ = candidates(fx, state, cal, today, random.Random(today.isoformat()), keep=lambda q: not q.get("long"))
     by, _ = L.bank_by_topic(rows, questions)
     plan_rows, cards = {}, {}
     for r in rows:
+        if fx["standing"][r["idx"]][0] in ("frozen", "unstudied"):
+            continue
         key = f"{r['course']}|{r['topic']}"
         lecs = L.held(r, cal)
         plan_rows[key] = sorted({e["date"].isoformat() for e in cal.get(r["course"], {}).get("exams", [])
                                  if L.covers(e, lecs)})
         for q in by.get(r["idx"], []):
             cards[q["id"]] = key
-    due = [c for c in cands if c["due"]]
-    new = [c for c in cands if not c["due"] and c["new"]]
-    queue = list(dict.fromkeys(c["q"]["id"] for c in interleave(due) + interleave(new)))
-    return dict(as_of=today.isoformat(), rows=plan_rows, cards=cards, queue=queue)
+    due = [c for c in cands if c["due"] and not c["new"]]               # asked before, and its date has come
+    new = interleave([c for c in cands if c["new"] and c["topic_due"]]) + interleave(
+        [c for c in cands if c["new"] and not c["topic_due"]])          # never asked: a due topic's first
+    first = list(dict.fromkeys(c["q"]["id"] for c in interleave(due)))
+    queue = list(dict.fromkeys(first + [c["q"]["id"] for c in new]))
+    return dict(as_of=today.isoformat(), rows=plan_rows, cards=cards, queue=queue, due=len(first))
 
 def plan_text(rows, questions, state, cal, today):
     return json.dumps(review_plan(rows, questions, state, cal, today), indent=1, ensure_ascii=False) + "\n"

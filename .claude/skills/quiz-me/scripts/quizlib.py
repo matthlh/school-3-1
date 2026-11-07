@@ -676,6 +676,13 @@ def topic_summary(r, qs, state, cal, rows=None):
             nxt, why = cand, f"earliest question date {earliest:%b %-d}, moved to a lighter day"
     return dict(last=day, grade=grade, streak=streak, next=nxt, why=why)
 
+def apply_summary(r, s):
+    """Write topic_summary's result into ledger row r. A `not studied` row keeps that Next: an answer recorded from a
+    stale plan or a website session does not start a topic he has not studied (quiz_pick.py --studied does)."""
+    r.update(last=s["last"].isoformat(), grade=s["grade"], streak=s["streak"])
+    if s["next"] is not None and r.get("next") != NOT_STUDIED:
+        r.update(next=s["next"].isoformat(), next_date=s["next"])
+
 def sync_card_dues(rows, questions, state, cal, only=None):
     """Pull each row's Next forward to row_due, so a topic comes due when any one of its questions needs him. A
     not-studied row is left alone. `only`: row idxs to touch (quiz_grade.py passes the rows it just moved); None = every

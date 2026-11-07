@@ -603,15 +603,14 @@ def grade(a, request):
             restore(r, baselines.get(f"{r['course']}|{r['topic']}", session["before"].get(key, snap)))
             delta.append((r, old, "restored"))
             continue
-        r.update(last=s["last"].isoformat(), grade=s["grade"], streak=s["streak"],
-                 next=s["next"].isoformat(), next_date=s["next"])
+        L.apply_summary(r, s)
         moved.add(r["idx"])
         when = "from current question histories"
         worse = [k for k in fresh if fresh[k][0] and ikey(items[k]) == key
                  and L.GRADE_RANK[fresh[k][0]] > L.GRADE_RANK[s["grade"]]]
         if worse:
             when += f"; {s['grade']} from another answer to this topic on {s['last']:%b %-d}"
-        if s["next"] <= today:
+        if s["next"] is not None and s["next"] <= today:
             when += "; another question of it is still due"
         delta.append((r, old, when + (f"; {s['why']}" if s["why"] else "")))
     for key in touched:
@@ -705,7 +704,7 @@ def grade(a, request):
         encoded = lambda value: json.dumps(value, indent=1, ensure_ascii=False)
         import quiz_pick as P                 # the website's Review queue follows every grade
         outputs = {L.STATE: encoded(state), L.PRIVATE: encoded(priv), L.LEDGER: ledger,
-                   L.REVIEW_PLAN: P.plan_text(rows, questions, state, cal, today)}
+                   L.REVIEW_PLAN: P.plan_text(rows, questions, state, cal, max(today, L.today_local()))}
         if log:
             lp = os.path.join(L.QUIZ_DIR, f"{today.isoformat()}.md")
             if os.path.exists(lp):

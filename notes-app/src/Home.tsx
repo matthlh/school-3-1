@@ -1,4 +1,4 @@
-import type { Texts, Tree } from './files'
+import type { Loaded, Texts, Tree } from './files'
 import { courseName, hrefFor } from './files'
 import { countQuestions, type Deadline, type LinkRow } from './markdown'
 import { hrefAnchor, hrefCourse } from './routes'
@@ -11,16 +11,18 @@ import { Upcoming } from './Upcoming'
 import { buildLabel } from './update'
 import { DueBody, DueDetail, type Due } from './DueNow'
 import { LinkGroups } from './LinksView'
+import { ReviewEntry } from './Review'
 
 /** Home: the Due now block (`due`), the next hard dates, a card per course, every link, the latest briefs. */
-export function Home({ tree, all, tallies, calendar, links, due }: {
-  tree: Tree; all: Texts; tallies: Record<string, Tally>; calendar: Deadline[]; links: LinkRow[]; due: Due
+export function Home({ tree, all, loaded, tallies, calendar, links, due }: {
+  tree: Tree; all: Texts; loaded: Loaded; tallies: Record<string, Tally>; calendar: Deadline[]; links: LinkRow[]; due: Due
 }) {
   const today = todayISO()
 
   return (
     <>
       <h1 className="brand"><Logo size={26} /> School 3-1</h1>
+      <ReviewEntry all={all} loaded={loaded} />
       <section className="panel">
         <div className="panel-head"><span>Due now <span className="sub">· <DueDetail due={due} /></span></span><a href={hrefAnchor('ledger.md', 'due-now')}>ledger →</a></div>
         <DueBody due={due} />

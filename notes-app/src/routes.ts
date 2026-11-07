@@ -5,6 +5,8 @@ export type Route =
   | { kind: 'home' }
   | { kind: 'course'; code: string }
   | { kind: 'file'; path: string; query: string; anchor?: string }
+  /** `#/review`, `#/review?course=STAT251`, `#/review?setup=1` (open the sync settings). */
+  | { kind: 'review'; course: string | null; setup: boolean }
 
 /** A malformed % escape stays as typed: the raw path matches no file, so the page says Not found. */
 function decode(s: string): string {
@@ -26,6 +28,11 @@ export function parseHash(hash: string): Route {
   const [path, query] = cut(rest, '?')
   const s = decode(path)
   if (!s) return { kind: 'home' }
+  if (s === 'review') {
+    const p = new URLSearchParams(query)
+    const course = p.get('course')
+    return { kind: 'review', course: course && /^[A-Z]{2,4}\d{3}[A-Z]?$/.test(course) ? course : null, setup: p.get('setup') === '1' }
+  }
   const m = /^course\/([^/]+)$/.exec(s)
   if (m) return { kind: 'course', code: m[1] }
   return { kind: 'file', path: s, query, anchor: decode(anchor) || undefined }

@@ -166,6 +166,10 @@ derived from current per-card histories across all sessions, never by restoring 
 reviews: Grade is the worst answer on the topic's latest review day and Streak is the topic's own ladder over all its
 answers, so an `O` today never shows as a drop because of an older miss. Grading journals its complete outputs and uses a shared writer lock so an
 interrupted write recovers on the next normal command; a dry run refuses pending recovery without writing it.
+**He can also review on the website** (`#/review`, 2026-11-06): each grade is saved on the device and synced through
+the private GitHub repository `matthlh/school-3-1-progress` (a token each device keeps in its own browser), so the phone
+and the laptop see the same progress; `sync_pull.py`, the morning check's first review step, files those grades into
+quiz-state.json once each (quiz-me SKILL, "Website Review page and sync").
 `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone (paused since
 2026-11-04 with the bed quiz; morning-check §7 says what runs instead): each answer
 shows as the answer's key, a checklist whose ticks set the grade, every tap is saved privately in the artifact,
@@ -363,7 +367,8 @@ brief chases unlogged lectures. Canvas grades are tracked per run; the table is 
 `ledger.md`, every course file and lecture, and the morning briefs as a two-pane site at
 http://localhost:8765. Files come in through `import.meta.glob(..., '?raw')` in `src/files.ts`,
 so edits and new lecture files hot-reload. Hash routes: `#/` home (Due now, Coming up, course cards, links),
-`#/course/STAT251` (buttons for syllabus/logistics/topics/question bank + lecture cards),
+`#/course/STAT251` (buttons for syllabus/logistics/topics/question bank + lecture cards), `#/review` (one question at
+a time from the review plan, graded by ticking the key; Matt, 2026-11-06),
 `#/courses/STAT251/...md` file view. Course files render under a tab strip (Overview · Syllabus · Logistics · Topics · Question bank · Ask Kraal).
 A question bank keeps its view in a query before any `#section` (`?section=lec-7&topic=…&lec=7&type=apply&only=weak&shuffle=4821&open=3,7-9`),
 so Back, Forward and reloads restore it; filters, mode and shuffle are Back steps, opening answers is not. The browser
@@ -404,8 +409,9 @@ The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11)
 `npm run parity` confirms that quizlib and the site read every question bank alike, topic, lec and type included (a
 difference fails the deploy).
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
-passcode links stay out of the repo (point at the Canvas Zoom tab instead). The one tracked file there is
-`routines/quiz-state.json`, because the site shows each question's history: dates, grades, confidence and cause.
+passcode links stay out of the repo (point at the Canvas Zoom tab instead). Two files there are tracked:
+`routines/quiz-state.json`, because the site shows each question's history (dates, grades, confidence and cause), and
+`routines/review-plan.json`, the Review page's queue (question ids, ledger row keys and exam dates only).
 New history entries also carry review and session identities for reliable retry and undo.
 His wrong answers and his reasons stay in the git-ignored `routines/quiz-private.json` (2026-11-06).
 `private/` is git-ignored as well and exists only on his Mac: `course-intel.md` (grade data and what past students

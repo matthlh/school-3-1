@@ -4,7 +4,9 @@ import { Settings } from './Settings'
 
 export interface Crumb { label: string; href?: string; tone?: string }
 
-export function TopBar({ crumbs, query, onQuery, onMenu, pinned, inputRef }: {
+export function TopBar({ review, crumbs, query, onQuery, onMenu, pinned, inputRef }: {
+  /** Show the Review link (everywhere but the Review page itself). */
+  review: boolean
   crumbs: Crumb[]
   query: string
   onQuery: (q: string) => void
@@ -29,6 +31,7 @@ export function TopBar({ crumbs, query, onQuery, onMenu, pinned, inputRef }: {
           )
         })}
       </div>
+      {review && <a className="topbar-review" href="#/review">Review</a>}
       <Settings />
       <div className="search">
         <input

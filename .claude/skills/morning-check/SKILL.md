@@ -625,6 +625,13 @@ until then. PHIL 385 is unchanged (nothing to pull).
 - **Brief:** the Today's classes line points at the page and names the question count. A lecture with no
   deck yet is "no deck posted", as before.
 
+**Website reviews first (2026-11-06).** Before anything in this section, run
+`python3 "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/quiz-me/scripts/sync_pull.py"`. It files the
+grades he saved on the website's Review page (phone or laptop) into the quiz records and refreshes the review plan.
+Put "Reviewed on the website: N (O/~/X)" in the brief when N > 0, and list any question it says he flagged so it is
+rewritten today. Until he has created the private repository it stops with "GitHub cannot find"; then the brief gets
+one Heads-up line, "Website review sync is not set up yet", and the run goes on.
+
 **Paused (Matt, 2026-11-04: "Remove the daily quizing for now, I haven't been doing it").** No deck had been tapped
 since Oct 13. While `PAUSED_HABITS` in `things_plan.py` holds the deck habit, run step 0 only, so a deck he does tap
 still gets graded, and skip steps 1 and 2: no new deck and no artifact rebuild. Run `quiz_pick.py --due` instead, so

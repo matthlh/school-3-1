@@ -17,11 +17,14 @@ import { SearchResults } from './SearchResults'
 import { UpdateToast } from './UpdateToast'
 import { startUpdateChecks, takeSavedScroll } from './update'
 import { useDue } from './DueNow'
+import { Review } from './Review'
+import { startSync } from './review/state'
 
 /** The tab title: the page, then the course it belongs to ("Syllabus · STAT 251", "Lec 3 · CPSC 310"). */
 function tabTitle(route: Route, tree: Tree): string {
   if (route.kind === 'home') return 'Home'
   if (route.kind === 'course') return courseLabel(route.code)
+  if (route.kind === 'review') return route.course ? `Review · ${courseLabel(route.course)}` : 'Review'
   const lec = /\/lectures\/(\d+)(?:-(\d+))?-[^/]*$/.exec(route.path)
   const reading = /\/readings\/([^/]+)\.md$/.exec(route.path)
   const page = lec ? `Lec ${+lec[1]}${lec[2] ? `–${+lec[2]}` : ''}`
@@ -48,7 +51,7 @@ export default function App() {
   const all = loaded?.texts ?? null
 
   useEffect(() => { loadAll().then(setLoaded, () => setFailed(true)) }, [])
-  useEffect(() => { startUpdateChecks(); startScrollMemory() }, [])
+  useEffect(() => { startUpdateChecks(); startScrollMemory(); startSync() }, [])
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
   const anchor = route.kind === 'file' ? route.anchor : undefined
   const viewQuery = route.kind === 'file' ? route.query : ''
@@ -102,6 +105,7 @@ export default function App() {
 
   const crumbs: Crumb[] = [{ label: 'Home', href: HREF_HOME }]
   if (route.kind === 'course') crumbs.push({ label: route.code, tone: route.code })
+  if (route.kind === 'review') crumbs.push({ label: 'Review' })
   if (route.kind === 'file') {
     const code = courseOf(route.path)
     if (code) crumbs.push({ label: code, href: hrefCourse(code), tone: code })
@@ -116,7 +120,8 @@ export default function App() {
   if (failed) body = <p className="muted">Some notes failed to load. <button type="button" className="link" onClick={() => window.location.reload()}>Reload</button></p>
   else if (!loaded || !all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} onPick={() => setQuery('')} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} tallies={tallies} calendar={calendar} links={links} due={due} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} loaded={loaded} tallies={tallies} calendar={calendar} links={links} due={due} />
+  else if (route.kind === 'review') body = <Review key={route.course ?? ''} all={all} loaded={loaded} course={route.course} setup={route.setup} />
   else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} due={due} />
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={loaded.quiz} due={due} />
@@ -128,7 +133,7 @@ export default function App() {
   return (
     <div className={'wrap' + (pinned ? ' pinned' : '')}>
       <Sidebar tree={tree} current={current} pinned={pinned} tallies={tallies} />
-      <TopBar crumbs={crumbs} query={query} onQuery={setQuery} onMenu={() => setPinned((v) => !v)} pinned={pinned} inputRef={searchRef} />
+      <TopBar review={route.kind !== 'review'} crumbs={crumbs} query={query} onQuery={setQuery} onMenu={() => setPinned((v) => !v)} pinned={pinned} inputRef={searchRef} />
       <main className={scoped && route.kind === 'course' ? 'wide' : undefined}>
         {scoped && all && !query.trim() && <CourseHeader code={scoped} tree={tree} all={all} current={current} />}
         {body}

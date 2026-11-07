@@ -28,6 +28,8 @@ Two scripts with one JSON hand-off. Both live in `.claude/skills/quiz-me/scripts
 Never edit the ledger's All-topics rows by hand. The scripts own them.
 
 ## Session — "quiz me"
+0. Run `python3 "$S/sync_pull.py"` first, so grades he saved on the website today count before the pick. If it stops
+   with "GitHub cannot find", the private repository is not set up yet: say so in one line and go on.
 1. Run `python3 "$S/quiz_pick.py"` (add `--course STAT251`, `--n 5`, `--all` as needed).
    **Inside an exam window, scope to the exam (Matt, 2026-09-29: "make sure it's related to the test and not
    random questions").** The scheduler does most of this (What the scripts decide, below). Topics from an
@@ -171,6 +173,7 @@ Never edit the ledger's All-topics rows by hand. The scripts own them.
 | "artifact quiz N items" / "make a quiz page" | `quiz_pick.py --n N`, then `node ../../morning-check/scripts/build_transit_deck.mjs --date <today> --session routines/quiz-session.json --title "<Mon D> Review Quiz" --out <scratchpad>/review-quiz.html`, and publish it as a new artifact with `capabilities: {"db": {}}` and the session file beside it as `session.json` (so a later session can grade it with `--session`). "Grade it" reads `grades/<date>` from that artifact as for the deck below and runs plain `quiz_grade.py "<replyString>"` (`--date` if picked on an earlier day, `--session` with the artifact's `session.json` if `routines/quiz-session.json` is gone). The first one was 2026-11-01. |
 | "grade my deck" / "grade the transit deck" | Pull it from the artifact instead of asking him to type it: `ArtifactData` with `action: "get"`, `collection: "grades"`, `doc_id` = the `date` in `routines/transit-session.json` (the deck page's fixed DATE_ID) and `url` = the Transit Deck artifact URL (morning-check SKILL.md §7). Unless it is already `processed: true`, first rewrite each question the doc marks `flagged: true` (grade `-`), then run `quiz_grade.py --transit <doc_id> "<replyString>"` with the cards he has graded so far, partial or not (2026-11-06): cards already recorded are skipped, so the same doc can be graded again after more taps, and the session closes by itself once every card is in. A deck that `--replace` filed away still takes its unrecorded
 taps (`--transit <its date>` finds it in `routines/quiz/sessions/`) and says it is closed. Mark the doc `processed: true` (`ArtifactData` `action: "update"`, the same `url`, `collection` and `doc_id`, `if_version` = the `version` the get returned) once every item has a grade or the script says the deck is closed. If nothing's there yet, say so — don't invent a reply. |
+| "import my website reviews" / "sync my reviews" | `sync_pull.py` (also the morning check's first review step). It reads the grades he saved on the website's Review page, phone or laptop, from the private repository `matthlh/school-3-1-progress` through `gh api`, and files each one in quiz-state.json under the site's own event id, so a second run records nothing new; an undo event removes its grade. What he typed for an X or ~ goes to quiz-private.json only. It re-derives the touched rows, refreshes the Due-now block and review-plan.json, writes one Session-log line per website session, and lists the questions he flagged as wrong or unclear: rewrite those the same day. `--dry-run` shows it without writing. Until the repository exists it stops with "GitHub cannot find"; report that in one line. |
 | is FSRS better yet / the FSRS shadow trial (from Oct 6, running until it decides) | `fsrs_shadow.py` — read-only: replays `routines/quiz-state.json` through FSRS-6 with its default parameters beside the ladder, prints log loss, RMSE and a 5-bin calibration table for FSRS and the ladder baseline, then one verdict line, always last (the Sunday weekly brief quotes it). `--since YYYY-MM-DD` scores only reviews from that day on. The ladder keeps scheduling; Matt adopts FSRS only if it beats the ladder baseline. |
 
 A new quiz pick replaces an open `routines/quiz-session.json`: the answers recorded from it are already in the ledger,
@@ -344,6 +347,28 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
 - `routines/quiz/grade-transaction.json` — temporary recovery journal for a grade's complete output files; the next
   normal command rolls an interrupted write forward once, under the shared writer lock.
 - `routines/runs/YYYY-MM-DD-transit.md` — the deck the morning check sends to his phone
+- `routines/review-plan.json` — tracked and public: the website Review page's queue (`quiz_pick.review_plan`), rewritten
+  by every `quiz_pick.py` run, every grade and every `sync_pull.py`. It holds question ids, ledger row keys, exam dates
+  and the count of due entries, nothing he wrote. The queue is every asked question whose date has come, then the
+  never-asked ones of due topics, then those of the other studied topics; long problems are left out.
+- `routines/quiz/web-events/` and `routines/quiz/web-sessions.json` — git-ignored: `sync_pull.py`'s cache of the
+  private repository's event files, and each website session's Session-log line.
+
+## Website Review page and sync (2026-11-06)
+Matt asked for review on the website with progress that syncs between his phone and laptop by itself; storage in one
+browser was not enough. The page is `#/review` (a Review button on Home and in the top bar):
+- It asks the plan's queue, due first, minus anything answered since on any device. The topic stays hidden until the
+  key shows. He may type an answer, taps Guess, Think so or Sure (which reveals the key), ticks the key points his
+  answer had, and saves; the grade follows the same rule as here (core, or Parts by count). Opening the notes before
+  the key counts as help: an `O` becomes `~`. "Question is wrong or unclear" saves no grade and lists it for rewriting.
+- Each save is an event saved on the device at once and pushed to the private repository as its own file
+  (`events/<day>/<id>.json`), so retries and two devices at once never duplicate or overwrite anything. Undo is a new
+  event. The chip says This device only, Saving, Saved and synced, Offline (N waiting) or Sync problem.
+- Each device needs the repository and a fine-grained token (that repository only, Contents read and write) once, in
+  the chip's settings; the token stays in that browser and is never part of the site or this repository.
+- The site's schedule (`notes-app/src/review/schedule.ts`) is a port of `card_state`; `npm run test:review` replays
+  every real history through both and fails on any difference, and tests the sync against an in-memory GitHub.
+- `sync_pull.py` brings the events into the quiz records (Variants above).
 
 ## Publish (end of every graded session)
 Grading rewrites `ledger.md` (Due now, topic rows) and sometimes `02-questions.md`. Once the ledger

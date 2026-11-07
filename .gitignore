@@ -2,6 +2,8 @@
 routines/*
 # … except the quiz history, which the notes site renders per question
 !routines/quiz-state.json
+# … and the website Review page's queue: question ids, row keys and exam dates only (quiz_pick.review_plan)
+!routines/review-plan.json
 # local Claude Code permissions
 .claude/settings.local.json
 # app build artefacts

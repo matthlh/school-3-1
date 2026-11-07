@@ -30,6 +30,8 @@ export interface Loaded {
   texts: Texts
   /** routines/quiz-state.json; null where there is none (the deployed site) or it does not parse. */
   quiz: QuizState | null
+  /** routines/review-plan.json's text (the Review page's queue, written by quiz_pick.py); null where there is none. */
+  reviewPlan: string | null
   /** A bank question's history, by course and question text (Question.question), through its id: the **Id:** stamp,
    *  else the hash the quiz scripts give an unstamped one. */
   historyOf: (course: string, q: Question) => QuizHistory | undefined
@@ -47,9 +49,10 @@ export function loadAll(): Promise<Loaded> {
 }
 
 async function load(): Promise<Loaded> {
-  const [pairs, quiz] = await Promise.all([
+  const [pairs, quiz, reviewPlan] = await Promise.all([
     Promise.all(Object.entries(files).map(async ([p, read]) => [p, await read()] as const)),
     loadQuizState(),
+    Object.values(planRaw)[0]?.().catch(() => null) ?? Promise.resolve(null),
   ])
   const texts: Texts = Object.fromEntries(pairs)
   const ids = new Map<string, string>()
@@ -63,6 +66,7 @@ async function load(): Promise<Loaded> {
   return {
     texts,
     quiz,
+    reviewPlan,
     historyOf: (course, q) => {
       // By the question's own stamp first: two stamped questions can share a prose stem (they differ only in a code
       // block), and the text key would give both the second one's history.
@@ -200,6 +204,7 @@ export interface QuizHistory {
 export interface QuizState { questions: Record<string, QuizHistory>; sessions: unknown[] }
 
 const quizRaw = import.meta.glob('../../routines/quiz-state.json', { query: '?raw', import: 'default' }) as Record<string, Loader>
+const planRaw = import.meta.glob('../../routines/review-plan.json', { query: '?raw', import: 'default' }) as Record<string, Loader>
 
 async function loadQuizState(): Promise<QuizState | null> {
   const load = Object.values(quizRaw)[0]
