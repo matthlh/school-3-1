@@ -87,25 +87,36 @@ FREEDOOMMMMM
 ### Aristophanes' *Plutus*
 
 - Chremylos is a poor, honest farmer. He asks the Delphic oracle whether he should raise his son to be a crook, since only crooks prosper.
-- The oracle tells him to follow the first man he meets. The man is a blind beggar who turns out to be Plutus, the god of wealth. Zeus blinded him so he could not distinguish the just from the unjust.
-- Chremylos takes Plutus to the temple of Asclepius. Plutus regains his sight, and wealth goes to the honest.
-- When people have what they need, they stop sacrificing to the gods. Hermes arrives starving, and the priest of Zeus is out of work.
-- Kraal describes the consequence as "society degrades because nobody has any motivation". The play ends with the gods losing their worshippers.
-- **Satiety** means having enough of everything and having nothing left to want. This is why the epigraph to A's essay says "one finally gets sick of everything."
+- The oracle tells him to follow the first man he meets. The man is a blind beggar who turns out to be Plutus, the god of wealth. Zeus blinded him so he could not tell the just from the unjust.
+- Chremylos takes Plutus to the temple of Asclepius. Plutus regains his sight, and wealth now goes to the honest.
+- The comic consequence is that nobody needs the gods any more. The sacrifices stop, so Hermes arrives starving, and the priest of Zeus is out of work.
+- The notes' ending, that "society degrades because nobody has any motivation", is Kraal's gloss, not the play's.
+- Kraal used the play to set up A's essay. A world where everyone has what they need is a world with nothing left to want.
+- That state is **satiety**, and satiety is the note the essay's epigraph strikes. This is why the epigraph says "one finally gets sick of everything."
 
 ### Why Kierkegaard reads Aristophanes
 
-- In his 1841 dissertation *On the Concept of Irony*, Kierkegaard weighs three sources on Socrates. They are Xenophon, Plato and Aristophanes' *Clouds*.
-- Kierkegaard thinks Aristophanes comes closest to the truth. He takes Socrates to be pure irony and thinks the comedian captured that.
-- Kraal calls Kierkegaard "one of the first" thinkers to treat anxiety and boredom philosophically. Boredom is the subject of this essay. Anxiety is the subject of *The Concept of Anxiety*, published in 1844 under Vigilius Haufniensis.
-- Pascal wrote about *ennui* two centuries earlier.
+- The notes are right that Kierkegaard is a huge fan of Aristophanes' account of Socrates. The ground is his 1841 dissertation *On the Concept of Irony*, from lecture 1.
+- In the dissertation he weighs three sources on Socrates. They are Xenophon, Plato and Aristophanes' *Clouds*.
+- He argues that Aristophanes' comic portrait comes closest to the truth. Socrates was pure irony, and only a comedian caught that.
+
+### "One of the first" on anxiety and boredom
+
+- Kraal calls Kierkegaard one of the first philosophers to treat anxiety and boredom philosophically. The claim is defensible.
+- Anxiety gets its own book, *The Concept of Anxiety* (1844), under the pseudonym Vigilius Haufniensis. Boredom gets this essay.
+- Pascal wrote about *ennui* two centuries earlier. That is why the claim is "one of the first" rather than "the first".
 
 ### A's claim about social life
 
-- A describes humans as beasts of prey (*Rovdyr*) even though they call themselves social animals. He treats their talk of society as inherited hypocrisy and calculated cunning. *Rovdyr* is an ordinary Danish word.
-- Kraal places A's distrust of altruism in the nineteenth-century debate. Fourier's utopian communities predate *Either/Or* (1843). Mill's *Utilitarianism* appeared in 1861 and Nietzsche wrote in the 1880s. These dates place the works in context.
+- A does not coin the phrase "beast of prey". The Danish word, *Rovdyr*, is an ordinary word, and A uses it with a sneer.
+- A says that for all the talk of man as a social animal, man is at bottom a beast of prey. He calls the talk of society inherited hypocrisy and calculated cunning.
+- Kraal's nineteenth-century line, from Fourier through Mill to Nietzsche, is context, not influence.
+- Fourier's utopian communities are earlier than *Either/Or* (1843). Mill's *Utilitarianism* is from 1861 and Nietzsche wrote in the 1880s, so both come after it.
+- The point is that A's cynicism about altruism belongs to a century that was arguing about altruism. It is not that A had read any of these writers.
 
 ### Kraal's three arts in Hannay's edition
+
+- Kraal cited Hannay's page numbers, and they are the kind of thing he can ask.
 
 | Page | Topic |
 |---|---|
@@ -113,11 +124,13 @@ FREEDOOMMMMM
 | 233 | The three arts, limitation and forgetting |
 | 239–240 | Arbitrariness |
 
-- Kraal calls them the "three arts". A presents limitation first, the relation between remembering and forgetting second, and arbitrariness third. A gives no numbered list.
-- The notes give "Arbitrariness (conditionality)". The Danish *Vilkaarlighed* means arbitrariness or wilfulness, and Hannay uses "arbitrariness".
-- A says a pleasant experience, once past, causes the pain of longing. His practice of forgetting therefore includes pleasant and unpleasant experiences. The notes call this "Forgetting the good things that spoil the current now".
+- The "three arts" framing is Kraal's tidy version. A does not number them.
+- What the text gives is the principle of limitation first, then the relation between remembering and forgetting, then arbitrariness.
+- The notes give "Arbitrariness (conditionality)". "Conditionality" is a slip. The Danish *Vilkaarlighed* means arbitrariness or wilfulness, and Hannay uses "arbitrariness".
+- The notes are right that forgetting also covers the good things that spoil the present. A's reason is that a pleasant experience, once past, carries the unpleasantness of longing. So forgetting has to apply to both pleasant and unpleasant experiences.
 
-### Marriage and office
+### Marriage and vocation
 
-- On marriage, the notes say "He doesn't say it's bad, just that he doesn't understand it". A calls "two become one" obscure and mystical. He goes further, saying woman is man's ruin and a woman's love is pretence and weakness.
-- "Becoming just another lawyer" is Kraal's example of losing freedom by taking office. A describes becoming a Peter Somebody, a tiny peg in the state, with a title that cannot be shed.
+- On marriage, the notes say "He doesn't say it's bad, just that he doesn't understand it". That is Kraal being kind.
+- A does call the "two become one" line obscure and mystical talk. He also says woman is man's ruin and a woman's love is only pretence and weakness. That is stronger than not understanding.
+- "Becoming just another lawyer" is Kraal's example for vocation. A's own example is becoming a Peter Somebody, a tiny peg in the machine of the state, with a title one can never shed.

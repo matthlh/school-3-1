@@ -36,58 +36,69 @@ Wonder whether both can be right, but one is more instinctual and natural, and a
 
 ### Judge William’s two tasks
 
-- “The Aesthetic Validity of Marriage” is the first of B’s two letters in Part II of *Either/Or*. Hong’s edition spells it "The Esthetic Validity of Marriage".
-- B is Judge William, a married public official called Assessor Vilhelm in Danish. He writes to A.
-- The letter lets B speak in "admonitory and urgent tones". He wants A to take the argument personally instead of treating it as a general debate.
-- B first argues that marriage has aesthetic value. His second task is to explain how marriage keeps that value through life’s obstacles, or how it "maintains the quality status over time" in the words of the notes.
-- In Kraal’s reading, marriage gives romantic love a form that is more beautiful and lasts. The ethical life therefore succeeds by A’s own aesthetic standard.
-- B’s conclusion is that "really it is marriage that is poetic". He rejects the idea that marriage is only respectable while romantic love alone is poetic.
+- “The Aesthetic Validity of Marriage” is the first of B’s two letters, which make up Part II of *Either/Or*. Hong’s edition spells it "The Esthetic Validity of Marriage".
+- B is Judge William, a married public official called Assessor Vilhelm in the Danish. The letter is addressed to A.
+- It is a letter, not a treatise. The letter form lets B speak in "admonitory and urgent tones" and stops A from treating it as a general debate.
+- B states two tasks near the start. The first is to show the aesthetic significance of marriage.
+- The second is to show how the aesthetic can be sustained against life’s obstacles. The notes’ "maintains the quality status over time" is this second task.
+- Kraal’s framing is that even if you play the game of life on the aesthetic’s own terms, the ethical wins, because marriage turns out more aesthetic than romantic love.
+- B’s conclusion is that "really it is marriage that is poetic". He denies that marriage is respectable but tiresomely moral while love is poetry.
 
 ### Why B warns A
 
-- B says he loves A "like a son, a brother, a friend". He calls this an aesthetic love and also loves A "with the fear and trembling of a religious love" because A has gone astray.
-- B tells him, "I am warning you, therefore, not about the world but about yourself, and I am warning the world about you." He would warn a daughter against A.
-- B predicts that A’s life "will be nothing but approach-runs". His conscience will record "not of genuine crimes, but of wasted possibilities".
-- B thinks A has stopped at exposing illusions. He calls this another illusion and tells A that "you accomplish nothing".
-- A mocks marriage with irony and observes it from the outside. He is drawn to "the first rapture of love", "loves the accidental" and tries to play fate, as with the five-dollar bill for the poorhouse woman.
+- B says he loves A "like a son, a brother, a friend", with an aesthetic love. He also loves A "with the fear and trembling of a religious love", because he sees how A has gone astray.
+- B tells him, "I am warning you, therefore, not about the world but about yourself, and I am warning the world about you." He adds that he would warn a daughter against A.
+- B predicts that A’s life "will be nothing but approach-runs".
+- B says A’s conscience will one day unroll a record "not of genuine crimes, but of wasted possibilities".
+- B says A has stopped at destroying illusions, which is itself a new illusion. He tells A that "you accomplish nothing".
+- A is not an enemy of marriage. He mocks it with irony and only observes it.
+- What draws A is "the first rapture of love". He "loves the accidental" and wants to play fate, as with the five-dollar bill for the poorhouse woman.
 - What A lacks "entirely, is faith".
 
 ### What the vow does
 
-- Kraal dates the Christian marriage vow to around 1100. The Church made marriage a sacrament in the twelfth century.
-- B says marriage belongs to Christianity. Neither pagan nations, despite the sensuality of the Orient and the beauty of Greece, nor Judaism perfected it.
-- At the wedding the Church "exacts a vow". The intention is the resolve expressed in the vow.
-- The intention gives married love a "law of motion", or a direction in which to develop. It gives married love an "inner history" by turning it inward.
+- Kraal’s point is that the marriage vow comes from Christianity, around 1100. The Church made marriage a sacrament in the twelfth century.
+- B himself says marriage belongs to Christianity. Neither the pagan nations, for all the sensuality of the Orient and the beauty of Greece, nor Judaism perfected it.
+- In the essay the Church "exacts a vow". The vow carries the intention, the resolve made in the vow.
+- The intention is what gives married love its "law of motion", a direction in which to develop, and so its history.
+- The notes compare the argument to motivation versus determination, and the comparison is close. B’s word for the determination side is the intention, which turns married love inward and gives it "inner history".
 
 ### Why love needs duty
 
-- B says "what distinguishes love from lust is its having the stamp of the eternal". The sensual on its own is "the instantaneous". It tries to turn a moment of pleasure "into a little eternity".
-- B says A’s "clever head" has conspired with his "lust". A keeps finding the illusion of first love in new girls, which "betrays as much desperation as depravity".
-- Kraal reconstructs the argument in three steps.
+- B says "what distinguishes love from lust is its having the stamp of the eternal". The sensual is "the instantaneous". It tries to make the moment of pleasure "into a little eternity".
+- B says A’s "clever head" has conspired with his "lust". So A renews the illusion of first love by finding it in new girls, which "betrays as much desperation as depravity".
+- The three steps in the notes are Kraal’s reconstruction, and they are right. Tightened, they read as follows.
 
-1. If love conflicts with duty and duty eventually arises in every love relationship, love cannot last.
-2. If love cannot last, it loses.
-3. Therefore, if love conflicts with duty, it loses.
+1. If love is inconsistent with the ethical (duty), and duty always turns up eventually in a love relation, then love cannot last.
+2. If love cannot last, love loses.
+3. Therefore, if love is inconsistent with the ethical, love loses.
 
 - B writes, "If duty is the enemy of love, and love cannot defeat this enemy, then love is not the true victor."
-- The notes above say to choose duty over love. B’s argument instead asks A, who prizes love, to accept that love can coexist with duty or admit he has "disparaged love and divested it of its majesty".
-- B gives his own position in two lines. "You regard duty as the enemy of love, I regard it as its friend" and "duty here is just one thing, truly to love".
-- For B, separating love from duty leads to despair. He calls the aesthetic, the ethical and the religious "the three great allies".
-- "Do it or do not do it, you will regret both" is A’s line from the *Diapsalmata*. B says it applies only to someone who cannot see the three spheres as allies. For such a person, "life is without meaning".
+- The last background bullet in the notes needs one fix. B does not conclude that one should live by duty instead of love.
+- The argument is aimed at A. A praises love as the highest thing, so A of all people must deny that duty is love’s enemy.
+- Otherwise A must admit that his love loses and that he has "disparaged love and divested it of its majesty".
+- B’s own view is that there is no split. He writes, "You regard duty as the enemy of love, I regard it as its friend", and "duty here is just one thing, truly to love".
+- B calls the aesthetic, the ethical and the religious "the three great allies".
+- The reason not to follow love alone is that love held apart from duty is despair, not that duty outranks love.
+- "Do it or do not do it, you will regret both" is A’s own line from the *Diapsalmata*. B says it is justified only for someone who cannot see the three spheres as allies. For such a person, "life is without meaning".
 
-### First love and the strength to sustain it
+### The personal note
 
-- B concedes that "far more natures are formed for conquering than for possessing". A’s disposition is the natural one.
-- Winning someone’s love is what B calls conquering. Sustaining that love is what he calls possessing.
-- B compares conquering to going uphill and possessing to going downhill. He says the downhill part takes more strength.
-- A remains answerable for the moods he keeps "as a constant possibility". For B, the question is what a person acquires over time. As he puts it, "the great thing isn't the original but the acquired".
+- B agrees with half of the personal note above. He admits that "far more natures are formed for conquering than for possessing", and that A’s kind of nature is the natural one.
+- He also says possessing (going downhill) takes more strength than conquering (going uphill).
+- B denies the other half. A’s "that's just how you are" is not a given.
+- A keeps every mood "as a constant possibility", so he is answerable for it.
+- For B the point is not "society", as the note has it. The point is time. Possessing is the acquired, and "the great thing isn't the original but the acquired".
 
 ### From Owen's notes of the same lecture
 
-- The [lecture 19 page](19-the-ethical-as-the-more-aesthetic.md) includes Owen’s notes. His account of the background and argument agrees with the notes above.
-- Owen writes the argument in six lines. He separates the two conditions in premise 1 and adds B’s own conclusion as a sixth line. Love can succeed when it joins with the ethical.
-- For premise 2, Owen’s "the after 6 months things" is the lecture’s example. In the essay, B says A expects duty to arise "sooner or later" in both romantic love and married love.
-- B says it is "impossible really to be angry with you". He sees good nature and childishness mixed with A’s evil.
-- B tells A, "You are still young" and "your life is passing". He hopes A will find "a centre" for his eccentric movements.
-- Both sets of notes cite p. 443 for B’s claim that A does not understand love. Owen’s page numbers run about 50 to 60 higher than the PDF’s, so p. 443 likely corresponds to PDF pp. 386–387. The separate passage on love and lust is on PDF pp. 342 and 396.
-- On PDF pp. 386–387, B tells A that A fears love ends when "the enigma" is gone. B says love begins when the enigma ends, because a person truly loves only when they know what they love.
+- Owen’s shared page, on the [lecture 19 page](19-the-ethical-as-the-more-aesthetic.md), covers this lecture too. His Background and argument match the notes above, and the points below add to them.
+- Owen writes the argument as six lines. He splits premise 1 into its two conditions and adds a sixth line, that B argues he can vindicate love by joining it with the ethical.
+- That sixth line is B’s own answer, duty as love’s "friend", as in the fix above.
+- Owen glosses premise 2, that the ethical always comes up eventually in a love relation, as "the after 6 months things".
+- The six months is the lecture’s example, not the essay’s. In the essay, B tells A that A thinks duty must come into view "sooner or later", in romantic love as well as in married love.
+- Owen adds that B is not angry with A. B says it is "impossible really to be angry with you", because A’s evil has some good nature and childishness mixed in.
+- Owen also has B telling A he still has time to change. B’s lines are "You are still young" and "your life is passing", and he hopes A may one day find "a centre" for his eccentric movements.
+- Owen, like the notes above, gives p. 443 for B’s claim that A does not understand love.
+- Owen’s page numbers run about 50 to 60 higher than the PDF’s file pages. So p. 443 is probably PDF pp. 386–387, not the love-and-lust lines on PDF pp. 342 and 396. This is inferred from the page offsets.
+- On PDF pp. 386–387, B tells A that A fears love ends once "the enigma" is gone. B holds that only then does love begin, and that one truly loves only when one knows what one loves.

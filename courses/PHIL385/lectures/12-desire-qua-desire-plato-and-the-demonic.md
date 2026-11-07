@@ -44,41 +44,55 @@ Final Lecture on this
 
 ### Desire qua desire
 
-- *Qua* means “as”. Desire qua desire is desire considered on its own, before reflection, reasoning or planning.
-- This is why A calls Don Giovanni immediate. He desires and acts in the moment. Planned seduction belongs to a different kind of desire.
-- A’s word for what the notes call "No half and half" is "absolutely". Sensual love is "absolutely faithless" because it loves all women. Don Giovanni is "absolutely victorious" and has none of the doubt that A associates with love of the soul.
+- *Qua* means “as”. Desire qua desire is desire taken as itself, with no reflection, reasoning or plan mixed in.
+- That is what makes Don Giovanni immediate. It is also why A says he is not really a seducer in the planning sense.
+- A’s word for what the notes call "no half and half" is "absolutely".
+- Sensual love is "absolutely faithless". It loves not one but all.
+- Don Giovanni is always "absolutely victorious", with none of the doubt that love of the soul has.
 
 ### Why the opera’s ending matters
 
-- Da Ponte’s full title is *Il dissoluto punito, ossia il Don Giovanni* (1787), "The Rake Punished, or Don Giovanni". Kraal’s "punishment of the libertine" is a loose translation of the subtitle.
+- The opera’s full title is *Il dissoluto punito, ossia il Don Giovanni*, "The Rake Punished, or Don Giovanni". The words are Da Ponte’s, 1787.
+- Kraal’s "punishment of the libertine" is a loose rendering of the same words.
 - In the final scene, the statue of the Commendatore drags Don Giovanni down to hell. Don Giovanni killed the Commendatore in the first scene.
-- Kraal says A leaves out the punishment because it does not fit his interpretation. The essay does discuss the Commendatore’s return, so Kraal’s description and the text disagree on whether A omits the ending.
-- A calls the return "a monstrous irony". Don Giovanni can overcome any obstacle, but he cannot kill a ghost. Only a spirit can coerce him because spirit is the negation of his immediacy.
-- Earlier, A says reflection reveals the sensual realm as the realm of sin. "Don Juan is slain, the music comes to an end". A reads the ending aesthetically as spirit ending immediacy.
+- Kraal’s claim is that A cherry-picks. The punishment does not fit A’s view, so A drops it. If an exam question asks what Kraal said, that is the answer.
+- In fact A does not skip the ending. He writes about the Commendatore’s return in the section on the opera’s structure.
+- A calls the return "a monstrous irony". Don Giovanni can beat every obstacle, but he cannot kill a ghost.
+- Only a spirit can coerce Don Giovanni, because he is immediacy and spirit is its negation.
+- Earlier, A says that once reflection enters, the sensual realm shows itself as the realm of sin, and "Don Juan is slain, the music comes to an end".
+- So A keeps the ending but reads it aesthetically, as spirit ending immediacy, not as a moral lesson about hell.
 
 ### Plato’s account of desire
 
-- In Book IV of the *Republic*, the soul has three parts. These are reason, the spirited part (*thumos*, or Kraal’s "drive") and appetite, or desire.
-- A just soul has each part doing its work under reason. The just person is also beautiful, which reflects the Greek association between goodness and beauty.
-- In the *Phaedrus*, reason is a charioteer with two horses. The noble white horse is the spirited part. The black horse is appetite. The aim is to keep them pulling in proportion.
-- In the *Symposium*, Diotima’s ladder starts with one beautiful body and moves to all beautiful bodies, then to beautiful souls, laws and knowledge. It ends with the Form of Beauty.
-- Plato’s ladder moves from a particular body to the abstract Form through reason. A’s stages move from an abstract dream of "the one" to a particular woman. All of A’s stages are immediate.
+- In Book IV of the *Republic*, the soul has three parts. These are reason, the spirited part (Greek *thumos*, Kraal’s "drive") and appetite, or desire.
+- Justice in the soul is each part doing its own work under reason.
+- The just person is also the beautiful one. This is the Greek pairing of the good and the beautiful.
+- In the *Phaedrus*, the soul is a charioteer driving two horses. The charioteer is reason.
+- The white horse is the noble, spirited part, which Kraal called drive. The black horse is appetite, or desire.
+- The aim is to keep the horses pulling in proportion, not to kill the black horse.
+- The *Symposium* is the earlier note on the Notion page. Diotima’s ladder of love climbs from desire for one beautiful body to all beautiful bodies, then to beautiful souls, laws and knowledge. At the top is the Form of Beauty itself.
+- The contrast with A is the point of the digression. Plato’s ladder goes upward, from the particular body to the abstract Form, and the climb is the work of reason.
+- A’s stages go the other way, from the abstract dream of "the one" to the particular woman. Every one of A’s stages is immediate, with no reason in it.
 
 ### Why A calls music a Christian art
 
-- In Kraal’s account of the Greeks, desire is part of a balanced soul. The Greeks "would have smiled" at Don Giovanni.
-- In Kraal’s account of Christianity, desire is sinful and is something to reduce. Compare Matthew 5:28 on looking with lust, Galatians 5:16–17 on flesh and spirit, and 1 John 2:16 on "the lust of the flesh".
-- In A’s account, Greek love was "of the soul" and in harmony with the sensual. The Greeks had no idea of the seducer. Hercules had many women but was no seducer in A’s sense.
-- On p. 75 of Hannay’s translation, A says Christianity set spirit against flesh. Excluding the sensual made it a principle of its own for the first time. Music expresses that principle, so A calls it a Christian art and says it did not develop in antiquity.
+- In Kraal’s picture of the Greeks, desire is one part of a balanced soul and nothing to be ashamed of. So the Greeks "would have smiled" at Don Giovanni.
+- In Kraal’s picture of Christianity, desire is sinful and something to reduce.
+- Kraal mentioned New Testament passages. Examples are Matthew 5:28 on looking with lust, Galatians 5:16–17 on flesh against spirit, and 1 John 2:16 on "the lust of the flesh".
+- A’s own claim is on p. 75 of Hannay. Christianity set spirit against flesh and so excluded the sensual. In excluding it, Christianity made the sensual a principle of its own for the first time.
+- That is why music, the art of that principle, is a Christian art and was not developed in antiquity.
+- A’s version of the Greek side differs slightly from Kraal’s. The Greeks did not lack desire, but their love was "of the soul", in harmony with the sensual. So they had no idea of a seducer.
+- Hercules had many women and was still no seducer.
 
 ### Why A calls music demonic
 
-- Kraal says desire can overpower a person. He calls that loss of control demonic. Since music is the medium of desire, he calls music demonic too.
-- For A, the sensual is demonic "in aesthetic indifference" when spirit has excluded it but has yet to judge it.
-- Don Juan is the sensual form of the demonic. Faust is the spiritual form.
+- Kraal’s chain has four steps. Desire can overpower a person. Being overpowered is what "demonic" means. Music is the medium of desire. So music is demonic.
+- For A, when the sensual is excluded by spirit but not yet judged by it, the sensual takes the form of the demonic "in aesthetic indifference".
+- Don Juan is the demonic specified as the sensual. Faust is the demonic specified as the spiritual.
 - The Venusberg is the mountain where the sensual has its kingdom. It is where "language has no home".
 
 ### What A finds in Mozart
 
-- A acknowledges that a reader might wonder which ideas are in Mozart’s music and which A brings to it.
-- He says readers will find infinitely more in the music than the little he presents. The essay is "written only for those in love".
+- Kraal’s aside on philosophers and quoting fits something A says himself.
+- A admits the reader may doubt how far what he says is in Mozart’s music and how far he reads it in.
+- He answers that the reader will find in the music not only the little he presents but infinitely more. The essay, he says, is "written only for those in love".

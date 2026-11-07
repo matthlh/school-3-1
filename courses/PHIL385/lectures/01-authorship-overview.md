@@ -86,19 +86,23 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 ### The dispute after Hegel
 
 - **Hegel died on 14 November 1831** in Berlin of cholera.
-- He called himself a Lutheran and presented his philosophy as the conceptual form of Christian truth. His followers split over how that philosophy related to Christianity.
-- **Right (Old) Hegelians** held that Hegel's system allowed for a personal God and immortality, in keeping with orthodox Christianity.
-- **Left (Young) Hegelians** held that it was incompatible with belief in a personal God. They included Strauss, Feuerbach, Bauer and, later, Marx.
-- David Friedrich Strauss borrowed the right, centre and left labels from the seating of the French parliament in 1837.
-- Strauss's *The Life of Jesus, Critically Examined* (1835–36) intensified the dispute. It reads the Gospel stories as myths produced by the early Christian community.
-- **Pantheism**, in this dispute, meant that God was the whole and had no separate personal existence. The Pantheism Controversy of 1785 pitted Jacobi against Mendelssohn over Lessing's Spinozism. Since then, critics in Germany had treated pantheism as a form of atheism.
-- Hegel's critics argued that his Absolute Spirit was impersonal. They took this as evidence that his philosophy was pantheistic and therefore atheistic.
+- He called himself a Lutheran and presented his philosophy as the conceptual form of Christian truth. That is why the dispute after his death was theological.
+- His followers split over how that philosophy related to Christianity.
+- **Right (Old) Hegelians** held that Hegel's system was compatible with orthodox Christianity, including a personal God and immortality.
+- **Left (Young) Hegelians** held that it was incompatible with theism, belief in a personal God. They included Strauss, Feuerbach, Bauer and, later, Marx.
+- David Friedrich Strauss coined the right, centre and left labels in 1837. He borrowed them from the seating of the French parliament.
+- The "Straus book" in the notes is Strauss's *The Life of Jesus, Critically Examined* (1835–36). It reads the Gospel stories as myths produced by the early Christian community, not as history.
+- This is the book that made the dispute explode.
+- **Pantheism**, in this dispute, meant that God was the whole and had no separate personal existence.
+- The Pantheism Controversy of 1785 pitted Jacobi against Mendelssohn over Lessing's Spinozism. Since then, critics in Germany had treated pantheism as atheism in disguise.
+- Hegel's critics argued that his Absolute Spirit was impersonal. They concluded that his philosophy was pantheism and therefore atheism, whatever he said about being a Lutheran.
 
 ### Kierkegaard's dissertation and Berlin lectures
 
-- Kierkegaard defended *On the Concept of Irony with Continual Reference to Socrates* on 29 September 1841. He earned a magister degree, equivalent to a doctorate. The notes describe it as a master's thesis.
-- In 1841, King Friedrich Wilhelm IV of Prussia called F. W. J. Schelling to Berlin to defend Christian philosophy against Hegelianism. He asked him to "stamp out the dragon-seed of Hegelian pantheism".
-- Kierkegaard left Copenhagen in October 1841, shortly after breaking his engagement to Regine Olsen.
+- Kierkegaard defended *On the Concept of Irony with Continual Reference to Socrates* on 29 September 1841. He earned a magister degree, equivalent to a doctorate.
+- The blank in the notes is F. W. J. Schelling.
+- In 1841, King Friedrich Wilhelm IV of Prussia called Schelling to Berlin to defend Christian philosophy against Hegelianism. The king's phrase was that he should "stamp out the dragon-seed of Hegelian pantheism".
+- Kierkegaard left Copenhagen in October 1841, right after breaking his engagement to Regine Olsen.
 - He attended Schelling's lectures in the winter of 1841–42 alongside Engels, Bakunin and Burckhardt. His initial enthusiasm gave way to boredom and disappointment.
 - He returned to Copenhagen by March 1842.
 
@@ -106,8 +110,10 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 
 - *Either/Or* (Danish *Enten–Eller*) came out on 20 February 1843, "edited by Victor Eremita". Volume 1 contains the papers of A, the aesthete. Volume 2 contains those of B, Judge William.
 - Kraal calls it Kierkegaard's debut because it begins the **pseudonymous authorship**, the works he published under invented names. He had already published his dissertation under his own name.
-- The notes record "He publishes 80 books". Kraal appears to be counting 8 pseudonymous books and 18 discourses in 1843–46. Kierkegaard published six books in 1843 alone.
-- Three **spheres**, or ways of living, recur across the authorship. They are the aesthetic, the ethical and the religious. *Either/Or* sets the aesthetic against the ethical. *Stages on Life's Way* presents all three in one volume.
+- The notes record "He publishes 80 books". This is almost certainly a mishearing.
+- The numbers Kraal is working with are 8 pseudonymous books and 18 discourses in 1843–46. Kierkegaard published six books in 1843 alone.
+- Three **spheres**, or ways of living, run through the whole authorship. They are the aesthetic, the ethical and the religious.
+- *Either/Or* sets the aesthetic against the ethical. *Stages on Life's Way* is the one book that presents all three in a single volume.
 
 | # | Work (Hannay's titles) | Published | Pseudonym |
 |---|---|---|---|
@@ -121,21 +127,23 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 | 8 | *Concluding Unscientific Postscript* | 27 Feb 1846 | Johannes Climacus |
 
 - The order of works 4, 5 and 6 differs from the order in the notes. *Crumbs* came out four days before *Anxiety* and *Prefaces*.
-- Hannay translates *Philosophiske Smuler* as *Philosophical Crumbs*. Most other editions use *Fragments*.
-- *Concluding Unscientific Postscript to Philosophical Crumbs* is the full title of the sequel. Kierkegaard intended the *Postscript* to conclude the authorship.
+- *Crumbs* and *Fragments* are the same book. Hannay translates *Philosophiske Smuler* as *Philosophical Crumbs*. Most other editions use *Fragments*.
+- The *Postscript* is the sequel to *Crumbs*, which is why both books share the pseudonym Johannes Climacus. Its full title is *Concluding Unscientific Postscript to Philosophical Crumbs*.
+- Kierkegaard intended the *Postscript* to conclude the authorship, hence "Concluding" in its title.
 - Johannes Climacus writes both books as a non-Christian asking how one becomes a Christian. His name comes from John Climacus, a 7th-century monk who wrote *The Ladder of Divine Ascent*.
 
 ### What the pseudonyms represent
 
-- Each pseudonym expresses a standpoint on existence as someone who holds it would understand it.
+- Each pseudonym expresses a standpoint on existence, worked out from the inside as someone who holds it would understand it.
 - In "A First and Last Explanation", appended to the *Postscript* in 1846, Kierkegaard says he wrote the books but there is "not a single word" of his own in them. He asks readers to attribute quotations to the pseudonyms.
-- Kraal says scholars misread Kierkegaard when they attribute a pseudonym's position to him.
-- Kierkegaard published the *Eighteen Upbuilding Discourses* under his own name in 1843–44. The six volumes contained 2, 3, 4, 2, 3 and 4 discourses, respectively. Each volume appeared alongside a pseudonymous book.
-- The discourses express his own religious standpoint. He called them "upbuilding" because he lacked ordination to preach sermons.
+- Kraal says even scholars misread Kierkegaard, because they quote a pseudonym as if it were Kierkegaard.
+- Kierkegaard published the *Eighteen Upbuilding Discourses* under his own name in 1843–44. The six small volumes contained 2, 3, 4, 2, 3 and 4 discourses, respectively. Each volume appeared alongside a pseudonymous book.
+- The discourses express his own religious standpoint. The pseudonyms express the alternatives.
+- He called the discourses "upbuilding" rather than sermons because he was not ordained.
 
 ### The second authorship and love
 
-- The second authorship starts in 1847 and expresses Kierkegaard's religious perspective. He signed some works and used a pseudonym for others.
+- The second authorship starts in 1847 and expresses Kierkegaard's own religious perspective. He signed some works and used a pseudonym for others.
 
 | Work | Year | Attribution |
 |---|---|---|
@@ -146,12 +154,17 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 
 - Kierkegaard wrote *The Point of View for My Work as an Author* in 1848, and it appeared in 1859. It explains the whole authorship as religious from the start.
 - Anti-Climacus is a "higher" pseudonym who represents the ideal Christian above Kierkegaard. Climacus is a "lower" one, below him.
-- In *Works of Love*, **preferential love** includes erotic love, friendship and love of country. It loves the other as "another self", which is why Kierkegaard treats it as a form of self-love.
-- **Christian neighbour-love** is the duty to love the neighbour as yourself without favouritism. The command is "you *shall* love", and God is the "middle term".
+- In *Works of Love*, **preferential love** includes erotic love, friendship and love of country. It is the "animalistic" love in the notes.
+- Preferential love loves the other as "another self", which is why Kierkegaard calls it self-love in disguise.
+- **Christian neighbour-love** is commanded and non-preferential: loving the neighbour as yourself. The command is "you *shall* love", and God is the "middle term".
 - Kraal says Kierkegaard turns to love because it is the closest thing to the faith he wants to hold in his heart.
 
 ### Why later thinkers call him an existentialist
 
 - The label comes from the 20th century, first in Jaspers' *Existenzphilosophie* and then in Sartre.
-- Kierkegaard is called a founder because he sets the single individual against the System, argues that "truth is subjectivity" in the *Postscript*, presents existence as a choice between spheres in *Either/Or*, and analyses anxiety and despair.
+- Kierkegaard is called its founder in hindsight, for four reasons:
+  - He sets the single individual against the System.
+  - The *Postscript* argues that "truth is subjectivity".
+  - *Either/Or* presents existence as a choice between spheres.
+  - The authorship contains analyses of anxiety and despair.
 - The last two weeks of the course trace this connection through Jaspers, Marcel, Heidegger, Sartre, de Beauvoir and Camus.

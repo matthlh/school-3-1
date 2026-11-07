@@ -1,6 +1,6 @@
 # PHIL 385 — Lec 11 (Fri Oct 9) — Don Giovanni: desire for woman in general
 
-The Italian lines come from Lorenzo Da Ponte’s public-domain libretto (1787). The English gives the meaning line by line. The [question bank](../02-questions.md) has a “Lec 11” section.
+The Italian lines come from Da Ponte’s original libretto (1787), which is public domain. The English is a plain line-by-line translation. The [question bank](../02-questions.md) has a “Lec 11” section.
 
 ## Your notes (pasted 2026-10-09)
 - Epmhasis on Don Giovanni
@@ -23,7 +23,7 @@ The Italian lines come from Lorenzo Da Ponte’s public-domain libretto (1787). 
 
 - Leporello, Don Giovanni’s servant, sings "Madamina, il catalogo è questo" to Donna Elvira, a woman his master has abandoned.
 - The [lecture 9 page](09-the-musical-erotic.md) has the opening lines and the counts by country. The total for Spain is 1,003.
-- "The dominant passion is the young beginner" translates "sua passion predominante è la giovin principiante". The young beginner is a young, inexperienced girl.
+- "The dominant passion is the young beginner" is a line from the verse below, "sua passion predominante è la giovin principiante". The young beginner is a young, inexperienced girl.
 
 | Italian | English |
 |---|---|
@@ -44,9 +44,10 @@ The Italian lines come from Lorenzo Da Ponte’s public-domain libretto (1787). 
 | purché porti la gonnella, | as long as she wears a skirt, |
 | voi sapete quel che fa. | you know what he does. |
 
-### Don Giovanni and Zerlina, Act 1
+### The seduction and marriage scene, Act 1
 
-- The notes most likely refer to "Là ci darem la mano". Don Giovanni meets Zerlina, a peasant girl, on her wedding day to Masetto. He promises to marry her himself.
+- The seduction and marriage scene in the notes is most likely "Là ci darem la mano".
+- Don Giovanni meets Zerlina, a peasant girl, on her wedding day to Masetto. He promises to marry her himself.
 
 | Italian | English |
 |---|---|
@@ -70,20 +71,30 @@ The Italian lines come from Lorenzo Da Ponte’s public-domain libretto (1787). 
 
 ### What Don Giovanni desires
 
-- A calls what all women share the feminine. Don Giovanni desires that quality in each woman. She can be "rich, ugly or beautiful".
-- That shared quality explains why his desire is equally strong for each woman. Once he wins one woman, the next takes her place.
-- The notes suggest he desires "their status of being seduced". A says he desires the feminine itself. Whether he has already seduced a woman determines who comes next.
-- Don Giovanni acts on desire as it occurs. For A, the desire itself seduces. Johannes, the reflective seducer in the Diary, chooses Cordelia in particular and plans each step.
-- Don Giovanni succeeds in none of the attempts shown on stage. Donna Anna fights him off at the start, and Donna Elvira interrupts his duet with Zerlina. The 1,003 women on Leporello’s list are past conquests.
+- The notes’ point that he desires the general, not the uncommon, matches A.
+- A calls what all women share the feminine. Don Giovanni desires in each woman what she has in common with every woman.
+- He does not need a woman to be extraordinary. The Catalogue Aria’s "rich, ugly or beautiful" line says the same.
+- This is the "force of desire" in the notes. His desire is equally strong for each woman because it is aimed at what they all share.
+- The notes’ main point about why the women are replaceable is right. He wants womanhood, not the person.
+- Once he wins a woman she has nothing more to give him, and the next one takes her place.
+- The notes say he desires "their status of being seduced". A says he desires the feminine itself.
+- Seduced or not seduced is the only difference among women that counts for him, so it decides who comes next.
+- A says Don Giovanni does not really seduce in the planning sense. He desires, and the desire itself works seductively.
+- Seduction by plan belongs to the Diary. Johannes, its seducer, is the opposite case. He chooses one particular girl, Cordelia, and plans her seduction step by step.
+- The notes say he has not slept with them yet. In the opera itself, Don Giovanni succeeds in none of the attempts shown on stage.
+- Donna Anna fights him off at the start, and Donna Elvira interrupts his duet with Zerlina. The 1,003 women on Leporello’s list are all in the past.
 
 ### How this differs from Crop Rotation
 
-- Don Giovanni is never bored. The notes suggest desire cures his boredom. A instead describes him acting on desire without planning or using it as a remedy.
-- *Crop Rotation* would classify his pursuit of new women as the extensive method. The essay rejects that method of fighting boredom, calling its endless search the bad infinity and using Nero as an example.
-- *Crop Rotation* gives a reflective technique for enjoying life. Don Giovanni acts without a technique.
+- A does not say that desire solves boredom, as the notes suggest. Don Giovanni is never bored, but he is not using desire as a remedy.
+- He plans nothing and simply desires, which is what makes him immediate.
+- *Crop Rotation* would class an endless run of new women as the extensive method, which chases ever more new things.
+- The essay rejects the extensive method as the crude way to fight boredom, calling its endless search the bad infinity and using Nero as an example.
+- So the link between the two essays is a contrast. *Crop Rotation* is a reflective technique for enjoying life. Don Giovanni is desire with no technique at all.
 
 ### Who wrote the Diary
 
-- "The Seducer's Diary" is the last of A’s papers. A presents it as Johannes’s work and claims he only found and copied it.
-- In the Preface, Victor Eremita suspects A wrote it himself.
-- In his Oct 6 email, Kraal agrees with Eremita. He reads the Diary as showing A’s own attempts to live the immediacy he praises in Don Giovanni.
+- The notes’ line "Author of the Musical Erotic is author of the Diary" is about A. "The Seducer's Diary" is the last of A’s papers.
+- A presents the Diary as written by Johannes, which A only found and copied.
+- In the Preface, Victor Eremita doubts that and suspects A wrote it himself.
+- In his Oct 6 email, Kraal sides with Eremita and takes A to be the author. Kraal reads the Diary as showing A’s own attempts at the immediacy he praises in Don Giovanni.

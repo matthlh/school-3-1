@@ -1,6 +1,6 @@
 # PHIL 385 — Lec 7 (Fri Sep 25) — The aesthetic recipe, and the start of "Ancient Tragedy"
 
-The Danish text of *Enten–Eller* is at tekster.kb.dk, and the page numbers are Hannay's. For practice, see [Lec 7 in the question bank](../02-questions.md).
+The clarifications follow the Danish text of *Enten–Eller* at tekster.kb.dk, and the page numbers are Hannay's. For practice, see [Lec 7 in the question bank](../02-questions.md).
 
 ## Your notes (pasted 2026-09-25)
 Friendship, marriage, career:
@@ -29,75 +29,103 @@ Acting as an absolute (like raising your truth and objective views independent o
 
 ## Clarifications
 
-### Kraal's three parts of aesthetic satisfaction
+### Kraal's three-part recipe
 
-- Kraal draws three claims about satisfaction from A's essays. The grouping is Kraal's.
+- The recipe is Kraal's synthesis of A's three essays so far, not A's own. It is the exam summary of A so far.
+- On the aesthetic view, satisfaction is best served in three ways, one from each essay.
 
-| Essay | Claim about satisfaction |
+| Essay | Satisfaction is best served by |
 |---|---|
-| "The Unhappiest One" | Start with pessimistic expectations. |
-| "Crop Rotation" | Avoid deep, lifelong commitments. |
-| "Ancient Tragedy" | Treat good and bad fortune as outside your control. |
+| "The Unhappiest One" | A pessimistic baseline. |
+| "Crop Rotation" | Having no deeper lifelong commitments. |
+| "Ancient Tragedy" | Seeing your fortune or misfortune as beyond your control. |
 
-- The distinction matters in the course's seven-question exams. Match each claim to its essay.
-- "Happiness is not satisfaction" is Kraal's distinction. For A, satisfaction means avoiding boredom and relationships that take away his freedom.
-- A thinks friendship, marriage and office make a person "several". Freedom requires being able to leave any of these ties.
-- The notes say "Free vs order". The freedom is A's, and the order is Judge William's ethical view.
-- The objection that struggle can be meaningful and leaving at the first difficulty has costs fits the Judge's case. In volume 2, he argues that commitment makes first love last and that the ethical life is more beautiful.
+- Learn it as a set of three with the essay attached to each. A question asking which essay supplies which claim is exactly what the seven-question exams are made of.
 
 ### Two meanings of aesthetic
 
-- In the narrow sense, **aesthetic** describes artistic qualities such as beauty, tragedy, comedy and interest. This is how A uses it in "aesthetic validity", "aesthetic interest" and "aesthetic guilt". When he says sin is outside the aesthetic, he means it cannot serve as material for art.
-- In the broad sense, the **aesthetic life-view** is the first of the three spheres. A lives for immediate experience, moods, enjoyment and what interests him. This view judges life by what it is like to experience it. Duty and God belong to the other spheres.
-- A says the aesthetic gives rest before the conflict of sin is asserted. The ethical is strict and hard. The religious gives rest after one has seen that conflict in its full terror.
-- A compares the tragic to a soothing motherly love and the religious to fatherly love.
+- The word has two uses in this course, and A slides between them.
+- In the narrow sense, **aesthetic** is the artistic category: what counts as beautiful, tragic, comic or interesting. This is the sense in "aesthetic validity", "aesthetic interest" and "aesthetic guilt", and the sense in most of this essay.
+- When A says sin is not an aesthetic element, he means it is not material for art.
+- In the wide sense, the **aesthetic life-view** is the first of the three spheres. It means living for immediacy, moods, enjoyment and the interesting.
+- The aesthetic life-view judges a life by what it is like to experience, rather than by duty or by God. A lives this way, and the recipe above is what it amounts to.
+- This essay gives the three spheres in one sentence. The aesthetic gives rest before the deep opposition of sin has been asserted. The ethical is strict and hard. The religious gives rest only after that opposition has been seen in its full terror.
+- A calls the tragic a motherly love that soothes, and the religious a fatherly love.
+
+### Freedom, order and the exit door
+
+- A's freedom is the absence of ties. It is the exit door in every relationship.
+- A condemns friendship, marriage and office, each because it makes you "several" and costs you your freedom.
+- The notes say "Free vs order". "Order" is the ethical, Judge William's side.
+- The notes object that there is meaning in the struggle and that an exit at the first difficulty is a slippery slope. That objection is the Judge's position almost word for word.
+- The Judge's marriage essay in volume 2 argues that commitment is what lets first love last and that the ethical is the more beautiful life. The objection is where the book is going.
+- "Happiness is not satisfaction" is Kraal's distinction. A does not promise happiness. He promises never being bored and never being trapped, and satisfaction in that sense is what the recipe delivers.
 
 ### Camus and French existentialism
 
-- Meursault, the narrator of Camus's *The Stranger* (1942), is indifferent to his mother's death, his lover and his trial. This is what Kraal means by "apathetic, pessimistic". The parallel with A is satisfaction amid unhappiness.
-- Camus rejected the labels nihilist and existentialist. He spoke of the **absurd**, and *The Myth of Sisyphus* argues against nihilism.
-- Meursault is indifferent by temperament. A deliberately cultivates arbitrariness. The parallel concerns their mood.
-- French existentialism here refers to Sartre and de Beauvoir. Camus is often grouped with them. The course treats them in its last week, December 4 and 7.
-- French existentialism takes the single individual, choice, anxiety and the refusal of a system from Kierkegaard. It leaves God out. Lecture 1 discusses the origin of the label.
+- Camus is Kraal's forward reference.
+- Meursault, the narrator of Camus's *The Stranger* (1942), is indifferent to his mother's death, his lover and his own trial. This is the "apathetic, pessimistic" attitude Kraal meant, and it rhymes with satisfaction found inside unhappiness.
+- Camus refused both labels, nihilist and existentialist. His word was the **absurd**, and *The Myth of Sisyphus* argues against nihilism.
+- Meursault does not cultivate his indifference the way A cultivates arbitrariness. He simply has it. So the parallel is a mood, not a method.
+- French existentialism means Sartre and de Beauvoir, with Camus usually filed beside them. The course reaches it in its last week, December 4 and 7.
+- French existentialism takes the single individual, choice, anxiety and the refusal of a system from Kierkegaard. It drops God. Lecture 1's clarification on the label covers the rest.
 
 ### Ancient and modern tragedy
 
-- A distinguishes ancient and modern tragedy by the source of the hero's downfall.
-- In ancient tragedy, the hero belongs to **substantial ties**, such as the state, the family and fate. Those ties help cause the downfall even when the hero acts freely.
-- The ancient hero's action is "as much event as action," since he both acts and suffers. This is why ancient tragedy has a chorus, a monologue and an epic element.
-- The modern hero is separated from immediate ties to the state, kin and fate, often even from his own past. Situation and character dominate. Dialogue carries the whole action, with no epic foreground or remainder.
-- On page 143, the modern hero "stands and falls entirely on his own deeds". This is the tendency behind the notes' claim that "the protagonist causes the incident". A thinks assigning the entire cause to the hero destroys the tragic.
+- A distinguishes ancient and modern tragedy by where the hero's downfall comes from.
+- In ancient tragedy, the individual, however freely he moves, rests in **substantial ties**: the state, the family and fate.
+- The ancient hero's action is only partly his own. It has a share of suffering in it, "as much event as action". This is why ancient tragedy has a chorus, a monologue and an epic element.
+- So the ancient hero's downfall is a suffering as well as a deed.
+- The modern hero is reflected out of every immediate relation to state, kin and fate, often even out of his own past. Situation and character dominate. Everything is exhausted in dialogue, with no epic foreground and no epic remainder.
+- On page 143, the modern hero "stands and falls entirely on his own deeds".
+- The notes' "the protagonist causes the incident" is right as a description of the modern tendency. A's point is that this tendency, pushed all the way, destroys the tragic.
 
 ### Tragic guilt
 
-- Aristotle requires the hero to have **hamartia**. In Greek tragedy, the hero's part in his downfall is partly what he does and partly what he suffers. The ambiguity of his guilt creates the tragic conflict.
-- With no guilt, the collision loses its force. With absolute guilt, the character is simply bad. The guilt becomes ethical, and evil loses its aesthetic interest.
-- The modern age treats the hero's whole life as his own doing and refuses to consider an unhappy childhood an excuse. A regards the courage to be one's own creator as an illusion. He says that "as the age loses the tragic, it gains despair."
-- A calls repentance the bitterest pain. It belongs to ethical life, and someone who repents does not want an audience. This is why A thinks repentance is a mistake on stage.
+- Aristotle requires the hero to have **hamartia**.
+- In Greek tragedy the action lies between doing and suffering, so the guilt does too. That ambiguity is the tragic collision.
+- The tragic lies between two extremes. With no guilt, the collision goes slack.
+- With absolute guilt, the hero no longer interests us tragically. His aesthetic guilt has become ethical guilt, he is simply bad, and evil has no aesthetic interest. Sin is not an aesthetic element.
+- The modern age errs by loading the hero's whole life onto his shoulders as his own deed. It will not hear of an unhappy childhood as an excuse.
+- The result, A says, is that "as the age loses the tragic, it gains despair." The courage to be one's own creator is an illusion.
+- The bitterest pain is repentance. It has ethical, not aesthetic, reality, and it does not want to be watched. That is why putting repentance on stage is a mistake.
 
 ### Antigone, Hamlet and Faust
 
-- Sophocles' trilogy, *Oedipus at Colonus*, *Oedipus the King* and *Antigone*, centres on inherited guilt. Through piety, the house of Labdacus inherits a guilt that both is and is not the descendant's own.
-- Antigone defies the king's ban by burying her brother. The act on its own could be modern tragedy. Oedipus's fate makes it Greek because "not an individual but a little world" goes under.
-- A says, "Hamlet is so tragic because he suspects his mother's crime." A treats suspicion as anxiety and anxiety as part of the modern tragic.
-- Kraal's example is Goethe's Faust, the scholar's pact and Gretchen. That Faust appears elsewhere in the book. In this essay, A names Grabbe's *Faust and Don Juan* as a work "built on evil". It shows what happens when guilt becomes absolute.
+- Antigone is the principal example of ancient tragedy because Sophocles' trilogy, *Oedipus at Colonus*, *Oedipus the King* and *Antigone*, turns on inherited guilt.
+- Inherited guilt is guilt that is guilt and yet not guilt. It passes down the house of Labdacus through piety.
+- In *Antigone* the guilt concentrates on one act, burying her brother against the king's ban. Taken alone, that act would be a modern subject.
+- What makes it Greek is that Oedipus's fate echoes through it, so that "not an individual but a little world" goes under.
+- Hamlet is in A's text, for a precise reason: "Hamlet is so tragic because he suspects his mother's crime." Suspicion is anxiety, and anxiety, A says, belongs to the modern tragic.
+- Faust is Kraal's example, not A's. Goethe's Faust, with the scholar's pact and Gretchen, is discussed elsewhere in the book.
+- The Faust in this essay is Grabbe's play *Faust and Don Juan*, which A names as a work "built on evil". It is A's example of what goes wrong when guilt becomes absolute.
 
-### Why the relative self can be tragic
+### Absolute and relative
 
-- A says every individual is a child of God, his age, his people, his family and his friends. The individual has his truth only in those relationships.
-- A calls the person who accepts those ties **relative**. Such a person can have the tragic, "even if it were the happiest individual — indeed I would say the individual is only happy when it has the tragic."
-- Someone who claims to be **the absolute**, independent of those ties, becomes ridiculous. A compares the claim to a word fixed as an adverb in one case suddenly demanding to be declined through all the cases.
-- The notes treat the passage as a balance of objective and subjective views. A is discussing guilt and belonging. He prefers the ancient, relative self to the modern ideal of self-creation because he takes the tragic to be a mildness and a healing. This is the third part of Kraal's account of aesthetic satisfaction.
+- The notes' paragraph on absolute and relative has the right passage but the wrong lesson.
+- A says every individual, however original, is the child of God, of his age, his people, his family and his friends. Only there does it have its truth.
+- If, in all that relativity, the individual wants to be **the absolute**, it becomes ridiculous.
+- If it gives up that claim and is content to be **relative**, it has the tragic, "even if it were the happiest individual — indeed I would say the individual is only happy when it has the tragic."
+- The passage is about guilt and belonging, not about knowledge. A is not saying that some views are objective and some subjective and that one should balance them.
+- A is saying that a person who denies he is shaped, and partly answerable, through his family and his time is comic. A person who accepts it gets the tragic, which A calls a mildness and a healing. That is item 3 of the recipe.
+- So "balance" is the wrong word. A's position is not a middle. It is a preference, on aesthetic grounds, for the ancient, relative self over the modern self-creator.
+- The notes' "there are some objective views" is a different question, about truth, which this essay never raises.
+- The comic image A uses is a word stuck as an adverb in one case that suddenly demands to be declined through all the cases.
 
 ### The spirit of the age
 
-- **Zeitgeist** means the spirit or characteristic mood of an age. Kraal uses the word for A's diagnosis that "the whole age tends toward the comic".
-- A describes doubt undermining existence and isolation growing. He takes the mania for associations as evidence of that isolation.
-- Everyone wants to rule, and nobody wants the responsibility. A calls the age more melancholy than Aristophanes' Greece and therefore more deeply in despair.
+- **Zeitgeist** means the spirit of the age, its characteristic mood. It is Kraal's word for A's diagnosis of the age.
+- A says "the whole age tends toward the comic" and speaks of the age's consciousness.
+- Kraal can ask A's diagnosis. Existence is undermined by doubt, and isolation is growing, which the mania for associations proves.
+- Everyone wants to rule, and nobody wants the responsibility.
+- The age is more melancholy than Aristophanes' Greece, and therefore more deeply in despair.
 
-### Sorrow, pain and A's modern Antigone
+### What the reading adds for Monday's lecture: sorrow, pain and A's modern Antigone
 
-- In ancient tragedy, sorrow is deeper and pain is less intense. In modern tragedy, pain is more intense and sorrow is less deep. Pain comes from reflecting on suffering. Sorrow retains a connection to the ties that shape a person's life.
-- A illustrates this with a child watching an adult suffer.
-- A's modern Antigone follows Sophocles except that only she knows the secret of Oedipus. Anxiety is her way of experiencing it, and A calls her "sorrow's bride".
-- She falls in love. The conflict comes when her beloved presses her to tell him the secret. She can confess her love only as she dies. This resembles the Antigone in "The Unhappiest One".
+- Ancient tragedy has deeper sorrow and less pain. Modern tragedy has more pain and less sorrow.
+- The reason is that pain is reflection on suffering, and sorrow has something substantial in it.
+- A's image is a child watching an adult suffer.
+- A's own modern Antigone keeps everything as in Sophocles, except that the secret of Oedipus is known to no one but her.
+- Anxiety, not sorrow, is her organ. A calls her "sorrow's bride".
+- She falls in love, and the beloved's pressing for the secret is the collision. She can only confess her love in the moment she dies.
+- This is the figure the Ask Kraal question is about. She now looks like the Antigone of "The Unhappiest One" too.

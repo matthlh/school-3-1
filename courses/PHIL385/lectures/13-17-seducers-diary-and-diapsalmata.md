@@ -1,6 +1,6 @@
 # PHIL 385 — Lec 13–17 (Mon Oct 19 to Wed Oct 28) — "The Seducer's Diary" and "Diapsalmata"
 
-Owen’s notes cover the Exam 3 unit from Oct 19 to Oct 28. Page references are to his edition.
+Owen’s notes cover the Exam 3 unit from Oct 19 to Oct 28. They are his notes, not yours, so the page references are to his edition and the emphasis is his.
 
 ## Your notes (Owen's shared Notion page "Diapsalmata + Shadowgraphs + Seducers Diary", read 2026-10-25; it covers the whole Exam 3 unit, Oct 19 to Oct 28, without separating the days; Matt confirmed on 2026-11-05 that there is no separate page for Oct 26 and Oct 28)
 All of this stuff is the content of exam 3
@@ -79,18 +79,25 @@ Shadowgraphs
 ### Who wrote the Diary
 
 - Johannes, "Johannes the Seducer", is the Diary’s named author.
-- In Victor Eremita’s preface, A says he only found and copied the Diary. Kraal and the Hong edition take A to be its actual author. This explains the notes’ labels "Author A Facade" and "Real Author A". Lecture 11 gives the same account.
-- “Shadowgraphs” appears as an empty heading in Owen’s notes. The syllabus lists “Diapsalmata” for both Mon Oct 26 and Wed Oct 28. That suggests the unit did not reach “Shadowgraphs”.
+- In Victor Eremita’s preface, A says he only found and copied the Diary. Kraal and the Hong edition take A to be its actual author.
+- That is why the notes label the two Johanneses in the diagram "Author A Facade" and "Real Author A". The lecture 11 page also names A as the Diary’s author.
+- “Shadowgraphs” appears in Owen’s notes as a heading with nothing under it, so the unit did not reach that essay. The syllabus still lists “Diapsalmata” for Mon Oct 26 and Wed Oct 28.
 
 ### What Johannes wants from Cordelia
 
-- The notes describe Johannes’s method as "Reflection + Calculation in how to tune his performance". He plans the affair, which is why it takes the form of a diary in prose. Kraal calls him the "mastermind behind the actor".
-- Don Giovanni acts on desire in the moment. He is the immediate seducer of "The Musical Erotic". Johannes is the reflective seducer.
-- Johannes wants Cordelia most while she resists. His interest ends when she desires him completely, so the Diary ends when the seduction is complete.
-- "Only when it is free is it beautiful" is Johannes’s reason for arranging matters so Cordelia breaks the engagement herself. He wants her to give herself freely.
+- Johannes’s seduction is reflective, not immediate.
+- The point to keep is the notes’ "Reflection + Calculation in how to tune his performance". Johannes plans the whole affair, which is why it has to be a diary and in prose.
+- Kraal’s "mastermind behind the actor" makes the same point.
+- Don Giovanni desires and acts in the moment. He is the musical, immediate seducer of "The Musical Erotic".
+- The notes’ "Final enjoyment" and "resistance" lines go together. Johannes wants Cordelia most while she still resists.
+- Once she desires him absolutely his interest is gone, which is why the Diary ends when the seduction is complete.
+- "Only when it is free is it beautiful" is Johannes’s justification. She must give herself freely, so he arranges matters so that she breaks the engagement herself.
 
 ### What the Diapsalmata suggest about A
 
-- The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. The page range in Owen’s edition is pp. 46–55.
-- Kraal reads the aphorisms as the voice of someone who has no belief about the meaning of life. A’s own papers therefore supply no standard for judging Johannes morally.
-- Kraal uses evolutionary biology to distinguish a precondition of life from a reason to live. Reproduction keeps the species going. That fact supplies no reason why someone should live.
+- The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. Their page numbers in Owen’s edition are 46 to 55.
+- Kraal reads them as the voice of someone with no belief about the meaning of life.
+- That makes moralizing about Johannes harder than it looks. A’s own papers supply no standard to moralize from.
+- The evolutionary-biology point is Kraal’s example, marked "IDK" in the notes. Treat it as the lecture’s example, not A’s.
+- Kraal’s claim is that a precondition of life is not the same thing as a meaning of life. Reproduction keeps the species going, but that is not a reason you should live.
+- So biology cannot settle what A is missing.
