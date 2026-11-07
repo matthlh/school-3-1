@@ -1,104 +1,34 @@
 #!/usr/bin/env python3
-"""Record grades for the pending session and update every SRS store, one answer at a time if need be.
+"""Record quiz grades immediately, with exact review identities and recoverable commits.
 
 Usage:
-  quiz_grade.py "3:O3"                     record question 3 the moment it is graded (the usual call, once per answer)
-  quiz_grade.py "1:O3 2:X3/c 3:~2/m 4:-"   several at once: n:token pairs, always ONE quoted string (- = skipped)
-  quiz_grade.py "O3 X1/m ~2"               a bare token sequence, in session order
-  quiz_grade.py "1 O 2 ~ 3 X"              a phone reply or the deck page's replyString, pasted verbatim
-  quiz_grade.py --transit 2026-10-05 "1 O 2 ~ 3 X"
-                                           the transit deck of that date (routines/transit-session.json)
-  quiz_grade.py --finish                   close the session early (he stopped) and print the full report
-  quiz_grade.py --undo 3                   take back question 3's recorded grade (this session, or the last finished one)
-  options: --date YYYY-MM-DD  --dry-run  --transit DECK_DATE | --session PATH  --note "free text for the log"
-           --said N "text"   his wrong answer to question N, an X or ~ (repeatable)
-           --why N "text"    why he was sure, for question N, an X at confidence 3 (repeatable)
+  quiz_grade.py "3:O3"                       record question 3
+  quiz_grade.py "1:O3 2:X3/c 3:~2/m 4:-"     record several answers; - excludes a question
+  quiz_grade.py --transit 2026-11-06 "1 O"    grade the pending or archived deck of that date
+  quiz_grade.py --session PATH "1:O3"         grade a saved session, resolving its canonical copy
+  quiz_grade.py --undo 3                     undo exactly that item's review
+  quiz_grade.py --finish                     close early, leaving unanswered items ungraded
 
-A token is <grade><conf?></cause?>. The grade is O, ~ (p means the same) or X, or - for skipped. conf is 1, 2 or 3,
-his confidence before he saw the answer, and optional: never ask for it. /cause goes on an X or ~ only, also optional:
-c concept, f forgot, m misread, k careless, s slow. An O given at confidence 1 or 2 is a Good: right, but he was not
-sure, so its topic's streak holds at its rung instead of climbing (Matt, 2026-11-01). An O at 3, or with no confidence,
-is an Easy and climbs. A live variant takes its question's grade. A question number given twice, or anything else
-malformed, stops the script before it writes.
+Confidence 1-3 and /cause are optional. --said N TEXT and --why N TEXT remain private.
+--date YYYY-MM-DD sets the review date; --dry-run validates and reports without writes.
 
-Saving (2026-11-06). Each call records its answers at once: the history entry, the ledger row, the Session-log line
-and the quiz log. The item is marked `done` in the session file, which stays until every item is done (or --finish),
-so a quiz that stops halfway has lost nothing, and the rest can be graded later. Grading a done item again with the
-same token is a no-op, so a retry or a re-sent reply never counts twice; a different token stops and points at --undo.
-A topic's session grade is the WORST grade among its done questions this session, applied to the row as it stood
-before the session (kept in the session file as `before`), so recording answers one at a time moves a row exactly as
-recording them together would. The ladder (X → streak 0, +1 d · ~ → +3 d · O → streak+1, +7/+16/+35 d) is adjusted by
-quizlib.next_review (never later than exam_cap; a gap of 3+ days goes to the lightest day within ±15%), then pulled
-forward to the earliest Next of the topic's asked questions (quizlib.sync_card_dues: each question keeps its own
-place on the ladder). His wrong answers (--said) and reasons (--why) go to the git-ignored routines/quiz-private.json,
-never to the public quiz-state.json.
+A new public history entry is [date, grade, metadata]. Metadata contains a unique event_id,
+session_id, and optional confidence/cause. Legacy entries are retained unchanged. Exact event
+identity makes identical same-day reviews independently undoable. A legacy undo is allowed only
+when its saved entry identifies one review uniquely; ambiguous matches stop without changing data.
 
-Each mode refuses the wrong session before writing anything. Plain grading takes routines/quiz-session.json only
-when it was picked today (--date sets today), and when there is none it names a pending transit deck. --transit
-takes routines/transit-session.json only when it holds the deck of DECK_DATE, the doc_id the deck page saves its
-grades under, so taps never land on another deck's questions. --session PATH grades that file with no date check.
-Each graded question counts for the ledger row of the topic stored in the session when it was picked
-(quizlib.match_topic on the item's `topic`), so retagging the bank after the pick changes nothing. Everything is built
-in memory first, every check included, so a stop writes nothing. Then it writes:
-  routines/quiz-state.json              per-question history + one record per session (its id)
-  routines/quiz-private.json            his wrong answers and reasons
-  ledger.md                             All-topics rows, Due-now block, the session's one Session-log line
-  routines/quiz/YYYY-MM-DD.md           the session log (a section per call)
-  the session file                      done items; moved to routines/quiz/sessions/<id>.json once finished
-A call that leaves items undone prints a short line per answer. A finished session prints the full report: the
-ledger delta, what needs more questions, the Due-now block, calibration when confidences were given, misses by cause
-when causes were given, confident misses, and last the notes pages behind the X and ~ grades.
-Record grades for the pending session and update every SRS store, one answer at a time if need be.
+Every accepted answer, including an excluded item, gets a session completion marker. Retries of
+the same answer do not add another review. Topic rows are derived from all current question
+histories, including overlapping transit and normal sessions; an old session snapshot cannot
+erase another session's evidence. A baseline is retained only for undo that leaves no history.
 
-Usage:
-  quiz_grade.py "3:O3"                     record question 3 the moment it is graded (the usual call, once per answer)
-  quiz_grade.py "1:O3 2:X3/c 3:~2/m 4:-"   several at once: n:token pairs, always ONE quoted string (- = skipped)
-  quiz_grade.py "O3 X1/m ~2"               a bare token sequence, in session order
-  quiz_grade.py "1 O 2 ~ 3 X"              a phone reply or the deck page's replyString, pasted verbatim
-  quiz_grade.py --transit 2026-10-05 "1 O 2 ~ 3 X"
-                                           the transit deck of that date (routines/transit-session.json)
-  quiz_grade.py --finish                   close the session early (he stopped) and print the full report
-  quiz_grade.py --undo 3                   take back question 3's recorded grade (this session, or the last finished one)
-  options: --date YYYY-MM-DD  --dry-run  --transit DECK_DATE | --session PATH  --note "free text for the log"
-           --said N "text"   his wrong answer to question N, an X or ~ (repeatable)
-           --why N "text"    why he was sure, for question N, an X at confidence 3 (repeatable)
-
-A token is <grade><conf?></cause?>. The grade is O, ~ (p means the same) or X, or - for skipped. conf is 1, 2 or 3,
-his confidence before he saw the answer, and optional: never ask for it. /cause goes on an X or ~ only, also optional:
-c concept, f forgot, m misread, k careless, s slow. An O given at confidence 1 or 2 is a Good: right, but he was not
-sure, so its topic's streak holds at its rung instead of climbing (Matt, 2026-11-01). An O at 3, or with no confidence,
-is an Easy and climbs. A live variant takes its question's grade. A question number given twice, or anything else
-malformed, stops the script before it writes.
-
-Saving (2026-11-06). Each call records its answers at once: the history entry, the ledger row, the Session-log line
-and the quiz log. The item is marked `done` in the session file, which stays until every item is done (or --finish),
-so a quiz that stops halfway has lost nothing, and the rest can be graded later. Grading a done item again with the
-same token is a no-op, so a retry or a re-sent reply never counts twice; a different token stops and points at --undo.
-A topic's session grade is the WORST grade among its done questions this session, applied to the row as it stood
-before the session (kept in the session file as `before`), so recording answers one at a time moves a row exactly as
-recording them together would. The ladder (X → streak 0, +1 d · ~ → +3 d · O → streak+1, +7/+16/+35 d) is adjusted by
-quizlib.next_review (never later than exam_cap; a gap of 3+ days goes to the lightest day within ±15%), then pulled
-forward to the earliest Next of the topic's asked questions (quizlib.sync_card_dues: each question keeps its own
-place on the ladder). His wrong answers (--said) and reasons (--why) go to the git-ignored routines/quiz-private.json,
-never to the public quiz-state.json.
-
-Each mode refuses the wrong session before writing anything. Plain grading takes routines/quiz-session.json only
-when it was picked today (--date sets today), and when there is none it names a pending transit deck. --transit
-takes routines/transit-session.json only when it holds the deck of DECK_DATE, the doc_id the deck page saves its
-grades under, so taps never land on another deck's questions. --session PATH grades that file with no date check.
-Each graded question counts for the ledger row of the topic stored in the session when it was picked
-(quizlib.match_topic on the item's `topic`), so retagging the bank after the pick changes nothing. Everything is built
-in memory first, every check included, so a stop writes nothing. Then it writes:
-  routines/quiz-state.json              per-question history + one record per session (its id)
-  routines/quiz-private.json            his wrong answers and reasons
-  ledger.md                             All-topics rows, Due-now block, the session's one Session-log line
-  routines/quiz/YYYY-MM-DD.md           the session log (a section per call)
-  the session file                      done items; moved to routines/quiz/sessions/<id>.json once finished
-A call that leaves items undone prints a short line per answer. A finished session prints the full report: the
-ledger delta, what needs more questions, the Due-now block, calibration when confidences were given, misses by cause
-when causes were given, confident misses, and last the notes pages behind the X and ~ grades.
+Each commit journals complete output snapshots before installing any of them. History, private
+notes, ledger, quiz log, and pending/archived session markers roll forward together after an
+interruption. Full log snapshots make recovery idempotent. A shared process lock serializes
+writers; picker and migration commands must recover this journal before loading mutable state.
+A dry run refuses an outstanding recovery instead of silently writing it.
 """
-import argparse, datetime as dt, glob, json, os, re, shlex, sys
+import argparse, contextlib, datetime as dt, fcntl, glob, hashlib, json, os, re, shlex, sys, tempfile, uuid
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import quizlib as L
@@ -111,6 +41,114 @@ CAUSES = {"c": ("concept", "open the notes page listed below and add or rewrite 
           "k": ("careless", "say each step out loud"),
           "s": ("slow", "a timed drill: quiz_pick.py --sprint for STAT 251, else a timed session")}
 CONF = {1: "guess", 2: "think so", 3: "sure"}
+
+def atomic_text(path, text):
+    """Replace a file while the recovery journal retains every output of this grade."""
+    path = os.path.abspath(path)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=".quiz-grade-", dir=os.path.dirname(path))
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(text)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+        directory = os.open(os.path.dirname(path), os.O_RDONLY)
+        try:
+            os.fsync(directory)
+        finally:
+            os.close(directory)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+
+def journal_path():
+    return os.path.join(L.QUIZ_DIR, "grade-transaction.json")
+
+def digest(path):
+    """sha256 of a file's text, or None when there is no file."""
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+def apply_transaction(tx, recovering=False):
+    """Idempotent roll-forward: log files are full snapshots, never replayed appends. On recovery, a file that changed
+    since the interrupted grade (a hand edit, a lecture log) is never overwritten: it stops with the journal kept."""
+    outputs = {os.path.abspath(p): c for p, c in tx["outputs"].items()}
+    if recovering and "before" in tx:
+        before = {os.path.abspath(p): h for p, h in tx["before"].items()}
+        changed = [p for p, c in outputs.items()
+                   if digest(p) not in (before.get(p), None if c is None else hashlib.sha256(c.encode("utf-8")).hexdigest())]
+        if changed:
+            raise SystemExit("An interrupted grade is waiting to be finished, but these files changed after it stopped:\n"
+                             + "\n".join(f"   {os.path.relpath(p, L.ROOT)}" for p in changed)
+                             + f"\nNothing was written. The grade's complete outputs are in {os.path.relpath(journal_path(), L.ROOT)}. "
+                             "Copy the change you made into the journal's text for that file (or undo it), then run any quiz "
+                             "command again.")
+    for path, content in outputs.items():
+        if content is None:
+            if os.path.exists(path):
+                os.remove(path)
+                directory = os.open(os.path.dirname(path), os.O_RDONLY)
+                try:
+                    os.fsync(directory)
+                finally:
+                    os.close(directory)
+        else:
+            atomic_text(path, content)
+    os.remove(journal_path())
+    directory = os.open(L.QUIZ_DIR, os.O_RDONLY)
+    try:
+        os.fsync(directory)
+    finally:
+        os.close(directory)
+
+def save_transaction(outputs, request, report=()):
+    """Journal every output of this call, with each target's current hash and the report it prints, then install them."""
+    outputs = {os.path.abspath(p): c for p, c in outputs.items()}
+    tx = dict(version=2, id=uuid.uuid4().hex, request=request, outputs=outputs,
+              before={p: digest(p) for p in outputs}, report=list(report))
+    atomic_text(journal_path(), json.dumps(tx, ensure_ascii=False))
+    apply_transaction(tx)
+
+@contextlib.contextmanager
+def grade_lock(dry_run=False):
+    if dry_run:
+        yield
+        return
+    os.makedirs(L.QUIZ_DIR, exist_ok=True)
+    with open(os.path.join(L.QUIZ_DIR, "grade.lock"), "a", encoding="utf-8") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
+
+def recover_transaction(request, dry_run=False):
+    if not os.path.exists(journal_path()):
+        return False
+    if dry_run:
+        raise SystemExit("an interrupted grade is waiting to recover; rerun without --dry-run first")
+    tx = load_json(journal_path())
+    apply_transaction(tx, recovering=True)
+    print("-- recovered the interrupted grade; its answers were saved exactly once")
+    if tx.get("report"):
+        print("-- its report:")
+        for line in tx["report"]:
+            print(line)
+    return tx.get("request") == request
+
+def remove_review(hist, done):
+    """New reviews have exact identities. An ambiguous legacy review is never guessed."""
+    event_id = done.get("event_id")
+    if event_id:
+        matches = [i for i, e in enumerate(hist) if len(e) > 2 and e[2].get("event_id") == event_id]
+    else:
+        matches = [i for i, e in enumerate(hist) if e == done["entry"]]
+    if len(matches) != 1:
+        raise SystemExit("cannot identify this review uniquely for undo; no files were changed")
+    del hist[matches[0]]
 
 def parse_token(tok):
     """One grade token, <grade><conf?></cause?> as in O3, X3/c or ~2/m → (grade or None for a skip, extra).
@@ -328,7 +366,7 @@ def find_session(a, today):
     if a.session:
         s = normalise(load_json(a.session))
         for p in (pending_for(s), os.path.join(L.SESSIONS_DIR, f"{s['id']}.json")):
-            if os.path.exists(p) and not same_file(p, a.session) and load_json(p).get("id") == s["id"]:
+            if os.path.exists(p) and not same_file(p, a.session) and normalise(load_json(p))["id"] == s["id"]:
                 print(f"-- using {os.path.relpath(p, L.ROOT)}, the copy of session {s['id']} that knows what is recorded")
                 return p, normalise(load_json(p)), p.startswith(L.SESSIONS_DIR)
         return a.session, s, a.session.startswith(L.SESSIONS_DIR)
@@ -369,10 +407,19 @@ def main():
     ap.add_argument("--why", nargs=2, action="append", default=[], metavar=("N", "TEXT"),
                     help="why he was sure, for question N, an X at confidence 3 (repeatable)")
     a = ap.parse_args()
+    if a.session:                        # the journal holds only absolute paths, whatever folder recovery runs from
+        a.session = os.path.abspath(a.session)
+    request = sys.argv[1:]
+    with grade_lock(a.dry_run):
+        if recover_transaction(request, a.dry_run):
+            return
+        grade(a, request)
+
+def grade(a, request):
     today = dt.date.fromisoformat(a.date) if a.date else L.today_local()
     path, session, was_filed = find_session(a, today)
     reopen = was_filed and a.undo is not None
-    if reopen and os.path.exists(pending_for(session)) and load_json(pending_for(session)).get("id") != session["id"]:
+    if reopen and os.path.exists(pending_for(session)) and normalise(load_json(pending_for(session)))["id"] != session["id"]:
         raise SystemExit(f"--undo would reopen session {session['id']}, but {os.path.relpath(pending_for(session), L.ROOT)} "
                          "holds another open session; finish that one first (quiz_grade.py --finish)")
     items = {it["n"]: it for it in session["items"]}
@@ -380,8 +427,8 @@ def main():
     add_notes(marks, a.said, a.why)
     if a.undo is not None and marks:
         raise SystemExit("--undo takes no grades; undo first, then grade again")
-    if a.undo is not None and not ((items.get(a.undo) or {}).get("done") or {}).get("grade"):
-        raise SystemExit(f"question {a.undo} has no recorded grade in session {session['id']}")
+    if a.undo is not None and not (items.get(a.undo) or {}).get("done"):
+        raise SystemExit(f"question {a.undo} has no recorded answer or exclusion in session {session['id']}")
     if not marks and a.undo is None and not a.finish:
         raise SystemExit("nothing graded")
 
@@ -430,6 +477,22 @@ def main():
 
     def row_of(it, k):
         return L.match_topic(it["course"], it["topic"], rows, f"{it['file']}:{it['line']}: question {k}'s ledger topic at pick time")
+    # A topic's baseline is its row before any of its questions had an answer: what an undo of its last answer restores.
+    # While it has no answer at all, its row as it is now is that state (a --studied since, say), so it is refreshed.
+    baselines = state.setdefault("topic_baselines", {})
+    tagged, _ = L.bank_by_topic(rows, questions)
+    for k, it in items.items():
+        if k not in fresh and k != a.undo:
+            continue
+        r = row_of(it, k)
+        if r is None:
+            continue
+        bkey = f"{r['course']}|{r['topic']}"
+        ids = {q["id"] for q in tagged.get(r["idx"], [])} | {x["id"] for x in items.values() if ikey(x) == ikey(it)}
+        if any(state["questions"].get(i, {}).get("history") for i in ids):
+            baselines.setdefault(bkey, session["before"].get(ikey(it), snapshot(r)))
+        else:
+            baselines[bkey] = snapshot(r)
     lost = [items[k] for k, (g, _) in fresh.items() if g and row_of(items[k], k) is None]
     if lost:
         raise SystemExit("These questions' ledger topics, stored when the session was picked, name no ledger row now, so "
@@ -458,10 +521,8 @@ def main():
         it = items[u]
         d = it.pop("done")
         hist = state["questions"].get(it["id"], {}).get("history", [])
-        for i in range(len(hist) - 1, -1, -1):
-            if hist[i] == d["entry"]:
-                del hist[i]
-                break
+        if d.get("grade"):
+            remove_review(hist, d)
         if d.get("private"):
             notes = priv.get(it["id"], [])
             for i in range(len(notes) - 1, -1, -1):
@@ -470,14 +531,10 @@ def main():
                     break
         rec_s["results"] = [r for r in rec_s["results"] if r[0] != u]
         r = row_of(it, u)
-        if r is not None:
-            if rebase_if_moved(ikey(it), r):
-                warnings.append(f"-- question {u}: its row was moved by another session since, so the undo took back the "
-                                "answer's history entry but left the row as that session set it")
-            else:
-                touched.add(ikey(it))
+        if r is not None and d.get("grade"):
+            touched.add(ikey(it))
         print(f"{'undone' if u == a.undo else 'changed on the deck page'} · question {u} · {it['label']} · "
-              f"{it['topic_tag'][:50]} · was {d['grade']}" + (f", now {fresh[u][0] or 'not graded'}" if u in fresh else ""))
+              f"{it['topic_tag'][:50]} · was {d['grade'] or 'not graded'}" + (f", now {fresh[u][0] or 'not graded'}" if u in fresh else ""))
 
     # ---- the fresh answers: history entry, private notes, done mark
     for k, (g, x) in sorted(fresh.items()):
@@ -495,23 +552,32 @@ def main():
         rec = state["questions"].setdefault(it["id"], dict(course=it["course"], topic=it["topic_tag"], history=[]))
         rec["topic"] = it["topic_tag"]
         public = {key2: v for key2, v in x.items() if key2 in ("conf", "cause")}
-        entry = [today.isoformat(), g] + ([public] if public else [])
+        event_id = uuid.uuid4().hex
+        entry = [today.isoformat(), g, {**public, "event_id": event_id, "session_id": session["id"]}]
         rec["history"].append(entry)
-        done = dict(grade=g, extra=public, at=f"{today.isoformat()} {stamp}", entry=entry, seq=session["seq"])
+        done = dict(grade=g, extra=public, at=f"{today.isoformat()} {stamp}", entry=entry,
+                    event_id=event_id, seq=session["seq"])
         note = {key2: v for key2, v in x.items() if key2 in ("said", "why")}
         if note:
-            done["private"] = [today.isoformat(), note]
+            done["private"] = [today.isoformat(), {**note, "event_id": event_id}]
             priv.setdefault(it["id"], []).append(done["private"])
         it["done"] = done
         rec_s["results"].append([k, it["id"], it["course"], g])
     for k, note in late_notes.items():                   # a note sent after its grade was recorded
         d, it = items[k]["done"], items[k]
-        d["private"] = [d["at"][:10], note]
+        d["private"] = [d["at"][:10], {**note, **({"event_id": d["event_id"]} if d.get("event_id") else {})}]
         priv.setdefault(it["id"], []).append(d["private"])
     rec_s["n"] = len(rec_s["results"])
 
-    # ---- the touched rows, rebuilt from their baseline and the answers recorded since, as of the day of the latest one
+    # ---- derive touched topic summaries from all current card histories, including other sessions.
+    # Session snapshots are only a fallback when undo leaves no evidence at all. Restoring a whole
+    # old snapshot while another session has answers would erase that other session's summary.
+    # A row's questions are the ones tagged to it now plus this session's items filed under it at pick time, so an
+    # answer to a question retagged mid-session still moves the row it was picked for; the row its tag names now is
+    # derived as well.
     delta, moved = [], set()
+    by_topic, _ = L.bank_by_topic(rows, questions)
+    targets = {}                                     # id(row) -> (row, session key or None)
     for key in sorted(touched):
         if key not in session["before"]:
             continue
@@ -520,26 +586,34 @@ def main():
         if r is None:
             warnings.append(f"-- {holder['label']} '{holder['topic'][:50]}' names no ledger row now; its row was not moved")
             continue
-        snap = session["before"][key]
-        restore(r, snap)
-        dones = [it["done"] for it in items.values() if ikey(it) == key and (it.get("done") or {}).get("grade")
-                 and it["done"].get("seq", 0) >= session["base"].get(key, 0)]
-        if not dones:                         # every answer of this row was undone: the row is as it was
-            delta.append((r, (snap["grade"] or "—", snap["streak"], snap["next"]), "restored"))
-            session["after"][key] = snapshot(r)
+        targets[id(r)] = (r, key)
+        for it in items.values():
+            if ikey(it) == key and it["id"] in qsrc:
+                now = next((x for x in rows if any(q["id"] == it["id"] for q in by_topic.get(x["idx"], []))), None)
+                if now is not None and id(now) not in targets:
+                    targets[id(now)] = (now, None)
+    for r, key in targets.values():
+        snap = snapshot(r)
+        qs = {q["id"]: q for q in by_topic.get(r["idx"], [])}
+        if key is not None:
+            qs.update({it["id"]: qsrc[it["id"]] for it in items.values() if ikey(it) == key and it["id"] in qsrc})
+        s = L.topic_summary(r, list(qs.values()), state, cal, rows)
+        old = (snap["grade"] or "—", snap["streak"], snap["next"])
+        if s is None:
+            restore(r, baselines.get(f"{r['course']}|{r['topic']}", session["before"].get(key, snap)))
+            delta.append((r, old, "restored"))
             continue
-        g = min((d["grade"] for d in dones), key=lambda v: L.GRADE_RANK[v])
-        good = g == "O" and any(d["extra"].get("conf") in (1, 2) for d in dones)
-        day = max(dt.date.fromisoformat(d["at"][:10]) for d in dones)
-        streak, days = L.next_after(g, r["streak"], good=good)
-        nxt, why = L.next_review(r, days, day, rows, cal)
-        r.update(last=day.isoformat(), grade=g, streak=streak, next=nxt.isoformat(), next_date=nxt)
+        r.update(last=s["last"].isoformat(), grade=s["grade"], streak=s["streak"],
+                 next=s["next"].isoformat(), next_date=s["next"])
         moved.add(r["idx"])
-        delta.append((r, (snap["grade"] or "—", snap["streak"], snap["next"]), f"+{(nxt - day).days} d" + (f"; {why}" if why else "")))
-    for r in L.sync_card_dues(rows, questions, state, cal, only=moved):
-        for i, (dr, old, when) in enumerate(delta):
-            if dr is r:
-                delta[i] = (dr, old, f"{when}; a question of it is due {r['next']}")
+        when = "from current question histories"
+        worse = [k for k in fresh if fresh[k][0] and ikey(items[k]) == key
+                 and L.GRADE_RANK[fresh[k][0]] > L.GRADE_RANK[s["grade"]]]
+        if worse:
+            when += f"; {s['grade']} from another answer to this topic on {s['last']:%b %-d}"
+        if s["next"] <= today:
+            when += "; another question of it is still due"
+        delta.append((r, old, when + (f"; {s['why']}" if s["why"] else "")))
     for key in touched:
         holder = next(it for it in items.values() if ikey(it) == key)
         r = row_of(holder, holder["n"])
@@ -628,33 +702,35 @@ def main():
     if a.dry_run:
         print("DRY RUN — nothing written\n")
     else:
-        L.save_state(state)
-        L.save_private(priv)
-        L.write_ledger(ledger)
-        os.makedirs(L.QUIZ_DIR, exist_ok=True)
+        encoded = lambda value: json.dumps(value, indent=1, ensure_ascii=False)
+        import quiz_pick as P                 # the website's Review queue follows every grade
+        outputs = {L.STATE: encoded(state), L.PRIVATE: encoded(priv), L.LEDGER: ledger,
+                   L.REVIEW_PLAN: P.plan_text(rows, questions, state, cal, today)}
         if log:
             lp = os.path.join(L.QUIZ_DIR, f"{today.isoformat()}.md")
-            new = not os.path.exists(lp)
-            with open(lp, "a", encoding="utf-8") as f:
-                f.write(("" if not new else f"# Quiz log — {today:%a %Y-%m-%d}\n\n") + "\n".join(log) + "\n")
+            if os.path.exists(lp):
+                with open(lp, encoding="utf-8") as f:
+                    previous = f.read()
+            else:
+                previous = f"# Quiz log — {today:%a %Y-%m-%d}\n\n"
+            outputs[lp] = previous + "\n".join(log) + "\n"
         archive = os.path.join(L.SESSIONS_DIR, f"{session['id']}.json")
         def write(p):
-            os.makedirs(os.path.dirname(p), exist_ok=True)
-            with open(p, "w", encoding="utf-8") as f:
-                json.dump(session, f, indent=1, ensure_ascii=False)
+            outputs[p] = encoded(session)
         def drop_pending():                   # the pending copy of this same session, never another one
             for p in (L.SESSION, L.TRANSIT_SESSION):
-                if os.path.exists(p) and not same_file(p, archive) and load_json(p).get("id") == session["id"]:
-                    os.remove(p)
+                if os.path.exists(p) and not same_file(p, archive) and normalise(load_json(p))["id"] == session["id"]:
+                    outputs[p] = None
         if finished or (was_filed and not reopen):
             write(archive)
             drop_pending()
         elif reopen:                              # an undo reopened a finished session: it is pending again
             write(pending_for(session))
             if os.path.exists(archive):
-                os.remove(archive)
+                outputs[archive] = None
         else:
             write(path)
+        save_transaction(outputs, request, report)
     for line in report:
         print(line)
 

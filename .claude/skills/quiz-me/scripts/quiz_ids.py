@@ -75,4 +75,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import quiz_grade as G
+    with G.grade_lock():
+        G.recover_transaction(None)
+        main()

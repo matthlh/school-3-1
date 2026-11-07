@@ -22,7 +22,7 @@ through Sunday; add `--next-week` for the coming Mon→Sun. Weekly owns when-dat
 owns Today/Tomorrow and never moves a future date. Tag `pin` = never move.
 
 `--budget H` trims (or extends) that date and is remembered in plan-state.json, so a later run the
-same day keeps the trim; the Career reserve is skipped on a trimmed day. Without one, the day before an
+same day keeps the trim. Without one, the day before an
 exam gets LIGHT_EVE of its budget.
 
 The model (Matt, 2026-09-11): every to-do carries an estimate tag (15m / 30m / 1h / 2h / 3h;
@@ -39,7 +39,7 @@ Steps:
      (term.py) with the LECTURE DATE as its deadline, so a missed close-out shows as overdue by
      the real date, not "due today"; for an async course (ASIA 250) it is "Watch + quiz <CODE> lec N
      · locks <date>" (2h) due at the mini-quiz hard lock — nothing is missed until then. Plus one
-     per PREP ladder step that fires today, named for its item ("T-3 STAT 251 Midterm · FULL TIMED
+     per current PREP ladder step, recovering the latest applicable step after a missed run, named for its item ("T-3 STAT 251 Midterm · FULL TIMED
      MOCK"); once the item's date has passed (for an exam, from its day), its open steps are cancelled. Existing lecture to-dos
      are reconciled (title, deadline; tags only if untagged) and auto-completed once the lecture
      file exists, except an async one, which he ticks himself after the quiz. Today's two revision
@@ -50,9 +50,9 @@ Steps:
      one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
   3. Candidates: when ≤ today, OR undated in Anytime, OR deadline ≤ today+PULL_IN_DAYS (a future
      when-date he set by hand is respected otherwise).
-  4. Score (deadline urgency → P-tag → was-planned → rollovers), then greedy fill by score:
-     events dated today first, then today's habits (never rolled), then a reserved CAREER_MIN_H of
-     Career items, then everything else.
+  4. Keep fixed events, then fill School → Career → Personal → other (Matt, 2026-11-06).
+     Within each group use deadline urgency → P-tag → was-planned → rollovers. Habits compete in
+     their group; a missed habit is cancelled next time rather than rolled. No Career hours are reserved.
      P3 items are capped at P3_CAP_H so the day isn't padded with fluff.
   5. Clock: in printed order each line starts at DAY_START (planning the real today after that: now,
      rounded up to the quarter hour) or where the line before it ended, after any lecture, lab or exam
@@ -90,7 +90,6 @@ import term, things_add
 BUDGET_H = {0: 6, 1: 6, 2: 6, 3: 6, 4: 6, 5: 6, 6: 6}   # Mon..Sun, hours of work outside class
 LIGHT_EVE = 0.5          # the day before an exam plans this share of its budget (a --budget for that date still wins)
 PULL_IN_DAYS = 1         # a when-date later than today is respected unless the deadline is within N days
-CAREER_MIN_H = 1.0       # reserve this much for Career-area items whenever any exist
 P3_CAP_H = 1.5           # at most this much P3 work per day
 DAY_START = "09:00"      # suggested start times run from here (a later run for today: from now), around lectures, labs and exams
 STUDY_END = "22:30"      # sleep: nothing in the plan ends later; a line that would leaves today's plan (docstring step 5)
@@ -406,9 +405,15 @@ def exams_on(d):
     """The term.key_dates() exams on date d."""
     return [k for k in term.key_dates() if k.kind == "exam" and k.date == d]
 
-def reserve_h(d, budget):
-    """Career hours held back on day d: CAREER_MIN_H, or none on a day trimmed below its weekday budget."""
-    return CAREER_MIN_H if budget >= BUDGET_H[d.weekday()] else 0
+def area_rank(t):
+    """School, Career, Personal, other; project membership also identifies school items without an area."""
+    if t.area in ("UBC", "School") or t.project in PROJECT_OF.values():
+        return 0
+    return {"Career": 1, "Personal": 2}.get(t.area, 3)
+
+def task_order(t):
+    """Area order, then daily urgency; shared by daily selection and printed plans."""
+    return (area_rank(t), -t.score, t.due or dt.date.max, t.est, t.name)
 
 def held_today(code, d):
     """Whether course `code` holds a lecture on d (term.lecture_dates, so not on a skip or exam day), and its number."""
@@ -532,9 +537,10 @@ def lecture_todos(auto, seed):
                 auto.register[-1] = title
 
 def ladder_todos(auto):
-    """Today's PREP ladder step for every key date that is still ahead, titled `T-<days left> <project> <name> · <step>`,
+    """The latest applicable PREP step for every key date still ahead, titled `T-<days left> <project> <name> · <step>`,
     P1, due today. A key date is ahead until the day after it, or for an exam until its day (PREP's exam day is
-    "Nothing"); after that its open steps are cancelled and none is created.
+    "Nothing"); after that its open steps are cancelled and none is created. Missed prerequisites are listed in the
+    current task's notes rather than creating every old daily block. A manually closed step stays closed.
     Switch-over from the titles without the name (`T-<days left> <project> · <step>`), which the old code shared across
     a course's items: an open one stood in for every later item's same step, so it goes to the soonest item ahead whose
     step has fired. It is renamed to that item's title, or cancelled when that item already has the step, open or
@@ -563,6 +569,11 @@ def ladder_todos(auto):
             auto.close(t, "canceled", f"{k.name} already has this step")
         else:
             auto.rename(t, title)
+    current = {}
+    for step in steps:
+        k, _, fired, _, _, _ = step
+        if ahead(k) and fired <= today and (k not in current or fired > current[k][2]):
+            current[k] = step
     for k, left, fired, est, title, old in steps:
         if fired == today and old in planned and auto.closed_by_hand(old):
             auto.known[title] = auto.known[old]
@@ -570,9 +581,17 @@ def ladder_todos(auto):
             if title in auto.by_title:
                 auto.close(auto.by_title[title], "canceled",
                            f"{k.name} is today" if k.date == today else f"{k.name} on {k.date:%b %-d} is past")
-        elif fired == today:
+        elif current.get(k) == (k, left, fired, est, title, old):
+            missed = [s for s in steps if s[0] == k and s[2] < fired
+                      and s[4] not in auto.by_title and s[4] not in auto.known]
+            notes = f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md."
+            if fired < today or missed:
+                notes += "\nRecovery after a missed planner run: use this current step, not a pile of old daily blocks."
+            if missed:
+                notes += "\nEarlier steps with no completion record: " + "; ".join(s[4] for s in sorted(missed, key=lambda s: s[2])) + "."
+                notes += " Check the missing prerequisites inside this block before continuing."
             auto.create(title, f"{est}, P1", project=PROJECT_OF[k.course], when=today, deadline=today,
-                        notes=f"Ladder step for {k.label} on {k.date:%a %b %-d}. From PREP.md.")
+                        notes=notes)
 
 def habit_todos(auto):
     """Today's habits (HABITS minus PAUSED_HABITS), each in its own area, due today. Any other open habit is cancelled: one
@@ -663,16 +682,13 @@ def plan(today, budget, todos, state):
             s += 100
         s += min(40 * rolled.get(t.id, 0), 200)
         t.score = s
-    order = sorted(cands, key=lambda t: (-t.score, t.due or dt.date.max, t.est, t.name))
-    selected, remaining, career_h, p3_h, warn = [], budget, 0.0, 0.0, []
-    career_min = reserve_h(today, budget)
+    order = sorted(cands, key=task_order)
+    selected, remaining, p3_h, warn = [], budget, 0.0, []
 
     def take(t):
-        nonlocal remaining, career_h, p3_h
+        nonlocal remaining, p3_h
         selected.append(t)
         remaining -= t.est
-        if t.area == "Career":
-            career_h += t.est
         if t.prio == "P3":
             p3_h += t.est
 
@@ -681,15 +697,7 @@ def plan(today, budget, todos, state):
             take(t)
         elif t.is_event and t.when and t.when < today:
             warn.append(f"stale event still open: {t.name}")
-    for t in order:                                    # today's habits: a missed one is cancelled, never rolled
-        if t.is_habit and t.est <= remaining:
-            take(t)
-    for t in order:                                    # career reserve
-        if t in selected or t.is_event or t.area != "Career" or career_h >= career_min:
-            continue
-        if t.est <= remaining and (t.prio != "P3" or p3_h + t.est <= P3_CAP_H):
-            take(t)
-    for t in order:                                    # everything else
+    for t in order:                                    # work and habits, in the user's area order
         if t in selected or t.is_event:
             continue
         if t.prio == "P3" and p3_h + t.est > P3_CAP_H:
@@ -713,7 +721,7 @@ def stuck(today, rollover, todos, state):
     cap = {d: budget_for(d, state) for d in days}
     load = {d: sum(t.est for t in todos if t.when == d and t.lst not in ("Inbox", "Someday")) for d in days}
     moves, flags = [], []
-    for t in rollover:
+    for t in sorted(rollover, key=task_order):
         n = rolled.get(t.id, 0)
         if n < STUCK_AFTER or t.is_event or t.is_habit:
             continue
@@ -735,11 +743,14 @@ def stuck(today, rollover, todos, state):
                      else [[d for d in days if d >= next_mon]])
             tiers = [x for x in tiers if x]
             if tiers:
-                d = free_day(t, tiers, load, cap) or min(tiers[0], key=lambda d: (day_weight(load, d), d))
-                load[d] += t.est
-                moves.append((t, d, n))
-                continue
-            stays = "no day before its deadline"
+                d = free_day(t, tiers, load, cap)
+                if d is not None:
+                    load[d] += t.est
+                    moves.append((t, d, n))
+                    continue
+                stays = "no future day has room; split or defer explicitly"
+            else:
+                stays = "no day before its deadline"
         due = ("no deadline" if not t.due else f"overdue since {t.due:%b %-d}" if t.due < today
                else "due today" if t.due == today else f"due {t.due:%b %-d}")
         flags.append((t, n + 1, ", ".join(x for x in (t.prio or "no priority", fmt_h(t.est), due, stays) if x)))
@@ -804,7 +815,7 @@ def plan_rows(selected, today, start):
     lecture still to come today, see ready_at) share the first line, the rest follow by score."""
     logs = [t for t in selected if re.match(r"^Log \w+ lec \d+", t.name) and ready_at(t, today) <= start]
     logs = logs if len(logs) > 1 else []
-    rest = sorted((t for t in selected if t not in logs), key=lambda t: (-t.score, t.due or dt.date.max))
+    rest = sorted((t for t in selected if t not in logs), key=task_order)
     return ([logs] if logs else []) + [[t] for t in rest]
 
 def ready_at(t, today):
@@ -855,7 +866,7 @@ def cushions(today, budget, todos, state, factors):
     no ladder and gets none), in date order. Its need counts all the work due before it, so it includes the needs of
     the lines above it: the estimates of every open course to-do due on or before that date, plus every ladder step
     still to come before it, whichever item the step is for. Free: the budgets from today (today's is `budget`) to the
-    day before it, less the Career reserve. When the need is more than the free hours, the line is a ⚠."""
+    day before it. School has first claim on that capacity. When the need is more than the free hours, the line is a ⚠."""
     steps = [(k.date - dt.timedelta(days=left), planned_h(est, factors)) for k in term.key_dates()
              for left, (_, est) in term.LADDERS.get(k.kind, {}).items() if 0 < left < (k.date - today).days]
     items = {}
@@ -864,13 +875,13 @@ def cushions(today, budget, todos, state, factors):
             items.setdefault(k.date, []).append(f"{PROJECT_OF[k.course]} {k.name}")
     lines = []
     for d in sorted(items):
-        need = sum(t.est for t in todos if t.project in PROJECT_OF.values() and t.due and t.due <= d)
+        need = sum(t.est for t in todos if area_rank(t) == 0 and t.due and t.due <= d)
         need = round(need + sum(h for day, h in steps if day < d), 2)
         free = 0.0
         for i in range((d - today).days):
             day = today + dt.timedelta(days=i)
             b = budget if i == 0 else budget_for(day, state)
-            free += b - reserve_h(day, b)
+            free += b
         names, one = " and ".join(items[d]), len(items[d]) == 1
         if need > free:
             lines.append(f"⚠ {names} {'has' if one else 'have'} {need:g}h of work before {d:%a %b %-d} but only {free:g}h free")
@@ -990,7 +1001,7 @@ def plan_week(today, todos, state, next_week=False):
         undated_must = t.when is None and t.prio == "P1"
         if in_window or (t.when is None and (due_in or undated_must)):   # a date outside the window is left alone
             movable.append(t)
-    movable.sort(key=lambda t: (t.due or dt.date.max, -PRIO_SCORE.get(t.prio, 100), -t.est, t.name))
+    movable.sort(key=lambda t: (area_rank(t), t.due or dt.date.max, -PRIO_SCORE.get(t.prio, 100), -t.est, t.name))
     changes, warn = [], []
     for t in movable:
         tiers = [[d for d in days if d < t.due], [d for d in days if d <= t.due]] if t.due else [days]
@@ -1040,7 +1051,7 @@ def print_week(days, cap, load, on_day, changes, warn, dry):
     print(f"**Week ahead — {total_l:g} of {total_c:g} h** ({days[0]:%a %b %-d} → {days[-1]:%a %b %-d})"
           + ("  (DRY RUN)" if dry else ""))
     for d in days:
-        items = sorted(on_day[d], key=lambda t: (-t.score, t.est), reverse=False)
+        items = sorted(on_day[d], key=task_order)
         names = [short(t.name) for t in items if not t.is_event]
         ev = [short(t.name) for t in items if t.is_event]
         shown = " · ".join(names[:3]) + (f" (+{len(names) - 3})" if len(names) > 3 else "")
@@ -1109,6 +1120,11 @@ def print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, a
         print("**Needs an estimate/priority tag** (15m/30m/1h/2h/3h + P1/P2/P3)")
         for t in need:
             print(f"- {t.where()} · {t.name[:80]}")
+    loose = sorted({t.project for t in todos if t.project and not t.area and area_rank(t) == 3 and t.lst != "Inbox"})
+    if loose:                            # ranked last (other) until filed, so Career work there would rank below Personal
+        print("**Needs an area** (projects ranked as other until filed under Career, Personal or UBC in Things3)")
+        for name in loose:
+            print(f"- {name}")
     inbox = [t for t in todos if t.lst == "Inbox"]
     if inbox:
         print(f"**Inbox: {len(inbox)} to file** — " + "; ".join(t.name[:40] for t in inbox))
@@ -1181,7 +1197,7 @@ def main():
             selected.remove(t)
             if t.when and t.when <= today:                # it was in Today: it rolls like any other item that did not fit
                 rollover.append(t)
-    rollover.sort(key=lambda t: (-t.score, t.due or dt.date.max))
+    rollover.sort(key=task_order)
     moves, flags = stuck(today, rollover, todos, state)   # docstring step 6: a move leaves the roll
     dest = {t.id: to for t, to, _ in moves}
     for t, to, n in moves:

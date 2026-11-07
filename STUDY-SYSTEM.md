@@ -31,22 +31,19 @@ Open the outline the morning check made (or the slides). Read **titles only**, s
 already seen. Pre-lecture questions were dropped on 2026-10-06: with real lectures the evidence for them is
 weak, and the day-after free-recall opener does that work instead.
 
-### 2. In lecture — your half page, restructured
-Same volume you planned. But split the page into two columns:
-
-| Question | Answer |
-|---|---|
-
-Every line is something you could be asked. `"Connascence of name vs. type — what's the
-difference and which is weaker?"` not `"Connascence: types are name, type, meaning..."`
-
-Same ink, same time. The difference is that a question page is a self-test and a statement
-page is a reread. This is the single highest-leverage change in this whole document.
+### 2. In lecture — your page, your way
+Keep one handwritten page in whatever format works for you. Send a photo or rough dump after class;
+the assistant organises it and builds questions. CPSC 310 uses the posted deck as its lecture record,
+so you do not need to supply a handwritten page for that course.
 
 ### 3. Same day — 10 minutes
-Photograph or type the page into `courses/<CODE>/lectures/`. Cover the answer column, test
-yourself once, mark each line `X` / `~` / `O`. Then tell me **"log CPSC310 lec 7"** — I pull
-your questions into the course bank and the ledger, and the spacing starts.
+Send the page and say **"log STAT251 lec 7"**. Full preparation may already have built the page and
+questions from the deck, recording and assigned reading. Your notes add or correct that preparation.
+A prepared page is not proof you studied it: say when you have studied or watched the lecture to start
+its review schedule. Each completed quiz attempt is recorded immediately, so stopping partway loses no completed work.
+
+Daily bus-deck and bedtime-quiz reminders remain paused since Nov 4. Use an on-demand session;
+recurring reminders restart only when you ask.
 
 ### 4. Friday — one revision block, ~2 hours
 I quiz you across all courses, interleaved, weighted toward what's overdue and what you've
@@ -57,29 +54,20 @@ Update the ledger, look at the week's due topics, adjust.
 
 ## Weekly time budget
 
-Four courses (321 dropped):
-
-| Block | Hours |
-|---|---|
-| Lecture close-outs (9 lectures × 10 min) | 1.5 |
-| STAT 251 — timed problem redo | 1.5 |
-| CPSC 310 — deliverable work | 3.5 |
-| ASIA 250 + PHIL 385 — reading w/ argument mapping | 1.5 |
-| Friday revision block | 2.0 |
-| Sunday ledger + planning | 0.5 |
-| Saturday flex (deliverable & essay weeks only) | 2.5 |
-| **Total outside class** | **~13** |
-
-Plus ~15 h of class = **~28 h/week**. With five courses add ~6 h → ~34 h.
+The planner uses a default budget of six hours a day outside class, shared by School, Career,
+Personal and other work, in that order. There is no Career reserve. A shorter day can be set explicitly;
+more than six hours needs your approval. The day before an exam is lighter unless you set another budget.
+Fixed calendar events keep their slots. Use the live plan and ledger for current deadlines, rather than
+an old weekly total in this document.
 
 ## Course-specific tactics
 
 **CPSC 310.** The 26W1 grading is 5% participation / 10% labs / **20% project** / **25% midterm /
 40% final**. That is 65% exams — and it is *not* what the course's reputation says. Students who
 took it under the old project-heavy scheme will tell you the project is everything. For your
-term that advice is wrong and following it will cost you the grade. Both exams are closed-book,
-no notes, no devices, and ask you to *justify* answers. Past finals were described as heavy on
-memorized specifics and trick questions. Treat the vocabulary like a language exam.
+term that advice is wrong and following it will cost you the grade. The exams ask you to read code,
+justify decisions and sometimes write TypeScript by hand. The current syllabus records the allowed cheat
+sheet and exam format. Practise applying the reader's vocabulary to unseen code.
 
 **STAT 251.** Students consistently report the final is fair but *long*. Redoing the WeBWorK
 problems is the highest-rated tactic. Redo them from a blank page with a timer — you are

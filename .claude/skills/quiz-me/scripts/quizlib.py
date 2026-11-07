@@ -30,6 +30,7 @@ ROOT = os.environ.get("SCHOOL_ROOT") or os.path.abspath(os.path.join(HERE, "..",
 LEDGER = os.path.join(ROOT, "ledger.md")
 STATE = os.path.join(ROOT, "routines", "quiz-state.json")
 PRIVATE = os.path.join(ROOT, "routines", "quiz-private.json")
+REVIEW_PLAN = os.path.join(ROOT, "routines", "review-plan.json")   # public: the website Review page's queue (quiz_pick.review_plan)
 SESSION = os.path.join(ROOT, "routines", "quiz-session.json")
 TRANSIT_SESSION = os.path.join(ROOT, "routines", "transit-session.json")
 QUIZ_DIR = os.path.join(ROOT, "routines", "quiz")
@@ -140,12 +141,18 @@ def parts(q):
     return len(letters) or len(romans) or 3
 
 def load_questions(courses=None):
-    out = []
+    out, seen = [], {}
     for path in sorted(glob.glob(os.path.join(ROOT, "courses", "*", "02-questions.md"))):
         course = os.path.basename(os.path.dirname(path))
-        if courses and course not in courses:
-            continue
-        out.extend(attach_sources(_parse_bank(path, course), course))
+        qs = _parse_bank(path, course)
+        for q in qs:
+            if q["id"] in seen:
+                other = seen[q["id"]]
+                raise SystemExit(f"Duplicate question id {q['id']}: {other['file']}:{other['line']} and "
+                                 f"{q['file']}:{q['line']}. Ids must be unique across all courses.")
+            seen[q["id"]] = q
+        if not courses or course in courses:
+            out.extend(attach_sources(qs, course))
     return out
 
 def _parse_bank(path, course):
@@ -223,14 +230,21 @@ def stamp_ids(state=None):
     is qid() of the stem as it is now, the id its history has always been filed under, or, when another question of the
     course already has that id, the hash of the stem and a counter. Returns [(file, line, id)] for the stamps written.
     quiz_pick.py runs it first on every run, so a question logged today is stamped before it is ever asked."""
-    out = []
+    out, banks, taken = [], [], set()
+    # Validate every existing stamp before writing any bank. A copied id in another course must not share history.
     for path in sorted(glob.glob(os.path.join(ROOT, "courses", "*", "02-questions.md"))):
         course = os.path.basename(os.path.dirname(path))
         qs = _parse_bank(path, course)
+        for q in qs:
+            if q["stamp"]:
+                if q["stamp"] in taken:
+                    raise SystemExit(f"Duplicate question id {q['stamp']} across course banks; no stamps written.")
+                taken.add(q["stamp"])
+        banks.append((path, course, qs))
+    for path, course, qs in banks:
         todo = [q for q in qs if not q["stamp"] and q["meta_line"]]
         if not todo:
             continue
-        taken = {q["stamp"] for q in qs if q["stamp"]}
         with open(path, encoding="utf-8") as f:
             lines = f.read().split("\n")
         for q in todo:
@@ -567,7 +581,11 @@ def save_private(priv):
 
 def history(state, q):
     """(date, grade) for each answer to q, oldest first. An entry's extra, if it has one, is left out."""
-    return [(parse_date(e[0]), e[1]) for e in state["questions"].get(q["id"], {}).get("history", [])]
+    rec = state["questions"].get(q["id"], {})
+    if rec.get("course") not in (None, q["course"]):
+        raise SystemExit(f"Question {q['id']} belongs to {q['course']}, but its saved history belongs to "
+                         f"{rec['course']}; check the question id before recording another answer.")
+    return [(parse_date(e[0]), e[1]) for e in rec.get("history", [])]
 
 def is_leech(hist):
     k, n = LEECH_X_IN_LAST
@@ -576,22 +594,28 @@ def is_leech(hist):
 # ---- per-question schedule (2026-11-06) -----------------------------------------------------
 # Each question keeps its own place on the ladder, from its own history, so an O on one question no longer pushes its
 # unasked or missed siblings out with it, and an X on one no longer calls its mastered siblings back. The ledger row
-# still groups a topic's questions: its Next is the earliest of the topic's own ladder date (which brings its unasked
-# questions in) and the Next of each question of it that has been asked (sync_card_dues), and the picker asks a due
-# topic's due questions first, then its new ones, and its not-due ones only to fill a session.
+# still groups a topic's questions: its Next is the earliest Next of its asked questions and, while any is unasked, the
+# topic's own ladder date (row_due), and the picker asks due questions first, then new ones (a due topic's, then any
+# studied topic's), and not-due ones only to fill a session.
 
 def card_state(entries, row, cal):
-    """(streak, gap, next date) of one question by the CLAUDE.md ladder, replayed over its own history entries (oldest
-    first; a Good, an O at confidence 1 or 2, holds its rung), each Next capped by exam_cap from the day of that answer
-    as a topic's is. None when it was never asked."""
+    """(streak, gap, next date) by the ladder, with at most one promotion per calendar day. A day's worst attempt
+    controls its grade; an O at confidence 1 or 2 holds its rung. Exam caps apply from the review date.
+    All raw attempts remain in history. None when it was never asked."""
     if not entries:
         return None
     streak, days, nxt = 0, 1, None
+    by_day = {}
     for e in entries:
         d, g = parse_date(e[0]), e[1]
         if d is None or g not in GRADES:
             continue
-        good = g == "O" and len(e) > 2 and e[2].get("conf") in (1, 2)
+        by_day.setdefault(d, []).append(e)
+    # Relearning on the same day is useful practice, not another successful spaced recall. Keep every attempt in
+    # history, but let a date advance the ladder at most once. A miss that day still needs a next-day check.
+    for d, attempts in sorted(by_day.items()):
+        g = min((e[1] for e in attempts), key=GRADE_RANK.__getitem__)
+        good = g == "O" and any(len(e) > 2 and e[2].get("conf") in (1, 2) for e in attempts)
         streak, days = next_after(g, streak, good=good)
         nxt = d + dt.timedelta(days=days)
         cap = exam_cap(row, d, cal) if row is not None else None
@@ -604,18 +628,66 @@ def card_next(state, q, row, cal):
     cs = card_state(state["questions"].get(q["id"], {}).get("history", []), row, cal)
     return cs[2] if cs else None
 
+def topic_entries(qs, state):
+    """Every recorded answer to any of these questions."""
+    return [e for q in qs for e in state["questions"].get(q["id"], {}).get("history", [])]
+
+def topic_state(r, qs, state, cal):
+    """(streak, gap, next date) of the topic as a whole: the ladder replayed over every answer to any of its questions,
+    a day at a time (card_state on their pooled answers). None when none of them was ever answered."""
+    return card_state(topic_entries(qs, state), r, cal)
+
+def row_due(r, qs, state, cal):
+    """The earliest date any of the row's questions needs him: an asked one's own Next, and, while any is unasked, the
+    topic's own ladder date from its answers so far (its row's Next before the first one). So an unasked sibling waits
+    at most the topic's ladder gap, however far a promoted sibling's own date has moved, and a graded topic is not held
+    due just because it still has unasked questions. None for a not-studied row or one with no questions."""
+    if r.get("next") == NOT_STUDIED:
+        return None
+    dates, unasked = [], False
+    for q in qs:
+        d = card_next(state, q, r, cal)
+        if d:
+            dates.append(d)
+        else:
+            unasked = True
+    if unasked:
+        ts = topic_state(r, qs, state, cal)
+        dates.append(ts[2] if ts else r.get("next_date"))
+    return min((d for d in dates if d), default=None)
+
+def topic_summary(r, qs, state, cal, rows=None):
+    """The ledger row of a topic from its questions' current histories, or None when none of them has a graded answer:
+    Last is the latest day any was answered, Grade that day's worst grade, Streak the topic's own ladder (topic_state),
+    and Next row_due. With `rows` (the whole ledger), a gap of 3 days or more may then come up to SPREAD earlier, to
+    the lighter day next_review finds (never later: a question's own date is the latest the topic may wait). Returns
+    dict(last, grade, streak, next, why), `why` saying how Next differs from the earliest question date, or ""."""
+    valid = [e for e in topic_entries(qs, state) if parse_date(e[0]) and e[1] in GRADES]
+    if not valid:
+        return None
+    day = max(parse_date(e[0]) for e in valid)
+    grade = min((e[1] for e in valid if parse_date(e[0]) == day), key=GRADE_RANK.__getitem__)
+    streak = topic_state(r, qs, state, cal)[0]
+    earliest = nxt = row_due(r, qs, state, cal)
+    why = ""
+    if rows is not None and nxt and (nxt - day).days >= 3:
+        cand, _ = next_review(r, (nxt - day).days, day, rows, cal)
+        if cand < nxt:
+            nxt, why = cand, f"earliest question date {earliest:%b %-d}, moved to a lighter day"
+    return dict(last=day, grade=grade, streak=streak, next=nxt, why=why)
+
 def sync_card_dues(rows, questions, state, cal, only=None):
-    """Pull each ledger row's Next forward to the earliest Next of its asked questions, so a topic comes due when any one
-    of its questions does. A not-studied row is left alone. `only`: row idxs to touch (quiz_grade.py passes the rows it
-    just moved); None = every row. Returns the rows it changed. Never moves a Next later: only grading does that."""
+    """Pull each row's Next forward to row_due, so a topic comes due when any one of its questions needs him. A
+    not-studied row is left alone. `only`: row idxs to touch (quiz_grade.py passes the rows it just moved); None = every
+    row. Returns the rows it changed. Never moves a Next later: only grading does that."""
     by, _ = bank_by_topic(rows, questions)
     changed = []
     for r in rows:
         if (only is not None and r["idx"] not in only) or r["next"] == NOT_STUDIED:
             continue
-        due = [d for d in (card_next(state, q, r, cal) for q in by.get(r["idx"], [])) if d]
-        if due and (r["next_date"] is None or min(due) < r["next_date"]):
-            r.update(next=min(due).isoformat(), next_date=min(due))
+        d = row_due(r, by.get(r["idx"], []), state, cal)
+        if d and (r["next_date"] is None or d < r["next_date"]):
+            r.update(next=d.isoformat(), next_date=d)
             changed.append(r)
     return changed
 

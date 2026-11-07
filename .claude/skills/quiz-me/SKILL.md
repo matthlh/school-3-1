@@ -12,11 +12,14 @@ Two scripts with one JSON hand-off. Both live in `.claude/skills/quiz-me/scripts
   (for my eyes only). It also refreshes the **Due now** block in `ledger.md` every run.
 - **Grade:** `quiz_grade.py "3:O"` records question 3 the moment it is graded: its history, its ledger row, the
   Session-log line (2026-11-06). The session file stays open until every question is recorded (a skip `-` counts),
-  so a stop loses nothing; the same grade sent twice is recorded once (a `--said` sent with it is still kept);
+  so a stop loses nothing; retrying the same session item records it once (a `--said` sent with it is still kept);
   `--undo N` takes one back, reopening the last finished quiz when none is open (`--transit DATE --undo N` for a
   deck); `--finish` closes a session early. `--session FILE` uses the pending or filed copy of the same session when
-  one exists, so an artifact's `session.json` never records an answer twice. A row another session moved in between
-  is not rebuilt from this session's old snapshot: only the answers recorded from then on apply to it.
+  one exists, so an artifact's `session.json` never records an answer twice. Topic rows are recomputed from current
+  per-question histories across all sessions; an old session snapshot never erases another session's evidence.
+  Each new review has its own `event_id` and `session_id`, so separate same-day attempts remain distinguishable.
+  An interrupted grade is recovered from its transaction journal on the next normal command; `--dry-run` refuses
+  pending recovery instead of writing files. Do not delete the journal or reconstruct its files by hand.
   `--transit <deck date>` grades the transit deck's file instead, and only if it holds that day's deck.
 - **Ids:** `quiz_ids.py` (2026-11-06). Every question carries `**Id:** xxxxxxxx` at the end of its meta line, and
   its history is filed under it, so rewording a stem keeps its history. `quiz_pick.py` stamps new questions on
@@ -197,18 +200,28 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
   coming and six unquizzed topics gets most of the session, and a two-topic course cannot crowd it out.
 - **Per-question schedule (2026-11-06).** Each question keeps its own place on the ladder, replayed from its own
   history (`card_state`), so an `O` on one question no longer pushes out a sibling he missed, and an `X` on one no
-  longer calls back siblings he knows. The topic row still groups them: its Next is the earlier of the topic's own
-  ladder date (which brings its unasked questions in) and the Next of each of its asked questions
-  (`sync_card_dues`, on every pick and every grade; it only ever moves a Next earlier). A row's Next can therefore
-  be earlier than its Last.
+  longer calls back siblings he knows. Attempts on the same calendar day use that day's worst grade and can
+  advance the ladder only once. An `X` followed by an `O` that day still needs a next-day check. When the day's grade
+  is `O`, any low-confidence `O` that day holds the rung. Every recorded attempt stays in history.
+  The topic row groups the cards (`row_due`): its Next is the earliest Next of its asked cards and, while any card is
+  unasked, the topic's own ladder date (`topic_state`: the ladder replayed over every answer to any of its cards, a
+  day at a time; before the first answer, its activation date). So an unasked card waits at most the topic's own gap,
+  however far a promoted sibling has moved, and a graded topic is not held due just because it has unasked cards
+  (2026-11-06; the first version pinned Next to Last, which kept 55 topics due every day). `not studied` stays
+  excluded. `sync_card_dues`, on every pick and grade, can only pull the row's Next earlier; grading recomputes the
+  summary. A row's Next can be earlier than its Last when an older card is still due.
 - **Within a topic:** questions whose own Next has come first (missed ones before shaky ones), then never-asked
-  ones, then asked ones that are not due yet, which only fill a session as *(ahead)* items; plus a small bonus for
+  ones, then asked ones that are not due yet, which only fill a session as *(ahead)* items. Never-asked questions of
+  studied topics that are not due form a new pool, asked after every due question and before any *(ahead)* one, so a
+  session with room makes first contact early. A topic due as a whole with none of its questions due on its own (the
+  exam-week sweep, a Next moved to a lighter day) gets its best question into the due pool, but not in `--long`,
+  `--transit` or `--sprint` when a question that mode leaves out is what made it due; plus a small bonus for
   the question types that course's exam rewards (CPSC 310 recall/critique · STAT 251 apply/derive · PHIL 385 and
   ASIA 250 recall).
 - **Interleave:** within the quotas, breadth first: every topic gets one question before any topic gets a second
   (Matt, 2026-11-01: a 50-question session had asked 24 topics, three questions each for the X ones, and nothing from
   STAT 251 lectures 15–19). Never the same topic twice in a row, cap per topic = max(3, n ÷ due topics); leftover
-  slots go to the best remaining due questions, then *(ahead)* ones.
+  slots go to the best remaining due questions, then new ones, then *(ahead)* ones.
 - **Look-alikes** (Brunmair & Richter 2019: confusable topics side by side beat the same topics apart). Each
   course's `01-topics.md` ends with a `## Look-alikes` table, `| Topic | Look-alike | Why they get confused |`.
   When a picked question's topic has a look-alike with an eligible question not yet chosen, the best such question
@@ -225,10 +238,15 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
   `Past wrong answers:` line lists the `said` texts in its history, oldest first, each once. The focus block ends
   with one `Day-after review` line for each lecture held yesterday (term.py's lecture dates) that has a log, with
   its notes page, scoped to `--course`.
-- **Topic session grade** = the worst grade among its questions recorded this session, applied to the row as it stood
-  before the session, so recording answers one at a time moves it exactly as one batch would. Ladder from CLAUDE.md:
-  `X` streak 0, +1 d · `~` +3 d · `O` streak+1, +7 / +16 / +35 d. The exam cap and load balancing below
-  adjust the Next date it gives.
+- **Topic summary** (`topic_summary`). Grading derives the row from all current histories, including overlapping
+  transit and normal sessions, over the questions tagged to the row now plus the session's items filed under it at
+  pick time (so a question retagged mid-session still moves the row it was picked for; the row its tag names now is
+  derived too). Last is the latest review date; Grade is the worst answer on that day; Streak is the topic's own ladder
+  (`topic_state`); Next is `row_due`, then load balancing below. A Grade worse than the answer just recorded says
+  which day's other answer set it, and a Next already past says another question of it is still due.
+  Undo removes the exact review event and recomputes this summary. A saved baseline is used only if no card history
+  remains. A legacy review that cannot be identified uniquely is not undone. The per-card ladder is:
+  `X` streak 0, +1 d · `~` +3 d · `O` streak+1, +7 / +16 / +35 d. The exam cap below can shorten that gap.
 - **Exam scope.** The exams are the ledger's Term calendar rows with Kind `exam`, which term.py loads, and lecture
   N's date comes from term.py's lecture numbering. An exam covers the lectures from the start of term up to its date.
   An exam's name (`exam_name`) is its label up to the first dash, parenthesis, comma or semicolon. term.py writes the
@@ -283,13 +301,13 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
 - **Exam cap.** The cap is the latest date a grade today may set as Next. It comes from the first exam that covers
   the topic and is at least 2 days away: 4 days before that exam (`CAP_DAYS`), or the day before it when that day is
   today or past. An exam today or tomorrow sets no cap, because this review is the last one before it, so the next
-  covering exam after it sets the cap; with none, there is no cap. Load balancing picks within the part of its
-  window up to the cap, and when the whole window lies past the cap, Next is the cap.
-- **Load balancing.** When the ladder gap is 3 days or more, Next may move up to 15% of the gap either way, at
-  least one day (`SPREAD`), to the day with the fewest topics due in the ledger's Next column. Frozen topics do not
-  count, since they never come due. Ties go to the ladder date. The exam cap still wins. The ledger delta says why
-  a date moved: "ladder said Oct 13, held before Exam 2 14:00 on Fri Oct 16" or "ladder said Oct 13, moved to a
-  lighter day".
+  covering exam after it sets the cap; with none, there is no cap. Each card's date is its ladder date or this cap,
+  whichever is earlier, computed from the review date.
+- **Load balancing** (Matt approved, 2026-10-06). When the gap from the review day to the topic's Next is 3 days or
+  more, Next may come up to 15% earlier, at least a day (`SPREAD`), to the day with the fewest topics due in the
+  ledger's Next column (`next_review`; frozen topics do not count). It never moves later: each card's own date is the
+  latest its topic may wait, and `sync_card_dues` would pull a later date back. The delta says "moved to a lighter
+  day".
 - **Topic matching.** A question's `**Topic:**` tag and a Look-alikes cell find their ledger row by one rule
   (`match_topic`): the same text, else one a prefix of the other (6+ characters), else a shared LO code (`1b–c`),
   compared after dropping bold and parentheticals. The first of these that hits any row decides. When it hits
@@ -311,16 +329,20 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
 - `SCHOOL_ROOT=<copy>` points the scripts at a copy of the workspace for testing.
 
 ## Files
-- `routines/quiz-session.json` — the open session. Each recorded item gets `done`; `before` keeps the ledger rows as
-  they stood before the session. Moved to `routines/quiz/sessions/<id>.json` once every item is recorded or on
+- `routines/quiz-session.json` — the open session. Each recorded item gets `done` with its review identity; `before`
+  is a fallback for undo when no history remains, not a basis for overwriting newer reviews. Moved to
+  `routines/quiz/sessions/<id>.json` once every item is recorded or on
   `--finish`; a new quiz pick files an open one there too.
 - `routines/transit-session.json` — the transit deck's open session, written by `quiz_pick.py --transit` and graded with `quiz_grade.py --transit <deck date>` from the deck page's taps, partial or not (a new deck replaces a waiting one, or follows today's, only with `--replace`)
 - `routines/quiz-state.json` — per-question history and session records, tracked because the site shows it. A
-  history entry is `[date, grade]`, or `[date, grade, extra]` where `extra` holds only what was given: `conf` and
-  `cause` (the full word). A record whose question left the bank keeps its history and gets `retired` (why).
+  new history entry is `[date, grade, extra]`, with `event_id`, `session_id`, and optional `conf` and `cause` (the full
+  word). Legacy entries retain their previous shape. A record whose question left the bank keeps its history and
+  gets `retired` (why).
 - `routines/quiz-private.json` — git-ignored: his wrong answers (`said`) and why he was sure (`why`), by question id
   (moved out of the public quiz-state.json on 2026-11-06)
 - `routines/quiz/YYYY-MM-DD.md` — session log: grades, misses with the correct answer, ledger delta
+- `routines/quiz/grade-transaction.json` — temporary recovery journal for a grade's complete output files; the next
+  normal command rolls an interrupted write forward once, under the shared writer lock.
 - `routines/runs/YYYY-MM-DD-transit.md` — the deck the morning check sends to his phone
 
 ## Publish (end of every graded session)
@@ -330,6 +352,13 @@ so the hosted notes site shows the new schedule. Nothing to commit → it says s
 commit message, never an attribution trailer.
 
 ## Tuning log
+- 2026-11-06 (review of Codex's fixes): an adversarial review on copies of the real data found that unasked cards
+  pinned every topic's Next to its Last (55 topics due every day after all-O sessions, against 18 by Nov 11 now), that
+  a stale miss from September turned today's `O` into an `X` row, that an answer to a question retagged mid-session
+  moved no row, and that load balancing had been dropped. Fixed with `row_due`, the topic's own ladder for Grade and
+  Streak, pick-time items in the row's card set, and earlier-only balancing; plus a new-card pool in the picker,
+  absolute journal paths, a recovery that refuses to overwrite a file edited since the interruption, the closing
+  report kept in the journal, and an id-less pending deck removed when finished.
 - 2026-11-06 (audit): Matt passed on a ChatGPT audit of the whole quiz system and asked for the changes. Done: every
   question has a permanent `**Id:**` (all 988 stamped with the ids they already had, so no history moved; 17 loose
   records from questions cut in September and October kept as retired), so rewording keeps history; each question

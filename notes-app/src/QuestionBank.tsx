@@ -159,7 +159,8 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
         <button type="button" className={'btn' + (view.shuffle ? ' on' : '')} onClick={() => go({ shuffle: view.shuffle ? 0 : 1 + Math.floor(Math.random() * 9999) })} title="Random order, all lectures mixed — how the exam asks">
           {view.shuffle ? 'File order' : 'Shuffle'}
         </button>
-        <button type="button" className="btn" onClick={() => openOnly(() => !everyOpen)}>
+        <button type="button" className="btn" disabled={visible.length === 0}
+          onClick={() => openOnly((q) => keep(q) ? !everyOpen : showing.has(q))}>
           {everyOpen ? 'Hide answers' : 'Show answers'}
         </button>
       </div>

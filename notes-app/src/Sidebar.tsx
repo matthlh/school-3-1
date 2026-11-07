@@ -20,7 +20,13 @@ const courseOfCurrent = (current: string) => /^courses?\/([^/]+)/.exec(current)?
 // down, so an open course still shows its main files first.
 const KEY = 'navOpen'
 function loadOpen(): Record<string, boolean> {
-  try { return JSON.parse(localStorage.getItem(KEY) ?? '{}') as Record<string, boolean> } catch { return {} }
+  try {
+    const saved: unknown = JSON.parse(localStorage.getItem(KEY) ?? '{}')
+    if (saved === null || typeof saved !== 'object' || Array.isArray(saved)) return {}
+    return Object.fromEntries(Object.entries(saved).filter(([id, value]) =>
+      /^(?:[A-Z]+[0-9]+(?::(?:lec|read))?|briefs)$/.test(id) && typeof value === 'boolean',
+    ))
+  } catch { return {} }
 }
 function saveOpen(v: Record<string, boolean>) {
   try { localStorage.setItem(KEY, JSON.stringify(v)) } catch { /* storage blocked: the choice lasts this page load */ }

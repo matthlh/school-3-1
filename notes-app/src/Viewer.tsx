@@ -5,7 +5,7 @@ import { VERIFY } from './CoursePage'
 import { SectionRail } from './SectionRail'
 
 /** Sections folded by default: his pasted pages and raw dumps (he has them on paper), and reference kept for Claude. */
-const FOLDED = /^(your notes|raw|reference|for claude)\b/i
+const FOLDED = /^(your notes|raw|reference|for claude|about this page|provenance)\b/i
 
 /** Each `## ` section under its heading, or folded into a <details> when FOLDED names it. */
 export function Sections({ sections, path }: { sections: Section[]; path: string }) {
@@ -36,12 +36,13 @@ export function Viewer({ path, text, hideTitle }: { path: string; text: string; 
   const shown = /\/00-syllabus\.md$/.test(path) ? rest.filter((s) => !(s.heading && VERIFY.test(s.heading))) : rest
   const named = shown.filter((s) => s.heading)
 
-  // The text between the title and the first `## ` section is the page's opening note: how it was built, its sources,
-  // what it covers. It folds into "About this page" when the page has sections after it; a page that is all preamble
-  // shows it as the page.
+  // On a lecture or reading page, the text between the title and the first `## ` section says how the page was built
+  // (the deck, the recording, whether he sent a page), so it folds into "About this page" when sections follow (Matt,
+  // 2026-11-06: hide the descriptions meant for Claude). Every other page keeps its opening visible: cheat-sheet routers,
+  // exam instructions and introductions are study content. Provenance there goes under `## About this page`.
   const h1 = /^\s*#\s[^\n]*\n?/.exec(preBody)?.[0] ?? ''
   const intro = preBody.slice(h1.length)
-  const fold = shown.length > 0 && intro.trim() !== ''
+  const fold = /\/(lectures|readings)\/[^/]+\.md$/.test(path) && shown.length > 0 && intro.trim() !== ''
   return (
     <article>
       {h1.trim() && <Md text={h1} path={path} />}

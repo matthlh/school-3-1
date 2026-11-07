@@ -4,7 +4,7 @@ Written Tue Oct 20, reordered Sat Oct 31, week 8 of 13. Four goals, in priority 
 
 ## Priority
 
-School moved above Career on Oct 31. The one carve-out: a booked interview, assessment or offer call keeps its slot, because it is fixed in time and rare. Everything else in Career moves around school deadlines.
+School > Career > Personal > other (Matt, Nov 6). This order applies to flexible work in both daily and weekly plans, with no Career reserve. Fixed external events keep their calendar slots; conflicts are reported rather than resolved by moving or cancelling an event.
 
 ## Where things stand on Oct 31
 
@@ -33,7 +33,7 @@ Rules that follow from the table:
 
 - Be in the 8 a.m. STAT 251 class every time. Each missed poll is a point you cannot get back.
 - Log a lecture the same day. PHIL 385 has no other record, and Exam 4 covers lectures 14 onward.
-- Grade a deck every day. Nothing has been tapped since Oct 13, and 72 topics are overdue.
+- Daily deck and bedtime quiz reminders remain paused since Nov 4. Use an on-demand review session; restart recurring reminders only when Matt asks.
 - Read the PHIL 385 Exam 3 key against the Diapsalmata page before Nov 2, so the drop from 12/15 to 5/15 has a cause before the Exam 4 drill starts.
 - Novel: 50 pages a week from Sun Nov 1 finishes The Temple of the Golden Pavilion by Nov 15, the day before the paper questions post.
 - D3 by Fri Nov 6 and D4 by Nov 27: meets spec, then stop. The autograder shows the bar on every push.
@@ -46,7 +46,7 @@ Summer 2027 is the fallback, and the plan stays the same either way.
 - Record every interview outcome the day it arrives. One is missing; mark it or chase it this week.
 - Each new interview gets a fundamentals brush-up first and company specifics second. The first loop was standard and the gap was Java, Spring, SQL and React vocabulary.
 - Finish that brush-up by Sun Nov 8: Spring Boot by its names (DI, controllers, MVC), Java collections and unboxing, SQL joins, React state. Done when each debrief item can be answered out loud.
-- Keep the floor: one application sent per day, never two missed days. Three applications close Sun Nov 1.
+- Send one application a day when the School work leaves room. The planner reserves no Career hours (Nov 6), so this is the first Career item once School is done.
 - Referrals narrow and deep: 8 to 12 real relationships, one specific low-ask message a month each. The companies quiet for 14 days get one nudge each in the week of Nov 2.
 - Negotiation prep: one 30-minute session on co-op comp ranges before any offer call.
 - Term 2 TA application: it was due Sun Oct 25 and is overdue. Send it or cancel it by Mon Nov 2.
@@ -58,9 +58,9 @@ Summer 2027 is the fallback, and the plan stays the same either way.
 - Weekly plan never over 1.25 times the budget. When it is, items leave; they do not roll.
 - The daily rolled count under 10. It is 37 today.
 
-## Goal 4 · Body: keep the one habit that stuck
+## Goal 4 · Body: keep the habits that stuck
 
-The daily rehab habit stays as a never-roll item through the term. The gym restarts as a two-day block in the week of Nov 2. Everything else on the self-improvement backlog is parked on purpose until December.
+The daily habit in the private habit list stays as a never-roll item through the term. The gym restarts as a two-day block in the week of Nov 2. Everything else on the self-improvement backlog is parked on purpose until December.
 
 ## Priority order, Nov 1 to Nov 8
 
@@ -79,10 +79,10 @@ Cut until Nov 9: the resume update, the LinkedIn post and profile PDF, videos an
 
 ## After Nov 8, in order
 
-1. School floor every day: deck, same-day lecture logs, every quiz and WeBWorK on time.
+1. School floor every day: same-day lecture logs, an on-demand review session, every quiz and WeBWorK on time.
 2. Novel at 50 pages a week, done Nov 15; SWR2 (~Nov 12); final paper from Nov 16, due Dec 10.
 3. PHIL 385 Exam 4 (Nov 20, Canvas now shows 13:00): drill lectures 14 onward from Nov 13.
-4. Career floor every day, interviews first, brush-up finished.
+4. Career after School each day, with no reserved hours. Interviews, assessments and offers keep the first line of the brief. Finish the brush-up.
 5. D4 (Nov 27) at meets spec with the partner.
 6. STAT 251 WeBWorK weekly, WA2 (Dec 2), timed MC mocks from Nov 23 for the final.
 7. CPSC 310, STAT 251 and PHIL 385 finals (Dec 11 to 22): cumulative, so the ladder keeps running on everything.

@@ -1,7 +1,7 @@
 # PHIL 385 — logistics
 
-- **Instructor:** Anders Kraal, anders.kraal@ubc.ca. **TAs:** Zoe Luo (zhiyu.luo@ubc.ca), Karoline
-  Paier (karoline.paier@ubc.ca), Anthony Nguyen (email via Canvas).
+- **Instructor:** Anders Kraal, anders.kraal@ubc.ca. **TAs:** Zoe Luo, Karoline Paier and Anthony Nguyen, each by email through
+  Canvas.
 - **Exams** are Canvas quizzes with a 50-minute window, written in class on Respondus LockDown
   Browser. A missed in-term exam moves its weight to the final automatically — no makeups, no
   concession needed. Marked by the TA (~20 min per exam); generic feedback in class "feedback sessions".

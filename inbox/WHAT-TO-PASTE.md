@@ -23,7 +23,8 @@ notes on it."
 
 **3. Your lecture page, after each lecture.**
 Photo of the physical page is fine — I'll read it. Say `log STAT251 lec 3`.
-This is the main input. Everything downstream runs on it.
+Keep your own layout. Posted decks, recordings and assigned readings may already have prepared the
+page and question bank; your notes add or correct them. CPSC 310 uses the deck as its lecture record.
 
 **4. Any past exams, practice midterms, or sample problems** the profs release.
 Highest-value single item after the syllabus. Past exam questions tell me the *form* of
@@ -39,6 +40,8 @@ PHIL and ASIA courses, prof emphasis is the single best predictor of the exam.
 **8. Your grades as they come back.** Lets me redirect hours toward whatever is actually at risk
 instead of guessing.
 
-## What I don't need
-Textbooks, full readings, or lecture recordings. Too much volume for too little signal — and
-the point of this system is that you're not reprocessing bulk material anyway.
+## What is pulled for you
+Posted decks, available recordings and assigned reading sections are used for full lecture preparation.
+You do not need to paste whole textbooks or duplicate material that was already pulled. If an attachment
+is needed, send the assigned pages or lecture deck. Say when you have studied the prepared lecture;
+preparing a page does not by itself start its review schedule.

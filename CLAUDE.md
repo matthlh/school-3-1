@@ -1,9 +1,11 @@
 # Operating rules for this workspace
 
 Matt is a UBC CS student, Term 3-1 (Sep–Dec 2026). Goal: highest grades per hour spent.
-Career work is a co-priority, so **time efficiency is a hard constraint, not a preference.** When a career item
-and a school item collide, **career goes first** (Matt, 2026-10-09); an interview, assessment or offer is always
-the first line of any brief and a push notification (morning-check SKILL §4b).
+**Time efficiency is a hard constraint. Priority is School > Career > Personal > other** (Matt, 2026-11-06).
+Apply that order to flexible work in both daily and weekly plans, with no reserved Career hours.
+Keep fixed external events on the calendar; do not cancel or move them to resolve a planning conflict.
+An interview, assessment or offer still gets the first alert line and a push notification (morning-check SKILL §4b);
+alert visibility does not change the work priority.
 
 ## At the start of any session
 1. Read `ledger.md`. Tell him what is **overdue** for revision before anything else.
@@ -150,12 +152,21 @@ Each first attempt is recorded the moment it is graded (2026-11-06): `quiz_grade
 optional confidence and `/` cause; a live variant takes its question's grade; `--said N "…"` keeps his wrong answer and
 `--why N "…"` why he was sure, both in the git-ignored `routines/quiz-private.json`) moves that topic's ledger row by
 the ladder below and logs the question's history in `routines/quiz-state.json` at once, so a session that stops
-halfway loses nothing. The same grade sent twice counts once, `--undo N` takes one back, and `--finish` closes a session
+halfway loses nothing. Retrying the same session item counts once; separate attempts keep distinct review identities.
+`--undo N` removes that item's exact review, and `--finish` closes a session
 early. When the session closes it prints calibration, misses by cause and confident misses with his reasons, and
 names the topics that need more questions — write those before the session ends. Each question also keeps its own
-place on the ladder, from its own history: a topic comes due when any one of its asked questions does, and a due topic
-asks its due and new questions before the ones he already knows (quiz-me SKILL, "Per-question schedule"). **Never update ledger rows by hand; the script
-owns them.** `quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone (paused since
+place on the ladder, from its own history. A day's worst attempt controls that card's schedule, with at most one
+promotion per calendar day; an `X` followed by an `O` that day still needs a next-day check. A topic comes due when
+an asked question's own Next comes, or, while it still has unasked questions, on the topic's own ladder date, so a
+promoted sibling never holds an unasked one back longer than that. A due topic asks its due and new questions before
+the ones he already knows, and new questions of other studied topics fill a session before any not-yet-due one
+(quiz-me SKILL, "Per-question schedule"). **Never update ledger rows by hand; the script owns them.** Topic rows are
+derived from current per-card histories across all sessions, never by restoring an old session snapshot over newer
+reviews: Grade is the worst answer on the topic's latest review day and Streak is the topic's own ladder over all its
+answers, so an `O` today never shows as a drop because of an older miss. Grading journals its complete outputs and uses a shared writer lock so an
+interrupted write recovers on the next normal command; a dry run refuses pending recovery without writing it.
+`quiz_pick.py --transit` builds the 6-question deck the morning check sends to his phone (paused since
 2026-11-04 with the bed quiz; morning-check §7 says what runs instead): each answer
 shows as the answer's key, a checklist whose ticks set the grade, every tap is saved privately in the artifact,
 and the next morning check (or "grade my deck") runs `quiz_grade.py --transit <deck date>` on whatever he tapped, a
@@ -186,9 +197,10 @@ point is `O`, which climbs the ladder at confidence 3 and holds its rung (a Good
 count: every part `O`, at least half `~`, fewer `X`. A Bad question tap leaves the card
 ungraded and lists it for me to rewrite at grading.
 
-Two adjustments follow the ladder. Next is never later than 4 days before the first exam at least 2 days away that
-covers the topic (the day before that exam once that day has passed), and a gap of 3 days or more moves up to 15% either way, at
-least a day, to the day with the fewest topics due. From 7 days before an exam, every topic it covers is due
+The exam cap can shorten a card's ladder interval. Next is never later than 4 days before the first exam at least
+2 days away from the review date that covers the topic (the day before that exam when that cap day is today or past).
+A topic gap of 3 days or more may come up to 15% earlier, at least a day, to the day with the fewest topics due; it is
+never moved later, since each question's own date is the latest its topic may wait. From 7 days before an exam, every topic it covers is due
 unless it was reviewed that week. After a non-cumulative exam (PHIL 385) its topics freeze until a later exam of
 the course covers them. Details: the quiz-me SKILL, "What the scripts decide". Each due-now block in `ledger.md`
 opens with the date it was written, has a readiness line per exam within 21 days (three separate numbers: the share of its
@@ -313,6 +325,7 @@ by priority, schedules the winners Today and the losers Tomorrow (rollover count
 listed under **Stuck** for him to split, defer or drop; a P3 with no deadline goes to Someday; any other stuck to-do
 goes to the weekly planner's free day (next week, or before its deadline) with a note saying why, and to Someday if
 it sticks again with no deadline (a dated one, or one he brought back from Someday, is listed under Stuck instead).
+When no future day has room, flag it for a split or an explicit deferral; never silently overbook a day.
 Deadlines never change. That block gives
 each P1 a start time from 09:00 (or from now, rounded up to the quarter hour, on a later run) that skips lecture, lab
 and exam slots, puts a lecture's log after that lecture and never runs past 22:30 (an item that would end later
@@ -323,13 +336,13 @@ before an exam gets half the budget unless he sets one. Rules:
 anything added to Things3 gets both tags; never hand-schedule into Today — set when/deadline/tags
 and let the planner decide (a *future* date set by hand holds unless the deadline is within a day; to
 lighten a day, move items out and run `things_plan.py --budget H` — the trim is remembered for that
-date and skips the Career reserve). Recurring work: dated series (WeBWorK, pre-lab quizzes, CPSC labs,
+date). Recurring work: dated series (WeBWorK, pre-lab quizzes, CPSC labs,
 PHIL readings, ASIA watch+quiz per lecture) are real dated to-dos; open-ended weekly ones (novel pages,
 Friday revision block, Saturday groceries) come from the planner's `WEEKLY` table a week ahead; an auto to-do he ticks or cancels by hand stays closed (ids kept in
 `plan-state.json`); Sundays 15:00 (scheduled task `weekly-plan`, or "plan my week") `things_plan.py --week` places next week's dated and
 undated-P1 work on days by deadline and rhythm — weekly owns when-dates, daily owns Today/Tomorrow, `pin`
 tag = never move; a ⚠ OVER BUDGET line is the one decision to put to him. Knobs
-(budget per weekday, 1 h Career reserve, 1.5 h P3 cap, the exam-eve factor, the 09:00–22:30 day, the cushion
+(budget per weekday, 1.5 h P3 cap, the exam-eve factor, the 09:00–22:30 day, the cushion
 window, the samples needed before estimates scale) sit at the top of the script. One-time
 course reference info (office hours, links, policies, schedules) lives in
 `courses/<CODE>/03-logistics.md` — except tool URLs (Canvas, WeBWorK, PrairieLearn, Piazza, readers), which live in
@@ -392,7 +405,8 @@ The workspace is a **public** git repo, GitHub `matthlh/school-3-1` (2026-09-11)
 difference fails the deploy).
 `routines/` is git-ignored on purpose — the briefs carry Gmail-derived personal detail — and Zoom
 passcode links stay out of the repo (point at the Canvas Zoom tab instead). The one tracked file there is
-`routines/quiz-state.json`, because the site shows each question's history: dates, grades, confidence and cause only.
+`routines/quiz-state.json`, because the site shows each question's history: dates, grades, confidence and cause.
+New history entries also carry review and session identities for reliable retry and undo.
 His wrong answers and his reasons stay in the git-ignored `routines/quiz-private.json` (2026-11-06).
 `private/` is git-ignored as well and exists only on his Mac: `course-intel.md` (grade data and what past students
 say about each instructor) and `habits.json` (personal daily habits `things_plan.py` adds to HABITS; the plan runs

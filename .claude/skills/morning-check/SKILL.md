@@ -57,7 +57,9 @@ osascript "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morn
 Prints Today (with project/area/due/tags), Inbox count, Upcoming ≤14 days, open projects.
 
 #### 1b. Daily plan — the Today list IS the plan (Matt, 2026-09-11)
-Matt has ~6 h of work time a day outside class. Every to-do carries two tags: an **estimate**
+Matt has ~6 h of work time a day outside class. Flexible work is ordered **School > Career > Personal > other**
+(Matt, 2026-11-06), in both daily and weekly plans. There is no Career reserve. Preserve fixed external events
+on the calendar; an urgent Career alert does not change this work order. Every to-do carries two tags: an **estimate**
 (`15m` `30m` `1h` `2h` `3h`, or `event` for a fixed slot that costs no planning time) and a
 **priority** (`P1` must — deadline- or grade-bound · `P2` should this week · `P3` whenever).
 Run this **after** the Canvas/PrairieLearn/Gmail sync (so new deadlines are already in Things3):
@@ -69,7 +71,7 @@ It (1) creates the automatic to-dos — one `Log <CODE> lec N (<date>)` per unlo
 today"; auto-completed once the lecture file exists), for async ASIA 250 a `Watch + quiz ASIA250 lec N ·
 locks <date>` (2h, P1, deadline = the mini-quiz hard lock, publish + 7 d; only Matt ticks it, after the
 quiz), one per PREP ladder step that
-fires today, named for its item (`T-3 STAT 251 Midterm · FULL TIMED MOCK`, the name being the bold name in
+fires today, or the latest applicable step after a missed run, named for its item (`T-3 STAT 251 Midterm · FULL TIMED MOCK`, the name being the bold name in
 the item's Term calendar row; the ladders are `term.LADDERS`, one per kind: exam, deliverable, paper and
 assignment, each step with its time tag; once the item's date has passed, or on an exam's own day, its open steps
 are cancelled), the weekly `Golden Pavilion: read 30–35 pages (week of …)`
@@ -82,17 +84,19 @@ schedule in `PHIL_READINGS`, from a week before the reading's first class (`Read
 1h P1, due the first class, created until the last class, skipped if any open to-do already mentions
 the title; `Log PHIL385 reading: <title>` 15m P1, due the last class; both are completed once
 `courses/PHIL385/readings/<slug>.md` exists, and one still open 21 days after the last class is cancelled)
-— then (2) scores every candidate (deadline urgency → P-tag → was already planned → rollover count),
-(3) fills the budget by score: events dated today, then today's two habits (so they never roll), then
-a 1 h Career reserve, then everything else, with a 1.5 h cap on P3 filler, (4) gives the plan a clock
+— then (2) scores every candidate within its area (deadline urgency → P-tag → was already planned → rollover count),
+(3) keeps fixed events and fills the budget School, Career, Personal, then other, with a 1.5 h cap on P3 filler,
+(4) gives the plan a clock
 (below), and (5) applies it: picked items are scheduled Today, anything that was in Today and
 lost is scheduled Tomorrow (counted as a rollover in `routines/plan-state.json`, which bumps it
 next time so nothing starves), undated Anytime items stay in the pool. A to-do that loses again after 5 rollovers
 (2026-11-06) stops competing blindly: a pinned or P1 one, or one due within 3 days or overdue, still rolls and is
 flagged under **Stuck**; any other one moves out with a one-sentence note, a P3 with no deadline to Someday, the rest
 to the day the weekly planner would pick, and to Someday on a second stick when it has no deadline (a dated one, or one
-he brought back from Someday, is flagged instead). `--dry-run` previews;
-`--budget 3` trims a short day and is remembered for that date (no Career reserve on a trimmed day);
+he brought back from Someday, is flagged instead). If no future day has room, flag the item instead of silently
+overbooking. After a missed planner run, create only the latest applicable preparation step and list missing
+prerequisites in its notes; do not create a pile of old daily blocks. `--dry-run` previews;
+`--budget 3` trims a short day and is remembered for that date;
 `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos; knobs are
 at the top of the script. A future when-date he set by hand holds unless the deadline is within a day.
 Open-ended weekly to-dos (novel pages Mon, Questions for Kraal Mon, revision block Fri, groceries Sat) come from the `WEEKLY`
@@ -118,13 +122,16 @@ The printed block, top to bottom (Matt, 2026-10-06):
   quarter hour, and a line names the factors in use (`Scaled by your actual times: 1h ×1.5`). The start times,
   the cushion and the weekly mode use the same numbers.
 - **Rolled to tomorrow**, **Needs an estimate/priority tag**, the Inbox count and the ⚠ lines follow as before.
+- **Needs an area** lists each open Things3 project with no area that is not a course project (2026-11-06): its
+  to-dos rank as other, below Personal, until it is filed. Put the line in the brief under Heads-up with the area it
+  looks like ("Khan Academy push: file under Career?"); filing a project is his call, so never move it yourself.
 - **Stuck** follows Rolled to tomorrow. It lists up to 5 flagged to-dos, most rolled first, each with its roll count,
   priority, estimate and deadline state, then a `+N more` line and one `Moved out of the daily plan` count. Each move
   also has an auto line.
 - A `Cushion:` line covers each date in the next 14 days that has an exam, deliverable, paper or assignment
   (an admin date gets none), in date order. Its hours count all the work due before that date, so each line
   includes the lines above it: every open course to-do due by then, plus every ladder step still to come before
-  it. Free is the daily budgets from today to the day before, minus the 1 h Career reserve. When the work is
+  it. Free is the daily budgets from today to the day before; School has first claim on that capacity. When the work is
   more than the free hours, the line is a ⚠ instead.
 - `First thing tomorrow:` names the top item that rolled.
 - The last line, `Time check: how long did <to-do> take?`, asks about one to-do completed yesterday that has a
@@ -188,8 +195,7 @@ offered more than twice a week, the 6 h budget is being mis-set and that is the 
 
 How to offer it: one line under the plan table naming **what the extra hours buy**, in marks or in a
 lock that closes — not "you're behind". Then ask with `AskUserQuestion`. On a yes, re-run
-`things_plan.py --budget 8` (or the number he gives; the bigger budget is remembered for that date,
-and the 1 h Career reserve still applies, because only a day trimmed below its default skips it) and
+`things_plan.py --budget 8` (or the number he gives; the bigger budget is remembered for that date) and
 post the new table. On a no, leave the plan alone and do not raise it again
 that day. He asked to be **reminded**, so on a surge day that he accepted, the evening deck and the
 next morning's run both carry one line on whether the surge item actually closed.
@@ -425,10 +431,9 @@ applying is a separate session he starts himself.
    or otherwise: the Career repo's rule is that LinkedIn automation risks a restricted account, which would cost
    the alumni filter. If the emails are thin, the fix is his LinkedIn notification settings (messages and
    connections by email on), not browsing the site.
-5. **Career beats school when they collide** (Matt, 2026-10-09: "if there's something important between my school
-   and my career, prioritize the career first"). When a career date and a school date need the same hours, the
-   plan table puts the career item first and the ⚠ line names the school item that moves, not the other way round.
-   The planner's Career reserve is the floor, not the cap.
+5. **School > Career > Personal > other** (Matt, 2026-11-06, replacing the Oct 9 order). Flexible Career work
+   uses the capacity left after School work. A booked external event keeps its calendar slot; report a conflict
+   instead of moving or cancelling it. Interviews, assessments and offers retain their first-line alert and push.
 6. **Applying is allowed without asking, with one hold** (Matt, 2026-10-09). Companies worth applying to that turn
    up in the Substack newsletters, in email or in his LinkedIn notes are applied to straight away in a Career
    session, following the Career repo's applying recipe, and the brief reports what went out. The hold: big tech
@@ -946,7 +951,7 @@ limited to a deadline collision or a ⚠ OVER BUDGET line that needs a decision.
   to-do "Restart daily quizzing (bus deck + bed quiz)" under UBC holds the idea.
 - 2026-10-14 (Matt: "something's wrong with the priority"): `things_plan.py` scores work due today or tomorrow above work whose date has passed. Before, overdue scored 1000 and due-tomorrow 900, and the was-planned and rollover bonuses kept old revision steps above LAB04 and WeBWorK 4 closing the next day; overdue now takes the 2–3 day band's 700 and wins ties by date.
 - 2026-10-09 (Matt): interviews, assessments and offers are the brief's first line and a push, every employer
-  reply carries its date, career outranks school when they collide, and applying no longer waits for his say
+  reply carries its date, and applying no longer waits for his say
   except big or medium tech where a referral is plausible (§4b steps 5–6). The keepalive task now also touches
   WeBWorK, and a signed-out line always carries the sign-in link; SCOPE is his to sign in to, no keepalive.
   LinkedIn is read through its notification emails (§4b step 4b), never the site.

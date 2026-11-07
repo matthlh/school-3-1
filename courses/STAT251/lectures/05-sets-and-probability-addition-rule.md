@@ -1,6 +1,6 @@
 # STAT 251 — Lec 5 (Fri Sep 18) — Ch 3: sets and probability, the addition rule
 
-No page from you for this one (sick). This file is the posted after-class deck organised for study: `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631), plus the last two slides of the lecture 4 after-class deck, which the class started with. Two formulas are images that the Canvas text layer drops (equally likely counting on slide 8, countable additivity on slide 13); they are written here from the surrounding slide text and the standard statement.
+No page from you for this one. This file is the posted after-class deck organised for study: `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631), plus the last two slides of the lecture 4 after-class deck, which the class started with. Two formulas are images that the Canvas text layer drops (equally likely counting on slide 8, countable additivity on slide 13); they are written here from the surrounding slide text and the standard statement.
 
 ## Learning goals (slides 2–3, the Chapter 3 outcomes)
 - Recall the basic mathematical properties of probability.

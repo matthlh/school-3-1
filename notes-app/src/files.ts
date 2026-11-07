@@ -12,7 +12,9 @@ const raw = {
   ...import.meta.glob('../../GOALS.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../TOPICS.md', { query: '?raw', import: 'default' }),
   ...import.meta.glob('../../courses/**/*.md', { query: '?raw', import: 'default' }),
-  ...import.meta.glob('../../routines/runs/*.md', { query: '?raw', import: 'default' }),
+  // Morning briefs contain private mail and planning details. Only the local dev server includes them;
+  // Vite removes this branch and its imports from every production build, even when ignored files exist locally.
+  ...(import.meta.env.DEV ? import.meta.glob('../../routines/runs/*.md', { query: '?raw', import: 'default' }) : {}),
 } as Record<string, Loader>
 
 /** Workspace-relative path → loader, e.g. "courses/STAT251/00-syllabus.md". */

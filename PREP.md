@@ -1,37 +1,14 @@
 # What to do, when
 
-Three phases: the next two days, the weekly rhythm, and the run-up to an exam.
+The weekly rhythm and preparation ladders. Use the live ledger for dates and the planner for today's work.
 
 ---
 
-## Phase 0 — the next two days (~2.5 h total)
+## Current rules
 
-Ordered by return on time.
-
-**1. ~~Paste the syllabi~~ — done (2026-09-10).** All four live in `courses/<CODE>/00-syllabus.md`;
-logistics (office hours, links, dates) in `03-logistics.md`.
-
-**2. ~~Decide PHIL 321~~ — done.** Dropped for good 2026-09-19. Four courses.
-
-**3. Get the CPSC 310 environment running end-to-end (~45 min).**
-**D1 is due Fri Sep 25 at 18:00 and late work is not graded — zero, no partial credit.**
-The autograder has limited runs per day, so you cannot leave this to the last evening.
-Clone, install, run the test suite, push one trivial commit. Confirm the whole loop works
-*this week*, while it costs you nothing.
-
-**4. Set up the physical page (~15 min).**
-Rule a vertical line down each page, two-thirds / one-third. Left = question, right = answer.
-Ten pages ruled in advance so you never have to think about it in a lecture.
-
-**5. ~~Confirm your STAT 251 section and instructor~~ — done.** Lab L1K (Fri 11–12, ESB 1046),
-lectures Premarathna. His 2025W sections averaged 72–74 with ~12% of students at 90+ —
-see `private/course-intel.md` (local only) for what that implies.
-
-**6. ~~Approve the calendar blocks~~ — done.** Written to your calendar 2026-09-08, recurring
-through Dec 4, plus all CPSC 310 deadlines and the midterm.
-
-**Explicitly not worth doing in these two days:** pre-reading textbooks, making notes in
-advance, watching ahead. Passive preview shows no measurable benefit. Bank the time.
+School > Career > Personal > other. Flexible work shares the six-hour daily budget, with no Career reserve.
+Fixed calendar events keep their slots. Your handwritten lecture page has no required layout.
+The daily bus deck and bedtime quiz remain paused; use on-demand review until you ask to restart them.
 
 ---
 
@@ -49,8 +26,8 @@ advance, watching ahead. Passive preview shows no measurable benefit. Bank the t
 | **Sat** | Badminton 10–12 | 12:15–2:45 flex *(delete if nothing's due)* | Free |
 | **Sun** | | 1–3 meal prep<br>3:00–3:20 ledger + week plan | Gym |
 
-Nothing school-related after 5pm on a normal week. That's the entire point of front-loading
-afternoons — evenings stay yours for career, gym, badminton, 10:30 bed.
+These blocks are rhythm cues. The current calendar and daily planner decide what fits today,
+including shorter days and deadline changes. Nothing is automatically planned past 22:30.
 
 **Bold = the blocks that actually produce grades.** Everything else is attendance.
 
@@ -62,10 +39,10 @@ didn't). At most 30 lines, plus the Career block:
 1. **Plan today — x of 6 h** — your Things3 Today list, rebuilt by the planner: every to-do has
    an estimate tag (15m … 3h) and a priority tag (P1/P2/P3); it fills 6 h by priority and gives each
    P1 a start time. Lecture logs, exam-ladder steps (T-10 gap check, T-3 mock, T-1 rationale…), the
-   two daily revision habits, PHIL 385 readings and the weekly Golden Pavilion reading are created as
+   PHIL 385 readings and the weekly Golden Pavilion reading are created as
    to-dos automatically. Work the list top to bottom; check things off.
 2. **Rolled to tomorrow** — what was in Today and didn't fit. It competes again tomorrow with a bump.
-3. **Today's classes** + **Review** — the outline for today's lectures, and the 6 questions on today's phone deck.
+3. **Today's classes** + **Review** — prepared pages for today's lectures. Daily deck reminders stay paused until restarted.
 4. **New since yesterday** — new Canvas / PrairieLearn / Piazza items, grades posted, emails that matter.
 5. **Heads-up** — due in 2–7 days, date conflicts, **unlogged lectures**, overdue revision topics.
 
@@ -76,17 +53,15 @@ ask). Undated stuff lives in Anytime; the planner pulls from it when the day has
 
 ### After every lecture — 10 minutes, non-negotiable
 
-Cover the answer column on your page. Test yourself once. Mark each line `X` / `~` / `O`.
-Then send it to me: **`log STAT251 lec 4`** (a photo of the page is fine).
-
-That's the whole habit. If you skip it, the Friday block has nothing to quiz you on and the
-system is just note-taking.
+Send your page and say **`log STAT251 lec 4`**; a photo or rough dump is fine, with no required layout.
+The questions may already be prepared from the course material. Say when you have studied a prepared
+lecture so its questions become eligible for review. CPSC 310 needs no handwritten page from you.
 
 ### Day-specific things to watch
 
 - **Mon** — the new ASIA lecture drops by 5pm and *last week's* quiz locks at 23:59 (do it in
   the Wednesday block, never Monday night). iClicker running before STAT starts.
-- **Tue** — WeBWorK is due at 23:59 (none on Nov 3 or Nov 17).
+- **Tue** — check newly opened WeBWorK sets. Each set's current deadline comes from the live ledger.
 - **Wed** — do the ASIA lecture + quiz in the morning block. Five days of buffer beats zero.
 - **Fri** — **your lab quiz is written in the lab and can't be made up.** Then the revision block.
 - **Sun** — 20 minutes at 3 pm: the weekly-plan brief's **Week ahead** block shows the planner's placement of next week

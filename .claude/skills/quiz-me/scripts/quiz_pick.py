@@ -46,6 +46,86 @@ def question_score(q, hist, nxt, today, rnd):
         s += (4 - pref.index(q["type"])) * 3
     return s + rnd.uniform(0, 3)
 
+def candidates(fx, state, cal, today, rnd, *, topic_keys=None, everything=False, keep=lambda q: True):
+    """([candidate], {row idx: (priority, due, course)}) for the questions `keep` allows. A question of a due topic is
+    due while it is new or its own Next has come (2026-11-06): one asked and not due yet waits with the topics ahead, so
+    a miss on a sibling never calls it back. A new question of a topic that is not due is `new`: the picker asks it after
+    the due ones and before any asked one that is not due yet, so a sibling's success never holds back its first ask."""
+    cands, prio = [], {}
+    for r in fx["rows"]:
+        if topic_keys and not any(k in r["topic"].lower() for k in topic_keys):
+            continue
+        st, late, _ = fx["standing"][r["idx"]]
+        if st == "frozen" and not topic_keys:        # its exam is past and the next one does not cover it
+            continue
+        if st == "unstudied" and not topic_keys:     # nothing to recall yet: he has not studied that lecture
+            continue
+        every = fx["by_topic"].get(r["idx"], [])
+        qs = [q for q in every if keep(q)]
+        if not qs:
+            continue
+        exam = L.exam_ahead(r, today, cal)          # the boost comes from the first exam ahead that covers the topic
+        pr, due = topic_priority(r, st, late, (exam["date"] - today).days if exam else None, everything)
+        prio[r["idx"]] = (pr, due, r["course"])
+        mine, own = [], False
+        ts = L.topic_state(r, every, state, cal)
+        first = ts[2] if ts else r["next_date"]     # when an unasked question of it is due (quizlib.row_due)
+        for q in every:
+            hist, nxt = L.history(state, q), L.card_next(state, q, r, cal)
+            if ((nxt if hist else first) or dt.date.max) <= today:
+                own = True
+            if not keep(q):
+                continue
+            card_due = everything or not hist or nxt is None or nxt <= today
+            mine.append(dict(q=q, row=r, due=due and card_due, new=not hist, topic_due=due, pair=None,
+                             score=pr + question_score(q, hist, nxt, today, rnd)))
+        # A topic that is due as a whole while none of its questions is due on its own (the exam-week sweep, a row date
+        # moved to a lighter day) still gets its best one into the due pool, so the sweep reaches it. Not when another
+        # of its questions, one this mode leaves out, is what made it due.
+        if due and mine and not any(c["due"] for c in mine) and (st == "sweep" or everything or not own):
+            max(mine, key=lambda c: c["score"])["due"] = True
+        cands += mine
+    return cands, prio
+
+def interleave(cs):
+    """Best first, never the same course twice running while another course still has one."""
+    by = {}
+    for c in sorted(cs, key=lambda c: -c["score"]):
+        by.setdefault(c["q"]["course"], []).append(c)
+    out, last = [], None
+    while any(by.values()):
+        live = [k for k, v in by.items() if v]
+        pick = max([k for k in live if k != last] or live, key=lambda k: by[k][0]["score"])
+        out.append(by[pick].pop(0))
+        last = pick
+    return out
+
+def review_plan(rows, questions, state, cal, today):
+    """routines/review-plan.json, the public plan the website's Review page reads (2026-11-06). It holds nothing that
+    ledger.md and quiz-state.json do not already publish: no answer and nothing he wrote.
+      rows   each ledger row's key ("STAT251|<topic>") -> the dates of the exams that cover it, for the exam cap
+      cards  each question's id -> its row's key
+      queue  the short questions to ask, best first: every due one, then every new one of a studied topic, courses
+             taken in turn. The page leaves out any answered since, on any device."""
+    fx = L.focus(rows, questions, state, today, cal)
+    cands, _ = candidates(fx, state, cal, today, random.Random(today.isoformat()), keep=lambda q: not q.get("long"))
+    by, _ = L.bank_by_topic(rows, questions)
+    plan_rows, cards = {}, {}
+    for r in rows:
+        key = f"{r['course']}|{r['topic']}"
+        lecs = L.held(r, cal)
+        plan_rows[key] = sorted({e["date"].isoformat() for e in cal.get(r["course"], {}).get("exams", [])
+                                 if L.covers(e, lecs)})
+        for q in by.get(r["idx"], []):
+            cards[q["id"]] = key
+    due = [c for c in cands if c["due"]]
+    new = [c for c in cands if not c["due"] and c["new"]]
+    queue = list(dict.fromkeys(c["q"]["id"] for c in interleave(due) + interleave(new)))
+    return dict(as_of=today.isoformat(), rows=plan_rows, cards=cards, queue=queue)
+
+def plan_text(rows, questions, state, cal, today):
+    return json.dumps(review_plan(rows, questions, state, cal, today), indent=1, ensure_ascii=False) + "\n"
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--course", action="append", help="scope to a course code (repeatable)")
@@ -138,6 +218,8 @@ def main():
     ready = L.readiness(rows, today, cal, state, questions)
     block = L.due_block(rows, today, cal, ready)
     L.write_ledger(L.ledger_text(text, rows, block))    # keep ledger.md's Due-now block truthful on every run
+    with open(L.REVIEW_PLAN, "w", encoding="utf-8") as f:   # and the website's Review queue with it
+        f.write(plan_text(rows, questions, state, cal, today))
 
     if a.due or a.studied or a.not_studied:
         for line in block + L.unmatched_block(L.bank_by_topic(rows, scoped)[1]):
@@ -152,39 +234,14 @@ def main():
         return
 
     # ---- candidates
-    cands, prio = [], {}
-    topic_keys = [t.lower() for t in a.topic] if a.topic else None
-    for r in fx["rows"]:
-        if topic_keys and not any(k in r["topic"].lower() for k in topic_keys):
-            continue
-        st, late, _ = fx["standing"][r["idx"]]
-        if st == "frozen" and not topic_keys:        # its exam is past and the next one does not cover it
-            continue
-        if st == "unstudied" and not topic_keys:     # nothing to recall yet: he has not studied that lecture
-            continue
-        qs = fx["by_topic"].get(r["idx"], [])
-        if a.transit or a.long:      # the bus deck has no room for paper; the Friday set is nothing but
-            qs = [q for q in qs if q.get("long") == a.long]
-        if a.sprint:                 # which method: short worked problems only, nothing that needs paper
-            qs = [q for q in qs if not q["long"] and q["type"] in WORKED_TYPES]
-        if not qs:
-            continue
-        exam = L.exam_ahead(r, today, cal)          # the boost comes from the first exam ahead that covers the topic
-        pr, due = topic_priority(r, st, late, (exam["date"] - today).days if exam else None, a.all)
-        prio[r["idx"]] = (pr, due, r["course"])
-        mine = []
-        for q in qs:
-            hist, nxt = L.history(state, q), L.card_next(state, q, r, cal)
-            # A due topic's question counts as due only while it is new or its own Next has come (2026-11-06): one
-            # asked and not due yet waits with the topics ahead, so a miss on a sibling never calls it back.
-            card_due = a.all or not hist or nxt is None or nxt <= today
-            mine.append(dict(q=q, row=r, due=due and card_due, topic_due=due, pair=None,
-                             score=pr + question_score(q, hist, nxt, today, rnd)))
-        # A topic that is due as a whole (the exam-week sweep, or its row's own date) while none of its questions is due
-        # on its own still gets its best one into the due pool, so the sweep reaches it.
-        if due and mine and not any(c["due"] for c in mine):
-            max(mine, key=lambda c: c["score"])["due"] = True
-        cands += mine
+    if a.transit or a.long:              # the bus deck has no room for paper; the Friday set is nothing but
+        keep = lambda q: q.get("long") == a.long
+    elif a.sprint:                       # which method: short worked problems only, nothing that needs paper
+        keep = lambda q: not q["long"] and q["type"] in WORKED_TYPES
+    else:
+        keep = lambda q: True
+    cands, prio = candidates(fx, state, cal, today, rnd, topic_keys=[t.lower() for t in a.topic] if a.topic else None,
+                             everything=a.all, keep=keep)
     if not cands:
         print("\n== No questions in the bank for that scope. Log a lecture first.")
         sys.exit(1)
@@ -193,7 +250,9 @@ def main():
     cap = max(3, math.ceil(n / max(1, len(due_topics) or len({c['row']['idx'] for c in cands}))))
     pool = sorted(cands, key=lambda c: -c["score"])
     due_pool = [c for c in pool if c["due"]]
-    ahead_pool = sorted((c for c in pool if not c["due"]), key=lambda c: (c["row"]["next_date"] or dt.date.max, -c["score"]))
+    new_pool = [c for c in pool if not c["due"] and c["new"]]       # first contact, after the due ones (2026-11-06)
+    ahead_pool = sorted((c for c in pool if not c["due"] and not c["new"]),
+                        key=lambda c: (c["row"]["next_date"] or dt.date.max, -c["score"]))
 
     # Course quotas. Each due course gets slots in proportion to the summed priority of its due
     # topics (more topics, more overdue, weaker, nearer exam → more), never fewer than one.
@@ -230,7 +289,7 @@ def main():
         # Richter 2019). The best eligible question of a paired topic, from the due pool while any due question is
         # left, since not-due topics only fill leftover slots; it counts toward n and pulls no look-alike of its own.
         mates = looks.get(c["row"]["idx"], {})
-        left = eligible(due_pool) or eligible(ahead_pool)
+        left = eligible(due_pool) or eligible(new_pool) or eligible(ahead_pool)
         alike = [m for m in left if m["row"]["idx"] in mates]
         if alike and len(chosen) < n:
             alike[0]["pair"] = dict(of=len(chosen), why=mates[alike[0]["row"]["idx"]])
@@ -249,6 +308,8 @@ def main():
     # 2) leftover slots: best remaining due questions (quota rounding, a course ran dry), then ahead
     while len(chosen) < n and eligible(due_pool):
         pick_from(eligible(due_pool))
+    while len(chosen) < n and eligible(new_pool):
+        pick_from(eligible(new_pool))
     while len(chosen) < n and eligible(ahead_pool):
         pick_from(eligible(ahead_pool))
 
@@ -340,4 +401,8 @@ def main():
     print(f"\n== Transit deck → {os.path.relpath(deck_md, L.ROOT)}")
 
 if __name__ == "__main__":
-    main()
+    # A previous grade may have stopped between output files. Finish it before this writer loads any state.
+    import quiz_grade as G
+    with G.grade_lock():
+        G.recover_transaction(None)
+        main()

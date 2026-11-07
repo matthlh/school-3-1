@@ -28,6 +28,7 @@ const PY = `
 import json, sys
 sys.path.insert(0, sys.argv[1])
 import quizlib
+quizlib.load_questions()  # validate ids globally, including reuse across course banks
 UNTAGGED = ("(untagged)", "?", "recall")            # what _parse_bank fills in when a question has no meta line
 def tags(q):
     t = (q["topic"], q["lec"], q["type"])
