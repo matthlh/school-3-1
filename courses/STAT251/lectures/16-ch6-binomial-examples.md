@@ -1,8 +1,8 @@
 # STAT 251 — Lec 16 (Mon Oct 19) — Ch 6: Binomial examples
 
-You sent no page for this lecture, so this file is the after-class deck `Lecture_16_Chapter_6_CanvasPost_AL.pdf` (11 slides with solutions) organised for study. The lecture page says class first finished the second half of the lecture 15 slides ([lecture 15 page](15-ch6-bernoulli-binomial.md)) and its Bernoulli and Binomial mean-and-variance file, which is scanned images with no text layer; that derivation is written out on the lecture 15 page. The Panopto recording was not read. Questions: 7 in [the bank](../02-questions.md) under "Lec 16" (6 short, 1 long problem).
+The deck is `Lecture_16_Chapter_6_CanvasPost_AL.pdf` (11 slides with solutions). The class starts with the second half of the previous deck and its handwritten mean-and-variance file. The derivation is on the [lecture 15 page](15-ch6-bernoulli-binomial.md), and the [question bank](../02-questions.md) lists this lesson under "Lec 16".
 
-## Slides, organized
+## Worked Binomial examples
 
 ### Example 1: a biased coin (slides 3 to 5)
 
@@ -32,7 +32,8 @@ $$
 
 ### Example 2: drivers at a flashing red light (slides 6 to 10)
 
-- 20% of drivers come to a complete stop; 10 drivers are chosen at random; $$X$$ is the number who stop, so $$X \sim \text{Bin}(10, 0.2)$$.
+- 20% of drivers come to a complete stop. Choose 10 drivers at random.
+- Let $$X$$ count the drivers who stop. Its distribution is $$X \sim \text{Bin}(10, 0.2)$$.
 - Exactly 2 stop:
 
 $$
@@ -75,7 +76,9 @@ $$
 - Expected number who stop: $$E(X) = np = 2$$.
 - Spread: $$\operatorname{Var}(X) = 10 \times 0.2 \times 0.8 = 1.6$$, so $$\operatorname{SD}(X) = \sqrt{1.6} = 1.265$$.
 
-### The wording rules the examples use
+## Translating the question
+
+### Which counts to include
 
 - "Exactly $$k$$" is one term, $$P(X = k)$$.
 - "Less than $$k$$" stops at $$k - 1$$, while "at most $$k$$" includes $$k$$.

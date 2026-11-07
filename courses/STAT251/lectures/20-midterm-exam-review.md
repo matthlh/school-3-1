@@ -1,17 +1,17 @@
 # STAT 251 — Lec 20 (Wed Oct 28) — Midterm exam review
 
-You have not sent notes for this lecture, so this file is the posted deck `Midterm_Review_CanvasPost.pdf` (28 slides) and the Panopto recording, both pulled from Canvas on 2026-11-01, organised for study. The deck is a formula sheet for Chapters 1 and 3 to 6 with no worked examples, so each block links to the lecture pages that teach it. The class itself was four iClicker questions and advice on how written answers are marked, written up under In class. Nothing in this lecture is new material, and the final covers all of it again. Questions: 8 in [the bank](../02-questions.md) under "Lec 20".
+The deck is `Midterm_Review_CanvasPost.pdf` (28 slides) and the lecture has a Panopto recording. The deck reviews Chapters 1 and 3 to 6. The [question bank](../02-questions.md) lists this lesson under "Lec 20".
 
-## Slides, organized
+## What to review for the exams
 
 ### What the midterm covered (slides 1 to 2)
 
-- The midterm covered Chapters 1, 3, 4, 5 and 6.
+- The midterm covered Chapters 1, 3, 4, 5 and 6. The final covers this material again.
 - Inferential statistics was not on it, because it starts in Chapters 7 to 9.
 
 ### Chapter 1 checklist (slides 3 to 4)
 
-- Classifying variables, and descriptive versus inferential statistics.
+- Classify variables by type and distinguish descriptive from inferential statistics.
 - Tables and graphs:
   - frequency table, pie chart and bar graph;
   - dot plot and stem-and-leaf plot;
@@ -25,14 +25,16 @@ You have not sent notes for this lecture, so this file is the posted deck `Midte
 
 ### Chapter 3 checklist (slides 5 to 6)
 
-- Random experiments, sample spaces, events and equally likely outcomes.
+- Identify the random experiment, its sample space, events and equally likely outcomes.
 - Venn diagrams for the complement, the intersection, the union and disjoint events.
 - The addition rule and the complement rule.
 - Conditional probability, the multiplication rule and independence defined through conditional probabilities.
 - Bayes' theorem and tree diagrams.
 - Taught in [lectures 5](05-sets-and-probability-addition-rule.md), [6](06-conditional-probability-independence.md) and [7](07-bayes-theorem-and-reliability.md).
 
-### Chapter 4: discrete random variables (slides 7 to 10)
+## Formula review
+
+### Chapter 4. Discrete random variables (slides 7 to 10)
 
 - A pmf $$f(x) = P(X = x)$$ must satisfy $$f(x) \ge 0$$ for every $$x$$ and $$\sum_x f(x) = 1$$.
 - The cdf, the mean and the mean of a function of $$X$$:
@@ -191,7 +193,7 @@ $$
 - WeBWorK 6 is due Nov 12. Everything except one part of one question can be done now; that part needs Chapter 7.
 - Written Assignment 1 solutions opened at 9:30 on Oct 28, after the late submissions he allowed. Its grades come after the midterm grades, because midterm marking goes first.
 - The midterm mixed multiple choice, short answers, short calculations like WeBWorK, and possibly true or false. It ran 48 minutes, not 50, to leave time to collect papers.
-- Bring a calculator you already know how to use; the library lends them.
+- Bring a calculator you already know how to use. The library lends calculators.
 - Cheat sheets:
   - The midterm allowed one handwritten side. The final allows two sides, or two one-sided sheets, so keep the midterm sheet and add a second one.
   - Sheets are not collected.

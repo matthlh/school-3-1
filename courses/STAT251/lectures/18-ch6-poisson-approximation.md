@@ -1,8 +1,8 @@
 # STAT 251 — Lec 18 (Fri Oct 23) — Ch 6: The Poisson distribution, the Poisson process and the Poisson approximation
 
-You sent no page for this lecture, so this file is the after-class deck `Lecture_18_Chapter_6_CanvasPost_AL.pdf` (17 slides with solutions) organised for study. The Panopto recording was not read. Questions: 9 in [the bank](../02-questions.md) under "Lec 18" (7 short, 2 long problems).
+The deck is `Lecture_18_Chapter_6_CanvasPost_AL.pdf` (17 slides with solutions). The [question bank](../02-questions.md) lists this lesson under "Lec 18".
 
-## Slides, organized
+## Poisson counts and exponential waiting times
 
 ### The Poisson distribution (slides 3 and 4)
 
@@ -72,7 +72,9 @@ P(X_5 > 3) &= 1 - P(X_5 \le 3) \\
 \end{aligned}
 $$
 
-### The Poisson approximation to the Binomial (slide 10)
+## Approximating a Binomial count
+
+### When to use a Poisson model (slide 10)
 
 - If $$X \sim \text{Bin}(n, p)$$ with $$n$$ large ($$n \ge 20$$) and $$p$$ small ($$np < 5$$), then $$X$$ is approximately $$\text{Poisson}(np)$$.
 
@@ -89,7 +91,9 @@ P(X > 3) &\approx 1 - e^{-1}\left(1 + 1 + \frac{1}{2} + \frac{1}{6}\right) \\
 \end{aligned}
 $$
 
-### Example 6: an exponential feeding a Binomial (slides 14 to 16)
+## Combining probability models
+
+### Example 6. An exponential probability in a Binomial count (slides 14 to 16)
 
 - Time to be served in a cafeteria is exponential with mean 3 minutes, so $$\lambda = \frac{1}{3}$$ per minute.
 - One day, served in under 1 minute: $$P(X < 1) = 1 - e^{-1/3} = 0.283$$.
@@ -109,7 +113,9 @@ $$
 
 ## Clarifications
 
-- The deck prints 0.9997 for Example 4 and 0.0189 for Example 5's approximation. The sums are 0.99979 and 0.01899, which round to 0.9998 and 0.0190; the deck truncated. Either rounding earns the mark, but show the sum.
+- The deck truncates Example 4 to 0.9997. The sum is 0.99979 and rounds to 0.9998.
+- The deck truncates Example 5's approximation to 0.0189. The sum is 0.01899 and rounds to 0.0190.
+- The displayed answers differ because of rounding. Either earns the mark if you show the sum.
 - The second process property is about the expected count: the mean number of events in an interval is the rate times its length, $$\lambda t$$, which is why $$X_t \sim \text{Poisson}(\lambda t)$$. The count itself varies.
 - The exponential's $$\lambda$$ is the Poisson rate per unit of time, so put $$t$$ in that unit before using $$e^{-\lambda t}$$. In Example 6 a mean of 3 minutes gives a rate of $$\frac{1}{3}$$ per minute; using 3 as the rate is the standard miss.
 - Example 6 is the chapter's pattern for combining models: one distribution gives a per-day probability $$p$$, and a Binomial counts the days out of $$n$$ on which that event happens.

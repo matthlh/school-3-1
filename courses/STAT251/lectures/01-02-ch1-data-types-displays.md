@@ -1,6 +1,6 @@
 # STAT 251 — Lec 1–2 (Wed Sep 9 · Fri Sep 11) — Ch 1: data types, descriptive vs inferential, displays
 
-Your page from Sep 11 comes first. Below it are the two decks organised for study, `Lecture_01_Chapter_1.pdf` (7 slides) and `Lecture_02_Chapter_1_CanvasPost.pdf` (16 slides, which repeats lecture 1's slides and continues), checked against both Panopto recordings on 2026-10-05. The first half of lecture 1 was a tour of the course policies, which the syllabus and logistics pages already cover.
+`Lecture_01_Chapter_1.pdf` (7 slides) introduces the material. `Lecture_02_Chapter_1_CanvasPost.pdf` (16 slides) repeats those slides and continues with displays. Both lectures have Panopto recordings. The first half of lecture 1 covers policies listed on the syllabus and logistics pages.
 
 ## Your notes (pasted 2026-09-11, no notebook yet)
 - talked about variables (continuous vs discrete or whatever it's called)
@@ -14,14 +14,14 @@ Your page from Sep 11 comes first. Below it are the two decks organised for stud
 - Name the features that describe a distribution.
 - Summarise and explore data with software, which is R in the labs.
 
-## Slides, organized
+## Data and displays
 ### What statistics is (slide 3)
 - The slide gives three textbook definitions in different words. All three say that statistics is collecting data, summarising it, analysing it, and interpreting the results to draw conclusions.
 - One of the three adds that statistics is the science of learning from data and of measuring, controlling and communicating uncertainty.
 - In the recording he stressed that a mistake at any one step gives a wrong conclusion, however well the other steps are done. The mistake can be biased data, a wrong summary, the wrong analysis method or a wrong interpretation.
 - Interpreting means saying what a result means in plain words. A result such as "reject $$H_0$$" (Chapter 8) means nothing to a reader until you say what it implies.
 
-### Population, sample, parameter, statistic (slide 4)
+### What a sample tells you about a population (slide 4)
 - The population is every subject of interest in a particular study. Define it precisely: "UBC students" has to say whether it means undergraduates only, and whether online students count.
 - A sample is a subset of the population. It should be chosen at random so that it represents the population.
 - A biased sample gives a wrong conclusion however good the analysis is. Measuring heights at the basketball team's practice would overstate the average height of UBC students.
@@ -46,13 +46,16 @@ Your page from Sep 11 comes first. Below it are the two decks organised for stud
   - Blood type is categorical.
 - A quantitative variable is discrete when its possible values are separate numbers, such as 0, 1, 2, 3, with no possible value between two neighbours.
 - Shoe sizes 6, 6.5, 7 and 7.5 are discrete even though they include halves, because no size exists between 6 and 6.5.
-- A quantitative variable is continuous when its possible values fill an interval, so any value between two possible values is also possible. Height, distance and weight are continuous. How many decimals you record only reflects the measuring tool.
+- A **continuous quantitative variable** can take any value between two of its possible values. Height, distance and weight are examples.
+- The measuring tool determines how many decimals you record. It does not make the variable discrete.
 - The type matters because it decides which graph and which analysis are correct.
 
 ### Descriptive and inferential statistics (slide 7)
 - Descriptive statistics are methods for summarising data with graphs, tables and numbers. They work the same way on sample data and on population data. "The class average was 85" describes a class.
 - Inferential statistics are methods for making decisions or predictions about a population from a sample of it.
 - Inference has two parts, estimation and hypothesis testing, which come in Chapters 7 and 8.
+
+## Displaying the data
 
 ### Frequency tables (slide 8)
 - A frequency table lists the possible values of a variable with the number of observations of each, called the frequency. It is mostly used for a categorical variable.
@@ -148,7 +151,8 @@ $$
 - iClicker: which variable is continuous? The answer was (c), your dog's weight, and 92% got it.
   - The number of people waiting in line and the number of speeding tickets are counts, so they are discrete.
   - The weight is a variable because it is measured across many dogs, and it can take any value in an interval.
-- iClicker: which graph suits a categorical variable with 25 categories? The answer was (b), a bar chart, and 73% got it. A pie with 25 slices is unreadable, and sorting the bars into a Pareto chart makes them easier still to compare.
+- The iClicker asked which graph suits a categorical variable with 25 categories. The answer was (b), a bar chart. 73% got it.
+- Comparing 25 slices in a pie chart is difficult. Sorting the bars into a Pareto chart makes the comparison easier.
 - He said answering iClicker from outside the room counts as cheating. If you miss a class, use the hour for other work and watch the recording later, since several of the lowest sessions are dropped at the end of term.
 - The lecture ended partway through the histogram example on slide 13.
 

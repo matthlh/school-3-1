@@ -1,13 +1,13 @@
 # STAT 251 — Lec 7 (Wed Sep 23) — Ch 3: Bayes' theorem, tree diagrams, system reliability
 
-No page from you for this one (missed class). This file is the posted after-class deck organised for study, `Lecture_07_Chapter_3_CanvasPost_AL.pdf` (9 slides, Canvas file 47723620), plus the Panopto recording. The first ten minutes finished lecture 6's slides 8 and 9. The theorem on slide 3 and the worked solution on slide 5 are images, so they are written from the recording.
+The deck is `Lecture_07_Chapter_3_CanvasPost_AL.pdf` (9 slides, Canvas file 47723620). The first ten minutes of Panopto finish slides 8 and 9 from lecture 6. The recording also covers the theorem and solution shown as images on slides 3 and 5.
 
 ## Learning goals
 - Compute posterior probabilities with Bayes' theorem, by formula and by tree diagram.
 - Recognise the law of total probability as the denominator of Bayes' theorem.
 - Compute the reliability of a small system of independent components in series and in parallel.
 
-## Slides, organized
+## Bayes' theorem and system reliability
 ### Finishing lecture 6 (recording, first ten minutes)
 - Independence cannot be shown on a Venn diagram; disjointness and intersections can. Independence needs one of the three equations.
 - Proof that $$A^c$$ and $$B$$ are independent when $$A$$ and $$B$$ are: on the Venn diagram $$A^c \cap B$$ is $$B$$ minus the overlap, so
@@ -59,7 +59,12 @@ P(A_2 \mid D) &= \frac{0.0036}{0.0161} \approx 0.224
 $$
 
 - Prior versus posterior: given the car is from plant 2, the defect probability is 0.018. Given the car is defective, the probability it is from plant 2 is about 0.22. Different questions, different numbers.
-- Tree method (slide 6): the first branches split by plant with 0.35, 0.20, 0.45; the second split by defective or not with each plant's rate. Multiply along each path to get $$P(A_k \cap D)$$, add the three defective paths for $$P(D)$$, and the posterior is one path over that sum. It is the same arithmetic as the formula. Define the events before drawing.
+#### Tree method (slide 6)
+
+1. Define the events. The first branches split by plant with probabilities 0.35, 0.20 and 0.45.
+2. Split each plant branch into defective and non-defective outcomes using that plant's rate.
+3. Multiply along each path to get $$P(A_k \cap D)$$. Add the three defective paths to get $$P(D)$$.
+4. Divide the target path by that sum to get the posterior. This uses the same arithmetic as the formula.
 
 ### Exam rules he stated
 - Midterm: one handwritten cheat sheet, letter size, one side. Final: two sides, which can be two one-sided sheets, so the midterm sheet is reusable. Handwritten only; written on a tablet and printed is fine. Typed or pasted slides are not allowed, and two students with matching sheets lose them for that exam. Questions and answers on the sheet are a waste, since he never repeats a question.

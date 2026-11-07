@@ -1,6 +1,6 @@
 # STAT 251 — Lec 12 (Wed Oct 7) — Ch 4: the maximum and minimum of independent random variables, functions of one random variable
 
-You were absent, so there is no page from you. This file is the posted after-class deck organised for study, `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with the recording's remarks under In class. It finishes the maximum from lecture 10, adds the minimum, and works four examples. The answer files for Examples 9, 10 and 11 are scanned handwriting with no text layer, so those three are worked here from scratch; Example 12 is worked in the deck itself.
+The deck is `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with a Panopto recording. The solutions for Examples 9, 10 and 11 are separate handwritten files. Example 12 is worked in the deck.
 
 ## Learning goals (slide 2)
 - Slide 2 repeats the Chapter 4 outcome list. The one this lecture covers is the last: the maximum and minimum of independent random variables.
@@ -8,7 +8,7 @@ You were absent, so there is no page from you. This file is the posted after-cla
 - Match the maximum to a parallel system and the minimum to a series system.
 - Find the distribution of a function of one random variable by the cdf method: write $$F_Y$$ as a probability statement about $$X$$, then differentiate.
 
-## Slides, organized
+## The maximum and minimum
 ### Where the maximum and the minimum come up (slides 3 and 6)
 - The maximum $$V = \max\{X_1, \dots, X_n\}$$ of $$n$$ independent random variables models two things on the slides.
   - The lifetime of a system of $$n$$ components connected in parallel, where $$X_i$$ is the lifetime of component $$i$$. The system runs until the last component fails.
@@ -19,7 +19,9 @@ You were absent, so there is no page from you. This file is the posted after-cla
 
 ### The cdf and pdf of the maximum (slides 4–5)
 - Setup: $$X_1, \dots, X_n$$ are independent and identically distributed, each with pdf $$f_X$$ and cdf $$F_X$$.
-- The cdf comes first. $$V \le v$$ happens exactly when every $$X_i \le v$$, because if the largest is at most $$v$$ then all of them are. Independence turns the joint probability into a product, and identical distributions turn the product into a power.
+1. Start with the cdf. $$V \le v$$ means every $$X_i \le v$$. If the largest is at most $$v$$, every value is.
+2. Use independence to multiply the probabilities.
+3. If the variables have identical distributions, the factors are equal and the product becomes a power.
 
 $$
 \begin{aligned}
@@ -68,7 +70,9 @@ $$
 
 - Side by side, the two results differ only in whether $$F_X$$ or $$1 - F_X$$ is raised to the power. The maximum raises the chance of being below, and the minimum raises the chance of being above.
 
-### Example 9: $$Y = e^X$$ for a uniform $$X$$ (slide 9)
+## Worked examples
+
+### Example 9. $$Y = e^X$$ for a uniform $$X$$ (slide 9)
 - $$X$$ is uniform on $$[-1, 1]$$, so $$f_X(x) = \frac{1}{2}$$ there and $$F_X(x) = \frac{x + 1}{2}$$ for $$-1 \le x \le 1$$.
 - The cdf method: write $$Y \le y$$ as a statement about $$X$$. Because $$e^x$$ is increasing, $$e^X \le y$$ exactly when $$X \le \ln y$$.
 - The support of $$Y$$ is the image of the support of $$X$$: $$X$$ runs from $$-1$$ to $$1$$, so $$Y$$ runs from $$e^{-1}$$ to $$e$$.

@@ -1,13 +1,15 @@
 # STAT 251 — Lec 9 (Mon Sep 28) — Ch 4: continuous random variables, the pdf and cdf, uniform and exponential
 
-No page from you for this one (missed class). This file is the posted after-class deck organised for study, `Lecture_09_Chapter_4_canvaspost_AL.pdf` (27 slides, Canvas file 48440138), plus the Panopto recording. The first fifteen minutes finished lecture 8's Example 5. Class ended after slide 15. He posted a short video for slides 16 to 26 (mean and variance, uniform, exponential, Example 7) on the lecture 9 page, and lecture 10 started Friday Oct 2. Integral signs come through the text layer as a bare "Z", so the formulas are written in their standard form. Two handwritten notes on the lecture page, `Lecture_09_Chapter_4_2_Mean_Var_Uniform_and_Exp_Dist.pdf` (file 47723630) and `Lecture_09_Chapter_4_3_Discrete&Continuous_rv_summary.pdf` (file 47723729), carry the uniform and exponential derivations and a discrete-versus-continuous summary; they are scans with no text layer.
+The deck is `Lecture_09_Chapter_4_canvaspost_AL.pdf` (27 slides, Canvas file 48440138), with Panopto through slide 15. The first fifteen minutes finish lecture 8's Example 5. A separate video covers slides 16 to 26, including Example 7, before lecture 10 on Fri Oct 2.
+
+`Lecture_09_Chapter_4_2_Mean_Var_Uniform_and_Exp_Dist.pdf` (Canvas file 47723630) has the uniform and exponential derivations. `Lecture_09_Chapter_4_3_Discrete&Continuous_rv_summary.pdf` (Canvas file 47723729) compares discrete and continuous variables.
 
 ## Learning goals
 - Read a pdf as a density: probabilities are areas, and a single point has probability 0.
 - Move between pdf and cdf in both directions, and use $$F$$ for probabilities, the median and the quartiles.
 - Compute the mean and variance of a continuous random variable by integration, and know the uniform and exponential results.
 
-## Slides, organized
+## Continuous distributions and density
 ### Finishing lecture 8 (recording, first fifteen minutes)
 - Example 5 worked: $$E(X) = 1.5$$ and $$\operatorname{Var}(X) = 0.75$$ for the number of heads in three flips, by both methods. $$E(X) = 1.5$$ is the long-run average of the count over hypothetically many repetitions of the three flips, not a value $$X$$ can take.
 - Uppercase $$X$$ versus lowercase $$x$$: $$E[(X - \mu)^2]$$ is written with the random variable, the sum $$\sum (x - \mu)^2 f(x)$$ runs over its possible values, and $$\mu$$ is a number, not a random variable.
@@ -63,7 +65,9 @@ $$
 - $$P(40 \le X \le 70) = F(70) - F(40) = 0.7 - 0.4 = 0.3$$.
 - Median: solve $$F(x) = 0.5$$. $$Q_1$$: solve $$F(x) = 0.25$$. $$Q_3$$: solve $$F(x) = 0.75$$. $$\text{IQR} = Q_3 - Q_1$$. For this $$X$$ the median is 50, $$Q_1$$ is 25 and $$Q_3$$ is 75.
 
-### Posted for the video (slides 16–26, not reached in class)
+## Mean, variance and distribution models
+
+### Uniform and exponential examples (video, slides 16–26)
 - Same definitions as the discrete case, with integrals in place of sums. The shortcut is the one used in practice; $$\sigma$$ is the square root.
 
 $$
@@ -81,7 +85,9 @@ $$
 E(X) = \frac{a + b}{2} \qquad \operatorname{Var}(X) = \frac{(b - a)^2}{12}
 $$
 
-- Exponential: $$X \sim \text{Exp}(\lambda)$$, with $$\lambda > 0$$ the rate, models the time until an event. $$f(x) = \lambda e^{-\lambda x}$$ for $$x \ge 0$$ and 0 for $$x < 0$$. The derivation needs integration by parts, which he called the hardest integration the course asks for.
+- An **exponential variable** $$X \sim \text{Exp}(\lambda)$$ measures the time until an event. The rate is $$\lambda > 0$$.
+- Its density is $$f(x) = \lambda e^{-\lambda x}$$ for $$x \ge 0$$ and 0 for $$x < 0$$.
+- The derivation uses integration by parts, which the instructor called the hardest integration in the course.
 
 $$
 E(X) = \frac{1}{\lambda} \qquad \operatorname{Var}(X) = \frac{1}{\lambda^2}

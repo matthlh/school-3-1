@@ -1,6 +1,6 @@
 # STAT 251 — Lec 8 (Fri Sep 25) — Ch 4: random variables, the pmf, the cdf, mean and variance
 
-No page from you for this one (missed class). This file is the posted after-class deck organised for study, `Lecture_08_Chapter_4_canvaspost_AL.pdf` (20 slides, Canvas file 47723817), plus the Panopto recording. The first ten minutes finished lecture 7's reliability question. Example 5 (slides 17 to 19) was not reached and opened lecture 9. Summation signs come through the text layer as a bare "P", so the formulas are written in their standard form.
+The deck is `Lecture_08_Chapter_4_canvaspost_AL.pdf` (20 slides, Canvas file 47723817). The first ten minutes of the Panopto recording finish lecture 7's reliability example. Lecture 9 begins with Example 5 from slides 17 to 19.
 
 ## Learning goals (slide 4, the Chapter 4 list)
 - Notation for random variables; discrete versus continuous.
@@ -9,7 +9,7 @@ No page from you for this one (missed class). This file is the posted after-clas
 - The cdf.
 - The max and min of independent random variables, later in the chapter.
 
-## Slides, organized
+## Discrete random variables and their distributions
 ### Finishing lecture 7 (recording, first ten minutes)
 - The reliability system splits into $$S_1$$ = $$A$$ and $$B$$ in parallel and $$S_2$$ = $$C$$ and $$D$$ in series. The system works only if both blocks work, so $$P(\text{system works}) = P(S_1)\,P(S_2)$$ by independence.
 - "Or" here means $$A$$ works, or $$B$$ works, or both. The intersection factorises only because independence is given, and the answer has to say so.
@@ -82,8 +82,12 @@ $$
 
 - So $$F(0.8) = F(0.925) = \frac{1}{8}$$, $$F(1.2) = F(1.6) = \frac{1}{2}$$, and $$F(10) = 1$$. The graph is a staircase, flat between possible values and jumping by $$f(x)$$ at each one.
 
+## Expected value and spread
+
 ### Mean and variance (slides 15–16)
-- The mean or expected value is a weighted average of the possible values with the pmf as the weights. Interpretation: the long-run average of $$X$$ over hypothetical repetitions of the experiment, not something one run shows. It is a random variable's mean, not the Chapter 1 sample mean, which belongs to data.
+- The **expected value** is the average of the possible values weighted by their probabilities in the pmf.
+- Over many repetitions, the average observed value of $$X$$ approaches its expected value. One run gives one value.
+- The Chapter 1 sample mean instead averages the observations in a data set.
 
 $$
 \mu = E(X) = \sum_x x\,f(x) \qquad E[g(X)] = \sum_x g(x)\,f(x)

@@ -1,8 +1,8 @@
 # STAT 251 — Lec 21 (Mon Nov 2) — Ch 7: statistics, sampling distributions and the Central Limit Theorem
 
-You have not studied this lecture or sent a page for it, so this file is the posted deck `Lecture_22_Chapter_7_CanvasPost.pdf` (13 slides), prepared 2026-11-02, and the recording's captions, read 2026-11-04, organised for study. Canvas posted no after-class deck for this class. Canvas numbers this class Lecture 22 because the midterm took the Lecture 21 slot, and the deck's own footer says Lecture 20; this site counts it as lecture 21. What the class added to the deck (the clicker question, the three distributions, how large $$n$$ must be, the applet demonstrations and the midterm feedback) is under In class. Questions: 10 in [the bank](../02-questions.md) under "Lec 21".
+The deck is `Lecture_22_Chapter_7_CanvasPost.pdf` (13 slides) and the lecture has a Panopto recording. The course site counts it as lecture 21. Canvas calls it Lecture 22 because the midterm occupied the Lecture 21 slot, while the deck footer says Lecture 20. The [question bank](../02-questions.md) lists this lesson under "Lec 21". The recording discusses how large $$n$$ must be.
 
-## Slides, organized
+## From samples to sampling distributions
 
 ### Chapter 7 learning outcomes (slide 2)
 
@@ -52,7 +52,9 @@ $$
 - The standard deviation of a sampling distribution is called the **standard error**, to tell it apart from the standard deviation of an ordinary distribution.
 - These two facts hold for any population. Only the shape (Normal or not) needs the CLT.
 
-### The Central Limit Theorem (slide 8)
+## The Central Limit Theorem
+
+### The approximation for a mean (slide 8)
 
 - Let $$X_1, \ldots, X_n$$ be a random sample from any population with mean $$\mu$$ and variance $$\sigma^2$$.
 - When $$n$$ is large (the book says $$n \ge 20$$), $$\bar{X}$$ is approximately Normal with mean $$\mu$$ and variance $$\frac{\sigma^2}{n}$$, whatever the shape of the population:
@@ -122,7 +124,9 @@ He separated three distributions that are easy to mix up. Take the number of cup
 - The sample distribution is how the data in one sample are spread: the histogram of the 50 values you collected.
 - The sampling distribution is the distribution of a statistic, such as $$\bar{x}$$, over all the samples of 50 you could have drawn. Another sample of 50 gives a different $$\bar{x}$$, so the sample mean is a random variable, $$\bar{X}$$, and its distribution is the sampling distribution.
 
-The sample distribution looks like the population distribution but is not the same. It gets closer to the population's shape as the sample size grows, and with a small sample there is no guarantee that it looks like the population at all. A bigger sample does not make the sample distribution Normal: a skewed population gives skewed samples, however large.
+A large sample tends to match the shape of its population. A small sample may look quite different.
+
+A skewed population still gives skewed samples. The distribution of the sample mean across many samples can become approximately Normal.
 
 - In this course the only sampling distribution studied is that of $$\bar{X}$$. The sample proportion $$\hat{p}$$ and the sample standard deviation $$s$$ have sampling distributions too, but they are not covered.
 - The sampling distribution shows how much the statistic varies from study to study. Large variability is bad, because one study's estimate could land far from the parameter. Small variability is good.

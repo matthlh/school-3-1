@@ -1,8 +1,8 @@
 # STAT 251 — Lec 22 (Wed Nov 4) — Ch 7: CLT examples, the CLT activity and the Normal approximation to the Binomial
 
-You missed this class and sent no page, so this file is the after-class deck `Lecture_23_Chapter_7_CanvasPost_AL.pdf` (13 slides), the activity solutions `A8_ch7 Activity solution.pdf` and the recording's slide index, organised for study. Canvas calls this class Lecture 23 and the deck calls itself Lecture 21; this site counts it as lecture 22. The recording's captions were not out yet on Nov 4, so In class comes from Panopto's slide index and a few frames, not from what was said. Questions: 10 in [the bank](../02-questions.md) under "Lec 22", and 1 under "Long problems".
+The deck is `Lecture_23_Chapter_7_CanvasPost_AL.pdf` (13 slides), with worksheet solutions in `A8_ch7 Activity solution.pdf`. Canvas calls it Lecture 23, the deck calls it Lecture 21, and the [question bank](../02-questions.md) lists it under "Lec 22" and "Long problems". In-class timings come from Panopto's Nov 4 slide index and frames.
 
-## Slides, organized
+## Choosing a Normal model for a sample mean
 
 ### Chapter 7 learning outcomes (slide 2)
 
@@ -10,7 +10,7 @@ You missed this class and sent no page, so this file is the after-class deck `Le
 - This class covers examples of the CLT and the Normal approximation to the Binomial.
 - The Normal approximation to the Poisson is the next class's topic.
 
-### When the CLT is needed and when it is not (slides 3 to 6)
+### Exact Normal models and the CLT (slides 3 to 6)
 
 Both examples ask the same kind of question: a random sample of $$n$$ values is taken, $$\bar{X}$$ is their average, and we want a probability about $$\bar{X}$$. A Normal table can only be used if $$\bar{X}$$ is Normal, so the first step is always to say why it is. There are two different reasons, and the two examples show one each.
 
@@ -121,11 +121,15 @@ $$
 - In words: about 95% of samples of 100 calls average between 20 and 30 minutes.
 - Compare one call. A single call lands between 20 and 30 minutes with probability $$e^{-0.04 \times 20} - e^{-0.04 \times 30} = 0.148$$, from the exponential cdf. Averaging 100 calls packs the values tightly around 25.
 
-### The Normal approximation to the Binomial (slide 7)
+## Approximating a Binomial count
+
+### When the approximation works (slide 7)
 
 A Binomial count $$X \sim \text{Bin}(n, p)$$ has an exact pmf, but adding up its terms is slow: "at most 30 successes out of 100" is 31 terms. When $$n$$ is large, the Binomial's histogram has a bell shape, so a Normal curve with the same mean and variance gives a quick approximate answer from the Z-table.
 
-The reason it is bell-shaped is the CLT for a sum, from lecture 21. The deck does not say this, but it is why the method works: $$X$$ is the sum of $$n$$ independent Bernoulli trials, each 1 for a success and 0 for a failure, and a sum of many independent values is approximately Normal. Its mean $$np$$ and variance $$np(1 - p)$$ are the Binomial's own, from lecture 15.
+The CLT for a sum from lecture 21 explains the bell shape. The count $$X$$ adds $$n$$ independent Bernoulli trials, each 1 for a success and 0 for a failure. With enough trials the sum is approximately Normal.
+
+Match the Normal model to the Binomial mean $$np$$ and variance $$np(1 - p)$$ from lecture 15.
 
 - The condition: use the approximation only when both $$np \ge 5$$ and $$n(1 - p) \ge 5$$.
 - $$np$$ is the expected number of successes and $$n(1 - p)$$ is the expected number of failures, so the condition asks for at least 5 of each.

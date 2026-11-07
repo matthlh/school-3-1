@@ -1,6 +1,6 @@
 # STAT 251 — Lec 3 (Mon Sep 14) — Ch 1: histograms, describing a distribution, mean and median, range
 
-Your page from Sep 14 comes first. Below it is the deck, `Lecture_03_Chapter_1_CanvasPost.pdf` (11 slides), organised for study and checked against the Panopto recording on 2026-10-05, then what happened in class and the clarifications to your page.
+The 11-slide deck is `Lecture_03_Chapter_1_CanvasPost.pdf`. The Sep 14 lecture also has a Panopto recording.
 
 ## Your notes (pasted 2026-09-14)
 Stats Notes:
@@ -15,13 +15,14 @@ Stats Notes:
    * Makes sense but depending on the skew, mean <=> median. When skewed, median is prefered as it's the relative mean.
 * Detached housing question
 
-## Slides, organized
+## Histograms, centre and spread
 ### Finishing the histogram (slides 2–3)
 - The example is lecture 2's: the hours worked by 25 students, range 90, five intervals of width 20 starting at 170, with frequencies 1, 2, 7, 10 and 5.
 - There is no fixed rule for the number of intervals. The rule of thumb is 5 to 15, and a large data set can have more.
 - Too few intervals hide the shape, since two bars cannot describe anything. Too many fail as well: 25 values spread over 10 intervals leave most bars at 0 or 1.
 - Five or six intervals give much the same picture for this data. Software such as R may pick different intervals, and that is fine.
-- A value that sits exactly on a boundary goes in the interval where it is the upper end, and the same rule holds at every boundary. In the example, 230 is counted in 210 to 230 and 250 in 230 to 250, not in 250 to 270. That is how the deck's counts come out.
+- The deck counts a boundary value in the interval where it is the upper endpoint.
+- In its example, 230 belongs to 210 to 230. The value 250 belongs to 230 to 250, so it stays out of 250 to 270.
 - A table of intervals with their counts is still called a frequency table.
 - Slide 3 repeats lecture 2's construction steps, ending with labelling both axes and giving the graph a title.
 
@@ -34,6 +35,8 @@ Stats Notes:
 - The centre is where the observations cluster, which is where the tallest bars are.
 - The spread is how spread out the observations are.
 - An outlier is an observation far from the rest of the data, unusually large or unusually small. On a histogram outliers show up as a few bars cut off from the rest by empty intervals. Lecture 4 gives the rule for deciding.
+
+## Measures of centre and spread
 
 ### The mean (slide 7)
 - The sample mean is the sum of the observations divided by how many there are.
@@ -105,7 +108,8 @@ $$
 ## Clarifications
 ### Centre and spread (the flagged confusion)
 - Centre is one number standing in for a typical value. The deck's wording is "where the observations cluster". The two measures so far are the mean and the median.
-- Spread is how far the observations sit from each other, or from the centre. The deck calls it variation, variability or dispersion. The only measure so far is the range. Variance, standard deviation and the interquartile range come next class, with the boxplot that displays them.
+- **Spread** describes how far observations are from one another or from the centre. The deck also calls it variation, variability or dispersion.
+- This lecture measures spread with the range. The next class adds variance, standard deviation, the interquartile range and the boxplot.
 - Centre and spread are separate features, so one number cannot describe a distribution. The sets 48, 49, 50, 51, 52 and 30, 40, 50, 60, 70 both have mean and median 50, but their ranges are 4 and 40.
 
 ### Skew is named after the tail, not the peak

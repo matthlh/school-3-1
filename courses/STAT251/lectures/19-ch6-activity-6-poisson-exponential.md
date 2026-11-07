@@ -1,8 +1,8 @@
 # STAT 251 — Lec 19 (Mon Oct 26) — Ch 6: Activity 6, the Poisson count and the exponential wait
 
-You sent no page for this lecture, so this file is the posted deck `Lecture_19_Chapter_6.pdf` (6 slides) and the posted solutions `A6_Ch6_poisson_process_solutions.pdf`, both pulled from Canvas on 2026-10-28, organised for study. The Panopto recording was not read. The deck's last slide names the Central Limit Theorem as the topic of the next class, so this lecture is all Chapter 6 and has no Chapter 7 content. Questions: 14 in [the bank](../02-questions.md) under "Lec 19" (12 short, 2 long problems).
+The deck is `Lecture_19_Chapter_6.pdf` (6 slides) and the worksheet solutions are in `A6_Ch6_poisson_process_solutions.pdf`. The deck introduces the Central Limit Theorem as the next topic after Chapter 6. The [question bank](../02-questions.md) lists this lesson under "Lec 19".
 
-## Slides, organized
+## Poisson counts and exponential waits
 
 ### Chapter 6 learning outcomes (slide 2)
 
@@ -35,7 +35,9 @@ $$
 
 - The upper tail is the line used most: $$P(T > t) = e^{-\lambda t}$$.
 
-### Activity 6: earthquake recurrence intervals (slide 5 and the worksheet)
+## Worked activity
+
+### Activity 6. Earthquake recurrence intervals (slide 5 and the worksheet)
 
 - The worksheet shows a histogram of 67 recurrence intervals, the times in years between one earthquake and the next, with the exponential pdf drawn over it using the estimated annual rate $$\lambda = 0.2403$$.
 - Question 1 asks for the probability that an interval is shorter than 10 months. The rate is per year, so 10 months is $$\frac{10}{12} = 0.833$$ years.
@@ -69,7 +71,11 @@ P(X = 0) &= \frac{e^{-1.2015} \times 1.2015^0}{0!} \\
 $$
 
 - Question 4 asks why questions 2 and 3 agree. Waiting more than 5 years for the next earthquake is the same event as having no earthquakes in 5 years, so $$P(T > 5) = P(X = 0) = e^{-1.2015}$$.
-- Question 5: an earthquake has just happened, and the seismologist wants the probability of waiting more than 30 years for the 10th earthquake after it. Waiting more than 30 years for the 10th means at most 9 earthquakes fall in the next 30 years. With $$Y \sim \text{Poisson}(0.2403 \times 30 = 7.209)$$:
+#### Question 5. The wait for the 10th earthquake
+
+- An earthquake has just happened. Find the probability that the seismologist waits more than 30 years for the 10th earthquake after it.
+- The wait exceeds 30 years if at most 9 earthquakes occur in the next 30 years.
+- Model the count as $$Y \sim \text{Poisson}(0.2403 \times 30 = 7.209)$$ and calculate its lower tail.
 
 $$
 \begin{aligned}

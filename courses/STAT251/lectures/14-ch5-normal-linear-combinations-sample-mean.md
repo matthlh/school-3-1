@@ -1,8 +1,8 @@
 # STAT 251 — Lec 14 (Wed Oct 14) — Ch 5: Normal facts, linear combinations and the sample mean
 
-You were absent, so there is no page from you. This file is the posted decks organised for study, the before-class `Lecture_14_Chapter_5_BL_CanvasPost.pdf` (7 slides) and the after-class `Lecture_14_Chapter_5_CanvasPost_AL.pdf`, with the recording's remarks under In class. The class first finished lecture 13's slides 12 to 24, the standard Normal, Table A and the forward and backward calculations, which are written up on the [lecture 13 page](13-ch5-normal-and-standard-normal.md). It then reached slide 2 of this deck, the symbols $$\phi$$ and $$\Phi$$, and ran three clicker questions. Facts 1 to 3 and the airline example are written up below from the deck and are expected on Friday, Oct 16, before Chapter 6 starts.
+The decks are `Lecture_14_Chapter_5_BL_CanvasPost.pdf` (7 slides) and `Lecture_14_Chapter_5_CanvasPost_AL.pdf`. The recording starts with slides 12 to 24 from the [lecture 13 page](13-ch5-normal-and-standard-normal.md), then reaches $$\phi$$ and $$\Phi$$ on slide 2 and three clicker questions.
 
-## Slides, organized
+## Linear combinations of Normal variables
 
 ### The Normal pdf and the standard Normal (slide 2)
 
@@ -78,7 +78,11 @@ $$
 - The variance step needs independence; the mean step does not. The shape, Normal, comes from Fact 2 because $$\bar{X}$$ is a linear combination with every $$a_i = \frac{1}{n}$$.
 - The standard deviation of $$\bar{X}$$ is $$\frac{\sigma}{\sqrt{n}}$$, so averaging $$n$$ values shrinks the spread by $$\sqrt{n}$$, not by $$n$$.
 
-### Example: airline passenger weights (slide 6)
+## Worked example
+
+Facts 1 to 3 and this example were expected on Friday, Oct 16, before Chapter 6.
+
+### Airline passenger weights (slide 6)
 
 - Adult passenger weight is about $$N(85, 15^2)$$ kg.
 - Part (a), one passenger between 73 kg and 105 kg. Standardise both ends: $$z = \frac{73 - 85}{15} = -0.80$$ and $$z = \frac{105 - 85}{15} = 1.33$$. Then $$P(-0.80 < Z < 1.33) = \Phi(1.33) - \Phi(-0.80) = 0.9082 - 0.2119 = 0.6963$$.
@@ -132,6 +136,7 @@ $$
 ## Clarifications
 
 - The deck writes the pdf's constant as $$\frac{1}{\sqrt{2\pi\sigma^2}}$$ and lecture 13 wrote it as $$\frac{1}{\sigma\sqrt{2\pi}}$$. They are the same number.
-- Fact 2 needs independence for the variance formula. Without it the covariance terms from lecture 10 come back, and the deck does not say whether the combination stays Normal when the variables are dependent (it does for jointly Normal variables, which is beyond this course).
+- Fact 2 uses independence to drop the covariance terms from the variance formula. Include the covariance terms from lecture 10 when the variables are dependent.
+- The deck gives no general rule about the distribution of a combination of dependent variables. A linear combination of jointly Normal variables stays Normal, a case outside this course.
 
 Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 14", and 1 under "Long problems". Ledger: the existing 3o linear combinations row and the 3p z-scores row.

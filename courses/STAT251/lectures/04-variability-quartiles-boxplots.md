@@ -1,6 +1,6 @@
 # STAT 251 — Lec 4 (Wed Sep 16) — Ch 1: variability, percentiles and quartiles, box plots
 
-Your page from Sep 16 comes first. The clarifications below it work through the after-class deck, `Lecture_04_Chapter_1_AL_CanvasPost.pdf` (13 slides), slide by slide. Everything was checked against the deck and the Panopto recording on 2026-10-05, and what the class added is under In class.
+The Sep 16 lecture uses `Lecture_04_Chapter_1_AL_CanvasPost.pdf` (13 slides) and has a Panopto recording.
 
 ## Your notes (pasted 2026-09-16)
 
@@ -28,7 +28,8 @@ Your page from Sep 16 comes first. The clarifications below it work through the 
 ## In class
 - The variance carries squared units. In the deck example it is 2.5 hours squared, and the standard deviation is about 1.581 hours. He insisted on units in every answer.
 - Each squared deviation is 0 or positive, so the variance can never be negative. A negative variance or standard deviation means an arithmetic mistake, and the standard deviation is always the positive square root.
-- He drew two smooth curves with the same centre on one scale and asked which may be taller. The narrower one has to be taller, because the area under each curve is the total probability, 1. A narrow curve drawn with a lower peak is wrong. This is a Chapter 4 idea, previewed here.
+- The instructor drew two smooth curves on the same scale with the same centre. The narrower curve had to be taller because the area under each curve is the total probability, 1.
+- This example previews the density curves from Chapter 4.
 - Percentile rank: if a score of 1200 on a test out of 1600 is at the 90th percentile, then 90% of test takers scored below it, so it is in the top 10%.
 - Use the course's $$np + 0.5$$ rule for quartiles and percentiles, not a formula from high school or from software, especially in WeBWorK. On small data sets other rules give slightly different answers. He called the 0.5 a correction factor.
 - Notation: $$x_i$$ is the $$i$$th observation in the order recorded, while $$x_{(i)}$$, with brackets, is the $$i$$th smallest after sorting, called an order statistic.
@@ -71,7 +72,7 @@ $$
 - The range is the weakest measure of spread because it is built from the two most extreme values only.
 - The median is preferred for skewed data because it is resistant, not because it is a kind of mean.
 
-### Percentile, quartile, quantile: one idea, three names
+### Percentiles, quartiles and quantiles
 - The $$p$$th percentile is a value with $$p$$ percent of the observations at or below it. $$Q_1$$ is the 25th percentile, the median is the 50th (also called $$Q_2$$) and $$Q_3$$ is the 75th.
 - A quantile is the same thing with $$p$$ written as a fraction: $$Q(0.25)$$ is the 25th percentile, which is $$Q_1$$.
 - The deck's rule for computing $$Q(p)$$: sort the data so that $$x_{(1)} \le x_{(2)} \le \dots \le x_{(n)}$$, where $$x_{(i)}$$ is the $$i$$th order statistic, the $$i$$th smallest value. Then compute $$np + 0.5$$.
@@ -105,14 +106,16 @@ $$
 - The five-number summary is the minimum, $$Q_1$$, the median, $$Q_3$$ and the maximum.
 - The box runs from $$Q_1$$ to $$Q_3$$, so its length is the IQR, and the median is a line inside it.
 - The median line sits wherever the median falls. It is in the centre of the box only when the middle half of the data is symmetric, and it does not move because of outliers, since the median is resistant. A median line near $$Q_1$$ with a long right whisker means right-skewed; near $$Q_3$$ with a long left whisker means left-skewed. That is the "sometimes it changes".
-- The whiskers do not run to the fences, and they do not automatically run to the minimum and maximum. Each whisker ends at the most extreme observation that is still inside its fence. With no outliers that is the minimum and the maximum. With outliers the whisker stops at the last non-outlier, and the outliers are drawn as separate stars or circles beyond it.
+- Each whisker ends at the most extreme observation still inside its fence.
+- When there are no outliers, the whiskers end at the minimum and maximum.
+- When there are outliers, the whiskers stop at the last observations inside the fences. Draw each outlier separately as a star or circle.
 - Deck example: box from 23 to 35 with the line at 29.5, left whisker to 12, right whisker to 42 (the largest value at or under 53), and a star at 59.
 
 ### Box plots versus histograms
 - Yes. Side-by-side box plots on one scale compare the centre, spread, skew and outliers of two or more groups at a glance, which histograms do badly.
 - The price is shape. A box plot cannot show whether a distribution is unimodal or bimodal, so for the shape of one distribution use a histogram.
 
-### Location and scale changes (deck only, not on the page)
+### Location and scale changes (deck)
 - The class reached these slides at the start of lecture 5.
 - If every observation is transformed by $$y = a + bx$$, the mean and variance change like this:
 

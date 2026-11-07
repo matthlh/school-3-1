@@ -1,8 +1,8 @@
 # STAT 251 — Lec 17 (Wed Oct 21) — Ch 6: Binomial suitability, Activity 7 and the Geometric distribution
 
-You sent no page for this lecture, so this file is the after-class deck `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activity 7 solutions `A7_ch6_binomial_solutions.pdf` organised for study. The Panopto recording was not read, and the deck gives no answers to the two "can the Binomial be used?" questions, so the answers here apply the 10% condition from [lecture 15](15-ch6-bernoulli-binomial.md). Questions: 6 in [the bank](../02-questions.md) under "Lec 17" (5 short, 1 long problem).
+The deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activity 7 solutions are in `A7_ch6_binomial_solutions.pdf`. The two Binomial suitability examples use the 10% condition from [lecture 15](15-ch6-bernoulli-binomial.md). The [question bank](../02-questions.md) lists this lesson under "Lec 17".
 
-## Slides, organized
+## When a Binomial count fits
 
 ### Recap: when the Binomial applies (slide 3)
 
@@ -18,8 +18,10 @@ You sent no page for this lecture, so this file is the after-class deck `Lecture
 
 ### Can the Binomial model the count? (slides 9 and 10)
 
-- A pool of 10 civil engineering and 6 computer science students; a team of 5 is picked at random. The team is 5 of 16 people, far more than 10% of the pool, so picking without replacement changes $$p$$ from pick to pick and the Binomial cannot be used.
-- A pool of 250 civil and 150 computer science students; a committee of 10 is picked. The committee is 10 of 400, which is 2.5% of the pool, so the 10% condition holds and the Binomial with $$p = \frac{150}{400}$$ is a reasonable model.
+- In the first example, the pool has 10 civil engineering students and 6 computer science students. A team of 5 is picked at random.
+- The team is 5 of 16 people, more than 10% of the pool. Each selection changes $$p$$ for the next pick, so the Binomial model does not apply.
+- In the second example, the pool has 250 civil and 150 computer science students. A committee of 10 is picked.
+- The committee is 10 of 400, or 2.5% of the pool. The 10% condition holds, so a Binomial with $$p = \frac{150}{400}$$ is a reasonable model.
 
 ### Activity 7: guessing on a multiple-choice quiz (slide 11 and the worksheet)
 
@@ -30,6 +32,8 @@ You sent no page for this lecture, so this file is the after-class deck `Lecture
 - The pmf on 3 questions is 0.422, 0.422, 0.141 and 0.016 for scores 0 to 3, and the expected score is $$3 \times 0.25 = 0.75$$.
 - Passing the 3-question quiz needs 2 or more: $$0.141 + 0.016 = 0.157$$.
 - A guesser is more likely to pass the short quiz than the 10-question one, because with more questions the score settles closer to its expected 25%.
+
+## Waiting for the first success
 
 ### The Geometric distribution (slide 12)
 

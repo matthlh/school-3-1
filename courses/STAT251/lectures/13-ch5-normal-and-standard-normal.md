@@ -1,8 +1,8 @@
 # STAT 251 — Lec 13 (Fri Oct 9) — Ch 4 activity A2, and Ch 5: the Normal and standard Normal distributions
 
-You were absent, so there is no page from you. This file is the posted decks organised for study, the before-class `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and the after-class `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, the same slides plus worked answers), with the Chapter 4 activity sheet A2 and its solution, and the recording's remarks under In class. Class reached slide 11, the SAT and ACT comparison. Slides 12 to 25, the standard Normal, Table A and the forward and backward calculations, are written up below from the deck and were covered at the start of lecture 14 on Oct 14. The [lecture 14 page](14-ch5-normal-linear-combinations-sample-mean.md) has what was said about them.
+The Chapter 5 decks are `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, including worked answers). The class also uses the Chapter 4 activity A2 worksheet and solution. Panopto reaches the SAT and ACT comparison on slide 11. The [lecture 14 page](14-ch5-normal-linear-combinations-sample-mean.md) covers slides 12 to 25 as taught on Oct 14.
 
-## Slides, organized
+## The Normal distribution
 
 ### The Normal family (slides 3 to 6)
 
@@ -31,7 +31,12 @@ $$
 
 - The z-score is the number of standard deviations $$x$$ sits from the mean. Negative means below the mean, positive means above.
 - Worked example: heights of US women aged 20 to 29 are about $$N(64.2, 2.8^2)$$ inches. A 70-inch woman has $$z = \frac{70 - 64.2}{2.8} = 2.07$$, and a 60-inch woman has $$z = \frac{60 - 64.2}{2.8} = -1.50$$.
-- Z-scores compare observations from different Normal distributions. The deck's scenario: a student scored 650 on the SAT, which has $$\mu = 500$$ and $$\sigma = 100$$, and 30 on the ACT, which has $$\mu = 21$$ and $$\sigma = 4.7$$. The SAT z-score is 1.5 and the ACT z-score is about 1.91, so the ACT score is relatively higher.
+- A **z-score** measures how many standard deviations a value is from its own mean. This lets you compare scores from different distributions.
+- The student scored 650 on the SAT, with $$\mu = 500$$ and $$\sigma = 100$$. The SAT z-score is 1.5.
+- The same student scored 30 on the ACT, with $$\mu = 21$$ and $$\sigma = 4.7$$. The ACT z-score is about 1.91.
+- The ACT score is higher relative to its distribution because its z-score is larger.
+
+## Finding Normal probabilities and cutoffs
 
 ### The standard Normal distribution and Table A (slides 12 to 16)
 

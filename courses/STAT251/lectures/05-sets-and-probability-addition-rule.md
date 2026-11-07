@@ -1,6 +1,6 @@
 # STAT 251 — Lec 5 (Fri Sep 18) — Ch 3: sets and probability, the addition rule
 
-No page from you for this one. This file is the posted after-class deck organised for study: `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631), plus the last two slides of the lecture 4 after-class deck, which the class started with. Two formulas are images that the Canvas text layer drops (equally likely counting on slide 8, countable additivity on slide 13); they are written here from the surrounding slide text and the standard statement.
+The deck is `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631). The class began with the last two slides of the lecture 4 after-class deck. Slides 8 and 13 give equally likely counting and countable additivity as images.
 
 ## Learning goals (slides 2–3, the Chapter 3 outcomes)
 - Recall the basic mathematical properties of probability.
@@ -10,7 +10,7 @@ No page from you for this one. This file is the posted after-class deck organise
 - Find probabilities of single events, complements, unions and intersections, using Venn diagrams where they help.
 - The rest of the Chapter 3 list (conditional probability, Bayes' theorem, the law of total probability, series and parallel circuits) belongs to lectures 6 and 7.
 
-## Slides, organized
+## Sample spaces, events and probability
 ### Carried over from lecture 4 (its slides 11 and 12)
 - Location and scale changes: if every observation is transformed by $$y_i = a + b\,x_i$$, the mean becomes $$\bar{y} = a + b\,\bar{x}$$ and the variance becomes $$s_y^2 = b^2 s_x^2$$. Celsius to Fahrenheit is the deck's case, with $$a = 32$$ and $$b = \frac{9}{5}$$.
 - The last lecture 4 slide shows a box plot and a histogram of the same data, generated from a right-skewed $$F(10, 5)$$ distribution. The histogram shows the skew as a long right tail. The box plot shows the same skew as a median sitting low in the box, a long upper whisker and starred outliers above it.
@@ -48,12 +48,17 @@ $$
 P(A) = \frac{\text{number of outcomes in } A}{\text{number of outcomes in } S}
 $$
 
+## Combining events
+
 ### Events as sets (slides 9–12)
 - The complement $$A^c$$ holds every outcome of $$S$$ that is not in $$A$$. $$P(A)$$ and $$P(A^c)$$ add to 1, so $$P(A^c) = 1 - P(A)$$.
 - The intersection $$A \cap B$$ holds the outcomes common to $$A$$ and $$B$$. Its probability is written $$P(A \text{ and } B)$$ or $$P(A \cap B)$$.
 - Two events are disjoint, or mutually exclusive, when they have no outcome in common. They cannot occur together, so $$P(A \cap B) = 0$$. Rolling a die, "odd" and "even" are disjoint.
 - The union $$A \cup B$$ holds the outcomes in $$A$$, in $$B$$, or in both. Its probability is written $$P(A \text{ or } B)$$ or $$P(A \cup B)$$.
-- Each of these slides carries a Venn diagram: a rectangle for $$S$$ with a circle per event. The complement is everything outside the circle, the intersection is the overlap, disjoint events are two circles that do not touch, and the union is both circles together.
+- A **Venn diagram** uses a rectangle for $$S$$ and a circle for each event.
+- The complement is the part of the rectangle outside the event's circle.
+- The intersection is the overlap. Disjoint events have no overlap.
+- The union contains both circles, including their overlap.
 
 ### Properties of probability (slide 13)
 - General addition rule:

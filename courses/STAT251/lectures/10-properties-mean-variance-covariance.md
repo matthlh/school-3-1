@@ -1,6 +1,6 @@
 # STAT 251 — Lec 10 (Fri Oct 2) — Ch 4: rules for the mean and variance, covariance, sums and averages, the maximum of independent random variables
 
-No page from you for this one. This file is the posted after-class deck organised for study, `Lecture_10_Chapter_4_CanvasPost_AL.pdf` (16 slides, Canvas file 47723830). It is the before-class deck plus worked answers to Examples 8 and 9. It was checked against the Panopto recording on 2026-10-05, and what the class added is under In class.
+The after-class deck is `Lecture_10_Chapter_4_CanvasPost_AL.pdf` (16 slides, Canvas file 47723830). It adds worked answers to Examples 8 and 9. The lecture also has a Panopto recording.
 
 ## Learning goals (slide 2)
 - Use the rules for the mean and variance of $$aX + b$$ and of sums of random variables.
@@ -8,7 +8,7 @@ No page from you for this one. This file is the posted after-class deck organise
 - Find the mean and variance of a sum or an average of independent random variables.
 - Find the cdf and pdf of the maximum, and the minimum, of independent random variables.
 
-## Slides, organized
+## Mean, variance and covariance
 ### Rules for the mean and variance (slide 3)
 
 For any random variables $$X$$ and $$Y$$ and any constants $$a$$ and $$b$$:
@@ -93,6 +93,8 @@ $$
 
 - The minus sign changes only the covariance term. The variance terms are always added.
 
+## Sums, averages and extrema
+
 ### Sums of independent random variables (slides 9–10)
 - Repeating an experiment independently gives independent random variables $$X_1, \dots, X_n$$. A linear combination is $$Y = a_1X_1 + \dots + a_nX_n$$, where the $$a_i$$ are constants.
 
@@ -176,7 +178,9 @@ $$
   - For the cheat sheet, write only the general formula for $$\operatorname{Var}(aX + bY + c)$$ plus the fact that independence makes the covariance 0. That covers every special case on the slides.
   - He allows a cheat sheet because building a good one forces you to understand the material.
 - Covariance gives only the direction of a linear relationship, not its strength. The sample covariance and the correlation come with Chapter 11, together with Chapter 2.
-- When a question says "random sample", the random variables are independent and identically distributed, often written iid. Independent means no value affects another. Identically distributed means they all come from the same distribution, so they share one mean and one variance. His example was the grades of randomly chosen students from a distribution with mean 78 and SD 8.
+- In a **random sample**, the variables are independent and identically distributed, or iid.
+- Independence means no value affects another. Identically distributed values come from the same distribution and share a mean and variance.
+- The instructor's example used randomly selected student grades from a distribution with mean 78 and standard deviation 8.
 - Before you observe a random variable its value is random. After you observe it, it is just a number, called an observed value.
 - Parallel system example: four components each last between 0 and 100 hours.
   - With lifetimes 78, 10, 88 and 2 hours, the system runs for 88 hours.

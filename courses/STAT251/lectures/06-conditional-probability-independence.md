@@ -1,13 +1,13 @@
 # STAT 251 — Lec 6 (Mon Sep 21) — Ch 3: conditional probability and independence
 
-No page from you for this one. This file is the posted after-class deck organised for study, `Lecture_06_Chapter_3_CanvasPost_AL.pdf` (10 slides, Canvas file 48280545), plus what the Panopto recording adds. The first fifteen minutes finished lecture 5, and slides 8 and 9 were not reached, so lecture 7 opens with them. Formulas that are images in the deck are written from the recording.
+The deck is `Lecture_06_Chapter_3_CanvasPost_AL.pdf` (10 slides, Canvas file 48280545). The Panopto recording covers the formulas shown as images in the deck. The first fifteen minutes finish lecture 5, and lecture 7 picks up slides 8 and 9.
 
 ## Learning goals
 - Define conditional probability and use it, with the multiplication rule, to find joint probabilities.
 - Define independence in three equivalent ways and test it with an equation, never with a Venn diagram.
 - Apply independence to "at least one" questions through the complement.
 
-## Slides, organized
+## Conditional probability and independence
 ### Finishing lecture 5 (recording, first fifteen minutes)
 - The general addition rule again, with the Venn picture: adding $$P(A)$$ and $$P(B)$$ counts the overlap twice, so the overlap is subtracted once. For disjoint events $$P(A \cap B) = 0$$ and the rule is just the sum. If $$A \subset B$$ then $$P(A \cap B) = P(A)$$ and $$P(A) \le P(B)$$, because $$A$$ cannot grow past $$B$$.
 - The baseball and hockey example, done as a method. Define the events first ($$A$$ = likes hockey, $$B$$ = likes baseball). Turn every sentence into a probability statement: $$P(A) = 0.65$$, $$P(B) = 0.45$$, $$P(A \cup B) = 0.85$$. Name the rule, then solve for $$P(A \cap B) = 0.25$$. He said written answers are marked this way: define the events, state the rule, show the steps, even when practising WeBWorK or multiple choice.
@@ -66,8 +66,13 @@ $$
 - The two agree, so $$A$$ and $$B$$ are independent.
 - Rule for questions: unless independence is stated, or is physically certain like a coin and a die, do not assume it. Assuming it makes the question easier and the answer wrong.
 
+## Worked examples
+
 ### At least one switch fails (slide 7)
-- Eight switches, each works with probability 0.99, independently. "At least one fails" splits into many cases (exactly one, exactly two, and so on, each in many arrangements), so take the complement. Define $$A_i$$ = switch $$i$$ works properly before writing anything, then use independence to multiply.
+- Each of eight switches works independently with probability 0.99.
+- Let $$A_i$$ be the event that switch $$i$$ works properly.
+- The event "at least one fails" includes exactly one failure, exactly two failures and all the remaining failure counts, each with different arrangements. Use the complement, where all switches work.
+- Independence lets you multiply the probabilities that the individual switches work.
 
 $$
 \begin{aligned}
