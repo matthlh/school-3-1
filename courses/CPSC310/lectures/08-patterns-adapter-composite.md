@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 8 (Tue Oct 6) — Patterns I: Adapter and Composite
 
-Deck: [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). Reader: [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/), which covers Adapter and Composite plus the Factory, Strategy, State and Decorator that later decks will use. Questions: 12 in [the bank](../02-questions.md) under "Lec 8". Matt was absent; the deck was posted before class, so there is no In class section.
+The lecture uses [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). The [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/) reader covers Adapter and Composite as well as Factory, Strategy, State and Decorator. See "Lec 8" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -8,7 +8,7 @@ Deck: [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patte
 - Move unfamiliar code to a pattern one behaviour-preserving step at a time. Today's targets are Adapter and Composite.
 - Judge whether a pattern pays for itself in a given situation.
 
-## Slides, organized
+## How to analyse a design pattern
 ### Module 2 starts: designing for change (slides 2–5)
 - Module 1 was design in the small: the cost of change, where it comes from (coupling, cohesion, testability) and how to reduce it (refactoring). Module 2 is design in the medium: improving a design, trade-offs between architectures, and what a design means for people outside it.
 - Every system gets changed. The deck's three kinds of change: a new requirement (a QA role in the org chart), a new dependency (switching payment providers), and new scale (more users, developers, code).
@@ -41,6 +41,8 @@ Deck: [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patte
 - Patterns help when change is likely, when variability already exists, and when coupling is becoming painful.
 - Patterns hurt when requirements are stable, when there is only one concrete case, and when the cost of the abstraction outweighs the future benefit.
 
+## Two patterns
+
 ### Adapter (slides 14–17)
 - Scenario: a year-end "wrapped" summary of the songs you played across several music platforms. Each platform has its own interface, its own methods and its own idea of what a play looks like, including CSV and JSON exports.
 - Intent: an off-the-shelf component offers functionality you want to reuse, but its view of the world does not fit the system you are building. **Adapter** converts the interface of a class into the interface clients expect, so classes with incompatible interfaces can work together. Concretely, wrap the existing class in a new class that exposes the interface you want.
@@ -52,7 +54,10 @@ Deck: [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patte
 
 ### Composite (slides 18–21)
 - Scenario: org-chart software. An org contains managers who supervise managers, engineers, designers, technical leads and product managers, so the tree has nodes that are one person and nodes that head a team.
-- Intent: the application manipulates a hierarchy of "primitive" and "composite" objects, and having to know which kind each object is before processing it is undesirable. **Composite** composes objects into tree structures for whole-part hierarchies and lets clients treat individual objects and compositions uniformly. The roles are **Component** (the shared interface), **Leaf** (one object) and **Composite** (holds components, each of which may itself be a composite).
+- **Composite** represents a whole and its parts as a tree. A client can process both "primitive" and "composite" objects through the same interface.
+- **Component** is the shared interface.
+- **Leaf** represents one object.
+- **Composite** holds components. A child component can itself be a composite.
 - The four-step analysis.
   1. Change: new roles in the org, any of which might be one person or head a team of their own.
   2. Pain: one array and one loop per role in every Manager operation (scattered), and each operation mixed with checking whether a report is a person or a team (tangled).

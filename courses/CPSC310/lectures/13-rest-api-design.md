@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 13 (Thu Oct 22) — REST API Design
 
-Deck: [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-api.pdf), 13 slides, posted on lecture day. Reader: [REST](https://ubccpsc.github.io/310/textbook/3-software-design/rest/), whose three sections are Nouns and Verbs, Statelessness and Design goals. Questions: 12 in [the bank](../02-questions.md) under "Lec 13". Slide 3 (the "Uber of ____" motivation for software as a service) is framing, not exam material, and is left out. Lab 1's topic already holds the status-code and PUT-idempotence basics; this page adds the design constraints. Built from the deck and the reader; Matt takes no notes in this course.
+The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-api.pdf) (13 slides) and [REST](https://ubccpsc.github.io/310/textbook/3-software-design/rest/), whose sections are Nouns and Verbs, Statelessness and Design goals. See "Lec 13" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Identify the parts of an HTTP request and response.
@@ -8,7 +8,7 @@ Deck: [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-ap
 - Improve a design using the Uniform Interface, Idempotency, Statelessness and Connectedness constraints.
 - Recognize requirements that REST models poorly.
 
-## Slides, organized
+## HTTP requests and responses
 
 ### Two services as the running examples (slides 4 and 7)
 - A weather client asks `GET /v1/forecast?city=Vancouver&days=3` with an `Accept: application/json` header and gets `200 OK`, a `Content-Type: application/json` header and a JSON body with the city and a list of days.
@@ -30,7 +30,9 @@ Deck: [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-ap
 - A **response** has three parts: the **status**, the **headers** and the **body**.
 - Status classes: **2XX** means it worked (`200 OK`, `201 Created`); **4XX** means the client's request was the problem (`400 Bad Request`, `404 Not Found`); **5XX** means the server failed (`500 Internal Server Error`).
 
-### Scenario: campus bike share (slide 8)
+## Designing a REST API
+
+### Campus bike share (slide 8)
 - The university launches a bike share with docking stations around campus. Bikes carry printed ids (`b1`, `b2`, …). Riders use a phone app to find a station with bikes, enter a bike's id to take it, and return it at any station.
 - Every later slide designs this service.
 
@@ -94,6 +96,9 @@ Deck: [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-ap
 - **Documentation**: what the API does, its parameters and its return structure, with concrete examples.
 
 ## Clarifications
+
+- Lab 1 covers status codes and PUT idempotence. This lecture adds REST design constraints. Slide 3 introduces software as a service with the "Uber of ____" example.
 - The deck's idempotency row says "all but POST". The reader adds PATCH as not idempotent; the deck never mentions PATCH. On an exam over the deck's four methods, GET, PUT and DELETE are idempotent and POST is not.
 - The deck splits Statelessness (the request carries the client's state) from Connectedness (responses carry links). The reader's Statelessness section covers both: its `/:query/next` example is the deck's `/stations/more`, and its GitHub example is Connectedness. Use the deck's two names when asked which constraint a design breaks.
-- The deck's slide 11 creates the trip with PUT and a client-chosen id, while the reader's table makes POST the usual way to create. Both are right: PUT creates when the client picks the URI, POST when the server does, and the deck chooses PUT because a dock retry must not start a second trip.
+- Slide 11 uses PUT to create a trip at a client-chosen URI. A dock can retry the same request without starting a second trip.
+- The reader's table gives POST as the usual creation method. It fits cases where the server chooses the URI. The two examples assign that choice to different parties.

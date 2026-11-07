@@ -1,12 +1,12 @@
 # CPSC 310 — Lec 2 (Tue Sep 15) — Coupling
 
-Deck: [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/02a-coupling.pdf). Reader: [Change Difficulty](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/change-difficulty/), [Cost of Change](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/cost-of-change/). Questions: 8 in [the bank](../02-questions.md) under "Lec 2".
+The lecture uses [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/02a-coupling.pdf). The reader covers coupling in [Change Difficulty](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/change-difficulty/) and the recap measures in [Cost of Change](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/cost-of-change/). See "Lec 2" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Tell apart the two forms of dependency that can exist between pieces of code, explicit and implicit.
 - Find the coupling in code you have not seen before and judge what a change would cost along three axes: degree, locality, and strength.
 
-## Slides, organized
+## Changes that expose dependencies
 
 ### FEAT-0000: a rename shows what depends on what (slides 3–4)
 - The ticket: `Instructor` stores one `name` field, and the city wants separate first and last names. The code is the Parkboard practice repo, [ubccpsc310/lecture_code](https://github.com/ubccpsc310/lecture_code), folder `02a-coupling`.
@@ -25,6 +25,8 @@ Deck: [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/02a-couplin
 - The CLI gained the age as a fifth positional argument (`argv[5]`), so the usage text, the parser, and anyone typing the command must all agree on the order.
 - Tests changed too: Test 35's expected total moved from 144.38 to 150.15, Test 36 flipped from "concession" to "free", and a new Test 36b checks that seniors still pay in other categories. Tests are dependents as well.
 - What to look for on an exam: the same number or the same list appearing in more than one file is a bill waiting to come due. Count the files a one-line policy change would touch; that count is the footprint.
+
+## Measuring coupling
 
 ### The three axes of coupling (slides 8–9)
 - Slide 9 defines **coupling**: "Coupling is the relationship between components. It forms through dependencies—imports, method calls, shared data, and assumptions about other components."
@@ -58,7 +60,11 @@ Deck: [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/02a-couplin
 
 ### Recap (slides 14–16)
 - Slide 14 repeats the learning goals.
-- Slide 15 recaps lecture 1. Designs have shortcomings that set the cost of current and future changes. The reader measures that cost two ways: **magnitude** is how large a change is, usually in lines of code, and **footprint** is how widespread it is, counted in methods, classes, files, modules, or services. Both reading and writing pay these costs; understanding code spread across eight files is a footprint cost even when you edit nothing. The risk is missing part of the footprint, because nothing forces dependent code to update.
+- Slide 15 recaps lecture 1. Design shortcomings make current and future changes more expensive.
+- **Magnitude** is how large the change is, usually in lines of code.
+- **Footprint** is how far the change reaches. Count the methods, classes, files, modules or services involved.
+- These costs apply when reading and writing code. Understanding code spread across eight files costs time even before you edit it.
+- You can miss part of the footprint because dependent code may have no mechanism forcing it to update.
 - Slide 16 recaps coupling as a way to quantify how dependencies affect the cost of change. Degree is how many things share a concept, locality is how far apart they are, and strength is how tightly they are bound, graded by the five connascence types. Coupling can be explicit or implicit.
 - The link between the two recaps: coupling is what produces footprint. Implicit coupling is dangerous for the same reason an unclear footprint is: nothing forces you to find every affected spot.
 

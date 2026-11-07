@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 7 (Thu Oct 1) — Test robustness
 
-Deck: [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/lectures/04b-test-robustness.pdf). Reader: [Blackbox Testing](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/blackbox/) for partitioning and [Glassbox Testing](https://ubccpsc.github.io/310/textbook/8-unplaced/testing/glassbox/) for coverage; the opening recap comes from [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). Questions: 10 in [the bank](../02-questions.md) under "Lec 7".
+The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/lectures/04b-test-robustness.pdf). Read [Blackbox Testing](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/blackbox/) for partitioning and [Glassbox Testing](https://ubccpsc.github.io/310/textbook/8-unplaced/testing/glassbox/) for coverage. The recap uses [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 7" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Design stubs and spies that stand in for real dependencies, to control what the code under test receives and to observe what it sends.
@@ -8,7 +8,7 @@ Deck: [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/lectures/04b-
 - Build a comprehensive test suite systematically with equivalence class partitioning.
 - Judge the strength of a test suite with coverage.
 
-## Slides, organized
+## What a strong test suite checks
 ### Recap: test doubles, DIP and LSP (slides 3–10)
 - Lecture 6 (Tue Sep 29, deck 04a) owns this material in full. The slides below are the recap this deck opened with.
 - Tests are hard to write when the code under test is uncontrollable (a bank, a clock), unobservable (you cannot see what was sent), or unsafe or slow (real money, the network).
@@ -19,7 +19,11 @@ Deck: [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/lectures/04b-
 - The **LSP methods rule**. A subclass must not strengthen preconditions for the same inputs, although it may widen them. It must not weaken postconditions for the same inputs, although it may narrow them.
   - Penguin's "heights under 50 cm only" is a stronger precondition. "Penguin perishes" is an additional effect the superclass never promised.
   - The Resize example: the superclass lets you set one dimension. A subclass where changing the width also changes the height has widened the postcondition, which is the bad direction.
-- The recap slide puts the four points together. Depend on an interface and pass the dependency in (DIP). Doubles stand in for it: stubs control what comes back, spies record what goes out. A double has to keep the interface's contract, not just its shape (LSP). The cost is another layer, doubles can drift from the real thing and need updating when the interface changes, and the real implementation still needs tests of its own.
+- Use dependency inversion (DIP) to depend on an interface. Pass the dependency in.
+- A stub controls what comes back. A spy records what goes out.
+- Liskov substitution (LSP) requires the double to meet the interface's behavioural contract as well as its type.
+- Doubles add a layer. They can drift from the real implementation and need updates when the interface changes.
+- Test the real implementation separately.
 
 ### What makes a test suite strong (slides 11–13)
 - A strong test suite is one that fails when the implementation is wrong. The deck lists four properties.
@@ -35,6 +39,8 @@ Deck: [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/lectures/04b-
   5. Check how good the suite is for this specific implementation: check coverage, and optionally check mutants.
   6. Write structural tests to exercise the full codebase.
 - The rule printed beside the steps: spec tests only test what is in the spec. Tests that follow the shape of the code come last, after the implementation exists.
+
+## Choosing representative tests
 
 ### Equivalence class partitioning (slides 14–16)
 - The problem: `getLetterGrade()` accepts any number, and you cannot test them all. Which values do you pick?

@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 6 (Tue Sep 29) — Test doubles, DIP and LSP
 
-Deck: [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-test-doubles.pdf). Reader: [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and the DIP and LSP entries in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). Questions: 10 in [the bank](../02-questions.md) under "Lec 6". Matt was not in class; this is the deck only.
+The lecture uses [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-test-doubles.pdf). The reader covers [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and DIP and LSP in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 6" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Apply the dependency inversion principle so tests can replace dependencies in the code under test.
@@ -8,7 +8,7 @@ Deck: [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-tes
 - Apply the Liskov substitution principle to decide whether a test double is a valid substitute.
 - Decide when a test double is worth its cost, and when to use the real dependency instead.
 
-## Slides, organized
+## Designing for replaceable dependencies
 ### Recall: the two axes (slide 3)
 - **Controllability** is the degree to which a test can determine the inputs and state that the code under test depends on.
 - **Observability** is the degree to which a test can inspect the results and effects that the code under test produces.
@@ -23,6 +23,8 @@ Deck: [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-tes
 - The **dependency inversion principle** (DIP): "depend upon abstractions, do not depend upon implementations."
 - The picture has three parts. The code under test, `buyCoffee`, depends on an interface, `IReader`. The real implementation, `reader`, implements that interface. Step 1 is the dependency on the interface; step 2 is the implementation of it.
 - That is what makes testing possible. The test code supplies its own implementation of `IReader`, called `testReader`, and `buyCoffee` cannot tell the difference. `testReader` is a **test double**.
+
+## Testing with a substitute
 
 ### Test doubles and when to use one (slides 11–12)
 - A test double stands in for a dependency that the code under test uses.
@@ -53,7 +55,9 @@ Deck: [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-tes
 - The cost: another layer in the design; doubles can drift from the real thing and need updating when the interface changes; and the real implementation still needs tests of its own.
 
 ## Clarifications
-- The reader names the same two kinds, with the same purpose. A stub "allows us to more easily supply the test with values," which is controllability. A spy "records the arguments provided to the method calls," which is observability. The reader's generic word for any developer-written substitute is **fake**. Mock appears only in its links, not as a defined term, so use stub and spy on an exam.
+- A **stub** "allows us to more easily supply the test with values," which improves controllability.
+- A **spy** "records the arguments provided to the method calls," which improves observability.
+- The reader calls any developer-written substitute a **fake**. It links to material about mocks and defines stub and spy as the terms to know.
 - The reader's example, `FakeLocator`, is both at once: it returns fixed values and appends every call to a `myCalls` array. One object can be a stub and a spy.
 - The reader's reasons for doubles match the deck's three cases and add two benefits: doubles greatly increase performance and make components less prone to non-determinism, because the result is fixed instead of computed by something external. They also let a test reach states that are hard to trigger for real, such as a remote service timing out.
 - The reader's one-line DIP is "classes should depend on abstractions, not implementations," and it says the principle is often applied during refactoring by introducing a new interface that existing code then implements. Its LSP line is "any object can be interchanged with any other object that has the same parent type," and it defers the rest to a video. The methods rule on slide 16 is the deck's addition, so learn it from the deck.

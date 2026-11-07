@@ -1,13 +1,13 @@
 # CPSC 310 — Lec 3 (Thu Sep 17) — Cohesion and refactoring
 
-Deck: [02b-cohesion-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/02b-cohesion-refactoring.pdf). Reader: [Change Difficulty](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/change-difficulty/), [Refactoring](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/refactoring/). Questions: 12 in [the bank](../02-questions.md) under "Lec 3".
+The lecture uses [02b-cohesion-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/02b-cohesion-refactoring.pdf) with [Change Difficulty](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/change-difficulty/) and [Refactoring](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/refactoring/). See "Lec 3" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Analyse the cohesion of a unit of code in terms of the bindings between its statements: data, logic and order.
 - Explain how low cohesion raises the risk of changing code.
 - Describe the refactoring process and how it lowers that risk as code evolves.
 
-## Slides, organized
+## Cohesion and bindings
 ### Where cohesion sits next to coupling (slides 3–4)
 - Lecture 2's coupling and this lecture's cohesion are the two properties that make a change expensive, and the deck gives each one a difficulty and a risk.
   - High coupling makes a change difficult because the edit lands in more places, and risky because one of those places is easy to miss.
@@ -45,7 +45,9 @@ function f(x: number) {
 - Lines 1 and 2 share no data (one touches `y`, the other `x`). They are logic-bound because both run whenever `f` runs. They have no order binding between just the two of them, although line 1 and line 3 do, because `y` must exist before it is incremented. The reader leaves the remaining pairs as an exercise.
 - The reader's class-level tell: a cohesive class has a small set of private fields that most of its public methods use. A field used by only a few methods is a sign that those methods and that field belong somewhere else.
 
-### Refactoring, by example (slides 11–14)
+## Refactoring
+
+### The Parkboard example (slides 11–14)
 - Slide 11 is the section title. Slides 12 to 14 are code screenshots with no slide text, so what follows is read from the `02b-cohesion` folder of the [lecture_code](https://github.com/ubccpsc310/lecture_code) repo, which holds the Parkboard code they most likely show. Before the feature, a customer already became a "Frequent Customer" at three program categories. Feature FEAT-0002 adds a "Community Champion" tier at five and makes waitlist places count as interest. The repo holds both versions plus a diff of each.
   - `v1-direct` adds the feature straight in. The same promote-the-tier block is pasted at four sites in two files (both branches of `Offering.register` and both seeding loops in `catalogue.ts`), for 37 new lines of source and 32 of tests, plus a new requirement that programs load before customers are queried.
   - `v2-refactor` refactors first. The duplicated block is extracted into a `Customer.recordCategory()` method, status-setting moves into `Customer`, and the `status` field becomes a getter computed from how many interests the customer has. Each of the four sites becomes one method call; the diff removes 34 lines and adds 14.
@@ -63,7 +65,16 @@ function f(x: number) {
 - The **rule of three** stops premature refactoring. The first time, do it the simplest way. The second time, do it again and note the duplicate. The third time, refactor. The reader calls this just-in-time abstraction, because a pre-emptive abstraction can make a system harder to understand even if it is easier to extend.
 
 ### How and when to refactor (slides 16–17)
-- The deck's process has six steps: make sure all tests pass; examine coupling and cohesion; decide which refactoring to apply; apply it; run the tests again to confirm nothing broke; repeat until the change you want is localised. The slide draws these as a cycle whose nodes are labelled change is desired, examine coupling and cohesion, ensure all tests pass, determine a refactoring, refactor, and ensure all tests still pass.
+The deck presents refactoring as a six-step cycle that starts with a desired change.
+
+1. Make sure all tests pass.
+2. Examine coupling and cohesion.
+3. Choose a refactoring.
+4. Apply it.
+5. Run the tests again to check that the behaviour still holds.
+6. Repeat until the desired change is localised.
+
+The list and diagram order the first two actions differently. The list starts by checking that tests pass. The diagram shows examining coupling and cohesion first.
 - The reader's version has four steps: identify the property to improve and the transformations that will do it; run the suite so you know the system works before you start (saving the output can help); perform the refactoring; run the full suite again and confirm behaviour is identical.
 - The tests run twice for a reason. The first run proves the green baseline is real, so a failure after the refactoring can only be the refactoring. Without the first run you cannot tell a pre-existing failure from one you introduced.
 - Slide 16 says not to refactor when the tests are failing, when the code should simply be rewritten, or when a deadline is close.

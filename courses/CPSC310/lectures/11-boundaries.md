@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 11 (Thu Oct 15) — Boundaries: core, edges, ports and adapters
 
-Deck: [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-boundaries.pdf), 11 slides, posted after class on Oct 15. The reader has no chapter called Boundaries; the terms come from [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/) (single responsibility, dependency inversion) and [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/), and the test-level slide previews [Testing Pyramid](https://ubccpsc.github.io/310/textbook/3-software-design/testing-pyramid/), which is lecture 12's chapter. Questions: 9 in [the bank](../02-questions.md) under "Lec 11". The schedule called this lecture "API design" before the deck went up, so the reader-chapter outline that stood here (the APIs chapter) was replaced by the deck. Slide 2 is the midterm notice; its details are in [03-logistics.md](../03-logistics.md). Built from the deck alone; Matt takes no notes in this course.
+The lecture uses [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-boundaries.pdf) (11 slides, posted after class on Oct 15). [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/) covers single responsibility and dependency inversion. [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) covers test doubles. The test-level slide previews lecture 12's [Testing Pyramid](https://ubccpsc.github.io/310/textbook/3-software-design/testing-pyramid/). See "Lec 11" in the [question bank](../02-questions.md) and the slide 2 midterm notice in [logistics](../03-logistics.md).
 
 ## Learning goals
 - Explain how an interface shaped like its dependency lets a storage change leak into the business logic and its tests.
@@ -8,7 +8,7 @@ Deck: [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-bound
 - Separate the core (business logic) from the edge (I/O, parsing, wiring).
 - Choose the test level (unit, integration or end-to-end) that should catch a given bug.
 
-## Slides, organized
+## Separating the core from the edges
 ### Two kinds of code (slide 4)
 - **Business logic** is the set of rules that make the system worth having, such as "a room cannot be double-booked". It changes when business concerns change.
 - **Everything else** moves data in and out: files, databases, user interfaces and other services, plus logging, caching and authentication. It changes when the outside world changes.
@@ -52,6 +52,8 @@ Deck: [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-bound
 | A new rule, such as at most 2 bookings per day | `book()`, and tests full of JSON | the core, and plain-object unit tests |
 | A new frontend, such as a web page | copy the rules out of `book()` | a new edge that calls the existing `book()` |
 
+## Testing across boundaries
+
 ### How to test the system (slide 10)
 - Each of the three parts gets its own test level.
 - **Unit tests with a test double** cover the core (`rooms.ts`): many of them, each taking milliseconds, checking the business logic against a fake store.
@@ -64,6 +66,9 @@ Deck: [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-bound
 - Test each thing at the narrowest level that can see it. That keeps tests from failing for the wrong reasons.
 
 ## Clarifications
-- The deck's adapter is the lecture 8 Adapter pattern used at a storage boundary, with one difference in who owns the interface. In lecture 8 the interface sat on the client's side of a foreign library; here the port belongs to the core and is written in the core's words, which is what stops a storage change from leaking inward.
+
+- The schedule originally listed "API design". The posted deck covers boundaries.
+- The storage adapter applies the Adapter pattern from lecture 8.
+- In lecture 8 the interface sat on the client's side of a foreign library. Here the core owns the interface, called a **port**, and describes it in its own terms. A storage change can stay at the edge.
 - "Every dependency points inward" is the reader's dependency inversion principle (Design Principles chapter): the core depends on an abstraction it owns, and the concrete store depends on that same abstraction rather than the other way round.
 - The three test levels are lecture 12's testing pyramid in miniature. The deck only names them and matches each to a part of the system; the counts and the trade-offs come next lecture.

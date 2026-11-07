@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 10 (Tue Oct 13) — Patterns III: State and the Open/Closed Principle
 
-Deck: [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-patterns-iii.pdf), 12 slides, posted on lecture day. Reader: [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/), the State section. Questions: 10 in [the bank](../02-questions.md) under "Lec 10". The course schedule called this lecture "API change severity and versioning" before the deck went up, so the reader-chapter outline that stood here was replaced by the deck. Built from the deck alone; Matt takes no notes in this course.
+The lecture uses [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-patterns-iii.pdf) (12 slides) and the State section of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). The schedule originally listed "API change severity and versioning". The deck covers State. See "Lec 10" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -8,7 +8,7 @@ Deck: [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-pat
 - Move unfamiliar code to a pattern one behaviour-preserving step at a time. Today's target is State.
 - Judge whether a pattern pays for itself in a given situation.
 
-## Slides, organized
+## State objects and transitions
 ### The scenario: a phone with three states (slide 3)
 - The code is the operating system of a new phone, which can be off, locked or ready.
 - Three events reach it: pressing the power button, pressing the home button, and receiving a notification.
@@ -23,7 +23,9 @@ Deck: [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-pat
 ### The refactoring: encapsulate the states in objects (slide 5)
 - Each state becomes its own class, so the phone's three states become `StateOff`, `StateLocked` and `StateReady`.
 - Each transition becomes a method on a state object.
-- A state object creates the state that follows it, which the deck draws as "creates" arrows. `StateOff` is created by `Phone` at start-up and again by `StateLocked` and `StateReady` when the phone powers down. `StateLocked` is created by `StateOff`. `StateReady` is created by `StateLocked`.
+- The "creates" arrows show which object instantiates the next state.
+- `Phone` creates `StateOff` at start-up. When the phone powers down, `StateLocked` or `StateReady` creates `StateOff`.
+- `StateOff` creates `StateLocked`. `StateLocked` creates `StateReady`.
 - Slide 6 is the canonical refactoring.guru diagram: a context holds a reference typed as the state interface, every concrete state implements that interface, and the context forwards each event to whichever state object it currently holds.
 
 ### State: the four-step analysis (slide 7)
@@ -42,6 +44,8 @@ Deck: [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-pat
   - Composite: the interface is `Employee`, a new variant is `DataScientist`, and the Manager and org totals stay unchanged.
   - Decorator: the interfaces are `Drink` and `AddOn`, a new variant is a mocha add-on, and the menu drinks and the cart stay unchanged.
   - State: the interface is `PhoneState`, a new variant is a lockout state, and `Phone` stays unchanged.
+
+## Designing for one kind of change
 
 ### The Open/Closed Principle (slide 9)
 - The **Open/Closed Principle**, OCP, says a unit of code, whether a function, a class or a module, should be open for extension and closed for modification.

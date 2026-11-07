@@ -1,13 +1,13 @@
 # CPSC 310 — Lec 4 (Tue Sep 22) — Refactoring
 
-Deck: [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/03a-refactoring.pdf). Reader: [Refactoring](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/refactoring/). Questions: 11 in [the bank](../02-questions.md) under "Lec 4".
+The lecture uses [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/03a-refactoring.pdf) with the reader's [Refactoring](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/refactoring/) chapter. See "Lec 4" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot the structural problems in code that get in the way of a new feature.
 - Design a different structure that takes the change more easily.
 - Carry out that restructuring safely, one behaviour-preserving step at a time, with the tests as the check.
 
-## Slides, organized
+## How designs change
 ### Design analysis questions (slide 2)
 - This slide is about the project reflections, not exam content. Half of each deliverable's grade is the reflection, and the answers are graded on relevance and specificity.
 - A vague answer ("I edited some files and it was confusing") scores lower than a concrete one that names what was edited, what broke, and where the missing edit site turned out to be.
@@ -22,12 +22,15 @@ Deck: [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectures/03a-refa
   - Duplication, clones or scattering that cause several edit sites are consolidated into one place.
   - Tangled pieces of functionality are split apart.
   - Hard-to-read code is made understandable.
-- The three comic panels (slides 6 to 8) tell the same story. First the developer asks whether a change can be made and the code, covered in smells, says no. Then the developer refactors repeatedly, guided by design principles and design patterns. Finally the developer asks again and the code says yes.
+- In the three panels on slides 6 to 8, code smells block a change the developer wants to make.
+- The developer applies design principles and patterns through repeated refactoring. The change becomes possible.
 - The reader calls this **emergent design**: as a system grows you learn which abstractions fit, and refactoring is how you fold them in.
 
 ### What refactoring is (slide 9)
 - **Refactoring** is a predictable, meaning-preserving code transformation, where meaning, semantics and behaviour are the same thing. This repeats lecture 3's definition.
 - The recap slide phrases it as changing how the code is represented without changing its external behaviour.
+
+## Code smells and refactoring choices
 
 ### Feature envy and the Law of Demeter (slides 10–11)
 - **Feature envy** is behaviour in the wrong place. If a method you are writing wants access to many fields of another class, the method probably belongs in that other class.

@@ -1,11 +1,11 @@
 # CPSC 310 — Lec 5 (Thu Sep 24) — Testability
 
-Deck: [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectures/03b-testability.pdf). Reader: [Testability](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/), with the contract material from [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). Questions: 12 in [the bank](../02-questions.md) under "Lec 5".
+The lecture uses [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectures/03b-testability.pdf), with the reader's [Testability](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and the contract material in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 5" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Use the two testability axes, controllability and observability, to analyse a piece of code and to improve it.
 
-## Slides, organized
+## What makes code easy to test
 ### Controllability (slide 3)
 - **Controllability** is how far a test can set the inputs and the state that the code under test depends on.
 - The deck lists four things that lower it.
@@ -25,6 +25,8 @@ Deck: [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectures/03b-test
   - Effects on external systems.
 - The reader's example is a method that mutates some object the test cannot reach and returns nothing. The usual fix is to return the data to the caller instead of passing it further down a call chain.
 - The reader adds a less obvious problem: deciding what the correct output is. Vague, incomplete or contradictory specifications are where "that's not a bug, it's a feature" comes from.
+
+## Designing for tests
 
 ### Exposing state for a test (slides 5–6)
 - The example is an `Animal` class with two private fields, `hungry` (starts true) and `eaten` (starts at 0), and an `eat()` method that sets `hungry` to false, increments `eaten` and returns it.
@@ -54,5 +56,7 @@ Deck: [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectures/03b-test
   - The reader says observability and isolateability matter most, but that an isolated unit you cannot control is not useful, because you cannot trigger the behaviour you want to see.
   - Lecture 6 is also titled Testability, so isolateability and fakes may be the deck material there.
 - The course site pairs this lecture with the Design Principles chapter and the question "when is it safe to substitute one thing for another?". Both are left over from before the Sep 23 reshuffle. That question is Liskov substitution, which is now lecture 7 (Test Doubles, DIP and LSP), and the chapter that matches this deck is Testability.
-- The one part of Design Principles this deck does use is the method **contract**. The REQUIRES, MODIFIES and EFFECTS comment is a data abstraction that states **preconditions** (what the method expects), **postconditions** (what it provides) and **invariants** (what must always hold). The rest of that chapter (abstraction, decomposition, information hiding, SOLID) will be logged with lecture 7.
+- The deck uses the method **contract** from Design Principles. The REQUIRES, MODIFIES and EFFECTS comment records this abstraction.
+- **Preconditions** state what the method expects. **Postconditions** state what the method promises to provide. **Invariants** state what must always hold.
+- The other Design Principles topics are abstraction, decomposition, information hiding and SOLID. The original outline points to lecture 7 for them.
 - The deck's own definitions say "the degree to which a test can determine" and "the degree to which a test can inspect". The reader phrases controllability as whether the code can be driven programmatically. Use the deck's wording on an exam and the reader's parameter fix as the remedy.

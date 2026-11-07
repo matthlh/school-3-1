@@ -1,13 +1,13 @@
 # CPSC 310 — Lec 12 (Tue Oct 20) — API Design & Evolution
 
-Deck: [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26w1/lectures/07a-api-design-evolution.pdf), 20 slides, posted on lecture day (the title slide still says 06b). Reader: [APIs](https://ubccpsc.github.io/310/textbook/3-software-design/apis/) for the design half and [Safe Versioning](https://ubccpsc.github.io/310/textbook/3-software-design/versioning/) for change severity; the sidebar's Testing Pyramid chapter, which slides 4 to 8 preview, returned 404 on Oct 20, so those slides stand on the deck alone. Questions: 11 in [the bank](../02-questions.md) under "Lec 12". Slide 2 is housekeeping (D3 posted, due Nov 6, planning task before Lab 07; midterm Thu Oct 29 19:00, practice exam on Piazza) and is in [03-logistics.md](../03-logistics.md), not here. Built from the deck and the reader; Matt takes no notes in this course.
+The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26w1/lectures/07a-api-design-evolution.pdf) (20 slides). Its title slide still says 06b. The reader covers [APIs](https://ubccpsc.github.io/310/textbook/3-software-design/apis/) and [Safe Versioning](https://ubccpsc.github.io/310/textbook/3-software-design/versioning/). Slides 4 to 8 cover the testing pyramid. See "Lec 12" in the [question bank](../02-questions.md) and slide 2's announcements in [logistics](../03-logistics.md).
 
 ## Learning goals
 - Analyze an API against four design criteria: information hiding, obliviousness, usability (easy to use, hard to misuse) and contract completeness.
 - Describe the impact of an API change on its clients as a severity: major, minor or patch.
 - Propose alternative API designs and alternative changes that reduce that impact.
 
-## Slides, organized
+## Choosing a test level
 
 ### Recap: core and edges (slide 3)
 - The booking tool from lecture 11 is the running picture: `main.ts` reads argv, picks a store and words the answer at the **edge**; `rooms.ts` holds `book()` in the **core**; `JsonBookingStore` implements the `BookingStore` interface.
@@ -24,7 +24,9 @@ Deck: [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26w1/lectures
 - **Integration tests** test between boundaries and bridge the gap between the other two. The approach is to run the core with the real adapter instead of a test double, and let the adapter use an actual resource, such as a file on disk.
 - **Test suite composition**: the majority of tests are unit tests, several integration tests sit at each boundary, and a few end-to-end tests make sure the whole application works. The deck draws this as a pyramid numbered 3, 2, 1 from the base up.
 
-### What an API is and why it is forever (slides 10 to 13)
+## Designing and evolving an API
+
+### What clients depend on (slides 10 to 13)
 - An **API** is a way for two or more programs to communicate. The deck's picture is a client on one side, a component on the other, and the API as the line between them.
 - APIs provide **information hiding**: only the necessary functions are exposed, the abstraction emphasizes essential characteristics and suppresses detail, the caller assumes nothing about how the interface is implemented, and so the effects of internal changes stay local.
 - **APIs are forever.** Once published, an API becomes a dependency for many teams, services and applications, and a change to a widely used API can break thousands of clients.
@@ -76,7 +78,13 @@ Deck: [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26w1/lectures
 - **Semantic versioning** writes a version as Major.Minor.Patch. A release bumps the number for its most severe change and resets the numbers below it: from 3.8.1, fixes only give 3.8.2, and a breaking change gives 4.0.0.
 - REST APIs are changed in backwards-compatible ways where possible, because running several live versions is costly. A necessary breaking change ships as `/v2/checkout` beside `/checkout`, the old route is deprecated, and it is removed once every client has moved. Starting with a `/v1` prefix leaves room for that.
 
+## Course announcements
+
+- Slide 2 lists D3 as due Nov 6 and the planning task as due before Lab 07.
+- It lists the midterm as Thu Oct 29 at 19:00 and points to the practice exam on Piazza.
+
 ## Clarifications
-- The deck and the reader split minor and patch differently. The deck puts performance improvements under PATCH (behavioural, nothing to adopt); the reader's Safe Versioning chapter lists small performance improvements under minor. On an exam, follow the definitions as asked: a structural, opt-in addition is minor; a behavioural, nothing-to-change improvement is patch.
+- The deck and reader differ on performance improvements. The deck classifies them as PATCH because clients have nothing to adopt. The reader's Safe Versioning chapter lists small performance improvements under minor.
+- On an exam, use the definitions in the question. A structural, opt-in addition is minor. A behavioural improvement that needs no client change is patch.
 - The deck's NONE level (refactoring, no client effect) has no name in the reader, which only says such a change has no client impact.
 - Slides 4 to 8 repeat the test-level material that lecture 11 previewed, with the E2E costs and the composition rule added. The Testing Pyramid chapter they point to is not published as of Oct 20.

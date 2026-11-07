@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 9 (Thu Oct 8) — Patterns II: Composite and Decorator
 
-Deck: [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patterns-ii.pdf), 12 slides. Reader: [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/), the Decorator and Composite sections. Questions: 12 in [the bank](../02-questions.md) under "Lec 9". Matt was absent; the deck was posted before class, so there is no In class section. The course site called this lecture "Decorator & State" in the morning and "Composite & Decorator" once the deck went up, so State waits for a later deck. Slide 2 reminds that D2 is due Fri Oct 16 and that D3/D4 team formation opens Fri Oct 9 with instructions on Piazza; anyone without a partner should ask their TA in lab; team repos are provisioned from Oct 19, and the team is to be entered "by end of day", with no day named, so the date comes from the Piazza post.
+The lecture uses [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patterns-ii.pdf) (12 slides) and the Decorator and Composite sections of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). See "Lec 9" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -8,7 +8,7 @@ Deck: [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patt
 - Move unfamiliar code to a pattern one behaviour-preserving step at a time. Today's targets are Composite and Decorator.
 - Judge whether a pattern pays for itself in a given situation.
 
-## Slides, organized
+## Composite and Decorator
 ### Composite again (slides 4–7)
 - Slides 4 to 7 repeat lecture 8's slides 18 to 21 word for word: the Workday org chart, the intent, the refactoring.guru diagram and the four-step analysis. The full treatment is on the [lecture 8 page](08-patterns-adapter-composite.md) under Composite.
 - The shape, one part per line.
@@ -16,6 +16,8 @@ Deck: [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patt
   - A **Leaf** is one object and answers for itself.
   - A **Composite** implements the same interface, holds a list of components, and answers by asking each of them. Any of those may itself be a composite.
 - The exam can ask the cost from either side. A new kind of node costs one class and no client change. A new operation costs a new method in the interface and in every class.
+
+## Adding behaviour by wrapping objects
 
 ### The Decorator scenario (slide 8)
 - A cash-register app for a coffee cart sells Espresso, Latte, Cold Brew and Matcha Latte.
@@ -83,6 +85,12 @@ const order: Drink = new Large(new Whip(new Latte()));
   - Base classes stay focused on their core responsibilities, which raises cohesion and cuts the risk of tangling.
   - New decorators are added without changing the base classes, so the classes are more loosely coupled.
   - The reader calls it a textbook case of composition over inheritance.
+
+## Course announcements
+
+- The schedule initially called the lecture "Decorator & State". The posted title was "Composite & Decorator". State moved to a later deck.
+- Slide 2 listed D2 as due Fri Oct 16. D3/D4 team formation opened Fri Oct 9 with instructions on Piazza. Students without a partner were to ask their TA in lab.
+- Team repositories were provisioned from Oct 19. The slide said to enter the team "by end of day" without naming the day. The date came from Piazza.
 
 ## Clarifications
 - The deck's cost line says the wrapping order changes the result, and the reader says the pattern cannot control the order of the wrappers. Both hold. The pattern gives no way to enforce an order, and the order matters when two wrappers' changes do not commute. With a 400-cent latte, a large that multiplies by 1.2 outside an extra shot that adds 100 cents gives $$(400 + 100) \times 1.2 = 600$$ cents, and the other way round gives $$400 \times 1.2 + 100 = 580$$ cents.
