@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 8 (Mon Sep 28) — Ancient Tragedy: guilt, sorrow, and the healing in fate
 
+Page references are to Hannay’s translation, and the Danish text is at tekster.kb.dk. The [lecture 7 page](07-the-aesthetic-recipe-and-ancient-tragedy.md) covers the overlap with Friday’s lecture, including why A is discussing Grabbe’s Faust rather than Goethe’s. The [question bank](../02-questions.md) has a “Lec 8” section.
+
 ## Your notes (a friend's page covering Fri Sep 25 and Mon Sep 28, pasted 2026-09-28)
 Beginning
 
@@ -83,102 +85,59 @@ Dictionary lookup (screenshot): sorrow — mental suffering caused by loss, disa
 misfortune; synonym: regret.
 
 ## Clarifications
-The first half of the page repeats Friday's lecture and is already in
-[lecture 7](07-the-aesthetic-recipe-and-ancient-tragedy.md), including the fix that the Faust in A's
-essay is Grabbe's, not Goethe's. What follows is the new material and the places the page slips.
-Checked against the Danish at tekster.kb.dk; page numbers are Hannay's.
 
-### The dictionary is a trap here
-- Your lookup gives *regret* as the synonym for sorrow. In A's vocabulary that is exactly the wrong
-  neighbour. A's sorrow, *Sorg*, is the mild, deep, unreflected grief of ancient tragedy. Regret, or
-  repentance, *Anger*, is what he names as the bitterest *pain*, and he says it has ethical, not
-  aesthetic, reality. Sorrow is the ancient side of his distinction, regret is the modern.
-- So: sorrow goes with fate, family and innocence; pain goes with reflection, guilt and the self. If
-  an option on an exam pairs "sorrow" with "regret" or with "your own fault", it is wrong.
+### What makes guilt tragic
 
-### Guilt, with the pages
-- Ancient tragic guilt is aesthetic: it lies between doing and suffering, it is inherited through
-  piety, and it is guilt and yet not guilt. Your friend's "they ended up that way" is a fair gloss.
-  A calls it *inherited guilt* and compares it to original sin.
-- Modern guilt is ethical, page 147: the isolated individual is his own creator, so his guilt is sin
-  and his pain is repentance, and with that the tragic is cancelled. The spectator's response
-  becomes "help yourself and heaven will help you," which is the loss of compassion, and compassion
-  is the real expression of the tragic.
-- The verdict your friend has right: A finds modern tragedy aesthetically deficient exactly to the
-  extent that it is ethically dominated.
+- A calls ancient tragic guilt aesthetic. It lies between action and suffering because the character inherits guilt through piety. The guilt is both theirs and something they did not bring on themselves.
+- A compares *inherited guilt* to original sin.
+- On p. 147, A describes modern guilt as ethical. The isolated individual is their own creator. Their guilt is sin, and their pain is repentance.
+- A says this cancels the tragic. The spectator’s reaction becomes "help yourself and heaven will help you," which replaces compassion. For A, compassion is the real expression of the tragic.
+- A finds modern tragedy aesthetically deficient to the extent that ethical judgment dominates it.
 
-### Sorrow against pain, corrected
-- The page says modern sorrow "is painful because you caused it." A's formulation is sharper and is
-  the one to memorise: in ancient tragedy the sorrow is deeper and the pain less; in modern tragedy
-  the pain is greater and the sorrow less. Sorrow has something substantial in it; pain is
-  reflection on the suffering.
-- The image is a child watching an adult suffer: not reflected enough to feel pain, yet infinitely
-  deep sorrow. That is Greek sorrow, mild and deep at once. An adult watching a child suffer feels
-  more pain and less sorrow, because the thought of guilt has entered.
-- The pairing at the end of the section: true tragic sorrow needs a moment of guilt and a moment of
-  transparency; true tragic pain needs a moment of innocence and a moment of obscurity.
+### Sorrow and pain
 
-### The healing in fate, page 144
-- A's sentence is that there is "a melancholy and a healing" in the tragic, and that aesthetically
-  the tragic is to human life what divine grace and mercy are, a motherly love that soothes the
-  troubled. The ethical, by contrast, is strict and hard, and the religious is a fatherly love that
-  has the ethical in it but softened.
-- "You can make someone else responsible" is too crude. The healing is not blame-shifting; it is
-  that the guilt is shared, inherited through the family and the age, so the individual is not left
-  alone with it as sole author. A's line is that the individual is only happy when it has the
-  tragic, and that in trying to win itself the supernatural way, as our age does, it loses itself
-  and becomes comic.
-- "Absurd" on the page is the friend's word. A's is *ridiculous*, comic. And the target is claiming
-  to be *the absolute* inside all that relativity, not asserting that something is objectively true.
-  Same correction as your own note from Friday.
+- A uses *Sorg*, or sorrow, for the mild, deep grief of ancient tragedy. It is unreflected grief tied to fate, family and innocence.
+- The notes above pair sorrow with regret. In A’s terms, regret or repentance, *Anger*, is the bitterest pain. It has ethical rather than aesthetic reality.
+- The notes say modern sorrow "is painful because you caused it." A gives sorrow and pain separate roles. Ancient tragedy has deeper sorrow and less pain. Modern tragedy has greater pain and less sorrow.
+- Sorrow retains something substantial, such as the character’s ties to family and fate. Pain involves reflecting on the suffering and the self’s guilt.
+- A compares a child watching an adult suffer with an adult watching a child suffer. The child feels infinitely deep sorrow and has too little reflection to feel pain. The adult feels more pain and less sorrow because the thought of guilt enters.
+- True tragic sorrow requires a moment of guilt and a moment of transparency.
+- True tragic pain requires a moment of innocence and a moment of obscurity.
 
-### Nietzsche, and "genealogical"
-- Kraal's link, and a good one. Nietzsche's *amor fati*, love of fate, first appears in *The Gay
-  Science* in 1882: to see as beautiful what is necessary in things. That is forty years after A's
-  essay, so "Nietzsche says this after Kierkegaard" is right and it is a parallel, not a debt.
-- "Genealogical" is Nietzsche's word too, from *On the Genealogy of Morals* (1887). What Kraal seems
-  to mean is that A traces how the concept of tragic guilt changed as the age changed, from the
-  substantial ties of Greece to the isolated individual, which is a history of a concept rather than
-  a definition of it. Take it as Kraal's framing.
+### How fate can heal, p. 144
 
-### Christ, and the "turning point"
-- What A actually says, in two places. First, that Christ's appearance is in one sense the deepest
-  tragedy, because he came in the fullness of time and bore the sin of the whole world. Second, that
-  Christ's life is never called a tragedy because it exceeds aesthetic categories: the unity of
-  absolute innocence and absolute guilt is metaphysical, not aesthetic, and in Christ suffering is
-  absolute because it is absolutely free action, and action is absolute suffering because it is
-  absolute obedience.
-- "The crucifixion is the turning point from Greek to modern tragedy" is Kraal's reading, not a
-  sentence in the text. It is defensible: Christianity brings in sin, responsibility and the
-  reflected individual, which is what A says the modern age has and Greece lacked. But if the exam
-  asks what A says, the answer is the two points above, and "absolutely free" belongs to the second.
+- A finds "a melancholy and a healing" in the tragic. He compares it to divine grace and mercy and describes it as a motherly love that soothes the troubled.
+- A calls the ethical strict and hard. He describes the religious as a fatherly love that softens the ethical within it.
+- The notes gloss the healing as "You can make someone else responsible". A’s point is that guilt is already shared with one’s family and age, so the individual does not bear it alone.
+- A says the individual is only happy when it has the tragic. In trying to win itself the supernatural way, as the modern age does, it loses itself and becomes comic.
+- The notes call this “absurd”. A calls it *ridiculous*, or comic. He is discussing someone who claims to be *the absolute* amid relativity. That differs from claiming a statement is objectively true.
 
-### Kraal's hypothetical Antigone is not A's Antigone
-- Kraal's exercise was "what if Antigone's suffering came from her own decisions about the burial
-  rather than from fate." That is the modern *tendency*, and A does name it: take the burial as an
-  isolated fact, a collision between sisterly love and an arbitrary ban, and you have "an entirely
-  modern tragic subject."
-- But A's own modern Antigone, the second half of the essay, does the opposite. He keeps the
-  inherited guilt and adds reflection. Everything is as in Sophocles except that the secret of
-  Oedipus, that he killed his father and married his mother, is known to nobody but her. Oedipus
-  lives honoured; she carries it alone; she does not know whether her father himself knew, which is
-  "the unrest in her sorrow, the ambiguity in her pain." Anxiety, not sorrow, is her organ, and A
-  says anxiety belongs essentially to the modern tragic because it looks to past or future, never
-  the present.
-- The collision is that she falls in love, "mortally in love," and the beloved presses her for the
-  secret, adjuring her by her love for her father at Oedipus's grave, working against himself
-  without knowing it. She can only confess her love in the moment she dies. A's image is
-  Epaminondas leaving the arrow in the wound until he heard the battle was won. So she is "sorrow's
-  bride" and *virgo mater*, carrying the secret under her heart, and her scene is not outward but
-  inward, "a scene of spirit."
-- That figure is the one who, in "The Unhappiest One," has turned her back on hope and lives on
-  memory's fidelity. The Ask Kraal question stands, but the evidence is here.
+### Kraal’s connection to Nietzsche
 
-### The Sophocles story, for the record
-- Polynices dies attacking Thebes; Creon forbids his burial; Antigone buries him; Creon condemns
-  her to be walled up alive. Her defence is the unwritten laws of the gods against a king's decree.
-- A's use of it: as an isolated clash of duty and decree it would be modern. What makes it Greek is
-  that Oedipus's fate echoes through it. "Not an individual who goes under, but a little world."
+- Nietzsche first uses *amor fati*, or love of fate, in *The Gay Science* (1882). It means seeing as beautiful what is necessary in things. This is a parallel from about forty years after A’s essay.
+- “Genealogical” is associated with Nietzsche’s *On the Genealogy of Morals* (1887). Kraal appears to use the word for A’s history of a concept.
+- A traces how tragic guilt changes as the age changes, from substantial ties in ancient Greece to the isolated modern individual.
 
-Questions: 10 in [02-questions.md](../02-questions.md) under "Lec 8". Ledger: no new row; all on
-the Ancient Tragedy row from Friday.
+### What A and Kraal say about Christ
+
+- A calls Christ’s appearance the deepest tragedy in one sense. Christ came in the fullness of time and bore the sin of the whole world.
+- A also says Christ’s life is never called a tragedy because it exceeds aesthetic categories. Absolute innocence and absolute guilt are united in a metaphysical sense.
+- For A, Christ’s suffering is absolute because it is absolutely free action. His action is absolute suffering because it is absolute obedience.
+- Kraal’s claim is that "The crucifixion is the turning point from Greek to modern tragedy". It is his interpretation of how Christianity brings in sin, responsibility and the reflected individual.
+
+### Sophocles’ Antigone and Kraal’s example
+
+- In Sophocles, Polynices dies attacking Thebes. Creon forbids his burial, but Antigone buries him. Creon condemns her to be walled up alive.
+- Antigone defends her action by appealing to the gods’ unwritten laws against the king’s decree.
+- Kraal asks "what if Antigone's suffering came from her own decisions about the burial rather than from fate." A also says that a conflict between sisterly love and an arbitrary ban, taken on its own, is "an entirely modern tragic subject."
+- The Greek story carries Oedipus’s fate into Antigone’s. As A writes, "Not an individual who goes under, but a little world."
+
+### A’s modern Antigone
+
+- A keeps inherited guilt in his modern version and adds reflection. His Antigone alone knows that Oedipus killed his father and married his mother. Oedipus lives honoured.
+- She does not know whether Oedipus knew his secret. A calls that uncertainty "the unrest in her sorrow, the ambiguity in her pain."
+- Anxiety is her defining way of feeling. A connects anxiety to modern tragedy because it looks to the past or future.
+- Antigone falls "mortally in love," and the man she loves urges her at Oedipus’s grave to reveal the secret. He appeals to her love for her father and works against himself without knowing it.
+- She can confess her love only as she dies. A compares her to Epaminondas, who kept the arrow in his wound until he heard that the battle was won.
+- A calls her "sorrow's bride" and *virgo mater* because she carries the secret under her heart. Her tragedy takes place within her, "a scene of spirit."
+- In “The Unhappiest One”, this Antigone turns away from hope and lives by remaining faithful to memory.

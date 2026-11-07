@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 9 (Mon Oct 5) — The Musical Erotic: why music, and the three stages of desire
 
+Page references are to Hannay’s Penguin translation. The [question bank](../02-questions.md) has a “Lec 9” section.
+
 ## Your notes (pasted 2026-10-05)
 Musical Erotic: - Erotic is more romantic and talks more about immediate and pre reflective (i believe its like instinctual and initial view and feelings)
 3 stages: 
@@ -60,14 +62,76 @@ Pesonal questions / thoughts:
 - Sounds like, it’s basically irrational instinctual feelings, doesn’t have to be positive feelings. Wonder if there’s biological explanatiosn for this or smth
 - I can understand the insticntual desire part, but I personally dont think its a good thing. I think I’m pretty instinctual, but don’t think it shd be the leading driving factor of our purpose or focus. See more downsides in it then upsides, esp in today’s societies.
 
-## In class: the three arias
-Kraal is playing one aria per stage. "Voi che sapete" was played on Oct 5; Papageno is next. The texts are the original libretti, which are public domain; the English is a plain line-by-line translation, not a singing version.
+## Clarifications
 
-### Stage 1, dreaming: "Voi che sapete" (*The Marriage of Figaro*, Act 2)
-- Cherubino sings it. He is the Page, a teenage boy in love with every woman he meets.
-- The text is by Lorenzo Da Ponte, 1786.
-- The line to know is "Ricerco un bene fuori di me, non so chi il tiene, non so cos'è": I search for a good outside myself; I don't know who holds it, I don't know what it is. That is desire with no object yet, A's first stage.
-- He also cannot say what he feels ("capir nol so", I can't understand it), which fits desire before reflection.
+### The essay and its terms
+
+- "The Immediate Erotic Stages or The Musical Erotic" is the second of A’s papers in Part I of *Either/Or*. It follows the Diapsalmata.
+- **Immediacy** is experiencing something as it happens. **Reflection** is stepping back to name, explain or judge it.
+- Desire is immediate because it exists while you want something. Kraal uses this as premise 1. A medium that steps outside the moment loses the experience of wanting.
+- A calls desire in its immediacy the **sensuous erotic**. He considers it the most abstract idea.
+- The names in the notes above refer to Cherubino and *Don Giovanni*. A calls the third stage **desiring**.
+
+### Why A chooses music
+
+- Language describes an experience from outside it. Kraal says it "exists past the event" (p. 80).
+- Painting and sculpture represent a figure by holding it still in space. A thinks this suits beauty, while desire moves.
+- Music unfolds while it sounds. It moves from moment to moment as desire does.
+- A’s point is about how listening happens in time. A recording can replay the experience as music.
+- A calls a work **classic** when its idea fits its medium perfectly. He thinks music is the most abstract medium and the only one that can express the sensuous erotic.
+- A thinks *Don Giovanni* is the one work where this idea and medium fit. He therefore ranks it highest among classics and praises Mozart. Kraal’s "holy glaze" describes the intensity of A’s praise.
+
+### The three stages of desire
+
+| Stage | Character | What desire does |
+| --- | --- | --- |
+| 1. Dreaming. | Cherubino, "the Page", in *The Marriage of Figaro*. | Desire is a vague, melancholy longing, in love with love itself. It has yet to identify an object. It longs for "the one" in the abstract. |
+| 2. Seeking. | Papageno, the bird-catcher, in *The Magic Flute*. | Desire wakes and looks outward among many possible objects. It looks cheerfully without desiring anyone in particular (p. 90). |
+| 3. Desiring. | Don Giovanni in *Don Giovanni*. | Desire wants each particular woman as an instance of woman as such. It keeps moving from one woman to another. |
+
+- A illustrates the first two stages with one character each. He discusses all of *Don Giovanni* because its main character’s desire drives the whole opera.
+- The third stage combines the dreamer’s pull toward an ideal and the seeker’s turn toward many possible objects. Both now aim at a particular woman.
+- The stage order follows desire’s development. *The Magic Flute* (1791) is the latest opera and illustrates the middle stage.
+
+### What the words do in opera
+
+- An opera is a drama sung with an orchestra. Its written text is the **libretto**.
+- For A, the music expresses desire and the libretto supplies the situation.
+- In his Oct 6 email, Kraal says the operas clarify A’s stages rather than prove them. A uses them because he takes music and desire to be immediate.
+- The presence of words creates a *prima facie* problem, one that arises at first sight. Kraal says A takes the words to be *heuristic*, meaning they help the listener follow the stages.
+- Kraal points out that A praises Mozart, the composer, without praising the librettists, Da Ponte and Schikaneder.
+- The 1800s background is outside the exam scope for this topic. The exam material is the three stages, why A chooses music and how he defines a classic.
+
+### Why A calls music a Christian art
+
+- On p. 75, A says that the sensual is **mediate** once we reflect on it. At that point language can describe it and ethical categories can judge it.
+- A holds that only music can express the sensual in its immediacy.
+- Christianity set spirit against flesh. By excluding the sensuous, Christianity made it a principle of its own for the first time. A calls music a Christian art because it expresses that principle.
+
+### Desire, pleasure and the aesthetic life
+
+- **Hedonism** takes pleasure to be the good and pursues pleasant states. It is a reflective theory.
+- Don Giovanni acts on desire before reflection. Desire can feel unpleasant, as the melancholy first stage shows.
+- The seducer in "The Seducer's Diary", at the end of A’s papers, plans how to enjoy himself. He is the reflective seducer.
+- In his Oct 6 email, Kraal calls a life driven by desire one kind of aesthetic life. It counts as aesthetic because it seeks beauty.
+- Kraal says the Diary shows some of A’s attempts at living immediately. A takes Don Giovanni as the clearest example.
+- In Part II, the Judge argues that a life of immediacy cannot hold together.
+
+### Nietzsche
+
+- In *The Birth of Tragedy* (1872), Nietzsche associates the Apollonian with the plastic arts, such as sculpture, and the Dionysian with music.
+- Nietzsche (1844–1900) became famous mostly after his collapse in 1889. He was known for his attack on Christian morality, "God is dead", and his aphoristic style.
+- Nietzsche and Kierkegaard are often paired as founders of existentialism. They never read each other. Kierkegaard died in 1855, and Nietzsche heard about him only in 1888, shortly before his breakdown.
+
+## In class: the three arias
+
+The original libretti are public domain. The English gives the meaning line by line. Kraal played Cherubino’s aria on Oct 5 and went through the Catalogue Aria and a seduction scene on Oct 9. See the [lecture 11 page](11-don-giovanni-and-the-catalogue.md) for the Oct 9 material.
+
+### Stage 1. Cherubino in *The Marriage of Figaro* (Act 2).
+
+- Cherubino is a teenage page in love with every woman he meets. He sings "Voi che sapete", with words by Lorenzo Da Ponte (1786).
+- He searches for a good outside himself without knowing what it is or who holds it. "Ricerco un bene fuori di me, non so chi il tiene, non so cos'è". This illustrates desire before it knows its object.
+- "capir nol so" means “I can’t understand it”. Cherubino also cannot explain what he feels.
 
 | Italian | English |
 |---|---|
@@ -88,12 +152,13 @@ Kraal is playing one aria per stage. "Voi che sapete" was played on Oct 5; Papag
 | Voi che sapete che cosa è amor, | You ladies who know what love is, |
 | donne, vedete s'io l'ho nel cor. | see whether I have it in my heart. |
 
-### Stage 2, seeking: "Der Vogelfänger bin ich ja" (*The Magic Flute*, Act 1)
-- Papageno sings it on his first entrance: the bird-catcher with his panpipe.
-- The text is by Emanuel Schikaneder, 1791, who also sang Papageno at the premiere.
-- This is the most likely Papageno piece for next class. If Kraal plays "Ein Mädchen oder Weibchen" (Act 2) instead, that is Papageno's other aria, wishing for a girl or a little wife; tell Claude and this section gets swapped.
-- The lines to know are in verse 2: "Ein Netz für Mädchen möchte ich, ich fing sie dutzendweis für mich", a net for girls, to catch them by the dozen. That is desire awake and looking among the many, A's second stage.
-- Verse 3 narrows to "the one I liked the best" without having found her, so the seeking points toward a particular woman it does not yet have.
+### Stage 2. Papageno in *The Magic Flute* (Act 1).
+
+- Papageno first enters as a bird-catcher with a panpipe and sings "Der Vogelfänger bin ich ja". Emanuel Schikaneder wrote the words in 1791 and sang Papageno at the premiere.
+- The second verse asks for a net to catch girls by the dozen. "Ein Netz für Mädchen möchte ich, ich fing sie dutzendweis für mich". This is desire looking among many possible objects.
+- Verse 3 narrows to "the one I liked the best". Papageno wants to find a particular woman but has yet to find her.
+- The first four lines are a refrain at the start of verses 2 and 3.
+- The aria for the next class was uncertain. Another possibility is "Ein Mädchen oder Weibchen" (Act 2), where Papageno wishes for a girl or a little wife.
 
 | German | English |
 |---|---|
@@ -118,14 +183,14 @@ Kraal is playing one aria per stage. "Voi che sapete" was played on Oct 5; Papag
 | Sie schlief an meiner Seite ein; | She'd fall asleep at my side; |
 | Ich wiegte wie ein Kind sie ein. | I'd rock her to sleep like a child. |
 
-The refrain's first four lines open verses 2 and 3 as well; they are written out once here.
+### Stage 3. Don Giovanni in *Don Giovanni* (1787).
 
-### Stage 3, desiring: *Don Giovanni* (1787)
-- The aria that states the third stage most directly is Don Giovanni's "Fin ch'han dal vino" (Act 1), known as the Champagne Aria. He orders a party, plans to flirt with "this one and that one", and wants ten more names on his list by morning. It is very fast and breathless, which is the point: desire with endless energy.
-- The other likely choice is Leporello's Catalogue Aria, "Madamina, il catalogo è questo" (Act 1). The servant reads out his master's list of conquests, ending "ma in Ispagna son già mille e tre", but in Spain, already one thousand and three. He adds that his master does not care whether she is rich, ugly or beautiful: desire aimed at woman as such, which is A's third stage.
-- Both texts are by Da Ponte, 1787. Kraal went through the Catalogue Aria and a seduction scene on Oct 9; see the [lecture 11 page](11-don-giovanni-and-the-catalogue.md).
+- Don Giovanni’s "Fin ch'han dal vino" (Act 1) is the Champagne Aria. He orders a party, plans to flirt with "this one and that one", and wants ten more names on his list by morning. Its fast pace expresses his constant desire.
+- Leporello, his servant, sings "Madamina, il catalogo è questo" (Act 1). He reads his master’s list of conquests, ending with "ma in Ispagna son già mille e tre", meaning “but in Spain, already one thousand and three”.
+- Leporello says his master desires women regardless of whether they are rich, ugly or beautiful. This illustrates desire for woman as such.
+- Da Ponte wrote the words to both arias in 1787.
 
-"Fin ch'han dal vino", in full:
+#### "Fin ch'han dal vino"
 
 | Italian | English |
 |---|---|
@@ -141,7 +206,7 @@ The refrain's first four lines open verses 2 and 3 as well; they are written out
 | Ah, la mia lista doman mattina | Ah, by tomorrow morning |
 | d'una decina devi aumentar. | you'll have to add ten to my list. |
 
-The Catalogue Aria, the lines that matter:
+#### "Madamina, il catalogo è questo"
 
 | Italian | English |
 |---|---|
@@ -157,72 +222,3 @@ The Catalogue Aria, the lines that matter:
 | se sia brutta, se sia bella; | whether she's ugly, whether she's beautiful; |
 | purché porti la gonnella, | as long as she wears a skirt, |
 | voi sapete quel che fa. | you know what he does. |
-
-## Clarifications
-
-### The essay, for the record
-- The full title is "The Immediate Erotic Stages or The Musical Erotic". It is the second of A's papers in Part I of *Either/Or*, right after the Diapsalmata.
-- The page numbers in your notes are Hannay's Penguin translation, the course text.
-- Two names in your notes need fixing. The character in *The Marriage of Figaro* is Cherubino, whom A calls "the Page". The third opera is *Don Giovanni*.
-
-### What "immediacy" means
-- Immediacy is experience as it happens, before you step back from it to name it, explain it or judge it. Reflection is that stepping back.
-- Desire is immediate in this sense. It exists in the moment of wanting, not in thinking about wanting.
-- That is the point of premise 1 in Kraal's argument. Desire lives only in the present moment, so any medium that steps back from the moment loses it.
-
-### Why music wins, and your recording point
-- Language is reflection. To put something into words you stand outside it and describe it after the fact, which is why Kraal said it "exists past the event" (p. 80).
-- Painting and sculpture are representation. They hold a figure still in space, which suits beauty, but desire is movement, not a pose.
-- Music exists only while it is sounding, one moment after another, so it has the same shape as desire.
-- Your recording point is a fair push. A's claim, though, is not that music vanishes for good. It is that music happens in time while you hear it, and a recording replays that moment rather than describing it. The argument survives recording.
-
-### Why Mozart is "supreme" (the holy glaze)
-- A's test for a classic work is a perfect fit between its idea and its medium.
-- Desire in its immediacy, which A calls the sensuous erotic, is for him the most abstract idea there is. Music is the most abstract medium, and the only one that can carry that idea.
-- *Don Giovanni* is the one work where that idea meets that medium. So A ranks it highest among all classics, and Mozart with it.
-- The worship is A's own, and it fits his character as the aesthete. Kraal's "holy glaze" reaction is a fair reading of the tone, not something you need to agree with.
-
-### Whole operas or specific parts
-- A does not go through the operas song by song.
-- For the first two stages he picks one character as the picture of that stage: Cherubino in *Figaro*, Papageno in *The Magic Flute*.
-- *Don Giovanni* he takes as a whole, because Don Giovanni's desire drives the whole opera.
-
-### Is opera cheating, and the lyrics
-- An opera is a drama sung to an orchestra, so it has words, the libretto, as well as music.
-- A's position is that in these operas the music, not the words, carries the desire. The libretto supplies the situations.
-- Kraal's answer (email, Oct 6): A is not using the operas to prove his argument. He uses them to clarify the stages of desire, and what justifies that is his claim that music and desire are both expressions of immediacy.
-- Kraal grants that the words create a prima facie problem, meaning a problem at first sight. A would say the words are heuristic, a help for finding your way, rather than essential.
-- The sign of this, Kraal says, is that A praises Mozart, the composer, and never the librettists, Da Ponte and Schikaneder.
-- The 1800s background is not needed for the exam. What you need is in the essay: the three stages, the argument for music, and the claim about the classic.
-
-### Dreaming, seeking, desiring
-- Stage 1, dreaming, is Cherubino. Desire has not woken up to any object yet. It is a vague, melancholy longing, in love with love itself, "the one" in the abstract.
-- Stage 2, seeking, is Papageno, the bird-catcher. Desire has woken up and turned outward. It notices the many possible objects and goes looking among them, cheerfully, but does not yet desire any one of them (p. 90).
-- The difference between the first two: dreaming is inward and has no object; seeking is outward and aims at the many.
-- Stage 3, desiring, is Don Giovanni. "Desiring" is the word you heard as "desiration". Desire is now fully itself: it has a particular object, and it wants each particular woman as an instance of woman as such. So it never settles and never runs out.
-- Stage 3 joins the first two: it keeps the dreamer's pull toward the ideal and the seeker's turn to the many, and aims both at the particular.
-- The stages are in the order of desire's growth, not the order the operas were written. *The Magic Flute* (1791) is the latest opera but the middle stage.
-
-### The page 75 passage, and "a Christian art"
-- In its mediate state, once it is reflected, the sensuous comes under language and under ethical categories. It gets talked about and judged.
-- In its immediacy it can only be expressed in music.
-- A calls music a Christian art because Christianity set spirit against the flesh. In excluding the sensuous it made the sensuous a principle of its own for the first time, and that excluded principle is what music expresses.
-
-### Is desire just hedonism
-- Not quite. Hedonism is a view: pleasure is the good, so go after pleasant states. That is already reflection, a theory with reasons behind it.
-- A's desire comes before any theory. Don Giovanni does not weigh pleasures; he simply desires.
-- Your second thought is right: desire does not have to feel good. The first stage is melancholy.
-- The calculating pursuer of enjoyment is a different figure, the reflective seducer of "The Seducer's Diary" at the end of A's papers.
-
-### Should love be the focus
-- Kraal's answer (email, Oct 6): A is not saying the aesthetic life is built on desire. He is saying that the desire-driven life he studies is one kind of aesthetic life.
-- The reason it counts as aesthetic: what is desired is beauty, and aesthetics is concerned with the beautiful.
-- On whether A lives the immediacy he praises, Kraal says A makes various attempts at it, which the Seducer's Diary will show, but A does not take himself to be as paradigmatic, meaning as perfect an example, as Don Giovanni.
-- Your doubt about building a life on it is close to where the book is going. Part II is the Judge arguing that a life of immediacy cannot hold together.
-
-### Nietzsche
-- The book is *The Birth of Tragedy* (1872). The Apollonian goes with the plastic arts such as sculpture, the Dionysian with music.
-- Nietzsche (1844–1900) became famous mostly after his collapse in 1889, for his attack on Christian morality, "God is dead", and his aphoristic style. He is usually paired with Kierkegaard as a founder of existentialism.
-- The two never read each other. Kierkegaard died in 1855, and Nietzsche was told about him only in 1888, just before his breakdown.
-
-Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 9". Ledger: 2 topics, due Oct 6.

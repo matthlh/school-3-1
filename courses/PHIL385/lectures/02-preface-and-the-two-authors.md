@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 2 (Mon Sep 14) — The Preface, and the two authors of *Either/Or*
 
+The Danish text of *Enten–Eller* is at tekster.kb.dk. For practice, see [Lec 2 in the question bank](../02-questions.md).
+
 ## Your notes (pasted 2026-09-14)
 * Aesthtical essays? Vs B's essays
 
@@ -49,75 +51,84 @@ Aim of either / or is to provide a clash of life views where each life view life
 Kierkegaard believes that there's no hard truth, can think of different paths in Author A and B. Don't need to be extreme, balance of beliefs, beliefs can change through experiences as well.
 
 ## Clarifications
-Checked against the Danish text of *Enten–Eller* at tekster.kb.dk.
 
-### Inner and outer
-- The thesis the Preface opens by doubting is Hegel's: the outer is the inner and the inner is the outer.
-- Kraal's musician analogy is the Hegelian side of the argument, not Eremita's. A talent nobody ever hears is not yet anything. Hegel's own version is that a person simply is the series of their deeds, and that the will is only actual once it has been carried out in the world. That is your "will actualized in reality".
-- Eremita's counter-case is the secret. People keep things their outside never shows, so the outer does not reliably reveal the inner.
-- Both halves matter for the exam. Hegel says the inner must become outer. Eremita says it often does not. The whole book is built on the gap.
+### Hegel and Eremita on inner and outer life
 
-### Why hearing
-- Eremita says hearing became his dearest sense. The exact reason is that the voice is the revelation of an inwardness that the outside cannot measure, and the ear is the instrument by which that inwardness is grasped.
-- His illustration is the confessor. A priest hearing confession is separated from the penitent by a grille, so he only hears, and he builds an outside to match what he hears. No contradiction arises.
-- The contradiction appears when you see and hear someone at the same time. That is when he catches the outer failing to match the inner.
+- Hegel holds that the outer is the inner and the inner is the outer. A person's deeds show who they are, and a person's will becomes real when they act on it. The notes call this "will actualized in reality".
+- Kraal's example illustrates Hegel's side. A musician's talent has yet to become real if nobody has heard it.
+- Eremita opens the Preface by questioning Hegel's thesis. His example is a secret. Someone can keep a part of their inner life entirely hidden.
+- Eremita calls hearing his dearest sense. The voice reveals inwardness, a person's inner life, and the ear grasps what outward appearance can fail to show.
+- In Eremita's example, a priest hears a confession through a grille. He imagines an outward appearance that fits the voice, so the two agree.
+- When Eremita hears and sees someone together, he can detect a gap between their outward appearance and what the voice reveals.
 
-### The pseudonym and the found-papers story
-- Victor Eremita is Latin for the victorious hermit. He signs the Preface simply as "The Editor", Copenhagen, November 1842. The book came out 20 February 1843.
-- The device is not original to Kierkegaard. Found manuscripts and editor-narrators were a stock Romantic convention, used by Goethe in *Werther*, by E. T. A. Hoffmann, by Jean Paul and by Walter Scott. Kierkegaard read all of them. What is his own is turning the convention into a philosophical instrument rather than a frame for a story.
-- The details you may be asked for: he noticed the writing desk about seven years earlier at a second-hand dealer's, bought it after resisting, and in the summer of 1836 struck it with a hatchet when a drawer jammed before a trip. He compares himself to Xerxes having the sea whipped. A hidden compartment sprang open. He carried the papers to Hillerød in a mahogany case that normally held pistols, and let his landlord believe he was practising with them.
+### Victor Eremita and the discovery of the papers
 
-### A and B
-- A is the aesthete. Eremita states plainly that the papers give no information about him at all, so "A" is a name Eremita invented.
-- B is the letter-writer. From the letters Eremita learns that he was called Wilhelm and was an assessor in a court, without it being said which court. Hence Judge William.
-- **The Johannes point is the other way round.** Eremita never gives A a name. Johannes is the seducer inside "The Seducer's Diary", named in Cordelia's letters. Eremita suspects A wrote the diary rather than found it, so if he is right, Johannes is a mask A made, not A's own name. Worth checking with Kraal, because as an exam claim "A is named Johannes" is false.
-- The two sets of papers even look different. A's are on fine vellum in quarto with a wide margin. B's are on full sheets of beehive paper in split columns, the way legal documents are written.
+- **Victor Eremita** is Latin for the victorious hermit. He signs the Preface "The Editor" in Copenhagen in November 1842. The book came out on 20 February 1843.
+- Found manuscripts and fictional editors were common in Romantic writing. Kierkegaard read writers who used the device, including Goethe in *Werther*, E. T. A. Hoffmann, Jean Paul and Walter Scott. He uses the device to stage a philosophical disagreement.
+- Eremita first saw the writing desk at a second-hand dealer's about seven years earlier. He resisted buying it, then bought it.
+- A drawer jammed before a trip in the summer of 1836. He struck the desk with a hatchet, and a hidden compartment opened. He compares himself to Xerxes having the sea whipped.
+- He carried the papers to Hillerød in a mahogany pistol case. He let his landlord think he was practising with pistols.
+- He waited five years between arranging and publishing the papers. He never learned who wrote them.
 
-### What is actually in the book
-- Volume 1 is "containing A's papers". Volume 2 is "containing B's papers, letters to A".
-- A's eight pieces, in the order Eremita printed them:
+### Who A, B and Johannes are
 
-  | # | Piece | Assigned in this course |
-  |---|---|---|
-  | 1 | Diapsalmata | yes, Oct 19–28 |
-  | 2 | The Immediate Erotic Stages, or the Musical Erotic | yes, Oct 5–14 |
-  | 3 | Ancient Tragedy's Reflection in the Modern | yes, Sep 25–28 |
-  | 4 | Silhouettes | no |
-  | 5 | The Unhappiest One | yes, Sep 14–18 |
-  | 6 | The First Love | no |
-  | 7 | Crop Rotation | yes, Sep 21–23 |
-  | 8 | The Seducer's Diary | yes, Oct 19–23 |
+- **A** is the aesthete. The papers reveal nothing about his identity, so Eremita invents the name "A".
+- **B** is Wilhelm, an assessor in an unnamed court. This is the letter writer known as Judge William.
+- **Johannes** is the seducer in "The Seducer's Diary". Cordelia names him in her letters. Eremita suspects that A wrote the diary, making Johannes a character A invented.
+- The notes say Eremita identifies A as Johannes. The Preface leaves A unnamed and places Johannes inside the diary.
+- A wrote on fine vellum in quarto with a wide margin. B used full sheets of beehive paper split into columns like legal documents.
 
-- B's three pieces, in order:
-  - The Aesthetic Validity of Marriage.
-  - The Equilibrium between the Aesthetic and the Ethical in the Development of the Personality.
-  - Ultimatum, the shortest, which is why it feels out of place.
-- The sermon is inside the Ultimatum. B forwards A a sermon by an unnamed Jutland pastor, titled "The Edifying in the Thought That Against God We Are Always in the Wrong". It is the last word of the whole book, and it is the only place a religious view speaks. Neither A nor B wrote it.
+### Volume 1 and A's papers
 
-### The subtitle, which does matter
-- The full title on both volumes is *Either/Or: A Fragment of Life*, edited by Victor Eremita. In Danish, *Enten–Eller. Et Livs-Fragment*.
-- So yes, "fragment of life" is worth remembering. It is a title, not a passing phrase, and it is a jab at Hegel. A system claims to be complete. This book offers pieces of a life and refuses to add up.
+- Volume 1 is "containing A's papers". Eremita left most of A's papers in the order he found them.
 
-### On marriage, which your notes have inverted
-- A's position: erotic love, especially first love, is aesthetic, and marriage ruins it. Duty, oath and habit are unaesthetic.
-- B's position: marriage is where first love becomes real instead of evaporating. Commitment does not kill the aesthetic, it is the only thing that lets it last, so the married life is more beautiful than the seducer's, not less.
-- Your last line has it right. B argues the ethical is the more beautiful. It is the first clause, that the Judge did not believe in marriage, that is backwards.
+| # | Piece | Assigned in this course |
+|---|---|---|
+| 1 | Diapsalmata | Yes, Oct 19–28 |
+| 2 | The Immediate Erotic Stages, or the Musical Erotic | Yes, Oct 5–14 |
+| 3 | Ancient Tragedy's Reflection in the Modern | Yes, Sep 25–28 |
+| 4 | Silhouettes | No |
+| 5 | The Unhappiest One | Yes, Sep 14–18 |
+| 6 | The First Love | No |
+| 7 | Crop Rotation | Yes, Sep 21–23 |
+| 8 | The Seducer's Diary | Yes, Oct 19–23 |
 
-### The aim, and one caution
-- Eremita's own words: when the book has been read, A and B are forgotten, and only the views of life stand facing each other, expecting no final decision in particular persons.
-- He calls it good fortune that the papers settle nothing. In ordinary novels one character converts the other, and the reader is handed a result instead of a view. Here neither wins.
-- The thought that A and B might be one man who went through both movements is not an idea he drops. He admits it is unhistorical and improbable and says he could not give it up, and it is what gave him the title. The title frees the reader from asking whether A repented or B won.
-- **Careful with "there's no hard truth" and "balance of beliefs".** That is not the position, and it would cost you marks. The book withholds a verdict so the reader has to make one. B argues at length that balancing the two is exactly the evasion to avoid, and the title is Either/Or rather than Both/And. Kierkegaard's "truth is subjectivity", which comes later in the *Postscript*, is a claim about how a truth has to be held and lived, not a claim that there is none. Your other point, that beliefs change through experience, is fine and is close to what the spheres are about.
+- Eremita placed the loose slips of aphorisms first. He applied A's title *Diapsalmata* and A's motto "ad se ipsum", meaning "to himself", to the whole collection.
+- Eremita pairs the first and last aphorisms. The first describes the pain of being a poet. The last takes pleasure in always having the laugh on its side.
+- The diary gives days and months without a year. Eremita dates it to 1834 because 7 April fell on a Monday that year.
 
-### Exam dates, settled
-- Exam 3 is Friday 30 October. Exam 4 is Friday 20 November. You checked both Canvas and the syllabus and they agree, so the Nov 20 discrepancy we had recorded is closed.
-- Which one is the 500-word essay exam is still unstated. That question stays on the list for office hours.
+### Volume 2 and B's letters
 
-### Smaller things from the Preface
-- Eremita left A's papers in the order he found them, letting chance rule. Only the loose slips of aphorisms had to be given a place, and he put them first, titled Diapsalmata with the motto "ad se ipsum", meaning "to himself". The word and the motto were A's own, written on the slips. Applying them to the whole collection was Eremita's doing.
-- He noticed that A's first and last aphorism answer each other. The first feels the pain of being a poet, the last enjoys always having the laugh on its side.
-- B's essays had no titles, because letters do not carry titles, so Eremita supplied those himself.
-- The diary entries carry days and months but no year. Eremita worked out that 7 April falls on a Monday in 1834, and dated the diary from that.
-- He waited five years between arranging the papers and publishing them, and never found out who the authors were.
+- Volume 2 is "containing B's papers, letters to A". Eremita supplied titles because B's letters had none.
 
-Questions: 11 in [02-questions.md](../02-questions.md) under "Lec 2". Ledger: 2 new topics, plus more questions on the existing Either/Or Preface row.
+1. The Aesthetic Validity of Marriage.
+2. The Equilibrium between the Aesthetic and the Ethical in the Development of the Personality.
+3. Ultimatum, the shortest of the three.
+
+- In the Ultimatum, B forwards A a sermon by an unnamed Jutland pastor. Its title is "The Edifying in the Thought That Against God We Are Always in the Wrong".
+- The sermon ends the book and is its only direct statement of the religious view. The pastor wrote it.
+
+### A and B on marriage
+
+- A considers erotic love, especially first love, aesthetic. He thinks the oath, duty and habit of marriage spoil it.
+- B thinks marriage makes first love real and gives it a form that can last. For him, the ethical life of a married person has more beauty than a seducer's life.
+- The notes first describe B as rejecting marriage and later describe him as defending it. B defends it.
+
+### Why the book leaves the choice open
+
+- The full title of both volumes is *Either/Or: A Fragment of Life*, edited by Victor Eremita. The Danish title is *Enten–Eller. Et Livs-Fragment*.
+- The subtitle challenges the completeness claimed by a Hegelian system. The book presents separate views of how to live and leaves the disagreement open.
+- Eremita says that after reading, A and B are forgotten and the views of life stand facing each other, expecting no final decision in particular persons.
+- Eremita calls this good fortune. A novel in which one character converts the other hands the reader the result. *Either/Or* leaves the reader to judge the views.
+- Eremita calls it unhistorical and improbable that A and B might be one person who passed through both ways of life. He kept the idea and took his title from it. The title shifts the question away from whether A repented or B won.
+- B argues that balancing the aesthetic and ethical ways of life evades the choice between them. A person's experience can change which beliefs they hold.
+- Kierkegaard's later claim that "truth is subjectivity" in the *Postscript* concerns how a person holds and lives a truth. The notes interpret the book's open ending as saying there is no hard truth. The open ending leaves the reader to make the choice.
+
+### Exam dates
+
+| Exam | Date |
+|---|---|
+| Exam 3 | Friday 30 October |
+| Exam 4 | Friday 20 November |
+
+- Canvas and the syllabus agree on those dates. At the time of this lecture, they had yet to identify which exam would use the 500-word essay.

@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 19 (Wed Nov 4) — "The Aesthetic Validity of Marriage" continued: the ethical as the more aesthetic
 
+Owen’s shared notes are tagged Session 1 and were first written on Nov 2. They cover the [lecture 18](18-aesthetic-validity-of-marriage.md) material under “From Owen's notes of the same lecture” and may also cover Nov 4, since they do not separate the days. The [question bank](../02-questions.md) has a “Lec 19” section.
+
 ## Your notes (Owen's shared Notion page "The Aesthetic Validity of Marriage", read 2026-11-04; tagged Session 1, first written Nov 2, with no split between days in its text)
 B’s major argument is that the ethical ends up being more aesthetic than just the immediate, pure aesthetic passion
 
@@ -69,94 +71,85 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 
 ## Clarifications
 
-### Where this page comes from
-- You missed this lecture, so this page is Owen's notes plus the essay.
-- Owen's page is tagged Session 1 and was first written on Nov 2, so some or all of it may be Monday's. Its text does not split the days.
-- Its Background and B's Argument sections repeat Monday's lecture, so they are explained on your [lecture 18 page](18-aesthetic-validity-of-marriage.md) under "From Owen's notes of the same lecture".
-- Everything else is explained here because your Monday page does not have it.
+### Why marriage is more beautiful in B’s account
 
-### The thesis: the ethical is the more aesthetic
-- Kraal's statement of B's major argument is that the ethical ends up more aesthetic, more beautiful, than the immediate, purely aesthetic passion of romantic love.
-- B's own words for the conclusion are that marriage is the "transfiguration" of first love (the same love, kept and made more glorious) and "even more beautiful than it", and that "really it is marriage that is poetic".
-- The link to Plato is Kraal's. B does not name Plato anywhere in the assigned text.
-- In Plato's *Republic* (Book VI) the Form of the Good is the most important thing to know, because just things, beautiful things and the rest are beneficial only through their relation to it. Kraal's short form of this is that the beautiful derives its value from the good.
-- Applied to the essay: the good is the ethical (your Monday notes), so the aesthetic gets its value from the ethical. A life that wants the most beauty therefore ends up in the ethical, which is why marriage wins even on A's own terms.
-- The "Author B" line under the Plato bullet marks B, not A, as the one who takes this Platonic line.
+- For Kraal, the ethical gives immediate romantic passion a more beautiful form. This is how he reads B’s argument that the ethical is more aesthetic.
+- B calls marriage the "transfiguration" of first love. Marriage keeps that love and makes it "even more beautiful than it". As B puts it, "really it is marriage that is poetic".
+- Kraal draws the connection to Plato. In Book VI of the *Republic*, the Form of the Good is the most important thing to know. Just and beautiful things benefit us through their relation to it.
+- In Kraal’s reading of B, the good is the ethical. The beautiful draws its value from the good, so marriage offers more beauty even by A’s standard. B does not name Plato in the assigned text.
 
-### The two comparisons
-- Kraal set an aesthetic life against an ethical life in a series of comparisons, arguing each time that the ethical life is the good one.
-- In each pair the first picture is the aesthetic life and the second is the ethical life.
-- Children: dying childless and alone, against dying with the people you love around you.
-- Confinement: keeping your inner secrets shut in and relying on deception, against sharing your biggest secrets with your lover openly.
-- "Confinement" is the lecture's heading for this comparison. It most likely names the aesthetic side, a self shut in with its secrets. The word is not in the essay.
+### Kraal’s two comparisons
 
-### The children comparison and the essay
-- B calls children "a blessing". His example is a poor woman trading in the square with her baby in her arms, whom he would paint and nothing else if he were a painter.
-- B adds that children humble proud parents and connect a person to a future and a past.
-- B does not argue that one should marry so as not to die alone. He quotes married people saying that their children and grandchildren will "close our eyes" and mourn them, and he treats it as their consolation, said "with a rare Sunday flourish".
-- He counts marrying for children or for a home among the one-sided "whys" he rejects, because marriage must have no "why". So the deathbed picture is Kraal's comparison of two lives, not B's reason for marrying.
-- The closest B comes to A dying alone is his warning that A's life will draw to its close with only the recollection of conscience and its record "of wasted possibilities".
-- B also pictures A as "alone in one's kayak", and corrects it to alone with one's care and "alone with one's despair".
+| Example | Aesthetic life | Ethical life |
+| --- | --- | --- |
+| Children | A person dies childless and alone. | A person dies surrounded by people they love. |
+| Confinement | A person conceals their secrets and relies on deception. | A person shares their most private thoughts openly with their lover. |
 
-### The confinement comparison and the essay
-- B's word for the first picture is "secretiveness". His words for the second are openheartedness, uprightness and "publicity", which he calls "the life-principle of love"; secretiveness between the lovers is its death.
-- His reason is that love is giving oneself, and one can give oneself only by going "out of" oneself, while secretiveness wants to remain in itself.
-- On deception, B says that making an impression from a distance, so that the girl loves an image she made herself, is "not love but the coquetry of the seducer". This fits Johannes's method in "The Seducer's Diary", though B does not name him.
-- A's castle in the air, with his wife living in a separate wing, runs on "secretiveness, mystification, refined coquetry". It is B's example of the first picture.
-- B says it takes courage to reveal oneself as one truly is.
-- B keeps one kind of secrecy. Toward the outside world the couple's secretiveness is "the absolute condition" for the aesthetic in marriage, so the openness he asks for is between husband and wife.
+- In each case, Kraal argues that the ethical life is the good one. “Confinement” is the lecture’s term and most likely names the self shut in with its secrets. B does not use that word in the essay.
+
+### What B says about children
+
+- B calls children "a blessing". He says that if he were a painter, he would paint only the poor woman trading in the square with her baby in her arms.
+- B says children humble proud parents. They connect a person to a future and a past.
+- Married people console themselves that their children and grandchildren will "close our eyes" and mourn them. B says they speak "with a rare Sunday flourish".
+- B rejects marrying for children or for a home as one-sided reasons. For him, marriage must have no "why". Kraal’s deathbed example compares the two ways of living.
+- The closest B comes to picturing A dying alone is when he says A’s life will end with conscience recalling its record "of wasted possibilities". Elsewhere B pictures A as "alone in one's kayak", then alone with his care and "alone with one's despair".
+
+### Why openness matters in love
+
+- B calls the first attitude "secretiveness". He says openheartedness, uprightness and "publicity" between the lovers sustain love. He calls publicity "the life-principle of love".
+- Love requires giving oneself, which means going "out of" oneself. Secretiveness keeps a person closed off and kills love.
+- B calls it "not love but the coquetry of the seducer" when a man impresses a girl from a distance and she falls in love with the image she has made of him. This fits Johannes’s method in "The Seducer's Diary", although B does not name Johannes.
+- B gives the example of A’s imaginary castle, where A’s wife lives in a separate wing. Their relationship depends on "secretiveness, mystification, refined coquetry".
+- B says it takes courage to reveal oneself as one truly is. He calls privacy from outsiders "the absolute condition" for the aesthetic in marriage. He asks for openness between the spouses.
 
 ### Marriage as promise keeping
-- "Promise keeping" is Kraal's phrase for why marriage stands for the ethical. B's own words for it are vow, intention and duty.
-- At the wedding the Church "exacts a vow".
-- The vow carries the intention, in which the will turns inward. B says this gives married love a "law of motion" (a direction it develops in over time) and an inner history (growth from within, not outward events), which first love lacks.
-- B says the language of duty is in the future tense, to suggest the historical. A promise binds who the couple will be.
-- A's "no mishmash" objection attacks the same promise: he asks what it means "to pledge oneself to love", where its boundary is, and what power can compel it.
-- Kraal's Monday point, that the vow comes from Christianity around 1100, belongs with this.
 
-### Kraal: A does not really love Cordelia
-- This is Kraal's claim: A's love for Cordelia is bound to a stretch of time and is not "eternal", so it is not really love.
-- Cordelia is not in B's letter. She is the girl of "The Seducer's Diary", which Kraal reads as A's own work (see the [lectures 13–15 page](13-17-seducers-diary-and-diapsalmata.md)).
-- The test Kraal applies is B's: love differs from lust by "the stamp of the eternal".
-- B's lines about A fit the claim. A thinks any girl should count herself lucky to be his sweetheart "even for a week".
-- B also says A renews first love by finding its illusion in new girls, which "betrays as much desperation as depravity".
-- In the Diary itself Johannes loses interest once Cordelia desires him completely, so the affair has an end built in.
+- Kraal says marriage stands for the ethical because it involves "Promise keeping". B’s own terms are vow, intention and duty.
+- At the wedding the Church "exacts a vow". Kraal dates the Christian vow to around 1100.
+- The vow expresses the intention. It turns the will inward and gives married love a "law of motion", or a direction in which to develop.
+- B calls this development from within an inner history. First love lacks that history.
+- B says the language of duty uses the future tense because a promise binds who the couple will be.
+- A’s "no mishmash" objection questions what it means "to pledge oneself to love", where the obligation ends and who can enforce it.
 
-### Kraal's diagram: from love to the will
-- The diagram is a box marked "Marriage" with five numbered steps under it. Owen's page numbers are from his copy; the PDF pages below are where each claim sits in your file.
-- Step 1 is that the defining characteristic of marriage is love. B says marriage's "substance" is love, "the being in love" (Owen's page 399, your PDF page 348).
-- Step 2 is that love is not lust. B says what separates them is "the stamp of the eternal" (Owen 393, PDF 342).
-- Step 3 is that love is not empty of the sensuous, and the sensuous is not lust. B grants that romantic love is "based essentially on the sensual" (Owen 392, PDF 342), and that first love has the sensual in it but is "not simply sensual" (Owen 406, PDF 352).
-- What makes the sensual into lust is being cut off from the eternal. B calls the sensual on its own "the instantaneous", which wants instant satisfaction.
-- Step 4 is that love, its sensuous side included, carries a stamp of the eternal. B says first love presupposes itself back "into all eternity" and forward into all eternity (PDF 352).
-- Step 5 is that this change, romantic love becoming married love (the note under step 4), happens through the ethical will: the intention and the decision. B says the true eternity needs "a determination of the will" (PDF 343).
-- Owen gives three pages for step 5:
-  - The lovers' thanks, intention and obligation give their love "an absolute stamp of eternity" (Owen 411, PDF 358).
-  - The Church exacts a vow, and the intention "makes the individual free" (Owen 432, PDF 376).
-  - The duty passage (Owen 468, PDF 408–409).
+### Why Kraal says A does not love Cordelia
 
-### The civil-marriage note
-- A note at the top left of the diagram, with an arrow to step 1, says that a civil marriage, one without religious officials, does not "require love".
-- The likeliest reading is a contrast. The law can marry two people without asking about love, while step 1 is B's claim about what makes a union a marriage at all.
-- B says a shared life without love is only the satisfaction of sensual desire or "an association, a partnership".
-- B's own use of the word for a marriage: the reflective age turns marriage into "a civil arrangement" for a period, ended by notifying the authority the way one gives notice of a change of address.
-- B says such unions "are not marriages", because they lack the consciousness of the eternal.
-- The note is the lecture's, not B's. B does not discuss civil weddings as such.
-- The Church does not ask the couple whether they love each other either, but B says that is because it "takes it for granted".
+- Kraal reads "The Seducer's Diary" as A’s own work. Cordelia appears in the Diary, outside B’s letter. The [lectures 13–15 page](13-17-seducers-diary-and-diapsalmata.md) covers the Diary.
+- B distinguishes love from lust by "the stamp of the eternal". Kraal applies this test to A’s interest in Cordelia. He says A’s interest is limited in time, so it fails B’s test for love.
+- B says A thinks any girl should count herself lucky to be his sweetheart "even for a week". A keeps finding the illusion of first love in new girls, which "betrays as much desperation as depravity".
+- In the Diary, Johannes loses interest when Cordelia desires him completely.
 
-### Romantic love seeks to become conjugal love
-- A note under step 4, with an arrow up to it, says that because love carries a stamp of the eternal, romantic love will seek to transform into conjugal love. "Conjugal" means married.
-- The reasoning is that romantic love already means to last for ever, but on its own its eternity is "illusory", because it has no inner history.
-- B says romantic love, being non-historical, "goes astray or comes to a standstill" (PDF 412–413).
-- Only the will in marriage, the intention and the vow, gives love the true eternity it claims. So romantic love has to become married love to be what it says it is.
-- B would not call this a replacement. He says first love enters marriage "without being changed", taken up into "a higher concentricity" (a larger circle around the same centre, so nothing is lost), and his word for the result is "transfiguration".
-- B's usual word for the love that enters marriage is "first love". "Romantic love" is his name for the immediate love of the old romances. Both are immediate love, which is what the diagram means.
+### Kraal’s five steps from love to the will
 
-### B as a Hegelian
-- Owen marks this as an aside: some readers take B, Judge William, to be a Hegelian. It is a reading of B, not his claim, and B does not name Hegel in the letter.
-- The reading rests on his vocabulary, which is Hegel's. First love is "an unreal An-sich" (the in-itself), marriage is "the immediacy which has mediacy in itself", and love is a unity of "the universal and the singular".
-- B expects it too: he imagines A begging him to keep away from "any attempt at mediation", mediation being the Hegelians' word for reconciling opposites.
-- It also rests on the shape of B's case. Hegel's *Philosophy of Right* (1820) makes marriage the first ethical relationship, love given a lasting and lawful form, which is close to B's marriage.
-- Against the label, B is alarmed by the young men who cry "de omnibus dubitandum" (doubt everything), a slogan of the Hegelian philosophy then in fashion in Copenhagen.
+1. **Love defines marriage.** B calls the "substance" of marriage love, or "the being in love" (Owen p. 399, PDF p. 348).
+2. **Love differs from lust.** Love carries "the stamp of the eternal" (Owen p. 393, PDF p. 342).
+3. **Love includes the sensual.** Romantic love is "based essentially on the sensual" (Owen p. 392, PDF p. 342).
+   - First love is "not simply sensual" (Owen p. 406, PDF p. 352).
+   - The sensual becomes lust when it is cut off from the eternal. B calls the sensual on its own "the instantaneous" because it seeks instant satisfaction.
+4. **Love claims eternity.** First love, including its sensual side, presupposes itself back "into all eternity" and forward into all eternity (PDF p. 352).
+   - This is why the diagram says romantic love seeks to become conjugal love, meaning married love.
+5. **The will gives romantic love a lasting form.** The intention and decision in marriage are "a determination of the will" (PDF p. 343).
+   - The lovers’ thanks, intention and obligation give their love "an absolute stamp of eternity" (Owen p. 411, PDF p. 358).
+   - The Church requires a vow and the intention "makes the individual free" (Owen p. 432, PDF p. 376).
+   - The passage on duty gives another reference for this step (Owen p. 468, PDF pp. 408–409).
 
-Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 19". Ledger: 1 new topic, marked not studied, so nothing from it is due until you say you have studied this lecture.
+### The note about civil marriage
+
+- The note attached to step 1 says a civil marriage, one without religious officials, does not "require love". Kraal’s diagram and B’s account use marriage in different senses. The note likely refers to the legal procedure, while B is explaining what makes a union a marriage.
+- B says a shared life without love satisfies sensual desire or amounts to "an association, a partnership".
+- In B’s account, the reflective age turns marriage into "a civil arrangement" for a period. A person can end it by notifying the authorities as if changing address. Such unions "are not marriages" in B’s sense because they lack the consciousness of the eternal.
+- B does not discuss civil weddings as such. He says the Church does not ask if the couple love each other because it "takes it for granted".
+
+### How first love lasts
+
+- Romantic love already means to last forever. B calls its eternity "illusory" on its own because romantic love has no inner history.
+- B says romantic love is non-historical and "goes astray or comes to a standstill" (PDF pp. 412–413). The intention and vow in marriage give it the eternity it claims.
+- B says first love enters marriage "without being changed". He calls the resulting marriage "a higher concentricity", a larger circle around the same centre, and names the change "transfiguration".
+- B normally calls the love that enters marriage “first love”. He calls the immediate love of old romances “romantic love”. Kraal’s diagram treats both as immediate love.
+
+### Why some readers call B a Hegelian
+
+- B uses Hegelian terms. He calls first love "an unreal An-sich", meaning the in-itself. He calls marriage "the immediacy which has mediacy in itself" and love a unity of "the universal and the singular".
+- B imagines A asking him to avoid "any attempt at mediation". In Hegelian usage, mediation is the reconciliation of opposites.
+- Hegel’s *Philosophy of Right* (1820) treats marriage as the first ethical relationship, in which love takes a lasting and lawful form. This resembles B’s argument.
+- B does not name Hegel in the letter. He is alarmed by young men who repeat "de omnibus dubitandum", meaning doubt everything, a Hegelian slogan then in fashion in Copenhagen.

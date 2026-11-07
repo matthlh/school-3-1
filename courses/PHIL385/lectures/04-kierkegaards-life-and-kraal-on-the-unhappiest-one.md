@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 4 (Fri Sep 18) — Kierkegaard's life, and Kraal's reading of "The Unhappiest One"
 
+Sources include the Danish text at tekster.kb.dk, the Copenhagen Kierkegaard Centre's biography, *Dansk Biografisk Leksikon* and the Wiener translation of Tolstoy's *On Life*. For practice, see [Lec 4 in the question bank](../02-questions.md).
+
 ## Your notes (a friend's page, pasted 2026-09-19 — you were sick)
 More background on Kierkegaard
 
@@ -51,117 +53,69 @@ Doesn't mean happiness as joy, but talks about you can find comfort
    * love → pain
 
 ## Clarifications
-Checked against the Danish text at tekster.kb.dk, the Copenhagen Kierkegaard Centre's biography
-pages, *Dansk Biografisk Leksikon*, and the Wiener translation of Tolstoy's *On Life*.
 
-### What this lecture adds
-- Most of the page is Kraal's synthesis of the essay you already have in
-  [lecture 3](03-losses-and-the-unhappy-consciousness.md) and the
-  [reading page](../readings/unhappiest-one.md): the class rule, fear of life rather than death,
-  past / future / combination, the teacher-of-children example, Gatsby, the young-or-old and
-  live-or-die symmetry, the four closing clauses. Those are banked already and are not repeated
-  below.
-- New here, and banked: the engagement, what the childhood injury actually was, the Tolstoy
-  comparison, and Kraal's three words for the ending — doxology, paradox, comfort.
+### A's premise and the closing lines
 
-### "You can only be happy in the present"
-- A does say this, but as a conditional he slips in while defining the hoping and remembering
-  individuals: they are unhappy in a sense "if otherwise it is only the person who is present to
-  himself that is happy." He never argues for it. It is the premise the whole contest runs on, which
-  is why the stipulation objection from our discussion bites here.
-- For the exam the safe form is: on A's view a person is happy only insofar as he is present to
-  himself, so absence in past or future is what unhappiness *is*.
+- A treats being present to oneself as a condition for happiness. He introduces the premise while defining the hoping and remembering individuals as unhappy in a sense "if otherwise it is only the person who is present to himself that is happy." He gives no argument for the premise.
+- On that premise, unhappiness means being absent from oneself in the past or future. The contest depends on accepting A's definition.
+- The unhappiest person in a way cannot die because he has never lived, and in a way cannot live because he is already dead.
+- The notes describe him as unable to hate or be strong. A says that he hates the world because he loves it. Each passion coincides with its opposite, and his own strength makes him powerless.
+- Kraal uses these examples to show how each capacity is cancelled by its opposite.
+- Related examples include the class rule, fearing life more than death, the past and future forms and their combination, the teacher of children, Gatsby, and the young-or-old and live-or-die symmetry. See [lecture 3](03-losses-and-the-unhappy-consciousness.md) and the [reading page](../readings/unhappiest-one.md).
 
-### "Unable to die, live, hate, be strong" — the text's own wording
-- Die and live are right: in a way he cannot die, for he has never lived; in a way he cannot live,
-  for he is already dead.
-- "Hate" and "be strong" are half-remembered. A does not say he cannot hate. He says he hates the
-  world only because he loves it, and that he has no passion, not because he lacks it, but because in
-  the same instant he has the opposite one. On strength: he is powerless, not because he lacks
-  strength, but because his own strength makes him impotent.
-- The pattern in all of these is the same, and it is what Kraal's aside is pointing at: each capacity
-  is cancelled by its own opposite, so he is never on one side of anything.
+### The four final questions
 
-### The four clauses, and "love → pain"
-- The Danish is: what is life but *Afsindighed*, faith but *Daarskab*, hope but *Galgenfrist*, love
-  but *Eddike i Saaret*. Madness, folly, a gallows-reprieve, vinegar in the wound.
-- Hannay has "salt in the wound", Hong "vinegar in the wound". "Pain" is your friend's gloss. On an
-  MC option, expect salt or vinegar.
-- *Galgenfrist* is the sharp one: literally the stay of execution granted to a condemned man. Hope is
-  not a way out, only a postponement. Your friend's "reprieve / postponing" has it exactly.
+| A asks about | Danish | Meaning |
+|---|---|---|
+| Life | *Afsindighed* | Madness |
+| Faith | *Daarskab* | Folly |
+| Hope | *Galgenfrist* | A gallows reprieve |
+| Love | *Eddike i Saaret* | Vinegar in the wound |
 
-### "Had a brain hemorrhage as a child" — not him
-- There is no record of a childhood brain hemorrhage for Kierkegaard. None of the standard sources
-  has one.
-- The line is almost certainly two other facts run together. His brother **Søren Michael** died at
-  12 in September 1819, when Søren was 6, after a collision in the schoolyard; the injury is usually
-  described as to the head. And "brain hemorrhage" was one of the causes later proposed for
-  Kierkegaard's own fatal illness in 1855, and rejected.
-- The childhood story that does attach to him is a fall from a tree, which he himself blamed for
-  his crooked back. The Danish medical writers who record it doubt it as a cause and propose spinal
-  tuberculosis instead. Treat it as his own explanation, not a documented event.
-- What is documented: he collapsed in the street in late September 1855 with his legs paralysed,
-  was admitted to Frederiks Hospital on 2 October, and died there on 11 November 1855, aged 42. No
-  autopsy; the cause is still disputed.
+- **Galgenfrist** is a stay of execution granted to a condemned person. The image gives hope the role of postponing the outcome.
+- The translations differ on the last image. Hannay has "salt in the wound" and Hong has "vinegar in the wound". The notes use "Pain" as a gloss.
 
-### The engagement, which is a marriage that never happened
-- Not a marriage. He was engaged to **Regine Olsen**, born 1822; they met in May 1837 when she was
-  15 and he 24. He proposed on 8 September 1840 and she accepted on 10 September.
-- He returned the ring with a farewell letter on 11 August 1841. She refused to accept the break,
-  and the final break in person came in October 1841. He left for Berlin on 25 October, two weeks
-  later, to hear Schelling; that is the trip from lecture 1.
-- Your friend's reason is one of his own stated reasons, and the one Kraal gave. His journals say
-  there was "something spectral" about him that no one could endure who had to see him every day,
-  and the ring letter says he could not make a girl happy. But he gives two more: a secret he felt he
-  would have to confide to a wife and could not, his "thorn in the flesh", which he repeated on his
-  deathbed; and his religious task as an author, which Regine herself later named as the reason.
-  On an exam, "his melancholy" is safe; "only his melancholy" is not.
-- What she did: became engaged to Johan Frederik Schlegel, her former tutor, in 1843, and married
-  him on 3 November 1847. Schlegel became governor of the Danish West Indies in 1855. They never
-  spoke again after 1841 except once: on 17 March 1855, the day she sailed, she stopped him in the
-  street and said God bless you, may all go well with you. He tipped his hat. He died eight months
-  later.
-- His will, a sealed letter to Peter Christian, left everything to her unconditionally, because for
-  him an engagement was and is as binding as a marriage. She declined it and asked only for her
-  letters back.
-- Where it shows up in the books, since Kraal will come back to it: the Seducer's Diary was read in
-  Copenhagen as his own treatment of Regine and was meant to make him look like a scoundrel; the
-  Judge's marriage essays defend the life he could not enter; *Repetition* has a young man who
-  finds he is already recollecting the girl and breaks with her, and Kierkegaard rewrote its ending
-  after learning in July 1843 that she was engaged; *Fear and Trembling* reads Abraham's sacrifice
-  of Isaac as his sacrifice of her; and "Guilty?/Not Guilty?" in *Stages* quotes the farewell
-  letter almost word for word.
+### The childhood injury and Kierkegaard's death
 
-### Tolstoy, *On Life*
-- Kraal's comparison, not something in the scholarship. Tolstoy wrote *On Life* in 1886–87, thirty
-  years after Kierkegaard died, and there is no evidence he ever read "The Unhappiest One". So the
-  parallel is a convergence, not an influence.
-- What they share. Tolstoy argues that true life exists only in the present, outside time, and that
-  the fear of death is an illusion produced by mistaking one's temporal, animal existence for life.
-  His sharpest line is that the thought of a future death is only the transfer into the future of a
-  death that is already happening in the present, a sign of the life a man ought to have and does
-  not. That is the Tolstoyan twin of A's man who cannot die because he has not lived.
-- Where they differ, and this is the exam-safe half. Tolstoy has a positive doctrine: subject the
-  animal self to reason and you live now, and death loses its sting. A has no cure at all; he crowns
-  the unhappiest one and walks off. And Tolstoy's target is other-worldly religion, people who put
-  the good of life before birth or after death, not memory and hope.
+- The notes mention a childhood brain hemorrhage. The standard sources record no such event for Kierkegaard.
+- His brother **Søren Michael** died in September 1819 at 12, after a schoolyard collision usually described as a head injury. Søren was 6.
+- "brain hemorrhage" was proposed and rejected as an explanation of Kierkegaard's own fatal illness in 1855. The notes may combine these two incidents.
+- Kierkegaard attributed his crooked back to a fall from a tree. The fall is known through his own account. Danish medical writers doubt that it caused the condition and propose spinal tuberculosis.
+- He collapsed in the street in late September 1855 with his legs paralysed. He entered Frederiks Hospital on 2 October and died there on 11 November 1855, aged 42.
+- There was no autopsy. The cause of death remains disputed.
 
-### "Doxology", "paradox", "comfort" — Kraal's three words for the ending
-- **Doxology** is a short hymn of praise, the "Glory be to the Father" kind. It is Kraal's label for
-  the ending, not a term you will find in the literature, but it fits: A hails the winner with a
-  chain of titles, salutes him as "great unknown", pronounces wishes, and reverses the title to "the
-  happiest". Know the word as Kraal's, and know what it names.
-- **The paradox.** A's text says the unhappiest one is in "conflict" with the world as a single
-  Thou, that the whole world is for him one person, Misunderstanding, and that his lips smile at the
-  world that misunderstands him. "Victimised" is your friend's word; A's is conflict. The
-  satisfaction is that the title is a distinction: a gift of fortune no one can give himself, a prize
-  the world cannot take away, so the one who holds it need never fear good fortune. That is why A
-  corrects himself to "the happiest" and says language fails.
-- **Comfort.** Not A's word. A's word throughout is *Lykke*, fortune or happiness: a gift of fortune,
-  the fellowship gathers to envy his fortune, he need not fear fortune. He never says the unhappiest
-  one is consoled. Kraal's "not joy but comfort" is a fair reading of what the four clauses do —
-  faith, hope and love are each downgraded to something an aesthete can bear — but on an MC option
-  the words are "the happiest", "gift of fortune" and "envy".
+### Kierkegaard and Regine Olsen
 
-Questions: 9 in [02-questions.md](../02-questions.md) under "Lec 4". Ledger: 1 new topic, due
-Sep 20, plus more questions on the family-losses and first-authorship rows.
+- **Regine Olsen** was born in 1822. They met in May 1837, when she was 15 and he was 24.
+- He proposed on 8 September 1840. She accepted on 10 September. The relationship ended before marriage.
+- He sent back the ring with a farewell letter on 11 August 1841. She refused the break. He ended the engagement in person in October 1841 and left for Berlin to hear Schelling on 25 October, two weeks later.
+- Kraal gives Kierkegaard's melancholy as a reason. Kierkegaard wrote that there was "something spectral" about him that a person living with him could not endure, and the letter says he could not make a girl happy.
+- Kierkegaard also gave a secret he could not confide to a wife as a reason. He called it his "thorn in the flesh" and mentioned it again on his deathbed.
+- His religious task as an author was another reason, which Regine herself later named.
+- Regine became engaged to her former tutor Johan Frederik Schlegel in 1843. They married on 3 November 1847. Schlegel became governor of the Danish West Indies in 1855.
+- After 1841, Regine spoke to Kierkegaard only once. On 17 March 1855, the day she sailed, she stopped him in the street, asked God to bless him and wished him well. He tipped his hat and died eight months later.
+- His will was a sealed letter to Peter Christian. It left everything to Regine without conditions because he considered engagement as binding as marriage. She declined and asked for her letters back.
+
+### The engagement in the books
+
+- Copenhagen readers took *The Seducer's Diary* as his account of how he treated Regine. It was meant to make him look like a scoundrel.
+- Judge William's essays defend a married life Kierkegaard could not enter.
+- In *Repetition*, a young man breaks with a girl he finds he is already recollecting. Kierkegaard rewrote the ending after learning in July 1843 that Regine was engaged.
+- One reading of *Fear and Trembling* connects Abraham's sacrifice of Isaac to Kierkegaard's sacrifice of Regine.
+- "Guilty?/Not Guilty?" in *Stages* quotes his farewell letter almost word for word.
+
+### Tolstoy's *On Life*
+
+- Tolstoy wrote *On Life* in 1886–87, thirty years after Kierkegaard died. Kraal draws the comparison. There is no evidence Tolstoy read "The Unhappiest One".
+- Tolstoy says true life exists only in the present and outside time. Fear of death comes from mistaking the life of the animal self in time for true life.
+- Tolstoy treats the thought of a future death as moving a death already taking place in the present into the future. To him, it signals that a person lacks the life he ought to have. A similarly describes someone who cannot die because he has never lived.
+- Tolstoy's solution is to subject the animal self to reason. A person can then live in the present and lose the fear of death. A ends with the award and offers no remedy.
+- Tolstoy's argument addresses religion that places the good of life before birth or after death. A's subject is absence through memory and hope.
+
+### Doxology, paradox and comfort
+
+- A **doxology** is a short hymn of praise, such as "Glory be to the Father". Kraal calls the ending a doxology because A offers titles and wishes, salutes the "great unknown" and finally calls him "the happiest".
+- The **paradox** is that the unhappiest person receives a distinction the world cannot take away. A says he is in "conflict" with the world as a single Thou, called Misunderstanding, and smiles at the world that misunderstands him.
+- The notes describe the person as "Victimised". A describes the relationship as conflict.
+- The title is a gift of fortune no one can give himself. Its recipient need never fear good fortune. A changes his address to "the happiest" and says language fails.
+- A's word *Lykke* means fortune or happiness. The fellowship gathers to envy the recipient's fortune. Kraal reads the four clauses as "not joy but comfort" because they reduce faith, hope and love to something an aesthete can bear. A's own terms are "the happiest", "gift of fortune" and "envy".

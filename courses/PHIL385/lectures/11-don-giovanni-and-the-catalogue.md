@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 11 (Fri Oct 9) — Don Giovanni: desire for woman in general
 
+The Italian lines come from Lorenzo Da Ponte’s public-domain libretto (1787). The English gives the meaning line by line. The [question bank](../02-questions.md) has a “Lec 11” section.
+
 ## Your notes (pasted 2026-10-09)
 - Epmhasis on Don Giovanni
 - Zooms in on Don G
@@ -16,12 +18,12 @@
 - So basically Don G’s idea of desire and feminity is just their status of being seduced. (He hasn’t slept with them yet)
 
 ## In class: the two scenes
-The texts are Da Ponte's original libretto (1787), which is public domain; the English is a plain line-by-line translation.
 
-### The list of names: Leporello's Catalogue Aria, "Madamina, il catalogo è questo" (Act 1)
-- Leporello, Don Giovanni's servant, sings it to Donna Elvira, a woman his master has abandoned.
-- The opening lines, with the counts by country ending in 1,003 in Spain, are on the [lecture 9 page](09-the-musical-erotic.md).
-- "The dominant passion is the young beginner" is a line from the verse below: "sua passion predominante è la giovin principiante". The young beginner is a young, inexperienced girl.
+### Leporello’s Catalogue Aria, Act 1
+
+- Leporello, Don Giovanni’s servant, sings "Madamina, il catalogo è questo" to Donna Elvira, a woman his master has abandoned.
+- The [lecture 9 page](09-the-musical-erotic.md) has the opening lines and the counts by country. The total for Spain is 1,003.
+- "The dominant passion is the young beginner" translates "sua passion predominante è la giovin principiante". The young beginner is a young, inexperienced girl.
 
 | Italian | English |
 |---|---|
@@ -42,9 +44,9 @@ The texts are Da Ponte's original libretto (1787), which is public domain; the E
 | purché porti la gonnella, | as long as she wears a skirt, |
 | voi sapete quel che fa. | you know what he does. |
 
-### The seduction and marriage scene: most likely "Là ci darem la mano" (Act 1)
-- Don Giovanni meets Zerlina, a peasant girl, on her wedding day to Masetto, and promises to marry her himself.
-- If Kraal used a different scene, tell Claude and this section gets swapped.
+### Don Giovanni and Zerlina, Act 1
+
+- The notes most likely refer to "Là ci darem la mano". Don Giovanni meets Zerlina, a peasant girl, on her wedding day to Masetto. He promises to marry her himself.
 
 | Italian | English |
 |---|---|
@@ -66,25 +68,22 @@ The texts are Da Ponte's original libretto (1787), which is public domain; the E
 
 ## Clarifications
 
-### "Author of the Musical Erotic is author of the Diary"
-- This is about A. "The Seducer's Diary" is the last of A's papers.
-- Be exact about the layers. A presents the Diary as written by Johannes, which he only found and copied. Eremita, in the Preface, doubts that and suspects A wrote it himself.
-- Kraal goes with Eremita: A is the author, and the Diary shows A's own attempts at the immediacy he praises in Don Giovanni (his email of Oct 6).
+### What Don Giovanni desires
 
-### Does desire solve boredom
-- A does not say this. Don Giovanni is never bored, but he is not using desire as a remedy. He plans nothing; he simply desires, which is what makes him immediate.
-- Crop Rotation would class an endless run of new women as the extensive method, chasing ever more new things, which it rejects as the crude way to fight boredom (the bad infinity, Nero).
-- So the link between the essays is a contrast. Crop Rotation is a reflective technique for enjoying life; Don Giovanni is desire with no technique at all.
+- A calls what all women share the feminine. Don Giovanni desires that quality in each woman. She can be "rich, ugly or beautiful".
+- That shared quality explains why his desire is equally strong for each woman. Once he wins one woman, the next takes her place.
+- The notes suggest he desires "their status of being seduced". A says he desires the feminine itself. Whether he has already seduced a woman determines who comes next.
+- Don Giovanni acts on desire as it occurs. For A, the desire itself seduces. Johannes, the reflective seducer in the Diary, chooses Cordelia in particular and plans each step.
+- Don Giovanni succeeds in none of the attempts shown on stage. Donna Anna fights him off at the start, and Donna Elvira interrupts his duet with Zerlina. The 1,003 women on Leporello’s list are past conquests.
 
-### Woman in general, not the uncommon
-- This matches A. Don Giovanni desires in each woman what she has in common with every woman, which A calls the feminine. He does not need her to be extraordinary. The aria's "rich, ugly or beautiful" line says the same.
-- That is the "force of desire" in your note: the desire is equally strong for each woman because it is aimed at what they all share.
-- The Diary's seducer, Johannes, is the opposite case. He picks one particular girl, Cordelia, and plans her seduction step by step.
+### How this differs from Crop Rotation
 
-### Why the women are replaceable, and "seduced"
-- Your main point is right. He wants womanhood, not the person, so once a woman is won she has nothing more to give him and the next one takes her place.
-- One fix to your last line. What he desires is the feminine itself, not "their status of being seduced". Seduced or not seduced is the only difference among women that counts for him, so it decides who comes next.
-- A also says Don Giovanni does not really seduce in the planning sense. He desires, and the desire itself works seductively. Seduction by plan belongs to the Diary.
-- On "he hasn't slept with them yet": in the opera itself, none of his attempts on stage succeed. Donna Anna fights him off at the start, and Donna Elvira interrupts the Zerlina duet. The 1,003 are all in the past, on Leporello's list.
+- Don Giovanni is never bored. The notes suggest desire cures his boredom. A instead describes him acting on desire without planning or using it as a remedy.
+- *Crop Rotation* would classify his pursuit of new women as the extensive method. The essay rejects that method of fighting boredom, calling its endless search the bad infinity and using Nero as an example.
+- *Crop Rotation* gives a reflective technique for enjoying life. Don Giovanni acts without a technique.
 
-Questions: 9 in [02-questions.md](../02-questions.md) under "Lec 11". Ledger: 1 new topic, due Oct 10.
+### Who wrote the Diary
+
+- "The Seducer's Diary" is the last of A’s papers. A presents it as Johannes’s work and claims he only found and copied it.
+- In the Preface, Victor Eremita suspects A wrote it himself.
+- In his Oct 6 email, Kraal agrees with Eremita. He reads the Diary as showing A’s own attempts to live the immediacy he praises in Don Giovanni.

@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 5–6 (Mon Sep 21, Wed Sep 23) — Crop Rotation: boredom and its cure
 
+See the [Crop Rotation reading page](../readings/crop-rotation.md) for the essay and [Lec 5–6 in the question bank](../02-questions.md) for practice.
+
 ## Your notes (a friend's page for both days, pasted 2026-09-25 — you were sick)
 LOTS of claims today!
 
@@ -81,60 +83,41 @@ FREEDOOMMMMM
 3. Vocation: Need to have an exit door. Becoming just another lawyer is boring, is that really what the world needs?
 
 ## Clarifications
-Almost everything on this page is the essay itself, and it is already banked from the reading page,
-[crop-rotation.md](../readings/crop-rotation.md). What follows is only what the lecture added or got
-slightly wrong.
 
-### The Plutus story, as the play actually runs
-- Chremylos, a poor and honest farmer, asks the Delphic oracle whether his son should be raised as a
-  crook, since only crooks prosper. He is told to follow the first man he meets. It is a blind
-  beggar, who turns out to be Plutus, the god of wealth, blinded by Zeus so that he cannot tell the
-  just from the unjust.
-- Chremylos takes him to the temple of Asclepius and his sight is restored, so wealth now flows to
-  the honest. The comic fallout is that nobody needs the gods any more: Hermes turns up starving
-  because the sacrifices have stopped, and the priest of Zeus is out of work.
-- The "society degrades because nobody has any motivation" ending is Kraal's gloss, not the play's.
-  What he wanted from it is the setup for A's essay: a world where everyone has what they need is a
-  world with nothing left to want, and satiety is the epigraph's note. That is why the epigraph
-  reads "one finally gets sick of everything."
+### Aristophanes' *Plutus*
 
-### Kierkegaard and Aristophanes
-- True, and worth a mark. In the 1841 dissertation *On the Concept of Irony* he weighs the three
-  sources for Socrates, Xenophon, Plato and Aristophanes' *Clouds*, and argues that the comic
-  portrait comes closest to the truth, because Socrates was pure irony and only a comedian caught
-  that. So "huge fan" is right, and the ground is the dissertation from lecture 1.
+- Chremylos is a poor, honest farmer. He asks the Delphic oracle whether he should raise his son to be a crook, since only crooks prosper.
+- The oracle tells him to follow the first man he meets. The man is a blind beggar who turns out to be Plutus, the god of wealth. Zeus blinded him so he could not distinguish the just from the unjust.
+- Chremylos takes Plutus to the temple of Asclepius. Plutus regains his sight, and wealth goes to the honest.
+- When people have what they need, they stop sacrificing to the gods. Hermes arrives starving, and the priest of Zeus is out of work.
+- Kraal describes the consequence as "society degrades because nobody has any motivation". The play ends with the gods losing their worshippers.
+- **Satiety** means having enough of everything and having nothing left to want. This is why the epigraph to A's essay says "one finally gets sick of everything."
 
-### "One of the first to treat anxiety and boredom philosophically"
-- Kraal's claim, and defensible. Anxiety gets its own book in 1844, *The Concept of Anxiety*, under
-  the pseudonym Vigilius Haufniensis. Boredom gets this essay. Pascal had written on *ennui* two
-  centuries earlier, so "one of the first" rather than "the first".
+### Why Kierkegaard reads Aristophanes
 
-### "Beast of prey", and the nineteenth-century line
-- A does not coin the phrase. He says that for all the talk of man as a social animal, man is at
-  bottom a beast of prey (*Rovdyr*), and that the talk of society is inherited hypocrisy and
-  calculated cunning. It is an ordinary Danish word used with a sneer.
-- The line Kraal drew is context, not influence. Fourier's utopian communities are earlier than
-  *Either/Or*; Mill's *Utilitarianism* is 1861 and Nietzsche writes in the 1880s, both after 1843.
-  The point is that A's cynicism about altruism belongs to a century that was arguing about it, not
-  that A had read any of them.
+- In his 1841 dissertation *On the Concept of Irony*, Kierkegaard weighs three sources on Socrates. They are Xenophon, Plato and Aristophanes' *Clouds*.
+- Kierkegaard thinks Aristophanes comes closest to the truth. He takes Socrates to be pure irony and thinks the comedian captured that.
+- Kraal calls Kierkegaard "one of the first" thinkers to treat anxiety and boredom philosophically. Boredom is the subject of this essay. Anxiety is the subject of *The Concept of Anxiety*, published in 1844 under Vigilius Haufniensis.
+- Pascal wrote about *ennui* two centuries earlier.
 
-### The page numbers
-- Kraal cited Hannay's pages, and they are the kind of thing he can ask. The bad infinity is at
-  232; the three arts, limitation and forgetting at 233; arbitrariness at 239–240.
-- The "three arts" framing is Kraal's tidy version. A does not number them. What the text gives is
-  the principle of limitation, then the relation between remembering and forgetting, then
-  arbitrariness, in that order.
+### A's claim about social life
 
-### Small corrections to the page
-- "Arbitrariness (conditionality)": the Danish is *Vilkaarlighed*, arbitrariness or wilfulness, and
-  Hannay has "arbitrariness". "Conditionality" is a slip.
-- "He doesn't say it's bad, just that he doesn't understand it": that is Kraal being kind. A does
-  call the "two become one" line obscure and mystical talk, but he also says woman is man's ruin
-  and that a woman's love is only pretence and weakness. That is stronger than not understanding.
-- "Becoming just another lawyer" is Kraal's example. A's is that one becomes a Peter Somebody, a
-  tiny peg in the machine of the state, and gets a title one can never shed.
-- "Forgetting the good things that spoil the current now": yes, and A's reason is that the pleasant,
-  once past, carries the unpleasantness of longing. Forgetting has to apply to both.
+- A describes humans as beasts of prey (*Rovdyr*) even though they call themselves social animals. He treats their talk of society as inherited hypocrisy and calculated cunning. *Rovdyr* is an ordinary Danish word.
+- Kraal places A's distrust of altruism in the nineteenth-century debate. Fourier's utopian communities predate *Either/Or* (1843). Mill's *Utilitarianism* appeared in 1861 and Nietzsche wrote in the 1880s. These dates place the works in context.
 
-Questions: 6 in [02-questions.md](../02-questions.md) under "Lec 5–6". Ledger: no new row; they
-land on the Crop Rotation row from the reading, plus one on the dissertation row.
+### Kraal's three arts in Hannay's edition
+
+| Page | Topic |
+|---|---|
+| 232 | The bad infinity |
+| 233 | The three arts, limitation and forgetting |
+| 239–240 | Arbitrariness |
+
+- Kraal calls them the "three arts". A presents limitation first, the relation between remembering and forgetting second, and arbitrariness third. A gives no numbered list.
+- The notes give "Arbitrariness (conditionality)". The Danish *Vilkaarlighed* means arbitrariness or wilfulness, and Hannay uses "arbitrariness".
+- A says a pleasant experience, once past, causes the pain of longing. His practice of forgetting therefore includes pleasant and unpleasant experiences. The notes call this "Forgetting the good things that spoil the current now".
+
+### Marriage and office
+
+- On marriage, the notes say "He doesn't say it's bad, just that he doesn't understand it". A calls "two become one" obscure and mystical. He goes further, saying woman is man's ruin and a woman's love is pretence and weakness.
+- "Becoming just another lawyer" is Kraal's example of losing freedom by taking office. A describes becoming a Peter Somebody, a tiny peg in the state, with a title that cannot be shed.

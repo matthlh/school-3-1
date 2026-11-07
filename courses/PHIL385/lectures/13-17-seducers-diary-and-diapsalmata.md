@@ -1,5 +1,7 @@
 # PHIL 385 — Lec 13–17 (Mon Oct 19 to Wed Oct 28) — "The Seducer's Diary" and "Diapsalmata"
 
+Owen’s notes cover the Exam 3 unit from Oct 19 to Oct 28. Page references are to his edition.
+
 ## Your notes (Owen's shared Notion page "Diapsalmata + Shadowgraphs + Seducers Diary", read 2026-10-25; it covers the whole Exam 3 unit, Oct 19 to Oct 28, without separating the days; Matt confirmed on 2026-11-05 that there is no separate page for Oct 26 and Oct 28)
 All of this stuff is the content of exam 3
 
@@ -73,9 +75,22 @@ Shadowgraphs
 (empty heading)
 
 ## Clarifications
-- These are Owen's notes, not yours, so the page numbers are from his copy and the emphasis is his. "Shadowgraphs" is on the page as a heading with nothing under it, so the week did not reach that essay; the syllabus has Mon Oct 26 and Wed Oct 28 still on "Diapsalmata".
-- The diary's author is Johannes, "Johannes the Seducer". In Victor Eremita's preface A claims only to have found and copied the diary, and the Hong edition's and Kraal's line is that A wrote it himself, which is why the notes say "Author A Facade" and "Real Author A" for the two Johanneses. A is the Diary's author in the lecture 11 log as well.
-- The seduction is reflective, not immediate. The notes' "Reflection + Calculation in how to tune his performance" is the point to keep: Don Giovanni desires and acts in the moment (the musical, immediate seducer of "The Musical Erotic"), while Johannes plans the whole affair, which is why it has to be a diary and in prose. Kraal's "mastermind behind the actor" is the same point.
-- The "Final enjoyment" and "resistance" lines go together. Johannes wants Cordelia most while she still resists, and once she desires him absolutely the interest is gone, which is why the diary ends when the seduction is complete. "Only when it is free is it beautiful" is his justification: she must give herself freely, so he arranges things so that she breaks the engagement herself.
-- The evolutionary-biology point is Kraal's example, marked "IDK" in the notes. The claim he was making is that a precondition of life (reproduction keeps the species going) is not the same thing as a meaning of life (a reason you should live), so biology cannot settle what A is missing. Treat the example as the lecture's, not A's.
-- The Diapsalmata are the short aphorisms that open Either/Or Part I, and the page numbers 46 to 55 are from Owen's edition. The lecture reads them as the voice of someone with no belief about the meaning of life, which is what makes moralizing about Johannes harder than it looks: there is no standard in A's own papers to moralize from.
+
+### Who wrote the Diary
+
+- Johannes, "Johannes the Seducer", is the Diary’s named author.
+- In Victor Eremita’s preface, A says he only found and copied the Diary. Kraal and the Hong edition take A to be its actual author. This explains the notes’ labels "Author A Facade" and "Real Author A". Lecture 11 gives the same account.
+- “Shadowgraphs” appears as an empty heading in Owen’s notes. The syllabus lists “Diapsalmata” for both Mon Oct 26 and Wed Oct 28. That suggests the unit did not reach “Shadowgraphs”.
+
+### What Johannes wants from Cordelia
+
+- The notes describe Johannes’s method as "Reflection + Calculation in how to tune his performance". He plans the affair, which is why it takes the form of a diary in prose. Kraal calls him the "mastermind behind the actor".
+- Don Giovanni acts on desire in the moment. He is the immediate seducer of "The Musical Erotic". Johannes is the reflective seducer.
+- Johannes wants Cordelia most while she resists. His interest ends when she desires him completely, so the Diary ends when the seduction is complete.
+- "Only when it is free is it beautiful" is Johannes’s reason for arranging matters so Cordelia breaks the engagement herself. He wants her to give herself freely.
+
+### What the Diapsalmata suggest about A
+
+- The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. The page range in Owen’s edition is pp. 46–55.
+- Kraal reads the aphorisms as the voice of someone who has no belief about the meaning of life. A’s own papers therefore supply no standard for judging Johannes morally.
+- Kraal uses evolutionary biology to distinguish a precondition of life from a reason to live. Reproduction keeps the species going. That fact supplies no reason why someone should live.
