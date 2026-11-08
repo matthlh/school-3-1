@@ -16,10 +16,10 @@
 
 ## Statistics, samples and variables
 ### What statistics is (slide 3)
-- The slide gives three textbook definitions in different words. All three say that statistics is collecting data, summarising it, analysing it, and interpreting the results to draw conclusions.
-- One of the three adds that statistics is the science of learning from data and of measuring, controlling and communicating uncertainty.
-- In the recording he stressed that a mistake at any one step gives a wrong conclusion, however well the other steps are done. The mistake can be biased data, a wrong summary, the wrong analysis method or a wrong interpretation.
-- Interpreting means saying what a result means in plain words. A result such as "reject $$H_0$$" (Chapter 8) means nothing to a reader until you say what it implies.
+- Statistics: collect data, summarise it, analyse it, interpret the results to draw conclusions. The three textbook definitions all say this.
+- One adds: the science of learning from data, and of measuring, controlling and communicating uncertainty.
+- A mistake at any one step — biased data, wrong summary, wrong method, wrong interpretation — ruins the conclusion, however good the other steps.
+- Interpreting means stating the result in plain words. "Reject $$H_0$$" (Ch 8) means nothing until you say what it implies.
 
 ### What a sample tells you about a population (slide 4)
 - The population is every subject of interest in a particular study. Define it precisely: "UBC students" has to say whether it means undergraduates only, and whether online students count.
@@ -37,18 +37,46 @@
 - A census collects data on the entire population, like Canada's national census. A sample survey collects data on a sample only.
 
 ### Types of variables (slides 5–6)
-- A variable is categorical when each observation belongs to one of a set of categories, such as your major. He also calls it qualitative.
-- A variable is quantitative when its observations are numbers that measure a magnitude. He also calls it numerical.
-- The slide's four examples:
-  - The number of siblings in a family is quantitative.
-  - County of residence is categorical.
-  - The distance in km of the commute to school is quantitative.
-  - Blood type is categorical.
-- A quantitative variable is discrete when its possible values are separate numbers, such as 0, 1, 2, 3, with no possible value between two neighbours.
-- Shoe sizes 6, 6.5, 7 and 7.5 are discrete even though they include halves, because no size exists between 6 and 6.5.
-- A **continuous quantitative variable** can take any value between two of its possible values. Height, distance and weight are examples.
-- The measuring tool determines how many decimals you record. It does not make the variable discrete.
-- The type matters because it decides which graph and which analysis are correct.
+
+> **Definition.** A **categorical** variable (also qualitative) sorts each observation into a group. A **quantitative** variable (also numerical) measures a magnitude as a number.
+
+```svg
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M300 48 V66 H150 V82 M300 66 H450 V82" />
+    <path d="M150 122 V140 H80 V156 M150 140 H220 V156" />
+    <path d="M450 122 V140 H380 V156 M450 140 H520 V156" />
+  </g>
+  <g text-anchor="middle">
+    <rect x="245" y="16" width="110" height="32" rx="6" fill="var(--panel)" stroke="var(--border3)"/>
+    <text x="300" y="36" fill="var(--fg)" font-weight="600">Variable</text>
+    <rect x="95" y="90" width="110" height="32" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="150" y="110" fill="var(--link)" font-weight="600">Categorical</text>
+    <rect x="395" y="90" width="110" height="32" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="450" y="110" fill="var(--ok)" font-weight="600">Quantitative</text>
+    <rect x="30" y="164" width="100" height="30" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="80" y="183" fill="var(--fg2)">Nominal</text>
+    <rect x="170" y="164" width="100" height="30" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="220" y="183" fill="var(--fg2)">Ordinal</text>
+    <rect x="330" y="164" width="100" height="30" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="380" y="183" fill="var(--fg2)">Discrete</text>
+    <rect x="470" y="164" width="100" height="30" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="520" y="183" fill="var(--fg2)">Continuous</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="150" y="214">blood type, major</text>
+    <text x="450" y="214">counts, measurements</text>
+  </g>
+</svg>
+```
+
+- The slide's four examples: siblings (quantitative), county of residence (categorical), commute distance in km (quantitative), blood type (categorical).
+- **Discrete** means the possible values are separate numbers with nothing between neighbours, such as 0, 1, 2, 3.
+- **Continuous** means the variable can take any value in an interval, such as height, distance or weight.
+
+> **Watch out.** Shoe sizes 6, 6.5, 7, 7.5 are discrete, not continuous — no size exists between 6 and 6.5. And the measuring tool only sets how many decimals you record; it never makes a continuous variable discrete.
+
+> **Key.** The variable's type decides which graph and which analysis are correct, so classify it first.
 
 ### Descriptive and inferential statistics (slide 7)
 - Descriptive statistics are methods for summarising data with graphs, tables and numbers. They work the same way on sample data and on population data. "The class average was 85" describes a class.
@@ -148,12 +176,11 @@ $$
 - Chapter 2, on bivariate data, is skipped for now and taught with Chapter 11 at the end of the term.
 
 ### Lecture 2 (Fri Sep 11)
-- iClicker: which variable is continuous? The answer was (c), your dog's weight, and 92% got it.
-  - The number of people waiting in line and the number of speeding tickets are counts, so they are discrete.
-  - The weight is a variable because it is measured across many dogs, and it can take any value in an interval.
-- The iClicker asked which graph suits a categorical variable with 25 categories. The answer was (b), a bar chart. 73% got it.
-  - A pie chart with 25 slices is unreadable.
-  - Sorting the bars into a Pareto chart makes them even easier to compare.
+
+> **Example.** iClicker — which variable is continuous? Answer (c), your dog's weight; 92% got it. People waiting in line and speeding tickets are counts, so they are discrete; weight is continuous because it is measured and can take any value in an interval.
+
+> **Example.** iClicker — which graph suits a categorical variable with 25 categories? Answer (b), a bar chart; 73% got it. A pie chart with 25 slices is unreadable, and sorting the bars into a Pareto chart makes them even easier to compare.
+
 - He said answering iClicker from outside the room counts as cheating. If you miss a class, use the hour for other work and watch the recording later, since several of the lowest sessions are dropped at the end of term.
 - The lecture ended partway through the histogram example on slide 13.
 

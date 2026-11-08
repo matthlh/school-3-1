@@ -21,6 +21,8 @@
   --violet-bg: light-dark(#eee7fb, #2a2040); --violet: light-dark(#5e3ea8, #c4aef5);
   --bar-s: light-dark(#4c9a63, #3f8a58); --bar-h: light-dark(#d1a24a, #b98b3a);
   --bar-m: light-dark(#c46a84, #a8506a); --bar-u: light-dark(#d8dbe4, #3a3d47);
+  /* Corner radii: only slightly rounded. --r-pill replaces the old 999px pills with a soft rectangle. */
+  --r-lg: 8px; --r-md: 6px; --r-sm: 4px; --r-xs: 3px; --r-pill: 7px;
 }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
@@ -80,21 +82,21 @@ button { font: inherit; }
 /* == Page shell: top bar and search == */
 .topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; height: var(--topbar-h, 48px); padding: 0 14px;
           background: var(--bg-glass); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--hair); }
-.menu { border: 0; background: none; font-size: 18px; line-height: 1; padding: 6px 8px; border-radius: 8px; cursor: pointer; color: var(--fg2); }
+.menu { border: 0; background: none; font-size: 18px; line-height: 1; padding: 6px 8px; border-radius: var(--r-md); cursor: pointer; color: var(--fg2); }
 .menu:hover, .menu.on { background: var(--soft); }
 /* Today · Review · Courses (2026-11-07): the site's main menu, the page's section marked */
 .topnav { display: flex; flex: 1; align-items: center; gap: 2px; min-width: 0; }   /* takes the free space: gear and search sit right */
-.topnav a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; font-size: 14.5px;
+.topnav a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: var(--r-pill); font-size: 14.5px;
             font-weight: 500; color: var(--fg2); text-decoration: none; white-space: nowrap; }
 .topnav a:hover { background: var(--soft); color: var(--fg); }
 .topnav a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
-.search-open, .search-close { display: none; border: 0; background: none; color: var(--fg2); cursor: pointer; border-radius: 8px; }
+.search-open, .search-close { display: none; border: 0; background: none; color: var(--fg2); cursor: pointer; border-radius: var(--r-md); }
 .search-open { align-items: center; justify-content: center; padding: 6px 8px; }
 .search-open:hover { background: var(--soft); }
 .search-close { padding: 6px 4px 6px 10px; font-size: 14.5px; color: var(--accent); }
 .search { margin-left: auto; display: flex; align-items: center; }
 .search input { -webkit-appearance: none; appearance: none; width: 330px; max-width: 48vw; height: 32px; margin: 0; padding: 0 14px;
-                border: 1px solid var(--border2); border-radius: 999px; font: inherit; font-size: 14px; line-height: 30px; color: var(--fg); background: var(--soft2); outline: none; }
+                border: 1px solid var(--border2); border-radius: var(--r-pill); font: inherit; font-size: 14px; line-height: 30px; color: var(--fg); background: var(--soft2); outline: none; }
 .search input:focus { border-color: var(--focus); background: var(--panel); }
 .search input::placeholder { color: var(--muted2); }
 .search input::-webkit-search-decoration, .search input::-webkit-search-results-button { -webkit-appearance: none; display: none; }
@@ -122,7 +124,7 @@ button { font: inherit; }
 /* == Page shell: sidebar == */
 /* Off-canvas: hover the left edge or pin it with ☰. */
 .edge { position: fixed; left: 0; top: 0; bottom: 0; width: 14px; z-index: 40; }
-nav { position: fixed; left: 0; top: 0; bottom: 0; width: 260px; z-index: 41; padding: 14px 10px 30px; overflow: auto; font-size: 13.5px;
+nav { position: fixed; left: 0; top: 0; bottom: 0; width: 260px; z-index: 41; padding: 14px 10px 30px; overflow: auto; font-size: 14.5px;
       background: var(--nav); border-right: 1px solid var(--border); box-shadow: 4px 0 18px rgba(0,0,0,.06);
       transform: translateX(-100%); transition: transform .22s cubic-bezier(.2,.7,.2,1), visibility 0s .22s; visibility: hidden; }
 /* Hidden once it has slid out, so its links are not invisible tab stops; visible the moment it opens. Only a real
@@ -132,7 +134,7 @@ nav.pinned { transform: none; visibility: visible; transition-delay: 0s; }
 /* Pinning pads the wrapper rather than shifting main: padding animates, so the content glides instead of snapping. */
 .wrap { padding-left: 0; transition: padding-left .22s cubic-bezier(.2,.7,.2,1); }
 .wrap.pinned { padding-left: 260px; }
-nav a { display: block; padding: 3px 8px; border-radius: 6px; color: var(--fg); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+nav a { display: block; padding: 3px 8px; border-radius: var(--r-sm); color: var(--fg); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 nav a:hover { background: var(--hover); }
 nav a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
 nav .nav-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
@@ -142,20 +144,26 @@ nav section { margin-top: 10px; }
 nav h3 { margin: 0 0 1px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 nav h3 > * { display: flex; align-items: center; gap: 7px; color: var(--muted); padding: 2px 8px; }
 nav h3 .pct { margin-left: auto; font-size: 10.5px; font-weight: 600; color: var(--muted2); letter-spacing: 0; }
+nav section.course h3 { font-size: 12.5px; letter-spacing: .02em; }
 nav section.course h3 a::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); opacity: .55; flex: none; }
 nav section > a { padding-left: 22px; }                       /* files sit one step in from the course name */
 nav .lec { margin-left: 24px; border-left: 2px solid var(--line, var(--border)); padding-left: 2px; }
-nav .lec a { padding-left: 8px; font-size: 12.5px; color: var(--fg2); }
+nav .lec a { padding-left: 8px; font-size: 13.5px; color: var(--fg2); }
 nav section.course a.cur { background: var(--tint); color: var(--ink); }
 nav .built { margin: 18px 8px 0; font-size: 11px; color: var(--faint); }
 /* Folding (2026-11-06): a chevron before each course name, and Lectures / Readings toggles inside an open course. */
 nav h3 { display: flex; align-items: center; }
 nav h3 > a, nav h3 > span { flex: 1; min-width: 0; }
-nav .nav-chev { flex: none; width: 18px; padding: 0; margin-right: -6px; border: 0; background: none; color: var(--muted2);
-                font-size: 11px; cursor: pointer; line-height: 1; }
+nav .nav-chev { flex: none; width: 26px; min-height: 28px; padding: 0; margin-right: -6px; border: 0; background: none;
+                color: var(--muted2); font-size: 12px; cursor: pointer; line-height: 1; border-radius: var(--r-sm);
+                display: inline-flex; align-items: center; justify-content: center; }
 nav .nav-chev:hover, nav .nav-toggle:hover { color: var(--fg); }
+nav .nav-chev:hover { background: var(--hover); }
+@media (pointer: coarse) { nav .nav-chev { min-width: 40px; min-height: 40px; } }
+/* Lecture titles wrap to two lines rather than being cut off. */
+nav .lec a { white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.3; padding-top: 4px; padding-bottom: 4px; }
 nav .nav-group { margin: 1px 0 0 22px; }
-nav .nav-toggle { display: flex; align-items: center; gap: 6px; width: 100%; padding: 3px 8px; border: 0; border-radius: 6px;
+nav .nav-toggle { display: flex; align-items: center; gap: 6px; width: 100%; padding: 3px 8px; border: 0; border-radius: var(--r-sm);
                   background: none; color: var(--muted); font: inherit; font-size: 12.5px; text-align: left; cursor: pointer; }
 nav .nav-toggle:hover { background: var(--hover); }
 nav .nav-toggle .chev { width: 10px; font-size: 10px; color: var(--muted2); }
@@ -189,19 +197,59 @@ article li > p { margin: .2em 0; }
 article table { border-collapse: collapse; margin: .8em 0; font-size: 14px; display: block; overflow-x: auto; max-width: 100%; }
 article th, article td { border: 1px solid var(--border2); padding: 6px 10px; text-align: left; vertical-align: top; }
 article th { background: var(--soft2); }
-article code { background: var(--soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; overflow-wrap: anywhere; }
-article pre { background: var(--soft2); padding: 12px; border-radius: 8px; overflow: auto; }
+article code { background: var(--soft); padding: 1px 5px; border-radius: var(--r-sm); font-size: .9em; overflow-wrap: anywhere; }
+article pre { background: var(--soft2); padding: 12px; border-radius: var(--r-md); overflow: auto; }
 article pre code { background: none; padding: 0; }
 article blockquote { margin: .8em 0; padding: .3em 1em; border-left: 3px solid var(--border3); color: var(--fg2); background: var(--panel); }
 article hr { border: 0; border-top: 1px solid var(--hair); margin: 1.6em 0; }
 article input[type=checkbox] { margin-right: 6px; }
+
+/* == Callouts: a labelled blockquote (> **Definition.** …) rendered as a coloured aside to break up the prose. == */
+.callout { margin: 1em 0; padding: 10px 14px 10px 16px; border-radius: var(--r-md); border: 1px solid var(--cl-line);
+  border-left: 4px solid var(--cl-accent); background: var(--cl-bg); color: var(--fg); }
+.callout > :first-child { margin-top: 0; } .callout > :last-child { margin-bottom: 0; }
+.callout p:first-child strong:first-child { color: var(--cl-accent); }   /* the label word takes the accent colour */
+.callout-def   { --cl-accent: var(--link);   --cl-bg: var(--accent-bg); --cl-line: var(--focus); }
+.callout-example { --cl-accent: var(--ok);   --cl-bg: var(--ok-bg);     --cl-line: color-mix(in srgb, var(--ok) 40%, transparent); }
+.callout-warn  { --cl-accent: var(--warn);   --cl-bg: var(--warn-bg);   --cl-line: color-mix(in srgb, var(--warn) 40%, transparent); }
+.callout-key   { --cl-accent: var(--violet); --cl-bg: var(--violet-bg); --cl-line: color-mix(in srgb, var(--violet) 40%, transparent); }
+.callout-why   { --cl-accent: var(--bad);    --cl-bg: var(--bad-bg);    --cl-line: color-mix(in srgb, var(--bad) 40%, transparent); }
+.callout-note  { --cl-accent: var(--muted);  --cl-bg: var(--soft2);     --cl-line: var(--border); }
+
+/* == A hand-drawn SVG figure authored in a ```svg fence. == */
+.svg-figure { margin: 1.1em 0; padding: 12px; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--panel);
+  text-align: center; overflow-x: auto; }
+.svg-figure svg { max-width: 100%; height: auto; }
+/* On a phone the labels would shrink with the whole graphic, so keep the diagram at a legible width and let it scroll
+   sideways instead (the sanitizer strips in-SVG styles, so a per-diagram media query is not possible). */
+@media (max-width: 640px) {
+  .svg-figure { text-align: left; }
+  .svg-figure svg { width: 540px; max-width: none; }
+}
+
+/* == Collapsible lecture sections: each `## ` folds, so the page skims as an outline. == */
+.lec-tools { display: flex; align-items: center; gap: 8px; justify-content: flex-end; margin: 0 0 4px; }
+.lec-tools .practice { margin-right: auto; }   /* Practice stays on the left, the fold toggle on the right */
+.btn.practice { padding: 4px 12px; font-size: 13px; }
+.fold-all { border: 1px solid var(--border2); background: var(--panel); color: var(--muted); border-radius: var(--r-pill);
+  font: inherit; font-size: 12.5px; padding: 3px 11px; cursor: pointer; }
+.fold-all:hover { background: var(--soft); color: var(--fg); }
+details.sec-fold { border: 0; border-top: 1px solid var(--hair); border-radius: 0; background: none; padding: 0; margin: 0; }
+details.sec-fold > summary { list-style: none; display: flex; align-items: center; gap: 8px; padding: 10px 0 8px; margin: 0; }
+details.sec-fold > summary::-webkit-details-marker { display: none; }
+details.sec-fold > summary::before { content: '▸'; color: var(--muted2); font-size: 12px; transition: transform .12s ease; flex: none; }
+details.sec-fold[open] > summary::before { transform: rotate(90deg); }
+details.sec-fold > summary .sec-h { font-size: 18px; font-weight: 600; color: var(--fg); }
+details.sec-fold > summary:hover .sec-h { color: var(--ink, var(--link)); }
+details.sec-fold .sec-body { padding: 0 0 8px 20px; }
+
 /* Folded sections: Your notes, Raw, Reference, For Claude */
-details { border: 1px solid var(--border); border-radius: 10px; padding: 8px 14px; margin: 14px 0; background: var(--panel); }
+details { border: 1px solid var(--border); border-radius: var(--r-md); padding: 8px 14px; margin: 14px 0; background: var(--panel); }
 summary { cursor: pointer; font-weight: 600; color: var(--fg2); }
 details[open] summary { margin-bottom: 6px; }
 
 /* == Panels, cards, buttons and chips == */
-.panel { border: 1px solid var(--border); border-radius: 12px; padding: 10px 16px; margin: 0 0 18px; background: var(--panel); }
+.panel { border: 1px solid var(--border); border-radius: var(--r-lg); padding: 10px 16px; margin: 0 0 18px; background: var(--panel); }
 .panel-head { display: flex; justify-content: space-between; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 4px; }
 .panel-head a { text-transform: none; letter-spacing: 0; }
 .panel-head .sub { text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; }   /* "· 18 topics · Wed Sep 16" */
@@ -209,25 +257,61 @@ details[open] summary { margin-bottom: 6px; }
 /* Cards: the courses on Courses, a course's pages and lectures, search hits */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 6px 0 22px; }
 .list { display: flex; flex-direction: column; gap: 10px; }
-.card { display: block; border: 1px solid var(--border); border-radius: 12px; padding: 13px 16px; text-decoration: none; color: inherit; background: var(--panel); }
+
+/* == Courses page: a tone-coloured mosaic, tiles of alternating proportions == */
+.collage { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin: 6px 0 22px; }
+.collage .tile {
+  position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 150px; padding: 15px 18px; border-radius: var(--r-lg); text-decoration: none; color: inherit;
+  background: var(--tint); border: 1px solid var(--line);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.collage .tile:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+.collage .tile .tile-top { position: relative; z-index: 1; }
+.collage .tile .code { font-weight: 800; font-size: 17px; letter-spacing: .3px; color: var(--ink); }
+.collage .tile .name { font-weight: 600; font-size: 15px; margin-top: 1px; }
+.collage .tile .sub { color: var(--muted); font-size: 12.5px; margin-top: 3px; }
+.collage .tile .sub.next { color: var(--fg2); }
+.collage .tile .stat { position: relative; z-index: 1; margin-top: 12px; }
+/* Big faint course letters bleeding off the top-right corner for the collage feel. */
+.collage .tile .watermark {
+  position: absolute; top: -18px; right: -6px; z-index: 0; pointer-events: none;
+  font-weight: 800; font-size: 86px; line-height: 1; letter-spacing: -2px;
+  color: var(--ink); opacity: .07; user-select: none;
+}
+/* Alternating spans: wide, narrow, narrow, wide — repeats for any number of courses. */
+.collage .tile:nth-child(4n+1) { grid-column: span 4; }
+.collage .tile:nth-child(4n+2) { grid-column: span 2; min-height: 184px; }
+.collage .tile:nth-child(4n+3) { grid-column: span 2; min-height: 184px; }
+.collage .tile:nth-child(4n+4) { grid-column: span 4; }
+@media (max-width: 760px) {
+  .collage { grid-template-columns: repeat(2, 1fr); }
+  .collage .tile, .collage .tile:nth-child(n) { grid-column: span 1; min-height: 150px; }
+}
+@media (max-width: 460px) {
+  .collage { grid-template-columns: 1fr; }
+  .collage .tile .watermark { font-size: 72px; }
+}
+.card { display: block; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 13px 16px; text-decoration: none; color: inherit; background: var(--panel); }
 .card:hover { border-color: var(--focus); background: var(--soft2); }
 .card .code { font-weight: 700; font-size: 15px; } .card .name { font-weight: 500; }
 .card .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
 .card.course { background: var(--tint); border-color: var(--line); }
 .card.course .code { color: var(--ink); }
 .card.course:hover { border-color: var(--ink); box-shadow: 0 1px 8px rgba(0,0,0,.05); }
+.card .name.clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .card.lecture { border-left: 3px solid var(--line); }
 .card.lecture:hover { background: var(--tint); border-color: var(--line); }
 .card.hit .snippet { font-size: 13.5px; color: var(--fg2); margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-mark { background: var(--mark); padding: 0 2px; border-radius: 3px; }
+mark { background: var(--mark); padding: 0 2px; border-radius: var(--r-xs); }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 8px 0; }
-.btn { display: inline-block; padding: 6px 13px; border: 1px solid var(--border2); border-radius: 999px; font-size: 13.5px; text-decoration: none; color: var(--fg); background: var(--panel); cursor: pointer; }
+.btn { display: inline-block; padding: 6px 13px; border: 1px solid var(--border2); border-radius: var(--r-pill); font-size: 13.5px; text-decoration: none; color: var(--fg); background: var(--panel); cursor: pointer; }
 .btn:hover { background: var(--soft); border-color: var(--border3); }
 .btn.on { background: var(--accent-bg); color: var(--accent); border-color: transparent; }
 .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
 .btn.primary:hover { filter: brightness(1.08); }
 .link { border: 0; background: none; color: var(--link); padding: 0 4px; cursor: pointer; font-size: 13px; }
-.chip { display: inline-block; font-size: 11.5px; padding: 2px 9px; border-radius: 999px; background: var(--soft); color: var(--fg2); border: 0; cursor: default; }
+.chip { display: inline-block; font-size: 11.5px; padding: 2px 9px; border-radius: var(--r-pill); background: var(--soft); color: var(--fg2); border: 0; cursor: default; }
 a.chip { text-decoration: none; }
 a.chip, button.chip { cursor: pointer; } a .chip { cursor: inherit; }   /* a chip inside a link (a search hit) keeps the link's cursor */
 a.chip:hover, button.chip:hover { background: var(--hover); }
@@ -237,12 +321,12 @@ a.chip.tone:hover, button.chip.tone:hover { background: var(--tint); box-shadow:
 .chip.type-apply { background: var(--ok-bg); color: var(--ok); } .chip.type-derive { background: var(--warn-bg); color: var(--warn); }
 .chip.type-critique { background: var(--violet-bg); color: var(--violet); } .chip.type-recall { background: var(--soft); color: var(--fg2); }
 /* Grade chips: O solid, ~ shaky, X missed, – not quizzed yet */
-.g { display: inline-block; min-width: 20px; text-align: center; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 999px; line-height: 1.5; }
+.g { display: inline-block; min-width: 20px; text-align: center; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: var(--r-pill); line-height: 1.5; }
 .g-O { background: var(--ok-bg); color: var(--ok); } .g-shaky { background: var(--warn-bg); color: var(--warn); }
 .g-X { background: var(--bad-bg); color: var(--bad); } .g-none { background: var(--soft); color: var(--faint); }
 /* Revision stats: the solid / shaky / missed / new bar and its one-line legend */
 .stat { margin-top: 8px; }
-.bar { display: flex; height: 6px; border-radius: 999px; overflow: hidden; background: var(--hair); margin-bottom: 5px; }
+.bar { display: flex; height: 6px; border-radius: var(--r-pill); overflow: hidden; background: var(--hair); margin-bottom: 5px; }
 .bar i { display: block; height: 100%; }
 .bar .s { background: var(--bar-s); } .bar .h { background: var(--bar-h); } .bar .m { background: var(--bar-m); } .bar .u { background: var(--bar-u); }
 .legend { font-size: 12.5px; color: var(--muted); } .legend b { color: var(--fg2); font-weight: 600; }
@@ -251,24 +335,24 @@ a.chip.tone:hover, button.chip.tone:hover { background: var(--tint); box-shadow:
 /* == Question bank == */
 /* Toolbar: All / Weak / Not asked, the section menu, the active topic filter, Shuffle and Show answers */
 .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0 16px; }
-.seg { display: inline-flex; border: 1px solid var(--border2); border-radius: 9px; overflow: hidden; background: var(--panel); }
+.seg { display: inline-flex; border: 1px solid var(--border2); border-radius: var(--r-md); overflow: hidden; background: var(--panel); }
 .seg button { border: 0; border-right: 1px solid var(--border); background: none; padding: 5px 12px; font-size: 13px; color: var(--fg2); cursor: pointer; }
 .seg button:last-child { border-right: 0; } .seg button:hover { background: var(--soft2); }
 .seg button.on { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
 .seg button .k { color: var(--muted2); margin-left: 6px; font-weight: 400; }
 /* The compact variant sits in a Settings row or the sidebar: the Light / Auto / Dark switch and the Secret visuals picker. */
-.seg.compact { flex: none; margin-left: auto; height: 26px; border-radius: 8px; }
+.seg.compact { flex: none; margin-left: auto; height: 26px; border-radius: var(--r-md); }
 .seg.compact button { min-width: 26px; padding: 0 7px; font-size: 12.5px; line-height: 24px; color: var(--muted); }
 .seg.compact button:hover { color: var(--fg); } .seg.compact button.on { font-weight: 400; }
-.seg.compact button:focus-visible { outline-offset: -2px; border-radius: 6px; }
-.toolbar select { font: inherit; font-size: 13px; padding: 5px 30px 5px 10px; border: 1px solid var(--border2); border-radius: 9px; background: var(--panel); max-width: 280px; }
+.seg.compact button:focus-visible { outline-offset: -2px; border-radius: var(--r-sm); }
+.toolbar select { font: inherit; font-size: 13px; padding: 5px 30px 5px 10px; border: 1px solid var(--border2); border-radius: var(--r-md); background: var(--panel); max-width: 280px; }
 .toolbar .spacer { flex: 1; }
 /* Active topic filter: "Topic: name ×", the × is the clear control */
 .toolbar .chip.on { font-size: 12.5px; padding: 4px 10px; max-width: 100%; text-align: left; }
 .toolbar .chip.on .x { display: inline-block; margin-left: 4px; font-size: 14px; line-height: 1; font-weight: 600; opacity: .75; }
 .toolbar .chip.on:hover { background: var(--accent); color: var(--panel); } .toolbar .chip.on:hover .x { opacity: 1; }
 /* Question cards */
-.q { border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; margin: 10px 0; background: var(--panel); }
+.q { border: 1px solid var(--border); border-radius: var(--r-lg); padding: 12px 16px; margin: 10px 0; background: var(--panel); }
 .q .text { font-weight: 500; } .q .n { color: var(--muted2); font-weight: 400; margin-right: 2px; }
 /* The stem renders as markdown blocks (bullets, tables, code); its first paragraph stays on the number's line. */
 .q .text > .n + p { display: inline; }
@@ -301,7 +385,7 @@ article .topics tr:first-child td { border-top: 0; }
 .outcomes td.id { color: var(--muted2); font-size: 12px; width: 44px; white-space: nowrap; } .outcomes tr.later td { color: var(--muted); }
 .legend.key { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 2px 0 6px; }
 .legend.key .right { margin-left: auto; }
-.hint { background: var(--mark); color: var(--warn); padding: 1px 9px; border-radius: 999px; font-size: 11.5px; cursor: help; }
+.hint { background: var(--mark); color: var(--warn); padding: 1px 9px; border-radius: var(--r-pill); font-size: 11.5px; cursor: help; }
 @media (max-width: 640px) {
   .topics td { overflow-wrap: anywhere; }   /* a token like mean/median/mode must not force the table wider than the phone */
 }
@@ -315,7 +399,7 @@ article .topics tr:first-child td { border-top: 0; }
 .readiness ul { list-style: none; margin: 2px 0 0; padding: 0; font-size: 13.5px; }
 .readiness li { margin: 3px 0; line-height: 1.5; }
 .readiness b { font-weight: 600; }
-.due-error { margin: 6px 0; padding: 8px 12px; border-radius: 9px; background: var(--bad-bg); color: var(--bad); font-size: 13.5px; }
+.due-error { margin: 6px 0; padding: 8px 12px; border-radius: var(--r-md); background: var(--bad-bg); color: var(--bad); font-size: 13.5px; }
 .due-error p { margin: .25em 0; }
 .stale { color: var(--muted); font-weight: 400; text-transform: none; letter-spacing: 0; }   /* "(2 days old)": a block written before today (BlockAge) */
 /* Calibration under the ledger's All topics heading: a small tinted panel per course, one row per confidence */
@@ -330,25 +414,30 @@ article .topics tr:first-child td { border-top: 0; }
 .course-head h1 { margin-bottom: .35em; }
 .tabs { display: flex; flex-wrap: wrap; gap: 2px; border-bottom: 1px solid var(--border2); margin: 0 0 20px; }
 .tab { display: inline-flex; align-items: center; padding: 7px 14px; margin-bottom: -1px; border: 1px solid transparent; border-bottom: 0;
-       border-radius: 9px 9px 0 0; color: var(--fg2); text-decoration: none; font-size: 14px; font-weight: 500; }
+       border-radius: var(--r-md) var(--r-md) 0 0; color: var(--fg2); text-decoration: none; font-size: 14px; font-weight: 500; }
 .tab:hover { background: var(--soft2); color: var(--fg); }
 .tab.cur { background: var(--panel); border-color: var(--border2); color: var(--ink); box-shadow: inset 0 3px 0 var(--ink); }
-.tab .count { margin-left: 7px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: 999px; }
+.tab .count { margin-left: 7px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: var(--r-pill); }
 /* On a course's main file, its tab's other pages: Syllabus · Logistics · Ask Kraal */
 .subtabs { display: flex; flex-wrap: wrap; gap: 6px; margin: -8px 0 18px; }
-.subtabs a { display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13.5px;
+.subtabs a { display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: var(--r-pill); font-size: 13.5px;
              color: var(--fg2); text-decoration: none; border: 1px solid var(--border2); }
 .subtabs a:hover { background: var(--soft2); color: var(--fg); }
 .subtabs a.cur { background: var(--tint); border-color: var(--line); color: var(--ink); font-weight: 600; }
 @media (pointer: coarse) { .tab, .subtabs a { min-height: 44px; } }
 .grid.files { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin: 4px 0 18px; }
-.card .name .count { margin-left: 8px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: 999px; }
+.card .name .count { margin-left: 8px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: var(--r-pill); }
 .card.continue-card { margin: 0 0 14px; background: var(--tint); border-color: var(--line); border-left: 3px solid var(--ink); }
 .card.continue-card .sub { color: var(--fg2); }
 .card.continue-card .sub { margin: 0 0 2px; }
 /* A lecture or reading page: one line back to its course, in place of the course header */
 .trail { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0 0 6px; font-size: 13.5px; color: var(--muted); }
 .trail a:not(.chip) { color: var(--fg2); text-decoration: none; } .trail a:not(.chip):hover { text-decoration: underline; }
+/* The course chip is a back button: bordered, with an arrow, filling on hover so it reads as clickable. */
+.trail .trail-back { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line); cursor: pointer;
+  font-weight: 600; transition: background .12s ease, color .12s ease, border-color .12s ease; }
+.trail .trail-back .back-arrow { font-size: 14px; line-height: 1; }
+.trail .trail-back:hover { background: var(--ink); color: var(--accent-fg); border-color: var(--ink); }
 .trail .sep { color: var(--faint); }
 .trail > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1 1 140px; }
 
@@ -379,7 +468,7 @@ details.queue[open] > summary { margin-bottom: 6px; }
 .whatif-warn { color: var(--warn); }
 .whatif-inputs { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 8px 0 12px; font-size: 13.5px; color: var(--fg2); }
 .whatif-inputs label { display: inline-flex; align-items: center; gap: 6px; }
-.whatif-inputs input { width: 62px; height: 30px; margin: 0; padding: 0 8px; border: 1px solid var(--border2); border-radius: 8px;
+.whatif-inputs input { width: 62px; height: 30px; margin: 0; padding: 0 8px; border: 1px solid var(--border2); border-radius: var(--r-md);
                        font: inherit; color: var(--fg); background: var(--soft2); font-variant-numeric: tabular-nums; }
 .whatif-inputs input:focus { border-color: var(--focus); background: var(--panel); }
 .whatif-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 24px; margin: 0 0 8px; }
@@ -418,14 +507,14 @@ table.whatif-table { width: 100%; border-collapse: collapse; font-size: 13.5px; 
 /* == Focus ring == */
 /* After the components on purpose: at equal specificity it overrides their border-radius while focused, so buttons,
    chips, cards and tabs show a 6px ring. The settings gear below keeps its own 8px. */
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r-sm); }
 
 /* == Page shell: settings popover (the gear left of the search) == */
 .settings { position: relative; display: flex; align-items: center; margin-left: auto; }
-.gear { border: 0; background: none; font-size: 17px; line-height: 1; padding: 6px 8px; border-radius: 8px; cursor: pointer; color: var(--fg2); }
+.gear { border: 0; background: none; font-size: 17px; line-height: 1; padding: 6px 8px; border-radius: var(--r-md); cursor: pointer; color: var(--fg2); }
 .gear:hover, .gear.on { background: var(--soft); color: var(--fg); }
 .pop { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; min-width: 380px; padding: 8px 14px 10px;
-       background: var(--panel); border: 1px solid var(--border2); border-radius: 12px; box-shadow: 0 12px 34px rgba(0,0,0,.14); font-size: 13.5px; }
+       background: var(--panel); border: 1px solid var(--border2); border-radius: var(--r-lg); box-shadow: 0 12px 34px rgba(0,0,0,.14); font-size: 13.5px; }
 .pop .row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 8px 0; }
 .pop .row + .row { border-top: 1px solid var(--hair); }
 .pop .lbl { color: var(--fg2); font-weight: 500; } .pop .val { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
@@ -442,7 +531,7 @@ table.whatif-table { width: 100%; border-collapse: collapse; font-size: 13.5px; 
 /* == Page shell: update toast == */
 /* Shown when a newer build is deployed. Fixed outside main and nav so the secret visuals never touch it. */
 .toast { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px);
-         padding: 10px 12px 10px 14px; background: var(--panel); border: 1px solid var(--border2); border-radius: 12px;
+         padding: 10px 12px 10px 14px; background: var(--panel); border: 1px solid var(--border2); border-radius: var(--r-lg);
          box-shadow: 0 12px 34px rgba(0,0,0,.14); font-size: 13.5px; color: var(--fg); animation: toast-in .25s ease-out; }
 .toast .actions { display: flex; align-items: center; gap: 10px; flex: none; }
 .toast .btn { padding: 4px 12px; font-size: 13px; }

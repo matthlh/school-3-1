@@ -19,12 +19,15 @@ export const VERIFY = /^(to verify|ask\b|check\b|do this week|open questions|to 
 function PageCards({ entries, all }: { entries: Entry[]; all: Texts }) {
   return (
     <div className="list">
-      {entries.map((e) => (
-        <a key={e.path} className="card lecture" href={hrefFor(e.path)}>
-          <div className="name">{afterDash(firstHeading(all[e.path] ?? '') ?? e.label)}</div>
-          <div className="sub">{e.label}</div>
-        </a>
-      ))}
+      {entries.map((e) => {
+        const title = afterDash(firstHeading(all[e.path] ?? '') ?? e.label)
+        return (
+          <a key={e.path} className="card lecture" href={hrefFor(e.path)}>
+            <div className="name clamp2" title={title}>{title}</div>
+            <div className="sub">{e.label}</div>
+          </a>
+        )
+      })}
     </div>
   )
 }

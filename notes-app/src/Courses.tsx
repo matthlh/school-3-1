@@ -16,19 +16,22 @@ export function Courses({ tree, all, tallies, calendar, due }: {
   return (
     <>
       <h1>Courses</h1>
-      <div className="grid">
+      <div className="collage">
         {tree.courses.map((c) => {
           const q = countQuestions(all[`courses/${c.code}/02-questions.md`])
           const next = calendar.find((d) => d.course === c.code && d.date >= today)
           return (
-            <a key={c.code} className="card course" href={hrefCourse(c.code)} style={toneStyle(c.code)}>
-              <div className="code">{c.code}</div>
-              <div className="name">{courseName(c.code, all)}</div>
-              <div className="sub">
-                {c.lectures.length} lecture{c.lectures.length === 1 ? '' : 's'}
-                {c.prepared.length > 0 && ` · ${c.prepared.length} not studied yet`} · {q} question{q === 1 ? '' : 's'}
+            <a key={c.code} className="tile" href={hrefCourse(c.code)} style={toneStyle(c.code)}>
+              <span className="watermark" aria-hidden>{c.code.replace(/\d+/, '')}</span>
+              <div className="tile-top">
+                <div className="code">{c.code}</div>
+                <div className="name">{courseName(c.code, all)}</div>
+                <div className="sub">
+                  {c.lectures.length} lecture{c.lectures.length === 1 ? '' : 's'}
+                  {c.prepared.length > 0 && ` · ${c.prepared.length} not studied yet`} · {q} question{q === 1 ? '' : 's'}
+                </div>
+                {next && <div className="sub next">Next: {next.what}, {next.approx ? '~' : ''}{formatDate(next.date)}</div>}
               </div>
-              {next && <div className="sub next">Next: {next.what}, {next.approx ? '~' : ''}{formatDate(next.date)}</div>}
               <StatBar t={tallies[c.code] ?? EMPTY} due={due.ok ? due.count(c.code) : null} />
             </a>
           )

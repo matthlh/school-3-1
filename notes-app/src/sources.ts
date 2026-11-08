@@ -13,6 +13,14 @@ const LEC_TAG = /^(\d+)(?:\s*[–—-]\s*(\d+))?$/   // **Lec:** 6 or 5–6
 interface LecFile { a: number; b: number; path: string }
 interface ReadFile { words: string[]; path: string }
 
+/** The question-bank `?lec=` value for a lecture page, or null for anything else. Mirrors how the bank slugs a Lec tag:
+ *  a file `05-06-…` covers lectures 5–6, whose questions are tagged `5–6`, which slugs to `5-6`. */
+export function lecQuery(path: string): string | null {
+  const m = /\/lectures\/(\d+)(?:-(\d+))?-/.exec(path)
+  if (!m) return null
+  return m[2] ? `${+m[1]}-${+m[2]}` : `${+m[1]}`
+}
+
 /** "5–6" → [5, 6], "6" → [6, 6]; a non-lecture tag ("WW2", "reading", "Lab 1") → null. */
 function lecSpan(tag: string): [number, number] | null {
   const m = LEC_TAG.exec(tag.trim())

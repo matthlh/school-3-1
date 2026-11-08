@@ -118,11 +118,13 @@ export const hrefCourse = (code: string, tab: CourseTab = 'study') => `#/course/
 /** Link to a `## Heading` inside a file: `hrefAnchor('ledger.md', 'term-calendar-hard-dates')`. */
 export const hrefAnchor = (path: string, anchor: string) => `#/${path}#${anchor}`
 
-/** onClick for anchor links: when the URL already carries this anchor no hashchange fires, so scroll by hand. */
+/** onClick for anchor links: when the URL already carries this anchor no hashchange fires, so scroll by hand. Also asks
+ *  the viewer to open the section first, in case it is a collapsed lecture fold (the viewer owns that open state). */
 export function scrollIfSame(e: { currentTarget: HTMLAnchorElement }) {
   const href = e.currentTarget.getAttribute('href')
   if (!href || window.location.hash !== href) return
   const id = href.slice(href.lastIndexOf('#') + 1)
+  window.dispatchEvent(new CustomEvent('reveal-section', { detail: id }))
   document.getElementById('sec-' + id)?.scrollIntoView({ block: 'start' })
 }
 

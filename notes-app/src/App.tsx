@@ -9,6 +9,7 @@ import { Home } from './Home'
 import { CoursePage } from './CoursePage'
 import { Courses } from './Courses'
 import { Viewer } from './Viewer'
+import { lecQuery } from './sources'
 import { LedgerView } from './LedgerView'
 import { TopicsView } from './TopicsView'
 import { CourseHeader } from './CourseTabs'
@@ -130,7 +131,12 @@ export default function App() {
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} all={all} topics={topics} historyOf={loaded.historyOf} view={parseBankView(route.query)} anchor={route.anchor} />
   else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} topics={topics} due={due} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
-  else body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} />
+  else {
+    const lec = route.kind === 'file' ? lecQuery(route.path) : null
+    const code = lec ? courseOf(route.path) : null
+    const practiceHref = lec && code ? `#/courses/${code}/02-questions.md?lec=${lec}` : undefined
+    body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} practiceHref={practiceHref} />
+  }
 
   return (
     <div className={'wrap' + (pinned ? ' pinned' : '')}>
@@ -140,9 +146,10 @@ export default function App() {
         {scoped && all && !query.trim() && <CourseHeader code={scoped} tree={tree} all={all} tab={tab} file={route.kind === 'file' ? route.path : undefined} />}
         {trailCourse && route.kind === 'file' && all && !query.trim() && (
           <div className="trail">
-            <a href={hrefCourse(trailCourse)} className="chip tone" style={toneStyle(trailCourse)}>{courseLabel(trailCourse)}</a>
-            <span className="sep" aria-hidden="true">›</span>
-            <a href={hrefCourse(trailCourse)}>Study</a>
+            <a href={hrefCourse(trailCourse)} className="chip tone trail-back" style={toneStyle(trailCourse)}
+              title={`Back to ${courseLabel(trailCourse)}`}>
+              <span className="back-arrow" aria-hidden="true">←</span>{courseLabel(trailCourse)}
+            </a>
             <span className="sep" aria-hidden="true">›</span>
             <span>{labelFor(route.path, tree)}</span>
           </div>

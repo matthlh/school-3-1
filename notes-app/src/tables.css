@@ -49,14 +49,19 @@ table.ledger:is(.calendar, .recurring) .chip-inline { display: none; margin-righ
 
 /* == Coming up on Today: the next few hard dates == */
 table.upcoming { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 4px; }
-.upcoming td { padding: 5px 6px; border-top: 1px solid var(--hair); vertical-align: top; }
+.upcoming td { padding: 7px 6px; border-top: 1px solid var(--hair); vertical-align: top; }
 .upcoming tr:first-child td { border-top: 0; }
 .upcoming td.when { white-space: nowrap; width: 84px; padding-left: 0; color: var(--muted); }
 .upcoming td.when.soon { color: var(--bad); font-weight: 600; }
-.upcoming td.date { white-space: nowrap; width: 150px; color: var(--fg2); }
-.upcoming td.weight { white-space: nowrap; text-align: right; color: var(--muted2); font-size: 12.5px; padding-right: 0; }
-.upcoming tr.exam td:nth-child(3) { font-weight: 600; }
-.upcoming .chip { margin-right: 4px; }
+.upcoming td.tag { width: 1%; white-space: nowrap; padding-left: 0; padding-right: 10px; }
+.upcoming td.tag .chip { margin: 0; }
+.upcoming td.what { color: var(--fg); }
+.upcoming tr.exam td.what { font-weight: 600; }
+/* Date and weight stack together on the right, aligned to the right edge. */
+.upcoming td.meta { white-space: nowrap; text-align: right; padding-right: 0; }
+.upcoming td.meta .date { display: block; color: var(--fg2); }
+.upcoming td.meta .weight { display: block; color: var(--muted2); font-size: 12px; margin-top: 2px; }
+.upcoming td.meta .rel { display: none; }   /* the relative "in 3 days" lives in its own left column on wide screens */
 
 /* == Ledger page == */
 /* Course filter chips over the All topics table */
@@ -66,7 +71,7 @@ table.upcoming { width: 100%; border-collapse: collapse; font-size: 13.5px; marg
 .ledger-page h2 .count { font-size: 13px; font-weight: 500; color: var(--muted); margin-left: 4px; }
 .ledger-page section { margin-bottom: 6px; }
 .ledger-page p.small { margin: -.2em 0 .6em; }
-.ledger-page blockquote { margin: 1em 0; padding: .55em 1em; border-left: 3px solid var(--warn, var(--border3)); border-radius: 0 9px 9px 0; background: var(--panel); color: var(--fg); }
+.ledger-page blockquote { margin: 1em 0; padding: .55em 1em; border-left: 3px solid var(--warn, var(--border3)); border-radius: 0 var(--r-md) var(--r-md) 0; background: var(--panel); color: var(--fg); }
 .ledger-page blockquote p { margin: .3em 0; }
 .ledger-page h3 { margin-top: 1.4em; }
 /* Any other markdown table on the ledger page shares the hairline look of the built tables */
@@ -105,7 +110,13 @@ table.ledger.grades td.score { line-height: 1.4; }
 
 /* == Phones: the tables shed columns and let long words wrap == */
 @media (max-width: 640px) {
-  .upcoming td.date { display: none; }
+  /* On a phone, drop the left relative column and the weight; keep the exact deadline on the right with the
+     relative label ("in 3 days") stacked under it. */
+  .upcoming td.when { display: none; }
+  .upcoming td.meta .weight { display: none; }
+  .upcoming td.meta .rel { display: block; color: var(--muted); font-size: 12px; margin-top: 1px; }
+  .upcoming td.meta .rel.soon { color: var(--bad); font-weight: 600; }
+  .upcoming td.tag { padding-left: 0; }
   table.ledger td.lec, table.ledger th.lec, table.ledger td.last, table.ledger th.last { display: none; }
   table.due td.grade, table.ledger td.grade, table.ledger th.grade { display: none; }   /* the grade chip is the first thing to go on a phone */
   table.due td.when { width: auto; font-size: 12px; padding-right: 0; }

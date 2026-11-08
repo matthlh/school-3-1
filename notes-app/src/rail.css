@@ -11,7 +11,7 @@
         display: none; flex-direction: column; align-items: stretch; gap: 7px;
         max-height: calc(100vh - 96px); overflow: hidden; box-sizing: border-box;
         padding: 8px 12px 8px 20px;    /* the left padding is an invisible hit area; the right 12px plus right: 14px is BAR_INSET in SectionRail.tsx */
-        border-radius: 14px; background: transparent; box-shadow: 0 0 24px 18px transparent;
+        border-radius: var(--r-lg); background: transparent; box-shadow: 0 0 24px 18px transparent;
         transition: background-color .15s, box-shadow .15s; }
 .rail:hover, .rail:has(:focus-visible) { overflow-y: auto; scrollbar-width: thin; }
 /* The legibility backdrop, only when the names open over the article: page colour with a feathered edge, no outline. */
@@ -20,7 +20,7 @@
 /* One row per section: the label, then the bar at the right edge, so the bars never move when the names open.
    Text is dim throughout: muted2 at rest, muted on hover, fg2 for the hovered and the current row, never fg. */
 .rail a { display: flex; flex-direction: row-reverse; flex: none; align-items: center; gap: 8px; min-height: 12px;
-          color: var(--muted2); font-size: 13px; line-height: 20px; text-decoration: none; border-radius: 6px;
+          color: var(--muted2); font-size: 13px; line-height: 20px; text-decoration: none; border-radius: var(--r-sm);
           transition: color .15s; }
 .rail a.on { color: var(--muted); font-weight: 600; }
 .rail:is(:hover, :has(:focus-visible)) a { color: var(--muted); }

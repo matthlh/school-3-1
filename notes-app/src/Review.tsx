@@ -169,7 +169,7 @@ function Start({ due, plan, course, start }: { due: string[] & { due: number }; 
         come first, then new ones.</p>
       <div className="row">
         <button type="button" className="btn primary big" onClick={() => start(8)}>Start {Math.min(8, due.length)} questions</button>
-        {due.length > 8 && <button type="button" className="btn big" onClick={() => start(20)}>{Math.min(20, due.length)} questions</button>}
+        {due.length > 8 && <button type="button" className="btn big" onClick={() => start(20)}>Longer: {Math.min(20, due.length)} questions</button>}
       </div>
       <p className="small muted">Each answer is saved the moment you grade it. Stop whenever you like.</p>
     </section>
@@ -195,7 +195,17 @@ function Session({ session, cards, loaded, plan, update }: {
   }, [qid, elsewhere, khash])   // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { top.current?.focus() }, [qid])
 
+  // Keyboard: 1–3 pick the confidence (and reveal the key), Enter saves the grade, and Enter / → / N move on. One
+  // listener calls a ref that is refreshed each render, so it always sees the current card and draft.
+  const onKey = useRef<(e: KeyboardEvent) => void>(() => {})
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => onKey.current(e)
+    window.addEventListener('keydown', h)
+    return () => window.removeEventListener('keydown', h)
+  }, [])
+
   if (!card) {   // the question left the bank since the session started
+    onKey.current = () => {}
     return <p className="muted">This question is no longer in the bank. <button type="button" className="btn" onClick={() => update({ ...session, at: session.at + 1 })}>Next</button></p>
   }
   const revealed = d.conf !== null
@@ -229,8 +239,22 @@ function Session({ session, cards, loaded, plan, update }: {
   }
   const go = (at: number) => update({ ...session, at })
 
+  onKey.current = (e: KeyboardEvent) => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return
+    const t = e.target as HTMLElement | null
+    if (t && (t.tagName === 'TEXTAREA' || t.tagName === 'INPUT' || t.isContentEditable)) return
+    if (!revealed) {
+      if (e.key >= '1' && e.key <= '3') { e.preventDefault(); set({ conf: Number(e.key) as 1 | 2 | 3, revealAt: Date.now(), khash }) }
+    } else if (!d.saved) {
+      if (e.key === 'Enter' && card.rubric && d.conf !== null) { e.preventDefault(); save() }
+    } else if (e.key === 'Enter' || e.key === 'ArrowRight' || e.key === 'n' || e.key === 'N') {
+      e.preventDefault(); go(session.at + 1)
+    }
+  }
+
   return (
     <div className="review-card" ref={top} tabIndex={-1}>
+      <div className="review-progress" aria-hidden="true"><i style={{ width: `${((session.at + 1) / session.qids.length) * 100}%` }} /></div>
       <div className="review-meta">
         <span>Question {session.at + 1} of {session.qids.length}</span>
         <CourseChip code={card.course} />
@@ -263,7 +287,7 @@ function Session({ session, cards, loaded, plan, update }: {
       </div>
       {!revealed ? (
         <div className="row review-actions">
-          <span className="small muted">How sure are you? Tapping shows the key.</span>
+          <span className="small muted">How sure are you? Tap or press 1–3 to show the key.</span>
           {CONF.map(([c, label]) => (
             <button key={c} type="button" className="btn big" onClick={() => set({ conf: c, revealAt: Date.now(), khash })}>{label}</button>
           ))}

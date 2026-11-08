@@ -25,13 +25,17 @@ export function Upcoming({ items, today, limit = 7, compact = false }: { items: 
             return (
               <tr key={i} className={d.exam ? 'exam' : undefined}>
                 <td className={'when' + (n <= 2 ? ' soon' : '')}>{when(n)}</td>
-                <td className="date">{d.approx ? '~' : ''}{formatDate(d.date)}{d.time ? `, ${d.time}` : ''}</td>
-                <td>
+                <td className="tag">{calendarChip(d.course)}</td>
+                <td className="what">
                   {compact
-                    ? <div className="clamp" title={d.what}>{calendarChip(d.course)}{' '}{d.what}</div>
-                    : <>{calendarChip(d.course)}{' '}{d.what}</>}
+                    ? <div className="clamp" title={d.what}>{d.what}</div>
+                    : d.what}
                 </td>
-                <td className="weight">{d.weight}</td>
+                <td className="meta">
+                  <span className="date">{d.approx ? '~' : ''}{formatDate(d.date)}{d.time ? `, ${d.time}` : ''}</span>
+                  <span className={'rel' + (n <= 2 ? ' soon' : '')}>{when(n)}</span>
+                  {d.weight ? <span className="weight">{d.weight}</span> : null}
+                </td>
               </tr>
             )
           })}
