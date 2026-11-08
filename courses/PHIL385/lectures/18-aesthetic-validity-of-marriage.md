@@ -39,10 +39,13 @@ Wonder whether both can be right, but one is more instinctual and natural, and a
 - “The Aesthetic Validity of Marriage” is the first of B’s two letters, which make up Part II of *Either/Or*. Hong’s edition spells it "The Esthetic Validity of Marriage".
 - B is Judge William, a married public official called Assessor Vilhelm in the Danish. The letter is addressed to A.
 - It is a letter, not a treatise. The letter form lets B speak in "admonitory and urgent tones" and stops A from treating it as a general debate.
-- B states two tasks near the start. The first is to show the aesthetic significance of marriage.
-- The second is to show how the aesthetic can be sustained against life’s obstacles. The notes’ "maintains the quality status over time" is this second task.
+
+> **Key.** B states two tasks near the start. The first is to show the aesthetic significance of marriage.
+> The second is to show how the aesthetic can be sustained against life’s obstacles. The notes’ "maintains the quality status over time" is this second task.
+
 - Kraal’s framing is that even if you play the game of life on the aesthetic’s own terms, the ethical wins, because marriage turns out more aesthetic than romantic love.
-- B’s conclusion is that "really it is marriage that is poetic". He denies that marriage is respectable but tiresomely moral while love is poetry.
+
+> **Key.** B’s conclusion is that "really it is marriage that is poetic". He denies that marriage is respectable but tiresomely moral while love is poetry.
 
 ### Why B warns A
 
@@ -74,7 +77,9 @@ Wonder whether both can be right, but one is more instinctual and natural, and a
 3. Therefore, if love is inconsistent with the ethical, love loses.
 
 - B writes, "If duty is the enemy of love, and love cannot defeat this enemy, then love is not the true victor."
-- The last background bullet in the notes needs one fix. B does not conclude that one should live by duty instead of love.
+
+> **Watch out.** The last background bullet in the notes needs one fix. B does not conclude that one should live by duty instead of love.
+
 - The argument is aimed at A. A praises love as the highest thing, so A of all people must deny that duty is love’s enemy.
 - Otherwise A must admit that his love loses and that he has "disparaged love and divested it of its majesty".
 - B’s own view is that there is no split. He writes, "You regard duty as the enemy of love, I regard it as its friend", and "duty here is just one thing, truly to love".

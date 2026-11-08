@@ -19,9 +19,11 @@ None. Everything below is from the deck.
 - The shaman's story: one becomes a shaman through an initiatory ritual narrated as a journey to the spirit world, starting from a psycho-physical crisis, often illness or a near-death experience. In Korean shamanism this begins with a "divine sickness" (shin byeong) that can only be cured by apprenticing to a shaman and being initiated into the possessing spirit.
 - Healing rituals either send the shaman to the spirit world or summon spirits here. In many forms the boundary is porous, which is the paracosm again. The basic myth of shamanism is the account of travel to and from the spirit world.
 - Neuroscience aside: activation of temporal-lobe circuitry, as in epileptic seizures, can cause altered states that feel religious. V. S. Ramachandran calls this part of the brain "the God module". The experiences are ambiguous and need a structured narrative to give them meaning.
-- Key concepts: ecstasy and enstasy. Both are altered states of consciousness (ASC) provoked by specific techniques. Transcendence is the sensation of leaving the physical body, sometimes with the body dismembered in the vision and rebuilt with new parts.
-  - Ecstasy (Greek ex-stasis, "stand outside oneself") is travel directed outward: the border between self and world disappears and the person becomes the universe, a drop dissolving into the ocean. In shamanism it is travel to a spirit world away from the body.
-  - Enstasy (en-stasis, "stand inside oneself") is directed inward: the universe breaks into the contours of the body, as if the infinite put on VR goggles to experience itself as subject and objects, seeing an ocean in one drop. In shamanic terms, the spirit possesses the shaman.
+
+> **Watch out.** Key concepts: ecstasy and enstasy. Both are altered states of consciousness (ASC) provoked by specific techniques. Transcendence is the sensation of leaving the physical body, sometimes with the body dismembered in the vision and rebuilt with new parts.
+> - Ecstasy (Greek ex-stasis, "stand outside oneself") is travel directed outward: the border between self and world disappears and the person becomes the universe, a drop dissolving into the ocean. In shamanism it is travel to a spirit world away from the body.
+> - Enstasy (en-stasis, "stand inside oneself") is directed inward: the universe breaks into the contours of the body, as if the infinite put on VR goggles to experience itself as subject and objects, seeing an ocean in one drop. In shamanic terms, the spirit possesses the shaman.
+
 - Reference given: Winkelman 2005, "Shamanism: An Overview", Encyclopedia of Religion, 2nd ed.
 - As societies grew complex, shamanism gave rise to religions; shamans became hereditary priests; rituals and narratives grew more complex; the ASC techniques remained. The question posed: can we trace South Asia back to these shamanic roots?
 
@@ -39,7 +41,9 @@ None. Everything below is from the deck.
 ### The Purusha hymn answered (slides 40 to 45)
 - Same three slides as lecture 1 on the Purusha cosmology, liturgy and panentheism, then the answer that was deferred.
 - Macdonell (1917) read the hymn as gods sacrificing Purusha, which the lecture calls a paradox he did not think through: the gods in the hymn are Purusha himself as he partitions into gods, people, animals and the inanimate world.
-- Correction slide, to memorise: pantheism means the universe is God. Panentheism means the universe is a part of God's body but part of God extends beyond the universe. The Hymn of Purusha is panentheism.
+
+> **Watch out.** Correction slide, to memorise: pantheism means the universe is God. Panentheism means the universe is a part of God's body but part of God extends beyond the universe. The Hymn of Purusha is panentheism.
+
 - The hymn's account of the four castes shows it is a late hymn in the Rig Veda. Brahmins are priests and teachers, Kshatriyas nobles and warriors, Vaishyas merchants, Shudras labourers and artisans. The earliest hymns reflect a polytheistic, nomadic society.
 
 ### Vedic gods (slides 46 to 49)
@@ -62,6 +66,36 @@ None. Everything below is from the deck.
 - The Hindu pantheon includes erotic beings; erotic desire has power, explained through karma, and the Creation Hymn has desire causing the world to appear. The ideal human life depends, for some traditions, on caste, station and gender; other traditions aim to escape samsara and reach moksha, treating desire as the core problem.
 - Rati is Kama's consort and feminine aspect, with matching iconography. In the myth, Shiva, an ascetic after losing his wife Sati, is shot by Kama's arrow so he will fall for Parvati, Sati's reincarnation. Enraged, Shiva burns Kama to ash with his third eye. Read one way this is asceticism defeating eroticism; read the other way Kama wins, because Shiva does fall in love and marry Parvati. Rati petitions for Kama's rebirth; he returns formless but still powerful. A son of Shiva was needed to defeat a demon.
 - The Trimurti: Brahma the creator, Vishnu the sustainer, Shiva the destroyer. The Tridevi: Sarasvati with Brahma, Lakshmi with Vishnu, Parvati with Shiva, each the consort or the female manifestation of the god. The pairs are joined sexually or are masculine and feminine sides of one principle.
+
+```svg
+<svg viewBox="0 0 600 175" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="150" y="40" width="130" height="46" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="215" y="62" fill="var(--link)" font-weight="600">Brahma</text>
+    <text x="215" y="79" fill="var(--muted)" font-size="11">creator</text>
+    <rect x="300" y="40" width="130" height="46" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="365" y="62" fill="var(--link)" font-weight="600">Vishnu</text>
+    <text x="365" y="79" fill="var(--muted)" font-size="11">sustainer</text>
+    <rect x="450" y="40" width="130" height="46" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="515" y="62" fill="var(--link)" font-weight="600">Shiva</text>
+    <text x="515" y="79" fill="var(--muted)" font-size="11">destroyer</text>
+    <rect x="150" y="120" width="130" height="34" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="215" y="142" fill="var(--fg2)">Sarasvati</text>
+    <rect x="300" y="120" width="130" height="34" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="365" y="142" fill="var(--fg2)">Lakshmi</text>
+    <rect x="450" y="120" width="130" height="34" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="515" y="142" fill="var(--fg2)">Parvati</text>
+  </g>
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M215 86 V120 M365 86 V120 M515 86 V120"/>
+  </g>
+  <g text-anchor="start" fill="var(--fg2)" font-size="12" font-weight="600">
+    <text x="20" y="67">Trimurti</text>
+    <text x="20" y="141">Tridevi</text>
+  </g>
+</svg>
+```
+
 - Deities have wrathful and peaceful aspects: Kali versus Parvati. A single goddess has many aspects, for example Parvati as Kali, Durga and Gauri; Kali connotes darkness, the end of time and death, with weapons, bloody tongue and a necklace of heads. Sometimes two forms, sometimes three, sometimes nine (the Nine Forms of Durga).
 - The divine androgyne: Shiva as Ardhanarishvara, "the Lord who is half woman", split vertically with Shiva on the dominant right side and Parvati on the left.
 - Shakti is divine energy, considered feminine, of the earth and the goddess. As Adishakti, primal energy, she stands over the three gods and her true nature is formless (nirguna). Shaktism places the divine feminine at the centre.
@@ -70,7 +104,9 @@ None. Everything below is from the deck.
 
 ### Upanishads and the post-Vedic schools (slides 65 to 69)
 - The Upanishads (800 to 200 BCE) posit a formless (nirguna) ground of being, Brahman, at the foundation of the universe. Brahman is the source of the individual soul (atman), the imperishable part of humans and animals that is reborn until liberation (moksha). Some Upanishads say atman is identical to Brahman (non-dualism), others keep a distinction (dualism). The Purusha question returns: are the shards the same as Purusha?
-- **Samkhya** means "rational examination". **Purusha** is the individual spirit or soul beyond life and death. It animates a living being.
+
+> **Definition.** **Samkhya** means "rational examination". **Purusha** is the individual spirit or soul beyond life and death. It animates a living being.
+
 - **Prakriti** is the inanimate matter that produces the world. Mind, ego, the six senses and intellect are all prakriti. Purusha interacts with prakriti. Purusha alone makes it appear alive.
 - **Avidya** is ignorance of our inner core. Passion and anger deepen the resulting suffering and produce bad karma.
 - The goal is to recognise purusha through introspection and gain liberation at death.

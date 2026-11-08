@@ -205,21 +205,24 @@ $$
 
 ### Clicker questions
 
-1. **Which summary is not sensitive to outliers?** The answer was B, the IQR.
-   - A summary built from every value (the mean, the variance, the standard deviation) or from the extremes (the range) moves when an outlier appears.
-   - The IQR uses only the middle 50% of the data, so very low or very high values do not change it.
-2. **$$P(S) = 0.4$$ and $$P(T) = 0.5$$; find $$P(S \cup T)$$.** Only 68% got it right.
-   - The options paired each value with a condition. If $$S$$ and $$T$$ are disjoint, $$P(S \cup T) = 0.4 + 0.5 = 0.9$$; if they are independent, $$P(S \cap T) = 0.4 \times 0.5 = 0.2$$, so $$P(S \cup T) = 0.4 + 0.5 - 0.2 = 0.7$$.
-   - The right option was 0.7 with independence. The wrong ones included 0.9 with independence and 0.7 with disjointness.
-   - Many students picked 0.9 without reading which condition it was paired with.
-3. **$$T = 2W + 3X - Y$$, with $$W$$ independent of $$X$$ and of $$Y$$ and $$\operatorname{Cov}(X, Y) = 3$$; find $$\operatorname{Var}(T)$$.** The answer was D, 22, and only 50% got it right.
-   - Independence makes $$\operatorname{Cov}(W, X)$$ and $$\operatorname{Cov}(W, Y)$$ zero, so only the $$X, Y$$ covariance term stays.
-   - That term is $$2 \times 3 \times (-1) \times \operatorname{Cov}(X, Y) = -18$$: two, times both coefficients with their signs, times the covariance.
-   - The recording does not say the three variances clearly, only the answer.
-   - Looking at the results chart, he said it looked left-skewed but that a bar chart has no skewness, because its categories can be put in any order.
-4. **$$P(Z > 5)$$ for a standard Normal $$Z$$.** It is about 0, and 85% got it right.
-   - The table only runs from about $$-3.49$$ to $$3.49$$, because almost all the area lies within 3 standard deviations.
-   - A z-score outside that range gives a probability of about 0 or about 1. One Written Assignment 1 answer reached a z-score above 6, so the probability below it was about 1.
+> **Example.** Which summary is not sensitive to outliers? The answer was B, the IQR.
+>   - A summary built from every value (the mean, the variance, the standard deviation) or from the extremes (the range) moves when an outlier appears.
+>   - The IQR uses only the middle 50% of the data, so very low or very high values do not change it.
+
+> **Example.** $$P(S) = 0.4$$ and $$P(T) = 0.5$$; find $$P(S \cup T)$$. Only 68% got it right.
+>   - The options paired each value with a condition. If $$S$$ and $$T$$ are disjoint, $$P(S \cup T) = 0.4 + 0.5 = 0.9$$; if they are independent, $$P(S \cap T) = 0.4 \times 0.5 = 0.2$$, so $$P(S \cup T) = 0.4 + 0.5 - 0.2 = 0.7$$.
+>   - The right option was 0.7 with independence. The wrong ones included 0.9 with independence and 0.7 with disjointness.
+>   - Many students picked 0.9 without reading which condition it was paired with.
+
+> **Example.** $$T = 2W + 3X - Y$$, with $$W$$ independent of $$X$$ and of $$Y$$ and $$\operatorname{Cov}(X, Y) = 3$$; find $$\operatorname{Var}(T)$$. The answer was D, 22, and only 50% got it right.
+>   - Independence makes $$\operatorname{Cov}(W, X)$$ and $$\operatorname{Cov}(W, Y)$$ zero, so only the $$X, Y$$ covariance term stays.
+>   - That term is $$2 \times 3 \times (-1) \times \operatorname{Cov}(X, Y) = -18$$: two, times both coefficients with their signs, times the covariance.
+>   - The recording does not say the three variances clearly, only the answer.
+>   - Looking at the results chart, he said it looked left-skewed but that a bar chart has no skewness, because its categories can be put in any order.
+
+> **Example.** $$P(Z > 5)$$ for a standard Normal $$Z$$. It is about 0, and 85% got it right.
+>   - The table only runs from about $$-3.49$$ to $$3.49$$, because almost all the area lies within 3 standard deviations.
+>   - A z-score outside that range gives a probability of about 0 or about 1. One Written Assignment 1 answer reached a z-score above 6, so the probability below it was about 1.
 
 ### How written answers are marked
 

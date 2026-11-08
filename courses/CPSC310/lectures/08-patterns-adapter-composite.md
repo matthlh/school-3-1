@@ -15,7 +15,7 @@ Matt was absent, so nothing on this page comes from class. The lecture notes fol
 - You cannot predict what the change will be, but you can often predict where it will land. The two questions to ask when it arrives: how many places do you have to edit, and how much unrelated code do you have to touch?
 
 ### What a design pattern is, and why the name matters (slides 6–7)
-- A **design pattern** is a tried and true solution to a commonly encountered problem. It is a reusable way of thinking about a recurring design problem, what emerges when you keep a likely change local, and a vocabulary for discussing trade-offs.
+> **Definition.** A **design pattern** is a tried and true solution to a commonly encountered problem. It is a reusable way of thinking about a recurring design problem, what emerges when you keep a likely change local, and a vocabulary for discussing trade-offs.
 - It is not a class diagram you copy, not a framework or library, and not a rule you must always follow.
 - Four reasons the name is worth knowing.
   - Recognition: you spot the problem shape earlier, sometimes before writing code.
@@ -45,7 +45,7 @@ Matt was absent, so nothing on this page comes from class. The lecture notes fol
 
 ### Adapter (slides 14–17)
 - Scenario: a year-end "wrapped" summary of the songs you played across several music platforms. Each platform has its own interface, its own methods and its own idea of what a play looks like, including CSV and JSON exports.
-- Intent: an off-the-shelf component offers functionality you want to reuse, but its view of the world does not fit the system you are building. **Adapter** converts the interface of a class into the interface clients expect, so classes with incompatible interfaces can work together. Concretely, wrap the existing class in a new class that exposes the interface you want.
+> **Definition.** **Adapter** converts the interface of a class into the interface clients expect, so classes with incompatible interfaces can work together. The intent: an off-the-shelf component offers functionality you want to reuse, but its view of the world does not fit the system you are building. Concretely, wrap the existing class in a new class that exposes the interface you want.
 - The four-step analysis.
   1. Change: new platforms, each with its own interface.
   2. Pain: one loop per platform in every report (scattered), and report logic mixed with calls to each platform's interface and field translation (tangled).
@@ -54,10 +54,43 @@ Matt was absent, so nothing on this page comes from class. The lecture notes fol
 
 ### Composite (slides 18–21)
 - Scenario: org-chart software. An org contains managers who supervise managers, engineers, designers, technical leads and product managers, so the tree has nodes that are one person and nodes that head a team.
-- Intent: the application manipulates a hierarchy of "primitive" and "composite" objects, and having to know which kind each object is before processing it is undesirable. **Composite** composes objects into tree structures for whole-part hierarchies and lets clients treat individual objects and compositions uniformly, through the same interface.
+> **Definition.** **Composite** composes objects into tree structures for whole-part hierarchies and lets clients treat individual objects and compositions uniformly, through the same interface. The intent: the application manipulates a hierarchy of "primitive" and "composite" objects, and having to know which kind each object is before processing it is undesirable.
+
 - The pattern has three roles. **Component** is the shared interface.
 - **Leaf** represents one object.
 - **Composite** holds components. A child component can itself be a composite.
+
+```svg
+<svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="215" y="14" width="170" height="36" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="300" y="37" fill="var(--link)" font-weight="600">Employee (Component)</text>
+    <rect x="215" y="98" width="170" height="36" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="121" fill="var(--fg)" font-weight="600">Manager (Composite)</text>
+    <rect x="40" y="186" width="150" height="36" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="115" y="209" fill="var(--fg2)">Engineer (Leaf)</text>
+    <rect x="225" y="186" width="150" height="36" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="209" fill="var(--fg2)">Designer (Leaf)</text>
+    <rect x="410" y="186" width="150" height="36" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="485" y="209" fill="var(--fg2)">Manager (Composite)</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M300 98 V50" marker-end="url(#a8)"/>
+    <path d="M115 186 V162 Q115 152 128 152 H300 V134" marker-end="url(#a8)"/>
+    <path d="M300 186 V134" marker-end="url(#a8)"/>
+    <path d="M485 186 V162 Q485 152 472 152 H300 V134" marker-end="url(#a8)"/>
+  </g>
+  <defs>
+    <marker id="a8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="360" y="78">implements</text>
+    <text x="300" y="172">holds Employee[]</text>
+  </g>
+</svg>
+```
 - The four-step analysis.
   1. Change: new roles in the org, any of which might be one person or head a team of their own.
   2. Pain: one array and one loop per role in every Manager operation (scattered), and each operation mixed with checking whether a report is a person or a team (tangled).

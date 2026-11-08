@@ -15,7 +15,7 @@ The after-class deck is `Lecture_06_Chapter_3_CanvasPost_AL.pdf` (10 slides, Can
 - Probability as a long-run relative frequency: $$P(\text{heads}) = 0.5$$ says nothing about ten flips, which can easily give two heads. Plot the proportion of heads, $$\frac{\text{heads}}{n}$$, against the number of flips $$n$$. It starts at 0 or 1, wanders, and settles near 0.5 as $$n$$ gets large, close by 10,000 flips but not necessarily by 100. Probability is the long-run proportion; the short run is random.
 
 ### Conditional probability (slides 2–3)
-- Conditional probability is the probability of one event given that a related event has already occurred. It is read "the probability of $$A$$ given $$B$$". The given event is always the denominator, which is why it needs positive probability.
+> **Definition.** Conditional probability is the probability of one event given that a related event has already occurred. It is read "the probability of $$A$$ given $$B$$". The given event is always the denominator, which is why it needs positive probability.
 
 $$
 P(A \mid B) = \frac{P(A \cap B)}{P(B)}, \qquad P(B) > 0
@@ -52,7 +52,8 @@ P(A \cap B) &= P(A)\,P(B)
 \end{aligned}
 $$
 
-- Independence is shown with one of the three equations, never from a Venn diagram. A Venn diagram shows disjointness, which is a different concept.
+> **Key.** Independence is shown with one of the three equations, never from a Venn diagram. A Venn diagram shows disjointness, which is a different concept.
+
 - Disjoint events with positive probability are never independent. Disjoint gives $$P(A \cap B) = 0$$, and $$P(A)\,P(B) = 0$$ would force one of the events to be impossible. Independence needs something in common to test.
 - Worked example: flip a fair coin and roll a fair die, 12 equally likely outcomes. $$A$$ = tail (6 outcomes), $$B$$ = even number (6 outcomes), $$A \cap B = \{(T,2), (T,4), (T,6)\}$$. Obvious here, but it shows the test:
 
@@ -64,7 +65,7 @@ P(A)\,P(B) &= \frac{6}{12} \cdot \frac{6}{12} = \frac{1}{4}
 $$
 
 - The two agree, so $$A$$ and $$B$$ are independent.
-- Rule for questions: unless independence is stated, or is physically certain like a coin and a die, do not assume it. Assuming it makes the question easier and the answer wrong.
+> **Watch out.** Rule for questions: unless independence is stated, or is physically certain like a coin and a die, do not assume it. Assuming it makes the question easier and the answer wrong.
 
 ## Worked examples
 
@@ -100,7 +101,7 @@ $$
 - Wednesday Sep 23: Bayes' theorem and examples ([lecture 7](07-bayes-theorem-and-reliability.md)).
 
 ## In class
-- iClicker: a question gave $$P(B) = 0.5$$ with $$A$$ and $$B$$ independent and asked for $$P(B \mid A)$$. Answer D, which is 0.5 straight away, because independence means $$P(B \mid A) = P(B)$$. Several people multiplied and divided their way to the same number; he wanted the ten-second route.
+> **Example.** iClicker: a question gave $$P(B) = 0.5$$ with $$A$$ and $$B$$ independent and asked for $$P(B \mid A)$$. Answer D, which is 0.5 straight away, because independence means $$P(B \mid A) = P(B)$$. Several people multiplied and divided their way to the same number; he wanted the ten-second route.
 
 ## Clarifications
 - "Given" decides the denominator. $$P(B \mid A)$$ divides by $$P(A)$$; $$P(A \mid B)$$ divides by $$P(B)$$. The numerator $$P(A \cap B)$$ is the same in both, which is what links them and gives Bayes' theorem next class.

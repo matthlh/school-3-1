@@ -16,7 +16,7 @@ The after-class deck is `Lecture_09_Chapter_4_canvaspost_AL.pdf` (27 slides, Can
 
 ### Continuous random variables and the pdf (slides 5–7)
 - Continuous variables model the lifetime of a component, a pH value, or the depth of a randomly chosen lake.
-- The probability density function $$f(x)$$ gives probabilities as areas under the curve. Density, because probability is area, not height.
+> **Definition.** The probability density function $$f(x)$$ gives probabilities as areas under the curve. Density, because probability is area, not height.
 
 $$
 P(a \le X \le b) = \int_a^b f(x)\,dx
@@ -28,7 +28,7 @@ $$
 f(x) \ge 0 \text{ for all } x, \qquad \int_{-\infty}^{\infty} f(x)\,dx = 1
 $$
 
-- $$P(a \le X \le b)$$, $$P(a < X \le b)$$, $$P(a \le X < b)$$ and $$P(a < X < b)$$ are all the same integral, because $$P(X = c) = 0$$ at any single point. The equal sign that mattered for discrete variables does not matter here.
+> **Watch out.** $$P(a \le X \le b)$$, $$P(a < X \le b)$$, $$P(a \le X < b)$$ and $$P(a < X < b)$$ are all the same integral, because $$P(X = c) = 0$$ at any single point. The equal sign that mattered for discrete variables does not matter here.
 - A random variable's mean is not the Chapter 1 sample mean. A sample mean averages data; a random variable is a function from $$S$$ to the real line, and its mean comes from its distribution.
 
 ### The cdf (slides 8–10)
@@ -49,6 +49,30 @@ P(a < X < b) &= F(b) - F(a)
 $$
 
 - By the fundamental theorem of calculus, $$f(x) = F'(x)$$. Integrate the pdf to get the cdf; differentiate the cdf to get the pdf.
+
+```svg
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="80" y="54" width="150" height="52" rx="8" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="155" y="85" fill="var(--link)" font-weight="600">pdf f(x)</text>
+    <rect x="370" y="54" width="150" height="52" rx="8" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="445" y="85" fill="var(--ok)" font-weight="600">cdf F(x)</text>
+  </g>
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <line x1="235" y1="62" x2="360" y2="62"/>
+    <line x1="365" y1="98" x2="240" y2="98"/>
+  </g>
+  <g fill="var(--border3)" stroke="none">
+    <path d="M360 62 L350 57 L350 67 Z"/>
+    <path d="M240 98 L250 93 L250 103 Z"/>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="300" y="52">integrate</text>
+    <text x="300" y="120">differentiate</text>
+  </g>
+</svg>
+```
+
 
 ### Example 6, uniform on $$[0, 100]$$ (slides 11–15)
 - $$f(x) = \frac{1}{k}$$ on $$0 \le x \le 100$$ and 0 otherwise. Total area 1 gives $$\frac{1}{k}(100 - 0) = 1$$, so $$k = 100$$. With a constant density the area is a rectangle, $$100 \times \frac{1}{k}$$, which gives $$k$$ without integrating; that shortcut does not exist for a curved $$f$$.
@@ -85,7 +109,7 @@ $$
 E(X) = \frac{a + b}{2} \qquad \operatorname{Var}(X) = \frac{(b - a)^2}{12}
 $$
 
-- An **exponential variable** $$X \sim \text{Exp}(\lambda)$$ measures the time until an event. The rate is $$\lambda > 0$$.
+> **Definition.** An **exponential variable** $$X \sim \text{Exp}(\lambda)$$ measures the time until an event. The rate is $$\lambda > 0$$.
 - Its density is $$f(x) = \lambda e^{-\lambda x}$$ for $$x \ge 0$$ and 0 for $$x < 0$$.
 - The derivation uses integration by parts, which the instructor called the hardest integration in the course.
 
@@ -109,7 +133,7 @@ $$
 - Friday Oct 2, since Wed Sep 30 is a holiday: properties of the mean and variance, covariance, sums of independent random variables, and the max and min of independent random variables.
 
 ## In class
-- iClicker: $$X$$ = the score on a fair die; find $$E(X)$$. Identify it as discrete with pmf $$\frac{1}{6}$$ at 1 to 6, so $$E(X) = \frac{1 + 2 + \dots + 6}{6} = \frac{21}{6} = 3.5$$. Answer D. A sum, not an integral, and 3.5 is a long-run average, not a face.
+> **Example.** iClicker: $$X$$ = the score on a fair die; find $$E(X)$$. Identify it as discrete with pmf $$\frac{1}{6}$$ at 1 to 6, so $$E(X) = \frac{1 + 2 + \dots + 6}{6} = \frac{21}{6} = 3.5$$. Answer D. A sum, not an integral, and 3.5 is a long-run average, not a face.
 - Announcements: no lab this week because of the Wed Sep 30 holiday. WeBWorK 2 is due Tue Sep 29 and WeBWorK 3 is visible. iClicker grades get synced to the Canvas gradebook every few weeks; the sync misses anyone whose iClicker email or name differs from Canvas, so set the iClicker name to the Canvas name and he enters those grades by hand at the end. Only 35 lecture days this term, so some material goes into posted videos.
 
 ## Clarifications

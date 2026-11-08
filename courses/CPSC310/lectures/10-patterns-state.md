@@ -17,7 +17,7 @@ The lecture notes follow only the deck, [06a-patterns-iii.pdf](https://ubccpsc.g
 ### State: intent (slide 4)
 - The problem it solves: an object behaves differently depending on the state it is in, and that state changes while the program runs.
 - Without the pattern, every method ends up with a switch on the current state to decide what to do.
-- The deck's intent line is the Gang of Four's. **State** lets an object "alter its behavior when its internal state changes", so that the object "will appear to change its class".
+> **Definition.** The deck's intent line is the Gang of Four's. **State** lets an object "alter its behavior when its internal state changes", so that the object "will appear to change its class".
 - The result is an **object-oriented state machine**: the states are objects and the transitions are method calls, instead of a table or a set of switches.
 
 ### The refactoring: encapsulate the states in objects (slide 5)
@@ -26,6 +26,37 @@ The lecture notes follow only the deck, [06a-patterns-iii.pdf](https://ubccpsc.g
 - A state object creates the state that follows it, which the deck draws as "creates" arrows.
 - `Phone` creates `StateOff` at start-up. When the phone powers down, `StateLocked` or `StateReady` creates `StateOff`.
 - `StateOff` creates `StateLocked`. `StateLocked` creates `StateReady`.
+
+```svg
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="40" y="70" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="100" y="97" fill="var(--fg)" font-weight="600">StateOff</text>
+    <rect x="240" y="70" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="97" fill="var(--fg)" font-weight="600">StateLocked</text>
+    <rect x="440" y="70" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="500" y="97" fill="var(--fg)" font-weight="600">StateReady</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M14 92 H40" marker-end="url(#a10)"/>
+    <path d="M160 92 H240" marker-end="url(#a10)"/>
+    <path d="M360 92 H440" marker-end="url(#a10)"/>
+    <path d="M500 114 C 500 184, 100 184, 100 116" marker-end="url(#a10)"/>
+    <path d="M300 114 C 300 158, 140 158, 102 116" marker-end="url(#a10)"/>
+  </g>
+  <defs>
+    <marker id="a10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="27" y="82">start-up</text>
+    <text x="200" y="84">creates</text>
+    <text x="400" y="84">creates</text>
+    <text x="300" y="178" fill="var(--fg2)">power down (from Locked or Ready)</text>
+  </g>
+</svg>
+```
 - Slide 6 is the canonical refactoring.guru diagram: a context holds a reference typed as the state interface, every concrete state implements that interface, and the context forwards each event to whichever state object it currently holds.
 
 ### State: the four-step analysis (slide 7)
@@ -48,7 +79,7 @@ The lecture notes follow only the deck, [06a-patterns-iii.pdf](https://ubccpsc.g
 ## Designing for one kind of change
 
 ### The Open/Closed Principle (slide 9)
-- The **Open/Closed Principle**, OCP, says a unit of code, whether a function, a class or a module, should be open for extension and closed for modification.
+> **Definition.** The **Open/Closed Principle**, OCP, says a unit of code, whether a function, a class or a module, should be open for extension and closed for modification.
 - Open for extension means new behaviour can be added.
 - Closed for modification means adding that behaviour does not change code that already works.
 - How it is done: depend on an abstraction, then extend by writing a new implementation of it. The four patterns are four ways of putting that abstraction in place.
@@ -64,7 +95,7 @@ The lecture notes follow only the deck, [06a-patterns-iii.pdf](https://ubccpsc.g
   - State: a new state is cheap; a new button is expensive.
 
 ### Choosing the axis (slide 12)
-- Every extension point costs indirection: an interface, a dispatch and more classes. Spend it only where variation will actually arrive.
+> **Key.** Every extension point costs indirection: an interface, a dispatch and more classes. Spend it only where variation will actually arrive.
 - Before adding an extension point, ask three questions.
   - What will vary: new services, roles, add-ons or states?
   - What must stay stable for the code that depends on it?

@@ -72,16 +72,20 @@ The Italian lines come from Da Ponte’s original libretto (1787), which is publ
 ### What Don Giovanni desires
 
 - The notes’ point that he desires the general, not the uncommon, matches A.
-- A calls what all women share the feminine. Don Giovanni desires in each woman what she has in common with every woman.
+
+> **Definition.** A calls what all women share the feminine. Don Giovanni desires in each woman what she has in common with every woman.
+
 - He does not need a woman to be extraordinary. The Catalogue Aria’s "rich, ugly or beautiful" line says the same.
 - This is the "force of desire" in the notes. His desire is equally strong for each woman because it is aimed at what they all share.
 - The notes’ main point about why the women are replaceable is right. He wants womanhood, not the person.
 - Once he wins a woman she has nothing more to give him, and the next one takes her place.
 - The notes say he desires "their status of being seduced". A says he desires the feminine itself.
 - Seduced or not seduced is the only difference among women that counts for him, so it decides who comes next.
-- A says Don Giovanni does not really seduce in the planning sense. He desires, and the desire itself works seductively.
-- Seduction by plan belongs to the Diary. Johannes, its seducer, is the opposite case. He chooses one particular girl, Cordelia, and plans her seduction step by step.
-- The notes say he has not slept with them yet. In the opera itself, Don Giovanni succeeds in none of the attempts shown on stage.
+
+> **Watch out.** A says Don Giovanni does not really seduce in the planning sense. He desires, and the desire itself works seductively.
+> Seduction by plan belongs to the Diary. Johannes, its seducer, is the opposite case. He chooses one particular girl, Cordelia, and plans her seduction step by step.
+> **Watch out.** The notes say he has not slept with them yet. In the opera itself, Don Giovanni succeeds in none of the attempts shown on stage.
+
 - Donna Anna fights him off at the start, and Donna Elvira interrupts his duet with Zerlina. The 1,003 women on Leporello’s list are all in the past.
 
 ### How this differs from Crop Rotation

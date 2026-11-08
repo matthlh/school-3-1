@@ -34,7 +34,7 @@ The lecture uses [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectur
 ## Code smells and refactoring choices
 
 ### Feature envy and the Law of Demeter (slides 10–11)
-- **Feature envy** is behaviour in the wrong place. If a method you are writing wants access to many fields of another class, the method probably belongs in that other class.
+> **Definition.** **Feature envy** is behaviour in the wrong place. If a method you are writing wants access to many fields of another class, the method probably belongs in that other class.
 - The **Law of Demeter** is the related tell: a long chain of dereferences through another object means the method is probably in the wrong spot.
 - The deck's example is a `Cat` whose `chaseDog()` reaches into its `Dog` field and drives the dog's run, tail and mouth one by one. The question the slide asks is why the cat is telling the dog how to behave, since objects should define their own behaviour.
 - The fix moves that behaviour into `Dog` as one method, so the cat makes a single call.
@@ -53,7 +53,7 @@ this.fido.beChased();
 - The recap slide stresses the discipline: verify that the tests pass before touching the code and again after every single change.
 
 ### Magic values (slides 13–14)
-- **Magic values** are semantically important values written directly into the program text.
+> **Definition.** **Magic values** are semantically important values written directly into the program text.
 - The deck lists the problems they cause.
   - They create coupling, specifically **connascence of value**. You have to find every place the value must agree and work out what changing it would do.
   - They hurt readability, because the reader cannot tell what the value means.
@@ -62,7 +62,7 @@ this.fido.beChased();
 - The deck calls this "replace magic number with symbol" and says it is the typical refactoring but not the only one. The reader's catalogue calls it replace magic number or string with a constant.
 
 ### Almost-duplicate code, pull up and template method (slides 15–19)
-- **Duplicate code** means the same intent or computation is expressed in several places. "Almost" duplicate means the copies differ slightly.
+> **Definition.** **Duplicate code** means the same intent or computation is expressed in several places. "Almost" duplicate means the copies differ slightly.
 - The deck lists the problems.
   - It is coupling, especially **connascence of algorithm**: every copy has to stay in agreement.
   - If the copies are not identical, finding all of them can be very hard.

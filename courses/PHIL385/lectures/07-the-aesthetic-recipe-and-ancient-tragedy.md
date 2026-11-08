@@ -40,12 +40,14 @@ Acting as an absolute (like raising your truth and objective views independent o
 | "Crop Rotation" | Having no deeper lifelong commitments. |
 | "Ancient Tragedy" | Seeing your fortune or misfortune as beyond your control. |
 
-- Learn it as a set of three with the essay attached to each. A question asking which essay supplies which claim is exactly what the seven-question exams are made of.
+> **Key.** Learn it as a set of three with the essay attached to each. A question asking which essay supplies which claim is exactly what the seven-question exams are made of.
 
 ### Two meanings of aesthetic
 
 - The word has two uses in this course, and A slides between them.
-- In the narrow sense, **aesthetic** is the artistic category: what counts as beautiful, tragic, comic or interesting. This is the sense in "aesthetic validity", "aesthetic interest" and "aesthetic guilt", and the sense in most of this essay.
+
+> **Definition.** In the narrow sense, **aesthetic** is the artistic category: what counts as beautiful, tragic, comic or interesting. This is the sense in "aesthetic validity", "aesthetic interest" and "aesthetic guilt", and the sense in most of this essay.
+
 - When A says sin is not an aesthetic element, he means it is not material for art.
 - In the wide sense, the **aesthetic life-view** is the first of the three spheres. It means living for immediacy, moods, enjoyment and the interesting.
 - The aesthetic life-view judges a life by what it is like to experience, rather than by duty or by God. A lives this way, and the recipe above is what it amounts to.
@@ -97,8 +99,9 @@ Acting as an absolute (like raising your truth and objective views independent o
 - In *Antigone* the guilt concentrates on one act, burying her brother against the king's ban. Taken alone, that act would be a modern subject.
 - What makes it Greek is that Oedipus's fate echoes through it, so that "not an individual but a little world" goes under.
 - Hamlet is in A's text, for a precise reason: "Hamlet is so tragic because he suspects his mother's crime." Suspicion is anxiety, and anxiety, A says, belongs to the modern tragic.
-- Faust is Kraal's example, not A's. Goethe's Faust, with the scholar's pact and Gretchen, is discussed elsewhere in the book.
-- The Faust in this essay is Grabbe's play *Faust and Don Juan*, which A names as a work "built on evil". It is A's example of what goes wrong when guilt becomes absolute.
+
+> **Watch out.** Faust is Kraal's example, not A's. Goethe's Faust, with the scholar's pact and Gretchen, is discussed elsewhere in the book.
+> The Faust in this essay is Grabbe's play *Faust and Don Juan*, which A names as a work "built on evil". It is A's example of what goes wrong when guilt becomes absolute.
 
 ### Absolute and relative
 
@@ -114,7 +117,8 @@ Acting as an absolute (like raising your truth and objective views independent o
 
 ### The spirit of the age
 
-- **Zeitgeist** means the spirit of the age, its characteristic mood. It is Kraal's word for A's diagnosis of the age.
+> **Definition.** **Zeitgeist** means the spirit of the age, its characteristic mood. It is Kraal's word for A's diagnosis of the age.
+
 - A says "the whole age tends toward the comic" and speaks of the age's consciousness.
 - Kraal can ask A's diagnosis. Existence is undermined by doubt, and isolation is growing, which the mania for associations proves.
 - Everyone wants to rule, and nobody wants the responsibility.

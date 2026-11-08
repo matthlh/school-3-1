@@ -74,7 +74,7 @@ E(X^3) &= -27(0.2) - 1(0.3) \\
 \end{aligned}
 $$
 
-- $$[E(X)]^3 = 0$$, so $$E(X^3) \ne [E(X)]^3$$. In general $$E[g(X)] \ne g(E(X))$$ unless $$g$$ is linear.
+> **Watch out.** $$[E(X)]^3 = 0$$, so $$E(X^3) \ne [E(X)]^3$$. In general $$E[g(X)] \ne g(E(X))$$ unless $$g$$ is linear.
 
 ## Part A: Game A, the sum of two rolls
 - Game A: roll the die twice, and the winning $$W_A = X_1 + X_2$$ is the sum. The two rolls are independent.
@@ -132,7 +132,7 @@ $$
 
 ## Why the two games have different variances
 - The expected winnings are equal: both are 0.
-- Game B's variance, 15.2, is twice Game A's, 7.6. Game B is the riskier game.
+> **Key.** Game B's variance, 15.2, is twice Game A's, 7.6. Game B is the riskier game.
 - The general rule, for $$X_1, \dots, X_n$$ independent with the same distribution as $$X$$ and variance $$\sigma^2$$:
 
 $$
@@ -143,7 +143,7 @@ $$
 $$
 
 - So $$nX$$ has the larger variance whenever $$n > 1$$. Adding independent rolls lets highs and lows partly cancel; multiplying one roll scales every deviation by $$n$$, so nothing cancels.
-- This is the trap the activity is built around: $$X_1 + X_2$$ and $$2X$$ have the same mean but not the same variance.
+> **Watch out.** This is the trap the activity is built around: $$X_1 + X_2$$ and $$2X$$ have the same mean but not the same variance.
 
 ## Clarifications
 - The deck says Parts A and B are both covered in this one lecture, although the Part A sheet says to bring it back next class for Part B.

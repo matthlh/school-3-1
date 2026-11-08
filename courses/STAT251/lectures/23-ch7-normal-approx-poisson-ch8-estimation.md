@@ -39,7 +39,7 @@ The class opened by redoing the lecture 22 Example 3, $$X \sim \text{Binomial}(1
 
 - It applies whenever a discrete random variable (a count) is approximated by a continuous one (the Normal).
 - It does not apply when a continuous variable is approximated by a Normal; a uniform variable is already continuous, so it needs no correction.
-- The question will not say "use the continuity correction". The hint is the word "approximate" in the question: "find the approximate probability" means an approximation is expected.
+> **Watch out.** The question will not say "use the continuity correction". The hint is the word "approximate" in the question: "find the approximate probability" means an approximation is expected.
 
 ### Why a single count is standardised with $$\sigma$$, not $$\frac{\sigma}{\sqrt{n}}$$ (recording)
 
@@ -52,7 +52,7 @@ A student asked why the Binomial approximation divides by $$\sigma$$ rather than
 
 ### The Normal approximation to the Poisson (slides 2 and 3)
 
-- If $$X \sim \text{Poisson}(\lambda)$$, then its mean and its variance are both $$\lambda$$. The Poisson is the only distribution in the course where the mean equals the variance. (The exponential has its mean equal to its standard deviation, both $$\frac{1}{\lambda}$$.)
+> **Key.** If $$X \sim \text{Poisson}(\lambda)$$, then its mean and its variance are both $$\lambda$$. The Poisson is the only distribution in the course where the mean equals the variance. (The exponential has its mean equal to its standard deviation, both $$\frac{1}{\lambda}$$.)
 - When $$\lambda \ge 20$$, the Poisson can be approximated by a Normal with the same mean and variance:
 
 $$
@@ -121,7 +121,7 @@ Chapter 7 covered sampling distributions.
 
 ### Using a sample to estimate a population parameter (Chapter 8 deck, slides 3 and 4)
 
-**Statistical inference** means taking a sample from a population, analysing the sample, and making decisions or predictions about the population from it.
+> **Definition.** **Statistical inference** means taking a sample from a population, analysing the sample, and making decisions or predictions about the population from it.
 
 - Estimation finds an approximate value of an unknown population parameter from a sample statistic.
 - The pairs used are $$\bar{x}$$ for $$\mu$$, $$s$$ for $$\sigma$$, and $$\hat{p}$$ for $$p$$.
@@ -143,7 +143,7 @@ Chapter 7 covered sampling distributions.
 
 Write $$\theta$$ for a parameter and $$\hat{\theta}$$ for a point estimator of it.
 
-- A good estimator has a sampling distribution centred at the parameter. This is called unbiasedness.
+> **Definition.** A good estimator has a sampling distribution centred at the parameter. This is called unbiasedness.
 - $$\hat{\theta}$$ is unbiased when its expected value equals the parameter:
 
 $$

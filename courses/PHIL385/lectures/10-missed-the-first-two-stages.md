@@ -25,14 +25,16 @@ You missed this lecture and no classmate’s notes came in, so nothing on this p
 - Desire looks for one it can desire. It has yet to desire any one of them (p. 90).
 - The mood is cheerful and lively, the opposite of the first stage’s melancholy.
 - A’s example is Papageno, the bird-catcher with the panpipe in *The Magic Flute*. Papageno’s aria wants "a net for girls" to catch them by the dozen.
-- A takes Papageno as the picture of this stage, not Tamino, the opera’s hero.
+
+> **Watch out.** A takes Papageno as the picture of this stage, not Tamino, the opera’s hero.
 
 ### Third stage. Desiring.
 
 - Dreaming has no object. Seeking has many objects but wants none in particular.
 - Desiring is Don Giovanni. He desires each particular woman as an instance of woman in general.
 - This stage keeps the dreamer’s pull toward an ideal and the seeker’s turn toward the many.
-- A orders the stages by the growth of desire, not by the dates of the operas.
+
+> **Watch out.** A orders the stages by the growth of desire, not by the dates of the operas.
 
 | Opera | Year |
 | --- | --- |

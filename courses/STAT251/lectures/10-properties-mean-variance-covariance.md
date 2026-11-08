@@ -30,7 +30,7 @@ E(XY) &= E(X)\,E(Y) \\
 \end{aligned}
 $$
 
-- The rule for $$E(X + Y)$$ holds for any two random variables, independent or not. The rule for $$E(XY)$$ needs independence.
+> **Watch out.** The rule for $$E(X + Y)$$ holds for any two random variables, independent or not. The rule for $$E(XY)$$ needs independence.
 - Adding $$b$$ moves every value by the same amount, so the spread does not change. Multiplying by $$a$$ scales the variance by $$a^2$$ and the SD by $$|a|$$.
 - Subtracting a variable still adds its variance, because $$\operatorname{Var}(-Y) = (-1)^2 \operatorname{Var}(Y) = \operatorname{Var}(Y)$$.
 
@@ -49,7 +49,8 @@ $$
 - The steps use two rules: the expectation of a sum is the sum of the expectations, and constants come out of $$E$$.
 
 ### Covariance (slides 5–6)
-- Covariance measures whether two random variables tend to move together.
+
+> **Definition.** Covariance measures whether two random variables tend to move together.
 
 $$
 \begin{aligned}
@@ -128,7 +129,7 @@ E(\bar{X}) &= \frac{1}{n}\big(\mu + \dots + \mu\big) \\
 $$
 
 - The $$\frac{1}{n}$$ comes out of the variance as $$\frac{1}{n^2}$$, and independence lets the variances add.
-- So an average of $$n$$ independent values has the same mean as one value and a variance $$n$$ times smaller.
+> **Key.** So an average of $$n$$ independent values has the same mean as one value and a variance $$n$$ times smaller.
 
 ### The maximum of independent random variables (slides 13–15)
 - $$V = \max\{X_1, \dots, X_n\}$$ models the lifetime of a system of $$n$$ components in parallel, where $$X_i$$ is the lifetime of component $$i$$ and the system runs until the last one fails. It also models the highest flood level of a river over the next $$n$$ years, where $$X_i$$ is the highest level in year $$i$$.
@@ -169,9 +170,9 @@ $$
 
 ## In class
 - The class reached slide 13: the parallel system and the definition of the cdf of the maximum. The rest of the maximum and all of the minimum move to Wednesday Oct 7.
-- iClicker on lecture 9's material: $$X$$ is continuous with pdf $$f$$, cdf $$F$$ and median $$m$$. The options were $$F(m) = 0.5$$, $$\int_{-\infty}^{m} f(x)\,dx = 0.5$$ and $$\int_{m}^{\infty} f(x)\,dx = 0.5$$. The answer was (e), all of them, and 79% got it.
-  - The three say the same thing in different notation. The median splits the area under $$f$$ in half.
-  - He warned against stopping at the first true option. Read every option before answering.
+> **Example.** iClicker on lecture 9's material: $$X$$ is continuous with pdf $$f$$, cdf $$F$$ and median $$m$$. The options were $$F(m) = 0.5$$, $$\int_{-\infty}^{m} f(x)\,dx = 0.5$$ and $$\int_{m}^{\infty} f(x)\,dx = 0.5$$. The answer was (e), all of them, and 79% got it.
+>   - The three say the same thing in different notation. The median splits the area under $$f$$ in half.
+>   - He warned against stopping at the first true option. Read every option before answering.
 - He worked Example 8 on the board, $$\operatorname{Var}(2X + 3Y) = 134$$. Example 9 was an iClicker, $$\operatorname{Var}(2X - Y) = 22$$, answer (c), and 81% got it.
 - What he said about exams:
   - He will not ask you to compute a covariance from scratch on an exam, so its definition does not need to go on your cheat sheet. Know $$\operatorname{Cov}(X, Y) = E(XY) - E(X)E(Y)$$ and what its sign means.

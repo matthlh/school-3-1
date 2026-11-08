@@ -19,6 +19,33 @@ $$
 ### The 68-95-99.7 rule (slides 7 to 8)
 
 - In any Normal distribution about 68% of observations fall within one $$\sigma$$ of $$\mu$$, about 95% within two, and about 99.7% within three. The deck calls it the empirical rule.
+
+```svg
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <path d="M90 178 C140 168 195 120 230 100 C265 78 285 60 300 60 C315 60 335 78 370 100 C405 120 460 168 510 178" fill="none" stroke="var(--link)" stroke-width="2"/>
+  <line x1="70" y1="178" x2="530" y2="178" stroke="var(--border2)" stroke-width="1.5"/>
+  <g stroke="var(--border3)" stroke-width="1" stroke-dasharray="3 3">
+    <line x1="160" y1="178" x2="160" y2="150"/>
+    <line x1="230" y1="178" x2="230" y2="100"/>
+    <line x1="300" y1="178" x2="300" y2="60"/>
+    <line x1="370" y1="178" x2="370" y2="100"/>
+    <line x1="440" y1="178" x2="440" y2="150"/>
+  </g>
+  <g text-anchor="middle" fill="var(--fg2)" font-size="11">
+    <text x="160" y="196">μ−2σ</text>
+    <text x="230" y="196">μ−σ</text>
+    <text x="300" y="196">μ</text>
+    <text x="370" y="196">μ+σ</text>
+    <text x="440" y="196">μ+2σ</text>
+  </g>
+  <g text-anchor="middle" fill="var(--muted)" font-size="12">
+    <text x="300" y="120">68%</text>
+    <text x="300" y="150">95%</text>
+    <text x="300" y="172">99.7%</text>
+  </g>
+</svg>
+```
+
 - Worked example: Iowa Test vocabulary scores for grade 7 students are close to $$N(6.84, 1.55^2)$$. The questions are to sketch the curve, to find the percent between 3.74 and 9.94, and the percent above 5.29. The answers come from the rule alone: 3.74 and 9.94 are $$\mu \pm 2\sigma$$, so 95%; 5.29 is $$\mu - \sigma$$, so half of the 68% plus the upper 50%, which is 84%.
 
 ### Z-scores (slides 9 to 11)
@@ -40,8 +67,9 @@ $$
 
 ### The standard Normal distribution and Table A (slides 12 to 16)
 
-- The standard Normal distribution is the Normal distribution with mean 0 and standard deviation 1, written $$N(0, 1)$$.
-- If $$X \sim N(\mu, \sigma^2)$$ then $$Z = \frac{X - \mu}{\sigma}$$ has the standard Normal distribution. Every Normal distribution looks the same once standardised, so one table gives areas under any Normal curve.
+> **Definition.** The standard Normal distribution is the Normal distribution with mean 0 and standard deviation 1, written $$N(0, 1)$$.
+
+> **Key.** If $$X \sim N(\mu, \sigma^2)$$ then $$Z = \frac{X - \mu}{\sigma}$$ has the standard Normal distribution. Every Normal distribution looks the same once standardised, so one table gives areas under any Normal curve.
 - The cumulative proportion for a value $$x$$ is the proportion of observations less than or equal to $$x$$. For the standard Normal this is $$P(Z \le z)$$.
 - Table A lists, for each $$z$$, the area under the standard Normal curve to the left of $$z$$. The row gives $$z$$ to one decimal and the column gives the second decimal. The deck's example: the row 0.8 and column .01 give $$P(Z < 0.81) = 0.7910$$.
 - The standard Normal is symmetric about zero, so one table of left-hand areas is enough for every probability. Right-hand tails come from one minus the left area, and a negative $$z$$ has the same tail area as its positive twin.
@@ -143,7 +171,7 @@ $$
 - Notation: $$Y \sim N(200, 25)$$ means a mean of 200 and a variance of 25, so $$\sigma = 5$$. Some textbooks, the STAT 200 one among them, write the standard deviation second. This course always writes the variance.
 - To check whether data are Normal, draw a histogram, not a box plot, and look for a roughly symmetric single-peaked bell. Only then apply the 68-95-99.7 rule.
 - For the Iowa example he sketched the curve first. Mark $$\mu$$ and three equally spaced standard deviations either side: 2.19, 3.74, 5.29, 6.84, 8.39, 9.94 and 11.49. Questions are much easier to answer from the sketch.
-- The second clicker question was the percent of scores above 5.29. The answer was (c), 84%, which is the 0.5 above the mean plus the 0.34 between $$\mu - \sigma$$ and $$\mu$$. Some students still got it wrong.
+> **Example.** The second clicker question was the percent of scores above 5.29. The answer was (c), 84%, which is the 0.5 above the mean plus the 0.34 between $$\mu - \sigma$$ and $$\mu$$. Some students still got it wrong.
 - The rule only works at exactly one, two or three standard deviations from the mean. It cannot give $$P(X > 5)$$ or $$P(6.5 < X < 7.5)$$ for the Iowa scores exactly, only a range, and z-scores with Table A are how those are found.
 - On the heights example he described $$z = 2.07$$ as on the large side, since about 95% of women are within two standard deviations of the mean. The ACT score is the better one because its z-score is further out to the right.
 - The recording says $$\sigma = 2.9$$ for the heights and 4.2 for the ACT in passing, but both calculations use the deck's 2.8 and 4.7.
@@ -155,7 +183,7 @@ $$
 
 ## Clarifications
 
-- The deck writes the parameters as $$N(6.84, 1.55^2)$$ and $$N(500, 100^2)$$: the second argument is the variance written as a square, so the standard deviation is the number before the square. Reading $$N(500, 100^2)$$ as a standard deviation of 10,000 is the classic slip. R's `pnorm` takes `sd`, the standard deviation, and not the variance.
+> **Watch out.** The deck writes the parameters as $$N(6.84, 1.55^2)$$ and $$N(500, 100^2)$$: the second argument is the variance written as a square, so the standard deviation is the number before the square. Reading $$N(500, 100^2)$$ as a standard deviation of 10,000 is the classic slip. R's `pnorm` takes `sd`, the standard deviation, and not the variance.
 - Table A gives the area to the left. The deck's slide 21 picks the table entry closest to the target proportion rather than interpolating. If an exam question asks for 0.90, use 0.8997 and $$z = 1.28$$.
 - Slide 6's formula came through the text layer broken. The pdf written above is the standard Normal density formula and matches the textbook.
 - The 68-95-99.7 rule is an approximation. Table A gives 0.6827, 0.9545 and 0.9973, and a question that asks for a table answer wants those, not the rounded rule.

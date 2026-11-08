@@ -20,8 +20,39 @@ Matt was not in class, so nothing on this page comes from class. The lecture not
 - The deck generalises to three cases where tests are hard to write. The code under test is **uncontrollable** (a bank, a clock), **unobservable** (you cannot see what was sent), or **unsafe or slow** (real money, the network).
 
 ### Dependency inversion (slides 8–10)
-- The **dependency inversion principle** (DIP): "depend upon abstractions, do not depend upon implementations."
+> **Definition.** The **dependency inversion principle** (DIP): "depend upon abstractions, do not depend upon implementations."
+
 - The picture has three parts. The code under test, `buyCoffee`, depends on an interface, `IReader`. The real implementation, `reader`, implements that interface. Step 1 is the dependency on the interface; step 2 is the implementation of it.
+
+```svg
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="215" y="16" width="170" height="36" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="39" fill="var(--fg)" font-weight="600">buyCoffee (under test)</text>
+    <rect x="235" y="92" width="130" height="36" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="300" y="115" fill="var(--link)" font-weight="600">IReader</text>
+    <rect x="70" y="168" width="150" height="36" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="145" y="191" fill="var(--fg2)">reader (real)</text>
+    <rect x="380" y="168" width="150" height="36" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="455" y="191" fill="var(--ok)">testReader (double)</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M300 52 V92" marker-end="url(#a6)"/>
+    <path d="M145 168 V140 Q145 128 160 128 H300" marker-end="url(#a6)"/>
+    <path d="M455 168 V140 Q455 128 440 128 H300" marker-end="url(#a6)"/>
+  </g>
+  <defs>
+    <marker id="a6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="360" y="78">depends on</text>
+    <text x="150" y="150">implements</text>
+    <text x="450" y="150">implements</text>
+  </g>
+</svg>
+```
 - That is what makes testing possible. The test code supplies its own implementation of `IReader`, called `testReader`, and `buyCoffee` cannot tell the difference. `testReader` is a **test double**.
 
 ## Testing with a substitute
@@ -35,12 +66,12 @@ Matt was not in class, so nothing on this page comes from class. The lecture not
 ### Is compiling good enough? (slide 13)
 - Any object with a `charge` method that returns a boolean compiles as an `IReader`. The deck's `FakeWorkingReader` throws on a negative amount and returns true for everything else.
 - Three questions the slide asks. What does `IReader` guarantee `buyCoffee`, and where is that written down? Does this double keep that guarantee? When the declined test fails against this double, who is wrong, `buyCoffee` or the double?
-- The point: the type system checks the shape of the double. It cannot check the contract. That is what the next principle is for.
+> **Watch out.** The point: the type system checks the shape of the double. It cannot check the contract. That is what the next principle is for.
 
 ### Liskov substitution (slides 14–16)
-- The **Liskov substitution principle** (LSP), in Liskov and Wing's 1994 wording: if a property is provable about objects of type T, it should be true of objects of type S where S is a subtype of T.
+> **Definition.** The **Liskov substitution principle** (LSP), in Liskov and Wing's 1994 wording: if a property is provable about objects of type T, it should be true of objects of type S where S is a subtype of T.
 - The plain version on slide 15: a subclass should not break the expectations set by its superclass.
-- The Bird example. `Bird.flyFromHeight(height)` works for all heights, and so does `Seagull`. `Penguin.flyFromHeight` only works for heights under 50 cm. `GoodPerson.freeBird(b)` calls `b.flyFromHeight(100)` on any `Bird`, so passing a Penguin breaks code that was correct for every Bird. Penguin is not a valid substitute.
+> **Example.** The Bird example. `Bird.flyFromHeight(height)` works for all heights, and so does `Seagull`. `Penguin.flyFromHeight` only works for heights under 50 cm. `GoodPerson.freeBird(b)` calls `b.flyFromHeight(100)` on any `Bird`, so passing a Penguin breaks code that was correct for every Bird. Penguin is not a valid substitute.
 - The **LSP methods rule** on slide 16.
   - Precondition rule: preconditions should not be strengthened for the same inputs. Widening them is fine.
   - Postcondition rule: postconditions should not be weakened for the same inputs. Narrowing them is fine.

@@ -108,7 +108,8 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 
 ### The first authorship
 
-- *Either/Or* (Danish *Enten–Eller*) came out on 20 February 1843, "edited by Victor Eremita". Volume 1 contains the papers of A, the aesthete. Volume 2 contains those of B, Judge William.
+> **Key.** *Either/Or* (Danish *Enten–Eller*) came out on 20 February 1843, "edited by Victor Eremita". Volume 1 contains the papers of A, the aesthete. Volume 2 contains those of B, Judge William.
+
 - Kraal calls it Kierkegaard's debut because it begins the **pseudonymous authorship**, the works he published under invented names. He had already published his dissertation under his own name.
 - The notes record "He publishes 80 books". This is almost certainly a mishearing.
 - The numbers Kraal is working with are 8 pseudonymous books and 18 discourses in 1843–46. Kierkegaard published six books in 1843 alone.
@@ -127,7 +128,9 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 | 8 | *Concluding Unscientific Postscript* | 27 Feb 1846 | Johannes Climacus |
 
 - The order of works 4, 5 and 6 differs from the order in the notes. *Crumbs* came out four days before *Anxiety* and *Prefaces*.
-- *Crumbs* and *Fragments* are the same book. Hannay translates *Philosophiske Smuler* as *Philosophical Crumbs*. Most other editions use *Fragments*.
+
+> **Watch out.** *Crumbs* and *Fragments* are the same book. Hannay translates *Philosophiske Smuler* as *Philosophical Crumbs*. Most other editions use *Fragments*.
+
 - The *Postscript* is the sequel to *Crumbs*, which is why both books share the pseudonym Johannes Climacus. Its full title is *Concluding Unscientific Postscript to Philosophical Crumbs*.
 - Kierkegaard intended the *Postscript* to conclude the authorship, hence "Concluding" in its title.
 - Johannes Climacus writes both books as a non-Christian asking how one becomes a Christian. His name comes from John Climacus, a 7th-century monk who wrote *The Ladder of Divine Ascent*.
@@ -135,7 +138,9 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 ### What the pseudonyms represent
 
 - Each pseudonym expresses a standpoint on existence, worked out from the inside as someone who holds it would understand it.
-- In "A First and Last Explanation", appended to the *Postscript* in 1846, Kierkegaard says he wrote the books but there is "not a single word" of his own in them. He asks readers to attribute quotations to the pseudonyms.
+
+> **Key.** In "A First and Last Explanation", appended to the *Postscript* in 1846, Kierkegaard says he wrote the books but there is "not a single word" of his own in them. He asks readers to attribute quotations to the pseudonyms.
+
 - Kraal says even scholars misread Kierkegaard, because they quote a pseudonym as if it were Kierkegaard.
 - Kierkegaard published the *Eighteen Upbuilding Discourses* under his own name in 1843–44. The six small volumes contained 2, 3, 4, 2, 3 and 4 discourses, respectively. Each volume appeared alongside a pseudonymous book.
 - The discourses express his own religious standpoint. The pseudonyms express the alternatives.
@@ -153,8 +158,10 @@ Lots of personal notes within, so I dont know really know how to take notes. Is 
 | *Practice in Christianity* | 1850 | Anti-Climacus, edited by "S. Kierkegaard" |
 
 - Kierkegaard wrote *The Point of View for My Work as an Author* in 1848, and it appeared in 1859. It explains the whole authorship as religious from the start.
-- Anti-Climacus is a "higher" pseudonym who represents the ideal Christian above Kierkegaard. Climacus is a "lower" one, below him.
-- In *Works of Love*, **preferential love** includes erotic love, friendship and love of country. It is the "animalistic" love in the notes.
+
+> **Watch out.** Anti-Climacus is a "higher" pseudonym who represents the ideal Christian above Kierkegaard. Climacus is a "lower" one, below him.
+> **Definition.** In *Works of Love*, **preferential love** includes erotic love, friendship and love of country. It is the "animalistic" love in the notes.
+
 - Preferential love loves the other as "another self", which is why Kierkegaard calls it self-love in disguise.
 - **Christian neighbour-love** is commanded and non-preferential: loving the neighbour as yourself. The command is "you *shall* love", and God is the "middle term".
 - Kraal says Kierkegaard turns to love because it is the closest thing to the faith he wants to hold in his heart.

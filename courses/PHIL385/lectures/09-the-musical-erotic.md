@@ -67,12 +67,15 @@ Pesonal questions / thoughts:
 ### The essay and its terms
 
 - The full title is "The Immediate Erotic Stages or The Musical Erotic". It is the second of A's papers in Part I of *Either/Or*, right after the Diapsalmata.
-- Two names in the notes need fixing. The character in *The Marriage of Figaro* is Cherubino, whom A calls "the Page". The third opera is *Don Giovanni*.
+
+> **Watch out.** Two names in the notes need fixing. The character in *The Marriage of Figaro* is Cherubino, whom A calls "the Page". The third opera is *Don Giovanni*.
+
 - "Desiring" is the word the notes heard as "desiration". It is the name of the third stage.
 
 ### What "immediacy" means
 
-- **Immediacy** is experience as it happens, before you step back from it to name it, explain it or judge it. **Reflection** is that stepping back.
+> **Definition.** **Immediacy** is experience as it happens, before you step back from it to name it, explain it or judge it. **Reflection** is that stepping back.
+
 - Desire is immediate in this sense. It exists in the moment of wanting, not in thinking about wanting.
 - That is the point of premise 1 in Kraal's argument. Desire lives only in the present moment, so any medium that steps back from the moment loses it.
 
@@ -86,13 +89,44 @@ Pesonal questions / thoughts:
 
 ### Why Mozart is "supreme"
 
-- A's test for a **classic** work is a perfect fit between its idea and its medium.
+> **Definition.** A's test for a **classic** work is a perfect fit between its idea and its medium.
+
 - Desire in its immediacy, which A calls the **sensuous erotic**, is for him the most abstract idea there is.
 - Music is the most abstract medium, and the only one that can carry that idea.
 - *Don Giovanni* is the one work where that idea meets that medium. So A ranks it highest among all classics, and Mozart with it.
 - The worship is A's own, and it fits his character as the aesthete. Kraal's "holy glaze" reaction is a fair reading of the tone, not something you need to agree with.
 
 ### The three stages of desire
+
+```svg
+<svg viewBox="0 0 600 130" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M180 56 H210" marker-end="url(#a)" />
+    <path d="M390 56 H420" marker-end="url(#a)" />
+  </g>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle">
+    <rect x="30" y="40" width="150" height="32" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="105" y="60" fill="var(--link)" font-weight="600">1. Dreaming</text>
+    <rect x="225" y="40" width="150" height="32" rx="6" fill="var(--panel)" stroke="var(--fg2)"/>
+    <text x="300" y="60" fill="var(--fg)" font-weight="600">2. Seeking</text>
+    <rect x="420" y="40" width="150" height="32" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="495" y="60" fill="var(--ok)" font-weight="600">3. Desiring</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="105" y="94">Cherubino</text>
+    <text x="105" y="108">(Figaro)</text>
+    <text x="300" y="94">Papageno</text>
+    <text x="300" y="108">(Magic Flute)</text>
+    <text x="495" y="94">Don Giovanni</text>
+    <text x="495" y="108">(Don Giovanni)</text>
+  </g>
+</svg>
+```
 
 | Stage | Character | What desire does |
 | --- | --- | --- |
@@ -104,7 +138,8 @@ Pesonal questions / thoughts:
 - For the first two stages, A picks one character as the picture of each stage. He takes *Don Giovanni* as a whole, because Don Giovanni's desire drives the whole opera.
 - The difference between the first two stages is that dreaming is inward and has no object, while seeking is outward and aims at the many.
 - Stage 3 joins the first two. It keeps the dreamer's pull toward the ideal and the seeker's turn to the many, and aims both at the particular.
-- The stages are in the order of desire's growth, not the order the operas were written. *The Magic Flute* (1791) is the latest opera but the middle stage.
+
+> **Watch out.** The stages are in the order of desire's growth, not the order the operas were written. *The Magic Flute* (1791) is the latest opera but the middle stage.
 
 ### What the words do in opera
 

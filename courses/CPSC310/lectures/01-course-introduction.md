@@ -15,8 +15,8 @@ The lecture uses [01-course_introduction.pdf](https://ubccpsc.github.io/310/26w1
 - The deck reads that definition at two scales. The **210-centric view** (slides 3–4) is a straight pipe from requirements to code. The code is small, there is a single version, one person writes it, and there is one prompt.
 - The **310-centric view** (slides 5–6) keeps the same pipe but changes everything around it. The codebase is large, it goes through many versions, many people work on it at once, and the requirements change while it is being built. The deck labels this view **socio-technical**.
 - Slide 7 widens the picture one more step. Software engineering also covers getting from an idea to requirements, not only from requirements to code. Deciding what to build is part of the job.
-- Slide 8 gives the course's own definition, which every later unit repeats at a larger radius: "Software engineering is the discipline of managing what a change costs as a system keeps growing." The load-bearing word is cost.
-- What this means on an exam: when a design or a code fragment is put in front of you, the question is never whether it works today. It is what the next change would cost, where that cost comes from, and which lever would lower it.
+> **Definition.** Slide 8 gives the course's own definition, which every later unit repeats at a larger radius: "Software engineering is the discipline of managing what a change costs as a system keeps growing." The load-bearing word is cost.
+> **Key.** What this means on an exam: when a design or a code fragment is put in front of you, the question is never whether it works today. It is what the next change would cost, where that cost comes from, and which lever would lower it.
 - The reader's fuller definition (What is Software Engineering) says the field applies scientific, economic, social and practical knowledge to **specify, invent, design, build, validate, deploy, maintain, research, and improve** software. The aim is software that is **correct, reliable, and works efficiently on real machines**. Programming is only the **build** step, one of nine.
 - The reader's Analytical Code Design introduction draws the line the course sits on. **Code** is short, isolated, and run once, like a script or an assignment. **Software** is large, highly connected to other software, and longstanding. Because software will be changed many times by many people, it has to be easy to evolve, easy to maintain, and easy to test, and a design choice is judged by what it does to those three properties.
 - The word **analytical** means that two solutions to the same problem are compared by measurable **trade-offs**, not by taste. The reader's introduction previews four areas that do this.
@@ -45,7 +45,7 @@ The lecture uses [01-course_introduction.pdf](https://ubccpsc.github.io/310/26w1
 ### Critical thinking and accountability (slide 13)
 - Slide 13 is a quotation from Holmes (2026). Its point: if software engineering is the "accountable stewardship" of systems people rely on, then the core professional skill was never typing code. It is the judgment to tell whether a decision or implementation is right, and the ability to say why.
 - GenAI can generate code. People have to keep agency over, and accountability for, the systems that shape society.
-- What this means on an exam: the questions ask what is wrong, what you would change, and why. The "why" is the skill being tested. Never call a design bad without naming the cost it imposes.
+> **Key.** What this means on an exam: the questions ask what is wrong, what you would change, and why. The "why" is the skill being tested. Never call a design bad without naming the cost it imposes.
 
 ### Semester roadmap (slide 15)
 - The slide is headed Semester Roadmap, with the lead-in "cost of change at bigger radii". It is the slide 8 definition asked three times, each at a larger scale.

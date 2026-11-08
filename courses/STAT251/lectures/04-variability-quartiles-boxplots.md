@@ -31,14 +31,18 @@ The clarifications work through the after-class deck, `Lecture_04_Chapter_1_AL_C
 - The instructor drew two smooth curves on the same scale with the same centre and asked which may be taller. The narrower curve has to be taller, because the area under each curve is the total probability, 1. A narrow curve drawn with a lower peak is wrong.
 - This example previews the density curves from Chapter 4.
 - Percentile rank: if a score of 1200 on a test out of 1600 is at the 90th percentile, then 90% of test takers scored below it, so it is in the top 10%.
-- Use the course's $$np + 0.5$$ rule for quartiles and percentiles, not a formula from high school or from software, especially in WeBWorK. On small data sets other rules give slightly different answers. He called the 0.5 a correction factor.
+
+> **Watch out.** Use the course's $$np + 0.5$$ rule for quartiles and percentiles, not a formula from high school or from software, especially in WeBWorK. On small data sets other rules give slightly different answers. He called the 0.5 a correction factor.
+
 - Notation: $$x_i$$ is the $$i$$th observation in the order recorded, while $$x_{(i)}$$, with brackets, is the $$i$$th smallest after sorting, called an order statistic.
-- You cannot read the mean off a box plot, because the plot is built from the five-number summary and never uses the mean.
+
+> **Watch out.** You cannot read the mean off a box plot, because the plot is built from the five-number summary and never uses the mean.
+
 - On the chemistry and physics box plots, the physics median was about 65 and the chemistry median about 73, and the whole physics box sat lower, so the physics exam looked harder.
-- iClicker: a box plot of the exam scores for a statistics course. If every score goes up by 5 points, which is true? The answer was (e), all of these.
-  - The third quartile goes up by 5 points.
-  - The median goes up by 5 points.
-  - The interquartile range does not change, because $$Q_3$$ and $$Q_1$$ both move up by 5.
+> **Example.** iClicker: a box plot of the exam scores for a statistics course. If every score goes up by 5 points, which is true? The answer was (e), all of these.
+>   - The third quartile goes up by 5 points.
+>   - The median goes up by 5 points.
+>   - The interquartile range does not change, because $$Q_3$$ and $$Q_1$$ both move up by 5.
 - The lecture ended on that iClicker. Slides 11 and 12, on location and scale changes and a box plot of right-skewed simulated data, opened lecture 5.
 
 ## Clarifications
@@ -105,6 +109,32 @@ $$
 ### Drawing the box plot
 - The five-number summary is the minimum, $$Q_1$$, the median, $$Q_3$$ and the maximum.
 - The box runs from $$Q_1$$ to $$Q_3$$, so its length is the IQR, and the median is a line inside it.
+
+```svg
+<svg viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <line x1="120" y1="80" x2="220" y2="80"/>
+    <line x1="400" y1="80" x2="500" y2="80"/>
+    <line x1="120" y1="62" x2="120" y2="98"/>
+    <line x1="500" y1="62" x2="500" y2="98"/>
+    <rect x="220" y="50" width="180" height="60" rx="3" fill="var(--panel)" stroke="var(--link)"/>
+    <line x1="300" y1="50" x2="300" y2="110" stroke="var(--link)" stroke-width="2"/>
+    <circle cx="555" cy="80" r="6" fill="var(--panel)" stroke="var(--ok)"/>
+  </g>
+  <g text-anchor="middle" fill="var(--fg2)" font-size="12">
+    <text x="120" y="130">min</text>
+    <text x="220" y="130">Q1</text>
+    <text x="300" y="130">median</text>
+    <text x="400" y="130">Q3</text>
+    <text x="500" y="130">max</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="310" y="36">box length is the IQR</text>
+    <text x="555" y="130">outlier</text>
+  </g>
+</svg>
+```
+
 - The median line sits wherever the median falls. It is in the centre of the box only when the middle half of the data is symmetric, and it does not move because of outliers, since the median is resistant. A median line near $$Q_1$$ with a long right whisker means right-skewed; near $$Q_3$$ with a long left whisker means left-skewed. That is the "sometimes it changes".
 - Each whisker ends at the most extreme observation still inside its fence, not at the fence itself.
 - When there are no outliers, the whiskers end at the minimum and maximum.

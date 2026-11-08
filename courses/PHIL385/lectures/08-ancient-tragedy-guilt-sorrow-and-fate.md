@@ -88,7 +88,8 @@ misfortune; synonym: regret.
 
 ### What makes guilt tragic
 
-- Ancient tragic guilt is aesthetic. It lies between doing and suffering, it is inherited through piety, and it is guilt and yet not guilt.
+> **Definition.** Ancient tragic guilt is aesthetic. It lies between doing and suffering, it is inherited through piety, and it is guilt and yet not guilt.
+
 - The friend's "they ended up that way" is a fair gloss.
 - A calls it *inherited guilt* and compares it to original sin.
 - On p. 147, A describes modern guilt as ethical. The isolated individual is his own creator, so his guilt is sin and his pain is repentance. With that, the tragic is cancelled.
@@ -102,7 +103,9 @@ misfortune; synonym: regret.
 - Regret, or repentance, *Anger*, is what A names as the bitterest *pain*. He says it has ethical, not aesthetic, reality.
 - Sorrow is the ancient side of A's distinction, and regret is the modern side.
 - Sorrow goes with fate, family and innocence. Pain goes with reflection, guilt and the self.
-- An exam option that pairs "sorrow" with "regret" or with "your own fault" is wrong.
+
+> **Watch out.** An exam option that pairs "sorrow" with "regret" or with "your own fault" is wrong.
+
 - The notes say modern sorrow "is painful because you caused it." A's formulation is sharper, and it is the one to memorise.
 - In ancient tragedy the sorrow is deeper and the pain less.
 - In modern tragedy the pain is greater and the sorrow less.
@@ -120,7 +123,9 @@ misfortune; synonym: regret.
 - The notes gloss the healing as "you can make someone else responsible". That is too crude, because the healing is not blame-shifting.
 - The healing is that the guilt is shared, inherited through the family and the age, so the individual is not left alone with it as its sole author.
 - A says the individual is only happy when it has the tragic. In trying to win itself the supernatural way, as our age does, it loses itself and becomes comic.
-- "Absurd" in the notes is the friend's word. A's word is *ridiculous*, or comic.
+
+> **Watch out.** "Absurd" in the notes is the friend's word. A's word is *ridiculous*, or comic.
+
 - A's target is claiming to be *the absolute* inside all that relativity, not asserting that something is objectively true. This is the same correction as the one to your own note from Friday.
 
 ### Nietzsche and "genealogical"
@@ -138,7 +143,9 @@ misfortune; synonym: regret.
 - First, Christ's appearance is in one sense the deepest tragedy, because he came in the fullness of time and bore the sin of the whole world.
 - Second, Christ's life is never called a tragedy, because it exceeds aesthetic categories. The unity of absolute innocence and absolute guilt is metaphysical, not aesthetic.
 - In Christ, suffering is absolute because it is absolutely free action, and action is absolute suffering because it is absolute obedience.
-- "The crucifixion is the turning point from Greek to modern tragedy" is Kraal's reading, not a sentence in the text.
+
+> **Watch out.** "The crucifixion is the turning point from Greek to modern tragedy" is Kraal's reading, not a sentence in the text.
+
 - Kraal's reading is defensible. Christianity brings in sin, responsibility and the reflected individual, which is what A says the modern age has and Greece lacked.
 - If the exam asks what A says, the answer is the two points above, and "absolutely free" belongs to the second.
 

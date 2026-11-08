@@ -27,7 +27,7 @@ Matt was absent, so nothing on this page comes from class. The lecture notes fol
 
 ### Decorator: intent (slide 9)
 - The problem it solves: one object, not its whole class, needs extra behaviour or state while the program is running. A subclass cannot give it that, because a class's behaviour is fixed when the code is written and is shared by every instance.
-- The slide's intent line is the Gang of Four's. **Decorator** lets you "attach additional responsibilities to an object dynamically" as a "flexible alternative to subclassing".
+> **Definition.** The slide's intent line is the Gang of Four's. **Decorator** lets you "attach additional responsibilities to an object dynamically" as a "flexible alternative to subclassing".
 - The deck's image is a gift that is wrapped, boxed and wrapped again. Every layer changes what the thing does, and whoever holds it still sees the same shape.
 
 ### Example in the wild: java.io (slide 10)
@@ -48,7 +48,37 @@ new ObjectInputStream(
   - A concrete component does the real work.
   - A base decorator implements Component and holds a reference to one Component.
   - Each concrete decorator extends the base decorator and changes the answer before or after passing the call on.
-- The two relationships to remember: a decorator **is a** Component, so it can stand wherever the client expects one, and it **has a** Component, the object it wraps.
+> **Key.** The two relationships to remember: a decorator **is a** Component, so it can stand wherever the client expects one, and it **has a** Component, the object it wraps.
+
+```svg
+<svg viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="20" y="50" width="150" height="40" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="95" y="75" fill="var(--link)" font-weight="600">Large</text>
+    <rect x="225" y="50" width="150" height="40" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="300" y="75" fill="var(--link)" font-weight="600">Whip</text>
+    <rect x="430" y="50" width="150" height="40" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="505" y="75" fill="var(--ok)" font-weight="600">Latte</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M170 70 H225" marker-end="url(#a9)"/>
+    <path d="M375 70 H430" marker-end="url(#a9)"/>
+  </g>
+  <defs>
+    <marker id="a9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="95" y="112">decorator</text>
+    <text x="300" y="112">decorator</text>
+    <text x="505" y="112">base component</text>
+    <text x="197" y="42">asks</text>
+    <text x="402" y="42">asks</text>
+    <text x="300" y="140" fill="var(--fg2)" font-size="12">getPriceCents() enters at the outermost wrapper and passes inward</text>
+  </g>
+</svg>
+```
 
 ### Decorator: analysis (slide 12)
 - The four steps for the coffee cart.
@@ -95,7 +125,7 @@ const order: Drink = new Large(new Whip(new Latte()));
 ## Clarifications
 - The deck's cost line says the wrapping order changes the result, and the reader says the pattern cannot control the order of the wrappers. Both hold. The pattern gives no way to enforce an order, and the order matters when two wrappers' changes do not commute. With a 400-cent latte, a large that multiplies by 1.2 outside an extra shot that adds 100 cents gives $$(400 + 100) \times 1.2 = 600$$ cents, and the other way round gives $$400 \times 1.2 + 100 = 580$$ cents.
 - The coffee cart's "more than one of the same add-on" is a feature of that domain. The reader lists the same ability as a downside, because wrappers cannot see each other. So the pattern allows a nonsense double wrap as readily as a wanted one. Whether a repeat is a bug is the domain's call, and the pattern offers no hook to enforce it.
-- Adapter, Composite and Decorator are all structural patterns, and all three put a wrapper behind an interface, which is why they get confused. Adapter changes the interface and keeps the behaviour. Decorator keeps the interface and changes the behaviour. Composite keeps the interface and holds many components in a tree rather than one in a chain.
+> **Watch out.** Adapter, Composite and Decorator are all structural patterns, and all three put a wrapper behind an interface, which is why they get confused. Adapter changes the interface and keeps the behaviour. Decorator keeps the interface and changes the behaviour. Composite keeps the interface and holds many components in a tree rather than one in a chain.
 - The client's coupling moves the same way as in the other patterns. The reader states the move from connascence of algorithm to connascence of type for Composite and for Strategy. For Adapter it says type or algorithm before and type after, with the main gain in degree. The reader's Decorator section only says "more loosely coupled", so reading the cart's switch as connascence of algorithm and its `Drink` dependency as connascence of type is my application of the reader's analysis, not its words.
 - The learning goal about refactoring to a pattern in small steps has no slides of its own; the deck goes from scenario to analysis. The steps are the lecture 4 discipline: tests first, one meaning-preserving move at a time, tests after each.
 - Java's class is `GZIPInputStream`; the deck writes it as GzipInputStream.

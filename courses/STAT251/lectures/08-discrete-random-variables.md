@@ -27,10 +27,35 @@ $$
 - Textbook exercises use more complicated layouts; the method is the same: name the series and parallel blocks, then write probability statements.
 
 ### Random variables (slides 5–7)
-- A random variable $$X$$ is a function on the sample space $$S$$ that assigns a number $$x = X(w)$$ to each outcome $$w$$. Uppercase names the variable, lowercase names one of its possible values, and "rv" in the notes means random variable.
+
+> **Definition.** A random variable $$X$$ is a function on the sample space $$S$$ that assigns a number $$x = X(w)$$ to each outcome $$w$$. Uppercase names the variable, lowercase names one of its possible values, and "rv" in the notes means random variable.
+
 - Example 1: flip a fair coin three times, eight equally likely outcomes. With $$X$$ = the number of heads, $$X(HHH) = 3$$ and $$X(HTT) = 1$$, and the possible values are $$x = 0, 1, 2, 3$$. Several outcomes map to the same value.
 - Discrete: the possible values are a finite set or an infinite sequence, and there is probability at each point. Continuous: the values fill an interval or a union of intervals, probability lives on intervals, and $$P(X = c) = 0$$ for any single $$c$$, because one point is one out of infinitely many.
 - A random variable whose only values are 0 and 1 is a Bernoulli random variable.
+
+```svg
+<svg viewBox="0 0 600 210" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M300 56 V78 H150 V96 M300 78 H450 V96" />
+  </g>
+  <g text-anchor="middle">
+    <rect x="230" y="24" width="140" height="32" rx="6" fill="var(--panel)" stroke="var(--border3)"/>
+    <text x="300" y="44" fill="var(--fg)" font-weight="600">Random variable X</text>
+    <rect x="90" y="104" width="120" height="32" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="150" y="124" fill="var(--link)" font-weight="600">Discrete</text>
+    <rect x="390" y="104" width="120" height="32" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="450" y="124" fill="var(--ok)" font-weight="600">Continuous</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="150" y="162">separate values</text>
+    <text x="150" y="180">probability at each point</text>
+    <text x="450" y="162">values fill an interval</text>
+    <text x="450" y="180">P(X = c) = 0</text>
+  </g>
+</svg>
+```
+
 
 ### The pmf (slides 8–11)
 - The probability mass function of a discrete $$X$$ is $$f(x) = P(X = x)$$ for each possible value $$x$$. To decide whether a table is a pmf, check both properties:
@@ -67,7 +92,7 @@ $$
 F(x) = P(X \le x) = \sum_{k \le x} f(k)
 $$
 
-- $$1 - F(x) = P(X > x)$$. The equal sign matters for a discrete variable: $$F(1)$$ includes $$P(X = 1)$$ and $$P(X > 1)$$ does not.
+> **Watch out.** $$1 - F(x) = P(X > x)$$. The equal sign matters for a discrete variable: $$F(1)$$ includes $$P(X = 1)$$ and $$P(X > 1)$$ does not.
 - Example 4: for the three flips,
 
 $$
@@ -120,7 +145,7 @@ $$
 - Continuous random variables (lecture 9). Integration and differentiation start there; he said to review the basics from a calculus book if needed.
 
 ## In class
-- iClicker 1: $$Y$$ = green die minus red die for two fair dice. The 36 ordered outcomes give differences from $$-5$$ to 5, so the possible values are $$-5, \dots, 5$$. Answer C, not $$-6$$ to 6.
+> **Example.** iClicker 1: $$Y$$ = green die minus red die for two fair dice. The 36 ordered outcomes give differences from $$-5$$ to 5, so the possible values are $$-5, \dots, 5$$. Answer C, not $$-6$$ to 6.
 - iClicker 2: find $$k$$ in Example 3. Answer B, $$k = 0.1$$, from the probabilities summing to 1. Nine people picked C.
 - iClicker 3: $$P(Y > 0.5)$$ for the same pmf. Answer C, 0.5.
 - Clicker marks are 1 for answering and 1 for the right answer. Students who miss class should not answer remotely.

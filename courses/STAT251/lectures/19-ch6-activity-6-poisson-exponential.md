@@ -84,9 +84,10 @@ $$
 
 ### The two translations the activity teaches
 
-- "The wait for the next event is longer than $$t$$" is the event "no events in an interval of length $$t$$": $$P(T > t) = P(X_t = 0) = e^{-\lambda t}$$.
+> **Key.** "The wait for the next event is longer than $$t$$" is the event "no events in an interval of length $$t$$": $$P(T > t) = P(X_t = 0) = e^{-\lambda t}$$.
+
 - "The wait for the $$k$$th event is longer than $$t$$" is the event "at most $$k - 1$$ events in an interval of length $$t$$": $$P(W_k > t) = P(X_t \le k - 1)$$, a Poisson sum with mean $$\lambda t$$.
-- The rate's time unit is the clock. Convert $$t$$ into that unit before writing $$\lambda t$$; 10 months with an annual rate is $$t = \frac{10}{12}$$, not 10.
+> **Watch out.** The rate's time unit is the clock. Convert $$t$$ into that unit before writing $$\lambda t$$; 10 months with an annual rate is $$t = \frac{10}{12}$$, not 10.
 
 ### Where the exponential comes from (the heuristic derivation)
 
@@ -103,7 +104,7 @@ f(t) &= \frac{d}{dt}F(t) = \lambda e^{-\lambda t}
 \end{aligned}
 $$
 
-- So the exponential pdf is not a new assumption: it follows from the Poisson count being zero on the interval.
+> **Key.** So the exponential pdf is not a new assumption: it follows from the Poisson count being zero on the interval.
 
 ### Next class (slide 6)
 

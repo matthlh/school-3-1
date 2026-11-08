@@ -12,7 +12,7 @@ The lecture uses [02b-cohesion-refactoring.pdf](https://ubccpsc.github.io/310/26
 - Lecture 2's coupling and this lecture's cohesion are the two properties that make a change expensive, and the deck gives each one a difficulty and a risk.
   - High coupling makes a change difficult because the edit lands in more places, and risky because one of those places is easy to miss.
   - Low cohesion makes a change difficult because you have to work out what the unit actually does before you can touch it, and risky because an edit can disturb code that has nothing to do with the reason for the change.
-- **Cohesion** is the relationship within one unit of code, such as a method or a class. The reader's phrasing is that it measures how focused a program element is on performing a single complete task.
+> **Definition.** **Cohesion** is the relationship within one unit of code, such as a method or a class. The reader's phrasing is that it measures how focused a program element is on performing a single complete task.
 - The deck's rule is that a unit should hold only functionality that belongs together, and that this gets harder to keep true as code evolves.
 - Cohesion is measured between pairs of statements inside the unit. Two statements can share data, share logic, or share an ordering. The more of these a pair shares, the more strongly they belong in the same unit.
 - Operationally: a pair that shares several bindings should stay together, and a statement that shares nothing with its neighbours is the first candidate to move out.
@@ -54,7 +54,7 @@ function f(x: number) {
   - The point of the pair: in v1 the feature is spread across four places, so the change carries the coupling difficulty (edit in many places) and the cohesion risk (loyalty logic sitting inside registration code). In v2 the concept has one home, so the next loyalty change is one edit.
 
 ### What refactoring is (slide 15)
-- **Refactoring** is a predictable, meaning-preserving transformation of code, where meaning is behaviour. The deck's footnote says meaning, semantics and behaviour are the same thing here.
+> **Definition.** **Refactoring** is a predictable, meaning-preserving transformation of code, where meaning is behaviour. The deck's footnote says meaning, semantics and behaviour are the same thing here.
 - The reader's definition: "the process of improving on the implementation of an existing design by restructuring the source code to alleviate existing shortcomings and ease future development."
 - A refactoring adds no feature and fixes no defect. Most refactorings consolidate duplicate code, reduce coupling, raise cohesion, or make the system easier to understand and maintain.
 - The reader frames refactoring as how a team handles **emergent design**: you learn which abstractions fit as the system grows, and refactoring folds them in.
@@ -62,7 +62,7 @@ function f(x: number) {
   - Adding a new feature is much harder than expected.
   - Fixing a bug that should be cohesive needs changes scattered across the system.
   - A code review of a simple feature or fix shows complex, hard-to-understand edits.
-- The **rule of three** stops premature refactoring. The first time, do it the simplest way. The second time, do it again and note the duplicate. The third time, refactor. The reader calls this just-in-time abstraction, because a pre-emptive abstraction can make a system harder to understand even if it is easier to extend.
+> **Key.** The **rule of three** stops premature refactoring. The first time, do it the simplest way. The second time, do it again and note the duplicate. The third time, refactor. The reader calls this just-in-time abstraction, because a pre-emptive abstraction can make a system harder to understand even if it is easier to extend.
 
 ### How and when to refactor (slides 16–17)
 These six steps summarise the deck's refactoring cycle.

@@ -46,7 +46,7 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
 
 ### Equivalence class partitioning (slides 14–16)
 - The problem: `getLetterGrade()` accepts any number, and you cannot test them all. Which values do you pick?
-- **Equivalence class partitioning** (ECP) splits the inputs into classes that the spec treats the same way, then tests one value per class. If 72 gets "B", 71 probably does too.
+> **Definition.** **Equivalence class partitioning** (ECP) splits the inputs into classes that the spec treats the same way, then tests one value per class. If 72 gets "B", 71 probably does too.
 - It works from the spec, not the code, so it is a **black-box** technique. The deck's claim for it: ECP finds the cases you missed, and shows which tests are repeats.
 - An **equivalence class** is a set of values the spec treats the same way. The deck derives them from two directions.
   - The input domain starts from the parameter types in the signature. It is narrowed by the preconditions, because excluded values are not tested. It is then split into valid and invalid classes, where invalid means rejected by the spec.
@@ -54,6 +54,38 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
 
 ### The worked example, getLetterGrade (slides 17–25)
 - The spec: A is 80 to 100, B is 68 to 79, C is 55 to 67, D is 50 to 54, F is 0 to 49. A valid grade is 0 to 100. The function throws `RangeError` below 0 or above 100.
+
+```svg
+<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="12">
+  <g>
+    <rect x="20" y="40" width="68" height="34" fill="var(--panel)" stroke="var(--border2)"/>
+    <rect x="88" y="40" width="88" height="34" fill="var(--panel)" stroke="var(--border3)"/>
+    <rect x="176" y="40" width="74" height="34" fill="var(--panel)" stroke="var(--border3)"/>
+    <rect x="250" y="40" width="86" height="34" fill="var(--panel)" stroke="var(--border3)"/>
+    <rect x="336" y="40" width="86" height="34" fill="var(--panel)" stroke="var(--border3)"/>
+    <rect x="422" y="40" width="88" height="34" fill="var(--panel)" stroke="var(--border3)"/>
+    <rect x="510" y="40" width="70" height="34" fill="var(--panel)" stroke="var(--border2)"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="54" y="61" fill="var(--muted)" font-size="11">invalid</text>
+    <text x="132" y="61" fill="var(--fg2)" font-weight="600">F 0–49</text>
+    <text x="213" y="61" fill="var(--fg2)" font-weight="600">D 50–54</text>
+    <text x="293" y="61" fill="var(--fg2)" font-weight="600">C 55–67</text>
+    <text x="379" y="61" fill="var(--fg2)" font-weight="600">B 68–79</text>
+    <text x="466" y="61" fill="var(--fg2)" font-weight="600">A 80–100</text>
+    <text x="545" y="61" fill="var(--muted)" font-size="11">invalid</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--link)">
+    <text x="88" y="92">0</text>
+    <text x="176" y="92">50</text>
+    <text x="250" y="92">55</text>
+    <text x="336" y="92">68</text>
+    <text x="422" y="92">80</text>
+    <text x="510" y="92">100</text>
+  </g>
+  <text x="300" y="112" text-anchor="middle" font-size="11" fill="var(--muted)">boundary values sit either side of each edge</text>
+</svg>
+```
 - Input side. One valid class, 0 ≤ grade ≤ 100. Two invalid classes, grade < 0 and grade > 100. Values like the string "80", `undefined`, `null` and `[]` are not tested, because they are outside the parameter type `number`.
 - Output side. Five normal classes, "A" to "F". One error class, `RangeError`.
 - That is 9 classes in total: 1 valid input, 2 invalid input, 5 normal output, 1 error output.
@@ -75,7 +107,7 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
 - Output partitioning finds behaviours that no single input points to. In `computeGPA`, asking "can the grade go over 100?" leads to points greater than maxPoints, which is the case that throws.
 
 ### Coverage (slides 27–30)
-- **Coverage** answers one question: how much of the code did the tests execute?
+> **Definition.** **Coverage** answers one question: how much of the code did the tests execute?
   - **Line coverage**: did the tests hit each executable line?
   - **Statement coverage**: did they run each statement?
   - **Branch coverage**: did they take each outcome of each decision?
@@ -84,7 +116,7 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
   - It can be fooled by tests without assertions.
   - It does not consider the input space.
   - Artificial thresholds can be gamed.
-- The rule for using it: use coverage to find what the tests missed, then decide whether more tests are needed.
+> **Key.** The rule for using it: use coverage to find what the tests missed, then decide whether more tests are needed.
 - Closing recap. ECP tells you what to test to cover the specification. Coverage tells you what code the tests executed. Use both to build a strong suite.
 
 ## Clarifications

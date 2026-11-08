@@ -79,13 +79,16 @@ Shadowgraphs
 ### Who wrote the Diary
 
 - Johannes, "Johannes the Seducer", is the Diary’s named author.
-- In Victor Eremita’s preface, A says he only found and copied the Diary. Kraal and the Hong edition take A to be its actual author.
+
+> **Watch out.** In Victor Eremita’s preface, A says he only found and copied the Diary. Kraal and the Hong edition take A to be its actual author.
+
 - That is why the notes label the two Johanneses in the diagram "Author A Facade" and "Real Author A". The lecture 11 page also names A as the Diary’s author.
 - “Shadowgraphs” appears in Owen’s notes as a heading with nothing under it, so the unit did not reach that essay. The syllabus still lists “Diapsalmata” for Mon Oct 26 and Wed Oct 28.
 
 ### What Johannes wants from Cordelia
 
-- Johannes’s seduction is reflective, not immediate.
+> **Watch out.** Johannes’s seduction is reflective, not immediate.
+
 - The point to keep is the notes’ "Reflection + Calculation in how to tune his performance". Johannes plans the whole affair, which is why it has to be a diary and in prose.
 - Kraal’s "mastermind behind the actor" makes the same point.
 - Don Giovanni desires and acts in the moment. He is the musical, immediate seducer of "The Musical Erotic".
@@ -95,7 +98,8 @@ Shadowgraphs
 
 ### What the Diapsalmata suggest about A
 
-- The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. Their page numbers in Owen’s edition are 46 to 55.
+> **Definition.** The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. Their page numbers in Owen’s edition are 46 to 55.
+
 - Kraal reads them as the voice of someone with no belief about the meaning of life.
 - That makes moralizing about Johannes harder than it looks. A’s own papers supply no standard to moralize from.
 - The evolutionary-biology point is Kraal’s example, marked "IDK" in the notes. Treat it as the lecture’s example, not A’s.

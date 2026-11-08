@@ -34,7 +34,7 @@ $$
 Y \sim N(a\mu + b,\; a^2\sigma^2)
 $$
 
-- The mean and variance follow the Chapter 4 rules for $$aX + b$$. The new claim is the shape: the result is still Normal. Standardising is the special case $$a = \frac{1}{\sigma}$$, $$b = -\frac{\mu}{\sigma}$$.
+> **Key.** The mean and variance follow the Chapter 4 rules for $$aX + b$$. The new claim is the shape: the result is still Normal. Standardising is the special case $$a = \frac{1}{\sigma}$$, $$b = -\frac{\mu}{\sigma}$$.
 
 ### Fact 2: a linear combination of independent Normals is Normal (slides 3 to 4)
 
@@ -76,7 +76,7 @@ E(\bar{X}) &= \frac{1}{n}\{E(X_1) + \cdots + E(X_n)\} \\
 $$
 
 - The variance step needs independence; the mean step does not. The shape, Normal, comes from Fact 2 because $$\bar{X}$$ is a linear combination with every $$a_i = \frac{1}{n}$$.
-- The standard deviation of $$\bar{X}$$ is $$\frac{\sigma}{\sqrt{n}}$$, so averaging $$n$$ values shrinks the spread by $$\sqrt{n}$$, not by $$n$$.
+> **Key.** The standard deviation of $$\bar{X}$$ is $$\frac{\sigma}{\sqrt{n}}$$, so averaging $$n$$ values shrinks the spread by $$\sqrt{n}$$, not by $$n$$.
 
 ## Worked example
 
@@ -129,7 +129,7 @@ Facts 1 to 3 above and the airline example below are written up from the deck. T
 
 ### Clicker questions
 
-- The first asked whether $$P(Z < 5)$$ is about 0. False: everything below 5 is almost all of the area, so it is almost 1.
+> **Example.** The first asked whether $$P(Z < 5)$$ is about 0. False: everything below 5 is almost all of the area, so it is almost 1.
 - The second compared the area from 1.5 to 2.10 with the matching area on the negative side. True, by symmetry. He said not to calculate anything for a question like that, only to draw it.
 - The third asked for the cutoff of the lowest 5%. The answer was (d). By symmetry, the cutoff is the negative of the value with 0.95 to its left. The recording ends while he looks up 0.95. It sits exactly halfway between 0.9495 at 1.64 and 0.9505 at 1.65, so the cutoff is about $$-1.645$$.
 

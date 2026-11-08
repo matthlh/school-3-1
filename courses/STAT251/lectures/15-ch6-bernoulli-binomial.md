@@ -15,7 +15,8 @@ The Chapter 6 deck is `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The Can
 
 ### Bernoulli random variable (slides 3 and 4)
 
-- A **Bernoulli trial** has exactly two outcomes, called Success and Failure.
+> **Definition.** A **Bernoulli trial** has exactly two outcomes, called Success and Failure.
+
 - The random variable takes the value 1 on a Success and 0 on a Failure.
 - The probability of Success is $$p$$ and the probability of Failure is $$1 - p$$.
 - Written $$X \sim \text{Bernoulli}(p)$$, the pmf is
@@ -35,7 +36,8 @@ $$
 
 ### Binomial distribution (slides 5 and 6)
 
-- A **Binomial** random variable counts the number of successes in $$n$$ independent Bernoulli trials, each with the same success probability $$p$$.
+> **Definition.** A **Binomial** random variable counts the number of successes in $$n$$ independent Bernoulli trials, each with the same success probability $$p$$.
+
 - Written $$X \sim \text{Bin}(n, p)$$, the pmf is
 
 $$
@@ -82,7 +84,7 @@ $$
 
 - Independence is the critical requirement for Bernoulli trials.
 - Sampling without replacement from a finite population makes the trials dependent.
-- The **10% condition** lets you treat them as independent anyway: when the sample is no more than 10% of the population, use the Binomial model; when you select more than 10% of the population, the independence assumption fails and the Binomial model cannot be used.
+> **Key.** The **10% condition** lets you treat them as independent anyway: when the sample is no more than 10% of the population, use the Binomial model; when you select more than 10% of the population, the independence assumption fails and the Binomial model cannot be used.
 
 ## Deriving the mean and variance from the definitions
 
@@ -101,6 +103,30 @@ E(X^2) &= 0^2 (1 - p) + 1^2 p \\
 $$
 
 - A Binomial count is the sum of $$n$$ independent Bernoulli variables, $$X = X_1 + X_2 + \cdots + X_n$$.
+
+```svg
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="50" y="22" width="110" height="26" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="105" y="40" fill="var(--link)">X1</text>
+    <rect x="50" y="56" width="110" height="26" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="105" y="74" fill="var(--link)">X2</text>
+    <text x="105" y="98" fill="var(--muted)">⋮</text>
+    <rect x="50" y="102" width="110" height="26" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="105" y="120" fill="var(--link)">Xn</text>
+    <text x="105" y="148" fill="var(--muted)" font-size="11">each Bernoulli(p)</text>
+    <rect x="360" y="48" width="210" height="54" rx="8" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="465" y="72" fill="var(--fg)" font-size="12">X = X1 + ⋯ + Xn</text>
+    <text x="465" y="92" fill="var(--ok)" font-weight="600" font-size="12">~ Bin(n, p)</text>
+  </g>
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <line x1="170" y1="75" x2="352" y2="75"/>
+  </g>
+  <path d="M352 75 L342 70 L342 80 Z" fill="var(--border3)"/>
+  <text x="262" y="66" text-anchor="middle" fill="var(--muted)" font-size="11">add them</text>
+</svg>
+```
+
 - Means always add, so $$E(X) = np$$.
 - Variances add when the parts are independent, so $$\operatorname{Var}(X) = np(1 - p)$$.
 - Both are the Chapter 4 rules for a sum with every coefficient equal to 1, so there is nothing new to memorise beyond the Bernoulli line.
@@ -111,6 +137,6 @@ $$
 
 ## Clarifications
 
-- The Bernoulli distribution is the Binomial with $$n = 1$$, so every Binomial fact reduces to the Bernoulli one when you set $$n = 1$$.
+> **Key.** The Bernoulli distribution is the Binomial with $$n = 1$$, so every Binomial fact reduces to the Bernoulli one when you set $$n = 1$$.
 - The 10% condition is a rule of thumb, not a theorem. With a small sample from a big population each pick barely changes the makeup of what is left, so the trials are close enough to independent and $$p$$ close enough to constant for the Binomial to be a good model.
 - The deck says the Binomial "cannot be used" past 10%. On an exam, write the check as a fraction, the sample over the population, and say which side of 10% it falls on before you name the model.

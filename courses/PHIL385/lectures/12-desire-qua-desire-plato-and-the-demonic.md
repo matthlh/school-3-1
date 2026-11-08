@@ -44,7 +44,8 @@ Final Lecture on this
 
 ### Desire qua desire
 
-- *Qua* means “as”. Desire qua desire is desire taken as itself, with no reflection, reasoning or plan mixed in.
+> **Definition.** *Qua* means “as”. Desire qua desire is desire taken as itself, with no reflection, reasoning or plan mixed in.
+
 - That is what makes Don Giovanni immediate. It is also why A says he is not really a seducer in the planning sense.
 - A’s word for what the notes call "no half and half" is "absolutely".
 - Sensual love is "absolutely faithless". It loves not one but all.
@@ -56,7 +57,9 @@ Final Lecture on this
 - Kraal’s "punishment of the libertine" is a loose rendering of the same words.
 - In the final scene, the statue of the Commendatore drags Don Giovanni down to hell. Don Giovanni killed the Commendatore in the first scene.
 - Kraal’s claim is that A cherry-picks. The punishment does not fit A’s view, so A drops it. If an exam question asks what Kraal said, that is the answer.
-- In fact A does not skip the ending. He writes about the Commendatore’s return in the section on the opera’s structure.
+
+> **Watch out.** In fact A does not skip the ending. He writes about the Commendatore’s return in the section on the opera’s structure.
+
 - A calls the return "a monstrous irony". Don Giovanni can beat every obstacle, but he cannot kill a ghost.
 - Only a spirit can coerce Don Giovanni, because he is immediacy and spirit is its negation.
 - Earlier, A says that once reflection enters, the sensual realm shows itself as the realm of sin, and "Don Juan is slain, the music comes to an end".
@@ -86,9 +89,12 @@ Final Lecture on this
 
 ### Why A calls music demonic
 
-- Kraal’s chain has four steps. Desire can overpower a person. Being overpowered is what "demonic" means. Music is the medium of desire. So music is demonic.
+> **Why.** Kraal’s chain has four steps. Desire can overpower a person. Being overpowered is what "demonic" means. Music is the medium of desire. So music is demonic.
+
 - For A, when the sensual is excluded by spirit but not yet judged by it, the sensual takes the form of the demonic "in aesthetic indifference".
-- Don Juan is the demonic specified as the sensual. Faust is the demonic specified as the spiritual.
+
+> **Watch out.** Don Juan is the demonic specified as the sensual. Faust is the demonic specified as the spiritual.
+
 - The Venusberg is the mountain where the sensual has its kingdom. It is where "language has no home".
 
 ### What A finds in Mozart

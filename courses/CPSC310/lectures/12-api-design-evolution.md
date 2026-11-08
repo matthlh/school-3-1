@@ -24,12 +24,33 @@ The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26
 - **Integration tests** test between boundaries and bridge the gap between the other two. The approach is to run the core with the real adapter instead of a test double, and let the adapter use an actual resource, such as a file on disk.
 - **Test suite composition**: the majority of tests are unit tests, several integration tests sit at each boundary, and a few end-to-end tests make sure the whole application works. The deck draws this as a pyramid numbered 3, 2, 1 from the base up.
 
+```svg
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g stroke="var(--border3)" stroke-width="1.5">
+    <polygon points="300,20 359,76 241,76" fill="var(--panel)"/>
+    <polygon points="241,76 359,76 419,132 181,132" fill="var(--panel)"/>
+    <polygon points="181,132 419,132 480,190 120,190" fill="var(--panel)"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="300" y="62" fill="var(--fg)" font-weight="600" font-size="12">E2E</text>
+    <text x="300" y="110" fill="var(--fg)" font-weight="600">Integration</text>
+    <text x="300" y="166" fill="var(--fg)" font-weight="600">Unit</text>
+  </g>
+  <g font-size="11" fill="var(--muted)">
+    <text x="366" y="52">a few (1)</text>
+    <text x="426" y="110">several (2)</text>
+    <text x="474" y="168">the majority (3)</text>
+  </g>
+  <text x="300" y="210" text-anchor="middle" font-size="11" fill="var(--fg2)">several integration tests sit at each boundary</text>
+</svg>
+```
+
 ## Designing and evolving an API
 
 ### What clients depend on (slides 10 to 13)
-- An **API** is a way for two or more programs to communicate. The deck's picture is a client on one side, a component on the other, and the API as the line between them.
+> **Definition.** An **API** is a way for two or more programs to communicate. The deck's picture is a client on one side, a component on the other, and the API as the line between them.
 - APIs provide **information hiding**: only the necessary functions are exposed, the abstraction emphasizes essential characteristics and suppresses detail, the caller assumes nothing about how the interface is implemented, and so the effects of internal changes stay local.
-- **APIs are forever.** Once published, an API becomes a dependency for many teams, services and applications, and a change to a widely used API can break thousands of clients.
+> **Key.** **APIs are forever.** Once published, an API becomes a dependency for many teams, services and applications, and a change to a widely used API can break thousands of clients.
 - A good API amplifies its value: it makes developers more productive, reduces errors, and its stability encourages reuse and long-term adoption.
 - APIs must still evolve as requirements change. The rule is that internals should change freely and the API surface should change rarely, and when the API does change it must not break clients.
 
@@ -85,6 +106,6 @@ The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26
 
 ## Clarifications
 - The deck and reader differ on performance improvements. The deck classifies them as PATCH because clients have nothing to adopt. The reader's Safe Versioning chapter lists small performance improvements under minor.
-- On an exam, use the definitions in the question. A structural, opt-in addition is minor. A behavioural improvement that needs no client change is patch.
+> **Watch out.** On an exam, use the definitions in the question. A structural, opt-in addition is minor. A behavioural improvement that needs no client change is patch.
 - The deck's NONE level (refactoring, no client effect) has no name in the reader, which only says such a change has no client impact.
 - Slides 4 to 8 repeat the test-level material that lecture 11 previewed, with the E2E costs and the composition rule added. This part of the page follows the deck. The Testing Pyramid chapter was unavailable on Oct 20.

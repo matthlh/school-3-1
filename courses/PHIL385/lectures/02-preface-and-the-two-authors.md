@@ -68,7 +68,8 @@ Kierkegaard believes that there's no hard truth, can think of different paths in
 
 ### Victor Eremita and the discovery of the papers
 
-- **Victor Eremita** is Latin for the victorious hermit. He signs the Preface simply "The Editor", in Copenhagen in November 1842. The book came out on 20 February 1843.
+> **Definition.** **Victor Eremita** is Latin for the victorious hermit. He signs the Preface simply "The Editor", in Copenhagen in November 1842. The book came out on 20 February 1843.
+
 - The found-papers device is not original to Kierkegaard. Found manuscripts and editor-narrators were a stock Romantic convention, used by Goethe in *Werther*, by E. T. A. Hoffmann, by Jean Paul and by Walter Scott. Kierkegaard read all of them.
 - What is Kierkegaard's own is turning the convention into a philosophical instrument rather than a frame for a story.
 - Eremita first saw the writing desk at a second-hand dealer's about seven years earlier. He resisted buying it, then bought it.
@@ -78,11 +79,39 @@ Kierkegaard believes that there's no hard truth, can think of different paths in
 
 ### Who A, B and Johannes are
 
+```svg
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M300 48 V66 H170 V82 M300 66 H430 V82" />
+    <path d="M170 122 V140" />
+    <path d="M430 122 V140" />
+  </g>
+  <g text-anchor="middle">
+    <rect x="200" y="16" width="200" height="32" rx="6" fill="var(--panel)" stroke="var(--border3)"/>
+    <text x="300" y="36" fill="var(--fg)" font-weight="600">Either/Or (Victor Eremita, editor)</text>
+    <rect x="70" y="90" width="200" height="32" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="170" y="110" fill="var(--link)" font-weight="600">Volume 1: A, the aesthete</text>
+    <rect x="330" y="90" width="200" height="32" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="430" y="110" fill="var(--ok)" font-weight="600">Volume 2: B, Judge William</text>
+    <rect x="60" y="140" width="220" height="30" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="170" y="159" fill="var(--fg2)" font-size="12">A's papers (incl. Seducer's Diary)</text>
+    <rect x="330" y="140" width="200" height="30" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="430" y="159" fill="var(--fg2)" font-size="12">B's papers, letters to A</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="170" y="196">Johannes is the seducer in the Diary,</text>
+    <text x="170" y="210">a name in A's papers, not A's own.</text>
+  </g>
+</svg>
+```
+
 - **A** is the aesthete. Eremita states plainly that the papers reveal nothing about him at all, so "A" is a name Eremita invented.
 - **B** is the letter writer. From the letters, Eremita learns that he was called Wilhelm and was an assessor in a court, without being told which court. Hence the name Judge William.
 - **Johannes** is the seducer in "The Seducer's Diary". Cordelia's letters name him. Eremita never gives A a name.
 - Eremita suspects that A wrote the diary rather than found it. If he is right, Johannes is a mask A made, not A's own name.
-- The notes say Eremita gives A the name Johannes. That is the wrong way round: as an exam claim, "A is named Johannes" is false.
+
+> **Watch out.** The notes say Eremita gives A the name Johannes. That is the wrong way round: as an exam claim, "A is named Johannes" is false.
+
 - The two sets of papers look different. A wrote on fine vellum in quarto with a wide margin. B used full sheets of beehive paper split into columns, the way legal documents are written.
 
 ### Volume 1 and A's papers
@@ -121,12 +150,15 @@ Kierkegaard believes that there's no hard truth, can think of different paths in
 - A considers erotic love, especially first love, aesthetic. He thinks marriage ruins it, and that the duty, oath and habit of marriage are unaesthetic.
 - B thinks marriage is where first love becomes real instead of evaporating. Commitment does not kill the aesthetic; it is the only thing that lets it last.
 - So for B the married life is more beautiful than the seducer's, not less. The ethical is the more beautiful.
-- The notes' first claim, that the Judge did not believe in marriage, is backwards. Their last line, that B defends marriage and finds the ethical more beautiful, is right.
+
+> **Watch out.** The notes' first claim, that the Judge did not believe in marriage, is backwards. Their last line, that B defends marriage and finds the ethical more beautiful, is right.
 
 ### Why the book leaves the choice open
 
 - The full title of both volumes is *Either/Or: A Fragment of Life*, edited by Victor Eremita. The Danish title is *Enten–Eller. Et Livs-Fragment*.
-- "A Fragment of Life" is worth remembering. It is a title, not a passing phrase, and it is a jab at Hegel.
+
+> **Key.** "A Fragment of Life" is worth remembering. It is a title, not a passing phrase, and it is a jab at Hegel.
+
 - A Hegelian system claims to be complete. This book offers pieces of a life and refuses to add up.
 - Eremita says that after reading, A and B are forgotten and only the views of life stand facing each other, expecting no final decision in particular persons.
 - Eremita calls it good fortune that the papers settle nothing. In ordinary novels one character converts the other, and the reader is handed a result instead of a view. In *Either/Or* neither wins.

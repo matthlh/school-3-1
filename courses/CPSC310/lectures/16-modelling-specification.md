@@ -15,6 +15,39 @@ Matt was absent, so nothing on this page comes from class. The lecture notes fol
 - **Models** are the classes, operations and rules the requirements imply. A model decides what there is to specify and finds what the requirements leave out. It is checked by a **walkthrough**.
 - **Specifications** are the precise documentation and the tests. Developers write the code from them, and they check the code because the tests run against the implementation.
 
+```svg
+<svg viewBox="0 0 600 130" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="12">
+  <g text-anchor="middle">
+    <rect x="8" y="34" width="124" height="38" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="70" y="58" fill="var(--fg)" font-weight="600">Requirements</text>
+    <rect x="164" y="34" width="110" height="38" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="219" y="58" fill="var(--fg)" font-weight="600">Models</text>
+    <rect x="306" y="34" width="134" height="38" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="373" y="58" fill="var(--fg)" font-weight="600">Specifications</text>
+    <rect x="472" y="34" width="110" height="38" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="527" y="58" fill="var(--ok)" font-weight="600">Code</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M132 53 H164" marker-end="url(#a16)"/>
+    <path d="M274 53 H306" marker-end="url(#a16)"/>
+    <path d="M440 53 H472" marker-end="url(#a16)"/>
+  </g>
+  <defs>
+    <marker id="a16" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="70" y="94">checked by</text>
+    <text x="70" y="108">stakeholders</text>
+    <text x="219" y="94">checked by a</text>
+    <text x="219" y="108">walkthrough</text>
+    <text x="373" y="94">checked by</text>
+    <text x="373" y="108">tests</text>
+  </g>
+</svg>
+```
+
 ### What a model records (slide 5)
 - A model records three things: **structure** (classes and their fields), **operations** (what can be done to each class) and **rules** (what is always true about the classes and operations).
 - It says what exists and what is allowed, never how anything works.
@@ -56,10 +89,11 @@ Matt was absent, so nothing on this page comes from class. The lecture notes fol
 ## Writing and testing a specification
 
 ### Four kinds of rule (slide 11)
-- An **invariant** is what is always true about an object between operations.
-- A **precondition** is what must be true before an operation is called. Meeting it is the caller's job.
-- A **postcondition** is what the operation guarantees afterwards, including what does not change.
-- An **exceptional case** is something the operation checks itself, together with the result it gives when it cannot proceed.
+> **Definition.**
+> - An **invariant** is what is always true about an object between operations.
+> - A **precondition** is what must be true before an operation is called. Meeting it is the caller's job.
+> - A **postcondition** is what the operation guarantees afterwards, including what does not change.
+> - An **exceptional case** is something the operation checks itself, together with the result it gives when it cannot proceed.
 - One sentence of the request often yields both an invariant and the rules on the operation that maintains it. "The waitlist holds at most 50" is an invariant on the waitlist and an exceptional case ("full") on join.
 
 ### Walkthroughs: testing a model by hand (slides 12 and 13)
@@ -93,7 +127,7 @@ interface Waitlist {
 - Preconditions are not tested, because behaviour when one is violated is unspecified.
 
 ### Summary (slide 16)
-- Models determine what is specified; specifications determine what is tested.
+> **Key.** Models determine what is specified; specifications determine what is tested.
 - Modelling is iterative: extract, shape, evaluate, revise.
 - Ownership and encapsulation decide the structure and where rules are enforced.
 - Invariants constrain classes; preconditions, postconditions and exceptional cases constrain operations.

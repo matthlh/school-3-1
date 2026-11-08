@@ -19,9 +19,43 @@ The lecture notes follow only the deck, [06b-boundaries.pdf](https://ubccpsc.git
 - The running example is a room-booking command-line tool. `main.ts` reads argv, picks a store and words the answer; `rooms.ts` holds `book()`; a `JsonBookingStore` reads and writes the file.
 - The **core** is the business logic. It imports nothing from outside and does no I/O of its own.
 - The **edges** hold the external concerns: I/O, parsing, validation, configuration such as file paths, and services such as auth, email and other APIs.
-- A **port** is an interface owned by the core and defined in the core's own domain, such as `BookingStore`.
-- An **adapter** is a class that implements a port using real resources, such as `JsonBookingStore` implementing `BookingStore` with the file system.
+> **Definition.** A **port** is an interface owned by the core and defined in the core's own domain, such as `BookingStore`. An **adapter** is a class that implements a port using real resources, such as `JsonBookingStore` implementing `BookingStore` with the file system.
+
 - The core uses the port, the adapter implements it, and the edge (`main.ts`) picks which adapter to hand the core. Every dependency points inward, toward the core.
+
+```svg
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="40" y="78" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="100" y="98" fill="var(--fg2)">main.ts</text>
+    <text x="100" y="113" fill="var(--muted)" font-size="11">edge</text>
+    <rect x="235" y="78" width="130" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="98" fill="var(--fg2)">JsonBookingStore</text>
+    <text x="300" y="113" fill="var(--muted)" font-size="11">adapter</text>
+    <rect x="440" y="36" width="130" height="40" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="505" y="61" fill="var(--link)" font-weight="600">BookingStore (port)</text>
+    <rect x="440" y="124" width="130" height="44" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="505" y="144" fill="var(--ok)" font-weight="600">core</text>
+    <text x="505" y="159" fill="var(--muted)" font-size="11">book(), refusalFor()</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M160 100 H235" marker-end="url(#a11)"/>
+    <path d="M365 92 Q440 80, 440 60" marker-end="url(#a11)"/>
+    <path d="M505 124 V76" marker-end="url(#a11)"/>
+  </g>
+  <defs>
+    <marker id="a11" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="197" y="90">hands adapter</text>
+    <text x="430" y="104" text-anchor="end">implements</text>
+    <text x="545" y="102">uses (owns)</text>
+  </g>
+  <text x="300" y="192" text-anchor="middle" font-size="11" fill="var(--fg2)">every dependency points inward, toward the core</text>
+</svg>
+```
 
 ### Where each responsibility went (slide 7)
 - The deck compares the one-file version, 01-booking, with the split version, 02-booking.
@@ -44,7 +78,7 @@ The lecture notes follow only the deck, [06b-boundaries.pdf](https://ubccpsc.git
 
 ### Each change lands in one place (slide 9)
 - Isolating the business logic means it changes only when a rule changes, it is tested with plain values (no files, no wording), and any edge can use it: the command line, a web server, the tests.
-- **Single responsibility principle**: each part of the system has one reason to change.
+> **Definition.** **Single responsibility principle**: each part of the system has one reason to change.
 
 | Change | 01-booking | 02-booking |
 |---|---|---|
@@ -63,7 +97,7 @@ The lecture notes follow only the deck, [06b-boundaries.pdf](https://ubccpsc.git
 ### Summary (slide 11)
 - Business logic goes in the core; everything else is the edge. The core can call the edge only through interfaces it owns, so every dependency points inward.
 - A port is owned by the core and written in its terms. An adapter does the translating.
-- Test each thing at the narrowest level that can see it. That keeps tests from failing for the wrong reasons.
+> **Key.** Test each thing at the narrowest level that can see it. That keeps tests from failing for the wrong reasons.
 
 ## Clarifications
 

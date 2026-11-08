@@ -32,9 +32,33 @@ Stats Notes:
   - Symmetric means the left and right halves are mirror images. Real data are never exactly symmetric, so roughly symmetric counts.
   - Skewed to the right means the right tail is longer than the left tail.
   - Skewed to the left means the left tail is longer than the right tail.
+
+```svg
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <line x1="20" y1="150" x2="180" y2="150" stroke="var(--border2)"/>
+    <line x1="220" y1="150" x2="380" y2="150" stroke="var(--border2)"/>
+    <line x1="420" y1="150" x2="580" y2="150" stroke="var(--border2)"/>
+    <path d="M24 150 C 64 150 80 60 100 60 C 120 60 136 150 176 150" stroke="var(--link)"/>
+    <path d="M224 150 C 244 150 248 68 264 68 C 292 68 330 150 376 150" stroke="var(--ok)"/>
+    <path d="M424 150 C 470 150 508 68 536 68 C 552 68 556 150 576 150" stroke="var(--ok)"/>
+  </g>
+  <g text-anchor="middle" fill="var(--fg2)">
+    <text x="100" y="172">Symmetric</text>
+    <text x="300" y="172">Skewed to the right</text>
+    <text x="500" y="172">Skewed to the left</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="300" y="190">long tail on the right</text>
+    <text x="500" y="190">long tail on the left</text>
+  </g>
+</svg>
+```
+
 - The centre is where the observations cluster, which is where the tallest bars are.
 - The spread is how spread out the observations are.
-- An outlier is an observation far from the rest of the data, unusually large or unusually small. On a histogram outliers show up as a few bars cut off from the rest by empty intervals. Lecture 4 gives the rule for deciding.
+
+> **Definition.** An outlier is an observation far from the rest of the data, unusually large or unusually small. On a histogram outliers show up as a few bars cut off from the rest by empty intervals. Lecture 4 gives the rule for deciding.
 
 ## Measures of centre and spread
 
@@ -96,13 +120,14 @@ $$
 \end{aligned}
 $$
 
-- iClicker: a bar chart of the percentage of students in each college, namely Biological Sciences, Math and Physical Sciences, Engineering and Business. Is it left-skewed? The answer was (d), none of the options.
-  - Skewness is never described for a bar chart, because the categories can be put in any order.
-  - A dot plot was also offered, but a dot plot needs the numerical values, not counts of categories.
-- iClicker, the detached housing question on your page: the distribution of detached house prices in Vancouver is right-skewed, answer (c).
-  - Most houses sell below about $5 million and the cheapest are around $1 million, but a few sell for tens of millions, up to about $85 million. The long tail is on the right.
-  - Those few expensive houses pull the mean above the median, so the median is the better figure for a typical house.
-  - He said he will not ask this kind of question on an exam, because it needs knowledge of the housing market.
+> **Example.** iClicker: a bar chart of the percentage of students in each college, namely Biological Sciences, Math and Physical Sciences, Engineering and Business. Is it left-skewed? The answer was (d), none of the options.
+>   - Skewness is never described for a bar chart, because the categories can be put in any order.
+>   - A dot plot was also offered, but a dot plot needs the numerical values, not counts of categories.
+
+> **Example.** iClicker, the detached housing question on your page: the distribution of detached house prices in Vancouver is right-skewed, answer (c).
+>   - Most houses sell below about $5 million and the cheapest are around $1 million, but a few sell for tens of millions, up to about $85 million. The long tail is on the right.
+>   - Those few expensive houses pull the mean above the median, so the median is the better figure for a typical house.
+>   - He said he will not ask this kind of question on an exam, because it needs knowledge of the housing market.
 - He asked everyone to talk to their neighbours during iClicker questions, because discussing an answer helps it stay in memory.
 
 ## Clarifications
@@ -113,7 +138,9 @@ $$
 - Centre and spread are separate features, so one number cannot describe a distribution. The sets 48, 49, 50, 51, 52 and 30, 40, 50, 60, 70 both have mean and median 50, but their ranges are 4 and 40.
 
 ### Skew is named after the tail, not the peak
-- "Lower point going into higher point" is not the definition. The direction of the skew is the direction the long tail points.
+
+> **Watch out.** "Lower point going into higher point" is not the definition. The direction of the skew is the direction the long tail points.
+
 - Right-skewed: the long tail stretches to the right, toward the high values, and the peak sits on the left. Incomes and house prices look like this.
 - Left-skewed: the long tail stretches to the left, toward the low values, and the peak sits on the right. Scores on an easy exam look like this.
 - Symmetric: the two halves are mirror images. The bell curve is one symmetric shape, not the only one.

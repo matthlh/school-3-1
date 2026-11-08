@@ -34,7 +34,9 @@ The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013
 - Under **Alara Kalama** he masters the four meditative absorptions, the **dhyanas** (Pali **jhanas**).
 - The fourth absorption gives a fully equanimous mind, but it is not liberation.
 - Instead, the fourth absorption leads to rebirth in the **world of form**, where gods called Brahma live.
-- Three words must be kept apart: **Brahma** is a god, a **Brahmin** is a priest, and **Brahman** is the absolute.
+
+> **Watch out.** Three words must be kept apart: **Brahma** is a god, a **Brahmin** is a priest, and **Brahman** is the absolute.
+
 - Under **Udraka Ramaputra** he learns subtler states that lead into the **formless realm**.
 - The four absorptions from Alara Kalama and the four from Udraka Ramaputra make eight stages of absorption.
 - The eight stages resemble **samadhi** in Classical Yoga.
@@ -55,6 +57,29 @@ The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013
   - the **form realms**, characterised by "clarity";
   - the **formless realms**, characterised by "space".
 - Meditation through these realms was like a shamanic journey.
+
+```svg
+<svg viewBox="0 0 600 210" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M90 182 V30"/>
+    <path d="M84 38 L90 28 L96 38"/>
+  </g>
+  <g text-anchor="middle" fill="var(--muted)" font-size="11">
+    <text x="90" y="198">Mount Meru</text>
+  </g>
+  <g text-anchor="middle">
+    <rect x="175" y="20" width="370" height="42" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="360" y="39" fill="var(--link)" font-weight="600">Formless realms</text>
+    <text x="360" y="55" fill="var(--muted)" font-size="11">"space"</text>
+    <rect x="175" y="74" width="370" height="42" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="360" y="93" fill="var(--link)" font-weight="600">Form realms</text>
+    <text x="360" y="109" fill="var(--muted)" font-size="11">"clarity"</text>
+    <rect x="175" y="128" width="370" height="42" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="360" y="147" fill="var(--link)" font-weight="600">Desire realms</text>
+    <text x="360" y="163" fill="var(--muted)" font-size="11">"pleasure"</text>
+  </g>
+</svg>
+```
 
 ## Awakening and teaching
 
@@ -85,7 +110,9 @@ The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013
 - Dhammapada verses 153 and 154 address the "house-builder", which is craving, as seen and defeated.
 
 ### The three marks (as the deck lists them)
-- The deck lists the three marks, the **lakshanas**, as anatman (no soul), **anitya** (impermanence) and nirvana.
+
+> **Key.** The deck lists the three marks, the **lakshanas**, as anatman (no soul), **anitya** (impermanence) and nirvana.
+
 - The deck describes nirvana as the end of **dukkha** (suffering).
 
 ### After the awakening
@@ -96,7 +123,9 @@ The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013
 
 ### Deed 11: teaching
 - "Turning the wheel", the **dharmachakra**, is the metaphor for teaching.
-- Dharma now means the truth spoken by the Buddha, not caste duty.
+
+> **Watch out.** Dharma now means the truth spoken by the Buddha, not caste duty.
+
 - In the plural, **dharmas** are the constituents of existence, like atoms.
 - He teaches for 45 years.
 - He teaches people of every caste.

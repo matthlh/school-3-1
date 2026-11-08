@@ -20,8 +20,36 @@ None. Everything below is from the deck.
   - Supernatural agents such as gods, spirits and souls, which often persist beyond death.
   - Supernatural states such as nirvana, heaven, hell and the afterlife, experienced after death or transcending suffering.
   - Cosmic justice such as karma, redemption and damnation, often enforced by the agents.
-- The course definition: religion is a set of articulated and reenacted solutions (narratives and rituals) to the human predicament, premised on the ideas of and interaction with the supernatural, adhered to by a community in some institutionalised form.
-- Applied to Hyon Gak's own teaching: the Buddha mind that is never born and never dies is a supernatural agent, nirvana as liberation from illusion is a supernatural state, and attachment leading to suffering is cosmic justice. So Buddhism fits the definition.
+
+```svg
+<svg viewBox="0 0 600 190" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M300 54 V72 M110 72 H490 M110 72 V90 M300 72 V90 M490 72 V90" />
+  </g>
+  <g text-anchor="middle">
+    <rect x="220" y="20" width="160" height="34" rx="6" fill="var(--panel)" stroke="var(--border3)"/>
+    <text x="300" y="42" fill="var(--fg)" font-weight="600">The supernatural</text>
+    <rect x="40" y="90" width="140" height="34" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="110" y="112" fill="var(--link)" font-weight="600">Agents</text>
+    <rect x="230" y="90" width="140" height="34" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="300" y="112" fill="var(--link)" font-weight="600">States</text>
+    <rect x="420" y="90" width="140" height="34" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="490" y="112" fill="var(--link)" font-weight="600">Cosmic justice</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="110" y="150">gods, spirits, souls</text>
+    <text x="300" y="150">nirvana, heaven,</text>
+    <text x="300" y="166">hell, afterlife</text>
+    <text x="490" y="150">karma, redemption,</text>
+    <text x="490" y="166">damnation</text>
+  </g>
+</svg>
+```
+
+> **Definition.** The course definition: religion is a set of articulated and reenacted solutions (narratives and rituals) to the human predicament, premised on the ideas of and interaction with the supernatural, adhered to by a community in some institutionalised form.
+
+> **Example.** Applied to Hyon Gak's own teaching: the Buddha mind that is never born and never dies is a supernatural agent, nirvana as liberation from illusion is a supernatural state, and attachment leading to suffering is cosmic justice. So Buddhism fits the definition.
+
 - Religious practice is the sustained effort to base behaviour on the ideas and personal experiences of the supernatural, by internalising the narratives and by ritualising daily life according to what the narratives prescribe.
 
 ### Narrative and myth
@@ -71,7 +99,9 @@ None. Everything below is from the deck.
 
 ### Early schools by the first century CE
 - The conservative schools survive as modern **Theravada**. The disciple aims at **nirvana**, liberation from the cycle of births and deaths.
-- An **arhat** is a liberated follower of the Buddha who is free of rebirth and of the three poisons. The poisons are anger, passion and ignorance. Here, ignorance means the illusion of one's own self.
+
+> **Definition.** An **arhat** is a liberated follower of the Buddha who is free of rebirth and of the three poisons. The poisons are anger, passion and ignorance. Here, ignorance means the illusion of one's own self.
+
 - In the conservative schools' view, one universe has only one Buddha at a time.
 - The progressive schools make up most of the Buddhist world. A follower declares as a **bodhisattva**, a future Buddha who aims to lead others to the same realisation.
 - In the progressive schools' view, a Buddha is free of rebirth and the three poisons and also creates a Buddha Land where bodhisattvas can be reborn to train.

@@ -74,11 +74,15 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 ### Why marriage is more beautiful in B’s account
 
 - Kraal’s statement of B’s major argument is that the ethical ends up more aesthetic, more beautiful, than the immediate, purely aesthetic passion of romantic love.
-- B calls marriage the "transfiguration" of first love. It is the same love, kept and made more glorious, and "even more beautiful than it".
+
+> **Key.** B calls marriage the "transfiguration" of first love. It is the same love, kept and made more glorious, and "even more beautiful than it".
+
 - B also says "really it is marriage that is poetic".
 - The link to Plato is Kraal’s. B does not name Plato anywhere in the assigned text.
 - In Book VI of Plato’s *Republic*, the Form of the Good is the most important thing to know, because just things, beautiful things and the rest are beneficial only through their relation to it.
-- Kraal’s short form of this is that the beautiful derives its value from the good.
+
+> **Key.** Kraal’s short form of this is that the beautiful derives its value from the good.
+
 - Applied to the essay, the good is the ethical (from the lecture 18 notes), so the aesthetic gets its value from the ethical.
 - A life that wants the most beauty therefore ends up in the ethical. That is why marriage wins even on A’s own terms.
 - The "Author B" line under the Plato bullet in the notes marks B, not A, as the one who takes this Platonic line.
@@ -130,7 +134,9 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 ### Why Kraal says A does not love Cordelia
 
 - This is Kraal’s claim. A’s love for Cordelia is bound to a stretch of time and is not "eternal", so it is not really love.
-- Cordelia is not in B’s letter. She is the girl of "The Seducer's Diary", which Kraal reads as A’s own work (see the [lectures 13–15 page](13-17-seducers-diary-and-diapsalmata.md)).
+
+> **Watch out.** Cordelia is not in B’s letter. She is the girl of "The Seducer's Diary", which Kraal reads as A’s own work (see the [lectures 13–15 page](13-17-seducers-diary-and-diapsalmata.md)).
+
 - The test Kraal applies is B’s. Love differs from lust by "the stamp of the eternal".
 - B’s lines about A fit the claim. A thinks any girl should count herself lucky to be his sweetheart "even for a week".
 - B also says A renews first love by finding its illusion in new girls, which "betrays as much desperation as depravity".
@@ -175,7 +181,9 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 ### Why some readers call B a Hegelian
 
 - Owen marks this as an aside. Some readers take B, Judge William, to be a Hegelian.
-- It is a reading of B, not his claim. B does not name Hegel in the letter.
+
+> **Watch out.** It is a reading of B, not his claim. B does not name Hegel in the letter.
+
 - The reading rests on B’s vocabulary, which is Hegel’s. B calls first love "an unreal An-sich" (the in-itself), marriage "the immediacy which has mediacy in itself", and love a unity of "the universal and the singular".
 - B expects the label too. He imagines A begging him to keep away from "any attempt at mediation". Mediation is the Hegelians’ word for reconciling opposites.
 - The reading also rests on the shape of B’s case. Hegel’s *Philosophy of Right* (1820) makes marriage the first ethical relationship, love given a lasting and lawful form, which is close to B’s marriage.

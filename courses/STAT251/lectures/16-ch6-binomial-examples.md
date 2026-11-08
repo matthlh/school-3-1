@@ -84,7 +84,7 @@ $$
 - "Less than $$k$$" stops at $$k - 1$$, while "at most $$k$$" includes $$k$$.
 - "More than $$k$$" starts at $$k + 1$$, while "at least $$k$$" includes $$k$$.
 - "At least $$k$$" is quickest as one minus "less than $$k$$" when $$k$$ is small.
-- The complement of "at least 1" is "none", $$P(X \ge 1) = 1 - (1 - p)^n$$, which is the single most used line in the chapter.
+> **Key.** The complement of "at least 1" is "none", $$P(X \ge 1) = 1 - (1 - p)^n$$, which is the single most used line in the chapter.
 
 ### Next class (slide 11)
 
@@ -93,4 +93,4 @@ $$
 ## Clarifications
 
 - The deck rounds $$P(X = 4)$$ in Example 1 to 0.36; the product is 0.3602. Keep four decimals on an exam unless the question says otherwise.
-- Counting failures instead of successes swaps $$p$$ for $$1 - p$$: if $$X \sim \text{Bin}(n, p)$$ counts successes, then $$n - X \sim \text{Bin}(n, 1 - p)$$. This turns a long upper-tail sum such as $$P(X \ge 10)$$ for $$\text{Bin}(12, 0.9)$$ into the three-term sum $$P(n - X \le 2)$$ for $$\text{Bin}(12, 0.1)$$.
+> **Watch out.** Counting failures instead of successes swaps $$p$$ for $$1 - p$$: if $$X \sim \text{Bin}(n, p)$$ counts successes, then $$n - X \sim \text{Bin}(n, 1 - p)$$. This turns a long upper-tail sum such as $$P(X \ge 10)$$ for $$\text{Bin}(12, 0.9)$$ into the three-term sum $$P(n - X \le 2)$$ for $$\text{Bin}(12, 0.1)$$.

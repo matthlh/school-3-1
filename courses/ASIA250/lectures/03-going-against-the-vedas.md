@@ -8,7 +8,9 @@ The notes follow the 52-slide deck. Readings 3 consist of Harvey (2013), chapter
 - The Rig Veda hymn that names the four castes is late in the collection; the earliest hymns describe a polytheistic, nomadic society.
 - The four castes are **brahmins** (priests and teachers), **kshatriyas** (nobles and warriors), **vaishyas** (merchants) and **shudras** (labourers and artisans).
 - The priesthood became a hereditary male lineage of ritual specialists who married among themselves and encoded the castes into the Vedas.
-- Here **dharma** means duty: each person stays in their caste and does its work.
+
+> **Definition.** Here **dharma** means duty: each person stays in their caste and does its work.
+
 - Brahmins perform rituals and teach.
 - Kings and nobles keep order and fight intruders.
 - Merchants make profit, pay taxes and give donations.
@@ -30,6 +32,38 @@ The notes follow the 52-slide deck. Readings 3 consist of Harvey (2013), chapter
 - Both were born warriors and royal princes.
 - Both held that killing produces so much bad karma that it is better to renounce the world and become an ascetic, a **shramana**.
 - Siddhartha left the palace with his charioteer Channa after seeing sights of suffering, cut his hair, took off his princely clothes and became a wandering ascetic.
+
+```svg
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g>
+    <rect x="25" y="20" width="265" height="150" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <rect x="310" y="20" width="265" height="150" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <rect x="25" y="186" width="550" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+  </g>
+  <g text-anchor="middle" font-weight="600">
+    <text x="157" y="42" fill="var(--link)">Siddhartha Gautama</text>
+    <text x="442" y="42" fill="var(--ok)">Vardhamana Mahavira</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="157" y="58">Buddhism</text>
+    <text x="442" y="58">Jainism</text>
+  </g>
+  <g text-anchor="start" fill="var(--fg2)" font-size="12">
+    <text x="40" y="84">Clan: Shakya</text>
+    <text x="40" y="106">Renounced at 29</text>
+    <text x="40" y="128">6 years of austerities</text>
+    <text x="40" y="150">Becomes Buddha ("Awakened One")</text>
+    <text x="325" y="84">Clan: Naya</text>
+    <text x="325" y="106">Renounced at 30</text>
+    <text x="325" y="128">12 years of austerities</text>
+    <text x="325" y="150">Becomes Tirthankara ("Ford Maker")</text>
+  </g>
+  <g text-anchor="middle" fill="var(--fg2)" font-size="12">
+    <text x="300" y="205">Both: kshatriya royal princes, became a shramana,</text>
+    <text x="300" y="221">both called Jina ("Conqueror" of suffering)</text>
+  </g>
+</svg>
+```
 
 ### The shramana movement and ascetic norms
 - The shramana movement begins around the 6th century BCE, but the Vedas already show people renouncing the world to escape suffering.
@@ -91,7 +125,9 @@ The notes follow the 52-slide deck. Readings 3 consist of Harvey (2013), chapter
 
 ### Buddhism as the religion of numbers
 - The early community used numbered lists to memorise teachings, passed them on orally, and later wrote them into scripture.
-- Gautama is Buddha number 28, after 27 earlier Buddhas.
+
+> **Key.** Gautama is Buddha number 28, after 27 earlier Buddhas.
+
 - The next Buddha is **Maitreya** (Pali Metteyya), number 29, now a god in Tushita Heaven; some sources say he comes in 5.67 billion years.
 - Gautama's path began four asamkhyeyas and one hundred thousand kalpas ago. The deck gives one asamkhyeya as $$10^{140}$$ and a kalpa as the time from the creation of one universe to the next.
 - He was then a brahmin ascetic named **Sumedha**, who heard Buddha number 4, **Dipankara**, and vowed to become a Buddha.

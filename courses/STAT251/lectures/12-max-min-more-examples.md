@@ -68,7 +68,7 @@ f_U(u) &= \frac{d}{du}\Big\{1 - \big[1 - F_X(u)\big]^n\Big\} \\
 \end{aligned}
 $$
 
-- Side by side, the two results differ only in whether $$F_X$$ or $$1 - F_X$$ is raised to the power. The maximum raises the chance of being below, and the minimum raises the chance of being above.
+> **Key.** Side by side, the two results differ only in whether $$F_X$$ or $$1 - F_X$$ is raised to the power. The maximum raises the chance of being below, and the minimum raises the chance of being above.
 
 ## Worked examples
 
@@ -92,7 +92,7 @@ $$
 
 ### Example 10: $$Y = X^2$$ needs both roots (slide 10)
 - $$f_X(x) = \frac{x^2}{18}$$ for $$-3 \le x \le 3$$ and 0 otherwise. $$Y = X^2$$ runs from 0 to 9.
-- $$X^2 \le y$$ is not $$X \le \sqrt{y}$$. It is $$-\sqrt{y} \le X \le \sqrt{y}$$, because negative values of $$X$$ square to the same $$y$$. So the cdf of $$Y$$ is an integral of $$f_X$$ between the two roots.
+> **Watch out.** $$X^2 \le y$$ is not $$X \le \sqrt{y}$$. It is $$-\sqrt{y} \le X \le \sqrt{y}$$, because negative values of $$X$$ square to the same $$y$$. So the cdf of $$Y$$ is an integral of $$f_X$$ between the two roots.
 
 $$
 \begin{aligned}
@@ -149,7 +149,7 @@ f_W(w) &= n\lambda e^{-n\lambda w}
 \end{aligned}
 $$
 
-- So the minimum of $$n$$ independent $$\text{Exp}(\lambda)$$ lifetimes is $$\text{Exp}(n\lambda)$$, with mean $$\frac{1}{n\lambda}$$. A series system of $$n$$ identical exponential components fails $$n$$ times as fast as one component.
+> **Key.** So the minimum of $$n$$ independent $$\text{Exp}(\lambda)$$ lifetimes is $$\text{Exp}(n\lambda)$$, with mean $$\frac{1}{n\lambda}$$. A series system of $$n$$ identical exponential components fails $$n$$ times as fast as one component.
 - Both pdfs are for $$y > 0$$ and $$w > 0$$, and 0 otherwise.
 
 ### Example 12: the maximum of two different uniforms (slides 12–17)

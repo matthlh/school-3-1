@@ -108,7 +108,8 @@ Doesn't mean happiness as joy, but talks about you can find comfort
 
 ### Kierkegaard and Regine Olsen
 
-- The notes' "marriage" was an engagement. He was engaged to **Regine Olsen** and never married her.
+> **Watch out.** The notes' "marriage" was an engagement. He was engaged to **Regine Olsen** and never married her.
+
 - Regine was born in 1822. They met in May 1837, when she was 15 and he was 24.
 - He proposed on 8 September 1840. She accepted on 10 September.
 - He sent back the ring with a farewell letter on 11 August 1841. She refused to accept the break. The final break in person came in October 1841.
@@ -117,7 +118,9 @@ Doesn't mean happiness as joy, but talks about you can find comfort
 - He gave two more reasons.
   - A secret he felt he would have to confide to a wife and could not. He called it his "thorn in the flesh" and repeated it on his deathbed.
   - His religious task as an author, which Regine herself later named as the reason.
-- On an exam, "his melancholy" is safe. "Only his melancholy" is not.
+
+> **Watch out.** On an exam, "his melancholy" is safe. "Only his melancholy" is not.
+
 - Regine became engaged to her former tutor Johan Frederik Schlegel in 1843. They married on 3 November 1847. Schlegel became governor of the Danish West Indies in 1855.
 - They never spoke again after 1841 except once. On 17 March 1855, the day she sailed, she stopped him in the street and said God bless you, may all go well with you. He tipped his hat. He died eight months later.
 - His will was a sealed letter to Peter Christian. It left everything to Regine unconditionally, because for him an engagement was and is as binding as a marriage.
@@ -146,7 +149,9 @@ Doesn't mean happiness as joy, but talks about you can find comfort
 ### Doxology, paradox and comfort
 
 - These are Kraal's three words for the ending.
-- A **doxology** is a short hymn of praise, such as "Glory be to the Father". It is Kraal's label for the ending, not a term found in the literature.
+
+> **Definition.** A **doxology** is a short hymn of praise, such as "Glory be to the Father". It is Kraal's label for the ending, not a term found in the literature.
+
 - The label fits. A hails the winner with a chain of titles, salutes him as "great unknown", pronounces wishes, and reverses the title to "the happiest". Know the word as Kraal's, and know what it names.
 - The **paradox**: A says the unhappiest one is in "conflict" with the world as a single Thou. The whole world is for him one person, Misunderstanding, and his lips smile at the world that misunderstands him.
 - The notes say "victimized". A's word is conflict.
@@ -155,4 +160,5 @@ Doesn't mean happiness as joy, but talks about you can find comfort
 - **Comfort** is not A's word. A's word throughout is *Lykke*, fortune or happiness: a gift of fortune, the fellowship gathers to envy his fortune, and he need not fear fortune.
 - A never says the unhappiest one is consoled.
 - Kraal's "not joy but comfort" is a fair reading of what the four clauses do. Faith, hope and love are each downgraded to something an aesthete can bear.
-- On an MC option, the words are "the happiest", "gift of fortune" and "envy".
+
+> **Key.** On an MC option, the words are "the happiest", "gift of fortune" and "envy".

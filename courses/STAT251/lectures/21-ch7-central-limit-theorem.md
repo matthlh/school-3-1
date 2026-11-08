@@ -49,7 +49,7 @@ $$
 - For a random sample of $$n$$ from any population with mean $$\mu$$ and variance $$\sigma^2$$:
   - The mean of the sampling distribution of $$\bar{X}$$ is $$\mu$$, the same as the population mean.
   - The standard deviation of the sampling distribution of $$\bar{X}$$ is $$\frac{\sigma}{\sqrt{n}}$$.
-- The standard deviation of a sampling distribution is called the **standard error**, to tell it apart from the standard deviation of an ordinary distribution.
+> **Definition.** The standard deviation of a sampling distribution is called the **standard error**, to tell it apart from the standard deviation of an ordinary distribution.
 - These two facts hold for any population. Only the shape (Normal or not) needs the CLT.
 
 ## The Central Limit Theorem
@@ -120,6 +120,25 @@ From the recording's captions, in the order the class went.
 
 He separated three distributions that are easy to mix up. Take the number of cups of coffee a UBC student drinks per week as the variable, and a random sample of 50 students.
 
+```svg
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="15" y="26" width="180" height="96" rx="8" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="105" y="58" fill="var(--link)" font-weight="600">Population</text>
+    <text x="105" y="76" fill="var(--link)">distribution</text>
+    <text x="105" y="102" fill="var(--muted)" font-size="11">the whole population's values</text>
+    <rect x="210" y="26" width="180" height="96" rx="8" fill="var(--panel)" stroke="var(--border3)"/>
+    <text x="300" y="58" fill="var(--fg)" font-weight="600">Sample</text>
+    <text x="300" y="76" fill="var(--fg)">distribution</text>
+    <text x="300" y="102" fill="var(--muted)" font-size="11">the values in one sample</text>
+    <rect x="405" y="26" width="180" height="96" rx="8" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="495" y="58" fill="var(--ok)" font-weight="600">Sampling</text>
+    <text x="495" y="76" fill="var(--ok)">distribution</text>
+    <text x="495" y="102" fill="var(--muted)" font-size="11">a statistic over all samples</text>
+  </g>
+</svg>
+```
+
 - The population distribution is how the variable is spread over the whole population: every UBC student's weekly cups.
 - The sample distribution is how the data in one sample are spread: the histogram of the 50 values you collected.
 - The sampling distribution is the distribution of a statistic, such as $$\bar{x}$$, over all the samples of 50 you could have drawn. Another sample of 50 gives a different $$\bar{x}$$, so the sample mean is a random variable, $$\bar{X}$$, and its distribution is the sampling distribution.
@@ -136,7 +155,7 @@ A bigger sample does not make the sample distribution Normal. A skewed populatio
 - The standard error is the standard deviation of a sampling distribution. An ordinary distribution such as the Binomial, Poisson, exponential or uniform has a standard deviation, not a standard error. When you hear "standard error", it is about a sampling distribution.
 - An estimate of $$\frac{\sigma}{\sqrt{n}}$$ computed from the sample is also called the standard error. He said this would be shown next lecture.
 - He said slide 6 "is not the central limit theorem". A Normal population gives an exactly Normal $$\bar{X}$$ for any $$n$$, because $$\bar{X}$$ is a linear combination of Normals (Chapter 5).
-- The CLT is the other case. A large enough random sample from any population, even one whose shape is unknown, gives an approximately Normal $$\bar{X}$$ with mean $$\mu$$ and standard error $$\frac{\sigma}{\sqrt{n}}$$.
+> **Key.** The CLT is the other case. A large enough random sample from any population, even one whose shape is unknown, gives an approximately Normal $$\bar{X}$$ with mean $$\mu$$ and standard error $$\frac{\sigma}{\sqrt{n}}$$.
 
 ### How large the sample must be
 
@@ -157,8 +176,9 @@ A bigger sample does not make the sample distribution Normal. A skewed populatio
 
 ### Clicker question
 
-- The question: sampling distributions describe the distribution of (A) parameters, (B) statistics, (C) both parameters and statistics, or (D) neither. A frame shows 124 responses. The recording does not give how the answers split.
-- The answer is (B), statistics. A sampling distribution is always the distribution of a statistic.
+> **Example.** The question: sampling distributions describe the distribution of (A) parameters, (B) statistics, (C) both parameters and statistics, or (D) neither. A frame shows 124 responses. The recording does not give how the answers split.
+>
+> The answer is (B), statistics. A sampling distribution is always the distribution of a statistic.
 - The reason: a statistic such as $$\bar{x}$$ takes a different value in each sample, so it is a random variable and has a distribution. A parameter such as $$\mu$$ is one fixed number, so it has no distribution.
 - The sampling distribution of $$\bar{X}$$ is centred at $$\mu$$ and shows how close $$\bar{x}$$ tends to land to it, but $$\mu$$ itself does not vary. That is why (C) is wrong.
 
@@ -192,5 +212,5 @@ He ran the first StatSpace applet, sampling from a non-Normal population. The po
 
 ## Clarifications
 
-- The standard error $$\frac{\sigma}{\sqrt{n}}$$ uses the population standard deviation $$\sigma$$. Dividing the variance by $$n$$ gives $$\frac{\sigma^2}{n}$$; dividing the standard deviation by $$n$$ instead of $$\sqrt{n}$$ is the usual slip.
+> **Watch out.** The standard error $$\frac{\sigma}{\sqrt{n}}$$ uses the population standard deviation $$\sigma$$. Dividing the variance by $$n$$ gives $$\frac{\sigma^2}{n}$$; dividing the standard deviation by $$n$$ instead of $$\sqrt{n}$$ is the usual slip.
 - The deck's $$n \ge 20$$ is the textbook's rule of thumb, not a cutoff where $$\bar{X}$$ switches to Normal. The instructor said 20 is fine to use in this course, the usual rule elsewhere is $$n > 30$$, and a highly skewed population can need more than 30 (How large the sample must be, under In class). A Normal population needs no minimum at all.

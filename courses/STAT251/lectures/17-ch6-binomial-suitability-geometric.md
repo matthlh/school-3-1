@@ -37,7 +37,8 @@ The after-class deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and
 
 ### The Geometric distribution (slide 12)
 
-- A **Geometric** random variable counts the independent trials needed until the first success, each trial succeeding with probability $$p$$.
+> **Definition.** A **Geometric** random variable counts the independent trials needed until the first success, each trial succeeding with probability $$p$$.
+
 - Written $$X \sim \text{Geo}(p)$$:
 
 $$
@@ -48,7 +49,23 @@ E(X) &= \frac{1}{p} \\
 \end{aligned}
 $$
 
-- The expected number of trials until an event first happens is called its **return period**.
+> **Definition.** The expected number of trials until an event first happens is called its **return period**.
+
+```svg
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="40" y="30" width="250" height="90" rx="8" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="165" y="58" fill="var(--link)" font-weight="600">Binomial</text>
+    <text x="165" y="82" fill="var(--fg2)" font-size="12">fixes the number of trials n</text>
+    <text x="165" y="102" fill="var(--fg2)" font-size="12">counts the successes</text>
+    <rect x="310" y="30" width="250" height="90" rx="8" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="435" y="58" fill="var(--ok)" font-weight="600">Geometric</text>
+    <text x="435" y="82" fill="var(--fg2)" font-size="12">fixes the successes at one</text>
+    <text x="435" y="102" fill="var(--fg2)" font-size="12">counts the trials</text>
+  </g>
+</svg>
+```
+
 
 ### The Geometric cdf (slide 13)
 
@@ -91,4 +108,4 @@ $$
 
 - The deck's part (b) says "at least 50 accounts are audited before an account in error is found" and computes $$P(X > 50)$$, which means the first 50 are all clean. Read literally, 50 clean accounts before the error is the same event, so the two agree; on an exam, write the event as "the first 50 are error-free" before using the cdf.
 - The Geometric variable here counts trials including the successful one, so its values start at 1 and $$E(X) = \frac{1}{p}$$. Some textbooks count only the failures before the first success, which starts at 0 and has mean $$\frac{1 - p}{p}$$; the course uses the first version.
-- Binomial or Geometric is decided by one fact: the Binomial fixes the number of trials and counts successes, while the Geometric fixes the number of successes at one and counts trials.
+> **Key.** Binomial or Geometric is decided by one fact: the Binomial fixes the number of trials and counts successes, while the Geometric fixes the number of successes at one and counts trials.

@@ -6,7 +6,7 @@ The after-class deck is `Lecture_18_Chapter_6_CanvasPost_AL.pdf` (17 slides with
 
 ### The Poisson distribution (slides 3 and 4)
 
-- The **Poisson** is a discrete distribution for the number of events in a fixed interval of time or space, when events happen independently at a known constant rate.
+> **Definition.** The **Poisson** is a discrete distribution for the number of events in a fixed interval of time or space, when events happen independently at a known constant rate.
 - Written $$X \sim \text{Poisson}(\lambda)$$ with rate $$\lambda > 0$$:
 
 $$
@@ -39,11 +39,11 @@ $$
 
 ### The Poisson process (slide 6)
 
-- Four properties make a count a **Poisson process**.
-  - Counts on intervals that do not overlap are independent.
-  - The number of events in an interval is proportional to the length of the interval.
-  - The probability of an event in an interval of a given length does not change from one interval to another.
-  - Two events cannot happen at the same instant.
+> **Definition.** Four properties make a count a **Poisson process**.
+>   - Counts on intervals that do not overlap are independent.
+>   - The number of events in an interval is proportional to the length of the interval.
+>   - The probability of an event in an interval of a given length does not change from one interval to another.
+>   - Two events cannot happen at the same instant.
 - The deck's examples are machine failures in a month, typing errors on a page and phone calls to a switchboard in 30 minutes.
 
 ### Waiting times are exponential (slide 7)
@@ -76,7 +76,7 @@ $$
 
 ### The Poisson approximation to the Binomial (slide 10)
 
-- If $$X \sim \text{Bin}(n, p)$$ with $$n$$ large ($$n \ge 20$$) and $$p$$ small ($$np < 5$$), then $$X$$ is approximately $$\text{Poisson}(np)$$.
+> **Key.** If $$X \sim \text{Bin}(n, p)$$ with $$n$$ large ($$n \ge 20$$) and $$p$$ small ($$np < 5$$), then $$X$$ is approximately $$\text{Poisson}(np)$$.
 
 ### Example 5: defective output (slides 11 to 13)
 
@@ -117,5 +117,5 @@ $$
 - The deck truncates Example 5's approximation to 0.0189. The sum is 0.01899 and rounds to 0.0190.
 - Either the truncated or the rounded value earns the mark, but show the sum.
 - The second process property is about the expected count: the mean number of events in an interval is the rate times its length, $$\lambda t$$, which is why $$X_t \sim \text{Poisson}(\lambda t)$$. The count itself varies.
-- The exponential's $$\lambda$$ is the Poisson rate per unit of time, so put $$t$$ in that unit before using $$e^{-\lambda t}$$. In Example 6 a mean of 3 minutes gives a rate of $$\frac{1}{3}$$ per minute; using 3 as the rate is the standard miss.
+> **Watch out.** The exponential's $$\lambda$$ is the Poisson rate per unit of time, so put $$t$$ in that unit before using $$e^{-\lambda t}$$. In Example 6 a mean of 3 minutes gives a rate of $$\frac{1}{3}$$ per minute; using 3 as the rate is the standard miss.
 - Example 6 is the chapter's pattern for combining models: one distribution gives a per-day probability $$p$$, and a Binomial counts the days out of $$n$$ on which that event happens.

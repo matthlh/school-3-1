@@ -12,7 +12,7 @@ The after-class deck is `Lecture_23_Chapter_7_CanvasPost_AL.pdf` (13 slides), wi
 
 ### Exact Normal models and the CLT (slides 3 to 6)
 
-Both examples ask the same kind of question: a random sample of $$n$$ values is taken, $$\bar{X}$$ is their average, and we want a probability about $$\bar{X}$$. A Normal table can only be used if $$\bar{X}$$ is Normal, so the first step is always to say why it is. There are two different reasons, and the two examples show one each.
+> **Key.** Both examples ask the same kind of question: a random sample of $$n$$ values is taken, $$\bar{X}$$ is their average, and we want a probability about $$\bar{X}$$. A Normal table can only be used if $$\bar{X}$$ is Normal, so the first step is always to say why it is. There are two different reasons, and the two examples show one each.
 
 - The population is Normal. Then $$\bar{X}$$ is a linear combination of independent Normal variables, so it is exactly Normal for any $$n$$, even $$n = 2$$. This is Fact 3 on the [lecture 14 page](14-ch5-normal-linear-combinations-sample-mean.md), and it needs no CLT.
 - The population is not Normal, or its shape is not given. Then the CLT says $$\bar{X}$$ is approximately Normal once $$n$$ is large, which this course takes as $$n \ge 20$$.
@@ -131,7 +131,7 @@ The deck states the approximation but does not give the reason. The CLT for a su
 
 Match the Normal model to the Binomial mean $$np$$ and variance $$np(1 - p)$$ from lecture 15.
 
-- The condition: use the approximation only when both $$np \ge 5$$ and $$n(1 - p) \ge 5$$.
+> **Key.** The condition: use the approximation only when both $$np \ge 5$$ and $$n(1 - p) \ge 5$$.
 - $$np$$ is the expected number of successes and $$n(1 - p)$$ is the expected number of failures, so the condition asks for at least 5 of each.
 - Why it depends on $$p$$, not only on $$n$$: when $$p$$ is near 0, the counts pile up against 0 and the histogram is lopsided. $$\text{Bin}(20, 0.05)$$ has $$np = 1$$, and its probabilities for 0, 1, 2 and 3 are 0.358, 0.377, 0.189 and 0.060, which is no bell even with $$n = 20$$.
 - When the condition holds:
@@ -231,7 +231,7 @@ There are no captions yet, so this comes from Panopto's slide index and a few fr
 
 ### Clicker questions
 
-- The first gave Example 1's stem (right-skewed prices, mean 25 dollars, standard deviation 20 dollars, a sample of 40) and asked whether the CLT can be used. The answer is (A) Yes. The population is skewed, so lecture 14's exact result does not apply, but $$n = 40 \ge 20$$ lets the CLT make $$\bar{X}$$ approximately Normal. The results screen was not checked.
+> **Example.** The first gave Example 1's stem (right-skewed prices, mean 25 dollars, standard deviation 20 dollars, a sample of 40) and asked whether the CLT can be used. The answer is (A) Yes. The population is skewed, so lecture 14's exact result does not apply, but $$n = 40 \ge 20$$ lets the CLT make $$\bar{X}$$ approximately Normal. The results screen was not checked.
 - The second gave Example 2's stem (Normal form times, mean 10 minutes, standard deviation 2 minutes, 5 people) and asked whether the CLT is needed. The answer is (B) No. The times are Normal, so $$\bar{X}$$ is exactly Normal for any $$n$$, even 5. A frame shows 102 responses; the split was not checked.
 - The pair is a contrast. In Example 1 the CLT is the only reason $$\bar{X}$$ is Normal. In Example 2 a stronger reason already holds, so the small $$n$$ does not matter.
 
@@ -240,4 +240,4 @@ There are no captions yet, so this comes from Panopto's slide index and a few fr
 - The activity sheet writes $$P(Z \le -2)$$ as $$1 - P(Z \ge -2)$$, which looks odd but is correct. The two events are complements (the single point $$-2$$ has probability 0), and $$P(Z \ge -2) = P(Z \le 2) = 0.9772$$ by symmetry. It is a long way of writing $$1 - 0.9772$$.
 - The deck's part (c) writes $$P(X \le 2) = P(X \le 2 + 0.5)$$. For the Binomial $$X$$ those are the same event, so the line says nothing new. The 2.5 belongs to the Normal variable, $$Y$$ in the slide 12 table. On an exam write $$P(X \le 2) \approx P(Y \le 2.5)$$ so the grader sees the switch to the Normal.
 - The continuity correction is only for a count, like a Binomial, approximated by a Normal. Examples 1 and 2 and the activity average continuous prices and times, so they take no correction.
-- This course's condition is $$np \ge 5$$ and $$n(1 - p) \ge 5$$. Some textbooks and websites use 10 instead. Use 5.
+> **Watch out.** This course's condition is $$np \ge 5$$ and $$n(1 - p) \ge 5$$. Some textbooks and websites use 10 instead. Use 5.

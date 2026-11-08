@@ -42,7 +42,7 @@ The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 - `bikes/{id}` is one bike. GET returns the bike and its sub-URIs. PUT replaces the whole bike. DELETE deletes it and returns a success code. POST has nothing to do here, so an error code or not implemented.
 - `bikes/{id}/trips` is the bike's trips. GET lists them. POST could start a trip, but the deck flags the risk: POST is not idempotent. PUT does nothing. DELETE would delete every trip, so nothing.
 - `bikes/{id}/trips/{id}` is one trip. GET returns it. PUT replaces the whole trip, which is how a trip ends. DELETE deletes it. POST does nothing.
-- The lesson the summary draws: **model things, not actions**. URLs are resources and methods are the verbs, so an action such as taking a trip becomes a resource, the trip.
+> **Key.** The lesson the summary draws: **model things, not actions**. URLs are resources and methods are the verbs, so an action such as taking a trip becomes a resource, the trip.
 
 ### The four RESTful design properties (slide 10)
 - Each property comes with the problem it solved in the bike share and a one-line check to run on a design.
@@ -73,7 +73,7 @@ The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 
 ### Nouns and verbs
 - REST is an architectural style for web services that focuses on interfaces rather than implementations and uses self-descriptive messages carried over HTTP.
-- Resources are nouns named by a **URI**. A URI identifies a resource without saying where on the network it lives or how to reach it: `/dataset` is a URI, `http://foo.com/dataset` is a **URL**.
+> **Definition.** Resources are nouns named by a **URI**. A URI identifies a resource without saying where on the network it lives or how to reach it: `/dataset` is a URI, `http://foo.com/dataset` is a **URL**.
 - Headers carry metadata only, such as the wanted response format, the encoding or credentials. The resource goes in the URI and request data goes in the body. A body on a GET is discouraged, because the URI alone names what is wanted.
 - Each request uses one verb and gets one response: a payload, usually JSON or XML, and a numeric status code.
 - The verbs, with the codes the reader lists for each:
@@ -98,7 +98,7 @@ The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 ## Clarifications
 
 - The Lab 1 topic covers status codes and PUT idempotence. This lecture adds REST design constraints. Slide 3 gives background on software as a service through the "Uber of ____" example. It is framing, not exam material.
-- The deck's idempotency row says "all but POST". The reader adds PATCH as not idempotent; the deck never mentions PATCH. On an exam over the deck's four methods, GET, PUT and DELETE are idempotent and POST is not.
+> **Watch out.** The deck's idempotency row says "all but POST". The reader adds PATCH as not idempotent; the deck never mentions PATCH. On an exam over the deck's four methods, GET, PUT and DELETE are idempotent and POST is not.
 - The deck splits Statelessness (the request carries the client's state) from Connectedness (responses carry links). The reader's Statelessness section covers both: its `/:query/next` example is the deck's `/stations/more`, and its GitHub example is Connectedness. Use the deck's two names when asked which constraint a design breaks.
 - Slide 11 uses PUT to create a trip at a client-chosen URI. The deck chooses PUT because a dock retry must not start a second trip.
 - The reader's table gives POST as the usual creation method. Both are right. PUT creates when the client picks the URI, and POST creates when the server does.

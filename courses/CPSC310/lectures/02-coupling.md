@@ -14,7 +14,7 @@ The lecture uses [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 - A dependency is **explicit** when it is a static reference the compiler can see. In the repo, `brochure.ts` reads `offering.instructor.name`, `Offering.valueOf` returns `this.instructor.name` for the `"instructor"` search field, and `Instructor.label()` uses `this.name`. Remove `name` and every one of these fails to compile, which is the compiler handing you the footprint for free.
 - A dependency is **implicit** when it only shows up at runtime, so you have to hunt for it by hand. In the repo, the catalogue stores each instructor as a single string like `"Virginia Woolf"` that has to be split apart; the search command takes the field as a string (`"instructor"` sits in `SEARCHABLE_FIELDS` and in a `switch`); and a test searches for the literal `"Toni Morrison"`, so it silently assumes names are joined first-then-last with a space. Nothing type-checks any of that.
 - How the 12:30 section finished it: `Instructor` got `fname` and `lname` plus a `get name()` that joins them, and `loadInstructors` splits the stored string. Because the getter kept `name` alive, every explicit dependency compiled untouched and the change stayed in two files. Keeping the old interface stable is the cheapest way to shrink a footprint.
-- What to look for on an exam: string-keyed lookups (`switch (field)`, `obj[key]`), data rows parsed by position, and literals inside tests are where implicit dependencies hide. Ask "if I change this, what tells me?" If the answer is "nothing until it runs", the dependency is implicit.
+> **Key.** What to look for on an exam: string-keyed lookups (`switch (field)`, `obj[key]`), data rows parsed by position, and literals inside tests are where implicit dependencies hide. Ask "if I change this, what tells me?" If the answer is "nothing until it runs", the dependency is implicit.
 
 ### FEAT-0001: one policy, five files (slides 5–7)
 - The ticket: resident seniors (65 and over) get Aquatics and Fitness programs free, paid for by raising the non-resident surcharge from 25% to 30%.
@@ -29,7 +29,7 @@ The lecture uses [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 ## Measuring coupling
 
 ### The three axes of coupling (slides 8–9)
-- Slide 9 defines **coupling**: "Coupling is the relationship between components. It forms through dependencies—imports, method calls, shared data, and assumptions about other components."
+> **Definition.** Slide 9 defines **coupling**: "Coupling is the relationship between components. It forms through dependencies—imports, method calls, shared data, and assumptions about other components."
 - The question it answers: if I change this component, what happens to the others?
 - Slide 8 names three ways to describe a dependency, and together they are what "coupling" means in this course.
   - **Degree** is how many components a dependency touches. In FEAT-0001, the surcharge value touched three.
@@ -49,13 +49,44 @@ The lecture uses [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 
 ### Connascence: five strengths, in rising cost (slide 13)
 - Connascence measures how strong one edge is. Each type names what two or more components must agree on. Slide 13 lists them in increasing cost of change.
+
+```svg
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g text-anchor="middle">
+    <rect x="12" y="30" width="104" height="34" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="64" y="52" fill="var(--link)" font-weight="600">Name</text>
+    <rect x="128" y="30" width="104" height="34" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="180" y="52" fill="var(--link)" font-weight="600">Type</text>
+    <rect x="244" y="30" width="104" height="34" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="296" y="52" fill="var(--fg2)" font-weight="600">Value</text>
+    <rect x="360" y="30" width="104" height="34" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="412" y="52" fill="var(--fg2)" font-weight="600">Position</text>
+    <rect x="476" y="30" width="112" height="34" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="532" y="52" fill="var(--fg2)" font-weight="600">Algorithm</text>
+  </g>
+  <g stroke="var(--border3)" stroke-width="1.5" fill="none">
+    <path d="M12 92 H582" marker-end="url(#ar)"/>
+  </g>
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="130" y="112">usually caught at compile time</text>
+    <text x="440" y="112">usually caught at run time</text>
+    <text x="300" y="134" fill="var(--fg2)" font-size="12">rising cost of change</text>
+  </g>
+</svg>
+```
+
   - **Name** means the components must agree on what something is called, like `findUserById`. Rename it and every call site must follow.
   - **Type** means they must agree on the shape of the data. Add a required field and every caller must supply it. FEAT-0001's `age` field is this; the compiler found all seven sites.
   - **Value** means they must agree on the meaning of a literal, like `"pending"` hard-coded in validation, reporting, and UI code. Change it in two of three spots and the system still runs, just wrong. Magic numbers are the numeric case, and FEAT-0001's `1.25` is exactly this.
   - **Position** means they must agree on an ordering of values, like `createInvoice(customerId, startDate, endDate, total, tax)`. Swap `total` and `tax` at a call site and it compiles, because both are numbers, may pass tests, and computes the wrong number silently.
   - **Algorithm** means they must perform the same computation the same way, like one class encoding data and another decoding it. The reader notes that the stronger kinds usually come with the weaker ones as well.
 - A memory aid for the order, which is mine and not the deck's: a missed Name or Type site usually fails at compile time, while a missed Value, Position or Algorithm site usually fails at run time, and the Position example only compiles because the swapped arguments share a type. The further down the table, the more of the footprint you have to find by hand.
-- Live example from the 12:30 section's finished code: `loadInstructors` passes the last name before the first name into a constructor declared first-then-last. Both are strings, so it compiles, and the getter would print "Woolf Virginia". That is the position trap, whether or not it was intentional.
+> **Watch out.** Live example from the 12:30 section's finished code: `loadInstructors` passes the last name before the first name into a constructor declared first-then-last. Both are strings, so it compiles, and the getter would print "Woolf Virginia". That is the position trap, whether or not it was intentional.
 - What to look for on an exam: the same literal in several files (Value), long argument lists of one type (Position), two components that each implement half of one protocol (Algorithm). Name the type, say which lever weakens it, and say what it would have cost if a site were missed.
 
 ### Recap (slides 14–16)

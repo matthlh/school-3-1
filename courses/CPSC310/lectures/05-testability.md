@@ -7,7 +7,7 @@ The lecture uses [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectur
 
 ## What makes code easy to test
 ### Controllability (slide 3)
-- **Controllability** is how far a test can set the inputs and the state that the code under test depends on.
+> **Definition.** **Controllability** is how far a test can set the inputs and the state that the code under test depends on.
 - The deck lists four things that lower it.
   - Hidden inputs, such as the clock or randomness.
   - Global or shared state.
@@ -17,7 +17,7 @@ The lecture uses [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectur
 - The reader's cautionary case is logic fused to the user interface, which leaves only slow, fragile UI tests as a way to check it.
 
 ### Observability (slide 4)
-- **Observability** is how far a test can inspect the results and effects that the code under test produces.
+> **Definition.** **Observability** is how far a test can inspect the results and effects that the code under test produces.
 - The deck lists four things that lower it.
   - Results that are only printed or formatted.
   - Intermediate values that are never returned.
@@ -40,7 +40,7 @@ The lecture uses [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectur
 - The EFFECTS clause is rewritten on slide 6 to begin "for a hungry animal only". That restates the precondition inside the effect, so the test starts by confirming the animal is hungry before calling `eat()`.
 
 ### Test-driven development (slide 7)
-- **Test-driven development** (TDD) runs a three-step cycle: write a failing test, make the test pass, then refactor.
+> **Definition.** **Test-driven development** (TDD) runs a three-step cycle: write a failing test, make the test pass, then refactor.
 - The deck pairs the cycle with three ideas under the heading testability by design: know what you are building, let the details come from building it, and make the next change cheap.
 - The reader's point is that writing the tests first forces the code into a testable structure from the start, so it never needs the restructuring that untestable code does later.
 

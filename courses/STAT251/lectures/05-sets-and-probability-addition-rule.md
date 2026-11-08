@@ -53,7 +53,8 @@ $$
 ### Events as sets (slides 9–12)
 - The complement $$A^c$$ holds every outcome of $$S$$ that is not in $$A$$. $$P(A)$$ and $$P(A^c)$$ add to 1, so $$P(A^c) = 1 - P(A)$$.
 - The intersection $$A \cap B$$ holds the outcomes common to $$A$$ and $$B$$. Its probability is written $$P(A \text{ and } B)$$ or $$P(A \cap B)$$.
-- Two events are disjoint, or mutually exclusive, when they have no outcome in common. They cannot occur together, so $$P(A \cap B) = 0$$. Rolling a die, "odd" and "even" are disjoint.
+> **Definition.** Two events are disjoint, or mutually exclusive, when they have no outcome in common. They cannot occur together, so $$P(A \cap B) = 0$$. Rolling a die, "odd" and "even" are disjoint.
+
 - The union $$A \cup B$$ holds the outcomes in $$A$$, in $$B$$, or in both. Its probability is written $$P(A \text{ or } B)$$ or $$P(A \cup B)$$.
 - Slides 9 to 12 each show a **Venn diagram**, which uses a rectangle for $$S$$ and a circle for each event.
 - The complement is the part of the rectangle outside the event's circle.
@@ -66,6 +67,18 @@ $$
 $$
 P(A \cup B) = P(A) + P(B) - P(A \cap B)
 $$
+
+```svg
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <rect x="30" y="20" width="540" height="180" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+  <circle cx="250" cy="110" r="85" fill="none" stroke="var(--link)" stroke-width="1.5"/>
+  <circle cx="350" cy="110" r="85" fill="none" stroke="var(--ok)" stroke-width="1.5"/>
+  <text x="48" y="44" fill="var(--muted)" font-size="12">S</text>
+  <text x="205" y="115" fill="var(--link)" font-weight="600" text-anchor="middle">A</text>
+  <text x="395" y="115" fill="var(--ok)" font-weight="600" text-anchor="middle">B</text>
+  <text x="300" y="114" fill="var(--fg2)" font-size="12" text-anchor="middle">A ∩ B</text>
+</svg>
+```
 
 - If $$A$$ and $$B$$ are disjoint the last term is zero, so $$P(A \cup B) = P(A) + P(B)$$.
 - Complement rule: $$P(A^c) = 1 - P(A)$$.
@@ -106,7 +119,9 @@ $$
 - Monday Sep 21: conditional probability, independence and applications ([lecture 6](06-conditional-probability-independence.md)). Lecture 7 is Bayes' theorem.
 
 ## Clarifications
-- Disjoint is not the same as complementary. Disjoint means the intersection is empty. Complementary means disjoint and together filling $$S$$, so $$P(A) + P(B) = 1$$. Odd and even on a die are both; $$\{1\}$$ and $$\{2\}$$ are disjoint only.
+
+> **Watch out.** Disjoint is not the same as complementary. Disjoint means the intersection is empty. Complementary means disjoint and together filling $$S$$, so $$P(A) + P(B) = 1$$. Odd and even on a die are both; $$\{1\}$$ and $$\{2\}$$ are disjoint only.
+
 - Disjoint is also not the same as independent, which arrives Monday. Two disjoint events with positive probability are never independent, because one occurring rules the other out. Lecture 6's deck carries the same warning.
 - The three-event rule comes from applying the two-event rule twice. Write $$A \cup B \cup C$$ as $$(A \cup B) \cup C$$, expand $$P(A \cup B)$$, and use $$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$$, whose two pieces overlap in $$A \cap B \cap C$$.
 

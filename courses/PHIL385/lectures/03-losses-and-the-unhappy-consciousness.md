@@ -93,9 +93,12 @@ Kierkegaard:
 
 - The essay is an address by A, an aesthete, to a fictional club of people who count themselves already dead. It is not Kierkegaard speaking.
 - The biography explains what Kierkegaard had to work with, not what the essay claims.
-- Kraal has stressed this distinction since lecture 1, and it is the easiest factual mark to lose. An exam option that begins "Kierkegaard holds that the unhappiest one…" is reporting A's position, not his.
-- A's definition: the unhappy one is the one who has his ideal, the content of his life, the fullness of his consciousness, his own real nature, in one way or another outside himself.
-- He is always absent from himself, never present to himself. This is the definition to memorise, and it is what the notes' "Essentially not being present to oneself" captures.
+
+> **Watch out.** Kraal has stressed this distinction since lecture 1, and it is the easiest factual mark to lose. An exam option that begins "Kierkegaard holds that the unhappiest one…" is reporting A's position, not his.
+
+> **Definition.** A's definition: the unhappy one is the one who has his ideal, the content of his life, the fullness of his consciousness, his own real nature, in one way or another outside himself.
+> He is always absent from himself, never present to himself. This is the definition to memorise, and it is what the notes' "Essentially not being present to oneself" captures.
+
 - The whole territory follows from that definition. A person can only be absent in the past or in the future, so there are exactly two directions of unhappiness. The notes' 1 and 2 are right.
 
 ### What A takes from Hegel
@@ -106,8 +109,9 @@ Kierkegaard:
 - A then says he and the fellowship will look at the region as natives, not as philosophers seeing the kingdom from a distance.
 - What A borrows is only the boundary. He does not borrow Hegel's content: a consciousness split between the Unchangeable and its own changeable self, working through devotion, labour and a priestly mediator.
 - A fills the same territory with hope and memory instead.
-- For Hegel the **unhappy consciousness** is a **stage**. It is sublated into Reason at the end of the chapter, which means Reason takes it up and supersedes it.
-- For A it is a **terminus**, or endpoint. The address reaches no winner, and the grave stays empty.
+
+> **Watch out.** For Hegel the **unhappy consciousness** is a **stage**. It is sublated into Reason at the end of the chapter, which means Reason takes it up and supersedes it.
+> For A it is a **terminus**, or endpoint. The address reaches no winner, and the grave stays empty.
 
 ### How the tenses map to hope and memory
 
@@ -131,7 +135,8 @@ Kierkegaard:
 - So the unhappiest is always to be sought among the unhappy rememberers.
 - A's reason is that memory is pre-eminently the proper element of the unhappy. The past has the peculiar property of being over, whereas the future is still to come. In that sense the future lies nearer the present than the past does.
 - The award at the end confirms it. The winner is hailed as recollection's unhappy lover.
-- The notes suggest that shattered hope is the most tragic thing. That is the ordinary view and a fair objection, but on the exam A's answer is memory, not hope.
+
+> **Watch out.** The notes suggest that shattered hope is the most tragic thing. That is the ordinary view and a fair objection, but on the exam A's answer is memory, not hope.
 
 ### The unhappy hoper
 
@@ -144,7 +149,9 @@ Kierkegaard:
 ### The unhappy rememberer
 
 - A rememberer is likewise not strictly unhappy as long as he is present in his memory.
-- The **strictly unhappy rememberer** remembers a time that never had reality for him.
+
+> **Definition.** The **strictly unhappy rememberer** remembers a time that never had reality for him.
+
 - A's first example is a man who never really had a childhood. He becomes a teacher of children, discovers there what is beautiful in childhood, and spends the rest of his life staring back at a childhood he never had.
 - A's second example is a man who lived without ever grasping life's joy. He catches sight of it in the moment of death, then does not die but lives again without living it over.
 

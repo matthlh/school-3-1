@@ -25,7 +25,7 @@ $$
 - The $$D$$ and $$E$$ recap: $$P(D \cap E) = 0.45$$ from the addition rule, $$P(E \mid D) = 0.9$$, and $$D$$ and $$E$$ are not independent because 0.45 is not $$0.5 \times 0.6$$, or equally because $$P(E \mid D)$$ is not $$P(E)$$. Use whichever equation the given numbers feed directly; do not compute $$P(D \mid E)$$ just to test with it.
 
 ### Bayes' theorem (slides 2–3)
-- Start from prior probabilities, take in new information, and compute posterior probabilities. His example: knowing which age group a person is in changes the assessed probability of a severe COVID outcome. The age group is the prior knowledge; the assessment given it is the posterior.
+> **Key.** Start from prior probabilities, take in new information, and compute posterior probabilities. His example: knowing which age group a person is in changes the assessed probability of a severe COVID outcome. The age group is the prior knowledge; the assessment given it is the posterior.
 - Setting: $$A_1, \dots, A_n$$ are mutually exclusive events that together form $$S$$, and $$B$$ is any event with $$P(B) > 0$$. Then:
 
 $$
@@ -58,7 +58,7 @@ P(A_2 \mid D) &= \frac{0.0036}{0.0161} \approx 0.224
 \end{aligned}
 $$
 
-- Prior versus posterior: given the car is from plant 2, the defect probability is 0.018. Given the car is defective, the probability it is from plant 2 is about 0.22. Different questions, different numbers.
+> **Watch out.** Prior versus posterior: given the car is from plant 2, the defect probability is 0.018. Given the car is defective, the probability it is from plant 2 is about 0.22. Different questions, different numbers.
 
 #### Tree method (slide 6)
 
@@ -66,6 +66,49 @@ $$
 2. Split each plant branch into defective and non-defective outcomes using that plant's rate.
 3. Multiply along each path to get $$P(A_k \cap D)$$. Add the three defective paths to get $$P(D)$$.
 4. Divide the target path by that sum to get the posterior. This uses the same arithmetic as the formula.
+
+```svg
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <line x1="80" y1="150" x2="225" y2="50"/>
+    <line x1="80" y1="150" x2="225" y2="150"/>
+    <line x1="80" y1="150" x2="225" y2="250"/>
+    <line x1="273" y1="50" x2="445" y2="30"/>
+    <line x1="273" y1="50" x2="445" y2="72"/>
+    <line x1="273" y1="150" x2="445" y2="130"/>
+    <line x1="273" y1="150" x2="445" y2="172"/>
+    <line x1="273" y1="250" x2="445" y2="230"/>
+    <line x1="273" y1="250" x2="445" y2="272"/>
+  </g>
+  <g text-anchor="middle">
+    <rect x="20" y="135" width="60" height="30" rx="6" fill="var(--panel)" stroke="var(--border3)"/>
+    <text x="50" y="155" fill="var(--fg)">Car</text>
+    <rect x="225" y="35" width="48" height="30" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="249" y="55" fill="var(--link)" font-weight="600">A1</text>
+    <rect x="225" y="135" width="48" height="30" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="249" y="155" fill="var(--link)" font-weight="600">A2</text>
+    <rect x="225" y="235" width="48" height="30" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="249" y="255" fill="var(--link)" font-weight="600">A3</text>
+  </g>
+  <g text-anchor="start" fill="var(--fg2)" font-size="12">
+    <text x="455" y="34">D</text>
+    <text x="455" y="76">not D</text>
+    <text x="455" y="134">D</text>
+    <text x="455" y="176">not D</text>
+    <text x="455" y="234">D</text>
+    <text x="455" y="276">not D</text>
+  </g>
+  <g text-anchor="middle" fill="var(--muted)" font-size="11">
+    <text x="140" y="92">0.35</text>
+    <text x="150" y="142">0.20</text>
+    <text x="140" y="212">0.45</text>
+    <text x="360" y="32">0.01</text>
+    <text x="360" y="132">0.018</text>
+    <text x="360" y="232">0.02</text>
+  </g>
+</svg>
+```
+
 
 ### Exam rules he stated
 - Midterm: one handwritten cheat sheet, letter size, one side. Final: two sides, which can be two one-sided sheets, so the midterm sheet is reusable. Handwritten only; written on a tablet and printed is fine. Typed or pasted slides are not allowed, and two students with matching sheets lose them for that exam. Questions and answers on the sheet are a waste, since he never repeats a question.
@@ -94,7 +137,8 @@ P(\text{system works}) &= 0.8 \times 0.9 \times 0.9 = 0.648
 $$
 
 ## Clarifications
-- The law of total probability is Bayes' denominator. Compute $$P(B)$$ once as the sum over the partition, then every posterior $$P(A_i \mid B)$$ is one path divided by that same number.
-- For reliability questions, label each block as series (all must work, so multiply reliabilities) or parallel (fails only if all fail, so one minus the product of the failure probabilities), then combine the blocks the same way.
+> **Key.** The law of total probability is Bayes' denominator. Compute $$P(B)$$ once as the sum over the partition, then every posterior $$P(A_i \mid B)$$ is one path divided by that same number.
+
+> **Key.** For reliability questions, label each block as series (all must work, so multiply reliabilities) or parallel (fails only if all fail, so one minus the product of the failure probabilities), then combine the blocks the same way.
 
 Questions: 6 in [02-questions.md](../02-questions.md) under "Lec 7", and 3 under "Long problems". Ledger: the WeBWorK 2 row for Bayes plus one new row for reliability, due Sep 29.

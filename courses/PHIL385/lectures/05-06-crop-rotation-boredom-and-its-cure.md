@@ -92,7 +92,8 @@ FREEDOOMMMMM
 - The comic consequence is that nobody needs the gods any more. The sacrifices stop, so Hermes arrives starving, and the priest of Zeus is out of work.
 - The notes' ending, that "society degrades because nobody has any motivation", is Kraal's gloss, not the play's.
 - Kraal used the play to set up A's essay. A world where everyone has what they need is a world with nothing left to want.
-- That state is **satiety**, and satiety is the note the essay's epigraph strikes. This is why the epigraph says "one finally gets sick of everything."
+
+> **Definition.** That state is **satiety**, and satiety is the note the essay's epigraph strikes. This is why the epigraph says "one finally gets sick of everything."
 
 ### Why Kierkegaard reads Aristophanes
 
@@ -108,7 +109,8 @@ FREEDOOMMMMM
 
 ### A's claim about social life
 
-- A does not coin the phrase "beast of prey". The Danish word, *Rovdyr*, is an ordinary word, and A uses it with a sneer.
+> **Watch out.** A does not coin the phrase "beast of prey". The Danish word, *Rovdyr*, is an ordinary word, and A uses it with a sneer.
+
 - A says that for all the talk of man as a social animal, man is at bottom a beast of prey. He calls the talk of society inherited hypocrisy and calculated cunning.
 - Kraal's nineteenth-century line, from Fourier through Mill to Nietzsche, is context, not influence.
 - Fourier's utopian communities are earlier than *Either/Or* (1843). Mill's *Utilitarianism* is from 1861 and Nietzsche wrote in the 1880s, so both come after it.
@@ -124,9 +126,12 @@ FREEDOOMMMMM
 | 233 | The three arts, limitation and forgetting |
 | 239–240 | Arbitrariness |
 
-- The "three arts" framing is Kraal's tidy version. A does not number them.
+> **Watch out.** The "three arts" framing is Kraal's tidy version. A does not number them.
+
 - What the text gives is the principle of limitation first, then the relation between remembering and forgetting, then arbitrariness.
-- The notes give "Arbitrariness (conditionality)". "Conditionality" is a slip. The Danish *Vilkaarlighed* means arbitrariness or wilfulness, and Hannay uses "arbitrariness".
+
+> **Definition.** The notes give "Arbitrariness (conditionality)". "Conditionality" is a slip. The Danish *Vilkaarlighed* means arbitrariness or wilfulness, and Hannay uses "arbitrariness".
+
 - The notes are right that forgetting also covers the good things that spoil the present. A's reason is that a pleasant experience, once past, carries the unpleasantness of longing. So forgetting has to apply to both pleasant and unpleasant experiences.
 
 ### Marriage and vocation
