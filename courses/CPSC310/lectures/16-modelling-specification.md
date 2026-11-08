@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 16 (Thu Nov 5) — Modelling & Specification
 
-The lecture notes follow [09b-model-specs.pdf](https://ubccpsc.github.io/310/26w1/lectures/09b-model-specs.pdf) (16 slides). The reader has no dedicated chapter on this material. Its closest chapters are [Assertions](https://ubccpsc.github.io/310/textbook/1-construction-basics/assertions/) for checking behaviour against a specification and [Blackbox Testing](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/blackbox/) for preconditions and input domains. See "Lec 16" in the [question bank](../02-questions.md).
+Matt was absent, so nothing on this page comes from class. The lecture notes follow [09b-model-specs.pdf](https://ubccpsc.github.io/310/26w1/lectures/09b-model-specs.pdf) (16 slides, posted on lecture day). The reader has no dedicated chapter on this material, so the deck is the source. Its closest chapters are [Assertions](https://ubccpsc.github.io/310/textbook/1-construction-basics/assertions/) for checking behaviour against a specification and [Blackbox Testing](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/blackbox/) for preconditions and input domains. See "Lec 16" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Model components from a stakeholder's request.
@@ -32,6 +32,7 @@ The lecture notes follow [09b-model-specs.pdf](https://ubccpsc.github.io/310/26w
 - A noun, or an adjective that classifies a noun, usually becomes a class or a field.
 - A verb that someone does usually becomes an operation.
 - A limit, a condition or a consequence usually becomes a rule.
+
 #### Section waitlist example
 
 - Each section has a fixed number of seats. When the section is full, students can join its waitlist, which holds up to 50 students.

@@ -1,6 +1,6 @@
 # STAT 251 — Lec 11 (Mon Oct 5) — Ch 4: in-class Activity 3, expectation and variance of discrete random variables
 
-The lecture 11 Canvas page has a 3-slide deck, the pre-activity worksheet, the Part A and Part B activity sheets and three solution files. The worked values agree with the readable parts of the posted solutions.
+This page covers everything on the lecture 11 Canvas page: a 3-slide deck, the pre-activity worksheet, the Part A and Part B activity sheets and three solution files. It does not use the lecture recording, which was not yet posted when the page was written. The worked values agree with the readable parts of the posted solutions.
 
 ## Activity 3. Expectation and variance
 - The whole lecture is in-class Activity 3, Parts A and B, on the expectation and variance of discrete random variables.

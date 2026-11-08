@@ -1,6 +1,6 @@
 # STAT 251 — Lec 21 (Mon Nov 2) — Ch 7: statistics, sampling distributions and the Central Limit Theorem
 
-The deck is `Lecture_22_Chapter_7_CanvasPost.pdf` (13 slides). Canvas did not post a separate after-class deck. The in-class material comes from the Panopto captions. This study site counts it as lecture 21. Canvas calls it Lecture 22 because the midterm occupied the Lecture 21 slot, while the deck footer says Lecture 20. The [question bank](../02-questions.md) lists this lesson under "Lec 21". The recording discusses how large $$n$$ must be.
+The deck is `Lecture_22_Chapter_7_CanvasPost.pdf` (13 slides). Canvas did not post a separate after-class deck. The in-class material comes from the Panopto captions. This study site counts this class as lecture 21. Canvas calls it Lecture 22 because the midterm occupied the Lecture 21 slot, while the deck footer says Lecture 20. The [question bank](../02-questions.md) lists this lesson under "Lec 21". What the class added to the deck is under In class.
 
 ## From samples to sampling distributions
 
@@ -124,9 +124,9 @@ He separated three distributions that are easy to mix up. Take the number of cup
 - The sample distribution is how the data in one sample are spread: the histogram of the 50 values you collected.
 - The sampling distribution is the distribution of a statistic, such as $$\bar{x}$$, over all the samples of 50 you could have drawn. Another sample of 50 gives a different $$\bar{x}$$, so the sample mean is a random variable, $$\bar{X}$$, and its distribution is the sampling distribution.
 
-A large sample tends to match the shape of its population. A small sample may look quite different.
+The sample distribution looks like the population distribution but is not the same. A large sample tends to match the shape of its population. A small sample may look quite different.
 
-A skewed population still gives skewed samples. The distribution of the sample mean across many samples can become approximately Normal.
+A bigger sample does not make the sample distribution Normal. A skewed population gives skewed samples, however large they are. The distribution of the sample mean across many samples can become approximately Normal.
 
 - In this course the only sampling distribution studied is that of $$\bar{X}$$. The sample proportion $$\hat{p}$$ and the sample standard deviation $$s$$ have sampling distributions too, but they are not covered.
 - The sampling distribution shows how much the statistic varies from study to study. Large variability is bad, because one study's estimate could land far from the parameter. Small variability is good.

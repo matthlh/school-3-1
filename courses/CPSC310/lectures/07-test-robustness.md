@@ -8,7 +8,7 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
 - Build a comprehensive test suite systematically with equivalence class partitioning.
 - Judge the strength of a test suite with coverage.
 
-## What a strong test suite checks
+## Test doubles and strong test suites
 ### Recap: test doubles, DIP and LSP (slides 3–10)
 - Lecture 6 (Tue Sep 29, deck 04a) owns this material in full. The slides below are the recap this deck opened with.
 - Tests are hard to write when the code under test is uncontrollable (a bank, a clock), unobservable (you cannot see what was sent), or unsafe or slow (real money, the network).
@@ -19,11 +19,13 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
 - The **LSP methods rule**. A subclass must not strengthen preconditions for the same inputs, although it may widen them. It must not weaken postconditions for the same inputs, although it may narrow them.
   - Penguin's "heights under 50 cm only" is a stronger precondition. "Penguin perishes" is an additional effect the superclass never promised.
   - The Resize example: the superclass lets you set one dimension. A subclass where changing the width also changes the height has widened the postcondition, which is the bad direction.
-- The recap slide uses dependency inversion (DIP) to depend on an interface. Pass the dependency in.
+- The recap slide puts four points together. Depend on an interface and pass the dependency in, which is dependency inversion (DIP).
 - A stub controls what comes back. A spy records what goes out.
 - Liskov substitution (LSP) requires the double to meet the interface's behavioural contract as well as its type.
-- Doubles add a layer. They can drift from the real implementation and need updates when the interface changes.
-- Test the real implementation separately.
+- The recap slide also names the cost of using doubles.
+  - They add another layer in the design.
+  - They can drift from the real implementation and need updates when the interface changes.
+  - The real implementation still needs tests of its own.
 
 ### What makes a test suite strong (slides 11–13)
 - A strong test suite is one that fails when the implementation is wrong. The deck lists four properties.

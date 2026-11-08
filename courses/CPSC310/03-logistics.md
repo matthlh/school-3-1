@@ -1,7 +1,7 @@
 # CPSC 310 — logistics
 
 - Section 103 meets Tue and Thu from 3:30–5:00 in LSK 201. Its iClicker code is NBOE. The course site has the materials, and Piazza has announcements. The course does not use Canvas.
-- Lab L1N meets Tue from 09:00–11:00 on Zoom. Find the section links in Piazza @14.
+- Your registered lab section, L1N, meets Tue from 09:00–11:00 on Zoom. Find the section Zoom links in Piazza @14. The passcode links are deliberately left off this page.
 - Lab blocks run from Fri to Thu, starting Fri Sep 11. If you are waitlisted, attend any lab.
 - Work is normally due by the start of the next lab. If the PrairieLearn credit window differs, use the PrairieLearn window. The course drops the lowest lab grade.
 - Submit labs, project questions and reflections in PrairieLearn. Submit code on GitHub Enterprise using the VPN and CWL. Starter repositories were provisioned Sep 11. Autograding started the week of Sep 14.
@@ -19,7 +19,7 @@
 - Practice exam: released the week of Oct 12 to 16; Lab 7 asks for evidence that it was printed, completed and marked on paper. Length and content may differ from the real exam.
 - The practice exam is Piazza @192 (Kyle, pinned, Oct 16): two PDFs, the exam and a code booklet, plus `SAMPLE_SOL_UPDATED.pdf`. Kyle's instructions are to print it, do it by hand without the internet, and time each question and the whole thing; it is meant to run about as long as the real two hours. The solution was corrected on Oct 28 (5a, 5d and 6b), and question 3c's LSP answer is disputed in the followups and unanswered. LAB07.1 on PrairieLearn is only a reflection on having done it.
 - Schedule: Lab 7 is released early and holds testable material, with the lab slot used to meet the D3 group. Tue Oct 27 is a review lecture (topic poll the week before). Thu Oct 29 lecture is cancelled. Office hours continue.
-- The two earlier classmate reports, all true/false or all multiple choice, disagree with the mixed format confirmed in Piazza @180.
+- The two earlier classmate reports, all true/false or all multiple choice, were both wrong. Piazza @180 confirmed the mixed format.
 
 ## AutoTest — how the project deliverables are graded (course site, 2026-09-16)
 - Code is graded automatically on every push to `main`.

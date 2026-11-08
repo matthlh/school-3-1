@@ -1,6 +1,6 @@
 # STAT 251 — Lec 5 (Fri Sep 18) — Ch 3: sets and probability, the addition rule
 
-The deck is `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631). The class began with the last two slides of the lecture 4 after-class deck. Slides 8 and 13 show the formulas for equally likely counting and countable additivity as images. The formulas below use the surrounding slide text and the standard statements.
+The after-class deck is `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631). The class began with the last two slides of the lecture 4 after-class deck. The formulas for equally likely counting on slide 8 and countable additivity on slide 13 are images that the Canvas text layer drops. Those two formulas are written from the surrounding slide text and the standard statements.
 
 ## Learning goals (slides 2–3, the Chapter 3 outcomes)
 - Recall the basic mathematical properties of probability.
@@ -55,7 +55,7 @@ $$
 - The intersection $$A \cap B$$ holds the outcomes common to $$A$$ and $$B$$. Its probability is written $$P(A \text{ and } B)$$ or $$P(A \cap B)$$.
 - Two events are disjoint, or mutually exclusive, when they have no outcome in common. They cannot occur together, so $$P(A \cap B) = 0$$. Rolling a die, "odd" and "even" are disjoint.
 - The union $$A \cup B$$ holds the outcomes in $$A$$, in $$B$$, or in both. Its probability is written $$P(A \text{ or } B)$$ or $$P(A \cup B)$$.
-- A **Venn diagram** uses a rectangle for $$S$$ and a circle for each event.
+- Slides 9 to 12 each show a **Venn diagram**, which uses a rectangle for $$S$$ and a circle for each event.
 - The complement is the part of the rectangle outside the event's circle.
 - The intersection is the overlap. Disjoint events have no overlap.
 - The union contains both circles, including their overlap.

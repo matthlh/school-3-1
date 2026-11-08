@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 5: The teachings and characteristics of early Buddhism and Theravada
 
-The notes follow the 65-slide deck published Mon Oct 5. Mini-Quiz 5 also covers Harvey (2013), chapter 4 (pp. 88 to 113) and the first part of chapter 11 (pp. 318 to 340). The two BBC (1977) documentaries are "The Mindful Way" (Ajahn Chah, Theravada in Thailand) and "Footprint of the Buddha" (Theravada in Sri Lanka).
+The notes follow the 65-slide deck published Mon Oct 5. The Canvas video has no caption track that could be read, so this page comes from the deck alone. Mini-Quiz 5 covers the lecture, Harvey (2013), chapter 4 (pp. 88 to 113) and the first part of chapter 11 (pp. 318 to 340). It also covers two BBC (1977) documentaries, "The Mindful Way" (Ajahn Chah, Theravada in Thailand) and "Footprint of the Buddha" (Theravada in Sri Lanka). The Harvey text was not on hand, so nothing on this page comes from it.
 
 ## Early Buddhism
 
@@ -286,7 +286,7 @@ Mini-Quiz 5 locked Tue Oct 13 at 23:59, a day later than usual because of Thanks
 - Maudgalyayana is associated with supernatural powers and the hungry-ghost mother. Ullambana falls on the 15th day of the seventh lunar month.
 - Ananda is associated with memory, compassion, "Thus have I heard" and women's ordination. He attained arhatship only after the Buddha's death.
 - Devadatta led the schism and tried to kill the Buddha.
-- Lecture 6 identifies Maitreya as the layman Ajita. The main account above gives that identification as likely.
+- Maitreya was likely the layman Ajita during the Buddha's lifetime.
 - Conservative versus innovative Buddhism: one Buddha and one bodhisattva at a time and nirvana final, against innumerable Buddhas and no arhat ideal; Theravada about 30% of Buddhists, Cambodia 97%, Thailand 90%, Myanmar 80%, Sri Lanka 70%, Laos 67%.
 - The Tipitaka: Vinaya 5 books, Sutta 5 collections, Abhidhamma 7 books; Patimokkha 227 rules for monks and 311 for nuns; parajika 4 and 8; Sudinna and the first rule.
 - The four immeasurables with their Pali names (metta, karuna, mudita, upekkha), recommended in Theravada mostly to lay followers.

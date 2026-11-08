@@ -7,14 +7,14 @@
 ## Grading — 100% exams, no papers
 | Component | Weight | Date | Format |
 |---|---|---|---|
-| Exam 1 | 15% | Fri Oct 2, 2:00–2:50pm | **Essay: 2 questions, max 500 words each*** |
+| Exam 1 | 15% | Fri Oct 2, 2:00–2:50pm | **Essay: 2 questions, max 500 words each** |
 | Exam 2 | 15% | Fri Oct 16, 2:00–2:50pm | MC, 7 questions |
 | Exam 3 | 15% | Fri Oct 30, 2:00–2:50pm | MC, 7 questions |
 | Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC, 7 questions |
 | Final | 40% | Fri Dec 11, 3:30pm, in person; room and length not posted yet | cumulative; course grades are often scaled up at the end and have never been scaled down |
 
 - Exams 2, 3 and 4 are multiple choice, with 7 questions each. They are marked on factual accuracy alone. Each question is about 2.1% of the course grade.
-- The syllabus identifies one essay exam without naming it. The Canvas quiz pages on 2026-09-19 showed 2 questions for Exam 1 and 7 for each of the others. **Exam 1 is the essay exam.**
+- The syllabus says one in-term exam is an essay exam but does not say which. The Canvas quiz pages on 2026-09-19 showed 2 questions for Exam 1 and 7 for each of the others. **Exam 1 is the essay exam.**
 - Type both essays in Respondus in 50 minutes. Each has a maximum of 500 words.
 - Only the final is cumulative. Exams 2–4 each cover their own material.
 
@@ -26,7 +26,7 @@
 - If you arrive late, sign in at the front desk. Leaving the room ends your exam.
 - **No slides, recordings or instructor notes exist** — lecture notes are the only record.
 - TAs grade the essay exam on factual accuracy, clarity, relevance and cogency. They grade **relative to peers**.
-- State your position, give a numbered argument, present the strongest objection and respond to it.
+- In the essay exam, a plain structure works best: state your position, give a numbered argument, present the strongest objection and respond to it.
 - Scaling: "hitherto a class has never been scaled down, but it often happens that it is scaled
   up." A+ starts at 90%.
 

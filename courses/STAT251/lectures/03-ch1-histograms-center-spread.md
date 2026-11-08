@@ -1,6 +1,6 @@
 # STAT 251 — Lec 3 (Mon Sep 14) — Ch 1: histograms, describing a distribution, mean and median, range
 
-The 11-slide deck is `Lecture_03_Chapter_1_CanvasPost.pdf`. The Sep 14 lecture also has a Panopto recording.
+The 11-slide deck is `Lecture_03_Chapter_1_CanvasPost.pdf`. The page is checked against the Sep 14 Panopto recording.
 
 ## Your notes (pasted 2026-09-14)
 Stats Notes:
@@ -122,7 +122,7 @@ $$
 ### Mean versus median
 - It is median, not medium.
 - "The median is the relative mean" is not a thing. The median is preferred for skewed data because it is resistant: a few extreme values drag the mean into the long tail but barely move the median, so the median is the better picture of a typical observation.
-- The rules for computing both are under Slides, organized.
+- The rules for computing both are under Measures of centre and spread.
 
 ### Empty intervals
 - A histogram interval with no observations stays on the axis with a bar of height zero. The gap is information, the same reason an empty stem stays in a stem-and-leaf plot. He confirmed in class that a histogram can have such gaps.

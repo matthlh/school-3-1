@@ -1,6 +1,6 @@
 # STAT 251 — Lec 23 (Fri Nov 6) — Ch 7: the Normal approximation to the Poisson; Ch 8: point estimation and unbiased estimators
 
-The Nov 6 Panopto captions and the decks `Lecture_24_Chapter_7_CanvasPost_AL.pdf` (9 slides) and `Lecture_25_Chapter_8_CanvasPost.pdf` (first five slides) cover this lecture. Canvas numbers it Lecture 24, and the [question bank](../02-questions.md) lists it under "Lec 23" and "Long problems".
+This page is built from the after-class deck `Lecture_24_Chapter_7_CanvasPost_AL.pdf` (9 slides), the first five slides of the Chapter 8 deck `Lecture_25_Chapter_8_CanvasPost.pdf`, and the Panopto captions of the Nov 6 recording. Canvas numbers this class Lecture 24, and the [question bank](../02-questions.md) lists it under "Lec 23" and "Long problems".
 
 ## Normal approximations for counts
 
@@ -20,7 +20,7 @@ The class opened by redoing the lecture 22 Example 3, $$X \sim \text{Binomial}(1
 - The Normal curve is continuous, so "the count is 2" has to become "the Normal value is in the bar for 2", which is $$1.5 \le Y \le 2.5$$.
 - So 0.5 is half the gap between neighbouring values.
 
-#### How to choose the cutoff
+#### How to choose the cutoff without memorising a table
 
 1. Rewrite a strict inequality as a "with equals" one on whole numbers first: $$X > 4$$ is $$X \ge 5$$, and $$X < 4$$ is $$X \le 3$$.
 2. Draw the bars and include every bar the event covers, all of it.
@@ -92,7 +92,7 @@ $$
 
 #### (b) Between 50 and 65 particles inclusive
 
-Include the whole bar for 50 and the whole bar for 65.
+The word "inclusive" matters, because the equals signs change the correction. Include the whole bar for 50 and the whole bar for 65.
 
 $$
 \begin{aligned}
@@ -105,7 +105,7 @@ P &= \Phi(1.42) - \Phi(-0.74) \\
 \end{aligned}
 $$
 
-The deck and the calculation disagree. The deck prints $$z_2 = 1.141$$ and gives 0.6911. The calculation gives 1.42 and 0.6926. See Clarifications for the source of the difference.
+The deck prints $$z_2 = 1.141$$ and gets 0.6911. See Clarifications.
 
 Once the probability statement is written in terms of $$Z$$, the rest is a Chapter 5 table lookup. The instructor stressed that the standard Normal table is used in every chapter from here on.
 
@@ -116,10 +116,10 @@ Once the probability statement is written in terms of $$Z$$, the rest is a Chapt
 Chapter 7 covered sampling distributions.
 
 - The population distribution is the distribution of the whole collection of values the study is about. It is usually unknown.
-- A sample distribution is the distribution of the values in one sample. The lecture 21 applets showed that a small sample can look quite different from the population. A large sample can look close to it.
+- A sample distribution is the distribution of the values in one sample. The lecture 21 applets showed that a small sample can look quite different from the population and that a large one looks close to it.
 - A sampling distribution is the distribution of a statistic, such as $$\bar{X}$$, $$\hat{p}$$ or $$S$$, over all possible samples.
 
-### Using a sample to estimate a population parameter
+### Using a sample to estimate a population parameter (Chapter 8 deck, slides 3 and 4)
 
 **Statistical inference** means taking a sample from a population, analysing the sample, and making decisions or predictions about the population from it.
 
@@ -127,14 +127,14 @@ Chapter 7 covered sampling distributions.
 - The pairs used are $$\bar{x}$$ for $$\mu$$, $$s$$ for $$\sigma$$, and $$\hat{p}$$ for $$p$$.
 - If the whole population's data were available, no inference would be needed: the parameters could simply be calculated.
 
-### Point estimates and interval estimates
+### Point estimates and interval estimates (Chapter 8 deck, slides 3 and 4)
 
 - A point estimate gives the parameter one value, for example "the mean is 100 dollars".
 - An interval estimate gives a range with a lower and an upper bound, for example "the mean is between 90 and 110 dollars".
 - A point estimate does not say how close it is likely to be to the parameter, so the interval estimate is more useful.
 - An interval that is too wide is useless, even though it almost surely contains the parameter: "between 50 and 150 dollars" says little. That is why the variability of the sampling distribution matters.
 
-### Estimators and estimates
+### Estimators and estimates (Chapter 8 deck, slides 3 and 4)
 
 - An estimator is the formula, for example $$\bar{X} = \frac{1}{n}\sum X_i$$.
 - An estimate is the number the formula gives for one sample, for example $$\bar{x} = 78$$.
@@ -163,11 +163,12 @@ The class stopped here. Confidence intervals for $$\mu$$ (slides 8 to 13) are th
 
 ## In class
 
-### Questions about the material
+### Remarks on the material
 
-- The slide and the instructor used different numbers for the same CLT activity. The slide calls it Activity 8 and the instructor called it Activity 7. The class did it in lecture 22 and had no worksheet in this lecture.
+- The CLT activity (Activity 8 on the slide, which the instructor called Activity 7) was not done in this class. It had already been covered in lecture 22, so this class had no worksheet.
 - A student asked whether a Poisson rate under 20 could be scaled up (for example 1 per second becomes 20 per 20 seconds) to use the approximation. The instructor said that changes the question: the rate has to match the interval the question asks about.
 - The instructor pointed out the other 0.5 in the course: the quartile rule $$np + 0.5$$ from Chapter 1 is also a correction.
+
 ### Midterm grades and written work
 
 - Midterm results appeared on Gradescope just before class. Version B was out of 36.
@@ -176,13 +177,14 @@ The class stopped here. Confidence intervals for $$\mu$$ (slides 8 to 13) are th
   - In the instructor's first example, a 55% midterm becomes 85% if the final is 85%.
   - In his second example, a 35% midterm becomes 70% if the final is 70%.
 - The course average is always kept between 75 and 80. If the final turns out hard, he scales the marks up.
-- The TAs said students lost marks for giving the right answer without showing how they got it. For written answers, show these steps.
+- The TAs said students lost marks on the midterm for giving the right answer without showing how they got it. For written answers, show these steps.
   - Define the random variable in words ("W is the time to serve one customer").
   - Name its distribution and parameter ("W follows an exponential distribution with $$\lambda = \ldots$$").
   - Say "continuity correction" when you add or subtract 0.5.
   - A multiple-choice question needs no work shown.
 - Remarking: TAs do not double-check midterm marking. Compare your Gradescope paper with the posted solutions (Midterm Exam Information module), and if there is a genuine marking mistake, send the Change of Grade Request form (Course Information module) to the head TA within one week of the grades being released.
 - Written assignments should be laid out clearly, like the posted solutions. Squeezing five answers onto two pages left out steps that carry marks.
+
 ### Schedule
 
 - There are no labs the week of Nov 9 to 13. Fri Nov 13 is the only class that week because of the break on Monday and Wednesday.

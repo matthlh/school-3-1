@@ -1,6 +1,6 @@
 # STAT 251 — Lec 10 (Fri Oct 2) — Ch 4: rules for the mean and variance, covariance, sums and averages, the maximum of independent random variables
 
-The after-class deck is `Lecture_10_Chapter_4_CanvasPost_AL.pdf` (16 slides, Canvas file 47723830). It adds worked answers to Examples 8 and 9. The lecture also has a Panopto recording.
+The after-class deck is `Lecture_10_Chapter_4_CanvasPost_AL.pdf` (16 slides, Canvas file 47723830). It is the before-class deck plus worked answers to Examples 8 and 9. The page is checked against the Panopto recording, and what the class added is under In class.
 
 ## Learning goals (slide 2)
 - Use the rules for the mean and variance of $$aX + b$$ and of sums of random variables.

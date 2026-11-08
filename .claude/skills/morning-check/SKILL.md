@@ -609,7 +609,7 @@ until then. PHIL 385 is unchanged (nothing to pull).
   none), and the assigned reader chapter or readings.
 - **Write the page as the real study page, not an outline:** `courses/<CODE>/lectures/_NN-<slug>.md` in
   the course's lecture-file shape (CPSC 310: the deck-organised format in CLAUDE.md; STAT 251 and ASIA 250:
-  `## Slides, organized`, `## In class` from the recording when there is one, `## Clarifications` where the
+  one `##` per main part of the deck named for what it teaches, `## In class` from the recording when there is one, `## Clarifications` where the
   deck and the recording or reader disagree), formulas in LaTeX. No pre-lecture questions (dropped on
   2026-10-06). Keep the underscore: term.py still counts the lecture unlogged and the `Log …` to-do stays
   open, which is his reminder to send notes after class.

@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 6: Mahayana, the Greater Vehicle
 
-The notes follow `Lecture 6.pptx` (65 slides, published Tue Oct 20). Mini-Quiz 6 also covers Harvey (2013), chapter 5 (pp. 114 to 150) and the first part of chapter 6 (pp. 151 to 179). See "Lec 6" in the [question bank](../02-questions.md).
+The notes follow `Lecture 6.pptx` (65 slides, published Tue Oct 20). The video was not read, so this page comes from the deck alone. Mini-Quiz 6 also covers Harvey (2013), chapter 5 (pp. 114 to 150) and the first part of chapter 6 (pp. 151 to 179). Those chapters were not pulled for this page. See "Lec 6" in the [question bank](../02-questions.md).
 
 ## How Mahayana emerged
 

@@ -244,9 +244,9 @@ share of those right the last time), and ends by naming each frozen topic.
   there** (Matt, 2026-09-14) — every push to `main` is a graded submission; edit and test, he does git.
   **Logging a CPSC 310 lecture** (Matt, 2026-09-17: he takes no notes in this course, so the posted deck
   *is* the lecture record) = run `--lecture N`, then write `lectures/NN-<slug>.md` as the deck organised for
-  study: a one-line preamble (deck link, reader chapter links, question count), `## Learning goals` (the
-  deck's goals slide, paraphrased), `## Slides, organized` with one `###` per topic block naming its slide
-  range, plain sentences, the reader's terms in bold on first use, a short fenced code fragment only where
+  study: a one-line preamble (deck link, reader chapter links, a link to the bank), `## Learning goals` (the
+  deck's goals slide, paraphrased), then one `##` per main part of the deck named for what it teaches, with one
+  `###` per topic block naming its slide range, plain sentences, the reader's terms in bold on first use, a short fenced code fragment only where
   the point needs it; then `## In class` (iClicker, exercises) and `## Clarifications` (deck vs reader
   disagreements) only when there is something, and `## Your notes` only if he sent some. Paraphrase, never
   transcribe: the decks say "do not distribute on non-UBC domains" and the repo is public, so the PDFs stay

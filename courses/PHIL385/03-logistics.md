@@ -1,9 +1,9 @@
 # PHIL 385 — logistics
 
 - Anders Kraal is the instructor. His email is anders.kraal@ubc.ca.
-- Contact the TAs, Zoe Luo, Karoline Paier and Anthony Nguyen, through Canvas.
+- Contact the TAs, Zoe Luo, Karoline Paier and Anthony Nguyen, each by email through Canvas.
 - Write each exam in class as a 50-minute Canvas quiz using Respondus LockDown Browser.
-- A missed in-term exam transfers its weight to the final automatically. No makeup or concession is needed.
+- A missed in-term exam transfers its weight to the final automatically. There are no makeup exams, and no concession is needed.
 - The TA spends about 20 minutes marking each exam. Class "feedback sessions" give general feedback.
 - Marks are relative to peers and scaled toward the department average of about 76. The 2025 exams were open-book. The current syllabus specifies closed-book exams.
 - Canvas has two "students asking students for class notes" boards, one per section.
@@ -21,7 +21,7 @@
 ## Exam 1 questions (as Matt recalled them after the exam)
 - Question 1 asked for three ways A suggests a person fails to overcome boredom, based on "The Unhappiest One". It drew on Crop Rotation as well.
 - Question 2 asked what A's position is and whether you agree or disagree, with justification.
-- Matt recalls one question tying two essays together and the other asking for a verdict on A as a whole. That differs from the unconfirmed account of the other course, where the first question combined all the texts.
+- Matt recalls one question tying two essays together and the other asking for a verdict on A as a whole.
 
 ## Reference (for Claude)
 - Office hours: Wed 12:15–12:45 on Zoom (link on the Canvas front page); email one day ahead for a slot.

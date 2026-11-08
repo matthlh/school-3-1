@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 11 (Thu Oct 15) — Boundaries: core, edges, ports and adapters
 
-The lecture notes follow [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-boundaries.pdf) (11 slides, posted after class on Oct 15). The reader has no dedicated Boundaries chapter. [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/) gives the related terminology for single responsibility and dependency inversion. [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) covers test doubles. The test-level slide previews lecture 12's [Testing Pyramid](https://ubccpsc.github.io/310/textbook/3-software-design/testing-pyramid/). See "Lec 11" in the [question bank](../02-questions.md) and the slide 2 midterm notice in [logistics](../03-logistics.md).
+The lecture notes follow only the deck, [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1/lectures/06b-boundaries.pdf) (11 slides, posted after class on Oct 15). The reader has no dedicated Boundaries chapter. [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/) gives the related terminology for single responsibility and dependency inversion. [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) covers test doubles. The test-level slide previews lecture 12's [Testing Pyramid](https://ubccpsc.github.io/310/textbook/3-software-design/testing-pyramid/). See "Lec 11" in the [question bank](../02-questions.md) and the slide 2 midterm notice in [logistics](../03-logistics.md).
 
 ## Learning goals
 - Explain how an interface shaped like its dependency lets a storage change leak into the business logic and its tests.
@@ -68,7 +68,7 @@ The lecture notes follow [06b-boundaries.pdf](https://ubccpsc.github.io/310/26w1
 ## Clarifications
 
 - The schedule originally listed "API design". The posted deck covers boundaries.
-- The storage adapter applies the Adapter pattern from lecture 8.
-- In lecture 8 the interface sat on the client's side of a foreign library. Here the core owns the interface, called a **port**, and describes it in its own terms. A storage change can stay at the edge.
+- The storage adapter applies the Adapter pattern from lecture 8, with one difference in who owns the interface.
+- In lecture 8 the interface sat on the client's side of a foreign library. Here the core owns the interface, called a **port**, and describes it in its own terms. That ownership, together with the core's own wording, is what stops a storage change from leaking into the core.
 - "Every dependency points inward" is the reader's dependency inversion principle (Design Principles chapter): the core depends on an abstraction it owns, and the concrete store depends on that same abstraction rather than the other way round.
 - The three test levels are lecture 12's testing pyramid in miniature. The deck only names them and matches each to a part of the system; the counts and the trade-offs come next lecture.

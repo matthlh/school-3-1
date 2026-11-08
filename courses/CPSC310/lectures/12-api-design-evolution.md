@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 12 (Tue Oct 20) — API Design & Evolution
 
-The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26w1/lectures/07a-api-design-evolution.pdf) (20 slides). Its title slide still says 06b. The reader covers [APIs](https://ubccpsc.github.io/310/textbook/3-software-design/apis/) and [Safe Versioning](https://ubccpsc.github.io/310/textbook/3-software-design/versioning/). Slides 4 to 8 cover the testing pyramid. See "Lec 12" in the [question bank](../02-questions.md) and slide 2's announcements in [logistics](../03-logistics.md).
+The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26w1/lectures/07a-api-design-evolution.pdf) (20 slides, posted on lecture day). Its title slide still says 06b. The reader's [APIs](https://ubccpsc.github.io/310/textbook/3-software-design/apis/) chapter covers the design half of the lecture, and [Safe Versioning](https://ubccpsc.github.io/310/textbook/3-software-design/versioning/) covers change severity. Matt takes no notes in this course, so this page comes only from the deck and the reader. Slides 4 to 8 cover the testing pyramid. See "Lec 12" in the [question bank](../02-questions.md) and slide 2's announcements in [logistics](../03-logistics.md).
 
 ## Learning goals
 - Analyze an API against four design criteria: information hiding, obliviousness, usability (easy to use, hard to misuse) and contract completeness.
@@ -80,7 +80,7 @@ The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26
 
 ## Course announcements
 
-- Slide 2 announces that D3 is posted and due Nov 6. Complete the planning task before Lab 07.
+- Slide 2 announces that D3 is posted and due Nov 6, with a planning task to finish before Lab 07.
 - It lists the midterm as Thu Oct 29 at 19:00 and points to the practice exam on Piazza.
 
 ## Clarifications

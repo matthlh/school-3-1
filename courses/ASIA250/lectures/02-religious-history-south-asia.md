@@ -5,7 +5,7 @@ The deck has 94 slides. The recording is Canvas module item 9469882 and the slid
 ## Your notes
 None. Everything below is from the deck.
 
-## Early religious practices
+## Absorption, shamanism and the Indus Valley
 
 ### Absorption and the faith frame (slides 2 to 4)
 - The lecture reopens with the Jones facets seen through a faith frame, then adds a new axis: absorption, the volume of the religious experience.
@@ -66,7 +66,7 @@ None. Everything below is from the deck.
 - The divine androgyne: Shiva as Ardhanarishvara, "the Lord who is half woman", split vertically with Shiva on the dominant right side and Parvati on the left.
 - Shakti is divine energy, considered feminine, of the earth and the goddess. As Adishakti, primal energy, she stands over the three gods and her true nature is formless (nirguna). Shaktism places the divine feminine at the centre.
 
-## Post-Vedic philosophy and devotion
+## Upanishads, post-Vedic philosophy and devotion
 
 ### Upanishads and the post-Vedic schools (slides 65 to 69)
 - The Upanishads (800 to 200 BCE) posit a formless (nirguna) ground of being, Brahman, at the foundation of the universe. Brahman is the source of the individual soul (atman), the imperishable part of humans and animals that is reborn until liberation (moksha). Some Upanishads say atman is identical to Brahman (non-dualism), others keep a distinction (dualism). The Purusha question returns: are the shards the same as Purusha?

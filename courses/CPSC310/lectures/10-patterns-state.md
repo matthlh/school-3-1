@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 10 (Tue Oct 13) — Patterns III: State and the Open/Closed Principle
 
-The lecture notes follow [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-patterns-iii.pdf) (12 slides). The related reading is the State section of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). The schedule originally listed "API change severity and versioning". The deck covers State. See "Lec 10" in the [question bank](../02-questions.md).
+The lecture notes follow only the deck, [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26w1/lectures/06a-patterns-iii.pdf) (12 slides, posted on lecture day). The related reading is the State section of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). The schedule originally listed "API change severity and versioning". The deck covers State. See "Lec 10" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -23,7 +23,7 @@ The lecture notes follow [06a-patterns-iii.pdf](https://ubccpsc.github.io/310/26
 ### The refactoring: encapsulate the states in objects (slide 5)
 - Each state becomes its own class, so the phone's three states become `StateOff`, `StateLocked` and `StateReady`.
 - Each transition becomes a method on a state object.
-- The "creates" arrows show which object instantiates the next state.
+- A state object creates the state that follows it, which the deck draws as "creates" arrows.
 - `Phone` creates `StateOff` at start-up. When the phone powers down, `StateLocked` or `StateReady` creates `StateOff`.
 - `StateOff` creates `StateLocked`. `StateLocked` creates `StateReady`.
 - Slide 6 is the canonical refactoring.guru diagram: a context holds a reference typed as the state interface, every concrete state implements that interface, and the context forwards each event to whichever state object it currently holds.

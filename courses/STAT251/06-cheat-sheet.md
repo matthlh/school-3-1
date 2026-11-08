@@ -1,17 +1,17 @@
 # STAT 251 — Midterm cheat sheet (Fri Oct 30, 08:00)
 
-The midterm covers Chapters 1, 3, 4, 5 and 6. The original cheat sheet describes the exam as long and multiple choice. The lecture 20 review notes describe a mixed format with multiple choice and written answers. The sheet helps you identify the model, then find the formula at the step where you need it.
+The midterm covers Chapters 1, 3, 4, 5 and 6. This sheet was written for a long multiple-choice exam, so it is built for speed. The lecture 20 review notes describe a mixed format instead, with multiple choice and written answers. The sheet names the problem type from the question's wording, then gives one recipe per type, with each formula beside the step that uses it and the trap that loses the mark.
 
-- Use one handwritten side of a letter-size sheet. A sheet written on a tablet and printed is allowed. Typed or pasted slides are prohibited. Both students lose their sheets if they match.
+- Use one handwritten side of a letter-size sheet. A sheet written on a tablet and printed is allowed. Typed or pasted slides are prohibited. If two students bring matching sheets, both sheets are taken.
 - Put the problem-type table and the two habits at the top. Put Chapters 1 and 3 on the left, Chapter 4 in the middle and Chapters 5 and 6 on the right.
-- Write each method from memory first. Then check it against the steps and traps below.
+- Writing the sheet is the studying, so write each recipe from memory first. Then check it against the steps and traps below.
 - If space runs out, drop the Trap lines for recipes 1 and 2 first, then recipe 10, then the Chapter 1 recall items in recipe 1.
-- Write "by independence" beside each product of probabilities.
-- Write the cdf for every real $$x$$, including the 0 and 1 pieces.
+- The first of the two habits is to write "by independence" beside each product of probabilities.
+- The second habit is to write the cdf for every real $$x$$, including the 0 and 1 pieces.
 
 ## Top strip · Which problem is this?
 
-Outcome 3cc asks you to choose the model. Match the question's wording to a row and use the numbered method.
+Choosing the model (outcome 3cc) is the hardest outcome on the list, and this table drills it. Match the question's wording to a row and use the numbered recipe.
 
 | The question has | It is | Recipe |
 |---|---|---|

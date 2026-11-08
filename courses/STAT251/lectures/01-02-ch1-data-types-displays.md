@@ -1,6 +1,6 @@
 # STAT 251 — Lec 1–2 (Wed Sep 9 · Fri Sep 11) — Ch 1: data types, descriptive vs inferential, displays
 
-`Lecture_01_Chapter_1.pdf` (7 slides) introduces the material. `Lecture_02_Chapter_1_CanvasPost.pdf` (16 slides) repeats those slides and continues with displays. Both lectures have Panopto recordings. The first half of lecture 1 covers policies listed on the syllabus and logistics pages.
+`Lecture_01_Chapter_1.pdf` (7 slides) introduces the material. `Lecture_02_Chapter_1_CanvasPost.pdf` (16 slides) repeats those slides and continues with displays. The page is checked against both lectures' Panopto recordings. The first half of lecture 1 covers policies listed on the syllabus and logistics pages.
 
 ## Your notes (pasted 2026-09-11, no notebook yet)
 - talked about variables (continuous vs discrete or whatever it's called)
@@ -14,7 +14,7 @@
 - Name the features that describe a distribution.
 - Summarise and explore data with software, which is R in the labs.
 
-## Data and displays
+## Statistics, samples and variables
 ### What statistics is (slide 3)
 - The slide gives three textbook definitions in different words. All three say that statistics is collecting data, summarising it, analysing it, and interpreting the results to draw conclusions.
 - One of the three adds that statistics is the science of learning from data and of measuring, controlling and communicating uncertainty.
@@ -152,7 +152,8 @@ $$
   - The number of people waiting in line and the number of speeding tickets are counts, so they are discrete.
   - The weight is a variable because it is measured across many dogs, and it can take any value in an interval.
 - The iClicker asked which graph suits a categorical variable with 25 categories. The answer was (b), a bar chart. 73% got it.
-- Comparing 25 slices in a pie chart is difficult. Sorting the bars into a Pareto chart makes the comparison easier.
+  - A pie chart with 25 slices is unreadable.
+  - Sorting the bars into a Pareto chart makes them even easier to compare.
 - He said answering iClicker from outside the room counts as cheating. If you miss a class, use the hour for other work and watch the recording later, since several of the lowest sessions are dropped at the end of term.
 - The lecture ended partway through the histogram example on slide 13.
 

@@ -1,6 +1,6 @@
 # STAT 251 — Lec 19 (Mon Oct 26) — Ch 6: Activity 6, the Poisson count and the exponential wait
 
-The deck is `Lecture_19_Chapter_6.pdf` (6 slides) and the worksheet solutions are in `A6_Ch6_poisson_process_solutions.pdf`. This lecture covers Chapter 6. The deck's last slide names the Central Limit Theorem as the topic of the next class. The [question bank](../02-questions.md) lists this lesson under "Lec 19".
+The deck is `Lecture_19_Chapter_6.pdf` (6 slides) and the worksheet solutions are in `A6_Ch6_poisson_process_solutions.pdf`, both from Canvas. The Panopto recording was not read. The deck's last slide names the Central Limit Theorem as the topic of the next class, so this lecture is all Chapter 6 and has no Chapter 7 content. The [question bank](../02-questions.md) lists this lesson under "Lec 19".
 
 ## Poisson counts and exponential waits
 
@@ -71,9 +71,7 @@ P(X = 0) &= \frac{e^{-1.2015} \times 1.2015^0}{0!} \\
 $$
 
 - Question 4 asks why questions 2 and 3 agree. Waiting more than 5 years for the next earthquake is the same event as having no earthquakes in 5 years, so $$P(T > 5) = P(X = 0) = e^{-1.2015}$$.
-#### Question 5. The wait for the 10th earthquake
-
-- An earthquake has just happened. Find the probability that the seismologist waits more than 30 years for the 10th earthquake after it.
+- Question 5 asks for the probability that the seismologist waits more than 30 years for the 10th earthquake after one that has just happened.
 - The wait exceeds 30 years if at most 9 earthquakes occur in the next 30 years.
 - Model the count as $$Y \sim \text{Poisson}(0.2403 \times 30 = 7.209)$$ and calculate its lower tail.
 

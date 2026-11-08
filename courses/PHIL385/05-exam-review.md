@@ -6,14 +6,13 @@ The texts are the *Preface*, *The Unhappiest One*, *Crop Rotation* and *Ancient 
 
 ## Who is speaking and what is at stake
 
-- Kierkegaard wrote all four texts through fictional voices. The review's general rule attributes all four texts to "A". The Preface section below attributes that text to the editor, "Victor Eremita". These attributions differ.
+- The three essays are written by "A", a made-up character, and the Preface by "Victor Eremita", the editor. Kierkegaard wrote them, but the views are theirs, not Kierkegaard's.
 - Attribute each view to its speaker. If you write "Kierkegaard argues…" you lose marks.
 - A lives what the course calls the aesthetic life. Plain meaning: he judges life by what it feels like to experience, not by duty or religion. He wants interesting experiences and moods, and he avoids anything that ties him down.
-Kraal summarised A's view in three parts, one per essay.
-
-- Expect the worst in *The Unhappiest One*.
-- Avoid lifelong commitments in *Crop Rotation*.
-- Treat good and bad luck as outside your control in *Ancient Tragedy*.
+- Kraal summarised A's view of how to be satisfied with life in three parts, one per essay.
+  - Expect the worst in *The Unhappiest One*.
+  - Avoid lifelong commitments in *Crop Rotation*.
+  - Treat good and bad luck as outside your control in *Ancient Tragedy*.
 - Kraal's point: A does not promise happiness. He promises you will not be bored and not be trapped.
 - The main objection you can use against A in any answer comes from "B", Judge William, who writes the second half of the book. B says: committing to things is what makes love last, a life of moods has no real self, and the committed life is the more beautiful one. Your own view from lecture 7, that struggle has meaning and leaving at the first difficulty is a slippery slope, is the same point.
 
@@ -42,7 +41,7 @@ Kraal summarised A's view in three parts, one per essay.
 - A is giving a speech to a club he invented called the Symparanekromenoi, people who count themselves as already dead. They meet on Fridays.
 - The contest for the grave excludes anyone who thinks death is the worst thing. The club thinks living is worse than dying.
 - A considers "the man who cannot die" and rejects him because everyone dies.
-- The title goes to a type of person, represented by the winner.
+- The title goes to a type of person, not one individual.
 - The definition to memorise: the unhappy person has the content of his life outside himself. He is always absent from himself, never present to himself.
 - You can only be absent in two directions: the past or the future. So there are two kinds of unhappy person, the one living in memory and the one living in hope. A borrows the phrase "unhappy consciousness" from Hegel but only the label, not Hegel's meaning.
 - Grammar example: the pluperfect tense ("had done") has no present in it, and neither does the future perfect ("will have done"). Those are the rememberer and the hoper.
@@ -53,7 +52,7 @@ Kraal summarised A's view in three parts, one per essay.
 - The candidates, in order: a girl whose lover cheated, Niobe, Antigone, Job, the father of the prodigal son (the only hoper), a forgotten man who failed at martyrdom, a second girl who cannot grieve or hope and gets second prize, and then the winner, who has no name and is called "the unhappy lover of memory". Everyone who can still grieve is eliminated, because grief proves you really had something.
 - The ending: A corrects himself and calls the winner the happiest, because being the unhappiest is a prize the world can never take from you. Then four lines: life is madness, faith is folly, hope is a reprieve (literally a stay of execution), love is salt in the wound. The speech ends with the day starting again. No cure is offered.
 - Kraal describes the ending as doxology, paradox and comfort. A **doxology** is a hymn of praise.
-- A uses "the happiest", "gift of fortune", and "envy". Those terms differ from Kraal's description of the ending as comfort.
+- A's own words for the ending are "the happiest", "gift of fortune", and "envy".
 
 ### Likely question
 - Is the unhappiest person really the one who is absent from his own life, rather than the one who suffers most?

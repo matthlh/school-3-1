@@ -56,7 +56,7 @@ None. Everything below is from the deck.
 - A world religion is one with a diasporic presence that travels across state borders.
 - Around 500 to 535 million people identify as Buddhists, over 7% of the world. Over 99% live in the Asia-Pacific region. In the homeland, Nepal and India, Buddhism is a minority religion today.
 
-## Buddhism as a lived practice
+## Buddhism experientially and the early schools
 
 ### Axiological aesthetics
 - Religious experience is a form of aesthetic experience in the axiological sense. Axiology is value theory. Axiological aesthetics studies how values are constructed by experiencing things.
@@ -72,10 +72,10 @@ None. Everything below is from the deck.
 ### Early schools by the first century CE
 - The conservative schools survive as modern **Theravada**. The disciple aims at **nirvana**, liberation from the cycle of births and deaths.
 - An **arhat** is a liberated follower of the Buddha who is free of rebirth and of the three poisons. The poisons are anger, passion and ignorance. Here, ignorance means the illusion of one's own self.
-- In this account, one universe has only one Buddha at a time.
+- In the conservative schools' view, one universe has only one Buddha at a time.
 - The progressive schools make up most of the Buddhist world. A follower declares as a **bodhisattva**, a future Buddha who aims to lead others to the same realisation.
-- A Buddha is free of rebirth and the three poisons. A Buddha also creates a Buddha Land where bodhisattvas can be reborn to train.
-- There are multiple universes. Bodhisattvas can become Buddhas quickly in other unenlightened universes.
+- In the progressive schools' view, a Buddha is free of rebirth and the three poisons and also creates a Buddha Land where bodhisattvas can be reborn to train.
+- The progressive schools also hold that there are multiple universes, so bodhisattvas can become Buddhas quickly in other unenlightened universes.
 
 ## Clarifications
 - The Mini-Quiz 1 question on the word "religion" being absent from pre-modern languages is not on the deck. It comes from the readings or the recording.

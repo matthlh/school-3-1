@@ -1,6 +1,6 @@
 # STAT 251 — Lec 12 (Wed Oct 7) — Ch 4: the maximum and minimum of independent random variables, functions of one random variable
 
-The deck is `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with a Panopto recording. The posted solutions for Examples 9, 10 and 11 are handwritten scans. The solutions on this page are worked independently. Example 12 follows the deck's solution.
+The after-class deck is `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with a Panopto recording. It finishes the maximum from lecture 10, adds the minimum, and works four examples. The posted solutions for Examples 9, 10 and 11 are handwritten scans with no text layer, so those three are worked here from scratch. Example 12 follows the deck's solution.
 
 ## Learning goals (slide 2)
 - Slide 2 repeats the Chapter 4 outcome list. The one this lecture covers is the last: the maximum and minimum of independent random variables.
@@ -72,7 +72,7 @@ $$
 
 ## Worked examples
 
-### Example 9. $$Y = e^X$$ for a uniform $$X$$ (slide 9)
+### Example 9: $$Y = e^X$$ for a uniform $$X$$ (slide 9)
 - $$X$$ is uniform on $$[-1, 1]$$, so $$f_X(x) = \frac{1}{2}$$ there and $$F_X(x) = \frac{x + 1}{2}$$ for $$-1 \le x \le 1$$.
 - The cdf method: write $$Y \le y$$ as a statement about $$X$$. Because $$e^x$$ is increasing, $$e^X \le y$$ exactly when $$X \le \ln y$$.
 - The support of $$Y$$ is the image of the support of $$X$$: $$X$$ runs from $$-1$$ to $$1$$, so $$Y$$ runs from $$e^{-1}$$ to $$e$$.

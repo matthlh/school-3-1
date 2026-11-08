@@ -2,9 +2,9 @@
 
 The exam is on paper. It uses true/false, multiple choice, short answer and long answer. Every question uses unfamiliar code, and some require handwritten TypeScript.
 
-Study lectures 1 to 12 for the midterm. The Oct 27 review deck excludes REST from lecture 13, so the REST section below is for the final. You may bring one handwritten sheet. The [cheat sheet](06-cheat-sheet.md) fits on its two sides.
+Study lectures 1 to 12 for the midterm. The Oct 27 review deck says REST (lecture 13) is not on the midterm, so the REST section below is for the final. You may bring one handwritten sheet. The [cheat sheet](06-cheat-sheet.md) is this page compressed to fit both sides of that sheet.
 
-Spend about 20 minutes on each of the four blocks. Answer the three practice questions at the end of each block before moving on.
+Spend about 20 minutes on each of the four blocks. Answer the three practice questions at the end of each block before moving on. Answering them, not reading the block, is what transfers to the exam.
 
 ## Block 1 · The cost of change (lectures 1 to 4)
 
@@ -12,7 +12,7 @@ Spend about 20 minutes on each of the four blocks. Answer the three practice que
 - The course's definition: software engineering is the discipline of managing what a change costs as a system keeps growing.
 - Every exam question about a fragment is really asking what the next change would cost, where that cost comes from, and which lever lowers it.
 - Never call a design bad without naming the cost it imposes.
-- **Magnitude** measures the size of the change, roughly in lines of code.
+- A change's cost is measured two ways. **Magnitude** measures the size of the change, roughly in lines of code.
 - **Footprint** measures how widely the change spreads. Count the methods, classes, files, modules or services affected.
 - You can miss part of the footprint because dependent code may have no mechanism forcing it to update.
 

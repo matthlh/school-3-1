@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 9 (Thu Oct 8) — Patterns II: Composite and Decorator
 
-The lecture notes follow the pre-class deck [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patterns-ii.pdf) (12 slides) and the Decorator and Composite sections of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). See "Lec 9" in the [question bank](../02-questions.md).
+Matt was absent, so nothing on this page comes from class. The lecture notes follow the pre-class deck [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patterns-ii.pdf) (12 slides) and the Decorator and Composite sections of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). See "Lec 9" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -8,7 +8,7 @@ The lecture notes follow the pre-class deck [05b-patterns-ii.pdf](https://ubccps
 - Move unfamiliar code to a pattern one behaviour-preserving step at a time. Today's targets are Composite and Decorator.
 - Judge whether a pattern pays for itself in a given situation.
 
-## Composite and Decorator
+## Composite
 ### Composite again (slides 4–7)
 - Slides 4 to 7 repeat lecture 8's slides 18 to 21 word for word: the Workday org chart, the intent, the refactoring.guru diagram and the four-step analysis. The full treatment is on the [lecture 8 page](08-patterns-adapter-composite.md) under Composite.
 - The shape, one part per line.

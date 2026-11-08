@@ -31,7 +31,7 @@ versions of the course and does not apply to 26W1.
 ## Project — InsightUBC
 InsightUBC is an inherited REST service for the Registrar's course and facilities data.
 
-- In D1, add two small features to see how much work a change takes.
+- In D1, add two small features to see the cost of change firsthand.
 - In D2, make the part that uses the network testable.
 - In D3 and D4, work in pairs. Turn vague requirements into a specification and build the change without breaking v1 or v2.
 
@@ -68,7 +68,7 @@ work on a branch and merge through a PR even solo.
 #### PrairieLearn reflection
 
 - Give the PR description. Explain what changed, why it changed and what might break.
-- List the files you modified. Record each file and function you touched and **how you found it**. Keep the list as you work so you can answer the discovery question.
+- List the files you modified. Record each file and function you touched and **how you found it**. Keep a running list while you code, because the "how you found it" question cannot be answered afterwards.
 - Trace a request from route registration to the disk write.
 - Explain how you represented an absent campus and justify the choice.
 - Write half a page on what was harder than expected.

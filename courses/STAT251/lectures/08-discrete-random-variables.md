@@ -1,6 +1,6 @@
 # STAT 251 — Lec 8 (Fri Sep 25) — Ch 4: random variables, the pmf, the cdf, mean and variance
 
-The deck is `Lecture_08_Chapter_4_canvaspost_AL.pdf` (20 slides, Canvas file 47723817). The first ten minutes of the Panopto recording finish lecture 7's reliability example. Lecture 9 begins with Example 5 from slides 17 to 19. The formulas use standard summation notation because the slide text layer shows the summation sign as "P".
+The after-class deck is `Lecture_08_Chapter_4_canvaspost_AL.pdf` (20 slides, Canvas file 47723817). The page also draws on the Panopto recording, whose first ten minutes finish lecture 7's reliability example. Lecture 9 begins with Example 5 from slides 17 to 19. The formulas use standard summation notation because the slide text layer shows the summation sign as "P".
 
 ## Learning goals (slide 4, the Chapter 4 list)
 - Notation for random variables; discrete versus continuous.

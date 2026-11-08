@@ -1,6 +1,6 @@
 # STAT 251 — Lec 4 (Wed Sep 16) — Ch 1: variability, percentiles and quartiles, box plots
 
-The Sep 16 lecture uses `Lecture_04_Chapter_1_AL_CanvasPost.pdf` (13 slides) and has a Panopto recording.
+The clarifications work through the after-class deck, `Lecture_04_Chapter_1_AL_CanvasPost.pdf` (13 slides), slide by slide. The page is checked against the deck and the Panopto recording of the Sep 16 lecture.
 
 ## Your notes (pasted 2026-09-16)
 
@@ -28,7 +28,7 @@ The Sep 16 lecture uses `Lecture_04_Chapter_1_AL_CanvasPost.pdf` (13 slides) and
 ## In class
 - The variance carries squared units. In the deck example it is 2.5 hours squared, and the standard deviation is about 1.581 hours. He insisted on units in every answer.
 - Each squared deviation is 0 or positive, so the variance can never be negative. A negative variance or standard deviation means an arithmetic mistake, and the standard deviation is always the positive square root.
-- The instructor drew two smooth curves on the same scale with the same centre. The narrower curve had to be taller because the area under each curve is the total probability, 1.
+- The instructor drew two smooth curves on the same scale with the same centre and asked which may be taller. The narrower curve has to be taller, because the area under each curve is the total probability, 1. A narrow curve drawn with a lower peak is wrong.
 - This example previews the density curves from Chapter 4.
 - Percentile rank: if a score of 1200 on a test out of 1600 is at the 90th percentile, then 90% of test takers scored below it, so it is in the top 10%.
 - Use the course's $$np + 0.5$$ rule for quartiles and percentiles, not a formula from high school or from software, especially in WeBWorK. On small data sets other rules give slightly different answers. He called the 0.5 a correction factor.
@@ -106,7 +106,7 @@ $$
 - The five-number summary is the minimum, $$Q_1$$, the median, $$Q_3$$ and the maximum.
 - The box runs from $$Q_1$$ to $$Q_3$$, so its length is the IQR, and the median is a line inside it.
 - The median line sits wherever the median falls. It is in the centre of the box only when the middle half of the data is symmetric, and it does not move because of outliers, since the median is resistant. A median line near $$Q_1$$ with a long right whisker means right-skewed; near $$Q_3$$ with a long left whisker means left-skewed. That is the "sometimes it changes".
-- Each whisker ends at the most extreme observation still inside its fence.
+- Each whisker ends at the most extreme observation still inside its fence, not at the fence itself.
 - When there are no outliers, the whiskers end at the minimum and maximum.
 - When there are outliers, the whiskers stop at the last observations inside the fences. Draw each outlier separately as a star or circle.
 - Deck example: box from 23 to 35 with the line at 29.5, left whisker to 12, right whisker to 42 (the largest value at or under 53), and a star at 59.
@@ -115,7 +115,7 @@ $$
 - Yes. Side-by-side box plots on one scale compare the centre, spread, skew and outliers of two or more groups at a glance, which histograms do badly.
 - The price is shape. A box plot cannot show whether a distribution is unimodal or bimodal, so for the shape of one distribution use a histogram.
 
-### Location and scale changes (deck)
+### Location and scale changes (deck only, not in your notes)
 - The class reached these slides at the start of lecture 5.
 - If every observation is transformed by $$y = a + bx$$, the mean and variance change like this:
 

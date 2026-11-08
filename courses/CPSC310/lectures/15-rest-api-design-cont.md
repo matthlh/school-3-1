@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 15 (Tue Nov 3) — REST API Design, continued
 
-The lecture finishes [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-api.pdf), the same 13-slide deck used in lecture 13.
+The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-api.pdf), the same 13 slides as lecture 13. Matt takes no notes in this course, so this page comes from the posted deck.
 
 ## REST after the midterm
 

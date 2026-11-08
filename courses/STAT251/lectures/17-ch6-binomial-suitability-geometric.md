@@ -1,6 +1,6 @@
 # STAT 251 — Lec 17 (Wed Oct 21) — Ch 6: Binomial suitability, Activity 7 and the Geometric distribution
 
-The deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activity 7 solutions are in `A7_ch6_binomial_solutions.pdf`. The deck poses the two Binomial suitability questions. The answers below apply the 10% condition from [lecture 15](15-ch6-bernoulli-binomial.md). The [question bank](../02-questions.md) lists this lesson under "Lec 17".
+The after-class deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activity 7 solutions are in `A7_ch6_binomial_solutions.pdf`. The Panopto recording was not read. The deck poses the two Binomial suitability questions but gives no answers, so the answers below apply the 10% condition from [lecture 15](15-ch6-bernoulli-binomial.md). The [question bank](../02-questions.md) lists this lesson under "Lec 17".
 
 ## When a Binomial count fits
 

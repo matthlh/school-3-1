@@ -1,6 +1,6 @@
 # STAT 251 — Lec 7 (Wed Sep 23) — Ch 3: Bayes' theorem, tree diagrams, system reliability
 
-The deck is `Lecture_07_Chapter_3_CanvasPost_AL.pdf` (9 slides, Canvas file 47723620). The first ten minutes of Panopto finish slides 8 and 9 from lecture 6. The theorem and worked solution below follow the recording for slides 3 and 5, where the deck shows them as images.
+The after-class deck is `Lecture_07_Chapter_3_CanvasPost_AL.pdf` (9 slides, Canvas file 47723620). The page also draws on the Panopto recording, whose first ten minutes finish slides 8 and 9 from lecture 6. The theorem and worked solution below follow the recording for slides 3 and 5, where the deck shows them as images.
 
 ## Learning goals
 - Compute posterior probabilities with Bayes' theorem, by formula and by tree diagram.
@@ -59,6 +59,7 @@ P(A_2 \mid D) &= \frac{0.0036}{0.0161} \approx 0.224
 $$
 
 - Prior versus posterior: given the car is from plant 2, the defect probability is 0.018. Given the car is defective, the probability it is from plant 2 is about 0.22. Different questions, different numbers.
+
 #### Tree method (slide 6)
 
 1. Define the events. The first branches split by plant with probabilities 0.35, 0.20 and 0.45.

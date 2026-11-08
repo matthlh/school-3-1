@@ -19,7 +19,7 @@ The lecture uses [01-course_introduction.pdf](https://ubccpsc.github.io/310/26w1
 - What this means on an exam: when a design or a code fragment is put in front of you, the question is never whether it works today. It is what the next change would cost, where that cost comes from, and which lever would lower it.
 - The reader's fuller definition (What is Software Engineering) says the field applies scientific, economic, social and practical knowledge to **specify, invent, design, build, validate, deploy, maintain, research, and improve** software. The aim is software that is **correct, reliable, and works efficiently on real machines**. Programming is only the **build** step, one of nine.
 - The reader's Analytical Code Design introduction draws the line the course sits on. **Code** is short, isolated, and run once, like a script or an assignment. **Software** is large, highly connected to other software, and longstanding. Because software will be changed many times by many people, it has to be easy to evolve, easy to maintain, and easy to test, and a design choice is judged by what it does to those three properties.
-- The reader's *Analytical Code Design* introduction defines **analytical design** as comparing solutions to the same problem by measurable **trade-offs**. It previews four areas.
+- The word **analytical** means that two solutions to the same problem are compared by measurable **trade-offs**, not by taste. The reader's introduction previews four areas that do this.
 - **Cost of change** asks why the cost matters and how to measure it.
 - **Change difficulty in code** examines which parts of a codebase make changes expensive.
 - **Refactoring** improves code while preserving what it does.
@@ -33,7 +33,7 @@ The lecture uses [01-course_introduction.pdf](https://ubccpsc.github.io/310/26w1
 - The punchline on slide 11: as abstraction rises, what engineers need to know moves from writing code to **requirements, design, and validation** of code.
 - What this means on an exam: an answer that only describes what the code does is answering the cheap part. The marks are in judging whether the requirement is right, whether the decomposition is right, and what evidence shows it works.
 
-## What engineers need to know
+## Engineering skills and the course plan
 
 ### The three fluencies (slide 12)
 - The slide credits the three fluencies to Reid Holmes, 2026.

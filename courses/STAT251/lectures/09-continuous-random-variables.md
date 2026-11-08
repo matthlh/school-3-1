@@ -1,8 +1,8 @@
 # STAT 251 — Lec 9 (Mon Sep 28) — Ch 4: continuous random variables, the pdf and cdf, uniform and exponential
 
-The deck is `Lecture_09_Chapter_4_canvaspost_AL.pdf` (27 slides, Canvas file 48440138), with Panopto through slide 15. The first fifteen minutes finish lecture 8's Example 5. A separate video on the lecture 9 page covers slides 16 to 26 on mean and variance, the uniform and exponential distributions, and Example 7. Lecture 10 began on Fri Oct 2.
+The after-class deck is `Lecture_09_Chapter_4_canvaspost_AL.pdf` (27 slides, Canvas file 48440138). The page also draws on the Panopto recording of the class, which ended after slide 15. The first fifteen minutes finish lecture 8's Example 5. The instructor posted a short video on the lecture 9 page that covers slides 16 to 26 on mean and variance, the uniform and exponential distributions, and Example 7. Lecture 10 began on Fri Oct 2.
 
-`Lecture_09_Chapter_4_2_Mean_Var_Uniform_and_Exp_Dist.pdf` (Canvas file 47723630) has the uniform and exponential derivations. `Lecture_09_Chapter_4_3_Discrete&Continuous_rv_summary.pdf` (Canvas file 47723729) compares discrete and continuous variables. Both files are handwritten scans. The formulas below use standard integral notation because the deck's text layer shows integral signs as "Z".
+`Lecture_09_Chapter_4_2_Mean_Var_Uniform_and_Exp_Dist.pdf` (Canvas file 47723630) has the uniform and exponential derivations. `Lecture_09_Chapter_4_3_Discrete&Continuous_rv_summary.pdf` (Canvas file 47723729) compares discrete and continuous variables. Both files are handwritten scans on the lecture 9 page, with no text layer. The formulas below use standard integral notation because the deck's text layer shows integral signs as "Z".
 
 ## Learning goals
 - Read a pdf as a density: probabilities are areas, and a single point has probability 0.
@@ -67,7 +67,7 @@ $$
 
 ## Mean, variance and distribution models
 
-### Uniform and exponential examples (video, slides 16–26)
+### Mean, variance, uniform and exponential (posted video, slides 16–26, not reached in class)
 - Same definitions as the discrete case, with integrals in place of sums. The shortcut is the one used in practice; $$\sigma$$ is the square root.
 
 $$

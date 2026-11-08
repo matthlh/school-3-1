@@ -58,7 +58,7 @@ The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013
 
 ## Awakening and teaching
 
-### Deed 9. Victory over Mara
+### Deed 9: victory over Mara
 - **Mara** is the god of passion and sexual desire.
 - The deck also calls him **Kamadeva**.
 - His name means "death".
@@ -118,7 +118,7 @@ The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013
 
 Mini-Quiz 4 locked Mon Oct 5 at 23:59. The following topics were flagged as likely quiz material.
 
-- Recall the numbers for 12 deeds, 29 Buddhas, the 4th Buddha, 4 plus 4 make 8 absorptions, 6 years of asceticism, 49 days under the tree, age 35 at awakening, 45 years of teaching, and age 80 at death.
+- Know these numbers: 12 deeds, 29 Buddhas, the 4th Buddha, 4 plus 4 make 8 absorptions, 6 years of asceticism, 49 days under the tree, age 35 at awakening, 45 years of teaching, and age 80 at death.
 - Alara Kalama taught the four absorptions. Udraka Ramaputra taught the formless states.
 - Anatman, the five skandhas in order, and the fire jumping from branch to branch.
 - The deck lists anatman, anitya and nirvana as the three marks.
@@ -132,4 +132,5 @@ Mini-Quiz 4 locked Mon Oct 5 at 23:59. The following topics were flagged as like
 - If a quiz option offers dukkha, check whether the question asks about the lecture or the reading.
 - The 4th Buddha in the number drill is Dipankara, the Buddha before whom Sumedha vowed to become a Buddha (lecture 3).
 - The age of 80 at death follows from the deck's own numbers: he awakens at 35 and teaches for 45 years.
+- The recording has no captions, so this page comes from the deck alone.
 - The deck dates the Yoga Sutras to about the 2nd century BCE. Many scholars date them later, so treat that date as the lecture's figure.

@@ -1,6 +1,6 @@
 # STAT 251 — Lec 20 (Wed Oct 28) — Midterm exam review
 
-The deck is `Midterm_Review_CanvasPost.pdf` (28 slides) and the Panopto recording covers the four iClicker questions and the instructor's advice on written answers. The deck is a formula review for Chapters 1 and 3 to 6, with no worked examples or new material. The [question bank](../02-questions.md) lists this lesson under "Lec 20".
+The deck is `Midterm_Review_CanvasPost.pdf` (28 slides). The class itself, from the Panopto recording, was four iClicker questions and the instructor's advice on how written answers are marked. The deck is a formula review for Chapters 1 and 3 to 6, with no worked examples or new material. The [question bank](../02-questions.md) lists this lesson under "Lec 20".
 
 ## What to review for the exams
 
@@ -34,7 +34,7 @@ The deck is `Midterm_Review_CanvasPost.pdf` (28 slides) and the Panopto recordin
 
 ## Formula review
 
-### Chapter 4. Discrete random variables (slides 7 to 10)
+### Chapter 4: discrete random variables (slides 7 to 10)
 
 - A pmf $$f(x) = P(X = x)$$ must satisfy $$f(x) \ge 0$$ for every $$x$$ and $$\sum_x f(x) = 1$$.
 - The cdf, the mean and the mean of a function of $$X$$:

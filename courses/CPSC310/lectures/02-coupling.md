@@ -63,7 +63,7 @@ The lecture uses [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 - Slide 15 recaps lecture 1. Design shortcomings affect the cost of current and future changes. The reader measures that cost in two ways.
 - **Magnitude** is how large the change is, usually in lines of code.
 - **Footprint** is how far the change reaches. Count the methods, classes, files, modules or services involved.
-- These costs apply when reading and writing code. Understanding code spread across eight files costs time even before you edit it.
+- These costs apply when reading and writing code. Understanding code spread across eight files is a footprint cost even when you edit nothing.
 - You can miss part of the footprint because dependent code may have no mechanism forcing it to update.
 - Slide 16 recaps coupling as a way to quantify how dependencies affect the cost of change. Degree is how many things share a concept, locality is how far apart they are, and strength is how tightly they are bound, graded by the five connascence types. Coupling can be explicit or implicit.
 - The link between the two recaps: coupling is what produces footprint. Implicit coupling is dangerous for the same reason an unclear footprint is: nothing forces you to find every affected spot.

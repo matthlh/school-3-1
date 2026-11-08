@@ -1,6 +1,6 @@
 # STAT 251 — Lec 15 (Fri Oct 16) — Ch 6: Bernoulli and Binomial distributions
 
-The Chapter 6 deck is `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The Canvas lecture page lists the after-class Normal examples from [lecture 14](14-ch5-normal-linear-combinations-sample-mean.md), then `A5_ch5_normal_worksheet`, then the Chapter 6 slides. A separate handwritten file covers Bernoulli and Binomial mean and variance. The derivation below starts from the Chapter 4 definitions. The [question bank](../02-questions.md) lists this lesson under "Lec 15".
+The Chapter 6 deck is `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The Canvas lecture page says the class first went through the after-class Normal examples from [lecture 14](14-ch5-normal-linear-combinations-sample-mean.md), then the Chapter 5 Normal worksheet `A5_ch5_normal_worksheet`, then the Chapter 6 slides. A separate after-class file covers Bernoulli and Binomial mean and variance. It is scanned handwriting with no text layer, so the derivation below is written out from the Chapter 4 definitions instead. The Panopto recording was not read. The [question bank](../02-questions.md) lists this lesson under "Lec 15".
 
 ## Bernoulli trials and Binomial counts
 
@@ -51,6 +51,8 @@ E(X) &= np \\
 \end{aligned}
 $$
 
+The pmf formula comes from three steps.
+
 1. Fix an order of $$x$$ successes and $$n - x$$ failures. By independence, its probability is $$p^{x}(1 - p)^{n - x}$$.
 2. Count the $$\binom{n}{x}$$ distinct orders.
 3. Add their probabilities. Every order has the same probability.
@@ -82,7 +84,7 @@ $$
 - Sampling without replacement from a finite population makes the trials dependent.
 - The **10% condition** lets you treat them as independent anyway: when the sample is no more than 10% of the population, use the Binomial model; when you select more than 10% of the population, the independence assumption fails and the Binomial model cannot be used.
 
-### Deriving the mean and variance from the definitions
+## Deriving the mean and variance from the definitions
 
 - For one Bernoulli trial, the mean and the variance come straight from the Chapter 4 definitions.
 
@@ -103,7 +105,7 @@ $$
 - Variances add when the parts are independent, so $$\operatorname{Var}(X) = np(1 - p)$$.
 - Both are the Chapter 4 rules for a sum with every coefficient equal to 1, so there is nothing new to memorise beyond the Bernoulli line.
 
-### Next class (slide 10)
+## Next class (slide 10)
 
 - Binomial examples and the Geometric distribution.
 

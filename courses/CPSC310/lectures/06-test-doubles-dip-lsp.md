@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 6 (Tue Sep 29) — Test doubles, DIP and LSP
 
-The lecture notes follow the slide deck [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-test-doubles.pdf). The reader covers [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and DIP and LSP in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 6" in the [question bank](../02-questions.md).
+Matt was not in class, so nothing on this page comes from class. The lecture notes follow the slide deck [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-test-doubles.pdf). The reader covers [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and DIP and LSP in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 6" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Apply the dependency inversion principle so tests can replace dependencies in the code under test.

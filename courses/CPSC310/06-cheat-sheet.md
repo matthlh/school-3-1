@@ -1,6 +1,6 @@
 # CPSC 310 midterm cheat sheet
 
-Match the wording of the question to a row in the table. Use the steps and answer format in the matching block.
+Match the wording of the question to a row in the table. Do the steps in the matching block in order, and write what the block says to write.
 
 | If the question says | It's a | Block |
 |---|---|---|
@@ -21,7 +21,7 @@ Match the wording of the question to a row in the table. Use the steps and answe
 
 1. Controllability: list where each method gets its inputs. `new Date()`, `Math.random()`, a global, a database, or `new Something()` inside the method means the test can't choose that input.
 2. Mark the method with more hidden inputs **Lower** for controllability. Mark **Same** when the lists match.
-3. To compare observability, look for results the test can check directly. A return value is visible. A result only in `console.log`, `void`, a file, a database or a private field is harder to check.
+3. To compare observability, look for results the test can check directly. A return value is visible. A method that only prints with `console.log`, returns `void`, or saves to a file, a database or a private field is harder to check.
 4. Mark the method whose result is harder to check **Lower**. If both return the result, mark **Same**.
 5. Demonstrate: one test per class, same inputs. Write the checks below.
 

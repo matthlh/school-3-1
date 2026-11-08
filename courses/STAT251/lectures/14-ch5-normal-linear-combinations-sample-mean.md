@@ -1,6 +1,6 @@
 # STAT 251 — Lec 14 (Wed Oct 14) — Ch 5: Normal facts, linear combinations and the sample mean
 
-The decks are `Lecture_14_Chapter_5_BL_CanvasPost.pdf` (7 slides) and `Lecture_14_Chapter_5_CanvasPost_AL.pdf`. The recording starts with slides 12 to 24 from the [lecture 13 page](13-ch5-normal-and-standard-normal.md), then reaches $$\phi$$ and $$\Phi$$ on slide 2 and three clicker questions.
+The decks are the before-class `Lecture_14_Chapter_5_BL_CanvasPost.pdf` (7 slides) and the after-class `Lecture_14_Chapter_5_CanvasPost_AL.pdf`. The class first finished lecture 13's slides 12 to 24, the standard Normal, Table A and the forward and backward calculations, which are written up on the [lecture 13 page](13-ch5-normal-and-standard-normal.md). It then reached $$\phi$$ and $$\Phi$$ on slide 2 of this deck and ran three clicker questions.
 
 ## Linear combinations of Normal variables
 
@@ -80,7 +80,7 @@ $$
 
 ## Worked example
 
-Facts 1 to 3 and the airline example follow the deck. They were expected in class on Friday, Oct 16, before Chapter 6.
+Facts 1 to 3 above and the airline example below are written up from the deck. They were expected in class on Friday, Oct 16, before Chapter 6.
 
 ### Airline passenger weights (slide 6)
 

@@ -23,8 +23,8 @@ Non-exam work accounts for **33%**. With all of those marks and the Piazza bonus
 - Intel from past terms: **MC-heavy and long** ("impossible to finish on time"). Mocks must be MC and timed.
 - Exams are built from the official learning outcomes (see Topics), not the chapter list.
 - Exams do not cover textbook material beyond what the lectures cover. Premarathna said so after class when asked directly; the TA on Piazza had said neither exam was written yet and to ask him.
-- The midterm allows one side of a handwritten letter-size sheet. The final allows two sides, which can be on two separate sheets.
-- You can print a sheet handwritten on a tablet. Typed text and pasted slides are prohibited. If two students bring matching sheets, both lose their sheets for that exam. The instructor gave these rules in lecture 7 on Sep 23.
+- The midterm allows one side of a handwritten letter-size cheat sheet. The final allows two sides, which can be on two separate sheets.
+- You can print a sheet handwritten on a tablet. Typed text and pasted slides are prohibited. If two students bring matching sheets, both lose their sheets for that exam. The instructor gave these rules and the sheet limits above in lecture 7 on Sep 23.
 - He does not set theoretical proofs, but a short "show that" (for example, that Aᶜ and B are independent when A and B are) has appeared on a midterm.
 - Written answers earn part marks for the method: define the random variable in words, name its distribution and parameter, check the approximation's condition, and write "continuity correction" by any 0.5. Midterm answers that gave only the number lost marks (lecture 23, Nov 6).
 - The final is cumulative over chapters 1, 2, 3, 4, 5, 6, 7, 8, 10, 11.

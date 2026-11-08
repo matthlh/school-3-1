@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 8 (Tue Oct 6) — Patterns I: Adapter and Composite
 
-The lecture notes follow the pre-class deck [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). The [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/) reader covers Adapter and Composite as well as Factory, Strategy, State and Decorator. See "Lec 8" in the [question bank](../02-questions.md).
+Matt was absent, so nothing on this page comes from class. The lecture notes follow the pre-class deck [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). The [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/) reader covers Adapter and Composite as well as Factory, Strategy, State and Decorator. See "Lec 8" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -54,8 +54,8 @@ The lecture notes follow the pre-class deck [05a-patterns-i.pdf](https://ubccpsc
 
 ### Composite (slides 18–21)
 - Scenario: org-chart software. An org contains managers who supervise managers, engineers, designers, technical leads and product managers, so the tree has nodes that are one person and nodes that head a team.
-- **Composite** represents a whole and its parts as a tree. A client can process both "primitive" and "composite" objects through the same interface.
-- **Component** is the shared interface.
+- Intent: the application manipulates a hierarchy of "primitive" and "composite" objects, and having to know which kind each object is before processing it is undesirable. **Composite** composes objects into tree structures for whole-part hierarchies and lets clients treat individual objects and compositions uniformly, through the same interface.
+- The pattern has three roles. **Component** is the shared interface.
 - **Leaf** represents one object.
 - **Composite** holds components. A child component can itself be a composite.
 - The four-step analysis.

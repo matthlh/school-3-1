@@ -22,8 +22,9 @@ The lecture uses [03a-refactoring.pdf](https://ubccpsc.github.io/310/26w1/lectur
   - Duplication, clones or scattering that cause several edit sites are consolidated into one place.
   - Tangled pieces of functionality are split apart.
   - Hard-to-read code is made understandable.
-- In the three panels on slides 6 to 8, code smells block a change the developer wants to make.
-- The developer applies design principles and patterns through repeated refactoring. The change becomes possible.
+- The three comic panels on slides 6 to 8 tell one story. In the first, the developer asks whether a change can be made, and the code, covered in smells, says no.
+- In the second, the developer refactors repeatedly, guided by design principles and design patterns.
+- In the third, the developer asks again, and the code says yes.
 - The reader calls this **emergent design**: as a system grows you learn which abstractions fit, and refactoring is how you fold them in.
 
 ### What refactoring is (slide 9)

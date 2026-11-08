@@ -54,9 +54,9 @@ The lecture uses [03b-testability.pdf](https://ubccpsc.github.io/310/26w1/lectur
   - Isolateability is the ability to locate a fault inside the code under test. The reader says controllability and observability together give it, and that splitting large functions into small self-contained ones raises it.
   - Automatability is the least discussed, because it mostly follows from controllability.
   - The reader says observability and isolateability matter most, but that an isolated unit you cannot control is not useful, because you cannot trigger the behaviour you want to see.
-  - The earlier outline expected isolateability and fakes in the next testability lecture. The logged lecture 6 is titled Test doubles, DIP and LSP.
-- The course site pairs this lecture with the Design Principles chapter and the question "when is it safe to substitute one thing for another?". Both are left over from before the Sep 23 reshuffle. That question is about Liskov substitution. The earlier outline placed it in lecture 7, while the logged Test doubles, DIP and LSP page is lecture 6. The reader chapter that matches this deck is Testability.
+  - When this lecture was given, lecture 6 was also titled Testability, so isolateability and fakes might have come there. In the end, lecture 6 was Test doubles, DIP and LSP.
+- The course site pairs this lecture with the Design Principles chapter and the question "when is it safe to substitute one thing for another?". Both are left over from before the Sep 23 reshuffle. That question is about Liskov substitution, which lecture 6 (Test doubles, DIP and LSP) covers. The reader chapter that matches this deck is Testability.
 - The method **contract** is the part of Design Principles this deck uses. The REQUIRES, MODIFIES and EFFECTS comment records the contract as a data abstraction.
 - **Preconditions** state what the method expects. **Postconditions** state what the method promises to provide. **Invariants** state what must always hold.
-- The other Design Principles topics are abstraction, decomposition, information hiding and SOLID. The original outline points to lecture 7 for them.
+- The other Design Principles topics are abstraction, decomposition, information hiding and SOLID. This deck does not cover them.
 - The deck's own definitions say "the degree to which a test can determine" and "the degree to which a test can inspect". The reader phrases controllability as whether the code can be driven programmatically. Use the deck's wording on an exam and the reader's parameter fix as the remedy.

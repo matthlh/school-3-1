@@ -1,12 +1,12 @@
 # Goals for Term 3-1 (Sep–Dec 2026)
 
-Use the four goals below to decide what to work on this term. Defer work that serves none of them.
+The four goals below are in priority order. Use them to decide what to work on this term, and cut work that serves none of them.
 
 ## Priority
 
 Matt set the priority on Nov 6. For flexible work in daily and weekly plans, put School first, Career second, Personal third and other work last. The plan reserves no Career hours.
 
-Keep fixed events in their calendar slots. Flag any conflict for Matt.
+Keep fixed external events in their calendar slots. Flag any conflict for Matt instead of moving or cancelling an event.
 
 ## Oct 31 snapshot
 
@@ -18,13 +18,13 @@ Keep fixed events in their calendar slots. Flag any conflict for Matt.
 - 74 topics are due and 72 of those are overdue. No deck has been tapped since Oct 13.
 - Things3 has 141 open items, 37 rolled to tomorrow and 26 dead ones still open. The Oct 20 target was 25.
 - The ASIA 250 novel still has no pages logged. The final paper on it is 47% of the course.
-- One completed interview loop ended in a rejection. A second interview has no recorded outcome. Nothing is pending.
+- The only interview that completed its loop ended in a rejection. A second interview has no recorded outcome. Nothing is pending.
 - The application floor held. The pipeline scheduler has been down for two weeks.
 - The next ten days include ASIA 250 Optional Assignment 2 and CPSC 310 D3. Both are due Fri Nov 6. D3 needs 32.5 h and the plan has 30 h free.
 
-## Goal 1. Earn the non-exam points and prepare for exams
+## Goal 1. Earn every non-exam point, then prepare for exams
 
-Spend each extra study hour where it can gain the most points. Prioritise the STAT 251 and CPSC 310 finals, followed by PHIL 385 Exam 4 and the final. ASIA 250 comes last because the plan treats its target as nearly secured. The table gives the targets the Oct 31 marks still allow.
+Spend each extra study hour where it can gain the most points. Prioritise the STAT 251 and CPSC 310 finals, followed by PHIL 385 Exam 4 and the final. ASIA 250 comes last because it is nearly secured. The table gives the targets the Oct 31 marks still allow.
 
 | Course | Running | What the target needs from here | This term's target |
 |---|---|---|---|
@@ -56,10 +56,10 @@ Summer 2027 is the fallback, and the plan stays the same either way.
 - Term 2 TA application: it was due Sun Oct 25 and is overdue. Send it or cancel it by Mon Nov 2.
 - Fix the pipeline's scheduler in one sitting.
 
-## Goal 3. Keep the plan within budget
+## Goal 3. Keep the system a plan, not a pile
 
 - Things3 at 25 or fewer open items by Sun Nov 8. It is at 141. The 26 dead items go first.
-- Keep the weekly plan at or below 1.25 times the budget. Remove items that put it over budget.
+- Keep the weekly plan at or below 1.25 times the budget. Remove items that put it over budget instead of rolling them.
 - Keep the daily rollover count under 10. It was 37 on Oct 31.
 
 ## Goal 4. Keep the daily habit and return to the gym

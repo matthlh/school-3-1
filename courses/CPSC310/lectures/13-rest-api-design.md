@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 13 (Thu Oct 22) — REST API Design
 
-The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-api.pdf) (13 slides) and [REST](https://ubccpsc.github.io/310/textbook/3-software-design/rest/), whose sections are Nouns and Verbs, Statelessness and Design goals. See "Lec 13" in the [question bank](../02-questions.md).
+The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/07b-rest-api.pdf) (13 slides, posted on lecture day) and [REST](https://ubccpsc.github.io/310/textbook/3-software-design/rest/), whose sections are Nouns and Verbs, Statelessness and Design goals. Matt takes no notes in this course, so this page comes only from the deck and the reader. See "Lec 13" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Identify the parts of an HTTP request and response.
@@ -97,8 +97,8 @@ The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 
 ## Clarifications
 
-- The Lab 1 topic covers status codes and PUT idempotence. This lecture adds REST design constraints. Slide 3 gives background on software as a service through the "Uber of ____" example.
+- The Lab 1 topic covers status codes and PUT idempotence. This lecture adds REST design constraints. Slide 3 gives background on software as a service through the "Uber of ____" example. It is framing, not exam material.
 - The deck's idempotency row says "all but POST". The reader adds PATCH as not idempotent; the deck never mentions PATCH. On an exam over the deck's four methods, GET, PUT and DELETE are idempotent and POST is not.
 - The deck splits Statelessness (the request carries the client's state) from Connectedness (responses carry links). The reader's Statelessness section covers both: its `/:query/next` example is the deck's `/stations/more`, and its GitHub example is Connectedness. Use the deck's two names when asked which constraint a design breaks.
-- Slide 11 uses PUT to create a trip at a client-chosen URI. A dock can retry the same request without starting a second trip.
-- The reader's table gives POST as the usual creation method. It fits cases where the server chooses the URI. The two examples assign that choice to different parties.
+- Slide 11 uses PUT to create a trip at a client-chosen URI. The deck chooses PUT because a dock retry must not start a second trip.
+- The reader's table gives POST as the usual creation method. Both are right. PUT creates when the client picks the URI, and POST creates when the server does.

@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 8: Pure Land and Zen Buddhism take over East Asia
 
-The notes follow the text-bearing slides in `Lecture 8.pptx` (66 slides, published Mon Nov 2). Mini-Quiz 8 also covers Poceski chapter 6 (pp. 131 to 155) and Harvey chapter 11 (pp. 340 to 347 excluding "Tantric Visualizations", and pp. 361 to 375 from "Zen Meditation"). See "Lec 8" in the [question bank](../02-questions.md).
+The notes follow the text-bearing slides in `Lecture 8.pptx` (66 slides, published Mon Nov 2). The video was not read, so this page comes from the deck alone. Mini-Quiz 8 also covers Readings 8, which are Poceski chapter 6 (pp. 131 to 155) and Harvey chapter 11 (pp. 340 to 347 excluding "Tantric Visualizations", and pp. 361 to 375 from "Zen Meditation"). These readings were not pulled for this page. See "Lec 8" in the [question bank](../02-questions.md).
 
 ## Pure Land Buddhism
 
@@ -13,10 +13,11 @@ The notes follow the text-bearing slides in `Lecture 8.pptx` (66 slides, publish
   - They downplayed human reincarnation and preached karma as leading to a next life of rewards (heavens) or punishments (hells and hungry ghosts).
   - They built rituals around Confucian ancestor veneration: freeing hungry ghosts (the **Maudgalyayana** story, the Obon and Ghost festivals) and worship of the bodhisattva **Kshitigarbha** for liberation from hell.
   - They preached immediate rebirth in a Buddha's **Pure Land**, escaping suffering altogether.
-- Pure Land addresses what happens after death, a gap in the Confucian account.
-- It offers an easier path than the Daoist pursuit of immortality through qi cultivation and appeals to immortals such as **Xiwangmu**.
-- A person reborn there becomes an advanced bodhisattva and can bless their relatives. This answers the concern about filial piety.
-- A pure land also resembles a Daoist paradise.
+- The Pure Land answer worked in four ways.
+  - It addresses what happens after death, a gap in the Confucian account.
+  - It offers an easier path than the Daoist pursuit of immortality through qi cultivation and appeals to immortals such as **Xiwangmu**.
+  - A person reborn there becomes an advanced bodhisattva who showers their relatives with blessings. This answers the concern about filial piety.
+  - A pure land also resembles a Daoist paradise.
 
 ### Devotion and the idea of a Pure Land (slides 11 to 14)
 - Mahayana has many forms of devotion (**bhakti**): supplicating and making offerings to a Buddha or bodhisattva in the hope that a higher power rescues you.
@@ -95,11 +96,11 @@ The notes follow the text-bearing slides in `Lecture 8.pptx` (66 slides, publish
 - **Linji** (Japanese *Rinzai*, died 866 CE) was famous for shock therapy: "If you meet the Buddha, kill the Buddha" (from the *Linjilu*, Japanese *Rinzairoku*, misspelled "Rinsairoku" in Mishima).
 - Killing the Buddha would be the greatest sin, so the tradition adds a safety valve: kill the Buddha and the world is doomed; do not kill him and there is no salvation. The answer to "why kill the Buddha?" is "sit and meditate on it".
 
-## Mini-Quiz 8 review
+## Mini-Quiz 8 and SWR2
 
-Mini-Quiz 8 moved to Thu Nov 12 at 23:59, after the reading break.
+Mini-Quiz 8 is due Thu Nov 12 at 23:59. It was moved past the reading break.
 
-SWR2 is due Sun Nov 15. Write it on *Fancy Dance* if you are reading *The Temple of the Golden Pavilion*, or on *Mandala* if you are reading *Little Pilgrim*.
+SWR2 is due Sun Nov 15. It is on one of two films. Write it on *Fancy Dance* if you are reading *The Temple of the Golden Pavilion*, or on *Mandala* if you are reading *Little Pilgrim*.
 
 The following topics were flagged as likely quiz material.
 
