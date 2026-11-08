@@ -1,26 +1,30 @@
 # Goals for Term 3-1 (Sep–Dec 2026)
 
-Written Tue Oct 20, reordered Sat Oct 31, week 8 of 13. Four goals, in priority order. Everything else this term is either in service of one of these or gets cut.
+Use the four goals below to decide what to work on this term. Defer work that serves none of them.
 
 ## Priority
 
-School > Career > Personal > other (Matt, Nov 6). This order applies to flexible work in both daily and weekly plans, with no Career reserve. Fixed external events keep their calendar slots; conflicts are reported rather than resolved by moving or cancelling an event.
+Matt set the priority on Nov 6. For flexible work in daily and weekly plans, put School first, Career second, Personal third and other work last. The plan reserves no Career hours.
 
-## Where things stand on Oct 31
+Keep fixed events in their calendar slots. Flag any conflict for Matt.
+
+## Oct 31 snapshot
 
 - The exam cluster is past. PHIL 385 Exam 3 came back 5/15 after 12/15 on Exam 2. The CPSC 310 and STAT 251 midterms are not marked yet.
-- Points lost since Oct 20: CPSC 310 LAB06 at 0, ASIA 250 Mini-Quiz 6 missed and locked at 0, and the STAT 251 iClicker still at 14/86 with classes 11 to 18 scored 0. WeBWorK 5 closed Oct 22 and its to-do is still open, so whether it was done is unrecorded.
+- Since Oct 20, CPSC 310 LAB06 and ASIA 250 Mini-Quiz 6 both scored 0. The missed quiz is locked.
+- STAT 251 iClicker is at 14/86, with classes 11 to 18 scored 0. WeBWorK 5 closed Oct 22. Its to-do is still open, and completion is unrecorded.
 - Running grades: CPSC 310 95.7%, STAT 251 70.2% on Canvas, ASIA 250 quizzes 49.5/60 and SWR1 95/100, PHIL 385 17/30 on the two marked exams.
 - Six lectures are unlogged: STAT 251 lec 20, PHIL 385 lec 16 and 17, ASIA 250 lec 5 to 7. The PHIL ones are Exam 4 material. ASIA quiz 7 locks Mon Nov 2.
 - 74 topics are due and 72 of those are overdue. No deck has been tapped since Oct 13.
 - Things3 has 141 open items, 37 rolled to tomorrow and 26 dead ones still open. The Oct 20 target was 25.
 - The ASIA 250 novel still has no pages logged. The final paper on it is 47% of the course.
-- Career: the one interview that completed its loop came back as a rejection, a second interview has no recorded outcome yet, and nothing is pending. The application floor held. The pipeline's scheduler has been down for two weeks.
-- Next ten days: ASIA 250 Optional Assignment 2 and CPSC 310 D3 both land Fri Nov 6. D3 has 32.5 h of work against 30 h free.
+- One completed interview loop ended in a rejection. A second interview has no recorded outcome. Nothing is pending.
+- The application floor held. The pipeline scheduler has been down for two weeks.
+- The next ten days include ASIA 250 Optional Assignment 2 and CPSC 310 D3. Both are due Fri Nov 6. D3 needs 32.5 h and the plan has 30 h free.
 
-## Goal 1 · School: bank every non-exam point, then exams
+## Goal 1. Earn the non-exam points and prepare for exams
 
-Hours go where a marginal hour buys the most: STAT 251 and CPSC 310 finals first, PHIL 385 Exam 4 and final second, ASIA 250 last because it is nearly banked. The targets below are what the arithmetic allows from here, not 96 everywhere.
+Spend each extra study hour where it can gain the most points. Prioritise the STAT 251 and CPSC 310 finals, followed by PHIL 385 Exam 4 and the final. ASIA 250 comes last because the plan treats its target as nearly secured. The table gives the targets the Oct 31 marks still allow.
 
 | Course | Running | What the target needs from here | This term's target |
 |---|---|---|---|
@@ -29,17 +33,17 @@ Hours go where a marginal hour buys the most: STAT 251 and CPSC 310 finals first
 | STAT 251 | 70.2% on Canvas, midterm unmarked | About 92 on the final and on everything remaining, no further missed class, lab, WeBWorK or pre-lab quiz | 90+ |
 | PHIL 385 | Exam 2 12/15, Exam 3 5/15, Exam 1 essay unmarked | Exam 4 at 7/7, essay 13/15 or better, final 36/40 or better | 80+. 96 would need 104% of the remaining marks. |
 
-Rules that follow from the table:
+### What to do
 
 - Be in the 8 a.m. STAT 251 class every time. Each missed poll is a point you cannot get back.
 - Log a lecture the same day. PHIL 385 has no other record, and Exam 4 covers lectures 14 onward.
 - Daily deck and bedtime quiz reminders remain paused since Nov 4. Use an on-demand review session; restart recurring reminders only when Matt asks.
 - Read the PHIL 385 Exam 3 key against the Diapsalmata page before Nov 2, so the drop from 12/15 to 5/15 has a cause before the Exam 4 drill starts.
-- Novel: 50 pages a week from Sun Nov 1 finishes The Temple of the Golden Pavilion by Nov 15, the day before the paper questions post.
+- Read 50 pages a week from Sun Nov 1 to finish *The Temple of the Golden Pavilion* by Nov 15. The paper questions appear the next day.
 - D3 by Fri Nov 6 and D4 by Nov 27: meets spec, then stop. The autograder shows the bar on every push.
 - Every ASIA 250 quiz on time. Quiz 7 locks Mon Nov 2.
 
-## Goal 2 · Career: a signed Winter 2027 co-op by Dec 1
+## Goal 2. Sign a Winter 2027 co-op by Dec 1
 
 Summer 2027 is the fallback, and the plan stays the same either way.
 
@@ -52,13 +56,13 @@ Summer 2027 is the fallback, and the plan stays the same either way.
 - Term 2 TA application: it was due Sun Oct 25 and is overdue. Send it or cancel it by Mon Nov 2.
 - Fix the pipeline's scheduler in one sitting.
 
-## Goal 3 · The system: a plan, not a pile
+## Goal 3. Keep the plan within budget
 
 - Things3 at 25 or fewer open items by Sun Nov 8. It is at 141. The 26 dead items go first.
-- Weekly plan never over 1.25 times the budget. When it is, items leave; they do not roll.
-- The daily rolled count under 10. It is 37 today.
+- Keep the weekly plan at or below 1.25 times the budget. Remove items that put it over budget.
+- Keep the daily rollover count under 10. It was 37 on Oct 31.
 
-## Goal 4 · Body: keep the habits that stuck
+## Goal 4. Keep the daily habit and return to the gym
 
 The daily habit in the private habit list stays as a never-roll item through the term. The gym restarts as a two-day block in the week of Nov 2. Everything else on the self-improvement backlog is parked on purpose until December.
 
@@ -86,4 +90,8 @@ Cut until Nov 9: the resume update, the LinkedIn post and profile PDF, videos an
 5. D4 (Nov 27) at meets spec with the partner.
 6. STAT 251 WeBWorK weekly, WA2 (Dec 2), timed MC mocks from Nov 23 for the final.
 7. CPSC 310, STAT 251 and PHIL 385 finals (Dec 11 to 22): cumulative, so the ladder keeps running on everything.
-8. Gym, two days a week, from the week of Nov 2.
+8. Go to the gym two days a week, starting in the week of Nov 2.
+
+## About this page
+
+The plan was written Tue Oct 20 and reordered Sat Oct 31, in week 8 of 13.
