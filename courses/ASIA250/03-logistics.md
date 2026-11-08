@@ -1,12 +1,12 @@
 # ASIA 250 — logistics
 
-- **Rhythm:** lecture + mini-quiz publish Mondays (week 1 was Tue Sep 8); each quiz hard-locks one
-  week later at 23:59. Week 6 (Oct 12) Thanksgiving and week 10 (Nov 9) reading break have no
-  lecture; SWR1 is published Sun Oct 11. Last lecture week 13 (Nov 30); last Q&A Dec 4.
-- **Q&A:** Fridays 19:30–~20:30, Sep 11 – Dec 4, optional. Zoom link + passcode: Canvas → Zoom tab.
-- **Office hours:** Wednesdays 4–5 pm, or by appointment. Auditorium Annex B, Room 100, 1924 West Mall (back of the building, ground floor). Email samuel.shooklyn@ubc.ca at least 24 hours ahead to secure a spot.
-- **Citation style:** all short written responses and the final paper must use Chicago/Turabian Author-Date style, not APA or MLA. Footnotes are not allowed in this style. A title page is required for the final paper but not for the short written responses. The course posts a sample paper (Canvas file 47240878) with the formatting instructions marked on it.
-- **Novel:** Option A, Mishima, *The Temple of the Golden Pavilion* (chosen 2026-09-13). Declare on Canvas by Mon Sep 14 23:59 (stays open to Sep 23). Final paper (47%) and the week 9 film (*Fancy Dance*) are on it.
+- The lecture and mini-quiz appear Mondays. Week 1 opened on Tue Sep 8. Each quiz locks one week later at 23:59.
+- There is no lecture in Week 6 (Oct 12) for Thanksgiving or in Week 10 (Nov 9) for reading break. SWR1 is published Sun Oct 11. The last lecture is in Week 13 (Nov 30).
+- Optional Q&A runs Fridays from 19:30 to about 20:30, Sep 11 to Dec 4. Find the Zoom link and passcode in the Canvas Zoom tab.
+- Office hours are Wednesdays from 4–5 pm or by appointment in Auditorium Annex B, Room 100, 1924 West Mall. The room is on the ground floor at the back. Email samuel.shooklyn@ubc.ca at least 24 hours ahead to secure a spot.
+- Use Chicago/Turabian Author-Date style for the short written responses and final paper. This style prohibits footnotes. A title page is required for the final paper only. The sample paper in Canvas file 47240878 shows the formatting instructions.
+- Option A is Mishima's *The Temple of the Golden Pavilion*, chosen 2026-09-13. The declaration is due on Canvas Mon Sep 14 at 23:59 and stays open to Sep 23.
+- The final paper is worth 47% and concerns the novel. The week 9 film is *Fancy Dance*.
 
 ## Readings on Canvas (files — nothing to buy)
 | Reading | Canvas file |
@@ -21,7 +21,7 @@
 | Germano 2005, "Dzogchen" (Readings 11) | files/47240871 |
 | Norbu 2000, *The Crystal and the Way of Light* ch 6 (Readings 11) | files/47240889 |
 
-Readings 3 also has four YouTube links and an 84000.co sutra translation (Gandavyuha ch 14).
+Readings 3 also includes four YouTube links and the 84000.co sutra translation of Gandavyuha chapter 14.
 Open a file at `https://canvas.ubc.ca/courses/193131/files/<id>`.
 
 ## Reference (for Claude)

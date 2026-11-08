@@ -1,9 +1,9 @@
 # ASIA 250 — Introduction to Buddhism (2026W1)
 
-**Instructor:** Samuel Shooklyn (samuel.shooklyn@ubc.ca) · **TA:** Karin Maruyama · **Format:**
-online, asynchronous, Sep 8 – Dec 1. Lectures are pre-recorded, posted Mondays by 5pm (11 modules).
-Only live component: optional Zoom Q&A, Fridays 7:30–8:30pm, not graded. **Textbook:** Harvey,
-*An Introduction to Buddhism* (2013), PDF on Canvas.
+- Samuel Shooklyn teaches the course. His email is samuel.shooklyn@ubc.ca. Karin Maruyama is the TA.
+- The course is online and asynchronous from Sep 8 to Dec 1. The 11 modules have prerecorded lectures posted Mondays by 5pm.
+- The only live component is the optional Friday Zoom Q&A from 7:30–8:30pm. It is ungraded.
+- The textbook is Harvey's *An Introduction to Buddhism* (2013), available as a PDF on Canvas.
 
 ## Grading — 104% available
 | Component | Weight | When |
@@ -16,19 +16,20 @@ Only live component: optional Zoom Q&A, Fridays 7:30–8:30pm, not graded. **Tex
 | *Bonus — course evaluation* | *+2%* | late in term |
 | *Bonus — optional assignment* | *+2%* | announced week 2, do any time |
 
-Bank the 27 cheap points (declaration + quizzes + bonuses) and the writing needs ~90% for a 96.
+The declaration, quizzes and bonuses are worth 27 points. With all 27, the writing needs about 90% for a 96.
 
 ## Formats
-- **Quizzes** test lectures *and* readings — lectures "overlap but do not cover all subjects of
-  the readings", so watching alone won't get 5/5. Answers publish when the quiz closes, so **late = 0
-  with no exceptions**, concession letters included.
-- **Final paper** is on your **independent novel**, not the lectures.
-  - Chosen 2026-09-13: **Option A, Mishima, *The Temple of the Golden Pavilion*** (Ivan Morris translation, about 260 pages, epub on Canvas).
+- Quizzes test both lectures and readings. The lectures "overlap but do not cover all subjects of
+  the readings". Study both to aim for 5/5.
+- Answers appear when the quiz closes. A late quiz earns 0, including with a concession letter.
+- The **final paper** is on your **independent novel**.
+  - The choice on 2026-09-13 was **Option A**, Mishima's *The Temple of the Golden Pavilion*. The Ivan Morris translation is about 260 pages and is available as an EPUB on Canvas.
   - The week 9 film for option A is *Fancy Dance*.
-  - Option B was Ko Un, *Little Pilgrim* (Shooklyn's own pick, "really easy and fun to read"); not chosen.
+  - Option B was Ko Un's *Little Pilgrim*. It was Shooklyn's pick, which he called "really easy and fun to read". The paper uses Option A.
   - 30 to 35 pages a week keeps pace for the Dec 10 paper.
-- SWRs and paper: **−10 points per day late.** No Wikipedia; use the Gale eBooks religion
-  collection first. Chicago/Turabian author-date. No AI policy stated.
+- Short written responses and the final paper lose **10 points for each day late**.
+- Use the Gale eBooks religion collection first. Wikipedia is prohibited.
+- Use Chicago/Turabian author-date citations. The syllabus gives no AI policy.
 
 ## Schedule
 | Wk | Posted | Lecture | Key readings |
