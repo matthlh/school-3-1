@@ -37,6 +37,9 @@ Basically boredom is evil, we can't change it but change our perceptions of it. 
 - The principle has the repelling force of "the negative", which in Hegel is the principle of motion. A says that whoever has it behind him has infinite momentum.
 - Then comes the central sentence, that boredom is a root of all evil.
 - The Danish says *a* root, *en Rod*. The English copy and the notes say *the* root. Either is acceptable on an exam, but the original hedges.
+
+> **Watch out.** A's central sentence is that boredom is a root of all evil. The Danish *en Rod* says *a* root; the common English rendering says *the* root. Either is accepted, but the original hedges.
+
 - A uses children as evidence. As long as children are amused they are good, and they turn unruly when boredom is on its way.
 - So a nursemaid is hired partly on whether she can amuse the children. She would be dismissed for failing at it, whatever her other virtues.
 - A calls the nursemaid's employment the one relationship in life where aesthetics gets its due. Nobody gets to divorce a boring wife, depose a boring king, exile a boring priest, sack a boring minister or execute a boring journalist.
@@ -98,6 +101,9 @@ Basically boredom is evil, we can't change it but change our perceptions of it. 
 
 - A's own is the true rotation. It keeps the soil and changes the method of cultivation and the crop. In life, it means varying how one uses the same surroundings.
 - Here lies **the principle of limitation**, which A calls the only saving principle in the world. The more you limit yourself, the more inventive you become.
+
+> **Definition.** **The principle of limitation** is A's only saving principle: the more you limit yourself, the more inventive you become. The true rotation keeps the same soil and varies the method, against the vulgar rotation that just changes the soil.
+
 - A prisoner for life is endlessly inventive, and a spider is great entertainment to him.
 - A's schooldays examples are a fly under a nutshell, a fly shut into a hole in the desk and watched through paper, and the monotonous drip from the roof.
 - The contrast is **extensive against intensive**. Relief is sought not by extensity but by intensity.
@@ -193,6 +199,8 @@ Basically boredom is evil, we can't change it but change our perceptions of it. 
 - The sexist tone the notes noticed is real. It includes woman as man's ruin, a woman's love as pretence and weakness, the beauty who neither sews nor spins, and the gypsy woman as a burden to her husband.
 - It is A's voice, meant to be heard as a life-view, not as Kierkegaard's own. On an exam, attribute every line of the essay to A.
 - Judge William's first letter in volume 2, "The Aesthetic Validity of Marriage", replies directly. It is on the syllabus for November.
+
+> **Watch out.** Every line of "Crop Rotation", the sexist claims included, is A's voice as a life-view, not Kierkegaard's own. Judge William's "The Aesthetic Validity of Marriage" in volume 2 is the direct reply.
 
 ## Allusions worth knowing
 

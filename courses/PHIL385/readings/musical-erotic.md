@@ -25,6 +25,34 @@ The PDF page numbers are 10 to 13 pages lower than Kraal's printed page numbers.
 | 2. Other adaptations of Don Juan (Molière, ballet and Byron) | 94–102 | ~107–115 |
 | 3. The inner musical structure of the opera, and the Platitudinous Postlude | 103–117 | ~116–130 |
 
+The essay traces three immediate erotic stages, each matched to a figure from Mozart.
+
+```svg
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M190 60 H210" marker-end="url(#a)"/>
+    <path d="M390 60 H410" marker-end="url(#a)"/>
+  </g>
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g text-anchor="middle">
+    <rect x="20" y="36" width="170" height="48" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="105" y="56" fill="var(--link)" font-weight="600">First Stage</text>
+    <text x="105" y="74" fill="var(--fg2)" font-size="12">the Page (Cherubino)</text>
+    <rect x="215" y="36" width="170" height="48" rx="6" fill="var(--panel)" stroke="var(--fg2)"/>
+    <text x="300" y="56" fill="var(--fg)" font-weight="600">Second Stage</text>
+    <text x="300" y="74" fill="var(--fg2)" font-size="12">Papageno ("seeking")</text>
+    <rect x="410" y="36" width="170" height="48" rx="6" fill="var(--panel)" stroke="var(--ok)"/>
+    <text x="495" y="56" fill="var(--ok)" font-weight="600">Third Stage</text>
+    <text x="495" y="74" fill="var(--fg2)" font-size="12">Don Giovanni (seduction)</text>
+  </g>
+  <text x="300" y="112" text-anchor="middle" fill="var(--muted)" font-size="11">the immediate erotic stages of the sensual genius</text>
+</svg>
+```
+
 ## The last part (pages 100–117)
 
 ### Molière's *Don Juan* (end of section 2)
@@ -34,8 +62,14 @@ The PDF page numbers are 10 to 13 pages lower than Kraal's printed page numbers.
 - A calls the statue in Molière a dramatic stumbling block. If Don Juan is force and passion, heaven itself must be set in motion. If he is not, such drastic means are ill-advised, and modern comedy would simply put him in a debtor's gaol.
 - In Mozart's opera, the Commendatore's return is right, because the music makes him more than an individual. His voice becomes the voice of a spirit.
 - No power on earth can coerce Don Giovanni. Only a ghost can, because he is sensual life in its **immediacy**, or before reflection, and the negation of immediacy is spirit.
+
+> **Definition.** **Immediacy** means sensual life before reflection. Don Giovanni is immediacy, so no earthly power can coerce him; only a ghost can, because the negation of immediacy is spirit.
+
 - Leporello's bond to his master makes sense. Through an obscure sympathy he is absorbed in a force, and that makes him a musical figure.
 - Sganarelle relates to an individual. A sees no rational ground for him to stay when he is not even paid.
+
+> **Watch out.** Keep Molière and Mozart apart. In Molière, Elvira is Don Juan's wife and he is an ordinary deceiver who promises marriage, a seducer historically rather than dramatically. In Mozart, the music makes him more than an individual.
+
 - Molière's Elvira is Don Juan's wife. He is an ordinary deceiver who promises marriage.
 - The two peasant girls are deceived offstage. The scene with Charlotte shows a lewd fellow looking over a girl like a horse dealer.
 - We learn that Molière's Don Juan is a seducer historically, not dramatically.
@@ -83,6 +117,9 @@ The PDF page numbers are 10 to 13 pages lower than Kraal's printed page numbers.
 - A says two arias must go, Ottavio's and Anna's. They are concert pieces, not dramatic music, and the two figures are too slight to hold up the action.
 - A says the overture should be composed last, so the composer is steeped in the music.
 - A calls Mozart's overture a perfect masterpiece. He says it is enough on its own to prove *Don Giovanni* a classic.
+
+> **Key.** A says the overture should be composed last, so the composer is steeped in the music. He calls Mozart's overture a perfect masterpiece, enough on its own to prove *Don Giovanni* a classic.
+
 - The overture's focus is Don Giovanni, not Don Giovanni and the Commendatore. The deep voice of the opening grows weaker and is dragged into the race. The finale is where earnestness returns.
 - The overture's first hint of Don Giovanni is like lightning on a dark horizon.
 - Don Giovanni's life is born in dread. It is a substantial dread, not despair, and it is his energy and his demonic joy of life.

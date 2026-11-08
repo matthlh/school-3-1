@@ -26,11 +26,16 @@ Free will vs determinism: is the main argument whether we have a spirit or just 
 
 ### The speaker and his audience
 
+> **Watch out.** The speaker is A, the aesthete, not Kierkegaard. On an exam, attribute every claim in this address to A.
+
 - The speaker is A, not Kierkegaard.
 - The full heading is three lines, and all three are printed in the book. They are "The Unhappiest One", then "An enthusiastic address to Symparanekromenoi", then "Peroration in the Friday meetings".
 - The title is also rendered "The Unhappiest One. An inspired address to the Symparanekromenoi."
 - A **peroration** is the closing part of a speech. So the piece presents itself as the last item at a regular Friday meeting of the club, not as an essay.
 - A addresses the **Symparanekromenoi**, the fellowship of the already-dead. They are A's fictional club of aesthetes who count themselves already dead and meet to celebrate unhappiness.
+
+> **Definition.** The **Symparanekromenoi** are A's fictional club of aesthetes who count themselves already dead and meet on Fridays to celebrate unhappiness. A **peroration** is the closing part of a speech, so the piece presents itself as the last item at one of those meetings.
+
 - The members describe themselves as living "aphoristically", set apart and segregated, solitary birds in the night, believing in nothing but misfortune.
 - The Greek and Latin words A uses for "set apart" are the ones Paul uses of himself in Romans 1:1.
 
@@ -39,6 +44,9 @@ Free will vs determinism: is the main argument whether we have a spirit or just 
 - A reports a grave somewhere in England marked only with the inscription "the unhappiest one". It was opened, and no body was found.
 - The text does not say who opened the grave or why. Only what they found matters, which is nothing.
 - The real source is a grave slab inscribed *Miserrimus* in Worcester Cathedral. Kierkegaard noted it in 1840.
+
+> **Key.** The inscription's real source is a grave slab reading *Miserrimus* in Worcester Cathedral, which Kierkegaard noted in 1840.
+
 - Kierkegaard's note already contains the whole idea. Someone might read the inscription, conclude nobody was buried there at all, and think the grave was meant for him.
 - The lines of verse A quotes about peace in the grave are from Christen Pram's epic *Stærkodder* of 1785.
 - A quotes them to set up the irony. The grave is supposed to be the one place where the unhappy finally rest, and this one is empty, so the unhappiest one does not even get that.
@@ -147,6 +155,9 @@ Two patterns run through the gallery.
 - The second wish is for the case where the winner's proud soul scorns that kind of pity. A asks that the girls love him, pregnant women in their fear come to him, mothers hope in him, the dying seek comfort from him and the old lean on him as on a staff. He asks that the whole world believe the winner can make it happy.
 - **The reversal.** A corrects himself and says he should have called the winner the happiest, because this is a gift of fortune nobody can give himself.
 - Language fails and thought is confounded, for who is the happiest except the unhappiest.
+
+> **Watch out.** At the end A reverses himself: he says the winner should instead be called the happiest, because being the unhappiest is a gift of fortune no one can give himself. The essay crowns no named winner, and the grave stays empty.
+
 - Then come four clauses to know. Life is madness, faith is folly, hope is a reprieve and love is salt in the wound.
 - The winner vanishes, and the fellowship is standing at the empty grave again.
 - A wishes him peace, rest, recovery, every good fortune, an early death, an eternal oblivion and no remembrance at all. He wishes this so that not even the memory of him should make anyone else unhappy.

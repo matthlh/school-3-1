@@ -32,6 +32,8 @@ This essay is on PDF pages 118–138. Kraal's page 143 is PDF page 122, and [lec
 - So the ancient hero's downfall is partly suffering. The modern hero's downfall is action.
 - Modern tragedy gives priority to the hero's situation and character and has no epic foreground. A says "the hero stands and falls entirely on his own deeds" (Kraal's page 143).
 
+> **Key.** Ancient hero's downfall is partly suffering; modern hero's downfall is action. On Kraal's page 143, "the hero stands and falls entirely on his own deeds".
+
 ### Guilt between activity and passivity
 
 - Aristotle requires the hero to have guilt (*hamartia*). In Greek tragedy, the guilt, like the action, lies between activity and passivity. That is the tragic collision.
@@ -68,9 +70,15 @@ This essay is on PDF pages 118–138. Kraal's page 143 is PDF page 122, and [lec
 
 - **Sorrow** is suffering without reflection. **Pain** is reflection on suffering.
 - Ancient tragedy has deeper sorrow and less pain. Modern tragedy has greater pain and less sorrow.
+
+> **Watch out.** Do not swap these. **Sorrow** is suffering without reflection; **pain** is reflection on suffering. Ancient tragedy has deeper sorrow and less pain; modern tragedy has greater pain and less sorrow.
+
 - A child watching an older person suffer has too little reflection for pain but infinitely deep sorrow. An adult watching a child suffer has greater pain and less sorrow. A clearer idea of guilt brings more pain and less sorrow.
 - A says that to feel Greek sorrow one must enter the Greek consciousness. He thinks most modern admiration of Greek tragedy is affectation.
 - **Remorse** is the bitterest pain, but it is ethical, not aesthetic. Its complete transparency ends aesthetic interest, and it refuses to be looked at.
+
+> **Definition.** **Remorse** is the bitterest pain, yet it is ethical rather than aesthetic. Because it is fully transparent and refuses to be looked at, it ends aesthetic interest and so lies outside tragedy.
+
 - A says the modern age works toward remorse as its highest tragic interest. He calls this the same confusion that wants to be edified in the theatre and entertained in church.
 - Once the individual is left wholly to himself, guilt becomes sin and pain becomes remorse. The tragic disappears, and the spectator, having lost his compassion, says "heaven helps those who help themselves".
 - Greater innocence brings deeper sorrow, but pushed to the limit this leaves aesthetics.
@@ -102,6 +110,9 @@ This essay is on PDF pages 118–138. Kraal's page 143 is PDF page 122, and [lec
 - No one knows the rest except Antigone. A leaves how she learned it to the reader.
 - Certainty throws her into anxiety. A calls **anxiety** the modern tragic.
 - Anxiety is reflection. It is the organ by which the subject takes in sorrow gradually, "in constant becoming".
+
+> **Definition.** A calls **anxiety** the modern tragic. It is reflection, the organ by which the subject takes sorrow in gradually, "in constant becoming", and it both loves and fears its object.
+
 - Anxiety both loves and fears its object. A compares it to an erotic glance that desires what it sees.
 
 ### Two proofs that anxiety is reflection

@@ -9,6 +9,9 @@ Super dense and hard to keep track of. The one idea I tracked: large emphasis on
 
 - The inward and outward idea in your notes is the right one.
 - Victor Eremita opens by doubting the philosophical thesis that "the outer is the inner and the inner is the outer". That is Hegel's formula.
+
+> **Key.** The thesis Eremita doubts, "the outer is the inner and the inner is the outer", is Hegel's. Eremita's counter is that people carry secrets their outward appearance never shows.
+
 - Eremita says people carry secrets their outward appearance never shows, so the outer does not reveal the inner.
 - Seven years earlier, Eremita saw an old writing desk called a secretaire at a second-hand dealer's. He offered too little and was refused, and eventually he bought the desk anyway.
 - Before a trip to the country, Eremita needed money from a drawer that had stuck. He struck the desk with a hatchet, and the blow sprang open a hidden compartment full of papers.
@@ -25,11 +28,26 @@ Super dense and hard to keep track of. The one idea I tracked: large emphasis on
 - The letters show that the second author was called Wilhelm and was an assessor in a court, without saying which court. This is why B is known as Judge William.
 - Eremita uses A and B rather than mixing a real name with an invented one.
 
+> **Watch out.** "A" is an invented label, since the papers reveal nothing about the first author. "B" rests on a real name, Wilhelm, read out of the letters, which is why B is called Judge William. Do not swap which of the two carries a real name.
+
 ### The diary within A's papers
 
 - A's last paper is "The Seducer's Diary". A claims he only found it and copied it.
 - Eremita does not believe A and suspects A wrote the diary himself.
 - Eremita compares the layers to a Chinese puzzle box, with one author enclosed inside another. The four layers are Kierkegaard, Victor Eremita, A and Johannes the Seducer, in that order.
+
+```svg
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <rect x="20" y="16" width="560" height="188" rx="8" fill="var(--panel)" stroke="var(--border3)"/>
+  <text x="300" y="36" text-anchor="middle" fill="var(--fg)" font-weight="600">Kierkegaard</text>
+  <rect x="64" y="48" width="472" height="140" rx="8" fill="var(--panel)" stroke="var(--link)"/>
+  <text x="300" y="68" text-anchor="middle" fill="var(--link)" font-weight="600">Victor Eremita, editor</text>
+  <rect x="116" y="80" width="368" height="92" rx="8" fill="var(--panel)" stroke="var(--ok)"/>
+  <text x="300" y="100" text-anchor="middle" fill="var(--ok)" font-weight="600">A, who claims he only found the diary</text>
+  <rect x="176" y="112" width="248" height="44" rx="8" fill="var(--panel)" stroke="var(--border2)"/>
+  <text x="300" y="139" text-anchor="middle" fill="var(--fg2)" font-weight="600">Johannes the Seducer</text>
+</svg>
+```
 
 ## Eremita's editorial decisions
 
@@ -53,6 +71,8 @@ Super dense and hard to keep track of. The one idea I tracked: large emphasis on
 
 - The title page says "edited by Victor Eremita". The name is Latin for the victorious hermit.
 - The Preface is signed "The Editor", Copenhagen, November 1842. *Either/Or* came out in February 1843.
+
+> **Key.** "Victor Eremita" is Latin for the victorious hermit, and he signs the Preface "The Editor", Copenhagen, November 1842. *Either/Or* was published in February 1843.
 
 ## What the Preface is prefacing
 

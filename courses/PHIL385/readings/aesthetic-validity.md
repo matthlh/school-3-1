@@ -6,6 +6,9 @@ The [lecture 18 page](../lectures/18-aesthetic-validity-of-marriage.md) has your
 
 - "The Aesthetic Validity of Marriage" opens Part II of *Either/Or*. It is the first of B's two letters to A.
 - B is Judge William, a married civil servant. A is the young aesthete whose papers make up Part I.
+
+> **Watch out.** This essay opens Part II and is the first of B's two letters to A. B is Judge William, the married civil servant; A is the young aesthete of Part I. Do not reverse who argues for marriage.
+
 - A thinks marriage kills the poetry of love. B argues that marriage is more beautiful and more worth living than romance even on A's terms.
 - B has two tasks. First, he argues that marriage has aesthetic worth, or that it can be beautiful. Second, he explains how marriage can keep that beauty through time and hardship.
 - Kraal's reading is that the ethical way of life wins even when you judge it by the aesthetic way of life's own standards.
@@ -59,11 +62,16 @@ The [lecture 18 page](../lectures/18-aesthetic-validity-of-marriage.md) has your
 - Both paths lose the eternal.
 - The two paths set love and marriage against each other. One keeps love and rejects marriage. The other keeps marriage and gives up love.
 
+> **Watch out.** Keep the two responses apart. The **immoral path** keeps passion and gives up marriage (Byron: love as heaven, marriage as hell). The **respectable path** is the marriage of convenience, the marriage of reason, which keeps marriage and gives up love. Both lose the eternal.
+
 ### Melancholy and the fear of commitment
 
 - B calls the age's illness melancholy, a fear of committing. He calls melancholy "the defect of our time".
 - **Egoistic melancholy** is fear for one's own sake, as in "perhaps fate will tie me to another".
 - **Sympathetic melancholy** is fear for oneself for the other person's sake. B calls it "more painful and also somewhat nobler".
+
+> **Definition.** **Egoistic melancholy** is fear of commitment for one's own sake. **Sympathetic melancholy** is fear for oneself for the other person's sake, which B calls more painful and somewhat nobler. Both treat each day as "examination day".
+
 - Both forms of melancholy treat each day as "examination day".
 - B says the age neutralizes marriage out of cowardice and self-indulgence. The Middle Ages also neutralized it, but because people thought the unmarried life was more perfect.
 
@@ -178,6 +186,9 @@ The [lecture 18 page](../lectures/18-aesthetic-validity-of-marriage.md) has your
 ### Outer and inner history
 
 - In **external history**, what one strives for lies outside. **Internal history** begins with the possession. B says, "Only internal history is true history."
+
+> **Definition.** In **external history** what one strives for lies outside; it suits art and poetry and the moment. **Internal history** begins with the possession, and B says, "Only internal history is true history." Marriage is internal history lived every day.
+
 - Art and poetry favour external history and the moment, because a moment can show a hero's pride, courage, conquest or death. It cannot show humility and patience, like the cross-bearer who takes up his cross each day.
 - B orders the arts from space to time. Sculpture comes first, then painting (Schelling), then music, which vanishes in time, and then poetry, the most complete art.
 - The aesthetic beyond representation is realized "by being lived". The highest is to feel oneself "a character in the play written by God", at once "composer and composition".

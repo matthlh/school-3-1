@@ -10,6 +10,11 @@ Page numbers are your PDF's. The diary is on PDF pp. 199–331, with A's preface
 - An unnamed editor, whom the book calls A, found the diary in Johannes's writing desk. Johannes had left the desk open for once, with a drawer pulled out.
 - The diary was a bound quarto labelled *Commentarius perpetuus No. 4*. A copied it in a hurry because he was afraid of being caught.
 - A knew Cordelia. Her first name is real, but the surname Wahl is made up.
+
+> **Watch out.** Johannes is the diarist and seducer. A is the editor who found and copied the diary and wrote the preface. Cordelia's first name is real, but the surname Wahl was supplied by A.
+
+> **Key.** The diary is a bound quarto labelled *Commentarius perpetuus No. 4*, which A copied in a hurry for fear of being caught.
+
 - Cordelia gave A a bundle of Johannes's letters to her. The letters have no dates, so A puts each one where the diary gives the reason for it.
 - A's preface also prints three letters Cordelia wrote to Johannes after he left her. Johannes sent them back unopened.
 
@@ -54,6 +59,9 @@ Page numbers are your PDF's. The diary is on PDF pp. 199–331, with A's preface
     - He wins over the aunt with farm talk he has studied.
 - He uses the engagement as a tool. He proposes in dull, set phrases, then makes engagement look ridiculous so that Cordelia breaks it off and he takes no blame.
 - He calls his method the **double movement**. His letters stir Cordelia up while his ironic conversation cools her down.
+
+> **Definition.** The **double movement** is Johannes's method: his letters stir Cordelia up while his ironic conversation cools her down.
+
 - He never asks whether she has read a letter.
 - He controls what Cordelia reads: first Bürger's *Lenore*, then myths and fairy tales, and at the end *Cupid and Psyche*.
 - A imagines that with some girls Johannes never made a declaration or a promise, so the girl had nothing to point to. With Cordelia he did propose, but the affair was tangled enough that he could even look like the one who was seduced.
@@ -63,6 +71,8 @@ Page numbers are your PDF's. The diary is on PDF pp. 199–331, with A's preface
 - The **first war** is a war of liberation and only a game. In it he retreats so that Cordelia will pursue him.
 - The **second war** is a war of conquest and a matter of life and death.
 - He wants to possess Cordelia in her freedom, not through the engagement.
+
+> **Definition.** The **first war** is a war of liberation, only a game, in which Johannes retreats so Cordelia pursues him. The **second war** is a war of conquest, a matter of life and death, aimed at possessing her in her freedom rather than through the engagement.
 
 ### What he seeks in love
 
@@ -103,6 +113,46 @@ Page numbers are your PDF's. The diary is on PDF pp. 199–331, with A's preface
 ## Names to know
 
 ### People
+
+```svg
+<svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, system-ui, sans-serif" font-size="13">
+  <defs>
+    <marker id="h" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0 0 L6 3 L0 6 Z" fill="var(--border3)"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="var(--border3)" stroke-width="1.5">
+    <path d="M360 140 H454" marker-end="url(#h)"/>
+    <path d="M300 118 V72" marker-end="url(#h)"/>
+    <path d="M140 140 H234" marker-end="url(#h)"/>
+    <path d="M300 170 V214" marker-end="url(#h)"/>
+    <path d="M360 232 Q470 215 500 174" marker-end="url(#h)"/>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="var(--muted)">
+    <text x="407" y="132">seduces</text>
+    <text x="347" y="98">wins with farm talk</text>
+    <text x="187" y="132">learns of her from</text>
+    <text x="300" y="196">uses as foil</text>
+    <text x="455" y="212">in love with</text>
+  </g>
+  <g text-anchor="middle">
+    <rect x="240" y="118" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--fg2)"/>
+    <text x="300" y="145" fill="var(--fg)" font-weight="600">Johannes</text>
+    <rect x="454" y="118" width="130" height="44" rx="6" fill="var(--panel)" stroke="var(--link)"/>
+    <text x="519" y="139" fill="var(--link)" font-weight="600">Cordelia Wahl</text>
+    <text x="519" y="155" fill="var(--muted)" font-size="11">the target, 17</text>
+    <rect x="240" y="26" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="47" fill="var(--fg2)" font-weight="600">The aunt</text>
+    <text x="300" y="62" fill="var(--muted)" font-size="11">her guardian</text>
+    <rect x="18" y="118" width="122" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="79" y="139" fill="var(--fg2)" font-weight="600">The Jansens</text>
+    <text x="79" y="155" fill="var(--muted)" font-size="11">gossip, access</text>
+    <rect x="240" y="214" width="120" height="44" rx="6" fill="var(--panel)" stroke="var(--border2)"/>
+    <text x="300" y="235" fill="var(--fg2)" font-weight="600">Edvard</text>
+    <text x="300" y="250" fill="var(--muted)" font-size="11">shy suitor, foil</text>
+  </g>
+</svg>
+```
 
 - **Johannes** is the diarist and the seducer.
 - **Cordelia Wahl** is the seventeen-year-old he seduces. Her name recalls Cordelia, King Lear's silent third daughter.
