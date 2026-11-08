@@ -427,6 +427,9 @@ export function courseLabel(code: string): string {
   return code.replace(/^([A-Za-z]+)(\d)/, '$1 $2')
 }
 
+/** A compact course code as the workspace writes it in paths and chips: "STAT251", "CPSC310". Not the spaced ledger form. */
+export const isCourseCode = (s: string) => /^[A-Z]{2,4}\d{3}[A-Z]?$/.test(s)
+
 // ---- a syllabus's "## Grading" table, for the what-if panel on a course page ------------------
 
 export interface GradeComponent {

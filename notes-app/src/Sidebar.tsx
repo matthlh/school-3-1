@@ -7,6 +7,7 @@ import { pctSolid, type Tally } from './stats'
 import { Logo } from './Logo'
 import { ThemeToggle } from './ThemeToggle'
 import { buildLabel } from './update'
+import { readJSON, writeJSON } from './storage'
 
 function Link({ entry, current }: { entry: Entry; current: string }) {
   return <a href={hrefFor(entry.path)} className={entry.path === current ? 'cur' : undefined}>{entry.label}</a>
@@ -20,17 +21,13 @@ const courseOfCurrent = (current: string) => /^courses?\/([^/]+)/.exec(current)?
 // down, so an open course still shows its main files first.
 const KEY = 'navOpen'
 function loadOpen(): Record<string, boolean> {
-  try {
-    const saved: unknown = JSON.parse(localStorage.getItem(KEY) ?? '{}')
-    if (saved === null || typeof saved !== 'object' || Array.isArray(saved)) return {}
-    return Object.fromEntries(Object.entries(saved).filter(([id, value]) =>
-      /^(?:[A-Z]+[0-9]+(?::(?:lec|read))?|briefs)$/.test(id) && typeof value === 'boolean',
-    ))
-  } catch { return {} }
+  const saved = readJSON<unknown>(localStorage, KEY)
+  if (saved === null || typeof saved !== 'object' || Array.isArray(saved)) return {}
+  return Object.fromEntries(Object.entries(saved).filter(([id, value]) =>
+    /^(?:[A-Z]+[0-9]+(?::(?:lec|read))?|briefs)$/.test(id) && typeof value === 'boolean',
+  ))
 }
-function saveOpen(v: Record<string, boolean>) {
-  try { localStorage.setItem(KEY, JSON.stringify(v)) } catch { /* storage blocked: the choice lasts this page load */ }
-}
+const saveOpen = (v: Record<string, boolean>) => writeJSON(localStorage, KEY, v)
 
 function Group({ id, label, entries, current, open, onToggle }: {
   id: string; label: string; entries: Entry[]; current: string; open: boolean; onToggle: (id: string, shown: boolean) => void

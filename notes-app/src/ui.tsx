@@ -1,5 +1,5 @@
 // Small pieces shared across pages: grade and course chips, the solid/shaky/missed bar, topic cells.
-import { splitTopic, type Grade, type TopicRow } from './markdown'
+import { isCourseCode, splitTopic, type Grade, type TopicRow } from './markdown'
 import { formatDate, isISODate } from './dates'
 import { hrefCourse, hrefTopic } from './routes'
 import { toneStyle } from './tone'
@@ -18,8 +18,6 @@ export function LastGrade({ r }: { r: TopicRow }) {
 export function CourseChip({ code }: { code: string }) {
   return <a href={hrefCourse(code)} className="chip tone" style={toneStyle(code)}>{code}</a>
 }
-
-export const isCourseCode = (s: string) => /^[A-Z]{2,4}\d{3}[A-Z]?$/.test(s)
 
 /** A calendar row's course cell as a chip: a course links to its page, UBC-wide dates get a plain chip, "—" gets none. */
 export function calendarChip(course: string) {

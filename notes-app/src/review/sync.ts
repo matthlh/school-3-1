@@ -5,6 +5,7 @@
 // by another. The token lives only in this browser's storage, never in the site's code or the public repository.
 
 import { isEvent, type Event } from './events'
+import { readText, writeText } from '../storage'
 
 // ---- storage on this device -----------------------------------------------------------------
 
@@ -12,8 +13,8 @@ import { isEvent, type Event } from './events'
 export interface Persist { get(key: string): string | null; set(key: string, value: string): void }
 
 export const browserPersist: Persist = {
-  get: (k) => { try { return localStorage.getItem(k) } catch { return null } },
-  set: (k, v) => { try { localStorage.setItem(k, v) } catch { /* storage blocked: kept for this page load only */ } },
+  get: (k) => readText(localStorage, k),
+  set: (k, v) => writeText(localStorage, k, v),
 }
 
 const EVENTS = 'reviewEvents'

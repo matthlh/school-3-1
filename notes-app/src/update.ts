@@ -11,6 +11,7 @@
 // one per entry), at its top or its #section when it is new, or where it was left when Back returns to it.
 import { useSyncExternalStore } from 'react'
 import { parseHash, pageId } from './routes'
+import { readJSON, writeJSON } from './storage'
 
 type UpdateStatus = 'current' | 'checking' | 'available' | 'error'
 interface UpdateInfo {
@@ -58,15 +59,8 @@ export function useUpdate(): UpdateInfo {
 }
 
 // sessionStorage is per tab and survives a reload, which is exactly the scope the loop guard needs.
-function readSession<T>(key: string): T | null {
-  try {
-    const raw = sessionStorage.getItem(key)
-    return raw === null ? null : (JSON.parse(raw) as T)
-  } catch { return null }
-}
-function writeSession(key: string, value: unknown) {
-  try { value === null ? sessionStorage.removeItem(key) : sessionStorage.setItem(key, JSON.stringify(value)) } catch { /* private mode */ }
-}
+const readSession = <T>(key: string): T | null => readJSON<T>(sessionStorage, key)
+const writeSession = (key: string, value: unknown) => writeJSON(sessionStorage, key, value)
 
 interface Reloaded { build: string; at: number }
 /** Milliseconds since this tab last reloaded for `build`, or Infinity if it never did. */

@@ -2,6 +2,7 @@
 // and mirrored onto <html data-NAME> (index.html applies the stored values inline before the first paint), and fires
 // a NAMEchange event on window when it changes. The default value is never stored and removes the attribute.
 import { useSyncExternalStore } from 'react'
+import { writeText } from './storage'
 
 export interface Pref<T extends string> {
   /** What the page shows now: the attribute, else the default. */
@@ -18,10 +19,8 @@ function pref<T extends string>(name: string, values: readonly T[], fallback: T)
   return {
     current: () => { const v = root.dataset[name]; return valid(v) ? v : fallback },
     set: (v) => {
-      try {
-        if (v === fallback) localStorage.removeItem(name)
-        else localStorage.setItem(name, v)
-      } catch { /* storage blocked (private mode): the attribute still applies for this page load */ }
+      // Storage blocked (private mode): the attribute still applies for this page load.
+      writeText(localStorage, name, v === fallback ? null : v)
       if (v === fallback) delete root.dataset[name]
       else root.dataset[name] = v
       window.dispatchEvent(new Event(event))

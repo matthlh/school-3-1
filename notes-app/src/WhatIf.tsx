@@ -6,6 +6,7 @@
 import { useMemo, useState } from 'react'
 import { hrefFor, type Texts } from './files'
 import { parseLedgerGrades, parseWeights, type GradeComponent, type GradeItem } from './markdown'
+import { readText, writeText } from './storage'
 
 interface Row extends GradeComponent {
   /** The Grades so far items that belong to this component. */
@@ -188,18 +189,13 @@ function percent(s: string): number | null {
 
 const KEY = 'target'
 
-/** The stored target, else 96. Storage can be blocked (private mode), so every access is wrapped. */
+/** The stored target, else 96. */
 function loadTarget(): string {
-  try {
-    const v = localStorage.getItem(KEY)
-    if (v !== null && percent(v) !== null) return v
-  } catch { /* storage blocked: the default applies */ }
-  return '96'
+  const v = readText(localStorage, KEY)
+  return v !== null && percent(v) !== null ? v : '96'
 }
 
-function saveTarget(v: number) {
-  try { localStorage.setItem(KEY, String(v)) } catch { /* storage blocked: the target lasts for this page load */ }
-}
+const saveTarget = (v: number) => writeText(localStorage, KEY, String(v))
 
 export function WhatIf({ code, all }: { code: string; all: Texts }) {
   const syllabusPath = `courses/${code}/00-syllabus.md`

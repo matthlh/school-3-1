@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { slug } from './markdown'
+import { isCourseCode, slug } from './markdown'
 
 /** The three tabs of a course page: what to study, reference material, and how the course is going. */
 export type CourseTab = 'study' | 'materials' | 'progress'
@@ -38,7 +38,7 @@ export function parseHash(hash: string): Route {
   if (s === 'review') {
     const p = new URLSearchParams(query)
     const course = p.get('course')
-    return { kind: 'review', course: course && /^[A-Z]{2,4}\d{3}[A-Z]?$/.test(course) ? course : null, setup: p.get('setup') === '1' }
+    return { kind: 'review', course: course && isCourseCode(course) ? course : null, setup: p.get('setup') === '1' }
   }
   if (s === 'courses') return { kind: 'courses' }
   const m = /^course\/([^/]+?)(?:\/(study|materials|progress))?\/?$/.exec(s)
