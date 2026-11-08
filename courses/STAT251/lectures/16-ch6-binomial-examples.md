@@ -1,6 +1,6 @@
 # STAT 251 — Lec 16 (Mon Oct 19) — Ch 6: Binomial examples
 
-The deck is `Lecture_16_Chapter_6_CanvasPost_AL.pdf` (11 slides with solutions). The class starts with the second half of the previous deck and its handwritten mean-and-variance file. The derivation is on the [lecture 15 page](15-ch6-bernoulli-binomial.md), and the [question bank](../02-questions.md) lists this lesson under "Lec 16".
+The deck is `Lecture_16_Chapter_6_CanvasPost_AL.pdf` (11 slides with solutions). The Canvas lecture page says the class starts with the second half of the previous deck and the handwritten Bernoulli and Binomial mean-and-variance file. The derivation is on the [lecture 15 page](15-ch6-bernoulli-binomial.md), and the [question bank](../02-questions.md) lists this lesson under "Lec 16".
 
 ## Worked Binomial examples
 

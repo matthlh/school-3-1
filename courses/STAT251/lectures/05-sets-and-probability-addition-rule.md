@@ -1,6 +1,6 @@
 # STAT 251 — Lec 5 (Fri Sep 18) — Ch 3: sets and probability, the addition rule
 
-The deck is `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631). The class began with the last two slides of the lecture 4 after-class deck. Slides 8 and 13 give equally likely counting and countable additivity as images.
+The deck is `Lecture_05_Chapter_3_CanvasPost_AL.pdf` (17 slides, Canvas file 47723631). The class began with the last two slides of the lecture 4 after-class deck. Slides 8 and 13 show the formulas for equally likely counting and countable additivity as images. The formulas below use the surrounding slide text and the standard statements.
 
 ## Learning goals (slides 2–3, the Chapter 3 outcomes)
 - Recall the basic mathematical properties of probability.

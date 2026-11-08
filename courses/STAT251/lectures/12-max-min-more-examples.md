@@ -1,6 +1,6 @@
 # STAT 251 — Lec 12 (Wed Oct 7) — Ch 4: the maximum and minimum of independent random variables, functions of one random variable
 
-The deck is `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with a Panopto recording. The solutions for Examples 9, 10 and 11 are separate handwritten files. Example 12 is worked in the deck.
+The deck is `Lecture_12_Chapter_4_Canvas_Post_AL.pdf` (18 slides, Canvas file 47723753), with a Panopto recording. The posted solutions for Examples 9, 10 and 11 are handwritten scans. The solutions on this page are worked independently. Example 12 follows the deck's solution.
 
 ## Learning goals (slide 2)
 - Slide 2 repeats the Chapter 4 outcome list. The one this lecture covers is the last: the maximum and minimum of independent random variables.

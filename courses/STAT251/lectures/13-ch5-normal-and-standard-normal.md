@@ -1,6 +1,6 @@
 # STAT 251 — Lec 13 (Fri Oct 9) — Ch 4 activity A2, and Ch 5: the Normal and standard Normal distributions
 
-The Chapter 5 decks are `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, including worked answers). The class also uses the Chapter 4 activity A2 worksheet and solution. Panopto reaches the SAT and ACT comparison on slide 11. The [lecture 14 page](14-ch5-normal-linear-combinations-sample-mean.md) covers slides 12 to 25 as taught on Oct 14.
+The Chapter 5 decks are `Lecture_13_Chapter_5_BL_CanvasPost.pdf` (25 slides) and `Lecture_13_Chapter_5_CanvasPost_AL.pdf` (30 slides, including worked answers). The class used the Chapter 4 activity A2 worksheet. The worksheet solution and Panopto recording are also sources for this page. Class reached the SAT and ACT comparison on slide 11. The lecture 13 account groups slides 12 to 25 with the Oct 14 continuation, while the [lecture 14 account](14-ch5-normal-linear-combinations-sample-mean.md) lists slides 12 to 24. Slide 25 previews the next class.
 
 ## The Normal distribution
 
@@ -32,7 +32,7 @@ $$
 - The z-score is the number of standard deviations $$x$$ sits from the mean. Negative means below the mean, positive means above.
 - Worked example: heights of US women aged 20 to 29 are about $$N(64.2, 2.8^2)$$ inches. A 70-inch woman has $$z = \frac{70 - 64.2}{2.8} = 2.07$$, and a 60-inch woman has $$z = \frac{60 - 64.2}{2.8} = -1.50$$.
 - A **z-score** measures how many standard deviations a value is from its own mean. This lets you compare scores from different distributions.
-- The student scored 650 on the SAT, with $$\mu = 500$$ and $$\sigma = 100$$. The SAT z-score is 1.5.
+- In the deck's example, a student scored 650 on the SAT, with $$\mu = 500$$ and $$\sigma = 100$$. The SAT z-score is 1.5.
 - The same student scored 30 on the ACT, with $$\mu = 21$$ and $$\sigma = 4.7$$. The ACT z-score is about 1.91.
 - The ACT score is higher relative to its distribution because its z-score is larger.
 

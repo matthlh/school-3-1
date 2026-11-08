@@ -1,6 +1,6 @@
 # STAT 251 — Lec 21 (Mon Nov 2) — Ch 7: statistics, sampling distributions and the Central Limit Theorem
 
-The deck is `Lecture_22_Chapter_7_CanvasPost.pdf` (13 slides) and the lecture has a Panopto recording. The course site counts it as lecture 21. Canvas calls it Lecture 22 because the midterm occupied the Lecture 21 slot, while the deck footer says Lecture 20. The [question bank](../02-questions.md) lists this lesson under "Lec 21". The recording discusses how large $$n$$ must be.
+The deck is `Lecture_22_Chapter_7_CanvasPost.pdf` (13 slides). Canvas did not post a separate after-class deck. The in-class material comes from the Panopto captions. This study site counts it as lecture 21. Canvas calls it Lecture 22 because the midterm occupied the Lecture 21 slot, while the deck footer says Lecture 20. The [question bank](../02-questions.md) lists this lesson under "Lec 21". The recording discusses how large $$n$$ must be.
 
 ## From samples to sampling distributions
 

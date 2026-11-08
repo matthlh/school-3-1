@@ -1,10 +1,10 @@
 # STAT 251 — Lec 23 (Fri Nov 6) — Ch 7: the Normal approximation to the Poisson; Ch 8: point estimation and unbiased estimators
 
-The Nov 6 recording and the decks `Lecture_24_Chapter_7_CanvasPost_AL.pdf` (9 slides) and `Lecture_25_Chapter_8_CanvasPost.pdf` (first five slides) cover this lecture. Canvas numbers it Lecture 24, and the [question bank](../02-questions.md) lists it under "Lec 23" and "Long problems".
+The Nov 6 Panopto captions and the decks `Lecture_24_Chapter_7_CanvasPost_AL.pdf` (9 slides) and `Lecture_25_Chapter_8_CanvasPost.pdf` (first five slides) cover this lecture. Canvas numbers it Lecture 24, and the [question bank](../02-questions.md) lists it under "Lec 23" and "Long problems".
 
 ## Normal approximations for counts
 
-### What the continuity correction changes (lecture 22 deck)
+### What the continuity correction changes (Nov 6 recording and lecture 22 deck)
 
 The class opened by redoing the lecture 22 Example 3, $$X \sim \text{Binomial}(10, 0.5)$$ and $$P(X \le 2)$$, to explain why the 0.5 is there. The details are on the [lecture 22 page](22-ch7-clt-examples-normal-approx-binomial.md).
 
@@ -69,6 +69,8 @@ $$
 A radioactive source emits particles at a mean of 55 per second, and the count follows a Poisson distribution.
 
 #### Set up the distribution
+
+The setup earns marks on its own.
 
 1. Define the random variable: $$X$$ is the number of particles emitted in 1 second.
 2. Name its distribution: $$X \sim \text{Poisson}(\lambda = 55)$$, so $$E(X) = 55$$ and $$\operatorname{Var}(X) = 55$$.
@@ -171,8 +173,8 @@ The class stopped here. Confidence intervals for $$\mu$$ (slides 8 to 13) are th
 - Midterm results appeared on Gradescope just before class. Version B was out of 36.
 - About 20 students scored under 16 of 36 and pulled the mean down. Most did well, and one or two scored 36 of 36.
 - **The final can replace the midterm.** If your final-exam percentage is higher than your midterm percentage, the midterm grade is replaced by the final's percentage.
-  - The instructor's first example raised a midterm from 55% to 85% when the final was 85%.
-  - His second example raised a midterm from 35% to 70% when the final was 70%.
+  - In the instructor's first example, a 55% midterm becomes 85% if the final is 85%.
+  - In his second example, a 35% midterm becomes 70% if the final is 70%.
 - The course average is always kept between 75 and 80. If the final turns out hard, he scales the marks up.
 - The TAs said students lost marks for giving the right answer without showing how they got it. For written answers, show these steps.
   - Define the random variable in words ("W is the time to serve one customer").

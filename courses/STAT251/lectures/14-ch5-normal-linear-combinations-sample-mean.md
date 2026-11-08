@@ -80,7 +80,7 @@ $$
 
 ## Worked example
 
-Facts 1 to 3 and this example were expected on Friday, Oct 16, before Chapter 6.
+Facts 1 to 3 and the airline example follow the deck. They were expected in class on Friday, Oct 16, before Chapter 6.
 
 ### Airline passenger weights (slide 6)
 

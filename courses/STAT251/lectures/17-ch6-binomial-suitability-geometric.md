@@ -1,6 +1,6 @@
 # STAT 251 — Lec 17 (Wed Oct 21) — Ch 6: Binomial suitability, Activity 7 and the Geometric distribution
 
-The deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activity 7 solutions are in `A7_ch6_binomial_solutions.pdf`. The two Binomial suitability examples use the 10% condition from [lecture 15](15-ch6-bernoulli-binomial.md). The [question bank](../02-questions.md) lists this lesson under "Lec 17".
+The deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activity 7 solutions are in `A7_ch6_binomial_solutions.pdf`. The deck poses the two Binomial suitability questions. The answers below apply the 10% condition from [lecture 15](15-ch6-bernoulli-binomial.md). The [question bank](../02-questions.md) lists this lesson under "Lec 17".
 
 ## When a Binomial count fits
 
@@ -19,7 +19,7 @@ The deck is `Lecture_17_Chapter_6_CanvasPost_AL.pdf` (18 slides) and the Activit
 ### Can the Binomial model the count? (slides 9 and 10)
 
 - In the first example, the pool has 10 civil engineering students and 6 computer science students. A team of 5 is picked at random.
-- The team is 5 of 16 people, more than 10% of the pool. Each selection changes $$p$$ for the next pick, so the Binomial model does not apply.
+- The team is 5 of 16 people, more than 10% of the pool. Picking without replacement changes $$p$$ for the next pick, so the Binomial model does not apply.
 - In the second example, the pool has 250 civil and 150 computer science students. A committee of 10 is picked.
 - The committee is 10 of 400, or 2.5% of the pool. The 10% condition holds, so a Binomial with $$p = \frac{150}{400}$$ is a reasonable model.
 

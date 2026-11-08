@@ -115,7 +115,7 @@ $$
 
 - The deck truncates Example 4 to 0.9997. The sum is 0.99979 and rounds to 0.9998.
 - The deck truncates Example 5's approximation to 0.0189. The sum is 0.01899 and rounds to 0.0190.
-- The displayed answers differ because of rounding. Either earns the mark if you show the sum.
+- The deck truncates the answers and the notes round them. Either convention earns the mark. Show the sum.
 - The second process property is about the expected count: the mean number of events in an interval is the rate times its length, $$\lambda t$$, which is why $$X_t \sim \text{Poisson}(\lambda t)$$. The count itself varies.
 - The exponential's $$\lambda$$ is the Poisson rate per unit of time, so put $$t$$ in that unit before using $$e^{-\lambda t}$$. In Example 6 a mean of 3 minutes gives a rate of $$\frac{1}{3}$$ per minute; using 3 as the rate is the standard miss.
 - Example 6 is the chapter's pattern for combining models: one distribution gives a per-day probability $$p$$, and a Binomial counts the days out of $$n$$ on which that event happens.

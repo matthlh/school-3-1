@@ -1,6 +1,6 @@
 # STAT 251 — Lec 22 (Wed Nov 4) — Ch 7: CLT examples, the CLT activity and the Normal approximation to the Binomial
 
-The deck is `Lecture_23_Chapter_7_CanvasPost_AL.pdf` (13 slides), with worksheet solutions in `A8_ch7 Activity solution.pdf`. Canvas calls it Lecture 23, the deck calls it Lecture 21, and the [question bank](../02-questions.md) lists it under "Lec 22" and "Long problems". In-class timings come from Panopto's Nov 4 slide index and frames.
+The deck is `Lecture_23_Chapter_7_CanvasPost_AL.pdf` (13 slides), with worksheet solutions in `A8_ch7 Activity solution.pdf`. Canvas calls it Lecture 23, the deck calls it Lecture 21, and the [question bank](../02-questions.md) lists it under "Lec 22" and "Long problems". The in-class account comes from Panopto's Nov 4 slide index and frames.
 
 ## Choosing a Normal model for a sample mean
 
@@ -127,7 +127,7 @@ $$
 
 A Binomial count $$X \sim \text{Bin}(n, p)$$ has an exact pmf, but adding up its terms is slow: "at most 30 successes out of 100" is 31 terms. When $$n$$ is large, the Binomial's histogram has a bell shape, so a Normal curve with the same mean and variance gives a quick approximate answer from the Z-table.
 
-The CLT for a sum from lecture 21 explains the bell shape. The count $$X$$ adds $$n$$ independent Bernoulli trials, each 1 for a success and 0 for a failure. With enough trials the sum is approximately Normal.
+The deck states the approximation. The CLT for a sum from lecture 21 explains the bell shape. The count $$X$$ adds $$n$$ independent Bernoulli trials, each 1 for a success and 0 for a failure. With enough trials the sum is approximately Normal.
 
 Match the Normal model to the Binomial mean $$np$$ and variance $$np(1 - p)$$ from lecture 15.
 

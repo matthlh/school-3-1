@@ -1,6 +1,6 @@
 # STAT 251 — Lec 15 (Fri Oct 16) — Ch 6: Bernoulli and Binomial distributions
 
-The Chapter 6 deck is `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The lecture begins with Normal examples from the [lecture 14 page](14-ch5-normal-linear-combinations-sample-mean.md) and `A5_ch5_normal_worksheet`. The handwritten after-class file gives the Bernoulli and Binomial mean and variance. The [question bank](../02-questions.md) lists this lesson under "Lec 15".
+The Chapter 6 deck is `Lecture_15_Chapter_6_CanvasPost.pdf` (10 slides). The Canvas lecture page lists the after-class Normal examples from [lecture 14](14-ch5-normal-linear-combinations-sample-mean.md), then `A5_ch5_normal_worksheet`, then the Chapter 6 slides. A separate handwritten file covers Bernoulli and Binomial mean and variance. The derivation below starts from the Chapter 4 definitions. The [question bank](../02-questions.md) lists this lesson under "Lec 15".
 
 ## Bernoulli trials and Binomial counts
 
@@ -82,7 +82,7 @@ $$
 - Sampling without replacement from a finite population makes the trials dependent.
 - The **10% condition** lets you treat them as independent anyway: when the sample is no more than 10% of the population, use the Binomial model; when you select more than 10% of the population, the independence assumption fails and the Binomial model cannot be used.
 
-### Where the mean and variance come from (the after-class file)
+### Deriving the mean and variance from the definitions
 
 - For one Bernoulli trial, the mean and the variance come straight from the Chapter 4 definitions.
 

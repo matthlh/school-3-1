@@ -1,6 +1,6 @@
 # STAT 251 — Lec 19 (Mon Oct 26) — Ch 6: Activity 6, the Poisson count and the exponential wait
 
-The deck is `Lecture_19_Chapter_6.pdf` (6 slides) and the worksheet solutions are in `A6_Ch6_poisson_process_solutions.pdf`. The deck introduces the Central Limit Theorem as the next topic after Chapter 6. The [question bank](../02-questions.md) lists this lesson under "Lec 19".
+The deck is `Lecture_19_Chapter_6.pdf` (6 slides) and the worksheet solutions are in `A6_Ch6_poisson_process_solutions.pdf`. This lecture covers Chapter 6. The deck's last slide names the Central Limit Theorem as the topic of the next class. The [question bank](../02-questions.md) lists this lesson under "Lec 19".
 
 ## Poisson counts and exponential waits
 

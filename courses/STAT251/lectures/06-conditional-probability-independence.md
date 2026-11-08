@@ -1,6 +1,6 @@
 # STAT 251 — Lec 6 (Mon Sep 21) — Ch 3: conditional probability and independence
 
-The deck is `Lecture_06_Chapter_3_CanvasPost_AL.pdf` (10 slides, Canvas file 48280545). The Panopto recording covers the formulas shown as images in the deck. The first fifteen minutes finish lecture 5, and lecture 7 picks up slides 8 and 9.
+The deck is `Lecture_06_Chapter_3_CanvasPost_AL.pdf` (10 slides, Canvas file 48280545). The formulas shown as images in the deck come from the Panopto recording here. The first fifteen minutes finish lecture 5, and lecture 7 picks up slides 8 and 9.
 
 ## Learning goals
 - Define conditional probability and use it, with the multiplication rule, to find joint probabilities.

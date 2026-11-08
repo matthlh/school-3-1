@@ -1,9 +1,9 @@
 # STAT 251 — logistics
 
 - Lectures meet MWF from 8:00–8:50 in CIRS 1250. The syllabus asks you to sit in the same seat each time.
-- Lab L1K meets Fri from 11:00–12:00 in ESB 1046 with Zachary. No labs run Sep 7–18. Lab 0 introduces R and has no assignment.
+- Lab L1K meets Fri from 11:00–12:00 in ESB 1046. Zachary is the TA. No labs run Sep 7–18. Lab 0 introduces R and has no assignment.
 - Lab 1 starts the week of Sep 21, with L1K on Fri Sep 25. Use the same R introduction as Lab 0. Nothing is due beforehand. Canvas posts groups of 3 to 4 from Wed Sep 23.
-- There are no labs from Sep 28 to Oct 2 because Wed Sep 30 is a holiday. Pre-lab quizzes start with Lab 2, as stated in lecture 6. The Lab 2 quiz opens Fri Oct 2 and moved to Fri Oct 9 at 23:59.
+- The lecture 8 page records no labs from Sep 28 to Oct 2 because Wed Sep 30 is a holiday. Lab 2 runs in the next lab week. The instructor said in lecture 6 that pre-lab quizzes start with Lab 2. Its quiz opens Fri Oct 2 and the deadline moved to Fri Oct 9 at 23:59.
 - Submit a lab-absence form during the week of the missed lab. The Oct 28 Canvas announcement says later forms are rejected.
 - Join iClicker Cloud through Canvas and press *sync* to receive participation credit. Match your Canvas name and email. Grades sync every few weeks. As stated in lecture 9, the instructor enters missed grades by hand at the end of term.
 - Answer iClicker only in the classroom. The lecture 10 Canvas page says answering from elsewhere counts as cheating.

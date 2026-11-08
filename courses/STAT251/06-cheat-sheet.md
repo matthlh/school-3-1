@@ -1,6 +1,6 @@
 # STAT 251 — Midterm cheat sheet (Fri Oct 30, 08:00)
 
-The midterm covers Chapters 1, 3, 4, 5 and 6. The cheat sheet describes the exam as long and multiple choice. The sheet helps you identify the model, then find the formula at the step where you need it.
+The midterm covers Chapters 1, 3, 4, 5 and 6. The original cheat sheet describes the exam as long and multiple choice. The lecture 20 review notes describe a mixed format with multiple choice and written answers. The sheet helps you identify the model, then find the formula at the step where you need it.
 
 - Use one handwritten side of a letter-size sheet. A sheet written on a tablet and printed is allowed. Typed or pasted slides are prohibited. Both students lose their sheets if they match.
 - Put the problem-type table and the two habits at the top. Put Chapters 1 and 3 on the left, Chapter 4 in the middle and Chapters 5 and 6 on the right.

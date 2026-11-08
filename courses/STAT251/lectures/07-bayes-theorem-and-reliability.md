@@ -1,6 +1,6 @@
 # STAT 251 — Lec 7 (Wed Sep 23) — Ch 3: Bayes' theorem, tree diagrams, system reliability
 
-The deck is `Lecture_07_Chapter_3_CanvasPost_AL.pdf` (9 slides, Canvas file 47723620). The first ten minutes of Panopto finish slides 8 and 9 from lecture 6. The recording also covers the theorem and solution shown as images on slides 3 and 5.
+The deck is `Lecture_07_Chapter_3_CanvasPost_AL.pdf` (9 slides, Canvas file 47723620). The first ten minutes of Panopto finish slides 8 and 9 from lecture 6. The theorem and worked solution below follow the recording for slides 3 and 5, where the deck shows them as images.
 
 ## Learning goals
 - Compute posterior probabilities with Bayes' theorem, by formula and by tree diagram.
