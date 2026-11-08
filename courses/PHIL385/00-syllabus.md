@@ -1,7 +1,8 @@
 # PHIL 385 — Existentialism: The Writings of Kierkegaard (2026W1)
 
-**Instructor:** Dr. Anders Kraal · **Meets:** MWF 2:00pm, Buchanan · **Text:** Kierkegaard,
-*Either/Or*, trans. Hannay (Penguin) + PDFs on Canvas
+- Dr. Anders Kraal teaches the course.
+- Class meets MWF at 2:00pm in Buchanan.
+- Read Kierkegaard's *Either/Or* in Hannay's Penguin translation and the PDFs on Canvas.
 
 ## Grading — 100% exams, no papers
 | Component | Weight | Date | Format |
@@ -12,27 +13,26 @@
 | Exam 4 | 15% | Fri Nov 20, 2:00–2:50pm | MC, 7 questions |
 | Final | 40% | Fri Dec 11, 3:30pm, in person; room and length not posted yet | cumulative; course grades are often scaled up at the end and have never been scaled down |
 
-*Three in-term exams are **multiple choice, 7 questions each**, marked on factual accuracy alone
-(each question ≈ 2.1% of the course grade). One is an **essay exam**: 2 questions, max 500 words
-each. The syllabus does not say which; the Canvas quiz pages do. Exam 1 is built with 2 questions and
-Exams 2, 3 and 4 with 7 (checked 2026-09-19), so **Exam 1 is the essay exam**: two 500-word essays
-in 50 minutes, typed in Respondus. Exams 2–4 are **not cumulative**; only the final is.
+- Exams 2, 3 and 4 are multiple choice, with 7 questions each. They are marked on factual accuracy alone. Each question is about 2.1% of the course grade.
+- The syllabus identifies one essay exam without naming it. The Canvas quiz pages on 2026-09-19 showed 2 questions for Exam 1 and 7 for each of the others. **Exam 1 is the essay exam.**
+- Type both essays in Respondus in 50 minutes. Each has a maximum of 500 words.
+- Only the final is cumulative. Exams 2–4 each cover their own material.
 
 ## Exam format
 - All four in-term exams are 50-minute Canvas quizzes opening exactly at 2:00pm, written in the
   classroom on **Respondus LockDown Browser**: random order, one question at a time, no going back.
   Install and test Respondus before Oct 2.
-- **Closed book.** Notes, phones and books away before entering. Late → sign in at the front desk;
-  leaving the room ends your exam.
+- Exams are closed book. Put away notes, phones and books before entering.
+- If you arrive late, sign in at the front desk. Leaving the room ends your exam.
 - **No slides, recordings or instructor notes exist** — lecture notes are the only record.
-- Essay exam marking: factual accuracy, clarity, relevance, cogency, explicitly **relative to
-  peers**, graded by TAs. Plain structure wins: position → numbered argument → strongest objection
-  → response.
+- TAs grade the essay exam on factual accuracy, clarity, relevance and cogency. They grade **relative to peers**.
+- State your position, give a numbered argument, present the strongest objection and respond to it.
 - Scaling: "hitherto a class has never been scaled down, but it often happens that it is scaled
   up." A+ starts at 90%.
 
 ## Rules that cost points
-- Miss one exam → weight moves to the final. Miss **two** → course grade capped at 80%; three → 75%.
+- Missing one exam transfers its weight to the final.
+- Missing **two** caps the course grade at 80%. Missing three caps it at 75%.
 - Paper option must be requested 24 h ahead; illegible handwriting can be given zero. Type it.
 - No eating or browsing in class; laptops for notes only. Questions at the end of lecture or in
   office hours, not by email.

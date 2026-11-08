@@ -1,12 +1,19 @@
 # PHIL 385 — Exam 1 review (Fri Oct 2, 14:00, Buchanan A 201)
 
-Two questions, 500 words each, 50 minutes, typed in Respondus. Each question asks whether you agree or disagree with a central idea. Texts covered: the Preface, The Unhappiest One, Crop Rotation, Ancient Tragedy's Reflection in the Modern. A question can cover all four or just one.
+The exam has two questions and lasts 50 minutes. Type up to 500 words per answer in Respondus. Each question asks whether you agree with a central idea and may cover one text or all four.
 
-## Things that apply to all four texts
+The texts are the *Preface*, *The Unhappiest One*, *Crop Rotation* and *Ancient Tragedy's Reflection in the Modern*.
 
-- All four texts are written by "A", a made-up character. Kierkegaard wrote them, but the views are A's, not Kierkegaard's. If you write "Kierkegaard argues…" you lose marks.
+## Who is speaking and what is at stake
+
+- Kierkegaard wrote all four texts through fictional voices. The review's general rule attributes all four texts to "A". The Preface section below attributes that text to the editor, "Victor Eremita". These attributions differ.
+- Attribute each view to its speaker. If you write "Kierkegaard argues…" you lose marks.
 - A lives what the course calls the aesthetic life. Plain meaning: he judges life by what it feels like to experience, not by duty or religion. He wants interesting experiences and moods, and he avoids anything that ties him down.
-- Kraal summarised A's view in three parts, one per essay. To be satisfied with life: expect the worst (The Unhappiest One), avoid lifelong commitments (Crop Rotation), and treat your good or bad luck as outside your control (Ancient Tragedy).
+Kraal summarised A's view in three parts, one per essay.
+
+- Expect the worst in *The Unhappiest One*.
+- Avoid lifelong commitments in *Crop Rotation*.
+- Treat good and bad luck as outside your control in *Ancient Tragedy*.
 - Kraal's point: A does not promise happiness. He promises you will not be bored and not be trapped.
 - The main objection you can use against A in any answer comes from "B", Judge William, who writes the second half of the book. B says: committing to things is what makes love last, a life of moods has no real self, and the committed life is the more beautiful one. Your own view from lecture 7, that struggle has meaning and leaving at the first difficulty is a slippery slope, is the same point.
 
@@ -33,7 +40,9 @@ Two questions, 500 words each, 50 minutes, typed in Respondus. Each question ask
 ### The facts
 - A grave in England is marked "the unhappiest one". It was opened and no body was inside. The real source is a grave slab in Worcester Cathedral marked Miserrimus. The empty grave is a deliberate echo of Christ's empty tomb.
 - A is giving a speech to a club he invented called the Symparanekromenoi, people who count themselves as already dead. They meet on Fridays.
-- Rules of the contest for the grave: anyone who thinks death is the worst thing is excluded. The club thinks living is worse than dying. A considers "the man who cannot die" and rejects him, because everyone dies. The title goes to a type of person, not one individual.
+- The contest for the grave excludes anyone who thinks death is the worst thing. The club thinks living is worse than dying.
+- A considers "the man who cannot die" and rejects him because everyone dies.
+- The title goes to a type of person, represented by the winner.
 - The definition to memorise: the unhappy person has the content of his life outside himself. He is always absent from himself, never present to himself.
 - You can only be absent in two directions: the past or the future. So there are two kinds of unhappy person, the one living in memory and the one living in hope. A borrows the phrase "unhappy consciousness" from Hegel but only the label, not Hegel's meaning.
 - Grammar example: the pluperfect tense ("had done") has no present in it, and neither does the future perfect ("will have done"). Those are the rememberer and the hoper.
@@ -43,7 +52,8 @@ Two questions, 500 words each, 50 minutes, typed in Respondus. Each question ask
 - The worst case combines both. He hopes for things that are already in the past and remembers things that are still ahead. His life points the wrong way in both directions. A's phrase: he came into the world too soon and so always arrives too late. Kraal's example is Gatsby, who wants a future that is really a repeat of 1917.
 - The candidates, in order: a girl whose lover cheated, Niobe, Antigone, Job, the father of the prodigal son (the only hoper), a forgotten man who failed at martyrdom, a second girl who cannot grieve or hope and gets second prize, and then the winner, who has no name and is called "the unhappy lover of memory". Everyone who can still grieve is eliminated, because grief proves you really had something.
 - The ending: A corrects himself and calls the winner the happiest, because being the unhappiest is a prize the world can never take from you. Then four lines: life is madness, faith is folly, hope is a reprieve (literally a stay of execution), love is salt in the wound. The speech ends with the day starting again. No cure is offered.
-- Kraal's three words for the ending: doxology (a hymn of praise), paradox, comfort. A's own words are "the happiest", "gift of fortune", and "envy".
+- Kraal describes the ending as doxology, paradox and comfort. A **doxology** is a hymn of praise.
+- A uses "the happiest", "gift of fortune", and "envy". Those terms differ from Kraal's description of the ending as comfort.
 
 ### Likely question
 - Is the unhappiest person really the one who is absent from his own life, rather than the one who suffers most?
