@@ -1,6 +1,6 @@
 # CPSC 310 midterm cheat sheet
 
-How to use it: find the words from the question in the table, go to that block, do the steps in order, and write what the block says to write.
+Match the wording of the question to a row in the table. Use the steps and answer format in the matching block.
 
 | If the question says | It's a | Block |
 |---|---|---|
@@ -20,9 +20,9 @@ How to use it: find the words from the question in the table, go to that block, 
 ## A. Testability compare (Lower / Same / Higher)
 
 1. Controllability: list where each method gets its inputs. `new Date()`, `Math.random()`, a global, a database, or `new Something()` inside the method means the test can't choose that input.
-2. The method with more of those is **Lower**. Same list: **Same**.
-3. Observability: look at what each method gives back. Returns the result: good. Only `console.log`, `void`, saves to a file, database or private field: bad.
-4. The bad one is **Lower**. Both return: **Same**.
+2. Mark the method with more hidden inputs **Lower** for controllability. Mark **Same** when the lists match.
+3. To compare observability, look for results the test can check directly. A return value is visible. A result only in `console.log`, `void`, a file, a database or a private field is harder to check.
+4. Mark the method whose result is harder to check **Lower**. If both return the result, mark **Same**.
 5. Demonstrate: one test per class, same inputs. Write the checks below.
 
 ```ts
@@ -33,7 +33,7 @@ expect(printer.render(["a"], 2)).to.be.undefined;                               
 
 ## B. Testability per marked line
 
-For each marked line, answer two True/False:
+For each marked line, answer both true/false questions.
 
 1. Controllability limits it? Read every `if` above the line. Can you make each one true with arguments you pass in? If one needs a real database row, the clock or randomness: **True**. Otherwise **False**.
 2. Observability limits it? Look at the line. `return something`: **False**. Writes to a file, a log, a database, a module-level variable or a private field: **True**.

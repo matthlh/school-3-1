@@ -1,6 +1,7 @@
 # CPSC310 — Introduction to Software Engineering (2026W1)
 
-**Meets:** Tue/Thu 3:30–5:00pm, LSK 201 (section 103) · Lab Tue 9:00–11:00am on Zoom
+- Section 103 meets Tue and Thu from 3:30–5:00pm in LSK 201.
+- The lab meets Tue from 9:00–11:00am on Zoom.
 
 ## Grading
 | Component | Weight | Notes |
@@ -21,21 +22,24 @@ versions of the course and does not apply to 26W1.
 - Closed book, on paper, no devices, no AI. Every question asks you to justify your answer, not merely to give it.
 - The 26W1 syllabus says memorising definitions will not be sufficient. The exams put code or a design you have not seen in front of you and ask what is wrong with it, what you would change, and why.
 - Question kinds mirror what you practised in lecture activities, iClicker questions, lab tutorials, lab assignments and the project. Format details come closer to the exam date.
-- Midterm covers content through week 6 (Oct 15). Final is cumulative.
+- The syllabus says the midterm covers content through week 6 (Oct 15). The schedule page gives a different cutoff, Thu Oct 22, as recorded under To verify.
+- The final is cumulative.
 - There are no past papers for this version of the course. The reader's licence says exams and solutions are private. The CSSS exam bank only has a 2009 sample final: 20 marks MC, 20 marks true/false, then 11 short-answer and design questions worth 6 to 12 marks each, 120 marks in 150 minutes. Student Quizlet sets from 2025 cover the old syllabus (security, agile process, MVC), most of which is gone from 26W1.
 - Earlier terms used true/false with negative marking. Two second-hand reports on this year's format: a classmate told Matt on 2026-10-02 that the exams are all true/false, and on 2026-10-05 Matt heard they are all multiple choice. Neither is confirmed by the course staff, and the two may describe the same thing (true/false is a two-option multiple-choice question). The syllabus still says every answer is justified, so expect a chosen option plus a reason.
 - The PrairieLearn labs are the only format sample from this year's staff (read 2026-10-06). Every lab uses four question shapes: one correct option, select every statement that is true, a whole number, and true/false per statement marked +1 right, -0.5 wrong, 0 blank. Each question is a short unseen code fragment with the same stems every time: degree, connascence, how you find out; data, logic, order binding; controllability, observability; precondition, postcondition. Expect the exam to look like this.
 
 ## Project — InsightUBC
-An inherited REST service for the Registrar (course and facilities data). D1 = two small features to
-feel the cost of change · D2 = make the network-reaching part testable · D3/D4 (pairs) = vague
-requirements → spec → build without breaking v1/v2.
+InsightUBC is an inherited REST service for the Registrar's course and facilities data.
+
+- In D1, add two small features to see how much work a change takes.
+- In D2, make the part that uses the network testable.
+- In D3 and D4, work in pairs. Turn vague requirements into a specification and build the change without breaking v1 or v2.
 
 - Every deliverable ships three artifacts (syllabus, "Code is necessary but not sufficient"): the work, a **design rationale**, and **process evidence** — "the pull requests, the commit sequence, the reviews you left, the tests". A submission that passes every automated check but lacks rationale and process evidence is incomplete. So D1 too: branch → PR → merge to `main`, small commits with real messages. Grading reads `main` (highest-scoring commit before the deadline) plus the PrairieLearn design analysis; TAs review PRs from D2 onward.
 - Graded **50% autograder** (every push to `main`; best commit before the deadline counts) +
   **50% written reflection** on PrairieLearn, TA-marked. Everyone passes the autograder; the
   reflection is where marks are won or lost.
-- **Late = not graded.** Autograder runs per day are limited.
+- Late work is ungraded. The autograder limits the number of runs per day.
 - Tests need the **UBC VPN** (geocoding service).
 
 | Due | Deliverable |
@@ -61,12 +65,14 @@ Autograding reads `main` only: every push to `main` is autograded and the highes
 deadline counts. Process evidence (PRs, commit sequence, tests) is assessed for every deliverable, so
 work on a branch and merge through a PR even solo.
 
-**Reflection (PrairieLearn):** PR description (what changed, why, what might break) · files
-modified · every file and function touched **and how you found each one** · a request trace from
-route registration to the disk write · how an absent campus is represented, justified · half a page
-on what was harder than expected · one structural change that would make the next feature cheaper,
-with trade-offs. Keep a running list while coding — the "how you found it" question is
-unanswerable afterwards.
+#### PrairieLearn reflection
+
+- Give the PR description. Explain what changed, why it changed and what might break.
+- List the files you modified. Record each file and function you touched and **how you found it**. Keep the list as you work so you can answer the discovery question.
+- Trace a request from route registration to the disk write.
+- Explain how you represented an absent campus and justify the choice.
+- Write half a page on what was harder than expected.
+- Propose one structural change that would make the next feature cheaper. Explain the trade-offs.
 
 ## Schedule
 | Wk | Lectures | Lab (Fri→Thu) | Deadline |
@@ -87,7 +93,7 @@ unanswerable afterwards.
 
 Cancelled labs: Wed Sep 30 and Mon Oct 12 — attend another section those weeks.
 
-## AutoTest (found 2026-09-19, was a "To verify" gap)
+## AutoTest
 - Every push/merge to `main` is graded automatically. No separate dashboard — feedback posts as a **follow-up commit comment** on GitHub.
 - To force a feedback run on demand, comment on a commit: `@310-bot #d1` (swap the deliverable tag per assignment).
 - **3 requests/day**, resets at midnight. A run that fails build/lint/prettier still consumes a request.

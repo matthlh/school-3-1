@@ -1,30 +1,25 @@
 # CPSC 310 — logistics
 
-- **Lectures:** Tue/Thu 3:30–5:00, LSK 201. Section 103 (iClicker code NBOE). Canvas is not used;
-  the course site has everything and announcements are on Piazza.
-- **Labs:** his registered section is **L1N, Tue 09:00–11:00**, on Zoom. Section Zoom links are in
-  Piazza @14 (the passcode links are deliberately not copied into this repo). Lab blocks run
-  Fri→Thu from Fri Sep 11. Waitlisted → attend any lab. Work is due by the start of the next lab;
-  the lowest lab is dropped. PrairieLearn's own credit window overrides the "start of the next
-  lab" rule whenever the two disagree.
-- **Submissions:** PrairieLearn (labs, project questions, reflections); code on GitHub Enterprise
-  (needs VPN + CWL). Starter repos were provisioned Sep 11; autograding runs from the week of Sep 14.
-- **Concessions:** only via the CPSC 310 Academic Concession Request Form, within one week of the
-  deadline; weight usually shifts to the final. Canvas messages and emails are ignored. CfA exams
-  must be booked ≥7 days ahead.
-- **AI:** allowed on labs and the project if you can explain everything you submit; not on exams.
+- Section 103 meets Tue and Thu from 3:30–5:00 in LSK 201. Its iClicker code is NBOE. The course site has the materials, and Piazza has announcements. The course does not use Canvas.
+- Lab L1N meets Tue from 09:00–11:00 on Zoom. Find the section links in Piazza @14.
+- Lab blocks run from Fri to Thu, starting Fri Sep 11. If you are waitlisted, attend any lab.
+- Work is normally due by the start of the next lab. If the PrairieLearn credit window differs, use the PrairieLearn window. The course drops the lowest lab grade.
+- Submit labs, project questions and reflections in PrairieLearn. Submit code on GitHub Enterprise using the VPN and CWL. Starter repositories were provisioned Sep 11. Autograding started the week of Sep 14.
+- Request a concession through the CPSC 310 Academic Concession Request Form within one week of the deadline. The weight usually moves to the final. Canvas messages and emails are ignored. Book CfA exams at least 7 days ahead.
+- You may use AI on labs and the project if you can explain everything you submit. Exams prohibit AI.
 
 ## Midterm format (Piazza @180, Kyle, Oct 15; settles the earlier @163 note)
 
 - Thu Oct 29, 19:00 to 21:00, on paper. Arrive 15 minutes early with UBC ID, pencils and erasers; phones and watches off and in the bag.
 - Room by last name: GWHB 1004 for ABB to GUR, HEBB 100 for HAN to SEK (Matt), SHRM B1001 for SEN to ZOU.
-- Question types: some true/false, multiple choice, short answer and long answer. Every question involves reading code, and short and long answers need some handwritten TypeScript. The exam is designed to keep writing small.
+- The exam uses true/false, multiple choice, short answer and long answer. Every question involves reading code.
+- Short and long answers require some handwritten TypeScript. The exam is designed to keep the amount of writing small.
 - Each question type mirrors something from lecture, the PrairieLearn labs and practice problems, or the project. Content covers everything through the prior week. The Oct 27 review deck (slide 2) says REST is not on the midterm, so the scope is lectures 1 to 12 (Oct 20), which is quizlib's EXAM_CUTOFF.
 - Cheat sheet: one 8.5 by 11 sheet, handwritten only (no tablet printouts), both sides, collected at the end. Kyle says to fill it with what helps apply principles and TypeScript syntax, not trivia.
 - Practice exam: released the week of Oct 12 to 16; Lab 7 asks for evidence that it was printed, completed and marked on paper. Length and content may differ from the real exam.
 - The practice exam is Piazza @192 (Kyle, pinned, Oct 16): two PDFs, the exam and a code booklet, plus `SAMPLE_SOL_UPDATED.pdf`. Kyle's instructions are to print it, do it by hand without the internet, and time each question and the whole thing; it is meant to run about as long as the real two hours. The solution was corrected on Oct 28 (5a, 5d and 6b), and question 3c's LSP answer is disputed in the followups and unanswered. LAB07.1 on PrairieLearn is only a reflection on having done it.
 - Schedule: Lab 7 is released early and holds testable material, with the lab slot used to meet the D3 group. Tue Oct 27 is a review lecture (topic poll the week before). Thu Oct 29 lecture is cancelled. Office hours continue.
-- The earlier classmate reports (all true/false, or all multiple choice) were both wrong; do not reopen them.
+- The two earlier classmate reports, all true/false or all multiple choice, disagree with the mixed format confirmed in Piazza @180.
 
 ## AutoTest — how the project deliverables are graded (course site, 2026-09-16)
 - Code is graded automatically on every push to `main`.

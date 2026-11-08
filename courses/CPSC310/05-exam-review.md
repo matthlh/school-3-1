@@ -1,14 +1,20 @@
 # CPSC 310 — Midterm review (Thu Oct 29, 19:00–21:00, HEBB 100)
 
-On paper: true/false, multiple choice, short and long answer, every question over code you have not seen, some handwritten TypeScript, one handwritten cheat sheet. Covers lectures 1 to 12; the Oct 27 review deck says REST (lecture 13) is not on the midterm, so the REST section at the end is for the final. The [cheat sheet](06-cheat-sheet.md) is this page compressed to two handwritten sides. Four blocks below, about 20 minutes each. After each block answer its three questions in chat before moving on; the answers are what transfers, not the reading.
+The exam is on paper. It uses true/false, multiple choice, short answer and long answer. Every question uses unfamiliar code, and some require handwritten TypeScript.
+
+Study lectures 1 to 12 for the midterm. The Oct 27 review deck excludes REST from lecture 13, so the REST section below is for the final. You may bring one handwritten sheet. The [cheat sheet](06-cheat-sheet.md) fits on its two sides.
+
+Spend about 20 minutes on each of the four blocks. Answer the three practice questions at the end of each block before moving on.
 
 ## Block 1 · The cost of change (lectures 1 to 4)
 
-### The one idea the course hangs on
+### What a change costs
 - The course's definition: software engineering is the discipline of managing what a change costs as a system keeps growing.
 - Every exam question about a fragment is really asking what the next change would cost, where that cost comes from, and which lever lowers it.
 - Never call a design bad without naming the cost it imposes.
-- A change's cost is measured two ways. **Magnitude** is how big it is, roughly lines of code. **Footprint** is how widespread it is, counted in methods, classes, files, modules or services. The risk is missing part of the footprint, because nothing forces dependent code to update.
+- **Magnitude** measures the size of the change, roughly in lines of code.
+- **Footprint** measures how widely the change spreads. Count the methods, classes, files, modules or services affected.
+- You can miss part of the footprint because dependent code may have no mechanism forcing it to update.
 
 ### Coupling
 - **Coupling** is the relationship between components. It forms through dependencies: imports, method calls, shared data, assumptions. Coupling is what produces footprint.
@@ -56,7 +62,8 @@ Each type names what two pieces of code must agree on.
 
 ### Refactoring
 - **Refactoring** is a predictable, meaning-preserving transformation of code. Meaning, semantics and behaviour are the same word here. It adds no feature and fixes no defect.
-- The process: tests pass, examine coupling and cohesion, pick a refactoring, apply it, tests pass again, repeat until the change you want is localised.
+- Check that the tests pass before you begin. Examine coupling and cohesion, choose a refactoring and apply it.
+- Check that the tests still pass. Repeat until the desired change is localised.
 - The tests run twice on purpose. The first run proves the green baseline is real, so a failure after can only be the refactoring.
 - When not to refactor: the tests are failing, the code should simply be rewritten, a deadline is close, and never while fixing a bug. A bug fix changes behaviour on purpose, and mixing the two hides which change did what.
 - Never on a schedule. Refactor opportunistically: when you recognise a smell, just before or after adding a feature, and during code review.
@@ -92,7 +99,7 @@ abstract class CollectionsReport {
 
 - The rejected alternative gives the parent `printHeader()` and `printFooter()` helpers and leaves `printReport()` abstract, so each subclass calls header, body and footer itself. The duplicate lines are gone but the sequence is still copied, and nothing stops a new subclass forgetting the footer. The template method makes the parent own the order.
 
-### Block 1 questions, answer in chat
+### Block 1 practice questions
 1. `applyDiscount(price, pct)` is called in four files, always with numbers. In one file a developer wrote `applyDiscount(0.15, price)`. It compiles and the tests pass. Which connascence type is this, and why did nothing catch it?
 2. `Invoice.printOwing()` prints a banner, loops over line items summing the amount, then prints the total. Which bindings hold between the banner line and the summing loop, which do not, and what refactoring applies? Use the reader's name for it.
 3. True or false, and justify: a good time to refactor is while you are fixing a bug, since you already have the code open.
@@ -152,7 +159,7 @@ abstract class CollectionsReport {
 
 - Test each thing at the narrowest level that can see the bug, so tests do not fail for the wrong reasons. The deck draws the composition as a pyramid.
 
-### Block 2 questions, answer in chat
+### Block 2 practice questions
 1. `sendReminder(userId)` looks up the user, builds an email and calls `new SmtpClient().send(email)`. Name the controllability and the observability problem, and write the signature you would change it to so a test can check what was sent without a mail server.
 2. An interface `Store.get(id): Item` says "returns the item, or throws NotFound if no item has that id". Your test double returns `undefined` for unknown ids. Does it compile? Is it a valid double under LSP? Which rule does it break?
 3. A function accepts a percentage 0 to 100 and returns "fail" below 50, "pass" from 50 to 84, "distinction" from 85, and throws outside the range. List the equivalence classes from both views and the boundary values you would test.
@@ -207,7 +214,7 @@ class Whip implements Drink {
 
 - Every extension point costs an interface, a dispatch and more classes. Before adding one ask: what will vary, what must stay stable for the code that depends on it, and is the variation really likely?
 
-### Block 3 questions, answer in chat
+### Block 3 practice questions
 1. A `Shape` interface has `area()`. `Circle` and `Square` implement it, and `Group` holds a `Shape[]` and returns the sum of its members' areas. Name the pattern, the three roles, and say which of these is cheap and which is expensive: adding `Triangle`, or adding `perimeter()`.
 2. `Notifier.send(msg)` sends an email. The product wants some messages also logged, and some also sent by SMS, in any combination, chosen per message at run time. Subclassing gives four classes today and eight with the next channel. Which pattern fixes this, write the `LoggingNotifier` class in TypeScript, and name one cost.
 3. True or false, and justify: applying the State pattern to a document with Draft, Review and Published states makes adding a new "Archived" state cheap and adding a new "export" action cheap.
@@ -277,7 +284,7 @@ class Whip implements Drink {
 - Headers carry metadata only. The resource goes in the URI, the data in the body, and a body on a GET is discouraged. A URI (`/dataset`) names a resource; a URL says where it lives.
 - REST fits things you store and change. It is awkward for pushing live updates to clients, commands to hardware ("unlock the dock"), computed answers like a price quote, and steps that must succeed together (reserve and pay).
 
-### Block 4 questions, answer in chat
+### Block 4 practice questions
 1. A booking core imports `fs` to read `bookings.json` directly inside `book()`. Name the principle it breaks, write the port interface you would give the core in TypeScript, and say which test level then covers the file code.
 2. Version 2.4.3 of a library. Three changes land: the `search()` method gains an optional `limit` parameter; a sort that was unstable becomes stable; `delete(id)` now throws instead of returning false when the id is missing. Give the severity of each and the resulting version number.
 3. A ride-share API has `POST /rides/{id}/cancel`, `GET /rides/next`, and responses that return only ids so the client builds `/rides/{id}` itself. Name the constraint each one breaks and rewrite each.
