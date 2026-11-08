@@ -1,9 +1,8 @@
 # ASIA 250 — Lecture 4: The Buddha and his teachings
 
-Logged 2026-10-05 from the posted deck (39 slides). There is no page from Matt; this file is the posted deck organised for study, and Mini-Quiz 4 locks Mon Oct 5 at 23:59.
-Mini-Quiz 4 covers the lecture, Harvey (2013) chapters 2 and 3 (pp. 32 to 87), and the animated film "Life of the Buddha Full Movie" (Lekker 32, 2020).
+The deck has 39 slides. Mini-Quiz 4 covers the lecture, Harvey (2013), chapters 2 and 3 (pp. 32 to 87), and the animated film "Life of the Buddha Full Movie" (Lekker 32, 2020).
 
-## Slides, organized
+## Renunciation and the Middle Way
 
 ### The 12 Great Deeds and the Lalitavistara
 - Every Buddha is said to accomplish the same **12 Great Deeds**.
@@ -57,7 +56,9 @@ Mini-Quiz 4 covers the lecture, Harvey (2013) chapters 2 and 3 (pp. 32 to 87), a
   - the **formless realms**, characterised by "space".
 - Meditation through these realms was like a shamanic journey.
 
-### Deed 9: victory over Mara
+## Awakening and teaching
+
+### Deed 9. Victory over Mara
 - **Mara** is the god of passion and sexual desire.
 - The deck also calls him **Kamadeva**.
 - His name means "death".
@@ -113,19 +114,22 @@ Mini-Quiz 4 covers the lecture, Harvey (2013) chapters 2 and 3 (pp. 32 to 87), a
 - His cremated bone fragments became relics, **sharira**.
 - The relics were enshrined in **stupas**.
 
-## Likely quiz targets
-- The numbers: 12 deeds, 29 Buddhas, the 4th Buddha, 4 plus 4 make 8 absorptions, 6 years of asceticism, 49 days under the tree, age 35 at awakening, 45 years of teaching, and age 80 at death.
-- The two teachers and what each taught: Alara Kalama the four absorptions, Udraka Ramaputra the formless states.
+## Mini-Quiz 4 review
+
+Mini-Quiz 4 locked Mon Oct 5 at 23:59.
+
+- Recall the numbers for 12 deeds, 29 Buddhas, the 4th Buddha, 4 plus 4 make 8 absorptions, 6 years of asceticism, 49 days under the tree, age 35 at awakening, 45 years of teaching, and age 80 at death.
+- Alara Kalama taught the four absorptions. Udraka Ramaputra taught the formless states.
 - Anatman, the five skandhas in order, and the fire jumping from branch to branch.
-- The three marks as the deck lists them: anatman, anitya and nirvana.
+- The deck lists anatman, anitya and nirvana as the three marks.
 - Mara as Kamadeva and "death", his daughters as the passions and his army as anger.
 - The two meanings of dharma (caste duty in the Bhagavadgita, the Buddha's truth after the awakening) and dharmas as the constituents of existence.
 - The four ashramas in order.
 - Rahula's name, the charioteer Channa, and the lute string and muddy water stories.
 
 ## Clarifications
-- The deck lists nirvana as the third mark. The standard list, and probably Harvey, gives dukkha (suffering) as the third mark alongside anatman and anitya. If a quiz option offers dukkha, check whether the question is about the lecture or the reading.
+- The deck and the standard list give different third marks. The deck lists nirvana. The standard list has **dukkha**, or suffering, alongside anatman and anitya. Harvey likely uses the standard list.
+- If a quiz option offers dukkha, check whether the question asks about the lecture or the reading.
 - The 4th Buddha in the number drill is Dipankara, the Buddha before whom Sumedha vowed to become a Buddha (lecture 3).
 - The age of 80 at death follows from the deck's own numbers: he awakens at 35 and teaches for 45 years.
-- The recording has no captions, so this file comes from the deck alone.
 - The deck dates the Yoga Sutras to about the 2nd century BCE. Many scholars date them later, so treat that date as the lecture's figure.

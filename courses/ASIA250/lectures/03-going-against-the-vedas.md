@@ -1,9 +1,8 @@
 # ASIA 250 — Lecture 3: Going against the Vedas
 
-Logged 2026-10-05 from the posted deck (52 slides). There is no page from Matt; this file is the posted deck organised for study.
-Readings 3 are Harvey (2013, pp. 8 to 31) chapter 1, the Vessantara Jataka in four YouTube parts, and Lalitavistara chapter 14 "Dreams". Mini-Quiz 3 locked Mon Sep 28.
+The deck has 52 slides. Readings 3 include Harvey (2013), chapter 1 (pp. 8 to 31), the four YouTube parts of the Vessantara Jataka and Lalitavistara chapter 14, "Dreams".
 
-## Slides, organized
+## The Brahmanical order and renunciation
 
 ### The Brahmanical order
 - The Rig Veda hymn that names the four castes is late in the collection; the earliest hymns describe a polytheistic, nomadic society.
@@ -21,7 +20,8 @@ Readings 3 are Harvey (2013, pp. 8 to 31) chapter 1, the Vessantara Jataka in fo
 - Krishna's first argument is that Arjuna is a kshatriya and fighting is his duty.
 - Krishna's second argument is that the soul of every living being, the **atman**, is indestructible, so Arjuna will not really kill anyone.
 - At the end Arjuna repents and dies of exhaustion on a pilgrimage to the Himalayas.
-- Krishna is shot in the heel by a hunter who mistakes his foot for a deer; he blesses the hunter and ascends to Vaikuntha heaven, or in other scriptures to Goloka Vrindavan, the realm of cows where Mirabai hoped to go.
+- A hunter mistakes Krishna's foot for a deer and shoots him in the heel. Krishna blesses the hunter.
+- Krishna ascends to Vaikuntha heaven in one account. Other scriptures say he ascends to Goloka Vrindavan, the realm of cows where Mirabai hoped to go.
 - The deck's reading is "cosmic justice": bad karma cannot be escaped, but doing one's duty is rewarded in the afterlife.
 
 ### Two kshatriya princes who renounced
@@ -81,6 +81,8 @@ Readings 3 are Harvey (2013, pp. 8 to 31) chapter 1, the Vessantara Jataka in fo
 - Asceticism consecrates (makes one pure and dedicated), separates (sets one apart from ordinary people) and transforms or atones (changes one's nature for spiritual gain).
 - Combined with other methods it produces altered states of consciousness.
 
+## Accounts of the Buddha's life
+
 ### Why the Buddha's life is traditional lore
 - Writing did not exist in South Asia until about 300 BCE.
 - No rival tradition mentions Siddhartha Gautama, and no archaeological find proves he existed.
@@ -128,12 +130,15 @@ Readings 3 are Harvey (2013, pp. 8 to 31) chapter 1, the Vessantara Jataka in fo
 - Deed 6: his father, King **Shuddhodana** ("Pure Generosity"), fears he will renounce, so he surrounds him with pleasure and bans every sign of suffering from the palace.
 - The primary source is the **Lalitavistara**: lalita means play or divine sport, and vistara means extensive.
 
-## Likely quiz targets
-- The four castes and each one's duty, and dharma as duty.
-- Krishna's two arguments to Arjuna (caste duty and the indestructible atman), and the shramana answer that killing makes bad karma, so renounce.
+## Mini-Quiz 3 review
+
+Mini-Quiz 3 locked Mon Sep 28.
+
+- Name the four castes and the duty of each. Explain why dharma means duty here.
+- Krishna tells Arjuna to act out of caste duty and argues that the atman cannot be destroyed. The shramana answer is to renounce because killing creates bad karma.
 - Siddhartha versus Mahavira: clan, age at renunciation (29 and 30), years of austerities (6 and 12), Buddha versus Tirthankara, and that both are Jina.
 - The four reasons Buddhism and Jainism are heterodox, and the jiva versus nirvana differences.
-- The three purusharthas and the four ashramas, with sannyasa the only world-renouncing stage.
+- Name the three purusharthas and four ashramas. Sannyasa is the only world-renouncing stage.
 - Schmalz on asceticism: askesis, tapas, negative and positive sides, and its four functions.
 - The Buddha numbers (Dipankara 4, Gautama 28, Maitreya 29), Sumedha, and the meaning of bodhisattva.
 - The ten perfections, the Jataka pairings, and the twelve great deeds in order.

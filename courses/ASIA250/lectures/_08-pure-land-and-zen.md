@@ -1,8 +1,8 @@
 # ASIA 250 — Lecture 8: Pure Land and Zen Buddhism take over East Asia
 
-Prepared 2026-11-02 from the posted deck `Lecture 8.pptx` (66 slides, published Mon Nov 2). The video was not read, so this page comes from the deck alone, and slides that are only pictures are skipped. Mini-Quiz 8 is due Thu Nov 12 at 23:59 (moved past the reading break) and also covers Readings 8 (Poceski chapter 6, pp. 131 to 155; Harvey chapter 11, pp. 340 to 347 without "Tantric Visualizations" and pp. 361 to 375 from "Zen Meditation"), which were not pulled for this page. SWR2 (due Sun Nov 15) is on one of two films: *Fancy Dance* for readers of *The Temple of the Golden Pavilion*, *Mandala* for readers of *Little Pilgrim*. Questions: 9 in [the bank](../02-questions.md) under "Lec 8".
+The lecture uses `Lecture 8.pptx` (66 slides, published Mon Nov 2). Read Poceski chapter 6 (pp. 131 to 155) and Harvey chapter 11 (pp. 340 to 347 excluding "Tantric Visualizations", and pp. 361 to 375 from "Zen Meditation"). See "Lec 8" in the [question bank](../02-questions.md).
 
-## Slides, organized
+## Pure Land Buddhism
 
 ### Three problems in China and the Buddhist answers (slides 2 to 4, 10)
 - When Buddhism reached China it met three problems.
@@ -13,7 +13,10 @@ Prepared 2026-11-02 from the posted deck `Lecture 8.pptx` (66 slides, published 
   - They downplayed human reincarnation and preached karma as leading to a next life of rewards (heavens) or punishments (hells and hungry ghosts).
   - They built rituals around Confucian ancestor veneration: freeing hungry ghosts (the **Maudgalyayana** story, the Obon and Ghost festivals) and worship of the bodhisattva **Kshitigarbha** for liberation from hell.
   - They preached immediate rebirth in a Buddha's **Pure Land**, escaping suffering altogether.
-- The Pure Land answer worked four ways: it filled the Confucian gap in afterlife concerns; it was an easy alternative to the Daoist program of immortality (qi cultivation, supplicating immortals such as **Xiwangmu**); those reborn there become advanced bodhisattvas who shower their relatives with blessings, which solves filial piety; and a pure land resembles a Daoist paradise.
+- Pure Land addresses what happens after death, a gap in the Confucian account.
+- It offers an easier path than the Daoist pursuit of immortality through qi cultivation and appeals to immortals such as **Xiwangmu**.
+- A person reborn there becomes an advanced bodhisattva and can bless their relatives. This answers the concern about filial piety.
+- A pure land also resembles a Daoist paradise.
 
 ### Devotion and the idea of a Pure Land (slides 11 to 14)
 - Mahayana has many forms of devotion (**bhakti**): supplicating and making offerings to a Buddha or bodhisattva in the hope that a higher power rescues you.
@@ -37,7 +40,9 @@ Prepared 2026-11-02 from the posted deck `Lecture 8.pptx` (66 slides, published 
 - The ethical result: Shinran lived with the nun **Eshin-ni** and fathered six children with her.
 - **Shin Buddhism**, the movement he started, keeps neither the Vinaya nor the bodhisattva precepts; it centres on gratitude and faith in Amitabha. It is now Japan's largest Buddhist denomination, with 22 million believers, and is sex-positive and non-celibate.
 
-### Non-gradual (subitist) Buddhism and Chan/Zen (slides 21 to 27)
+## Chan and Zen
+
+### Non-gradual (subitist) Buddhism (slides 21 to 27)
 - **Subitist** Buddhism holds that awakening, the direct experience of emptiness, happens in a flash (Latin *subito*). The path is direct mind-to-mind transmission of the experience from master to disciple, not step-by-step training in virtues: "a finger pointing to the moon".
 - **Chan/Zen** is one example. All of Zen's teachings are the finger; once you see the moon (experience emptiness) you let go of the finger and carry on as you are, as monk, nun or lay person.
 - Monastic discipline is one finger among many, so a lay person can be enlightened, the opposite of Theravada, where only monastics become arhats.
@@ -90,9 +95,14 @@ Prepared 2026-11-02 from the posted deck `Lecture 8.pptx` (66 slides, published 
 - **Linji** (Japanese *Rinzai*, died 866 CE) was famous for shock therapy: "If you meet the Buddha, kill the Buddha" (from the *Linjilu*, Japanese *Rinzairoku*, misspelled "Rinsairoku" in Mishima).
 - Killing the Buddha would be the greatest sin, so the tradition adds a safety valve: kill the Buddha and the world is doomed; do not kill him and there is no salvation. The answer to "why kill the Buddha?" is "sit and meditate on it".
 
-## Likely quiz targets
-- Shinran's paradox and the reasoning behind it; Shin Buddhism's size and non-celibacy.
-- The three problems Buddhism met in China and the three Buddhist answers.
-- Gradual (Pure Land) against subitist (Zen) paths.
+## Mini-Quiz 8 review
+
+Mini-Quiz 8 is due Thu Nov 12 at 23:59, after the reading break.
+
+SWR2 is due Sun Nov 15. Watch *Fancy Dance* if you are reading *The Temple of the Golden Pavilion*, or *Mandala* if you are reading *Little Pilgrim*.
+
+- Explain Shinran's paradox and how he arrives at it. Recall the size of Shin Buddhism and its position on celibacy.
+- Match each of the three problems Buddhism met in China to its Buddhist answer.
+- Compare the gradual Pure Land path with the subitist Zen path.
 - Bodhidharma's four-line verse, Emperor Wu, Huike and the arm.
-- Koan, satori, kyogai; Rinzai against Soto; "kill the Buddha" and antinomianism.
+- Define koan, satori and kyogai. Compare Rinzai and Soto. Explain how "kill the Buddha" connects to antinomianism.

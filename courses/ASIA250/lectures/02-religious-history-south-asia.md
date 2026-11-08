@@ -1,13 +1,11 @@
 # ASIA 250 — Lecture 2: Religious history of South Asia
 
-Logged 2026-10-02 from the posted deck (94 slides). No handwritten page; the course is asynchronous.
-Recording: Canvas module item 9469882. Slides: module item 9469883. Readings: Trautmann ch. 3 and 4 (pp. 32 to 61) and Luhrmann ch. 3 "Talent and training" (pp. 58 to 78).
-Slides 15 to 30, 35 to 37 and 52 to 53 are image-only (Indus Valley Civilization and Hindu deity images), so their content is in the recording and in Trautmann.
+The deck has 94 slides. The recording is Canvas module item 9469882 and the slides are item 9469883. Read Trautmann chapters 3 and 4 (pp. 32 to 61) and Luhrmann chapter 3, "Talent and training" (pp. 58 to 78). The recording and Trautmann give context for the images on slides 15 to 30, 35 to 37 and 52 to 53.
 
 ## Your notes
 None. Everything below is from the deck.
 
-## What the deck covers
+## Early religious practices
 
 ### Absorption and the faith frame (slides 2 to 4)
 - The lecture reopens with the Jones facets seen through a faith frame, then adds a new axis: absorption, the volume of the religious experience.
@@ -30,7 +28,9 @@ None. Everything below is from the deck.
 ### Indus Valley Civilization (slides 15 to 32, mostly images)
 - The one text slide: there is evidence the IVC crumbled because the Indus River changed course, causing floods and droughts that led to the cities being abandoned. Trautmann ch. 3 covers the rest.
 
-### The Vedic period and a brief introduction to Hinduism (slides 33 to 39)
+## Vedic religion and Hinduism
+
+### The Vedic period (slides 33 to 39)
 - We cannot say much about IVC religion, so the lecture turns to the later Vedic or Brahmanical religion.
 - The Vedic period runs roughly 1500 to 500 BCE, when the Vedas were composed. Early Vedic is about 1500 to 1000 BCE, Later Vedic about 1000 to 500 BCE. It ends with the decline of Vedic activity and the rise of classical Hinduism and new cities.
 - "Hinduism" is an umbrella term for a group of religious traditions from South Asia, linked to modern yoga, meditation and sects such as ISKCON.
@@ -66,9 +66,16 @@ None. Everything below is from the deck.
 - The divine androgyne: Shiva as Ardhanarishvara, "the Lord who is half woman", split vertically with Shiva on the dominant right side and Parvati on the left.
 - Shakti is divine energy, considered feminine, of the earth and the goddess. As Adishakti, primal energy, she stands over the three gods and her true nature is formless (nirguna). Shaktism places the divine feminine at the centre.
 
+## Post-Vedic philosophy and devotion
+
 ### Upanishads and the post-Vedic schools (slides 65 to 69)
 - The Upanishads (800 to 200 BCE) posit a formless (nirguna) ground of being, Brahman, at the foundation of the universe. Brahman is the source of the individual soul (atman), the imperishable part of humans and animals that is reborn until liberation (moksha). Some Upanishads say atman is identical to Brahman (non-dualism), others keep a distinction (dualism). The Purusha question returns: are the shards the same as Purusha?
-- Samkhya ("rational examination"): purusha names the individual spirit or soul that animates a living being. It interacts with inanimate matter, prakriti, which produces the world. Mind, ego, the six senses and intellect are all prakriti; only purusha, beyond life and death, makes prakriti seem alive. We suffer because we are unaware of our inner core, which is ignorance (avidya), and we deepen suffering through passion and anger, producing bad karma. The goal is to become aware of purusha by introspection, giving liberation at death. The allegory: purusha is the passenger in a chariot, the charioteer is intellect, ego and mind, the horses are the six senses, the chariot is the body. Samkhya's open problem: why does purusha get entangled in prakriti, and where does prakriti come from?
+- **Samkhya** means "rational examination". **Purusha** is the individual spirit or soul beyond life and death. It animates a living being.
+- **Prakriti** is the inanimate matter that produces the world. Mind, ego, the six senses and intellect are all prakriti. Purusha makes it appear alive.
+- **Avidya** is ignorance of our inner core. Passion and anger deepen the resulting suffering and produce bad karma.
+- The goal is to recognise purusha through introspection and gain liberation at death.
+- In the chariot allegory, purusha is the passenger and the body is the chariot. Intellect, ego and mind make up the charioteer. The six senses are the horses.
+- Samkhya leaves open why purusha gets entangled in prakriti and where prakriti comes from.
 - Yoga ("yoke", taming body and mind) puts Samkhya into practice. Keeping the body still while concentrating on one object stops the mind's fluctuations and brings a deep trance (samadhi) in which purusha shows itself like the moon on still water. Gods (Ishvara) serve as perfect objects of concentration because they represent purushas that never got lost in prakriti. Yoga inherits Samkhya's problems.
 - Vedanta ("conclusion of the Vedas") comes in two forms. Advaita (non-dual): there are no individual souls, only Brahman, the universal consciousness; individuals are like the one sun reflected in many mirrors, and separate selfhood is illusion. Its problem: why does Brahman become ignorant of itself? Dvaita (dual): God, for example Vishnu, is the eternal purusha or Brahman who created individual souls out of goodwill so they would seek union through devotion. The lecture says this is the dominant Hindu theology today and solves most of the other schools' problems.
 - The desktop analogy: thoughts come and go but consciousness continues, like a desktop and its contents. Is there one desktop or many (atman versus Brahman)? Is it separate from the hardware (purusha versus prakriti)? Or are both produced by a benevolent intelligence (Vedas and Dvaita Vedanta)?

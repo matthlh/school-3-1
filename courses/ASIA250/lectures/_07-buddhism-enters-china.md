@@ -1,8 +1,8 @@
 # ASIA 250 — Lecture 7: Buddhism enters China, encountering Confucianism and Daoism
 
-Prepared 2026-10-30 from the posted deck `Lecture 7.pptx` (119 slides, published Mon Oct 26). The video was not read, so this page comes from the deck alone. Mini-Quiz 7 locks Mon Nov 2 at 23:59 and also covers Readings 7 (Analects Book 2, pp. 8 to 16; Laozi chapter 1, pp. 39 to 43; Poceski chapter 5, pp. 103 to 129), which were not pulled for this page. Questions: 10 in [the bank](../02-questions.md) under "Lec 7".
+The lecture uses `Lecture 7.pptx` (119 slides, published Mon Oct 26). Mini-Quiz 7 locked Mon Nov 2 at 23:59. Readings 7 include *Analects* Book 2 (pp. 8 to 16), Laozi chapter 1 (pp. 39 to 43) and Poceski chapter 5 (pp. 103 to 129). See "Lec 7" in the [question bank](../02-questions.md).
 
-## Slides, organized
+## Buddhism and Confucianism in China
 
 ### Buddhism reaches China (slides 3 to 5)
 - Around the 1st century CE Buddhism spread out of the Indian subcontinent into Central Asia and reached China slowly along the **Silk Road**, carried peacefully by monks and merchants.
@@ -36,7 +36,8 @@ Prepared 2026-10-30 from the posted deck `Lecture 7.pptx` (119 slides, published
 - The **five relationships** are emperor and minister, father and son, elder and younger brother, husband and wife, and friends. Extended, they stand for all of society.
 
 ### The Five Classics and the golden age (slides 16 to 19)
-- The **Five Classics** come from the Zhou (1046 to 256 BCE), were systematized in the Han from 202 BCE, and their selection is attributed to Confucius: the Book of Changes, the Classic of History, the Classic of Poetry, the Records of Rites and the Spring and Autumn Annals.
+- The **Five Classics** come from the Zhou (1046 to 256 BCE). They were systematized in the Han from 202 BCE, and their selection is attributed to Confucius.
+- They are the Book of Changes, the Classic of History, the Classic of Poetry, the Records of Rites and the Spring and Autumn Annals.
 - The early Zhou (1046 to 771 BCE) is the ideal age, and its aristocratic, patrilineal family system is the ideal family, kept up through ancestral rites of food, wine and prayer (Ebrey).
 - The Classics have four overlapping concerns: individual, familial, political and cosmic.
 - **Ritual masters** lead worship of deities, natural principles and ancestors at public temples.
@@ -67,7 +68,9 @@ Prepared 2026-10-30 from the posted deck `Lecture 7.pptx` (119 slides, published
 - **Yue Fei** (1103 to 1142) is the military hero: a peasant who passed the military exam, tattooed "Serve the Country with Utmost Loyalty" on his back, fought the Jin and was killed with his emperor's consent.
 - **Huang Chao** (835 to 884) shows when it goes wrong: he failed the exam, smuggled salt, rebelled during famine, took Chang'an in 881 and declared the Qi dynasty, and was killed in 884. Dropouts more often became Daoist hermits or Buddhist monks.
 
-### Daoism (slides 83 to 98)
+## Daoism
+
+### Daoist practice and belief (slides 83 to 98)
 - **Laozi** ("Old Master", assumed 400s BCE) is the founder figure; the **Daodejing** ("Classic of the Way and its Power") is also called the Laozi. The earliest communities date from the later Han.
 - Daoism means living in harmony with the **dao**, the way underlying all things, without resistance and effortlessly.
 - Cosmogony: primordial chaos (dao) splits into qi, qi splits into **yin and yang**, and yin and yang give the **five phases** (wuxing).

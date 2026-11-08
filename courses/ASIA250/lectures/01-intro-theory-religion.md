@@ -1,12 +1,11 @@
 # ASIA 250 — Lecture 1: Introduction, theory, notions about Buddhism
 
-Logged 2026-09-15 from the posted deck (53 slides). No handwritten page for this one; the course is asynchronous.
-Recording: Canvas module item 9469878. Slides: module item 9469879.
+The lecture deck has 53 slides. The recording is Canvas module item 9469878 and the slides are item 9469879.
 
 ## Your notes
 None. Everything below is from the deck.
 
-## What the deck covers
+## How to study religion
 
 ### Hook: Hyon Gak
 - Hyon Gak was born Paul Muenzen in New Jersey in 1964, converted from Catholicism while a graduate student at Harvard, spent over a decade as a monk in Korean temples, and now teaches meditation in Germany.
@@ -57,7 +56,9 @@ None. Everything below is from the deck.
 - A world religion is one with a diasporic presence that travels across state borders.
 - Around 500 to 535 million people identify as Buddhists, over 7% of the world. Over 99% live in the Asia-Pacific region. In the homeland, Nepal and India, Buddhism is a minority religion today.
 
-### Buddhism experientially: axiological aesthetics
+## Buddhism as a lived practice
+
+### Axiological aesthetics
 - Religious experience is a form of aesthetic experience in the axiological sense. Axiology is value theory. Axiological aesthetics studies how values are constructed by experiencing things.
 - An aesthetic experience is putting a mental frame over something and sustaining attention on it for an extended time. Art is the obvious case, but anything can become the object of the aesthetic gaze.
 - The two-drivers example: Driver A curses the traffic and gets hijacked by emotion; Driver B admires the sunset, pulls into the slow lane and plans to frame a photo; a hypothetical Driver C reads the jam as God's punishment. B is having the aesthetic experience.
@@ -69,8 +70,12 @@ None. Everything below is from the deck.
 - The meme: a Buddhist nun sees Jesus in her latte and says she is surprised it is not the Buddha.
 
 ### Early schools by the first century CE
-- Conservative schools, surviving as modern Theravada: the disciple aims at nirvana, liberation from the cycle of births and deaths. An arhat is a liberated follower of the Buddha who is not reborn and is free of the three poisons, anger, passion and ignorance, where ignorance is the illusion of one's own self. One universe has only one Buddha at a time.
-- Progressive schools, now most of the Buddhist world: the follower declares as a bodhisattva, a future Buddha, in order to lead others to the same realisation. A Buddha is free of rebirth and the three poisons and also creates a Buddha Land where bodhisattvas can be reborn to train. There are multiple universes, so bodhisattvas can become Buddhas quickly in other unenlightened universes.
+- The conservative schools survive as modern **Theravada**. The disciple aims at **nirvana**, liberation from the cycle of births and deaths.
+- An **arhat** is a liberated follower of the Buddha who is free of rebirth and of the three poisons. The poisons are anger, passion and ignorance. Here, ignorance means the illusion of one's own self.
+- In this account, one universe has only one Buddha at a time.
+- The progressive schools make up most of the Buddhist world. A follower declares as a **bodhisattva**, a future Buddha who aims to lead others to the same realisation.
+- A Buddha is free of rebirth and the three poisons. A Buddha also creates a Buddha Land where bodhisattvas can be reborn to train.
+- There are multiple universes. Bodhisattvas can become Buddhas quickly in other unenlightened universes.
 
 ## Clarifications
 - The Mini-Quiz 1 question on the word "religion" being absent from pre-modern languages is not on the deck. It comes from the readings or the recording.

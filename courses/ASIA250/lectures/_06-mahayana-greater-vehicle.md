@@ -1,8 +1,8 @@
 # ASIA 250 — Lecture 6: Mahayana, the Greater Vehicle
 
-Prepared 2026-10-23 from the posted deck `Lecture 6.pptx` (65 slides, published Tue Oct 20). The video was not read, so this page comes from the deck alone. Mini-Quiz 6 locks Mon Oct 26 at 23:59 and also covers Harvey (2013) chapter 5 (pp. 114 to 150) and the first part of chapter 6 (pp. 151 to 179), which were not pulled for this page. Questions: 10 in [the bank](../02-questions.md) under "Lec 6".
+The lecture uses `Lecture 6.pptx` (65 slides, published Tue Oct 20). Mini-Quiz 6 also covers Harvey (2013), chapter 5 (pp. 114 to 150) and the first part of chapter 6 (pp. 151 to 179). See "Lec 6" in the [question bank](../02-questions.md).
 
-## Slides, organized
+## How Mahayana emerged
 
 ### After the Buddha's final nirvana (slides 2 and 3)
 - Tradition puts the Buddha's final nirvana at the Vesak full moon (4th lunar month) of 483 BCE, though closer to 400 BCE is more likely.
@@ -54,6 +54,8 @@ Prepared 2026-10-23 from the posted deck `Lecture 6.pptx` (65 slides, published 
   - Passion residue: they can still have nocturnal emissions, a sign of subconscious desire.
   - Aversion residue: they lack enough compassion, because of excessive world-denying practice such as corpse meditation and strict rule-keeping.
 - So, the progressives say, a Buddhist should aim to become a Buddha, whose awakening is perfect, not an arhat.
+
+## The path to Buddhahood
 
 ### How one becomes a Buddha (slides 16 to 19)
 - Both sides agree it takes countless acts of compassion and self-denial over many lifetimes to gather merit.
@@ -136,6 +138,8 @@ Prepared 2026-10-23 from the posted deck `Lecture 6.pptx` (65 slides, published 
 - Attraction: **Sarvanivaranaviskambhin** ("the one who blocks all obstacles"), shown as an androgyne with a bare chest, removes the five hindrances (desire, hostility, laziness, distraction and worry, doubt) and turns passion toward the path.
 - **Avalokiteshvara** (Chinese **Guanyin**), male in India, was feminised in China, where compassion is a feminine (yin) quality.
 
+## Bodhisattvas and their vows
+
 ### The great bodhisattvas (slides 48 to 55)
 - **Maitreya**, the future Buddha of early Buddhism, was in the Buddha's lifetime a layman named **Ajita**, vowed long ago to become a Buddha, now lives as a god in **Tushita** heaven and will come as the next Buddha; with the Jatakas he is the prototype of the cosmic bodhisattvas.
 - **Manjushri** personifies wisdom; his sword cuts through the illusion of samsara.
@@ -151,21 +155,25 @@ Prepared 2026-10-23 from the posted deck `Lecture 6.pptx` (65 slides, published 
 - It is a heroic journey rather than early Buddhism's withdrawal, started by monastics but spreading to the laity, who become bodhisattvas rather than donors, which is why "greater vehicle" fits.
 - **Joseph Campbell**'s **monomyth**, *The Hero with a Thousand Faces* (1949): the hero leaves the known for the unknown, faces a monster and brings back a treasure; a bodhisattva bridges our world and the multiverse of Buddhas, creating a paracosm the community shares.
 - Followers join the great bodhisattvas' journey by chanting scriptures, such as the most-chanted text in East Asia, chapter 25 of the **Lotus Sutra**, on the miracles of Guanyin.
-- The **Gandavyuha Sutra** ("A Series of Episodes"): the youth **Sudhana** meets 53 teachers, including Maitreya and Manjushri but also a slave, a child, a physician and a ship's captain, 20 of them women (the courtesan Vasumitra, the Buddha's wife and mother, a queen, a princess, goddesses).
+- In the **Gandavyuha Sutra** ("A Series of Episodes"), the youth **Sudhana** meets 53 teachers. They include Maitreya, Manjushri, a slave, a child, a physician and a ship's captain.
+- Twenty teachers are women, including the courtesan Vasumitra, the Buddha's wife and mother, a queen, a princess and goddesses.
 - In the **Tower of Maitreya** Sudhana experiences emptiness and the interconnected multiverse.
 - The sutra ends with **Samantabhadra** telling him to put his wisdom into practice as skillful means; Sudhana ends where he began, the same yet transformed, a metaphor for realising emptiness.
 - The deck asks how **Ko Un**'s modern rendering (the novel *Little Pilgrim*) compares with the traditional account.
 
-## Likely quiz targets
-- Sarvastivada ("everything exists") vs Sautrantika ("the sutras are enough"), and the middle position of Theravada; 82 dharmas in Theravada's Abhidharma.
+## Mini-Quiz 6 review
+
+Mini-Quiz 6 locked Mon Oct 26 at 23:59.
+
+- Compare Sarvastivada ("everything exists") and Sautrantika ("the sutras are enough"). Theravada takes a middle position and counts 82 dharmas in its Abhidharma.
 - Mahasamghikas and Lokottaravada as the innovationists; why they found arhatship insufficient; 32 Marks of a Great Man.
 - Hinayana as a pejorative term; Theravada (Pali, Southern) vs Mahayana (Sanskrit to Chinese and Tibetan, Northern).
 - The three failings of arhats, one per poison.
 - Vessantara and Prince Sattva Jatakas, and what each one gives up.
 - The ten paramis vs the ten paramitas; the six core paramitas and the four derived ones.
-- The Bodhisattva Vow, the one-Buddha problem and the multiverse answer.
+- Explain how the multiverse addresses the one-Buddha problem raised by the Bodhisattva Vow.
 - Brahmajala Sutra precepts, Precept 20, and Brahma's Net as the image of emptiness.
 - Emptiness as dependence on parts, causes and conditions, and the mind; prajna and upaya.
 - Detachment vs compassion meditation and their ethical outcomes.
-- The 8 Great Bodhisattvas and what each stands for; Kukai and Akashagarbha.
+- Name the 8 Great Bodhisattvas and what each stands for. Explain the connection between Kukai and Akashagarbha.
 - Bodhicitta, Campbell's monomyth, Lotus Sutra chapter 25, and Sudhana's 53 teachers in the Gandavyuha Sutra.

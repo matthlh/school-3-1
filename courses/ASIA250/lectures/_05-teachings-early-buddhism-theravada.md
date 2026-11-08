@@ -1,9 +1,8 @@
 # ASIA 250 — Lecture 5: The teachings and characteristics of early Buddhism and Theravada
 
-Prepared 2026-10-07 from the posted deck (65 slides, published Mon Oct 5). The Canvas video has no caption track we can read, so this page comes from the deck alone, and Mini-Quiz 5 locks Tue Oct 13 at 23:59 (a day later than usual because Oct 12 is Thanksgiving).
-Mini-Quiz 5 covers the lecture, Harvey (2013) chapter 4 (pp. 88 to 113) and the first part of chapter 11 (pp. 318 to 340), and two BBC (1977) documentaries: "The Mindful Way" (Ajahn Chah, Theravada in Thailand) and "Footprint of the Buddha" (Theravada in Sri Lanka). The Harvey text is not on hand, so nothing below comes from it.
+The 65-slide deck was published Mon Oct 5. Mini-Quiz 5 also covers Harvey (2013), chapter 4 (pp. 88 to 113) and the first part of chapter 11 (pp. 318 to 340). The two BBC (1977) documentaries are "The Mindful Way" (Ajahn Chah, Theravada in Thailand) and "Footprint of the Buddha" (Theravada in Sri Lanka).
 
-## Slides, organized
+## Early Buddhism
 
 ### How the teachings were transmitted (slide 2)
 - The content of the Buddha's teaching varies from school to school.
@@ -62,7 +61,9 @@ Mini-Quiz 5 covers the lecture, Harvey (2013) chapter 4 (pp. 88 to 113) and the 
 - The divine worlds have very little suffering and mostly pleasures.
 - The lower worlds (animals, ghosts, hells) have too much suffering and too short a life span, so there is no possibility of following the teachings on liberation.
 
-### Ghosts and Yama: the Vedic idea and the Buddhist twist (slides 10 to 12)
+## Rebirth, cosmology and karma
+
+### Ghosts and Yama in Vedic and Buddhist belief (slides 10 to 12)
 - Ghosts are **pretas** in Sanskrit and **petas** in Pali.
 - In the Brahmanic Hinduism of the Buddha's time, people became ghosts when they died.
 - A son conducted ritual sacrifices to feed the dead ghost so it could grow an immortal body and go to the ancestral land of **Yama**.
@@ -149,6 +150,8 @@ Mini-Quiz 5 covers the lecture, Harvey (2013) chapter 4 (pp. 88 to 113) and the 
 - The origin of the four castes shows that the Purusha Hymn is fairly late in the Rig Veda: Brahmins (priests and teachers), Kshatriyas (nobles and warriors), Vaishyas (merchants), Shudras (labourers and artisans).
 - The earliest hymns reflect a polytheistic and nomadic society.
 
+## Arhats, disciples and Theravada practice
+
 ### The Arhats (slide 28)
 - The Buddha converted thousands of people over 45 years, including his cousins, wife, son, relatives and former servants, the ascetics he had trained with, and people he met on his constant journey.
 - Many of them are considered to have reached nirvana and became known as the **Arhats**.
@@ -160,7 +163,9 @@ Mini-Quiz 5 covers the lecture, Harvey (2013) chapter 4 (pp. 88 to 113) and the 
 - Ashvajit's summary is the **Verse of Causality** (Pratityasamutpada gatha, "ye dharma hetu"), perhaps the most famous line of early Buddhist teaching, found in all traditions: those dharmas which arise from a cause, the Tathagata has declared their cause, and that which is the cessation of them; thus the great renunciant (shramana) has taught.
 - **Maudgalyayana** (Pali Moggallana): known for his **supernatural abilities**, which let him see his mother as a preta.
 - According to some accounts both Shariputra and Maudgalyayana die voluntarily before the Buddha, not wishing to witness his final Parinirvana: Maudgalyayana is beaten to death, and Shariputra dies after converting his mother.
-- **Ananda**, "the man who remembered everything": the Buddha's cousin; phenomenal memory; the Buddha's assistant; known for his **compassion** but also for lingering attachments; asked the Buddha to ordain women into the sangha; attained arhatship only after the Buddha's death, because he had focused on service; a "crypto-bodhisattva" and a model for later traditions; celebrated for the phrase "Thus have I heard" that opens all Buddhist sutras.
+- **Ananda**, "the man who remembered everything", was the Buddha's cousin and assistant. He was known for his memory, **compassion** and lingering attachments.
+- He asked the Buddha to ordain women into the sangha. He reached arhatship only after the Buddha's death because he had focused on service.
+- The deck calls him a "crypto-bodhisattva" and a model for later traditions. He is associated with "Thus have I heard", the opening words of Buddhist sutras.
 - Ananda died of old age: by one source he corrected a young monk who was reciting a line wrongly, the monk's teacher said Ananda had become senile, and on hearing that Ananda decided to pass into final nirvana.
 - **Devadatta**: another cousin of the Buddha; joined for selfish reasons; created a **schism** by inventing stricter rules than the Buddha's; the Buddha sent Shariputra and Maudgalyayana to bring back the monks who had left with him; later tried to kill the Buddha, failed, and fell into the deepest hell, literally swallowed by the earth.
 - Devadatta shows sectarianism within early Buddhism: the Chinese traveller **Faxian** (337 to 422 CE) reports Devadatta's followers in India, who worshipped all the other Buddhas except Siddhartha.
@@ -265,14 +270,22 @@ Mini-Quiz 5 covers the lecture, Harvey (2013) chapter 4 (pp. 88 to 113) and the 
 - Theravada mostly recommends the four immeasurables to lay followers, which sets it apart from the Mahayana Buddhism of the next module.
 - The deck closes with **Avalokitesvara** (Guanyin), the deity of compassion in Mahayana Buddhism.
 
-## Likely quiz targets
-- The Pali Canon dates: no writing for over 200 years, Pali a western Indian dialect of about the 3rd century BCE, first inscriptions about 25 BCE (over 400 years after the Buddha), full canon in the 5th century CE (1000 years after).
+## Mini-Quiz 5 review
+
+Mini-Quiz 5 locked Tue Oct 13 at 23:59, a day later than usual because of Thanksgiving on Oct 12.
+
+- The teachings were unwritten for over 200 years. Pali was a western Indian dialect of about the 3rd century BCE.
+- The first inscriptions date to about 25 BCE, over 400 years after the Buddha. The full canon dates to the 5th century CE, about 1000 years after the Buddha.
 - The Buddha numbers: Dipankara 4, Gautama 28, Maitreya 29, and Sumedha's vow four asamkhyeyas and 100,000 kalpas ago, with one asamkhyeya as 10 to the power 140.
-- The six realms and their causes: hells from anger and killing, hungry ghosts from avarice, animals from ignorance, humans from sexual desire, asuras from jealousy, gods from pride; the first three are the lower realms.
+- The three lower realms are hells from anger and killing, hungry ghosts from avarice, and animals from ignorance.
+- The other realms are humans from sexual desire, asuras from jealousy, and gods from pride.
 - Yama's two Buddhist roles (Yama Heaven for good people, and Yama as King of Hells, a vemanikapeta) against the Vedic Yama, the first being to die, and why pretas are hungry (greed, not a missing son).
 - The three poisons and their animals: ignorance is the pig, craving is the chicken, aversion is the snake, and which practice extinguishes each.
 - The Wheel of Life: poisons at the centre, white and black deeds, six planes, Yama holding the wheel as a mirror.
-- The disciples: Ashvajit converts Shariputra and Maudgalyayana with the Verse of Causality; Shariputra is wisdom, Maudgalyayana is supernatural powers and the hungry-ghost mother (Ullambana, 15th day of the seventh lunar month); Ananda is memory, compassion, "Thus have I heard", women's ordination, arhat only after the Buddha's death; Devadatta the schism and the attempt on the Buddha's life; Maitreya was the layman Ajita.
+- Ashvajit converts Shariputra and Maudgalyayana with the Verse of Causality. Shariputra is associated with wisdom.
+- Maudgalyayana is associated with supernatural powers and the hungry-ghost mother. Ullambana falls on the 15th day of the seventh lunar month.
+- Ananda is associated with memory, compassion, "Thus have I heard" and women's ordination. He attained arhatship after the Buddha's death.
+- Devadatta led the schism and tried to kill the Buddha. Maitreya was the layman Ajita.
 - Conservative versus innovative Buddhism: one Buddha and one bodhisattva at a time and nirvana final, against innumerable Buddhas and no arhat ideal; Theravada about 30% of Buddhists, Cambodia 97%, Thailand 90%, Myanmar 80%, Sri Lanka 70%, Laos 67%.
 - The Tipitaka: Vinaya 5 books, Sutta 5 collections, Abhidhamma 7 books; Patimokkha 227 rules for monks and 311 for nuns; parajika 4 and 8; Sudinna and the first rule.
 - The four immeasurables with their Pali names (metta, karuna, mudita, upekkha), recommended in Theravada mostly to lay followers.
