@@ -1,7 +1,9 @@
 # STAT 251 — Introductory Probability and Statistics (2026W1)
 
-**Instructor:** Dr. Lasantha Premarathna · **Meets:** MWF 8:00–8:50am, CIRS 1250 · **Lab L1K:** Fri
-11:00–12:00, ESB 1046 · **Text:** free course notes on Canvas (optional: Devore)
+- Dr. Lasantha Premarathna teaches the course.
+- Lectures meet MWF from 8:00–8:50am in CIRS 1250.
+- Lab L1K meets Fri from 11:00–12:00 in ESB 1046.
+- The free course notes are on Canvas. Devore is optional.
 
 ## Grading
 | Component | Weight | Notes |
@@ -15,21 +17,22 @@
 | **Final** | **45%** | **Mon Dec 14, 3:30pm**, in person; room and length not posted yet. **Must pass the final to pass the course.** |
 | *Piazza bonus* | *+1%* | 10+ endorsed answers |
 
-**33% is non-exam work** — bank all of it plus the Piazza bonus and the exams need ~92.5% for a 96.
+Non-exam work accounts for **33%**. With all of those marks and the Piazza bonus, the exams need an average of about 92.5% for a 96.
 
 ## Exam format
 - Intel from past terms: **MC-heavy and long** ("impossible to finish on time"). Mocks must be MC and timed.
 - Exams are built from the official learning outcomes (see Topics), not the chapter list.
 - Exams do not cover textbook material beyond what the lectures cover. Premarathna said so after class when asked directly; the TA on Piazza had said neither exam was written yet and to ask him.
-- Cheat sheets: the midterm allows one handwritten letter-size sheet, one side; the final allows two sides, which can be two one-sided sheets. Written on a tablet and printed is fine; typed or pasted slides are not. Two students with matching sheets lose them for that exam. Said in lecture 7, Sep 23.
+- The midterm allows one side of a handwritten letter-size sheet. The final allows two sides, which can be on two separate sheets.
+- You can print a sheet handwritten on a tablet. Typed text and pasted slides are prohibited. If two students bring matching sheets, both lose their sheets for that exam. The instructor gave these rules in lecture 7 on Sep 23.
 - He does not set theoretical proofs, but a short "show that" (for example, that Aᶜ and B are independent when A and B are) has appeared on a midterm.
 - Written answers earn part marks for the method: define the random variable in words, name its distribution and parameter, check the approximation's condition, and write "continuity correction" by any 0.5. Midterm answers that gave only the number lost marks (lecture 23, Nov 6).
 - The final is cumulative over chapters 1, 2, 3, 4, 5, 6, 7, 8, 10, 11.
 
 ## Rules that cost points
-- **No late submissions, ever** — WeBWorK, assignments, labs, exams.
+- WeBWorK, assignments, labs and exams have no late submissions.
 - **Gen AI is prohibited in all assessments**, including WeBWorK, labs and written assignments.
-- Regrade requests within one week of marks being released.
+- Request a regrade within one week of mark release.
 - Content questions go to office hours or Piazza, not email (~600 students).
 
 ## Schedule
@@ -51,8 +54,9 @@
 | 14 | Dec 7 | Ch 2–11 | WW 10 | — |
 | — | Mon Dec 14 | **Final**, 3:30pm | | |
 
-Chapters: 1 descriptive stats · 3 probability · 4–6 random variables · 7 CLT · 8 estimation and
-testing · 10 ANOVA · 2 & 11 regression. Schedule is tentative; changes come by announcement.
+Chapter 1 covers descriptive statistics, and Chapter 3 covers probability. Chapters 4–6 cover random variables. Chapter 7 covers the Central Limit Theorem, Chapter 8 covers estimation and testing, and Chapter 10 covers ANOVA. Chapters 2 and 11 cover regression.
+
+The schedule is tentative. Changes come by announcement.
 
 ## To verify
 - [x] iClicker Cloud set up, STAT 251 added, answering in class (2026-09-16)

@@ -1,24 +1,16 @@
 # STAT 251 — logistics
 
-- **Lectures:** MWF 8:00–8:50, CIRS 1250. Sit in the same seat (syllabus asks for it).
-- **Lab L1K:** Fri 11:00–12:00, ESB 1046, TA Zachary. Labs start the week of Sep 21 (Lab 0 = intro
-  to R, no assignment); no labs Sep 7–18.
-- There are no labs the week of Sep 28 to Oct 2 (lecture 8 page). The Lab 2 pre-lab quiz moved to Fri Oct 9, 23:59, and opens Fri Oct 2.
-- **Lab 1** runs the week of Sep 21 (L1K on Fri Sep 25). Its pre-reading is the same R introduction as
-  Lab 0 and nothing is submitted beforehand. Lab groups of 3 to 4 are posted on Canvas from Wed Sep 23.
-  Pre-lab quizzes start with Lab 2 (said in lecture 6).
-- No labs the week of Sep 28, because Wed Sep 30 is a holiday. Lab 2 is the next lab week.
-- iClicker grades are synced to the Canvas gradebook every few weeks. The sync misses an iClicker account whose email or name differs from Canvas, so set the iClicker name to the Canvas name; he enters those grades by hand at the end of term (said in lecture 9).
-- Answering iClicker questions when you are not in the classroom counts as cheating. The lecture 10 Canvas page says so in its reminders.
-- Only 35 lecture days this term, so overflow goes into short posted videos. The first covers lecture 9's slides 16 to 26 (mean and variance, uniform, exponential, Example 7), and it is posted on the lecture 9 page.
-- A lab-absence form must be submitted in the same week as the missed lab, or it is not accepted (Canvas announcement, Oct 28).
-- **Tools:** WeBWorK only via the Canvas WeBWorK tab (else the roster won't sync) · iClicker Cloud —
-  join via the Canvas link and press *sync* or participation isn't graded · Gradescope for written
-  assignments (link appears with WA1) · Piazza (don't post answers before due dates).
-- **Contact:** content questions → office hours or Piazza. Instructor email
-  (wpremara@stat.ubc.ca, subject "STAT 251") is for personal matters only. Admin (lab section, late
-  registration): coordinator Kaique Barros, programs-assistant@stat.ubc.ca.
-- **Weather closure:** lecture moves to Zoom or a posted recording; details by Canvas announcement.
+- Lectures meet MWF from 8:00–8:50 in CIRS 1250. The syllabus asks you to sit in the same seat each time.
+- Lab L1K meets Fri from 11:00–12:00 in ESB 1046 with Zachary. No labs run Sep 7–18. Lab 0 introduces R and has no assignment.
+- Lab 1 starts the week of Sep 21, with L1K on Fri Sep 25. Use the same R introduction as Lab 0. Nothing is due beforehand. Canvas posts groups of 3 to 4 from Wed Sep 23.
+- There are no labs from Sep 28 to Oct 2 because Wed Sep 30 is a holiday. Pre-lab quizzes start with Lab 2, as stated in lecture 6. The Lab 2 quiz opens Fri Oct 2 and moved to Fri Oct 9 at 23:59.
+- Submit a lab-absence form during the week of the missed lab. The Oct 28 Canvas announcement says later forms are rejected.
+- Join iClicker Cloud through Canvas and press *sync* to receive participation credit. Match your Canvas name and email. Grades sync every few weeks. As stated in lecture 9, the instructor enters missed grades by hand at the end of term.
+- Answer iClicker only in the classroom. The lecture 10 Canvas page says answering from elsewhere counts as cheating.
+- The term has 35 lecture days. Short posted videos cover the overflow. The first is on the lecture 9 page and covers slides 16 to 26, including mean, variance, uniform, exponential and Example 7.
+- Open WeBWorK through the Canvas WeBWorK tab so the roster syncs. Submit written assignments on Gradescope, whose link appears with WA1. Use Piazza for questions and wait until after due dates to post answers.
+- Take content questions to office hours or Piazza. Email wpremara@stat.ubc.ca with subject "STAT 251" for personal matters. Ask coordinator Kaique Barros at programs-assistant@stat.ubc.ca about lab sections or late registration.
+- During a weather closure, lecture moves to Zoom or a posted recording. Canvas announces the details.
 
 ## Dates (Canvas, as of 2026-09-10)
 | What | When (Pacific) | Pts |

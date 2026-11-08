@@ -1,12 +1,17 @@
 # STAT 251 — Midterm cheat sheet (Fri Oct 30, 08:00)
 
-One letter-size sheet, one side, handwritten (tablet-written and printed is fine; typed or pasted slides are not; two matching sheets both get taken). Covers Ch 1, 3, 4, 5, 6. The exam is multiple choice and long, so the sheet is built for speed: a router that names the problem type from the question's wording, then one recipe per type with each formula written beside the step that uses it and the trap that loses the mark. Write the two habits and the router in a strip across the top, then three columns: Ch 1 and Ch 3 on the left, Ch 4 in the middle, Ch 5 and Ch 6 on the right. Writing it is the studying: write each recipe from memory first, then fix it against this page. If you run short of room, drop the Trap lines of recipes 1 and 2 first, then recipe 10, then the Ch 1 recall items in recipe 1.
+The midterm covers Chapters 1, 3, 4, 5 and 6. The cheat sheet describes the exam as long and multiple choice. The sheet helps you identify the model, then find the formula at the step where you need it.
 
-The two habits: write "by independence" beside every product of probabilities, and write a cdf for every real $$x$$, the 0 piece and the 1 piece included.
+- Use one handwritten side of a letter-size sheet. A sheet written on a tablet and printed is allowed. Typed or pasted slides are prohibited. Both students lose their sheets if they match.
+- Put the problem-type table and the two habits at the top. Put Chapters 1 and 3 on the left, Chapter 4 in the middle and Chapters 5 and 6 on the right.
+- Write each method from memory first. Then check it against the steps and traps below.
+- If space runs out, drop the Trap lines for recipes 1 and 2 first, then recipe 10, then the Chapter 1 recall items in recipe 1.
+- Write "by independence" beside each product of probabilities.
+- Write the cdf for every real $$x$$, including the 0 and 1 pieces.
 
 ## Top strip · Which problem is this?
 
-The hardest outcome on the list is picking the model (3cc), and this table is that drill. Read the question, find the row, go to the recipe.
+Outcome 3cc asks you to choose the model. Match the question's wording to a row and use the numbered method.
 
 | The question has | It is | Recipe |
 |---|---|---|
