@@ -24,7 +24,7 @@ const adapters = {
   './ui': 'export const GradeChip=()=>null;',
 }
 const built = await bundle({
-  stdin: { contents: "export { Viewer } from './Viewer'; export { Sidebar } from './Sidebar'; export { QuestionBank } from './QuestionBank'; export { parseBankView, parseHash } from './routes';", resolveDir: join(app, 'src'), loader: 'ts' },
+  stdin: { contents: "export { Viewer } from './Viewer'; export { Sidebar } from './Sidebar'; export { QuestionBank } from './QuestionBank'; export { parseBankView, parseHash, hrefCourse } from './routes';", resolveDir: join(app, 'src'), loader: 'ts' },
   bundle: true, format: 'esm', platform: 'node', write: false, logLevel: 'error',
   plugins: [{ name: 'component-adapters', setup(api) {
     api.onResolve({ filter: /^(react(?:\/jsx-runtime)?|\.\/(?:files|Md|CoursePage|SectionRail|Logo|ThemeToggle|update|ui))$/ }, ({ path }) =>
@@ -32,7 +32,7 @@ const built = await bundle({
     api.onLoad({ filter: /.*/, namespace: 'adapter' }, ({ path }) => ({ contents: adapters[path], loader: 'js' }))
   } }],
 })
-const { Viewer, Sidebar, QuestionBank, parseBankView, parseHash } = await import('data:text/javascript;base64,' + Buffer.from(built.outputFiles[0].text).toString('base64'))
+const { Viewer, Sidebar, QuestionBank, parseBankView, parseHash, hrefCourse } = await import('data:text/javascript;base64,' + Buffer.from(built.outputFiles[0].text).toString('base64'))
 
 // Walk the rendered component tree while remembering whether content is inside a collapsed details.
 function walk(tree, folded = false) {
@@ -72,7 +72,7 @@ test('a lecture or reading page folds its opening note; other pages keep theirs'
 })
 
 test('invalid saved navigation cannot crash or supply non-boolean expansion values', () => {
-  const tree = { courses: [{ code: 'STAT251', main: [], lectures: [], readings: [] }], runs: [] }
+  const tree = { courses: [{ code: 'STAT251', main: [], lectures: [], readings: [], prepared: [] }], runs: [] }
   for (const raw of ['null', '[]', '"text"', '42', 'true', '{', '{"STAT251":"false","briefs":1}', '{"STAT251":true,"briefs":false}']) {
     globalThis.localStorage = { getItem: () => raw }
     const nodes = walk(Sidebar({ tree, current: '', pinned: false, tallies: {} }))
@@ -95,6 +95,18 @@ const bank = '# Bank\n\n## Lec 1\n\n### Q: First?\n**Topic:** First **Lec:** 1 *
 function bankNodes(query) {
   return walk(QuestionBank({ path: 'courses/STAT251/02-questions.md', text: bank, all: {}, topics: [], historyOf: () => undefined, view: parseBankView(query) }))
 }
+test('Courses and each course tab have their own address, and a course file stays a file', () => {
+  assert.deepEqual(parseHash('#/'), { kind: 'home' })
+  assert.deepEqual(parseHash('#/courses'), { kind: 'courses' })
+  assert.deepEqual(parseHash('#/course/STAT251'), { kind: 'course', code: 'STAT251', tab: 'study' })
+  for (const tab of ['study', 'materials', 'progress']) {
+    assert.deepEqual(parseHash(hrefCourse('PHIL385', tab)), { kind: 'course', code: 'PHIL385', tab })
+  }
+  assert.equal(hrefCourse('PHIL385'), '#/course/PHIL385')
+  assert.equal(parseHash('#/course/STAT251/bogus').kind, 'file')
+  assert.deepEqual(parseHash('#/courses/STAT251/00-syllabus.md'), { kind: 'file', path: 'courses/STAT251/00-syllabus.md', query: '', anchor: undefined })
+})
+
 test('bulk reveal changes only visible answers and preserves hidden answer state', () => {
   browser()
   const show = bankNodes('section=lec-1&open=3').find((n) => n.type === 'button' && n.props.children === 'Show answers')

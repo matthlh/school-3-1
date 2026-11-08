@@ -12,7 +12,7 @@
 tr.pager-row td { border: 0; padding: 2px 0 0; background: none; }   /* a long markdown table carries its pager in a last row */
 tr.pager-row .pager { margin: 4px 0 0; }
 
-/* == Compact tables: Due now (Home and the ledger) and the ledger dashboard == */
+/* == Compact tables: Due now (Today and the ledger) and the ledger dashboard == */
 table.due, table.ledger { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 6px 0 0; line-height: 1.45; }
 article table.due, article table.ledger { display: table; }
 table.due td, table.ledger td, table.ledger th { padding: 6px 8px; border: 0; border-top: 1px solid var(--hair); vertical-align: top; text-align: left; background: none; }
@@ -47,7 +47,7 @@ table.ledger.recurring td.note { color: var(--muted); font-size: 13px; }
 table.ledger.recurring td.note code, table.ledger.recurring td.series code { font-size: .88em; }
 table.ledger:is(.calendar, .recurring) .chip-inline { display: none; margin-right: 6px; }   /* phones only; the Course column carries the chip on wide screens */
 
-/* == Coming up on Home: the next few hard dates == */
+/* == Coming up on Today: the next few hard dates == */
 table.upcoming { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 4px; }
 .upcoming td { padding: 5px 6px; border-top: 1px solid var(--hair); vertical-align: top; }
 .upcoming tr:first-child td { border-top: 0; }

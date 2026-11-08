@@ -1,6 +1,7 @@
 // Every markdown file in the workspace, pulled in through Vite's glob imports.
 // Files load as raw text; Vite hot-reloads the app when any of them changes.
 
+import type { CourseTab } from './routes'
 import { afterDash, firstHeading, parseQuestions, type Question } from './markdown'
 import { questionId } from './stats'
 
@@ -77,7 +78,8 @@ async function load(): Promise<Loaded> {
 }
 
 export interface Entry { path: string; label: string }
-export interface Course { code: string; main: Entry[]; lectures: Entry[]; readings: Entry[] }
+/** `prepared`: lecture pages staged before he studied them (`lectures/_NN-…`), kept apart from the logged ones. */
+export interface Course { code: string; main: Entry[]; lectures: Entry[]; readings: Entry[]; prepared: Entry[] }
 export interface Tree { courses: Course[]; runs: Entry[] }
 
 const MAIN: [string, string][] = [
@@ -90,6 +92,20 @@ const MAIN: [string, string][] = [
   ['06-cheat-sheet.md', 'Cheat sheet'],
 ]
 
+/** Which course tab each main file sits under: study content, reference material, or progress. */
+const MAIN_TAB: Record<string, CourseTab> = {
+  '02-questions.md': 'study', '05-exam-review.md': 'study', '06-cheat-sheet.md': 'study',
+  '00-syllabus.md': 'materials', '03-logistics.md': 'materials', '04-ask-kraal.md': 'materials',
+  '01-topics.md': 'progress',
+}
+export const mainTab = (path: string): CourseTab => MAIN_TAB[path.slice(path.lastIndexOf('/') + 1)] ?? 'materials'
+
+/** A lecture file's first number: "lectures/05-06-crop…" → 5, "lectures/_08-pure…" → 8; Infinity when it has none. */
+export function lectureNumber(path: string): number {
+  const m = /\/_?(\d+)[^/]*$/.exec(path)
+  return m ? +m[1] : Infinity
+}
+
 /** "01-02-ch1-data-types-displays.md" → "01–02 · ch1 data types displays"; "crop-rotation.md" → "crop rotation" */
 function prettyLecture(name: string): string {
   const s = name.replace(/\.md$/, '')
@@ -101,7 +117,7 @@ export function buildTree(): Tree {
   const courses = new Map<string, Course>()
   const course = (code: string): Course => {
     let c = courses.get(code)
-    if (!c) { c = { code, main: [], lectures: [], readings: [] }; courses.set(code, c) }
+    if (!c) { c = { code, main: [], lectures: [], readings: [], prepared: [] }; courses.set(code, c) }
     return c
   }
   const runs: Entry[] = []
@@ -113,10 +129,14 @@ export function buildTree(): Tree {
       if (label) course(m[1]).main.push({ path: p, label })
       continue
     }
-    // Staged outlines (`_NN-…`, `_<slug>`) are not logged yet and stay out of the tree.
+    // Staged pages (`_NN-…`, `_<slug>`) are not logged yet: a lecture one is a study page prepared before he studied
+    // it, listed apart as prepared; any other stays out of the tree.
     m = /^courses\/([^/]+)\/(lectures|readings)\/([^/]+\.md)$/.exec(p)
     if (m) {
-      if (m[3].startsWith('_')) continue
+      if (m[3].startsWith('_')) {
+        if (m[2] === 'lectures' && /^_\d/.test(m[3])) course(m[1]).prepared.push({ path: p, label: prettyLecture(m[3].slice(1)) })
+        continue
+      }
       if (m[2] === 'lectures') course(m[1]).lectures.push({ path: p, label: prettyLecture(m[3]) })
       else course(m[1]).readings.push({ path: p, label: 'reading · ' + prettyLecture(m[3]) })
       continue
@@ -128,7 +148,9 @@ export function buildTree(): Tree {
   const order = (path: string) => MAIN.findIndex(([f]) => path.endsWith('/' + f))
   for (const c of courses.values()) {
     c.main.sort((a, b) => order(a.path) - order(b.path))
-    c.lectures.sort((a, b) => a.path.localeCompare(b.path))
+    const byNumber = (a: Entry, b: Entry) => lectureNumber(a.path) - lectureNumber(b.path) || a.path.localeCompare(b.path)
+    c.lectures.sort(byNumber)
+    c.prepared.sort(byNumber)
     c.readings.sort((a, b) => a.path.localeCompare(b.path))
   }
   runs.sort((a, b) => b.label.localeCompare(a.label))
@@ -169,7 +191,7 @@ export function labelFor(path: string, tree: Tree): string {
   if (path === 'GOALS.md') return 'Goals'
   if (path === 'TOPICS.md') return 'Topic list'
   for (const c of tree.courses) {
-    const e = [...c.main, ...c.lectures, ...c.readings].find((x) => x.path === path)
+    const e = [...c.main, ...c.lectures, ...c.readings, ...c.prepared].find((x) => x.path === path)
     if (e) return e.label
   }
   const r = tree.runs.find((x) => x.path === path)

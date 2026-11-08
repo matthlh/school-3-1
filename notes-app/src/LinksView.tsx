@@ -8,7 +8,7 @@ import { Md } from './Md'
 /**
  * links.md's rows as groups: "Everywhere" first, then one tinted panel per course. The groups flow down balanced CSS
  * columns, so the course with the most links goes right after Everywhere, topping up the short first column, and the
- * other courses follow in file order. The links page and Home both show these.
+ * other courses follow in file order. The links page shows these.
  */
 export function LinkGroups({ rows }: { rows: LinkRow[] }) {
   const codes = [...new Set(rows.map((r) => r.course))]

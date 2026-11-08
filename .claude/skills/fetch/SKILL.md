@@ -95,8 +95,8 @@ creates this one there, once:
 - If the first run stops on a permission prompt for `prelecture.py`, allow it permanently.
 - The scheduled run replies in one line, such as "Lec 9 outline rebuilt from the deck" or "Lec 9
   deck not up yet, the reader-chapter outline stays". It writes only the `_NN` file: no ledger row
-  and no publish, because the notes site does not show `_NN` outlines and the next morning check's
-  publish commits the file.
+  and no publish. The site lists `_NN` pages on the course's Study tab and in Today's Continue row; the
+  live site shows the earlier version, or none, until the next morning check's publish commits the file.
 
 ## "fetch what's covered today" (or "fetch today")
 1. `python3 "$S/fetch_status.py"` (no `--course`) — one line per course, which ones meet today.

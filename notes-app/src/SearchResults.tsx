@@ -27,7 +27,7 @@ function Highlight({ text, terms }: { text: string; terms: string[] }) {
 
 /**
  * Every file cut into its `## ` sections, as the viewer cuts it, so a hit links to the id its section gets there. A
- * syllabus checklist ("To verify", "To do") shows on the course Overview instead of the syllabus page, so its hits link
+ * syllabus checklist ("To verify", "To do") shows on the course's Materials tab instead of the syllabus page, so its hits link
  * there. A line that is only an HTML comment, such as the Due now block's date line, never renders, so search skips it.
  */
 function sectionsOf(all: Texts, tree: Tree): Part[] {
@@ -37,8 +37,8 @@ function sectionsOf(all: Texts, tree: Tree): Part[] {
     const lines = s.body.split('\n').filter((l) => !/^\s*<!--.*-->\s*$/.test(l))
     return {
       key: `${path}:${i}`, path,
-      href: overview ? hrefCourse(code) : s.heading ? hrefAnchor(path, s.id) : hrefFor(path),
-      page: overview ? 'Overview' : labelFor(path, tree),
+      href: overview ? hrefCourse(code, 'materials') : s.heading ? hrefAnchor(path, s.id) : hrefFor(path),
+      page: overview ? 'Materials' : labelFor(path, tree),
       heading: s.heading, lines, lower: `${s.heading ?? ''}\n${lines.join('\n')}`.toLowerCase(),
     }
   }))

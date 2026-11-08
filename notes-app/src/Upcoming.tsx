@@ -8,14 +8,17 @@ const CALENDAR_HEADING = 'Term calendar — hard dates'
 
 const when = (n: number) => (n === 0 ? 'today' : n === 1 ? 'tomorrow' : `in ${n} days`)
 
-/** The next few hard dates from the ledger's term calendar. */
-export function Upcoming({ items, today }: { items: Deadline[]; today: string }) {
-  const next = items.filter((d) => d.date >= today).slice(0, 7)
+/**
+ * The next few hard dates from the ledger's term calendar: seven, or `limit`. `compact` (Today) cuts each row's text to
+ * two lines, the whole of it in the tooltip and on the ledger.
+ */
+export function Upcoming({ items, today, limit = 7, compact = false }: { items: Deadline[]; today: string; limit?: number; compact?: boolean }) {
+  const next = items.filter((d) => d.date >= today).slice(0, limit)
   if (next.length === 0) return null
   return (
     <section className="panel">
       <div className="panel-head"><span>Coming up</span><a href={hrefAnchor('ledger.md', slug(CALENDAR_HEADING))}>all dates →</a></div>
-      <table className="upcoming">
+      <table className={'upcoming' + (compact ? ' compact' : '')}>
         <tbody>
           {next.map((d, i) => {
             const n = daysBetween(today, d.date)
@@ -24,7 +27,9 @@ export function Upcoming({ items, today }: { items: Deadline[]; today: string })
                 <td className={'when' + (n <= 2 ? ' soon' : '')}>{when(n)}</td>
                 <td className="date">{d.approx ? '~' : ''}{formatDate(d.date)}{d.time ? `, ${d.time}` : ''}</td>
                 <td>
-                  {calendarChip(d.course)}{' '}{d.what}
+                  {compact
+                    ? <div className="clamp" title={d.what}>{calendarChip(d.course)}{' '}{d.what}</div>
+                    : <>{calendarChip(d.course)}{' '}{d.what}</>}
                 </td>
                 <td className="weight">{d.weight}</td>
               </tr>

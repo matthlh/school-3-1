@@ -10,7 +10,7 @@
 // on the way to another page carries no position: the new page opens where its history entry says (routes.ts keeps
 // one per entry), at its top or its #section when it is new, or where it was left when Back returns to it.
 import { useSyncExternalStore } from 'react'
-import { parseHash } from './routes'
+import { parseHash, pageId } from './routes'
 
 type UpdateStatus = 'current' | 'checking' | 'available' | 'error'
 interface UpdateInfo {
@@ -109,8 +109,7 @@ export function takeSavedScroll(hash: string): number | null {
 
 /** The page a hash names, ignoring any in-page anchor: home, a course, or a file. */
 function pageOf(hash: string): string {
-  const r = parseHash(hash)
-  return r.kind === 'file' ? r.path : r.kind === 'course' ? 'course/' + r.code : ''
+  return pageId(parseHash(hash))
 }
 
 /** Reload on the next move to another page. Jumps within the same page (contents chips) are left alone. The reload saves

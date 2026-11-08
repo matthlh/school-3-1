@@ -6,7 +6,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Loaded, Texts } from './files'
 import { hrefFor } from './files'
-import { parseQuestions, type Question } from './markdown'
+import { courseLabel, parseQuestions, type Question } from './markdown'
 import { sourcesFor } from './sources'
 import { Md } from './Md'
 import { CourseChip, GradeChip } from './ui'
@@ -46,22 +46,47 @@ const CONF: [1 | 2 | 3, string][] = [[1, 'Guess'], [2, 'Think so'], [3, 'Sure']]
 
 const deviceName = () => (/Mobi|Android|iPhone|iPad/.test(navigator.userAgent) ? 'phone' : 'laptop')
 
-/** The Home and course-page way in: how many questions are due now, and a button that opens the Review page. */
-export function ReviewEntry({ all, loaded, course = null }: { all: Texts; loaded: Loaded; course?: string | null }) {
+/**
+ * The Today and course-page way in: how many questions are waiting, and a button that opens the Review page. `hero` is
+ * Today's version, the page's one main action: a short session first, with the count and sync state under it.
+ */
+export function ReviewEntry({ all, loaded, course = null, hero = false }: { all: Texts; loaded: Loaded; course?: string | null; hero?: boolean }) {
   const cards = useCards(all)
   const events = useEvents()
   const plan = useMemo(() => parsePlan(loaded.reviewPlan ?? undefined), [loaded])
   const q = dueToday(plan, cards, events, course, loaded.quiz)
   const open = loadSession()
   const resume = open && open.at < open.qids.length
+  const href = course ? `${HREF_REVIEW}?course=${course}` : HREF_REVIEW
+  const sync = <SyncChip onSetup={() => { window.location.hash = '/review?setup=1' }} />
+  if (hero) {
+    const first = Math.min(8, q.length)
+    return (
+      <section className="panel review-hero">
+        <div className="due-label">{resume ? 'Review in progress' : 'Next step'}</div>
+        <h2>{resume ? `Finish your review: question ${open.at + 1} of ${open.qids.length}.`
+          : !plan ? 'The review plan is not published yet.'
+          : first ? `Review ${first} question${first === 1 ? '' : 's'}.`
+          : 'Nothing is waiting for review.'}</h2>
+        <p className="muted">{resume ? 'Every grade so far is saved.'
+          : !plan ? 'It appears after the next quiz or morning check.'
+          : first ? `${counted(q.length, q.due)}. Due questions come first, and each grade is saved as you go, so you can stop at any point.`
+          : 'Open a course below and keep reading.'}</p>
+        <div className="row">
+          {(resume || first > 0) && <a className="btn primary big" href={href}>{resume ? 'Resume review' : 'Start review'}</a>}
+          {sync}
+        </div>
+      </section>
+    )
+  }
   if (!plan) return null
   return (
     <section className="home-review">
-      <a className="btn primary" href={course ? `${HREF_REVIEW}?course=${course}` : HREF_REVIEW}>
-        {resume ? 'Resume review' : 'Review'}
+      <a className="btn primary" href={href}>
+        {resume ? 'Resume review' : course ? `Review ${courseLabel(course)}` : 'Review'}
       </a>
       <span className="muted">{resume ? `question ${open.at + 1} of ${open.qids.length}` : counted(q.length, q.due)}</span>
-      <SyncChip onSetup={() => { window.location.hash = '/review?setup=1' }} />
+      {sync}
     </section>
   )
 }

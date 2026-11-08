@@ -324,7 +324,7 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
   `quiz_grade.py` stops before writing anything and names it; make a ledger row match it and grade again.
 - `ledger.md` holds the only copy of each topic's grade, streak and Next. Grading never writes
   `courses/<CODE>/01-topics.md`, which keeps the topic list, its notes and the Look-alikes table. The notes site's
-  Topics tab shows each row's grade from the ledger and its standing from the Due now block.
+  Topics page (from a course's Progress tab) shows each row's grade from the ledger and its standing from the Due now block.
 - Knobs at the top of `quizlib.py`: `MIN_QUESTIONS_PER_TOPIC` (6), `LEECH_X_IN_LAST` (2 of 3), `TYPE_PREF`,
   `SWEEP_DAYS` (7), `CAP_DAYS` (4), `SPREAD` (0.15), `NON_CUMULATIVE` and `EXAM_CUTOFF`. Each
   `NON_CUMULATIVE` or `EXAM_CUTOFF` key must name exactly one exam in the ledger's Term calendar, or the scripts
@@ -356,7 +356,7 @@ when it really is that day's quiz, `--date <its date>` grades it as that day.
 
 ## Website Review page and sync (2026-11-06)
 Matt asked for review on the website with progress that syncs between his phone and laptop by itself; storage in one
-browser was not enough. The page is `#/review` (a Review button on Home and in the top bar):
+browser was not enough. The page is `#/review` (Review in the top bar's menu, Today's Start review, and a course's Study tab):
 - It asks the plan's queue, due first, minus anything answered since on any device. The topic stays hidden until the
   key shows. He may type an answer, taps Guess, Think so or Sure (which reveals the key), ticks the key points his
   answer had, and saves; the grade follows the same rule as here (core, or Parts by count). Opening the notes before
@@ -426,7 +426,7 @@ keys or got an ask in the stem, no fact or Id lost); readiness
   needed), so the ladder stays.
 - 2026-10-06 (mirror): grading no longer copies Last, Grade, Streak and Next into `01-topics.md` (Matt approved).
   The copy was lossy and had started to match rows of the new Look-alikes tables. Those columns are gone from the
-  topic tables, so `ledger.md` is the only place a topic's status lives, and the site's Topics tab reads it there.
+  topic tables, so `ledger.md` is the only place a topic's status lives, and the site's Topics page reads it there.
 - 2026-10-06 (modes): four additions (Matt approved). Look-alike topics are served back to back: each
   `01-topics.md` gained a `## Look-alikes` table (STAT 251 9 pairs, CPSC 310 5, PHIL 385 7, ASIA 250 5), and a
   picked question pulls the best question of its look-alike right after it. `--sprint` drills STAT 251 method

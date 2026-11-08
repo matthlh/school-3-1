@@ -32,7 +32,7 @@ export function Viewer({ path, text, hideTitle }: { path: string; text: string; 
   const sections = splitSections(text)
   const [pre, ...rest] = sections
   const preBody = hideTitle ? pre.body.replace(/^\s*#\s[^\n]*\n?/, '') : pre.body
-  // Checklists ("To verify", "Ask in week 1") show on the course overview instead.
+  // Checklists ("To verify", "Ask in week 1") show on the course's Materials tab instead.
   const shown = /\/00-syllabus\.md$/.test(path) ? rest.filter((s) => !(s.heading && VERIFY.test(s.heading))) : rest
   const named = shown.filter((s) => s.heading)
 

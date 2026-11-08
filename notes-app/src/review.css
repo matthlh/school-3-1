@@ -38,7 +38,3 @@
 .review-start .row { gap: 10px; flex-wrap: wrap; }
 .home-review { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 0 0 16px; }
 .home-review .btn { min-height: 44px; padding: 0 18px; font-size: 15px; }
-.topbar-review { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; margin-right: 6px; border-radius: 16px;
-                 border: 1px solid var(--border); color: var(--fg); text-decoration: none; font-size: 13px; white-space: nowrap; }
-.topbar-review:hover { border-color: var(--accent); color: var(--accent); }
-@media (max-width: 520px) { .topbar-review { padding: 0 9px; } }

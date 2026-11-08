@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildTree, courseOf, labelFor, loadAll, mainFileCourse, titledByHeader, type Loaded, type Tree } from './files'
+import { buildTree, courseOf, labelFor, loadAll, mainFileCourse, mainTab, titledByHeader, type Loaded, type Tree } from './files'
 import { courseLabel, parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
 import { tallyByCourse } from './stats'
-import { HREF_HOME, hrefCourse, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
-import { TopBar, type Crumb } from './TopBar'
+import { COURSE_TABS, hrefCourse, pageId, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
+import { TopBar, type Section } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { Home } from './Home'
 import { CoursePage } from './CoursePage'
+import { Courses } from './Courses'
 import { Viewer } from './Viewer'
 import { LedgerView } from './LedgerView'
 import { TopicsView } from './TopicsView'
@@ -19,13 +20,15 @@ import { startUpdateChecks, takeSavedScroll } from './update'
 import { useDue } from './DueNow'
 import { Review } from './Review'
 import { startSync } from './review/state'
+import { toneStyle } from './tone'
 
 /** The tab title: the page, then the course it belongs to ("Syllabus · STAT 251", "Lec 3 · CPSC 310"). */
 function tabTitle(route: Route, tree: Tree): string {
-  if (route.kind === 'home') return 'Home'
-  if (route.kind === 'course') return courseLabel(route.code)
+  if (route.kind === 'home') return 'Today'
+  if (route.kind === 'courses') return 'Courses'
+  if (route.kind === 'course') return `${COURSE_TABS.find(([id]) => id === route.tab)?.[1]} · ${courseLabel(route.code)}`
   if (route.kind === 'review') return route.course ? `Review · ${courseLabel(route.course)}` : 'Review'
-  const lec = /\/lectures\/(\d+)(?:-(\d+))?-[^/]*$/.exec(route.path)
+  const lec = /\/lectures\/_?(\d+)(?:-(\d+))?-[^/]*$/.exec(route.path)
   const reading = /\/readings\/([^/]+)\.md$/.exec(route.path)
   const page = lec ? `Lec ${+lec[1]}${lec[2] ? `–${+lec[2]}` : ''}`
     : reading ? `Reading: ${reading[1].replace(/-/g, ' ')}`
@@ -53,6 +56,7 @@ export default function App() {
   useEffect(() => { loadAll().then(setLoaded, () => setFailed(true)) }, [])
   useEffect(() => { startUpdateChecks(); startScrollMemory(); startSync() }, [])
   const current = route.kind === 'file' ? route.path : route.kind === 'course' ? `course/${route.code}` : ''
+  const page = pageId(route)
   const anchor = route.kind === 'file' ? route.anchor : undefined
   const viewQuery = route.kind === 'file' ? route.query : ''
   // New page, once the content exists: where it was last scrolled when Back, Forward or a reload return to it
@@ -68,7 +72,7 @@ export default function App() {
     if (!el) { window.scrollTo(0, 0); return }
     if (el instanceof HTMLDetailsElement) el.open = true
     el.scrollIntoView({ block: 'start' })
-  }, [current, anchor, all])
+  }, [page, anchor, all])
   // A question bank's view changing is the same page and stays put, unless Back or Forward return to a step that
   // remembers where it was. Only a change of view runs this: the first load is the effect above's.
   useEffect(() => {
@@ -77,8 +81,6 @@ export default function App() {
   }, [viewQuery])
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      const typing = (e.target as HTMLElement)?.tagName === 'INPUT'
-      if (e.key === '/' && !typing) { e.preventDefault(); searchRef.current?.focus() }
       if (e.key === 'Escape') setPinned(false)
     }
     window.addEventListener('keydown', onKey)
@@ -103,26 +105,26 @@ export default function App() {
   const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', termYear()), [all])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
 
-  const crumbs: Crumb[] = [{ label: 'Home', href: HREF_HOME }]
-  if (route.kind === 'course') crumbs.push({ label: route.code, tone: route.code })
-  if (route.kind === 'review') crumbs.push({ label: 'Review' })
-  if (route.kind === 'file') {
-    const code = courseOf(route.path)
-    if (code) crumbs.push({ label: code, href: hrefCourse(code), tone: code })
-    crumbs.push({ label: labelFor(route.path, tree) })
-  }
+  // The menu section a page belongs to: anything inside a course is under Courses.
+  const section: Section | null = route.kind === 'home' ? 'today' : route.kind === 'review' ? 'review'
+    : route.kind === 'courses' || route.kind === 'course' || (route.kind === 'file' && courseOf(route.path)) ? 'courses' : null
   const title = tabTitle(route, tree)
   useEffect(() => { document.title = title }, [title])
 
+  // A course page, or one of a course's main files, sits under the course's name and tabs; a lecture or reading page
+  // gets a one-line trail back to its course instead, so the notes start near the top of a phone screen.
   const scoped = route.kind === 'course' ? route.code : route.kind === 'file' ? mainFileCourse(route.path) : null
+  const tab = route.kind === 'course' ? route.tab : route.kind === 'file' && scoped ? mainTab(route.path) : 'study'
+  const trailCourse = route.kind === 'file' && !scoped ? courseOf(route.path) : null
 
   let body
   if (failed) body = <p className="muted">Some notes failed to load. <button type="button" className="link" onClick={() => window.location.reload()}>Reload</button></p>
   else if (!loaded || !all) body = <p className="muted">Loading…</p>
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} onPick={() => setQuery('')} />
-  else if (route.kind === 'home') body = <Home tree={tree} all={all} loaded={loaded} tallies={tallies} calendar={calendar} links={links} due={due} />
+  else if (route.kind === 'home') body = <Home tree={tree} all={all} loaded={loaded} calendar={calendar} due={due} />
+  else if (route.kind === 'courses') body = <Courses tree={tree} all={all} tallies={tallies} calendar={calendar} due={due} />
   else if (route.kind === 'review') body = <Review key={route.course ?? ''} all={all} loaded={loaded} course={route.course} setup={route.setup} />
-  else if (route.kind === 'course') body = <CoursePage code={route.code} tree={tree} all={all} topics={topics} tallies={tallies} links={links} due={due} />
+  else if (route.kind === 'course') body = <div style={toneStyle(route.code)}><CoursePage code={route.code} tab={route.tab} tree={tree} all={all} loaded={loaded} topics={topics} tallies={tallies} links={links} due={due} /></div>
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={loaded.quiz} due={due} />
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} all={all} topics={topics} historyOf={loaded.historyOf} view={parseBankView(route.query)} anchor={route.anchor} />
@@ -133,9 +135,18 @@ export default function App() {
   return (
     <div className={'wrap' + (pinned ? ' pinned' : '')}>
       <Sidebar tree={tree} current={current} pinned={pinned} tallies={tallies} />
-      <TopBar review={route.kind !== 'review'} crumbs={crumbs} query={query} onQuery={setQuery} onMenu={() => setPinned((v) => !v)} pinned={pinned} inputRef={searchRef} />
-      <main className={scoped && route.kind === 'course' ? 'wide' : undefined}>
-        {scoped && all && !query.trim() && <CourseHeader code={scoped} tree={tree} all={all} current={current} />}
+      <TopBar section={section} query={query} onQuery={setQuery} onMenu={() => setPinned((v) => !v)} pinned={pinned} inputRef={searchRef} />
+      <main>
+        {scoped && all && !query.trim() && <CourseHeader code={scoped} tree={tree} all={all} tab={tab} file={route.kind === 'file' ? route.path : undefined} />}
+        {trailCourse && route.kind === 'file' && all && !query.trim() && (
+          <div className="trail">
+            <a href={hrefCourse(trailCourse)} className="chip tone" style={toneStyle(trailCourse)}>{courseLabel(trailCourse)}</a>
+            <span className="sep" aria-hidden="true">›</span>
+            <a href={hrefCourse(trailCourse)}>Study</a>
+            <span className="sep" aria-hidden="true">›</span>
+            <span>{labelFor(route.path, tree)}</span>
+          </div>
+        )}
         {body}
       </main>
       <UpdateToast />

@@ -14,6 +14,7 @@
   --soft2: light-dark(#f0f3f9, #22252d); --hover: light-dark(#e6eaf3, #2c2f39); --nav: light-dark(#f1f3f9, #191b21);
   --link: light-dark(#0a58ca, #7fb0ff); --accent-bg: light-dark(#e4ecfb, #1f2c47);
   --accent: light-dark(#0a3d91, #a9c4ff); --mark: light-dark(#fff3b0, #5a4a00);
+  --accent-fg: light-dark(#fff, #12151c);   /* text on an accent fill: every palette's accent is dark in light mode and pale in dark */
   --focus: light-dark(#8fb0f0, #3b5a8a); --ok-bg: light-dark(#e6f4ea, #16301f); --ok: light-dark(#1f6f3d, #8fd3a3);
   --warn-bg: light-dark(#fdf1d6, #3a2a10); --warn: light-dark(#8a5a00, #e6b86a);
   --bad-bg: light-dark(#fbe3e8, #3a1a24); --bad: light-dark(#a03050, #f0a0b3);
@@ -77,15 +78,20 @@ a { color: var(--link); }
 button { font: inherit; }
 
 /* == Page shell: top bar and search == */
-.topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; height: 48px; padding: 0 14px;
+.topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; height: var(--topbar-h, 48px); padding: 0 14px;
           background: var(--bg-glass); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--hair); }
 .menu { border: 0; background: none; font-size: 18px; line-height: 1; padding: 6px 8px; border-radius: 8px; cursor: pointer; color: var(--fg2); }
 .menu:hover, .menu.on { background: var(--soft); }
-.crumbs { flex: 1; min-width: 0; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.crumbs a { color: var(--fg2); text-decoration: none; } .crumbs a:hover { text-decoration: underline; }
-.crumbs .sep { color: var(--faint); margin: 0 6px; } .crumbs .here { font-weight: 600; }
-.crumbs .tone { background: var(--tint); color: var(--ink); padding: 1px 9px; border-radius: 999px; font-weight: 600; font-size: 12.5px; }
-.crumbs a.tone:hover { text-decoration: none; filter: brightness(.97); }
+/* Today · Review · Courses (2026-11-07): the site's main menu, the page's section marked */
+.topnav { display: flex; flex: 1; align-items: center; gap: 2px; min-width: 0; }   /* takes the free space: gear and search sit right */
+.topnav a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; font-size: 14.5px;
+            font-weight: 500; color: var(--fg2); text-decoration: none; white-space: nowrap; }
+.topnav a:hover { background: var(--soft); color: var(--fg); }
+.topnav a.cur { background: var(--accent-bg); color: var(--accent); font-weight: 600; }
+.search-open, .search-close { display: none; border: 0; background: none; color: var(--fg2); cursor: pointer; border-radius: 8px; }
+.search-open { align-items: center; justify-content: center; padding: 6px 8px; }
+.search-open:hover { background: var(--soft); }
+.search-close { padding: 6px 4px 6px 10px; font-size: 14.5px; color: var(--accent); }
 .search { margin-left: auto; display: flex; align-items: center; }
 .search input { -webkit-appearance: none; appearance: none; width: 330px; max-width: 48vw; height: 32px; margin: 0; padding: 0 14px;
                 border: 1px solid var(--border2); border-radius: 999px; font: inherit; font-size: 14px; line-height: 30px; color: var(--fg); background: var(--soft2); outline: none; }
@@ -94,7 +100,24 @@ button { font: inherit; }
 .search input::-webkit-search-decoration, .search input::-webkit-search-results-button { -webkit-appearance: none; display: none; }
 .search input::-webkit-search-cancel-button { -webkit-appearance: none; height: 14px; width: 14px; margin-left: 4px; cursor: pointer;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Ccircle cx='7' cy='7' r='7' fill='%23c7c7cc'/%3E%3Cpath d='M4.5 4.5l5 5m0-5l-5 5' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; }
-@media (max-width: 640px) { .topbar { gap: 8px; } .search input { width: 150px; } }
+/* On a phone the menu keeps the bar, and search opens over it from a button; Cancel closes it. */
+@media (max-width: 640px) {
+  .topbar { gap: 4px; padding: 0 8px; }
+  .topnav a { padding: 0 10px; }
+  .search { display: none; }
+  .search-open { display: inline-flex; margin-left: auto; }
+  .topbar.searching > :not(.search) { display: none; }
+  .topbar.searching .search { display: flex; flex: 1; margin: 0; }
+  .topbar.searching .search input { width: auto; max-width: none; flex: 1; }
+  .topbar.searching .search-close { display: inline-flex; }
+}
+@media (max-width: 360px) { .topnav a { padding: 0 7px; font-size: 14px; } }
+/* Fingers: menu, gear and search buttons at least 44px tall on a touch screen; the bar grows to hold them. */
+@media (pointer: coarse) {
+  :root { --topbar-h: 52px; }
+  .topnav a, .menu, .gear, .search-open, .search-close { min-height: 44px; min-width: 44px; justify-content: center; }
+  details.queue > summary { min-height: 44px; }
+}
 
 /* == Page shell: sidebar == */
 /* Off-canvas: hover the left edge or pin it with ☰. */
@@ -141,7 +164,7 @@ nav .nav-group .lec { margin-left: 10px; }
 @media (max-width: 640px) {
   /* A pinned sidebar covers the page instead of squeezing it to 130px, and starts under the top bar so ☰ closes it. */
   .wrap.pinned { padding-left: 0; }
-  nav { top: 48px; }
+  nav { top: var(--topbar-h, 48px); }
 }
 @media (prefers-reduced-motion: reduce) { .wrap, nav { transition: none; } }
 
@@ -149,13 +172,11 @@ nav .nav-group .lec { margin-left: 10px; }
 main { max-width: 800px; margin: 0 auto; padding: 22px 28px 90px; }
 [id^="sec-"], .toolbar { scroll-margin-top: 60px; }   /* anchor jumps, and a bank's filter changes, land below the sticky top bar */
 h1 { font-size: 24px; margin: .2em 0 .7em; }
-h1.brand { display: flex; align-items: center; gap: 10px; }
 h2 { font-size: 18px; margin: 1.5em 0 .5em; padding-bottom: .2em; border-bottom: 1px solid var(--hair); }
 h3 { font-size: 15.5px; margin: 1.2em 0 .4em; }
 .section-title { margin-top: 1.8em; }
 .muted { color: var(--muted2); } .light { font-weight: 400; font-size: .8em; }
 .small { font-size: 13px; } .ink { color: var(--ink); }
-.updated { margin-top: 28px; }   /* the "Site built" line at the foot of Home */
 @media (max-width: 640px) { main { padding: 16px 16px 70px; } }
 /* Markdown. Long slash-joined words in prose, and long file names in inline code, wrap instead of running off a phone
    screen. */
@@ -185,7 +206,7 @@ details[open] summary { margin-bottom: 6px; }
 .panel-head a { text-transform: none; letter-spacing: 0; }
 .panel-head .sub { text-transform: none; letter-spacing: 0; color: var(--muted); font-weight: 400; }   /* "· 18 topics · Wed Sep 16" */
 .panel p { margin: .3em 0; }
-/* Cards: the courses on Home, the lectures on a course page, search hits */
+/* Cards: the courses on Courses, a course's pages and lectures, search hits */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 6px 0 22px; }
 .list { display: flex; flex-direction: column; gap: 10px; }
 .card { display: block; border: 1px solid var(--border); border-radius: 12px; padding: 13px 16px; text-decoration: none; color: inherit; background: var(--panel); }
@@ -203,6 +224,8 @@ mark { background: var(--mark); padding: 0 2px; border-radius: 3px; }
 .btn { display: inline-block; padding: 6px 13px; border: 1px solid var(--border2); border-radius: 999px; font-size: 13.5px; text-decoration: none; color: var(--fg); background: var(--panel); cursor: pointer; }
 .btn:hover { background: var(--soft); border-color: var(--border3); }
 .btn.on { background: var(--accent-bg); color: var(--accent); border-color: transparent; }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); }
 .link { border: 0; background: none; color: var(--link); padding: 0 4px; cursor: pointer; font-size: 13px; }
 .chip { display: inline-block; font-size: 11.5px; padding: 2px 9px; border-radius: 999px; background: var(--soft); color: var(--fg2); border: 0; cursor: default; }
 a.chip { text-decoration: none; }
@@ -284,7 +307,7 @@ article .topics tr:first-child td { border-top: 0; }
 }
 
 /* == Revision status: the Due now block and calibration == */
-/* The Due now block (DueNow.tsx) on Home and the ledger: the sweep count over its list, the readiness and frozen lines
+/* The Due now block (DueNow.tsx) on Today and the ledger: the sweep count over its list, the readiness and frozen lines
    under it, or the error that stands in for all of it. The list itself is the compact table in tables.css. */
 .due-note { margin: .45em 0 .3em; font-size: 13px; color: var(--muted); }
 .readiness { margin: 10px 0 4px; }
@@ -303,8 +326,7 @@ article .topics tr:first-child td { border-top: 0; }
 .calibration .cal-row .n { color: var(--muted); }
 .calibration .cal-row .o { min-width: 44px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
 
-/* == Course page: header, tabs and overview == */
-main.wide { max-width: 1080px; }
+/* == Course page: header, the Study · Materials · Progress tabs, and their pages == */
 .course-head h1 { margin-bottom: .35em; }
 .tabs { display: flex; flex-wrap: wrap; gap: 2px; border-bottom: 1px solid var(--border2); margin: 0 0 20px; }
 .tab { display: inline-flex; align-items: center; padding: 7px 14px; margin-bottom: -1px; border: 1px solid transparent; border-bottom: 0;
@@ -312,11 +334,46 @@ main.wide { max-width: 1080px; }
 .tab:hover { background: var(--soft2); color: var(--fg); }
 .tab.cur { background: var(--panel); border-color: var(--border2); color: var(--ink); box-shadow: inset 0 3px 0 var(--ink); }
 .tab .count { margin-left: 7px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: 999px; }
-/* Overview: revision and lectures on the left, the Links and checklist panels in a column on the right */
-.course-grid { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; align-items: start; }
-@media (max-width: 900px) { .course-grid { grid-template-columns: 1fr; } }
-.panel.side { padding: 8px 14px 10px; }
-.panel.side ul { margin: .3em 0; padding-left: 1.2em; font-size: 13.5px; } .panel.side li { margin: .25em 0; }
+/* On a course's main file, its tab's other pages: Syllabus · Logistics · Ask Kraal */
+.subtabs { display: flex; flex-wrap: wrap; gap: 6px; margin: -8px 0 18px; }
+.subtabs a { display: inline-flex; align-items: center; min-height: 30px; padding: 0 12px; border-radius: 999px; font-size: 13.5px;
+             color: var(--fg2); text-decoration: none; border: 1px solid var(--border2); }
+.subtabs a:hover { background: var(--soft2); color: var(--fg); }
+.subtabs a.cur { background: var(--tint); border-color: var(--line); color: var(--ink); font-weight: 600; }
+@media (pointer: coarse) { .tab, .subtabs a { min-height: 44px; } }
+.grid.files { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); margin: 4px 0 18px; }
+.card .name .count { margin-left: 8px; font-size: 11.5px; font-weight: 600; background: var(--tint); color: var(--ink); padding: 0 7px; border-radius: 999px; }
+.card.continue-card { margin: 0 0 14px; background: var(--tint); border-color: var(--line); border-left: 3px solid var(--ink); }
+.card.continue-card .sub { color: var(--fg2); }
+.card.continue-card .sub { margin: 0 0 2px; }
+/* A lecture or reading page: one line back to its course, in place of the course header */
+.trail { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0 0 6px; font-size: 13.5px; color: var(--muted); }
+.trail a:not(.chip) { color: var(--fg2); text-decoration: none; } .trail a:not(.chip):hover { text-decoration: underline; }
+.trail .sep { color: var(--faint); }
+.trail > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1 1 140px; }
+
+/* == Today and Courses == */
+.today-title { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.review-hero { padding: 16px 18px 12px; border-color: var(--line, var(--border)); }
+.review-hero h2 { margin: .3em 0 .2em; padding: 0; border: 0; font-size: 20px; line-height: 1.35; }
+.review-hero .row { margin: 12px 0 4px; }
+.review-hero .btn.big { min-height: 44px; padding: 0 20px; font-size: 15px; display: inline-flex; align-items: center; }
+.home-review .btn { display: inline-flex; align-items: center; }
+ul.continue { list-style: none; margin: 2px 0 2px; padding: 0; }
+ul.continue li + li { border-top: 1px solid var(--hair); }
+ul.continue a { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 6px 2px; color: inherit; text-decoration: none; }
+ul.continue a:hover .title { text-decoration: underline; }
+ul.continue .chip { flex: none; min-width: 74px; text-align: center; cursor: inherit; }
+ul.continue .what { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+ul.continue .kind { font-size: 12px; color: var(--muted); }
+ul.continue .title { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ul.continue .arrow { color: var(--muted2); }
+details.queue > summary { cursor: pointer; list-style: none; min-height: 32px; align-items: center; margin: 0; }
+details.queue > summary::-webkit-details-marker { display: none; }
+details.queue > summary > span::before { content: '▸'; display: inline-block; width: 1.1em; color: var(--muted2); }
+details.queue[open] > summary > span::before { content: '▾'; }
+details.queue[open] > summary { margin-bottom: 6px; }
+.card .sub.next, .upcoming.compact .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 /* Grade what-if panel: the target and assumption inputs, the projected grade beside the needed average, then the
    components with the graded items placed in them, most points open first */
 .whatif-warn { color: var(--warn); }
@@ -357,14 +414,6 @@ table.whatif-table { width: 100%; border-collapse: collapse; font-size: 13.5px; 
 .linkgroups .panel { display: inline-block; width: 100%; vertical-align: top; break-inside: avoid; margin: 0 0 14px; padding: 10px 16px 12px; --ink: var(--muted); }
 .linkgroups .panel-head { align-items: center; min-height: 24px; margin-bottom: 2px; }
 .linkgroups .panel-head .chip { font-size: 12px; font-weight: 600; letter-spacing: 0; text-transform: none; }
-/* Home: the same groups, compact, in two columns down to a phone's width (the group order balances two columns) */
-.home-links { margin: 0 0 18px; }
-.home-links > .panel-head { margin: 0 2px 6px; }
-.home-links .linkgroups { columns: 2 150px; margin: 0; }
-.home-links .linkgroups .panel { margin-bottom: 10px; padding: 6px 12px 8px; }
-.home-links .linkgroups .panel-head { min-height: 22px; }
-.home-links .linklist { font-size: 13px; }
-.home-links .linklist li { padding: 1px 0; }
 
 /* == Focus ring == */
 /* After the components on purpose: at equal specificity it overrides their border-radius while focused, so buttons,
@@ -406,9 +455,9 @@ table.whatif-table { width: 100%; border-collapse: collapse; font-size: 13.5px; 
 @media (prefers-reduced-motion: reduce) { .toast { animation: none; } }
 
 /* == Secret visuals == */
-/* Scoped to the content (main, sidebar, crumbs, search, section rail) so the settings popover stays readable and
+/* Scoped to the content (main, sidebar, top menu, search, section rail) so the settings popover stays readable and
    every link still sits where it was. Text stays in the DOM for screen readers; only its paint changes. */
-[data-visual="abstract"] :where(main, nav, .crumbs, .search, .rail) :is(h1, h2, h3, h4, p, li, td, th, a, span, button, summary, label, em, strong, b, i, code, small, div, input, mark, select) {
+[data-visual="abstract"] :where(main, nav, .topnav, .search, .rail) :is(h1, h2, h3, h4, p, li, td, th, a, span, button, summary, label, em, strong, b, i, code, small, div, input, mark, select) {
   color: transparent !important; -webkit-text-fill-color: transparent;
   text-decoration: line-through !important; text-decoration-thickness: .66em !important; text-decoration-skip-ink: none !important;
   text-decoration-color: var(--border3) !important;
@@ -421,15 +470,15 @@ table.whatif-table { width: 100%; border-collapse: collapse; font-size: 13.5px; 
 [data-visual="abstract"] :is(main, nav) input[type=checkbox] { opacity: .35; }
 
 [data-visual="blobs"] :is(main, nav) { filter: blur(3px) contrast(1.35) saturate(1.5); }
-[data-visual="blobs"] :is(.crumbs, .search) { filter: blur(3px); }
+[data-visual="blobs"] :is(.topnav, .search) { filter: blur(3px); }
 
-[data-visual="wireframe"] :is(main, nav, .crumbs, .rail) * {
+[data-visual="wireframe"] :is(main, nav, .topnav, .rail) * {
   background: transparent !important; box-shadow: none !important; color: transparent !important; -webkit-text-fill-color: transparent;
   text-decoration: none !important; border-color: var(--border3) !important;
   outline: 1px solid var(--border3); outline: 1px solid color-mix(in srgb, var(--fg) 22%, transparent); outline-offset: -1px;
 }
 [data-visual="wireframe"] :is(main, nav) svg { opacity: .25; }
-[data-visual="wireframe"] :is(main, nav, .crumbs) *:focus-visible { outline: 2px solid var(--focus); }
+[data-visual="wireframe"] :is(main, nav, .topnav) *:focus-visible { outline: 2px solid var(--focus); }
 
 /* == Math (KaTeX) == */
 /* Display equations scroll sideways on a narrow screen instead of widening the page. */

@@ -1,4 +1,4 @@
-// The Due now block the quiz scripts write into ledger.md, as Home, the ledger, a course page and a Topics tab show it.
+// The Due now block the quiz scripts write into ledger.md, as Today, the ledger, a course's Progress tab and a Topics page show it.
 // The site never works out for itself what is due: every due, sweep and frozen mark comes from this block (parseDueBlock
 // in markdown.ts).
 import { useMemo } from 'react'
@@ -57,7 +57,7 @@ export function DueDetail({ due }: { due: Due }) {
 
 /**
  * "(2 days old)", muted, after `label`, when the block was written before today; nothing for today's block or one that
- * could not be read. The Due now titles, a course page's Revision panel and a Topics tab show it, so an old block's
+ * could not be read. The Due now titles, a course's Revision panel and a Topics page show it, so an old block's
  * marks are not taken for today's.
  */
 export function BlockAge({ due, label = '' }: { due: Due; label?: string }) {
@@ -111,7 +111,7 @@ function DueTable({ items }: { items: DueItem[] }) {
 
 /** One line per course with an exam within 21 days: "Exam 2 on Fri Oct 16 at 14:00. 31% of 120 in-scope questions likely
  *  recalled now. 52% asked so far, 71% of those right last time." Recall, coverage and accuracy stay separate numbers. */
-function ReadinessList({ rows }: { rows: Readiness[] }) {
+export function ReadinessList({ rows }: { rows: Readiness[] }) {
   const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`
   return (
     <div className="readiness">
@@ -160,7 +160,7 @@ export function DueError({ error }: { error: string }) {
 }
 
 /**
- * A ledger row's standing as a table cell (a course page's Revision panel, the ledger's All topics, a Topics tab): the
+ * A ledger row's standing as a table cell (a course's Revision panel, the ledger's All topics, a Topics page): the
  * block's label in red when due, in amber with its exam for an exam sweep ("Exam 2 sweep"), "frozen" muted, else
  * "next Tue Oct 13" muted. `s` is null when the block could not be read; then only the next date shows.
  */

@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
 import { slug } from './markdown'
 
+/** The three tabs of a course page: what to study, reference material, and how the course is going. */
+export type CourseTab = 'study' | 'materials' | 'progress'
+export const COURSE_TABS: [CourseTab, string][] = [['study', 'Study'], ['materials', 'Materials'], ['progress', 'Progress']]
+
 export type Route =
   | { kind: 'home' }
-  | { kind: 'course'; code: string }
+  /** `#/courses`: every course. */
+  | { kind: 'courses' }
+  /** `#/course/STAT251` (Study), `#/course/STAT251/materials`, `#/course/STAT251/progress`. */
+  | { kind: 'course'; code: string; tab: CourseTab }
   | { kind: 'file'; path: string; query: string; anchor?: string }
   /** `#/review`, `#/review?course=STAT251`, `#/review?setup=1` (open the sync settings). */
   | { kind: 'review'; course: string | null; setup: boolean }
@@ -33,9 +40,19 @@ export function parseHash(hash: string): Route {
     const course = p.get('course')
     return { kind: 'review', course: course && /^[A-Z]{2,4}\d{3}[A-Z]?$/.test(course) ? course : null, setup: p.get('setup') === '1' }
   }
-  const m = /^course\/([^/]+)$/.exec(s)
-  if (m) return { kind: 'course', code: m[1] }
+  if (s === 'courses') return { kind: 'courses' }
+  const m = /^course\/([^/]+?)(?:\/(study|materials|progress))?\/?$/.exec(s)
+  if (m) return { kind: 'course', code: m[1], tab: (m[2] as CourseTab | undefined) ?? 'study' }
   return { kind: 'file', path: s, query, anchor: decode(anchor) || undefined }
+}
+
+/**
+ * Which page a route shows, for "a new page opened" (scroll to the top, clear the search, close the phone sidebar) and
+ * for update.ts's reload on the next page move: Today, Review and Courses differ, and so does each tab of a course. A
+ * file's query (a bank's view) and anchor are the same page.
+ */
+export function pageId(r: Route): string {
+  return r.kind === 'file' ? r.path : r.kind === 'course' ? `course/${r.code}/${r.tab}` : r.kind
 }
 
 /** Fired by navigate, which changes the URL without a hashchange event. */
@@ -95,7 +112,9 @@ export function useRoute(): Route {
 }
 
 export const HREF_HOME = '#/'
-export const hrefCourse = (code: string) => `#/course/${code}`
+export const HREF_COURSES = '#/courses'
+/** A course page; Study when no tab is named. */
+export const hrefCourse = (code: string, tab: CourseTab = 'study') => `#/course/${code}${tab === 'study' ? '' : '/' + tab}`
 /** Link to a `## Heading` inside a file: `hrefAnchor('ledger.md', 'term-calendar-hard-dates')`. */
 export const hrefAnchor = (path: string, anchor: string) => `#/${path}#${anchor}`
 
