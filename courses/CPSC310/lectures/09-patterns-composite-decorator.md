@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 9 (Thu Oct 8) — Patterns II: Composite and Decorator
 
-The lecture uses [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patterns-ii.pdf) (12 slides) and the Decorator and Composite sections of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). See "Lec 9" in the [question bank](../02-questions.md).
+The lecture notes follow the pre-class deck [05b-patterns-ii.pdf](https://ubccpsc.github.io/310/26w1/lectures/05b-patterns-ii.pdf) (12 slides) and the Decorator and Composite sections of [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/). See "Lec 9" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.
@@ -88,9 +88,9 @@ const order: Drink = new Large(new Whip(new Latte()));
 
 ## Course announcements
 
-- The schedule initially called the lecture "Decorator & State". The posted title was "Composite & Decorator". State moved to a later deck.
+- The course site initially listed "Decorator & State". When the deck appeared, the site changed the listing to "Composite & Decorator". State moved to a later deck.
 - Slide 2 listed D2 as due Fri Oct 16. D3/D4 team formation opened Fri Oct 9 with instructions on Piazza. Students without a partner were to ask their TA in lab.
-- Team repositories were provisioned from Oct 19. The slide said to enter the team "by end of day" without naming the day. The date came from Piazza.
+- Slide 2 says team repository provisioning starts Oct 19. It says to enter the team "by end of day" without naming the day. Use the Piazza post for the deadline.
 
 ## Clarifications
 - The deck's cost line says the wrapping order changes the result, and the reader says the pattern cannot control the order of the wrappers. Both hold. The pattern gives no way to enforce an order, and the order matters when two wrappers' changes do not commute. With a 400-cent latte, a large that multiplies by 1.2 outside an extra shot that adds 100 cents gives $$(400 + 100) \times 1.2 = 600$$ cents, and the other way round gives $$400 \times 1.2 + 100 = 580$$ cents.

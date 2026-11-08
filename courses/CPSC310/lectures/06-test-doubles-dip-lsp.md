@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 6 (Tue Sep 29) — Test doubles, DIP and LSP
 
-The lecture uses [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-test-doubles.pdf). The reader covers [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and DIP and LSP in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 6" in the [question bank](../02-questions.md).
+The lecture notes follow the slide deck [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectures/04a-test-doubles.pdf). The reader covers [Testability & Test Doubles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/testability/) and DIP and LSP in [Design Principles](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/principles/). See "Lec 6" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Apply the dependency inversion principle so tests can replace dependencies in the code under test.
@@ -55,9 +55,9 @@ The lecture uses [04a-test-doubles.pdf](https://ubccpsc.github.io/310/26w1/lectu
 - The cost: another layer in the design; doubles can drift from the real thing and need updating when the interface changes; and the real implementation still needs tests of its own.
 
 ## Clarifications
-- A **stub** "allows us to more easily supply the test with values," which improves controllability.
-- A **spy** "records the arguments provided to the method calls," which improves observability.
-- The reader calls any developer-written substitute a **fake**. It links to material about mocks and defines stub and spy as the terms to know.
+- The reader says a **stub** "allows us to more easily supply the test with values," which improves controllability.
+- In the reader, a **spy** "records the arguments provided to the method calls," which improves observability.
+- The reader calls any developer-written substitute a **fake**. Mocks appear only in its links. Use the reader's terms stub and spy on the exam.
 - The reader's example, `FakeLocator`, is both at once: it returns fixed values and appends every call to a `myCalls` array. One object can be a stub and a spy.
 - The reader's reasons for doubles match the deck's three cases and add two benefits: doubles greatly increase performance and make components less prone to non-determinism, because the result is fixed instead of computed by something external. They also let a test reach states that are hard to trigger for real, such as a remote service timing out.
 - The reader's one-line DIP is "classes should depend on abstractions, not implementations," and it says the principle is often applied during refactoring by introducing a new interface that existing code then implements. Its LSP line is "any object can be interchanged with any other object that has the same parent type," and it defers the rest to a video. The methods rule on slide 16 is the deck's addition, so learn it from the deck.

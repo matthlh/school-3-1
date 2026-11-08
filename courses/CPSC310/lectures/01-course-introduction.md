@@ -19,8 +19,8 @@ The lecture uses [01-course_introduction.pdf](https://ubccpsc.github.io/310/26w1
 - What this means on an exam: when a design or a code fragment is put in front of you, the question is never whether it works today. It is what the next change would cost, where that cost comes from, and which lever would lower it.
 - The reader's fuller definition (What is Software Engineering) says the field applies scientific, economic, social and practical knowledge to **specify, invent, design, build, validate, deploy, maintain, research, and improve** software. The aim is software that is **correct, reliable, and works efficiently on real machines**. Programming is only the **build** step, one of nine.
 - The reader's Analytical Code Design introduction draws the line the course sits on. **Code** is short, isolated, and run once, like a script or an assignment. **Software** is large, highly connected to other software, and longstanding. Because software will be changed many times by many people, it has to be easy to evolve, easy to maintain, and easy to test, and a design choice is judged by what it does to those three properties.
-- **Analytical design** compares solutions to the same problem by measurable **trade-offs**.
-- **Cost of change** asks how much work a change takes and how to measure it.
+- The reader's *Analytical Code Design* introduction defines **analytical design** as comparing solutions to the same problem by measurable **trade-offs**. It previews four areas.
+- **Cost of change** asks why the cost matters and how to measure it.
 - **Change difficulty in code** examines which parts of a codebase make changes expensive.
 - **Refactoring** improves code while preserving what it does.
 - **Testability** concerns how easy the code is to test.

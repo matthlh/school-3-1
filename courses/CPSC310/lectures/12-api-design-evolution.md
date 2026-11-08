@@ -80,11 +80,11 @@ The lecture uses [07a-api-design-evolution.pdf](https://ubccpsc.github.io/310/26
 
 ## Course announcements
 
-- Slide 2 lists D3 as due Nov 6 and the planning task as due before Lab 07.
+- Slide 2 announces that D3 is posted and due Nov 6. Complete the planning task before Lab 07.
 - It lists the midterm as Thu Oct 29 at 19:00 and points to the practice exam on Piazza.
 
 ## Clarifications
 - The deck and reader differ on performance improvements. The deck classifies them as PATCH because clients have nothing to adopt. The reader's Safe Versioning chapter lists small performance improvements under minor.
 - On an exam, use the definitions in the question. A structural, opt-in addition is minor. A behavioural improvement that needs no client change is patch.
 - The deck's NONE level (refactoring, no client effect) has no name in the reader, which only says such a change has no client impact.
-- Slides 4 to 8 repeat the test-level material that lecture 11 previewed, with the E2E costs and the composition rule added. The Testing Pyramid chapter they point to is not published as of Oct 20.
+- Slides 4 to 8 repeat the test-level material that lecture 11 previewed, with the E2E costs and the composition rule added. This part of the page follows the deck. The Testing Pyramid chapter was unavailable on Oct 20.

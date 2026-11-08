@@ -65,7 +65,7 @@ function f(x: number) {
 - The **rule of three** stops premature refactoring. The first time, do it the simplest way. The second time, do it again and note the duplicate. The third time, refactor. The reader calls this just-in-time abstraction, because a pre-emptive abstraction can make a system harder to understand even if it is easier to extend.
 
 ### How and when to refactor (slides 16–17)
-The deck presents refactoring as a six-step cycle that starts with a desired change.
+These six steps summarise the deck's refactoring cycle.
 
 1. Make sure all tests pass.
 2. Examine coupling and cohesion.
@@ -74,7 +74,7 @@ The deck presents refactoring as a six-step cycle that starts with a desired cha
 5. Run the tests again to check that the behaviour still holds.
 6. Repeat until the desired change is localised.
 
-The list and diagram order the first two actions differently. The list starts by checking that tests pass. The diagram shows examining coupling and cohesion first.
+The order above begins with passing tests. The slide diagram starts with a desired change, then shows examining coupling and cohesion before checking that tests pass.
 - The reader's version has four steps: identify the property to improve and the transformations that will do it; run the suite so you know the system works before you start (saving the output can help); perform the refactoring; run the full suite again and confirm behaviour is identical.
 - The tests run twice for a reason. The first run proves the green baseline is real, so a failure after the refactoring can only be the refactoring. Without the first run you cannot tell a pre-existing failure from one you introduced.
 - Slide 16 says not to refactor when the tests are failing, when the code should simply be rewritten, or when a deadline is close.

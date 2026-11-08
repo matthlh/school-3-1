@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 16 (Thu Nov 5) — Modelling & Specification
 
-The lecture uses [09b-model-specs.pdf](https://ubccpsc.github.io/310/26w1/lectures/09b-model-specs.pdf) (16 slides). The reader's related chapters are [Assertions](https://ubccpsc.github.io/310/textbook/1-construction-basics/assertions/) for checking behaviour against a specification and [Blackbox Testing](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/blackbox/) for preconditions and input domains. See "Lec 16" in the [question bank](../02-questions.md).
+The lecture notes follow [09b-model-specs.pdf](https://ubccpsc.github.io/310/26w1/lectures/09b-model-specs.pdf) (16 slides). The reader has no dedicated chapter on this material. Its closest chapters are [Assertions](https://ubccpsc.github.io/310/textbook/1-construction-basics/assertions/) for checking behaviour against a specification and [Blackbox Testing](https://ubccpsc.github.io/310/textbook/2-analytical-code-design/blackbox/) for preconditions and input domains. See "Lec 16" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Model components from a stakeholder's request.
@@ -34,11 +34,11 @@ The lecture uses [09b-model-specs.pdf](https://ubccpsc.github.io/310/26w1/lectur
 - A limit, a condition or a consequence usually becomes a rule.
 #### Section waitlist example
 
-- Each section has a fixed number of seats. When full, it can have up to 50 students on its waitlist.
+- Each section has a fixed number of seats. When the section is full, students can join its waitlist, which holds up to 50 students.
 - A student who is already enrolled or already waiting for that section cannot join the waitlist. Students can leave or check their position at any time.
-- When a seat opens, the first student in line gets 24 hours to accept it.
+- When a seat opens, the system offers it to the first student in line. That student has 24 hours to accept.
 - Accepting enrols the student and removes them from the waitlist. Declining or letting the offer expire removes them and sends the offer to the next student.
-- The Student Information System stores names and emails. One student may be waiting for several sections.
+- The Student Information System stores names and emails. One student is often waiting for several sections.
 
 ### Class, field or operation? (slide 9)
 - For each noun, ask whether it is just a value of something else or has data and rules of its own.

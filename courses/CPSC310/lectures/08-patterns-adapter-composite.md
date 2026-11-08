@@ -1,6 +1,6 @@
 # CPSC 310 — Lec 8 (Tue Oct 6) — Patterns I: Adapter and Composite
 
-The lecture uses [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). The [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/) reader covers Adapter and Composite as well as Factory, Strategy, State and Decorator. See "Lec 8" in the [question bank](../02-questions.md).
+The lecture notes follow the pre-class deck [05a-patterns-i.pdf](https://ubccpsc.github.io/310/26w1/lectures/05a-patterns-i.pdf). The [Design Patterns](https://ubccpsc.github.io/310/textbook/3-software-design/design-patterns/) reader covers Adapter and Composite as well as Factory, Strategy, State and Decorator. See "Lec 8" in the [question bank](../02-questions.md).
 
 ## Learning goals
 - Spot a decision in existing code that is likely to change, and find where knowledge of it is spread out or mixed in with other things.

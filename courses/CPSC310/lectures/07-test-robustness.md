@@ -19,7 +19,7 @@ The lecture uses [04b-test-robustness.pdf](https://ubccpsc.github.io/310/26w1/le
 - The **LSP methods rule**. A subclass must not strengthen preconditions for the same inputs, although it may widen them. It must not weaken postconditions for the same inputs, although it may narrow them.
   - Penguin's "heights under 50 cm only" is a stronger precondition. "Penguin perishes" is an additional effect the superclass never promised.
   - The Resize example: the superclass lets you set one dimension. A subclass where changing the width also changes the height has widened the postcondition, which is the bad direction.
-- Use dependency inversion (DIP) to depend on an interface. Pass the dependency in.
+- The recap slide uses dependency inversion (DIP) to depend on an interface. Pass the dependency in.
 - A stub controls what comes back. A spy records what goes out.
 - Liskov substitution (LSP) requires the double to meet the interface's behavioural contract as well as its type.
 - Doubles add a layer. They can drift from the real implementation and need updates when the interface changes.

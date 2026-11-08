@@ -97,7 +97,7 @@ The lecture uses [07b-rest-api.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 
 ## Clarifications
 
-- Lab 1 covers status codes and PUT idempotence. This lecture adds REST design constraints. Slide 3 introduces software as a service with the "Uber of ____" example.
+- The Lab 1 topic covers status codes and PUT idempotence. This lecture adds REST design constraints. Slide 3 gives background on software as a service through the "Uber of ____" example.
 - The deck's idempotency row says "all but POST". The reader adds PATCH as not idempotent; the deck never mentions PATCH. On an exam over the deck's four methods, GET, PUT and DELETE are idempotent and POST is not.
 - The deck splits Statelessness (the request carries the client's state) from Connectedness (responses carry links). The reader's Statelessness section covers both: its `/:query/next` example is the deck's `/stations/more`, and its GitHub example is Connectedness. Use the deck's two names when asked which constraint a design breaks.
 - Slide 11 uses PUT to create a trip at a client-chosen URI. A dock can retry the same request without starting a second trip.

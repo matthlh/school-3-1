@@ -60,7 +60,7 @@ The lecture uses [02a-coupling.pdf](https://ubccpsc.github.io/310/26w1/lectures/
 
 ### Recap (slides 14–16)
 - Slide 14 repeats the learning goals.
-- Slide 15 recaps lecture 1. Design shortcomings make current and future changes more expensive.
+- Slide 15 recaps lecture 1. Design shortcomings affect the cost of current and future changes. The reader measures that cost in two ways.
 - **Magnitude** is how large the change is, usually in lines of code.
 - **Footprint** is how far the change reaches. Count the methods, classes, files, modules or services involved.
 - These costs apply when reading and writing code. Understanding code spread across eight files costs time even before you edit it.
