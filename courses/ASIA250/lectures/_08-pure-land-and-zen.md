@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 8: Pure Land and Zen Buddhism take over East Asia
 
-The lecture uses `Lecture 8.pptx` (66 slides, published Mon Nov 2). Read Poceski chapter 6 (pp. 131 to 155) and Harvey chapter 11 (pp. 340 to 347 excluding "Tantric Visualizations", and pp. 361 to 375 from "Zen Meditation"). See "Lec 8" in the [question bank](../02-questions.md).
+The notes follow the text-bearing slides in `Lecture 8.pptx` (66 slides, published Mon Nov 2). Mini-Quiz 8 also covers Poceski chapter 6 (pp. 131 to 155) and Harvey chapter 11 (pp. 340 to 347 excluding "Tantric Visualizations", and pp. 361 to 375 from "Zen Meditation"). See "Lec 8" in the [question bank](../02-questions.md).
 
 ## Pure Land Buddhism
 
@@ -97,9 +97,11 @@ The lecture uses `Lecture 8.pptx` (66 slides, published Mon Nov 2). Read Poceski
 
 ## Mini-Quiz 8 review
 
-Mini-Quiz 8 is due Thu Nov 12 at 23:59, after the reading break.
+Mini-Quiz 8 moved to Thu Nov 12 at 23:59, after the reading break.
 
-SWR2 is due Sun Nov 15. Watch *Fancy Dance* if you are reading *The Temple of the Golden Pavilion*, or *Mandala* if you are reading *Little Pilgrim*.
+SWR2 is due Sun Nov 15. Write it on *Fancy Dance* if you are reading *The Temple of the Golden Pavilion*, or on *Mandala* if you are reading *Little Pilgrim*.
+
+The following topics were flagged as likely quiz material.
 
 - Explain Shinran's paradox and how he arrives at it. Recall the size of Shin Buddhism and its position on celibacy.
 - Match each of the three problems Buddhism met in China to its Buddhist answer.

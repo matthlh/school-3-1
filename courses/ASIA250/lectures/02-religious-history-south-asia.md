@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 2: Religious history of South Asia
 
-The deck has 94 slides. The recording is Canvas module item 9469882 and the slides are item 9469883. Read Trautmann chapters 3 and 4 (pp. 32 to 61) and Luhrmann chapter 3, "Talent and training" (pp. 58 to 78). The recording and Trautmann give context for the images on slides 15 to 30, 35 to 37 and 52 to 53.
+The deck has 94 slides. The recording is Canvas module item 9469882 and the slides are item 9469883. Read Trautmann chapters 3 and 4 (pp. 32 to 61) and Luhrmann chapter 3, "Talent and training" (pp. 58 to 78). Slides 15 to 30, 35 to 37 and 52 to 53 contain only images of the Indus Valley Civilization and Hindu deities. The recording and Trautmann cover this material.
 
 ## Your notes
 None. Everything below is from the deck.
@@ -71,7 +71,7 @@ None. Everything below is from the deck.
 ### Upanishads and the post-Vedic schools (slides 65 to 69)
 - The Upanishads (800 to 200 BCE) posit a formless (nirguna) ground of being, Brahman, at the foundation of the universe. Brahman is the source of the individual soul (atman), the imperishable part of humans and animals that is reborn until liberation (moksha). Some Upanishads say atman is identical to Brahman (non-dualism), others keep a distinction (dualism). The Purusha question returns: are the shards the same as Purusha?
 - **Samkhya** means "rational examination". **Purusha** is the individual spirit or soul beyond life and death. It animates a living being.
-- **Prakriti** is the inanimate matter that produces the world. Mind, ego, the six senses and intellect are all prakriti. Purusha makes it appear alive.
+- **Prakriti** is the inanimate matter that produces the world. Mind, ego, the six senses and intellect are all prakriti. Purusha interacts with prakriti. Purusha alone makes it appear alive.
 - **Avidya** is ignorance of our inner core. Passion and anger deepen the resulting suffering and produce bad karma.
 - The goal is to recognise purusha through introspection and gain liberation at death.
 - In the chariot allegory, purusha is the passenger and the body is the chariot. Intellect, ego and mind make up the charioteer. The six senses are the horses.

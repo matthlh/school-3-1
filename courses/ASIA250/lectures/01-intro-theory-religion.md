@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 1: Introduction, theory, notions about Buddhism
 
-The lecture deck has 53 slides. The recording is Canvas module item 9469878 and the slides are item 9469879.
+The course is asynchronous. The lecture deck has 53 slides. The recording is Canvas module item 9469878 and the slides are item 9469879.
 
 ## Your notes
 None. Everything below is from the deck.

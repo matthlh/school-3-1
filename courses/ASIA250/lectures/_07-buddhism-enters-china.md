@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 7: Buddhism enters China, encountering Confucianism and Daoism
 
-The lecture uses `Lecture 7.pptx` (119 slides, published Mon Oct 26). Mini-Quiz 7 locked Mon Nov 2 at 23:59. Readings 7 include *Analects* Book 2 (pp. 8 to 16), Laozi chapter 1 (pp. 39 to 43) and Poceski chapter 5 (pp. 103 to 129). See "Lec 7" in the [question bank](../02-questions.md).
+The notes follow `Lecture 7.pptx` (119 slides, published Mon Oct 26). Mini-Quiz 7 locked Mon Nov 2 at 23:59. It also covered Readings 7, which are *Analects* Book 2 (pp. 8 to 16), Laozi chapter 1 (pp. 39 to 43) and Poceski chapter 5 (pp. 103 to 129). See "Lec 7" in the [question bank](../02-questions.md).
 
 ## Buddhism and Confucianism in China
 

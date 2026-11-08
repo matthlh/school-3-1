@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 3: Going against the Vedas
 
-The deck has 52 slides. Readings 3 include Harvey (2013), chapter 1 (pp. 8 to 31), the four YouTube parts of the Vessantara Jataka and Lalitavistara chapter 14, "Dreams".
+The notes follow the 52-slide deck. Readings 3 consist of Harvey (2013), chapter 1 (pp. 8 to 31), the four YouTube parts of the Vessantara Jataka and Lalitavistara chapter 14, "Dreams".
 
 ## The Brahmanical order and renunciation
 
@@ -132,9 +132,9 @@ The deck has 52 slides. Readings 3 include Harvey (2013), chapter 1 (pp. 8 to 31
 
 ## Mini-Quiz 3 review
 
-Mini-Quiz 3 locked Mon Sep 28.
+Mini-Quiz 3 locked Mon Sep 28. The following topics were flagged as likely quiz material.
 
-- Name the four castes and the duty of each. Explain why dharma means duty here.
+- Name the four castes and the duty of each. Give the meaning of dharma in that context.
 - Krishna tells Arjuna to act out of caste duty and argues that the atman cannot be destroyed. The shramana answer is to renounce because killing creates bad karma.
 - Siddhartha versus Mahavira: clan, age at renunciation (29 and 30), years of austerities (6 and 12), Buddha versus Tirthankara, and that both are Jina.
 - The four reasons Buddhism and Jainism are heterodox, and the jiva versus nirvana differences.

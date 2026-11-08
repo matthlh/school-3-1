@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 4: The Buddha and his teachings
 
-The deck has 39 slides. Mini-Quiz 4 covers the lecture, Harvey (2013), chapters 2 and 3 (pp. 32 to 87), and the animated film "Life of the Buddha Full Movie" (Lekker 32, 2020).
+The notes follow the 39-slide deck. Mini-Quiz 4 covers the lecture, Harvey (2013), chapters 2 and 3 (pp. 32 to 87), and the animated film "Life of the Buddha Full Movie" (Lekker 32, 2020).
 
 ## Renunciation and the Middle Way
 
@@ -116,7 +116,7 @@ The deck has 39 slides. Mini-Quiz 4 covers the lecture, Harvey (2013), chapters 
 
 ## Mini-Quiz 4 review
 
-Mini-Quiz 4 locked Mon Oct 5 at 23:59.
+Mini-Quiz 4 locked Mon Oct 5 at 23:59. The following topics were flagged as likely quiz material.
 
 - Recall the numbers for 12 deeds, 29 Buddhas, the 4th Buddha, 4 plus 4 make 8 absorptions, 6 years of asceticism, 49 days under the tree, age 35 at awakening, 45 years of teaching, and age 80 at death.
 - Alara Kalama taught the four absorptions. Udraka Ramaputra taught the formless states.

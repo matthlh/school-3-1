@@ -21,7 +21,7 @@ The declaration, quizzes and bonuses are worth 27 points. With all 27, the writi
 ## Formats
 - Quizzes test both lectures and readings. The lectures "overlap but do not cover all subjects of
   the readings". Study both to aim for 5/5.
-- Answers appear when the quiz closes. A late quiz earns 0, including with a concession letter.
+- Answers appear when the quiz closes. A late quiz earns 0 in every case, including with a concession letter.
 - The **final paper** is on your **independent novel**.
   - The choice on 2026-09-13 was **Option A**, Mishima's *The Temple of the Golden Pavilion*. The Ivan Morris translation is about 260 pages and is available as an EPUB on Canvas.
   - The week 9 film for option A is *Fancy Dance*.

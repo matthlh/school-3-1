@@ -4,7 +4,7 @@
 - There is no lecture in Week 6 (Oct 12) for Thanksgiving or in Week 10 (Nov 9) for reading break. SWR1 is published Sun Oct 11. The last lecture is in Week 13 (Nov 30).
 - Optional Q&A runs Fridays from 19:30 to about 20:30, Sep 11 to Dec 4. Find the Zoom link and passcode in the Canvas Zoom tab.
 - Office hours are Wednesdays from 4–5 pm or by appointment in Auditorium Annex B, Room 100, 1924 West Mall. The room is on the ground floor at the back. Email samuel.shooklyn@ubc.ca at least 24 hours ahead to secure a spot.
-- Use Chicago/Turabian Author-Date style for the short written responses and final paper. This style prohibits footnotes. A title page is required for the final paper only. The sample paper in Canvas file 47240878 shows the formatting instructions.
+- Use Chicago/Turabian Author-Date style for the short written responses and final paper. The course excludes APA and MLA, and the instructions prohibit footnotes. A title page is required for the final paper only. The sample paper in Canvas file 47240878 shows the formatting instructions.
 - Option A is Mishima's *The Temple of the Golden Pavilion*, chosen 2026-09-13. The declaration is due on Canvas Mon Sep 14 at 23:59 and stays open to Sep 23.
 - The final paper is worth 47% and concerns the novel. The week 9 film is *Fancy Dance*.
 

@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 5: The teachings and characteristics of early Buddhism and Theravada
 
-The 65-slide deck was published Mon Oct 5. Mini-Quiz 5 also covers Harvey (2013), chapter 4 (pp. 88 to 113) and the first part of chapter 11 (pp. 318 to 340). The two BBC (1977) documentaries are "The Mindful Way" (Ajahn Chah, Theravada in Thailand) and "Footprint of the Buddha" (Theravada in Sri Lanka).
+The notes follow the 65-slide deck published Mon Oct 5. Mini-Quiz 5 also covers Harvey (2013), chapter 4 (pp. 88 to 113) and the first part of chapter 11 (pp. 318 to 340). The two BBC (1977) documentaries are "The Mindful Way" (Ajahn Chah, Theravada in Thailand) and "Footprint of the Buddha" (Theravada in Sri Lanka).
 
 ## Early Buddhism
 
@@ -165,7 +165,7 @@ The 65-slide deck was published Mon Oct 5. Mini-Quiz 5 also covers Harvey (2013)
 - According to some accounts both Shariputra and Maudgalyayana die voluntarily before the Buddha, not wishing to witness his final Parinirvana: Maudgalyayana is beaten to death, and Shariputra dies after converting his mother.
 - **Ananda**, "the man who remembered everything", was the Buddha's cousin and assistant. He was known for his memory, **compassion** and lingering attachments.
 - He asked the Buddha to ordain women into the sangha. He reached arhatship only after the Buddha's death because he had focused on service.
-- The deck calls him a "crypto-bodhisattva" and a model for later traditions. He is associated with "Thus have I heard", the opening words of Buddhist sutras.
+- The deck calls him a "crypto-bodhisattva" and a model for later traditions. He is associated with "Thus have I heard", which the deck gives as the opening of all Buddhist sutras.
 - Ananda died of old age: by one source he corrected a young monk who was reciting a line wrongly, the monk's teacher said Ananda had become senile, and on hearing that Ananda decided to pass into final nirvana.
 - **Devadatta**: another cousin of the Buddha; joined for selfish reasons; created a **schism** by inventing stricter rules than the Buddha's; the Buddha sent Shariputra and Maudgalyayana to bring back the monks who had left with him; later tried to kill the Buddha, failed, and fell into the deepest hell, literally swallowed by the earth.
 - Devadatta shows sectarianism within early Buddhism: the Chinese traveller **Faxian** (337 to 422 CE) reports Devadatta's followers in India, who worshipped all the other Buddhas except Siddhartha.
@@ -272,7 +272,7 @@ The 65-slide deck was published Mon Oct 5. Mini-Quiz 5 also covers Harvey (2013)
 
 ## Mini-Quiz 5 review
 
-Mini-Quiz 5 locked Tue Oct 13 at 23:59, a day later than usual because of Thanksgiving on Oct 12.
+Mini-Quiz 5 locked Tue Oct 13 at 23:59, a day later than usual because of Thanksgiving on Oct 12. The following topics were flagged as likely quiz material.
 
 - The teachings were unwritten for over 200 years. Pali was a western Indian dialect of about the 3rd century BCE.
 - The first inscriptions date to about 25 BCE, over 400 years after the Buddha. The full canon dates to the 5th century CE, about 1000 years after the Buddha.
@@ -284,8 +284,9 @@ Mini-Quiz 5 locked Tue Oct 13 at 23:59, a day later than usual because of Thanks
 - The Wheel of Life: poisons at the centre, white and black deeds, six planes, Yama holding the wheel as a mirror.
 - Ashvajit converts Shariputra and Maudgalyayana with the Verse of Causality. Shariputra is associated with wisdom.
 - Maudgalyayana is associated with supernatural powers and the hungry-ghost mother. Ullambana falls on the 15th day of the seventh lunar month.
-- Ananda is associated with memory, compassion, "Thus have I heard" and women's ordination. He attained arhatship after the Buddha's death.
-- Devadatta led the schism and tried to kill the Buddha. Maitreya was the layman Ajita.
+- Ananda is associated with memory, compassion, "Thus have I heard" and women's ordination. He attained arhatship only after the Buddha's death.
+- Devadatta led the schism and tried to kill the Buddha.
+- Lecture 6 identifies Maitreya as the layman Ajita. The main account above gives that identification as likely.
 - Conservative versus innovative Buddhism: one Buddha and one bodhisattva at a time and nirvana final, against innumerable Buddhas and no arhat ideal; Theravada about 30% of Buddhists, Cambodia 97%, Thailand 90%, Myanmar 80%, Sri Lanka 70%, Laos 67%.
 - The Tipitaka: Vinaya 5 books, Sutta 5 collections, Abhidhamma 7 books; Patimokkha 227 rules for monks and 311 for nuns; parajika 4 and 8; Sudinna and the first rule.
 - The four immeasurables with their Pali names (metta, karuna, mudita, upekkha), recommended in Theravada mostly to lay followers.

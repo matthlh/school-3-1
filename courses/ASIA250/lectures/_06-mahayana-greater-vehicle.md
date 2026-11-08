@@ -1,6 +1,6 @@
 # ASIA 250 — Lecture 6: Mahayana, the Greater Vehicle
 
-The lecture uses `Lecture 6.pptx` (65 slides, published Tue Oct 20). Mini-Quiz 6 also covers Harvey (2013), chapter 5 (pp. 114 to 150) and the first part of chapter 6 (pp. 151 to 179). See "Lec 6" in the [question bank](../02-questions.md).
+The notes follow `Lecture 6.pptx` (65 slides, published Tue Oct 20). Mini-Quiz 6 also covers Harvey (2013), chapter 5 (pp. 114 to 150) and the first part of chapter 6 (pp. 151 to 179). See "Lec 6" in the [question bank](../02-questions.md).
 
 ## How Mahayana emerged
 
@@ -163,7 +163,7 @@ The lecture uses `Lecture 6.pptx` (65 slides, published Tue Oct 20). Mini-Quiz 6
 
 ## Mini-Quiz 6 review
 
-Mini-Quiz 6 locked Mon Oct 26 at 23:59.
+Mini-Quiz 6 locked Mon Oct 26 at 23:59. The following topics were flagged as likely quiz material.
 
 - Compare Sarvastivada ("everything exists") and Sautrantika ("the sutras are enough"). Theravada takes a middle position and counts 82 dharmas in its Abhidharma.
 - Mahasamghikas and Lokottaravada as the innovationists; why they found arhatship insufficient; 32 Marks of a Great Man.
@@ -171,7 +171,7 @@ Mini-Quiz 6 locked Mon Oct 26 at 23:59.
 - The three failings of arhats, one per poison.
 - Vessantara and Prince Sattva Jatakas, and what each one gives up.
 - The ten paramis vs the ten paramitas; the six core paramitas and the four derived ones.
-- Explain how the multiverse addresses the one-Buddha problem raised by the Bodhisattva Vow.
+- Explain the Bodhisattva Vow and the one-Buddha problem. Describe how the multiverse addresses the problem.
 - Brahmajala Sutra precepts, Precept 20, and Brahma's Net as the image of emptiness.
 - Emptiness as dependence on parts, causes and conditions, and the mind; prajna and upaya.
 - Detachment vs compassion meditation and their ethical outcomes.
