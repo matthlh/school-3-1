@@ -404,16 +404,23 @@ Explicit coupling (imports, types) is visible to the compiler, so tooling can fi
 
 ## Lec 3 — Cohesion & refactoring (logged 2026-09-17, deck 02b-cohesion-refactoring.pdf + reader Change Difficulty and Refactoring; no in-class notes)
 
-### Q: The deck pairs each of coupling and cohesion with one difficulty and one risk. Give all four, then say which of the four the Parkboard `v1-direct` diff (the loyalty-tier block pasted at four sites across two files) shows most directly, and why.
+### Q: Changing code is harder when coupling is high or cohesion is low. For each of the two, give the difficulty it adds to an edit and the risk it adds.
 **Topic:** Cohesion & bindings  **Lec:** 3  **Type:** recall  **Id:** 05550eaa
 **A:** Parts:
 1. High coupling's difficulty is making the edit in more places.
 2. High coupling's risk is missing a place that needed the edit.
 3. Low cohesion's difficulty is understanding what the unit actually does before you can change it.
 4. Low cohesion's risk is an edit disturbing code unrelated to the reason for the change.
-5. Parkboard v1 shows the coupling difficulty most directly, because one concept needs four edit sites.
 
-High coupling: the difficulty is making the edit in more places, and the risk is missing a place that needed the edit. Low cohesion: the difficulty is understanding what the unit actually does before you can change it, and the risk is an edit disturbing code unrelated to the reason for the change. Parkboard v1 shows the coupling difficulty most directly, because one concept needs four edit sites. It also plants loyalty logic inside registration code, which sets up the cohesion risk for the next change.
+High coupling spreads one concept across many sites, so an edit has more places to touch and one of them can be missed. Low cohesion packs unrelated jobs into one unit, so you must first work out what the unit does, and an edit made for one job can break another.
+
+### Q: A parking app computes a customer's loyalty tier with the same six-line block, pasted at four places across two files (registration and checkout). The tier rules are about to change. Of high coupling's and low cohesion's difficulties and risks, which one does this code show most directly, and why?
+**Topic:** Cohesion & bindings  **Lec:** 3  **Type:** apply  **Id:** 3d2018b1
+**A:** Key:
+1. The high-coupling difficulty: the edit has to be made in more places.
+2. One rule change needs four edit sites in two files.
+
+The same block at four sites means the change must be repeated four times, which is coupling's difficulty, and missing one of them would be coupling's risk. The block also puts loyalty logic inside registration code, which lowers that unit's cohesion and sets up the cohesion risk for a later change.
 
 ### Q: Name the three kinds of cohesion binding, define each in one sentence, and give the reader's alternative name for the third. Then say what "the more they share, the more they belong together" tells you to do with a statement that shares nothing with its neighbours.
 **Topic:** Cohesion & bindings  **Lec:** 3  **Type:** recall  **Id:** 5e7a609c
