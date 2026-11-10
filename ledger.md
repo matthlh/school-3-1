@@ -4,65 +4,65 @@ Rows whose Next is on or before today are due.
 
 ## Due now
 
-<!-- due as of 2026-11-09 -->
+<!-- due as of 2026-11-10 -->
 
-_55 topics due as of Mon Nov 9. Say **quiz me**._
+_55 topics due as of Tue Nov 10. Say **quiz me**._
 
-- CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 43 d · last unquizzed
-- STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 41 d · last unquizzed
-- STAT 251 · 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) · overdue 41 d · last unquizzed
-- CPSC 310 · Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) · overdue 38 d · last unquizzed
-- CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 38 d · last unquizzed
-- STAT 251 · 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) · overdue 37 d · last unquizzed
-- STAT 251 · 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) · overdue 37 d · last unquizzed
-- STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 32 d · last unquizzed
-- STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · overdue 31 d · last unquizzed
-- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 28 d · last X
-- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 27 d · last X
-- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 27 d · last X
-- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 23 d · last X
-- CPSC 310 · Boundaries: core, edges, ports and adapters (business logic in the core, which imports nothing and does no I/O · everything else at the edge: I/O, parsing, validation, config, services · a port is an interface the core owns, in its terms · an adapter implements the port with real resources · every dependency points inward · SRP: one reason to change · test at the narrowest level that can see the bug: unit with a double, integration with a temp file, one or two e2e) · overdue 23 d · last unquizzed
-- STAT 251 · 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement) · overdue 23 d · last unquizzed
-- CPSC 310 · Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) · overdue 19 d · last unquizzed
-- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 51 d · last ~
-- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 48 d · last ~
-- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 48 d · last ~
-- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 48 d · last ~
-- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 48 d · last ~
-- STAT 251 · 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail) · overdue 16 d · last unquizzed
-- STAT 251 · 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ) · overdue 16 d · last unquizzed
-- STAT 251 · 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation) · overdue 16 d · last unquizzed
-- STAT 251 · 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width) · overdue 12 d · last unquizzed
-- STAT 251 · 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts) · overdue 12 d · last unquizzed
-- STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 28 d · last ~
-- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 28 d · last ~
-- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 27 d · last ~
-- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 27 d · last ~
-- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 27 d · last ~
-- STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 26 d · last ~
-- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 58 d · last O
-- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 58 d · last O
-- STAT 251 · Descriptive vs. inferential statistics · overdue 56 d · last O
-- STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 24 d · last ~
-- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 7 d · last X
-- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 7 d · last X
-- CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 7 d · last X
-- CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 7 d · last X
-- CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 7 d · last X
-- STAT 251 · 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) · overdue 7 d · last X
-- STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · overdue 7 d · last X
-- STAT 251 · 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ) · overdue 7 d · last X
-- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 46 d · last O
-- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 44 d · last O
-- PHIL 385 · The Aesthetic Validity of Marriage: B's task and tone (Judge William's letter to A · two tasks: marriage is aesthetic and stays so · loves A like a son, brother and friend · warns A about himself · the vow from Christianity about 1100 · if duty is love's enemy, love is not the true victor · the close) · overdue 6 d · last unquizzed
-- PHIL 385 · The Aesthetic Validity of Marriage: first love and the reflective age (love has the stamp of the eternal, lust does not · the immoral and the respectable paths · egoistic and sympathetic melancholy · first love's features · the Page as the state before first love · thanking God lifts it into a higher concentricity · the altar objections · one loves only once) · overdue 6 d · last unquizzed
-- PHIL 385 · The Aesthetic Validity of Marriage: marriage's history, habit and duty (no why: character, children, home · the wedding ceremony · the aesthetic lies in the acquired · inner history · conqueror vs possessor · habit only of the bad · the husband preserves time · duty the friend of love · the three great allies) · overdue 6 d · last unquizzed
-- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 27 d · last O
-- CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 24 d · last O
-- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 23 d · last O
-- STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 20 d · last O
-- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 45 d · last O
-- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 5 d · last ~
+- CPSC 310 · Code smells (feature envy and the Law of Demeter · magic values and connascence of value · almost-duplicate code and connascence of algorithm · pull up and template method) · overdue 44 d · last unquizzed
+- STAT 251 · 2k Reliability of series and parallel systems (series multiplies reliabilities · parallel is one minus the product of failure probabilities · combine blocks · independence must be given) · overdue 42 d · last unquizzed
+- STAT 251 · 3f Discrete cdf (F as a running sum · defined for every real x · step function · one minus F) · overdue 42 d · last unquizzed
+- CPSC 310 · Equivalence class partitioning (equivalence class · input domain narrowed by preconditions, valid vs invalid · output range by postconditions, normal vs error · one value per class, one value can cover both views · boundary pair on each side of every edge · when input and output views diverge) · overdue 39 d · last unquizzed
+- CPSC 310 · Strong test suites and coverage (four properties of a strong suite · six-step build order, spec tests only test the spec · line, statement, branch, path coverage · four limits of coverage · reader's 67/50/25 example) · overdue 39 d · last unquizzed
+- STAT 251 · 3j Rules for the mean and variance (E of aX + b · E of a sum always adds · E of XY splits only under independence · Var of aX + b is a² Var X · proof of the shortcut) · overdue 38 d · last unquizzed
+- STAT 251 · 3m–n Maximum and minimum of independent random variables (cdf of the max is the product of the cdfs · pdf by the chain rule · parallel lifetime is the max · series lifetime is the min · flood levels) · overdue 38 d · last unquizzed
+- STAT 251 · 3l Functions of one random variable (cdf method: F_Y from F_X · differentiate for the pdf · the new support · Y = X² needs both roots) · overdue 33 d · last unquizzed
+- STAT 251 · 3o Normal distribution and the empirical rule (symmetric bell shape · μ sets the centre and equals the median · σ sets the spread · N(μ, σ²) carries the variance · 68-95-99.7 rule · pdf formula) · overdue 32 d · last unquizzed
+- STAT 251 · 2h Conditional probability and the multiplication rule (definition as a ratio · proportion of A inside B · the given event is the denominator · two forms of the multiplication rule) · overdue 29 d · last X
+- CPSC 310 · Three fluencies (decomposition · requirements · validation) · overdue 28 d · last X
+- STAT 251 · 2i Bayes' theorem and the law of total probability (partition · weighted average of the branch rates · reversing the conditional · posterior vs prior) · overdue 28 d · last X
+- CPSC 310 · Cohesion & bindings (data · logic · order bindings · low cohesion difficulty and risk · reader's timing vs deck's order) · overdue 24 d · last X
+- CPSC 310 · Boundaries: core, edges, ports and adapters (business logic in the core, which imports nothing and does no I/O · everything else at the edge: I/O, parsing, validation, config, services · a port is an interface the core owns, in its terms · an adapter implements the port with real resources · every dependency points inward · SRP: one reason to change · test at the narrowest level that can see the bug: unit with a double, integration with a temp file, one or two e2e) · overdue 24 d · last unquizzed
+- STAT 251 · 3q–s Bernoulli and Binomial distributions (Bernoulli: 1 on success, pmf p^x(1 − p)^(1 − x), mean p, variance p(1 − p) · Binomial counts successes in n independent trials with one p · pmf C(n, x) p^x (1 − p)^(n − x), one order times the number of orders · mean np, variance np(1 − p) · three assumptions · the 10% condition for sampling without replacement) · overdue 24 d · last unquizzed
+- CPSC 310 · Test levels and the testing pyramid (across, within and between boundaries · e2e: poor fault localization, many reasons to fail, cumbersome, expensive · unit: fast, isolated, doubles, breakpoints, checks behaviour in isolation · integration: core with the real adapter on a real resource · most unit, several integration per boundary, a few e2e) · overdue 20 d · last unquizzed
+- CPSC 310 · What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) · overdue 52 d · last ~
+- STAT 251 · 3t–v Geometric distribution (trials until the first success · pmf p(1 − p)^(x − 1) for x = 1, 2, … · mean 1/p is the return period · variance (1 − p)/p² · cdf 1 − (1 − p)^x by the geometric series · P(X > x) = (1 − p)^x, the first x trials fail) · overdue 17 d · last unquizzed
+- STAT 251 · 3w–aa Poisson process and Poisson distribution (counts in a fixed interval at a constant rate · pmf λ^x e^(−λ)/x! · mean and variance both λ · the rate scales with the interval, λt · four process properties · the time between events is exponential with mean 1/λ) · overdue 17 d · last unquizzed
+- STAT 251 · 3bb Poisson approximation to the Binomial (n ≥ 20 and np < 5 · λ = np · check both conditions first · exact Binomial against the approximation) · overdue 17 d · last unquizzed
+- CPSC 310 · Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) · overdue 49 d · last ~
+- CPSC 310 · Lab 1 request path & async (route/handler/middleware · validator critique · event loop · missing await) · overdue 49 d · last ~
+- STAT 251 · 1d Centre vs spread (what each measures · range · same centre, different spread) · overdue 49 d · last ~
+- STAT 251 · 1b Percentiles, quartiles and the IQR (np + 0.5 quantile rule · Q1, Q2, Q3 · 1.5 × IQR outlier fences) · overdue 49 d · last ~
+- STAT 251 · 3y Waiting times in a Poisson process (P(T > t) is P(no events in t), both e^(−λt) · the kth event after time t means at most k − 1 events in t · convert t into the rate's time unit first · exponential cdf 1 − e^(−λt), mean 1/λ · histogram proportion is density times bar width) · overdue 13 d · last unquizzed
+- STAT 251 · 3cc Which distribution fits (a fixed n and a count of successes is Binomial · trials until the first success is Geometric · events at a rate in an interval or region is Poisson · the wait for the next event is exponential · a per-trial probability from one model feeds a Binomial count · the 10% condition and the n ≥ 20, np < 5 check decide the shortcuts) · overdue 13 d · last unquizzed
+- STAT 251 · 1b Variance and standard deviation (n - 1 formula · units · not resistant · effect of y = a + bx) · overdue 29 d · last ~
+- STAT 251 · 2f Probability rules and the addition rule (outcome probabilities sum to 1 · complement rule · general addition rule · countable additivity · three-event rule) · overdue 29 d · last ~
+- STAT 251 · 2g Events as sets and Venn diagrams (complement · intersection · union · disjoint events have no overlap · subsets · De Morgan) · overdue 28 d · last ~
+- STAT 251 · 2c Probability as long-run relative frequency (short-run proportions wander · the proportion of heads settles near 0.5 as n grows) · overdue 28 d · last ~
+- STAT 251 · 3f Continuous cdf in both directions (F as an integral with a dummy variable · differentiate F to get f · one minus F for the upper tail · median and quartiles by solving F) · overdue 28 d · last ~
+- STAT 251 · 3d Mean and variance of a discrete random variable (long-run average · E of a function of X · variance by definition and by the shortcut · not the sample mean) · overdue 27 d · last ~
+- STAT 251 · 1a Types of data (categorical nominal/ordinal · numerical discrete/continuous) · overdue 59 d · last O
+- STAT 251 · 1b–c Displays: freq table, pie, bar, dot plot, stem-and-leaf · overdue 59 d · last O
+- STAT 251 · 3g–i Mean, variance, uniform and exponential (E and Var by integration · the shortcut · uniform mean and variance · exponential mean and variance by parts · median from F) · overdue 25 d · last ~
+- STAT 251 · Descriptive vs. inferential statistics · overdue 57 d · last O
+- CPSC 310 · Coupling & connascence (degree · locality · strength · five connascence types · addressing coupling) · overdue 8 d · last X
+- CPSC 310 · Refactoring (meaning-preserving · four steps, tests twice · when not to · rule of three · technical debt · Fowler's catalogue) · overdue 8 d · last X
+- CPSC 310 · Emergent design and technical debt (three signs a change is hard · three abstractions to introduce · debt as interest · not all debt is bad · refactoring timeline · tests before and after every step) · overdue 8 d · last X
+- CPSC 310 · Controllability and observability (deck definitions · four causes lowering each · parameters in, values out · reader's four properties incl. isolateability and automatability) · overdue 8 d · last X
+- CPSC 310 · Testable by design (black-box Given/When/Then first · exposing promised state with read-only queries · REQUIRES/EFFECTS contract · TDD red, green, refactor) · overdue 8 d · last X
+- STAT 251 · 3j–k Covariance, sums and the sample mean (Cov as E of XY minus E X times E Y · sign of Cov · the 2ab Cov term · minus signs still add variances · mean μ and variance σ²/n of X̄) · overdue 8 d · last X
+- STAT 251 · 3p Z-scores and standard Normal calculations (z = (x − μ)/σ counts standard deviations from the mean · Table A gives the area to the left · between two values subtract · upper tail is one minus · backward: find z from the proportion then unstandardise · pnorm) · overdue 8 d · last X
+- STAT 251 · 3o Linear combinations of Normals and the sample mean (aX + b stays Normal · independent sums: means add with the coefficients, variances with squared coefficients · identically distributed collapse · X̄ ~ N(μ, σ²/n) · total and mean routes give the same z · φ and Φ) · overdue 8 d · last X
+- PHIL 385 · The Aesthetic Validity of Marriage: B's task and tone (Judge William's letter to A · two tasks: marriage is aesthetic and stays so · loves A like a son, brother and friend · warns A about himself · the vow from Christianity about 1100 · if duty is love's enemy, love is not the true victor · the close) · overdue 7 d · last unquizzed
+- PHIL 385 · The Aesthetic Validity of Marriage: first love and the reflective age (love has the stamp of the eternal, lust does not · the immoral and the respectable paths · egoistic and sympathetic melancholy · first love's features · the Page as the state before first love · thanking God lifts it into a higher concentricity · the altar objections · one loves only once) · overdue 7 d · last unquizzed
+- PHIL 385 · The Aesthetic Validity of Marriage: marriage's history, habit and duty (no why: character, children, home · the wedding ceremony · the aesthetic lies in the acquired · inner history · conqueror vs possessor · habit only of the bad · the husband preserves time · duty the friend of love · the three great allies) · overdue 7 d · last unquizzed
+- STAT 251 · 1d Shape of a histogram (construction · empty bins · mounds · symmetric vs skewed · outliers) · overdue 47 d · last O
+- STAT 251 · 1b–c Box plots (five-number summary · whiskers end inside the fences · median line shows skew · side-by-side comparisons) · overdue 45 d · last O
+- STAT 251 · 2d–e Independence (three equivalent tests · disjoint events are never independent · never assume independence unless stated · complements of independent events · at least one via the complement) · overdue 28 d · last O
+- CPSC 310 · Test doubles and LSP substitutability (stub vs spy · DIP makes doubles possible · LSP methods rule: preconditions not strengthened, postconditions not weakened · a double keeps the contract, not just the shape · three costs of doubles) · overdue 25 d · last O
+- STAT 251 · 2b Sample space and events (random experiment · S as a set · event as a subset · discrete, continuous and bivariate S · equally likely counting) · overdue 24 d · last O
+- STAT 251 · 3a–b Random variables and the pmf (X as a function on S · possible values · discrete vs continuous · pmf properties · find the constant · probability statements) · overdue 21 d · last O
+- STAT 251 · 1b Mean and median (median rule for odd and even n · skew pulls the mean · which to report) · overdue 46 d · last O
+- STAT 251 · 3c Continuous random variables and the pdf (probability as area · f ≥ 0 and total area 1 · find the constant · endpoints do not matter · P at a point is 0) · overdue 6 d · last ~
 
 _Readiness · PHIL 385 Exam 4 14:00 · Fri Nov 20 · 0% of 45 in-scope questions likely recalled · 0% asked · none asked yet._
 
@@ -255,10 +255,11 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | ~Mon Nov 16 | ASIA 250 | Final paper questions posted | | |
 | **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** (7 MC) | 15% | exam |
 | ~Thu Nov 26, 23:59 | STAT 251 | WeBWorK 8 — the Canvas calendar shows Thu Nov 26 (seen 2026-10-23); not yet read off WeBWorK | | |
-| Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired) | 5% | deliverable |
+| Fri Nov 27, 18:00 | CPSC 310 | **D4** — Build it (paired). Spec posted Nov 10: 30% autograded, 70% manual; highest-scoring commit on main before the deadline counts | 5% | deliverable |
 | ~Thu Dec 3, 23:59 | STAT 251 | WeBWorK 9 — the Canvas calendar shows Thu Dec 3 (seen 2026-10-23); not yet read off WeBWorK | | |
 | Wed Dec 2 | STAT 251 | Written Assignment 2 due | ~5% | assignment |
 | Mon Dec 7 | — | Last day of classes · last ASIA quiz due | | |
+| Tue Dec 1, 09:00 | CPSC 310 | **D4 design viva**, about 15 minutes with the TA in the Nov 27–Dec 3 lab (his lab L1N, Tue 09:00); not a demo (D4 spec) | | |
 | ~Tue Dec 8, 23:59 | STAT 251 | WeBWorK 10 — the Canvas calendar agrees on Tue Dec 8 (seen 2026-10-23); not yet read off WeBWorK. Pre-lab quiz Lab 8 is Fri Dec 11 | | |
 | **Thu Dec 10** | ASIA 250 | **FINAL PAPER** (1000–1500 words) | 47% | paper |
 | Fri Dec 11 | UBC | Exam period starts (Dec 11–22). All three finals are on the UBC exam schedule (seen 2026-11-06); no rooms posted yet | | admin |
@@ -416,3 +417,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-11-06 | Logged STAT 251 lec 23 (Canvas Lecture 24: the Normal approximation to the Poisson, the continuity correction again, and the start of Chapter 8 on point estimation and unbiased estimators) from the after-class deck, the Chapter 8 deck and the recording: 10 questions and 1 long problem, 2 new topics (4c, 5b–d), not studied. The final now replaces the midterm when it is higher (syllabus updated). Slide 7 of the deck has an arithmetic slip, noted on the page. |
 | 2026-11-06 | Final exam dates from the UBC exam schedule (Matt's screenshot): PHIL 385 Fri Dec 11 15:30, STAT 251 Mon Dec 14 15:30, CPSC 310 Fri Dec 18 12:00, no rooms yet. The PHIL and STAT rows are now exam rows, ending at 18:00, the end of the 2.5-hour slot, until a length is posted. Syllabi and STAT logistics updated; no 3-in-24-h hardship. |
 | 2026-11-09 | Morning check: nothing new on Canvas, PrairieLearn or the CPSC 310 site. The CPSC 310 coupling-and-cohesion question he flagged on the website was split into a four-part recall question and a separate apply question with the code described in the stem. WeBWorK signed out. |
+| 2026-11-10 | Morning check: CPSC 310 D4 spec posted (due Fri Nov 27 18:00, 30% autograded and 70% manual) and a D4 design viva added for the Tue Dec 1 lab; both in Things3. D3-Auto graded on Canvas with the score hidden. |
