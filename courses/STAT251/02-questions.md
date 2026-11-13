@@ -4513,6 +4513,87 @@ E(\hat{\theta}_3) &= \frac{\mu + \mu + \mu}{4} \\
 \end{aligned}
 $$
 
+## Lec 24 — Ch 8: the confidence interval for the mean when σ is known (prepared 2026-11-13 from the deck; Canvas calls it Lecture 25; numbers changed)
+
+### Q: A population has $$\sigma = 12$$. A random sample of $$n = 36$$ gives $$\bar{x} = 84$$. Find the 95% confidence interval for $$\mu$$.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** apply  **Id:** bfb92ff8
+**A:** Key:
+1. Use $$\bar{x} \pm Z_{0.025} \frac{\sigma}{\sqrt{n}}$$ with $$84 \pm 1.96 \times \frac{12}{\sqrt{36}}$$.
+2. The margin of error is $$1.96 \times 2 = 3.92$$.
+3. The interval is $$(80.08, 87.92)$$.
+
+$$n = 36$$ is large, so the CLT makes $$\bar{X}$$ approximately Normal even without knowing the population's shape.
+
+$$
+\begin{aligned}
+\frac{\sigma}{\sqrt{n}} &= \frac{12}{6} \\
+&= 2 \\
+84 - 3.92 &= 80.08 \\
+84 + 3.92 &= 87.92
+\end{aligned}
+$$
+
+### Q: Bolt lengths are Normal with $$\sigma = 8$$ mm. A sample of $$n = 25$$ bolts has $$\bar{x} = 50.3$$ mm. Find the 90% confidence interval for the mean length.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** apply  **Id:** cd9246bb
+**A:** Key:
+1. Use $$\bar{x} \pm Z_{0.05} \frac{\sigma}{\sqrt{n}}$$ with $$50.3 \pm 1.645 \times \frac{8}{\sqrt{25}}$$.
+2. The margin of error is $$1.645 \times 1.6 = 2.632$$.
+3. The interval is $$(47.668, 52.932)$$ mm.
+
+A 90% level means $$\alpha = 0.10$$, so the table value is $$Z_{\alpha/2} = Z_{0.05} = 1.645$$. The sample is small, but the population is Normal, so $$\bar{X}$$ is exactly Normal and the interval is valid.
+
+### Q: Give $$\alpha$$ and $$Z_{\alpha/2}$$ for a 90%, a 95% and a 99% confidence interval.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** recall  **Id:** 80fece64
+**A:** Parts:
+1. 90%: $$\alpha = 0.10$$ and $$Z_{0.05} = 1.645$$.
+2. 95%: $$\alpha = 0.05$$ and $$Z_{0.025} = 1.96$$.
+3. 99%: $$\alpha = 0.01$$ and $$Z_{0.005} = 2.575$$.
+
+$$Z_{\alpha/2}$$ is the value with an area of $$\frac{\alpha}{2}$$ above it, because the $$\alpha$$ left outside the interval is split between the two tails.
+
+### Q: A 95% confidence interval for $$\mu$$ (σ known) is 6 units wide. Say how wide it becomes if (a) the level is raised to 99% with the same sample, and (b) the sample size is multiplied by 4 at 95%, and say why in each case.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** apply  **Id:** 9adf9b06
+**A:** Parts:
+1. (a) About $$6 \times \frac{2.575}{1.96} \approx 7.88$$, wider, because a higher confidence level needs a larger $$Z_{\alpha/2}$$.
+2. (b) 3 units, half as wide, because the width has $$\sqrt{n}$$ in the denominator and $$\sqrt{4} = 2$$.
+
+The width is $$2 Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$, so the level acts through $$Z_{\alpha/2}$$ and the sample size through $$\frac{1}{\sqrt{n}}$$.
+
+### Q: When can the interval $$\bar{x} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$ be used? Give the two situations that make it valid and the condition it always needs.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** recall  **Id:** 4fc2c870
+**A:** Key:
+1. It needs $$\bar{X}$$ to be Normal, which holds in either of two situations.
+2. The sample size $$n$$ is large, so the CLT makes $$\bar{X}$$ approximately Normal.
+3. Or the population is Normal, so $$\bar{X}$$ is exactly Normal for any $$n$$.
+4. It always needs the population standard deviation $$\sigma$$ to be known.
+
+When $$\sigma$$ is not known and is estimated by $$s$$, the next lecture replaces $$Z_{\alpha/2}$$ with a value from the t-distribution.
+
+### Q: A 95% confidence interval for a mean (σ known) is $$(46.2, 53.8)$$. Find the point estimate and the margin of error, and say what each one is.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** apply  **Id:** 30da4f21
+**A:** Key:
+1. The point estimate is the midpoint, $$\bar{x} = \frac{46.2 + 53.8}{2} = 50$$.
+2. The margin of error is half the width, $$\frac{53.8 - 46.2}{2} = 3.8$$.
+3. The point estimate is the single best guess for $$\mu$$, and the margin of error, $$Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$, is how far the guess may be from $$\mu$$.
+
+Every interval in the course has the form point estimate plus or minus margin of error, so the two can always be read back off the endpoints.
+
+### Q: Starting from $$P\left(-1.96 \le \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \le 1.96\right) = 0.95$$, derive the 95% confidence interval for $$\mu$$.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 24  **Type:** derive  **Id:** 283f862e
+**A:** Steps:
+1. Multiply every part of the inequality by $$\frac{\sigma}{\sqrt{n}}$$.
+2. Subtract $$\bar{X}$$ from every part, which leaves $$-\mu$$ in the middle.
+3. Multiply by $$-1$$, which flips both inequalities.
+4. Read off $$\left(\bar{X} - 1.96 \frac{\sigma}{\sqrt{n}}, \bar{X} + 1.96 \frac{\sigma}{\sqrt{n}}\right)$$.
+
+$$
+\begin{aligned}
+0.95 &= P\left(-1.96 \frac{\sigma}{\sqrt{n}} \le \bar{X} - \mu \le 1.96 \frac{\sigma}{\sqrt{n}}\right) \\
+&= P\left(-\bar{X} - 1.96 \frac{\sigma}{\sqrt{n}} \le -\mu \le -\bar{X} + 1.96 \frac{\sigma}{\sqrt{n}}\right) \\
+&= P\left(\bar{X} - 1.96 \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X} + 1.96 \frac{\sigma}{\sqrt{n}}\right)
+\end{aligned}
+$$
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?

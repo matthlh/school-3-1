@@ -136,6 +136,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | STAT 251 | 4d Continuity correction (the bar for a whole number k runs from k − 0.5 to k + 0.5 · turn fewer than and more than into at most and at least first · at most k ends at k + 0.5, at least k starts at k − 0.5 · P(X = k) becomes P(k − 0.5 ≤ Y ≤ k + 0.5) · only for a count approximated by a Normal) | 22 | — | — | 0 | not studied |
 | STAT 251 | 4c Normal approximation to the Poisson (λ ≥ 20 · X ≈ N(λ, λ), the mean and variance both λ · standardise with √λ · continuity correction as for the Binomial · "approximate probability" in the question is the hint) | 23 | — | — | 0 | not studied |
 | STAT 251 | 5b–d Point and interval estimation and unbiased estimators (inference from a sample to a population · point estimate is one number, interval estimate a range · estimator is the formula, estimate its value · unbiased when E(θ̂) = θ, bias E(θ̂) − θ · X̄ unbiased for μ, S² for σ² · of two unbiased estimators the smaller standard error wins) | 23 | — | — | 0 | not studied |
+| STAT 251 | 5e–f Confidence interval for μ with σ known (X̄ Normal when n is large or the population is Normal · x̄ ± Z_{α/2} σ/√n · Z 1.645, 1.96, 2.575 for 90, 95, 99% · higher level wider, larger n narrower · point estimate ± margin of error) | 24 | — | — | 0 | not studied |
 | CPSC 310 | What SE is ("managing what a change costs" · changing requirements · code vs software · analytical code design) | 1 | 2026-10-09 | ~ | 0 | 2026-09-19 |
 | CPSC 310 | Three fluencies (decomposition · requirements · validation) | 1 | 2026-11-01 | X | 0 | 2026-10-13 |
 | CPSC 310 | Lab 1 HTTP & PUT (status codes · 400 vs 422 · PUT idempotence vs POST) | Lab 1 | 2026-09-19 | ~ | 0 | 2026-09-22 |
@@ -252,6 +253,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 | Thu Nov 12, 23:59 | CPSC 310 | **LAB08 Midterm Reflection** on PrairieLearn, open from Oct 30; the reflection opens once the midterm is marked (Piazza @279) | 10% pool | |
 | **Thu Nov 12, 22:59** | STAT 251 | **WeBWorK 6** (no late). Opens Oct 22 and covers Ch 6 and Ch 7 (instructor, Piazza @39). Read off WeBWorK 2026-10-30: open, 3 problems, 20 points; banked the same day. WeBWorK shows the close as 11:59 PM **MST** (seen 2026-11-01), which is 22:59 Pacific now that clocks went back on Nov 1; treat 22:00 as the real cutoff | | |
 | **Sun Nov 15, 23:59** | ASIA 250 | **Short Written Response 2** — published Nov 2; due moved past the reading break (Canvas) | 15% | paper |
+| Fri Nov 20, 23:59 | STAT 251 | Pre-lab Quiz Lab 6 (Canvas, posted Nov 13; Lab 6 runs the week of Nov 16) | 4 pts | |
 | ~Mon Nov 16 | ASIA 250 | Final paper questions posted | | |
 | **Fri Nov 20, 14:00–14:50** | PHIL 385 | **Exam 4** (7 MC) | 15% | exam |
 | ~Thu Nov 26, 23:59 | STAT 251 | WeBWorK 8 — the Canvas calendar shows Thu Nov 26 (seen 2026-11-12); WeBWorK says it opens Tue Nov 17 | | |
@@ -273,7 +275,7 @@ _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 
 
 | Series | Course | When | Note |
 |---|---|---|---|
-| Pre-lab quizzes | STAT 251 | Fridays, 23:59 | Labs 2 to 8. None on Oct 30 or Nov 20; Lab 5's is due Nov 6. |
+| Pre-lab quizzes | STAT 251 | Fridays, 23:59 | Labs 2 to 8. None on Oct 30; Lab 5's is due Nov 6 and Lab 6's Nov 20. |
 | WeBWorK | STAT 251 | Tuesdays, 23:59 | No late submissions. None on Nov 3 or Nov 17. |
 | Labs | CPSC 310 | Thursdays, 23:59 | Some stay open two weeks. PrairieLearn's close date wins. |
 | Mini-quizzes | ASIA 250 | Mondays, 23:59 | Late is zero. None on Oct 19 or Nov 16. |
@@ -287,7 +289,7 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 0/10; Mini-Quiz 6 was missed and locked at 0; Mini-Quiz 7 10/10; Optional Assignment 1 missed and the 2% bonus is gone; Optional Assignment 2 marked 100 so the 2% bonus is banked; Short Written Response 1 95/100 | 2026-11-07 |
 | CPSC 310 | 88.23%; D1-Auto 100/100; D1-Manual 100/100; D2-Auto 100/100; D2-Manual 95.83/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; LAB06 0/100; LAB07 100/100; midterm marked on Gradescope and not on Canvas yet; the labs come from PrairieLearn | 2026-11-06 |
 | PHIL 385 | total hidden on Canvas; Exam 2 12/15; Exam 3 5/15; Exam 1 not marked yet | 2026-10-31 |
-| STAT 251 | 64.79%; Midterm 22.5/36; iClicker 14/86; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; Pre-lab Quiz Lab 4 4/4; Pre-lab Quiz Lab 5 4/4; Lab 2 9.5/10; Lab 3 9/10; classes 5 to 9, 11, 13 to 19 and 22 to 24 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); WeBWorK is not on Canvas yet | 2026-11-06 |
+| STAT 251 | 72.52%; Midterm 22.5/36; Written Assignment 1 49.5/50; iClicker 14/86; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; Pre-lab Quiz Lab 4 4/4; Pre-lab Quiz Lab 5 4/4; Lab 2 9.5/10; Lab 3 9/10; Lab 5 9.5/10; classes 5 to 9, 11, 13 to 19 and 22 to 24 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); WeBWorK is not on Canvas yet | 2026-11-13 |
 
 ## Session log
 | Date | What we did |
@@ -420,3 +422,4 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | 2026-11-10 | Morning check: CPSC 310 D4 spec posted (due Fri Nov 27 18:00, 30% autograded and 70% manual) and a D4 design viva added for the Tue Dec 1 lab; both in Things3. D3-Auto graded on Canvas with the score hidden. |
 | 2026-11-11 | Morning check: nothing new on Canvas, the CPSC 310 site or Piazza. PrairieLearn shows LAB09 REST & Modelling opening Fri Nov 13 09:00. Planner added the T-4 SWR2 and T-9 PHIL 385 Exam 4 steps. |
 | 2026-11-12 | Morning check (partial; the Chrome connection kept dropping and the run stalled past midnight): WeBWorK 6 finished 3/3 at 100% and closed in Things3. WeBWorK 7 confirmed due Thu Nov 19 22:59 Pacific, 3 problems, banked as 5 questions under WeBWorK 7. WeBWorK 8 opens Tue Nov 17; its Things3 deadline corrected to Thu Nov 26 from the Canvas calendar. No grade changed. Gmail, Piazza, PrairieLearn, Career and the planner were not run. |
+| 2026-11-13 | Morning check (ran about 12:00): STAT 251 Written Assignment 1 49.5/50 and Lab 5 9.5/10, Canvas total 72.52%. Pre-lab Quiz Lab 6 posted, due Fri Nov 20 (calendar row; Things3 deadline moved from Nov 27). STAT 251 lec 24 (Canvas Lecture 25, the z confidence interval for the mean) prepared from the deck: 7 questions, 1 new topic (5e–f), not studied. WeBWorK signed out. |

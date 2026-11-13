@@ -75,8 +75,7 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 |---|---|
 | 5a | Sample statistic vs. population parameter |
 | 5b–d | Point and interval estimation and unbiased estimators *(lec 23: inference from a sample to a population, point estimate as one number and interval estimate as a range, estimator as the formula and estimate as its value, unbiased when $$E(\hat{\theta}) = \theta$$, bias $$E(\hat{\theta}) - \theta$$, $$\bar{X}$$ unbiased for $$\mu$$ and $$S^2$$ for $$\sigma^2$$, and of two unbiased estimators the one with the smaller standard error; ledger row 5b–d)* |
-| 5e | Interpret a CI and a confidence level |
-| 5f | What determines CI width |
+| 5e–f | Confidence interval for μ with σ known *(lec 24: $$\bar{X}$$ Normal when n is large (CLT) or the population is Normal, the interval $$\bar{x} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$ derived from the standard Normal, $$Z_{\alpha/2}$$ 1.645, 1.96 and 2.575 for 90%, 95% and 99%, wider with a higher level and narrower with a larger n, point estimate plus or minus margin of error; ledger row 5e–f)* |
 | 5g | Components of a hypothesis test |
 | 5h | Use normality / CLT for estimation and testing |
 | 5i | p-value approach **and** critical value approach |
