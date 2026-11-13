@@ -3939,6 +3939,102 @@ $$
 
 (b) "Not exceeded before the 8th day" means days 1 to 7 are all fine, $$P(N > 7) = (1 - p)^7 = 0.9918^7 = 0.944$$. The trap is using $$\sigma = 25$$, the variance, in the z-score.
 
+## WeBWorK 7 — Ch 6 and Ch 7 (opened Nov 11, due Thu Nov 19; banked 2026-11-12, numbers changed)
+
+### Q: WeBWorK-style. A bus's wait time past its scheduled arrival is Uniform on $$[0, 10]$$ minutes, and you record 64 independent waits. Find the approximate probability that (a) the total of the 64 waits is between 300 and 345 minutes, and (b) the average wait exceeds 5.5 minutes.
+**Topic:** 4e CLT for averages and sums  **Lec:** WW7  **Type:** apply  **Id:** 6dccdeda
+**A:** Key:
+1. One wait has $$\mu = 5$$ and $$\sigma = \frac{10}{\sqrt{12}} = 2.887$$, and the CLT applies because $$n = 64 \ge 20$$.
+2. (a) The total is $$T \approx N(320, 64 \times 8.333)$$, standard deviation $$2.887 \times 8 = 23.09$$.
+3. (a) $$P(300 < T < 345) = \Phi(1.08) - \Phi(-0.87) = 0.668$$.
+4. (b) The average has standard error $$\frac{2.887}{8} = 0.361$$, so $$z = \frac{5.5 - 5}{0.361} = 1.39$$.
+5. (b) $$P(\bar{X} > 5.5) = 1 - \Phi(1.39) = 0.083$$.
+
+A Uniform on $$[a, b]$$ has mean $$\frac{a + b}{2}$$ and variance $$\frac{(b - a)^2}{12}$$, so one wait has variance $$\frac{100}{12} = 8.333$$.
+
+$$
+\begin{aligned}
+SD(T) &= \sigma\sqrt{n} \\
+&= 2.887 \times 8 = 23.09 \\
+z_1 &= \frac{300 - 320}{23.09} = -0.87 \\
+z_2 &= \frac{345 - 320}{23.09} = 1.08
+\end{aligned}
+$$
+
+The average uses the standard error instead.
+
+$$
+\begin{aligned}
+SE &= \frac{\sigma}{\sqrt{n}} = 0.361 \\
+z &= \frac{5.5 - 5}{0.361} = 1.39 \\
+P(\bar{X} > 5.5) &= 0.083
+\end{aligned}
+$$
+
+The trap is using $$\sigma\sqrt{n}$$ for the average or $$\frac{\sigma}{\sqrt{n}}$$ for the total.
+
+### Q: WeBWorK-style. The same bus waits are Uniform on $$[0, 10]$$ minutes, 64 independent waits. Find (a) the exact probability that 62 or more of the 64 waits exceed 1 minute, and (b) with the Normal approximation and continuity correction, the probability that 42 or more of the 64 waits exceed 4 minutes.
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** WW7  **Type:** apply  **Id:** 37dedc97
+**A:** Key:
+1. Each wait is a trial: the count over a cutoff $$c$$ is Binomial with $$p = P(W > c) = \frac{10 - c}{10}$$.
+2. (a) $$X \sim \text{Bin}(64, 0.9)$$, and $$P(X \ge 62) = P(62) + P(63) + P(64) = 0.0293 + 0.0084 + 0.0012 = 0.039$$.
+3. (b) $$Y \sim \text{Bin}(64, 0.6)$$ has mean 38.4 and standard deviation $$\sqrt{64 \times 0.6 \times 0.4} = 3.919$$.
+4. (b) With the continuity correction, $$P(Y \ge 42) \approx P(Z > \frac{41.5 - 38.4}{3.919}) = P(Z > 0.79) = 0.214$$.
+
+The uniform model only supplies $$p$$; the count is Binomial. In (a) $$n(1 - p) = 6.4$$ is small, so the question asks for the exact sum rather than an approximation.
+
+$$
+\begin{aligned}
+P(X = 64) &= 0.9^{64} = 0.0012 \\
+P(X = 63) &= 64 \times 0.9^{63} \times 0.1 \\
+&= 0.0084 \\
+P(X = 62) &= \binom{64}{2} 0.9^{62} \times 0.1^2 \\
+&= 0.0293
+\end{aligned}
+$$
+
+In (b), "42 or more" starts at 42, so the continuity correction moves the cutoff down to 41.5.
+
+### Q: WeBWorK-style. An exam has 50 multiple-choice questions with four choices each, one mark per correct answer and no penalty. A student guesses every answer. Use the Normal approximation with continuity correction to estimate the probability of a score of 15 or more.
+**Topic:** 4b Normal approximation to the Binomial  **Lec:** WW7  **Type:** apply  **Id:** b2943d04
+**A:** Key:
+1. The score is $$X \sim \text{Bin}(50, 0.25)$$, approximated by a Normal with mean $$np = 12.5$$ and standard deviation $$\sqrt{50 \times 0.25 \times 0.75} = 3.062$$.
+2. With the continuity correction, $$P(X \ge 15) \approx P(Z > \frac{14.5 - 12.5}{3.062})$$.
+3. $$P(Z > 0.65) = 0.257$$.
+
+Both checks pass: $$np = 12.5$$ and $$n(1 - p) = 37.5$$ are both large enough, so the Normal approximation is fine.
+
+$$
+\begin{aligned}
+z &= \frac{14.5 - 12.5}{3.062} \\
+&= 0.65 \\
+P(X \ge 15) &\approx 1 - 0.7422 \\
+&= 0.257
+\end{aligned}
+$$
+
+The trap is cutting at 15.5, which answers "more than 15".
+
+### Q: WeBWorK-style. 70% of the employees in a department are computer science graduates, and a project team has 8 of them, chosen at random. Find (a) the probability that all 8 are graduates, (b) the probability that exactly 3 are, (c) the most likely number of graduates (the smaller one if two tie), and (d) the expected number of teams, out of 40 such teams, with exactly 3 graduates.
+**Topic:** 3q–s Bernoulli and Binomial distributions  **Lec:** WW7  **Type:** apply  **Id:** bb970757
+**A:** Parts:
+1. (a) $$X \sim \text{Bin}(8, 0.7)$$, so $$P(X = 8) = 0.7^8 = 0.058$$.
+2. (b) $$P(X = 3) = \binom{8}{3} 0.7^3 \times 0.3^5 = 56 \times 0.343 \times 0.00243 = 0.047$$.
+3. (c) The mode is 6, where the pmf peaks at 0.297.
+4. (d) The number of such teams is $$\text{Bin}(40, 0.0467)$$, so the expected count is $$40 \times 0.0467 = 1.9$$.
+
+For the mode, the pmf rises while $$x < (n + 1)p = 6.3$$, so it peaks at 6; the values at 5, 6 and 7 are 0.254, 0.297 and 0.198. A tie happens only when $$(n + 1)p$$ is a whole number.
+
+Part (d) stacks a second Binomial on the first: each team is a trial whose success is having exactly 3 graduates, with probability 0.0467 from (b).
+
+### Q: WeBWorK-style. In the same department, 70% of employees are computer science graduates. You meet employees at random, one after another. Find (a) the probability that the third employee you meet is the first graduate, and (b) the mean number of graduates among 50 employees you meet in a day.
+**Topic:** 3cc Which distribution fits  **Lec:** WW7  **Type:** apply  **Id:** a9f3d8d7
+**A:** Parts:
+1. (a) The meetings until the first graduate are Geometric with $$p = 0.7$$, so $$P(N = 3) = 0.3^2 \times 0.7 = 0.063$$.
+2. (b) The count among 50 is $$\text{Bin}(50, 0.7)$$, with mean $$np = 35$$.
+
+The same 70% feeds two models: which meeting is the first success is Geometric, and how many successes in a fixed 50 is Binomial. Two failures then a success gives $$(1 - p)^2 p$$.
+
 ## Lec 21 — Ch 7: statistics, sampling distributions and the Central Limit Theorem (prepared 2026-11-02 from the deck, updated 2026-11-04 from the recording; Canvas calls it Lecture 22; numbers changed)
 
 ### Q: A study of 200 UBC commuters finds a mean commute of 34 minutes. For each, say whether it is a statistic or a parameter: (a) the 34 minutes, (b) the mean commute of all UBC commuters, (c) the standard deviation of the 200 commutes, (d) the proportion of all UBC commuters who bike. Which of them is known in practice?
