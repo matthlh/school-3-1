@@ -28,7 +28,22 @@
 | Written Assignment 2 | Wed Dec 2 | 40 |
 | Midterm | **Fri Oct 30, 08:00–08:50**, regular classroom (confirmed 2026-09-11; ignore the Nov 4 Canvas entry) | 29 |
 | Labs 1–8 | in lab | 10 each |
-| Final | **Mon Dec 14, 15:30**, in person; room and length not posted yet | 84 |
+| Final | **Mon Dec 14, 15:30–18:00**, OSB1 A, 2.5 hours, closed book | 84 |
+
+## Final exam (Canvas module "Final Exam Information", posted 2026-11-15)
+- The final is on Mon Dec 14 from 15:30 to 18:00 in OSB1 A.
+- It is 2.5 hours and closed book.
+- It covers what was taught in class from chapters 1–8, 10 and 11.
+- Questions are multiple choice, short answer and short calculations that need only a calculator.
+- Partial marks are given for work shown when the final answer is wrong.
+- There are no R coding questions, but there can be questions about R output.
+- The z table, the t table and the relevant pages of the F table are provided.
+- You may bring one double-sided (or two one-sided) letter-size formula sheet.
+- The sheet must be handwritten by you; a printout of a sheet you handwrote on a tablet is allowed.
+- Bring a simple or scientific calculator (no graphing or programmable ones) and your UBC ID.
+- There is no make-up final; a missed final goes to Science Advising within 72 hours for deferred standing.
+- The module has six practice problem sets with separate solutions, and a formula sheet to model yours on.
+- Extra office hours for Dec 8–14 will be posted by Dec 7.
 
 ## Textbook, solutions and suggested problems (Canvas module "Textbook & Suggested Problems", as of 2026-09-11)
 - The course textbook is `textBook_coursenotes.pdf` on Canvas (file 47723417). There are no solutions for chapters 1 and 2. Other chapters have partial solution PDFs on the same page.
