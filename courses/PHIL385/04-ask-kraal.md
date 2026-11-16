@@ -7,13 +7,33 @@ office hours rather than by email.
 These are built to get his opinion rather than a fact. A question you can settle by rereading goes
 in the question bank instead.
 
-## Ask these, in this order
+## Worth marks (ask in 10 seconds after Wednesday's class)
 
-- Emailed on Oct 6 asking for a slot in the Wed Oct 7 office hours, with the opera question, the immediacy
-  question and the sensuous-desire question. He replied the same evening: drop by the Zoom, and he answered all
-  three in writing (Answered table below). Still to ask in the 12:15 slot: whether the Exam 2 multiple-choice
-  questions are multi-select with negative marking, whose view an exam question wants, and what format the
-  final takes.
+- **Does Exam 4 cover "Equilibrium"?** The class on it runs through Wed Nov 18, two days before the
+  exam. If he says no, its questions can wait for the final. If you do not ask, study it anyway.
+
+## Optional: Author B, for interest only (2026-11-16)
+
+PHIL 385 has no participation mark and the multiple-choice exams test the text, so these earn nothing
+directly. Ask only if you want the conversation.
+
+- **Is "an aesthetic choice is no choice" fair to A?** A chooses all the time; Crop Rotation is a
+  whole method of choosing. B says the aesthetic is "not evil but indifference". What makes a choice
+  count as a real choice for B, and could A answer that he simply prefers not to choose absolutely?
+- **Is marriage more aesthetic on A's own terms, or has B changed what "aesthetic" means?** Kraal said
+  the ethical wins even playing by the aesthetic's rules. But B's beauty is inner history, and A's is
+  the first rapture. Is B winning the game or quietly switching it?
+
+## Still open
+
+- What format the final takes. It is 40% and cumulative, and the syllabus does not say whether it has
+  essay questions like Exam 1 or multiple choice like Exams 2 to 4. Matt will ask later (2026-11-16).
+- The "80 books" figure from lecture 1. The numbers that fit are 8 pseudonymous books and 18
+  discourses, so the larger number is probably a mishearing.
+
+## Later: Author A (parked 2026-11-16)
+
+Matt's call: B questions first, these wait.
 
 - **Where does the Nietzsche parallel come from?** Nietzsche never read Kierkegaard. Is the Dionysian
   the same insight reached twice, or do both draw on a common source, such as Schopenhauer's view of
@@ -74,14 +94,6 @@ in the question bank instead.
   backwards?** A diagnoses and walks off. Is "choose yourself" in volume 2 meant as the response to
   A's unhappiest one, or is that us imposing a plot on two authors who never met?
 
-## One boring question worth real marks
-
-- **Whose view does an exam question want?** If a question says "Kierkegaard holds that…" and the
-  claim comes from a pseudonymous book, is the pseudonym's view the right answer, or is that option
-  wrong? How will the wording tell us which you mean?
-  - Not interesting, but each exam question is worth about 2% of the course grade and this is the
-    likeliest way to lose one on a technicality.
-
 ## Settled without asking
 
 - Whether the Judge is Kierkegaard's final position. The text does not say. Eremita states that the
@@ -92,15 +104,10 @@ in the question bank instead.
 - Which exam is the essay exam. Exam 1. Its Canvas quiz is built with 2 questions; Exams 2, 3 and 4
   have 7, which is the MC count in the syllabus. Worth one sentence of confirmation if he is already
   answering the Exam 3 question, not a question on its own.
-
-## Still open from earlier
-
-- What format the final takes. It is 40% and cumulative, and the syllabus does not say whether it has essay questions like Exam 1 or multiple choice like Exams 2 to 4.
-- Whether the multiple-choice questions are multi-select, and whether there is negative marking.
-- Whether the exam uses Hannay's titles or the Hong titles, since *Philosophical Crumbs* and
-  *Philosophical Fragments* are the same book and *Crop Rotation* is elsewhere *Rotation of Crops*.
-- The "80 books" figure from lecture 1. The numbers that fit are 8 pseudonymous books and 18
-  discourses, so the larger number is probably a mishearing.
+- Exam 4's time. It is Fri Nov 20 at 14:00 (Matt, 2026-11-16). Canvas opens the quiz at 13:00 Pacific; that is
+  a setup slip like the Exam 3 date. Do not reopen this from Canvas.
+- Whose view an exam question wants. Matt: the wording makes it clear (2026-11-16). Dropped.
+- Which titles to go by. The Penguin Classics *Either/Or* translated by Alastair Hannay (Matt, 2026-11-16).
 
 ## Answered
 
@@ -108,6 +115,7 @@ Each answer goes in this table, so the lecture pages and the question bank can b
 
 | Date | Question | What he said |
 |---|---|---|
+| 2026-11-16 | Are the multiple-choice questions multi-select, with negative marking? | Settled by Matt from sitting the exams. Each question has exactly one right answer, and a wrong answer costs nothing. Always answer every question. |
 | 2026-10-06 | Is it a problem for A's argument that his proof is an opera, when all three examples have libretti? | By email. A is not using the operas to prove an argument; he uses them to clarify the stages of desire, and his justification is that music and desire are both expressions of immediacy. The words do create a prima facie problem, but A would call them heuristic rather than essential. It is telling that he praises Mozart and not his librettists Da Ponte and Schikaneder. |
 | 2026-10-06 | Does A live the immediacy he praises, or is he a reflective man admiring what he cannot have? | By email. A makes various attempts at this immediacy, which the Seducer's Diary will show, but he does not take himself to be as paradigmatic as Don Giovanni. |
 | 2026-10-06 | Why build the aesthetic life on sensuous desire? Is it set up for the Judge to answer in Part II? | By email. A is not saying the aesthetic life is built on desire. He is saying that the desire-driven life he studies is one kind of aesthetic life, because what is desired is beauty and aesthetics is concerned with the beautiful. |

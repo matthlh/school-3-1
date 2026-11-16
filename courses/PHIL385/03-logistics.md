@@ -33,3 +33,4 @@
 - **Exam 3 is Fri Oct 30**, the syllabus date (settled by Matt, 2026-09-20). The Canvas quiz page's
   Nov 20 is Exam 4's own slot and is a setup slip: Oct 30 is the only timeslot in the term that fits
   a third in-term exam. Do not reopen this from Canvas.
+- **Exam 4 is Fri Nov 20 at 14:00** (Matt, 2026-11-16). Canvas opens the quiz at 13:00 Pacific; that is a setup slip like Exam 3's Canvas date. Do not reopen this from Canvas.

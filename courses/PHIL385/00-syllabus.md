@@ -66,5 +66,5 @@
 ## To verify
 - [x] Which of the four in-term exams is the essay exam? Exam 1: its Canvas quiz has 2 questions, the others 7 (2026-09-19). Confirm in passing.
 - [x] Exam 3 date: **Fri Oct 30**, the syllabus date (Matt, 2026-09-20). The Canvas quiz page says Nov 20, but that is Exam 4's slot, so it is a setup slip. Oct 30 is a triple exam day.
-- [ ] Are MC questions multi-select ("the correct answer(s)")? Negative marking?
+- [x] MC questions have one right answer each, and a wrong answer costs nothing (Matt, 2026-11-16).
 - [ ] Respondus LockDown Browser installed and tested before Oct 2
