@@ -3315,3 +3315,322 @@ PDF pp. 428 and 457. The aesthetic person does develop, but "with necessity, not
 3. Against a provable objective fact: "Can we think it, that is, is it something for thought? No"; thought yields only relative differences.
 
 B also fences off two misreadings of freedom itself: it is not *liberum arbitrium*, the bare freedom to pick either way, because true freedom "has for all eternity evil outside itself" and perfects itself by excluding it (PDF p. 425); and it does not assume "a notion of radical evil", since repentance expresses both that evil is part of me and that it is not essentially part of me (PDF pp. 426–427, 457).
+
+## Reading: "Equilibrium" (Nov 13–18; read by Claude 2026-11-16)
+
+### Q: B quotes A's "great thinker and true philosopher of life" on a man who had tossed his hat onto the floor. What did the thinker say, and what does B call A's "do it or don't do it, you will regret both"?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** reading  **Type:** recall  **Id:** f7dd7b95
+**A:** Parts:
+1. "If you pick it up, you'll get a beating, if you don't pick it up you'll also get a beating, now you can choose!"
+2. B calls A's line "a deep mockery of yourself" and a sad proof of how loose the joints of A's soul are.
+
+PDF p. 416, Penguin about p. 476. A offers the line as friendly advice to people who come to him in a crisis. B's reply is that he who mocks others mocks himself, and that A's whole view of life rests on the single sentence "I say merely either/or". The same line appears in the first letter as what would be justified if the aesthetic, the ethical and the religious came apart, and in the Diapsalmata as A's "ecstatic lecture".
+
+### Q: B compares the person who deliberates to a helmsman whose ship is about to tack. What is the point of the image, and what happens to the person who "forgets to take that headway into account"?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** reading  **Type:** recall  **Id:** 27451d12
+**A:** Key:
+1. The ship keeps its headway while the helmsman says "I can either do this or that", so there is only an instant when it is immaterial which he does; a person cannot keep his personality blank while he deliberates.
+2. The moment comes when there is no either/or left, not because he has chosen but because he has refrained from choice.
+3. Which means that others have chosen for him and he has lost himself.
+
+PDF p. 420, Penguin about p. 478. The personality already has an interest in the choice before one chooses, so a postponed choice is made unconsciously or by the dark powers within. The fairy-tale of people captivated by mermaids' music, who had to play the same piece backwards without a mistake, stands for having to retract what was lived while one deliberated. A's own method shows the result: faced with priest or actor, his reflection "with its hundred arms" spends half a year on each, a third option (lawyer, barrister) appears, and after a year and a half he ends with "Or a hairdresser, or a bank teller, I say only either/or." B says A has become a universal critic, and that his "vanitas vanitatum vanitas, hurrah!" is no choice but a case of "Drop it!", or a mediation like letting five become an even number.
+
+### Q: "As truly as there is a future, just as truly is there an either/or." Set out B's case that philosophy's mediation makes the same error as A does, and say what limits philosophy's right to mediate.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** reading  **Type:** derive  **Id:** 8fb23cfa
+**A:** Key:
+1. A's domain is action and philosophy's is contemplation; A mediates oppositions in a higher lunacy and philosophy in a higher unity, and transferred to the practical domain philosophy must come to A's result.
+2. A turns to the future ("whichever I do is equally wrong, ergo I do nothing at all"); philosophy turns to the past, where for the philosopher world history is concluded and he mediates.
+3. The philosopher's time is not absolute time, so absolute mediation is possible only when history is finished and the System is in constant process of becoming; the age's error was to mistake itself for absolute time.
+4. Philosophy is therefore helpless at getting a man to act, because what it really demands is that one act from necessity, which is a contradiction.
+
+PDF pp. 424–426, Penguin about pp. 482–484. B mocks the young men who can mediate Christianity and paganism yet cannot tell a plain man what he has to do in life. The deeper point follows: if mediation is admitted there is no absolute choice, which B resolves by separating the sphere of thought, where the opposition has no substance, from the sphere of freedom, where one opposite excludes the other. The treasure B would leave his little son is "an either/or which makes a man greater than the angels" (PDF p. 427).
+
+### Q: Give B's general description of every aesthetic life-view, and the carefully worded clause about its condition that he asks A to keep hold of.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 31a54752
+**A:** Key:
+1. Every aesthetic life-view says that one must enjoy life.
+2. The person who wants to enjoy life always posits a condition that is either outside the individual, or in the individual but not posited by the individual himself.
+
+PDF p. 430, Penguin about p. 489. At every stage spirit appears not as spirit but as immediacy, at most in the form of talent. B says A shares this life-view with every carouser and sportsman, and that what distinguishes A from them is unessential. The summary line at the end of the stages is that one lives for that in which one is immediately what one is (PDF p. 436).
+
+### Q: Sort B's stages of the aesthetic life-view by where the condition for enjoyment lies: health and beauty; wealth, glory and nobility; talent; desire.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 99ba4863
+**A:** Parts:
+1. Health, and its poetic form beauty: the condition lies in the individual but is not posited by him, and personality has the form of the psychic.
+2. Wealth, glory, nobility, and the girl head over heels in love: the condition lies outside the individual.
+3. Talent, practical, mercantile, mathematical, poetic, artistic or philosophical: the condition lies in the individual but is not posited by him, however much he educates it.
+4. Desire ("Live for your desire"): desire is inherently diverse, so the life splits into endless diversity; it lies in reflection, but a finite one, and the personality stays immediate.
+
+PDF pp. 431–432, Penguin about pp. 490–492. B's example for beauty is the old countess who watched her husband walk up the avenue in his court uniform and said "Little Vilhelm, isn't my Ditlev the handsomest man in the whole kingdom?"; "Little Vilhelm" is B as a student, and her life-view was that they were the handsomest couple in the land. The talented are the tireless people A scorns; B says their life is more innocent than A's. Beyond desire come two refinements: the Epicurean's "Enjoy yourself; it is you yourself in the enjoyment that you must enjoy", and the Cynic's "Enjoy yourself in constantly discarding the conditions". Both still depend on an external condition, and the discarder hollows himself out.
+
+### Q: On Nero: what did A once say about him burning Rome, what one word does B give for Nero's nature, and how did the earlier Church doctrine B subscribes to classify that word?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 4694989d
+**A:** Parts:
+1. A said one could not blame Nero for setting fire to Rome to get some idea of the conflagration of Troy, only question whether he had enough of the artist in him to know how to enjoy it.
+2. Melancholy.
+3. Among the cardinal sins; B adds that a person becomes melancholy only by his own fault, whereas sorrow can pursue someone blamelessly all his life.
+
+PDF pp. 433–435, Penguin about pp. 493–496. Nero is B's example of the life of desire with everything in its favour. The immediacy of spirit demands a breakthrough that Nero lacks the courage for, so he grabs at new pleasures and yawns when they end. He wants to make people anxious, because to himself he is a riddle and anxiety is his being, and he slinks in weak and impotent, which is more disquieting than imperial dignity. Caligula's wish for all men's heads on one neck and a man's suicide are the same expression. B later tells A that "this is the way to become a Nero", were it not for A's original seriousness, and were A Emperor of Rome (PDF p. 442).
+
+### Q: Define melancholy as B does in this letter, say how it differs from sorrow, and say why B calls it a sin.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 3f650f8a
+**A:** Key:
+1. Melancholy is "hysteria of the spirit": a moment comes when immediacy has ripened and the spirit demands a higher form in which it will apprehend itself as spirit, and if that movement halts and is pressed back, melancholy sets in.
+2. The griever knows why he grieves, while the melancholic can only say "I don't know what it is, I can't explain it"; that is melancholy's infinitude, since knowing the cause would remove it.
+3. It is sin because it is the sin of not willing deeply and sincerely, which B calls a mother to all sins.
+
+PDF p. 435, Penguin about p. 496. Only the spirit can cure it, since it lies in the spirit; physicians cannot. It is common in the age, "the whole of German and French youth groan" under it, and only the most gifted natures are afflicted. For the person who owns himself eternally it is neither too early nor too late that he comes to the world. The trap is the first letter, where melancholy (egoistic and sympathetic) was the age's fear of committing; this is a different account.
+
+### Q: Reconstruct B's argument that every aesthetic life-view is despair.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** derive  **Id:** a096ef55
+**A:** Key:
+1. Suppose every aesthetic life succeeds (the man of health is as quick as ever when he dies, the couple dance at their golden wedding, the gold mines never run out, Nero never yawns), and then suppose the opposite, that none of it happens: these people despair.
+2. They despair because what they built their lives on proved transitory, but the transitory has not changed in anything essential, since it was transitory all along.
+3. So if they despair now, they were in despair beforehand and simply did not know it, which is an accidental difference.
+4. Hence every aesthetic view of life is despair, and everyone who lives aesthetically is in despair whether he knows it or not; the one who knows it needs a higher form of existence.
+
+PDF pp. 436–437, Penguin about pp. 498–499. The later formulation is that any life-view with a condition outside it is despair (PDF p. 462), and the contrast is that the aesthetic life-view builds on what may or may not be, while the ethical builds on what has being as its essential property (PDF p. 457).
+
+### Q: What does B call A's own life-view, how does it differ from the despair of a painter who goes blind, and between which two extremes does A's life swing?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 9ffa0207
+**A:** Key:
+1. The last and most refined aesthetic life-view, which is despair itself; a despair in thought, thought-despair.
+2. The painter despairs over something particular and his despair would end if his sight returned; A has lost nothing (wealth, independence, health, a vigorous mind, no girl has refused him), his thought has hurried ahead and seen through the vanity of everything but gone no further.
+3. Between being intemperately energetic and immoderately indolent.
+
+PDF pp. 437–439, Penguin about pp. 499–502. A hates activity because his life lacks continuity: he stands idle in the market-place like the workers in the Gospel, would not step aside for a tile falling from a roof, dies daily, and reckons his life "from one day's notice to quit to the next". When something grips him he is "in touch" and works with a dying man's energy for a month or six months at most, then says "and that's the end of the story". Musaeus's legend of Roland's pages, where the invisible page loses princess Urraca's fascination the moment he shows his everyday face, explains why A passes off an ideal picture of himself and withdraws. A is "content with absolute discontent": a day for the world's glories, a month to be a millionaire, half a year for the most beautiful girl.
+
+### Q: "What then are you to do? I have only one answer: 'Despair!'" In what sense does B command despair, and which two pieces of ordinary advice does he reject first, and why?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 157e3e18
+**A:** Key:
+1. Despair not as a comfort and not as a state to remain in, but as an action requiring all the soul's strength, gravity and self-command.
+2. He rejects "Get married" and "Apply for some office", because marrying or taking a post as a distraction from melancholy is a kind of falsehood, and the melancholy would erupt again.
+
+PDF pp. 444–445, Penguin about pp. 508–509. B shouts it as a married man, not as a mocking demon, and says anyone who has not tasted the bitterness of despair has missed the meaning of life; he has despaired too. A is fortunate because he will not despair over something particular; a despairer who blames the complex world outside him despairs falsely and comes to hate the world. The woman who sold Tarquin the books burnt a third and demanded the same sum, twice, which is what delay does to A's conditions. The even better condition is the gifted young man who despairs for the girl's sake over the difference between them and finds the eternally human, in which all are equal (PDF p. 446). The poet-existence lies in despair not carried through, so if A does not want to be a poet the only way is "Despair!" (PDF p. 447).
+
+### Q: How does B distinguish doubt from despair, and which of the two does he call the true point of departure for finding the absolute?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 51e06395
+**A:** Key:
+1. "Doubt is a despair of thought, despair is a doubt of the personality."
+2. Doubt belongs to necessity and moves only thought, which rests in the absolute by the same necessity with which it doubted; despair is an expression of the whole personality and is chosen in freedom.
+3. Doubt lies in difference and needs talent; despair lies in the absolute and needs none, so the lowliest person, a young girl, can despair.
+4. Despair, not doubt, is the true point of departure.
+
+PDF pp. 447–449, Penguin about pp. 512–514. One can doubt without choosing to, but one cannot despair without choosing to. B has seen German philosophers who conquered doubt and still have despair in their hearts, distracting themselves with objective thinking, since "scarcely any sedative is more effective than abstract thinking". When one truly wills despair one is beyond it, because one has chosen what despair chooses, oneself in one's eternal validity.
+
+### Q: When B chooses absolutely, what does he say he chooses, in what paired formula, and what is his first definition of the self that is chosen?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 0019774f
+**A:** Key:
+1. The absolute, which is himself in his eternal validity, not this or that finite thing and not himself in his immediacy as this contingent individual.
+2. "I choose the absolute which chooses me, I posit the absolute which posits me"; the category of choice is the identity of both, since what is chosen is (or I could not choose it) and is not (since it comes to be only by my choosing it).
+3. The self is the most abstract thing of all and at the same time the most concrete thing of all: it is freedom.
+
+PDF pp. 449–451, Penguin about pp. 514–517. Even the Jew who chose God did not choose absolutely, since he chose the absolute but not absolutely and so made it finite. B's psychological proof of the eternal validity of personal existence is that no one seriously wishes to become someone else; even a suicide wants another form of his self. "I do not create myself, I choose myself": as free spirit he is born of the principle of contradiction, and the chosen self is infinitely concrete yet absolutely different from his former self.
+
+### Q: Why is repentance the expression of choosing oneself, what does B call the one expression of love of God, and why could the pious Jew not repent the sins of the fathers?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** f083785b
+**A:** Key:
+1. The chosen self has a history that links him to his family and the race, and the fight to possess it is repentance: he repents himself back into himself, into the family, into the race, until he finds himself in God.
+2. Love of God has only one expression in language, repentance, because thought's love of the absolute loves necessarily rather than freely, and because God loved me first.
+3. The pious Jew felt the fathers' guilt weigh on him but could not repent it, because he could not choose himself absolutely; repentance first found its true expression in Christianity.
+
+PDF pp. 451–452, Penguin about pp. 517–519. Only the one who chooses himself as guilty chooses himself absolutely, so the son repents even his father's inherited sins, which B learnt watching his little son in the living-room. "The greater the freedom the greater the guilt, and that is the secret of blessedness." "absolute isolation is identical with the deepest continuity." Earlier B had said that repentance is no mediation: it does not look with longing on what should be mediated but consumes it in its wrath, which is like exclusion, so admitting repentance needs no notion of radical evil (PDF p. 427). The phrase "repenting myself out of the whole of existence" guards against the reading that he chose evil as absolutely as good (PDF p. 457).
+
+### Q: B reads "gain the whole world and suffer harm to his own soul" as an ethical expression. Contrast finite and absolute despair, and say exactly when a person suffers harm to his soul.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** apply  **Id:** 931ede20
+**A:** Key:
+1. Absolute despair, willed infinitely, is identical with absolute self-surrender and is an infinitization; finite despair is a hardening.
+2. Every finite despair, whether over gaining the world or over losing it, is a choice of the finite and so an unfree despair.
+3. He suffers harm only when he hardens himself in finite despair and, on coming round, chooses a finite way out; then he isolates himself and becomes a beast of prey that shuns no means.
+
+PDF pp. 453–455, Penguin about pp. 520–523. The soul is the same abstract self found earlier, impervious to the finitudes of immediacy: one can lose wealth, esteem and mental powers without harm, or gain them all and suffer harm. No one can judge another here, since the harm lies in the inmost being like the rot in the core of a fruit. The chosen self is "the whole aesthetic self which is chosen ethically".
+
+### Q: How does aesthetic development differ from ethical development for B, and why is despair "no break but a transfiguration"?
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** e6a54e90
+**A:** Key:
+1. The aesthete develops with necessity, like a plant: he becomes something, but what he becomes is what he already is immediately ("I have it in me to be a Don Juan, a Faust, a robber chief").
+2. The ethical person has from the first the absolute difference between good and evil; he suppresses evil and brings the good forward, so the aesthetic is removed from its throne.
+3. Aesthetes call despair a break only because they take life to be a necessary unfolding of the immediate; only the person who despairs over something particular suffers a break.
+4. In despair nothing is destroyed: all the aesthetic qualities remain, but as ancillary, and are preserved for that very reason; "Everything returns, but transfigured."
+
+PDF pp. 457–459 and 487, Penguin about pp. 525–528 and 561. The aesthetic life-view builds on what may or may not be, the ethical on what has being as its essential property. It takes ethical courage to be content with the universal; the aesthete secretly dreads despair because despair brings out the universal and his life rests on a difference. The ethicist only carries to its conclusion the doubt that the higher aesthete set in motion and broke off.
+
+### Q: B describes a man who has chosen himself and then says "Now I own myself … I am the one I am", and who ends like Narcissus. What went wrong, and what does the right choice do instead?
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** apply  **Id:** f1a48af1
+**A:** Key:
+1. He chose himself from outside, in respect of his necessity rather than his freedom, and so took the ethical option in vain, aesthetically.
+2. His eternal validity overwhelmed him and the temporal vanished; he reached eternity before his time, gazed at himself, sank into apathy, and suicide seemed the only way out, since he had fallen in love with himself like Narcissus.
+3. The right choice chooses the self in respect of its possibility, so that he is in motion and stays in his freedom only by constantly realizing it.
+
+PDF pp. 460–461, Penguin about pp. 529–530. B says such cases have not seldom ended in suicide. The mood passage just before it draws the same line: the aesthete has his centre at the periphery, while the ethical person has his mood centralized and an acquired equability.
+
+### Q: A's favourite life-view says the meaning of life is sorrow and "the unhappiest is the happiest". Where does B place it between the aesthetic and the ethical, why is it despair too, and what is the first thing B answers?
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** apply  **Id:** 7c6289d1
+**A:** Key:
+1. At the dangerous transition between the aesthetic and the ethical: not aesthetic, since its slogan is not pleasure, and not ethical either, a place where the soul is seduced by a theory of predestination and ends in plain fatalism.
+2. It is despair because the one who makes sorrow the meaning of life has joy outside him, just as the joy-seeker has sorrow outside him, and any life-view with a condition outside it is despair.
+3. "First of all, you do not sorrow": A's saying is a falsification, a rebellion against God, and treason against the human race.
+
+PDF pp. 461–464, Penguin about pp. 530–534. A's sorrow is aesthetic, reflected sorrow, based on misfortune, fate and disposition rather than guilt; it is not repentance. B's own sorrow gets an ethical expression, guilt, repentance and forgiveness, and he deposits it within his being rather than taking it out every day. The age believes in sorrow because it no longer believes in joy, and joy obliges one to be thankful. The trap is the Diapsalmata lecture, where A has no belief about the meaning of life; here B attributes a view to A and refutes it.
+
+### Q: The Greek who made himself "a paragon of virtue" is B's first failed ethical life. What marks it, and what is its defect?
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** fdd2bb90
+**A:** Key:
+1. The first form of the choice is complete isolation: the individual is active, but his action has no relation to the surrounding world, and he develops the personal virtues (courage, perseverance, temperance, moderation), not the civic ones.
+2. The defect is that he chose himself altogether abstractly, so the perfection he attained was abstract and his blessedness a lonely, transient self-contentment.
+
+PDF pp. 465–466, Penguin about pp. 535–537. The Christian anchorites did the same. This is why B stresses that choosing oneself and repenting oneself are identical, since repentance puts the individual into connection with the surrounding world. The Greek and the mystic are both attempts at an ethical life-view that fail because the individual chose himself in isolation or abstractly, which is to say not ethically (PDF p. 472).
+
+### Q: Give B's three personal objections to the mystic.
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** bb22ce11
+**A:** Parts:
+1. A certain importunity towards God: the mystic disdains the reality God placed him in, and so disdains God's love ("To obey is better than sacrifice"); worse still when he thinks some accidental trait makes him God's favourite.
+2. Softness and weakness: he puts his love of God to the test at every moment instead of believing in his own love and continuing happily in the situation assigned to him.
+3. A deceit against the world he lives in: he chooses solitude without asking whether he has the right to; B is an enemy of mysticism especially as a husband and father, since a mystic would need another adyton all to himself and would be a bad husband.
+
+PDF pp. 468–469, Penguin about pp. 540–542. The one-sided mystic becomes indifferent to every relationship, even the tenderest, and B denies any collision between love of God and love of the people God lodged in our hearts. Young Ludvig Blackfeldt, whom both knew, was absorbed in Indian rather than Christian mysticism and took his own life; what is peculiar to the mystical is not the religious but the isolation, the attempt at immediate rapport with the eternal.
+
+### Q: In one sentence, what is the mystic's mistake, and how does his repentance differ from ethical repentance?
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** ba7c3b10
+**A:** Key:
+1. The mistake is not that he chooses himself but that he does not choose himself properly: in respect of his freedom yet not ethically, which means abstractly, so he lacks transparency.
+2. He repents himself out of himself, not into himself; metaphysically, not ethically, judging existence to be vanity, illusion or sin.
+3. Ethical repentance has only two movements, abolishing its object or bearing it, whereas the mystic's fleeing is an abstract relation.
+
+PDF pp. 471–472, Penguin about pp. 543–545. "the abstract is the opaque, the indistinct." To repent aesthetically is detestable because effeminate; to repent metaphysically is a misplaced superfluity, since the individual did not create the world. The mystic chooses himself out of the world and cannot choose himself back, while the true concrete choice chooses out of the world and back into it in the same moment. He sees the temporal as a probation, but for B the temporal is the possibility of the finite spirit's glorification and the greatest gift of grace: man's dignity is that he can acquire a history and give it continuity by his own work.
+
+### Q: A defines the beautiful as "that which has its teleology within itself" and points to a young girl, nature and art. How does B turn the definition against him?
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** critique  **Id:** 589b324f
+**A:** Key:
+1. A's examples lack movement, and teleology requires movement, so A's phrase is only negative: it says the beautiful is not for something else.
+2. In life A's beauty is the individually beautiful: he sees each person as an element in a whole, so each person's teleology lies outside him and the parts are not beautiful in themselves.
+3. As soon as A says inner or immanent teleology he requires movement and history, which takes him out of nature and art into the sphere of freedom, and so of ethics.
+4. The individual has his teleology within him and is his own teleology; his movement runs from himself, through the world, to himself, and only there can there be any question of beauty.
+
+PDF pp. 488–490, Penguin about pp. 562–565. Art and poetry give only an imperfect reconciliation with life. The beauty B sees is in the trace of the historical (Loquere ut videam te), in the struggle rather than the consummation, and it is joyful and triumphant, unlike the sadness in nature, art and even the Greek gods. "the man of courage does not see ghosts, on the contrary he sees conquering heroes."
+
+### Q: What is the aesthete's relation to mood, what is the ethical person's, and how does B's gambler show the difference?
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** apply  **Id:** aa600023
+**A:** Key:
+1. The aesthete tries to be wholly taken up in the mood, so he is in the moment and swings between huge oscillations; his mood is eccentric because his centre is at the periphery.
+2. The ethical person has chosen himself infinitely and sees mood beneath him; the remainder that will not fit the mood is his continuity, which is master over mood, and he has a memory of his life.
+3. The gambler whose desire is roused is cured if he can say "Not just now; in an hour's time", because that hour is the continuity that saves him; mastering desire means determining the instant, not abstaining.
+
+PDF pp. 459–460, Penguin about pp. 528–529. The ethical person's total mood is equability, which is acquired and which no one has by nature or immediately.
+
+### Q: "The person who lives aesthetically sees only possibilities everywhere; the person who lives ethically sees tasks everywhere." Say what the ethical individual chooses himself as, and name the three superstitions B lists about what makes a man happy.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 49f3c234
+**A:** Key:
+1. He chooses himself concretely as this definite individual, with these aptitudes, passions and surroundings, the product of a definite outside world, and takes responsibility for all of it; his concretion is his task, and since the choice is freedom's he can equally be said to produce himself.
+2. The superstitions: that one's place in the world makes one happy; that getting exactly the ideal girl makes one happy; that great events and situations make a man into something.
+
+PDF pp. 473–474, Penguin about pp. 545–547. Each superstition has a true core, but if his place or his choice disappoints him the ethical person does not lose courage, since "the art is not to wish but to will" and everywhere there is a dance floor. "to be or not to be" applies to the aesthete, who is dead if the least demand goes unmet; the ethical person always keeps hold of one point, himself. The essential and the accidental (PDF p. 480): everything posited with his freedom is essential; he is his own editor, with editorial responsibility to himself, to the scheme of things and to God, and his wit and acuity are not essentially his unless he takes them up as a task.
+
+### Q: Why does B reject "living for the fulfilment of life's duties" as the ethical life-view, what does the Danish word for duty show, and where does the truly ethical individual keep his duty?
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 89030a0e
+**A:** Key:
+1. That formula places the individual in an external relation to duty, with duty as a mass of particular propositions, which makes it tedious and hard to defend against the aesthetic.
+2. Pligt by its derivation names an internal relation: duty is not an imposition (Paalæg) but something which imposes (paaligger).
+3. The truly ethical individual has duty inside him, not outside, and so has inner calm; the unhappiest life is to have duty outside oneself and constantly want to realize it.
+
+PDF pp. 475–476, Penguin about pp. 548–550. If the ethical lies outside personal being, one has despaired: the aesthetic as such is despair, and the ethical taken abstractly brings about nothing. The ethical is the universal and as such the abstract, interdictory, law; the Jews understood the Law but not "Thou shalt love God with all thine heart", which is positive and concrete in the highest degree.
+
+### Q: Contrast "the accidental man" with "the universal man", and say what B calls "the true art of living".
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 56ac0c26
+**A:** Key:
+1. The aesthete is the accidental man, who thinks he is the perfect man through being the only man; for the man aesthetically in love it matters that no one has loved with just his nuances.
+2. The ethical person works at becoming the universal man, not by stripping off his concretion but by clothing himself in it and permeating it with the universal; if he marries, he realizes the universal.
+3. The true art of living is to be the only man, unlike any other, and at the same time the universal man.
+
+PDF pp. 476–481, Penguin about pp. 550–554. Only when the individual himself is the universal can the ethical be realized, which B calls the secret of conscience. He can become the universal man only because he already has the universal in him potentially (kata dunamin), like the fire that burned in the bush without consuming it; any regular verb could serve as the grammar's paradigm. B says "to choose oneself" rather than "to know oneself" because the knowing is itself an action, and the ideal self lies within him and fades like a man's shadow, in front in the morning, beside him at noon, behind him in the evening. The Hussites who went naked like Adam and Eve show what happens if the universal is placed outside.
+
+### Q: "I can perform duties without doing my duty, and I can do my duty without performing duties." What sceptical argument about duty is B answering, and what does he conclude about personal being?
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** apply  **Id:** a5953326
+**A:** Key:
+1. The deeper scepticism: duty is the universal, but all I can do is the particular, so in principle I cannot do my duty at all.
+2. Language answers it: one never says that a man does duty, one says he does his duty and I do my duty, so the individual is at once the universal and the particular.
+3. Personal being is therefore itself the absolute, the unity of the universal and the particular, neither lawless nor giving itself its laws, and the dialectic of duty lies within me.
+
+PDF pp. 482–484, Penguin about pp. 555–558. The weaker scepticism, that laws change, touches only the civic virtues. Making duty external would abolish the difference between good and evil, since an abstract relation to the universal is incommensurate with that difference; no one has ever held it a duty to do evil. The freethinkers' example of peoples who kill their aged parents looks only at the external, while the ethical lies in consciousness. Personal being is the Archimedean point from which one can lift the world, and only as the particular is he the absolute, which saves him from revolutionary radicalism.
+
+### Q: Tell B's story of the first ten lines of Balle's textbook, and say what he derives from it about duty.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 50a59740
+**A:** Key:
+1. At five, on his first day at school, he was set the first ten lines of Balle's textbook to learn by heart; he tested himself before sleep and got up at five to read them again.
+2. It was as though heaven and earth would collapse if he did not learn his lines, and even if they collapsed, that would not exempt him from the task once he had it.
+3. From that one duty he derives the whole of his ethical view of life: what matters is not the multiplicity of duty but its intensity, and the energy with which one becomes ethically conscious.
+
+PDF pp. 485–486, Penguin about pp. 559–560. He owes the impression to his father's serious-mindedness. In education what matters is that the spirit is matured and energy aroused: "Give a man energy, passion, and he has everything." Becoming ethically conscious means becoming conscious of one's eternal being, which B calls the true proof of the immortality of the soul; the homework was its first proof, incomplete only because the task was accidental. In relation to his own life a man "is not his uncle but his father". Duty is the identity of absolute dependency and absolute freedom, and one is autodidact by being theodidact.
+
+### Q: The penniless hero asks an aesthete and then an ethicist how to live. Give the aesthete's answer, the ethicist's one sentence, and the two advantages B claims for the ethical view of work.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 1de4e9f8
+**A:** Key:
+1. The aesthete: money is the absolute condition of life (three thousand dollars a year when single, six thousand to marry), so with nothing the hero is left with the workhouse, or makeshifts such as marrying a rich girl, the lottery, the colonies or an old bachelor's inheritance.
+2. The ethicist: "It is every man's duty to work in order to live", which makes the moneyed aesthete the exception; being an exception is inferior, and having money is a humiliation.
+3. First advantage: the ethical view accords with reality and explains something universal in it, while the aesthetic view proposes something accidental and explains nothing.
+4. Second: it construes man in the light of his perfection and true beauty, since work expresses the universally human and freedom, and through work man becomes master of nature.
+
+PDF pp. 491–493, Penguin about pp. 566–568. "Marriage is not harmed by seducers but by cowardly husbands", and likewise the good cause is harmed by workers who sigh that the finest thing is to be independent. A world where work was unnecessary would be an imperfection of existence; the lower the level of human life, the less the necessity of work is apparent. Making ends meet is the most formative struggle there is.
+
+### Q: Why does B set "everyone has a vocation" above the aesthete's theory of talent, and what does he say about the word "accomplish"?
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 2d1ecb34
+**A:** Key:
+1. The aesthete's life-views rest on difference, a more-or-less of talent, and it is arbitrary where he stops; the ethicist says that behind all differences remains the universal, and it is a vocation, so the most eminent talent and the least significant individual both have one.
+2. Vocation makes the universal transparent rather than something accidental, and shows the universal in its true beauty: talent is beautiful only when it becomes transparent in a vocation.
+3. "Essentially everyone accomplishes as much as anyone else": accomplish names a relation between my action and something outside me over which I have no authority, so each can complete his job and no more, and what I accomplish is my good fortune.
+
+PDF pp. 493–496, Penguin about pp. 568–572. The third adviser's plan is seven hours' sleep, five dull hours of work and twelve hours coddling one's talent, "a non-human for five". A vocation gives a standard outside oneself that apportions time and offers a fresh start after a failure; without one a man becomes a pedant or a loafer. A once joked that he had studied integral, differential and infinitesimal calculus to work out what part of the whole a junior Admiralty clerk accomplished. B's image is the beech that grows its crown whether or not anyone comes to sit in its shade.
+
+### Q: How does the hero correctly understand "it is every man's duty to marry", and what can the ethical not tell him?
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** 5d00fe08
+**A:** Key:
+1. Not that it is a sin not to marry, unless it is one's own fault, but that he who marries realizes the universal.
+2. The ethical cannot tell him whom to marry, since that would need knowledge of all his aesthetic characteristics, and choosing for him would make nonsense of its own theory.
+
+PDF pp. 497–499, Penguin about pp. 573–575. Once he has chosen, the ethical sanctions and elevates his love and saves him from a superstitious belief in the accidental; there is no abstract marriage, as there is no abstract vocation. Before this the hero learnt from the aesthetes what not to do: the seducer lies doubly, and to love on the basis of what is obscure in oneself, with one part of the soul, with a hundred arms, or conditionally, is an insult. Love is a holy tax paid in its own currency.
+
+### Q: A man the hero respects tells him to marry only "an uncommon girl". What does marriage do with her uncommon qualities, and what does the hero say whether he gets the prodigy or an ordinary girl?
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** apply  **Id:** aaf73159
+**A:** Key:
+1. Marriage takes nothing from her and abolishes no difference; it makes the differences look accidental as long as marriage is something outside him, and he is secure in them only when he gives them the expression of the universal, since "the relationship is the absolute, for the relationship is the universal".
+2. It deprives him of the vain joy of being uncommon to give him the true joy of being ordinary, and treats the differences as tasks rather than guarantees.
+3. Either way he says essentially "I am no different from any other married man, for the relationship is the absolute".
+
+PDF pp. 498–500, Penguin about pp. 574–577. B imagines a forest nymph arriving in Copenhagen and choosing the hero, and quotes Donna Clara on "the beautiful Preciosa". In the event the hero married a girl like any other and was glad, since with a prodigy the task would have been too much for him. The duty to see each other daily spread evenness over the relationship, and time became a blessing: "the prosaic marriage had concealed a poet".
+
+### Q: Tell the story of the Dutch orientalist, and give the moral B draws from it, including his formula about woman and man.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** df09d9c6
+**A:** Key:
+1. He missed dinner over a diacritic he had never seen in an excellent Dutch edition; his wife said it was not worth wasting breath on, blew, and the dot vanished, because it was a grain of snuff.
+2. Unmarried he might have gone mad; as an aesthete with a prodigy in a palace he would have come home at dawn to stare at the dot, with no wife who could blow it away.
+3. "Woman clarifies finiteness, man chases after infinity": woman is on good terms with time and gives man finiteness.
+
+PDF pp. 500–503, Penguin about pp. 577–581. B's own melancholy hours end when he watches his wife move about the room, always occupied. In B's retelling of the creation, man did not know what to do with finiteness and woman's need was to make the interval shorter. Because she gives man finiteness she is the stronger, which is why Scripture has the man, not the maiden, leave father and mother. B hates all talk of the emancipation of women and makes woman his symbol of the congregation; know that this is B's view in 1843, not Kraal's.
+
+### Q: What is "the absolute condition for friendship" for B, what must the shared life-view be, and what did Aristotle do with friendship?
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** 6f28720c
+**A:** Key:
+1. Full agreement in life-view, so that friendship rests on consciousness rather than obscure emotions or sympathy, which saves it from infatuation and from having a friend one day and not the next.
+2. The life-view must be positive (the Augurs laughed because theirs was negative), and a positive life-view must contain an ethical factor, so people with a system that has no room for the ethical have no life-view at all.
+3. Aristotle made friendship the starting point of his whole ethical view, broadening justice until friendship and justice come to the same; B calls this more perfect than basing right on duty, since it rests on the social, but imperfect because it makes the State the highest idea.
+
+PDF pp. 505–507, Penguin about pp. 583–586. Unity in life-view endures if the friend dies and ends if the unity ends, whereas the lovebirds that die together are beautiful in nature and ugly in the world of spirit. A's wish for a kindred soul to laugh at it all cannot ground a friendship, and B asks whether A found his friends in the Symparanekromenoi, a society that esteems its members for hiding their madness. A's opposite accounts of friendship show that sentimentality and callousness are one and the same.
+
+### Q: Complete B's formula "It is every man's duty to …", say why he prefers it to "the duty to have a friend", and say what happens to the man who is not revealed.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** f3f4689b
+**A:** Key:
+1. "… become revealed."
+2. It conveys the ethical in friendship and in everything else in the letter at once, and sharply brings out the difference between the ethical and the aesthetic.
+3. Ethics says the meaning of life and reality is that man be revealed, so if he is not, the revelation takes the form of punishment, as at the judgement after death when everything is revealed.
+
+PDF pp. 507–508, Penguin about pp. 586–587. The aesthete always holds something back, since giving himself totally would be doing it ethically, and hide-and-seek avenges itself by making him a mystery to himself; mystics get phantoms to contend with. The letter opened on the same thought: he who cannot reveal himself cannot love, and he who cannot love is the unhappiest of all (PDF p. 417). It closes with B's testimony as a witness rather than a judge ("a person who speaks of what he has experienced always has authority"), his wife's verdict that A lacks womanliness, and the question whether A's lonely laughter satisfies him.
+
+### Q: "The truly extraordinary man is the truly ordinary man." Explain the sentence, and say how the man who finds he cannot realize some part of the universal should conduct himself.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** e69fbe15
+**A:** Key:
+1. The more of the universally human an individual realizes in his life, the more extraordinary he is; the less of the universal he can assume, the less perfect he is, uncommon only in a bad sense.
+2. He first deliberates how far it is true, knowing that laziness and cowardice make people fancy it, then risks an experiment arranged so that what wounds him is the universal, not the particular.
+3. If he fails, he stands outside the universal on that point as an exception, with an explanation he could give at any hour, and bears witness to the universal by his sorrow; B calls the struggle a purgatory.
+4. He is reconciled through that sorrow, seeing that everyone is an exception and that everyone is at the same time the universally human, and admits it would be more perfect still to take possession of the whole universal.
+
+PDF pp. 510–514, Penguin about pp. 589–594. Going into the monastery was not the error; thinking it made one uncommon was: "the gods do not sell the unusual at a bargain price." One owes the person who strikes out on his own the shout "Think of the end!", where the end means life, not death. B closes by hoping one day to call A his friend in the strict sense, keeps the correspondence secret because A hates having his inner history talked about, and wishes him farewell as though they were far apart while hoping to see him as often as before.
