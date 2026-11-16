@@ -1,8 +1,8 @@
 # PHIL 385 — Lec 13–17 (Mon Oct 19 to Wed Oct 28) — "The Seducer's Diary" and "Diapsalmata"
 
-Owen’s notes cover the Exam 3 unit from Oct 19 to Oct 28. They are his notes, not yours, so the page references are to his edition and the emphasis is his.
+A classmate's shared notes (the [Notion page](https://app.notion.com/p/Diapsalmata-Shadowgraphs-Seducers-Diary-3feddf27e93e80ef805ef4a234e5a3e3)) cover the Exam 3 unit from Oct 19 to Oct 28. They are not your notes, so the page references are to another edition and the emphasis is theirs.
 
-## Your notes (Owen's shared Notion page "Diapsalmata + Shadowgraphs + Seducers Diary", read 2026-10-25; it covers the whole Exam 3 unit, Oct 19 to Oct 28, without separating the days; Matt confirmed on 2026-11-05 that there is no separate page for Oct 26 and Oct 28)
+## Your notes (a classmate's shared Notion page "Diapsalmata + Shadowgraphs + Seducers Diary", read 2026-10-25; it covers the whole Exam 3 unit, Oct 19 to Oct 28, without separating the days; Matt confirmed on 2026-11-05 that there is no separate page for Oct 26 and Oct 28)
 All of this stuff is the content of exam 3
 
 Seducers Diary
@@ -83,7 +83,7 @@ Shadowgraphs
 > **Watch out.** In Victor Eremita’s preface, A says he only found and copied the Diary. Kraal and the Hong edition take A to be its actual author.
 
 - That is why the notes label the two Johanneses in the diagram "Author A Facade" and "Real Author A". The lecture 11 page also names A as the Diary’s author.
-- “Shadowgraphs” appears in Owen’s notes as a heading with nothing under it, so the unit did not reach that essay. The syllabus still lists “Diapsalmata” for Mon Oct 26 and Wed Oct 28.
+- “Shadowgraphs” appears in the shared notes as a heading with nothing under it, so the unit did not reach that essay. The syllabus still lists “Diapsalmata” for Mon Oct 26 and Wed Oct 28.
 
 ### What Johannes wants from Cordelia
 
@@ -98,7 +98,7 @@ Shadowgraphs
 
 ### What the Diapsalmata suggest about A
 
-> **Definition.** The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. Their page numbers in Owen’s edition are 46 to 55.
+> **Definition.** The Diapsalmata are the short aphorisms that open Part I of *Either/Or*. Their page numbers in the shared notes' edition are 46 to 55.
 
 - Kraal reads them as the voice of someone with no belief about the meaning of life.
 - That makes moralizing about Johannes harder than it looks. A’s own papers supply no standard to moralize from.

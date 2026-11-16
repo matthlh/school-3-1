@@ -1,6 +1,6 @@
 # PHIL 385 — Reading: *Either/Or*, "The Aesthetic Validity of Marriage"
 
-The [lecture 18 page](../lectures/18-aesthetic-validity-of-marriage.md) has your notes and Kraal's argument. The essay is on PDF pp. 334–414. The exact PDF pages appear alongside approximate page numbers for Alastair Hannay's Penguin Classics translation (1992), the edition Kraal cites. The Penguin estimates are worked out from three passages whose Penguin page is known (Kraal's p. 384 and Owen's pp. 399 and 443), so they can be off by a page or two.
+The [lecture 18 page](../lectures/18-aesthetic-validity-of-marriage.md) has your notes and Kraal's argument. The essay is on PDF pp. 334–414. The exact PDF pages appear alongside approximate page numbers for Alastair Hannay's Penguin Classics translation (1992), the edition Kraal cites. The Penguin estimates are worked out from three passages whose Penguin page is known (Kraal's p. 384 and the shared notes' pp. 399 and 443), so they can be off by a page or two.
 
 ## B's argument for marriage
 

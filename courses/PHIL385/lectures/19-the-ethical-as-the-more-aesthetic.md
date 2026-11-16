@@ -1,8 +1,8 @@
 # PHIL 385 — Lec 19 (Wed Nov 4) — "The Aesthetic Validity of Marriage" continued: the ethical as the more aesthetic
 
-You missed this lecture, so this page is Owen’s notes plus the essay. Owen’s page is tagged Session 1 and was first written on Nov 2, so some or all of it may be Monday’s; its text does not split the days. Its Background and B’s Argument sections repeat Monday’s lecture, so the [lecture 18](18-aesthetic-validity-of-marriage.md) page explains them under “From Owen's notes of the same lecture”. The [question bank](../02-questions.md) has a “Lec 19” section.
+You missed this lecture, so this page is a classmate's shared notes (the [Notion page](https://app.notion.com/p/The-Aesthetic-Validity-of-Marriage-40cddf27e93e807a9f9dce30fd36573f)) plus the essay. The shared page is tagged Session 1 and was first written on Nov 2, so some or all of it may be Monday’s; its text does not split the days. Its Background and B’s Argument sections repeat Monday’s lecture, so the [lecture 18](18-aesthetic-validity-of-marriage.md) page explains them under “From a classmate's shared notes of the same lecture”. The [question bank](../02-questions.md) has a “Lec 19” section.
 
-## Your notes (Owen's shared Notion page "The Aesthetic Validity of Marriage", read 2026-11-04; tagged Session 1, first written Nov 2, with no split between days in its text)
+## Your notes (a classmate's shared Notion page "The Aesthetic Validity of Marriage", read 2026-11-04; tagged Session 1, first written Nov 2, with no split between days in its text)
 B’s major argument is that the ethical ends up being more aesthetic than just the immediate, pure aesthetic passion
 
 - Goes back to Platos Republic
@@ -145,18 +145,18 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 ### Kraal’s five steps from love to the will
 
 - The diagram is a box marked "Marriage" with five numbered steps under it.
-- Owen’s page numbers are from his copy. The PDF pages are where each claim sits in your file.
+- The first page numbers are the shared notes' own, from another copy of the book. The PDF pages are where each claim sits in your file.
 
-1. **Love defines marriage.** B says marriage’s "substance" is love, "the being in love" (Owen p. 399, PDF p. 348).
-2. **Love is not lust.** B says what separates them is "the stamp of the eternal" (Owen p. 393, PDF p. 342).
-3. **Love is not empty of the sensuous, and the sensuous is not lust.** B grants that romantic love is "based essentially on the sensual" (Owen p. 392, PDF p. 342).
-   - First love has the sensual in it but is "not simply sensual" (Owen p. 406, PDF p. 352).
+1. **Love defines marriage.** B says marriage’s "substance" is love, "the being in love" (notes p. 399, PDF p. 348).
+2. **Love is not lust.** B says what separates them is "the stamp of the eternal" (notes p. 393, PDF p. 342).
+3. **Love is not empty of the sensuous, and the sensuous is not lust.** B grants that romantic love is "based essentially on the sensual" (notes p. 392, PDF p. 342).
+   - First love has the sensual in it but is "not simply sensual" (notes p. 406, PDF p. 352).
    - What makes the sensual into lust is being cut off from the eternal. B calls the sensual on its own "the instantaneous", which wants instant satisfaction.
 4. **Love, its sensuous side included, carries a stamp of the eternal.** B says first love presupposes itself back "into all eternity" and forward into all eternity (PDF p. 352).
-5. **The change happens through the ethical will, the intention and the decision.** The change is romantic love becoming married love, as in the note under step 4. B says the true eternity needs "a determination of the will" (PDF p. 343). Owen gives three pages for this step.
-   - The lovers’ thanks, intention and obligation give their love "an absolute stamp of eternity" (Owen p. 411, PDF p. 358).
-   - The Church exacts a vow, and the intention "makes the individual free" (Owen p. 432, PDF p. 376).
-   - The third is the duty passage (Owen p. 468, PDF pp. 408–409).
+5. **The change happens through the ethical will, the intention and the decision.** The change is romantic love becoming married love, as in the note under step 4. B says the true eternity needs "a determination of the will" (PDF p. 343). The shared notes give three pages for this step.
+   - The lovers’ thanks, intention and obligation give their love "an absolute stamp of eternity" (notes p. 411, PDF p. 358).
+   - The Church exacts a vow, and the intention "makes the individual free" (notes p. 432, PDF p. 376).
+   - The third is the duty passage (notes p. 468, PDF pp. 408–409).
 
 ### The note about civil marriage
 
@@ -180,7 +180,7 @@ Kraal argues that Author A doesn’t really love Cordelia as their love is time 
 
 ### Why some readers call B a Hegelian
 
-- Owen marks this as an aside. Some readers take B, Judge William, to be a Hegelian.
+- The shared notes mark this as an aside. Some readers take B, Judge William, to be a Hegelian.
 
 > **Watch out.** It is a reading of B, not his claim. B does not name Hegel in the letter.
 

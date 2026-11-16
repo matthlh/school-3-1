@@ -2654,7 +2654,7 @@ Desire taken purely as itself, with no reflection, logic or reasoning mixed in; 
 
 A admits the reader may doubt how far what he says is in Mozart's music and how far he reads it in, and answers that the reader will find in the music not only the little he presents but infinitely more. He says the whole inquiry is "written only for those in love". It fits Kraal's email point that A praises Mozart, not the librettists: what A takes from the operas is the idea the music gives him, not the text.
 
-## Lec 13–14 — "The Seducer's Diary": Johannes and Cordelia (Mon Oct 19 and Wed Oct 21, logged 2026-10-25 from Owen's shared notes)
+## Lec 13–14 — "The Seducer's Diary": Johannes and Cordelia (Mon Oct 19 and Wed Oct 21, logged 2026-10-25 from a classmate's shared notes)
 
 ### Q: Who is the seducer of "The Seducer's Diary", who claims to have found the diary, and what did Kraal say about who really wrote it?
 **Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** 13  **Type:** recall  **Id:** ac726101
@@ -2743,7 +2743,7 @@ Johannes wants Cordelia most while there is resistance in their love and no long
 
 Everyone has an inner world of thoughts and an outer world in which others see only the physical person, and the two are not the same. The diary shows the gap at its widest: Cordelia sees the facade, the reader sees the calculating inner life, and nothing in Johannes's outward conduct reveals it.
 
-## Lec 15 — "Diapsalmata": moralizing and the meaning of life (Fri Oct 23, logged 2026-10-25 from Owen's shared notes)
+## Lec 15 — "Diapsalmata": moralizing and the meaning of life (Fri Oct 23, logged 2026-10-25 from a classmate's shared notes)
 
 ### Q: Why did Kraal say it is easy to moralize about Johannes, and what does moralizing presuppose?
 **Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** 15  **Type:** recall  **Id:** e50bec8b
@@ -2869,7 +2869,7 @@ Romantic love rests on the sensual and beauty but is noble because of the consci
 
 For such a person, B says, "life is without meaning". B calls it A's "pet theory" and uses it as the end point of taking duty to be love's enemy: that view is despair, whether A feels its pain or tries to forget it.
 
-## Lec 19 — "The Aesthetic Validity of Marriage" continued: the ethical as the more aesthetic (Wed Nov 4, logged 2026-11-04 from Owen's shared notes)
+## Lec 19 — "The Aesthetic Validity of Marriage" continued: the ethical as the more aesthetic (Wed Nov 4, logged 2026-11-04 from a classmate's shared notes)
 
 ### Q: Kraal said B's major argument, that the ethical ends up more aesthetic than the immediate aesthetic passion, goes back to Plato. What principle did he take from Plato, and how does it apply to marriage?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** 8c654d9f
@@ -3208,3 +3208,110 @@ B adds that his insistence on duty is not the prosaic common sense of people who
 3. An invitation: no standing invitation "for ever", but "come when you want, always welcome".
 
 B wrote for a fortnight of evenings with A, figuratively, "outside my door", and sends a greeting from his wife.
+
+## Lec 22 — "Equilibrium": Hegel as background, and why good and evil are not for thought (Mon Nov 16, logged 2026-11-16)
+
+### Q: Kraal drew Hegel's philosophy as a tree. Name its three branches, and say where B's letter gives the same list.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** deff7c1b
+**A:** Key:
+1. Nature, logic and history.
+2. B names the same three as the spheres "properly for thought": "logic, nature and history", where necessity rules and mediation is valid (PDF p. 426).
+
+In Hegel's own *Encyclopaedia* (1817) the three parts are Logic, Nature and Spirit, and world history is the last stretch of objective spirit, after the state. That is why the page asks whether history is "really a branch": it is for B's list, not in Hegel's table of contents.
+
+### Q: Under "history" Kraal set two readings against each other. Name them, and say which one B accepts for history as philosophy's object, and why.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** apply  **Id:** 939ec7d9
+**A:** Key:
+1. History as a necessary unfolding, against history as free volitions and their contingencies.
+2. B accepts necessity for history as philosophy's object: the individual acts freely, but the higher order "digests the free actions" into its eternal laws, and that order is necessity, so the philosopher may use "relative mediation".
+3. The inward work of the free individual stays outside: philosophy "has nothing whatever to do" with it, and it "is the true life of freedom".
+
+PDF p. 426. B's image is the world-historical individual, whose outward works philosophy sees "absorbed into and transformed by the world-historical process", while his "works that follow him" are his own in all eternity.
+
+### Q: Give Kraal's "Hegel steps" 1 to 3 as written on the board, and what step 6 says must happen to self-actualization.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 4c1059d4
+**A:** Parts:
+1. Step 1: conscious of being free.
+2. Step 2: rational to believe "I am free".
+3. Step 3: irrational to be called unfree.
+4. Step 6: this self-actualization must be recognized, in society, and then in marriage.
+
+Steps 4 and 5 are missing from the page. In Hegel the gap is filled by the free will giving itself existence in the world (*Philosophy of Right*, §29) and that existence being acknowledged by other free wills, which is recognition (*Anerkennung*). Step 1 echoes Hegel's line that world history is the progress of the consciousness of freedom.
+
+### Q: Which sentence of Hegel's did Kraal give as the background to B on marriage, and where in Hegel does it sit?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** c2117126
+**A:** Key:
+1. "Marriage is in essence an ethical relationship" (Knox's translation: "an ethical tie").
+2. Hegel, *Elements of the Philosophy of Right* (1820), the Addition to §161, in the Family section of ethical life, whose three parts run family, civil society, state.
+
+Hegel's point in the passage is that earlier natural-law writers saw only the physical side of marriage or the contract; for him the ethical side is the couple's consciousness of their unity as their substantial aim, entered by free consent. It is the background to B's vow, intention and duty in the first letter, and to the "B is a Hegelian" reading from lecture 19.
+
+### Q: On Kraal's tree, "ethics" branches into marriage, the state and civil society, and his note says the "ought" is to be recognized. What is Hegel's name for this part of his philosophy, and what does recognition add to the "ought"?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** f5d17332
+**A:** Key:
+1. Ethical life (*Sittlichkeit*): freedom made actual in institutions, in the order family (marriage), civil society, state.
+2. For Hegel the ethical is not a bare "ought" standing over against reality, as he read Kant's duty; what ought to be is already realized and acknowledged by other free wills in those institutions, which is what "the rational is actual" means.
+
+Recognition (*Anerkennung*) is the acknowledgement of one free will by another; a freedom nobody recognizes has no existence in the world. That is why Kraal's step 6 says self-actualization "must accordingly be recognized".
+
+### Q: Which part of Hegel's picture does B accept, and which part does he refuse? Say why he refuses it.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** apply  **Id:** 3e397cdd
+**A:** Key:
+1. Accepts: philosophy's business is necessity, so in logic, nature and history mediation holds.
+2. Refuses: ethics is not one of the necessities; good and evil are not a category of thought at all.
+3. Why: "for thought the opposition has no substance, it goes over into the other"; "for freedom the opposition does have substance, because the one opposite now excludes the other", and exclusion "is precisely the opposite of mediation" (PDF p. 425).
+
+Mediation is the Hegelian move of reconciling two opposites in a higher unity. B grants it for the past, which the philosopher contemplates, and denies it for the future, which the acting individual faces: "As truly as there is a future, just as truly is there an either/or." The trap is to read "no such thing as good and evil" as B's own view; his claim is only that thought never reaches them.
+
+### Q: On Hannay p. 524 B says one always thinks "relative differences, never the absolute difference". What is the absolute difference, when is it posited, and why does thought never reach it?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** a0b8a256
+**A:** Key:
+1. The difference between good and evil.
+2. It is posited "only when I have absolutely chosen myself"; until then it "remains latent".
+3. Thought never reaches it because "whenever I think, my relation to what it is I am thinking is one of necessity, but that is exactly why the difference between good and evil does not arise"; "think the whole of history and you think the necessary movement of the Idea".
+
+Philosophy "may well be justified in claiming it cannot think an absolute contradiction, but it by no means follows that the latter does not exist"; it seems to have abolished the principle of contradiction only because "it has not yet reached it". In thinking "I make myself infinite, but not absolutely, since I disappear into the absolute"; only the choice of myself makes me "infinite absolutely".
+
+### Q: "The good is by virtue of my willing it, and otherwise it has no existence." Does this make good and evil subjective for B? Say why or why not, and what B contrasts the good with.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** critique  **Id:** 4f2eb49c
+**A:** Key:
+1. No.
+2. B says it is "in no way to belittle the categories of good and evil or to reduce them to merely subjective determinations. On the contrary, it is to assert the absolute validity of these categories."
+3. The contrast is the absolute, which philosophy says "is by virtue of my thinking it" and then corrects to "the absolute's self-thinking in me", because my thought of it is necessary; the good is by willing, which "is the expression of freedom".
+
+Hannay p. 524 (PDF pp. 456–457). B's closing line there: "The good is the in-and-for-itself posited by the in-and-for-itself, and that is freedom." In the lecture's words, the distinction cannot be demonstrated, it is a matter of decision and will, but that does not imply the good is not real.
+
+### Q: Complete B's answer, and say what his either/or does denote: "What is it, then, that I separate in my either/or? Is it good and evil? No, …"
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** ec6a1a07
+**A:** Key:
+1. "… I simply want to bring you to the point where that choice truly acquires meaning for you."
+2. His either/or "does not denote in the first instance the choice between good and evil, it denotes the choice whereby one chooses good and evil or excludes them": choosing to will, under which good and evil are then posited.
+3. The two options are living aesthetically or living ethically, and "the aesthetic is not evil but indifference".
+
+PDF pp. 423–424. The page gives it as Hannay p. 480. Someone who chooses the ethical chooses the good, but "the good here is wholly abstract", and it does not follow that the chooser cannot choose evil again. B adds that the more time passes the harder the choice becomes, because the soul is always already on one side.
+
+### Q: Why does B say an aesthetic choice "is no choice", and what makes the act of choosing "a literal and strict expression of the ethical"?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** daf1594c
+**A:** Key:
+1. An aesthetic choice is "either wholly immediate, thus no choice, or it loses itself in multiplicity": the girl who follows her heart chooses immediately, and the man who surveys life-tasks chooses for the moment only and can choose otherwise the next.
+2. Wherever there is an either/or in the stricter sense "the ethical is involved", and "the only absolute either/or there is is the choice between good and evil, but it is also absolutely ethical".
+3. What matters is "less a matter of choosing correctly than of the energy, earnest and feeling with which one chooses", because the choice consolidates the personality.
+
+PDF p. 423. B says that someone who chose wrongly with that energy would discover it was wrong, because choosing with the whole inwardness brings him "into immediate relation to the eternal power". A's "do it or don't do it, you will regret both" is the model of the non-choice B opens the letter with.
+
+### Q: Give B's definitions of the aesthetic factor and the ethical factor in a person, and say which life-view he calls despair and why.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 407e6eb8
+**A:** Key:
+1. The aesthetic factor is "that by which he is immediately what he is"; the ethical factor is "that by which he becomes what he becomes".
+2. Every aesthetic life-view is despair, "because it was built upon what may or may not be"; the ethical builds life "upon what has being as its essential property".
+
+PDF pp. 428 and 457. The aesthetic person does develop, but "with necessity, not with freedom", so there is no metamorphosis. "Either, then, one is to live aesthetically or one is to live ethically."
+
+### Q: Objective morality, relative morality, absolutism: which label fits B's account of good and evil, and what does he say against each of the two readings he rules out?
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** critique  **Id:** 813ef215
+**A:** Key:
+1. None fits cleanly: good and evil have "absolute validity" but are posited by the will, not demonstrated by thought.
+2. Against relativism: willing them does not reduce them "to merely subjective determinations".
+3. Against a provable objective fact: "Can we think it, that is, is it something for thought? No"; thought yields only relative differences.
+
+B also fences off two misreadings of freedom itself: it is not *liberum arbitrium*, the bare freedom to pick either way, because true freedom "has for all eternity evil outside itself" and perfects itself by excluding it (PDF p. 425); and it does not assume "a notion of radical evil", since repentance expresses both that evil is part of me and that it is not essentially part of me (PDF pp. 426–427, 457).

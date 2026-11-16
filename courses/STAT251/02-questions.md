@@ -4594,6 +4594,89 @@ $$
 \end{aligned}
 $$
 
+## Lec 25 — Ch 8: confidence interval examples, the t-distribution and the interval for μ with σ unknown (prepared 2026-11-16 from the after-class deck; Canvas calls it Lecture 26; numbers changed)
+
+### Q: Lead levels at $$n = 49$$ sites average $$\bar{x} = 12.4$$ ppb, and $$\sigma = 2.1$$ ppb is known. Give the point estimate of $$\mu$$ and the 95% confidence interval, and interpret the interval in a sentence.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 25  **Type:** apply  **Id:** aa6e43c7
+**A:** Key:
+1. Use $$\bar{x} \pm Z_{0.025} \frac{\sigma}{\sqrt{n}}$$ with $$12.4 \pm 1.96 \times \frac{2.1}{\sqrt{49}}$$.
+2. The point estimate is $$\hat{\mu} = \bar{x} = 12.4$$ ppb.
+3. The margin of error is $$1.96 \times 0.3 = 0.588$$, so the interval is $$(11.812, 12.988)$$.
+4. We are 95% confident that the true mean lead level is between 11.812 and 12.988 ppb.
+
+$$
+\begin{aligned}
+\frac{\sigma}{\sqrt{n}} &= \frac{2.1}{7} \\
+&= 0.3
+\end{aligned}
+$$
+
+This is the deck's zinc example with the numbers changed.
+
+### Q: For the same lead data ($$n = 49$$, $$\bar{x} = 12.4$$, $$\sigma = 2.1$$), find the 99% confidence interval and say how it compares with the 95% one.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 25  **Type:** apply  **Id:** c87335a3
+**A:** Key:
+1. Use $$12.4 \pm Z_{0.005} \times 0.3$$ with $$Z_{0.005} = 2.575$$.
+2. The margin of error is $$0.7725$$, so the interval is $$(11.6275, 13.1725)$$.
+3. It is wider than the 95% interval, because a higher confidence level needs a larger $$Z_{\alpha/2}$$.
+
+### Q: With $$\sigma = 4$$ known, how many observations are needed for a 95% confidence interval for $$\mu$$ with a margin of error of 1? Say how you round and why.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 25  **Type:** apply  **Id:** 1c10ede8
+**A:** Key:
+1. Set $$1 = 1.96 \times \frac{4}{\sqrt{n}}$$ and solve, $$n = \left(\frac{1.96 \times 4}{1}\right)^2$$.
+2. That gives $$n = 61.47$$.
+3. Round up to $$n = 62$$, because rounding down would leave the margin of error above 1.
+
+The general rule is $$n = \left(\frac{Z_{\alpha/2} \, \sigma}{m}\right)^2$$, always rounded up, where $$m$$ is the margin of error wanted.
+
+### Q: A random sample of $$n = 16$$ bags from a Normal population has $$\bar{x} = 31.5$$ g and $$s = 4.8$$ g; $$\sigma$$ is unknown. Find the 95% confidence interval for $$\mu$$. Use $$t_{0.025, 15} = 2.131$$.
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 25  **Type:** apply  **Id:** bc906a7e
+**A:** Key:
+1. Use $$\bar{x} \pm t_{0.025, 15} \frac{s}{\sqrt{n}}$$ with $$31.5 \pm 2.131 \times \frac{4.8}{\sqrt{16}}$$.
+2. The standard error is $$\frac{4.8}{4} = 1.2$$, so the margin of error is $$2.5572$$.
+3. The interval is $$(28.9428, 34.0572)$$ g.
+
+The degrees of freedom are $$n - 1 = 15$$. The sample is small, so the interval relies on the population being Normal.
+
+### Q: Why does the interval for $$\mu$$ use a t-value instead of $$Z_{\alpha/2}$$ when $$\sigma$$ is unknown, and why is the t-value larger?
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 25  **Type:** recall  **Id:** 9a23912e
+**A:** Key:
+1. $$\sigma$$ is estimated by the sample standard deviation $$s$$, and that substitution adds extra error.
+2. With $$s$$, the statistic $$\frac{\bar{X} - \mu}{s / \sqrt{n}}$$ follows the t-distribution with $$n - 1$$ degrees of freedom, not the standard Normal.
+3. The t-distribution has thicker tails, so its cut-off for the same level is larger, which widens the interval to cover the extra error.
+
+### Q: Give five properties of the t-distribution from the lecture.
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 25  **Type:** recall  **Id:** 9aae4aeb
+**A:** Parts:
+1. Bell shaped and symmetric about 0.
+2. Its probabilities depend on the degrees of freedom, $$df = n - 1$$.
+3. It has longer, thicker tails and is more spread out than the standard Normal.
+4. As $$n \to \infty$$, $$t_{n-1}$$ approaches the standard Normal.
+5. When $$n \ge 30$$, $$t_{n-1}$$ can be replaced with $$Z$$.
+
+### Q: What conditions does a t confidence interval for $$\mu$$ need?
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 25  **Type:** recall  **Id:** 0b9a24e2
+**A:** Key:
+1. A random sample from the population.
+2. A Normal population, which is the basic assumption of the t interval.
+3. If the sample is large, the population need not be Normal, because of the CLT.
+
+### Q: True or false, and justify: a 95% confidence interval for $$\mu$$ of $$(2.50, 2.70)$$ means there is a 95% probability that $$\mu$$ lies between 2.50 and 2.70.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 25  **Type:** apply  **Id:** a0478898
+**A:** Key:
+1. False: $$\mu$$ is fixed, so this one interval either contains it or does not.
+2. The 95% describes the method: if samples of size $$n$$ were taken repeatedly and an interval built from each, on average 95% of the intervals would contain $$\mu$$.
+
+The class showed this with an applet that simulates many intervals; it also shows a larger $$n$$ giving narrower intervals. The correct wording for one interval is "we are 95% confident that $$\mu$$ is between 2.50 and 2.70".
+
+### Q: For each case, say whether the 90% interval for $$\mu$$ uses $$Z$$ or $$t$$, and give the table value: (a) $$n = 10$$, $$s = 3$$, Normal population; (b) $$n = 10$$, $$\sigma = 3$$ known, Normal population. Use $$t_{0.05, 9} = 1.833$$.
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 25  **Type:** apply  **Id:** bcda8221
+**A:** Parts:
+1. (a) $$\sigma$$ is unknown, so $$t$$ with $$df = 9$$: $$t_{0.05, 9} = 1.833$$.
+2. (b) $$\sigma$$ is known, so $$Z$$: $$Z_{0.05} = 1.645$$.
+
+The choice depends on whether $$\sigma$$ is known, not on the sample size. The t-value is larger because the t-distribution has thicker tails.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?

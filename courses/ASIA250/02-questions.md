@@ -1474,3 +1474,150 @@ Both schools still aim at the same direct experience of emptiness. *Mandala*, th
 3. The safety valve: kill the Buddha and the world is doomed; do not kill him and there is no salvation, a double impasse to meditate on.
 
 Many koans are antinomian, such as "a dog has no Buddha nature". Linji (died 866 CE) is Rinzai in Japanese; the saying is from the Linjilu, which Mishima misspells as Rinsairoku. Japan abolished monastic celibacy at the end of the 19th century.
+
+## Lec 9 — Tantra: esoteric Hinduism and Buddhism (prepared 2026-11-16 from the deck)
+
+### Q: Give four differences between exoteric and esoteric teachings, as the lecture sets them out.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 00c31162
+**A:** Parts:
+1. Exoteric needs no secret initiation; esoteric needs a secret initiation ritual.
+2. Exoteric can be followed by anyone; esoteric only with a master's permission.
+3. Exoteric texts read more or less literally; esoteric texts are obscure and encode secret practices.
+4. Exoteric Buddhist texts are sutras; esoteric Buddhist texts are tantras.
+
+The deck adds that in exoteric teachings the deity and the worshipper are distinct, while the esoteric initiate views herself as a manifestation of the deity, and some tantric traditions erase the line completely (non-duality).
+
+### Q: True or false, and justify: in esoteric Buddhism, as in Theravada, awakened qualities are acquired one at a time over many lifetimes.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** apply  **Id:** 6a4e88b0
+**A:** Key:
+1. False: the gradual, many-lifetime path is the exoteric (Theravada) one.
+2. In esoteric Buddhism the practitioner visualizes herself as a deity that already has every awakened quality, so it is instantaneous.
+3. It still requires initiation from a qualified master, who is seen as a fully awakened Buddha.
+
+The examples of awakened qualities on the exoteric side are detachment, abandoning anger and direct knowledge of impermanence.
+
+### Q: A critic says tantric visualization is like "eating a cake painting". What is the tantric reply, and which image does the lecture use for it?
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** apply  **Id:** 25250107
+**A:** Key:
+1. A cake is not inside you, but awakened qualities already are present within the mind.
+2. The image is the finger pointing to the moon: pointing does not create a new moon.
+3. So visualizations and rituals do not develop an awakened mind; they make the person aware of qualities already there.
+
+"Eating a cake painting" is a Zen joke for trying to satisfy hunger by looking at a picture of food.
+
+### Q: Match each tantric shock method to the norm the lecture says it breaks: (a) the master hits the student in the gap between two thoughts, (b) running naked downhill through a forest shouting, (c) living in a cremation ground covered in ashes with a skull begging bowl, (d) ritual sex with a low-caste partner visualized as Bhairavi.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 9b5efcd1
+**A:** Parts:
+1. (a) Non-violence.
+2. (b) Propriety.
+3. (c) Purity, the rule a traditional brahmin keeps.
+4. (d) Ascetic celibacy and social norms.
+
+The cremation-ground practitioners are the kapalika sect, "carriers of skull begging bowls". The deck compares method (b) to the "Ozaki 8" challenges in *Point Break* (2015).
+
+### Q: What is the Vijnana Bhairava Tantra? Give its tradition, how many methods it offers, who speaks to whom, and what each speaker personifies.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 0eaa660d
+**A:** Key:
+1. A Hindu tantra.
+2. It offers 112 methods for opening the mind to the ultimate reality.
+3. Shiva in his wrathful form, Bhairava, instructs the Goddess in her wrathful form, Bhairavi, as a conversation between lovers.
+4. Bhairava personifies universal consciousness and Bhairavi the material universe, and the message is that the two are inseparable.
+
+The title means "the Wrathful Divine Consciousness". Many methods are described cryptically so the uninitiated cannot work them out.
+
+### Q: Using the lecture's wave and ocean image, explain what illusion tantra's transgressive methods are meant to break, and why the deities are wrathful.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** apply  **Id:** 827d3956
+**A:** Key:
+1. The illusion is seeing oneself as an autonomous person separate from the universe, a wave believing it is separate from the ocean.
+2. Awakening is the wave realizing it is part of the ocean: one universal consciousness behind everyone, with no personal consciousness.
+3. The transgressive methods and the frightening wrathful deities are "shock therapy" to wake the person to that reality.
+
+In the Vijnana Bhairava Tantra, Shiva tells the initiate that her consciousness is really his, a universal consciousness with no gender that is never born and never dies.
+
+### Q: Where and when do many scholars place the origin of tantra, and where is esoteric Buddhism mainly found today?
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** b6559189
+**A:** Parts:
+1. Kashmir, in northern India.
+2. Around the 3rd to 4th centuries CE, for both Hindu and Buddhist tantra.
+3. Tibet (78.5%), Mongolia (51.7%) and Buryatia in Russian Siberia (20%).
+
+Hindu tantra later spread across the subcontinent and into Southeast Asia and Indonesia.
+
+### Q: What does "Vajrayana" mean, and how do its followers rank the tantras against the Mahayana sutras?
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** 2eca9ac1
+**A:** Key:
+1. The Indestructible or Diamond Vehicle; a vajra is the thunderbolt, the indestructible divine weapon of Indian mythology.
+2. They accept the Buddhist tantras as scripture equal or superior to the Mahayana sutras.
+
+The deck calls esoteric Buddhism "a special case of Mahayana Buddhism".
+
+### Q: Why does the lecture call Buddhist tantra unique, and how do monastics practise sexual union without breaking celibacy?
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** apply  **Id:** 5021ab5c
+**A:** Key:
+1. It is taught in a monastic setting, while Hindu tantra is mostly non-celibate.
+2. Monastics usually only visualize union with imagined deities called wisdom partners (jnana mudra), so the transgression stays symbolic.
+3. They channel the erotic pleasure of the visualization, heightened by abstinence, toward an awakening experience.
+
+There are exceptions where actual partners are used. The celibate Dalai Lama practises the Kalacakra tantra and gives its initiation often.
+
+### Q: How does tantra's way of dealing with the three poisons differ from the exoteric schools'? Give the saying that sums it up.
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** apply  **Id:** b7b567b2
+**A:** Key:
+1. Exoteric schools renounce the poisons with antidotes such as meditation on impermanence or emptiness, on corpses, the precepts, and loving kindness.
+2. Tantra transcends them by using them, transforming each into a divine energy of the awakened mind.
+3. The saying is "passions are awakening" (Japanese bonno soku bodai).
+
+The three poisons are ignorance, passion and aversion. In an awakened mind ignorance is peaceful emptiness, passion is bliss, and anger is the radiant, liberating force that subdues obstacles.
+
+### Q: Name the deity a tantrika visualizes to transform each poison: ignorance, passion and anger.
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** eb27b3af
+**A:** Parts:
+1. Ignorance: Buddha Vairocana, whose blue body grows to engulf the universe.
+2. Passion: deities in sexual union, such as Vajrasattva and his consort.
+3. Anger: a wrathful deity such as Acala (Japanese Fudo Myoo) in his mandala of fire.
+
+The anger visualization is enacted before a real or imagined fire, as in the Japanese goma ritual. Each ends with the practitioner seeing the world "as it is", free of dualistic constructs.
+
+### Q: Tantric ritual works on three dimensions of a person. Name each and the practice that belongs to it.
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** 143c9bba
+**A:** Parts:
+1. Mind: visualization of oneself as the deity and the world as its pure land (mandala).
+2. Speech: chanting the secret formula (mantra).
+3. Body: the sacred gestures (mudra).
+
+A qualified master must initiate the person into all three.
+
+### Q: Give the colour and the energy of each of the three main channels, and say how the energies can enter the central channel fully.
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** d2f2ef73
+**A:** Parts:
+1. Central: blue; when closed, ignorance reigns.
+2. Left: red, lunar, blood, feminine, active in sleep; when dominant, passion stirs.
+3. Right: white, solar, semen, masculine, active when awake; when dominant, anger rises.
+4. Fully only through orgasm with a partner who is also a tantrika, or at death.
+
+Enlightened experience alone brings the energies in only partly. Monks and nuns must wait for death, or disrobe and become lay tantrikas. The points where the channels intertwine are the chakras.
+
+### Q: Who was Padmasambhava, and what is the rainbow body?
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** 2a6c0016
+**A:** Key:
+1. The first to bring Vajrayana to Tibet (c. 8th century CE), from Kashmir or Uddiyana.
+2. A monastic said to have secretly practised intercourse and reached full liberation while alive.
+3. The rainbow body: Tibetans believe his gross body dissolved into light, and he set up his pure land on the mythical Copper Mountain.
+
+### Q: Which Tibetan school rejects sexual practice for monastics, who founded it, and what was his reason?
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** 6528908b
+**A:** Key:
+1. The Gelug school, the Dalai Lamas' school.
+2. Founded by Tsongkhapa (1357–1419).
+3. He said sexual practice is dangerous and can lead the tantrika back to samsara, so he chose to wait for death for full liberation.
+
+The other three of the four major Tibetan schools accept that accomplished tantrikas may stay monastics and practise sex.
+
+### Q: According to the lecture, what goes wrong when tantra's goal is forgotten? Give the two medieval Japanese examples.
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** apply  **Id:** 9d98565d
+**A:** Key:
+1. It decays into stifling ritualism and self-serving motives, and secrecy breeds nepotism and elitism once rulers take it up.
+2. Cloistered emperors such as Go-Shirakawa (1127–1192) kept ruling after abdicating, using tantric rituals and secret alliances.
+3. Sohei, warrior monks such as Benkei, used wrathful tantric practice in martial training, guarded temples and often fought for hire.
+
+Japanese Zen, Pure Land and Nichiren Buddhism grew partly from dissatisfaction with this elitism and antisocial transgression.

@@ -95,15 +95,15 @@ Wonder whether both can be right, but one is more instinctual and natural, and a
 - A keeps every mood "as a constant possibility", so he is answerable for it.
 - For B the point is not "society", as the note has it. The point is time. Possessing is the acquired, and "the great thing isn't the original but the acquired".
 
-### From Owen's notes of the same lecture
+### From a classmate's shared notes of the same lecture
 
-- Owen’s shared page, on the [lecture 19 page](19-the-ethical-as-the-more-aesthetic.md), covers this lecture too. His Background and argument match the notes above, and the points below add to them.
-- Owen writes the argument as six lines. He splits premise 1 into its two conditions and adds a sixth line, that B argues he can vindicate love by joining it with the ethical.
+- The classmate's shared page, on the [lecture 19 page](19-the-ethical-as-the-more-aesthetic.md), covers this lecture too. Its Background and argument match the notes above, and the points below add to them.
+- The shared notes write the argument as six lines. They split premise 1 into its two conditions and add a sixth line, that B argues he can vindicate love by joining it with the ethical.
 - That sixth line is B’s own answer, duty as love’s "friend", as in the fix above.
-- Owen glosses premise 2, that the ethical always comes up eventually in a love relation, as "the after 6 months things".
+- The shared notes gloss premise 2, that the ethical always comes up eventually in a love relation, as "the after 6 months things".
 - The six months is the lecture’s example, not the essay’s. In the essay, B tells A that A thinks duty must come into view "sooner or later", in romantic love as well as in married love.
-- Owen adds that B is not angry with A. B says it is "impossible really to be angry with you", because A’s evil has some good nature and childishness mixed in.
-- Owen also has B telling A he still has time to change. B’s lines are "You are still young" and "your life is passing", and he hopes A may one day find "a centre" for his eccentric movements.
-- Owen, like the notes above, gives p. 443 for B’s claim that A does not understand love.
-- Owen’s page numbers run about 50 to 60 higher than the PDF’s file pages. So p. 443 is probably PDF pp. 386–387, not the love-and-lust lines on PDF pp. 342 and 396. This is inferred from the page offsets.
+- The shared notes add that B is not angry with A. B says it is "impossible really to be angry with you", because A’s evil has some good nature and childishness mixed in.
+- They also have B telling A he still has time to change. B’s lines are "You are still young" and "your life is passing", and he hopes A may one day find "a centre" for his eccentric movements.
+- They, like the notes above, give p. 443 for B’s claim that A does not understand love.
+- Their page numbers run about 50 to 60 higher than the PDF’s file pages. So p. 443 is probably PDF pp. 386–387, not the love-and-lust lines on PDF pp. 342 and 396. This is inferred from the page offsets.
 - On PDF pp. 386–387, B tells A that A fears love ends once "the enigma" is gone. B holds that only then does love begin, and that one truly loves only when one knows what one loves.

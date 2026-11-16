@@ -80,7 +80,7 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | 5h | Use normality / CLT for estimation and testing |
 | 5i | p-value approach **and** critical value approach |
 | 5j | Relationship between CIs and hypothesis tests |
-| 5k | t-distribution family and its link to the Normal |
+| 5k | t-distribution family and its link to the Normal *(lec 25: $$s$$ replaces $$\sigma$$, so $$\frac{\bar{X} - \mu}{s / \sqrt{n}} \sim t_{n-1}$$, the interval $$\bar{x} \pm t_{\alpha/2, \, n-1} \frac{s}{\sqrt{n}}$$, symmetric about 0 with thicker tails than the Normal, approaches Z as n grows, Z allowed when $$n \ge 30$$, needs a random sample and a Normal population unless n is large; ledger row 5k)* |
 | 5l–m | Type I and Type II errors, in context |
 | 5n | Interpret **and calculate** power |
 | 5o | Effect of n, effect size, α on power and β |
@@ -161,3 +161,4 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | 3cc Which distribution fits | 3q–s Bernoulli and Binomial distributions | A which-model question is usually lost by defaulting to the Binomial: a Binomial count needs a fixed n with a success probability on every trial, a Geometric counts trials to the first success, a Poisson has a rate and no n, and an exponential is a time rather than a count. |
 | 4b Normal approximation to the Binomial | 3bb Poisson approximation to the Binomial | Both stand in for a Binomial count, but the Poisson is for rare successes, with n at least 20 and np below 5, while the Normal needs np and n(1 - p) both at least 5 and takes the continuity correction, so the conditions decide which one is allowed. |
 | 4c Normal approximation to the Poisson | 4b Normal approximation to the Binomial | Both replace a count by a Normal and take the continuity correction, but the Poisson needs λ ≥ 20 and uses N(λ, λ), while the Binomial needs np ≥ 5 and n(1 − p) ≥ 5 and uses N(np, np(1 − p)). |
+| 5e–f Confidence interval for μ with σ known | 5k t-distribution and the confidence interval for μ with σ unknown | Both intervals are point estimate plus or minus a table value times a standard error, but the Z interval needs σ known and uses σ/√n, while the t interval uses s/√n and a t-value at n − 1 degrees of freedom, so the choice turns on whether σ is known, not on the sample size. |
