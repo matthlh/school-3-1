@@ -2377,3 +2377,116 @@ Slide 16's summary pairs them deliberately: walkthroughs for the model, unit tes
 3. Walkthroughs evaluate the model; unit tests make the specification executable.
 
 Slide 16. (a) swaps the two groups, (c) puts invariants on operations and tests on the model, (d) makes walkthroughs a substitute for tests when the deck has them doing different jobs.
+
+## Lec 17 — Modelling: Scenarios (logged 2026-11-16 from deck 10b-scenarios.pdf; no reader chapter covers it; Matt was absent and takes no notes in this course; written in the exam formats: true/false with justification, multiple choice, short answer with handwritten TypeScript)
+
+### Q: True or false, and justify: in a requirement scenario, the Given lists the steps the user took to reach the starting point, and the Then lists the messages the system shows in response.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** recall  **Id:** a504ccc0
+**A:** Key:
+1. False.
+2. Given is the state of the system before the action, declared as facts, not as the steps that led there.
+3. Then is the state of the system after the action.
+
+Slide 4 defines all three parts in terms of state: Given is the state before, When is one action an actor performs, Then is the state after. Slide 8's last tip says the same thing from the other side: declare what is true, not the steps to get there. A message on screen is how the system is built to respond; the scenario records what is now true, such as "the student is at the end of the waitlist".
+
+### Q: A request reads: "Each study room can be booked for at most two hours. A student may hold at most one booking at a time. A booking can be cancelled until ten minutes before it starts." Write the scenario for a student booking a room successfully, as Given, When and Then.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** apply  **Id:** 9514c142
+**A:** Parts:
+1. Given: the room is free for the requested slot; the slot is at most two hours; the student holds no booking.
+2. When: the student books the room for that slot.
+3. Then: the student holds a booking for that room and slot, and the room is no longer free for that slot.
+
+Each Given line comes from one sentence of the request, which is how you know the list is complete: the two-hour limit and the one-booking limit each need a line, and "the room is free" is the assumption the request never states but the scenario forces into the open (slide 7). Flipping any one Given line gives a different starting state that needs its own scenario: the room is taken, the slot is three hours, or the student already holds a booking.
+
+### Q: A teammate writes this scenario for the section waitlist. "Given: the user has logged in, opened the course page and clicked the red Full badge. When: the client POSTs to /queue and the server inserts a row into queue_entries. Then: the API returns 201 and the UI shows a toast." Critique it against the deck's tips for writing scenarios, and rewrite the three parts.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** critique  **Id:** 413e05a0
+**A:** Key:
+1. It is not a usable scenario: it describes how the system is built, not what is true in the client's terms.
+2. Stay in the problem domain: POST, rows, status codes and toasts are implementation.
+3. Use words from the requirements: the request says "waitlist", not "queue".
+4. Keep it short and declare what is true: the Given lists steps taken, not the state.
+5. Rewrite: Given the section is full, the waitlist is not full, the student is not enrolled and not on the waitlist; When the student joins the waitlist; Then the student is at the end of the waitlist.
+
+Slide 8. The test for each line is whether the client could read it and say "yes, that is what I meant". A client cannot check a table name or a status code, so those lines cannot expose a missing requirement, which is the reason scenarios are written at all (slide 4). The rewrite is the deck's Scenario #1 from slide 6.
+
+### Q: The deck's Scenario #1 for joining the waitlist has four Given lines: the section is full, the waitlist is not full, the student is not enrolled, and the student is not on the waitlist. Flip one Given line at a time. For each of the four new starting states, say what the request says should happen when the student tries to join, or say that the request does not specify it.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** apply  **Id:** 8270f865
+**A:** Parts:
+1. Section not full: the request does not specify it. It only says students can join once the section is full, so refusing the join is a decision to make and document.
+2. Waitlist full: the student cannot join, because the waitlist holds at most 50.
+3. Student enrolled: the student cannot join the waitlist of a section they are enrolled in.
+4. Student already on the waitlist: the student cannot join the same waitlist twice.
+
+This is slide 8's "cover the space" tip: for each action, work through every valid starting state, and being systematic is what finds the edge cases. Three of the four flipped states are answered by a sentence of the request. The first is not, which makes it an unspecified state, and slide 7 says what to do with one: fill the gap with a reasonable decision, document it, and go back to the client to verify.
+
+### Q: A library's request says: "When a book with a hold on it is returned, it is kept for the first member in the hold queue for three days. Any member may borrow a book that is on the shelf." A book with a hold has just been returned and is being kept for the first member in the queue. A different member tries to borrow it. Say what the deck calls this situation, give the valid Then states, and say how the deck resolves it.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** apply  **Id:** 0279ecdc
+**A:** Key:
+1. Conflicting requirements: more than one Then is valid for the same Given and When.
+2. Then, option 1: the other member borrows the book, because it is on the shelf.
+3. Then, option 2: the other member cannot borrow it, because it is being kept for the member with the hold.
+4. Resolve it by deciding which requirement takes priority, and confirm with the client if the choice matters to them.
+
+Slide 9. The deck's own example has the same shape: a seat is on offer to the first student on the waitlist and a different student tries to enrol, which the "section is not full" rule allows and the offer forbids. Neither sentence of the request is wrong on its own. The conflict only appears when one scenario makes both apply at once, which is why writing scenarios finds it and reading the request does not.
+
+### Q: Scenario #8 for the section waitlist reads: "Given: the student has an offer; the offer is not expired; the student is not enrolled; the section is not full. When: the student accepts the offer. Then: the student is enrolled." Student A accepts the offer and immediately unenrols. Student B receives the offer. Student A accepts the offer again. Say which part of the scenario is incomplete, what goes wrong in this sequence, and how to fix the scenario.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** critique  **Id:** ec8da2a1
+**A:** Key:
+1. The Then is incomplete.
+2. After accepting, A still has an unexpired offer, so once A unenrols all four Given lines hold again and A can accept a second time, taking the seat on offer to B.
+3. Fix: the Then also says the student is off the waitlist and no longer has an offer.
+
+Slide 10 poses this in class and the deck does not show the answer, so this reading is mine. The request itself supplies the fix: a student who accepts is enrolled and comes off the waitlist. The general rule is that a Then must state everything the action changes. A scenario that lists only the headline change leaves the rest of the state as it was, and a later scenario's Given can then be satisfied by state that should no longer exist.
+
+### Q: True or false, and justify: when writing a scenario exposes a case the requirements do not cover, the developer should stop writing scenarios until the client has answered.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** apply  **Id:** bcec88d4
+**A:** Key:
+1. False.
+2. Fill the gap with a reasonable decision where you can, and document the decision.
+3. Go back to the client to ask or to verify it.
+
+Slide 7. Requirements never state every rule, so gaps are the normal case and stopping at each one would stop the work. The deck's order is: the scenario surfaces the assumption, you decide and write the decision down, and the client confirms or corrects it. Slide 9 adds when the client must be involved: when the choice matters to them.
+
+### Q: Which one of the deck's tips for writing scenarios is the one aimed at finding edge cases? (a) Stay in the problem domain. (b) Be consistent. (c) Cover the space. (d) Keep it short. Say what the tip tells you to do, and what "be consistent" is for instead.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** recall  **Id:** a3b1209d
+**A:** Key:
+1. (c).
+2. For each action, work through every valid starting state; being systematic is what finds the edge cases.
+3. Be consistent means listing the same state items in the same order, so the differences between scenarios stand out.
+
+Slide 8. The two tips work together: a fixed list of state items in a fixed order is what lets you flip one item at a time and see which starting states you have not written yet. (a) keeps the scenario in the client's terms and (d) keeps it to what is true, not the steps that made it true.
+
+### Q: In the section waitlist request, students can join the waitlist, leave it, check their position, and accept or decline an offer, and an offer can expire after 24 hours. Sort these into the actions that change the system's state and the one that does not, say what makes the expiry different from the others, and say what the Then of the non-changing action looks like.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** apply  **Id:** 95ac9467
+**A:** Parts:
+1. Join, leave, accept and decline change state: each changes who is on the waitlist, who has an offer or who is enrolled.
+2. Checking a position changes nothing.
+3. Expiry changes state without the student doing anything: the passing of 24 hours is the trigger, and the student comes off the waitlist and the seat goes to the next in line.
+4. The Then for checking a position says the state is unchanged and the student is told their place in line.
+
+The deck states this as a learning goal (slide 2, "identify operations that change system state") and does not work it on a slide, so the sorting is mine, read off the request on slide 5. It matters for the model in lecture 16's terms: the state-changing actions become operations with postconditions, and position is something always computable from the line, which lecture 16 also calls an operation and not a field. A scenario for an action that changes nothing is still worth writing, because "nothing else changes" is a claim a test can check.
+
+### Q: Lecture 16 says every walkthrough step becomes a test with a given, a when and a then. Write by hand a Mocha test for the deck's Scenario #1 (the section is full, the waitlist is not full, the student is not enrolled and not on the waitlist; the student joins; the student is at the end of the waitlist). Assume `new Section(capacity)`, `section.enrol(id)`, `section.join(id)` returning `{ ok: true, position }` or `{ ok: false, reason }`, and that one other student is already waiting.
+**Topic:** Requirement scenarios  **Lec:** 17  **Type:** apply  **Id:** 85147928
+**A:** Key:
+1. The test has three blocks that mirror the scenario: set up the Given, perform the When, assert the Then.
+2. Given: a section of capacity 1 with one student enrolled and one other student on the waitlist.
+3. When: one call, `section.join("s3")`.
+4. Then: the result is ok and the position is 2, the end of the line.
+
+```ts
+it("adds a student to the end of the waitlist when the section is full", () => {
+	// Given: section full, waitlist not full, s3 not enrolled, s3 not waiting
+	const section = new Section(1);
+	section.enrol("s1");
+	section.join("s2");
+
+	// When
+	const result = section.join("s3");
+
+	// Then: s3 is last in line
+	expect(result).to.deep.equal({ ok: true, position: 2 });
+});
+```
+
+Each Given line of the scenario must be true after the setup, and the setup should make nothing else true. The When is a single call, because a scenario has one action. Asserting position 2 with one student already waiting is what checks "the end of the waitlist"; with an empty waitlist, position 1 would pass even if the code added students at the front.
