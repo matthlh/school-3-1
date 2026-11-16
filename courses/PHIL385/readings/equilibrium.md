@@ -1,6 +1,6 @@
 # PHIL 385 — Reading: *Either/Or*, "Equilibrium between the Aesthetic and the Ethical in the Development of Personality"
 
-The [lecture 22 page](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) has your notes on Hegel and on Hannay p. 524. This page is the whole essay, section by section. The essay is B's second letter to A and runs PDF pp. 415–514; the "Last Word" that introduces the Jutland priest's sermon starts on PDF p. 515. The Penguin page numbers below are for Alastair Hannay's translation (Penguin Classics, 1992), which Kraal cites. Two of them are known: your p. 480 line is PDF p. 423, and p. 524 is PDF pp. 456–457. Every other Penguin number is worked out from those two, so it can be off by a few pages, more so near the end. Exam 4 (Fri Nov 20) covers this essay with "The Aesthetic Validity of Marriage". The [question bank](../02-questions.md) has a section called "Reading: Equilibrium".
+The [lecture 21 page](../lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md) has a classmate's shared notes on Kraal's Hegel framework, and the [lecture 22 page](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) has your notes on Hegel and on Hannay p. 524. This page is the whole essay, section by section. The essay is B's second letter to A and runs PDF pp. 415–514; the "Last Word" that introduces the Jutland priest's sermon starts on PDF p. 515. The Penguin page numbers below are for Alastair Hannay's translation (Penguin Classics, 1992), which Kraal cites. Two of them are known: your p. 480 line is PDF p. 423, and p. 524 is PDF pp. 456–457. Every other Penguin number is worked out from those two, so it can be off by a few pages, more so near the end. Exam 4 (Fri Nov 20) covers this essay with "The Aesthetic Validity of Marriage". The [question bank](../02-questions.md) has a section called "Reading: Equilibrium".
 
 > **Watch out.** This is B's second and last letter. B is Judge William, married, a civil servant; A is the young aesthete of Part I. The first letter argued that marriage keeps love's beauty. This letter argues that choosing at all is the ethical, that every aesthetic life is despair, and that the aesthetic comes back, transfigured, inside the ethical. The "equilibrium" of the title is that return.
 
@@ -106,6 +106,7 @@ The [lecture 22 page](../lectures/22-equilibrium-hegel-and-the-choice-of-good-an
 - The either/or is absolute in one sense, because its options are choosing and not choosing. In another sense the absolute either/or first appears with the choice, when good and evil become options.
 - B is "no ethical rigorist". Once the choice is posited the whole of the aesthetic returns, and only then is life beautiful. The aim is to use the world and not abuse it.
 - The two definitions: "The aesthetic factor in a person is that by which he is immediately what he is; the ethical factor is that by which he becomes what he becomes."
+- Kraal's gloss of this page (p. 486, a classmate's shared notes of Nov 13): the real either/or is whether to see the world in terms of good and evil at all, and the alternative he named was Nietzsche's beyond good and evil.
 
 ## Every aesthetic life is despair
 
@@ -213,6 +214,7 @@ The [lecture 22 page](../lectures/22-equilibrium-hegel-and-the-choice-of-good-an
 - Philosophy says "The absolute *is* by virtue of my thinking it", then corrects itself to "the absolute's self-thinking in me", because my thought of the absolute is necessary. "Things are different with the good. The good *is* by virtue of my willing it, and otherwise it has no existence." The same holds for evil.
 - This does not make good and evil subjective. "On the contrary, it is to assert the absolute validity of these categories." "The good is the in-and-for-itself posited by the in-and-for-itself, and that is freedom."
 - To avoid the misreading that he chose good and evil equally absolutely, B used the phrase "repenting myself out of the whole of existence". Repentance expresses that evil is an essential part of me and at the same time not essentially a part of me. If evil were not part of me I could not choose it; if there were something in me I could not choose, I would not be the absolute myself but only a product.
+- Kraal called this the most important page of *Either/Or* (a classmate's shared notes of Nov 13).
 - The [lecture 22 page](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) has Kraal's handling of this passage and your questions on it.
 
 ## The ethical life-view
