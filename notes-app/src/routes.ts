@@ -27,13 +27,22 @@ function cut(s: string, ch: string): [string, string] {
   return i < 0 ? [s, ''] : [s.slice(0, i), s.slice(i + 1)]
 }
 
+/** "a%23b" → ["a", "b"], the escape in either case; none → [s, '']. */
+function cutEscapedHash(s: string): [string, string] {
+  const m = /%23/i.exec(s)
+  return m ? [s.slice(0, m.index), s.slice(m.index + 3)] : [s, '']
+}
+
 /**
  * `#/courses/X/file.md?query#section-id` → file route. The query is a question bank's view (BankView); the anchor is
- * a section (the element id is `sec-<anchor>`). Both are cut off before decoding, so an escaped ? or # stays in place.
+ * a section (the element id is `sec-<anchor>`). Both are cut off before decoding, so an escaped ? stays in place. An
+ * escaped # in the path starts the anchor when there is no real one: a chat app that relays a section link escapes its
+ * second # as %23, and no file name has a #.
  */
 export function parseHash(hash: string): Route {
-  const [rest, anchor] = cut(hash.replace(/^#\/?/, ''), '#')
-  const [path, query] = cut(rest, '?')
+  const [rest, hashAnchor] = cut(hash.replace(/^#\/?/, ''), '#')
+  const [escaped, query] = cut(rest, '?')
+  const [path, anchor] = hashAnchor ? [escaped, hashAnchor] : cutEscapedHash(escaped)
   const s = decode(path)
   if (!s) return { kind: 'home' }
   if (s === 'review') {

@@ -107,6 +107,13 @@ test('Courses and each course tab have their own address, and a course file stay
   assert.deepEqual(parseHash('#/courses/STAT251/00-syllabus.md'), { kind: 'file', path: 'courses/STAT251/00-syllabus.md', query: '', anchor: undefined })
 })
 
+test('a section link whose second # a chat app escaped as %23 still opens that section', () => {
+  const want = { kind: 'file', path: 'courses/STAT251/lectures/18-x.md', query: '', anchor: 'mean-and-variance-slide-5' }
+  assert.deepEqual(parseHash('#/courses/STAT251/lectures/18-x.md#mean-and-variance-slide-5'), want)
+  assert.deepEqual(parseHash('#/courses/STAT251/lectures/18-x.md%23mean-and-variance-slide-5'), want)
+  assert.deepEqual(parseHash('#/courses/STAT251/lectures/18-x.md%2523'), { kind: 'file', path: 'courses/STAT251/lectures/18-x.md%23', query: '', anchor: undefined })
+})
+
 test('bulk reveal changes only visible answers and preserves hidden answer state', () => {
   browser()
   const show = bankNodes('section=lec-1&open=3').find((n) => n.type === 'button' && n.props.children === 'Show answers')

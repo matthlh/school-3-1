@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { splitSections, type Section } from './markdown'
-import { hrefAnchor, scrollIfSame } from './routes'
+import { hrefAnchor, parseHash, scrollIfSame } from './routes'
 import { Md } from './Md'
 import { VERIFY } from './CoursePage'
 import { SectionRail } from './SectionRail'
@@ -84,7 +84,7 @@ export function Viewer({ path, text, hideTitle, practiceHref }: { path: string; 
   // next), and a link to a section — from the contents row, the rail, or a search hit — opens it before scrolling.
   useEffect(() => {
     setClosed(defaultClosed())
-    const anchorId = () => { const h = window.location.hash; const i = h.lastIndexOf('#'); return i > 0 ? h.slice(i + 1) : '' }
+    const anchorId = () => { const r = parseHash(window.location.hash); return r.kind === 'file' ? r.anchor ?? '' : '' }
     const reveal = (id: string) => {
       if (!id) return
       setClosed((c) => { if (!c.has(id)) return c; const n = new Set(c); n.delete(id); return n })
