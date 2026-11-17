@@ -2,6 +2,65 @@
 
 This page is built from the after-class deck `Lecture_24_Chapter_7_CanvasPost_AL.pdf` (9 slides), the first five slides of the Chapter 8 deck `Lecture_25_Chapter_8_CanvasPost.pdf`, and the Panopto captions of the Nov 6 recording. Canvas numbers this class Lecture 24, and the [question bank](../02-questions.md) lists it under "Lec 23" and "Long problems".
 
+## Your notes (photos of four pages headed "lec 24", Canvas's number for this class, 2026-11-17)
+
+### Page 1
+- Stat 251 lec 24
+- Need to review: Binomial + Normal distribution?
+- X ~ Bin(10, 0.5)   n = 10, p = 0.5
+- P(X ≤ 2)
+  - = P(X=0) + P(X=1) + P(X=2)
+  - = (10 choose 0)(0.5)^0 (0.5)^10 + (10 choose 1)(0.5)^1 (0.5)^9 + (10 choose 2)(0.5)^2 (0.5)^8
+  - = 0.0547
+- b) P(X ≤ 2) normal approx.
+- X ~ (10, 0.5)   n = 10, p = 0.5
+  - => μ = E(X) = np = 10 × 0.5 = 5
+  - => σ² = Var(X) = np(1−p) = 2.5
+  - np = 5 ≥ 5, n(1−p) = 5 ≥ 5 \* cond. satisfied
+- Then, X ~ N(5, 2.5) ...
+- c) P(X ≤ 2) normal approx. w/ continuity correction
+
+### Page 2
+- X ~ Poisson(λ)
+  - => μ = E(X) = λ
+  - σ2 = Var(X) = λ
+- when λ ≥ 20, then X ~ N(λ, λ)
+- Example 4:
+- X = # particles
+- P(X > 60)
+- X ~ Poisson(λ = 55)   λ ≥ 20
+  - μ = E(X) = λ = 55
+  - σ² = Var(X) = λ = 55
+- X ~ N(55, 55) approx.
+- P(X > 60) → P(X ≥ 61) \* X is discrete
+- [continuity correction, idk why it's 0.5 though]
+  - = P((X − μ)/σ ≥ (60.5 − 55)/√55)
+  - = P(Z ≥ 0.74) = 1 − ... = 0.2296
+
+### Page 3
+- b) P(50 ≤ X ≤ 65)
+  - => P(49.5 ≤ X ≤ 65.5)
+  - P((X − μ)/σ) ....
+  - = P(Z ≤ 1.41) − P(Z ≤ −0.74)
+- ☐ Review CLT
+- ☐ Norm approx. → Binomial
+- ☐
+- quartiles ~> 0.5 is the continuity correction ? [always 0.5]?
+- sampling distribution, population distribution (bracketed: don't know distribution)
+- sample distribution
+- Statistical Inference
+  - Methods of making decisions or predictions about a population based on information obtained from a sample
+  - e.g. sample mean x̄ used to estimate population μ
+
+### Page 4
+- Two types of estimation
+- point estimation: (a line with one dot)
+- Interval estimation: (a line with [ • ] marked "interval") ← better, but if large maybe not
+- good estimator: unbiased
+  - → sampling distribution centered at parameter
+- unbiased estimator: E(θ̂) = θ
+  - θ is parameter, θ̂ point estimator
+
 ## Normal approximations for counts
 
 ### What the continuity correction changes (Nov 6 recording and lecture 22 deck)
@@ -194,3 +253,17 @@ The class stopped here. Confidence intervals for $$\mu$$ (slides 8 to 13) are th
 
 - Slide 7 has an arithmetic slip. $$\frac{65.5 - 55}{\sqrt{55}} = \frac{10.5}{7.416} = 1.42$$, not 1.141, so $$\Phi(1.42) = 0.9222$$ and the answer is $$0.9222 - 0.2296 = 0.6926$$. The deck's 0.6911 comes from reading $$\Phi(1.41)$$. The method on the slide is right.
 - The deck title says Activity, but no activity was done in this class (see In class).
+- Your notes stop before the numbers in parts (b) and (c) of the Binomial example. The standard deviation is $$\sqrt{2.5} = 1.581$$, because the 2.5 in $$N(5, 2.5)$$ is the variance. Without the correction the answer is about half the exact 0.0547; with it, the answer is close:
+
+$$
+\begin{aligned}
+\text{(b)}\; z &= \frac{2 - 5}{1.581} = -1.90 \\
+P(Y \le 2) &= 0.0287 \\
+\text{(c)}\; z &= \frac{2.5 - 5}{1.581} = -1.58 \\
+P(Y \le 2.5) &= 0.0571
+\end{aligned}
+$$
+
+- Your notes ask why the correction is 0.5 and whether it is always 0.5. A count only takes whole numbers, so the bar for a value $$k$$ runs halfway to each neighbour, from $$k - 0.5$$ to $$k + 0.5$$. For a count it is always 0.5. The full reason is under "Why the correction is 0.5" above.
+- Your notes link the quartiles to the continuity correction. They are two separate rules that both use 0.5. The quartile rule $$np + 0.5$$ from lecture 4 finds a position in sorted data; the instructor mentioned it only because it is the other 0.5 in the course. The continuity correction belongs only to a Normal approximation of a count.
+- Your notes have $$P(Z \le 1.41)$$, the value the deck used. The correct value is 1.42, because $$\frac{10.5}{7.416} = 1.416$$, and part (b) of Example 4 comes to 0.6926 (the first clarification above).
