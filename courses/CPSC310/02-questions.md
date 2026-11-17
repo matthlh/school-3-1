@@ -2490,3 +2490,127 @@ it("adds a student to the end of the waitlist when the section is full", () => {
 ```
 
 Each Given line of the scenario must be true after the setup, and the setup should make nothing else true. The When is a single call, because a scenario has one action. Asserting position 2 with one student already waiting is what checks "the end of the waitlist"; with an empty waitlist, position 1 would pass even if the code added students at the front.
+
+## Lec 18 — Modelling: Data (logged 2026-11-17 from deck 11a-data-specs.pdf, the reader's Data Modelling chapter and Matt's page from class; written in the exam formats: true/false with justification, multiple choice, short answer with handwritten TypeScript)
+
+### Q: A gym rents lockers to members. A member can rent at most 2 lockers, a locker is rented to one member at a time, rentals expire 30 days after they start, and lockers that are out of order cannot be rented. Using the deck's procedure, classify each phrase as an entity, a property, a relationship or a derived rule: (a) member, (b) out of order, (c) rented to, (d) expired.
+**Topic:** Data modelling  **Lec:** 18  **Type:** apply  **Id:** 54b62b4f
+**A:** Parts:
+1. (a) Member is an entity.
+2. (b) Out of order is a property of Locker.
+3. (c) Rented to is a relationship between Member and Locker.
+4. (d) Expired is a derived rule.
+
+Slide 14, steps 2 and 3. A recurring noun is an entity. Of the remaining phrases, one about a single thing is a property (a locker is or is not out of order), one that connects two things is a relationship, and one that follows from other facts is a derived rule: a rental is expired when more than 30 days have passed since it started. The gym is the deck's camera example with the names changed.
+
+### Q: In the gym model, the relationship "rented to" joins Member and Locker. Write the cardinality at each end, read the relationship as one sentence, and say what a `*` at the Locker end would mean instead.
+**Topic:** Data modelling  **Lec:** 18  **Type:** apply  **Id:** 4383a27e
+**A:** Key:
+1. The Member end is 1 and the Locker end is 0..2.
+2. One member has 0 to 2 lockers rented.
+3. A `*` would mean a member can rent any number of lockers.
+
+Slide 9. The deck's version is 1 at Student and 0..3 at Camera, read as "1 student has 0 to 3 cameras on loan". The three forms are exact (N), range (N..M) and `*` for any. The range starts at 0 because a member with no lockers is a valid state.
+
+### Q: The first camera model has Student and Camera joined by "on loan" (1 and 0..3). Run the deck's sanity check on this Then: "the camera is on loan to the student, due back 7 days from now". Say which phrase fails, what that tells you about the model, and what change fixes it.
+**Topic:** Data modelling  **Lec:** 18  **Type:** apply  **Id:** 9669ce1a
+**A:** Key:
+1. "Due back 7 days from now" cannot be expressed, because nothing in the model holds when the loan was made.
+2. The model is incomplete.
+3. Promote "on loan" to an entity, Loan, with the property "time lent".
+
+Slides 10 and 11. The check is that every phrase in every Given and Then appears as something in the model. "On loan to the student" passes, since the relationship expresses it. The due date itself is not stored: it follows from the time lent plus 7 days.
+
+### Q: True or false, and justify: in the camera model, the time a camera was lent should be a property of Student, since the student is the one who borrowed it.
+**Topic:** Data modelling  **Lec:** 18  **Type:** critique  **Id:** a7a48b3f
+**A:** Key:
+1. False.
+2. A student can have up to 3 loans, each made at a different time, and a property is one simple fact per instance.
+3. The time belongs on Loan, the relationship promoted to an entity.
+
+Slides 4 and 11. The deck's rule is that a relationship with state of its own becomes an entity, and the time lent is state of the lending, not of either end. This was your own question in class.
+
+### Q: True or false, and justify: promoting "on loan" to a Loan entity removes the connection between Student and Camera.
+**Topic:** Data modelling  **Lec:** 18  **Type:** critique  **Id:** 029449bf
+**A:** Key:
+1. False.
+2. The one relationship is replaced by two, "has" between Student and Loan and "lends" between Loan and Camera, so a student still reaches their cameras through their loans.
+
+Slide 11. The cardinalities are Student 1 and Loan 0..3 on "has", and Loan 0..1 and Camera 1 on "lends". The limit of 3 cameras out is still on the diagram, as the 0..3 on "has". Slide 15 adds that more than one model can be correct; the test is whether every Given and Then can be expressed.
+
+### Q: The second camera model is Student, "has" (1 and 0..3), Loan, "lends" (0..1 and 1), Camera. Read each of the four cardinalities as a sentence.
+**Topic:** Data modelling  **Lec:** 18  **Type:** apply  **Id:** 925e5b4d
+**A:** Parts:
+1. The 1 at Student: a loan belongs to exactly 1 student.
+2. The 0..3 at Loan on "has": a student has 0 to 3 loans.
+3. The 0..1 at Loan on "lends": a camera is on 0 or 1 loan.
+4. The 1 at Camera: a loan lends exactly 1 camera.
+
+Slide 11. Each number says how many instances at its own end connect to one instance at the other end. The 0..1 is the request's "a camera can be lent to only one student at a time", and the 0..3 is "at most 3 cameras out".
+
+### Q: A teammate's camera model gives Camera a yes or no property "available" and gives Loan a yes or no property "overdue". Say what is wrong with both, and write each as the deck would.
+**Topic:** Data modelling  **Lec:** 18  **Type:** critique  **Id:** 608546a4
+**A:** Key:
+1. Both are conclusions that follow from other facts, and the deck says to store facts, not conclusions.
+2. Derived rule: a camera is available when it is not on loan and is not in for repair.
+3. Derived rule: a loan is overdue when more than 7 days have passed.
+
+Slides 13 and 15. The facts are "in for repair", whether a Loan exists for the camera, and the time lent. The next sentence is my reasoning, not the deck's: a stored conclusion is a second copy that can disagree with the facts, for example a camera still marked available after it is lent.
+
+### Q: For the camera request, say for each constraint whether the diagram's structure can show it or it needs a written rule, and name the cardinality or the rule type: (a) a camera is lent to one student at a time, (b) a camera in for repair is not on loan, (c) a loan is overdue after 7 days, (d) a student has at most 3 cameras out.
+**Topic:** Data modelling  **Lec:** 18  **Type:** apply  **Id:** a0760963
+**A:** Parts:
+1. (a) Structure: the 0..1 at the Loan end of "lends".
+2. (b) A condition rule.
+3. (c) A derived rule.
+4. (d) Structure: the 0..3 at the Loan end of "has".
+
+Slides 12, 13 and 15. The deck says to use structure first, with rules covering only what the diagram cannot show. For (d) the deck also writes "a student has at most 3 loans" as a bound rule, and the reader gives a cardinality as its example of a bound rule, so "bound rule" is accepted for (d) as well. A condition rule ties two things together: the property "in for repair" and the existence of a loan.
+
+### Q: Which one of these belongs in a data model? (a) A `loans` table with a `student_id` foreign key. (b) A Loan entity with the property "time lent". (c) A `Map<string, Loan>` keyed by camera id. (d) The route `GET /loans/:id`. Give the reason the other three do not.
+**Topic:** Data modelling  **Lec:** 18  **Type:** recall  **Id:** aa2307a0
+**A:** Key:
+1. (b).
+2. A data model stays in the problem domain: it says what information exists, not how it is stored or represented.
+
+Slide 3. The other three are concrete representations of the model: a database table, a language's data structure and a REST resource. The reader's term is implementation agnostic, and it says technology choices come later.
+
+### Q: In class the waitlist model began with Student holding a property "position" and a yes or no property "enrolled", next to a Section entity and a Waitlist entity. Say what is wrong with each of the two properties and what the model should have instead.
+**Topic:** Data modelling  **Lec:** 18  **Type:** critique  **Id:** 30530509
+**A:** Key:
+1. Position is a conclusion derived from the order of the line, so it is not stored.
+2. Enrolled connects a student and a section, so it is a relationship, not a property.
+3. The student's place on a waitlist becomes its own entity, Place in line, and position is derived from it.
+
+Your page from class and slide 15, which lists "position" among the derived conclusions and names Place in line as a relationship that became an entity. The deck does not show what Place in line stores; my reading is the time the student joined. A yes or no "enrolled" on Student also cannot say which section. Your page notes one more gap in the class's model: the offer.
+
+### Q: Write by hand TypeScript interfaces for the second camera model as one concrete representation of it (Student, Loan with its time lent, Camera), then name one thing the data model says that your interfaces do not enforce, and say how "overdue" should appear in the code.
+**Topic:** Data modelling  **Lec:** 18  **Type:** apply  **Id:** de2d72ab
+**A:** Key:
+1. Three interfaces, with the time lent on Loan and Loan referring to its one student and its one camera.
+2. The interfaces do not enforce the cardinality 0..3, so the limit of 3 loans needs a validation.
+3. Overdue is a function computed from the time lent, not a stored field.
+
+```ts
+interface Student {
+	studentId: string;
+}
+
+interface Camera {
+	cameraId: string;
+	inForRepair: boolean;
+}
+
+interface Loan {
+	studentId: string;
+	cameraId: string;
+	timeLent: Date;
+}
+
+function isOverdue(loan: Loan, now: Date): boolean {
+	const days = (now.getTime() - loan.timeLent.getTime()) / 86_400_000;
+	return days > 7;
+}
+```
+
+Slide 3 says a model can contain more than any one concrete representation of it, and this is the case here: the types allow a fourth loan for one student, two loans for one camera, and a loan of a camera that is in for repair. The reader says rules become methods, routes or validations in the implementation. The camera id is mine; the deck's Camera box shows only "in for repair".
