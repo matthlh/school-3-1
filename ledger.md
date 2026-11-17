@@ -66,7 +66,7 @@ _57 topics due as of Tue Nov 17. Say **quiz me**._
 - PHIL 385 · Equilibrium: the ethical individual, duty, calling and work (mood against continuity, the gambler's hour · tasks, not possibilities · duty inside, not outside: Pligt and paaligger · the accidental man and the universal man · my duty: the unity of the universal and the particular · the intensity of duty, Balle's textbook · every man's duty to work · everyone has a vocation · accomplish is not in our power) · due today · last unquizzed
 - PHIL 385 · Equilibrium: marriage, friendship and the uncommon man (every man's duty to marry: he who marries realizes the universal · ethics does not say whom · the forest nymph and the relationship as the absolute · the Dutch orientalist: woman clarifies finiteness · friendship needs full agreement in a positive life-view · Aristotle · the duty to become revealed · B as witness, not judge · the truly extraordinary man is the truly ordinary man) · due today · last unquizzed
 
-_Readiness · PHIL 385 Exam 4 14:00 · Fri Nov 20 · 0% of 147 in-scope questions likely recalled · 5% asked · 6% right last time._
+_Readiness · PHIL 385 Exam 4 14:00 · Fri Nov 20 · 0% of 148 in-scope questions likely recalled · 5% asked · 6% right last time._
 
 _Frozen, not due: PHIL 385 16 topics from Exam 1 · PHIL 385 4 topics from Exam 2 14:00 · PHIL 385 3 topics from Exam 3 14:00. The exam that covered them is past and the course's next exam does not._
 

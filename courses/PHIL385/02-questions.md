@@ -2807,58 +2807,54 @@ Romantic love, in the past. Kraal's note was "for a while it was Cordelia": the 
 
 It is the first of B's two letters that make up Part II of *Either/Or*. B chose the letter form because it allows "admonitory and urgent tones" and keeps A from debating in general terms. Kraal's line was that if you play the game of life on the aesthetic's own parameter, the ethical still triumphs, because marriage turns out more aesthetic than romantic love.
 
-### Q: State B's two-fold task in the essay.
+### Q: What are the two things B sets out to show in "The Aesthetic Validity of Marriage"?
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** 608d9bce
 **A:** Parts:
-1. To show the aesthetic significance of marriage, against A's view that marriage is unaesthetic and boring in the long run.
-2. To show how the aesthetic can be sustained in marriage against life's obstacles, over time.
+1. That marriage is aesthetic, against A's view that it is unaesthetic and boring in the long run.
+2. That the aesthetic can be sustained in marriage against life's obstacles, over time.
 
 B prefixes each task with a short "polemical prologue" that answers A's sarcasm. He calls fighting for marriage his vocation as a husband, "pro aris et focis", for hearth and home.
 
-### Q: How does B say he feels toward A, and what is his warning?
+### Q: How does B say he feels toward A, and what does he warn him about?
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** 5a7b554f
 **A:** Parts:
-1. He loves A "like a son, a brother, a friend", with an aesthetic love and "with the fear and trembling of a religious love".
-2. The warning is about A himself: "I am warning you not about the world but about yourself, and I am warning the world about you."
-3. A is wasting his life: it "will be nothing but approach-runs", conscience will unroll a record of "wasted possibilities", and "you accomplish nothing".
+1. He loves A like a son, a brother and a friend.
+2. He warns A about A himself, not about the world, and warns the world about A.
+3. A is wasting his life: it will be nothing but approach-runs and a record of wasted possibilities.
 
-Kraal's gloss: B tells A he has one chance at life, has talents and responsibilities he should take up, and is on a self-destructive path he will regret. B also says he would warn a daughter against A. He adds that A is not an enemy of marriage but only mocks and observes it, loves "the accidental", and lacks faith.
+B's own words are that he loves A "with the fear and trembling of a religious love", and "I am warning you not about the world but about yourself, and I am warning the world about you." Kraal's gloss: A has one chance at life, talents and responsibilities he should take up, and is on a self-destructive path. B would warn a daughter against A, and says A is not an enemy of marriage but only mocks and observes it.
 
-### Q: Where did Kraal say the marriage vow comes from, and what does B say about where marriage belongs?
+### Q: Where did Kraal say the marriage vow comes from, and where does B say marriage belongs?
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** 43a22f40
 **A:** Parts:
 1. Kraal: the vow comes from Christianity, around the year 1100.
-2. B: marriage belongs to Christianity; the pagan nations, for all the sensuality of the Orient and the beauty of Greece, and Judaism did not perfect it.
+2. B: marriage belongs to Christianity; the pagan nations and Judaism did not perfect it.
 
-The Church made marriage a sacrament in the twelfth century, which is the fact behind Kraal's date. In the ceremony the Church "exacts a vow", and the vow, the intention, gives marital love its law of motion.
+B grants the Orient its sensuality and Greece its beauty, but neither perfected marriage. The Church made marriage a sacrament in the twelfth century, which is the fact behind Kraal's date. In the ceremony the Church "exacts a vow", and the vow, the intention, gives marital love its law of motion.
 
-### Q: Reconstruct the argument Kraal drew from B about love and the ethical, and give B's own sentence for it.
-**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** derive  **Id:** 6fd7ade3
-**A:** Parts:
-1. If love is inconsistent with the ethical, and the ethical (duty) always turns up eventually in a love relation, then love cannot last.
-2. If love cannot last, love loses.
-3. So if love is inconsistent with the ethical, love loses.
-4. B's sentence: "If duty is the enemy of love, and love cannot defeat this enemy, then love is not the true victor."
+### Q: Suppose, with A, that duty is the enemy of love. What follows for love, by B's argument, and what must A therefore give up?
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** apply  **Id:** 6fd7ade3
+**A:** Key:
+1. Duty always turns up eventually in a love relation, so if it is love's enemy, love cannot last and love loses: "love is not the true victor".
+2. A, who makes love the highest thing, must therefore give up the premise that duty is love's enemy.
 
-The argument is aimed at A, who praises love as the highest thing: A must deny that duty is love's enemy, or admit that his love loses and that he has disparaged it.
+B's sentence: "If duty is the enemy of love, and love cannot defeat this enemy, then love is not the true victor." The argument is a trap for A: either deny that duty is love's enemy, or admit that his love loses and that he has disparaged it. B's own view is that duty is love's friend.
 
 ### Q: True or false, and justify: B concludes from his argument that one should live by duty and responsibility rather than by love.
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** critique  **Id:** 2c023bd9
 **A:** Key:
 1. False.
-2. B's view is that duty is love's friend, not its rival: "You regard duty as the enemy of love, I regard it as its friend."
-3. "Duty here is just one thing, truly to love", and the aesthetic, the ethical and the religious are "the three great allies".
+2. B's view is that duty is love's friend, not its rival: "duty here is just one thing, truly to love".
 
-The argument is a trap for A: if duty were love's enemy, love would lose, so A, who makes love the highest, must give up the premise. B says duty is not "one climate and love another"; duty makes his love "the true, temperate climate". Love held apart from duty is despair, which is why B rejects it, not because duty outranks love.
+"You regard duty as the enemy of love, I regard it as its friend." Duty is not "one climate and love another"; it makes B's love "the true, temperate climate", and the aesthetic, the ethical and the religious are "the three great allies". Love held apart from duty is despair, which is why B rejects it, not because duty outranks love.
 
 ### Q: What distinguishes love from lust, according to B?
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 089d617e
 **A:** Key:
 1. Love has "the stamp of the eternal"; lust does not.
-2. The sensual is "the instantaneous" and at best makes the moment of pleasure into "a little eternity".
-3. The true eternity in love needs "a determination of the will".
+2. Lust is the sensual on its own, "the instantaneous", which at best makes the moment of pleasure into "a little eternity".
 
-Romantic love rests on the sensual and beauty but is noble because of the consciousness of the eternal it takes up. B says A's "clever head" has conspired with his "lust", so that he renews the illusion of first love in new girls.
+The true eternity in love needs "a determination of the will", which is the step from romantic to married love. Romantic love rests on the sensual and on beauty but is noble because of the consciousness of the eternal it takes up. B says A's "clever head" has conspired with his "lust", so that he renews the illusion of first love in new girls.
 
 ### Q: B quotes "do it or do not do it, you will regret both". Whose line is it, where is it from, and when does B say it is justified?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** a47ec4a3
@@ -2871,14 +2867,13 @@ For such a person, B says, "life is without meaning". B calls it A's "pet theory
 
 ## Lec 19 — "The Aesthetic Validity of Marriage" continued: the ethical as the more aesthetic (Wed Nov 4, logged 2026-11-04 from a classmate's shared notes)
 
-### Q: Kraal said B's major argument, that the ethical ends up more aesthetic than the immediate aesthetic passion, goes back to Plato. What principle did he take from Plato, and how does it apply to marriage?
+### Q: Kraal said B's major argument, that the ethical ends up more aesthetic than romantic love, goes back to Plato. What principle did he take from Plato, and how does it apply to marriage?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** 8c654d9f
-**A:** Parts:
-1. The beautiful derives its value from the good.
-2. The good is the ethical, so the aesthetic gets its value from the ethical.
-3. Marriage stands for the ethical, so it ends up more beautiful than first love.
+**A:** Key:
+1. The beautiful derives its value from the good (Plato's *Republic*).
+2. Marriage stands for the ethical, the good, so marriage ends up more beautiful than first love.
 
-The work is Plato's *Republic*. In Book VI the Form of the Good is the most important thing to know, because just things, beautiful things and the rest are beneficial only through their relation to it. The link to Plato is Kraal's, and B does not name Plato in the assigned text. B's own words for the conclusion are that marriage is the "transfiguration" of first love (the same love, kept and made more glorious) and "even more beautiful than it", and that "really it is marriage that is poetic".
+In *Republic* Book VI the Form of the Good is the most important thing to know, because just and beautiful things are beneficial only through their relation to it. The link to Plato is Kraal's; B does not name Plato in the assigned text. B's own words for the conclusion are that marriage is the "transfiguration" of first love and "even more beautiful than it", and that "really it is marriage that is poetic".
 
 ### Q: Kraal set the aesthetic against the ethical in two comparisons, "Children" and "Confinement". Give both sides of each, and the conclusion he drew.
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** aff56207
@@ -2893,19 +2888,17 @@ Both pictures are Kraal's, built from B's letter. B's word for the confinement s
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** critique  **Id:** 6491137a
 **A:** Key:
 1. False.
-2. B quotes married people saying their children and grandchildren will "close our eyes" and mourn them, as their consolation, not as his argument.
-3. Marrying for children or for a home is one of the one-sided "whys" B rejects, because marriage must have no "why".
+2. The deathbed picture is Kraal's comparison of two lives, and marrying for children is one of the one-sided "whys" B rejects, since marriage must have no "why".
 
-The deathbed comparison is Kraal's picture of two lives, not B's reason for marrying. B still calls children "a blessing", with the poor woman in the square and her baby as his example. His own warning about A's end is different: A's life will close with only the recollection of conscience and its record "of wasted possibilities".
+B quotes married people saying their children and grandchildren will "close our eyes" as their consolation, not as his argument. He still calls children "a blessing", with the poor woman in the square and her baby as his example. His warning about A's end is different: A's life will close with only the recollection of conscience and its record "of wasted possibilities".
 
 ### Q: In the "Confinement" comparison, why can a lover who keeps himself secret from his beloved not truly love, by B's reasoning?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** derive  **Id:** 4411759b
 **A:** Key:
-1. Love is giving oneself, and one can give oneself only by going out of oneself, while secretiveness wants to remain in itself.
+1. Love is giving oneself, which means going out of oneself, while secretiveness wants to remain in itself.
 2. Making an impression from a distance, so that the girl loves an image she made herself, is "not love but the coquetry of the seducer".
-3. The one who loves has lost himself in the other, and in forgetting himself he is revealed to the other.
 
-So B calls openness "the life-principle of love" and inward secretiveness its death, and says it takes courage to reveal oneself as one truly is. The secrecy B keeps is toward the outside world, not between husband and wife. A's castle in the air, with his wife in a separate wing, ran on "secretiveness, mystification, refined coquetry".
+The one who loves has lost himself in the other, and in forgetting himself he is revealed to the other. So B calls openness "the life-principle of love" and inward secretiveness its death, and says it takes courage to reveal oneself as one truly is. The secrecy B keeps is toward the outside world, not between husband and wife.
 
 ### Q: Why, according to Kraal, does marriage represent the ethical?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** 32c93814
@@ -2938,38 +2931,33 @@ Each step is B's: marriage's "substance" is love; love differs from lust by "the
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 19  **Type:** critique  **Id:** 7477f702
 **A:** Key:
 1. False: love is not devoid of the sensuous, and the sensuous is not lust.
-2. First love has the sensual in it but is "not simply sensual", and marriage is "sensual yet spiritual".
-3. Lust is the sensual on its own, "the instantaneous" that wants instant satisfaction, without the stamp of the eternal.
+2. First love is "not simply sensual", and marriage is "sensual yet spiritual"; lust is the sensual on its own, without the stamp of the eternal.
 
 This is step 3 of Kraal's diagram. B does rank the spiritual higher: the higher "the heaven over the marriage bed", the more aesthetic the marriage. But marriage keeps the sensual, now in "a yet deeper opposition" to the spiritual. B's reply to A about the altar makes the same point: "flesh is not sensuality, it is selfishness".
 
-### Q: What does the civil-marriage note on Kraal's diagram say, which step does it point at, and where does B himself call a kind of marriage "civil"?
+### Q: What does the civil-marriage note on Kraal's diagram say, and which step does it point at?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** 3b0336bd
 **A:** Parts:
 1. A civil marriage, one without religious officials, does not "require love".
 2. It points at step 1: the defining characteristic of marriage is love.
-3. B uses "a civil arrangement" for the reflective age's marriage for a period, and says such unions "are not marriages".
 
-The civil arrangement is ended by notifying the authority, the way one gives notice of a change of address. For B a shared life without love is only the satisfaction of sensual desire or "an association, a partnership". The Church does not ask whether the couple love each other either, but because it "takes it for granted". The note is the lecture's, not B's.
+The note is the lecture's, not B's. B's nearest words are "a civil arrangement" for the reflective age's marriage for a period, ended by notifying the authority the way one gives notice of a change of address; such unions, he says, "are not marriages". For B a shared life without love is only the satisfaction of sensual desire or "an association, a partnership". The Church does not ask whether the couple love each other either, but because it "takes it for granted".
 
-### Q: On Kraal's diagram, romantic love "will seek to transform into conjugal love". What does "conjugal" mean, and why does romantic love seek this?
+### Q: On Kraal's diagram, romantic love "will seek to transform into conjugal love". What is conjugal love, and why does romantic love seek it?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** derive  **Id:** 2a561807
-**A:** Parts:
+**A:** Key:
 1. Conjugal love is married love.
-2. Romantic love already carries the stamp of the eternal: it means to last for ever.
-3. On its own its eternity is "illusory", because it has no inner history.
-4. The true eternity needs "a determination of the will", the intention and vow of marriage, so romantic love must become married love to be what it claims.
+2. Romantic love already claims eternity, but on its own its eternity is "illusory", with no inner history; the true eternity needs "a determination of the will", the intention and vow of marriage, so romantic love must become married love to be what it claims.
 
-B says romantic love, being non-historical, "goes astray or comes to a standstill". He would not call the change a replacement: first love enters marriage "without being changed", and his word for the result is "transfiguration" (the same love, kept and made more glorious).
+B says romantic love, being non-historical, "goes astray or comes to a standstill". He would not call the change a replacement: first love enters marriage "without being changed", and his word for the result is "transfiguration", the same love kept and made more glorious.
 
 ### Q: Which philosopher do some readers say Judge William (B) follows, and what in his letter supports it?
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** d1713bd4
 **A:** Key:
 1. Hegel: some argue that B is a Hegelian.
-2. His Hegelian vocabulary, for example first love as "an unreal An-sich" (the in-itself).
-3. B imagines A begging him to keep away from "any attempt at mediation", the Hegelians' word for reconciling opposites.
+2. His Hegelian vocabulary, for example first love as "an unreal An-sich" (the in-itself) and marriage as "the immediacy which has mediacy in itself", and his joke that A begs him to keep away from "any attempt at mediation".
 
-The lecture mentioned this as an aside. It is a reading of B, and B does not name Hegel in the letter. More of his Hegelian vocabulary: marriage is "the immediacy which has mediacy in itself", and love is a unity of "the universal and the singular". Hegel's *Philosophy of Right* (1820) makes marriage the first ethical relationship, love given a lasting and lawful form, which is close to B's case. Against the label, B is alarmed by the young men who cry "de omnibus dubitandum" (doubt everything), a slogan of the Hegelian philosophy then in fashion in Copenhagen.
+The lecture mentioned this as an aside. It is a reading of B, and B does not name Hegel in the letter. Hegel's *Philosophy of Right* (1820) makes marriage the first ethical relationship, love given a lasting and lawful form, which is close to B's case. Against the label, B is alarmed by the young men who cry "de omnibus dubitandum" (doubt everything), a slogan of the Hegelian philosophy then in fashion in Copenhagen.
 
 ### Q: Multiple choice. According to the lecture, B's argument that the ethical is the more aesthetic goes back to which work? (a) Plato's *Republic* (b) Plato's *Symposium* (c) Hegel's *Philosophy of Right* (d) Aristotle's *Nicomachean Ethics*
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** ba1b02de
@@ -2980,42 +2968,41 @@ The principle Kraal took from it is that the beautiful derives its value from th
 
 ## Reading: "The Aesthetic Validity of Marriage" (Nov 2–6; read by Claude 2026-11-02)
 
-### Q: Give B's criteria of romantic love.
+### Q: What are B's three criteria of romantic love?
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** c191fc17
 **A:** Parts:
 1. It is immediate: "to see her and to love her were one and the same".
-2. It rests on natural necessity and on beauty, sensual beauty and the beauty that shows through the sensual.
-3. It has nobility from the consciousness of the eternal it takes up, which is what separates love from lust.
+2. It rests on natural necessity and on beauty.
+3. It carries the consciousness of the eternal, which gives it nobility and separates it from lust.
 
-B says the old romances end where they should begin, with the lovers united in the fifth act, and that their struggle is entirely external; today money has replaced cruel fathers, with a rich uncle dying in the fifth act.
+The beauty is sensual beauty and the beauty that shows through the sensual. B says the old romances end where they should begin, with the lovers united in the fifth act, and that their struggle is entirely external; today money has replaced cruel fathers, with a rich uncle dying in the fifth act.
 
-### Q: The reflective age, B says, struck out on two paths against romantic love. Describe both and his verdict on each.
+### Q: The reflective age, B says, struck out on two paths against romantic love. Name both and give his verdict on each.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 34cb071d
 **A:** Parts:
-1. The immoral path keeps the temporal "refined in a sensual eternity, in the eternal instant of the embrace"; Byron's "love is heaven, marriage hell"; marriages for a period with a way out, like giving notice of a change of address.
-2. The respectable path is the marriage of convenience, really "the marriage of reason": a capitulation to life, with despair as its only solace.
-3. Verdict on the first: absolutely immoral, though it brings thought a step nearer the goal as "a formal protest against marriage".
+1. The immoral path: keep the sensual and drop the eternal, in "the eternal instant of the embrace" and marriages for a period with a way out.
+2. The respectable path: the marriage of convenience, really "the marriage of reason", a capitulation to life.
+3. Verdict on the first: absolutely immoral, though as "a formal protest against marriage" it brings thought a step nearer the goal.
 4. Verdict on the second: as immoral as it is unaesthetic, because a calculation is always temporal and so lacks the eternal.
 
-The immoral path's new definition of unhappy love is to be loved when one is no longer in love. The marriage of reason is entered into by people who have learnt that love is an illusion and concerns itself with "the prose of life".
+Byron's "love is heaven, marriage hell" belongs to the first path, whose marriages end the way one gives notice of a change of address, and whose new definition of unhappy love is to be loved when one is no longer in love. The marriage of reason is entered by people who have learnt that love is an illusion; its only solace is despair.
 
-### Q: Distinguish egoistic from sympathetic melancholy in B's letter, and say what B makes of the age's retreat from marriage.
+### Q: Distinguish egoistic from sympathetic melancholy in B's first letter, and say why he thinks the age retreats from marriage.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 24c3627e
 **A:** Parts:
-1. Egoistic melancholy fears for itself: "perhaps fate will tie me to another that is truly the ideal".
-2. Sympathetic melancholy, "more painful and also somewhat nobler", fears for itself for the other's sake: "perhaps what the beloved finds captivating in me will be taken from me".
-3. Both treat every day as "examination day", and the age neutralizes marriage out of cowardice and self-indulgence, not, as the Middle Ages did, because the unmarried life was thought more perfect.
+1. Egoistic melancholy fears for itself: perhaps fate will tie me to another who is truly the ideal.
+2. Sympathetic melancholy, nobler and more painful, fears for itself for the other's sake: perhaps what the beloved finds captivating in me will be taken from me.
+3. The age neutralizes marriage out of cowardice and self-indulgence, not, as the Middle Ages did, because the unmarried life was thought more perfect.
 
-B calls melancholy "the defect of our time" and says marriages contracted for a period only sap the energy of married life.
+Both kinds treat every day as "examination day". B calls melancholy "the defect of our time" and says marriages contracted for a period only sap the energy of married life. The trap is the second letter, where melancholy is "hysteria of the spirit", a different account.
 
-### Q: Why, for B, must conjugal love not begin with doubt, and what is the "higher concentric immediacy"?
+### Q: Why, for B, must conjugal love not begin with doubt, and what is the "higher concentric immediacy" that first love is taken up into?
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** cf5e12e3
-**A:** Parts:
-1. A marriage built on doubt would divorce marriage from love by annihilating first love.
-2. Instead first love is taken up unchanged into "a higher concentric immediacy", which enriches it rather than impoverishing it.
-3. The higher thing is the religious, "where rational reflection ends", and there love finds the infinity reflective love sought in vain.
+**A:** Key:
+1. A marriage built on doubt would annihilate first love and so divorce marriage from love.
+2. The higher concentric immediacy is the religious, "where rational reflection ends": first love is taken up into it unchanged, which enriches it rather than impoverishing it.
 
-B wants no rift in the ethical like the one between faith and knowledge in the intellectual sphere.
+There love finds the infinity that reflective love sought in vain. B wants no rift in the ethical like the one between faith and knowledge in the intellectual sphere.
 
 ### Q: What is the substance of marriage for B, and what does marriage presuppose? Whom does he call the traitors of marriage?
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** a3a23b24
@@ -3046,14 +3033,13 @@ B is reusing A's own example from "The Musical Erotic" but places it before firs
 
 It is not simply sensual because the sensual as such comes forth only in reflection, and first love has no reflection. It has all of this immediately. The two are drawn to each other by an irresistible power and feel their freedom in it. B offers himself as "the noble father" who lets them come together "in the name of God".
 
-### Q: How, for B, do the lovers relate their first love to God without changing it, and what image does he use?
+### Q: How, for B, do the lovers relate their first love to God without changing it, and what does that do to the love?
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** e930d091
-**A:** Parts:
-1. They thank God for their love; no reflection joins, and the love is "assumed into a higher concentricity".
+**A:** Key:
+1. They thank God for their love; no reflection joins, and the love is taken up into "a higher concentricity".
 2. The thanksgiving carries an intention, to hold on to the love, and that lifts first love into the ethical.
-3. The image is a swimming belt worn by someone who has never been in mortal danger.
 
-Thanking God also changes the man: instead of feeling he has conquered the girl, he humbles himself, and "it is in truth far more beautiful to take the beloved as a gift from the hand of God than to have subdued the whole world to conquer her". Possession becomes "daily possession throughout a whole lifetime".
+B's image is a swimming belt worn by someone who has never been in mortal danger. Thanking God also changes the man: instead of feeling he has conquered the girl, he humbles himself, and "it is in truth far more beautiful to take the beloved as a gift from the hand of God than to have subdued the whole world to conquer her". Possession becomes "daily possession throughout a whole lifetime".
 
 ### Q: Give A's three offences at the altar and B's reply to each.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 1f816b1e
@@ -3082,14 +3068,13 @@ A's wider objection is that the Christian God is spirit and negates beauty and t
 
 Each is one-sided, so "as ridiculous as they are anaesthetic and irreligious"; marrying for a purpose fails because "the fault is precisely that he has a purpose". The despicable whys (money, jealousy, prospects of inheritance) B refuses to discuss. The result puts marriage level with first love, and "the aesthetic in marriage is this: that it conceals a multitude of 'why's' which life reveals in all their blessedness".
 
-### Q: Tell the story of the official at the tea-table, and what B wishes such husbands.
+### Q: In the story of the official at the tea-table, what did the host answer to A's "why does one marry?", and what does B wish such husbands?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 3a214cba
 **A:** Parts:
-1. A, visiting a government official's family, asked "why does one marry, why, why?", and the host answered that "marriage is a good school for character", then outdid himself in absurdity.
-2. B reproached A for the women's sake, especially the wife who perhaps loved her husband.
-3. B wishes every such husband "a Xanthippe for his wife and as wicked children as possible", so that he has the means to attain his purpose.
+1. That "marriage is a good school for character", after which he outdid himself in absurdity.
+2. B wishes every such husband "a Xanthippe for his wife and as wicked children as possible", so that he has the means to attain his purpose.
 
-B grants that marriage is a "genesis of character", but anyone who marries for that reason should go to any other school than love's.
+B reproached A for the women's sake, especially the wife who perhaps loved her husband. He grants that marriage is a "genesis of character", but anyone who marries for that reason should go to any other school than love's.
 
 ### Q: What does B say about children and about marrying for a home?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 27d4e441
@@ -3100,25 +3085,29 @@ B grants that marriage is a "genesis of character", but anyone who marries for t
 
 States have rewarded fertility and Christianity has at times rewarded celibacy. A, "a stranger and an alien in the world", has no home and is only ever a welcome guest, which B calls a humiliation.
 
-### Q: What does the wedding ceremony do, according to B, and how does he answer A's objection that it reminds one of one's "numerical significance"?
+### Q: What does the wedding ceremony do, according to B?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 4a40cdbf
 **A:** Parts:
 1. It surveys the genesis of the human race and ties the marriage to the universal, leading the lovers back to the first couple.
-2. It proclaims sin as the lot of man in general, never "you are now about to commit a sin", with the three punishments: pain in childbirth, the woman's obedience, bread in the sweat of the brow.
-3. It asks questions to make firm, not to cause vacillation, takes the couple's love for granted since "the Church is not a match-maker", and exacts a vow.
-4. Reply to A: love is a unity of the universal and the singular, and the great thing is "in the singular to possess the universal", so each marriage is "an individual and a symbol at the same time".
+2. It proclaims sin as the lot of man in general, never "you are now about to commit a sin".
+3. It takes the couple's love for granted, since "the Church is not a match-maker", and exacts a vow.
 
-The ceremony does not bring the lovers to a standstill; it "lets what was already in motion proceed openly". Conclusion of the first task: marriage is "the transfiguration of first love, and is even more beautiful than it".
+The three punishments it recalls are pain in childbirth, the woman's obedience, and bread in the sweat of the brow. Its questions are asked to make firm, not to cause vacillation, and it does not bring the lovers to a standstill; it "lets what was already in motion proceed openly". Conclusion of the first task: marriage is "the transfiguration of first love, and is even more beautiful than it".
 
-### Q: "The aesthetic lies not in the immediate but in the acquired." Explain with B's account of marriage's law of motion.
+### Q: How does B answer A's objection that the wedding ceremony reminds one of one's "numerical significance"?
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 65a222e2
+**A:** Key:
+1. Love is a unity of the universal and the singular, and the great thing is "in the singular to possess the universal", so each marriage is "an individual and a symbol at the same time".
+
+A's complaint is that being led back to the first couple makes one a number in the race. For B that is the point: the ceremony ties the particular love to the universal without dissolving it.
+
+### Q: "The aesthetic lies not in the immediate but in the acquired." Explain the sentence with B's account of first love and marital love.
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** derive  **Id:** ff4fb933
 **A:** Key:
 1. First love is "an unreal An-sich" with no inner history, like a sleepwalker who falls the moment you say his name.
-2. Marital love is "armed": in the intention the will is directed inward, so it has a law of motion and an inner history.
-3. Marriage is "the immediacy which has mediacy in itself, the infinity which has the finite in itself, an eternity which has the temporal in itself", so it is ideal in both the classical and the romantic sense.
-4. Hence "it is marriage that is poetic", and first love lacks "the second aesthetic ideal, the element of history".
+2. Marital love has a law of motion and an inner history, because in the intention the will is directed inward; so the aesthetic is in what is acquired over time, and "it is marriage that is poetic".
 
-Against the young men who cry "de omnibus dubitandum", B says love is a province of giving, not acquiring; the beauty is in the immediate's being acquired along with the doubt, not in exertion alone. He compares faith: a miracle-working faith would have no history, because the history of faith is its appropriation in life.
+B's formula for marriage is "the immediacy which has mediacy in itself, the infinity which has the finite in itself, an eternity which has the temporal in itself", which makes it ideal in both the classical and the romantic sense; first love lacks "the second aesthetic ideal, the element of history". Against the young men who cry "de omnibus dubitandum", B says love is a province of giving, not acquiring; the beauty is in the immediate's being acquired along with the doubt. He compares faith: a miracle-working faith would have no history.
 
 ### Q: In what sense is secretiveness the absolute condition of the aesthetic in marriage, and what is the inward condition?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 249beac9
@@ -3128,32 +3117,29 @@ Against the young men who cry "de omnibus dubitandum", B says love is a province
 
 B to A: "You fear that when the enigma has gone love will cease, while I believe that only when it has gone does love begin." A's castle in the air, with him on the ground floor and his wife in the left wing of the first floor, is B's example of clinging to immediacy as a category of nature.
 
-### Q: Why does B say the "secrecy system" never makes a happy marriage, and when does he advise against marrying?
+### Q: Why does B say the "secrecy system" never makes a happy marriage, and when does he advise against marrying at all?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** bbc2df79
 **A:** Parts:
-1. An aesthetically beautiful marriage is always a happy one, and B has never seen a happy marriage built on secrecy: the wife as slave, the "misplaced solicitude" that calls woman weak ("the woman is just as strong as the man, maybe stronger"), and the gifted husband who arranged his wife's whole world like Potemkin's landscapes.
-2. The life-principle of marriage is "honesty, openheartedness, revelation, understanding"; a couple should "live on a good understanding".
-3. Never marry if you have "a secret which cannot be dragged out of you without costing you your life".
+1. An aesthetically beautiful marriage is a happy one, and B has never seen a happy marriage built on secrecy; the life-principle of marriage is "honesty, openheartedness, revelation, understanding".
+2. Never marry if you have "a secret which cannot be dragged out of you without costing you your life".
 
-Goethe's *Elective Affinities* shows what secretiveness leads to: had Edward confided to his wife that he loved another, the affair would have been "a divertissement in the drama of the marriage".
+His examples of the secrecy system are the wife kept as a slave, the "misplaced solicitude" that calls woman weak ("the woman is just as strong as the man, maybe stronger"), and the gifted husband who arranged his wife's whole world like Potemkin's landscapes. Goethe's *Elective Affinities* shows what secretiveness leads to: had Edward confided to his wife that he loved another, the affair would have been "a divertissement in the drama of the marriage".
 
-### Q: What is B's protest against A's word "habit"?
+### Q: What is B's protest against A's word "habit" for marriage?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** critique  **Id:** 2f879f43
 **A:** Key:
-1. "Habit" is used properly only of what is bad; it designates something unfree, and of the good "one can never talk of habit".
+1. "Habit" is used properly only of what is bad; it designates something unfree, so of the good "one can never talk of habit". What A calls habit is the historical side of marriage.
 2. Monotony can be the expression of something beautiful, like an even tempo in music.
-3. Even if monotony were unavoidable, the task would be to preserve love under it, since "despair can never be a task; it is a convenience".
 
-What A calls habit is simply the historical side of marriage. A's error is that he thinks abstractly, in "the categories of love", not historically.
+Even if monotony were unavoidable, the task would be to preserve love under it, since "despair can never be a task; it is a convenience". A's error is that he thinks abstractly, in "the categories of love", not historically.
 
-### Q: Contrast the conqueror and the possessor as B does.
+### Q: Contrast the conqueror and the possessor as B does, and say what marriage does with them.
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 0e994979
 **A:** Key:
-1. "Possession is conquering in reverse": to conquer needs pride, violence, greed, eating and drinking; to possess needs humility, patience, contentment, praying and fasting.
-2. A calls himself "a conqueror who cannot possess"; B grants that most natures are formed for conquering, but going downhill takes more strength than going uphill.
-3. The religious element in marriage "will dethrone the conqueror and let the possessor come into view", so marriage is built for "lasting possession".
+1. "Possession is conquering in reverse": to conquer needs pride, violence and greed; to possess needs humility, patience and contentment.
+2. The religious element in marriage "will dethrone the conqueror and let the possessor come into view", so marriage is built for "lasting possession".
 
-A's own maxim, "the great thing isn't the original but the acquired", counts against him: conquering is the original, possessing the acquired. The possessor also conquers, like the countryman who conquers by digging the earth.
+A calls himself "a conqueror who cannot possess"; B grants that most natures are formed for conquering, but going downhill takes more strength than going uphill. A's own maxim, "the great thing isn't the original but the acquired", counts against him: conquering is the original, possessing the acquired. The possessor also conquers, like the countryman who conquers by digging the earth.
 
 ### Q: Distinguish external from internal history, and say what art and poetry can and cannot represent.
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** e9cb1149
@@ -3164,12 +3150,11 @@ A's own maxim, "the great thing isn't the original but the acquired", counts aga
 
 The arts move from space to time: sculpture, painting (as Schelling noted), music, which vanishes in time, and poetry, the most complete. The highest in aesthetics is to feel oneself "a character in the play written by God", at once "composer and composition".
 
-### Q: Compare B's faithful husband with the faithful knight, and say who triumphs over time.
+### Q: Who triumphs over time, B's faithful husband or the faithful knight, and why?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 053e1b47
-**A:** Parts:
-1. The knight waits fifteen years and then comes the moment of his reward, which poetry concentrates.
-2. The husband is faithful for fifteen years while possessing, and constantly acquires the fidelity he has; his enemy is "that most dangerous enemy which is time".
-3. The knight "has killed time"; the husband "has not killed time but saved and preserved it in eternity", so only he triumphs over time.
+**A:** Key:
+1. The husband: the knight "has killed time", while the husband "has not killed time but saved and preserved it in eternity".
+2. The knight waits fifteen years for the moment of his reward, which poetry can show; the husband is faithful for fifteen years while possessing, acquiring daily the fidelity he has, against "that most dangerous enemy which is time".
 
 B's riddle is to live in eternity yet hear the parlour clock strike so that it prolongs one's eternity, against the medieval story of the man who woke in hell, asked "What time is it?", and was told "An eternity."
 
@@ -3182,23 +3167,21 @@ B's riddle is to live in eternity yet hear the parlour clock strike so that it p
 
 A bachelor's jubilee is thought laughable, because the single state is assumed never to grasp the true present, the unity of hope and recollection. The married love's predicates (faithful, constant, humble, patient, and so on) are all inward and temporal, and it is "the divine through being the everyday".
 
-### Q: How does B answer A's "cane of duty", and what does "duty here is just one thing" mean?
+### Q: What does B make of A's "cane of duty" behind the closed door of marriage?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** critique  **Id:** 92734778
-**A:** Parts:
-1. A says that behind the closed door "out comes the cane and we are told it's a duty"; B says A's fear of being compelled shows he does not believe in the eternity of first love, so for A "love is clearly not the highest thing".
-2. Duty is love's friend: "duty here is just one thing, truly to love", not a catalogue of rules of etiquette.
-3. The husband who feared his wife thought he loved her only from duty was doing exactly what duty enjoins; the "more" one can do is to do what duty enjoins, translating it from the external to the internal.
+**A:** Key:
+1. A's fear of being compelled shows he does not believe in the eternity of first love, so for A "love is clearly not the highest thing".
+2. Duty is love's friend, not a catalogue of rules: "duty here is just one thing, truly to love".
 
-Duty "has a mortal hatred of false love, yes, it kills it", and its language is in the future tense, to suggest the historical. Love and duty are like the "t" and the "e" in the syllable "te": say one and you say the other. B: "Duty is not for me one climate and love another; duty makes my love into the true, temperate climate."
+A's line is that behind the closed door "out comes the cane and we are told it's a duty". B's husband who feared his wife thought he loved her only from duty was doing exactly what duty enjoins; the "more" one can do is to translate duty from the external to the internal. Duty "has a mortal hatred of false love, yes, it kills it", and its language is in the future tense, to suggest the historical. Love and duty are like the "t" and the "e" in the syllable "te": say one and you say the other.
 
 ### Q: What is A's "no mishmash" objection to marriage, and how does B answer it?
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** critique  **Id:** 78ee2989
-**A:** Parts:
-1. A: everything else is either duty or love; marriage alone is "a monstrosity", a "hermaphroditic ambiguity", since one cannot say where the boundary of a pledge to love lies, which tribunal judges it, or what power compels.
-2. B: even an official's calling is not a sum of appointments, since the State presupposes the enthusiasm it cannot check.
-3. In marriage the main thing is inward, and the check is "you yourself"; demanding an outside check is a way to worm out of duty or to have oneself declared incompetent.
+**A:** Key:
+1. A: everything else is either duty or love; marriage alone is "a monstrosity", a "hermaphroditic ambiguity", since no one can say where the boundary of a pledge to love lies, which tribunal judges it, or what power compels.
+2. B: in marriage the main thing is inward and the check is "you yourself"; demanding an outside check is a way to worm out of duty or to have oneself declared incompetent.
 
-B adds that his insistence on duty is not the prosaic common sense of people who destroyed the immediate and took to duty in old age; duty has been "our love's first and only confidant".
+B's comparison is an official's calling, which is not a sum of appointments either, since the State presupposes the enthusiasm it cannot check. He adds that his insistence on duty is not the prosaic common sense of people who destroyed the immediate and took to duty in old age; duty has been "our love's first and only confidant".
 
 ### Q: How does B close the letter?
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** fbf44a15
@@ -3211,14 +3194,13 @@ B wrote for a fortnight of evenings with A, figuratively, "outside my door", and
 
 ## Lec 21 — "Equilibrium": Hegel's framework, and the real either/or (Fri Nov 13, logged 2026-11-16 from a classmate's shared notes)
 
-### Q: As Kraal set it out, what is philosophy about for Hegel, what slogan of Kierkegaard's did he set against Hegel's "truth is objectivity", and where does that slogan actually come from?
+### Q: As Kraal set it out, what is philosophy about for Hegel, and what slogan of Kierkegaard's did he set against Hegel's "truth is objectivity"?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** recall  **Id:** cc5fc32e
 **A:** Key:
-1. For Hegel philosophy is about what must be, what is necessary; it is science, and truth is objectivity, against intuition, feeling and edification as sources of truth.
+1. For Hegel philosophy is about what must be, what is necessary; it is science, and truth is objectivity, against intuition, feeling and edification.
 2. "Truth is subjectivity."
-3. The slogan is the title claim of a chapter of the *Concluding Unscientific Postscript* (1846, Johannes Climacus); the shared notes file it under *Fear and Trembling* (1843, Johannes de Silentio).
 
-From a classmate's shared notes of Nov 13. Hegel's word for science is *Wissenschaft*; the Preface to the *Phenomenology of Spirit* (1807) says philosophy must become science and attacks philosophy that offers edification and feeling instead of the concept. Kraal's other Hegel points: reason in history as the unfolding of the human spirit, and the system's parts Spirit and Nature. If Kraal named *Fear and Trembling* in class, that is what an exam option would expect; both books are in the first authorship.
+From a classmate's shared notes of Nov 13. The slogan is the title claim of a chapter of the *Concluding Unscientific Postscript* (1846, Johannes Climacus); the shared notes file it under *Fear and Trembling* (1843, Johannes de Silentio), and if Kraal named that book in class an exam option would follow him. Hegel's word for science is *Wissenschaft*; the Preface to the *Phenomenology of Spirit* (1807) says philosophy must become science. Kraal's other Hegel points: reason in history as the unfolding of the human spirit, and the system's parts Spirit and Nature.
 
 ### Q: Kraal contrasted Kant and Hegel on marriage. What is marriage for each?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** recall  **Id:** 0a16cf02
@@ -3228,21 +3210,20 @@ From a classmate's shared notes of Nov 13. Hegel's word for science is *Wissensc
 
 From a classmate's shared notes of Nov 13. The notes' "marriage helps provide a contract around it" is loose: Hegel says marriage begins from the consent, a contract, but is the contract to go beyond the standpoint of contract (§163). Kraal's remark was that Hegel, compared with Kant, can feel more in tune with human experience, feeling and intuition. This is the background to the lecture 19 note that some readers call B a Hegelian.
 
-### Q: In Kraal's Hegel steps, being conscious of freedom has two sides, indeterminacy and determinacy. Say what each is, with the shared notes' example, and name the Hegel passage behind them.
+### Q: In Kraal's Hegel steps, being conscious of freedom has two sides, indeterminacy and determinacy. What is each?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** recall  **Id:** 291333b7
 **A:** Key:
 1. Indeterminacy: I am conscious of not being fully determined by external factors, of having agency.
 2. Determinacy: I am conscious of being able to determine myself with regard to some content, "I want to be a good person".
-3. *Philosophy of Right* §5–7, the moments of the will: abstraction from every content, the positing of a determinate content, and their unity, the free will that wills itself.
 
-From a classmate's shared notes of Nov 13. The third moment is Kraal's "the rational view of myself is that I am a free being". Determining myself by the good, taking the good as my content, is what actualizes me as an ethical subject.
+From a classmate's shared notes of Nov 13. Behind the pair is *Philosophy of Right* §5–7, the moments of the will: abstraction from every content, the positing of a determinate content, and their unity, the free will that wills itself, which is Kraal's "the rational view of myself is that I am a free being". Determining myself by the good is what actualizes me as an ethical subject.
 
-### Q: "What is rational is actual and what is actual is rational." Where is the line from, and how does Kraal get from it to "I am and therefore ought to be free" and then to recognition?
+### Q: "What is rational is actual and what is actual is rational." Where is the line from, and how does Kraal get from it to "I ought to be free" and then to recognition?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** apply  **Id:** f7272cfc
 **A:** Key:
 1. The Preface to Hegel's *Philosophy of Right* (1820).
-2. The rational view of myself is that I am a free being, so the truth about me is that I am free and therefore ought to be free.
-3. Because the ethical is universal, my freedom demands recognition from myself and from society, and I must will that I am free and will what is, determining myself by the good.
+2. The rational view of myself is that I am free, so the truth about me is that I am free and therefore ought to be free.
+3. Because the ethical is universal, my freedom demands recognition from myself and from society, so I must will that I am free and determine myself by the good.
 
 From a classmate's shared notes of Nov 13; the shared page writes the line as "only what is real is rational, and what is rational is real". Recognition is Hegel's *Anerkennung*, the step 4 your Monday page left blank. Kraal added that denying one's freedom is irrational, with the Sartre aside.
 
@@ -3262,21 +3243,20 @@ From a classmate's shared notes of Nov 13. The three are Hegel's ethical life (*
 
 From a classmate's shared notes of Nov 13. The aside is Kraal's; neither B nor Hegel names Sartre. Its place in the steps is step 1, "I'm conscious of being free", where Hegel's point is that it is irrational to deny that you are free.
 
-### Q: Kraal illustrated B's claim that the good cannot be proved with David Hume and with an open marriage. What does each illustration say, and where does the Hume parallel stop?
+### Q: Kraal illustrated B's claim that the good cannot be proved with David Hume and with an open marriage. What does each illustration say?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** critique  **Id:** 53c096d7
 **A:** Key:
-1. Hume: one cannot prove what is beautiful, since beauty is no quality in things themselves ("Of the Standard of Taste", 1757); likewise B's good cannot be demonstrated.
+1. Hume: one cannot prove what is beautiful, since beauty is no quality in things themselves; likewise B's good cannot be demonstrated.
 2. Open marriage: B could not say that such an arrangement is objectively good or bad, because deciding good and evil is not philosophy's domain and thought yields only relative differences.
-3. The parallel stops at subjectivity: Hume makes beauty a sentiment, while B asserts the absolute validity of good and evil, posited by freedom.
 
-From a classmate's shared notes of Nov 13. Both illustrations are Kraal's; the essay has neither. B himself, having chosen, holds that every man should marry (PDF p. 497) and that openness between the spouses is the life-principle of marriage (first letter): he has the view and denies that philosophy proves it. Kraal also called Hannay p. 524 the most important page of *Either/Or*; what it says is on the lecture 22 page.
+From a classmate's shared notes of Nov 13; both illustrations are Kraal's, and the essay has neither. The Hume parallel ("Of the Standard of Taste", 1757) stops at subjectivity: Hume makes beauty a sentiment, while B asserts the absolute validity of good and evil, posited by freedom. B himself, having chosen, holds that every man should marry and that openness between the spouses is the life-principle of marriage: he has the view and denies that philosophy proves it. Kraal also called Hannay p. 524 the most important page of *Either/Or*.
 
-### Q: Kraal's gloss on Hannay p. 486 is that "the real either/or is seeing the world in terms of good and evil in the first place". What alternative set of categories did he name, and in what two senses does B's either/or count as absolute on that page?
+### Q: Kraal's gloss on Hannay p. 486 is that "the real either/or is seeing the world in terms of good and evil in the first place". Whose alternative categories did he name, and in what two senses is B's either/or absolute?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** recall  **Id:** e3c2c365
 **A:** Key:
-1. Nietzsche's beyond good and evil, seeing the world in terms of what makes the species progress or decline.
-2. The either/or is absolute in one sense because its options are choosing and not choosing.
-3. In another sense the absolute either/or first appears with the choice, when good and evil become the options.
+1. Nietzsche's beyond good and evil: seeing the world in terms of what makes the species progress or decline.
+2. Absolute in one sense because its options are choosing and not choosing.
+3. Absolute in another sense once one has chosen, when good and evil become the options.
 
 From a classmate's shared notes of Nov 13. Hannay p. 486 is PDF pp. 427–428. The sentence behind the gloss is earlier, PDF p. 424: B's either/or does not denote in the first instance the choice between good and evil but the choice whereby one chooses good and evil or excludes them, and the question is under what categories one wants to see the world and live. Nietzsche is Kraal's example (*Beyond Good and Evil*, 1886); B's own name for the non-ethical side is the aesthetic, which is not evil but indifference.
 
@@ -3290,14 +3270,13 @@ From a classmate's shared notes of Nov 13. Hannay p. 486 is PDF pp. 427–428. T
 
 In Hegel's own *Encyclopaedia* (1817) the three parts are Logic, Nature and Spirit, and world history is the last stretch of objective spirit, after the state. That is why the page asks whether history is "really a branch": it is for B's list, not in Hegel's table of contents.
 
-### Q: Under "history" Kraal set two readings against each other. Name them, and say which one B accepts for history as philosophy's object, and why.
+### Q: Under "history" Kraal set two readings against each other. Name them, and say which one B accepts for history as philosophy's object.
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** apply  **Id:** 939ec7d9
 **A:** Key:
 1. History as a necessary unfolding, against history as free volitions and their contingencies.
-2. B accepts necessity for history as philosophy's object: the individual acts freely, but the higher order "digests the free actions" into its eternal laws, and that order is necessity, so the philosopher may use "relative mediation".
-3. The inward work of the free individual stays outside: philosophy "has nothing whatever to do" with it, and it "is the true life of freedom".
+2. B accepts necessity: the individual acts freely, but the higher order "digests the free actions" into its eternal laws, so the philosopher may use "relative mediation" on history; the inward work of the free individual stays outside philosophy.
 
-PDF p. 426. B's image is the world-historical individual, whose outward works philosophy sees "absorbed into and transformed by the world-historical process", while his "works that follow him" are his own in all eternity.
+PDF p. 426. B's image is the world-historical individual, whose outward works philosophy sees "absorbed into and transformed by the world-historical process", while his "works that follow him" are his own in all eternity; that inward side "is the true life of freedom", and philosophy "has nothing whatever to do" with it.
 
 ### Q: Give Kraal's "Hegel steps" 1 to 3 as written on the board, and what step 6 says must happen to self-actualization.
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 4c1059d4
@@ -3321,9 +3300,9 @@ Hegel's point in the passage is that earlier natural-law writers saw only the ph
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** f5d17332
 **A:** Key:
 1. Ethical life (*Sittlichkeit*): freedom made actual in institutions, in the order family (marriage), civil society, state.
-2. For Hegel the ethical is not a bare "ought" standing over against reality, as he read Kant's duty; what ought to be is already realized and acknowledged by other free wills in those institutions, which is what "the rational is actual" means.
+2. The "ought" is not a bare demand standing against reality: what ought to be is already realized and acknowledged by other free wills in those institutions, which is recognition (*Anerkennung*).
 
-Recognition (*Anerkennung*) is the acknowledgement of one free will by another; a freedom nobody recognizes has no existence in the world. That is why Kraal's step 6 says self-actualization "must accordingly be recognized".
+That acknowledgement is what "the rational is actual" means for Hegel, as against Kant's duty, which he read as a bare ought. A freedom nobody recognizes has no existence in the world, which is why Kraal's step 6 says self-actualization "must accordingly be recognized".
 
 ### Q: Which part of Hegel's picture does B accept, and which part does he refuse? Say why he refuses it.
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** apply  **Id:** 3e397cdd
@@ -3343,14 +3322,13 @@ Mediation is the Hegelian move of reconciling two opposites in a higher unity. B
 
 Philosophy "may well be justified in claiming it cannot think an absolute contradiction, but it by no means follows that the latter does not exist"; it seems to have abolished the principle of contradiction only because "it has not yet reached it". In thinking "I make myself infinite, but not absolutely, since I disappear into the absolute"; only the choice of myself makes me "infinite absolutely".
 
-### Q: "The good is by virtue of my willing it, and otherwise it has no existence." Does this make good and evil subjective for B? Say why or why not, and what B contrasts the good with.
+### Q: "The good is by virtue of my willing it, and otherwise it has no existence." Does this make good and evil subjective for B? Say why or why not.
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** critique  **Id:** 4f2eb49c
 **A:** Key:
 1. No.
 2. B says it is "in no way to belittle the categories of good and evil or to reduce them to merely subjective determinations. On the contrary, it is to assert the absolute validity of these categories."
-3. The contrast is the absolute, which philosophy says "is by virtue of my thinking it" and then corrects to "the absolute's self-thinking in me", because my thought of it is necessary; the good is by willing, which "is the expression of freedom".
 
-Hannay p. 524 (PDF pp. 456–457). B's closing line there: "The good is the in-and-for-itself posited by the in-and-for-itself, and that is freedom." In the lecture's words, the distinction cannot be demonstrated, it is a matter of decision and will, but that does not imply the good is not real.
+Hannay p. 524 (PDF pp. 456–457). The contrast is the absolute, which philosophy says "is by virtue of my thinking it" and then corrects to "the absolute's self-thinking in me", because my thought of it is necessary; the good is by willing, which "is the expression of freedom". B's closing line there: "The good is the in-and-for-itself posited by the in-and-for-itself, and that is freedom." In the lecture's words, the distinction cannot be demonstrated, it is a matter of decision and will, but that does not imply the good is not real.
 
 ### Q: Complete B's answer, and say what his either/or does denote: "What is it, then, that I separate in my either/or? Is it good and evil? No, …"
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** ec6a1a07
@@ -3361,14 +3339,13 @@ Hannay p. 524 (PDF pp. 456–457). B's closing line there: "The good is the in-a
 
 PDF pp. 423–424. The page gives it as Hannay p. 480. Someone who chooses the ethical chooses the good, but "the good here is wholly abstract", and it does not follow that the chooser cannot choose evil again. B adds that the more time passes the harder the choice becomes, because the soul is always already on one side.
 
-### Q: Why does B say an aesthetic choice "is no choice", and what makes the act of choosing "a literal and strict expression of the ethical"?
+### Q: Why does B say an aesthetic choice "is no choice", and why is every either/or in the strict sense ethical?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** daf1594c
 **A:** Key:
-1. An aesthetic choice is "either wholly immediate, thus no choice, or it loses itself in multiplicity": the girl who follows her heart chooses immediately, and the man who surveys life-tasks chooses for the moment only and can choose otherwise the next.
-2. Wherever there is an either/or in the stricter sense "the ethical is involved", and "the only absolute either/or there is is the choice between good and evil, but it is also absolutely ethical".
-3. What matters is "less a matter of choosing correctly than of the energy, earnest and feeling with which one chooses", because the choice consolidates the personality.
+1. An aesthetic choice is "either wholly immediate, thus no choice, or it loses itself in multiplicity": the girl who follows her heart chooses immediately, and the man who surveys life-tasks chooses for the moment only.
+2. "The only absolute either/or there is is the choice between good and evil, but it is also absolutely ethical", so wherever there is an either/or in the stricter sense "the ethical is involved".
 
-PDF p. 423. B says that someone who chose wrongly with that energy would discover it was wrong, because choosing with the whole inwardness brings him "into immediate relation to the eternal power". A's "do it or don't do it, you will regret both" is the model of the non-choice B opens the letter with.
+PDF p. 423. B adds that what matters is "less a matter of choosing correctly than of the energy, earnest and feeling with which one chooses", because the choice consolidates the personality; someone who chose wrongly with that energy would discover it, since choosing with the whole inwardness brings him "into immediate relation to the eternal power". A's "do it or don't do it, you will regret both" is the model of the non-choice B opens the letter with.
 
 ### Q: Give B's definitions of the aesthetic factor and the ethical factor in a person, and say which life-view he calls despair and why.
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 407e6eb8
@@ -3397,24 +3374,21 @@ B also fences off two misreadings of freedom itself: it is not *liberum arbitriu
 
 PDF p. 416, Penguin about p. 476. A offers the line as friendly advice to people who come to him in a crisis. B's reply is that he who mocks others mocks himself, and that A's whole view of life rests on the single sentence "I say merely either/or". The same line appears in the first letter as what would be justified if the aesthetic, the ethical and the religious came apart, and in the Diapsalmata as A's "ecstatic lecture".
 
-### Q: B compares the person who deliberates to a helmsman whose ship is about to tack. What is the point of the image, and what happens to the person who "forgets to take that headway into account"?
+### Q: B compares the person who deliberates to a helmsman whose ship is about to tack. What is the point of the image, and what happens to the person who postpones the choice?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** reading  **Type:** recall  **Id:** 27451d12
 **A:** Key:
-1. The ship keeps its headway while the helmsman says "I can either do this or that", so there is only an instant when it is immaterial which he does; a person cannot keep his personality blank while he deliberates.
-2. The moment comes when there is no either/or left, not because he has chosen but because he has refrained from choice.
-3. Which means that others have chosen for him and he has lost himself.
+1. The ship keeps its headway while the helmsman says "I can either do this or that", so a person cannot keep his personality blank while he deliberates.
+2. The moment comes when there is no either/or left, not because he has chosen but because he refrained from choosing, which means that others have chosen for him and he has lost himself.
 
-PDF p. 420, Penguin about p. 478. The personality already has an interest in the choice before one chooses, so a postponed choice is made unconsciously or by the dark powers within. The fairy-tale of people captivated by mermaids' music, who had to play the same piece backwards without a mistake, stands for having to retract what was lived while one deliberated. A's own method shows the result: faced with priest or actor, his reflection "with its hundred arms" spends half a year on each, a third option (lawyer, barrister) appears, and after a year and a half he ends with "Or a hairdresser, or a bank teller, I say only either/or." B says A has become a universal critic, and that his "vanitas vanitatum vanitas, hurrah!" is no choice but a case of "Drop it!", or a mediation like letting five become an even number.
+PDF p. 420, Penguin about p. 478. The personality already has an interest in the choice before one chooses, so a postponed choice is made unconsciously or by the dark powers within. A's own method shows the result: faced with priest or actor, his reflection "with its hundred arms" spends half a year on each, a third option appears, and after a year and a half he ends with "Or a hairdresser, or a bank teller, I say only either/or." B says A's "vanitas vanitatum vanitas, hurrah!" is no choice but a case of "Drop it!".
 
-### Q: "As truly as there is a future, just as truly is there an either/or." Set out B's case that philosophy's mediation makes the same error as A does, and say what limits philosophy's right to mediate.
+### Q: "As truly as there is a future, just as truly is there an either/or." How does B say philosophy's mediation makes the same error as A, and what limits philosophy's right to mediate?
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** reading  **Type:** derive  **Id:** 8fb23cfa
 **A:** Key:
-1. A's domain is action and philosophy's is contemplation; A mediates oppositions in a higher lunacy and philosophy in a higher unity, and transferred to the practical domain philosophy must come to A's result.
-2. A turns to the future ("whichever I do is equally wrong, ergo I do nothing at all"); philosophy turns to the past, where for the philosopher world history is concluded and he mediates.
-3. The philosopher's time is not absolute time, so absolute mediation is possible only when history is finished and the System is in constant process of becoming; the age's error was to mistake itself for absolute time.
-4. Philosophy is therefore helpless at getting a man to act, because what it really demands is that one act from necessity, which is a contradiction.
+1. A turns to the future and does nothing ("whichever I do is equally wrong"); philosophy turns to the past, where history is concluded for it, and mediates oppositions in a higher unity. Transferred to action, philosophy comes to A's result, since it demands that one act from necessity, which is a contradiction.
+2. Philosophy may mediate only the past, by relative mediation; the future, which the acting individual faces, is an either/or, since the philosopher's time is not absolute time and the System is still becoming.
 
-PDF pp. 424–426, Penguin about pp. 482–484. B mocks the young men who can mediate Christianity and paganism yet cannot tell a plain man what he has to do in life. The deeper point follows: if mediation is admitted there is no absolute choice, which B resolves by separating the sphere of thought, where the opposition has no substance, from the sphere of freedom, where one opposite excludes the other. The treasure B would leave his little son is "an either/or which makes a man greater than the angels" (PDF p. 427).
+PDF pp. 424–426, Penguin about pp. 482–484. A's domain is action and philosophy's is contemplation; A mediates in a higher lunacy and philosophy in a higher unity. The age's error was to mistake itself for absolute time. B mocks the young men who can mediate Christianity and paganism yet cannot tell a plain man what he has to do in life, and resolves the matter by separating the sphere of thought, where the opposition has no substance, from the sphere of freedom, where one opposite excludes the other. The treasure B would leave his little son is "an either/or which makes a man greater than the angels".
 
 ### Q: Give B's general description of every aesthetic life-view, and the carefully worded clause about its condition that he asks A to keep hold of.
 **Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 31a54752
@@ -3455,10 +3429,9 @@ PDF p. 435, Penguin about p. 496. Only the spirit can cure it, since it lies in 
 ### Q: Reconstruct B's argument that every aesthetic life-view is despair.
 **Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** derive  **Id:** a096ef55
 **A:** Key:
-1. Suppose every aesthetic life succeeds (the man of health is as quick as ever when he dies, the couple dance at their golden wedding, the gold mines never run out, Nero never yawns), and then suppose the opposite, that none of it happens: these people despair.
-2. They despair because what they built their lives on proved transitory, but the transitory has not changed in anything essential, since it was transitory all along.
-3. So if they despair now, they were in despair beforehand and simply did not know it, which is an accidental difference.
-4. Hence every aesthetic view of life is despair, and everyone who lives aesthetically is in despair whether he knows it or not; the one who knows it needs a higher form of existence.
+1. Suppose every aesthetic life succeeds (the man of health is as quick as ever when he dies, the gold mines never run out, Nero never yawns), and then suppose none of it happens: these people despair.
+2. What they built on proved transitory, but the transitory has not changed in anything essential, since it was transitory all along; so they were in despair beforehand and did not know it.
+3. Hence every aesthetic view of life is despair, whether the person knows it or not; the one who knows it needs a higher form of existence.
 
 PDF pp. 436–437, Penguin about pp. 498–499. The later formulation is that any life-view with a condition outside it is despair (PDF p. 462), and the contrast is that the aesthetic life-view builds on what may or may not be, while the ethical builds on what has being as its essential property (PDF p. 457).
 
@@ -3479,15 +3452,14 @@ PDF pp. 437–439, Penguin about pp. 499–502. A hates activity because his lif
 
 PDF pp. 444–445, Penguin about pp. 508–509. B shouts it as a married man, not as a mocking demon, and says anyone who has not tasted the bitterness of despair has missed the meaning of life; he has despaired too. A is fortunate because he will not despair over something particular; a despairer who blames the complex world outside him despairs falsely and comes to hate the world. The woman who sold Tarquin the books burnt a third and demanded the same sum, twice, which is what delay does to A's conditions. The even better condition is the gifted young man who despairs for the girl's sake over the difference between them and finds the eternally human, in which all are equal (PDF p. 446). The poet-existence lies in despair not carried through, so if A does not want to be a poet the only way is "Despair!" (PDF p. 447).
 
-### Q: How does B distinguish doubt from despair, and which of the two does he call the true point of departure for finding the absolute?
+### Q: How does B distinguish doubt from despair, and which of the two is the true point of departure for finding the absolute?
 **Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 51e06395
 **A:** Key:
 1. "Doubt is a despair of thought, despair is a doubt of the personality."
-2. Doubt belongs to necessity and moves only thought, which rests in the absolute by the same necessity with which it doubted; despair is an expression of the whole personality and is chosen in freedom.
-3. Doubt lies in difference and needs talent; despair lies in the absolute and needs none, so the lowliest person, a young girl, can despair.
-4. Despair, not doubt, is the true point of departure.
+2. Doubt belongs to necessity and moves only thought; despair is an expression of the whole personality and is chosen in freedom.
+3. Despair, not doubt, is the true point of departure.
 
-PDF pp. 447–449, Penguin about pp. 512–514. One can doubt without choosing to, but one cannot despair without choosing to. B has seen German philosophers who conquered doubt and still have despair in their hearts, distracting themselves with objective thinking, since "scarcely any sedative is more effective than abstract thinking". When one truly wills despair one is beyond it, because one has chosen what despair chooses, oneself in one's eternal validity.
+PDF pp. 447–449, Penguin about pp. 512–514. Doubt lies in difference and needs talent; despair lies in the absolute and needs none, so the lowliest person, a young girl, can despair. One can doubt without choosing to, but one cannot despair without choosing to. B has seen German philosophers who conquered doubt and still have despair in their hearts, distracting themselves with objective thinking, since "scarcely any sedative is more effective than abstract thinking". When one truly wills despair one is beyond it, because one has chosen what despair chooses, oneself in one's eternal validity.
 
 ### Q: When B chooses absolutely, what does he say he chooses, in what paired formula, and what is his first definition of the self that is chosen?
 **Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 0019774f
@@ -3519,12 +3491,11 @@ PDF pp. 453–455, Penguin about pp. 520–523. The soul is the same abstract se
 ### Q: How does aesthetic development differ from ethical development for B, and why is despair "no break but a transfiguration"?
 **Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** e6a54e90
 **A:** Key:
-1. The aesthete develops with necessity, like a plant: he becomes something, but what he becomes is what he already is immediately ("I have it in me to be a Don Juan, a Faust, a robber chief").
+1. The aesthete develops with necessity, like a plant: he becomes what he already is immediately ("I have it in me to be a Don Juan, a Faust, a robber chief").
 2. The ethical person has from the first the absolute difference between good and evil; he suppresses evil and brings the good forward, so the aesthetic is removed from its throne.
-3. Aesthetes call despair a break only because they take life to be a necessary unfolding of the immediate; only the person who despairs over something particular suffers a break.
-4. In despair nothing is destroyed: all the aesthetic qualities remain, but as ancillary, and are preserved for that very reason; "Everything returns, but transfigured."
+3. In despair nothing is destroyed: all the aesthetic qualities remain, but as ancillary, and are preserved for that very reason; "Everything returns, but transfigured."
 
-PDF pp. 457–459 and 487, Penguin about pp. 525–528 and 561. The aesthetic life-view builds on what may or may not be, the ethical on what has being as its essential property. It takes ethical courage to be content with the universal; the aesthete secretly dreads despair because despair brings out the universal and his life rests on a difference. The ethicist only carries to its conclusion the doubt that the higher aesthete set in motion and broke off.
+PDF pp. 457–459 and 487, Penguin about pp. 525–528 and 561. Aesthetes call despair a break only because they take life to be a necessary unfolding of the immediate; only the person who despairs over something particular suffers a break. It takes ethical courage to be content with the universal; the aesthete secretly dreads despair because despair brings out the universal and his life rests on a difference.
 
 ### Q: B describes a man who has chosen himself and then says "Now I own myself … I am the one I am", and who ends like Narcissus. What went wrong, and what does the right choice do instead?
 **Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** apply  **Id:** f1a48af1
@@ -3566,19 +3537,17 @@ PDF pp. 468–469, Penguin about pp. 540–542. The one-sided mystic becomes ind
 **A:** Key:
 1. The mistake is not that he chooses himself but that he does not choose himself properly: in respect of his freedom yet not ethically, which means abstractly, so he lacks transparency.
 2. He repents himself out of himself, not into himself; metaphysically, not ethically, judging existence to be vanity, illusion or sin.
-3. Ethical repentance has only two movements, abolishing its object or bearing it, whereas the mystic's fleeing is an abstract relation.
 
-PDF pp. 471–472, Penguin about pp. 543–545. "the abstract is the opaque, the indistinct." To repent aesthetically is detestable because effeminate; to repent metaphysically is a misplaced superfluity, since the individual did not create the world. The mystic chooses himself out of the world and cannot choose himself back, while the true concrete choice chooses out of the world and back into it in the same moment. He sees the temporal as a probation, but for B the temporal is the possibility of the finite spirit's glorification and the greatest gift of grace: man's dignity is that he can acquire a history and give it continuity by his own work.
+PDF pp. 471–472, Penguin about pp. 543–545. "the abstract is the opaque, the indistinct." Ethical repentance has only two movements, abolishing its object or bearing it, whereas the mystic's fleeing is an abstract relation. The mystic chooses himself out of the world and cannot choose himself back, while the true concrete choice chooses out of the world and back into it in the same moment. He sees the temporal as a probation, but for B the temporal is the possibility of the finite spirit's glorification: man's dignity is that he can acquire a history.
 
 ### Q: A defines the beautiful as "that which has its teleology within itself" and points to a young girl, nature and art. How does B turn the definition against him?
 **Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** critique  **Id:** 589b324f
 **A:** Key:
 1. A's examples lack movement, and teleology requires movement, so A's phrase is only negative: it says the beautiful is not for something else.
-2. In life A's beauty is the individually beautiful: he sees each person as an element in a whole, so each person's teleology lies outside him and the parts are not beautiful in themselves.
-3. As soon as A says inner or immanent teleology he requires movement and history, which takes him out of nature and art into the sphere of freedom, and so of ethics.
-4. The individual has his teleology within him and is his own teleology; his movement runs from himself, through the world, to himself, and only there can there be any question of beauty.
+2. As soon as A says inner teleology he requires movement and history, which takes him out of nature and art into the sphere of freedom, and so of ethics.
+3. The individual has his teleology within him and is his own teleology; his movement runs from himself, through the world, to himself, and only there can there be any question of beauty.
 
-PDF pp. 488–490, Penguin about pp. 562–565. Art and poetry give only an imperfect reconciliation with life. The beauty B sees is in the trace of the historical (Loquere ut videam te), in the struggle rather than the consummation, and it is joyful and triumphant, unlike the sadness in nature, art and even the Greek gods. "the man of courage does not see ghosts, on the contrary he sees conquering heroes."
+PDF pp. 488–490, Penguin about pp. 562–565. In life A's beauty is the individually beautiful: he sees each person as an element in a whole, so each person's teleology lies outside him. Art and poetry give only an imperfect reconciliation with life. The beauty B sees is in the trace of the historical, in the struggle rather than the consummation, and it is joyful and triumphant: "the man of courage does not see ghosts, on the contrary he sees conquering heroes."
 
 ### Q: What is the aesthete's relation to mood, what is the ethical person's, and how does B's gambler show the difference?
 **Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** apply  **Id:** aa600023
@@ -3701,10 +3670,9 @@ PDF pp. 507–508, Penguin about pp. 586–587. The aesthete always holds someth
 **A:** Key:
 1. The more of the universally human an individual realizes in his life, the more extraordinary he is; the less of the universal he can assume, the less perfect he is, uncommon only in a bad sense.
 2. He first deliberates how far it is true, knowing that laziness and cowardice make people fancy it, then risks an experiment arranged so that what wounds him is the universal, not the particular.
-3. If he fails, he stands outside the universal on that point as an exception, with an explanation he could give at any hour, and bears witness to the universal by his sorrow; B calls the struggle a purgatory.
-4. He is reconciled through that sorrow, seeing that everyone is an exception and that everyone is at the same time the universally human, and admits it would be more perfect still to take possession of the whole universal.
+3. If he fails, he stands outside the universal on that point as an exception, with an explanation he could give at any hour, and bears witness to the universal by his sorrow, through which he is reconciled.
 
-PDF pp. 510–514, Penguin about pp. 589–594. Going into the monastery was not the error; thinking it made one uncommon was: "the gods do not sell the unusual at a bargain price." One owes the person who strikes out on his own the shout "Think of the end!", where the end means life, not death. B closes by hoping one day to call A his friend in the strict sense, keeps the correspondence secret because A hates having his inner history talked about, and wishes him farewell as though they were far apart while hoping to see him as often as before.
+PDF pp. 510–514, Penguin about pp. 589–594. B calls the struggle a purgatory; the exception sees that everyone is an exception and that everyone is at the same time the universally human, and admits it would be more perfect still to take possession of the whole universal. Going into the monastery was not the error; thinking it made one uncommon was: "the gods do not sell the unusual at a bargain price." B closes by hoping one day to call A his friend in the strict sense, keeps the correspondence secret because A hates having his inner history talked about, and wishes him farewell as though they were far apart while hoping to see him as often as before.
 
 ## Exam 3 — the real questions (Fri Oct 30, from Kraal's answer key)
 
