@@ -5,7 +5,7 @@ import { scheduleFor, type PublicEntry } from './progress'
 import type { ReviewPlan } from './state'
 
 /** What dueToday needs to know of each card and of the public history. */
-export interface CardInfo { course: string }
+export interface CardInfo { course: string; section?: string }
 export interface PublicHistory { questions: Record<string, { history: unknown[] } | undefined> }
 
 /**
@@ -15,12 +15,12 @@ export interface PublicHistory { questions: Record<string, { history: unknown[] 
  * next day. A plan older than today also gains the asked cards of its live topics whose date has come since.
  */
 export function dueToday(plan: ReviewPlan | null, cards: Map<string, CardInfo>, events: Event[], course: string | null,
-  quiz: PublicHistory | null, today = localDay()) {
+  quiz: PublicHistory | null, today = localDay(), section: string | null = null) {
   if (!plan) return Object.assign([] as string[], { due: 0 })
   const graded = new Set(liveReviews(events).filter((r) => r.grade !== null).map((r) => r.qid))
   const hist = (id: string) => quiz?.questions[id]?.history as PublicEntry[] | undefined
   const next = (id: string) => scheduleFor(id, hist(id), events, plan.rows[plan.cards[id]] ?? [])?.next ?? null
-  const ok = (id: string) => cards.has(id) && (!course || cards.get(id)!.course === course)
+  const ok = (id: string) => cards.has(id) && (!course || cards.get(id)!.course === course) && (!section || cards.get(id)!.section === section)
   const still = (id: string) => { if (!graded.has(id)) return true; const n = next(id); return n === null || n <= today }
   const queued = new Set(plan.queue)
   const due = plan.queue.slice(0, plan.due).filter((id) => ok(id) && still(id))

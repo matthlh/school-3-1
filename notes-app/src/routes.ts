@@ -12,8 +12,9 @@ export type Route =
   /** `#/course/STAT251` (Study), `#/course/STAT251/materials`, `#/course/STAT251/progress`. */
   | { kind: 'course'; code: string; tab: CourseTab }
   | { kind: 'file'; path: string; query: string; anchor?: string }
-  /** `#/review`, `#/review?course=STAT251`, `#/review?setup=1` (open the sync settings). */
-  | { kind: 'review'; course: string | null; setup: boolean }
+  /** `#/review`, `#/review?course=STAT251`, `#/review?course=STAT251&section=exam-4-practice` (one bank section, keyed as
+   *  the question bank's own `?section=`), `#/review?setup=1` (open the sync settings). */
+  | { kind: 'review'; course: string | null; section: string | null; setup: boolean }
 
 /** A malformed % escape stays as typed: the raw path matches no file, so the page says Not found. */
 function decode(s: string): string {
@@ -38,7 +39,10 @@ export function parseHash(hash: string): Route {
   if (s === 'review') {
     const p = new URLSearchParams(query)
     const course = p.get('course')
-    return { kind: 'review', course: course && isCourseCode(course) ? course : null, setup: p.get('setup') === '1' }
+    const ok = !!course && isCourseCode(course)
+    const section = p.get('section')
+    return { kind: 'review', course: ok ? course : null, section: ok && section && /^[a-z0-9-]+$/.test(section) ? section : null,
+      setup: p.get('setup') === '1' }
   }
   if (s === 'courses') return { kind: 'courses' }
   const m = /^course\/([^/]+?)(?:\/(study|materials|progress))?\/?$/.exec(s)

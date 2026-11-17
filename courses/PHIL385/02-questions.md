@@ -3705,3 +3705,629 @@ PDF pp. 507–508, Penguin about pp. 586–587. The aesthete always holds someth
 4. He is reconciled through that sorrow, seeing that everyone is an exception and that everyone is at the same time the universally human, and admits it would be more perfect still to take possession of the whole universal.
 
 PDF pp. 510–514, Penguin about pp. 589–594. Going into the monastery was not the error; thinking it made one uncommon was: "the gods do not sell the unusual at a bargain price." One owes the person who strikes out on his own the shout "Think of the end!", where the end means life, not death. B closes by hoping one day to call A his friend in the strict sense, keeps the correspondence secret because A hates having his inner history talked about, and wishes him farewell as though they were far apart while hoping to see him as often as before.
+
+## Exam 3 — the real questions (Fri Oct 30, from Kraal's answer key)
+
+### Q: Exam 3, question 1: which view best represents the position of Author A in the Diapsalmata on the meaning of life?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 002d091b
+**A:** Key:
+1. He has no idea what the meaning of life actually is.
+
+Kraal's answer key, emailed Oct 30. This is the centre bubble of the lecture's map of the Diapsalmata: A lacks a belief about the meaning of life, is disappointed with philosophy, and thinks that perhaps only God knows.
+
+### Q: Exam 3, question 2: which view best represents the position of the Diapsalmata on the ability of philosophy to provide insights about such things as the meaning of life?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 4823ff3b
+**A:** Key:
+1. It does not deliver on its promises.
+
+Kraal's answer key, emailed Oct 30. The map's branch is "becomes disappointed with philosophy" (the shared notes' p. 50).
+
+### Q: Exam 3, question 3: which view best represents the position of the Diapsalmata on the idea that the meaning of life is to sustain life?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 8c44cb6a
+**A:** Key:
+1. It is a contradictory view.
+
+Kraal's answer key, emailed Oct 30. Sustaining life is a precondition of life, and a precondition of life cannot be its meaning: living in order to go on living explains nothing. Question 4 has the same answer for the opposite idea.
+
+### Q: Exam 3, question 4: which view best represents the position of the Diapsalmata on the idea that the meaning of life is to die?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 5713e2e2
+**A:** Key:
+1. It is a contradictory view.
+
+Kraal's answer key, emailed Oct 30. The map's branch is "can't be to die either" (p. 49): a life whose point is its own ending contradicts itself, just as a life whose point is only to continue does.
+
+### Q: Exam 3, question 5: what does the author of the Diary take to be "man's dream"?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** exam3  **Type:** recall  **Id:** a44c2bc8
+**A:** Key:
+1. Woman.
+
+Kraal's answer key, emailed Oct 30. The line is from Johannes's reflections on woman late in the Diary, where she exists for the man's sake and is what he dreams of.
+
+### Q: Exam 3, question 6: how does Author A in the Diapsalmata come to regard his earlier romantic endeavours?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** d24e45f2
+**A:** Key:
+1. As something dream-like, situated in a hazy past.
+
+Kraal's answer key, emailed Oct 30. Romantic love was once the best and most enjoyable thing for A, and "for a while it was Cordelia"; the Diapsalmata voice has given it up. Question 13 is the same fact from the other side.
+
+### Q: Exam 3, question 7: what is Johannes's aim taken to be in the Diary?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** exam3  **Type:** recall  **Id:** e49e7933
+**A:** Key:
+1. To bring the desired woman to the point where she loves him so much that she would give herself completely to him.
+
+Kraal's answer key, emailed Oct 30. This is the free gift as the highest enjoyment, which Kraal called counterfactual: the prize is that she would give everything, not that he takes it. The wrong options would have been the physical conquest, marriage, or revenge.
+
+### Q: Exam 3, question 8: how does Johannes regard the occurrence of deceptiveness in the development of a romantic relation?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** exam3  **Type:** recall  **Id:** 2be39ecf
+**A:** Key:
+1. It is necessary, and justified by the fact that one of the parties is going to have to engage in it.
+
+Kraal's answer key, emailed Oct 30. The lecture's two steps: deception is the key to romantic love rather than a fault in it, and since someone is bound to be deceived, Johannes might as well be the one acting.
+
+### Q: Exam 3, question 9 asked what Victor Eremita thinks is illustrated by the Diary, and the right answer was "None of these options". What does that tell you about how to handle an option list on these exams?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** exam3  **Type:** critique  **Id:** 306bc7e9
+**A:** Key:
+1. Check every option against the text, and pick "None of these options" when none matches; it was the right answer 3 times in the 22 questions of Exams 2 and 3.
+
+Kraal's answer key, emailed Oct 30. The other two were Exam 2, question 7 (why music is the best medium for the demonic) and Exam 3, question 15 (the author of Goethe's Clavigo). The closest-looking option is not a safe fallback in this course: an option has to say what Victor Eremita, A or B actually says.
+
+### Q: Exam 3, question 10: why does Victor Eremita think that Author A wrote a preface to the Diary in which he distinguishes himself from Johannes?
+**Topic:** The Seducer's Diary: Johannes and Cordelia  **Lec:** exam3  **Type:** recall  **Id:** f0fbaa80
+**A:** Key:
+1. He thinks Author A had gotten uncomfortable with the content.
+
+Kraal's answer key, emailed Oct 30. In Victor Eremita's preface to Either/Or, A's claim to have only found and copied the Diary reads as A's way of putting distance between himself and Johannes; Kraal and the Hong edition take A to be the Diary's real author.
+
+### Q: Exam 3, question 11: what is "the sum of all practical wisdom" according to the "ecstatic lecture" in the Diapsalmata?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 0c0d362d
+**A:** Key:
+1. That doing A, or not doing A, or doing both A and not-A, will all in the end lead to regret.
+
+Kraal's answer key, emailed Oct 30. This is "do it or do not do it, you will regret both", which B quotes against A in both letters of Part II.
+
+### Q: Exam 3, question 12: how does Author A in the Diapsalmata relate to his earlier religious views?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 78207e06
+**A:** Key:
+1. He has drifted away from them and has gotten uncomfortable with God.
+
+Kraal's answer key, emailed Oct 30. The map keeps "perhaps only God knows" as A's last candidate for where the meaning of life might sit, but A no longer stands in his earlier relation to God.
+
+### Q: Exam 3, question 13: how did Author A eventually come to describe what he in his earlier life considered the most exciting thing of all?
+**Topic:** Diapsalmata: moralizing and the meaning of life  **Lec:** exam3  **Type:** recall  **Id:** 9984bb73
+**A:** Key:
+1. These things no longer amused him and he no longer cared for them.
+
+Kraal's answer key, emailed Oct 30. The most exciting thing was romantic love; the Diary shows that desire ending the moment it is satisfied.
+
+### Q: Exam 3, question 14: why did Author A not think that Marie Beaumarchais's sorrow could come to a point of rest?
+**Topic:** Shadowgraphs: reflective sorrow and Marie Beaumarchais  **Lec:** exam3  **Type:** recall  **Id:** a8ae9c5f
+**A:** Key:
+1. Because it had no definite object.
+
+Kraal's answer key, emailed Oct 30. "Shadowgraphs" is A's lecture to the Symparanekromenoi on reflective sorrow, shown in three deserted women: Marie Beaumarchais from Goethe's Clavigo, Donna Elvira from Don Giovanni, and Margarete from Goethe's Faust. Marie cannot settle whether Clavigo deceived her, so her sorrow has nothing fixed to rest on and keeps moving. The shared notes had nothing under this essay, so it was examined without being covered in the notes.
+
+### Q: Exam 3, question 15: who was the author of Goethe's Clavigo?
+**Topic:** Shadowgraphs: reflective sorrow and Marie Beaumarchais  **Lec:** exam3  **Type:** recall  **Id:** 71a4695c
+**A:** Key:
+1. Goethe (the play Clavigo, 1774); on the exam the right option was "None of these options", because Goethe was not listed.
+
+Kraal's answer key, emailed Oct 30. A trap question: the stem names the author. Read the stem before the options.
+
+## Exam 4 practice — Kraal's format, one fact per question (written 2026-11-17)
+
+### Q: Which view best represents B's aim in "The Aesthetic Validity of Marriage"?
+- (a) To show that duty must replace love once first love fades.
+- (b) To show that marriage is aesthetic, and that the aesthetic can be sustained in it against life's obstacles.
+- (c) To show that romantic love is an illusion and that the marriage of reason is the sensible compromise.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** fe7e6215
+**A:** Key:
+1. (b): B's two-fold task is to show the aesthetic significance of marriage and how the aesthetic can be sustained in it over time.
+
+(a) is the opposite of B's view that duty is love's friend. (c) is the respectable path of the reflective age, which B calls as immoral as it is unaesthetic.
+
+### Q: What does B say he is warning A about?
+- (a) The world, which will punish A's way of life.
+- (b) A himself, and he warns the world about A.
+- (c) Marriage, which A is not ready for.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** 94ce32b6
+**A:** Key:
+1. (b): "I am warning you not about the world but about yourself, and I am warning the world about you."
+
+A's life will be nothing but approach-runs and a record of wasted possibilities. B also says he would warn a daughter against A.
+
+### Q: How does B close his letter?
+- (a) With a standing invitation to A to visit "for ever".
+- (b) With a demand that A marry within the year.
+- (c) With a prayer for A's conversion.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** bf9e198d
+**A:** Key:
+1. (d): he closes with "Dixi et animam meam liberavi", the Serbian legend of the giant and the cottager's prayer, and an invitation that is expressly not a standing one "for ever" but "come when you want, always welcome".
+
+(a) is the trap: B refuses the "for ever" and offers the open door instead.
+
+### Q: What does B take to distinguish love from lust?
+- (a) The presence of the sensual: love has none, lust is nothing else.
+- (b) The stamp of the eternal, which love has and lust lacks.
+- (c) The Church's blessing.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 2ff2d8b8
+**A:** Key:
+1. (b): love has "the stamp of the eternal"; lust is "the instantaneous".
+
+(a) is wrong because love is not devoid of the sensuous and the sensuous is not lust. The true eternity in love needs a determination of the will.
+
+### Q: Which view best represents B's position on the sensual in marriage?
+- (a) Marriage must leave the sensual behind, since love is not lust.
+- (b) Marriage keeps the sensual: it is sensual yet spiritual, and "flesh is not sensuality, it is selfishness".
+- (c) The sensual is tolerated in marriage only for the sake of children.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** d24503ce
+**A:** Key:
+1. (b): first love is sensual but not simply sensual, and marriage keeps the sensual in a deeper opposition to the spiritual.
+
+B does rank the spiritual higher: the higher the heaven over the marriage bed, the more aesthetic the marriage. (c) is one of the "whys" he rejects.
+
+### Q: What does B take to be the substance of marriage?
+- (a) Duty.
+- (b) The vow exacted by the Church.
+- (c) Love, the being in love.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 97f400e7
+**A:** Key:
+1. (c): marriage presupposes love "as something present, not past"; without it a shared life is sensual satisfaction or a partnership.
+
+The Church "is not a match-maker" and takes the couple's love for granted. Duty and the vow give the love its law of motion; they are not its substance.
+
+### Q: Whom does B call the traitors of marriage?
+- (a) The seducers.
+- (b) The divorced.
+- (c) The husbands who rebel against marriage only in thought and sigh for the engagement.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 228eb9c4
+**A:** Key:
+1. (c): the thought-rebels, "like lunatics each in his matrimonial cell".
+
+If they were right, love would belong to the engagement and no one should marry. In the second letter B says the same of cowardly husbands: marriage is not harmed by seducers.
+
+### Q: How does B regard the saying "one loves only once"?
+- (a) He rejects it: earthly love is preferential and so loves several in turn.
+- (b) He accepts it: the aesthetic, the ethical and the religious all say it, and marriage makes it real.
+- (c) He accepts it, and concludes that one should never marry, since marriage ends love.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** aad4dd30
+**A:** Key:
+1. (b): all three spheres say it, and the Church looks with suspicion on a second marriage.
+
+Preferential love begins by loving several and ends in loving one, which is why (a) is wrong. The saying B refuses is "one loves only once, one marries twice, three times".
+
+### Q: Why does B say the age has retreated from marriage?
+- (a) Because, as in the Middle Ages, the unmarried life is thought more perfect.
+- (b) Out of cowardice and self-indulgence: the melancholy that treats every day as examination day.
+- (c) Because money has replaced the cruel fathers of the old romances.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 79e4d678
+**A:** Key:
+1. (b): egoistic and sympathetic melancholy, "the defect of our time".
+
+(a) is the medieval reason B contrasts with the age's. (c) is B's joke about modern romances, with a rich uncle dying in the fifth act, not the age's reason.
+
+### Q: Which view best represents B's position on the marriage of convenience, "the marriage of reason"?
+- (a) It is the respectable compromise once first love has been seen through.
+- (b) It is as immoral as it is unaesthetic, because a calculation is always temporal and lacks the eternal.
+- (c) It is unaesthetic but moral, since it keeps the couple faithful.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** f80808ba
+**A:** Key:
+1. (b): the respectable path is a capitulation to life with despair as its only solace.
+
+The other path of the reflective age, the immoral one, keeps the eternal instant of the embrace and marries for a period; B calls it absolutely immoral but a step nearer the goal as a protest.
+
+### Q: Which view best represents B's position on why one should marry?
+- (a) To form one's character, since marriage is a school for character.
+- (b) To have children and propagate the race.
+- (c) To have a home.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 05d3975f
+**A:** Key:
+1. (d): marriage must have no "why", because it has its teleology in itself; "the less 'why' the more love".
+
+(a), (b) and (c) are the three reputable whys B examines and rejects as one-sided, "as ridiculous as they are anaesthetic and irreligious". The official at the tea-table gave (a).
+
+### Q: How does B regard A's word "habit" for the monotony of marriage?
+- (a) He concedes that marriage becomes habit and asks A to bear it as a duty.
+- (b) He says "habit" is used properly only of what is bad, so of the good one cannot speak of habit; what A calls habit is the historical side of marriage.
+- (c) He says habit is a blessing, since it frees the couple from passion.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 7dd77499
+**A:** Key:
+1. (b): habit designates something unfree, and monotony can be the expression of something beautiful, like an even tempo in music.
+
+(a) fails because for B "despair can never be a task; it is a convenience": even under monotony the task is to preserve love.
+
+### Q: Why does B think the husband, not the knight who waits fifteen years, triumphs over time?
+- (a) Because the husband's reward comes sooner.
+- (b) Because the knight has killed time, while the husband has not killed time but saved and preserved it in eternity.
+- (c) Because the knight's fidelity is only external, while the husband's is a feeling.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** f5dd0380
+**A:** Key:
+1. (b): the husband is faithful while possessing and constantly acquires the fidelity he has, against "that most dangerous enemy which is time".
+
+Poetry can concentrate the knight's fifteen years into the moment of reward; the husband's daily fidelity cannot be shown in a moment, only lived.
+
+### Q: What does B take to be the inward condition of the aesthetic in marriage?
+- (a) Secretiveness, which keeps the enigma alive.
+- (b) Openheartedness, uprightness and publicity on the largest conceivable scale.
+- (c) Mutual independence, each spouse keeping a wing of the house.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** a3b0cb8b
+**A:** Key:
+1. (b): inwardly the condition is openness, which takes courage; secretiveness is the condition only outwardly, toward the world.
+
+(a) is A's view: "you fear that when the enigma has gone love will cease, while I believe that only when it has gone does love begin". (c) is A's castle in the air.
+
+### Q: Which view best represents B's position on duty in relation to love?
+- (a) Duty is love's enemy, and love must defeat it.
+- (b) Duty replaces love when first love fades.
+- (c) Duty is love's friend: "duty here is just one thing, truly to love".
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 57912a29
+**A:** Key:
+1. (c): "You regard duty as the enemy of love, I regard it as its friend."
+
+The trap for A is (a): if duty is love's enemy and love cannot defeat it, love is not the true victor. "Duty makes my love into the true, temperate climate."
+
+### Q: What does B take possession to be, against A's conquering?
+- (a) A weaker form of conquering, fit for those who cannot conquer.
+- (b) Conquering in reverse: it needs humility, patience and contentment where conquering needs pride, violence and greed.
+- (c) An aesthetic category that B leaves to A.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 5096b548
+**A:** Key:
+1. (b): "possession is conquering in reverse", and going downhill takes more strength than going uphill.
+
+A calls himself "a conqueror who cannot possess". The religious element in marriage dethrones the conqueror and lets the possessor come into view.
+
+### Q: According to Kraal, why does marriage represent the ethical?
+- (a) Because it is a contract recognized by the state.
+- (b) Because it represents promise keeping: the vow the Church exacts.
+- (c) Because it produces children, who continue the race.
+- (d) None of these options.
+**Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** 7f9a301f
+**A:** Key:
+1. (b): "promise keeping" is Kraal's phrase for B's vow, intention and duty.
+
+(a) is Kant's contract view, which Hegel and B both leave behind. (c) is one of the rejected whys.
+
+### Q: What does B say his either/or separates in the first instance?
+- (a) Good and evil.
+- (b) Marriage and the single life.
+- (c) Not good and evil, but the choice whereby one chooses good and evil or excludes them.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** b28e2890
+**A:** Key:
+1. (c): "Is it good and evil? No, I simply want to bring you to the point where that choice truly acquires meaning for you."
+
+Hannay p. 480. The options his either/or sets are living aesthetically or living ethically, and the aesthetic is not evil but indifference.
+
+### Q: What does B call "the only absolute either/or there is"?
+- (a) The choice between the aesthetic and the ethical.
+- (b) The choice between good and evil, which is also absolutely ethical.
+- (c) The choice between marrying and not marrying.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 23fc531a
+**A:** Key:
+1. (b): "the only absolute either/or there is is the choice between good and evil, but it is also absolutely ethical".
+
+Keep the two apart: B's own either/or brings A to the point where good and evil become the options (the previous question); once one has chosen, the choice between them is the only absolute either/or.
+
+### Q: Which view best represents B's position on philosophy's mediation?
+- (a) Mediation is valid everywhere, since the rational is actual.
+- (b) Mediation is valid in logic, nature and history, where necessity rules, but not for freedom and the future, where one opposite excludes the other.
+- (c) Mediation is a confusion with no valid use.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 56b8367d
+**A:** Key:
+1. (b): "As truly as there is a future, just as truly is there an either/or"; exclusion is the opposite of mediation.
+
+(a) is Hegel's position as Kraal drew it. (c) overshoots: B grants the philosopher relative mediation for the past.
+
+### Q: Which view best represents B's position on Hegel's system?
+- (a) He accepts the whole system, including its mediation of ethical oppositions.
+- (b) He rejects the whole system as a confusion of thought.
+- (c) He accepts it for the past, for logic and for nature, and for the ethical sphere as well once the individual has chosen.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** b2d77039
+**A:** Key:
+1. (d): B accepts necessity and mediation for logic, nature and history, and refuses them for ethics, where good and evil are not a category of thought at all, before or after the choice.
+
+(c) is the near miss: the ethical sphere never comes under mediation, because for freedom one opposite excludes the other.
+
+### Q: Why does B think thought never reaches the difference between good and evil?
+- (a) Because good and evil do not exist.
+- (b) Because they are merely subjective determinations.
+- (c) Because whenever I think, my relation to what I think is one of necessity, and thought yields only relative differences.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 68b94440
+**A:** Key:
+1. (c): Hannay p. 524, "think the whole of history and you think the necessary movement of the Idea"; the absolute difference is posited only when I have absolutely chosen myself.
+
+(a) and (b) are the two misreadings B rules out in the same passage.
+
+### Q: What does B take "the good is by virtue of my willing it" to show?
+- (a) That good and evil are subjective.
+- (b) That the good is whatever society recognizes.
+- (c) That good and evil have absolute validity, posited by freedom rather than demonstrated by thought.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 4f30af56
+**A:** Key:
+1. (c): it is "in no way to belittle the categories of good and evil or to reduce them to merely subjective determinations. On the contrary, it is to assert the absolute validity of these categories."
+
+The contrast is the absolute, which philosophy says "is by virtue of my thinking it" and which is therefore necessary; the good is by willing, the expression of freedom.
+
+### Q: What does B take the aesthetic to be, in relation to good and evil?
+- (a) Evil.
+- (b) Not evil but indifference.
+- (c) A lower good that mediation lifts into the ethical.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 7a484394
+**A:** Key:
+1. (b): "the aesthetic is not evil but indifference", so the either/or is to live aesthetically or to live ethically.
+
+Someone who chooses the ethical chooses the good, but the good there is wholly abstract, and it does not follow that he cannot choose evil again.
+
+### Q: Which spheres does B say are properly for thought, where necessity rules?
+- (a) Logic, nature and history.
+- (b) Logic, nature and spirit.
+- (c) The aesthetic, the ethical and the religious.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 968dcf89
+**A:** Key:
+1. (a): B's list, the three branches of Kraal's tree.
+
+(b) is the division of Hegel's own Encyclopaedia. (c) is the first letter's "three great allies".
+
+### Q: Which sentence of Hegel's did Kraal give as the background to B on marriage?
+- (a) Marriage is a contract for the lifelong reciprocal possession of each other's sexual attributes.
+- (b) Marriage is in essence an ethical relationship.
+- (c) Marriage is a sacrament of the Church.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** recall  **Id:** 7a3b8e60
+**A:** Key:
+1. (b): Hegel, Philosophy of Right, the Addition to §161, "an ethical tie" in Knox's translation.
+
+(a) is Kant's Metaphysics of Morals, which Hegel calls shameful. (c) is the twelfth-century Church, behind Kraal's date of about 1100 for the vow.
+
+### Q: Which slogan of Kierkegaard's did Kraal set against Hegel's "truth is objectivity"?
+- (a) What is rational is actual.
+- (b) De omnibus dubitandum.
+- (c) Truth is subjectivity.
+- (d) None of these options.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 21  **Type:** recall  **Id:** 4af99045
+**A:** Key:
+1. (c): "truth is subjectivity", the title claim of a chapter of the Concluding Unscientific Postscript.
+
+(a) is Hegel's own line. (b) is the Hegelians' slogan in Copenhagen that B mocks in the first letter.
+
+### Q: What does B take to be common to every aesthetic life-view?
+- (a) Pleasure in the moment at any cost.
+- (b) That one must enjoy life, with a condition that is either outside the individual or in him but not posited by him.
+- (c) That the meaning of life is sorrow.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** d1696043
+**A:** Key:
+1. (b): every aesthetic life-view says one must enjoy life, and its condition is never posited by the individual himself.
+
+(c) is A's favourite life-view, which B places at the transition between the aesthetic and the ethical and calls despair too.
+
+### Q: Why does B think every aesthetic life-view is despair?
+- (a) Because pleasure always ends in boredom.
+- (b) Because it is built on what may or may not be, so the person who despairs when it fails was in despair before without knowing it.
+- (c) Because aesthetes are melancholy by nature.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 8a212efd
+**A:** Key:
+1. (b): the transitory was transitory all along, so the difference between the one who knows and the one who does not is accidental.
+
+(a) is A's argument in Crop Rotation, not B's. The ethical builds life on what has being as its essential property.
+
+### Q: What does B take melancholy to be in "Equilibrium"?
+- (a) Sorrow over a definite loss.
+- (b) A bodily illness for physicians to treat.
+- (c) Hysteria of the spirit: immediacy has ripened and the spirit's demand for a higher form is pressed back; it is the sin of not willing deeply.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 276fcc78
+**A:** Key:
+1. (c): the griever knows why he grieves, the melancholic can only say "I don't know what it is"; only the spirit can cure it.
+
+The trap is the first letter, where melancholy was the age's fear of committing, egoistic or sympathetic. This is a different account.
+
+### Q: What is B's one answer to A's question "What then am I to do?"
+- (a) Get married.
+- (b) Apply for some office.
+- (c) Despair, as an act of the whole personality.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 846ee4dc
+**A:** Key:
+1. (c): "Despair!", not as a comfort or a state to remain in but as an action requiring all the soul's strength.
+
+(a) and (b) are the two pieces of ordinary advice B rejects first, because a distraction from melancholy is a kind of falsehood and the melancholy would erupt again.
+
+### Q: What does B take the self to be that is chosen in the absolute choice?
+- (a) The self in its immediacy, this contingent individual with his talents.
+- (b) A new self created from nothing.
+- (c) Himself in his eternal validity: the most abstract and the most concrete thing of all, freedom.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** d2aedbfd
+**A:** Key:
+1. (c): "I choose the absolute which chooses me, I posit the absolute which posits me", and the self is freedom.
+
+(b) fails on "I do not create myself, I choose myself". The chosen self is infinitely concrete yet absolutely different from the former self.
+
+### Q: How does B regard repentance?
+- (a) As a mediation between good and evil.
+- (b) As an aesthetic sorrow over one's fate.
+- (c) As the expression of choosing oneself, and the one expression in language of love of God.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 285938e5
+**A:** Key:
+1. (c): the chooser repents himself back into himself, into the family, into the race, until he finds himself in God.
+
+(a) is the reading B blocks: repentance is no mediation, it consumes what it would mediate. The pious Jew could not repent the fathers' sins because he could not choose himself absolutely.
+
+### Q: What does B take to be the true point of departure for finding the absolute?
+- (a) Doubt, the philosophers' method.
+- (b) Despair, chosen in freedom by the whole personality.
+- (c) Faith, which needs no choice.
+- (d) None of these options.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** dc047bfe
+**A:** Key:
+1. (b): "Doubt is a despair of thought, despair is a doubt of the personality"; one can doubt without choosing to, but not despair.
+
+Doubt needs talent and lies in difference; despair lies in the absolute, so the lowliest person can despair.
+
+### Q: Why did the man who said "Now I own myself" end like Narcissus?
+- (a) He chose evil as absolutely as the good.
+- (b) He chose himself in respect of his necessity rather than his possibility, so he reached eternity before his time and sank into apathy.
+- (c) He never chose at all and let others choose for him.
+- (d) None of these options.
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** 6211c801
+**A:** Key:
+1. (b): he took the ethical option in vain, aesthetically, and fell in love with himself.
+
+(c) is the helmsman who lets the ship keep its headway. The right choice chooses the self in its possibility and stays in freedom by constantly realizing it.
+
+### Q: What does B take the mystic's mistake to be?
+- (a) That he chooses himself at all.
+- (b) That he chooses himself ethically but neglects God.
+- (c) That he does not choose himself properly: in respect of his freedom yet abstractly, not ethically, so he repents himself out of himself rather than into himself.
+- (d) None of these options.
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** 72fedbef
+**A:** Key:
+1. (c): the mystic lacks transparency, "the abstract is the opaque", and repents metaphysically, judging existence vanity.
+
+B's three personal objections are importunity toward God, softness, and a deceit against the world; a mystic would be a bad husband.
+
+### Q: How does B say the aesthete develops, against the ethical person?
+- (a) With necessity, like a plant: he becomes what he already is immediately.
+- (b) With freedom, since he chooses his pleasures.
+- (c) Not at all: the aesthete never changes.
+- (d) None of these options.
+**Topic:** Equilibrium: the false paths, the mystic and the aesthetic's return  **Lec:** reading  **Type:** recall  **Id:** aba4d22e
+**A:** Key:
+1. (a): "I have it in me to be a Don Juan, a Faust, a robber chief"; the ethical person has the absolute difference from the first and suppresses evil.
+
+Despair is therefore no break but a transfiguration: "Everything returns, but transfigured."
+
+### Q: What does the person who lives ethically see everywhere, according to B?
+- (a) Possibilities.
+- (b) Tasks.
+- (c) Duties imposed from outside.
+- (d) None of these options.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** e675109c
+**A:** Key:
+1. (b): "the person who lives aesthetically sees only possibilities everywhere; the person who lives ethically sees tasks everywhere".
+
+(c) is the external relation to duty that B rejects. The ethical individual chooses himself concretely as this definite individual, and his concretion is his task.
+
+### Q: Which view best represents B's position on duty?
+- (a) Duty is a mass of particular propositions to be fulfilled, which is why the ethical life is tedious.
+- (b) Duty is external law that the individual obeys.
+- (c) Duty is internal: Pligt names not an imposition (Paalaeg) but what imposes (paaligger), and the unhappiest life is to have duty outside oneself.
+- (d) None of these options.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 8e284215
+**A:** Key:
+1. (c): the truly ethical individual has duty inside him, which gives him inner calm.
+
+(a) is the formula "living for the fulfilment of life's duties" that B rejects. "I can perform duties without doing my duty, and I can do my duty without performing duties."
+
+### Q: What does the gambler's cure, "Not just now; in an hour's time", show for B?
+- (a) That mastering desire means abstaining.
+- (b) That mastering desire means determining the instant, the hour being the continuity that saves him.
+- (c) That the ethical person has no desires.
+- (d) None of these options.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** a57d935b
+**A:** Key:
+1. (b): the ethical person has continuity, which is master over mood; the aesthete's centre is at the periphery.
+
+The ethical person's total mood is equability, which is acquired, never had by nature.
+
+### Q: What does B make of "it is every man's duty to work in order to live"?
+- (a) Work is a necessary evil that the talented should minimize.
+- (b) It makes the moneyed aesthete the exception, and having money is a humiliation; the ethical view explains something universal, while the aesthetic view explains nothing.
+- (c) Work is only for those with no talent.
+- (d) None of these options.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 47d29520
+**A:** Key:
+1. (b): the penniless hero's second adviser; work expresses the universally human and freedom.
+
+The aesthete's answer was that money is the absolute condition of life, three thousand dollars a year single and six thousand to marry.
+
+### Q: What does B mean by "essentially everyone accomplishes as much as anyone else"?
+- (a) That talents are equal.
+- (b) That "accomplish" names a relation between my action and something outside me over which I have no authority, so each can only complete his job, and what he accomplishes is his good fortune.
+- (c) That history remembers everyone equally.
+- (d) None of these options.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 93d64103
+**A:** Key:
+1. (b): everyone has a vocation, and the vocation makes the universal transparent where talent is only a more-or-less.
+
+A's joke was to study the calculus to work out what part of the whole a junior Admiralty clerk accomplished.
+
+### Q: How does the hero rightly understand "it is every man's duty to marry"?
+- (a) That not marrying is a sin.
+- (b) That one must marry an uncommon girl.
+- (c) That he who marries realizes the universal; it is no sin not to marry unless by one's own fault, and the ethical cannot say whom.
+- (d) None of these options.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** cdc0358a
+**A:** Key:
+1. (c): choosing for him would need all his aesthetic characteristics and would make nonsense of the ethical's own theory.
+
+(b) is the advice of the man the hero respects; marriage abolishes no difference but makes the differences tasks, since "the relationship is the absolute".
+
+### Q: What does B take the Dutch orientalist's wife to show?
+- (a) That woman is the weaker and needs man's protection.
+- (b) That woman clarifies finiteness while man chases after infinity, so she is on good terms with time.
+- (c) That learning and marriage do not mix.
+- (d) None of these options.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** e8b063e4
+**A:** Key:
+1. (b): she blew the diacritic away, because it was a grain of snuff.
+
+B concludes that she is the stronger, which is why Scripture has the man leave father and mother. This is B's view of 1843, not Kraal's.
+
+### Q: What does B take to be the absolute condition for friendship?
+- (a) A shared taste for laughing at the world.
+- (b) Sympathy and obscure emotions.
+- (c) Full agreement in a life-view, which must be positive and contain an ethical factor.
+- (d) None of these options.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** 71074532
+**A:** Key:
+1. (c): friendship rests on consciousness, so people whose system has no room for the ethical have no life-view at all.
+
+(a) is A's wish for a kindred soul, which cannot ground a friendship; the Augurs laughed because their life-view was negative.
+
+### Q: Complete B's formula: "It is every man's duty to …"
+- (a) … have a friend.
+- (b) … become revealed.
+- (c) … accomplish something.
+- (d) None of these options.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** 5c8374d6
+**A:** Key:
+1. (b): "it is every man's duty to become revealed", which B prefers to "the duty to have a friend".
+
+If a man is not revealed, the revelation takes the form of punishment. The letter opened on the same thought: he who cannot reveal himself cannot love.
+
+### Q: What does B mean by "the truly extraordinary man is the truly ordinary man"?
+- (a) That the uncommon man stands outside the universal.
+- (b) That the more of the universally human an individual realizes in his life, the more extraordinary he is.
+- (c) That the extraordinary should enter the monastery.
+- (d) None of these options.
+**Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** c7c12597
+**A:** Key:
+1. (b): the less of the universal a man can assume, the less perfect he is, uncommon only in a bad sense.
+
+The man who finds he cannot realize some part of the universal stands outside it on that point as an exception, with an explanation, and bears witness to the universal by his sorrow.

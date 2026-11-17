@@ -7,6 +7,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Loaded, Texts } from './files'
 import { hrefFor } from './files'
 import { courseLabel, parseQuestions, type Question } from './markdown'
+import { sectionKeys } from './QuestionBank'
 import { sourcesFor } from './sources'
 import { Md } from './Md'
 import { CourseChip, GradeChip } from './ui'
@@ -21,13 +22,16 @@ import { loadConfig } from './review/sync'
 import { shortDate } from './dates'
 
 export const HREF_REVIEW = '#/review'
-const hrefReview = (course: string | null | undefined) => course ? `${HREF_REVIEW}?course=${course}` : HREF_REVIEW
+const hrefReview = (course: string | null | undefined, section?: string | null) =>
+  course ? `${HREF_REVIEW}?course=${course}${section ? `&section=${section}` : ''}` : HREF_REVIEW
 
-/** The open session when it belongs on this route: a course link shows only a session started for that course, and the
- *  unfiltered page shows any. A session started from another course's link is not resumed here. */
-const sessionFor = (s: ReviewSession | null, course: string | null) => s && (!course || (s.course ?? null) === course) ? s : null
+/** The open session when it belongs on this route: a course link shows only a session started for that course (any of its
+ *  sections), a section link only one started for that section, and the unfiltered page shows any. A session started
+ *  from another course's or section's link is not resumed here. */
+const sessionFor = (s: ReviewSession | null, course: string | null, section: string | null = null) =>
+  s && (!course || (s.course ?? null) === course) && (!section || (s.section ?? null) === section) ? s : null
 
-interface Card { qid: string; course: string; q: Question; rubric: Rubric | null; src: { path: string; title: string } | null; row: string | null }
+interface Card { qid: string; course: string; section: string; q: Question; rubric: Rubric | null; src: { path: string; title: string } | null; row: string | null }
 
 /** Every stamped bank question by its permanent id, with its rubric and notes page. */
 function useCards(all: Texts): Map<string, Card> {
@@ -38,10 +42,13 @@ function useCards(all: Texts): Map<string, Card> {
       if (!course) continue
       const groups = parseQuestions(text)
       const src = sourcesFor(course, groups, all)
-      for (const q of groups.flatMap((g) => g.questions)) {
-        if (!q.stamp) continue
-        out.set(q.stamp, { qid: q.stamp, course, q, rubric: parseRubric(q.answer), src: src.get(q.id) ?? null, row: null })
-      }
+      const keys = sectionKeys(groups)   // the same keys as the question bank's `?section=`
+      groups.forEach((g, gi) => {
+        for (const q of g.questions) {
+          if (!q.stamp) continue
+          out.set(q.stamp, { qid: q.stamp, course, section: keys[gi], q, rubric: parseRubric(q.answer), src: src.get(q.id) ?? null, row: null })
+        }
+      })
     }
     return out
   }, [all])
@@ -133,15 +140,17 @@ function SyncSetup({ onClose }: { onClose: () => void }) {
 const counted = (n: number, due: number) =>
   [due && `${due} due`, n - due && `${n - due} new`].filter(Boolean).join(' · ') || 'nothing to review'
 
-export function Review({ all, loaded, course, setup: askSetup = false }: { all: Texts; loaded: Loaded; course: string | null; setup?: boolean }) {
+export function Review({ all, loaded, course, section = null, setup: askSetup = false }: {
+  all: Texts; loaded: Loaded; course: string | null; section?: string | null; setup?: boolean
+}) {
   const cards = useCards(all)
   const events = useEvents()
   const plan = useMemo(() => parsePlan(loaded.reviewPlan ?? undefined), [loaded])
   const [session, setSession] = useState<ReviewSession | null>(loadSession)
   const [setup, setSetup] = useState(askSetup)
-  const due = useMemo(() => dueToday(plan, cards, events, course, loaded.quiz), [plan, cards, events, course, loaded])
+  const due = useMemo(() => dueToday(plan, cards, events, course, loaded.quiz, undefined, section), [plan, cards, events, course, section, loaded])
   const update = (s: ReviewSession | null) => { setSession(s); saveSession(s) }
-  const own = sessionFor(session, course)
+  const own = sessionFor(session, course, section)
   // A session another route started and left unfinished: named on the start screen, and replaced by Start (every
   // grade is saved as it is given, so nothing is lost).
   const stray = session && !own && session.at < session.qids.length ? session : null
@@ -149,7 +158,7 @@ export function Review({ all, loaded, course, setup: askSetup = false }: { all: 
   const start = (n: number) => {
     const qids = due.slice(0, n)
     if (!qids.length) return
-    update({ id: newId(), started: new Date().toISOString(), course, qids, at: 0,
+    update({ id: newId(), started: new Date().toISOString(), course, section, qids, at: 0,
       cards: Object.fromEntries(qids.map((id) => [id, blankDraft(cards.get(id)?.rubric?.points.length ?? 1)])) })
   }
 
@@ -164,24 +173,26 @@ export function Review({ all, loaded, course, setup: askSetup = false }: { all: 
         ? <Session session={own} cards={cards} loaded={loaded} plan={plan} update={update} />
         : own
           ? <Summary session={own} cards={cards} onDone={() => update(null)} />
-          : <Start due={due} plan={plan} course={course} start={start} stray={stray} />}
+          : <Start due={due} plan={plan} course={course} section={section} start={start} stray={stray} />}
     </article>
   )
 }
 
-function Start({ due, plan, course, start, stray }: {
-  due: string[] & { due: number }; plan: ReviewPlan | null; course: string | null; start: (n: number) => void; stray: ReviewSession | null
+function Start({ due, plan, course, section, start, stray }: {
+  due: string[] & { due: number }; plan: ReviewPlan | null; course: string | null; section: string | null; start: (n: number) => void
+  stray: ReviewSession | null
 }) {
+  const where = course ? ` in ${courseLabel(course)}${section ? `, section ${section}` : ''}` : ''
   if (!plan) return <p className="muted">The review plan is not published yet. It appears after the next quiz or morning check.</p>
-  if (!due.length) return <p>Nothing to review{course ? ` in ${courseLabel(course)}` : ''}. The plan was written {shortDate(plan.as_of)}.</p>
+  if (!due.length) return <p>Nothing to review{where}. The plan was written {shortDate(plan.as_of)}.</p>
   return (
     <section className="panel review-start">
-      <p>{counted(due.length, due.due)}{course ? ` in ${courseLabel(course)}` : ''}, from the plan of {shortDate(plan.as_of)}. Due questions
+      <p>{counted(due.length, due.due)}{where}, from the plan of {shortDate(plan.as_of)}. Due questions
         come first, then new ones.</p>
       {stray && (
-        <p className="small muted">A review of {stray.course ? courseLabel(stray.course) : 'every course'} is open at
+        <p className="small muted">A review of {stray.course ? courseLabel(stray.course) : 'every course'}{stray.section ? `, section ${stray.section},` : ''} is open at
           question {stray.at + 1} of {stray.qids.length}. Starting here replaces it; every grade saved so far stays.{' '}
-          <a href={hrefReview(stray.course)}>Resume it instead</a>.</p>
+          <a href={hrefReview(stray.course, stray.section)}>Resume it instead</a>.</p>
       )}
       <div className="row">
         <button type="button" className="btn primary big" onClick={() => start(8)}>Start {Math.min(8, due.length)} questions</button>
@@ -353,7 +364,7 @@ function Summary({ session, cards, onDone }: { session: ReviewSession; cards: Ma
           </ul>
         </>
       )}
-      <button type="button" className="btn primary" onClick={() => { onDone(); navigate(hrefReview(session.course)) }}>Done</button>
+      <button type="button" className="btn primary" onClick={() => { onDone(); navigate(hrefReview(session.course, session.section)) }}>Done</button>
     </section>
   )
 }

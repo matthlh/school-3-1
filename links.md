@@ -15,6 +15,7 @@ Every course tool in one place. A name opens the tool in a new tab, and the same
 | CPSC310 | Course site | https://ubccpsc.github.io/310/26w1/ | . |
 | CPSC310 | Schedule (slides live here) | https://ubccpsc.github.io/310/26w1/schedule | CPSC ?310 lec |
 | CPSC310 | Reader (textbook) | https://ubccpsc.github.io/310/textbook/ | Pre-lecture;CPSC ?310 lec |
+| CPSC310 | GitHub: lecture code (lecture_code) | https://github.com/ubccpsc310/lecture_code |  |
 | CPSC310 | Syllabus | https://ubccpsc.github.io/310/26w1/syllabus |  |
 | CPSC310 | Project overview (InsightUBC) | https://ubccpsc.github.io/310/26w1/project/ | \bD\d\b;Deliverable |
 | CPSC310 | InsightUBC REST API spec (openapi) | https://ubccpsc.github.io/310/26w1/project/spec.html | \bD\d\b;Deliverable |

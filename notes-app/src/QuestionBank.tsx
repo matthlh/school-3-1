@@ -35,7 +35,7 @@ const startsWith = (s: string, key: string) => s === key || s.startsWith(key + '
  * to differ from every earlier section: "lec-7", "webwork-2", "long-problems", "lec-1-deck". A section added later
  * never changes an earlier key, so an old URL keeps naming the same section.
  */
-function sectionKeys(groups: QuestionGroup[]): string[] {
+export function sectionKeys(groups: QuestionGroup[]): string[] {
   const earlier: string[] = []
   return groups.map((g) => {
     const title = shortTitle(g.title ?? '')

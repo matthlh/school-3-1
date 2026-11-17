@@ -124,7 +124,7 @@ export default function App() {
   else if (query.trim()) body = <SearchResults query={query} all={all} tree={tree} onPick={() => setQuery('')} />
   else if (route.kind === 'home') body = <Home tree={tree} all={all} loaded={loaded} calendar={calendar} due={due} />
   else if (route.kind === 'courses') body = <Courses tree={tree} all={all} tallies={tallies} calendar={calendar} due={due} />
-  else if (route.kind === 'review') body = <Review key={route.course ?? ''} all={all} loaded={loaded} course={route.course} setup={route.setup} />
+  else if (route.kind === 'review') body = <Review key={`${route.course ?? ''}/${route.section ?? ''}`} all={all} loaded={loaded} course={route.course} section={route.section} setup={route.setup} />
   else if (route.kind === 'course') body = <div style={toneStyle(route.code)}><CoursePage code={route.code} tab={route.tab} tree={tree} all={all} loaded={loaded} topics={topics} tallies={tallies} links={links} due={due} /></div>
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={loaded.quiz} due={due} />

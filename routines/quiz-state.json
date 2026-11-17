@@ -1970,6 +1970,126 @@
      }
     ]
    ]
+  },
+  "c191fc17": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: first love and the reflective age",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 2,
+      "event_id": "3778f7e394c52621",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "608d9bce": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: B's task and tone",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 1,
+      "event_id": "2aec4176f24b7ae3",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "69d2ea1d": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: marriage's history, habit and duty",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 2,
+      "event_id": "1b09404f59d4d0a8",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "a47ec4a3": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: marriage's history, habit and duty",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 1,
+      "event_id": "bf4afec232de4722",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "089d617e": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: first love and the reflective age",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 2,
+      "event_id": "636d5415fd74421c",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "053e1b47": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: marriage's history, habit and duty",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 1,
+      "event_id": "323b677ba0c6f058",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "249beac9": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: marriage's history, habit and duty",
+   "history": [
+    [
+     "2026-11-17",
+     "X",
+     {
+      "conf": 1,
+      "event_id": "f17fa2fc0fb4b3bf",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
+  },
+  "27d4e441": {
+   "course": "PHIL385",
+   "topic": "The Aesthetic Validity of Marriage: marriage's history, habit and duty",
+   "history": [
+    [
+     "2026-11-17",
+     "~",
+     {
+      "conf": 3,
+      "event_id": "6909fb06d7f8eb9f",
+      "session_id": "web-1cf444798101271e"
+     }
+    ]
+   ]
   }
  },
  "sessions": [
@@ -3350,6 +3470,83 @@
      "X"
     ]
    ]
+  },
+  {
+   "id": "web-1cf444798101271e",
+   "date": "2026-11-17",
+   "mode": "web",
+   "n": 8,
+   "note": "",
+   "results": [
+    [
+     1,
+     "69d2ea1d",
+     "PHIL385",
+     "X"
+    ],
+    [
+     2,
+     "608d9bce",
+     "PHIL385",
+     "X"
+    ],
+    [
+     3,
+     "053e1b47",
+     "PHIL385",
+     "X"
+    ],
+    [
+     4,
+     "c191fc17",
+     "PHIL385",
+     "X"
+    ],
+    [
+     5,
+     "089d617e",
+     "PHIL385",
+     "X"
+    ],
+    [
+     6,
+     "27d4e441",
+     "PHIL385",
+     "~"
+    ],
+    [
+     7,
+     "a47ec4a3",
+     "PHIL385",
+     "X"
+    ],
+    [
+     8,
+     "249beac9",
+     "PHIL385",
+     "X"
+    ]
+   ]
   }
- ]
+ ],
+ "topic_baselines": {
+  "PHIL385|The Aesthetic Validity of Marriage: marriage's history, habit and duty (no why: character, children, home · the wedding ceremony · the aesthetic lies in the acquired · inner history · conqueror vs possessor · habit only of the bad · the husband preserves time · duty the friend of love · the three great allies)": {
+   "last": "—",
+   "grade": "",
+   "streak": 0,
+   "next": "2026-11-03"
+  },
+  "PHIL385|The Aesthetic Validity of Marriage: B's task and tone (Judge William's letter to A · two tasks: marriage is aesthetic and stays so · loves A like a son, brother and friend · warns A about himself · the vow from Christianity about 1100 · if duty is love's enemy, love is not the true victor · the close)": {
+   "last": "—",
+   "grade": "",
+   "streak": 0,
+   "next": "2026-11-03"
+  },
+  "PHIL385|The Aesthetic Validity of Marriage: first love and the reflective age (love has the stamp of the eternal, lust does not · the immoral and the respectable paths · egoistic and sympathetic melancholy · first love's features · the Page as the state before first love · thanking God lifts it into a higher concentricity · the altar objections · one loves only once)": {
+   "last": "—",
+   "grade": "",
+   "streak": 0,
+   "next": "2026-11-03"
+  }
+ }
 }

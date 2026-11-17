@@ -92,6 +92,8 @@ export interface ReviewSession {
   started: string
   /** The course the session was started for, or null for every course; a session saved before this field is every course. */
   course?: string | null
+  /** The bank section it was started for (the course page's section key), or null for the whole course. */
+  section?: string | null
   qids: string[]
   at: number
   cards: Record<string, CardDraft>
