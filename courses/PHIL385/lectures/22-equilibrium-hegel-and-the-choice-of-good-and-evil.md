@@ -122,4 +122,4 @@ A photo of Hannay p. 524 (PDF pp. 456–457), the passage you marked very import
 - Your question "is it important that good vs evil can't be proven? → whether god exists?" has a B answer. B does not prove God either. In the choice "there appears before it not a distinguished person, but the eternal power itself", and the I accepts itself before it (PDF p. 427). Repentance is the one love of God, and its ground is "that he loved me first" (PDF p. 451).
 - So for B the unprovability is not a loss. Proof belongs to thought and necessity; the choice, God and good and evil all belong to freedom.
 
-Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 22". Ledger: 1 new topic, due Nov 17. The reading page for "Equilibrium" does not exist yet.
+Questions: 12 in [02-questions.md](../02-questions.md) under "Lec 22". Ledger: 1 new topic, due Nov 17. The reading page is [equilibrium.md](../readings/equilibrium.md).

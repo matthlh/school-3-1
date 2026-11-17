@@ -90,6 +90,8 @@ export interface CardDraft {
 export interface ReviewSession {
   id: string
   started: string
+  /** The course the session was started for, or null for every course; a session saved before this field is every course. */
+  course?: string | null
   qids: string[]
   at: number
   cards: Record<string, CardDraft>

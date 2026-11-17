@@ -21,6 +21,11 @@ import { loadConfig } from './review/sync'
 import { shortDate } from './dates'
 
 export const HREF_REVIEW = '#/review'
+const hrefReview = (course: string | null | undefined) => course ? `${HREF_REVIEW}?course=${course}` : HREF_REVIEW
+
+/** The open session when it belongs on this route: a course link shows only a session started for that course, and the
+ *  unfiltered page shows any. A session started from another course's link is not resumed here. */
+const sessionFor = (s: ReviewSession | null, course: string | null) => s && (!course || (s.course ?? null) === course) ? s : null
 
 interface Card { qid: string; course: string; q: Question; rubric: Rubric | null; src: { path: string; title: string } | null; row: string | null }
 
@@ -55,9 +60,9 @@ export function ReviewEntry({ all, loaded, course = null, hero = false }: { all:
   const events = useEvents()
   const plan = useMemo(() => parsePlan(loaded.reviewPlan ?? undefined), [loaded])
   const q = dueToday(plan, cards, events, course, loaded.quiz)
-  const open = loadSession()
+  const open = sessionFor(loadSession(), course)
   const resume = open && open.at < open.qids.length
-  const href = course ? `${HREF_REVIEW}?course=${course}` : HREF_REVIEW
+  const href = hrefReview(course)
   const sync = <SyncChip onSetup={() => { window.location.hash = '/review?setup=1' }} />
   if (hero) {
     const first = Math.min(8, q.length)
@@ -136,11 +141,15 @@ export function Review({ all, loaded, course, setup: askSetup = false }: { all: 
   const [setup, setSetup] = useState(askSetup)
   const due = useMemo(() => dueToday(plan, cards, events, course, loaded.quiz), [plan, cards, events, course, loaded])
   const update = (s: ReviewSession | null) => { setSession(s); saveSession(s) }
+  const own = sessionFor(session, course)
+  // A session another route started and left unfinished: named on the start screen, and replaced by Start (every
+  // grade is saved as it is given, so nothing is lost).
+  const stray = session && !own && session.at < session.qids.length ? session : null
 
   const start = (n: number) => {
     const qids = due.slice(0, n)
     if (!qids.length) return
-    update({ id: newId(), started: new Date().toISOString(), qids, at: 0,
+    update({ id: newId(), started: new Date().toISOString(), course, qids, at: 0,
       cards: Object.fromEntries(qids.map((id) => [id, blankDraft(cards.get(id)?.rubric?.points.length ?? 1)])) })
   }
 
@@ -151,22 +160,29 @@ export function Review({ all, loaded, course, setup: askSetup = false }: { all: 
         <SyncChip onSetup={() => setSetup((v) => !v)} />
       </div>
       {setup && <SyncSetup onClose={() => setSetup(false)} />}
-      {session && session.at < session.qids.length
-        ? <Session session={session} cards={cards} loaded={loaded} plan={plan} update={update} />
-        : session
-          ? <Summary session={session} cards={cards} onDone={() => update(null)} />
-          : <Start due={due} plan={plan} course={course} start={start} />}
+      {own && own.at < own.qids.length
+        ? <Session session={own} cards={cards} loaded={loaded} plan={plan} update={update} />
+        : own
+          ? <Summary session={own} cards={cards} onDone={() => update(null)} />
+          : <Start due={due} plan={plan} course={course} start={start} stray={stray} />}
     </article>
   )
 }
 
-function Start({ due, plan, course, start }: { due: string[] & { due: number }; plan: ReviewPlan | null; course: string | null; start: (n: number) => void }) {
+function Start({ due, plan, course, start, stray }: {
+  due: string[] & { due: number }; plan: ReviewPlan | null; course: string | null; start: (n: number) => void; stray: ReviewSession | null
+}) {
   if (!plan) return <p className="muted">The review plan is not published yet. It appears after the next quiz or morning check.</p>
-  if (!due.length) return <p>Nothing to review{course ? ` in ${course}` : ''}. The plan was written {shortDate(plan.as_of)}.</p>
+  if (!due.length) return <p>Nothing to review{course ? ` in ${courseLabel(course)}` : ''}. The plan was written {shortDate(plan.as_of)}.</p>
   return (
     <section className="panel review-start">
-      <p>{counted(due.length, due.due)}{course ? ` in ${course}` : ''}, from the plan of {shortDate(plan.as_of)}. Due questions
+      <p>{counted(due.length, due.due)}{course ? ` in ${courseLabel(course)}` : ''}, from the plan of {shortDate(plan.as_of)}. Due questions
         come first, then new ones.</p>
+      {stray && (
+        <p className="small muted">A review of {stray.course ? courseLabel(stray.course) : 'every course'} is open at
+          question {stray.at + 1} of {stray.qids.length}. Starting here replaces it; every grade saved so far stays.{' '}
+          <a href={hrefReview(stray.course)}>Resume it instead</a>.</p>
+      )}
       <div className="row">
         <button type="button" className="btn primary big" onClick={() => start(8)}>Start {Math.min(8, due.length)} questions</button>
         {due.length > 8 && <button type="button" className="btn big" onClick={() => start(20)}>Longer: {Math.min(20, due.length)} questions</button>}
@@ -337,7 +353,7 @@ function Summary({ session, cards, onDone }: { session: ReviewSession; cards: Ma
           </ul>
         </>
       )}
-      <button type="button" className="btn primary" onClick={() => { onDone(); navigate('#/review') }}>Done</button>
+      <button type="button" className="btn primary" onClick={() => { onDone(); navigate(hrefReview(session.course)) }}>Done</button>
     </section>
   )
 }
