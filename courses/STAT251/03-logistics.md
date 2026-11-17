@@ -23,7 +23,7 @@
 | WeBWorK 5–10 | Open Tue Oct 13 · Oct 20 · Nov 3 · Nov 17 · Nov 24 · Dec 1 (from WeBWorK). Sets 1 and 2 closed seven days after opening and sets 3 and 4 nine days after (the Canvas calendar now shows set 5 due Thu Oct 22, the same pattern), so each due date is confirmed inside WeBWorK on its open day | |
 | Pre-lab quizzes, Labs 2–8 | Fri Oct 9 · Oct 16 · Oct 23 · Nov 13 · Nov 27 · Dec 4 · Dec 11, 23:59 | 4 · 2 · 4 · 4 · 4 · 3 · 5 |
 | In-lab quiz + follow-up (L1K) | In every Friday lab, about a 20-minute window. No lab in week 8 (Oct 26–30), per the syllabus schedule | 3 + 3 per lab |
-| Post-lab survey | Fri Nov 13, 23:59 | 1 |
+| Post-lab survey | Deleted from Canvas (seen 2026-11-17); nothing to submit | 0 |
 | Written Assignment 1 | **Sat Oct 24** (confirmed 2026-09-11; ignore the Oct 31 Canvas calendar entry) | 52 |
 | Written Assignment 2 | Wed Dec 2 | 40 |
 | Midterm | **Fri Oct 30, 08:00–08:50**, regular classroom (confirmed 2026-09-11; ignore the Nov 4 Canvas entry) | 29 |
