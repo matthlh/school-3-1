@@ -2968,33 +2968,38 @@ The principle Kraal took from it is that the beautiful derives its value from th
 
 ## Reading: "The Aesthetic Validity of Marriage" (Nov 2–6; read by Claude 2026-11-02)
 
-### Q: What are B's three criteria of romantic love?
+### Q: Two people fall in love as soon as they meet. Which description captures B's three features of romantic love?
+- (a) It comes from weighing reasons, rests on shared plans, and aims at a lasting bond.
+- (b) It happens immediately, rests on natural necessity and beauty, and carries a sense of the eternal.
+- (c) It happens immediately, rests on natural necessity and beauty, and aims at satisfying the present desire.
+- (d) It begins in doubt, is confirmed by reflection, and is made beautiful by a vow.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** c191fc17
-**A:** Parts:
-1. It is immediate: "to see her and to love her were one and the same".
-2. It rests on natural necessity and on beauty.
-3. It carries the consciousness of the eternal, which gives it nobility and separates it from lust.
+**A:** Key:
+1. (b) It is immediate, rests on natural necessity and beauty, and carries a sense of the eternal.
 
-The beauty is sensual beauty and the beauty that shows through the sensual. B says the old romances end where they should begin, with the lovers united in the fifth act, and that their struggle is entirely external; today money has replaced cruel fathers, with a rich uncle dying in the fifth act.
+The lovers feel drawn to each other before weighing reasons and experience this love as something that should last. The third choice gets the beginning right and then describes the aim of lust. Old romances show how lovers overcome external obstacles and reach the wedding. B is interested in how they carry that love into the years afterward. (PDF pp. 342–343.)
 
-### Q: The reflective age, B says, struck out on two paths against romantic love. Name both and give his verdict on each.
-**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 34cb071d
-**A:** Parts:
-1. The immoral path: keep the sensual and drop the eternal, in "the eternal instant of the embrace" and marriages for a period with a way out.
-2. The respectable path: the marriage of convenience, really "the marriage of reason", a capitulation to life.
-3. Verdict on the first: absolutely immoral, though as "a formal protest against marriage" it brings thought a step nearer the goal.
-4. Verdict on the second: as immoral as it is unaesthetic, because a calculation is always temporal and so lacks the eternal.
+### Q: One couple keeps dating only as long as the passion lasts. Another marries for financial security while setting aside romantic love. How does B classify the two cases?
+- (a) The first follows the respectable path, and the second follows the immoral path.
+- (b) Both follow the respectable path because both choose a practical arrangement.
+- (c) The first follows the immoral path, and the second follows the respectable path.
+- (d) Both follow the immoral path, since both give up the eternal.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** apply  **Id:** 34cb071d
+**A:** Key:
+1. (c) The first takes the immoral path, and the second takes the respectable path.
 
-Byron's "love is heaven, marriage hell" belongs to the first path, whose marriages end the way one gives notice of a change of address, and whose new definition of unhappy love is to be loved when one is no longer in love. The marriage of reason is entered by people who have learnt that love is an illusion; its only solace is despair.
+The first keeps passion and leaves the future open. The second keeps marriage and bases it on what is useful. B thinks both give up the eternal. He sees merit in the immoral path as a formal protest that shows the problem clearly. He still judges the marriage of reason immoral and lacking in beauty because it rests on a calculation. (PDF pp. 343–347.)
 
-### Q: Distinguish egoistic from sympathetic melancholy in B's first letter, and say why he thinks the age retreats from marriage.
-**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 24c3627e
-**A:** Parts:
-1. Egoistic melancholy fears for itself: perhaps fate will tie me to another who is truly the ideal.
-2. Sympathetic melancholy, nobler and more painful, fears for itself for the other's sake: perhaps what the beloved finds captivating in me will be taken from me.
-3. The age neutralizes marriage out of cowardice and self-indulgence, not, as the Middle Ages did, because the unmarried life was thought more perfect.
+### Q: Two people are hesitant about marrying. One worries about missing a better match. The other worries about hurting their partner if their feelings change. Which kind of melancholy does B see in each?
+- (a) Egoistic in the first and sympathetic in the second.
+- (b) Sympathetic in the first and egoistic in the second.
+- (c) Egoistic in both, because both worries are about the future.
+- (d) Sympathetic in both, because the decision concerns a partner.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** apply  **Id:** 24c3627e
+**A:** Key:
+1. (a) The first fear is egoistic, and the second is sympathetic.
 
-Both kinds treat every day as "examination day". B calls melancholy "the defect of our time" and says marriages contracted for a period only sap the energy of married life. The trap is the second letter, where melancholy is "hysteria of the spirit", a different account.
+The distinction is whose sake the person is afraid for. The first worries about their own future. The second worries about what changing would do to their partner. B thinks either person may spend every day re-examining the decision. He attributes the age's retreat to cowardice and self-indulgence. The medieval retreat came from ranking the unmarried life higher. (PDF pp. 344–347.)
 
 ### Q: Why, for B, must conjugal love not begin with doubt, and what is the "higher concentric immediacy" that first love is taken up into?
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** cf5e12e3
@@ -3860,25 +3865,25 @@ Kraal's answer key, emailed Oct 30. A trap question: the stem names the author. 
 
 ## Exam 4 practice — Kraal's format, one fact per question (written 2026-11-17)
 
-### Q: Which view best represents B's aim in "The Aesthetic Validity of Marriage"?
-- (a) To show that duty must replace love once first love fades.
-- (b) To show that marriage is aesthetic, and that the aesthetic can be sustained in it against life's obstacles.
-- (c) To show that romantic love is an illusion and that the marriage of reason is the sensible compromise.
-- (d) None of these options.
+### Q: Which pair of questions captures B's two tasks in "The Aesthetic Validity of Marriage"?
+- (a) What makes marriage beautiful, and how can that beauty survive life's difficulties?
+- (b) What makes first love beautiful, and when should the couple set it aside for duty?
+- (c) Why is marriage an ethical duty, and how can the Church enforce it?
+- (d) Why does first love fade, and how can a marriage of reason fill its place?
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** fe7e6215
 **A:** Key:
-1. (b): B's two-fold task is to show the aesthetic significance of marriage and how the aesthetic can be sustained in it over time.
+1. (a) Show marriage's aesthetic significance and how it can be sustained through life's difficulties.
 
-(a) is the opposite of B's view that duty is love's friend. (c) is the respectable path of the reflective age, which B calls as immoral as it is unaesthetic.
+The first task concerns the beauty of marriage itself. The second concerns how the spouses keep that beauty through time. Duty and the vow matter because they help the couple live out the love they bring to marriage. (PDF pp. 336, 376–377.)
 
 ### Q: What does B say he is warning A about?
-- (a) The world, which will punish A's way of life.
-- (b) A himself, and he warns the world about A.
+- (a) A himself, and he warns the world about A.
+- (b) The world, which will punish A's way of life.
 - (c) Marriage, which A is not ready for.
 - (d) None of these options.
 **Topic:** The Aesthetic Validity of Marriage: B's task and tone  **Lec:** 18  **Type:** recall  **Id:** 94ce32b6
 **A:** Key:
-1. (b): "I am warning you not about the world but about yourself, and I am warning the world about you."
+1. (a): "I am warning you not about the world but about yourself, and I am warning the world about you."
 
 A's life will be nothing but approach-runs and a record of wasted possibilities. B also says he would warn a daughter against A.
 
@@ -3893,38 +3898,38 @@ A's life will be nothing but approach-runs and a record of wasted possibilities.
 
 (a) is the trap: B refuses the "for ever" and offers the open door instead.
 
-### Q: What does B take to distinguish love from lust?
-- (a) The presence of the sensual: love has none, lust is nothing else.
-- (b) The stamp of the eternal, which love has and lust lacks.
-- (c) The Church's blessing.
-- (d) None of these options.
-**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 2ff2d8b8
+### Q: Two people are equally drawn to their partners. One wants a life together. The other wants the encounter to feel endless while it lasts. Which feature distinguishes love from lust for B?
+- (a) Love gives an attraction a claim to endure beyond the present encounter.
+- (b) Love produces a more intense sensation during the encounter.
+- (c) Love starts with a judgment about the benefits of a shared life.
+- (d) Love begins when a public vow confirms that the feeling is mutual.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** apply  **Id:** 2ff2d8b8
 **A:** Key:
-1. (b): love has "the stamp of the eternal"; lust is "the instantaneous".
+1. (a) Love has the stamp of the eternal. It looks beyond the moment toward a shared future.
 
-(a) is wrong because love is not devoid of the sensuous and the sensuous is not lust. The true eternity in love needs a determination of the will.
+B calls lust instantaneous, even when the pleasure feels like a small eternity. Love can include the same sensual attraction, and its intention reaches beyond the encounter. Realizing that intention through time takes a decision of the will. (PDF pp. 342–343.)
 
-### Q: Which view best represents B's position on the sensual in marriage?
-- (a) Marriage must leave the sensual behind, since love is not lust.
-- (b) Marriage keeps the sensual: it is sensual yet spiritual, and "flesh is not sensuality, it is selfishness".
-- (c) The sensual is tolerated in marriage only for the sake of children.
-- (d) None of these options.
+### Q: A says Christian marriage has to give up sensual attraction because God is spirit. How does B answer him?
+- (a) Sensual pleasure can enter marriage only when it serves the purpose of having children.
+- (b) The ethical promise makes the attraction unnecessary once the couple is married.
+- (c) The lovers should keep their sensual life apart from the religious part of marriage.
+- (d) Sensual attraction can belong to Christian marriage, and B understands flesh as selfishness.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** d24503ce
 **A:** Key:
-1. (b): first love is sensual but not simply sensual, and marriage keeps the sensual in a deeper opposition to the spiritual.
+1. (d) Christian marriage can include innocent sensuality. B treats flesh as selfishness.
 
-B does rank the spiritual higher: the higher the heaven over the marriage bed, the more aesthetic the marriage. (c) is one of the "whys" he rejects.
+The couple already has sensual love, which the vow and thanks to God can take up into an ethical and religious life. B uses flesh for a selfish attitude that can also appear in spiritual life. (PDF pp. 354–356, 361.)
 
-### Q: What does B take to be the substance of marriage?
-- (a) Duty.
-- (b) The vow exacted by the Church.
-- (c) Love, the being in love.
-- (d) None of these options.
-**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 97f400e7
+### Q: Two people freely promise to stay married in the hope that they will fall in love after the wedding. What does B think they have yet to bring to the marriage itself?
+- (a) A legal or religious form for their promise.
+- (b) A purpose they intend to carry out together.
+- (c) A willingness to remain together in the future.
+- (d) Being in love with each other at the time they marry.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** apply  **Id:** 97f400e7
 **A:** Key:
-1. (c): marriage presupposes love "as something present, not past"; without it a shared life is sensual satisfaction or a partnership.
+1. (d) Being in love is the substance of marriage, and B expects it to be present when the couple marries.
 
-The Church "is not a match-maker" and takes the couple's love for granted. Duty and the vow give the love its law of motion; they are not its substance.
+B compares expecting the wedding to create love to putting two doves in a cage. The Church asks for a vow because it already takes the love for granted. (PDF pp. 348–349, 376.)
 
 ### Q: Whom does B call the traitors of marriage?
 - (a) The seducers.
@@ -3937,38 +3942,38 @@ The Church "is not a match-maker" and takes the couple's love for granted. Duty 
 
 If they were right, love would belong to the engagement and no one should marry. In the second letter B says the same of cowardly husbands: marriage is not harmed by seducers.
 
-### Q: How does B regard the saying "one loves only once"?
-- (a) He rejects it: earthly love is preferential and so loves several in turn.
-- (b) He accepts it: the aesthetic, the ethical and the religious all say it, and marriage makes it real.
-- (c) He accepts it, and concludes that one should never marry, since marriage ends love.
-- (d) None of these options.
+### Q: What does B think marriage does with the saying "one loves only once"?
+- (a) It makes past love a memory while the spouses move on to a different kind of relationship.
+- (b) It guarantees that they will always feel the same intensity as when they met.
+- (c) It makes the claim something the couple can live out by keeping their first love through time.
+- (d) It gives each new attraction the status of a first love if the feeling is strong enough.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** aad4dd30
 **A:** Key:
-1. (b): all three spheres say it, and the Church looks with suspicion on a second marriage.
+1. (c) Marriage puts the claim into practice by giving the couple a way to sustain first love.
 
-Preferential love begins by loving several and ends in loving one, which is why (a) is wrong. The saying B refuses is "one loves only once, one marries twice, three times".
+B says the aesthetic, the ethical and the religious agree on the claim. He points to the Church's suspicion of second marriages. The idea concerns the continuity of love, which can be renewed through changing circumstances. (PDF pp. 359–360.)
 
-### Q: Why does B say the age has retreated from marriage?
-- (a) Because, as in the Middle Ages, the unmarried life is thought more perfect.
-- (b) Out of cowardice and self-indulgence: the melancholy that treats every day as examination day.
-- (c) Because money has replaced the cruel fathers of the old romances.
-- (d) None of these options.
+### Q: Why, according to B, does the modern reflective age retreat from committing to marriage?
+- (a) It ranks the unmarried life as more perfect, as B says the Middle Ages did.
+- (b) It faces external obstacles that make marriage impossible, such as parents and money.
+- (c) It keeps reconsidering whether to commit, which B traces to cowardice and self-indulgence.
+- (d) It makes each person prove that their decision to marry is based on a practical benefit.
 **Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** 79e4d678
 **A:** Key:
-1. (b): egoistic and sympathetic melancholy, "the defect of our time".
+1. (c) B blames cowardice and self-indulgence, expressed in the melancholy that keeps reopening the decision.
 
-(a) is the medieval reason B contrasts with the age's. (c) is B's joke about modern romances, with a rich uncle dying in the fifth act, not the age's reason.
+The person who fears for their own sake and the person who fears for the other's sake can both make every day another examination. B gives a separate explanation of the medieval preference for remaining unmarried. (PDF pp. 344–347.)
 
-### Q: Which view best represents B's position on the marriage of convenience, "the marriage of reason"?
-- (a) It is the respectable compromise once first love has been seen through.
-- (b) It is as immoral as it is unaesthetic, because a calculation is always temporal and lacks the eternal.
-- (c) It is unaesthetic but moral, since it keeps the couple faithful.
-- (d) None of these options.
-**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** recall  **Id:** f80808ba
+### Q: A couple marries because their lives fit together on paper. They have given up on romantic love and hope a sensible arrangement is enough. Why does B still reject their marriage of reason?
+- (a) He thinks rational plans can succeed only after the couple has children.
+- (b) He thinks their real aim is to enjoy passion until they can leave the arrangement.
+- (c) He thinks their decision proves that an unmarried life is more perfect.
+- (d) He thinks a calculation rests on temporary circumstances and loses love's claim to the eternal.
+**Topic:** The Aesthetic Validity of Marriage: first love and the reflective age  **Lec:** 18  **Type:** apply  **Id:** f80808ba
 **A:** Key:
-1. (b): the respectable path is a capitulation to life with despair as its only solace.
+1. (d) A calculated arrangement rests on temporary conditions and gives up love's claim to endure.
 
-The other path of the reflective age, the immoral one, keeps the eternal instant of the embrace and marries for a period; B calls it absolutely immoral but a step nearer the goal as a protest.
+A stable household may be a benefit. The marriage of reason makes that kind of benefit its foundation, which is why B finds the outwardly respectable path both immoral and lacking in beauty. (PDF pp. 346–347.)
 
 ### Q: Which view best represents B's position on why one should marry?
 - (a) To form one's character, since marriage is a school for character.
@@ -3982,26 +3987,26 @@ The other path of the reflective age, the immoral one, keeps the eternal instant
 (a), (b) and (c) are the three reputable whys B examines and rejects as one-sided, "as ridiculous as they are anaesthetic and irreligious". The official at the tea-table gave (a).
 
 ### Q: How does B regard A's word "habit" for the monotony of marriage?
-- (a) He concedes that marriage becomes habit and asks A to bear it as a duty.
-- (b) He says "habit" is used properly only of what is bad, so of the good one cannot speak of habit; what A calls habit is the historical side of marriage.
+- (a) He says "habit" is used properly only of what is bad, so of the good one cannot speak of habit; what A calls habit is the historical side of marriage.
+- (b) He concedes that marriage becomes habit and asks A to bear it as a duty.
 - (c) He says habit is a blessing, since it frees the couple from passion.
 - (d) None of these options.
 **Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 7dd77499
 **A:** Key:
-1. (b): habit designates something unfree, and monotony can be the expression of something beautiful, like an even tempo in music.
+1. (a): habit designates something unfree, and monotony can be the expression of something beautiful, like an even tempo in music.
 
-(a) fails because for B "despair can never be a task; it is a convenience": even under monotony the task is to preserve love.
+(b) fails because for B "despair can never be a task; it is a convenience": even under monotony the task is to preserve love.
 
-### Q: Why does B think the husband, not the knight who waits fifteen years, triumphs over time?
-- (a) Because the husband's reward comes sooner.
-- (b) Because the knight has killed time, while the husband has not killed time but saved and preserved it in eternity.
-- (c) Because the knight's fidelity is only external, while the husband's is a feeling.
-- (d) None of these options.
-**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** f5dd0380
+### Q: A knight waits fifteen years to be with his beloved. A husband spends fifteen years being faithful while living with his beloved. Why does B say the husband preserves time?
+- (a) He spends less time waiting for his beloved, so he reaches the reward sooner.
+- (b) He keeps the memory of the wedding vivid enough to take the place of the intervening years.
+- (c) His years contain more dramatic events, so a poet has more moments to choose from.
+- (d) He lives fidelity during those years, so what he acquires through them becomes part of the love.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** apply  **Id:** f5dd0380
 **A:** Key:
-1. (b): the husband is faithful while possessing and constantly acquires the fidelity he has, against "that most dangerous enemy which is time".
+1. (d) The years become part of the relationship because he lives and acquires fidelity through them.
 
-Poetry can concentrate the knight's fifteen years into the moment of reward; the husband's daily fidelity cannot be shown in a moment, only lived.
+The knight's years are a wait for the decisive moment. The husband's fidelity takes shape across the years themselves. That is B's contrast between killing time and preserving it in eternity. (PDF pp. 402–404.)
 
 ### Q: What does B take to be the inward condition of the aesthetic in marriage?
 - (a) Secretiveness, which keeps the enigma alive.
@@ -4014,16 +4019,16 @@ Poetry can concentrate the knight's fifteen years into the moment of reward; the
 
 (a) is A's view: "you fear that when the enigma has gone love will cease, while I believe that only when it has gone does love begin". (c) is A's castle in the air.
 
-### Q: Which view best represents B's position on duty in relation to love?
-- (a) Duty is love's enemy, and love must defeat it.
-- (b) Duty replaces love when first love fades.
-- (c) Duty is love's friend: "duty here is just one thing, truly to love".
-- (d) None of these options.
-**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** recall  **Id:** 57912a29
+### Q: Two people have promised to love each other. When they are frustrated with each other, one listens honestly because the relationship matters. How would B understand the role of duty here?
+- (a) The promise gives them a way to act on and sustain the love they already have.
+- (b) The promise takes the place of their love until their feelings happen to return.
+- (c) The promise interferes with love whenever keeping it requires an effort.
+- (d) The promise matters chiefly because an outside authority can enforce it.
+**Topic:** The Aesthetic Validity of Marriage: marriage's history, habit and duty  **Lec:** 18  **Type:** apply  **Id:** 57912a29
 **A:** Key:
-1. (c): "You regard duty as the enemy of love, I regard it as its friend."
+1. (a) Duty supports the love by giving the couple a way to live out their promise.
 
-The trap for A is (a): if duty is love's enemy and love cannot defeat it, love is not the true victor. "Duty makes my love into the true, temperate climate."
+B says the duty is truly to love. The commitment can guide what the partners do when loving takes effort. If duty always appeared as an enemy of love, a lasting relationship would eventually bring love up against something it had to defeat. (PDF pp. 408–410.)
 
 ### Q: What does B take possession to be, against A's conquering?
 - (a) A weaker form of conquering, fit for those who cannot conquer.
@@ -4036,27 +4041,27 @@ The trap for A is (a): if duty is love's enemy and love cannot defeat it, love i
 
 A calls himself "a conqueror who cannot possess". The religious element in marriage dethrones the conqueror and lets the possessor come into view.
 
-### Q: According to Kraal, why does marriage represent the ethical?
-- (a) Because it is a contract recognized by the state.
-- (b) Because it represents promise keeping: the vow the Church exacts.
-- (c) Because it produces children, who continue the race.
-- (d) None of these options.
+### Q: Which part of marriage does Kraal point to when he says it represents the ethical in B's argument?
+- (a) The couple makes a vow and undertakes to keep it throughout their shared life.
+- (b) The couple qualifies for the legal rights of a recognized household.
+- (c) The couple falls in love immediately and feels drawn together.
+- (d) The couple receives its love as a gift and thanks God for it.
 **Topic:** The Aesthetic Validity of Marriage: the ethical as the more aesthetic  **Lec:** 19  **Type:** recall  **Id:** 7f9a301f
 **A:** Key:
-1. (b): "promise keeping" is Kraal's phrase for B's vow, intention and duty.
+1. (a) Promise keeping. The vow expresses the intention that the couple takes responsibility for living out.
 
-(a) is Kant's contract view, which Hegel and B both leave behind. (c) is one of the rejected whys.
+The attraction illustrates first love's aesthetic side. Thanking God illustrates its religious side. Kraal calls the responsibility to keep the vow the ethical side. (PDF pp. 353, 376.)
 
-### Q: What does B say his either/or separates in the first instance?
-- (a) Good and evil.
-- (b) Marriage and the single life.
-- (c) Not good and evil, but the choice whereby one chooses good and evil or excludes them.
-- (d) None of these options.
-**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** b28e2890
+### Q: A is deciding whether good and evil should guide how he lives. Which choice in "Equilibrium" is he facing?
+- (a) The choice between good and evil in a particular action.
+- (b) B's first either/or, the choice to live ethically in the first place.
+- (c) An aesthetic choice between two equally interesting ways to spend his time.
+- (d) The choice between the first letter's respectable path and immoral path.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** apply  **Id:** b28e2890
 **A:** Key:
-1. (c): "Is it good and evil? No, I simply want to bring you to the point where that choice truly acquires meaning for you."
+1. (b) The first either/or is the choice to will, which brings the categories of good and evil into his life.
 
-Hannay p. 480. The options his either/or sets are living aesthetically or living ethically, and the aesthetic is not evil but indifference.
+Choosing whether to live ethically comes first. Once A takes that step, he can ask whether a particular action is good or evil. B calls that latter choice the absolute either/or. (PDF pp. 423–424, 428.)
 
 ### Q: What does B call "the only absolute either/or there is"?
 - (a) The choice between the aesthetic and the ethical.
@@ -4070,15 +4075,15 @@ Hannay p. 480. The options his either/or sets are living aesthetically or living
 Keep the two apart: B's own either/or brings A to the point where good and evil become the options (the previous question); once one has chosen, the choice between them is the only absolute either/or.
 
 ### Q: Which view best represents B's position on philosophy's mediation?
-- (a) Mediation is valid everywhere, since the rational is actual.
-- (b) Mediation is valid in logic, nature and history, where necessity rules, but not for freedom and the future, where one opposite excludes the other.
+- (a) Mediation is valid in logic, nature and history, where necessity rules, but not for freedom and the future, where one opposite excludes the other.
+- (b) Mediation is valid everywhere, since the rational is actual.
 - (c) Mediation is a confusion with no valid use.
 - (d) None of these options.
 **Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 56b8367d
 **A:** Key:
-1. (b): "As truly as there is a future, just as truly is there an either/or"; exclusion is the opposite of mediation.
+1. (a): "As truly as there is a future, just as truly is there an either/or"; exclusion is the opposite of mediation.
 
-(a) is Hegel's position as Kraal drew it. (c) overshoots: B grants the philosopher relative mediation for the past.
+(b) is Hegel's position as Kraal drew it. (c) overshoots: B grants the philosopher relative mediation for the past.
 
 ### Q: Which view best represents B's position on Hegel's system?
 - (a) He accepts the whole system, including its mediation of ethical oppositions.
@@ -4102,16 +4107,16 @@ Keep the two apart: B's own either/or brings A to the point where good and evil 
 
 (a) and (b) are the two misreadings B rules out in the same passage.
 
-### Q: What does B take "the good is by virtue of my willing it" to show?
-- (a) That good and evil are subjective.
-- (b) That the good is whatever society recognizes.
-- (c) That good and evil have absolute validity, posited by freedom rather than demonstrated by thought.
-- (d) None of these options.
-**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** recall  **Id:** 4f30af56
+### Q: A reader takes B's claim that the good exists through his willing it to mean that each person gets to decide what counts as good. How would B respond?
+- (a) Good and evil have absolute validity. Willing is how a person enters into that distinction.
+- (b) Good and evil are valid only for the individual who has willed them.
+- (c) Good and evil are conventional, so society ultimately decides what they mean.
+- (d) Good and evil arise through philosophical proof, which leaves the individual no choice.
+**Topic:** Equilibrium: Hegel's system and the choice of good and evil  **Lec:** 22  **Type:** apply  **Id:** 4f30af56
 **A:** Key:
-1. (c): it is "in no way to belittle the categories of good and evil or to reduce them to merely subjective determinations. On the contrary, it is to assert the absolute validity of these categories."
+1. (a) Willing brings the distinction into one's life, and B claims absolute validity for the categories themselves.
 
-The contrast is the absolute, which philosophy says "is by virtue of my thinking it" and which is therefore necessary; the good is by willing, the expression of freedom.
+B's point is that entering the ethical involves freedom. A preference cannot turn evil into good. When Kraal discusses the possibility of intuiting the ethical, his reply is that a person would still have to choose to trust and act on the insight. (PDF pp. 456–457.)
 
 ### Q: What does B take the aesthetic to be, in relation to good and evil?
 - (a) Evil.
@@ -4168,27 +4173,27 @@ Someone who chooses the ethical chooses the good, but the good there is wholly a
 
 (c) is A's favourite life-view, which B places at the transition between the aesthetic and the ethical and calls despair too.
 
-### Q: Why does B think every aesthetic life-view is despair?
-- (a) Because pleasure always ends in boredom.
-- (b) Because it is built on what may or may not be, so the person who despairs when it fails was in despair before without knowing it.
-- (c) Because aesthetes are melancholy by nature.
-- (d) None of these options.
-**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 8a212efd
+### Q: A musician builds their sense of life's worth entirely on being able to perform. An injury makes that impossible. Why does B say the despair was there even before the injury?
+- (a) Being absorbed in music was already an unconscious feeling of sadness.
+- (b) The musician knew exactly what would happen and kept postponing a response.
+- (c) Every pleasure leads to boredom even if the person remains able to enjoy it.
+- (d) The ability to perform was always a condition that could be lost, and their life already depended on it.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** apply  **Id:** 8a212efd
 **A:** Key:
-1. (b): the transitory was transitory all along, so the difference between the one who knows and the one who does not is accidental.
+1. (d) The dependency existed all along. Losing the ability made it visible.
 
-(a) is A's argument in Crop Rotation, not B's. The ethical builds life on what has being as its essential property.
+B imagines successful and unsuccessful versions of an aesthetic life. The condition is transitory in both versions. The injury makes the dependence clear, which is why B can call the earlier life despair even when it felt happy. (PDF pp. 436–438.)
 
-### Q: What does B take melancholy to be in "Equilibrium"?
-- (a) Sorrow over a definite loss.
-- (b) A bodily illness for physicians to treat.
-- (c) Hysteria of the spirit: immediacy has ripened and the spirit's demand for a higher form is pressed back; it is the sin of not willing deeply.
-- (d) None of these options.
-**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 276fcc78
+### Q: In "Equilibrium", someone feels a need to live more seriously and keeps distracting themselves without knowing what weighs on them. How would B describe this?
+- (a) Melancholy as hysteria of the spirit, because the person holds back from a deeper way of living.
+- (b) Sorrow, because the person can point to a particular thing they have lost.
+- (c) Sympathetic melancholy, because they are mainly afraid of hurting a person they love.
+- (d) Repentance, because they have already accepted responsibility for their life.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** apply  **Id:** 276fcc78
 **A:** Key:
-1. (c): the griever knows why he grieves, the melancholic can only say "I don't know what it is"; only the spirit can cure it.
+1. (a) This is melancholy as hysteria of the spirit, where the demand for a higher form of life is held back.
 
-The trap is the first letter, where melancholy was the age's fear of committing, egoistic or sympathetic. This is a different account.
+B distinguishes the vague pressure here from sorrow over a specific loss. The first letter uses sympathetic melancholy for the fear of committing out of concern for the other person. (PDF pp. 344–345, 434–436.)
 
 ### Q: What is B's one answer to A's question "What then am I to do?"
 - (a) Get married.
@@ -4201,16 +4206,16 @@ The trap is the first letter, where melancholy was the age's fear of committing,
 
 (a) and (b) are the two pieces of ordinary advice B rejects first, because a distraction from melancholy is a kind of falsehood and the melancholy would erupt again.
 
-### Q: What does B take the self to be that is chosen in the absolute choice?
-- (a) The self in its immediacy, this contingent individual with his talents.
-- (b) A new self created from nothing.
-- (c) Himself in his eternal validity: the most abstract and the most concrete thing of all, freedom.
-- (d) None of these options.
-**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** d2aedbfd
+### Q: Someone takes B's advice to choose themselves and thinks it means inventing a new personality. What self does B say they actually choose?
+- (a) The sum of their strongest talents and most persistent inclinations.
+- (b) Their actual self in its eternal validity, which B calls freedom.
+- (c) An ideal self they could adopt if they left their history behind.
+- (d) The public role that society finds most suitable for them.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** apply  **Id:** d2aedbfd
 **A:** Key:
-1. (c): "I choose the absolute which chooses me, I posit the absolute which posits me", and the self is freedom.
+1. (b) They choose themselves in their eternal validity, as a free person responsible for their actual life.
 
-(b) fails on "I do not create myself, I choose myself". The chosen self is infinitely concrete yet absolutely different from the former self.
+B's formula is about choosing the self one already has. The choice brings into being a way of living that life. He calls freedom abstract when stated by itself and concrete because it belongs to this particular person. (PDF pp. 449–451.)
 
 ### Q: How does B regard repentance?
 - (a) As a mediation between good and evil.
@@ -4219,18 +4224,20 @@ The trap is the first letter, where melancholy was the age's fear of committing,
 - (d) None of these options.
 **Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** 285938e5
 **A:** Key:
-1. (c): the chooser repents himself back into himself, into the family, into the race, until he finds himself in God.
+1. (c): repentance expresses choosing oneself and is the one expression in language of love of God.
+
+B says the person repents into their own life, their family and the human race until they find themselves in God.
 
 (a) is the reading B blocks: repentance is no mediation, it consumes what it would mediate. The pious Jew could not repent the fathers' sins because he could not choose himself absolutely.
 
 ### Q: What does B take to be the true point of departure for finding the absolute?
-- (a) Doubt, the philosophers' method.
-- (b) Despair, chosen in freedom by the whole personality.
+- (a) Despair, chosen in freedom by the whole personality.
+- (b) Doubt, the philosophers' method.
 - (c) Faith, which needs no choice.
 - (d) None of these options.
 **Topic:** Equilibrium: despair and choosing oneself  **Lec:** reading  **Type:** recall  **Id:** dc047bfe
 **A:** Key:
-1. (b): "Doubt is a despair of thought, despair is a doubt of the personality"; one can doubt without choosing to, but not despair.
+1. (a): "Doubt is a despair of thought, despair is a doubt of the personality"; one can doubt without choosing to, but not despair.
 
 Doubt needs talent and lies in difference; despair lies in the absolute, so the lowliest person can despair.
 
@@ -4267,16 +4274,16 @@ B's three personal objections are importunity toward God, softness, and a deceit
 
 Despair is therefore no break but a transfiguration: "Everything returns, but transfigured."
 
-### Q: What does the person who lives ethically see everywhere, according to B?
-- (a) Possibilities.
-- (b) Tasks.
-- (c) Duties imposed from outside.
-- (d) None of these options.
-**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** e675109c
+### Q: A person finds that their job is less exciting than they imagined. Which response shows the ethical person's sense of a task?
+- (a) Ask what the work and the people involved now require, and decide how to take responsibility for it.
+- (b) Keep comparing possible jobs until one feels absorbing enough to settle the issue.
+- (c) Treat the job as a temporary way to pass time until a better mood arrives.
+- (d) Obey every instruction mechanically because responsibility belongs entirely to whoever gave it.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** apply  **Id:** e675109c
 **A:** Key:
-1. (b): "the person who lives aesthetically sees only possibilities everywhere; the person who lives ethically sees tasks everywhere".
+1. (a) They take their real situation as a task and decide how to take responsibility for it.
 
-(c) is the external relation to duty that B rejects. The ethical individual chooses himself concretely as this definite individual, and his concretion is his task.
+For B the ethical person starts with the concrete life they have. The job becomes a place where they can act. The aesthete sees open possibilities and looks for a situation that will provide the experience they want. (PDF pp. 472–475.)
 
 ### Q: Which view best represents B's position on duty?
 - (a) Duty is a mass of particular propositions to be fulfilled, which is why the ethical life is tedious.
@@ -4289,16 +4296,16 @@ Despair is therefore no break but a transfiguration: "Everything returns, but tr
 
 (a) is the formula "living for the fulfilment of life's duties" that B rejects. "I can perform duties without doing my duty, and I can do my duty without performing duties."
 
-### Q: What does the gambler's cure, "Not just now; in an hour's time", show for B?
-- (a) That mastering desire means abstaining.
-- (b) That mastering desire means determining the instant, the hour being the continuity that saves him.
-- (c) That the ethical person has no desires.
-- (d) None of these options.
-**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** a57d935b
+### Q: B’s gambler can tell himself to wait an hour when he feels the urge to gamble. What does the delay show?
+- (a) He can remove the conditions that ever make gambling tempting.
+- (b) He can follow the feeling more freely after giving it time to grow.
+- (c) He can keep a direction for his life even while the mood is urging him to act.
+- (d) He can replace the desire with a better sensation and continue following whichever is strongest.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** apply  **Id:** a57d935b
 **A:** Key:
-1. (b): the ethical person has continuity, which is master over mood; the aesthete's centre is at the periphery.
+1. (c) The hour creates continuity. The urge is present and he can still decide what he will do.
 
-The ethical person's total mood is equability, which is acquired, never had by nature.
+B calls this determining the instant. The delay is an act of freedom in the presence of desire. It shows why continuity, a direction lasting through moods, can govern the moment. (PDF pp. 459–460.)
 
 ### Q: What does B make of "it is every man's duty to work in order to live"?
 - (a) Work is a necessary evil that the talented should minimize.
@@ -4311,16 +4318,16 @@ The ethical person's total mood is equability, which is acquired, never had by n
 
 The aesthete's answer was that money is the absolute condition of life, three thousand dollars a year single and six thousand to marry.
 
-### Q: What does B mean by "essentially everyone accomplishes as much as anyone else"?
-- (a) That talents are equal.
-- (b) That "accomplish" names a relation between my action and something outside me over which I have no authority, so each can only complete his job, and what he accomplishes is his good fortune.
-- (c) That history remembers everyone equally.
-- (d) None of these options.
-**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** recall  **Id:** 93d64103
+### Q: Two people do everything their jobs ask of them. One person’s work has much wider effects. How can B still say they essentially accomplish as much as each other?
+- (a) The two must have equal talent if they both performed their duties.
+- (b) The job with the greater effects must have required less effort.
+- (c) Each can fully do their work. What results from it also depends on things they cannot control.
+- (d) The wider effects are irrelevant to the word accomplishment, which means completing a checklist.
+**Topic:** Equilibrium: the ethical individual, duty, calling and work  **Lec:** reading  **Type:** apply  **Id:** 93d64103
 **A:** Key:
-1. (b): everyone has a vocation, and the vocation makes the universal transparent where talent is only a more-or-less.
+1. (c) Each can do their work fully. How much it accomplishes also depends on circumstances outside their control.
 
-A's joke was to study the calculus to work out what part of the whole a junior Admiralty clerk accomplished.
+B distinguishes what is in a worker's power from the wider result, which is partly good fortune. His beech tree grows its crown whether anyone comes to sit in the shade. (PDF pp. 495–496.)
 
 ### Q: How does the hero rightly understand "it is every man's duty to marry"?
 - (a) That not marrying is a sin.
@@ -4329,7 +4336,7 @@ A's joke was to study the calculus to work out what part of the whole a junior A
 - (d) None of these options.
 **Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** cdc0358a
 **A:** Key:
-1. (c): choosing for him would need all his aesthetic characteristics and would make nonsense of the ethical's own theory.
+1. (c): someone who marries realizes the universal. Ethics states the general duty, and the individual chooses whom to marry.
 
 (b) is the advice of the man the hero respects; marriage abolishes no difference but makes the differences tasks, since "the relationship is the absolute".
 
@@ -4340,7 +4347,7 @@ A's joke was to study the calculus to work out what part of the whole a junior A
 - (d) None of these options.
 **Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** e8b063e4
 **A:** Key:
-1. (b): she blew the diacritic away, because it was a grain of snuff.
+1. (b): she clarifies finiteness by bringing the scholar back to ordinary life. The dot that absorbed him was a grain of snuff she could blow away.
 
 B concludes that she is the stronger, which is why Scripture has the man leave father and mother. This is B's view of 1843, not Kraal's.
 
@@ -4367,12 +4374,12 @@ B concludes that she is the stronger, which is why Scripture has the man leave f
 If a man is not revealed, the revelation takes the form of punishment. The letter opened on the same thought: he who cannot reveal himself cannot love.
 
 ### Q: What does B mean by "the truly extraordinary man is the truly ordinary man"?
-- (a) That the uncommon man stands outside the universal.
-- (b) That the more of the universally human an individual realizes in his life, the more extraordinary he is.
+- (a) That the more of the universally human an individual realizes in his life, the more extraordinary he is.
+- (b) That the uncommon man stands outside the universal.
 - (c) That the extraordinary should enter the monastery.
 - (d) None of these options.
 **Topic:** Equilibrium: marriage, friendship and the uncommon man  **Lec:** reading  **Type:** recall  **Id:** c7c12597
 **A:** Key:
-1. (b): the less of the universal a man can assume, the less perfect he is, uncommon only in a bad sense.
+1. (a): the less of the universal a man can assume, the less perfect he is, uncommon only in a bad sense.
 
 The man who finds he cannot realize some part of the universal stands outside it on that point as an exception, with an explanation, and bears witness to the universal by his sorrow.

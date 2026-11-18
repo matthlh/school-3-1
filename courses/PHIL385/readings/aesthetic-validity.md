@@ -18,18 +18,31 @@ The essay is on PDF pp. 334–414 of Hannay’s abridged Penguin translation. It
 
 ## First love and the reflective age
 
-### What romantic love promises (Hannay around pp. 393–397, PDF pp. 342–346)
+Judge William, or B, asks what happens after two people fall in love and the first rush settles.
 
-- Romantic love is **immediate**. The lovers experience it directly, sometimes at first sight, before they have weighed any reasons. B describes it in terms of natural necessity, beauty and the **stamp of the eternal**. The lovers feel drawn to each other and understand their love as something that should last.
-- For B, this claim to last is what distinguishes love from lust. Sensual pleasure can make an instant feel like eternity. Carrying love through time takes a decision of the will.
-- Old romances get their drama from obstacles outside the couple, such as a cruel father. A newer plot might solve the problem of money with a rich uncle's death in the fifth act. Both stories end with the wedding. B wants to know what the couple does once they can actually live together.
+### What romantic love promises (PDF pp. 342–343)
 
-### How the reflective age responds
+- Imagine two people meet and fall for each other. B calls their love **immediate** because the feeling comes before they sit down to weigh any reasons. They find beauty in each other and feel drawn together. B calls the pull of that attraction **natural necessity**.
+- In the moment, each thinks, “I want to be with you for good.” That sense that the love should last is the **stamp of the eternal**. An intense moment of desire can feel endless too. B calls lust **instantaneous** because its aim is satisfaction in that moment. Love reaches into a future together.
+- The feeling gives them a future they want. Living it out takes a **decision of the will**. They have to decide what to do with the love when time and circumstances put it under pressure.
 
-- The **immoral path** keeps passion and gives up marriage. Byron's picture of love as heaven and marriage as hell is B's example. When passion fades, being loved by someone you no longer love becomes the new form of unhappy love. A marriage that either person can cancel by giving notice follows the same logic.
-- The **respectable path** keeps marriage and gives up romantic love. In a **marriage of reason**, or marriage of convenience, the couple calculates what arrangement will work. For B, both paths lose love's claim to the eternal. One trusts a passing intensity, and the other trusts circumstances that can change.
-- B calls one reason for avoiding commitment **melancholy**. **Egoistic melancholy** worries about one's own future, as when someone wonders whether fate has another partner in store. **Sympathetic melancholy** worries on the other person's behalf, as when someone fears they might let a partner down. Both turn every day into another examination of whether to commit.
-- B attributes the modern retreat from marriage to cowardice and self-indulgence. He gives a different reason for the medieval retreat. People then ranked the unmarried life as more perfect.
+### How the reflective age responds (PDF pp. 343–347)
+
+The **reflective age** is B’s name for a society that has started to question that future. Imagine the same couple asking, “What if the feeling fades?” B sees two answers.
+
+- **The immoral path.** They enjoy the passion while it lasts and stay free to leave. Byron’s picture of love as heaven and marriage as hell is B’s example. A marriage they can quit by giving notice follows the same logic. If one person stays in love after the other has lost interest, being loved can itself feel like unhappy love.
+- **The respectable path.** They marry because an arrangement makes sense, say for financial security. B calls this a **marriage of reason**, or a marriage of convenience. It sets aside love as the reason for marrying.
+- Both answers give up the future that first love imagined. One lets the relationship last as long as the passion does. The other puts its trust in practical reasons that can also change.
+
+### Why the couple might keep putting off the decision (PDF pp. 344–347)
+
+- **Egoistic melancholy** asks, “What if I commit and later wish I’d chosen someone else?” The fear is for one’s own sake.
+- **Sympathetic melancholy** asks, “What if my feelings change and I hurt them?” The fear is for the other person’s sake. B describes it as more painful and somewhat nobler.
+- Either fear can turn every day into another examination of whether to commit. B blames the modern retreat from marriage on cowardice and self-indulgence. He gives the Middle Ages a different reason. People there ranked the unmarried life as more perfect.
+
+This is why B cares that old romances end at the wedding. An angry father or a shortage of money can make it hard for the couple to get together. B wants to know how they keep loving each other once they share a life. His answer in the next section is that the vow gives them a way to act on what they meant when they first thought, “I want this to last.”
+
+[Exam 4 practice on first love](#/courses/PHIL385/02-questions.md?section=exam-4-practice&topic=the-aesthetic-validity-of-marriage-first-love-and-the-reflective-age-love-has-the-stamp-of-the-eternal-lust-does-not-the-immoral-and-the-respectable-paths-egoistic-and-sympathetic-melancholy-first-love-s-features-the-page-as-the-state-before-first-love-thanking-god-lifts-it-into-a-higher-concentricity-the-altar-objections-one-loves-only-once)
 
 ## How marriage preserves first love
 
