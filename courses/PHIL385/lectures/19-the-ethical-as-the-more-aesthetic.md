@@ -12,7 +12,7 @@ The source is a classmate's shared page covering the week of Nov 2. It was first
 
 - **Children.** Kraal compares dying alone with dying among people you love. His example shows a possible good inside a shared life. B calls children a blessing and rejects using them as the purpose for marrying. His image is a poor woman in the square holding her baby.
 - **Openness.** A imagines keeping his wife in another wing of the castle so they stay mysterious to each other. B thinks knowing a person well makes a deeper love possible. He wants **privacy with outsiders and openness between spouses**. Kraal's heading "confinement" points to the secrecy that keeps A from giving himself to another person.
-- **Cordelia.** Kraal applies B's test of the **stamp of the eternal** to *The Seducer's Diary*. Johannes loses interest once Cordelia gives him the love he was seeking. The affair is designed to end at the point that interests him most. This is Kraal's comparison across the two texts.
+- **Cordelia.** Kraal applies B's test of the **stamp of the eternal** to *The Seducer's Diary*. In the final entry, Johannes says he never wants to see Cordelia again after their night together. The affair is designed to end once he has seduced her (PDF pp. 330–331). This is Kraal's comparison across the two texts.
 
 ## The argument from love to the will
 

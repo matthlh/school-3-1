@@ -9,7 +9,7 @@ The source is a classmate's shared page first revised on Nov 13. It overlaps wit
 3. I must recognize my own freedom and exercise it by taking the good as my purpose. Other people and society must recognize that freedom too.
 4. That recognition needs institutions. A family lets a person exercise freedom as a spouse or parent. Civil society provides the laws and practices needed for work and exchange. The state gives these institutions their wider setting.
 
-- Hegel calls this **ethical life** (*Sittlichkeit*). His three parts are **family, civil society and state**. Marriage is the first form of the family and, in Hegel's words, an ethical tie (*Philosophy of Right*, §161 Addition).
+- Hegel calls this **ethical life** (*Sittlichkeit*). His three parts are **family, civil society and state**. Marriage is the first form of the family and, in Hegel's words, an ethical tie. [Hegel, *Philosophy of Right*, §161 Addition](https://www.marxists.org/reference/archive/hegel/works/pr/prfamily.htm)
 - Kant describes marriage legally as a lifelong contract for reciprocal possession of the partners' sexual attributes. Hegel starts from free consent and emphasizes the life the couple undertakes as a unity. A feeling could change tomorrow. The partners give their commitment a stable form.
 - Kraal brings in Sartre's **bad faith** as a comparison. A person can deny their freedom by treating their role or situation as though it makes every choice for them.
 

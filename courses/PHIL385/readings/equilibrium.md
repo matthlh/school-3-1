@@ -6,7 +6,7 @@
 - A tries to keep his options open. A career can interest him for months and then lose its appeal as soon as something else comes along. B thinks each new interest still leaves A depending on a mood or circumstance. B calls that dependence **despair**, even when A feels fine.
 - B asks A to face that dependence and **choose himself**. This means taking responsibility for the life he already has and deciding how to live it. A's abilities, interests and pleasures still belong to him. They now have a place in a life he chooses. That is the **equilibrium** the letter is about.
 
-This letter is on PDF pp. 415–514. The "Last Word" introducing the Jutland priest's sermon starts on PDF p. 515. Hannay's Penguin pages are approximate except for the passages marked with specific pages from lecture. Exam 4 covers both letters.
+This letter is on PDF pp. 415–514 of Hannay’s abridged Penguin translation. The "Last Word" introducing the Jutland priest's sermon starts on PDF p. 515. Hannay's Penguin pages are approximate except for the passages marked with specific pages from lecture. Exam 4 covers both letters.
 
 [Lecture 21 on Hegel and choice](../lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md) · [Lecture 22 on good and evil](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Lecture 23 on despair](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md) · [Question bank](../02-questions.md) · [Exam 4 summary](../07-exam-4-summary.md)
 
@@ -64,9 +64,9 @@ This letter is on PDF pp. 415–514. The "Last Word" introducing the Jutland pri
 - A swings between intense work and idleness. For a while a project absorbs him. Then he drops it and takes comfort in thinking that he could have continued. B thinks this lets A avoid committing to anything he might have to keep doing after the mood passes.
 - When A imagines wealth, admiration or the most beautiful person's love, he can picture enjoying each for a while. B grants A one point. Finite goods can be worth having and still fall short of what someone seeks when they want something eternal.
 
-### What B means by "Despair!" (Hannay p. 511, PDF p. 447)
+### What B means by "Despair!" (Hannay pp. 511–512, PDF pp. 445–446)
 
-- B thinks telling A to get married or take a job would give him another diversion. His one answer is **Despair!** He asks A to face the fact that another success or pleasure cannot settle how he is going to live. B presents that as an action that takes courage, a step that brings A to the crossroads. He describes the power of despair through a young man who despairs for the sake of the woman he loves and discovers what the two of them share as human beings (Hannay p. 512).
+- B thinks telling A to get married or take a job would give him another diversion. His one answer is **Despair!** He asks A to face the fact that another success or pleasure cannot supply the basis for his whole life. B presents facing this as an action that takes courage. In Kraal's reading, it brings A to the crossroads. He describes the power of despair through a young man who despairs for the sake of the woman he loves and discovers what the two of them share as human beings (Hannay p. 512).
 - B distinguishes **finite despair** from **absolute despair**. In finite despair, a person clings to one loss or tries to replace it with another finite good. In absolute despair, a person gives up treating any of these goods as the final basis for their life and takes responsibility for themselves as a whole. B calls this absolute self-surrender.
 - B calls despair a person's salvation only when it is **willed infinitely**. Finite despair can harm the soul when a person hardens around the loss and makes a finite solution their only aim. This is the point of his discussion of gaining the whole world and suffering harm to one's soul (Hannay p. 522, PDF pp. 453–455). [Lecture 23](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
 
@@ -79,7 +79,7 @@ This letter is on PDF pp. 415–514. The "Last Word" introducing the Jutland pri
 - B calls the self abstract because he can speak of freedom apart from any particular trait. He also calls it concrete because the freedom belongs to this actual person, with these abilities, relationships and this past. The choice brings into being a way of living a life the person already has.
 - This is the point of the paired formula about choosing the absolute that chooses him and positing the absolute that posits him. B actively takes up a self he also receives. He calls it choosing oneself.
 
-### Why repentance belongs to the choice (PDF pp. 447–453)
+### Why repentance belongs to the choice (PDF pp. 451–452)
 
 - Choosing the whole self includes accepting responsibility for its past. B calls that movement **repentance**. A person faces guilt and the history that connects them to other people, through their family and ultimately to God.
 - B calls repentance the one expression of the love of God because God loved the person first. He describes Christian repentance as reaching even to guilt inherited from one's family. He attributes the limit he sees in earlier Jewish piety to its inability, in his account, to choose the self absolutely.

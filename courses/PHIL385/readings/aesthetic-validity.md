@@ -7,7 +7,7 @@
 - B has two tasks. First, he asks what makes marriage beautiful in the first place. Second, he asks how the couple can sustain that beauty as their lives change. His answer is that their promise gives first love a history. Keeping it gives them a chance to develop trust and fidelity over the years.
 - Kraal makes the argument this way. A lasting relationship will eventually demand patience, honesty and responsibility. If those demands were enemies of love, love would fail as soon as it faced demands it could not overcome. B thinks they help love last. On A's own standard of what makes life beautiful, the ethical commitments improve the relationship.
 
-The essay is on PDF pp. 334–414. Hannay's Penguin page numbers below are approximate unless marked otherwise. Exam 4 covers both letters. [Lecture 18](../lectures/18-aesthetic-validity-of-marriage.md) · [Lecture 19](../lectures/19-the-ethical-as-the-more-aesthetic.md) · [Question bank](../02-questions.md) · [Exam 4 summary](../07-exam-4-summary.md) · [Second letter](equilibrium.md)
+The essay is on PDF pp. 334–414 of Hannay’s abridged Penguin translation. Its print page numbers below are approximate unless marked otherwise. Exam 4 covers both letters. [Lecture 18](../lectures/18-aesthetic-validity-of-marriage.md) · [Lecture 19](../lectures/19-the-ethical-as-the-more-aesthetic.md) · [Question bank](../02-questions.md) · [Exam 4 summary](../07-exam-4-summary.md) · [Second letter](equilibrium.md)
 
 ### Why B writes to A (Hannay around p. 384, PDF pp. 334–341)
 
@@ -49,7 +49,7 @@ The essay is on PDF pp. 334–414. Hannay's Penguin page numbers below are appro
 - A objects that the ceremony makes the groom the bride's master and treats her as a sinner. B turns the charge of mastery back on A, who already seeks control through seduction. B takes the ceremony to speak about woman's lot in general and says that woman is nearer to God.
 - A thinks fidelity loses its freedom if God commands it. B replies that lovers can freely ask God to witness their promise. People already look for a witness when they swear love by the moon. Thanking God also helps the lover see the beloved as a gift and give up the pride of conquest.
 
-### Why B rejects reasons for marrying (Hannay around pp. 416–427, PDF pp. 363–372)
+### Why B rejects reasons for marrying (Hannay around pp. 416–427, PDF pp. 361–373)
 
 - B says marriage has its **teleology** within itself. Its aim is the shared life of the couple. A separate goal makes the marriage a means of getting something. That makes the value of the marriage depend on whether it can deliver the result.
 - **Building character.** At the tea table, an official says marriage is a school for character. B wishes such a husband a Xanthippe for a wife. The joke turns his stated aim against him. A difficult marriage could give him exactly the training he asked for.

@@ -9,7 +9,7 @@
 ## Why despair would lead A to choose
 
 1. A keeps turning to a different thing for satisfaction. He can imagine enjoying wealth, admiration or being loved, each for a while. Each one is **finite**, meaning it can change or end.
-2. B thinks A has already recognized that another experience will leave the same problem. This is the **crossroads**. Once A has run out of ways to put the decision off, he has to face how he will live.
+2. B thinks A has already recognized that another experience will leave the same problem. Kraal connects that recognition to B's **crossroads**. Once A has run out of ways to put the decision off, he has to face how he will live (PDF p. 423).
 3. B says **Despair!** He asks A to face that dependence deliberately. Getting married or taking a job to keep himself occupied would give A another distraction. The response B seeks is the choice of oneself.
 
 - The supposedly successful aesthete is also in despair. If a talent made life feel worthwhile, losing it would expose a dependence that already existed while the talent lasted. That is why B says every aesthetic life is despair, even before the person feels it.
@@ -19,11 +19,11 @@
 
 ## Where the passages are in Hannay
 
-- **pp. 501–502.** The condition on which the aesthetic life depends was transitory all along.
-- **pp. 511–512.** B commands despair as an action. The young man who despairs for the sake of the woman he loves illustrates its power. The forest fire is Kraal's image.
-- **pp. 513–515.** B asks A to choose despair and thereby choose himself. This is where he pairs doubt with thought and despair with the personality.
-- **p. 522.** B says despair is a person's salvation when it is willed infinitely.
-- **p. 524.** Thought reaches relative differences. The distinction between good and evil enters a person's life through choice.
+- **pp. 501–502 (PDF pp. 436–437).** The condition on which the aesthetic life depends was transitory all along.
+- **pp. 511–512 (PDF pp. 445–446).** B commands despair as an action. The young man who despairs for the sake of the woman he loves illustrates its power. The forest fire is Kraal's image.
+- **pp. 513–515 (PDF pp. 447–449).** B asks A to choose despair and thereby choose himself. This is where he pairs doubt with thought and despair with the personality.
+- **p. 522 (PDF p. 454).** B says despair is a person's salvation when it is willed infinitely.
+- **p. 524 (PDF pp. 456–457).** Thought reaches relative differences. The distinction between good and evil enters a person's life through choice.
 
 [Full reading](../readings/equilibrium.md) · [Lecture 22 on p. 524](22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Exam 4 summary](../07-exam-4-summary.md)
 
