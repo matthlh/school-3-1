@@ -1,12 +1,14 @@
 # PHIL 385 — Reading: *Either/Or*, "Equilibrium between the Aesthetic and the Ethical in the Development of Personality"
 
+## What B asks A to choose
+
 - Judge William, or B, is writing to A for the second and final time. In [the first letter](aesthetic-validity.md), he argued that a marriage gives first love a life beyond its beginning. Here he asks what it would take for A to commit to a way of life at all.
 - A tries to keep his options open. A career can interest him for months and then lose its appeal as soon as something else comes along. B thinks each new interest still leaves A depending on a mood or circumstance. B calls that dependence **despair**, even when A feels fine.
 - B asks A to face that dependence and **choose himself**. This means taking responsibility for the life he already has and deciding how to live it. A's abilities, interests and pleasures still belong to him. They now have a place in a life he chooses. That is the **equilibrium** the letter is about.
 
 This letter is on PDF pp. 415–514. The "Last Word" introducing the Jutland priest's sermon starts on PDF p. 515. Hannay's Penguin pages are approximate except for the passages marked with specific pages from lecture. Exam 4 covers both letters.
 
-[Lecture 21 on Hegel and choice](../lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md) · [Lecture 22 on good and evil](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Lecture 23 on despair](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md) · [Question bank](../02-questions.md)
+[Lecture 21 on Hegel and choice](../lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md) · [Lecture 22 on good and evil](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Lecture 23 on despair](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md) · [Question bank](../02-questions.md) · [Exam 4 summary](../07-exam-4-summary.md)
 
 ## The opening, and why choice cannot wait
 

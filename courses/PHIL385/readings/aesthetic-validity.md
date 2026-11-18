@@ -7,7 +7,7 @@
 - B has two tasks. First, he asks what makes marriage beautiful in the first place. Second, he asks how the couple can sustain that beauty as their lives change. His answer is that their promise gives first love a history. Keeping it gives them a chance to develop trust and fidelity over the years.
 - Kraal makes the argument this way. A lasting relationship will eventually demand patience, honesty and responsibility. If those demands were enemies of love, love would fail as soon as it faced demands it could not overcome. B thinks they help love last. On A's own standard of what makes life beautiful, the ethical commitments improve the relationship.
 
-The essay is on PDF pp. 334–414. Hannay's Penguin page numbers below are approximate unless marked otherwise. Exam 4 covers both letters. [Lecture 18](../lectures/18-aesthetic-validity-of-marriage.md) · [Lecture 19](../lectures/19-the-ethical-as-the-more-aesthetic.md) · [Question bank](../02-questions.md) · [Second letter](equilibrium.md)
+The essay is on PDF pp. 334–414. Hannay's Penguin page numbers below are approximate unless marked otherwise. Exam 4 covers both letters. [Lecture 18](../lectures/18-aesthetic-validity-of-marriage.md) · [Lecture 19](../lectures/19-the-ethical-as-the-more-aesthetic.md) · [Question bank](../02-questions.md) · [Exam 4 summary](../07-exam-4-summary.md) · [Second letter](equilibrium.md)
 
 ### Why B writes to A (Hannay around p. 384, PDF pp. 334–341)
 

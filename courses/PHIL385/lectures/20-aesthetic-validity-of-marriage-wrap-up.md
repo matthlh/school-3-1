@@ -1,13 +1,12 @@
-# PHIL 385 — Lec 20 (Fri Nov 6) — "The Aesthetic Validity of Marriage", end of the week
+# PHIL 385 — Lec 20 (Fri Nov 6) — Marriage week wrap-up
 
-You missed this lecture. A classmate's shared Notion page, ["The Aesthetic Validity of Marriage"](https://app.notion.com/p/The-Aesthetic-Validity-of-Marriage-40cddf27e93e807a9f9dce30fd36573f), is one cumulative page for the whole week (Nov 2, 4 and 6), and its text does not split the days.
+The shared Notion page is cumulative for Nov 2, 4 and 6, with no notes labelled separately for Friday. The available copy was read on Nov 4. [Shared Notion page](https://app.notion.com/p/The-Aesthetic-Validity-of-Marriage-40cddf27e93e807a9f9dce30fd36573f)
 
-## Where the material is
+## The argument from the week
 
-- The [lecture 18](18-aesthetic-validity-of-marriage.md) page has Monday's lecture.
-- The [lecture 19](19-the-ethical-as-the-more-aesthetic.md) page has the shared page as read on Nov 4, checked against the essay.
-- The [question bank](../02-questions.md) covers this week under its "Lec 18" and "Lec 19" sections.
+- A thinks love gets its beauty from the feelings of the beginning. B thinks the couple can keep that first love and acquire a kind of beauty that only comes from sharing a life.
+- The **vow** turns the desire to stay in love into a promise the couple can act on. Its **inner history** is the trust, patience and fidelity that grow out of acting on it.
+- The knight waits fifteen years to win the beloved. B's husband spends fifteen years with his beloved and is faithful through them. Those years become part of the relationship, which is why B says the husband **preserves time in eternity**.
+- For B, duty helps the couple live out their love. Lecture 18 gives Kraal's argument for that claim. Lecture 19 gives the examples and connects the argument to Plato.
 
-## Clarifications
-
-- The shared page was last read on Nov 4. Anything added after the Friday lecture has not been checked yet.
+[Lecture 18](18-aesthetic-validity-of-marriage.md) · [Lecture 19](19-the-ethical-as-the-more-aesthetic.md) · [Full reading](../readings/aesthetic-validity.md) · [Exam 4 summary](../07-exam-4-summary.md)

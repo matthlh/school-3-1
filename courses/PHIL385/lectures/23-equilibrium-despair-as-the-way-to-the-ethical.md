@@ -1,6 +1,31 @@
-# PHIL 385 — Lec 23 (Wed Nov 18) — "Equilibrium": the ethical is chosen, and despair is the way to it
+# PHIL 385 — Lec 23 (Wed Nov 18) — Why B tells A to despair
 
-The last lecture on B's second letter before Exam 4 (Fri Nov 20). It took two questions: whether B can survive the objection that we have a rational capacity to intuit the ethical, and what would lead someone to will the ethical at all. The [reading page](../readings/equilibrium.md) has the whole essay and the [question bank](../02-questions.md) has a "Lec 23" section.
+## What if reason can show us the ethical?
+
+- Kraal's objection is that people might be able to **intuit** the ethical, meaning see it directly through reason. If I can see what is right, what is left for me to choose?
+- Kraal's reply on B's behalf is that I still have to decide to trust that judgment and let it guide my life. Knowing what a judgment says and acting on it are two steps. The second still takes an **act of will**.
+- The margin notes give two labels for why an appeal to reason alone might fail. **Circularity** can mean that the appeal already assumes the authority of a capacity whose authority the person still has to accept. **Incommensurability** can mean that reasoning compares things on a common scale, while B treats good and evil as an absolute divide. These are readings of the margin notes in light of Hannay p. 524.
+
+## Why despair would lead A to choose
+
+1. A keeps turning to a different thing for satisfaction. He can imagine enjoying wealth, admiration or being loved, each for a while. Each one is **finite**, meaning it can change or end.
+2. B thinks A has already recognized that another experience will leave the same problem. This is the **crossroads**. Once A has run out of ways to put the decision off, he has to face how he will live.
+3. B says **Despair!** He asks A to face that dependence deliberately. Getting married or taking a job to keep himself occupied would give A another distraction. The response B seeks is the choice of oneself.
+
+- The supposedly successful aesthete is also in despair. If a talent made life feel worthwhile, losing it would expose a dependence that already existed while the talent lasted. That is why B says every aesthetic life is despair, even before the person feels it.
+- **Doubt** concerns thought. **Despair** concerns the whole person and what they are going to live for. B calls despair the starting point for finding the absolute because this question demands a choice of the whole person.
+- Your notes ask about the **contingent self** and **eternal validity**. The contingent self has the talents, interests and moods a person happens to have. Choosing oneself in one's eternal validity means taking responsibility for that actual life as a free person. A new opportunity can add to the life. B's freedom here is the ability to take the life up as one's own.
+- B calls **absolute despair** a kind of self-surrender. A person gives up treating a finite good as the basis of their whole life. A person in **finite despair** can harden around one loss or one hoped-for gain, which B says harms the soul.
+
+## Where the passages are in Hannay
+
+- **pp. 501–502.** The condition on which the aesthetic life depends was transitory all along.
+- **pp. 511–512.** B commands despair as an action. The young man who despairs for the sake of the woman he loves illustrates its power. The forest fire is Kraal's image.
+- **pp. 513–515.** B asks A to choose despair and thereby choose himself. This is where he pairs doubt with thought and despair with the personality.
+- **p. 522.** B says despair is a person's salvation when it is willed infinitely.
+- **p. 524.** Thought reaches relative differences. The distinction between good and evil enters a person's life through choice.
+
+[Full reading](../readings/equilibrium.md) · [Lecture 22 on p. 524](22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Exam 4 summary](../07-exam-4-summary.md)
 
 ## Your notes (three scanned pages, 2026-11-18)
 
@@ -58,42 +83,3 @@ B: Solution is to embrace despair, embrace his true self in its true validity.
 
 can't justify with appeal ~~to~~ circular reasoning ↖
 (circle arrow) incomenserelibty ↗
-
-## Clarifications
-
-### Q1: the objection from a rational capacity to intuit the ethical
-- The objection says: if we can see the ethical by reason, then the ethical is given to us, not chosen, so B's claim that the ethical is chosen fails.
-- Your guess was that B would call the objection a contradiction. Kraal's reply on B's behalf is different and weaker in a good way. B does not have to deny the capacity. Even if you have it, you must still decide to trust it and act on it, and that decision is an act of will. So the choice has only moved one step back, and B's claim stands.
-- This is the same move as Hannay p. 524 from Monday. Thought gives necessity, and in necessity the difference between good and evil never arises. "The good is by virtue of my willing it, and otherwise it has no existence."
-- The exam line, in Kraal's words: there is no objection, because there is still choice.
-
-### Your "not related" aside about power and freedom
-- You wrote that more power and opportunities are what give freedom, and that the rational is not the only choice. B's freedom is not a range of options. His first definition of the self one chooses is that it is "the most abstract thing of all which yet, at the same time, is the most concrete thing of all – it is freedom" (Hannay about p. 516). More opportunities add to the aesthetic self, the contingent one; they do not make the choice of oneself.
-
-### Q2: what leads someone to will the ethical, and where your page numbers land
-- B's one answer is despair. He shouts it as a married man, "not as a comfort, not as a state in which you are to remain, but as an action requiring all the soul's strength" (Hannay p. 511, PDF p. 447).
-- "The power of despair" (p. 512) is from the gifted young man who loves a girl as much as himself and despairs for her sake: "The power of despair will then consume everything until he finds himself in his eternal validity, but then he has also found her." The forest fire is Kraal's image, not B's.
-- "So choose despair" (p. 513) opens the next section: "choose despair, since despair is itself a choice, for one can doubt without choosing to, but despair one cannot without choosing to do so." What one chooses in despairing is oneself, "not as this contingent individual" but "in one's eternal validity".
-- "Despair is the doubt of personality" is half of B's formula: "Doubt is a despair of thought, despair is a doubt of the personality" (p. 513). The "true point of departure" line is his prediction that the age will learn "that the true point of departure for finding the absolute is not doubt but despair" (p. 515).
-- "Man's true salvation to despair" is later (p. 522), in the passage on gaining the whole world and suffering harm to one's soul: "it is my heartfelt conviction that it is a man's true salvation to despair." The qualification that follows matters. One must will one's despair infinitely, in an absolute sense, which "is identical with absolute self-surrender"; willed in a finite sense, despair harms the soul.
-- Your summary pages: 511 is Despair! as an action, 513 is choose despair and choose oneself, 515 is the absolute formula ("I choose the absolute which chooses me, I posit the absolute which posits me") and the point of departure, and 501–502 is the argument that every aesthetic life-view is despair, because what it builds on was transitory all along.
-
-### The crossroads
-- Your margin asks what the crossroads is. It is B's image from the start of the letter (PDF pp. 423–424), right after "Is it good and evil? No, I simply want to bring you to the point where that choice truly acquires meaning for you." His next sentence: "Only when one can get a person to stand at the crossroads in such a way that he has no expedient but to choose, does he choose what is right."
-- So despair is what pushes a person to the crossroads. It takes away every expedient, every finite way out, and leaves only the choice of oneself. That is why B commands it rather than comforting A.
-
-### "Contingent you is entertaining yourself", and the blank after "Eternal validity is"
-- The contingent you is the self of immediacy, the one A keeps amused with moods, learning and new beginnings. B says A hovers above himself in "the nothing of despair" and decorates "the palace of mental profusion" he occasionally lives in.
-- The blank can be filled from p. 513 to 516. Oneself in one's eternal validity is the self chosen absolutely: not this or that finite thing, but "myself in my eternal validity", which B then calls freedom, and which is "infinitely concrete" though it did not exist before the choice.
-
-### "Nothing finite can satisfy the soul of one who feels a need for the eternal"
-- B says this to A in the stages passage, before Despair! (Hannay about p. 503, PDF about p. 440). A answers every offer, the most beautiful girl, honour and glory, with "yes, for half a year that would be really fine". B refuses to call him insatiable and says instead that in a sense A is right: "nothing finite, even the whole world, can satisfy the soul of one who feels a need for the eternal."
-- On your page this is why embracing despair is the solution: the finite cannot satisfy, so only the choice of oneself in one's eternal validity can.
-
-### "Can't justify with appeal": circular reasoning and incommensurability
-- Your page has only the two labels and arrows, so this is a reconstruction of what Kraal was closing with; check it against the shared notes if they go up.
-- Circular: B cannot justify the ethical by appealing to reason, because trusting reason is itself the choice in question. An appeal to reason would use the very capacity that must first be chosen.
-- Incommensurable: the difference between good and evil cannot be measured by thought. B's own word is in the duty passage: if duty were external, "the difference between good and evil is incommensurate with an abstract relation" (PDF p. 483). And on p. 524 thought reaches only relative differences, never the absolute one.
-- So B gives no proof and does not need one. Good and evil are posited by the choice, and that is the "absolute validity" of the categories, not a weakness.
-
-Questions: 9 in [02-questions.md](../02-questions.md) under "Lec 23". Ledger: 1 new topic, due Nov 19. The reading page is [equilibrium.md](../readings/equilibrium.md).

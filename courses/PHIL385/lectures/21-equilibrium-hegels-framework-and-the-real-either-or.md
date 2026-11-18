@@ -1,6 +1,32 @@
-# PHIL 385 — Lec 21 (Fri Nov 13) — "Equilibrium": Hegel's framework, and the real either/or
+# PHIL 385 — Lec 21 (Fri Nov 13) — Hegel, freedom and B’s first choice
 
-You missed this lecture. This page is a classmate's shared notes (the [Notion page](https://app.notion.com/p/Equilibrium-417ddf27e93e8061a982c0ce145ef3db)) checked against the essay. The shared page is tagged Session 1 with a first revision date of Nov 13, so it is at least Friday's class. Its second half, the Hegel steps and Hannay p. 524, is also what you wrote down on Mon Nov 16, so either Kraal went over the framework again on Monday or the page gathers both days; its text does not split them. The [lecture 22 page](22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) has your own notes on the same ground, and the [reading page](../readings/equilibrium.md) has the whole essay. The [question bank](../02-questions.md) has a "Lec 21" section.
+The source is a classmate's shared page first revised on Nov 13. It overlaps with the Nov 16 lecture, and the shared text does not mark which day each point belongs to. [Shared Notion page](https://app.notion.com/p/Equilibrium-417ddf27e93e8061a982c0ce145ef3db)
+
+## How Hegel gets from freedom to marriage
+
+1. I am conscious that I can step back from a desire or a role given to me. Kraal calls this **indeterminacy**. I can also choose a particular purpose and act on it. That is **determinacy**.
+2. Hegel says what is rational is actual and what is actual is rational. Kraal's next step is that freedom is an account of what I really am, and therefore of how I ought to live.
+3. I must recognize my own freedom and exercise it by taking the good as my purpose. Other people and society must recognize that freedom too.
+4. That recognition needs institutions. A family lets a person exercise freedom as a spouse or parent. Civil society provides the laws and practices needed for work and exchange. The state gives these institutions their wider setting.
+
+- Hegel calls this **ethical life** (*Sittlichkeit*). His three parts are **family, civil society and state**. Marriage is the first form of the family and, in Hegel's words, an ethical tie (*Philosophy of Right*, §161 Addition).
+- Kant describes marriage legally as a lifelong contract for reciprocal possession of the partners' sexual attributes. Hegel starts from free consent and emphasizes the life the couple undertakes as a unity. A feeling could change tomorrow. The partners give their commitment a stable form.
+- Kraal brings in Sartre's **bad faith** as a comparison. A person can deny their freedom by treating their role or situation as though it makes every choice for them.
+
+## What B takes from Hegel
+
+- Hegel asks philosophy to explain what is necessary. He sees reason in world history and calls philosophy a science, *Wissenschaft*. The top-level parts of his *Encyclopaedia* are **Logic, Nature and Spirit**. History appears within Spirit.
+- B also gives thought a domain of necessity. His own list in the letter is **logic, nature and history**. He leaves room for explaining what a free act became as part of history. The individual's decision to act is still a matter of will. [Lecture 22](22-equilibrium-hegel-and-the-choice-of-good-and-evil.md)
+- Kraal contrasts Hegel's emphasis on objectivity with **truth is subjectivity**. That phrase is from Johannes Climacus's *Concluding Unscientific Postscript*. *Fear and Trembling*, by Johannes de Silentio, is another work used in the shared notes' comparison with Hegel.
+- Kraal's examples are Hume on beauty and the case of an open marriage. A comparison can explain how different arrangements work. For B, proving that one of them is ultimately good or evil calls for more than comparing them. Hume illustrates a limit of proof, while B makes a separate claim that good and evil have absolute validity.
+
+## What B means by “either/or”
+
+- The **first choice** is whether to live in terms of good and evil at all. B calls it the **choice to will**. Kraal raised Nietzsche's *Beyond Good and Evil* as an example of thinking in other categories.
+- Once a person lives in the ethical, good and evil become alternatives in what they do. B calls this the **absolute either/or**. He calls the aesthetic life **indifference** toward the distinction.
+- Hannay p. 486 (PDF pp. 427–428) emphasizes the reality of choosing. The first choice is absolute in the sense that the person either takes that step or leaves it untaken. It gives the choice between good and evil its force for them.
+
+[Full reading](../readings/equilibrium.md) · [Exam 4 summary](../07-exam-4-summary.md)
 
 ## Your notes (a classmate's shared Notion page "Equilibrium", read 2026-11-16; tagged Session 1, first revision date Nov 13, with no split between days in its text)
 
@@ -78,60 +104,3 @@ Humans are conscious of being free. What is real is rational and vice versa, so 
 - Should I see the world in terms of ethical categories at all, good and evil, or in terms in other categories?
   - Maybe like Neizchte, beyond good and evil. What is species progressing and destructing
 - "The real either or is seeing the world in terms of good and evil in the first place" → p486
-
-## Clarifications
-
-### What this page adds to Monday's
-
-- The shared page confirms the reconstruction on the [lecture 22 page](22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) of the two Hegel steps your page left blank: freedom is an ought that must be recognized, and I must will what is and determine myself by the good. Recognition then needs institutions.
-- New here: Hegel against Kant on marriage, the two sides of being conscious of freedom (indeterminacy and determinacy), the Sartre aside, Hume and the open marriage as Kraal's illustrations, and Kraal's gloss of Hannay p. 486 as "the real either/or", with Nietzsche as the alternative.
-- Kraal pointed to material on Hegel's *Outlines of the Philosophy of Right* uploaded on Canvas. It has not been pulled here.
-
-### Hegel's framework, as Kraal set it out
-
-- "What must be and what is necessary" is Kraal's short form of Hegel's view that philosophy comprehends what is as necessary, not what might have been otherwise. B agrees with that much (PDF p. 426).
-- The two words under it, "Spirit" and "Natura", are two of the three parts of Hegel's system in the *Encyclopaedia* (1817): Logic, Nature and Spirit. B's own list of the spheres for thought is logic, nature and history (PDF p. 426; see the lecture 22 page).
-- "Saw reason in history, as it is the unfolding of the human spirit" is Hegel's *Lectures on the Philosophy of History*: reason governs the world, and world history is the progress of the consciousness of freedom.
-- "Philosophy is science" is Hegel's word *Wissenschaft*. The Preface to the *Phenomenology of Spirit* (1807) says philosophy must become science.
-- "Truth is objectivity", against intuition, feeling and edification, is the same Preface's attack on philosophy that offers edification (*Erbauung*) and feeling instead of the concept. The *Philosophy of Right*'s preface attacks Fries's philosophy of feeling in the same way.
-- The Kierkegaard slogan set against it, "truth is subjectivity", is the title claim of a chapter in the *Concluding Unscientific Postscript* (1846, by Johannes Climacus). The shared page files it under *Fear and Trembling* (1843, by Johannes de Silentio), which attacks the system from another side, the teleological suspension of the ethical. The slogan itself is the Postscript's. If Kraal named *Fear and Trembling* in class, that is what an exam option would expect; the attribution to the Postscript is the one to carry into the final.
-
-> **Watch out.** Two anti-Hegel slogans, two pseudonyms. "Truth is subjectivity" is Johannes Climacus in the *Postscript* (1846). *Fear and Trembling* is Johannes de Silentio (1843). Both are in the first authorship (lecture 1).
-
-### Kant and Hegel on marriage
-
-- Kant's *Metaphysics of Morals* (1797) defines marriage as a contract between two persons for the lifelong reciprocal possession of each other's sexual attributes. That is the "sexual contract" in the notes.
-- Hegel calls bringing marriage under contract shameful and says marriage is in essence an ethical tie, "rightfully ethical love" (*Philosophy of Right*, §161 Addition). The shared page's phrase is Hegel's own.
-- "Love is only a feeling" is Hegel's reason: a feeling is contingent, so ethical life cannot stay in that form. Marriage gives love ethical form through the couple's free consent and their consciousness of their unity as their substantial aim.
-- The notes' "marriage helps provide a contract around it" is loose. Hegel's own line is that marriage begins from a contract, the consent, but is the contract to go beyond the standpoint of contract (§163). The ethical bond, not the contract, is the point.
-- This is the background to the lecture 19 note that some readers call B a Hegelian, and to Kraal's Hegel sentence on the lecture 22 page.
-
-### The Hegel steps, filled in
-
-- "I'm conscious of being free" has two sides on the shared page. Indeterminacy: I am conscious of not being fully determined by external factors, of having agency. Determinacy: I am conscious of being able to determine myself with regard to some content, "I want to be a good person".
-- These are the first two moments of the will in the *Philosophy of Right*, §5 and §6: the I's ability to abstract from every content, and its positing of a determinate content. §7 is their unity, the free will that wills itself. Kraal's "rational view of myself is that I am a free being" is that third moment.
-- "Only what is real is rational, and what is rational is real" is the Preface's "What is rational is actual; and what is actual is rational" (1820). Kraal's use: the rational view of me is that I am free, so the truth about me is that I am and therefore ought to be free.
-- "Sartre calls this the 'Bad Spirit'" is a slip for bad faith (*mauvaise foi*), from *Being and Nothingness* (1943): lying to oneself about one's own freedom by treating oneself as a thing fixed by circumstances or a role. Kraal's point is that denying your freedom is irrational for Hegel and self-deceiving for Sartre. The aside is Kraal's; B names neither.
-- Recognition (German *Anerkennung*) is the missing step 4 of your page: because the ethical is universal, my freedom demands recognition from myself and from society, and I must will that I am free and will what is.
-- Step 5 is determining myself by a content, the good, which actualizes me as an ethical subject. Step 6, which your page has, is that this self-actualization must be recognized by myself and by society.
-- The institutions example is Hegel's ethical life (*Sittlichkeit*): industry needs civil law and civil society; a family needs the institution of the family; both need a government. In the *Philosophy of Right* the order is family, civil society, state.
-- "Hegel would say that one must make the choice for what is good or evil out of necessity" is Kraal's contrast, not a Hegel quotation. For Hegel the good is the content the free will gives itself and the ethical is freedom made actual, which philosophy comprehends as necessary. B's reply is that for freedom, unlike for thought, the opposition has substance (PDF p. 425).
-
-### B against Hegel, on the shared page
-
-- "One can make a decision about good and evil out of will, but not out of necessity" is Hannay p. 524 (PDF pp. 456–457): the good is by virtue of my willing it, and whenever I think, my relation to the thing is one of necessity, so the difference between good and evil does not arise.
-- "You can't scientifically prove that something is good" is B's line that philosophy may be right that it cannot think an absolute contradiction, but it does not follow that none exists.
-- The Hume parallel is Kraal's. Hume's "Of the Standard of Taste" (1757) says beauty is no quality in things themselves but exists in the mind that contemplates them, so one cannot prove what is beautiful. The parallel stops there: Hume makes beauty a sentiment, while B says the categories of good and evil have "absolute validity" and are posited by freedom, not subjective.
-- The open marriage is Kraal's example, not B's. The point it makes is B's: thought cannot establish that any arrangement is good or evil, since thought yields only relative differences. B himself, having chosen, holds that every man should marry (PDF p. 497) and that openness between the spouses is the life-principle of marriage (first letter). He has the view; he denies that philosophy proves it.
-- "Author B presupposes Hegelian notion of philosophy being equivalent of knowledge and thought" is B's own framing: philosophy's domain is contemplation, and the spheres proper to thought are logic, nature and history (PDF pp. 425–426).
-- "Most important page of Either/Or is p524" is Kraal's ranking. What the page says is on the lecture 22 page and in the reading page's section "Good and evil are not for thought".
-- "The ability to make that choice that absolutizes you is freedom" is B's "this absolute choice of myself is my freedom" (PDF p. 456).
-
-### "The real either/or" and p. 486
-
-- Hannay p. 486 is PDF pp. 427–428. There B says what stands out in his either/or is the ethical, so it is not a matter of the thing chosen but of "the reality of choosing", and that the either/or is absolute in one sense because its options are choosing and not choosing, while in another sense the absolute either/or, good against evil, first appears with the choice.
-- The sentence behind Kraal's gloss is earlier, PDF p. 424 (about p. 481): "My either/or does not denote in the first instance the choice between good and evil, it denotes the choice whereby one chooses good and evil or excludes them." B adds that the question is "under what categories one wants to contemplate the entire world and would oneself live".
-- Nietzsche is Kraal's example of the other categories, from *Beyond Good and Evil* (1886): seeing the world in terms of what makes the species progress or decline rather than in terms of good and evil. B names no such alternative; his own name for the non-ethical side is the aesthetic, which "is not evil but indifference".
-- Kraal's "real either/or" matches the lecture 22 conclusion: B's either/or is the choice to will at all, not a choice between good and evil.
-
-Questions: 8 in [02-questions.md](../02-questions.md) under "Lec 21". Ledger: no new topic; the "Equilibrium: Hegel's system and the choice of good and evil" row now covers lectures 21–22.
