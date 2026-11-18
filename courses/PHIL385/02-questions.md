@@ -3674,6 +3674,83 @@ PDF pp. 507–508, Penguin about pp. 586–587. The aesthete always holds someth
 
 PDF pp. 510–514, Penguin about pp. 589–594. B calls the struggle a purgatory; the exception sees that everyone is an exception and that everyone is at the same time the universally human, and admits it would be more perfect still to take possession of the whole universal. Going into the monastery was not the error; thinking it made one uncommon was: "the gods do not sell the unusual at a bargain price." B closes by hoping one day to call A his friend in the strict sense, keeps the correspondence secret because A hates having his inner history talked about, and wishes him farewell as though they were far apart while hoping to see him as often as before.
 
+## Lec 23 — "Equilibrium": the ethical is chosen, and despair is the way to it (Wed Nov 18, logged 2026-11-18)
+
+### Q: Which view best represents B's position on how a person arrives at the ethical?
+- (a) By an objective demonstration of the ethical.
+- (b) By a rational capacity to intuit the ethical.
+- (c) By choice, an act of will, which despair brings a person to.
+- (d) None of these options.
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** recall  **Id:** fdbee37f
+**A:** Key:
+1. (c): the ethical is chosen, an act of will, and despair is what brings a person to that choice.
+
+Kraal's two board lines: there is no objective demonstration of the ethical, and the ethical is chosen. (a) is what B denies, and (b) is the objection Kraal raised, which B survives because even an intuited ethical must still be chosen and trusted.
+
+### Q: Kraal raised the objection that humans possess a rational capacity to intuit the ethical. How did he say B would reply, and why does the objection then fail?
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** apply  **Id:** 2c8b3b01
+**A:** Key:
+1. Even if you have such a capacity, you must still choose to trust it, and that decision is an act of will.
+2. The objection fails because there is still a choice: it has only moved one step back.
+
+Kraal called this a very deep point and said it would probably be on the quiz. B does not have to deny the capacity. The reply matches Hannay p. 524: thought gives necessity, and the good "is by virtue of my willing it, and otherwise it has no existence". Your own guess, that B would call the objection a contradiction, is weaker, since it would need B to deny that reason can see the ethical at all.
+
+### Q: What does B take to be the one thing that leads a person to will the ethical, and in what spirit does he recommend it?
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** recall  **Id:** 7713c533
+**A:** Key:
+1. Despair: "I have only one answer: 'Despair!'" (Hannay p. 511).
+2. As an action requiring all the soul's strength, not as a comfort and not as a state to remain in.
+
+He shouts it as a married man, not as a mocking demon, and says anyone who has not tasted the bitterness of despair has missed the meaning of life. Kraal's contrast: A avoids boredom, while B does not avoid despair but looks for ways to embrace it.
+
+### Q: Why does B say "choose despair", and what does a person choose when he despairs?
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** recall  **Id:** 53afe607
+**A:** Key:
+1. Because despair is itself a choice: one can doubt without choosing to, but one cannot despair without choosing to.
+2. In despairing one chooses oneself, not as this contingent individual but in one's eternal validity.
+
+Hannay p. 513. Kraal's gloss: choose to confront it, and courage is to look your despair in the eye. The contingent you is the self of immediacy that only entertains itself; the self chosen in its eternal validity is what B goes on to call freedom, the most abstract and the most concrete thing of all.
+
+### Q: What does B mean when he says a person must be brought "to the crossroads", and what brings him there?
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** recall  **Id:** 6fc5b95a
+**A:** Key:
+1. A person who stands at the crossroads with no expedient but to choose chooses what is right (PDF pp. 423–424).
+2. Despair brings him there, by taking away every finite way out.
+
+The image sits right after "Is it good and evil? No, I simply want to bring you to the point where that choice truly acquires meaning for you." That is why B commands despair instead of comforting A: the comfort would be one more expedient.
+
+### Q: "Nothing finite, even the whole world, can satisfy the soul of one who feels a need for the eternal." Who says this, about whom, and what is it answering?
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** recall  **Id:** ea7497f4
+**A:** Key:
+1. B says it about A.
+2. It answers A's habit of taking every offer, the most beautiful girl, honour and glory, with "yes, for half a year that would be really fine".
+
+B refuses to call A insatiable and says that in a sense A is right. In the lecture this was the reason embracing despair is the solution: since nothing finite satisfies, only the choice of oneself in one's eternal validity can.
+
+### Q: "It is a man's true salvation to despair." Where in the letter does B say this, and what qualification follows it?
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** 23  **Type:** recall  **Id:** 873ee8d3
+**A:** Key:
+1. In the passage on gaining the whole world and suffering harm to one's soul (Hannay about p. 522).
+2. One must will one's despair infinitely, in an absolute sense, which is identical with absolute self-surrender; despair willed in a finite sense harms the soul.
+
+B's pairing: "finite despair is a hardening, absolute despair an infinitization". A person suffers harm only when he hardens himself in finite despair and then chooses a finite way out.
+
+### Q: Give B's formula that pairs doubt with despair, and say what he calls the true point of departure for finding the absolute.
+**Topic:** Equilibrium: despair and choosing oneself  **Lec:** 23  **Type:** recall  **Id:** fcf2469e
+**A:** Key:
+1. "Doubt is a despair of thought, despair is a doubt of the personality" (Hannay p. 513).
+2. Despair, not doubt, is the true point of departure for finding the absolute (p. 515).
+
+B says recent philosophy begins speculation with doubt but never says how doubt differs from despair. Doubt moves only thought and belongs to necessity; despair is an expression of the whole personality, which is why it takes talent to doubt and none to despair.
+
+### Q: Kraal closed by saying B cannot justify the ethical "with appeal", and wrote "circular reasoning" and "incommensurability" beside it. Explain each label.
+**Topic:** Equilibrium: despair as the way to the ethical  **Lec:** 23  **Type:** apply  **Id:** 906a6f70
+**A:** Key:
+1. Circular: an appeal to reason would use the very capacity whose trustworthiness must first be chosen.
+2. Incommensurable: the difference between good and evil cannot be measured by thought, which reaches only relative differences, never the absolute one.
+
+The page has only the two labels, so the glosses are reconstructed from B. His own word is in the duty passage: if duty were external, "the difference between good and evil is incommensurate with an abstract relation" (PDF p. 483). For B the lack of a proof is not a weakness: good and evil are posited by the choice, which is their absolute validity.
+
 ## Exam 3 — the real questions (Fri Oct 30, from Kraal's answer key)
 
 ### Q: Exam 3, question 1: which view best represents the position of Author A in the Diapsalmata on the meaning of life?
