@@ -8,16 +8,16 @@
 ## Grading
 | Component | Weight | Notes |
 |---|---|---|
-| iClicker in class (running) | 4% | participation; 4 lowest sessions dropped; week 1 not counted; 38 polls weighted 2–14 pts each, so be there every time |
-| WeBWorK ×10 | 10% | Tuesdays 23:59 (dates in Logistics) |
-| Lab ×8 | 7% | in-lab quiz (3) + follow-up (3), written in a ~20-min window during the Friday lab — no make-up at home |
-| Pre-lab quizzes ×7 | 2% | short Canvas quiz on the lab handout before Labs 2–8; opens ~1 week before, due Fri 23:59 |
+| iClicker in class (running) | 4% | participation; 6 lowest sessions dropped (raised from 4 on Nov 18); week 1 not counted; 38 polls weighted 2–14 pts each, so be there every time |
+| WeBWorK ×10 | 10% | Tuesdays 23:59 (dates in Logistics); lowest one dropped |
+| Lab ×8 | 7% | in-lab quiz (3) + follow-up (3), written in a ~20-min window during the Friday lab — no make-up at home; lowest lab dropped |
+| Pre-lab quizzes ×7 | 2% | short Canvas quiz on the lab handout before Labs 2–8; opens ~1 week before, due Fri 23:59; lowest one dropped |
 | Written assignments ×2 | 10% | WA1 **Sat Oct 24** (52 pts) · WA2 **Wed Dec 2** (40 pts), via Gradescope; posted ≥10 days ahead |
 | **Midterm** (replaced by Final if higher) | **22%** | **Fri Oct 30, 8:00–8:50am**, regular classroom; versions A/B; no make-up (approved concession → weight to final); the replacement rule was announced in lecture 23, Nov 6 |
 | **Final** | **45%** | **Mon Dec 14, 3:30pm**, in person; room and length not posted yet. **Must pass the final to pass the course.** |
 | *Piazza bonus* | *+1%* | 10+ endorsed answers |
 
-Non-exam work accounts for **33%**. With all of those marks and the Piazza bonus, the exams need an average of about 92.5% for a 96.
+Non-exam work accounts for **33%**. The drops are applied only when final grades are prepared and never show in the Canvas gradebook; a missed item counts as 0 when the lowest is picked (announcement, Nov 18). With all of those marks and the Piazza bonus, the exams need an average of about 92.5% for a 96.
 
 ## Exam format
 - Intel from past terms: **MC-heavy and long** ("impossible to finish on time"). Mocks must be MC and timed.

@@ -4677,6 +4677,100 @@ The class showed this with an applet that simulates many intervals; it also show
 
 The choice depends on whether $$\sigma$$ is known, not on the sample size. The t-value is larger because the t-distribution has thicker tails.
 
+## Lec 26 — Ch 8: a t interval example, hypothesis tests about μ, and Type I and Type II errors (prepared 2026-11-18 from the after-class deck; Canvas calls it Lecture 27; numbers changed)
+
+### Q: A sample of $$n = 25$$ one-bedroom apartments from a Normal population has $$\bar{x} = 840$$ dollars and $$s = 120$$ dollars; $$\sigma$$ is unknown. Find the 95% confidence interval for the mean rent and interpret it. Use $$t_{0.025, 24} = 2.064$$.
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 26  **Type:** apply  **Id:** f51e4438
+**A:** Key:
+1. Use $$\bar{x} \pm t_{0.025, 24} \frac{s}{\sqrt{n}}$$ with $$840 \pm 2.064 \times \frac{120}{\sqrt{25}}$$.
+2. The standard error is $$24$$, so the margin of error is $$49.536$$.
+3. The interval is $$(790.464, 889.536)$$ dollars.
+4. We are 95% confident that the true mean rent is between about 790 and 890 dollars.
+
+This is the deck's studio-apartment example with the numbers changed. The degrees of freedom are $$n - 1 = 24$$.
+
+### Q: In a hypothesis test, what does the null hypothesis state, what does the alternative state, and which one holds the equality?
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** recall  **Id:** fbe0244d
+**A:** Key:
+1. The null $$H_0$$ is a tentative assumption about the parameter; the alternative $$H_a$$ is its opposite and is what the test tries to establish.
+2. The equality part always goes in $$H_0$$.
+
+The hypotheses are written before the data are seen.
+
+### Q: A maker claims its batteries last more than 10 hours on average, and a test is run to establish the claim. Write $$H_0$$ and $$H_a$$, and name the kind of test.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** apply  **Id:** 849c7305
+**A:** Key:
+1. $$H_0: \mu \le 10$$ against $$H_a: \mu > 10$$.
+2. It is a one-tailed, upper-tail test.
+
+The claim to establish goes in $$H_a$$, and the equality stays in $$H_0$$.
+
+### Q: Name the three forms a hypothesis test about $$\mu$$ can take, with each pair of hypotheses.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** recall  **Id:** 31416617
+**A:** Parts:
+1. Lower-tail test: $$H_0: \mu \ge \mu_0$$ against $$H_a: \mu < \mu_0$$.
+2. Upper-tail test: $$H_0: \mu \le \mu_0$$ against $$H_a: \mu > \mu_0$$.
+3. Two-tailed test: $$H_0: \mu = \mu_0$$ against $$H_a: \mu \ne \mu_0$$.
+
+The first two are one-tailed tests; $$\mu_0$$ is the hypothesised value.
+
+### Q: Define the p-value.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** recall  **Id:** 4cc7e15e
+**A:** Key:
+1. The probability of a result as extreme as the one observed, or more extreme in the direction of $$H_a$$, assuming $$H_0$$ is true.
+
+It describes how unusual the data would be if $$H_0$$ were true, so a small p-value is evidence against $$H_0$$.
+
+### Q: A test gives a p-value of 0.032. State the decision (a) at $$\alpha = 0.05$$ and (b) at $$\alpha = 0.01$$.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** apply  **Id:** c16cf546
+**A:** Parts:
+1. (a) $$0.032 \le 0.05$$, so reject $$H_0$$; the result is statistically significant.
+2. (b) $$0.032 > 0.01$$, so do not reject $$H_0$$.
+
+The rule is to reject $$H_0$$ when the p-value is at most $$\alpha$$. Say "do not reject", never "accept".
+
+### Q: Test $$H_0: \mu \le 50$$ against $$H_a: \mu > 50$$ at $$\alpha = 0.05$$ for a Normal population with $$\sigma$$ unknown, given $$n = 16$$, $$\bar{x} = 52.4$$ and $$s = 6$$. Use the critical value approach with $$t_{0.05, 15} = 1.753$$.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** apply  **Id:** 80ccfd90
+**A:** Key:
+1. Use $$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{52.4 - 50}{6 / 4} = 1.6$$ with $$df = 15$$.
+2. The rejection rule is to reject $$H_0$$ when $$t \ge 1.753$$.
+3. $$1.6 < 1.753$$, so do not reject $$H_0$$: the data do not show the mean is above 50.
+
+The statistic uses $$\mu_0$$ because it is built assuming $$H_0$$ is true, and $$s$$ with $$t_{n-1}$$ because $$\sigma$$ is unknown.
+
+### Q: Give the rejection rule for a Z test at $$\alpha = 0.05$$ that is (a) two-tailed and (b) lower-tail.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** apply  **Id:** cf25a8fa
+**A:** Parts:
+1. (a) Reject $$H_0$$ when $$Z \le -1.96$$ or $$Z \ge 1.96$$, with 0.025 in each tail.
+2. (b) Reject $$H_0$$ when $$Z \le -1.645$$, with all 0.05 in the lower tail.
+
+### Q: List the steps of a hypothesis test by the p-value approach.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** recall  **Id:** 0c4e3542
+**A:** Parts:
+1. Write $$H_0$$ and $$H_a$$, then choose the significance level $$\alpha$$.
+2. Collect the data and compute the test statistic.
+3. Use the test statistic to compute the p-value.
+4. Reject $$H_0$$ if the p-value is at most $$\alpha$$.
+5. State the conclusion in context.
+
+The critical value approach shares the first two points, then uses $$\alpha$$ to find the critical value and rejection rule, and compares the test statistic with that rule.
+
+### Q: Define a Type I error and a Type II error, and give the symbol for the probability of each.
+**Topic:** 5l–m Type I and Type II errors  **Lec:** 26  **Type:** recall  **Id:** 0faf9437
+**A:** Parts:
+1. Type I error: rejecting $$H_0$$ when $$H_0$$ is true, with probability $$\alpha$$.
+2. Type II error: not rejecting $$H_0$$ when $$H_0$$ is false, with probability $$\beta$$.
+
+A good test rarely makes either error.
+
+### Q: A bottler tests $$H_0: \mu \ge 500$$ ml against $$H_a: \mu < 500$$ ml to decide whether its bottles are underfilled. Describe a Type I error and a Type II error in this context.
+**Topic:** 5l–m Type I and Type II errors  **Lec:** 26  **Type:** apply  **Id:** 5e7b8b8e
+**A:** Parts:
+1. Type I: concluding the bottles are underfilled (mean below 500 ml) when the mean is really at least 500 ml.
+2. Type II: not concluding they are underfilled when the mean really is below 500 ml.
+
+Name the decision and the true state of $$H_0$$ in the words of the problem; bare definitions earn less on the exam.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?

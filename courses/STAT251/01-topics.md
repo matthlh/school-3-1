@@ -76,12 +76,10 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | 5a | Sample statistic vs. population parameter |
 | 5b–d | Point and interval estimation and unbiased estimators *(lec 23: inference from a sample to a population, point estimate as one number and interval estimate as a range, estimator as the formula and estimate as its value, unbiased when $$E(\hat{\theta}) = \theta$$, bias $$E(\hat{\theta}) - \theta$$, $$\bar{X}$$ unbiased for $$\mu$$ and $$S^2$$ for $$\sigma^2$$, and of two unbiased estimators the one with the smaller standard error; ledger row 5b–d)* |
 | 5e–f | Confidence interval for μ with σ known *(lec 24: $$\bar{X}$$ Normal when n is large (CLT) or the population is Normal, the interval $$\bar{x} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$ derived from the standard Normal, $$Z_{\alpha/2}$$ 1.645, 1.96 and 2.575 for 90%, 95% and 99%, wider with a higher level and narrower with a larger n, point estimate plus or minus margin of error; ledger row 5e–f)* |
-| 5g | Components of a hypothesis test |
-| 5h | Use normality / CLT for estimation and testing |
-| 5i | p-value approach **and** critical value approach |
+| 5g–i | Hypothesis tests about μ: components of a hypothesis test, using normality or the CLT for testing, and the p-value approach **and** critical value approach *(lec 26: $$H_0$$ holds the equality and $$H_a$$ is what the test tries to establish, the three forms, $$Z$$ with $$\sigma$$ known and $$t_{n-1}$$ with $$s$$, the p-value as the chance of a result as extreme or more toward $$H_a$$ assuming $$H_0$$, reject when the p-value is at most $$\alpha$$, critical values and rejection regions; ledger row 5g–i; 5h is folded in)* |
 | 5j | Relationship between CIs and hypothesis tests |
 | 5k | t-distribution family and its link to the Normal *(lec 25: $$s$$ replaces $$\sigma$$, so $$\frac{\bar{X} - \mu}{s / \sqrt{n}} \sim t_{n-1}$$, the interval $$\bar{x} \pm t_{\alpha/2, \, n-1} \frac{s}{\sqrt{n}}$$, symmetric about 0 with thicker tails than the Normal, approaches Z as n grows, Z allowed when $$n \ge 30$$, needs a random sample and a Normal population unless n is large; ledger row 5k)* |
-| 5l–m | Type I and Type II errors, in context |
+| 5l–m | Type I and Type II errors, in context *(lec 26: Type I rejects a true $$H_0$$ with probability $$\alpha$$, Type II keeps a false $$H_0$$ with probability $$\beta$$, the decision table; ledger row 5l–m)* |
 | 5n | Interpret **and calculate** power |
 | 5o | Effect of n, effect size, α on power and β |
 
@@ -162,3 +160,4 @@ Topics that are easy to mix up. When a quiz picks a question from one, a questio
 | 4b Normal approximation to the Binomial | 3bb Poisson approximation to the Binomial | Both stand in for a Binomial count, but the Poisson is for rare successes, with n at least 20 and np below 5, while the Normal needs np and n(1 - p) both at least 5 and takes the continuity correction, so the conditions decide which one is allowed. |
 | 4c Normal approximation to the Poisson | 4b Normal approximation to the Binomial | Both replace a count by a Normal and take the continuity correction, but the Poisson needs λ ≥ 20 and uses N(λ, λ), while the Binomial needs np ≥ 5 and n(1 − p) ≥ 5 and uses N(np, np(1 − p)). |
 | 5e–f Confidence interval for μ with σ known | 5k t-distribution and the confidence interval for μ with σ unknown | Both intervals are point estimate plus or minus a table value times a standard error, but the Z interval needs σ known and uses σ/√n, while the t interval uses s/√n and a t-value at n − 1 degrees of freedom, so the choice turns on whether σ is known, not on the sample size. |
+| 5l–m Type I and Type II errors | 5g–i Hypothesis tests about μ | The significance level α is both the rejection cut-off for the p-value and the probability of a Type I error, while β, the Type II probability, is not set by the tester; a Type I error needs H0 true and rejected, a Type II error needs H0 false and kept. |
