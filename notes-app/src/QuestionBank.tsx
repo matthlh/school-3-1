@@ -1,11 +1,12 @@
 import { useMemo, useRef } from 'react'
 import type { Loaded, QuizHistory, Texts } from './files'
-import { courseOf, hrefFor } from './files'
+import { courseOf } from './files'
 import { parseQuestions, slug, splitTopic, type Question, type QuestionGroup, type TopicRow } from './markdown'
 import { hrefBank, navigate, toRanges, topicKey, type BankView } from './routes'
-import { sourcesFor } from './sources'
+import { sourceHref, sourceLabel, sourcesFor } from './sources'
 import { isWeak, lastGrade, loCodes, matchTopic, tallyHistories } from './stats'
 import { GradeChip } from './ui'
+import { formatDate } from './dates'
 import { Md } from './Md'
 
 type Mode = BankView['only']
@@ -56,8 +57,8 @@ function ActiveFilter({ label, title, onClear }: { label: string; title: string;
   )
 }
 
-export function QuestionBank({ path, text, all, topics, historyOf, view, anchor }: {
-  path: string; text: string; all: Texts; topics: TopicRow[]; historyOf: Loaded['historyOf']; view: BankView; anchor?: string
+export function QuestionBank({ path, text, all, topics, historyOf, view, anchor, examTopics }: {
+  path: string; text: string; all: Texts; topics: TopicRow[]; historyOf: Loaded['historyOf']; view: BankView; anchor?: string; examTopics?: ReadonlySet<string>
 }) {
   const code = courseOf(path) ?? ''
   const groups = useMemo(() => parseQuestions(text), [text])
@@ -109,7 +110,8 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
   const weakCount = flat.filter((q) => isWeak(histOf(q))).length
   const keep = (q: Question) => {
     const t = tagKeys(q)
-    return (!view.section || groupOf.get(q.id) === section) &&
+    return (!view.exam || !!examTopics?.has(topicOf.get(q.id) ?? '')) &&
+      (!view.section || groupOf.get(q.id) === section) &&
       (!view.topic || t.topic === view.topic) &&
       (!view.lec || t.lec === view.lec) &&
       (!view.type || t.type === view.type) &&
@@ -151,6 +153,7 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
         {view.section && section < 0 && (
           <ActiveFilter label={`Section: ${view.section}, not found`} title="No section has this key — click to show every section again" onClear={() => go({ section: '' })} />
         )}
+        {view.exam && <ActiveFilter label={`Exam on ${formatDate(view.exam)}`} title="Show questions from every exam" onClear={() => go({ exam: '' })} />}
         {topicName && <ActiveFilter label={`Topic: ${topicName}`} title={`${topicText} — click to show every topic again`} onClear={() => go({ topic: '' })} />}
         {lecName && <ActiveFilter label={`Lec: ${lecName}`} title={`Lec ${lecName} — click to show every lecture again`} onClear={() => go({ lec: '' })} />}
         {typeName && <ActiveFilter label={`Type: ${typeName}`} title={`${typeName} — click to show every type again`} onClear={() => go({ type: '' })} />}
@@ -200,7 +203,7 @@ export function QuestionBank({ path, text, all, topics, historyOf, view, anchor 
                   {open && (
                     <div className="ans">
                       <Md text={q.answer} path={path} />
-                      {src && <div className="src"><a href={hrefFor(src.path)}>{src.title}</a></div>}
+                      {src && <div className="src"><a href={sourceHref(src)}>{sourceLabel(src)}</a></div>}
                     </div>
                   )}
                 </div>

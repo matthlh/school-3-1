@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react'
-import { splitSections, type Section } from './markdown'
-import { hrefAnchor, parseHash, scrollIfSame } from './routes'
+import { useRef, useState } from 'react'
+import { isRawSection, splitSections, type Section } from './markdown'
+import { hrefAnchor, scrollIfSame } from './routes'
+import { useReadingPlace } from './readingPlace'
 import { Md } from './Md'
 import { VERIFY } from './CoursePage'
 import { SectionRail } from './SectionRail'
-
-/** Sections folded by default: his pasted pages and raw dumps (he has them on paper), and reference kept for Claude. */
-const FOLDED = /^(your notes|raw|reference|for claude|about this page|provenance)\b/i
 
 /** Lecture and reading pages, where each `## ` section can be folded away to skim the page as an outline. */
 const FOLDABLE = /\/(lectures|readings)\/[^/]+\.md$/
@@ -24,21 +22,21 @@ export function Sections({ sections, path, foldable = false, open, onToggle }: {
   return (
     <>
       {sections.map((s) =>
-        s.heading && FOLDED.test(s.heading) ? (
+        s.heading && isRawSection(s.heading) ? (
           <details key={s.id} id={'sec-' + s.id}>
             <summary>{s.heading}</summary>
-            <Md text={s.body} path={path} />
+            <Md text={s.body} path={path} section={s.id} />
           </details>
         ) : s.heading && foldable ? (
           <details key={s.id} className="sec-fold" id={'sec-' + s.id} open={open ? open(s.id) : true}
             onToggle={(e) => onToggle?.(s.id, e.currentTarget.open)}>
             <summary><span className="sec-h">{s.heading}</span></summary>
-            <div className="sec-body"><Md text={s.body} path={path} /></div>
+            <div className="sec-body"><Md text={s.body} path={path} section={s.id} /></div>
           </details>
         ) : (
           <section key={s.id} id={'sec-' + s.id}>
             {s.heading && <h2>{s.heading}</h2>}
-            <Md text={s.body} path={path} />
+            <Md text={s.body} path={path} section={s.id} />
           </section>
         ),
       )}
@@ -47,6 +45,8 @@ export function Sections({ sections, path, foldable = false, open, onToggle }: {
 }
 
 export function Viewer({ path, text, hideTitle, practiceHref }: { path: string; text: string; hideTitle?: boolean; practiceHref?: string }) {
+  const article = useRef<HTMLElement>(null)
+  useReadingPlace(path, article)
   const sections = splitSections(text)
   const [pre, ...rest] = sections
   const preBody = hideTitle ? pre.body.replace(/^\s*#\s[^\n]*\n?/, '') : pre.body
@@ -67,7 +67,7 @@ export function Viewer({ path, text, hideTitle, practiceHref }: { path: string; 
   // empties it, "Outline" fills it, and a native click on one heading adds or removes just that id. A long lecture
   // opens as an outline — every section collapsed but the first — so it does not start as a wall of text. The FOLDED
   // sections (Your notes, provenance) are their own always-start-closed <details>, so they are not counted here.
-  const foldable = named.filter((s) => s.heading && !FOLDED.test(s.heading))
+  const foldable = named.filter((s) => s.heading && !isRawSection(s.heading))
   const longPage = isLecture && foldable.length >= 5
   const defaultClosed = () => (longPage ? new Set(foldable.slice(1).map((s) => s.id)) : new Set<string>())
   const [closed, setClosed] = useState<ReadonlySet<string>>(defaultClosed)
@@ -80,28 +80,8 @@ export function Viewer({ path, text, hideTitle, practiceHref }: { path: string; 
     return next
   })
 
-  // The fold state is per file (so collapsing a section on one lecture never carries to a same-named section on the
-  // next), and a link to a section — from the contents row, the rail, or a search hit — opens it before scrolling.
-  useEffect(() => {
-    setClosed(defaultClosed())
-    const anchorId = () => { const r = parseHash(window.location.hash); return r.kind === 'file' ? r.anchor ?? '' : '' }
-    const reveal = (id: string) => {
-      if (!id) return
-      setClosed((c) => { if (!c.has(id)) return c; const n = new Set(c); n.delete(id); return n })
-      requestAnimationFrame(() => document.getElementById('sec-' + id)?.scrollIntoView({ block: 'start' }))
-    }
-    const onHash = () => reveal(anchorId())
-    const onReveal = (e: Event) => reveal((e as CustomEvent<string>).detail)
-    onHash()
-    window.addEventListener('hashchange', onHash)
-    window.addEventListener('reveal-section', onReveal as EventListener)
-    return () => {
-      window.removeEventListener('hashchange', onHash)
-      window.removeEventListener('reveal-section', onReveal as EventListener)
-    }
-  }, [path])
   return (
-    <article>
+    <article ref={article}>
       {h1.trim() && <Md text={h1} path={path} />}
       {fold
         ? <details className="about"><summary>About this page</summary><Md text={intro} path={path} /></details>

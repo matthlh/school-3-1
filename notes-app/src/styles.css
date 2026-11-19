@@ -320,6 +320,11 @@ mark { background: var(--mark); padding: 0 2px; border-radius: var(--r-xs); }
 .mock-question:disabled .mock-choice { cursor: default; }
 .mock-feedback { margin-top: 10px; padding: 2px 12px; border-left: 3px solid var(--border3); background: var(--soft); }
 .exam-mock .btn:disabled { opacity: .5; cursor: default; filter: none; }
+
+.upcoming-exams { margin-top: 12px; }
+.exam-prep .resource-links { gap: 8px; }
+.exam-topic-list { padding-left: 1.25em; }
+.exam-topic-list li { margin: .5em 0; }
 .link { border: 0; background: none; color: var(--link); padding: 0 4px; cursor: pointer; font-size: 13px; }
 .chip { display: inline-block; font-size: 11.5px; padding: 2px 9px; border-radius: var(--r-pill); background: var(--soft); color: var(--fg2); border: 0; cursor: default; }
 a.chip { text-decoration: none; }

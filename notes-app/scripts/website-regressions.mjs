@@ -8,6 +8,15 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { build as bundle } from 'esbuild'
 import { build as viteBuild } from 'vite'
+import { importSite } from './import-site.mjs'
+
+const { subheadings, sourcesFor, sourceHref, parseQuestions, parseCalendar, followUp, moveNext, examTopics, hrefExam, hrefBank } =
+  await importSite(`export { subheadings, parseQuestions, parseCalendar } from './markdown';
+    export { sourcesFor, sourceHref } from './sources';
+    export { followUp, moveNext } from './review/followUp';
+    export { examTopics } from './examScope';
+    export { hrefExam, hrefBank } from './routes';`)
+
 
 const app = decodeURIComponent(new URL('..', import.meta.url).pathname)
 const root = decodeURIComponent(new URL('../..', import.meta.url).pathname)
@@ -160,4 +169,46 @@ test('production output excludes private briefs even when they exist in the buil
   } finally {
     await rm(fixture, { recursive: true, force: true })
   }
+})
+
+test('review links to a relevant subheading and ignores raw notes', () => {
+  const path = 'courses/STAT251/lectures/01-logic.md'
+  const text = '# Lecture\n\n## Clarifications\n\n### Bayes theorem (PDF p. 12)\nPosterior probability given a positive result.\n\n### Independence\nProduct rule.\n\n## Your notes\nBayes theorem posterior probability.'
+  const bank = '## Lec 1\n### Q: How do we compute posterior probability with Bayes theorem?\n**Topic:** Bayes theorem  **Lec:** 1  **Type:** apply  **Id:** 12345678\n**A:** Key:\n1. Apply Bayes theorem to the likelihood and prior.\n\nPDF p. 12.'
+  const groups = parseQuestions(bank)
+  const source = sourcesFor('STAT251', groups, { [path]: text }).get(groups[0].questions[0].id)
+  assert.equal(sourceHref(source), '#/' + path + '#clarifications--bayes-theorem-pdf-p-12')
+  const unrelated = parseQuestions(bank.replace(/Bayes theorem|posterior probability|likelihood and prior/g, 'hypothetical integers').replace('PDF p. 12.', ''))
+  const fallback = sourcesFor('STAT251', unrelated, { [path]: text }).get(unrelated[0].questions[0].id)
+  assert.equal(sourceHref(fallback), '#/' + path)
+  assert.deepEqual(subheadings('### Repeated\n\n```md\n### Inside code\n```\n\n### Repeated', 'review').map(h => h.id),
+    ['review--repeated', 'review--repeated--2'])
+})
+
+test('related practice skips reviewed cards and promotes a fresh card only once', () => {
+  const make = (qid, topic, stem) => ({
+    qid, course: 'PHIL385', section: 'exam', src: null, rubric: { kind: 'Key', points: ['answer'], rest: '' },
+    q: { display: stem, topic, answer: 'Key:\n1. Despair reveals dependence.' },
+  })
+  const current = make('first', 'Despair', 'Why is the athlete in despair?')
+  const seen = make('seen', 'Despair', 'Why is there despair before the result?')
+  const fresh = make('fresh', 'Despair', 'Why is despair present when the musician succeeds?')
+  const other = make('other', 'Marriage', 'What does the vow do?')
+  const session = { qids: ['first', 'other', 'fresh'], at: 0, cards: {} }
+  const quiz = { questions: { seen: { history: [['2026-11-18', 'X']] } } }
+  assert.equal(followUp(current, [other, seen, fresh], session, null, quiz, []).qid, 'fresh')
+  assert.deepEqual(moveNext(session.qids, 1, 'fresh'), ['first', 'fresh', 'other'])
+  assert.deepEqual(moveNext(session.qids, 1, 'new'), ['first', 'new', 'other', 'fresh'])
+  assert.equal(followUp(current, [other, seen], session, null, quiz, []), null)
+})
+
+test('exam prep uses calendar kinds and the shared scope while preserving bank filters', () => {
+  const text = '## Term calendar\n| Date | Course | What | Weight | Kind |\n| --- | --- | --- | --- | --- |\n| Fri Nov 20 | PHIL 385 | **Exam 4** | 15% | exam |\n| Fri Dec 11 | ASIA 250 | **Final paper** | 40% | paper |'
+  assert.deepEqual(parseCalendar(text, 2026).map(d => d.exam), [true, false])
+  const date = '2026-11-20'
+  const plan = { rows: { 'PHIL385|Marriage': [date], 'PHIL385|Preface': ['2026-12-11'], 'STAT251|Probability': [date] } }
+  assert.deepEqual([...examTopics(plan, 'PHIL385', date)], ['Marriage'])
+  assert.deepEqual(parseHash(hrefExam('PHIL385', date)), { kind: 'exam', code: 'PHIL385', date })
+  const view = parseBankView('exam=' + date + '&topic=marriage')
+  assert.equal(hrefBank('courses/PHIL385/02-questions.md', view), '#/courses/PHIL385/02-questions.md?topic=marriage&exam=' + date)
 })

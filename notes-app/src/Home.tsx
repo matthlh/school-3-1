@@ -2,6 +2,7 @@ import type { Course, Loaded, Texts, Tree } from './files'
 import { hrefFor, lectureNumber } from './files'
 import { afterDash, courseLabel, firstHeading, type Deadline } from './markdown'
 import { hrefAnchor } from './routes'
+import { readingPlace, resumeHref } from './readingPlace'
 import { toneStyle } from './tone'
 import { todayISO, formatDate } from './dates'
 import { Upcoming } from './Upcoming'
@@ -16,6 +17,13 @@ export function nextPage(c: Course): { path: string; prepared: boolean } | null 
   if (c.prepared.length) return { path: c.prepared[0].path, prepared: true }
   const last = [...c.lectures].sort((a, b) => lectureNumber(a.path) - lectureNumber(b.path)).pop()
   return last ? { path: last.path, prepared: false } : null
+}
+
+export function continuePage(c: Course, all: Texts) {
+  const place = readingPlace(c.code)
+  if (place && all[place.path]) return { path: place.path, href: resumeHref(place), section: place.section, prepared: false, resumed: true }
+  const next = nextPage(c)
+  return next && { ...next, href: hrefFor(next.path), section: '', resumed: false }
 }
 
 /**
@@ -53,15 +61,15 @@ export function Home({ tree, all, loaded, calendar, due }: {
         <div className="panel-head"><span>Continue</span></div>
         <ul className="continue">
           {tree.courses.map((c) => {
-            const next = nextPage(c)
+            const next = continuePage(c, all)
             if (!next) return null
             const { date, title } = splitTitle(firstHeading(all[next.path] ?? '') ?? '')
             return (
               <li key={c.code}>
-                <a href={hrefFor(next.path)} style={toneStyle(c.code)}>
+                <a href={next.href} style={toneStyle(c.code)}>
                   <span className="chip tone">{courseLabel(c.code)}</span>
                   <span className="what">
-                    <span className="kind">{[pageKind(next.path), date, next.prepared && 'not studied yet'].filter(Boolean).join(' · ')}</span>
+                    <span className="kind">{[pageKind(next.path), next.section || date, next.prepared && 'not studied yet'].filter(Boolean).join(' · ')}</span>
                     <span className="title">{title || pageKind(next.path)}</span>
                   </span>
                   <span className="arrow" aria-hidden="true">→</span>

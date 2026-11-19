@@ -2,14 +2,17 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { buildTree, courseOf, labelFor, loadAll, mainFileCourse, mainTab, PHIL385_EXAM_4_MOCK, titledByHeader, type Loaded, type Tree } from './files'
 import { courseLabel, parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
 import { tallyByCourse } from './stats'
-import { COURSE_TABS, hrefCourse, pageId, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
+import { COURSE_TABS, hrefCourse, openSection, pageId, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
 import { TopBar, type Section } from './TopBar'
 import { Sidebar } from './Sidebar'
 import { Home } from './Home'
+import { restoreReadingPlace } from './readingPlace'
 import { CoursePage } from './CoursePage'
 import { Courses } from './Courses'
 import { Viewer } from './Viewer'
 import { ExamMock } from './ExamMock'
+import { ExamPrep } from './ExamPrep'
+import { examTopics } from './examScope'
 import { lecQuery } from './sources'
 import { LedgerView } from './LedgerView'
 import { TopicsView } from './TopicsView'
@@ -21,13 +24,14 @@ import { UpdateToast } from './UpdateToast'
 import { startUpdateChecks, takeSavedScroll } from './update'
 import { useDue } from './DueNow'
 import { Review } from './Review'
-import { startSync } from './review/state'
+import { parsePlan, startSync } from './review/state'
 import { toneStyle } from './tone'
 
 /** The tab title: the page, then the course it belongs to ("Syllabus · STAT 251", "Lec 3 · CPSC 310"). */
 function tabTitle(route: Route, tree: Tree): string {
   if (route.kind === 'home') return 'Today'
   if (route.kind === 'courses') return 'Courses'
+  if (route.kind === 'exam') return `Exam prep · ${courseLabel(route.code)}`
   if (route.kind === 'course') return `${COURSE_TABS.find(([id]) => id === route.tab)?.[1]} · ${courseLabel(route.code)}`
   if (route.kind === 'review') return route.course ? `Review · ${courseLabel(route.course)}` : 'Review'
   const lec = /\/lectures\/_?(\d+)(?:-(\d+))?-[^/]*$/.exec(route.path)
@@ -68,12 +72,12 @@ export default function App() {
     setQuery('')
     if (window.matchMedia('(max-width: 640px)').matches) setPinned(false)
     if (!all) return
+    const el = openSection(anchor)
     const y = takeSavedScroll(window.location.hash) ?? savedScroll()
     if (y !== null) { window.scrollTo(0, y); return }
-    const el = anchor ? document.getElementById('sec-' + anchor) : null
-    if (!el) { window.scrollTo(0, 0); return }
-    if (el instanceof HTMLDetailsElement) el.open = true
-    el.scrollIntoView({ block: 'start' })
+    if (current && restoreReadingPlace(current, viewQuery, anchor, el)) return
+    if (el) el.scrollIntoView({ block: 'start' })
+    else window.scrollTo(0, 0)
   }, [page, anchor, all])
   // A question bank's view changing is the same page and stays put, unless Back or Forward return to a step that
   // remembers where it was. Only a change of view runs this: the first load is the effect above's.
@@ -106,16 +110,17 @@ export default function App() {
   const links = useMemo(() => parseLinks(all?.['links.md'] ?? ''), [all])
   const calendar = useMemo(() => parseCalendar(all?.['ledger.md'] ?? '', termYear()), [all])
   const tallies = useMemo(() => tallyByCourse(topics), [topics])
+  const plan = useMemo(() => parsePlan(loaded?.reviewPlan ?? undefined), [loaded])
 
   // The menu section a page belongs to: anything inside a course is under Courses.
   const section: Section | null = route.kind === 'home' ? 'today' : route.kind === 'review' ? 'review'
-    : route.kind === 'courses' || route.kind === 'course' || (route.kind === 'file' && courseOf(route.path)) ? 'courses' : null
+    : route.kind === 'courses' || route.kind === 'course' || route.kind === 'exam' || (route.kind === 'file' && courseOf(route.path)) ? 'courses' : null
   const title = tabTitle(route, tree)
   useEffect(() => { document.title = title }, [title])
 
   // A course page, or one of a course's main files, sits under the course's name and tabs; a lecture or reading page
   // gets a one-line trail back to its course instead, so the notes start near the top of a phone screen.
-  const scoped = route.kind === 'course' ? route.code : route.kind === 'file' ? mainFileCourse(route.path) : null
+  const scoped = route.kind === 'course' || route.kind === 'exam' ? route.code : route.kind === 'file' ? mainFileCourse(route.path) : null
   const tab = route.kind === 'course' ? route.tab : route.kind === 'file' && scoped ? mainTab(route.path) : 'study'
   const trailCourse = route.kind === 'file' && !scoped ? courseOf(route.path) : null
 
@@ -127,9 +132,18 @@ export default function App() {
   else if (route.kind === 'courses') body = <Courses tree={tree} all={all} tallies={tallies} calendar={calendar} due={due} />
   else if (route.kind === 'review') body = <Review key={`${route.course ?? ''}/${route.section ?? ''}`} all={all} loaded={loaded} course={route.course} section={route.section} setup={route.setup} />
   else if (route.kind === 'course') body = <div style={toneStyle(route.code)}><CoursePage code={route.code} tab={route.tab} tree={tree} all={all} loaded={loaded} topics={topics} tallies={tallies} links={links} due={due} /></div>
+  else if (route.kind === 'exam') {
+    const exam = calendar.find(d => d.exam && d.course === route.code && d.date === route.date)
+    body = exam ? <ExamPrep exam={exam} loaded={loaded} topics={topics} due={due} plan={plan} /> : <article><h1>Exam not found</h1></article>
+  }
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={loaded.quiz} due={due} />
-  else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} all={all} topics={topics} historyOf={loaded.historyOf} view={parseBankView(route.query)} anchor={route.anchor} />
+  else if (route.path.endsWith('/02-questions.md')) {
+    const view = parseBankView(route.query)
+    const scope = view.exam ? examTopics(plan, courseOf(route.path) ?? '', view.exam) : undefined
+    body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} all={all} topics={topics} historyOf={loaded.historyOf}
+      view={view} anchor={route.anchor} examTopics={scope} />
+  }
   else if (route.path === PHIL385_EXAM_4_MOCK) body = <ExamMock path={route.path} text={all[route.path]} />
   else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} topics={topics} due={due} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
@@ -137,7 +151,7 @@ export default function App() {
     const lec = route.kind === 'file' ? lecQuery(route.path) : null
     const code = lec ? courseOf(route.path) : null
     const practiceHref = lec && code ? `#/courses/${code}/02-questions.md?lec=${lec}` : undefined
-    body = <Viewer path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} practiceHref={practiceHref} />
+    body = <Viewer key={route.path} path={route.path} text={all[route.path]} hideTitle={titledByHeader(route.path)} practiceHref={practiceHref} />
   }
 
   return (

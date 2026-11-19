@@ -5,10 +5,10 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Loaded, Texts } from './files'
-import { hrefFor } from './files'
 import { courseLabel, parseQuestions, type Question } from './markdown'
 import { sectionKeys } from './QuestionBank'
-import { sourcesFor } from './sources'
+import { sourceHref, sourceLabel, sourcesFor, type Source } from './sources'
+import { followUp, moveNext } from './review/followUp'
 import { Md } from './Md'
 import { CourseChip, GradeChip } from './ui'
 import { navigate } from './routes'
@@ -31,27 +31,27 @@ const hrefReview = (course: string | null | undefined, section?: string | null) 
 const sessionFor = (s: ReviewSession | null, course: string | null, section: string | null = null) =>
   s && (!course || (s.course ?? null) === course) && (!section || (s.section ?? null) === section) ? s : null
 
-interface Card { qid: string; course: string; section: string; q: Question; rubric: Rubric | null; src: { path: string; title: string } | null; row: string | null }
+interface Card { qid: string; course: string; section: string; q: Question; rubric: Rubric | null; src: Source | null }
 
 /** Every stamped bank question by its permanent id, with its rubric and notes page. */
-function useCards(all: Texts): Map<string, Card> {
+function useCards(all: Texts, includeSources = true): Map<string, Card> {
   return useMemo(() => {
     const out = new Map<string, Card>()
     for (const [path, text] of Object.entries(all)) {
       const course = /^courses\/([^/]+)\/02-questions\.md$/.exec(path)?.[1]
       if (!course) continue
       const groups = parseQuestions(text)
-      const src = sourcesFor(course, groups, all)
+      const src = includeSources ? sourcesFor(course, groups, all) : null
       const keys = sectionKeys(groups)   // the same keys as the question bank's `?section=`
       groups.forEach((g, gi) => {
         for (const q of g.questions) {
           if (!q.stamp) continue
-          out.set(q.stamp, { qid: q.stamp, course, section: keys[gi], q, rubric: parseRubric(q.answer), src: src.get(q.id) ?? null, row: null })
+          out.set(q.stamp, { qid: q.stamp, course, section: keys[gi], q, rubric: parseRubric(q.answer), src: src?.get(q.id) ?? null })
         }
       })
     }
     return out
-  }, [all])
+  }, [all, includeSources])
 }
 
 const CONF: [1 | 2 | 3, string][] = [[1, 'Guess'], [2, 'Think so'], [3, 'Sure']]
@@ -63,7 +63,7 @@ const deviceName = () => (/Mobi|Android|iPhone|iPad/.test(navigator.userAgent) ?
  * Today's version, the page's one main action: a short session first, with the count and sync state under it.
  */
 export function ReviewEntry({ all, loaded, course = null, hero = false }: { all: Texts; loaded: Loaded; course?: string | null; hero?: boolean }) {
-  const cards = useCards(all)
+  const cards = useCards(all, false)
   const events = useEvents()
   const plan = useMemo(() => parsePlan(loaded.reviewPlan ?? undefined), [loaded])
   const q = dueToday(plan, cards, events, course, loaded.quiz)
@@ -243,6 +243,8 @@ function Session({ session, cards, loaded, plan, update }: {
   const exams = plan && plan.cards[qid] ? plan.rows[plan.cards[qid]] ?? [] : []
   const hist = loaded.quiz?.questions[qid]?.history as PublicEntry[] | undefined
   const sched = d.saved ? scheduleFor(qid, hist, events, exams) : null
+  const missed = !!d.saved && (grade === 'X' || grade === '~')
+  const related = missed ? followUp(card, cards.values(), session, plan, loaded.quiz, events) : null
 
   const save = () => {
     if (!card.rubric || d.conf === null) return
@@ -265,6 +267,11 @@ function Session({ session, cards, loaded, plan, update }: {
     void syncNow()
   }
   const go = (at: number) => update({ ...session, at })
+  const practise = (next: Card) => {
+    const at = session.at + 1
+    update({ ...session, at, qids: moveNext(session.qids, at, next.qid),
+      cards: { ...session.cards, [next.qid]: session.cards[next.qid] ?? blankDraft(next.rubric?.points.length ?? 1) } })
+  }
 
   onKey.current = (e: KeyboardEvent) => {
     if (e.metaKey || e.ctrlKey || e.altKey) return
@@ -338,10 +345,11 @@ function Session({ session, cards, loaded, plan, update }: {
       )}
       <div className="row small review-foot">
         {card.src && (
-          <a href={hrefFor(card.src.path)} onClick={() => { if (!revealed) set({ assisted: true }) }}>
-            {revealed ? 'Notes' : 'Look at the notes (counts as help)'}: {card.src.title}
+          <a href={sourceHref(card.src)} onClick={() => { if (!revealed) set({ assisted: true }) }}>
+            {revealed ? sourceLabel(card.src) : 'Look at the notes (counts as help)'}
           </a>
         )}
+        {related && <button type="button" className="btn" onClick={() => practise(related)}>Try a related question</button>}
         {session.at > 0 && <button type="button" className="link" onClick={() => go(session.at - 1)}>Back</button>}
         <button type="button" className="link" onClick={() => go(session.qids.length)}>End session</button>
       </div>
@@ -358,9 +366,9 @@ function Summary({ session, cards, onDone }: { session: ReviewSession; cards: Ma
       <p><b>{live.size}</b> of {session.qids.length} saved.</p>
       {misses.length > 0 && (
         <>
-          <p className="small muted">Pages behind the misses:</p>
+          <p className="small muted">Notes for the questions you missed</p>
           <ul>
-            {misses.map((id) => { const c = cards.get(id); return c?.src ? <li key={id}><a href={hrefFor(c.src.path)}>{c.src.title}</a> <GradeChip g={live.get(id)!.grade} /></li> : null })}
+            {misses.map((id) => { const c = cards.get(id); return c?.src ? <li key={id}><a href={sourceHref(c.src)}>{sourceLabel(c.src)}</a> <GradeChip g={live.get(id)!.grade} /></li> : null })}
           </ul>
         </>
       )}

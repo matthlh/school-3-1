@@ -1,11 +1,15 @@
 // The notes page each bank question comes from, linked under its answer on the question cards.
-// Mirror of the source-page block in .claude/skills/quiz-me/scripts/quizlib.py (attach_sources): keep the rules in step.
+// The starting page follows quizlib.py's attach_sources. The site can then target a heading within that page or its linked reading.
 
 import type { Texts } from './files'
-import { firstHeading, type QuestionGroup } from './markdown'
+import { firstHeading, isRawSection, splitSections, subheadings, type Question, type QuestionGroup } from './markdown'
+import { parseRubric } from './review/rubric'
 import { normQuestion } from './stats'
 
-interface Source { path: string; title: string }
+export interface Source { path: string; title: string; anchor?: string; heading?: string }
+
+export const sourceHref = (source: Source) => `#/${source.path}${source.anchor ? '#' + source.anchor : ''}`
+export const sourceLabel = (source: Source) => source.heading ?? source.title
 
 const LEC_FILE = /^(\d+)(?:-(\d+))?-/            // 05-06-<slug>.md covers lectures 5–6 (as term.py reads it)
 const LEC_TAG = /^(\d+)(?:\s*[–—-]\s*(\d+))?$/   // **Lec:** 6 or 5–6
@@ -30,6 +34,75 @@ function lecSpan(tag: string): [number, number] | null {
 /** Lowercase words with apostrophes dropped: "Seducer's Diary" → ["seducers", "diary"]. */
 function words(s: string): string[] {
   return s.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, ' ').split(' ').filter(Boolean)
+}
+
+const COMMON = new Set('be been being which would should could what when where whose these those each more most only than does doing from into same through between about both part first second show gives give says think take makes question answer explain means because choose compare following have will their there they them this that with without also how why use used example examples two one three something person individual course lecture reading concept summary key notes point section different name describe define'.split(' '))
+
+function focusWords(text: string) {
+  return words(text).filter(word => word.length > 2 && !/^\d+$/.test(word) && !COMMON.has(word))
+}
+
+const terms = (text: string) => new Set(focusWords(text))
+
+function phrases(text: string) {
+  const tokens = focusWords(text)
+  return new Set(tokens.slice(1).map((word, i) => tokens[i] + ' ' + word))
+}
+
+function pageReferences(text: string) {
+  return [...text.matchAll(/\b(PDF|Hannay)\s+(?:around\s+)?pp?\.\s*(\d+)(?:[–-](\d+))?/gi)]
+    .map(([, edition, from, to]) => ({ edition: edition.toLowerCase(), from: +from, to: +(to ?? from) }))
+}
+
+const questionEvidence = (q: Question) =>
+  [q.display.split('\n', 1)[0], ...(parseRubric(q.answer)?.points ?? [])].join('\n')
+
+export function questionTerms(question: Question) {
+  return terms(questionEvidence(question))
+}
+
+interface Passage { anchor: string; heading: string; title: Set<string>; body: Set<string>; phrases: Set<string>; references: ReturnType<typeof pageReferences> }
+
+function passages(text: string): Passage[] {
+  return splitSections(text).flatMap(section => {
+    if (!section.heading || isRawSection(section.heading)) return []
+    const lines = section.body.split('\n')
+    const headings = subheadings(section.body, section.id)
+    const starts = [{ id: section.id, heading: section.heading, line: 0 }, ...headings]
+    return starts.map((h, i) => {
+      const body = lines.slice(h.line, starts[i + 1] ? starts[i + 1].line - 1 : undefined).join(' ')
+      return {
+        anchor: h.id, heading: h.heading.replace(/[*\x60]/g, ''), title: terms(h.heading), body: terms(body),
+        phrases: phrases(h.heading + '\n' + body), references: pageReferences(h.heading),
+      }
+    })
+  })
+}
+
+function closestPassage(question: Question, candidates: { path: string; passage: Passage }[]) {
+  const text = questionEvidence(question)
+  const evidence = terms(text)
+  const pairs = phrases(text)
+  const refs = pageReferences(question.display.split('\n', 1)[0] + '\n' + question.answer)
+  const topic = terms(question.topic)
+  const ranked = candidates.map(({ path, passage }) => {
+    let score = 0
+    let strong = 0
+    for (const word of evidence) {
+      if (passage.title.has(word)) { score += 6; strong++ }
+      else if (passage.body.has(word)) { score++; strong++ }
+    }
+    for (const pair of pairs) if (passage.phrases.has(pair)) score += 4
+    for (const ref of refs) {
+      const range = passage.references.find(r => r.edition === ref.edition && r.from <= ref.from && r.to >= ref.to)
+      if (range) score += range.from === ref.from && range.to === ref.to ? 16 : 12
+    }
+    for (const word of topic) if (!evidence.has(word) && passage.title.has(word)) score += 2
+    return { path, passage, score, strong }
+  }).sort((a, b) => b.score - a.score)
+  const [best, next] = ranked
+  // Weak or tied evidence falls back to the notes page. A heading link should point to the explanation, not a guess.
+  return best && best.strong >= 2 && best.score >= 5 && best.score > (next?.score ?? 0) ? best : null
 }
 
 /** The file whose NN or NN-MM prefix covers the whole span (narrowest first), else the one covering its start. */
@@ -115,14 +188,35 @@ export function sourcesFor(code: string, groups: QuestionGroup[], all: Texts): M
   const tags = qs.map(({ q }) => normQuestion(q.topic))
   const titles = new Map<string, string>()
   const out = new Map<string, Source>()
+  const indexed = new Map<string, Passage[]>()
+  const forPath = (path: string) => {
+    const prior = indexed.get(path)
+    if (prior) return prior
+    const found = passages(all[path] ?? '')
+    indexed.set(path, found)
+    return found
+  }
+  const linked = new Map<string, string[]>()
+  const readingLinks = (path: string) => {
+    const prior = linked.get(path)
+    if (prior) return prior
+    const paths = [...(all[path] ?? '').matchAll(/\]\(\.\.\/readings\/([\w-]+\.md)(?:#[^)]*)?\)/g)]
+      .map(([, file]) => dir + 'readings/' + file).filter(file => file in all)
+    const found = [...new Set(paths)]
+    linked.set(path, found)
+    return found
+  }
   qs.forEach(({ q, section }, i) => {
     // A question written from a reading links to that reading's notes, whatever lecture its Lec names.
     const fromReading = q.lec.trim().toLowerCase() === 'reading' || section.toLowerCase().startsWith('reading')
-    let src = (fromReading ? readingFile(section, reads) : null) ?? direct[i]
+    let src = (fromReading ? readingFile(section, reads) ?? readingFile(q.topic, reads) : null) ?? direct[i]
     if (!src && !spans[i]) src = topicLecture(i, tags, direct)
     if (!src) return
-    if (!titles.has(src)) titles.set(src, pageTitle(src, all[src] ?? ''))
-    out.set(q.id, { path: src, title: titles.get(src) ?? '' })
+    const match = closestPassage(q, [src, ...readingLinks(src)]
+      .flatMap(path => forPath(path).map(passage => ({ path, passage }))))
+    const path = match?.path ?? src
+    if (!titles.has(path)) titles.set(path, pageTitle(path, all[path] ?? ''))
+    out.set(q.id, { path, title: titles.get(path) ?? '', anchor: match?.passage.anchor, heading: match?.passage.heading })
   })
   return out
 }

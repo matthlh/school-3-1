@@ -50,7 +50,7 @@ export function useEvents(): Event[] {
 export interface ReviewPlan {
   /** The day the scripts wrote it. */
   as_of: string
-  /** Ledger row key ("STAT251|<topic>") → the dates of the exams that cover it, for the exam cap. */
+  /** Every ledger row key ("STAT251|<topic>") → its covering exam dates, for scope and the exam cap. */
   rows: Record<string, string[]>
   /** Question id → its ledger row key. */
   cards: Record<string, string>

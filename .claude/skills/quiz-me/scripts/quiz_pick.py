@@ -103,8 +103,7 @@ def interleave(cs):
 def review_plan(rows, questions, state, cal, today):
     """routines/review-plan.json, the public plan the website's Review page reads (2026-11-06). It holds nothing that
     ledger.md and quiz-state.json do not already publish: no answer and nothing he wrote.
-      rows   each live ledger row's key ("STAT251|<topic>") -> the dates of the exams that cover it, for the exam cap;
-             live is studied and not frozen, so the page never brings back a topic the scripts have set aside
+      rows   each ledger row's key ("STAT251|<topic>") -> its covering exam dates, for exam scope and the exam cap
       cards  each question of a live row: its id -> its row's key
       queue  the short questions to ask, best first, courses taken in turn: every asked one whose date has come (and a
              sweep topic's best), then the never-asked ones of due topics, then those of the other studied topics. The
@@ -115,12 +114,12 @@ def review_plan(rows, questions, state, cal, today):
     by, _ = L.bank_by_topic(rows, questions)
     plan_rows, cards = {}, {}
     for r in rows:
-        if fx["standing"][r["idx"]][0] in ("frozen", "unstudied"):
-            continue
         key = f"{r['course']}|{r['topic']}"
         lecs = L.held(r, cal)
         plan_rows[key] = sorted({e["date"].isoformat() for e in cal.get(r["course"], {}).get("exams", [])
                                  if L.covers(e, lecs)})
+        if fx["standing"][r["idx"]][0] in ("frozen", "unstudied"):
+            continue
         for q in by.get(r["idx"], []):
             cards[q["id"]] = key
     due = [c for c in cands if c["due"] and not c["new"]]               # asked before, and its date has come

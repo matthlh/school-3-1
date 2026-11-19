@@ -23,6 +23,26 @@ export function splitSections(md: string): Section[] {
   return out
 }
 
+/** One level-three heading within a section. Line numbers are one-based within the section body. */
+export function subheadings(body: string, parent: string) {
+  const lines = body.split('\n')
+  const headings: { id: string; heading: string; line: number }[] = []
+  const ids = new Map<string, number>()
+  let fence = false
+  for (const [index, line] of lines.entries()) {
+    if (/^```/.test(line)) fence = !fence
+    const heading = !fence && /^### (.+)$/.exec(line)?.[1].trim()
+    if (!heading) continue
+    const base = `${parent}--${slug(heading)}`
+    const count = (ids.get(base) ?? 0) + 1
+    ids.set(base, count)
+    headings.push({ id: count === 1 ? base : `${base}--${count}`, heading, line: index + 1 })
+  }
+  return headings
+}
+
+export const isRawSection = (heading: string) => /^(your notes|raw|reference|for claude|about this page|provenance)\b/i.test(heading)
+
 export function firstHeading(md: string): string | null {
   const m = /^# (.+)$/m.exec(md)
   return m ? m[1].trim() : null
@@ -165,8 +185,7 @@ const DATE_RE = /(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)?\s*(Jan|Feb|Mar|Apr|May|Jun|Jul
 /**
  * ledger.md → "## Term calendar" rows with a parseable date. A range ("Sep 11 → Sep 24") keeps its end.
  * A table whose header starts with "Series" (the recurring series) is skipped whole: its rows are weekly, not dated.
- * `year` is the year the term began. A row is an exam when its What cell opens with the bold exam name
- * (**Exam 2**, **Midterm**, **Final**), so "exam schedule posted" and "final paper questions posted" are not.
+ * `year` is the year the term began. Kind identifies exam rows. Older calendars without a Kind column use the bold exam name.
  */
 export function parseCalendar(md: string, year: number): Deadline[] {
   const sec = extractSection(md, /^term calendar/i)
@@ -188,7 +207,8 @@ export function parseCalendar(md: string, year: number): Deadline[] {
     const what = cells[2].replace(/\*\*/g, '').replace(/\s*[—–-]\s+(confirmed|the |course-site|PrairieLearn's).*$/i, '').trim()
     out.push({
       date, time: last[3] ?? '', approx: /^~/.test(plain.trim()), course: cells[1].replace(/\s+/g, ''),
-      what, rawWhat: cells[2], weight: (cells[3] ?? '').replace(/\*/g, '').trim(), exam: /^\*\*(exam\b|midterm|final)/i.test(cells[2]),
+      what, rawWhat: cells[2], weight: (cells[3] ?? '').replace(/\*/g, '').trim(),
+      exam: cells.length >= 5 ? cells[4].trim().toLowerCase() === 'exam' : /^\*\*(?:exam\s+\d+|midterm|final)(?:\*\*|\s+[—(])/i.test(cells[2]),
     })
   }
   return out.sort((a, b) => a.date.localeCompare(b.date) || a.time.localeCompare(b.time))

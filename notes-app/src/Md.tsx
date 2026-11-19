@@ -5,6 +5,7 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
 import { hrefFor, resolveRelative } from './files'
+import { subheadings } from './markdown'
 import { PAGE, usePager } from './Pager'
 
 const isExternal = (href: string) => /^(https?:|mailto:)/.test(href)
@@ -102,7 +103,10 @@ const REHYPE = [[rehypeKatex, { strict: false }], [rehypeHighlight, { detect: fa
  * Markdown renderer. `path` is the current file (for relative links); `inline` drops <p> wrappers. Memoised: its props
  * are plain strings, and re-rendering markdown with math and code is the slowest thing the site does.
  */
-export const Md = memo(function Md({ text, path = '', inline = false }: { text: string; path?: string; inline?: boolean }) {
+export const Md = memo(function Md({ text, path = '', inline = false, section }: {
+  text: string; path?: string; inline?: boolean; section?: string
+}) {
+  const headings = useMemo(() => section ? new Map(subheadings(text, section).map(h => [h.line, h.id])) : null, [text, section])
   const components = useMemo<Components>(() => ({
     a: ({ node: _node, href, children, ...rest }) => {
       if (href && isLocalMd(href)) return <a href={hrefFor(resolveRelative(path, href))}>{children}</a>
@@ -112,10 +116,14 @@ export const Md = memo(function Md({ text, path = '', inline = false }: { text: 
         </a>
       )
     },
+    ...(headings ? { h3: ({ node, ...props }) => {
+      const id = headings.get(node?.position?.start.line ?? 0)
+      return <h3 {...props} id={id ? 'sec-' + id : undefined} />
+    } } : {}),
     tbody: TBody,
     blockquote: Blockquote,
     pre: Pre,
     ...(inline ? { p: Unwrap } : {}),
-  }), [path, inline])
+  }), [path, inline, headings])
   return <ReactMarkdown remarkPlugins={REMARK} rehypePlugins={REHYPE} components={components}>{text}</ReactMarkdown>
 })

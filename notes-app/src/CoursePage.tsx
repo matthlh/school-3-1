@@ -10,7 +10,7 @@ import { Md } from './Md'
 import { usePager } from './Pager'
 import { WhatIf } from './WhatIf'
 import { ReviewEntry } from './Review'
-import { nextPage, pageKind, splitTitle } from './Home'
+import { continuePage, pageKind, splitTitle } from './Home'
 
 /** Syllabus sections that belong on the Materials tab (checklists), not in the syllabus view. */
 export const VERIFY = /^(to verify|ask\b|check\b|do this week|open questions|to do)/i
@@ -71,14 +71,14 @@ export function CoursePage({ code, tab, tree, all, loaded, topics, tallies, link
   if (tab === 'materials') return <Materials code={code} all={all} files={files} links={links} />
   if (tab === 'progress') return <Progress code={code} all={all} files={files} topics={topics} tallies={tallies} due={due} />
 
-  const next = nextPage(course)
+  const next = continuePage(course, all)
   const nextTitle = splitTitle(next ? firstHeading(all[next.path] ?? '') ?? '' : '')
   return (
     <>
       <ReviewEntry all={all} loaded={loaded} course={code} />
       {next && (
-        <a className="card continue-card" href={hrefFor(next.path)}>
-          <div className="sub">{['Continue', pageKind(next.path), nextTitle.date, next.prepared && 'not studied yet'].filter(Boolean).join(' · ')}</div>
+        <a className="card continue-card" href={next.href}>
+          <div className="sub">{[next.resumed ? 'Continue' : 'Next to read', pageKind(next.path), next.section || nextTitle.date, next.prepared && 'not studied yet'].filter(Boolean).join(' · ')}</div>
           <div className="name">{nextTitle.title}</div>
         </a>
       )}

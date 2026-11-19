@@ -11,6 +11,7 @@ export type Route =
   | { kind: 'courses' }
   /** `#/course/STAT251` (Study), `#/course/STAT251/materials`, `#/course/STAT251/progress`. */
   | { kind: 'course'; code: string; tab: CourseTab }
+  | { kind: 'exam'; code: string; date: string }
   | { kind: 'file'; path: string; query: string; anchor?: string }
   /** `#/review`, `#/review?course=STAT251`, `#/review?course=STAT251&section=exam-4-practice` (one bank section, keyed as
    *  the question bank's own `?section=`), `#/review?setup=1` (open the sync settings). */
@@ -54,6 +55,8 @@ export function parseHash(hash: string): Route {
       setup: p.get('setup') === '1' }
   }
   if (s === 'courses') return { kind: 'courses' }
+  const exam = /^exam\/([A-Z0-9]+)\/(\d{4}-\d{2}-\d{2})$/.exec(s)
+  if (exam && isCourseCode(exam[1])) return { kind: 'exam', code: exam[1], date: exam[2] }
   const m = /^course\/([^/]+?)(?:\/(study|materials|progress))?\/?$/.exec(s)
   if (m) return { kind: 'course', code: m[1], tab: (m[2] as CourseTab | undefined) ?? 'study' }
   return { kind: 'file', path: s, query, anchor: decode(anchor) || undefined }
@@ -65,7 +68,8 @@ export function parseHash(hash: string): Route {
  * file's query (a bank's view) and anchor are the same page.
  */
 export function pageId(r: Route): string {
-  return r.kind === 'file' ? r.path : r.kind === 'course' ? `course/${r.code}/${r.tab}` : r.kind
+  return r.kind === 'file' ? r.path : r.kind === 'course' ? `course/${r.code}/${r.tab}`
+    : r.kind === 'exam' ? `exam/${r.code}/${r.date}` : r.kind
 }
 
 /** Fired by navigate, which changes the URL without a hashchange event. */
@@ -128,17 +132,23 @@ export const HREF_HOME = '#/'
 export const HREF_COURSES = '#/courses'
 /** A course page; Study when no tab is named. */
 export const hrefCourse = (code: string, tab: CourseTab = 'study') => `#/course/${code}${tab === 'study' ? '' : '/' + tab}`
+export const hrefExam = (code: string, date: string) => `#/exam/${code}/${date}`
 /** Link to a `## Heading` inside a file: `hrefAnchor('ledger.md', 'term-calendar-hard-dates')`. */
 export const hrefAnchor = (path: string, anchor: string) => `#/${path}#${anchor}`
 
-/** onClick for anchor links: when the URL already carries this anchor no hashchange fires, so scroll by hand. Also asks
- *  the viewer to open the section first, in case it is a collapsed lecture fold (the viewer owns that open state). */
+/** Open the requested section or subheading, including its enclosing outline disclosure. */
+export function openSection(anchor: string | undefined) {
+  const target = anchor ? document.getElementById('sec-' + anchor) : null
+  const details = target?.closest('details')
+  if (details instanceof HTMLDetailsElement) details.open = true
+  return target
+}
+
+/** An anchor link already in the address bar needs to reopen and scroll to its section without a hashchange. */
 export function scrollIfSame(e: { currentTarget: HTMLAnchorElement }) {
   const href = e.currentTarget.getAttribute('href')
   if (!href || window.location.hash !== href) return
-  const id = href.slice(href.lastIndexOf('#') + 1)
-  window.dispatchEvent(new CustomEvent('reveal-section', { detail: id }))
-  document.getElementById('sec-' + id)?.scrollIntoView({ block: 'start' })
+  openSection(href.slice(href.lastIndexOf('#') + 1))?.scrollIntoView({ block: 'start' })
 }
 
 // ---- a question bank's view, kept in its URL so Back, Forward and a reload come back to it ----------------------
@@ -149,6 +159,8 @@ type Ranges = [number, number][]
 export interface BankView {
   /** A `## ` section's key (sectionKeys in QuestionBank.tsx), or '' for every section. */
   section: string
+  /** Exam date for a scoped practice bank. */
+  exam?: string
   /** The filters as slugs, '' for none: topicKey of the ledger topic a Topic tag names, then the slugs of a Lec tag and a
    *  Type tag. */
   topic: string
@@ -192,6 +204,7 @@ export function parseBankView(query: string): BankView {
   const only = p.get('only')
   return {
     section: p.get('section') ?? '',
+    ...( /^\d{4}-\d{2}-\d{2}$/.test(p.get('exam') ?? '') ? { exam: p.get('exam') ?? '' } : {}),
     topic: p.get('topic') ?? '',
     lec: p.get('lec') ?? '',
     type: p.get('type') ?? '',
@@ -206,13 +219,16 @@ export function parseBankView(query: string): BankView {
  * (so it is no new place to scroll to): `#/courses/STAT251/02-questions.md?section=lec-7&type=apply&open=3,7-9`.
  */
 export function hrefBank(path: string, view: BankView, anchor?: string): string {
-  const { section, topic, lec, type, only, shuffle, open } = view
-  const q = Object.entries({ section, topic, lec, type }).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
+  const { section, topic, lec, type, exam = '', only, shuffle, open } = view
+  const q = Object.entries({ section, topic, lec, type, exam }).filter(([, v]) => v).map(([k, v]) => `${k}=${encodeURIComponent(v)}`)
   if (only !== 'all') q.push(`only=${only}`)
   if (shuffle) q.push(`shuffle=${shuffle}`)
   if (open.length) q.push('open=' + open.map(([a, b]) => (a === b ? `${a}` : `${a}-${b}`)).join(','))
   return `#/${path}${q.length ? '?' + q.join('&') : ''}${anchor ? '#' + anchor : ''}`
 }
+
+export const hrefExamBank = (code: string, exam: string) =>
+  hrefBank(`courses/${code}/02-questions.md`, { ...WHOLE_BANK, exam })
 
 /** The course's question bank showing only one topic's questions: a ledger row's topic or a question's Topic tag. */
 export const hrefTopic = (code: string, topic: string) =>
