@@ -6,7 +6,7 @@ Judge William (**B**) writes both letters in Part II of *Either/Or* to the young
 
 PDF references below follow Alastair Hannay’s abridged Penguin translation. Lecture interpretations are attributed to Kraal.
 
-[Exam 4 multiple-choice practice](#/courses/PHIL385/02-questions.md?section=exam-4-practice)
+[Take the seven-question mock](08-exam-4-mock.md) · [Exam 4 multiple-choice practice](#/courses/PHIL385/02-questions.md?section=exam-4-practice)
 
 ## The Aesthetic Validity of Marriage
 
@@ -28,25 +28,29 @@ PDF references below follow Alastair Hannay’s abridged Penguin translation. Le
 
 ## Equilibrium — choice, Hegel and good and evil
 
-[Full reading](readings/equilibrium.md) · [Lectures 21](lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md), [22](lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) and [23](lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
+Imagine you damage a friend’s bike while borrowing it. You could tell them what happened or say it was already broken.
 
-1. **The first either/or** is whether to live in terms of good and evil at all. B calls this the **choice to will**. The aesthetic as a way of life is **indifference** to those categories. The helmsman's ship keeps moving while he deliberates. Waiting can let circumstances decide for him (PDF pp. 420, 423–424).
-2. **The absolute either/or** is the choice between good and evil in a person's actions. It acquires meaning for the person once they choose to live ethically. They can still choose evil.
-3. **Choosing oneself** means accepting the actual person one is and taking responsibility for what one becomes. B's phrase **eternal validity** points to the self as **freedom**, which goes deeper than any talent, role or mood.
+1. **The first either/or** is whether to let good and evil matter in how you live. B calls taking up that responsibility the **choice to will**. Treating the bike incident only as a question of which story will work illustrates the aesthetic’s **indifference** to good and evil.
+2. **The absolute either/or** is the choice you face once you take that responsibility seriously. You can still choose to tell the truth or lie. The first choice makes that distinction matter to you (PDF pp. 423–424, 428).
+3. **Hannay p. 524.** You can compare how likely each story is to be believed. That is a **relative difference**. B says thought cannot establish the absolute difference between good and evil in the same way. Taking responsibility for acting on what is right takes a decision of the will. B says the good exists through his willing it in this sense. He still gives good and evil **absolute validity**. Preferring the easier story has no power to make it good (PDF pp. 456–457).
 
-- **Hegel and B.** For Hegel, freedom becomes actual and recognized in **family, civil society and the state**. Hegel calls marriage an ethical tie. His own system has **Logic, Nature and Spirit**. B's list of the spheres where thought can explain necessity is **logic, nature and history**. Looking back can explain where an act fits in history. The person still had to decide freely at the time.
-- **Hannay p. 524 (PDF pp. 456–457).** Thought compares relative differences. B says that the absolute difference between good and evil enters one's life through the will. The good exists by virtue of one's willing it in this sense. B still asserts the **absolute validity** of good and evil. Their validity cannot be set by personal taste.
-- **Kraal's reason objection.** Even if reason lets us see the ethical directly, we still have to choose to trust that judgment and live by it. The act of will still matters.
+- **Kraal’s reason objection.** Suppose you see immediately that you should tell your friend. You still have to choose to trust that judgment and act on it.
+- **Hegel and B.** For Hegel, freedom becomes actual and recognized in **family, civil society and the state**. Hegel calls marriage an ethical tie. His system has **Logic, Nature and Spirit**. B’s spheres for thought are **logic, nature and history**. A historical explanation can show where the choice fits after the fact. The person still had to make it.
+
+[Full reading on the two choices](readings/equilibrium.md#the-choice-and-what-philosophy-cannot-do) · [Lectures 21](lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md) and [22](lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md)
 
 ## Equilibrium — how despair leads to the ethical
 
-1. Imagine making one talent the ground of your whole life. Aesthetic enjoyment rests on some such condition you did not put there, whether it is inside you, like a talent, or outside you, like wealth.
-2. Losing the talent could expose how much your life depended on it. It was always possible to lose it. That dependence is why B says **every aesthetic life-view is already despair**, whether the person feels it or not (PDF pp. 436–437). A's **thought-despair** means he sees this in advance and still avoids committing.
-3. B says **Despair!** He asks A to confront the limits of building a life on finite things (PDF p. 445). Kraal connects this to the **crossroads**, where a person has come to the point of having to choose (PDF p. 423). B wants A to choose himself as a free person responsible for his life (PDF p. 447).
+1. **The dependence.** A musician makes performing the one thing that gives their life worth. They may feel great while they are able to perform. Their life still depends on a condition they can lose. B already calls this **despair**.
+2. **The loss.** An injury takes away their ability to perform. The injury exposes the dependence that was there before. A’s **thought-despair** is a version of this in which he sees that every source of satisfaction can give out, even though he has suffered no particular loss (PDF pp. 436–438).
+3. **The choice.** The musician can deliberately face the dependence and ask how they will live this life even if they never perform again. That is what B asks A to do when he says **Despair!** The **crossroads** is the point where they have to decide how to live. B’s answer is to **choose oneself** as a free person responsible for that life (PDF pp. 423, 445, 447).
 
-- **Doubt and despair.** Doubt concerns thought. Despair concerns the whole personality. B calls despair the true starting point for finding the absolute. He calls it salvation when it is **willed infinitely** (PDF pp. 447–449, 454–455). Finite despair can harden around a single loss or gain and harm the soul.
+- **Finite and absolute despair.** The musician could make recovery or a new success the sole basis for their worth. That is finite despair. B calls it **absolute despair** when they give up putting their whole life at the mercy of any one gain or loss. They can still value music and work toward recovery. Choosing oneself in one’s **eternal validity** means taking responsibility for the actual life one has, through whatever happens to those abilities (PDF pp. 447–451, 454–455).
+- **Doubt and despair.** Doubt concerns thought. Despair concerns the whole personality. B calls despair the true starting point for finding the absolute and says it can be salvation when it is **willed infinitely**.
 - **Melancholy.** In this letter B calls it **hysteria of the spirit**. The person senses a need for a deeper way to live and holds back from willing it. Nero tries another amusement and gets bored again.
-- **Repentance.** Choosing the actual self includes taking responsibility for one's guilt and facing the history that connects one with other people and God. B calls repentance the one expression of love of God.
+- **Repentance.** Choosing the actual self includes taking responsibility for one’s guilt and facing the history that connects one with other people and God. B calls repentance the one expression of love of God.
+
+[Full reading on despair](readings/equilibrium.md#every-aesthetic-life-is-despair) · [Lecture 23](lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
 
 ## Equilibrium — what an ethical life looks like
 

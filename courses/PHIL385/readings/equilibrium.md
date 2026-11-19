@@ -23,12 +23,13 @@ This letter is on PDF pp. 415–514 of Hannay’s abridged Penguin translation. 
 
 ### The two choices in B's either/or (Hannay p. 480 and following, PDF pp. 423–424)
 
-1. **First, choose whether to live ethically at all.** This is B's initial either/or. It asks whether A will take responsibility for his choices and treat good and evil as categories that matter in his life. B calls this the **choice to will**.
-2. **Then, choose between good and evil in what you do.** B calls this the **absolute either/or**. Choosing the ethical makes the distinction matter to the person. That person can still go on to do wrong.
+Imagine you damage a friend’s bike while borrowing it. You could tell them what happened or say it was already broken. B sees two choices here.
 
-- B calls an **aesthetic choice** no choice in the strict sense. It can be immediate, as when a person simply follows an attraction. It can also dissolve into endlessly comparing possibilities, as in A's career example. B calls the aesthetic a position of **indifference** to good and evil.
-- The difference is the seriousness with which a person chooses. Someone who commits can discover their mistake and correct it. Someone who treats every option as an experiment can always move on before finding out what their decision means.
-- B calls the moment when A has exhausted ways of avoiding the decision the **crossroads**. He wants to bring A to that point. The sections on despair explain how he thinks A can get there. Kraal linked the first either/or to Nietzsche's idea of going beyond good and evil. [Lecture 21](../lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md)
+1. **The first either/or is how you will live.** You could treat the situation as a question of which story will work. Or you could let right and wrong matter in how you decide what to do, with this friend and across your life. B calls taking up that responsibility the **choice to will**.
+2. **The absolute either/or is what you will do.** Once you have taken responsibility for living ethically, you can still tell the truth or lie. B calls that the choice between **good and evil**. Choosing to live ethically makes the distinction matter. It leaves you responsible for each act that follows.
+
+- B calls the aesthetic position **indifference** to good and evil. He also calls an aesthetic choice no choice in the strict sense. It can follow an immediate attraction, or it can get lost in comparing possibilities. In the bike example, you could keep trying out stories in your head while letting which one feels persuasive decide for you.
+- Someone who chooses seriously can discover that they chose badly and correct it. B calls the moment when a person has exhausted ways of avoiding the decision the **crossroads**. Kraal linked the first either/or to Nietzsche’s idea of going beyond good and evil. [Lecture 21](../lectures/21-equilibrium-hegels-framework-and-the-real-either-or.md)
 
 ### Thought, freedom and Hegel (PDF pp. 424–427)
 
@@ -56,19 +57,21 @@ This letter is on PDF pp. 415–514 of Hannay’s abridged Penguin translation. 
 
 ### Why the despair is there before a loss (Hannay pp. 501–502 on the argument, PDF pp. 436–443 for the section)
 
-1. Suppose I make my talent the condition that gives my life meaning. As long as I can use it, my life may feel successful.
-2. If I lose that ability, the life I built around it can fall apart. The loss exposes how much I was already depending on a condition that could change.
-3. B calls that dependence despair. It was there while the talent was flourishing. This is how B can say that **every aesthetic life-view is despair**, whether the person knows it or not.
+Imagine a musician who sees being able to perform as the one thing that makes their life worthwhile. Then an injury takes away their ability to perform.
 
-- B uses a painter who goes blind to show despair over one thing. If the painter's sight returns, that cause of despair disappears. A has suffered no such loss. He already sees in thought that each source of satisfaction can give out. B calls A's position **thought-despair**.
-- A swings between intense work and idleness. For a while a project absorbs him. Then he drops it and takes comfort in thinking that he could have continued. B thinks this lets A avoid committing to anything he might have to keep doing after the mood passes.
-- When A imagines wealth, admiration or the most beautiful person's love, he can picture enjoying each for a while. B grants A one point. Finite goods can be worth having and still fall short of what someone seeks when they want something eternal.
+1. **Before the injury**, they felt successful. Their sense of worth still depended on an ability that could be lost.
+2. **After the injury**, they can feel how much depended on that ability. The injury exposed a dependence already there.
+3. **B calls the dependence despair.** That is why he says that every aesthetic life-view is already despair. The person may feel happy while the condition holds.
 
-### What B means by "Despair!" (Hannay pp. 511–512, PDF pp. 445–446)
+- B’s own example is a painter who goes blind. Getting his sight back would end that particular despair. A has suffered no comparable loss. He already sees that wealth, admiration or love could stop satisfying him, yet keeps finding distractions. B calls A’s position **thought-despair**.
+- When A gets absorbed in a project, he works intensely and then drops it. The thought that he could have continued lets him keep his options open. B grants that finite goods can be worth having and still fall short of what someone seeks when they want something eternal.
 
-- B thinks telling A to get married or take a job would give him another diversion. His one answer is **Despair!** He asks A to face the fact that another success or pleasure cannot supply the basis for his whole life. B presents facing this as an action that takes courage. In Kraal's reading, it brings A to the crossroads. He describes the power of despair through a young man who despairs for the sake of the woman he loves and discovers what the two of them share as human beings (Hannay p. 512).
-- B distinguishes **finite despair** from **absolute despair**. In finite despair, a person clings to one loss or tries to replace it with another finite good. In absolute despair, a person gives up treating any of these goods as the final basis for their life and takes responsibility for themselves as a whole. B calls this absolute self-surrender.
-- B calls despair a person's salvation only when it is **willed infinitely**. Finite despair can harm the soul when a person hardens around the loss and makes a finite solution their only aim. This is the point of his discussion of gaining the whole world and suffering harm to one's soul (Hannay p. 522, PDF pp. 453–455). [Lecture 23](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
+### What B means by “Despair!” (Hannay pp. 511–512, PDF pp. 445–446)
+
+- The musician could go looking for another success to serve the same role. If they pin their whole worth on recovering or becoming successful at something else, B calls that **finite despair**. What the life depends on has changed. The dependence is still there.
+- **Choosing despair** means deliberately facing that dependence. Think of the musician asking, “If I can no longer perform, how am I going to live this life?” B wants them to take responsibility for answering as the person they already are, with their history, relationships and abilities. That is what he means by **choosing oneself**.
+- B calls despair **absolute** or **willed infinitely** when the person gives up making any finite loss or gain the ground of their whole life. He calls this **absolute self-surrender**. The musician can still work toward recovery or stay involved in music. Their responsibility for how they live reaches further than whether they can perform again (PDF pp. 447–449, 453–455).
+- B tells A to **Despair!** because A already sees the limits of his distractions. A marriage or a job taken for the sake of distraction would repeat the pattern. Kraal connects B’s command to the **crossroads**, the point where A has to decide how he will live. B also illustrates the power of despair through a young man who discovers what he and the woman he loves share as human beings (Hannay p. 512). [Lecture 23](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
 
 ## Choosing oneself
 
@@ -87,9 +90,10 @@ This letter is on PDF pp. 415–514 of Hannay’s abridged Penguin translation. 
 
 ### Why B says thought cannot establish good and evil (Hannay p. 524, PDF pp. 456–457)
 
-- Thought can compare relative differences, such as which action is more effective or has better consequences. B calls the difference between good and evil **absolute**. The distinction enters the person's life when they choose themselves and take responsibility for what they will.
-- When B says that the good exists through his willing it, he means that this relation to the good requires a free act. He still claims that good and evil have **absolute validity**. Willing the good is how the individual enters into that distinction. Their preferences cannot determine what counts as good.
-- Kraal raised the objection that people might have a rational capacity to see the ethical on its own. His reply on B's behalf was that even if we can see it, we still have to decide to trust that capacity and live by what it tells us. The insight leaves the act of will to us. [Lecture 22](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Lecture 23](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
+- Go back to the broken bike. You can think through whether a lie will work, how much the repair costs, or how your friend might react. These are **relative differences**. Each answer depends on the comparison you are making.
+- B says those comparisons cannot establish the **absolute difference** between good and evil. They still leave you with a decision. Will you take responsibility for acting on what you take to be right? He says that good and evil become a live issue for you when you choose to live ethically. This is what he means when he says that the good exists by virtue of his **willing** it.
+- B still claims **absolute validity** for good and evil. Your choice is about taking responsibility for how you live. If you decide to lie, your preference for the easier story has no power to make it good.
+- Kraal raised the possibility that a person can **intuit** the ethical, or see it directly through reason. In the example, suppose you see immediately that you should tell your friend what happened. Kraal’s reply on B’s behalf is that you still have to decide to trust that judgment and live by it. [Lecture 22](../lectures/22-equilibrium-hegel-and-the-choice-of-good-and-evil.md) · [Lecture 23](../lectures/23-equilibrium-despair-as-the-way-to-the-ethical.md)
 
 ## The ethical life-view
 

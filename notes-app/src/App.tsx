@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildTree, courseOf, labelFor, loadAll, mainFileCourse, mainTab, titledByHeader, type Loaded, type Tree } from './files'
+import { buildTree, courseOf, labelFor, loadAll, mainFileCourse, mainTab, PHIL385_EXAM_4_MOCK, titledByHeader, type Loaded, type Tree } from './files'
 import { courseLabel, parseCalendar, parseLedgerTopics, parseLinks } from './markdown'
 import { tallyByCourse } from './stats'
 import { COURSE_TABS, hrefCourse, pageId, parseBankView, savedScroll, startScrollMemory, useRoute, type Route } from './routes'
@@ -9,6 +9,7 @@ import { Home } from './Home'
 import { CoursePage } from './CoursePage'
 import { Courses } from './Courses'
 import { Viewer } from './Viewer'
+import { ExamMock } from './ExamMock'
 import { lecQuery } from './sources'
 import { LedgerView } from './LedgerView'
 import { TopicsView } from './TopicsView'
@@ -129,6 +130,7 @@ export default function App() {
   else if (!(route.path in all)) body = <article><h1>Not found</h1><p><code>{route.path}</code></p></article>
   else if (route.path === 'ledger.md') body = <LedgerView text={all['ledger.md']} topics={topics} calendar={calendar} quiz={loaded.quiz} due={due} />
   else if (route.path.endsWith('/02-questions.md')) body = <QuestionBank key={route.path} path={route.path} text={all[route.path]} all={all} topics={topics} historyOf={loaded.historyOf} view={parseBankView(route.query)} anchor={route.anchor} />
+  else if (route.path === PHIL385_EXAM_4_MOCK) body = <ExamMock path={route.path} text={all[route.path]} />
   else if (route.path.endsWith('/01-topics.md')) body = <TopicsView path={route.path} text={all[route.path]} topics={topics} due={due} />
   else if (route.path === 'links.md') body = <LinksView text={all['links.md']} rows={links} />
   else {

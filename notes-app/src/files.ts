@@ -82,6 +82,8 @@ export interface Entry { path: string; label: string }
 export interface Course { code: string; main: Entry[]; lectures: Entry[]; readings: Entry[]; prepared: Entry[] }
 export interface Tree { courses: Course[]; runs: Entry[] }
 
+export const PHIL385_EXAM_4_MOCK = 'courses/PHIL385/08-exam-4-mock.md'
+
 const MAIN: [string, string][] = [
   ['00-syllabus.md', 'Syllabus'],
   ['03-logistics.md', 'Logistics'],
@@ -90,13 +92,14 @@ const MAIN: [string, string][] = [
   ['04-ask-kraal.md', 'Ask Kraal'],
   ['05-exam-review.md', 'Exam review'],
   ['07-exam-4-summary.md', 'Exam 4 summary'],
+  ['08-exam-4-mock.md', 'Exam 4 mock'],
   ['06-cheat-sheet.md', 'Cheat sheet'],
 ]
 
 /** Which course tab each main file sits under: study content, reference material, or progress. */
 const MAIN_TAB: Record<string, CourseTab> = {
   '02-questions.md': 'study', '05-exam-review.md': 'study', '06-cheat-sheet.md': 'study',
-  '07-exam-4-summary.md': 'study',
+  '07-exam-4-summary.md': 'study', '08-exam-4-mock.md': 'study',
   '00-syllabus.md': 'materials', '03-logistics.md': 'materials', '04-ask-kraal.md': 'materials',
   '01-topics.md': 'progress',
 }

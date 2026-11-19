@@ -1,7 +1,7 @@
 import { useMemo, useState, type MouseEvent } from 'react'
 import { flushSync } from 'react-dom'
 import type { Texts, Tree } from './files'
-import { courseOf, hrefFor, labelFor } from './files'
+import { courseOf, hrefFor, labelFor, PHIL385_EXAM_4_MOCK } from './files'
 import { splitSections } from './markdown'
 import { hrefAnchor, hrefCourse, scrollIfSame } from './routes'
 import { toneStyle } from './tone'
@@ -31,17 +31,19 @@ function Highlight({ text, terms }: { text: string; terms: string[] }) {
  * there. A line that is only an HTML comment, such as the Due now block's date line, never renders, so search skips it.
  */
 function sectionsOf(all: Texts, tree: Tree): Part[] {
-  return Object.entries(all).flatMap(([path, text]) => splitSections(text).map((s, i) => {
-    const code = /^courses\/([^/]+)\/00-syllabus\.md$/.exec(path)?.[1]
-    const overview = code !== undefined && s.heading !== null && VERIFY.test(s.heading)
-    const lines = s.body.split('\n').filter((l) => !/^\s*<!--.*-->\s*$/.test(l))
-    return {
-      key: `${path}:${i}`, path,
-      href: overview ? hrefCourse(code, 'materials') : s.heading ? hrefAnchor(path, s.id) : hrefFor(path),
-      page: overview ? 'Materials' : labelFor(path, tree),
-      heading: s.heading, lines, lower: `${s.heading ?? ''}\n${lines.join('\n')}`.toLowerCase(),
-    }
-  }))
+  return Object.entries(all).flatMap(([path, text]) => splitSections(text)
+    .filter((_, i) => i === 0 || path !== PHIL385_EXAM_4_MOCK)
+    .map((s, i) => {
+      const code = /^courses\/([^/]+)\/00-syllabus\.md$/.exec(path)?.[1]
+      const overview = code !== undefined && s.heading !== null && VERIFY.test(s.heading)
+      const lines = s.body.split('\n').filter((l) => !/^\s*<!--.*-->\s*$/.test(l))
+      return {
+        key: `${path}:${i}`, path,
+        href: overview ? hrefCourse(code, 'materials') : s.heading ? hrefAnchor(path, s.id) : hrefFor(path),
+        page: overview ? 'Materials' : labelFor(path, tree),
+        heading: s.heading, lines, lower: `${s.heading ?? ''}\n${lines.join('\n')}`.toLowerCase(),
+      }
+    }))
 }
 
 /**

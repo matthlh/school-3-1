@@ -36,6 +36,8 @@ function PageCards({ entries, all }: { entries: Entry[]; all: Texts }) {
 const BLURB: Record<string, string> = {
   'Question bank': 'Every question, filterable by topic and lecture.',
   'Exam review': 'Notes for exam preparation.',
+  'Exam 4 summary': 'The two letters and the key arguments.',
+  'Exam 4 mock': 'Seven mixed questions with answers at the end.',
   'Cheat sheet': 'What goes on the allowed sheet.',
   Syllabus: 'Grading, exam format and schedule.',
   Logistics: 'Office hours, contacts and course details.',
