@@ -12,7 +12,7 @@
 | WeBWorK ×10 | 10% | Tuesdays 23:59 (dates in Logistics); lowest one dropped |
 | Lab ×8 | 7% | in-lab quiz (3) + follow-up (3), written in a ~20-min window during the Friday lab — no make-up at home; lowest lab dropped |
 | Pre-lab quizzes ×7 | 2% | short Canvas quiz on the lab handout before Labs 2–8; opens ~1 week before, due Fri 23:59; lowest one dropped |
-| Written assignments ×2 | 10% | WA1 **Sat Oct 24** (52 pts) · WA2 **Wed Dec 2** (40 pts), via Gradescope; posted ≥10 days ahead |
+| Written assignments ×2 | 10% | WA1 **Sat Oct 24** (52 pts) · WA2 **Wed Dec 2** (40 pts), via Gradescope; posted ≥10 days ahead; WA2 questions 5 and 6 are bonus, up to about 109% (announced Nov 18) |
 | **Midterm** (replaced by Final if higher) | **22%** | **Fri Oct 30, 8:00–8:50am**, regular classroom; versions A/B; no make-up (approved concession → weight to final); the replacement rule was announced in lecture 23, Nov 6 |
 | **Final** | **45%** | **Mon Dec 14, 3:30pm**, in person; room and length not posted yet. **Must pass the final to pass the course.** |
 | *Piazza bonus* | *+1%* | 10+ endorsed answers |

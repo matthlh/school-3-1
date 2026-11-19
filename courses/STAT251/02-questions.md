@@ -4677,7 +4677,7 @@ The class showed this with an applet that simulates many intervals; it also show
 
 The choice depends on whether $$\sigma$$ is known, not on the sample size. The t-value is larger because the t-distribution has thicker tails.
 
-## Lec 26 — Ch 8: a t interval example, hypothesis tests about μ, and Type I and Type II errors (prepared 2026-11-18 from the after-class deck; Canvas calls it Lecture 27; numbers changed)
+## Lec 26 — Ch 8: a t interval example, hypothesis tests about μ, and Type I and Type II errors (prepared 2026-11-18 from the after-class deck, logged the same day with the recording and his notes; Canvas calls it Lecture 27; numbers changed)
 
 ### Q: A sample of $$n = 25$$ one-bedroom apartments from a Normal population has $$\bar{x} = 840$$ dollars and $$s = 120$$ dollars; $$\sigma$$ is unknown. Find the 95% confidence interval for the mean rent and interpret it. Use $$t_{0.025, 24} = 2.064$$.
 **Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 26  **Type:** apply  **Id:** f51e4438
@@ -4770,6 +4770,38 @@ A good test rarely makes either error.
 2. Type II: not concluding they are underfilled when the mean really is below 500 ml.
 
 Name the decision and the true state of $$H_0$$ in the words of the problem; bare definitions earn less on the exam.
+
+### Q: A 95% confidence interval for $$\mu$$ is $$(1840, 1910)$$. Which statement gives the meaning of 95% confidence? (A) 95% of the population's values fall in $$(1840, 1910)$$. (B) In repeated sampling, $$\mu$$ would fall in $$(1840, 1910)$$ 95% of the time. (C) 95% of the sample's values fall in $$(1840, 1910)$$. (D) In repeated sampling, 95% of the intervals built this way would contain $$\mu$$. Choose one, and say why B is wrong.
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** 26  **Type:** apply  **Id:** 1796db47
+**A:** Key:
+1. D.
+2. B is wrong because $$\mu$$ is a fixed number; it is the interval, not $$\mu$$, that changes from sample to sample.
+
+A and C describe observations, but a confidence interval is about the parameter. The 95% describes the method: about 95 of every 100 intervals built from repeated samples contain $$\mu$$. This was an iClicker question in class; 59% chose D, and most of the rest chose B.
+
+### Q: A simple random sample of 64 granola bars has a mean weight of 42 g, and the population standard deviation is unknown. A 95% confidence interval for the mean weight is based on which model? (A) the standard Normal model (B) t with 64 degrees of freedom (C) t with 63 degrees of freedom (D) none can be named without $$s$$. Choose the best answer and say why.
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** 26  **Type:** apply  **Id:** a6e8cf4e
+**A:** Key:
+1. C, t with 63 degrees of freedom.
+2. $$\sigma$$ is unknown, so $$s$$ replaces it, and that gives t with $$n - 1 = 63$$ degrees of freedom.
+
+A is only an approximation, valid because $$n$$ is large; when one answer must be chosen, choose the exact model. D is wrong because the question asks for the model, and $$s$$ can always be computed from a random sample. This was an iClicker question in class with $$n = 100$$; 72% chose t with 99 degrees of freedom.
+
+### Q: Which pair of hypotheses tests whether the average time a coffee order takes is less than 4 minutes? (A) $$H_0: \bar{x} \ge 4$$, $$H_a: \bar{x} < 4$$ (B) $$H_0: \bar{x} < 4$$, $$H_a: \bar{x} \ge 4$$ (C) $$H_0: \mu \ge 4$$, $$H_a: \mu < 4$$ (D) $$H_0: \mu < 4$$, $$H_a: \mu \ge 4$$. Choose one, and say why A and B are ruled out.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** apply  **Id:** 14be73a0
+**A:** Key:
+1. C.
+2. A and B are about $$\bar{x}$$, but hypotheses are about the population parameter $$\mu$$; the sample mean is already known from the data.
+
+"Less than 4" is what the test tries to establish, so it goes in $$H_a$$, and the equality stays with $$H_0$$. D swaps the two. This was an iClicker question in class.
+
+### Q: Two tests of the same $$H_0$$ give p-values of 0.30 and 0.0005. For each, say how unusual the data would be if $$H_0$$ were true, and give the decision at $$\alpha = 0.05$$.
+**Topic:** 5g–i Hypothesis tests about μ  **Lec:** 26  **Type:** apply  **Id:** d1d15a82
+**A:** Parts:
+1. 0.30: data like these would turn up about 3 times in 10 if $$H_0$$ were true, which is not unusual, so do not reject $$H_0$$.
+2. 0.0005: data this extreme would almost never turn up if $$H_0$$ were true, so reject $$H_0$$; the result is statistically significant.
+
+The p-value measures how unusual the sample is under $$H_0$$. The smaller it is, the stronger the evidence against $$H_0$$, and the cut-off is $$\alpha$$.
 
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
