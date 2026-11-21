@@ -4803,6 +4803,73 @@ A is only an approximation, valid because $$n$$ is large; when one answer must b
 
 The p-value measures how unusual the sample is under $$H_0$$. The smaller it is, the stronger the evidence against $$H_0$$, and the cut-off is $$\alpha$$.
 
+## WeBWorK 8 — Ch 8 (open by Nov 21, due Fri Nov 27; banked 2026-11-21, numbers changed)
+
+### Q: WeBWorK-style. A random sample of 1600 voters is polled and $$X$$ is the number who support a proposal. The estimator used is $$\hat{p} = \frac{X + \sqrt{1600}/2}{1600}$$. What is the bias of $$\hat{p}$$ as an estimator of the true proportion $$p$$?
+**Topic:** 5b–d Point and interval estimation and unbiased estimators  **Lec:** WW8  **Type:** apply  **Id:** 2b930f51
+**A:** Key:
+1. Bias is $$E(\hat{p}) - p = \frac{20}{1600} = \frac{1}{80}$$.
+
+$$E(X) = np$$, so $$\frac{X}{1600}$$ alone is unbiased and only the added constant is left.
+
+$$
+\begin{aligned}
+E(\hat{p}) &= \frac{E(X) + 20}{1600} \\
+&= \frac{1600p + 20}{1600} \\
+&= p + \frac{1}{80}
+\end{aligned}
+$$
+
+In general the added $$\frac{\sqrt{n}}{2}$$ gives bias $$\frac{1}{2\sqrt{n}}$$, which shrinks as $$n$$ grows. The trap is answering 0 because $$\frac{X}{n}$$ alone is unbiased.
+
+### Q: WeBWorK-style. Vehicle speeds on a bridge are Normal. A sample of 25 vehicles has mean 88.40 km/h and sample standard deviation 5.20 km/h. (a) How many degrees of freedom does the t distribution have? (b) Give the 95% confidence interval for the mean speed. (c) At the 5% level, what do you conclude about $$H_0: \mu = 80$$, and why? (d) What does lowering the significance level do to the Type I error probability?
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** WW8  **Type:** apply  **Id:** 936aac66
+**A:** Key:
+1. (b) $$88.40 \pm t_{0.025, 24} \times \frac{5.20}{\sqrt{25}} = 88.40 \pm 2.064 \times 1.04$$.
+2. (a) $$df = n - 1 = 24$$.
+3. (b) The interval is $$(86.25, 90.55)$$.
+4. (c) Reject $$H_0$$, because 80 is not in the 95% interval.
+5. (d) It decreases the Type I error probability.
+
+$$
+\begin{aligned}
+SE &= \frac{5.20}{5} = 1.04 \\
+ME &= 2.064 \times 1.04 \\
+&= 2.147
+\end{aligned}
+$$
+
+A two-sided test at level $$\alpha$$ rejects exactly when the hypothesised mean falls outside the $$(1 - \alpha)$$ interval. Lowering $$\alpha$$ also raises the Type II probability. The traps are rejecting because the sample mean is not 80, and thinking a smaller $$\alpha$$ leaves Type II unchanged.
+
+### Q: WeBWorK-style. Two tire brands are compared on mileage before uneven wear, assumed Normal with equal variances. Brand A: 12 cars, mean 24.10, variance 6.00. Brand B: 10 cars, mean 22.30, variance 5.00 (thousands of miles). (a) Find the pooled variance. (b) Give the 95% confidence interval for $$\mu_A - \mu_B$$. (c) At $$\alpha = 0.05$$, do you reject $$H_0: \mu_A = \mu_B$$, and why?
+**Topic:** 5k t-distribution and the confidence interval for μ with σ unknown  **Lec:** WW8  **Type:** apply  **Id:** 0e19ae29
+**A:** Key:
+1. (b) $$1.80 \pm t_{0.025, 20} \times s_p \sqrt{\frac{1}{12} + \frac{1}{10}}$$ with $$df = 12 + 10 - 2 = 20$$.
+2. (a) $$s_p^2 = \frac{11 \times 6.00 + 9 \times 5.00}{20} = 5.55$$.
+3. (b) $$SE = 1.009$$, so the interval is $$1.80 \pm 2.086 \times 1.009 = (-0.30, 3.90)$$.
+4. (c) Do not reject $$H_0$$, because 0 is inside the interval.
+
+$$
+\begin{aligned}
+s_p^2 &= \frac{66 + 45}{20} \\
+&= 5.55 \\
+SE &= \sqrt{5.55 \times 0.1833} \\
+&= 1.009 \\
+ME &= 2.086 \times 1.009 \\
+&= 2.104
+\end{aligned}
+$$
+
+The pooled variance weights each sample variance by its degrees of freedom, $$n - 1$$. The trap is checking whether the observed difference is inside the interval: it always is. The question is whether 0 is.
+
+### Q: WeBWorK-style. A test's significance level is changed from 0.05 to 0.01. Which of these happen? (A) The probability that $$H_0$$ is true changes from 0.05 to 0.01. (B) It becomes harder to reject $$H_0$$. (C) It becomes easier to prove $$H_0$$ true. (D) The Type II error probability changes from 0.05 to 0.01. (E) The Type I error probability changes from 0.05 to 0.01.
+**Topic:** 5l–m Type I and Type II errors  **Lec:** WW8  **Type:** apply  **Id:** c140313e
+**A:** Parts:
+1. B is true: a smaller $$\alpha$$ makes rejection harder.
+2. E is true: $$\alpha$$ is the Type I error probability.
+
+A, C and D are false. $$\alpha$$ is not the probability that $$H_0$$ is true, a test never proves $$H_0$$, and $$\beta$$ is not set by $$\alpha$$ (it rises when $$\alpha$$ falls).
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -6350,3 +6417,22 @@ P(X \ge 75) &\approx P(Y \ge 74.5) \\
 &= 0.2420
 \end{aligned}
 $$
+
+### Q: WeBWorK-style. Repair times are Normal with standard deviation 40 hours. Ten repairs took 150, 210, 190, 230, 175, 205, 260, 185, 220 and 195 hours. (a) Find the 95% confidence interval for the mean repair time, to 3 decimals. (b) What is the smallest sample size that makes the interval narrower than 20 hours?
+**Topic:** 5e–f Confidence interval for μ with σ known  **Lec:** WW8  **Type:** apply  **Id:** 733134af
+**A:** Steps:
+1. $$\sigma$$ is known, so use $$\bar{x} \pm 1.96 \frac{\sigma}{\sqrt{n}}$$.
+2. $$\bar{x} = \frac{2020}{10} = 202.0$$.
+3. $$ME = 1.96 \times \frac{40}{\sqrt{10}} = 24.792$$, so the interval is $$(177.208, 226.792)$$.
+4. Width $$2 \times 1.96 \times \frac{40}{\sqrt{n}} < 20$$ gives $$\sqrt{n} > 7.84$$, so $$n > 61.47$$.
+5. Round up: $$n = 62$$.
+
+$$
+\begin{aligned}
+\frac{156.8}{\sqrt{n}} &< 20 \\
+\sqrt{n} &> 7.84 \\
+n &> 61.47
+\end{aligned}
+$$
+
+The trap is rounding 61.47 down; a sample size always rounds up. With $$n = 61$$ the width is 20.08, which is not below 20.
