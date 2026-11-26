@@ -4,7 +4,11 @@ The four goals below are in priority order. Use them to decide what to work on t
 
 ## Priority
 
-Matt set the priority on Nov 6. For flexible work in daily and weekly plans, put School first, Career second, Personal third and other work last. The plan reserves no Career hours.
+Matt set the priority on Nov 19, replacing the Nov 6 order. For flexible work in daily and weekly plans, put Career first, School second, Personal third and other work last.
+
+- School work due within 2 days, exam prep steps included, still goes before Career.
+- Overdue school catch-up ranks with the rest of School.
+- The plan reserves no hours for either.
 
 Keep fixed external events in their calendar slots. Flag any conflict for Matt instead of moving or cancelling an event.
 

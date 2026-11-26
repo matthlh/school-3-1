@@ -54,8 +54,8 @@ Update the ledger, look at the week's due topics, adjust.
 
 ## Weekly time budget
 
-The planner uses a default budget of six hours a day outside class, shared by School, Career,
-Personal and other work, in that order. There is no Career reserve. A shorter day can be set explicitly;
+The planner uses a default budget of six hours a day outside class, shared by Career, School,
+Personal and other work, in that order, except that school work due within 2 days goes first. No hours are reserved. A shorter day can be set explicitly;
 more than six hours needs your approval. The day before an exam is lighter unless you set another budget.
 Fixed calendar events keep their slots. Use the live plan and ledger for current deadlines, rather than
 an old weekly total in this document.

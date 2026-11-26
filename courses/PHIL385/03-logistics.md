@@ -6,6 +6,7 @@
 - A missed in-term exam transfers its weight to the final automatically. There are no makeup exams, and no concession is needed.
 - The TA spends about 20 minutes marking each exam. Class "feedback sessions" give general feedback.
 - Marks are relative to peers and scaled toward the department average of about 76. The 2025 exams were open-book. The current syllabus specifies closed-book exams.
+- Kraal announced on Nov 25 that the in-term exams will not be scaled, because the class average is already 78%. The course mark is the in-term marks plus the final, which is worth 40%.
 - Canvas has two "students asking students for class notes" boards, one per section.
 
 ## Readings

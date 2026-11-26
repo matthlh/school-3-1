@@ -57,8 +57,9 @@ osascript "/Users/matthe/Documents/CodingProjects/School 3-1/.claude/skills/morn
 Prints Today (with project/area/due/tags), Inbox count, Upcoming ≤14 days, open projects.
 
 #### 1b. Daily plan — the Today list IS the plan (Matt, 2026-09-11)
-Matt has ~6 h of work time a day outside class. Flexible work is ordered **School > Career > Personal > other**
-(Matt, 2026-11-06), in both daily and weekly plans. There is no Career reserve. Preserve fixed external events
+Matt has ~6 h of work time a day outside class. Flexible work is ordered **Career > School > Personal > other**
+(Matt, 2026-11-19), in both daily and weekly plans, except that school work due within 2 days (`URGENT_SCHOOL_DAYS`)
+goes before Career; overdue school catch-up ranks with the rest of School. No hours are reserved. Preserve fixed external events
 on the calendar; an urgent Career alert does not change this work order. Every to-do carries two tags: an **estimate**
 (`15m` `30m` `1h` `2h` `3h`, or `event` for a fixed slot that costs no planning time) and a
 **priority** (`P1` must — deadline- or grade-bound · `P2` should this week · `P3` whenever).
@@ -85,7 +86,7 @@ schedule in `PHIL_READINGS`, from a week before the reading's first class (`Read
 the title; `Log PHIL385 reading: <title>` 15m P1, due the last class; both are completed once
 `courses/PHIL385/readings/<slug>.md` exists, and one still open 21 days after the last class is cancelled)
 — then (2) scores every candidate within its area (deadline urgency → P-tag → was already planned → rollover count),
-(3) keeps fixed events and fills the budget School, Career, Personal, then other, with a 1.5 h cap on P3 filler,
+(3) keeps fixed events and fills the budget with school work due within 2 days, then Career, the rest of School, Personal, then other, with a 1.5 h cap on P3 filler,
 (4) gives the plan a clock
 (below), and (5) applies it: picked items are scheduled Today, anything that was in Today and
 lost is scheduled Tomorrow (counted as a rollover in `routines/plan-state.json`, which bumps it
@@ -131,7 +132,7 @@ The printed block, top to bottom (Matt, 2026-10-06):
 - A `Cushion:` line covers each date in the next 14 days that has an exam, deliverable, paper or assignment
   (an admin date gets none), in date order. Its hours count all the work due before that date, so each line
   includes the lines above it: every open course to-do due by then, plus every ladder step still to come before
-  it. Free is the daily budgets from today to the day before; School has first claim on that capacity. When the work is
+  it. Free is the daily budgets from today to the day before; the line counts it as if School had first claim on that capacity. When the work is
   more than the free hours, the line is a ⚠ instead.
 - `First thing tomorrow:` names the top item that rolled.
 - The last line, `Time check: how long did <to-do> take?`, asks about one to-do completed yesterday that has a
@@ -431,8 +432,8 @@ applying is a separate session he starts himself.
    or otherwise: the Career repo's rule is that LinkedIn automation risks a restricted account, which would cost
    the alumni filter. If the emails are thin, the fix is his LinkedIn notification settings (messages and
    connections by email on), not browsing the site.
-5. **School > Career > Personal > other** (Matt, 2026-11-06, replacing the Oct 9 order). Flexible Career work
-   uses the capacity left after School work. A booked external event keeps its calendar slot; report a conflict
+5. **Career > School > Personal > other** (Matt, 2026-11-19, replacing the Nov 6 School-first order), except that
+   school work due within 2 days goes before Career. A booked external event keeps its calendar slot; report a conflict
    instead of moving or cancelling it. Interviews, assessments and offers retain their first-line alert and push.
 6. **Applying is allowed without asking, with one hold** (Matt, 2026-10-09). Companies worth applying to that turn
    up in the Substack newsletters, in email or in his LinkedIn notes are applied to straight away in a Career

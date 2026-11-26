@@ -50,7 +50,8 @@ Steps:
      one week ahead; `--seed` pre-creates the term's ASIA 250 watch+quiz to-dos.
   3. Candidates: when ≤ today, OR undated in Anytime, OR deadline ≤ today+PULL_IN_DAYS (a future
      when-date he set by hand is respected otherwise).
-  4. Keep fixed events, then fill School → Career → Personal → other (Matt, 2026-11-06).
+  4. Keep fixed events, then fill school work due within URGENT_SCHOOL_DAYS → Career → other School →
+     Personal → other (Matt, 2026-11-19, replacing the 2026-11-06 School-first order).
      Within each group use deadline urgency → P-tag → was-planned → rollovers. Habits compete in
      their group; a missed habit is cancelled next time rather than rolled. No Career hours are reserved.
      P3 items are capped at P3_CAP_H so the day isn't padded with fluff.
@@ -405,11 +406,19 @@ def exams_on(d):
     """The term.key_dates() exams on date d."""
     return [k for k in term.key_dates() if k.kind == "exam" and k.date == d]
 
+RANK_DAY = dt.date.today()   # main() sets it to the planned day
+URGENT_SCHOOL_DAYS = 2        # school work due from RANK_DAY to RANK_DAY + this still goes before Career
+
+def is_school(t):
+    """Project membership also identifies school items without an area."""
+    return t.area in ("UBC", "School") or t.project in PROJECT_OF.values()
+
 def area_rank(t):
-    """School, Career, Personal, other; project membership also identifies school items without an area."""
-    if t.area in ("UBC", "School") or t.project in PROJECT_OF.values():
-        return 0
-    return {"Career": 1, "Personal": 2}.get(t.area, 3)
+    """Career first (Matt, 2026-11-19), except school work due within URGENT_SCHOOL_DAYS:
+    urgent School, Career, other School, Personal, other. Overdue school work ranks as other School."""
+    if is_school(t):
+        return 0 if t.due and RANK_DAY <= t.due <= RANK_DAY + dt.timedelta(days=URGENT_SCHOOL_DAYS) else 2
+    return {"Career": 1, "Personal": 3}.get(t.area, 4)
 
 def task_order(t):
     """Area order, then daily urgency; shared by daily selection and printed plans."""
@@ -866,7 +875,7 @@ def cushions(today, budget, todos, state, factors):
     no ladder and gets none), in date order. Its need counts all the work due before it, so it includes the needs of
     the lines above it: the estimates of every open course to-do due on or before that date, plus every ladder step
     still to come before it, whichever item the step is for. Free: the budgets from today (today's is `budget`) to the
-    day before it. School has first claim on that capacity. When the need is more than the free hours, the line is a ⚠."""
+    day before it, as if School had first claim on that capacity. When the need is more than the free hours, the line is a ⚠."""
     steps = [(k.date - dt.timedelta(days=left), planned_h(est, factors)) for k in term.key_dates()
              for left, (_, est) in term.LADDERS.get(k.kind, {}).items() if 0 < left < (k.date - today).days]
     items = {}
@@ -875,7 +884,7 @@ def cushions(today, budget, todos, state, factors):
             items.setdefault(k.date, []).append(f"{PROJECT_OF[k.course]} {k.name}")
     lines = []
     for d in sorted(items):
-        need = sum(t.est for t in todos if area_rank(t) == 0 and t.due and t.due <= d)
+        need = sum(t.est for t in todos if is_school(t) and t.due and t.due <= d)
         need = round(need + sum(h for day, h in steps if day < d), 2)
         free = 0.0
         for i in range((d - today).days):
@@ -1120,7 +1129,7 @@ def print_day(today, budget, kept, rollover, warn, cands, todos, eve, factors, a
         print("**Needs an estimate/priority tag** (15m/30m/1h/2h/3h + P1/P2/P3)")
         for t in need:
             print(f"- {t.where()} · {t.name[:80]}")
-    loose = sorted({t.project for t in todos if t.project and not t.area and area_rank(t) == 3 and t.lst != "Inbox"})
+    loose = sorted({t.project for t in todos if t.project and not t.area and area_rank(t) == 4 and t.lst != "Inbox"})
     if loose:                            # ranked last (other) until filed, so Career work there would rank below Personal
         print("**Needs an area** (projects ranked as other until filed under Career, Personal or UBC in Things3)")
         for name in loose:
@@ -1154,6 +1163,8 @@ def main():
         ap.error("--date needs --dry-run: Things3 schedules relative to the real today, so a real run for another date would misplace to-dos")
     now = dt.datetime.now().astimezone()
     today = dt.date.fromisoformat(a.date) if a.date else now.date()
+    global RANK_DAY
+    RANK_DAY = today
     state = load_state()
     if a.actual:
         record_actuals(a.actual, state, a.dry_run)

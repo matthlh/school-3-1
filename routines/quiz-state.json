@@ -1998,6 +1998,14 @@
       "event_id": "2aec4176f24b7ae3",
       "session_id": "web-1cf444798101271e"
      }
+    ],
+    [
+     "2026-11-20",
+     "O",
+     {
+      "event_id": "6829feec669f4b89a2e24fad43b2ba25",
+      "session_id": "2026-11-20-quiz-000701"
+     }
     ]
    ]
   },
@@ -2073,6 +2081,14 @@
       "event_id": "f17fa2fc0fb4b3bf",
       "session_id": "web-1cf444798101271e"
      }
+    ],
+    [
+     "2026-11-20",
+     "O",
+     {
+      "event_id": "84124c01c8c64e5aa94f405817f870d5",
+      "session_id": "2026-11-20-quiz-000701"
+     }
     ]
    ]
   },
@@ -2104,6 +2120,16 @@
       "event_id": "7bbabfdb620f45a19c461ae16ddc8787",
       "session_id": "2026-11-17-quiz-163400"
      }
+    ],
+    [
+     "2026-11-20",
+     "X",
+     {
+      "conf": 1,
+      "cause": "concept",
+      "event_id": "e058073e0c1745e38987984771e66bdc",
+      "session_id": "2026-11-20-quiz-000701"
+     }
     ]
    ]
   },
@@ -2119,6 +2145,60 @@
       "cause": "forgot",
       "event_id": "c4d64553c2cc47069b31ac75e3cbbbfd",
       "session_id": "2026-11-17-quiz-163400"
+     }
+    ],
+    [
+     "2026-11-20",
+     "O",
+     {
+      "event_id": "d1ae4785ab6d4f4e9aee986b932bd9c7",
+      "session_id": "2026-11-20-quiz-000701"
+     }
+    ]
+   ]
+  },
+  "fdd2bb90": {
+   "course": "PHIL385",
+   "topic": "Equilibrium: the false paths, the mystic and the aesthetic's return",
+   "history": [
+    [
+     "2026-11-20",
+     "X",
+     {
+      "cause": "forgot",
+      "event_id": "262b8f0661204c8f821455a8b7f7f1fd",
+      "session_id": "2026-11-20-quiz-000701"
+     }
+    ]
+   ]
+  },
+  "407e6eb8": {
+   "course": "PHIL385",
+   "topic": "Equilibrium: Hegel's system and the choice of good and evil",
+   "history": [
+    [
+     "2026-11-20",
+     "X",
+     {
+      "conf": 2,
+      "cause": "concept",
+      "event_id": "be9c4f9dfb9e466ea43243dea885e3da",
+      "session_id": "2026-11-20-quiz-000701"
+     }
+    ]
+   ]
+  },
+  "4694989d": {
+   "course": "PHIL385",
+   "topic": "Equilibrium: despair and choosing oneself",
+   "history": [
+    [
+     "2026-11-20",
+     "X",
+     {
+      "cause": "forgot",
+      "event_id": "637b92cd06a24482ab2b1d08ed5d834a",
+      "session_id": "2026-11-20-quiz-000701"
      }
     ]
    ]
@@ -3580,6 +3660,57 @@
      "X"
     ]
    ]
+  },
+  {
+   "id": "2026-11-20-quiz-000701",
+   "date": "2026-11-20",
+   "mode": "quiz",
+   "n": 7,
+   "note": "",
+   "results": [
+    [
+     1,
+     "249beac9",
+     "PHIL385",
+     "O"
+    ],
+    [
+     2,
+     "608d9bce",
+     "PHIL385",
+     "O"
+    ],
+    [
+     3,
+     "e930d091",
+     "PHIL385",
+     "X"
+    ],
+    [
+     4,
+     "31a54752",
+     "PHIL385",
+     "O"
+    ],
+    [
+     5,
+     "fdd2bb90",
+     "PHIL385",
+     "X"
+    ],
+    [
+     6,
+     "407e6eb8",
+     "PHIL385",
+     "X"
+    ],
+    [
+     7,
+     "4694989d",
+     "PHIL385",
+     "X"
+    ]
+   ]
   }
  ],
  "topic_baselines": {
@@ -3602,6 +3733,18 @@
    "next": "2026-11-03"
   },
   "PHIL385|Equilibrium: despair and choosing oneself (one must enjoy life, on a condition not posited by oneself · the stages from health and beauty to talent, desire, Nero and the Cynic · melancholy as hysteria of the spirit · every aesthetic life-view is despair · A's thought-despair · Despair! as an action, not a comfort · doubt is a despair of thought, despair a doubt of the personality · choosing oneself in one's eternal validity · repentance as the one love of God · suffering harm to one's soul)": {
+   "last": "—",
+   "grade": "",
+   "streak": 0,
+   "next": "2026-11-17"
+  },
+  "PHIL385|Equilibrium: the false paths, the mystic and the aesthetic's return (the aesthete develops like a plant · despair is no break but a transfiguration · Narcissus, who reached eternity before his time · sorrow as the meaning of life is despair too · the Greek paragon of virtue · the mystic chooses himself abstractly · B's three objections: importunity, softness, deceit · he repents out of himself, not into · Ludvig Blackfeldt · A's beautiful has no movement, the ethical individual is his own teleology)": {
+   "last": "—",
+   "grade": "",
+   "streak": 0,
+   "next": "2026-11-17"
+  },
+  "PHIL385|Equilibrium: Hegel's system and the choice of good and evil (logic, nature and history as the spheres for thought · history as necessity against free volitions · Kraal's Hegel steps from consciousness of freedom to recognition and marriage · marriage in essence an ethical tie · thought yields relative differences, never the absolute one · the good is by virtue of my willing it, yet not subjective · B's either/or is choosing to will, not choosing between good and evil)": {
    "last": "—",
    "grade": "",
    "streak": 0,

@@ -1,8 +1,10 @@
 # Operating rules for this workspace
 
 Matt is a UBC CS student, Term 3-1 (Sep–Dec 2026). Goal: highest grades per hour spent.
-**Time efficiency is a hard constraint. Priority is School > Career > Personal > other** (Matt, 2026-11-06).
-Apply that order to flexible work in both daily and weekly plans, with no reserved Career hours.
+**Time efficiency is a hard constraint. Priority is Career > School > Personal > other** (Matt, 2026-11-19, replacing
+the 2026-11-06 School-first order), with one exception: school work due within 2 days (today, tomorrow or the day
+after, exam prep steps included) still goes before Career. Overdue school catch-up ranks with the rest of School.
+Apply that order to flexible work in both daily and weekly plans (`area_rank` in `things_plan.py`), with no reserved hours.
 Keep fixed external events on the calendar; do not cancel or move them to resolve a planning conflict.
 An interview, assessment or offer still gets the first alert line and a push notification (morning-check SKILL §4b);
 alert visibility does not change the work priority.
