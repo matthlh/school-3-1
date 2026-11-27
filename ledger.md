@@ -318,13 +318,14 @@ Each row holds the course's Canvas current score. The CPSC 310 row also holds Pr
 | Course | Score | As of |
 |---|---|---|
 | ASIA 250 | total hidden on Canvas; Declaration 100/100; Mini-Quiz 1 10/10; Mini-Quiz 2 10/10; Mini-Quiz 3 9.5/10; Mini-Quiz 4 10/10; Mini-Quiz 5 10/10; Mini-Quiz 6 0/10; Mini-Quiz 6 was missed and locked at 0; Mini-Quiz 7 10/10; Mini-Quiz 8 0/10; Mini-Quiz 8 was missed and locked at 0; Mini-Quiz 9 10/10; Optional Assignment 1 missed and the 2% bonus is gone; Optional Assignment 2 marked 100 so the 2% bonus is banked; Short Written Response 1 95/100; Short Written Response 2 88/100 | 2026-11-25 |
-| CPSC 310 | 88.23%; D1-Auto 100/100; D1-Manual 100/100; D2-Auto 100/100; D2-Manual 95.83/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; LAB06 0/100; LAB07 100/100; LAB08 100/100; midterm marked on Gradescope and not on Canvas yet; the labs come from PrairieLearn | 2026-11-14 |
+| CPSC 310 | 91.69%; D1-Auto 100/100; D1-Manual 100/100; D2-Auto 100/100; D2-Manual 95.83/100; D3-Auto 100/100; D3-Manual 100/100; LAB01 100/100; LAB02 74/100; LAB03 90/100; LAB04 100/100; LAB05 100/100; LAB06 0/100; LAB07 100/100; LAB08 100/100; midterm marked on Gradescope and not on Canvas yet; the labs come from PrairieLearn | 2026-11-27 |
 | PHIL 385 | total hidden on Canvas; Exam 1 14/15; Exam 2 12/15; Exam 3 5/15 | 2026-11-19 |
 | STAT 251 | 72.52%; Midterm 22.5/36; Written Assignment 1 49.5/50; iClicker 14/86; Pre-lab Quiz Lab 2 4/4; Pre-lab Quiz Lab 3 2/2; Pre-lab Quiz Lab 4 4/4; Pre-lab Quiz Lab 5 4/4; Pre-lab Quiz Lab 6 4/4; Lab 2 9.5/10; Lab 3 9/10; Lab 5 9.5/10; classes 5 to 9, 11, 13 to 19 and 22 to 24 scored 0 and class 10 scored 5 of 5; classes 1 and 2 in week 1 do not count; Lab 1 0/6 (missed, no make-up); WeBWorK is not on Canvas yet | 2026-11-19 |
 
 ## Session log
 | Date | What we did |
 |---|---|
+| 2026-11-27 | Canvas re-run: CPSC 310 D3-Auto 100/100 and D3-Manual 100/100 recorded; Canvas total 91.69%. |
 | 2026-11-27 | Morning check: Chrome extension down, so Canvas, WeBWorK, Piazza and PrairieLearn were skipped; CPSC 310 lec 21 deck posted; Critical Environment Technologies assessment to-do added to Things3. |
 | 2026-11-04 | Morning check: CPSC 310 final set for Fri Dec 18, 12:00–14:30 and midterm regrade deadline Nov 17 added (Piazza @290); grades updated for CPSC 310 (88.23%, D2 97.5), ASIA 250 Mini-Quiz 7 and STAT 251 pre-lab 5. |
 | 2026-09-08 | System set up. PHIL 321 dropped → 4 courses. Calendar blocks written through Dec 4. |
