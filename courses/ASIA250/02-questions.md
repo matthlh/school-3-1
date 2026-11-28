@@ -1621,3 +1621,44 @@ The other three of the four major Tibetan schools accept that accomplished tantr
 3. Sohei, warrior monks such as Benkei, used wrathful tantric practice in martial training, guarded temples and often fought for hire.
 
 Japanese Zen, Pure Land and Nichiren Buddhism grew partly from dissatisfaction with this elitism and antisocial transgression.
+
+## Lec 9 — Mini-Quiz 9 questions (added 2026-11-27)
+
+### Q: Tantra: (a) denotes esoteric (secret) teachings; (b) is found in Hinduism but not in Buddhism; (c) counters the three poisons by renunciation; (d) all of the above; (e) only a and b. Pick the letter and say why the others fail.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 9b68fd03
+**A:** Key:
+1. (A): in this course tantra denotes esoteric (secret) teachings.
+2. (b) fails because Buddhism has tantra too, Vajrayana, and (c) fails because tantra transforms the three poisons rather than renouncing them.
+
+(A). Slide 3 defines tantra for the course as esoteric, secret teachings that need initiation. Vajrayana is Buddhist tantra, taught in Tibetan monasteries, so (b) is wrong. Renouncing the poisons with antidotes is the exoteric method; tantra transcends them by turning them into divine energies, so (c) is wrong.
+
+### Q: True or false: according to Dr. Christopher Wallis, tantra is a movement that found its way into many religions but is not a religion itself.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 9d999a9f
+**A:** Key:
+1. True: Wallis calls tantra a movement that entered Hinduism, Buddhism and Jainism rather than a religion of its own.
+
+True. Wallis describes tantra as a pan-Indian movement from about the 3rd to 4th centuries CE that spread into Shaivism, Vaishnavism, Buddhism and Jainism. It supplies methods and a view of the body and mind, not its own founder, canon or community.
+
+### Q: In tantra, each of the three poisons is transcended by a visualization. Match ignorance, passion and aversion/anger to: a wrathful deity consuming all obstacles in the divine fire; a peaceful cosmic Buddha containing the whole universe within his body; the bliss of deities in sexual union.
+**Topic:** Vajrayana: monastic tantra, transforming the three poisons, the subtle body, Padmasambhava and Tsongkhapa  **Lec:** 9  **Type:** recall  **Id:** 75ace3d8
+**A:** Parts:
+1. Ignorance becomes a peaceful cosmic Buddha containing the whole universe within his body (Vairocana).
+2. Passion becomes the bliss of deities in sexual union (Vajrasattva and his consort).
+3. Aversion/anger becomes a wrathful deity consuming all obstacles in the divine fire (Acala).
+
+Slides 26 to 31. Vairocana's blue body grows to engulf the universe, so the sense of being trapped in self versus objects dissolves into borderless emptiness. The deities in union fill with the nectar of pleasure that flows out until good and bad have one taste. Acala's fire of wisdom, as in the Japanese goma ritual, burns the causes of anger until self and world are luminous emptiness.
+
+### Q: Which statement is NOT true of exoteric (common) Buddhism? (1) The meaning of its texts, for example the Pure Land sutras, is more or less literal; (2) its texts are commonly known as tantras; (3) its teachings need no special secret initiation; (4) its Buddhas and bodhisattvas are distinct from the worshipper, at least on the surface; (5) all of the above are true.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 100bd4df
+**A:** Key:
+1. (2): exoteric texts are the sutras, and the tantras are the esoteric texts.
+
+(2). Slides 4 to 7 set the pairs: exoteric teachings are open to anyone, need no initiation, read more or less literally, keep deity and worshipper distinct (duality), and in Buddhism are the sutras. Esoteric teachings need initiation, are written obscurely, blur the line between deity and worshipper, and are the tantras.
+
+### Q: True or false: only tantras, not Zen or Pure Land, contain antinomian "shock therapy" teachings. Say why.
+**Topic:** Tantra: exoteric vs esoteric, transgression as shock therapy and the Vijnana Bhairava Tantra  **Lec:** 9  **Type:** recall  **Id:** 616cbf24
+**A:** Key:
+1. False.
+2. Zen uses paradox, shouting and hitting to shock the mind open, so antinomian methods are not unique to tantra.
+
+False. Lecture 8 (slide 65) describes Zen antinomianism as masters breaking precepts to cause awakening, and lecture 9 (slides 10 to 15) says Zen agrees with tantra on shock methods, using koans and blows in the gap between two thoughts. The deck's own example is the instructor's 2013 koan practice in Korea.
