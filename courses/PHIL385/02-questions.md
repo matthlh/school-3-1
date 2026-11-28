@@ -3756,6 +3756,145 @@ B says recent philosophy begins speculation with doubt but never says how doubt 
 
 The page has only the two labels, so the glosses are reconstructed from B. His own word is in the duty passage: if duty were external, "the difference between good and evil is incommensurate with an abstract relation" (PDF p. 483). For B the lack of a proof is not a weakness: good and evil are posited by the choice, which is their absolute validity.
 
+## Lec 26 — After Fear and Trembling: the religious as risk, and truth is subjectivity (Fri Nov 27, logged 2026-11-27 from a recording)
+
+### Q: In which work does the phrase "the 70,000 fathoms" appear, and what does it stand for?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** bbf0bb2b
+**A:** Key:
+1. *Stages on Life's Way*.
+2. The religious as uncertainty or risk: being out on the deep with 70,000 fathoms of water beneath you, far from all human help.
+
+Kraal's board line: "The religious is now articulated in terms of uncertainty or risk." The passage is by Frater Taciturnus, in the last part of the book (1845).
+
+### Q: "The question is whether one has not become joyful in the wrong place." From the point of view of the religious, where is the right place to be joyful?
+- (a) On certain ground, within the limits of reason.
+- (b) In danger, out on 70,000 fathoms of water.
+- (c) In the company of other believers.
+- (d) None of these options.
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** 041f4461
+**A:** Key:
+1. (b): in danger, out on the deep.
+
+The passage goes on: "To swim in the shallows in the company of waders is not the religious." The person who wants certain ground and will not move beyond reason is in the shallow water, which is (a).
+
+### Q: Why, on Kraal's account, is every religion out on the 70,000 fathoms? Name two of the examples he gave.
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** apply  **Id:** 668512c4
+**A:** Key:
+1. Each rests on trusting a word that cannot be proven, and wherever there is trust there are a thousand possibilities of going wrong.
+2. Any two: the Christian trusts Jesus's word through his followers; the Muslim trusts the revelation in the cave of Hira and Sahih al-Bukhari's sifting of the hadiths; the Hindu the Mahabharata; the Jew that Moses received and wrote the Torah.
+
+His conclusion: the Christian, the Muslim, the Hindu and the Jew all make an act of faith, and someone who thinks a religious worldview can be demonstrated like a theorem in Euclid's geometry is mistaken.
+
+### Q: Why, for Kierkegaard, can rational argument never be enough for the religious?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** 8cf967bc
+**A:** Key:
+1. The most that argument yields is probability, and one cannot go from probability to certainty.
+2. The religious demands everything of a soul, so probability is not enough and there has to be an act of faith.
+
+Kraal said the *Postscript* was to be the defence of this: in the setting of Christian apologetics it goes through the attempts to give Christian doctrine a rational basis and shows they reach only probability.
+
+### Q: In the 70,000 fathoms passage, what is the one thing left for the person who loves the swimmer to do, and which example from the second authorship did Kraal attach to it?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** 40ea7fda
+**A:** Key:
+1. To shout to the beloved: "If you do not become happy now, then know that it is your own fault."
+2. The forgiveness of sins: a promise that cannot be proven and can only be believed.
+
+Kraal's image was the life ring: the one life ring you are given is something you can only believe in, with no proof or guarantee, and if you do not believe it you perish.
+
+### Q: What is *The Concept of Anxiety* about, and which Danish word does Kraal keep for its key term?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** 3a6d2073
+**A:** Key:
+1. The experience of sin and of falling into sin, and the angst that results.
+2. Angst.
+
+Angst differs a little from the everyday English "anxiety", which is why it is often left in Danish. The book has a theological framework and is a gesture towards the religious, yet it is one of the most popular Kierkegaard books among psychologists; Kraal named Jung. Its pseudonym is Vigilius Haufniensis (1844).
+
+### Q: What is unusual about the form of *Prefaces*, and who is its pseudonymous author?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** 1fc043d1
+**A:** Key:
+1. The whole book is prefaces, with nothing after them.
+2. Nicolaus Notabene.
+
+There are eight numbered prefaces with a preface of their own in front, which is why Kraal said eight or nine. It appeared on the same day as *The Concept of Anxiety*, 17 June 1844.
+
+### Q: Which attitude does *Prefaces* take issue with, and what must happen to that attitude for the religious to emerge?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** a88a2ae8
+**A:** Key:
+1. The belief that modern times have superseded the earlier religious eras, so that "today we know better" and everyone is the endpoint to which world history tends.
+2. It must collapse: only by doubting that the current culture is the endpoint can one follow him into the religious.
+
+Kierkegaard ties the attitude to branches of Hegelianism that claimed to evaluate whole epochs of history, with mediation as the tool. Kraal's reason the attachment to one's own age has to die: the religious is out of fashion, not the zeitgeist.
+
+### Q: In the *Prefaces* passage Kraal read, what has science forgotten even though it is "finished with everything", and whose line did Kraal quote beside it?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** 1ec7c817
+**A:** Key:
+1. The point of it all, which is the religious question.
+2. Wittgenstein: to believe in God is to believe that life has meaning.
+
+The point is not to deny scientific progress. Even a finished physics leaves the question of what it is all for, which physics cannot answer. Someone who finds that question silly or nonsensical cannot enter the religious.
+
+### Q: At the close of *Fear and Trembling*, what can one generation never learn from another, and what does the disciple of Heraclitus show about "going further"?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** f4af6ec7
+**A:** Key:
+1. The genuinely human factor; in this respect every generation begins afresh.
+2. Going further can negate: by saying one cannot move at all, the disciple cancelled Heraclitus's insight instead of improving on it.
+
+Kierkegaard applies it to love and to faith. To go beyond love is to negate it, and whoever thinks faith must give way to knowledge, as Hegel says in the preface to the *Phenomenology of Spirit*, has not understood faith.
+
+### Q: Where in *Either/Or* does the same complaint appear, and what can the young men there do and not do?
+**Topic:** After Fear and Trembling: the religious as risk  **Lec:** 26  **Type:** recall  **Id:** ee00de53
+**A:** Key:
+1. In B's "Equilibrium", Hannay p. 487.
+2. They can mediate Christianity and paganism and play with the titanic forces of history, but cannot tell a plain man what he is to do in life.
+
+Kraal first guessed "The Aesthetic Validity of Marriage"; the page is in "Equilibrium", in B's pages on what philosophy and mediation cannot do.
+
+### Q: How is the *Postscript* related to the *Crumbs*, and what does it do with the uncertainty of the 70,000 fathoms?
+**Topic:** Crumbs and Postscript: truth is subjectivity  **Lec:** 26  **Type:** recall  **Id:** ffd2a5d4
+**A:** Key:
+1. It is the appendix to the *Crumbs*, and the text that concludes the authorship.
+2. It universalizes the uncertainty from the religious domain to the whole human condition: truth is subjectivity.
+
+The *Crumbs* is about 100 pages and the *Postscript* about 800 by Kraal's count. Both are by Johannes Climacus. Many consider the *Postscript* the most influential of the eight books in philosophy.
+
+### Q: Give Kraal's nutshell argument for "truth is subjectivity" in the *Postscript*.
+**Topic:** Crumbs and Postscript: truth is subjectivity  **Lec:** 26  **Type:** derive  **Id:** f1d932b1
+**A:** Key:
+1. Reality is concrete and particular, while language and thought are abstract and general.
+2. Truth is agreement, or correspondence, between thought and reality.
+3. Something general cannot fully express something particular, so every statement is only an approximation through human categories.
+4. Approximation means probability, and probability means choice, so truth is subjectivity.
+
+Kierkegaard keeps the traditional concept of truth; the argument turns on language. Kraal's examples: "It's raining outside" fits a trillion different rains, and "he's a good guy" fits a thousand other people, so neither adequately describes this rain or this person.
+
+### Q: Which view best represents the *Postscript*'s position on natural science?
+- (a) Truth is subjectivity in ethics and religion, but natural science is objective.
+- (b) Truth is subjectivity there too, because the universe consists of particular facts and language is general.
+- (c) Natural science is false and should give way to faith.
+- (d) None of these options.
+**Topic:** Crumbs and Postscript: truth is subjectivity  **Lec:** 26  **Type:** recall  **Id:** a597293f
+**A:** Key:
+1. (b): truth is subjectivity across the board, in the scientific domain as well.
+
+The universe consists of particular facts, not general facts, so the same gap between general language and particular reality holds in science. Kraal was explicit that this does not deny scientific progress, which rules out (c).
+
+### Q: Why do many call Kierkegaard the first postmodernist? Name two of the thinkers Kraal listed.
+**Topic:** Crumbs and Postscript: truth is subjectivity  **Lec:** 26  **Type:** recall  **Id:** 4f1b42f1
+**A:** Key:
+1. Because the *Postscript* defends "truth is subjectivity", and defends it from the nature of language, as the postmodernists later did.
+2. Any two of Lyotard, Derrida and Foucault.
+
+Kraal dated postmodernism's rise to the 1980s and 90s and said one of Derrida's late books plays on *Fear and Trembling*; that book is *The Gift of Death* (1992).
+
+### Q: State the two possibilities the *Crumbs* sets side by side, say what follows on the second, and say what Plato's doubt shows.
+**Topic:** Crumbs and Postscript: truth is subjectivity  **Lec:** 26  **Type:** recall  **Id:** 950b2ab6
+**A:** Key:
+1. Either we have the condition of truth in us: reason, used rightly, can find the truth.
+2. Or we do not have the condition of truth, and then it must come from without, so one needs a saviour.
+3. Plato's doubt, whether the divine spark in him is not a many-headed monster, shows the second possibility cannot be refuted.
+
+Plato and Aristotle hold the first, and on it no saviour is needed. Kraal associated the second with the religious. Philosophy cannot tell you which situation is yours. Plato's doubt is *Phaedrus* 230a, which Climacus quotes.
+
 ## Exam 3 — the real questions (Fri Oct 30, from Kraal's answer key)
 
 ### Q: Exam 3, question 1: which view best represents the position of Author A in the Diapsalmata on the meaning of life?
