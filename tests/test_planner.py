@@ -31,12 +31,14 @@ class PlannerTests(unittest.TestCase):
     def setUp(self):
         for mock in (patch.object(planner, "osa", side_effect=AssertionError("No live Things3 calls")),
                      patch.object(planner.things_add, "add_todo", side_effect=AssertionError("No live to-do creation")),
-                     patch.object(planner.term, "key_dates", return_value=[])):
+                     patch.object(planner.term, "key_dates", return_value=[]),
+                     patch.object(planner, "RANK_DAY", DAY)):
             mock.start()
             self.addCleanup(mock.stop)
 
-    def test_school_uses_full_six_hours_before_career(self):
-        school = [todo("School A", estimate="3h"), todo("School B", estimate="3h")]
+    def test_school_due_within_two_days_uses_full_six_hours_before_career(self):
+        due = DAY + dt.timedelta(days=planner.URGENT_SCHOOL_DAYS)
+        school = [todo("School A", estimate="3h", due=due), todo("School B", estimate="3h", due=due)]
         career = todo("Career deadline", area="Career", due=DAY)
         selected, rolled, warnings, _ = planner.plan(DAY, 6, [career, *school], {})
         self.assertEqual(selected, school)
@@ -44,17 +46,31 @@ class PlannerTests(unittest.TestCase):
         self.assertTrue(any("Career deadline" in warning for warning in warnings))
         self.assertEqual(planner.budget_for(DAY, {}), 6)
 
+    def test_career_goes_before_school_due_later(self):
+        later = todo("School later", estimate="3h", due=DAY + dt.timedelta(days=planner.URGENT_SCHOOL_DAYS + 1))
+        undated = todo("School undated", estimate="3h")
+        career = todo("Career", area="Career", estimate="3h")
+        selected, rolled, *_ = planner.plan(DAY, 6, [later, undated, career], {})
+        self.assertEqual(selected[0], career)
+        self.assertEqual(len(selected), 2)
+        self.assertEqual(len(rolled), 1)
+
     def test_area_order_overrides_priority_and_deadline(self):
         items = [todo("Other", area="Other", due=DAY), todo("Personal", area="Personal", due=DAY),
-                 todo("Career", area="Career", due=DAY), todo("School", priority="P2")]
-        selected, *_ = planner.plan(DAY, 4, items, {})
-        self.assertEqual([t.name for t in selected], ["School", "Career", "Personal", "Other"])
+                 todo("Career", area="Career", priority="P2"), todo("School", due=DAY),
+                 todo("Overdue school", due=DAY - dt.timedelta(days=1)),
+                 todo("Urgent school", priority="P3", due=DAY + dt.timedelta(days=2))]
+        order = ["School", "Urgent school", "Career", "Overdue school", "Personal", "Other"]
+        selected, *_ = planner.plan(DAY, 6, items, {})
+        self.assertEqual([t.name for t in selected], order)
         rows = planner.plan_rows(selected, DAY, 540)
-        self.assertEqual([row[0].name for row in rows], ["School", "Career", "Personal", "Other"])
+        self.assertEqual([row[0].name for row in rows], order)
 
     def test_course_project_counts_as_school_without_area(self):
         t = todo("Course task", area="", project="STAT 251")
-        self.assertEqual(planner.area_rank(t), 0)
+        self.assertTrue(planner.is_school(t))
+        self.assertEqual(planner.area_rank(t), 2)
+        self.assertEqual(planner.area_rank(todo("Course task", area="", project="STAT 251", due=DAY)), 0)
 
     def test_fixed_event_kept_and_future_work_date_respected(self):
         event = todo("Booked interview", area="Career", estimate="event")
