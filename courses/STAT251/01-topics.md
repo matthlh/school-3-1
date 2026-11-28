@@ -94,9 +94,9 @@ review. An outcome without a code, such as 1+, is found by its words instead.
 | # | Outcome |
 |---|---|
 | 7a | When ANOVA is / isn't appropriate |
-| 7b | Modeling assumptions |
+| 7b | Modeling assumptions *(ANOVA modelling assumptions, WW9: independent observations, a Normal population per group, equal population variances; equal means is H0, not an assumption; ledger row 7b)* |
 | 7c | Null and alternative hypotheses |
-| 7d | Partition of total SS into within / between |
+| 7d | Partition of total SS into within / between *(with 7e–7h: the one-way ANOVA table and the F test, WW9: SST = SSF + SSE, df k − 1 and N − k, F = MSF/MSE, MSE estimates the common variance; ledger row 7d–h)* |
 | 7e | Degrees of freedom for each SS |
 | 7f | Interpret an ANOVA table |
 | 7g | Perform the F test |

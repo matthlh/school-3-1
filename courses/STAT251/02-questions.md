@@ -4870,6 +4870,19 @@ The pooled variance weights each sample variance by its degrees of freedom, $$n 
 
 A, C and D are false. $$\alpha$$ is not the probability that $$H_0$$ is true, a test never proves $$H_0$$, and $$\beta$$ is not set by $$\alpha$$ (it rises when $$\alpha$$ falls).
 
+## WeBWorK 9 — Ch 10: one-way ANOVA (open by Nov 28, due Thu Dec 3; banked 2026-11-28, numbers changed)
+
+### Q: WeBWorK-style. A store shelves a brand of tea at a low, middle or top shelf, one height per day at random, and records daily sales. For a one-way ANOVA on these data, say true or false for each: (i) we must assume the three sample means are equal; (ii) we must assume each height's daily sales come from a Normal distribution; (iii) we must assume the daily sales within one height are independent; (iv) we must assume the three sample standard deviations are independent; (v) we must assume the sales for different heights are independent.
+**Topic:** 7b ANOVA modelling assumptions  **Lec:** WW9  **Type:** apply  **Id:** 5e4550d0
+**A:** Parts:
+1. (i) False.
+2. (ii) True.
+3. (iii) True.
+4. (iv) False.
+5. (v) True.
+
+The model assumes independent observations, a Normal population in each group and a common variance $$\sigma^2$$. Equal means is what the test checks, and only for the population means, as $$H_0$$; it is never an assumption. Nothing in the model is about the sample standard deviations being independent; the variance assumption is that the population variances are equal.
+
 ## Long problems — need paper: steps only in a normal quiz, worked in full in the Friday set
 
 ### Q: Build the stem-and-leaf plot for the deck's example 80 85 75 90 62 50 55 65 75 82 70 25 92 57 63 72 81 95 41 69. Why does the procedure say to include empty stems, and what is the median?
@@ -6436,3 +6449,24 @@ n &> 61.47
 $$
 
 The trap is rounding 61.47 down; a sample size always rounds up. With $$n = 61$$ the width is 20.08, which is not below 20.
+
+### Q: WeBWorK-style. Daily tea sales (in hundreds of dollars) by shelf height: low 5.9, 7.1, 6.4, 7.3; middle 8.2, 8.9, 7.4, 7.6, 7.0; top 8.5, 7.9, 6.6, 6.4, 7.6. The middle shelf has mean 7.820 and standard deviation 0.743, the top shelf mean 7.400 and standard deviation 0.886. (a) Find the low shelf's mean and standard deviation. (b) Estimate the common variance. (c) Complete the ANOVA table (df, SS, MS, F). (d) At the 5% level, with $$F_{2,11,0.05} = 3.98$$, do the three heights give the same mean daily sales?
+**Topic:** 7d–h One-way ANOVA table and the F test  **Lec:** WW9  **Type:** apply  **Id:** a2b704a9
+**A:** Steps:
+1. (a) Low shelf: $$\bar{x} = \frac{26.7}{4} = 6.675$$ and $$s = 0.645$$.
+2. (b) $$s_p^2 = MSE = \frac{SSE}{N - k} = \frac{6.596}{11} = 0.600$$.
+3. (c) $$SST = 9.534$$ on 13 df, $$SSF = SST - SSE = 2.939$$ on 2 df, and $$MSF = 1.469$$.
+4. (c) $$F = \frac{MSF}{MSE} = \frac{1.469}{0.600} = 2.5$$.
+5. (d) $$2.5 < 3.98$$, so do not reject $$H_0$$: no evidence that the mean sales differ.
+
+The error sum of squares pools each group's own spread, $$(n_i - 1)s_i^2$$:
+
+$$
+\begin{aligned}
+SSE &= 3(0.4158) + 4(0.552) \\
+&\quad + 4(0.785) \\
+&= 6.596
+\end{aligned}
+$$
+
+The grand mean is $$\frac{102.8}{14} = 7.343$$, and SST is the sum of every value's squared distance from it. The degrees of freedom split as $$k - 1 = 2$$, $$N - k = 11$$ and $$N - 1 = 13$$. Keep at least six decimals in MSF and MSE before dividing, or F can round to the wrong first decimal.
